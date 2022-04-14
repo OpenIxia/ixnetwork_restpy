@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,44 +33,47 @@ class Preferences(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'preferences'
+    _SDM_NAME = "preferences"
     _SDM_ATT_MAP = {
-        'AllowProtocolSessionStateLog': 'allowProtocolSessionStateLog',
-        'AutoSaveIntervalMin': 'autoSaveIntervalMin',
-        'AutoSaveLocation': 'autoSaveLocation',
-        'ClientTraceLevel': 'clientTraceLevel',
-        'ConfigurationAtIxNetworkStartup': 'configurationAtIxNetworkStartup',
-        'ConnectPortsOnLoadConfig': 'connectPortsOnLoadConfig',
-        'DeleteDumpFilesOlderThan': 'deleteDumpFilesOlderThan',
-        'EnableAutoSave': 'enableAutoSave',
-        'EnableCloudTools': 'enableCloudTools',
-        'EnableDpdkForNewConfig': 'enableDpdkForNewConfig',
-        'ForceLegacyPortNameInStats': 'forceLegacyPortNameInStats',
-        'GenerateUniqueValueOnCopyPaste': 'generateUniqueValueOnCopyPaste',
-        'IncludeTroubleshootingComments': 'includeTroubleshootingComments',
-        'LatestConfigInDiagEnabled': 'latestConfigInDiagEnabled',
-        'PhyMode': 'phyMode',
-        'PingChassisOnConnect': 'pingChassisOnConnect',
-        'ProcessProtocolStateChangeAsync': 'processProtocolStateChangeAsync',
-        'RebootPortsOnConnect': 'rebootPortsOnConnect',
-        'ReceiveMode': 'receiveMode',
-        'RecentChassisList': 'recentChassisList',
-        'RecentFiles': 'recentFiles',
-        'ResourceManagerLocation': 'resourceManagerLocation',
-        'ScriptgenTextEditorPath': 'scriptgenTextEditorPath',
-        'SelectDGOnCreation': 'selectDGOnCreation',
-        'ShortenScenarioObjectNameInMiddle': 'shortenScenarioObjectNameInMiddle',
-        'StreamLogsToSyslogServer': 'streamLogsToSyslogServer',
-        'SyslogHost': 'syslogHost',
-        'SyslogPort': 'syslogPort',
-        'TransmitMode': 'transmitMode',
+        "AllowProtocolSessionStateLog": "allowProtocolSessionStateLog",
+        "AutoSaveIntervalMin": "autoSaveIntervalMin",
+        "AutoSaveLocation": "autoSaveLocation",
+        "ClientTraceLevel": "clientTraceLevel",
+        "ConfigurationAtIxNetworkStartup": "configurationAtIxNetworkStartup",
+        "ConnectPortsOnLoadConfig": "connectPortsOnLoadConfig",
+        "DeleteDumpFilesOlderThan": "deleteDumpFilesOlderThan",
+        "EnableAutoSave": "enableAutoSave",
+        "EnableCloudTools": "enableCloudTools",
+        "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
+        "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
+        "GenerateUniqueValueOnCopyPaste": "generateUniqueValueOnCopyPaste",
+        "IncludeTroubleshootingComments": "includeTroubleshootingComments",
+        "LatestConfigInDiagEnabled": "latestConfigInDiagEnabled",
+        "PhyMode": "phyMode",
+        "PingChassisOnConnect": "pingChassisOnConnect",
+        "ProcessProtocolStateChangeAsync": "processProtocolStateChangeAsync",
+        "RebootPortsOnConnect": "rebootPortsOnConnect",
+        "ReceiveMode": "receiveMode",
+        "RecentChassisList": "recentChassisList",
+        "RecentFiles": "recentFiles",
+        "ResourceManagerLocation": "resourceManagerLocation",
+        "ScriptgenTextEditorPath": "scriptgenTextEditorPath",
+        "SelectDGOnCreation": "selectDGOnCreation",
+        "ShortenScenarioObjectNameInMiddle": "shortenScenarioObjectNameInMiddle",
+        "StreamLogsToSyslogServer": "streamLogsToSyslogServer",
+        "SyslogHost": "syslogHost",
+        "SyslogPort": "syslogPort",
+        "TransmitMode": "transmitMode",
     }
     _SDM_ENUM_MAP = {
-        'clientTraceLevel': ['debug', 'error', 'fatal', 'info', 'warn'],
-        'configurationAtIxNetworkStartup': ['useEmptyConfiguration', 'useLastSavedConfiguration'],
-        'phyMode': ['copper', 'fiber'],
-        'receiveMode': ['capturePackets', 'measureTrafficFlow'],
-        'transmitMode': ['interleavedStreams', 'sequentialStreams'],
+        "clientTraceLevel": ["debug", "error", "fatal", "info", "warn"],
+        "configurationAtIxNetworkStartup": [
+            "useEmptyConfiguration",
+            "useLastSavedConfiguration",
+        ],
+        "phyMode": ["copper", "fiber"],
+        "receiveMode": ["capturePackets", "measureTrafficFlow"],
+        "transmitMode": ["interleavedStreams", "sequentialStreams"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -86,10 +90,13 @@ class Preferences(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.analyzer.analyzer import Analyzer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.analyzer.analyzer import (
+            Analyzer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Analyzer', None) is not None:
-                return self._properties.get('Analyzer')
+            if self._properties.get("Analyzer", None) is not None:
+                return self._properties.get("Analyzer")
         return Analyzer(self)._select()
 
     @property
@@ -103,10 +110,13 @@ class Preferences(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.statistics.statistics import Statistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.statistics.statistics import (
+            Statistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Statistics', None) is not None:
-                return self._properties.get('Statistics')
+            if self._properties.get("Statistics", None) is not None:
+                return self._properties.get("Statistics")
         return Statistics(self)._select()
 
     @property
@@ -117,11 +127,12 @@ class Preferences(Base):
         -------
         - bool: Enables logging each protocol session state change. This option is very heavy for performance.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowProtocolSessionStateLog'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowProtocolSessionStateLog"])
+
     @AllowProtocolSessionStateLog.setter
     def AllowProtocolSessionStateLog(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllowProtocolSessionStateLog'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllowProtocolSessionStateLog"], value)
 
     @property
     def AutoSaveIntervalMin(self):
@@ -131,11 +142,12 @@ class Preferences(Base):
         -------
         - number: Set the interval time in minutes in which the configuration will be saved automatically
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoSaveIntervalMin'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoSaveIntervalMin"])
+
     @AutoSaveIntervalMin.setter
     def AutoSaveIntervalMin(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoSaveIntervalMin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoSaveIntervalMin"], value)
 
     @property
     def AutoSaveLocation(self):
@@ -145,11 +157,12 @@ class Preferences(Base):
         -------
         - str: Set the location where the configuration will be saved automatically
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoSaveLocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoSaveLocation"])
+
     @AutoSaveLocation.setter
     def AutoSaveLocation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoSaveLocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoSaveLocation"], value)
 
     @property
     def ClientTraceLevel(self):
@@ -159,11 +172,12 @@ class Preferences(Base):
         -------
         - str(debug | error | fatal | info | warn): Set the IxNetwork Client side Log/Trace level
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientTraceLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientTraceLevel"])
+
     @ClientTraceLevel.setter
     def ClientTraceLevel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientTraceLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientTraceLevel"], value)
 
     @property
     def ConfigurationAtIxNetworkStartup(self):
@@ -173,11 +187,12 @@ class Preferences(Base):
         -------
         - str(useEmptyConfiguration | useLastSavedConfiguration): Controls which configuration to load when IxNetwork starts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfigurationAtIxNetworkStartup'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfigurationAtIxNetworkStartup"])
+
     @ConfigurationAtIxNetworkStartup.setter
     def ConfigurationAtIxNetworkStartup(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConfigurationAtIxNetworkStartup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConfigurationAtIxNetworkStartup"], value)
 
     @property
     def ConnectPortsOnLoadConfig(self):
@@ -187,11 +202,12 @@ class Preferences(Base):
         -------
         - bool: If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded (Should be used only in IxNetwork Desktop App)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectPortsOnLoadConfig"])
+
     @ConnectPortsOnLoadConfig.setter
     def ConnectPortsOnLoadConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectPortsOnLoadConfig"], value)
 
     @property
     def DeleteDumpFilesOlderThan(self):
@@ -201,11 +217,12 @@ class Preferences(Base):
         -------
         - number: Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeleteDumpFilesOlderThan'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeleteDumpFilesOlderThan"])
+
     @DeleteDumpFilesOlderThan.setter
     def DeleteDumpFilesOlderThan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeleteDumpFilesOlderThan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeleteDumpFilesOlderThan"], value)
 
     @property
     def EnableAutoSave(self):
@@ -215,11 +232,12 @@ class Preferences(Base):
         -------
         - bool: If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoSave'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAutoSave"])
+
     @EnableAutoSave.setter
     def EnableAutoSave(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAutoSave'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAutoSave"], value)
 
     @property
     def EnableCloudTools(self):
@@ -229,11 +247,12 @@ class Preferences(Base):
         -------
         - bool: Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCloudTools'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCloudTools"])
+
     @EnableCloudTools.setter
     def EnableCloudTools(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCloudTools'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCloudTools"], value)
 
     @property
     def EnableDpdkForNewConfig(self):
@@ -243,11 +262,12 @@ class Preferences(Base):
         -------
         - bool: Sets the default DPDK enable/disable state when a new config is created.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDpdkForNewConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDpdkForNewConfig"])
+
     @EnableDpdkForNewConfig.setter
     def EnableDpdkForNewConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDpdkForNewConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDpdkForNewConfig"], value)
 
     @property
     def ForceLegacyPortNameInStats(self):
@@ -257,11 +277,12 @@ class Preferences(Base):
         -------
         - bool: When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"])
+
     @ForceLegacyPortNameInStats.setter
     def ForceLegacyPortNameInStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"], value)
 
     @property
     def GenerateUniqueValueOnCopyPaste(self):
@@ -271,11 +292,12 @@ class Preferences(Base):
         -------
         - bool: When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GenerateUniqueValueOnCopyPaste'])
+        return self._get_attribute(self._SDM_ATT_MAP["GenerateUniqueValueOnCopyPaste"])
+
     @GenerateUniqueValueOnCopyPaste.setter
     def GenerateUniqueValueOnCopyPaste(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GenerateUniqueValueOnCopyPaste'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GenerateUniqueValueOnCopyPaste"], value)
 
     @property
     def IncludeTroubleshootingComments(self):
@@ -285,11 +307,12 @@ class Preferences(Base):
         -------
         - bool: Includes troubleshooting comments in the script
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTroubleshootingComments'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTroubleshootingComments"])
+
     @IncludeTroubleshootingComments.setter
     def IncludeTroubleshootingComments(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTroubleshootingComments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTroubleshootingComments"], value)
 
     @property
     def LatestConfigInDiagEnabled(self):
@@ -297,13 +320,14 @@ class Preferences(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatestConfigInDiagEnabled"])
+
     @LatestConfigInDiagEnabled.setter
     def LatestConfigInDiagEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatestConfigInDiagEnabled"], value)
 
     @property
     def PhyMode(self):
@@ -313,11 +337,12 @@ class Preferences(Base):
         -------
         - str(copper | fiber): Set the media in Default Port Settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PhyMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PhyMode"])
+
     @PhyMode.setter
     def PhyMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PhyMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PhyMode"], value)
 
     @property
     def PingChassisOnConnect(self):
@@ -327,11 +352,12 @@ class Preferences(Base):
         -------
         - bool: Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingChassisOnConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingChassisOnConnect"])
+
     @PingChassisOnConnect.setter
     def PingChassisOnConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingChassisOnConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingChassisOnConnect"], value)
 
     @property
     def ProcessProtocolStateChangeAsync(self):
@@ -341,11 +367,12 @@ class Preferences(Base):
         -------
         - bool: When true, protocol state change events are handled Asynchronously
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProcessProtocolStateChangeAsync'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProcessProtocolStateChangeAsync"])
+
     @ProcessProtocolStateChangeAsync.setter
     def ProcessProtocolStateChangeAsync(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProcessProtocolStateChangeAsync'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProcessProtocolStateChangeAsync"], value)
 
     @property
     def RebootPortsOnConnect(self):
@@ -355,11 +382,12 @@ class Preferences(Base):
         -------
         - bool: If true the application will reboot any connected virtual ports when the configuration is loaded
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["RebootPortsOnConnect"])
+
     @RebootPortsOnConnect.setter
     def RebootPortsOnConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RebootPortsOnConnect"], value)
 
     @property
     def ReceiveMode(self):
@@ -369,11 +397,12 @@ class Preferences(Base):
         -------
         - str(capturePackets | measureTrafficFlow): Set the receive mode in Default Port settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceiveMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveMode"])
+
     @ReceiveMode.setter
     def ReceiveMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReceiveMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReceiveMode"], value)
 
     @property
     def RecentChassisList(self):
@@ -383,11 +412,12 @@ class Preferences(Base):
         -------
         - list(str): List of recently used chassis
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentChassisList'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentChassisList"])
+
     @RecentChassisList.setter
     def RecentChassisList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RecentChassisList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RecentChassisList"], value)
 
     @property
     def RecentFiles(self):
@@ -397,7 +427,7 @@ class Preferences(Base):
         -------
         - list(str): List of recently used files
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentFiles'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentFiles"])
 
     @property
     def ResourceManagerLocation(self):
@@ -407,11 +437,12 @@ class Preferences(Base):
         -------
         - str: Set the Resource Manager resources location
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResourceManagerLocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResourceManagerLocation"])
+
     @ResourceManagerLocation.setter
     def ResourceManagerLocation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResourceManagerLocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResourceManagerLocation"], value)
 
     @property
     def ScriptgenTextEditorPath(self):
@@ -421,11 +452,12 @@ class Preferences(Base):
         -------
         - str: Set the text editor path for Scriptgen
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScriptgenTextEditorPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScriptgenTextEditorPath"])
+
     @ScriptgenTextEditorPath.setter
     def ScriptgenTextEditorPath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ScriptgenTextEditorPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScriptgenTextEditorPath"], value)
 
     @property
     def SelectDGOnCreation(self):
@@ -435,11 +467,12 @@ class Preferences(Base):
         -------
         - bool: When true, Device Group will be auto selected in Scenario on a new Topology creation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectDGOnCreation'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectDGOnCreation"])
+
     @SelectDGOnCreation.setter
     def SelectDGOnCreation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectDGOnCreation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectDGOnCreation"], value)
 
     @property
     def ShortenScenarioObjectNameInMiddle(self):
@@ -449,11 +482,16 @@ class Preferences(Base):
         -------
         - bool: Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShortenScenarioObjectNameInMiddle'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ShortenScenarioObjectNameInMiddle"]
+        )
+
     @ShortenScenarioObjectNameInMiddle.setter
     def ShortenScenarioObjectNameInMiddle(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShortenScenarioObjectNameInMiddle'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["ShortenScenarioObjectNameInMiddle"], value
+        )
 
     @property
     def StreamLogsToSyslogServer(self):
@@ -463,11 +501,12 @@ class Preferences(Base):
         -------
         - bool: Enables streaming Logs To Syslog Server
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StreamLogsToSyslogServer'])
+        return self._get_attribute(self._SDM_ATT_MAP["StreamLogsToSyslogServer"])
+
     @StreamLogsToSyslogServer.setter
     def StreamLogsToSyslogServer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StreamLogsToSyslogServer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StreamLogsToSyslogServer"], value)
 
     @property
     def SyslogHost(self):
@@ -477,11 +516,12 @@ class Preferences(Base):
         -------
         - str: syslog host
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SyslogHost'])
+        return self._get_attribute(self._SDM_ATT_MAP["SyslogHost"])
+
     @SyslogHost.setter
     def SyslogHost(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SyslogHost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SyslogHost"], value)
 
     @property
     def SyslogPort(self):
@@ -491,11 +531,12 @@ class Preferences(Base):
         -------
         - number: syslog Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SyslogPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["SyslogPort"])
+
     @SyslogPort.setter
     def SyslogPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SyslogPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SyslogPort"], value)
 
     @property
     def TransmitMode(self):
@@ -505,13 +546,44 @@ class Preferences(Base):
         -------
         - str(interleavedStreams | sequentialStreams): Set the transmit mode in Default Port settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitMode"])
+
     @TransmitMode.setter
     def TransmitMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitMode"], value)
 
-    def update(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, EnableDpdkForNewConfig=None, ForceLegacyPortNameInStats=None, GenerateUniqueValueOnCopyPaste=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, ProcessProtocolStateChangeAsync=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, SelectDGOnCreation=None, ShortenScenarioObjectNameInMiddle=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
+    def update(
+        self,
+        AllowProtocolSessionStateLog=None,
+        AutoSaveIntervalMin=None,
+        AutoSaveLocation=None,
+        ClientTraceLevel=None,
+        ConfigurationAtIxNetworkStartup=None,
+        ConnectPortsOnLoadConfig=None,
+        DeleteDumpFilesOlderThan=None,
+        EnableAutoSave=None,
+        EnableCloudTools=None,
+        EnableDpdkForNewConfig=None,
+        ForceLegacyPortNameInStats=None,
+        GenerateUniqueValueOnCopyPaste=None,
+        IncludeTroubleshootingComments=None,
+        LatestConfigInDiagEnabled=None,
+        PhyMode=None,
+        PingChassisOnConnect=None,
+        ProcessProtocolStateChangeAsync=None,
+        RebootPortsOnConnect=None,
+        ReceiveMode=None,
+        RecentChassisList=None,
+        ResourceManagerLocation=None,
+        ScriptgenTextEditorPath=None,
+        SelectDGOnCreation=None,
+        ShortenScenarioObjectNameInMiddle=None,
+        StreamLogsToSyslogServer=None,
+        SyslogHost=None,
+        SyslogPort=None,
+        TransmitMode=None,
+    ):
         # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
@@ -530,7 +602,7 @@ class Preferences(Base):
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - GenerateUniqueValueOnCopyPaste (bool): When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
-        - LatestConfigInDiagEnabled (bool): 
+        - LatestConfigInDiagEnabled (bool):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously
@@ -552,7 +624,38 @@ class Preferences(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, EnableDpdkForNewConfig=None, ForceLegacyPortNameInStats=None, GenerateUniqueValueOnCopyPaste=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, ProcessProtocolStateChangeAsync=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, RecentFiles=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, SelectDGOnCreation=None, ShortenScenarioObjectNameInMiddle=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
+    def find(
+        self,
+        AllowProtocolSessionStateLog=None,
+        AutoSaveIntervalMin=None,
+        AutoSaveLocation=None,
+        ClientTraceLevel=None,
+        ConfigurationAtIxNetworkStartup=None,
+        ConnectPortsOnLoadConfig=None,
+        DeleteDumpFilesOlderThan=None,
+        EnableAutoSave=None,
+        EnableCloudTools=None,
+        EnableDpdkForNewConfig=None,
+        ForceLegacyPortNameInStats=None,
+        GenerateUniqueValueOnCopyPaste=None,
+        IncludeTroubleshootingComments=None,
+        LatestConfigInDiagEnabled=None,
+        PhyMode=None,
+        PingChassisOnConnect=None,
+        ProcessProtocolStateChangeAsync=None,
+        RebootPortsOnConnect=None,
+        ReceiveMode=None,
+        RecentChassisList=None,
+        RecentFiles=None,
+        ResourceManagerLocation=None,
+        ScriptgenTextEditorPath=None,
+        SelectDGOnCreation=None,
+        ShortenScenarioObjectNameInMiddle=None,
+        StreamLogsToSyslogServer=None,
+        SyslogHost=None,
+        SyslogPort=None,
+        TransmitMode=None,
+    ):
         # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
@@ -575,7 +678,7 @@ class Preferences(Base):
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - GenerateUniqueValueOnCopyPaste (bool): When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
-        - LatestConfigInDiagEnabled (bool): 
+        - LatestConfigInDiagEnabled (bool):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously

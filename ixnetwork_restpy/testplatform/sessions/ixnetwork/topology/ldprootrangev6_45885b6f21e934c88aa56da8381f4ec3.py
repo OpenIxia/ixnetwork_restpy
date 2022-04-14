@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class LdpRootRangeV6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldpRootRangeV6'
+    _SDM_NAME = "ldpRootRangeV6"
     _SDM_ATT_MAP = {
-        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FilterOnGroupAddress': 'filterOnGroupAddress',
-        'GroupCountPerLSP': 'groupCountPerLSP',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'Name': 'name',
-        'NumberOfTLVs': 'numberOfTLVs',
-        'RootAddress': 'rootAddress',
-        'RootAddressCount': 'rootAddressCount',
-        'RootAddressStep': 'rootAddressStep',
-        'SourceAddressV4': 'sourceAddressV4',
-        'SourceAddressV6': 'sourceAddressV6',
-        'SourceCountPerLSP': 'sourceCountPerLSP',
-        'StartGroupAddressV4': 'startGroupAddressV4',
-        'StartGroupAddressV6': 'startGroupAddressV6',
+        "ContinuousIncrementOVAcrossRoot": "continuousIncrementOVAcrossRoot",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FilterOnGroupAddress": "filterOnGroupAddress",
+        "GroupCountPerLSP": "groupCountPerLSP",
+        "LspCountPerRoot": "lspCountPerRoot",
+        "Name": "name",
+        "NumberOfTLVs": "numberOfTLVs",
+        "RootAddress": "rootAddress",
+        "RootAddressCount": "rootAddressCount",
+        "RootAddressStep": "rootAddressStep",
+        "SourceAddressV4": "sourceAddressV4",
+        "SourceAddressV6": "sourceAddressV6",
+        "SourceCountPerLSP": "sourceCountPerLSP",
+        "StartGroupAddressV4": "startGroupAddressV4",
+        "StartGroupAddressV6": "startGroupAddressV6",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LdpRootRangeV6, self).__init__(parent, list_op)
@@ -68,10 +68,13 @@ class LdpRootRangeV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import (
+            LdpTLVList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTLVList', None) is not None:
-                return self._properties.get('LdpTLVList')
+            if self._properties.get("LdpTLVList", None) is not None:
+                return self._properties.get("LdpTLVList")
         return LdpTLVList(self)
 
     @property
@@ -83,7 +86,11 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Continuous Increment Opaque Value Across Root
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ContinuousIncrementOVAcrossRoot']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ContinuousIncrementOVAcrossRoot"]),
+        )
 
     @property
     def Count(self):
@@ -93,7 +100,7 @@ class LdpRootRangeV6(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -103,7 +110,7 @@ class LdpRootRangeV6(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FilterOnGroupAddress(self):
@@ -114,7 +121,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, all the LSPs will belong to the same set of groups
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FilterOnGroupAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FilterOnGroupAddress"])
+        )
 
     @property
     def GroupCountPerLSP(self):
@@ -125,7 +135,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Count Per LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupCountPerLSP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupCountPerLSP"])
+        )
 
     @property
     def LspCountPerRoot(self):
@@ -136,7 +149,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Count Per Root
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspCountPerRoot']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspCountPerRoot"])
+        )
 
     @property
     def Name(self):
@@ -146,11 +162,12 @@ class LdpRootRangeV6(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfTLVs(self):
@@ -160,11 +177,12 @@ class LdpRootRangeV6(Base):
         -------
         - number: Number Of TLVs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTLVs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfTLVs"])
+
     @NumberOfTLVs.setter
     def NumberOfTLVs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfTLVs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfTLVs"], value)
 
     @property
     def RootAddress(self):
@@ -175,7 +193,8 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RootAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RootAddress"]))
 
     @property
     def RootAddressCount(self):
@@ -186,7 +205,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RootAddressCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RootAddressCount"])
+        )
 
     @property
     def RootAddressStep(self):
@@ -197,7 +219,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RootAddressStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RootAddressStep"])
+        )
 
     @property
     def SourceAddressV4(self):
@@ -208,7 +233,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Source Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceAddressV4"])
+        )
 
     @property
     def SourceAddressV6(self):
@@ -219,7 +247,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Source Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressV6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceAddressV6"])
+        )
 
     @property
     def SourceCountPerLSP(self):
@@ -230,7 +261,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Count Per LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceCountPerLSP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceCountPerLSP"])
+        )
 
     @property
     def StartGroupAddressV4(self):
@@ -241,7 +275,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address(V4)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartGroupAddressV4"])
+        )
 
     @property
     def StartGroupAddressV6(self):
@@ -252,7 +289,10 @@ class LdpRootRangeV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address(V6)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressV6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartGroupAddressV6"])
+        )
 
     def update(self, Name=None, NumberOfTLVs=None):
         # type: (str, int) -> LdpRootRangeV6
@@ -315,7 +355,22 @@ class LdpRootRangeV6(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ContinuousIncrementOVAcrossRoot=None, FilterOnGroupAddress=None, GroupCountPerLSP=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None, SourceAddressV4=None, SourceAddressV6=None, SourceCountPerLSP=None, StartGroupAddressV4=None, StartGroupAddressV6=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ContinuousIncrementOVAcrossRoot=None,
+        FilterOnGroupAddress=None,
+        GroupCountPerLSP=None,
+        LspCountPerRoot=None,
+        RootAddress=None,
+        RootAddressCount=None,
+        RootAddressStep=None,
+        SourceAddressV4=None,
+        SourceAddressV6=None,
+        SourceCountPerLSP=None,
+        StartGroupAddressV4=None,
+        StartGroupAddressV6=None,
+    ):
         """Base class infrastructure that gets a list of ldpRootRangeV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

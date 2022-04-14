@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,102 +33,101 @@ class AdvancedLearnedInfoOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'advancedLearnedInfoOptions'
+    _SDM_NAME = "advancedLearnedInfoOptions"
     _SDM_ATT_MAP = {
-        'AllCVlanCCM': 'allCVlanCCM',
-        'AllDstMEPDM': 'allDstMEPDM',
-        'AllDstMEPLM': 'allDstMEPLM',
-        'AllDstMEPLT': 'allDstMEPLT',
-        'AllDstMepLB': 'allDstMepLB',
-        'AllSVlanCCM': 'allSVlanCCM',
-        'AllSrcMEPDM': 'allSrcMEPDM',
-        'AllSrcMEPLM': 'allSrcMEPLM',
-        'AllSrcMEPLT': 'allSrcMEPLT',
-        'AllSrcMepLB': 'allSrcMepLB',
-        'AllVlanCCM': 'allVlanCCM',
-        'CVlanIdFilterCCM': 'cVlanIdFilterCCM',
-        'CVlanIdFilterDM': 'cVlanIdFilterDM',
-        'CVlanIdFilterLB': 'cVlanIdFilterLB',
-        'CVlanIdFilterLM': 'cVlanIdFilterLM',
-        'CVlanIdFilterLT': 'cVlanIdFilterLT',
-        'CVlanPriorityFilterCCM': 'cVlanPriorityFilterCCM',
-        'CVlanPriorityFilterDM': 'cVlanPriorityFilterDM',
-        'CVlanPriorityFilterLB': 'cVlanPriorityFilterLB',
-        'CVlanPriorityFilterLM': 'cVlanPriorityFilterLM',
-        'CVlanPriorityFilterLT': 'cVlanPriorityFilterLT',
-        'CVlanTpidFilterCCM': 'cVlanTpidFilterCCM',
-        'CVlanTpidFilterDM': 'cVlanTpidFilterDM',
-        'CVlanTpidFilterLB': 'cVlanTpidFilterLB',
-        'CVlanTpidFilterLM': 'cVlanTpidFilterLM',
-        'CVlanTpidFilterLT': 'cVlanTpidFilterLT',
-        'ConfiguredVlanDM': 'configuredVlanDM',
-        'ConfiguredVlanLB': 'configuredVlanLB',
-        'ConfiguredVlanLM': 'configuredVlanLM',
-        'ConfiguredVlanLT': 'configuredVlanLT',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestinationMpMacDM': 'destinationMpMacDM',
-        'DestinationMpMacLB': 'destinationMpMacLB',
-        'DestinationMpMacLM': 'destinationMpMacLM',
-        'DestinationMpMacLT': 'destinationMpMacLT',
-        'EnableVlanFilterCCM': 'enableVlanFilterCCM',
-        'MdLevelLB': 'mdLevelLB',
-        'MdLevelLT': 'mdLevelLT',
-        'MdOrMegLevelCCM': 'mdOrMegLevelCCM',
-        'MdOrMegLevelDM': 'mdOrMegLevelDM',
-        'MdOrMegLevelLM': 'mdOrMegLevelLM',
-        'MethodDM': 'methodDM',
-        'Name': 'name',
-        'SVlanIdFilterCCM': 'sVlanIdFilterCCM',
-        'SVlanIdFilterDM': 'sVlanIdFilterDM',
-        'SVlanIdFilterLB': 'sVlanIdFilterLB',
-        'SVlanIdFilterLM': 'sVlanIdFilterLM',
-        'SVlanIdFilterLT': 'sVlanIdFilterLT',
-        'SVlanPriorityFilterCCM': 'sVlanPriorityFilterCCM',
-        'SVlanPriorityFilterDM': 'sVlanPriorityFilterDM',
-        'SVlanPriorityFilterLB': 'sVlanPriorityFilterLB',
-        'SVlanPriorityFilterLM': 'sVlanPriorityFilterLM',
-        'SVlanPriorityFilterLT': 'sVlanPriorityFilterLT',
-        'SVlanTpidFilterCCM': 'sVlanTpidFilterCCM',
-        'SVlanTpidFilterDM': 'sVlanTpidFilterDM',
-        'SVlanTpidFilterLB': 'sVlanTpidFilterLB',
-        'SVlanTpidFilterLM': 'sVlanTpidFilterLM',
-        'SVlanTpidFilterLT': 'sVlanTpidFilterLT',
-        'SourceMpMacDM': 'sourceMpMacDM',
-        'SourceMpMacLB': 'sourceMpMacLB',
-        'SourceMpMacLM': 'sourceMpMacLM',
-        'SourceMpMacLT': 'sourceMpMacLT',
-        'TimeoutDM': 'timeoutDM',
-        'TimeoutLB': 'timeoutLB',
-        'TimeoutLM': 'timeoutLM',
-        'TimeoutLT': 'timeoutLT',
-        'TransactionIdLB': 'transactionIdLB',
-        'TransactionIdLT': 'transactionIdLT',
-        'TtlLT': 'ttlLT',
-        'TypeDM': 'typeDM',
-        'VlanIdFilterCCM': 'vlanIdFilterCCM',
-        'VlanIdFilterDM': 'vlanIdFilterDM',
-        'VlanIdFilterLB': 'vlanIdFilterLB',
-        'VlanIdFilterLM': 'vlanIdFilterLM',
-        'VlanIdFilterLT': 'vlanIdFilterLT',
-        'VlanPriorityFilterCCM': 'vlanPriorityFilterCCM',
-        'VlanPriorityFilterDM': 'vlanPriorityFilterDM',
-        'VlanPriorityFilterLB': 'vlanPriorityFilterLB',
-        'VlanPriorityFilterLM': 'vlanPriorityFilterLM',
-        'VlanPriorityFilterLT': 'vlanPriorityFilterLT',
-        'VlanStackingCCM': 'vlanStackingCCM',
-        'VlanStackingDM': 'vlanStackingDM',
-        'VlanStackingLB': 'vlanStackingLB',
-        'VlanStackingLM': 'vlanStackingLM',
-        'VlanStackingLT': 'vlanStackingLT',
-        'VlanTpidFilterCCM': 'vlanTpidFilterCCM',
-        'VlanTpidFilterDM': 'vlanTpidFilterDM',
-        'VlanTpidFilterLB': 'vlanTpidFilterLB',
-        'VlanTpidFilterLM': 'vlanTpidFilterLM',
-        'VlanTpidFilterLT': 'vlanTpidFilterLT',
+        "AllCVlanCCM": "allCVlanCCM",
+        "AllDstMEPDM": "allDstMEPDM",
+        "AllDstMEPLM": "allDstMEPLM",
+        "AllDstMEPLT": "allDstMEPLT",
+        "AllDstMepLB": "allDstMepLB",
+        "AllSVlanCCM": "allSVlanCCM",
+        "AllSrcMEPDM": "allSrcMEPDM",
+        "AllSrcMEPLM": "allSrcMEPLM",
+        "AllSrcMEPLT": "allSrcMEPLT",
+        "AllSrcMepLB": "allSrcMepLB",
+        "AllVlanCCM": "allVlanCCM",
+        "CVlanIdFilterCCM": "cVlanIdFilterCCM",
+        "CVlanIdFilterDM": "cVlanIdFilterDM",
+        "CVlanIdFilterLB": "cVlanIdFilterLB",
+        "CVlanIdFilterLM": "cVlanIdFilterLM",
+        "CVlanIdFilterLT": "cVlanIdFilterLT",
+        "CVlanPriorityFilterCCM": "cVlanPriorityFilterCCM",
+        "CVlanPriorityFilterDM": "cVlanPriorityFilterDM",
+        "CVlanPriorityFilterLB": "cVlanPriorityFilterLB",
+        "CVlanPriorityFilterLM": "cVlanPriorityFilterLM",
+        "CVlanPriorityFilterLT": "cVlanPriorityFilterLT",
+        "CVlanTpidFilterCCM": "cVlanTpidFilterCCM",
+        "CVlanTpidFilterDM": "cVlanTpidFilterDM",
+        "CVlanTpidFilterLB": "cVlanTpidFilterLB",
+        "CVlanTpidFilterLM": "cVlanTpidFilterLM",
+        "CVlanTpidFilterLT": "cVlanTpidFilterLT",
+        "ConfiguredVlanDM": "configuredVlanDM",
+        "ConfiguredVlanLB": "configuredVlanLB",
+        "ConfiguredVlanLM": "configuredVlanLM",
+        "ConfiguredVlanLT": "configuredVlanLT",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DestinationMpMacDM": "destinationMpMacDM",
+        "DestinationMpMacLB": "destinationMpMacLB",
+        "DestinationMpMacLM": "destinationMpMacLM",
+        "DestinationMpMacLT": "destinationMpMacLT",
+        "EnableVlanFilterCCM": "enableVlanFilterCCM",
+        "MdLevelLB": "mdLevelLB",
+        "MdLevelLT": "mdLevelLT",
+        "MdOrMegLevelCCM": "mdOrMegLevelCCM",
+        "MdOrMegLevelDM": "mdOrMegLevelDM",
+        "MdOrMegLevelLM": "mdOrMegLevelLM",
+        "MethodDM": "methodDM",
+        "Name": "name",
+        "SVlanIdFilterCCM": "sVlanIdFilterCCM",
+        "SVlanIdFilterDM": "sVlanIdFilterDM",
+        "SVlanIdFilterLB": "sVlanIdFilterLB",
+        "SVlanIdFilterLM": "sVlanIdFilterLM",
+        "SVlanIdFilterLT": "sVlanIdFilterLT",
+        "SVlanPriorityFilterCCM": "sVlanPriorityFilterCCM",
+        "SVlanPriorityFilterDM": "sVlanPriorityFilterDM",
+        "SVlanPriorityFilterLB": "sVlanPriorityFilterLB",
+        "SVlanPriorityFilterLM": "sVlanPriorityFilterLM",
+        "SVlanPriorityFilterLT": "sVlanPriorityFilterLT",
+        "SVlanTpidFilterCCM": "sVlanTpidFilterCCM",
+        "SVlanTpidFilterDM": "sVlanTpidFilterDM",
+        "SVlanTpidFilterLB": "sVlanTpidFilterLB",
+        "SVlanTpidFilterLM": "sVlanTpidFilterLM",
+        "SVlanTpidFilterLT": "sVlanTpidFilterLT",
+        "SourceMpMacDM": "sourceMpMacDM",
+        "SourceMpMacLB": "sourceMpMacLB",
+        "SourceMpMacLM": "sourceMpMacLM",
+        "SourceMpMacLT": "sourceMpMacLT",
+        "TimeoutDM": "timeoutDM",
+        "TimeoutLB": "timeoutLB",
+        "TimeoutLM": "timeoutLM",
+        "TimeoutLT": "timeoutLT",
+        "TransactionIdLB": "transactionIdLB",
+        "TransactionIdLT": "transactionIdLT",
+        "TtlLT": "ttlLT",
+        "TypeDM": "typeDM",
+        "VlanIdFilterCCM": "vlanIdFilterCCM",
+        "VlanIdFilterDM": "vlanIdFilterDM",
+        "VlanIdFilterLB": "vlanIdFilterLB",
+        "VlanIdFilterLM": "vlanIdFilterLM",
+        "VlanIdFilterLT": "vlanIdFilterLT",
+        "VlanPriorityFilterCCM": "vlanPriorityFilterCCM",
+        "VlanPriorityFilterDM": "vlanPriorityFilterDM",
+        "VlanPriorityFilterLB": "vlanPriorityFilterLB",
+        "VlanPriorityFilterLM": "vlanPriorityFilterLM",
+        "VlanPriorityFilterLT": "vlanPriorityFilterLT",
+        "VlanStackingCCM": "vlanStackingCCM",
+        "VlanStackingDM": "vlanStackingDM",
+        "VlanStackingLB": "vlanStackingLB",
+        "VlanStackingLM": "vlanStackingLM",
+        "VlanStackingLT": "vlanStackingLT",
+        "VlanTpidFilterCCM": "vlanTpidFilterCCM",
+        "VlanTpidFilterDM": "vlanTpidFilterDM",
+        "VlanTpidFilterLB": "vlanTpidFilterLB",
+        "VlanTpidFilterLM": "vlanTpidFilterLM",
+        "VlanTpidFilterLT": "vlanTpidFilterLT",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AdvancedLearnedInfoOptions, self).__init__(parent, list_op)
@@ -141,7 +141,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All C-VLAN
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllCVlanCCM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllCVlanCCM"]))
 
     @property
     def AllDstMEPDM(self):
@@ -152,7 +153,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Learned MEPs (in same MA) as Destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllDstMEPDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllDstMEPDM"]))
 
     @property
     def AllDstMEPLM(self):
@@ -163,7 +165,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Learned MEPs (in same MA) as Destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllDstMEPLM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllDstMEPLM"]))
 
     @property
     def AllDstMEPLT(self):
@@ -174,7 +177,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Learned MEPs (in same MA) as Destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllDstMEPLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllDstMEPLT"]))
 
     @property
     def AllDstMepLB(self):
@@ -185,7 +189,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Learned MEPs (in same MA) as Destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllDstMepLB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllDstMepLB"]))
 
     @property
     def AllSVlanCCM(self):
@@ -196,7 +201,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to display all the S-VLAN IDs without filtering using any specific S-VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllSVlanCCM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllSVlanCCM"]))
 
     @property
     def AllSrcMEPDM(self):
@@ -207,7 +213,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Configured MEPs as Source.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllSrcMEPDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllSrcMEPDM"]))
 
     @property
     def AllSrcMEPLM(self):
@@ -218,7 +225,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Configured MEPs as Source.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllSrcMEPLM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllSrcMEPLM"]))
 
     @property
     def AllSrcMEPLT(self):
@@ -229,7 +237,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Configured MEPs as Source.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllSrcMEPLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllSrcMEPLT"]))
 
     @property
     def AllSrcMepLB(self):
@@ -240,7 +249,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use All Configured MEPs as Source.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllSrcMepLB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllSrcMepLB"]))
 
     @property
     def AllVlanCCM(self):
@@ -251,7 +261,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to display all the VLAN IDs without filtering using any specific VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllVlanCCM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AllVlanCCM"]))
 
     @property
     def CVlanIdFilterCCM(self):
@@ -262,7 +273,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanIdFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanIdFilterCCM"])
+        )
 
     @property
     def CVlanIdFilterDM(self):
@@ -273,7 +287,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanIdFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanIdFilterDM"])
+        )
 
     @property
     def CVlanIdFilterLB(self):
@@ -284,7 +301,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanIdFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanIdFilterLB"])
+        )
 
     @property
     def CVlanIdFilterLM(self):
@@ -295,7 +315,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanIdFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanIdFilterLM"])
+        )
 
     @property
     def CVlanIdFilterLT(self):
@@ -306,7 +329,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanIdFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanIdFilterLT"])
+        )
 
     @property
     def CVlanPriorityFilterCCM(self):
@@ -317,7 +343,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriorityFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriorityFilterCCM"])
+        )
 
     @property
     def CVlanPriorityFilterDM(self):
@@ -328,7 +357,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriorityFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriorityFilterDM"])
+        )
 
     @property
     def CVlanPriorityFilterLB(self):
@@ -339,7 +371,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriorityFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriorityFilterLB"])
+        )
 
     @property
     def CVlanPriorityFilterLM(self):
@@ -350,7 +385,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriorityFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriorityFilterLM"])
+        )
 
     @property
     def CVlanPriorityFilterLT(self):
@@ -361,7 +399,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriorityFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriorityFilterLT"])
+        )
 
     @property
     def CVlanTpidFilterCCM(self):
@@ -372,7 +413,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpidFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpidFilterCCM"])
+        )
 
     @property
     def CVlanTpidFilterDM(self):
@@ -383,7 +427,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpidFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpidFilterDM"])
+        )
 
     @property
     def CVlanTpidFilterLB(self):
@@ -394,7 +441,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpidFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpidFilterLB"])
+        )
 
     @property
     def CVlanTpidFilterLM(self):
@@ -405,7 +455,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpidFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpidFilterLM"])
+        )
 
     @property
     def CVlanTpidFilterLT(self):
@@ -416,7 +469,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpidFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpidFilterLT"])
+        )
 
     @property
     def ConfiguredVlanDM(self):
@@ -427,7 +483,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the configured VLAN value of the source MEP to be used in DMM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfiguredVlanDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfiguredVlanDM"])
+        )
 
     @property
     def ConfiguredVlanLB(self):
@@ -438,7 +497,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the configured VLAN value of the source MEP to be used in LBM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfiguredVlanLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfiguredVlanLB"])
+        )
 
     @property
     def ConfiguredVlanLM(self):
@@ -449,7 +511,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the configured VLAN value of the source MEP to be used in LMM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfiguredVlanLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfiguredVlanLM"])
+        )
 
     @property
     def ConfiguredVlanLT(self):
@@ -460,7 +525,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the configured VLAN value of the source MEP to be used in LTM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfiguredVlanLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfiguredVlanLT"])
+        )
 
     @property
     def Count(self):
@@ -470,7 +538,7 @@ class AdvancedLearnedInfoOptions(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -480,7 +548,7 @@ class AdvancedLearnedInfoOptions(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestinationMpMacDM(self):
@@ -491,7 +559,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination MP MAC address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationMpMacDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationMpMacDM"])
+        )
 
     @property
     def DestinationMpMacLB(self):
@@ -502,7 +573,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination MP MAC address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationMpMacLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationMpMacLB"])
+        )
 
     @property
     def DestinationMpMacLM(self):
@@ -513,7 +587,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination MP MAC address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationMpMacLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationMpMacLM"])
+        )
 
     @property
     def DestinationMpMacLT(self):
@@ -524,7 +601,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination MP MAC address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationMpMacLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationMpMacLT"])
+        )
 
     @property
     def EnableVlanFilterCCM(self):
@@ -535,7 +615,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables filtering in learned information using VLAN
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlanFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableVlanFilterCCM"])
+        )
 
     @property
     def MdLevelLB(self):
@@ -546,7 +629,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Loopback in All or selected MD Level.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdLevelLB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdLevelLB"]))
 
     @property
     def MdLevelLT(self):
@@ -557,7 +641,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Link Trace in All or selected MD Level.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdLevelLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdLevelLT"]))
 
     @property
     def MdOrMegLevelCCM(self):
@@ -568,7 +653,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select any MD Level value to display only that level in learned information, if available. Select All to not use any filter.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdOrMegLevelCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MdOrMegLevelCCM"])
+        )
 
     @property
     def MdOrMegLevelDM(self):
@@ -579,7 +667,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Delay Measurement in All or selected MD Level.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdOrMegLevelDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MdOrMegLevelDM"])
+        )
 
     @property
     def MdOrMegLevelLM(self):
@@ -590,7 +681,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Loss Measurement in All or selected MD Level.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdOrMegLevelLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MdOrMegLevelLM"])
+        )
 
     @property
     def MethodDM(self):
@@ -601,7 +695,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Choose a Delay Measurement Method (One or Two way).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MethodDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MethodDM"]))
 
     @property
     def Name(self):
@@ -611,11 +706,12 @@ class AdvancedLearnedInfoOptions(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SVlanIdFilterCCM(self):
@@ -626,7 +722,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanIdFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanIdFilterCCM"])
+        )
 
     @property
     def SVlanIdFilterDM(self):
@@ -637,7 +736,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanIdFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanIdFilterDM"])
+        )
 
     @property
     def SVlanIdFilterLB(self):
@@ -648,7 +750,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanIdFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanIdFilterLB"])
+        )
 
     @property
     def SVlanIdFilterLM(self):
@@ -659,7 +764,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanIdFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanIdFilterLM"])
+        )
 
     @property
     def SVlanIdFilterLT(self):
@@ -670,7 +778,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanIdFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanIdFilterLT"])
+        )
 
     @property
     def SVlanPriorityFilterCCM(self):
@@ -681,7 +792,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriorityFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriorityFilterCCM"])
+        )
 
     @property
     def SVlanPriorityFilterDM(self):
@@ -692,7 +806,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriorityFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriorityFilterDM"])
+        )
 
     @property
     def SVlanPriorityFilterLB(self):
@@ -703,7 +820,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriorityFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriorityFilterLB"])
+        )
 
     @property
     def SVlanPriorityFilterLM(self):
@@ -714,7 +834,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriorityFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriorityFilterLM"])
+        )
 
     @property
     def SVlanPriorityFilterLT(self):
@@ -725,7 +848,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriorityFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriorityFilterLT"])
+        )
 
     @property
     def SVlanTpidFilterCCM(self):
@@ -736,7 +862,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpidFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpidFilterCCM"])
+        )
 
     @property
     def SVlanTpidFilterDM(self):
@@ -747,7 +876,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpidFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpidFilterDM"])
+        )
 
     @property
     def SVlanTpidFilterLB(self):
@@ -758,7 +890,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpidFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpidFilterLB"])
+        )
 
     @property
     def SVlanTpidFilterLM(self):
@@ -769,7 +904,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpidFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpidFilterLM"])
+        )
 
     @property
     def SVlanTpidFilterLT(self):
@@ -780,7 +918,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpidFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpidFilterLT"])
+        )
 
     @property
     def SourceMpMacDM(self):
@@ -791,7 +932,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source MEP MAC address. Unconfigured MAC address also allowed.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMpMacDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMpMacDM"]))
 
     @property
     def SourceMpMacLB(self):
@@ -802,7 +944,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source MEP MAC address. Unconfigured MAC address also allowed.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMpMacLB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMpMacLB"]))
 
     @property
     def SourceMpMacLM(self):
@@ -813,7 +956,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source MEP MAC address. Unconfigured MAC address also allowed.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMpMacLM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMpMacLM"]))
 
     @property
     def SourceMpMacLT(self):
@@ -824,7 +968,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source MEP MAC address. Unconfigured MAC address also allowed.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMpMacLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMpMacLT"]))
 
     @property
     def TimeoutDM(self):
@@ -835,7 +980,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger DMM or 1DM using Timeout (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeoutDM"]))
 
     @property
     def TimeoutLB(self):
@@ -846,7 +992,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Loopback using Timeout (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutLB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeoutLB"]))
 
     @property
     def TimeoutLM(self):
@@ -857,7 +1004,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger LMM using Timeout (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutLM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeoutLM"]))
 
     @property
     def TimeoutLT(self):
@@ -868,7 +1016,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Link Trace using this Timeout
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeoutLT"]))
 
     @property
     def TransactionIdLB(self):
@@ -879,7 +1028,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transaction ID (Unconfigured MEP)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransactionIdLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransactionIdLB"])
+        )
 
     @property
     def TransactionIdLT(self):
@@ -890,7 +1042,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transaction ID for Unconfigured Source MEP i.e. if the Source MAC dosent match any of the learned RMEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransactionIdLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransactionIdLT"])
+        )
 
     @property
     def TtlLT(self):
@@ -901,7 +1056,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Link Trace using this TTL
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TtlLT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TtlLT"]))
 
     @property
     def TypeDM(self):
@@ -912,7 +1068,8 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Delay measurement type (DM or DVM).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeDM']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TypeDM"]))
 
     @property
     def VlanIdFilterCCM(self):
@@ -923,7 +1080,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanIdFilterCCM"])
+        )
 
     @property
     def VlanIdFilterDM(self):
@@ -934,7 +1094,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanIdFilterDM"])
+        )
 
     @property
     def VlanIdFilterLB(self):
@@ -945,7 +1108,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanIdFilterLB"])
+        )
 
     @property
     def VlanIdFilterLM(self):
@@ -956,7 +1122,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanIdFilterLM"])
+        )
 
     @property
     def VlanIdFilterLT(self):
@@ -967,7 +1136,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanIdFilterLT"])
+        )
 
     @property
     def VlanPriorityFilterCCM(self):
@@ -978,7 +1150,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriorityFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanPriorityFilterCCM"])
+        )
 
     @property
     def VlanPriorityFilterDM(self):
@@ -989,7 +1164,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriorityFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanPriorityFilterDM"])
+        )
 
     @property
     def VlanPriorityFilterLB(self):
@@ -1000,7 +1178,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriorityFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanPriorityFilterLB"])
+        )
 
     @property
     def VlanPriorityFilterLM(self):
@@ -1011,7 +1192,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriorityFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanPriorityFilterLM"])
+        )
 
     @property
     def VlanPriorityFilterLT(self):
@@ -1022,7 +1206,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriorityFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanPriorityFilterLT"])
+        )
 
     @property
     def VlanStackingCCM(self):
@@ -1033,7 +1220,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No VLAN displays all learned information that does not belong to any VLAN. Single or Stacked VLAN displays learned information with one or two VLANs respectively.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStackingCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanStackingCCM"])
+        )
 
     @property
     def VlanStackingDM(self):
@@ -1044,7 +1234,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No VLAN does not include any VLAN info in the PDU. Single or Stacked VLAN includes the following configuration options.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStackingDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanStackingDM"])
+        )
 
     @property
     def VlanStackingLB(self):
@@ -1055,7 +1248,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No VLAN does not include any VLAN info in the PDU. Single or Stacked VLAN includes the following configuration options.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStackingLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanStackingLB"])
+        )
 
     @property
     def VlanStackingLM(self):
@@ -1066,7 +1262,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No VLAN does not include any VLAN info in the PDU. Single or Stacked VLAN includes the following configuration options.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStackingLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanStackingLM"])
+        )
 
     @property
     def VlanStackingLT(self):
@@ -1077,7 +1276,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No VLAN does not include any VLAN info in the PDU. Single or Stacked VLAN includes the following configuration options.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStackingLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanStackingLT"])
+        )
 
     @property
     def VlanTpidFilterCCM(self):
@@ -1088,7 +1290,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Filter learned information using this VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTpidFilterCCM"])
+        )
 
     @property
     def VlanTpidFilterDM(self):
@@ -1099,7 +1304,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterDM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTpidFilterDM"])
+        )
 
     @property
     def VlanTpidFilterLB(self):
@@ -1110,7 +1318,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterLB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTpidFilterLB"])
+        )
 
     @property
     def VlanTpidFilterLM(self):
@@ -1121,7 +1332,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterLM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTpidFilterLM"])
+        )
 
     @property
     def VlanTpidFilterLT(self):
@@ -1132,7 +1346,10 @@ class AdvancedLearnedInfoOptions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Triggered PDU includes this VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterLT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTpidFilterLT"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> AdvancedLearnedInfoOptions
@@ -1210,10 +1427,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1232,10 +1453,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmAISDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmCcmLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1254,10 +1479,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmCcmLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1276,10 +1505,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmDMDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1298,10 +1531,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLCKDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1320,10 +1557,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLinkTraceDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1342,10 +1583,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLMDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1364,10 +1609,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLoopbackDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1386,10 +1635,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmTSTDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1408,10 +1661,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicDMLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1430,10 +1687,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLBLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1452,10 +1713,14 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLMLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1474,12 +1739,107 @@ class AdvancedLearnedInfoOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLTLearnedInformation", payload=payload, response_object=None
+        )
 
-    def get_device_ids(self, PortNames=None, AllCVlanCCM=None, AllDstMEPDM=None, AllDstMEPLM=None, AllDstMEPLT=None, AllDstMepLB=None, AllSVlanCCM=None, AllSrcMEPDM=None, AllSrcMEPLM=None, AllSrcMEPLT=None, AllSrcMepLB=None, AllVlanCCM=None, CVlanIdFilterCCM=None, CVlanIdFilterDM=None, CVlanIdFilterLB=None, CVlanIdFilterLM=None, CVlanIdFilterLT=None, CVlanPriorityFilterCCM=None, CVlanPriorityFilterDM=None, CVlanPriorityFilterLB=None, CVlanPriorityFilterLM=None, CVlanPriorityFilterLT=None, CVlanTpidFilterCCM=None, CVlanTpidFilterDM=None, CVlanTpidFilterLB=None, CVlanTpidFilterLM=None, CVlanTpidFilterLT=None, ConfiguredVlanDM=None, ConfiguredVlanLB=None, ConfiguredVlanLM=None, ConfiguredVlanLT=None, DestinationMpMacDM=None, DestinationMpMacLB=None, DestinationMpMacLM=None, DestinationMpMacLT=None, EnableVlanFilterCCM=None, MdLevelLB=None, MdLevelLT=None, MdOrMegLevelCCM=None, MdOrMegLevelDM=None, MdOrMegLevelLM=None, MethodDM=None, SVlanIdFilterCCM=None, SVlanIdFilterDM=None, SVlanIdFilterLB=None, SVlanIdFilterLM=None, SVlanIdFilterLT=None, SVlanPriorityFilterCCM=None, SVlanPriorityFilterDM=None, SVlanPriorityFilterLB=None, SVlanPriorityFilterLM=None, SVlanPriorityFilterLT=None, SVlanTpidFilterCCM=None, SVlanTpidFilterDM=None, SVlanTpidFilterLB=None, SVlanTpidFilterLM=None, SVlanTpidFilterLT=None, SourceMpMacDM=None, SourceMpMacLB=None, SourceMpMacLM=None, SourceMpMacLT=None, TimeoutDM=None, TimeoutLB=None, TimeoutLM=None, TimeoutLT=None, TransactionIdLB=None, TransactionIdLT=None, TtlLT=None, TypeDM=None, VlanIdFilterCCM=None, VlanIdFilterDM=None, VlanIdFilterLB=None, VlanIdFilterLM=None, VlanIdFilterLT=None, VlanPriorityFilterCCM=None, VlanPriorityFilterDM=None, VlanPriorityFilterLB=None, VlanPriorityFilterLM=None, VlanPriorityFilterLT=None, VlanStackingCCM=None, VlanStackingDM=None, VlanStackingLB=None, VlanStackingLM=None, VlanStackingLT=None, VlanTpidFilterCCM=None, VlanTpidFilterDM=None, VlanTpidFilterLB=None, VlanTpidFilterLM=None, VlanTpidFilterLT=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AllCVlanCCM=None,
+        AllDstMEPDM=None,
+        AllDstMEPLM=None,
+        AllDstMEPLT=None,
+        AllDstMepLB=None,
+        AllSVlanCCM=None,
+        AllSrcMEPDM=None,
+        AllSrcMEPLM=None,
+        AllSrcMEPLT=None,
+        AllSrcMepLB=None,
+        AllVlanCCM=None,
+        CVlanIdFilterCCM=None,
+        CVlanIdFilterDM=None,
+        CVlanIdFilterLB=None,
+        CVlanIdFilterLM=None,
+        CVlanIdFilterLT=None,
+        CVlanPriorityFilterCCM=None,
+        CVlanPriorityFilterDM=None,
+        CVlanPriorityFilterLB=None,
+        CVlanPriorityFilterLM=None,
+        CVlanPriorityFilterLT=None,
+        CVlanTpidFilterCCM=None,
+        CVlanTpidFilterDM=None,
+        CVlanTpidFilterLB=None,
+        CVlanTpidFilterLM=None,
+        CVlanTpidFilterLT=None,
+        ConfiguredVlanDM=None,
+        ConfiguredVlanLB=None,
+        ConfiguredVlanLM=None,
+        ConfiguredVlanLT=None,
+        DestinationMpMacDM=None,
+        DestinationMpMacLB=None,
+        DestinationMpMacLM=None,
+        DestinationMpMacLT=None,
+        EnableVlanFilterCCM=None,
+        MdLevelLB=None,
+        MdLevelLT=None,
+        MdOrMegLevelCCM=None,
+        MdOrMegLevelDM=None,
+        MdOrMegLevelLM=None,
+        MethodDM=None,
+        SVlanIdFilterCCM=None,
+        SVlanIdFilterDM=None,
+        SVlanIdFilterLB=None,
+        SVlanIdFilterLM=None,
+        SVlanIdFilterLT=None,
+        SVlanPriorityFilterCCM=None,
+        SVlanPriorityFilterDM=None,
+        SVlanPriorityFilterLB=None,
+        SVlanPriorityFilterLM=None,
+        SVlanPriorityFilterLT=None,
+        SVlanTpidFilterCCM=None,
+        SVlanTpidFilterDM=None,
+        SVlanTpidFilterLB=None,
+        SVlanTpidFilterLM=None,
+        SVlanTpidFilterLT=None,
+        SourceMpMacDM=None,
+        SourceMpMacLB=None,
+        SourceMpMacLM=None,
+        SourceMpMacLT=None,
+        TimeoutDM=None,
+        TimeoutLB=None,
+        TimeoutLM=None,
+        TimeoutLT=None,
+        TransactionIdLB=None,
+        TransactionIdLT=None,
+        TtlLT=None,
+        TypeDM=None,
+        VlanIdFilterCCM=None,
+        VlanIdFilterDM=None,
+        VlanIdFilterLB=None,
+        VlanIdFilterLM=None,
+        VlanIdFilterLT=None,
+        VlanPriorityFilterCCM=None,
+        VlanPriorityFilterDM=None,
+        VlanPriorityFilterLB=None,
+        VlanPriorityFilterLM=None,
+        VlanPriorityFilterLT=None,
+        VlanStackingCCM=None,
+        VlanStackingDM=None,
+        VlanStackingLB=None,
+        VlanStackingLM=None,
+        VlanStackingLT=None,
+        VlanTpidFilterCCM=None,
+        VlanTpidFilterDM=None,
+        VlanTpidFilterLB=None,
+        VlanTpidFilterLM=None,
+        VlanTpidFilterLT=None,
+    ):
         """Base class infrastructure that gets a list of advancedLearnedInfoOptions device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

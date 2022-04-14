@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,14 @@ class PppSessionRate(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pppSessionRate'
+    _SDM_NAME = "pppSessionRate"
     _SDM_ATT_MAP = {
-        'InputParameters': 'inputParameters',
-        'Mode': 'mode',
-        'Name': 'name',
+        "InputParameters": "inputParameters",
+        "Mode": "mode",
+        "Name": "name",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['existingMode', 'newMode'],
+        "mode": ["existingMode", "newMode"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,10 +59,13 @@ class PppSessionRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_590a8802c7b6270cf281b61fb810c6aa import Results
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_590a8802c7b6270cf281b61fb810c6aa import (
+            Results,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Results', None) is not None:
-                return self._properties.get('Results')
+            if self._properties.get("Results", None) is not None:
+                return self._properties.get("Results")
         return Results(self)._select()
 
     @property
@@ -75,10 +79,13 @@ class PppSessionRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2627b0362167c335e46215e2b6147a3f import TestConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2627b0362167c335e46215e2b6147a3f import (
+            TestConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TestConfig', None) is not None:
-                return self._properties.get('TestConfig')
+            if self._properties.get("TestConfig", None) is not None:
+                return self._properties.get("TestConfig")
         return TestConfig(self)
 
     @property
@@ -89,11 +96,12 @@ class PppSessionRate(Base):
         -------
         - str: Input Parameters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InputParameters'])
+        return self._get_attribute(self._SDM_ATT_MAP["InputParameters"])
+
     @InputParameters.setter
     def InputParameters(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InputParameters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InputParameters"], value)
 
     @property
     def Mode(self):
@@ -103,11 +111,12 @@ class PppSessionRate(Base):
         -------
         - str(existingMode | newMode): Test mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def Name(self):
@@ -117,11 +126,12 @@ class PppSessionRate(Base):
         -------
         - str: Test name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, InputParameters=None, Mode=None, Name=None):
         # type: (str, str, str) -> PppSessionRate
@@ -226,10 +236,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -244,10 +256,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -256,17 +270,19 @@ class PppSessionRate(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -283,10 +299,14 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -304,10 +324,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -333,10 +355,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -360,10 +384,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -380,10 +406,12 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -401,7 +429,9 @@ class PppSessionRate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

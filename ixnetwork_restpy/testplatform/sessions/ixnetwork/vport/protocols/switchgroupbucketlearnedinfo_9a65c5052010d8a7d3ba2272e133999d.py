@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class SwitchGroupBucketLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchGroupBucketLearnedInfo'
+    _SDM_NAME = "switchGroupBucketLearnedInfo"
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'PacketCount': 'packetCount',
-        'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
-        'Weight': 'weight',
+        "ByteCount": "byteCount",
+        "PacketCount": "packetCount",
+        "WatchGroup": "watchGroup",
+        "WatchPort": "watchPort",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchGroupBucketLearnedInfo, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class SwitchGroupBucketLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_b2b33b0d8aab03a9558c5f84af5b73d2 import SwitchGroupActionLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_b2b33b0d8aab03a9558c5f84af5b73d2 import (
+            SwitchGroupActionLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchGroupActionLearnedInfo', None) is not None:
-                return self._properties.get('SwitchGroupActionLearnedInfo')
+            if self._properties.get("SwitchGroupActionLearnedInfo", None) is not None:
+                return self._properties.get("SwitchGroupActionLearnedInfo")
         return SwitchGroupActionLearnedInfo(self)
 
     @property
@@ -72,7 +75,7 @@ class SwitchGroupBucketLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteCount"])
 
     @property
     def PacketCount(self):
@@ -82,7 +85,7 @@ class SwitchGroupBucketLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCount"])
 
     @property
     def WatchGroup(self):
@@ -92,7 +95,7 @@ class SwitchGroupBucketLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchGroup"])
 
     @property
     def WatchPort(self):
@@ -102,7 +105,7 @@ class SwitchGroupBucketLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchPort"])
 
     @property
     def Weight(self):
@@ -112,10 +115,10 @@ class SwitchGroupBucketLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
 
     def add(self):
-        """Adds a new switchGroupBucketLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchGroupBucketLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -127,7 +130,14 @@ class SwitchGroupBucketLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteCount=None, PacketCount=None, WatchGroup=None, WatchPort=None, Weight=None):
+    def find(
+        self,
+        ByteCount=None,
+        PacketCount=None,
+        WatchGroup=None,
+        WatchPort=None,
+        Weight=None,
+    ):
         # type: (int, int, int, int, int) -> SwitchGroupBucketLearnedInfo
         """Finds and retrieves switchGroupBucketLearnedInfo resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class EvpnMac(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evpnMac'
+    _SDM_NAME = "evpnMac"
     _SDM_ATT_MAP = {
-        'Esi': 'esi',
-        'MacAddress': 'macAddress',
-        'MacPrefixLen': 'macPrefixLen',
-        'Neighbor': 'neighbor',
+        "Esi": "esi",
+        "MacAddress": "macAddress",
+        "MacPrefixLen": "macPrefixLen",
+        "Neighbor": "neighbor",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EvpnMac, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class EvpnMac(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_9644743d8e097c3fbbcd45b81df8ec69 import NextHopInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_9644743d8e097c3fbbcd45b81df8ec69 import (
+            NextHopInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NextHopInfo', None) is not None:
-                return self._properties.get('NextHopInfo')
+            if self._properties.get("NextHopInfo", None) is not None:
+                return self._properties.get("NextHopInfo")
         return NextHopInfo(self)
 
     @property
@@ -71,7 +74,7 @@ class EvpnMac(Base):
         -------
         - str: (Read Only) Ethernet Segment Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Esi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Esi"])
 
     @property
     def MacAddress(self):
@@ -81,7 +84,7 @@ class EvpnMac(Base):
         -------
         - str: (Read Only) The C-MAC or the B-MAC address learned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
 
     @property
     def MacPrefixLen(self):
@@ -91,7 +94,7 @@ class EvpnMac(Base):
         -------
         - str: (Read Only) Prefix length of the learned C-MAC or B-MAC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacPrefixLen'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacPrefixLen"])
 
     @property
     def Neighbor(self):
@@ -101,10 +104,10 @@ class EvpnMac(Base):
         -------
         - str: (Read Only) The neighbor IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     def add(self):
-        """Adds a new evpnMac resource on the json, only valid with config assistant
+        """Adds a new evpnMac resource on the json, only valid with batch add utility
 
         Returns
         -------

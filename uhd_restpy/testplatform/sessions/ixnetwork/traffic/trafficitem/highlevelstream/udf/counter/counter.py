@@ -166,7 +166,7 @@ class Counter(Base):
 
     def add(self, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
         # type: (int, int, str, int, int, str) -> Counter
-        """Adds a new counter resource on the json, only valid with config assistant
+        """Adds a new counter resource on the json, only valid with batch add utility
 
         Args
         ----

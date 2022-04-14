@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,21 @@ class EgressRxCondition(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egressRxCondition'
+    _SDM_NAME = "egressRxCondition"
     _SDM_ATT_MAP = {
-        'Operator': 'operator',
-        'Values': 'values',
+        "Operator": "operator",
+        "Values": "values",
     }
     _SDM_ENUM_MAP = {
-        'operator': ['isBetween', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isSmaller'],
+        "operator": [
+            "isBetween",
+            "isDifferent",
+            "isEqual",
+            "isEqualOrGreater",
+            "isEqualOrSmaller",
+            "isGreater",
+            "isSmaller",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -50,13 +59,14 @@ class EgressRxCondition(Base):
         """
         Returns
         -------
-        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller): 
+        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
+        return self._get_attribute(self._SDM_ATT_MAP["Operator"])
+
     @Operator.setter
     def Operator(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Operator"], value)
 
     @property
     def Values(self):
@@ -66,11 +76,12 @@ class EgressRxCondition(Base):
         -------
         - list(number): Value to be matched for the condition.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Values'])
+        return self._get_attribute(self._SDM_ATT_MAP["Values"])
+
     @Values.setter
     def Values(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Values"], value)
 
     def update(self, Operator=None, Values=None):
         # type: (str, List[int]) -> EgressRxCondition
@@ -78,7 +89,7 @@ class EgressRxCondition(Base):
 
         Args
         ----
-        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): 
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
         - Values (list(number)): Value to be matched for the condition.
 
         Raises
@@ -97,7 +108,7 @@ class EgressRxCondition(Base):
 
         Args
         ----
-        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): 
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
         - Values (list(number)): Value to be matched for the condition.
 
         Returns

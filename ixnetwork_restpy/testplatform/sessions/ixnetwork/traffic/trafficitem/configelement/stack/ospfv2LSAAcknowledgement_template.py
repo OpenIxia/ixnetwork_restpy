@@ -4,30 +4,30 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv2LSAAcknowledgement(Base):
     __slots__ = ()
-    _SDM_NAME = 'ospfv2LSAAcknowledgement'
+    _SDM_NAME = "ospfv2LSAAcknowledgement"
     _SDM_ATT_MAP = {
-        'Ospfv2PacketHeaderOspfVersion': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.ospfVersion-1',
-        'Ospfv2PacketHeaderPacketType': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.packetType-2',
-        'Ospfv2PacketHeaderPacketLength': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.packetLength-3',
-        'Ospfv2PacketHeaderRouterID': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.routerID-4',
-        'Ospfv2PacketHeaderAreaID': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.areaID-5',
-        'Ospfv2PacketHeaderChecksum': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.checksum-6',
-        'Ospfv2PacketHeaderAuthenticationType': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationType-7',
-        'AuthenticationDataNullAuthentication': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.nullAuthentication-8',
-        'AuthenticationDataSimplePassword': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.simplePassword-9',
-        'CryptographicAuthenticationDataReserved': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.reserved-10',
-        'CryptographicAuthenticationDataKeyID': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.keyID-11',
-        'CryptographicAuthenticationDataAuthenticationDataLength': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.authenticationDataLength-12',
-        'CryptographicAuthenticationDataCryptographicSequenceNumber': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.cryptographicSequenceNumber-13',
-        'UserDefinedAuthenticationDataUserDefinedAuthData': 'ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.userDefinedAuthenticationData.userDefinedAuthData-14',
-        'VariableHeaderLinkStateAge': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateAge-15',
-        'VariableHeaderOptions': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.options-16',
-        'VariableHeaderLinkStateType': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateType-17',
-        'VariableHeaderLinkStateID': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateID-18',
-        'VariableHeaderLinkStateAdvertisingRouter': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateAdvertisingRouter-19',
-        'VariableHeaderLinkStateSequenceNumber': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateSequenceNumber-20',
-        'VariableHeaderLinkStateChecksum': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateChecksum-21',
-        'VariableHeaderLinkStateLength': 'ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateLength-22',
+        "Ospfv2PacketHeaderOspfVersion": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.ospfVersion-1",
+        "Ospfv2PacketHeaderPacketType": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.packetType-2",
+        "Ospfv2PacketHeaderPacketLength": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.packetLength-3",
+        "Ospfv2PacketHeaderRouterID": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.routerID-4",
+        "Ospfv2PacketHeaderAreaID": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.areaID-5",
+        "Ospfv2PacketHeaderChecksum": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.checksum-6",
+        "Ospfv2PacketHeaderAuthenticationType": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationType-7",
+        "AuthenticationDataNullAuthentication": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.nullAuthentication-8",
+        "AuthenticationDataSimplePassword": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.simplePassword-9",
+        "CryptographicAuthenticationDataReserved": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.reserved-10",
+        "CryptographicAuthenticationDataKeyID": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.keyID-11",
+        "CryptographicAuthenticationDataAuthenticationDataLength": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.authenticationDataLength-12",
+        "CryptographicAuthenticationDataCryptographicSequenceNumber": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.cryptographicSequenceNumber-13",
+        "UserDefinedAuthenticationDataUserDefinedAuthData": "ospfv2LSAAcknowledgement.header.ospfv2PacketHeader.authenticationData.userDefinedAuthenticationData.userDefinedAuthData-14",
+        "VariableHeaderLinkStateAge": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateAge-15",
+        "VariableHeaderOptions": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.options-16",
+        "VariableHeaderLinkStateType": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateType-17",
+        "VariableHeaderLinkStateID": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateID-18",
+        "VariableHeaderLinkStateAdvertisingRouter": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateAdvertisingRouter-19",
+        "VariableHeaderLinkStateSequenceNumber": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateSequenceNumber-20",
+        "VariableHeaderLinkStateChecksum": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateChecksum-21",
+        "VariableHeaderLinkStateLength": "ospfv2LSAAcknowledgement.header.linkStateAdvertisementHeader.variableHeader.linkStateLength-22",
     }
 
     def __init__(self, parent, list_op=False):
@@ -41,7 +41,11 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderOspfVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderOspfVersion"]),
+        )
 
     @property
     def Ospfv2PacketHeaderPacketType(self):
@@ -51,7 +55,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderPacketType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderPacketType"])
+        )
 
     @property
     def Ospfv2PacketHeaderPacketLength(self):
@@ -61,7 +68,11 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderPacketLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderPacketLength"]),
+        )
 
     @property
     def Ospfv2PacketHeaderRouterID(self):
@@ -71,7 +82,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderRouterID"])
+        )
 
     @property
     def Ospfv2PacketHeaderAreaID(self):
@@ -81,7 +95,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderAreaID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderAreaID"])
+        )
 
     @property
     def Ospfv2PacketHeaderChecksum(self):
@@ -91,7 +108,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderChecksum"])
+        )
 
     @property
     def Ospfv2PacketHeaderAuthenticationType(self):
@@ -102,7 +122,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Available enum values: Null authentication, 0, Simple password, 1, Cryptographic Authentication, 2, User defined Authentication, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ospfv2PacketHeaderAuthenticationType"]
+            ),
+        )
 
     @property
     def AuthenticationDataNullAuthentication(self):
@@ -112,7 +138,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationDataNullAuthentication']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationDataNullAuthentication"]
+            ),
+        )
 
     @property
     def AuthenticationDataSimplePassword(self):
@@ -122,7 +154,11 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationDataSimplePassword']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticationDataSimplePassword"]),
+        )
 
     @property
     def CryptographicAuthenticationDataReserved(self):
@@ -132,7 +168,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CryptographicAuthenticationDataReserved"]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataKeyID(self):
@@ -142,7 +184,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataKeyID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CryptographicAuthenticationDataKeyID"]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataAuthenticationDataLength(self):
@@ -152,7 +200,15 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataAuthenticationDataLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "CryptographicAuthenticationDataAuthenticationDataLength"
+                ]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataCryptographicSequenceNumber(self):
@@ -162,7 +218,15 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataCryptographicSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "CryptographicAuthenticationDataCryptographicSequenceNumber"
+                ]
+            ),
+        )
 
     @property
     def UserDefinedAuthenticationDataUserDefinedAuthData(self):
@@ -172,7 +236,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedAuthenticationDataUserDefinedAuthData']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UserDefinedAuthenticationDataUserDefinedAuthData"]
+            ),
+        )
 
     @property
     def VariableHeaderLinkStateAge(self):
@@ -182,7 +252,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateAge']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateAge"])
+        )
 
     @property
     def VariableHeaderOptions(self):
@@ -192,7 +265,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderOptions"])
+        )
 
     @property
     def VariableHeaderLinkStateType(self):
@@ -203,7 +279,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Available enum values: Router LSA, 1, Network LSA, 2, Summary LSA, Routers to Networks, 3, Summary LSA, Routers to AS Boundary, 4, AS-External-LSA, 5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateType"])
+        )
 
     @property
     def VariableHeaderLinkStateID(self):
@@ -213,7 +292,10 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateID"])
+        )
 
     @property
     def VariableHeaderLinkStateAdvertisingRouter(self):
@@ -223,7 +305,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateAdvertisingRouter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["VariableHeaderLinkStateAdvertisingRouter"]
+            ),
+        )
 
     @property
     def VariableHeaderLinkStateSequenceNumber(self):
@@ -233,7 +321,13 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["VariableHeaderLinkStateSequenceNumber"]
+            ),
+        )
 
     @property
     def VariableHeaderLinkStateChecksum(self):
@@ -243,7 +337,11 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateChecksum']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateChecksum"]),
+        )
 
     @property
     def VariableHeaderLinkStateLength(self):
@@ -253,7 +351,11 @@ class Ospfv2LSAAcknowledgement(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateLength"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

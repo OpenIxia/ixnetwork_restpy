@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class WriteAction(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'writeAction'
+    _SDM_NAME = "writeAction"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
-        'ExperimenterDataMiss': 'experimenterDataMiss',
-        'ExperimenterId': 'experimenterId',
-        'ExperimenterIdMiss': 'experimenterIdMiss',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterDataLengthMiss": "experimenterDataLengthMiss",
+        "ExperimenterDataMiss": "experimenterDataMiss",
+        "ExperimenterId": "experimenterId",
+        "ExperimenterIdMiss": "experimenterIdMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(WriteAction, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class WriteAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_74e479a9923f7c41a7e661d1cc1ae3ad import WriteActionMissType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_74e479a9923f7c41a7e661d1cc1ae3ad import (
+            WriteActionMissType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteActionMissType', None) is not None:
-                return self._properties.get('WriteActionMissType')
+            if self._properties.get("WriteActionMissType", None) is not None:
+                return self._properties.get("WriteActionMissType")
         return WriteActionMissType(self)._select()
 
     @property
@@ -75,10 +78,13 @@ class WriteAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_a223fc2d5a16eef37e250b290c4a730d import WriteActionType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_a223fc2d5a16eef37e250b290c4a730d import (
+            WriteActionType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteActionType', None) is not None:
-                return self._properties.get('WriteActionType')
+            if self._properties.get("WriteActionType", None) is not None:
+                return self._properties.get("WriteActionType")
         return WriteActionType(self)._select()
 
     @property
@@ -89,11 +95,12 @@ class WriteAction(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -103,11 +110,12 @@ class WriteAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterDataLengthMiss(self):
@@ -117,11 +125,12 @@ class WriteAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"])
+
     @ExperimenterDataLengthMiss.setter
     def ExperimenterDataLengthMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"], value)
 
     @property
     def ExperimenterDataMiss(self):
@@ -131,11 +140,12 @@ class WriteAction(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"])
+
     @ExperimenterDataMiss.setter
     def ExperimenterDataMiss(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"], value)
 
     @property
     def ExperimenterId(self):
@@ -145,11 +155,12 @@ class WriteAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
     @property
     def ExperimenterIdMiss(self):
@@ -159,13 +170,22 @@ class WriteAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"])
+
     @ExperimenterIdMiss.setter
     def ExperimenterIdMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"], value)
 
-    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def update(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int) -> WriteAction
         """Updates writeAction resource on the server.
 
@@ -184,7 +204,15 @@ class WriteAction(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int) -> WriteAction
         """Finds and retrieves writeAction resources from the server.
 

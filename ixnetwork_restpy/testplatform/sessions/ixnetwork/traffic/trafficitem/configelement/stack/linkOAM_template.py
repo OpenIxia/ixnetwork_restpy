@@ -4,101 +4,101 @@ from ixnetwork_restpy.files import Files
 
 class LinkOAM(Base):
     __slots__ = ()
-    _SDM_NAME = 'linkOAM'
+    _SDM_NAME = "linkOAM"
     _SDM_ATT_MAP = {
-        'PacketSubtype': 'linkOAM.header.packet.subtype-1',
-        'PacketFlags': 'linkOAM.header.packet.flags-2',
-        'InformationOAMPDUCode': 'linkOAM.header.packet.pduType.informationOAMPDU.code-3',
-        'LocalInfoTLVType': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.type-4',
-        'LocalInfoTLVLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.length-5',
-        'LocalInfoTLVVersion': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.version-6',
-        'LocalInfoTLVRevision': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.revision-7',
-        'LocalInfoTLVState': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.state-8',
-        'LocalInfoTLVOamConfig': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oamConfig-9',
-        'LocalInfoTLVOamPDUConfig': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oamPDUConfig-10',
-        'LocalInfoTLVOui': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oui-11',
-        'LocalInfoTLVVendorInfo': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.vendorInfo-12',
-        'RemoteInfoTLVType': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.type-13',
-        'RemoteInfoTLVLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.length-14',
-        'RemoteInfoTLVVersion': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.version-15',
-        'RemoteInfoTLVRevision': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.revision-16',
-        'RemoteInfoTLVState': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.state-17',
-        'RemoteInfoTLVOamConfig': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oamConfig-18',
-        'RemoteInfoTLVOamPDUConfig': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oamPDUConfig-19',
-        'RemoteInfoTLVOui': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oui-20',
-        'RemoteInfoTLVVendorInfo': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.vendorInfo-21',
-        'OrganizationSpecificInfoTLVType': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.type-22',
-        'OrganizationSpecificInfoTLVLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.length-23',
-        'OrganizationSpecificInfoTLVOui': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.oui-24',
-        'OrganizationSpecificInfoTLVValueLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.valueLength-25',
-        'OrganizationSpecificInfoTLVValue': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.value-26',
-        'ReservedTLVType': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.type-27',
-        'ReservedTLVLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.length-28',
-        'ReservedTLVValueLength': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.valueLength-29',
-        'ReservedTLVValue': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.value-30',
-        'EndTLVType': 'linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.endTLV.type-31',
-        'LoopbackControlOAMPDUCode': 'linkOAM.header.packet.pduType.loopbackControlOAMPDU.code-32',
-        'LoopbackControlOAMPDULoopbackCommand': 'linkOAM.header.packet.pduType.loopbackControlOAMPDU.loopbackCommand-33',
-        'OrganizationSpecificOAMPDUCode': 'linkOAM.header.packet.pduType.organizationSpecificOAMPDU.code-34',
-        'OrganizationSpecificOAMPDUOui': 'linkOAM.header.packet.pduType.organizationSpecificOAMPDU.oui-35',
-        'OrganizationSpecificOAMPDUValueLength': 'linkOAM.header.packet.pduType.organizationSpecificOAMPDU.valueLength-36',
-        'OrganizationSpecificOAMPDUValue': 'linkOAM.header.packet.pduType.organizationSpecificOAMPDU.value-37',
-        'EventNotificationOAMPDUCode': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.code-38',
-        'EventNotificationOAMPDUSequenceNumber': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.sequenceNumber-39',
-        'TlvtypeEndTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.endTLV.type-40',
-        'ErroredSymbolPeriodEventTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.type-41',
-        'ErroredSymbolPeriodEventTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.length-42',
-        'ErroredSymbolPeriodEventTLVTimestamp': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.timestamp-43',
-        'ErroredSymbolPeriodEventTLVSymbolWindow': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbolWindow-44',
-        'ErroredSymbolPeriodEventTLVSymbolThreshold': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbolThreshold-45',
-        'ErroredSymbolPeriodEventTLVSymbols': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbols-46',
-        'ErroredSymbolPeriodEventTLVErrorRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.errorRunningTotal-47',
-        'ErroredSymbolPeriodEventTLVEventRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.eventRunningTotal-48',
-        'ErroredFrameEventTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.type-49',
-        'ErroredFrameEventTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.length-50',
-        'ErroredFrameEventTLVTimestamp': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.timestamp-51',
-        'ErroredFrameEventTLVFrameWindow': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frameWindow-52',
-        'ErroredFrameEventTLVFrameThreshold': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frameThreshold-53',
-        'ErroredFrameEventTLVFrames': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frames-54',
-        'ErroredFrameEventTLVErrorRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.errorRunningTotal-55',
-        'ErroredFrameEventTLVEventRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.eventRunningTotal-56',
-        'ErroredFramesPeriodEventTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.type-57',
-        'ErroredFramesPeriodEventTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.length-58',
-        'ErroredFramesPeriodEventTLVTimestamp': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.timestamp-59',
-        'ErroredFramesPeriodEventTLVFrameWindow': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frameWindow-60',
-        'ErroredFramesPeriodEventTLVFrameThreshold': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frameThreshold-61',
-        'ErroredFramesPeriodEventTLVFrames': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frames-62',
-        'ErroredFramesPeriodEventTLVErrorRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.errorRunningTotal-63',
-        'ErroredFramesPeriodEventTLVEventRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.eventRunningTotal-64',
-        'ErroredFramesSecondsSummaryEventTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.type-65',
-        'ErroredFramesSecondsSummaryEventTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.length-66',
-        'ErroredFramesSecondsSummaryEventTLVTimestamp': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.timestamp-67',
-        'ErroredFramesSecondsSummaryEventTLVFrameSecondsWindow': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSecondsWindow-68',
-        'ErroredFramesSecondsSummaryEventTLVFrameSecondsThreshold': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSecondsThreshold-69',
-        'ErroredFramesSecondsSummaryEventTLVFrameSeconds': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSeconds-70',
-        'ErroredFramesSecondsSummaryEventTLVErrorRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.errorRunningTotal-71',
-        'ErroredFramesSecondsSummaryEventTLVEventRunningTotal': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.eventRunningTotal-72',
-        'OrganizationSpecificEventTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.type-73',
-        'OrganizationSpecificEventTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.length-74',
-        'OrganizationSpecificEventTLVOui': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.oui-75',
-        'OrganizationSpecificEventTLVValueLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.valueLength-76',
-        'OrganizationSpecificEventTLVValue': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.value-77',
-        'TlvtypeReservedTLVType': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.type-78',
-        'TlvtypeReservedTLVLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.length-79',
-        'TlvtypeReservedTLVValueLength': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.valueLength-80',
-        'TlvtypeReservedTLVValue': 'linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.value-81',
-        'VariableRequestOAMPDUCode': 'linkOAM.header.packet.pduType.variableRequestOAMPDU.code-82',
-        'VariableDescriptorBranch': 'linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.variableDescriptor.branch-83',
-        'VariableDescriptorLeaf': 'linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.variableDescriptor.leaf-84',
-        'EndDescriptorEndOfDescriptor': 'linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.endDescriptor.endOfDescriptor-85',
-        'VariableResponseOAMPDUCode': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.code-86',
-        'VariableContainerBranch': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.branch-87',
-        'VariableContainerLeaf': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.leaf-88',
-        'VariableContainerWidth': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.width-89',
-        'VariableContainerValueLength': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.valueLength-90',
-        'VariableContainerValue': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.value-91',
-        'EndContainerEndOfContainer': 'linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.endContainer.endOfContainer-92',
-        'HeaderFcs': 'linkOAM.header.fcs-93',
+        "PacketSubtype": "linkOAM.header.packet.subtype-1",
+        "PacketFlags": "linkOAM.header.packet.flags-2",
+        "InformationOAMPDUCode": "linkOAM.header.packet.pduType.informationOAMPDU.code-3",
+        "LocalInfoTLVType": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.type-4",
+        "LocalInfoTLVLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.length-5",
+        "LocalInfoTLVVersion": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.version-6",
+        "LocalInfoTLVRevision": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.revision-7",
+        "LocalInfoTLVState": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.state-8",
+        "LocalInfoTLVOamConfig": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oamConfig-9",
+        "LocalInfoTLVOamPDUConfig": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oamPDUConfig-10",
+        "LocalInfoTLVOui": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.oui-11",
+        "LocalInfoTLVVendorInfo": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.localInfoTLV.vendorInfo-12",
+        "RemoteInfoTLVType": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.type-13",
+        "RemoteInfoTLVLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.length-14",
+        "RemoteInfoTLVVersion": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.version-15",
+        "RemoteInfoTLVRevision": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.revision-16",
+        "RemoteInfoTLVState": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.state-17",
+        "RemoteInfoTLVOamConfig": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oamConfig-18",
+        "RemoteInfoTLVOamPDUConfig": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oamPDUConfig-19",
+        "RemoteInfoTLVOui": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.oui-20",
+        "RemoteInfoTLVVendorInfo": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.remoteInfoTLV.vendorInfo-21",
+        "OrganizationSpecificInfoTLVType": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.type-22",
+        "OrganizationSpecificInfoTLVLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.length-23",
+        "OrganizationSpecificInfoTLVOui": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.oui-24",
+        "OrganizationSpecificInfoTLVValueLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.valueLength-25",
+        "OrganizationSpecificInfoTLVValue": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.organizationSpecificInfoTLV.value-26",
+        "ReservedTLVType": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.type-27",
+        "ReservedTLVLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.length-28",
+        "ReservedTLVValueLength": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.valueLength-29",
+        "ReservedTLVValue": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.reservedTLV.value-30",
+        "EndTLVType": "linkOAM.header.packet.pduType.informationOAMPDU.informationTLV.tlvType.endTLV.type-31",
+        "LoopbackControlOAMPDUCode": "linkOAM.header.packet.pduType.loopbackControlOAMPDU.code-32",
+        "LoopbackControlOAMPDULoopbackCommand": "linkOAM.header.packet.pduType.loopbackControlOAMPDU.loopbackCommand-33",
+        "OrganizationSpecificOAMPDUCode": "linkOAM.header.packet.pduType.organizationSpecificOAMPDU.code-34",
+        "OrganizationSpecificOAMPDUOui": "linkOAM.header.packet.pduType.organizationSpecificOAMPDU.oui-35",
+        "OrganizationSpecificOAMPDUValueLength": "linkOAM.header.packet.pduType.organizationSpecificOAMPDU.valueLength-36",
+        "OrganizationSpecificOAMPDUValue": "linkOAM.header.packet.pduType.organizationSpecificOAMPDU.value-37",
+        "EventNotificationOAMPDUCode": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.code-38",
+        "EventNotificationOAMPDUSequenceNumber": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.sequenceNumber-39",
+        "TlvtypeEndTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.endTLV.type-40",
+        "ErroredSymbolPeriodEventTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.type-41",
+        "ErroredSymbolPeriodEventTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.length-42",
+        "ErroredSymbolPeriodEventTLVTimestamp": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.timestamp-43",
+        "ErroredSymbolPeriodEventTLVSymbolWindow": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbolWindow-44",
+        "ErroredSymbolPeriodEventTLVSymbolThreshold": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbolThreshold-45",
+        "ErroredSymbolPeriodEventTLVSymbols": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.symbols-46",
+        "ErroredSymbolPeriodEventTLVErrorRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.errorRunningTotal-47",
+        "ErroredSymbolPeriodEventTLVEventRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredSymbolPeriodEventTLV.eventRunningTotal-48",
+        "ErroredFrameEventTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.type-49",
+        "ErroredFrameEventTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.length-50",
+        "ErroredFrameEventTLVTimestamp": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.timestamp-51",
+        "ErroredFrameEventTLVFrameWindow": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frameWindow-52",
+        "ErroredFrameEventTLVFrameThreshold": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frameThreshold-53",
+        "ErroredFrameEventTLVFrames": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.frames-54",
+        "ErroredFrameEventTLVErrorRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.errorRunningTotal-55",
+        "ErroredFrameEventTLVEventRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFrameEventTLV.eventRunningTotal-56",
+        "ErroredFramesPeriodEventTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.type-57",
+        "ErroredFramesPeriodEventTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.length-58",
+        "ErroredFramesPeriodEventTLVTimestamp": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.timestamp-59",
+        "ErroredFramesPeriodEventTLVFrameWindow": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frameWindow-60",
+        "ErroredFramesPeriodEventTLVFrameThreshold": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frameThreshold-61",
+        "ErroredFramesPeriodEventTLVFrames": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.frames-62",
+        "ErroredFramesPeriodEventTLVErrorRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.errorRunningTotal-63",
+        "ErroredFramesPeriodEventTLVEventRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesPeriodEventTLV.eventRunningTotal-64",
+        "ErroredFramesSecondsSummaryEventTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.type-65",
+        "ErroredFramesSecondsSummaryEventTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.length-66",
+        "ErroredFramesSecondsSummaryEventTLVTimestamp": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.timestamp-67",
+        "ErroredFramesSecondsSummaryEventTLVFrameSecondsWindow": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSecondsWindow-68",
+        "ErroredFramesSecondsSummaryEventTLVFrameSecondsThreshold": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSecondsThreshold-69",
+        "ErroredFramesSecondsSummaryEventTLVFrameSeconds": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.frameSeconds-70",
+        "ErroredFramesSecondsSummaryEventTLVErrorRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.errorRunningTotal-71",
+        "ErroredFramesSecondsSummaryEventTLVEventRunningTotal": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.erroredFramesSecondsSummaryEventTLV.eventRunningTotal-72",
+        "OrganizationSpecificEventTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.type-73",
+        "OrganizationSpecificEventTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.length-74",
+        "OrganizationSpecificEventTLVOui": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.oui-75",
+        "OrganizationSpecificEventTLVValueLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.valueLength-76",
+        "OrganizationSpecificEventTLVValue": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.organizationSpecificEventTLV.value-77",
+        "TlvtypeReservedTLVType": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.type-78",
+        "TlvtypeReservedTLVLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.length-79",
+        "TlvtypeReservedTLVValueLength": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.valueLength-80",
+        "TlvtypeReservedTLVValue": "linkOAM.header.packet.pduType.eventNotificationOAMPDU.eventTVL.tlvType.reservedTLV.value-81",
+        "VariableRequestOAMPDUCode": "linkOAM.header.packet.pduType.variableRequestOAMPDU.code-82",
+        "VariableDescriptorBranch": "linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.variableDescriptor.branch-83",
+        "VariableDescriptorLeaf": "linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.variableDescriptor.leaf-84",
+        "EndDescriptorEndOfDescriptor": "linkOAM.header.packet.pduType.variableRequestOAMPDU.descriptors.tlvType.endDescriptor.endOfDescriptor-85",
+        "VariableResponseOAMPDUCode": "linkOAM.header.packet.pduType.variableResponseOAMPDU.code-86",
+        "VariableContainerBranch": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.branch-87",
+        "VariableContainerLeaf": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.leaf-88",
+        "VariableContainerWidth": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.width-89",
+        "VariableContainerValueLength": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.valueLength-90",
+        "VariableContainerValue": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.variableContainer.value-91",
+        "EndContainerEndOfContainer": "linkOAM.header.packet.pduType.variableResponseOAMPDU.containers.tlvType.endContainer.endOfContainer-92",
+        "HeaderFcs": "linkOAM.header.fcs-93",
     }
 
     def __init__(self, parent, list_op=False):
@@ -112,7 +112,8 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketSubtype']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PacketSubtype"]))
 
     @property
     def PacketFlags(self):
@@ -122,7 +123,8 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PacketFlags"]))
 
     @property
     def InformationOAMPDUCode(self):
@@ -132,7 +134,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InformationOAMPDUCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InformationOAMPDUCode"])
+        )
 
     @property
     def LocalInfoTLVType(self):
@@ -142,7 +147,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVType"])
+        )
 
     @property
     def LocalInfoTLVLength(self):
@@ -152,7 +160,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVLength"])
+        )
 
     @property
     def LocalInfoTLVVersion(self):
@@ -162,7 +173,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVVersion"])
+        )
 
     @property
     def LocalInfoTLVRevision(self):
@@ -172,7 +186,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVRevision']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVRevision"])
+        )
 
     @property
     def LocalInfoTLVState(self):
@@ -182,7 +199,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVState']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVState"])
+        )
 
     @property
     def LocalInfoTLVOamConfig(self):
@@ -192,7 +212,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVOamConfig']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVOamConfig"])
+        )
 
     @property
     def LocalInfoTLVOamPDUConfig(self):
@@ -202,7 +225,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVOamPDUConfig']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVOamPDUConfig"])
+        )
 
     @property
     def LocalInfoTLVOui(self):
@@ -212,7 +238,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVOui']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVOui"])
+        )
 
     @property
     def LocalInfoTLVVendorInfo(self):
@@ -222,7 +251,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalInfoTLVVendorInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalInfoTLVVendorInfo"])
+        )
 
     @property
     def RemoteInfoTLVType(self):
@@ -232,7 +264,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVType"])
+        )
 
     @property
     def RemoteInfoTLVLength(self):
@@ -242,7 +277,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVLength"])
+        )
 
     @property
     def RemoteInfoTLVVersion(self):
@@ -252,7 +290,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVVersion"])
+        )
 
     @property
     def RemoteInfoTLVRevision(self):
@@ -262,7 +303,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVRevision']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVRevision"])
+        )
 
     @property
     def RemoteInfoTLVState(self):
@@ -272,7 +316,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVState']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVState"])
+        )
 
     @property
     def RemoteInfoTLVOamConfig(self):
@@ -282,7 +329,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVOamConfig']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVOamConfig"])
+        )
 
     @property
     def RemoteInfoTLVOamPDUConfig(self):
@@ -292,7 +342,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVOamPDUConfig']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVOamPDUConfig"])
+        )
 
     @property
     def RemoteInfoTLVOui(self):
@@ -302,7 +355,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVOui']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVOui"])
+        )
 
     @property
     def RemoteInfoTLVVendorInfo(self):
@@ -312,7 +368,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteInfoTLVVendorInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteInfoTLVVendorInfo"])
+        )
 
     @property
     def OrganizationSpecificInfoTLVType(self):
@@ -322,7 +381,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificInfoTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificInfoTLVType"]),
+        )
 
     @property
     def OrganizationSpecificInfoTLVLength(self):
@@ -332,7 +395,11 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificInfoTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificInfoTLVLength"]),
+        )
 
     @property
     def OrganizationSpecificInfoTLVOui(self):
@@ -342,7 +409,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificInfoTLVOui']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificInfoTLVOui"]),
+        )
 
     @property
     def OrganizationSpecificInfoTLVValueLength(self):
@@ -352,7 +423,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificInfoTLVValueLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OrganizationSpecificInfoTLVValueLength"]
+            ),
+        )
 
     @property
     def OrganizationSpecificInfoTLVValue(self):
@@ -362,7 +439,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificInfoTLVValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificInfoTLVValue"]),
+        )
 
     @property
     def ReservedTLVType(self):
@@ -372,7 +453,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedTLVType"])
+        )
 
     @property
     def ReservedTLVLength(self):
@@ -382,7 +466,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedTLVLength"])
+        )
 
     @property
     def ReservedTLVValueLength(self):
@@ -392,7 +479,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedTLVValueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedTLVValueLength"])
+        )
 
     @property
     def ReservedTLVValue(self):
@@ -402,7 +492,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedTLVValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedTLVValue"])
+        )
 
     @property
     def EndTLVType(self):
@@ -412,7 +505,8 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndTLVType"]))
 
     @property
     def LoopbackControlOAMPDUCode(self):
@@ -422,7 +516,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LoopbackControlOAMPDUCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LoopbackControlOAMPDUCode"])
+        )
 
     @property
     def LoopbackControlOAMPDULoopbackCommand(self):
@@ -433,7 +530,13 @@ class LinkOAM(Base):
         Available enum values: Enable OAM Remote Loopback, 1, Disable OAM Remote Loopback, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LoopbackControlOAMPDULoopbackCommand']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LoopbackControlOAMPDULoopbackCommand"]
+            ),
+        )
 
     @property
     def OrganizationSpecificOAMPDUCode(self):
@@ -443,7 +546,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificOAMPDUCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificOAMPDUCode"]),
+        )
 
     @property
     def OrganizationSpecificOAMPDUOui(self):
@@ -453,7 +560,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificOAMPDUOui']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificOAMPDUOui"]),
+        )
 
     @property
     def OrganizationSpecificOAMPDUValueLength(self):
@@ -463,7 +574,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificOAMPDUValueLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OrganizationSpecificOAMPDUValueLength"]
+            ),
+        )
 
     @property
     def OrganizationSpecificOAMPDUValue(self):
@@ -473,7 +590,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificOAMPDUValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificOAMPDUValue"]),
+        )
 
     @property
     def EventNotificationOAMPDUCode(self):
@@ -483,7 +604,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventNotificationOAMPDUCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EventNotificationOAMPDUCode"])
+        )
 
     @property
     def EventNotificationOAMPDUSequenceNumber(self):
@@ -493,7 +617,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventNotificationOAMPDUSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EventNotificationOAMPDUSequenceNumber"]
+            ),
+        )
 
     @property
     def TlvtypeEndTLVType(self):
@@ -503,7 +633,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvtypeEndTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TlvtypeEndTLVType"])
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVType(self):
@@ -513,7 +646,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVType"]),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVLength(self):
@@ -523,7 +660,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVLength"]),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVTimestamp(self):
@@ -533,7 +674,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVTimestamp"]
+            ),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVSymbolWindow(self):
@@ -543,7 +690,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVSymbolWindow']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVSymbolWindow"]
+            ),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVSymbolThreshold(self):
@@ -553,7 +706,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVSymbolThreshold']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVSymbolThreshold"]
+            ),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVSymbols(self):
@@ -563,7 +722,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVSymbols']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVSymbols"]
+            ),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVErrorRunningTotal(self):
@@ -573,7 +738,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVErrorRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVErrorRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredSymbolPeriodEventTLVEventRunningTotal(self):
@@ -583,7 +754,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredSymbolPeriodEventTLVEventRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredSymbolPeriodEventTLVEventRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredFrameEventTLVType(self):
@@ -593,7 +770,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ErroredFrameEventTLVType"])
+        )
 
     @property
     def ErroredFrameEventTLVLength(self):
@@ -603,7 +783,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ErroredFrameEventTLVLength"])
+        )
 
     @property
     def ErroredFrameEventTLVTimestamp(self):
@@ -613,7 +796,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredFrameEventTLVTimestamp"]),
+        )
 
     @property
     def ErroredFrameEventTLVFrameWindow(self):
@@ -623,7 +810,11 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVFrameWindow']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredFrameEventTLVFrameWindow"]),
+        )
 
     @property
     def ErroredFrameEventTLVFrameThreshold(self):
@@ -633,7 +824,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVFrameThreshold']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFrameEventTLVFrameThreshold"]
+            ),
+        )
 
     @property
     def ErroredFrameEventTLVFrames(self):
@@ -643,7 +840,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVFrames']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ErroredFrameEventTLVFrames"])
+        )
 
     @property
     def ErroredFrameEventTLVErrorRunningTotal(self):
@@ -653,7 +853,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVErrorRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFrameEventTLVErrorRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredFrameEventTLVEventRunningTotal(self):
@@ -663,7 +869,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFrameEventTLVEventRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFrameEventTLVEventRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVType(self):
@@ -673,7 +885,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVType"]),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVLength(self):
@@ -683,7 +899,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVLength"]),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVTimestamp(self):
@@ -693,7 +913,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVTimestamp"]
+            ),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVFrameWindow(self):
@@ -703,7 +929,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVFrameWindow']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVFrameWindow"]
+            ),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVFrameThreshold(self):
@@ -713,7 +945,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVFrameThreshold']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVFrameThreshold"]
+            ),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVFrames(self):
@@ -723,7 +961,11 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVFrames']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVFrames"]),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVErrorRunningTotal(self):
@@ -733,7 +975,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVErrorRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVErrorRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredFramesPeriodEventTLVEventRunningTotal(self):
@@ -743,7 +991,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesPeriodEventTLVEventRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesPeriodEventTLVEventRunningTotal"]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVType(self):
@@ -753,7 +1007,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesSecondsSummaryEventTLVType"]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVLength(self):
@@ -763,7 +1023,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesSecondsSummaryEventTLVLength"]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVTimestamp(self):
@@ -773,7 +1039,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesSecondsSummaryEventTLVTimestamp"]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVFrameSecondsWindow(self):
@@ -783,7 +1055,15 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVFrameSecondsWindow']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ErroredFramesSecondsSummaryEventTLVFrameSecondsWindow"
+                ]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVFrameSecondsThreshold(self):
@@ -793,7 +1073,15 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVFrameSecondsThreshold']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ErroredFramesSecondsSummaryEventTLVFrameSecondsThreshold"
+                ]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVFrameSeconds(self):
@@ -803,7 +1091,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVFrameSeconds']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ErroredFramesSecondsSummaryEventTLVFrameSeconds"]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVErrorRunningTotal(self):
@@ -813,7 +1107,15 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVErrorRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ErroredFramesSecondsSummaryEventTLVErrorRunningTotal"
+                ]
+            ),
+        )
 
     @property
     def ErroredFramesSecondsSummaryEventTLVEventRunningTotal(self):
@@ -823,7 +1125,15 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ErroredFramesSecondsSummaryEventTLVEventRunningTotal']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ErroredFramesSecondsSummaryEventTLVEventRunningTotal"
+                ]
+            ),
+        )
 
     @property
     def OrganizationSpecificEventTLVType(self):
@@ -833,7 +1143,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificEventTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificEventTLVType"]),
+        )
 
     @property
     def OrganizationSpecificEventTLVLength(self):
@@ -843,7 +1157,13 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificEventTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OrganizationSpecificEventTLVLength"]
+            ),
+        )
 
     @property
     def OrganizationSpecificEventTLVOui(self):
@@ -853,7 +1173,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificEventTLVOui']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificEventTLVOui"]),
+        )
 
     @property
     def OrganizationSpecificEventTLVValueLength(self):
@@ -863,7 +1187,13 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificEventTLVValueLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OrganizationSpecificEventTLVValueLength"]
+            ),
+        )
 
     @property
     def OrganizationSpecificEventTLVValue(self):
@@ -873,7 +1203,11 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificEventTLVValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificEventTLVValue"]),
+        )
 
     @property
     def TlvtypeReservedTLVType(self):
@@ -883,7 +1217,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvtypeReservedTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TlvtypeReservedTLVType"])
+        )
 
     @property
     def TlvtypeReservedTLVLength(self):
@@ -893,7 +1230,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvtypeReservedTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TlvtypeReservedTLVLength"])
+        )
 
     @property
     def TlvtypeReservedTLVValueLength(self):
@@ -903,7 +1243,11 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvtypeReservedTLVValueLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["TlvtypeReservedTLVValueLength"]),
+        )
 
     @property
     def TlvtypeReservedTLVValue(self):
@@ -913,7 +1257,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvtypeReservedTLVValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TlvtypeReservedTLVValue"])
+        )
 
     @property
     def VariableRequestOAMPDUCode(self):
@@ -923,7 +1270,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableRequestOAMPDUCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableRequestOAMPDUCode"])
+        )
 
     @property
     def VariableDescriptorBranch(self):
@@ -933,7 +1283,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableDescriptorBranch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableDescriptorBranch"])
+        )
 
     @property
     def VariableDescriptorLeaf(self):
@@ -943,7 +1296,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableDescriptorLeaf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableDescriptorLeaf"])
+        )
 
     @property
     def EndDescriptorEndOfDescriptor(self):
@@ -953,7 +1309,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndDescriptorEndOfDescriptor']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndDescriptorEndOfDescriptor"])
+        )
 
     @property
     def VariableResponseOAMPDUCode(self):
@@ -963,7 +1322,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableResponseOAMPDUCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableResponseOAMPDUCode"])
+        )
 
     @property
     def VariableContainerBranch(self):
@@ -973,7 +1335,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableContainerBranch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableContainerBranch"])
+        )
 
     @property
     def VariableContainerLeaf(self):
@@ -983,7 +1348,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableContainerLeaf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableContainerLeaf"])
+        )
 
     @property
     def VariableContainerWidth(self):
@@ -993,7 +1361,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableContainerWidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableContainerWidth"])
+        )
 
     @property
     def VariableContainerValueLength(self):
@@ -1003,7 +1374,10 @@ class LinkOAM(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableContainerValueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableContainerValueLength"])
+        )
 
     @property
     def VariableContainerValue(self):
@@ -1013,7 +1387,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableContainerValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableContainerValue"])
+        )
 
     @property
     def EndContainerEndOfContainer(self):
@@ -1023,7 +1400,10 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndContainerEndOfContainer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndContainerEndOfContainer"])
+        )
 
     @property
     def HeaderFcs(self):
@@ -1033,7 +1413,8 @@ class LinkOAM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFcs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderFcs"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

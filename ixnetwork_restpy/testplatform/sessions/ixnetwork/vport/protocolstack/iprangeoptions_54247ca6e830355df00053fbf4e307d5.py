@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class IpRangeOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipRangeOptions'
+    _SDM_NAME = "ipRangeOptions"
     _SDM_ATT_MAP = {
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
-        'Icmpv6DiscardRouterAdvertisements': 'icmpv6DiscardRouterAdvertisements',
-        'Ipv6AddressMode': 'ipv6AddressMode',
-        'Ipv6ConfigRate': 'ipv6ConfigRate',
-        'Ipv6ConfigRateEnable': 'ipv6ConfigRateEnable',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'ObjectId': 'objectId',
+        "GatewayArpRequestRate": "gatewayArpRequestRate",
+        "Icmpv6DiscardRouterAdvertisements": "icmpv6DiscardRouterAdvertisements",
+        "Ipv6AddressMode": "ipv6AddressMode",
+        "Ipv6ConfigRate": "ipv6ConfigRate",
+        "Ipv6ConfigRateEnable": "ipv6ConfigRateEnable",
+        "MaxOutstandingGatewayArpRequests": "maxOutstandingGatewayArpRequests",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IpRangeOptions, self).__init__(parent, list_op)
@@ -53,16 +53,17 @@ class IpRangeOptions(Base):
     @property
     def GatewayArpRequestRate(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Maximum ARP request rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayArpRequestRate"])
+
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayArpRequestRate"], value)
 
     @property
     def Icmpv6DiscardRouterAdvertisements(self):
@@ -72,11 +73,16 @@ class IpRangeOptions(Base):
         -------
         - bool: When enabled, IPv6 plugin will filter out ICMPv6 RA messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6DiscardRouterAdvertisements'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["Icmpv6DiscardRouterAdvertisements"]
+        )
+
     @Icmpv6DiscardRouterAdvertisements.setter
     def Icmpv6DiscardRouterAdvertisements(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6DiscardRouterAdvertisements'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["Icmpv6DiscardRouterAdvertisements"], value
+        )
 
     @property
     def Ipv6AddressMode(self):
@@ -86,11 +92,12 @@ class IpRangeOptions(Base):
         -------
         - str: Indicates whether static allocation or autoconfiguration of IPv6 addresses is used. Please note that this setting will only be applied to IPv6 stacks configured on the port. More settings in Protocols->Options.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6AddressMode"])
+
     @Ipv6AddressMode.setter
     def Ipv6AddressMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6AddressMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6AddressMode"], value)
 
     @property
     def Ipv6ConfigRate(self):
@@ -100,11 +107,12 @@ class IpRangeOptions(Base):
         -------
         - number: Number of IPv6 addresses to be configured per second. This is a best effort rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ConfigRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ConfigRate"])
+
     @Ipv6ConfigRate.setter
     def Ipv6ConfigRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ConfigRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ConfigRate"], value)
 
     @property
     def Ipv6ConfigRateEnable(self):
@@ -114,25 +122,31 @@ class IpRangeOptions(Base):
         -------
         - bool: When enabled, IPv6 plugin will configure IPv6 addresses at specified rate. This is a best effort rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ConfigRateEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ConfigRateEnable"])
+
     @Ipv6ConfigRateEnable.setter
     def Ipv6ConfigRateEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ConfigRateEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ConfigRateEnable"], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Threshold at which the plugin begins throttling back the number of new requests sent out.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MaxOutstandingGatewayArpRequests"]
+        )
+
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MaxOutstandingGatewayArpRequests"], value
+        )
 
     @property
     def ObjectId(self):
@@ -142,9 +156,17 @@ class IpRangeOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
-    def update(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
+    def update(
+        self,
+        GatewayArpRequestRate=None,
+        Icmpv6DiscardRouterAdvertisements=None,
+        Ipv6AddressMode=None,
+        Ipv6ConfigRate=None,
+        Ipv6ConfigRateEnable=None,
+        MaxOutstandingGatewayArpRequests=None,
+    ):
         # type: (int, bool, str, int, bool, int) -> IpRangeOptions
         """Updates ipRangeOptions resource on the server.
 
@@ -163,7 +185,15 @@ class IpRangeOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
+    def add(
+        self,
+        GatewayArpRequestRate=None,
+        Icmpv6DiscardRouterAdvertisements=None,
+        Ipv6AddressMode=None,
+        Ipv6ConfigRate=None,
+        Ipv6ConfigRateEnable=None,
+        MaxOutstandingGatewayArpRequests=None,
+    ):
         # type: (int, bool, str, int, bool, int) -> IpRangeOptions
         """Adds a new ipRangeOptions resource on the server and adds it to the container.
 
@@ -196,7 +226,16 @@ class IpRangeOptions(Base):
         """
         self._delete()
 
-    def find(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None, ObjectId=None):
+    def find(
+        self,
+        GatewayArpRequestRate=None,
+        Icmpv6DiscardRouterAdvertisements=None,
+        Ipv6AddressMode=None,
+        Ipv6ConfigRate=None,
+        Ipv6ConfigRateEnable=None,
+        MaxOutstandingGatewayArpRequests=None,
+        ObjectId=None,
+    ):
         # type: (int, bool, str, int, bool, int, str) -> IpRangeOptions
         """Finds and retrieves ipRangeOptions resources from the server.
 
@@ -259,10 +298,14 @@ class IpRangeOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -281,10 +324,14 @@ class IpRangeOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -303,7 +350,11 @@ class IpRangeOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

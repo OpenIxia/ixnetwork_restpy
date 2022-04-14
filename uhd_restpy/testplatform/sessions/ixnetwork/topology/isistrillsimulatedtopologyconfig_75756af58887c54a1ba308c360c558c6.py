@@ -167,7 +167,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     def add(self, Name=None, TrillNodeTopologyCount=None):
         # type: (str, int) -> IsisTrillSimulatedTopologyConfig
-        """Adds a new isisTrillSimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisTrillSimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----

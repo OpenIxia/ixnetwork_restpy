@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv3Hello(Base):
     __slots__ = ()
-    _SDM_NAME = 'ospfv3Hello'
+    _SDM_NAME = "ospfv3Hello"
     _SDM_ATT_MAP = {
-        'Ospfv3PacketHeaderOspfVersion': 'ospfv3Hello.header.ospfv3PacketHeader.ospfVersion-1',
-        'Ospfv3PacketHeaderPacketType': 'ospfv3Hello.header.ospfv3PacketHeader.packetType-2',
-        'Ospfv3PacketHeaderPacketLength': 'ospfv3Hello.header.ospfv3PacketHeader.packetLength-3',
-        'Ospfv3PacketHeaderRouterID': 'ospfv3Hello.header.ospfv3PacketHeader.routerID-4',
-        'Ospfv3PacketHeaderAreaID': 'ospfv3Hello.header.ospfv3PacketHeader.areaID-5',
-        'Ospfv3PacketHeaderOspfPacketChecksum': 'ospfv3Hello.header.ospfv3PacketHeader.ospfPacketChecksum-6',
-        'Ospfv3PacketHeaderInstanceID': 'ospfv3Hello.header.ospfv3PacketHeader.instanceID-7',
-        'Ospfv3PacketHeaderReserved': 'ospfv3Hello.header.ospfv3PacketHeader.reserved-8',
-        'HelloPacketBodyInterfaceID': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.interfaceID-9',
-        'HelloPacketBodyRouterPriority': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.routerPriority-10',
-        'HelloPacketBodyOptions': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.options-11',
-        'HelloPacketBodyHelloInterval': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.helloInterval-12',
-        'HelloPacketBodyRouterDeadInterval': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.routerDeadInterval-13',
-        'HelloPacketBodyDesignatedRouterID': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.designatedRouterID-14',
-        'HelloPacketBodyBackupDesignatedRouterID': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.backupDesignatedRouterID-15',
-        'HelloNeighborListNeighborRouterID': 'ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.helloNeighborList.neighborRouterID-16',
+        "Ospfv3PacketHeaderOspfVersion": "ospfv3Hello.header.ospfv3PacketHeader.ospfVersion-1",
+        "Ospfv3PacketHeaderPacketType": "ospfv3Hello.header.ospfv3PacketHeader.packetType-2",
+        "Ospfv3PacketHeaderPacketLength": "ospfv3Hello.header.ospfv3PacketHeader.packetLength-3",
+        "Ospfv3PacketHeaderRouterID": "ospfv3Hello.header.ospfv3PacketHeader.routerID-4",
+        "Ospfv3PacketHeaderAreaID": "ospfv3Hello.header.ospfv3PacketHeader.areaID-5",
+        "Ospfv3PacketHeaderOspfPacketChecksum": "ospfv3Hello.header.ospfv3PacketHeader.ospfPacketChecksum-6",
+        "Ospfv3PacketHeaderInstanceID": "ospfv3Hello.header.ospfv3PacketHeader.instanceID-7",
+        "Ospfv3PacketHeaderReserved": "ospfv3Hello.header.ospfv3PacketHeader.reserved-8",
+        "HelloPacketBodyInterfaceID": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.interfaceID-9",
+        "HelloPacketBodyRouterPriority": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.routerPriority-10",
+        "HelloPacketBodyOptions": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.options-11",
+        "HelloPacketBodyHelloInterval": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.helloInterval-12",
+        "HelloPacketBodyRouterDeadInterval": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.routerDeadInterval-13",
+        "HelloPacketBodyDesignatedRouterID": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.designatedRouterID-14",
+        "HelloPacketBodyBackupDesignatedRouterID": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.backupDesignatedRouterID-15",
+        "HelloNeighborListNeighborRouterID": "ospfv3Hello.header.ospfv3PacketBody.helloPacketBody.helloNeighborList.neighborRouterID-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,11 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderOspfVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderOspfVersion"]),
+        )
 
     @property
     def Ospfv3PacketHeaderPacketType(self):
@@ -45,7 +49,10 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderPacketType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderPacketType"])
+        )
 
     @property
     def Ospfv3PacketHeaderPacketLength(self):
@@ -55,7 +62,11 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderPacketLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderPacketLength"]),
+        )
 
     @property
     def Ospfv3PacketHeaderRouterID(self):
@@ -65,7 +76,10 @@ class Ospfv3Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderRouterID"])
+        )
 
     @property
     def Ospfv3PacketHeaderAreaID(self):
@@ -75,7 +89,10 @@ class Ospfv3Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderAreaID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderAreaID"])
+        )
 
     @property
     def Ospfv3PacketHeaderOspfPacketChecksum(self):
@@ -85,7 +102,13 @@ class Ospfv3Hello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderOspfPacketChecksum']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ospfv3PacketHeaderOspfPacketChecksum"]
+            ),
+        )
 
     @property
     def Ospfv3PacketHeaderInstanceID(self):
@@ -95,7 +118,10 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderInstanceID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderInstanceID"])
+        )
 
     @property
     def Ospfv3PacketHeaderReserved(self):
@@ -105,7 +131,10 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderReserved"])
+        )
 
     @property
     def HelloPacketBodyInterfaceID(self):
@@ -115,7 +144,10 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyInterfaceID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyInterfaceID"])
+        )
 
     @property
     def HelloPacketBodyRouterPriority(self):
@@ -125,7 +157,11 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyRouterPriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyRouterPriority"]),
+        )
 
     @property
     def HelloPacketBodyOptions(self):
@@ -135,7 +171,10 @@ class Ospfv3Hello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyOptions"])
+        )
 
     @property
     def HelloPacketBodyHelloInterval(self):
@@ -145,7 +184,10 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyHelloInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyHelloInterval"])
+        )
 
     @property
     def HelloPacketBodyRouterDeadInterval(self):
@@ -155,7 +197,11 @@ class Ospfv3Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyRouterDeadInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyRouterDeadInterval"]),
+        )
 
     @property
     def HelloPacketBodyDesignatedRouterID(self):
@@ -165,7 +211,11 @@ class Ospfv3Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyDesignatedRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HelloPacketBodyDesignatedRouterID"]),
+        )
 
     @property
     def HelloPacketBodyBackupDesignatedRouterID(self):
@@ -175,7 +225,13 @@ class Ospfv3Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloPacketBodyBackupDesignatedRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["HelloPacketBodyBackupDesignatedRouterID"]
+            ),
+        )
 
     @property
     def HelloNeighborListNeighborRouterID(self):
@@ -185,7 +241,11 @@ class Ospfv3Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloNeighborListNeighborRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HelloNeighborListNeighborRouterID"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

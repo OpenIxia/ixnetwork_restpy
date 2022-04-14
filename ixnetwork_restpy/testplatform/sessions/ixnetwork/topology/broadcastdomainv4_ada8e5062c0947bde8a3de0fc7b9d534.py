@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,47 +33,46 @@ class BroadcastDomainV4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'broadcastDomainV4'
+    _SDM_NAME = "broadcastDomainV4"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdRouteLabel': 'adRouteLabel',
-        'AsNumber2Bytes': 'asNumber2Bytes',
-        'AsNumber4Bytes': 'asNumber4Bytes',
-        'BVlanId': 'bVlanId',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpid': 'bVlanTpid',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlanAwareService': 'enableVlanAwareService',
-        'EthernetTagId': 'ethernetTagId',
-        'ExportEviRTAssignedNumber': 'exportEviRTAssignedNumber',
-        'ExportRTIpv4Address': 'exportRTIpv4Address',
-        'ExportRTSubType': 'exportRTSubType',
-        'ExportRTType': 'exportRTType',
-        'ExportRTValueSameAsExportRT': 'exportRTValueSameAsExportRT',
-        'GroupAddress': 'groupAddress',
-        'ImportEviRTAssignedNumber': 'importEviRTAssignedNumber',
-        'ImportRTIpv4Address': 'importRTIpv4Address',
-        'ImportRTSubType': 'importRTSubType',
-        'ImportRTType': 'importRTType',
-        'ImportRTValueSameAsExportEVIRT': 'importRTValueSameAsExportEVIRT',
-        'Name': 'name',
-        'NoOfMacPools': 'noOfMacPools',
-        'NumJoinSynchIgmpRoutes': 'numJoinSynchIgmpRoutes',
-        'NumJoinSynchMldRoutes': 'numJoinSynchMldRoutes',
-        'NumLeaveSynchIgmpRoutes': 'numLeaveSynchIgmpRoutes',
-        'NumLeaveSynchMldRoutes': 'numLeaveSynchMldRoutes',
-        'NumSmetIgmpRoutes': 'numSmetIgmpRoutes',
-        'NumSmetMldRoutes': 'numSmetMldRoutes',
-        'RootAddress': 'rootAddress',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
-        'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
-        'UsebVlan': 'usebVlan',
+        "Active": "active",
+        "AdRouteLabel": "adRouteLabel",
+        "AsNumber2Bytes": "asNumber2Bytes",
+        "AsNumber4Bytes": "asNumber4Bytes",
+        "BVlanId": "bVlanId",
+        "BVlanPriority": "bVlanPriority",
+        "BVlanTpid": "bVlanTpid",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableVlanAwareService": "enableVlanAwareService",
+        "EthernetTagId": "ethernetTagId",
+        "ExportEviRTAssignedNumber": "exportEviRTAssignedNumber",
+        "ExportRTIpv4Address": "exportRTIpv4Address",
+        "ExportRTSubType": "exportRTSubType",
+        "ExportRTType": "exportRTType",
+        "ExportRTValueSameAsExportRT": "exportRTValueSameAsExportRT",
+        "GroupAddress": "groupAddress",
+        "ImportEviRTAssignedNumber": "importEviRTAssignedNumber",
+        "ImportRTIpv4Address": "importRTIpv4Address",
+        "ImportRTSubType": "importRTSubType",
+        "ImportRTType": "importRTType",
+        "ImportRTValueSameAsExportEVIRT": "importRTValueSameAsExportEVIRT",
+        "Name": "name",
+        "NoOfMacPools": "noOfMacPools",
+        "NumJoinSynchIgmpRoutes": "numJoinSynchIgmpRoutes",
+        "NumJoinSynchMldRoutes": "numJoinSynchMldRoutes",
+        "NumLeaveSynchIgmpRoutes": "numLeaveSynchIgmpRoutes",
+        "NumLeaveSynchMldRoutes": "numLeaveSynchMldRoutes",
+        "NumSmetIgmpRoutes": "numSmetIgmpRoutes",
+        "NumSmetMldRoutes": "numSmetMldRoutes",
+        "RootAddress": "rootAddress",
+        "RsvpP2mpId": "rsvpP2mpId",
+        "RsvpP2mpIdAsNumber": "rsvpP2mpIdAsNumber",
+        "RsvpTunnelId": "rsvpTunnelId",
+        "SenderAddressPRootNodeAddress": "senderAddressPRootNodeAddress",
+        "UsebVlan": "usebVlan",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BroadcastDomainV4, self).__init__(parent, list_op)
@@ -88,10 +88,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchigmp_f89f38fca85b1442229391afe5b95e76 import BgpEvpnJoinSynchIgmp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchigmp_f89f38fca85b1442229391afe5b95e76 import (
+            BgpEvpnJoinSynchIgmp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnJoinSynchIgmp', None) is not None:
-                return self._properties.get('BgpEvpnJoinSynchIgmp')
+            if self._properties.get("BgpEvpnJoinSynchIgmp", None) is not None:
+                return self._properties.get("BgpEvpnJoinSynchIgmp")
         return BgpEvpnJoinSynchIgmp(self)._select()
 
     @property
@@ -105,10 +108,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchmld_4f5a831aa8e923cbdbff69a4f078837d import BgpEvpnJoinSynchMld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchmld_4f5a831aa8e923cbdbff69a4f078837d import (
+            BgpEvpnJoinSynchMld,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnJoinSynchMld', None) is not None:
-                return self._properties.get('BgpEvpnJoinSynchMld')
+            if self._properties.get("BgpEvpnJoinSynchMld", None) is not None:
+                return self._properties.get("BgpEvpnJoinSynchMld")
         return BgpEvpnJoinSynchMld(self)._select()
 
     @property
@@ -122,10 +128,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchigmp_411f258090ec14c0d716cabc5159977e import BgpEvpnLeaveSynchIgmp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchigmp_411f258090ec14c0d716cabc5159977e import (
+            BgpEvpnLeaveSynchIgmp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnLeaveSynchIgmp', None) is not None:
-                return self._properties.get('BgpEvpnLeaveSynchIgmp')
+            if self._properties.get("BgpEvpnLeaveSynchIgmp", None) is not None:
+                return self._properties.get("BgpEvpnLeaveSynchIgmp")
         return BgpEvpnLeaveSynchIgmp(self)._select()
 
     @property
@@ -139,10 +148,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchmld_226fbb8fe75f87a6460aecae872f059a import BgpEvpnLeaveSynchMld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchmld_226fbb8fe75f87a6460aecae872f059a import (
+            BgpEvpnLeaveSynchMld,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnLeaveSynchMld', None) is not None:
-                return self._properties.get('BgpEvpnLeaveSynchMld')
+            if self._properties.get("BgpEvpnLeaveSynchMld", None) is not None:
+                return self._properties.get("BgpEvpnLeaveSynchMld")
         return BgpEvpnLeaveSynchMld(self)._select()
 
     @property
@@ -156,10 +168,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetigmp_68fa5fa63ce581945025c1253038bccb import BgpEvpnSmetIgmp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetigmp_68fa5fa63ce581945025c1253038bccb import (
+            BgpEvpnSmetIgmp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnSmetIgmp', None) is not None:
-                return self._properties.get('BgpEvpnSmetIgmp')
+            if self._properties.get("BgpEvpnSmetIgmp", None) is not None:
+                return self._properties.get("BgpEvpnSmetIgmp")
         return BgpEvpnSmetIgmp(self)._select()
 
     @property
@@ -173,10 +188,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetmld_8d81cf97f583ad4547c03c6110c5168a import BgpEvpnSmetMld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetmld_8d81cf97f583ad4547c03c6110c5168a import (
+            BgpEvpnSmetMld,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEvpnSmetMld', None) is not None:
-                return self._properties.get('BgpEvpnSmetMld')
+            if self._properties.get("BgpEvpnSmetMld", None) is not None:
+                return self._properties.get("BgpEvpnSmetMld")
         return BgpEvpnSmetMld(self)._select()
 
     @property
@@ -190,10 +208,13 @@ class BroadcastDomainV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import (
+            PnTLVList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PnTLVList', None) is not None:
-                return self._properties.get('PnTLVList')
+            if self._properties.get("PnTLVList", None) is not None:
+                return self._properties.get("PnTLVList")
         return PnTLVList(self)
 
     @property
@@ -205,7 +226,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdRouteLabel(self):
@@ -216,7 +238,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AD Route Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdRouteLabel"]))
 
     @property
     def AsNumber2Bytes(self):
@@ -227,7 +250,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 2-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber2Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber2Bytes"])
+        )
 
     @property
     def AsNumber4Bytes(self):
@@ -238,7 +264,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 4-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber4Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber4Bytes"])
+        )
 
     @property
     def BVlanId(self):
@@ -249,7 +278,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BVlanId"]))
 
     @property
     def BVlanPriority(self):
@@ -260,7 +290,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BVlanPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BVlanPriority"]))
 
     @property
     def BVlanTpid(self):
@@ -271,7 +302,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BVlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BVlanTpid"]))
 
     @property
     def Count(self):
@@ -281,7 +313,7 @@ class BroadcastDomainV4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -291,7 +323,7 @@ class BroadcastDomainV4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableVlanAwareService(self):
@@ -302,7 +334,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable VLAN Aware Service
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlanAwareService']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableVlanAwareService"])
+        )
 
     @property
     def EthernetTagId(self):
@@ -313,7 +348,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ethernet Tag ID. For VPWS, this acts as VPWS Service ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EthernetTagId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EthernetTagId"]))
 
     @property
     def ExportEviRTAssignedNumber(self):
@@ -324,7 +360,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Export Route Target Assigned Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExportEviRTAssignedNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExportEviRTAssignedNumber"])
+        )
 
     @property
     def ExportRTIpv4Address(self):
@@ -335,7 +374,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExportRTIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExportRTIpv4Address"])
+        )
 
     @property
     def ExportRTSubType(self):
@@ -346,7 +388,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SubType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExportRTSubType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExportRTSubType"])
+        )
 
     @property
     def ExportRTType(self):
@@ -357,7 +402,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExportRTType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExportRTType"]))
 
     @property
     def ExportRTValueSameAsExportRT(self):
@@ -368,7 +414,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Same value as the Export RT configured in EVI.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExportRTValueSameAsExportRT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExportRTValueSameAsExportRT"])
+        )
 
     @property
     def GroupAddress(self):
@@ -379,7 +428,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupAddress"]))
 
     @property
     def ImportEviRTAssignedNumber(self):
@@ -390,7 +440,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Import Route Target Assigned Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImportEviRTAssignedNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ImportEviRTAssignedNumber"])
+        )
 
     @property
     def ImportRTIpv4Address(self):
@@ -401,7 +454,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImportRTIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ImportRTIpv4Address"])
+        )
 
     @property
     def ImportRTSubType(self):
@@ -412,7 +468,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SubType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImportRTSubType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ImportRTSubType"])
+        )
 
     @property
     def ImportRTType(self):
@@ -423,7 +482,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImportRTType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ImportRTType"]))
 
     @property
     def ImportRTValueSameAsExportEVIRT(self):
@@ -434,7 +494,11 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Same value as the Export EVI-RT configured in broadcastdomain
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImportRTValueSameAsExportEVIRT']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ImportRTValueSameAsExportEVIRT"]),
+        )
 
     @property
     def Name(self):
@@ -444,11 +508,12 @@ class BroadcastDomainV4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfMacPools(self):
@@ -458,11 +523,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: Number of Mac Pools
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfMacPools'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfMacPools"])
+
     @NoOfMacPools.setter
     def NoOfMacPools(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfMacPools'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfMacPools"], value)
 
     @property
     def NumJoinSynchIgmpRoutes(self):
@@ -472,11 +538,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of JoinSnch (IGMP) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumJoinSynchIgmpRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumJoinSynchIgmpRoutes"])
+
     @NumJoinSynchIgmpRoutes.setter
     def NumJoinSynchIgmpRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumJoinSynchIgmpRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumJoinSynchIgmpRoutes"], value)
 
     @property
     def NumJoinSynchMldRoutes(self):
@@ -486,11 +553,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of JoinSynch (MLD) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumJoinSynchMldRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumJoinSynchMldRoutes"])
+
     @NumJoinSynchMldRoutes.setter
     def NumJoinSynchMldRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumJoinSynchMldRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumJoinSynchMldRoutes"], value)
 
     @property
     def NumLeaveSynchIgmpRoutes(self):
@@ -500,11 +568,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of LeaveSynch (IGMP) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumLeaveSynchIgmpRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumLeaveSynchIgmpRoutes"])
+
     @NumLeaveSynchIgmpRoutes.setter
     def NumLeaveSynchIgmpRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumLeaveSynchIgmpRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumLeaveSynchIgmpRoutes"], value)
 
     @property
     def NumLeaveSynchMldRoutes(self):
@@ -514,11 +583,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of LeaveSynch (MLD) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumLeaveSynchMldRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumLeaveSynchMldRoutes"])
+
     @NumLeaveSynchMldRoutes.setter
     def NumLeaveSynchMldRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumLeaveSynchMldRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumLeaveSynchMldRoutes"], value)
 
     @property
     def NumSmetIgmpRoutes(self):
@@ -528,11 +598,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of SMET (IGMP) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumSmetIgmpRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumSmetIgmpRoutes"])
+
     @NumSmetIgmpRoutes.setter
     def NumSmetIgmpRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumSmetIgmpRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumSmetIgmpRoutes"], value)
 
     @property
     def NumSmetMldRoutes(self):
@@ -542,11 +613,12 @@ class BroadcastDomainV4(Base):
         -------
         - number: The number of SMET (MLD) Routes to be configured under Broadcast Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumSmetMldRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumSmetMldRoutes"])
+
     @NumSmetMldRoutes.setter
     def NumSmetMldRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumSmetMldRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumSmetMldRoutes"], value)
 
     @property
     def RootAddress(self):
@@ -557,7 +629,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Root Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RootAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RootAddress"]))
 
     @property
     def RsvpP2mpId(self):
@@ -568,7 +641,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP P2MP ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpId"]))
 
     @property
     def RsvpP2mpIdAsNumber(self):
@@ -579,7 +653,10 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP P2MP ID as Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpIdAsNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpIdAsNumber"])
+        )
 
     @property
     def RsvpTunnelId(self):
@@ -590,7 +667,8 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RSVP Tunnel ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvpTunnelId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RsvpTunnelId"]))
 
     @property
     def SenderAddressPRootNodeAddress(self):
@@ -601,7 +679,11 @@ class BroadcastDomainV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sender Address/P-Root Node Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderAddressPRootNodeAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SenderAddressPRootNodeAddress"]),
+        )
 
     @property
     def UsebVlan(self):
@@ -611,13 +693,25 @@ class BroadcastDomainV4(Base):
         -------
         - bool: Use B-VLAN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UsebVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["UsebVlan"])
+
     @UsebVlan.setter
     def UsebVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UsebVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UsebVlan"], value)
 
-    def update(self, Name=None, NoOfMacPools=None, NumJoinSynchIgmpRoutes=None, NumJoinSynchMldRoutes=None, NumLeaveSynchIgmpRoutes=None, NumLeaveSynchMldRoutes=None, NumSmetIgmpRoutes=None, NumSmetMldRoutes=None, UsebVlan=None):
+    def update(
+        self,
+        Name=None,
+        NoOfMacPools=None,
+        NumJoinSynchIgmpRoutes=None,
+        NumJoinSynchMldRoutes=None,
+        NumLeaveSynchIgmpRoutes=None,
+        NumLeaveSynchMldRoutes=None,
+        NumSmetIgmpRoutes=None,
+        NumSmetMldRoutes=None,
+        UsebVlan=None,
+    ):
         # type: (str, int, int, int, int, int, int, int, bool) -> BroadcastDomainV4
         """Updates broadcastDomainV4 resource on the server.
 
@@ -642,7 +736,20 @@ class BroadcastDomainV4(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfMacPools=None, NumJoinSynchIgmpRoutes=None, NumJoinSynchMldRoutes=None, NumLeaveSynchIgmpRoutes=None, NumLeaveSynchMldRoutes=None, NumSmetIgmpRoutes=None, NumSmetMldRoutes=None, UsebVlan=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfMacPools=None,
+        NumJoinSynchIgmpRoutes=None,
+        NumJoinSynchMldRoutes=None,
+        NumLeaveSynchIgmpRoutes=None,
+        NumLeaveSynchMldRoutes=None,
+        NumSmetIgmpRoutes=None,
+        NumSmetMldRoutes=None,
+        UsebVlan=None,
+    ):
         # type: (int, str, str, int, int, int, int, int, int, int, bool) -> BroadcastDomainV4
         """Finds and retrieves broadcastDomainV4 resources from the server.
 
@@ -709,10 +816,12 @@ class BroadcastDomainV4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertiseAliasing", payload=payload, response_object=None)
 
     def AdvertiseAliasingPerBroadcastDomain(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -741,10 +850,14 @@ class BroadcastDomainV4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasingPerBroadcastDomain', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "advertiseAliasingPerBroadcastDomain", payload=payload, response_object=None
+        )
 
     def WithdrawAliasing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -763,10 +876,12 @@ class BroadcastDomainV4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdrawAliasing", payload=payload, response_object=None)
 
     def WithdrawAliasingPerBroadcastDomain(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -795,12 +910,44 @@ class BroadcastDomainV4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasingPerBroadcastDomain', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "withdrawAliasingPerBroadcastDomain", payload=payload, response_object=None
+        )
 
-    def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AsNumber2Bytes=None, AsNumber4Bytes=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, ExportEviRTAssignedNumber=None, ExportRTIpv4Address=None, ExportRTSubType=None, ExportRTType=None, ExportRTValueSameAsExportRT=None, GroupAddress=None, ImportEviRTAssignedNumber=None, ImportRTIpv4Address=None, ImportRTSubType=None, ImportRTType=None, ImportRTValueSameAsExportEVIRT=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdRouteLabel=None,
+        AsNumber2Bytes=None,
+        AsNumber4Bytes=None,
+        BVlanId=None,
+        BVlanPriority=None,
+        BVlanTpid=None,
+        EnableVlanAwareService=None,
+        EthernetTagId=None,
+        ExportEviRTAssignedNumber=None,
+        ExportRTIpv4Address=None,
+        ExportRTSubType=None,
+        ExportRTType=None,
+        ExportRTValueSameAsExportRT=None,
+        GroupAddress=None,
+        ImportEviRTAssignedNumber=None,
+        ImportRTIpv4Address=None,
+        ImportRTSubType=None,
+        ImportRTType=None,
+        ImportRTValueSameAsExportEVIRT=None,
+        RootAddress=None,
+        RsvpP2mpId=None,
+        RsvpP2mpIdAsNumber=None,
+        RsvpTunnelId=None,
+        SenderAddressPRootNodeAddress=None,
+    ):
         """Base class infrastructure that gets a list of broadcastDomainV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

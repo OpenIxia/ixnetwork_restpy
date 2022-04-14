@@ -4,46 +4,46 @@ from ixnetwork_restpy.files import Files
 
 class TDSRemoteProcedureCall(Base):
     __slots__ = ()
-    _SDM_NAME = 'TDS_Remote_Procedure_Call'
+    _SDM_NAME = "TDS_Remote_Procedure_Call"
     _SDM_ATT_MAP = {
-        'HeaderType': 'TDS_Remote_Procedure_Call.header.Type-1',
-        'HeaderStatus': 'TDS_Remote_Procedure_Call.header.Status-2',
-        'HeaderLength': 'TDS_Remote_Procedure_Call.header.Length-3',
-        'HeaderChannel': 'TDS_Remote_Procedure_Call.header.Channel-4',
-        'HeaderPacket number': 'TDS_Remote_Procedure_Call.header.Packet number-5',
-        'HeaderWindow': 'TDS_Remote_Procedure_Call.header.Window-6',
-        'Packet data stream headersTotal length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Total length-7',
-        'Packet data stream headersHeaderLength': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Length-8',
-        'Packet data stream headersHeaderType': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Type-9',
-        'HeaderTransaction descriptor': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Transaction descriptor-10',
-        'HeaderField0': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.field0-11',
-        'Remote Procedure CallProcedure name length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Procedure name length-12',
-        'Remote Procedure CallStored procedure ID': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Stored procedure ID-13',
-        'Option flagsWith recompile': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.With recompile-14',
-        'Option flagsNo metadata': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.No metadata-15',
-        'Option flagsReuse metadata': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.Reuse metadata-16',
-        'Parameter1Field1': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.field1-17',
-        'Parameter1Name length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Name length-18',
-        'Type info (INTNTYPE)Type': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Type info (INTNTYPE).Type-19',
-        'Type info (INTNTYPE)Maximal length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Type info (INTNTYPE).Maximal length-20',
-        'ValueLength': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Value.Length-21',
-        'ValueData': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Value.Data-22',
-        'Parameter2Name length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Name length-23',
-        'Parameter2Status flags': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Status flags-24',
-        'Type info (NVARCHARTYPE - NVarChar)Type': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Type-25',
-        'Type info (NVARCHARTYPE - NVarChar)Maximal length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Maximal length-26',
-        'CollationCollation bits': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Collation.Collation bits-27',
-        'CollationSortId': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Collation.SortId-28',
-        'Parameter2ValueLength': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Value.Length-29',
-        'Parameter2ValueData': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Value.Data-30',
-        'Parameter3Name length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Name length-31',
-        'Parameter3Status flags': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Status flags-32',
-        'Parameter3Type info (NVARCHARTYPE - NVarChar)Type': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Type-33',
-        'Parameter3Type info (NVARCHARTYPE - NVarChar)Maximal length': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Maximal length-34',
-        'CollationCollation Bits': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Collation.Collation Bits-35',
-        'Type info (nvarchartype - nvarchar)CollationSortId': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Collation.SortId-36',
-        'Parameter3ValueLength': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Value.Length-37',
-        'Parameter3ValueData': 'TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Value.Data-38',
+        "HeaderType": "TDS_Remote_Procedure_Call.header.Type-1",
+        "HeaderStatus": "TDS_Remote_Procedure_Call.header.Status-2",
+        "HeaderLength": "TDS_Remote_Procedure_Call.header.Length-3",
+        "HeaderChannel": "TDS_Remote_Procedure_Call.header.Channel-4",
+        "HeaderPacket number": "TDS_Remote_Procedure_Call.header.Packet number-5",
+        "HeaderWindow": "TDS_Remote_Procedure_Call.header.Window-6",
+        "Packet data stream headersTotal length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Total length-7",
+        "Packet data stream headersHeaderLength": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Length-8",
+        "Packet data stream headersHeaderType": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Type-9",
+        "HeaderTransaction descriptor": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.Transaction descriptor-10",
+        "HeaderField0": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Packet data stream headers.Header.field0-11",
+        "Remote Procedure CallProcedure name length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Procedure name length-12",
+        "Remote Procedure CallStored procedure ID": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Stored procedure ID-13",
+        "Option flagsWith recompile": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.With recompile-14",
+        "Option flagsNo metadata": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.No metadata-15",
+        "Option flagsReuse metadata": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Option flags.Reuse metadata-16",
+        "Parameter1Field1": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.field1-17",
+        "Parameter1Name length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Name length-18",
+        "Type info (INTNTYPE)Type": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Type info (INTNTYPE).Type-19",
+        "Type info (INTNTYPE)Maximal length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Type info (INTNTYPE).Maximal length-20",
+        "ValueLength": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Value.Length-21",
+        "ValueData": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter1.Value.Data-22",
+        "Parameter2Name length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Name length-23",
+        "Parameter2Status flags": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Status flags-24",
+        "Type info (NVARCHARTYPE - NVarChar)Type": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Type-25",
+        "Type info (NVARCHARTYPE - NVarChar)Maximal length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Maximal length-26",
+        "CollationCollation bits": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Collation.Collation bits-27",
+        "CollationSortId": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Type info (NVARCHARTYPE - NVarChar).Collation.SortId-28",
+        "Parameter2ValueLength": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Value.Length-29",
+        "Parameter2ValueData": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter2.Value.Data-30",
+        "Parameter3Name length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Name length-31",
+        "Parameter3Status flags": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Status flags-32",
+        "Parameter3Type info (NVARCHARTYPE - NVarChar)Type": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Type-33",
+        "Parameter3Type info (NVARCHARTYPE - NVarChar)Maximal length": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Maximal length-34",
+        "CollationCollation Bits": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Collation.Collation Bits-35",
+        "Type info (nvarchartype - nvarchar)CollationSortId": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Type info (NVARCHARTYPE - NVarChar).Collation.SortId-36",
+        "Parameter3ValueLength": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Value.Length-37",
+        "Parameter3ValueData": "TDS_Remote_Procedure_Call.header.Remote Procedure Call.Parameter3.Value.Data-38",
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,7 +57,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderStatus(self):
@@ -67,7 +68,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderStatus']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderStatus"]))
 
     @property
     def HeaderLength(self):
@@ -77,7 +79,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderChannel(self):
@@ -87,7 +90,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChannel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderChannel"]))
 
     @property
     def HeaderPacketnumber(self):
@@ -97,7 +101,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPacket number']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPacket number"])
+        )
 
     @property
     def HeaderWindow(self):
@@ -107,7 +114,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderWindow']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderWindow"]))
 
     @property
     def PacketdatastreamheadersTotallength(self):
@@ -117,7 +125,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Packet data stream headersTotal length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Packet data stream headersTotal length"]
+            ),
+        )
 
     @property
     def PacketdatastreamheadersHeaderLength(self):
@@ -127,7 +141,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Packet data stream headersHeaderLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Packet data stream headersHeaderLength"]
+            ),
+        )
 
     @property
     def PacketdatastreamheadersHeaderType(self):
@@ -137,7 +157,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Packet data stream headersHeaderType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Packet data stream headersHeaderType"]
+            ),
+        )
 
     @property
     def HeaderTransactiondescriptor(self):
@@ -147,7 +173,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderTransaction descriptor']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderTransaction descriptor"])
+        )
 
     @property
     def HeaderField0(self):
@@ -157,7 +186,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderField0']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderField0"]))
 
     @property
     def RemoteProcedureCallProcedurenamelength(self):
@@ -167,7 +197,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Remote Procedure CallProcedure name length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Remote Procedure CallProcedure name length"]
+            ),
+        )
 
     @property
     def RemoteProcedureCallStoredprocedureID(self):
@@ -177,7 +213,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Remote Procedure CallStored procedure ID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Remote Procedure CallStored procedure ID"]
+            ),
+        )
 
     @property
     def OptionflagsWithrecompile(self):
@@ -187,7 +229,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Option flagsWith recompile']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Option flagsWith recompile"])
+        )
 
     @property
     def OptionflagsNometadata(self):
@@ -197,7 +242,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Option flagsNo metadata']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Option flagsNo metadata"])
+        )
 
     @property
     def OptionflagsReusemetadata(self):
@@ -207,7 +255,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Option flagsReuse metadata']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Option flagsReuse metadata"])
+        )
 
     @property
     def Parameter1Field1(self):
@@ -217,7 +268,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter1Field1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter1Field1"])
+        )
 
     @property
     def Parameter1Namelength(self):
@@ -227,7 +281,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter1Name length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter1Name length"])
+        )
 
     @property
     def TypeinfoINTNTYPEType(self):
@@ -237,7 +294,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type info (INTNTYPE)Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Type info (INTNTYPE)Type"])
+        )
 
     @property
     def TypeinfoINTNTYPEMaximallength(self):
@@ -247,7 +307,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type info (INTNTYPE)Maximal length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type info (INTNTYPE)Maximal length"]
+            ),
+        )
 
     @property
     def ValueLength(self):
@@ -257,7 +323,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ValueLength"]))
 
     @property
     def ValueData(self):
@@ -267,7 +334,8 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ValueData"]))
 
     @property
     def Parameter2Namelength(self):
@@ -277,7 +345,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter2Name length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter2Name length"])
+        )
 
     @property
     def Parameter2Statusflags(self):
@@ -287,7 +358,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter2Status flags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter2Status flags"])
+        )
 
     @property
     def TypeinfoNVARCHARTYPENVarCharType(self):
@@ -297,7 +371,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type info (NVARCHARTYPE - NVarChar)Type']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type info (NVARCHARTYPE - NVarChar)Type"]
+            ),
+        )
 
     @property
     def TypeinfoNVARCHARTYPENVarCharMaximallength(self):
@@ -307,7 +387,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type info (NVARCHARTYPE - NVarChar)Maximal length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type info (NVARCHARTYPE - NVarChar)Maximal length"]
+            ),
+        )
 
     @property
     def CollationCollationbits(self):
@@ -317,7 +403,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollationCollation bits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollationCollation bits"])
+        )
 
     @property
     def CollationSortId(self):
@@ -327,7 +416,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollationSortId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollationSortId"])
+        )
 
     @property
     def Parameter2ValueLength(self):
@@ -337,7 +429,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter2ValueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter2ValueLength"])
+        )
 
     @property
     def Parameter2ValueData(self):
@@ -347,7 +442,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter2ValueData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter2ValueData"])
+        )
 
     @property
     def Parameter3Namelength(self):
@@ -357,7 +455,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3Name length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter3Name length"])
+        )
 
     @property
     def Parameter3Statusflags(self):
@@ -367,7 +468,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3Status flags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter3Status flags"])
+        )
 
     @property
     def Parameter3TypeinfoNVARCHARTYPENVarCharType(self):
@@ -377,7 +481,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3Type info (NVARCHARTYPE - NVarChar)Type']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Parameter3Type info (NVARCHARTYPE - NVarChar)Type"]
+            ),
+        )
 
     @property
     def Parameter3TypeinfoNVARCHARTYPENVarCharMaximallength(self):
@@ -387,7 +497,15 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3Type info (NVARCHARTYPE - NVarChar)Maximal length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Parameter3Type info (NVARCHARTYPE - NVarChar)Maximal length"
+                ]
+            ),
+        )
 
     @property
     def CollationCollationBits(self):
@@ -397,7 +515,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollationCollation Bits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollationCollation Bits"])
+        )
 
     @property
     def TypeinfonvarchartypenvarcharCollationSortId(self):
@@ -407,7 +528,13 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type info (nvarchartype - nvarchar)CollationSortId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type info (nvarchartype - nvarchar)CollationSortId"]
+            ),
+        )
 
     @property
     def Parameter3ValueLength(self):
@@ -417,7 +544,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3ValueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter3ValueLength"])
+        )
 
     @property
     def Parameter3ValueData(self):
@@ -427,7 +557,10 @@ class TDSRemoteProcedureCall(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter3ValueData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Parameter3ValueData"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

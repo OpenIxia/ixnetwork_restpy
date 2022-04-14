@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,20 @@ class Dhcpv6ServerRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6ServerRange'
+    _SDM_NAME = "dhcpv6ServerRange"
     _SDM_ATT_MAP = {
-        'DnsDomain': 'dnsDomain',
-        'Enabled': 'enabled',
-        'IpAddress': 'ipAddress',
-        'IpDns1': 'ipDns1',
-        'IpDns2': 'ipDns2',
-        'IpPrefix': 'ipPrefix',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'UseRapidCommit': 'useRapidCommit',
+        "DnsDomain": "dnsDomain",
+        "Enabled": "enabled",
+        "IpAddress": "ipAddress",
+        "IpDns1": "ipDns1",
+        "IpDns2": "ipDns2",
+        "IpPrefix": "ipPrefix",
+        "IpType": "ipType",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "UseRapidCommit": "useRapidCommit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv6ServerRange, self).__init__(parent, list_op)
@@ -61,11 +61,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: The domain name to be searched during name resolution advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DnsDomain'])
+        return self._get_attribute(self._SDM_ATT_MAP["DnsDomain"])
+
     @DnsDomain.setter
     def DnsDomain(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DnsDomain'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DnsDomain"], value)
 
     @property
     def Enabled(self):
@@ -75,11 +76,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpAddress(self):
@@ -89,11 +91,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: The first IP address allocated by this address pool. The rest of addresses will be sequentially allocated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpDns1(self):
@@ -103,11 +106,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: The first DNS address advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDns1'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDns1"])
+
     @IpDns1.setter
     def IpDns1(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDns1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDns1"], value)
 
     @property
     def IpDns2(self):
@@ -117,11 +121,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: The second DNS address advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDns2'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDns2"])
+
     @IpDns2.setter
     def IpDns2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDns2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDns2"], value)
 
     @property
     def IpPrefix(self):
@@ -131,11 +136,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - number: The Subnet Prefix length advertised in DHCPv6PD Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
+
     @IpPrefix.setter
     def IpPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpPrefix"], value)
 
     @property
     def IpType(self):
@@ -145,11 +151,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: Defines the version of IP address style to be used for describing the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Name(self):
@@ -159,11 +166,12 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -173,7 +181,7 @@ class Dhcpv6ServerRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def UseRapidCommit(self):
@@ -183,13 +191,25 @@ class Dhcpv6ServerRange(Base):
         -------
         - bool: Enables DHCP server to negotiate leases with rapid commit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseRapidCommit"])
+
     @UseRapidCommit.setter
     def UseRapidCommit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseRapidCommit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseRapidCommit"], value)
 
-    def update(self, DnsDomain=None, Enabled=None, IpAddress=None, IpDns1=None, IpDns2=None, IpPrefix=None, IpType=None, Name=None, UseRapidCommit=None):
+    def update(
+        self,
+        DnsDomain=None,
+        Enabled=None,
+        IpAddress=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpPrefix=None,
+        IpType=None,
+        Name=None,
+        UseRapidCommit=None,
+    ):
         # type: (str, bool, str, str, str, int, str, str, bool) -> Dhcpv6ServerRange
         """Updates dhcpv6ServerRange resource on the server.
 
@@ -211,7 +231,18 @@ class Dhcpv6ServerRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DnsDomain=None, Enabled=None, IpAddress=None, IpDns1=None, IpDns2=None, IpPrefix=None, IpType=None, Name=None, UseRapidCommit=None):
+    def add(
+        self,
+        DnsDomain=None,
+        Enabled=None,
+        IpAddress=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpPrefix=None,
+        IpType=None,
+        Name=None,
+        UseRapidCommit=None,
+    ):
         # type: (str, bool, str, str, str, int, str, str, bool) -> Dhcpv6ServerRange
         """Adds a new dhcpv6ServerRange resource on the server and adds it to the container.
 
@@ -247,7 +278,19 @@ class Dhcpv6ServerRange(Base):
         """
         self._delete()
 
-    def find(self, DnsDomain=None, Enabled=None, IpAddress=None, IpDns1=None, IpDns2=None, IpPrefix=None, IpType=None, Name=None, ObjectId=None, UseRapidCommit=None):
+    def find(
+        self,
+        DnsDomain=None,
+        Enabled=None,
+        IpAddress=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpPrefix=None,
+        IpType=None,
+        Name=None,
+        ObjectId=None,
+        UseRapidCommit=None,
+    ):
         # type: (str, bool, str, str, str, int, str, str, str, bool) -> Dhcpv6ServerRange
         """Finds and retrieves dhcpv6ServerRange resources from the server.
 
@@ -313,10 +356,14 @@ class Dhcpv6ServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -335,10 +382,14 @@ class Dhcpv6ServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -357,10 +408,14 @@ class Dhcpv6ServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -384,10 +439,12 @@ class Dhcpv6ServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -411,7 +468,9 @@ class Dhcpv6ServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

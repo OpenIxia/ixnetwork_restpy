@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,83 +35,91 @@ class OpenFlowSwitch(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'openFlowSwitch'
+    _SDM_NAME = "openFlowSwitch"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuxConnTimeout': 'auxConnTimeout',
-        'AuxNonHelloStartupOption': 'auxNonHelloStartupOption',
-        'BadVersionErrorAction': 'badVersionErrorAction',
-        'BandTypes': 'bandTypes',
-        'BarrierReplyDelayType': 'barrierReplyDelayType',
-        'BarrierReplyMaxDelay': 'barrierReplyMaxDelay',
-        'Capabilities': 'capabilities',
-        'ConnectedVia': 'connectedVia',
-        'ControllerFlowTxRate': 'controllerFlowTxRate',
-        'Count': 'count',
-        'DatapathDesc': 'datapathDesc',
-        'DatapathId': 'datapathId',
-        'DatapathIdHex': 'datapathIdHex',
-        'DescriptiveName': 'descriptiveName',
-        'DirectoryName': 'directoryName',
-        'EchoInterval': 'echoInterval',
-        'EchoTimeOut': 'echoTimeOut',
-        'EnableHelloElement': 'enableHelloElement',
-        'Errors': 'errors',
-        'FileCaCertificate': 'fileCaCertificate',
-        'FileCertificate': 'fileCertificate',
-        'FilePrivKey': 'filePrivKey',
-        'FlowRemovedMask': 'flowRemovedMask',
-        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
-        'GroupCapabilities': 'groupCapabilities',
-        'GroupType': 'groupType',
-        'HardwareDesc': 'hardwareDesc',
-        'InterPacketInBurstGap': 'interPacketInBurstGap',
-        'ManufacturerDesc': 'manufacturerDesc',
-        'MaxBandPerMeter': 'maxBandPerMeter',
-        'MaxColorValue': 'maxColorValue',
-        'MaxNumberOfBucketsPerGroups': 'maxNumberOfBucketsPerGroups',
-        'MaxPacketInBytes': 'maxPacketInBytes',
-        'MeterCapabilities': 'meterCapabilities',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumMeter': 'numMeter',
-        'NumberOfBuffers': 'numberOfBuffers',
-        'NumberOfChannels': 'numberOfChannels',
-        'NumberOfHostPorts': 'numberOfHostPorts',
-        'NumberOfPacketIn': 'numberOfPacketIn',
-        'NumberOfPorts': 'numberOfPorts',
-        'NumberOfTableRanges': 'numberOfTableRanges',
-        'NumberOfTopologyPorts': 'numberOfTopologyPorts',
-        'NumberOfUnconnectedPorts': 'numberOfUnconnectedPorts',
-        'PacketInMaskMaster': 'packetInMaskMaster',
-        'PacketInMaskSlave': 'packetInMaskSlave',
-        'PacketInReplyDelay': 'packetInReplyDelay',
-        'PacketInReplyTimeout': 'packetInReplyTimeout',
-        'PacketInTxBurst': 'packetInTxBurst',
-        'PacketOutRxRate': 'packetOutRxRate',
-        'PeriodicEcho': 'periodicEcho',
-        'PortStatusMaskMaster': 'portStatusMaskMaster',
-        'PortStatusMaskSlave': 'portStatusMaskSlave',
-        'SerialNumber': 'serialNumber',
-        'SessionStatus': 'sessionStatus',
-        'SoftwareDesc': 'softwareDesc',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'StoreFlows': 'storeFlows',
-        'SwitchDesc': 'switchDesc',
-        'SwitchLocalIp': 'switchLocalIp',
-        'TableMissAction': 'tableMissAction',
-        'TcpPort': 'tcpPort',
-        'TimeoutOption': 'timeoutOption',
-        'TimeoutOptionValue': 'timeoutOptionValue',
-        'TlsVersion': 'tlsVersion',
-        'TransactionID': 'transactionID',
-        'TypeOfConnection': 'typeOfConnection',
-        'VersionSupported': 'versionSupported',
+        "Active": "active",
+        "AuxConnTimeout": "auxConnTimeout",
+        "AuxNonHelloStartupOption": "auxNonHelloStartupOption",
+        "BadVersionErrorAction": "badVersionErrorAction",
+        "BandTypes": "bandTypes",
+        "BarrierReplyDelayType": "barrierReplyDelayType",
+        "BarrierReplyMaxDelay": "barrierReplyMaxDelay",
+        "Capabilities": "capabilities",
+        "ConnectedVia": "connectedVia",
+        "ControllerFlowTxRate": "controllerFlowTxRate",
+        "Count": "count",
+        "DatapathDesc": "datapathDesc",
+        "DatapathId": "datapathId",
+        "DatapathIdHex": "datapathIdHex",
+        "DescriptiveName": "descriptiveName",
+        "DirectoryName": "directoryName",
+        "EchoInterval": "echoInterval",
+        "EchoTimeOut": "echoTimeOut",
+        "EnableHelloElement": "enableHelloElement",
+        "Errors": "errors",
+        "FileCaCertificate": "fileCaCertificate",
+        "FileCertificate": "fileCertificate",
+        "FilePrivKey": "filePrivKey",
+        "FlowRemovedMask": "flowRemovedMask",
+        "FlowRemovedMaskSlave": "flowRemovedMaskSlave",
+        "GroupCapabilities": "groupCapabilities",
+        "GroupType": "groupType",
+        "HardwareDesc": "hardwareDesc",
+        "InterPacketInBurstGap": "interPacketInBurstGap",
+        "ManufacturerDesc": "manufacturerDesc",
+        "MaxBandPerMeter": "maxBandPerMeter",
+        "MaxColorValue": "maxColorValue",
+        "MaxNumberOfBucketsPerGroups": "maxNumberOfBucketsPerGroups",
+        "MaxPacketInBytes": "maxPacketInBytes",
+        "MeterCapabilities": "meterCapabilities",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumMeter": "numMeter",
+        "NumberOfBuffers": "numberOfBuffers",
+        "NumberOfChannels": "numberOfChannels",
+        "NumberOfHostPorts": "numberOfHostPorts",
+        "NumberOfPacketIn": "numberOfPacketIn",
+        "NumberOfPorts": "numberOfPorts",
+        "NumberOfTableRanges": "numberOfTableRanges",
+        "NumberOfTopologyPorts": "numberOfTopologyPorts",
+        "NumberOfUnconnectedPorts": "numberOfUnconnectedPorts",
+        "PacketInMaskMaster": "packetInMaskMaster",
+        "PacketInMaskSlave": "packetInMaskSlave",
+        "PacketInReplyDelay": "packetInReplyDelay",
+        "PacketInReplyTimeout": "packetInReplyTimeout",
+        "PacketInTxBurst": "packetInTxBurst",
+        "PacketOutRxRate": "packetOutRxRate",
+        "PeriodicEcho": "periodicEcho",
+        "PortStatusMaskMaster": "portStatusMaskMaster",
+        "PortStatusMaskSlave": "portStatusMaskSlave",
+        "SerialNumber": "serialNumber",
+        "SessionStatus": "sessionStatus",
+        "SoftwareDesc": "softwareDesc",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "StoreFlows": "storeFlows",
+        "SwitchDesc": "switchDesc",
+        "SwitchLocalIp": "switchLocalIp",
+        "TableMissAction": "tableMissAction",
+        "TcpPort": "tcpPort",
+        "TimeoutOption": "timeoutOption",
+        "TimeoutOptionValue": "timeoutOptionValue",
+        "TlsVersion": "tlsVersion",
+        "TransactionID": "transactionID",
+        "TypeOfConnection": "typeOfConnection",
+        "VersionSupported": "versionSupported",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -127,10 +136,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchchannel_73fc107210c8f2c174f0a9ff032ae654 import OFSwitchChannel
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchchannel_73fc107210c8f2c174f0a9ff032ae654 import (
+            OFSwitchChannel,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OFSwitchChannel', None) is not None:
-                return self._properties.get('OFSwitchChannel')
+            if self._properties.get("OFSwitchChannel", None) is not None:
+                return self._properties.get("OFSwitchChannel")
         return OFSwitchChannel(self)
 
     @property
@@ -144,10 +156,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -161,10 +176,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchlearnedinfoconfig_e82ac94514eca4bb9bcfc04c550a7144 import OFSwitchLearnedInfoConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchlearnedinfoconfig_e82ac94514eca4bb9bcfc04c550a7144 import (
+            OFSwitchLearnedInfoConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OFSwitchLearnedInfoConfig', None) is not None:
-                return self._properties.get('OFSwitchLearnedInfoConfig')
+            if self._properties.get("OFSwitchLearnedInfoConfig", None) is not None:
+                return self._properties.get("OFSwitchLearnedInfoConfig")
         return OFSwitchLearnedInfoConfig(self)._select()
 
     @property
@@ -178,10 +196,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchports_f9b16b436eb30e1711de8e369383df29 import OfSwitchPorts
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchports_f9b16b436eb30e1711de8e369383df29 import (
+            OfSwitchPorts,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OfSwitchPorts', None) is not None:
-                return self._properties.get('OfSwitchPorts')
+            if self._properties.get("OfSwitchPorts", None) is not None:
+                return self._properties.get("OfSwitchPorts")
         return OfSwitchPorts(self)._select()
 
     @property
@@ -195,10 +216,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.packetinlist_10d8adb40e4e05f4b37904f2c6428ca9 import PacketInList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.packetinlist_10d8adb40e4e05f4b37904f2c6428ca9 import (
+            PacketInList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PacketInList', None) is not None:
-                return self._properties.get('PacketInList')
+            if self._properties.get("PacketInList", None) is not None:
+                return self._properties.get("PacketInList")
         return PacketInList(self)
 
     @property
@@ -212,10 +236,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchgroupslist_8730e37b1ef4012ce871082b246f9630 import SwitchGroupsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchgroupslist_8730e37b1ef4012ce871082b246f9630 import (
+            SwitchGroupsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchGroupsList', None) is not None:
-                return self._properties.get('SwitchGroupsList')
+            if self._properties.get("SwitchGroupsList", None) is not None:
+                return self._properties.get("SwitchGroupsList")
         return SwitchGroupsList(self)
 
     @property
@@ -229,10 +256,13 @@ class OpenFlowSwitch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchtableslist_73e39ebca0d77977f214e593d8a686a4 import SwitchTablesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchtableslist_73e39ebca0d77977f214e593d8a686a4 import (
+            SwitchTablesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchTablesList', None) is not None:
-                return self._properties.get('SwitchTablesList')
+            if self._properties.get("SwitchTablesList", None) is not None:
+                return self._properties.get("SwitchTablesList")
         return SwitchTablesList(self)
 
     @property
@@ -244,7 +274,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AuxConnTimeout(self):
@@ -255,7 +286,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The inactive time in milliseconds after which the auxiliary connection will timeout and close.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxConnTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuxConnTimeout"])
+        )
 
     @property
     def AuxNonHelloStartupOption(self):
@@ -266,7 +300,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the action from the following options for non-hello message when connection is established. The options are: 1) Accept Connection 2) Return Error
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxNonHelloStartupOption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuxNonHelloStartupOption"])
+        )
 
     @property
     def BadVersionErrorAction(self):
@@ -277,7 +314,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the action to be performed when an invalid version error occurs. The options are: 1) Re-send Hello 2) Terminate Connection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BadVersionErrorAction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BadVersionErrorAction"])
+        )
 
     @property
     def BandTypes(self):
@@ -288,7 +328,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select meter band types from the list
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandTypes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BandTypes"]))
 
     @property
     def BarrierReplyDelayType(self):
@@ -299,7 +340,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the Barrier Reply Delay Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BarrierReplyDelayType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BarrierReplyDelayType"])
+        )
 
     @property
     def BarrierReplyMaxDelay(self):
@@ -310,7 +354,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Barrier Reply Max Delay in milli seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BarrierReplyMaxDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BarrierReplyMaxDelay"])
+        )
 
     @property
     def Capabilities(self):
@@ -321,21 +368,23 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Capabilities
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Capabilities']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Capabilities"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def ControllerFlowTxRate(self):
@@ -346,7 +395,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, statistics is published showing the rate at which Flows are transmitted per second, by the Controller
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControllerFlowTxRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControllerFlowTxRate"])
+        )
 
     @property
     def Count(self):
@@ -356,7 +408,7 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DatapathDesc(self):
@@ -367,7 +419,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the Data Path used.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DatapathDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DatapathDesc"]))
 
     @property
     def DatapathId(self):
@@ -378,7 +431,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID of the OF Channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DatapathId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DatapathId"]))
 
     @property
     def DatapathIdHex(self):
@@ -389,7 +443,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID in Hex of the OF Channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DatapathIdHex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DatapathIdHex"]))
 
     @property
     def DescriptiveName(self):
@@ -399,7 +454,7 @@ class OpenFlowSwitch(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DirectoryName(self):
@@ -410,7 +465,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory in Client where the Certificate and Key Files are available
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DirectoryName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DirectoryName"]))
 
     @property
     def EchoInterval(self):
@@ -421,7 +477,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The periodic interval in seconds at which the Interface sends Echo Request Packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoInterval"]))
 
     @property
     def EchoTimeOut(self):
@@ -432,7 +489,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the echo request times out when they have been sent for a specified number of times, or when the time value specified has lapsed, but no response is received
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoTimeOut']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoTimeOut"]))
 
     @property
     def EnableHelloElement(self):
@@ -443,7 +501,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Element
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloElement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloElement"])
+        )
 
     @property
     def Errors(self):
@@ -452,7 +513,7 @@ class OpenFlowSwitch(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FileCaCertificate(self):
@@ -463,7 +524,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Browse and upload a CA Certificate file for TLS session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FileCaCertificate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FileCaCertificate"])
+        )
 
     @property
     def FileCertificate(self):
@@ -474,7 +538,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Browse and upload the certificate file for TLS session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FileCertificate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FileCertificate"])
+        )
 
     @property
     def FilePrivKey(self):
@@ -485,7 +552,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Browse and upload the private key file for TLS session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FilePrivKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FilePrivKey"]))
 
     @property
     def FlowRemovedMask(self):
@@ -496,7 +564,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the flow removed message types that will not be received when the controller has the Master role
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowRemovedMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlowRemovedMask"])
+        )
 
     @property
     def FlowRemovedMaskSlave(self):
@@ -507,7 +578,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the flow removed message types that will not be received when the controller has the Slave role
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowRemovedMaskSlave']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlowRemovedMaskSlave"])
+        )
 
     @property
     def GroupCapabilities(self):
@@ -518,7 +592,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group configuration flags: Weight:Support weight for select groups. Liveness:Support liveness for select groups. Chaining:Support chaining groups. Check Loops:Check chaining for loops and delete.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupCapabilities']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupCapabilities"])
+        )
 
     @property
     def GroupType(self):
@@ -529,7 +606,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Can be of the following types per switch: 1)All: Execute all buckets in the group. 2)Select:Execute one bucket in the group. 3)Indirect:Execute the one defined bucket in this group. 4)Fast Failover:Execute the first live bucket.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupType"]))
 
     @property
     def HardwareDesc(self):
@@ -540,7 +618,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the hardware used.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HardwareDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HardwareDesc"]))
 
     @property
     def InterPacketInBurstGap(self):
@@ -551,7 +630,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the duration (in milliseconds) for which the switch waits between successive packet-in bursts.The default value is 1,000 milliseconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterPacketInBurstGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterPacketInBurstGap"])
+        )
 
     @property
     def ManufacturerDesc(self):
@@ -562,7 +644,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the manufacturer. The default value is Ixia.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManufacturerDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ManufacturerDesc"])
+        )
 
     @property
     def MaxBandPerMeter(self):
@@ -573,7 +658,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of bands per meter
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxBandPerMeter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxBandPerMeter"])
+        )
 
     @property
     def MaxColorValue(self):
@@ -584,7 +672,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Color Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxColorValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxColorValue"]))
 
     @property
     def MaxNumberOfBucketsPerGroups(self):
@@ -595,7 +684,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): To specify the maximum number of group buckets each group can have.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfBucketsPerGroups']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfBucketsPerGroups"])
+        )
 
     @property
     def MaxPacketInBytes(self):
@@ -606,7 +698,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum length of the Packet-in messages in bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxPacketInBytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxPacketInBytes"])
+        )
 
     @property
     def MeterCapabilities(self):
@@ -617,7 +712,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select meter capabilities from the list
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeterCapabilities']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeterCapabilities"])
+        )
 
     @property
     def Multiplier(self):
@@ -627,11 +725,12 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -641,11 +740,12 @@ class OpenFlowSwitch(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumMeter(self):
@@ -656,7 +756,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of Openflow meters configured for the switch
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumMeter']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NumMeter"]))
 
     @property
     def NumberOfBuffers(self):
@@ -667,7 +768,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the maximum number of packets the switch can buffer when sending packets to the controller using packet-in messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfBuffers']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfBuffers"])
+        )
 
     @property
     def NumberOfChannels(self):
@@ -677,11 +781,12 @@ class OpenFlowSwitch(Base):
         -------
         - number: Total number of OpenFlow channels to be added for this protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfChannels'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfChannels"])
+
     @NumberOfChannels.setter
     def NumberOfChannels(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfChannels'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfChannels"], value)
 
     @property
     def NumberOfHostPorts(self):
@@ -691,7 +796,7 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of Host Ports per Switch
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfHostPorts"])
 
     @property
     def NumberOfPacketIn(self):
@@ -701,11 +806,12 @@ class OpenFlowSwitch(Base):
         -------
         - number: Specify the number of packet-in ranges supported by the switch.The maximum allowed value is 10 ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPacketIn'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPacketIn"])
+
     @NumberOfPacketIn.setter
     def NumberOfPacketIn(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfPacketIn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfPacketIn"], value)
 
     @property
     def NumberOfPorts(self):
@@ -715,7 +821,7 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of Ports per Switch
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPorts"])
 
     @property
     def NumberOfTableRanges(self):
@@ -725,11 +831,12 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of Tables per Switch
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTableRanges'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfTableRanges"])
+
     @NumberOfTableRanges.setter
     def NumberOfTableRanges(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfTableRanges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfTableRanges"], value)
 
     @property
     def NumberOfTopologyPorts(self):
@@ -739,7 +846,7 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of Topology Ports per Switch
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTopologyPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfTopologyPorts"])
 
     @property
     def NumberOfUnconnectedPorts(self):
@@ -749,11 +856,12 @@ class OpenFlowSwitch(Base):
         -------
         - number: Number of Unconnected Ports per Switch
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfUnconnectedPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfUnconnectedPorts"])
+
     @NumberOfUnconnectedPorts.setter
     def NumberOfUnconnectedPorts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfUnconnectedPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfUnconnectedPorts"], value)
 
     @property
     def PacketInMaskMaster(self):
@@ -764,7 +872,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Packet In Mask Master
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInMaskMaster']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketInMaskMaster"])
+        )
 
     @property
     def PacketInMaskSlave(self):
@@ -775,7 +886,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Packet In Mask Slave
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInMaskSlave']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketInMaskSlave"])
+        )
 
     @property
     def PacketInReplyDelay(self):
@@ -786,7 +900,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, delay between packet-in and the corresponding packet-out or flow mod is published.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInReplyDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketInReplyDelay"])
+        )
 
     @property
     def PacketInReplyTimeout(self):
@@ -797,7 +914,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The amount of time, in seconds, that the switch keeps the packet-in message in buffer, if it does not receive any corresponding packet-out or flow mod.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInReplyTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketInReplyTimeout"])
+        )
 
     @property
     def PacketInTxBurst(self):
@@ -808,7 +928,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the number of packet-in transmitting packets that can be sent in a single burst within the time frame specified by the Inter PacketIn Burst Gap value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInTxBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketInTxBurst"])
+        )
 
     @property
     def PacketOutRxRate(self):
@@ -819,7 +942,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, packet_out rx rate and packet_in tx rate is calculated for the switch.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketOutRxRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketOutRxRate"])
+        )
 
     @property
     def PeriodicEcho(self):
@@ -830,7 +956,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Interface sends echo requests periodically to keep the OpenFlow session connected.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeriodicEcho']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeriodicEcho"]))
 
     @property
     def PortStatusMaskMaster(self):
@@ -841,7 +968,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Port Status Mask Master
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortStatusMaskMaster']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortStatusMaskMaster"])
+        )
 
     @property
     def PortStatusMaskSlave(self):
@@ -852,7 +982,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Port Status Mask Slave
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortStatusMaskSlave']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortStatusMaskSlave"])
+        )
 
     @property
     def SerialNumber(self):
@@ -863,7 +996,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The serial number used.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SerialNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SerialNumber"]))
 
     @property
     def SessionStatus(self):
@@ -873,7 +1007,7 @@ class OpenFlowSwitch(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SoftwareDesc(self):
@@ -884,7 +1018,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the software used.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SoftwareDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SoftwareDesc"]))
 
     @property
     def StackedLayers(self):
@@ -894,11 +1029,12 @@ class OpenFlowSwitch(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -907,7 +1043,7 @@ class OpenFlowSwitch(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -917,7 +1053,7 @@ class OpenFlowSwitch(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def StoreFlows(self):
@@ -928,7 +1064,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the flow information sent by the Controller are learned by the Switch.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StoreFlows']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StoreFlows"]))
 
     @property
     def SwitchDesc(self):
@@ -939,7 +1076,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A description of the Switch
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SwitchDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SwitchDesc"]))
 
     @property
     def SwitchLocalIp(self):
@@ -949,7 +1087,7 @@ class OpenFlowSwitch(Base):
         -------
         - list(str): The local IP address of the interface. This field is auto-populated and cannot be changed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchLocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchLocalIp"])
 
     @property
     def TableMissAction(self):
@@ -960,7 +1098,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify what the Switch should do when there is no match for the packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableMissAction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TableMissAction"])
+        )
 
     @property
     def TcpPort(self):
@@ -971,7 +1112,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the TCP port for this interface
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TcpPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TcpPort"]))
 
     @property
     def TimeoutOption(self):
@@ -982,7 +1124,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The types of timeout options supported. Choose one of the following: 1) Multiplier 2) Timeout Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutOption']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeoutOption"]))
 
     @property
     def TimeoutOptionValue(self):
@@ -993,7 +1136,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The value specified for the selected Timeout option.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutOptionValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TimeoutOptionValue"])
+        )
 
     @property
     def TlsVersion(self):
@@ -1004,7 +1150,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TLS version selection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlsVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TlsVersion"]))
 
     @property
     def TransactionID(self):
@@ -1015,7 +1162,8 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, PacketIn Delay Calculation will be done by matching transaction ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransactionID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TransactionID"]))
 
     @property
     def TypeOfConnection(self):
@@ -1026,7 +1174,10 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of connection used for the Interface. Options include: 1) TCP 2) TLS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TypeOfConnection"])
+        )
 
     @property
     def VersionSupported(self):
@@ -1037,9 +1188,22 @@ class OpenFlowSwitch(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the supported OpenFlow version number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionSupported']))
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, NumberOfPacketIn=None, NumberOfTableRanges=None, NumberOfUnconnectedPorts=None, StackedLayers=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VersionSupported"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfChannels=None,
+        NumberOfPacketIn=None,
+        NumberOfTableRanges=None,
+        NumberOfUnconnectedPorts=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, int, int, List[str]) -> OpenFlowSwitch
         """Updates openFlowSwitch resource on the server.
 
@@ -1063,7 +1227,17 @@ class OpenFlowSwitch(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, NumberOfPacketIn=None, NumberOfTableRanges=None, NumberOfUnconnectedPorts=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfChannels=None,
+        NumberOfPacketIn=None,
+        NumberOfTableRanges=None,
+        NumberOfUnconnectedPorts=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, int, int, List[str]) -> OpenFlowSwitch
         """Adds a new openFlowSwitch resource on the server and adds it to the container.
 
@@ -1098,7 +1272,27 @@ class OpenFlowSwitch(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfChannels=None, NumberOfHostPorts=None, NumberOfPacketIn=None, NumberOfPorts=None, NumberOfTableRanges=None, NumberOfTopologyPorts=None, NumberOfUnconnectedPorts=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, SwitchLocalIp=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfChannels=None,
+        NumberOfHostPorts=None,
+        NumberOfPacketIn=None,
+        NumberOfPorts=None,
+        NumberOfTableRanges=None,
+        NumberOfTopologyPorts=None,
+        NumberOfUnconnectedPorts=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        SwitchLocalIp=None,
+    ):
         """Finds and retrieves openFlowSwitch resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve openFlowSwitch resources from the server.
@@ -1181,10 +1375,12 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1203,10 +1399,14 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetOFChannelLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1225,10 +1425,14 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFChannelLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getOFChannelLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetOFSwitchFlowStatLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1247,10 +1451,14 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchFlowStatLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getOFSwitchFlowStatLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetOFSwitchGroupLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1269,10 +1477,14 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchGroupLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getOFSwitchGroupLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetOFSwitchMeterLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1291,10 +1503,14 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchMeterLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getOFSwitchMeterLearnedInfo", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1323,10 +1539,12 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1355,10 +1573,12 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1387,12 +1607,71 @@ class OpenFlowSwitch(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AuxConnTimeout=None, AuxNonHelloStartupOption=None, BadVersionErrorAction=None, BandTypes=None, BarrierReplyDelayType=None, BarrierReplyMaxDelay=None, Capabilities=None, ControllerFlowTxRate=None, DatapathDesc=None, DatapathId=None, DatapathIdHex=None, DirectoryName=None, EchoInterval=None, EchoTimeOut=None, EnableHelloElement=None, FileCaCertificate=None, FileCertificate=None, FilePrivKey=None, FlowRemovedMask=None, FlowRemovedMaskSlave=None, GroupCapabilities=None, GroupType=None, HardwareDesc=None, InterPacketInBurstGap=None, ManufacturerDesc=None, MaxBandPerMeter=None, MaxColorValue=None, MaxNumberOfBucketsPerGroups=None, MaxPacketInBytes=None, MeterCapabilities=None, NumMeter=None, NumberOfBuffers=None, PacketInMaskMaster=None, PacketInMaskSlave=None, PacketInReplyDelay=None, PacketInReplyTimeout=None, PacketInTxBurst=None, PacketOutRxRate=None, PeriodicEcho=None, PortStatusMaskMaster=None, PortStatusMaskSlave=None, SerialNumber=None, SoftwareDesc=None, StoreFlows=None, SwitchDesc=None, TableMissAction=None, TcpPort=None, TimeoutOption=None, TimeoutOptionValue=None, TlsVersion=None, TransactionID=None, TypeOfConnection=None, VersionSupported=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AuxConnTimeout=None,
+        AuxNonHelloStartupOption=None,
+        BadVersionErrorAction=None,
+        BandTypes=None,
+        BarrierReplyDelayType=None,
+        BarrierReplyMaxDelay=None,
+        Capabilities=None,
+        ControllerFlowTxRate=None,
+        DatapathDesc=None,
+        DatapathId=None,
+        DatapathIdHex=None,
+        DirectoryName=None,
+        EchoInterval=None,
+        EchoTimeOut=None,
+        EnableHelloElement=None,
+        FileCaCertificate=None,
+        FileCertificate=None,
+        FilePrivKey=None,
+        FlowRemovedMask=None,
+        FlowRemovedMaskSlave=None,
+        GroupCapabilities=None,
+        GroupType=None,
+        HardwareDesc=None,
+        InterPacketInBurstGap=None,
+        ManufacturerDesc=None,
+        MaxBandPerMeter=None,
+        MaxColorValue=None,
+        MaxNumberOfBucketsPerGroups=None,
+        MaxPacketInBytes=None,
+        MeterCapabilities=None,
+        NumMeter=None,
+        NumberOfBuffers=None,
+        PacketInMaskMaster=None,
+        PacketInMaskSlave=None,
+        PacketInReplyDelay=None,
+        PacketInReplyTimeout=None,
+        PacketInTxBurst=None,
+        PacketOutRxRate=None,
+        PeriodicEcho=None,
+        PortStatusMaskMaster=None,
+        PortStatusMaskSlave=None,
+        SerialNumber=None,
+        SoftwareDesc=None,
+        StoreFlows=None,
+        SwitchDesc=None,
+        TableMissAction=None,
+        TcpPort=None,
+        TimeoutOption=None,
+        TimeoutOptionValue=None,
+        TlsVersion=None,
+        TransactionID=None,
+        TypeOfConnection=None,
+        VersionSupported=None,
+    ):
         """Base class infrastructure that gets a list of openFlowSwitch device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

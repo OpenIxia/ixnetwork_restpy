@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class FlowRemovedMaskSlave(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flowRemovedMaskSlave'
+    _SDM_NAME = "flowRemovedMaskSlave"
     _SDM_ATT_MAP = {
-        'Delete': 'delete',
-        'GroupDelete': 'groupDelete',
-        'HardTimeout': 'hardTimeout',
-        'IdleTimeout': 'idleTimeout',
+        "Delete": "delete",
+        "GroupDelete": "groupDelete",
+        "HardTimeout": "hardTimeout",
+        "IdleTimeout": "idleTimeout",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FlowRemovedMaskSlave, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class FlowRemovedMaskSlave(Base):
         -------
         - bool: This indicates that flow entry is evicted by a delete Flow Mod message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Delete'])
+        return self._get_attribute(self._SDM_ATT_MAP["Delete"])
+
     @Delete.setter
     def Delete(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Delete'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Delete"], value)
 
     @property
     def GroupDelete(self):
@@ -67,11 +68,12 @@ class FlowRemovedMaskSlave(Base):
         -------
         - bool: This indicates that the group is removed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDelete'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDelete"])
+
     @GroupDelete.setter
     def GroupDelete(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDelete'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDelete"], value)
 
     @property
     def HardTimeout(self):
@@ -81,11 +83,12 @@ class FlowRemovedMaskSlave(Base):
         -------
         - bool: This indicates that Flow idle time exceeded hard timeout.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HardTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["HardTimeout"])
+
     @HardTimeout.setter
     def HardTimeout(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HardTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HardTimeout"], value)
 
     @property
     def IdleTimeout(self):
@@ -95,11 +98,12 @@ class FlowRemovedMaskSlave(Base):
         -------
         - bool: This indicates that Flow idle time exceeded idle timeout.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IdleTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["IdleTimeout"])
+
     @IdleTimeout.setter
     def IdleTimeout(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IdleTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IdleTimeout"], value)
 
     def update(self, Delete=None, GroupDelete=None, HardTimeout=None, IdleTimeout=None):
         # type: (bool, bool, bool, bool) -> FlowRemovedMaskSlave

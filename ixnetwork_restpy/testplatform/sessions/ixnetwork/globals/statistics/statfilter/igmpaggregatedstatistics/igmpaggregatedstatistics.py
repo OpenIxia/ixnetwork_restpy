@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class IgmpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpAggregatedStatistics'
+    _SDM_NAME = "igmpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'GeneralQueriesRx': 'generalQueriesRx',
-        'GrpSpecificQueriesRx': 'grpSpecificQueriesRx',
-        'HostInvalidPacketsRx': 'hostInvalidPacketsRx',
-        'HostTotalFramesRx': 'hostTotalFramesRx',
-        'HostTotalFramesTx': 'hostTotalFramesTx',
-        'Hostv1MembershipRptsRx': 'hostv1MembershipRptsRx',
-        'Hostv2MembershipRptsRx': 'hostv2MembershipRptsRx',
-        'PortName': 'portName',
-        'V1MembershipRptsTx': 'v1MembershipRptsTx',
-        'V2LeaveTx': 'v2LeaveTx',
-        'V2MembershipRptsTx': 'v2MembershipRptsTx',
-        'V3GrpAndSrcSpecificQueriesRx': 'v3GrpAndSrcSpecificQueriesRx',
-        'V3MembershipRptsTx': 'v3MembershipRptsTx',
+        "GeneralQueriesRx": "generalQueriesRx",
+        "GrpSpecificQueriesRx": "grpSpecificQueriesRx",
+        "HostInvalidPacketsRx": "hostInvalidPacketsRx",
+        "HostTotalFramesRx": "hostTotalFramesRx",
+        "HostTotalFramesTx": "hostTotalFramesTx",
+        "Hostv1MembershipRptsRx": "hostv1MembershipRptsRx",
+        "Hostv2MembershipRptsRx": "hostv2MembershipRptsRx",
+        "PortName": "portName",
+        "V1MembershipRptsTx": "v1MembershipRptsTx",
+        "V2LeaveTx": "v2LeaveTx",
+        "V2MembershipRptsTx": "v2MembershipRptsTx",
+        "V3GrpAndSrcSpecificQueriesRx": "v3GrpAndSrcSpecificQueriesRx",
+        "V3MembershipRptsTx": "v3MembershipRptsTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpAggregatedStatistics, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: General Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueriesRx"])
+
     @GeneralQueriesRx.setter
     def GeneralQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueriesRx"], value)
 
     @property
     def GrpSpecificQueriesRx(self):
@@ -76,11 +77,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Grp. Specific Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrpSpecificQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrpSpecificQueriesRx"])
+
     @GrpSpecificQueriesRx.setter
     def GrpSpecificQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrpSpecificQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrpSpecificQueriesRx"], value)
 
     @property
     def HostInvalidPacketsRx(self):
@@ -90,11 +92,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Host Invalid Packets Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostInvalidPacketsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostInvalidPacketsRx"])
+
     @HostInvalidPacketsRx.setter
     def HostInvalidPacketsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostInvalidPacketsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostInvalidPacketsRx"], value)
 
     @property
     def HostTotalFramesRx(self):
@@ -104,11 +107,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Host Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostTotalFramesRx"])
+
     @HostTotalFramesRx.setter
     def HostTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostTotalFramesRx"], value)
 
     @property
     def HostTotalFramesTx(self):
@@ -118,11 +122,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Host Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostTotalFramesTx"])
+
     @HostTotalFramesTx.setter
     def HostTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostTotalFramesTx"], value)
 
     @property
     def Hostv1MembershipRptsRx(self):
@@ -132,11 +137,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Host v1 Membership Rpts. Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hostv1MembershipRptsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hostv1MembershipRptsRx"])
+
     @Hostv1MembershipRptsRx.setter
     def Hostv1MembershipRptsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Hostv1MembershipRptsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Hostv1MembershipRptsRx"], value)
 
     @property
     def Hostv2MembershipRptsRx(self):
@@ -146,11 +152,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Host v2 Membership Rpts. Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hostv2MembershipRptsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hostv2MembershipRptsRx"])
+
     @Hostv2MembershipRptsRx.setter
     def Hostv2MembershipRptsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Hostv2MembershipRptsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Hostv2MembershipRptsRx"], value)
 
     @property
     def PortName(self):
@@ -160,11 +167,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def V1MembershipRptsTx(self):
@@ -174,11 +182,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: v1 Membership Rpts. Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V1MembershipRptsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V1MembershipRptsTx"])
+
     @V1MembershipRptsTx.setter
     def V1MembershipRptsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V1MembershipRptsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V1MembershipRptsTx"], value)
 
     @property
     def V2LeaveTx(self):
@@ -188,11 +197,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: v2 Leave Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V2LeaveTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V2LeaveTx"])
+
     @V2LeaveTx.setter
     def V2LeaveTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V2LeaveTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V2LeaveTx"], value)
 
     @property
     def V2MembershipRptsTx(self):
@@ -202,11 +212,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: v2 Membership Rpts. Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V2MembershipRptsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V2MembershipRptsTx"])
+
     @V2MembershipRptsTx.setter
     def V2MembershipRptsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V2MembershipRptsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V2MembershipRptsTx"], value)
 
     @property
     def V3GrpAndSrcSpecificQueriesRx(self):
@@ -216,11 +227,12 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: v3 Grp. & Src. Specific Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V3GrpAndSrcSpecificQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V3GrpAndSrcSpecificQueriesRx"])
+
     @V3GrpAndSrcSpecificQueriesRx.setter
     def V3GrpAndSrcSpecificQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V3GrpAndSrcSpecificQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V3GrpAndSrcSpecificQueriesRx"], value)
 
     @property
     def V3MembershipRptsTx(self):
@@ -230,13 +242,29 @@ class IgmpAggregatedStatistics(Base):
         -------
         - bool: v3 Membership Rpts. Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V3MembershipRptsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V3MembershipRptsTx"])
+
     @V3MembershipRptsTx.setter
     def V3MembershipRptsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V3MembershipRptsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V3MembershipRptsTx"], value)
 
-    def update(self, GeneralQueriesRx=None, GrpSpecificQueriesRx=None, HostInvalidPacketsRx=None, HostTotalFramesRx=None, HostTotalFramesTx=None, Hostv1MembershipRptsRx=None, Hostv2MembershipRptsRx=None, PortName=None, V1MembershipRptsTx=None, V2LeaveTx=None, V2MembershipRptsTx=None, V3GrpAndSrcSpecificQueriesRx=None, V3MembershipRptsTx=None):
+    def update(
+        self,
+        GeneralQueriesRx=None,
+        GrpSpecificQueriesRx=None,
+        HostInvalidPacketsRx=None,
+        HostTotalFramesRx=None,
+        HostTotalFramesTx=None,
+        Hostv1MembershipRptsRx=None,
+        Hostv2MembershipRptsRx=None,
+        PortName=None,
+        V1MembershipRptsTx=None,
+        V2LeaveTx=None,
+        V2MembershipRptsTx=None,
+        V3GrpAndSrcSpecificQueriesRx=None,
+        V3MembershipRptsTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IgmpAggregatedStatistics
         """Updates igmpAggregatedStatistics resource on the server.
 
@@ -262,7 +290,22 @@ class IgmpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, GeneralQueriesRx=None, GrpSpecificQueriesRx=None, HostInvalidPacketsRx=None, HostTotalFramesRx=None, HostTotalFramesTx=None, Hostv1MembershipRptsRx=None, Hostv2MembershipRptsRx=None, PortName=None, V1MembershipRptsTx=None, V2LeaveTx=None, V2MembershipRptsTx=None, V3GrpAndSrcSpecificQueriesRx=None, V3MembershipRptsTx=None):
+    def find(
+        self,
+        GeneralQueriesRx=None,
+        GrpSpecificQueriesRx=None,
+        HostInvalidPacketsRx=None,
+        HostTotalFramesRx=None,
+        HostTotalFramesTx=None,
+        Hostv1MembershipRptsRx=None,
+        Hostv2MembershipRptsRx=None,
+        PortName=None,
+        V1MembershipRptsTx=None,
+        V2LeaveTx=None,
+        V2MembershipRptsTx=None,
+        V3GrpAndSrcSpecificQueriesRx=None,
+        V3MembershipRptsTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IgmpAggregatedStatistics
         """Finds and retrieves igmpAggregatedStatistics resources from the server.
 

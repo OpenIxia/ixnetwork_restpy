@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,26 +34,25 @@ class RsvpIngressRroSubObjectsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpIngressRroSubObjectsList'
+    _SDM_NAME = "rsvpIngressRroSubObjectsList"
     _SDM_ATT_MAP = {
-        'BandwidthProtection': 'bandwidthProtection',
-        'CType': 'cType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GlobalLabel': 'globalLabel',
-        'Ip': 'ip',
-        'Label': 'label',
-        'LocalIp': 'localIp',
-        'Name': 'name',
-        'NodeProtection': 'nodeProtection',
-        'P2mpIdAsIp': 'p2mpIdAsIp',
-        'P2mpIdAsNum': 'p2mpIdAsNum',
-        'ProtectionAvailable': 'protectionAvailable',
-        'ProtectionInUse': 'protectionInUse',
-        'Type': 'type',
+        "BandwidthProtection": "bandwidthProtection",
+        "CType": "cType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "GlobalLabel": "globalLabel",
+        "Ip": "ip",
+        "Label": "label",
+        "LocalIp": "localIp",
+        "Name": "name",
+        "NodeProtection": "nodeProtection",
+        "P2mpIdAsIp": "p2mpIdAsIp",
+        "P2mpIdAsNum": "p2mpIdAsNum",
+        "ProtectionAvailable": "protectionAvailable",
+        "ProtectionInUse": "protectionInUse",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpIngressRroSubObjectsList, self).__init__(parent, list_op)
@@ -66,7 +66,10 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth Protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthProtection"])
+        )
 
     @property
     def CType(self):
@@ -77,7 +80,8 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CType"]))
 
     @property
     def Count(self):
@@ -87,7 +91,7 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -97,7 +101,7 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GlobalLabel(self):
@@ -108,7 +112,8 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Global Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GlobalLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GlobalLabel"]))
 
     @property
     def Ip(self):
@@ -119,7 +124,8 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ip']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ip"]))
 
     @property
     def Label(self):
@@ -130,7 +136,8 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Label']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Label"]))
 
     @property
     def LocalIp(self):
@@ -140,7 +147,7 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def Name(self):
@@ -150,11 +157,12 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NodeProtection(self):
@@ -165,7 +173,10 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Node Protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NodeProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NodeProtection"])
+        )
 
     @property
     def P2mpIdAsIp(self):
@@ -175,7 +186,7 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - list(str): P2MP ID As IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpIdAsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpIdAsIp"])
 
     @property
     def P2mpIdAsNum(self):
@@ -185,7 +196,7 @@ class RsvpIngressRroSubObjectsList(Base):
         -------
         - list(str): P2MP ID displayed in Integer format
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpIdAsNum'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpIdAsNum"])
 
     @property
     def ProtectionAvailable(self):
@@ -196,7 +207,10 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Protection Available
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionAvailable']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtectionAvailable"])
+        )
 
     @property
     def ProtectionInUse(self):
@@ -207,7 +221,10 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Protection In Use
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionInUse']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtectionInUse"])
+        )
 
     @property
     def Type(self):
@@ -218,7 +235,8 @@ class RsvpIngressRroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type: IP or Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     def update(self, Name=None):
         # type: (str) -> RsvpIngressRroSubObjectsList
@@ -239,7 +257,7 @@ class RsvpIngressRroSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> RsvpIngressRroSubObjectsList
-        """Adds a new rsvpIngressRroSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new rsvpIngressRroSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -255,7 +273,15 @@ class RsvpIngressRroSubObjectsList(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None, P2mpIdAsIp=None, P2mpIdAsNum=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalIp=None,
+        Name=None,
+        P2mpIdAsIp=None,
+        P2mpIdAsNum=None,
+    ):
         # type: (int, str, List[str], str, List[str], List[str]) -> RsvpIngressRroSubObjectsList
         """Finds and retrieves rsvpIngressRroSubObjectsList resources from the server.
 
@@ -300,7 +326,19 @@ class RsvpIngressRroSubObjectsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BandwidthProtection=None, CType=None, GlobalLabel=None, Ip=None, Label=None, NodeProtection=None, ProtectionAvailable=None, ProtectionInUse=None, Type=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BandwidthProtection=None,
+        CType=None,
+        GlobalLabel=None,
+        Ip=None,
+        Label=None,
+        NodeProtection=None,
+        ProtectionAvailable=None,
+        ProtectionInUse=None,
+        Type=None,
+    ):
         """Base class infrastructure that gets a list of rsvpIngressRroSubObjectsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

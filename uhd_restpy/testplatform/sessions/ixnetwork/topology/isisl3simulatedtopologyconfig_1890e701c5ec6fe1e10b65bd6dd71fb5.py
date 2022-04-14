@@ -200,7 +200,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     def add(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
         # type: (int, int, str) -> IsisL3SimulatedTopologyConfig
-        """Adds a new isisL3SimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisL3SimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----

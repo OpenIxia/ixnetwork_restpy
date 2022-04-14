@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,48 +33,47 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3PseudoSRv6AdjSIDList'
+    _SDM_NAME = "ospfv3PseudoSRv6AdjSIDList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActiveTo': 'activeTo',
-        'Algorithm': 'algorithm',
-        'AlgorithmTo': 'algorithmTo',
-        'ArgumentLength': 'argumentLength',
-        'ArgumentLengthTo': 'argumentLengthTo',
-        'BFlag': 'bFlag',
-        'BFlagTo': 'bFlagTo',
-        'Count': 'count',
-        'CustomEndPointFunction': 'customEndPointFunction',
-        'CustomEndPointFunctionTo': 'customEndPointFunctionTo',
-        'DescriptiveName': 'descriptiveName',
-        'EndPointFunction': 'endPointFunction',
-        'EndPointFunctionTo': 'endPointFunctionTo',
-        'FunctionLength': 'functionLength',
-        'FunctionLengthTo': 'functionLengthTo',
-        'IncludeSRv6SIDStructureSubTlv': 'includeSRv6SIDStructureSubTlv',
-        'IncludeSRv6SIDStructureSubTlvTo': 'includeSRv6SIDStructureSubTlvTo',
-        'Ipv6AdjSid': 'ipv6AdjSid',
-        'Ipv6AdjSidTo': 'ipv6AdjSidTo',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorBlockLengthTo': 'locatorBlockLengthTo',
-        'LocatorNodeLength': 'locatorNodeLength',
-        'LocatorNodeLengthTo': 'locatorNodeLengthTo',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'PFlagTo': 'pFlagTo',
-        'Reserved1': 'reserved1',
-        'Reserved1To': 'reserved1To',
-        'Reserved2': 'reserved2',
-        'Reserved2To': 'reserved2To',
-        'ReservedFlag': 'reservedFlag',
-        'ReservedFlagTo': 'reservedFlagTo',
-        'SFlag': 'sFlag',
-        'SFlagTo': 'sFlagTo',
-        'Weight': 'weight',
-        'WeightTo': 'weightTo',
+        "Active": "active",
+        "ActiveTo": "activeTo",
+        "Algorithm": "algorithm",
+        "AlgorithmTo": "algorithmTo",
+        "ArgumentLength": "argumentLength",
+        "ArgumentLengthTo": "argumentLengthTo",
+        "BFlag": "bFlag",
+        "BFlagTo": "bFlagTo",
+        "Count": "count",
+        "CustomEndPointFunction": "customEndPointFunction",
+        "CustomEndPointFunctionTo": "customEndPointFunctionTo",
+        "DescriptiveName": "descriptiveName",
+        "EndPointFunction": "endPointFunction",
+        "EndPointFunctionTo": "endPointFunctionTo",
+        "FunctionLength": "functionLength",
+        "FunctionLengthTo": "functionLengthTo",
+        "IncludeSRv6SIDStructureSubTlv": "includeSRv6SIDStructureSubTlv",
+        "IncludeSRv6SIDStructureSubTlvTo": "includeSRv6SIDStructureSubTlvTo",
+        "Ipv6AdjSid": "ipv6AdjSid",
+        "Ipv6AdjSidTo": "ipv6AdjSidTo",
+        "LocatorBlockLength": "locatorBlockLength",
+        "LocatorBlockLengthTo": "locatorBlockLengthTo",
+        "LocatorNodeLength": "locatorNodeLength",
+        "LocatorNodeLengthTo": "locatorNodeLengthTo",
+        "Name": "name",
+        "PFlag": "pFlag",
+        "PFlagTo": "pFlagTo",
+        "Reserved1": "reserved1",
+        "Reserved1To": "reserved1To",
+        "Reserved2": "reserved2",
+        "Reserved2To": "reserved2To",
+        "ReservedFlag": "reservedFlag",
+        "ReservedFlagTo": "reservedFlagTo",
+        "SFlag": "sFlag",
+        "SFlagTo": "sFlagTo",
+        "Weight": "weight",
+        "WeightTo": "weightTo",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv3PseudoSRv6AdjSIDList, self).__init__(parent, list_op)
@@ -87,7 +87,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActiveTo(self):
@@ -98,7 +99,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveTo"]))
 
     @property
     def Algorithm(self):
@@ -109,7 +111,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm associated with Segment Identifier(SID).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def AlgorithmTo(self):
@@ -120,7 +123,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm associated with Segment Identifier(SID).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlgorithmTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AlgorithmTo"]))
 
     @property
     def ArgumentLength(self):
@@ -131,7 +135,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLength"])
+        )
 
     @property
     def ArgumentLengthTo(self):
@@ -142,7 +149,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLengthTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLengthTo"])
+        )
 
     @property
     def BFlag(self):
@@ -153,7 +163,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B Flag: Backup Flag: If set, the Adjacency Segment Identifier(SID) refers to an adjacency that is eligible for protection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def BFlagTo(self):
@@ -164,7 +175,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B Flag: Backup Flag: If set, the Adjacency Segment Identifier(SID) refers to an adjacency that is eligible for protection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlagTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlagTo"]))
 
     @property
     def Count(self):
@@ -174,7 +186,7 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomEndPointFunction(self):
@@ -185,7 +197,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Function.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEndPointFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEndPointFunction"])
+        )
 
     @property
     def CustomEndPointFunctionTo(self):
@@ -196,7 +211,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Function.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEndPointFunctionTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEndPointFunctionTo"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -206,7 +224,7 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EndPointFunction(self):
@@ -217,7 +235,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The End Point Function associated with SRv6 adjacency Segment Identifier(SID).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunction"])
+        )
 
     @property
     def EndPointFunctionTo(self):
@@ -228,7 +249,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The End Point Function associated with SRv6 adjacency Segment Identifier(SID).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunctionTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunctionTo"])
+        )
 
     @property
     def FunctionLength(self):
@@ -239,7 +263,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLength"])
+        )
 
     @property
     def FunctionLengthTo(self):
@@ -250,7 +277,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLengthTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLengthTo"])
+        )
 
     @property
     def IncludeSRv6SIDStructureSubTlv(self):
@@ -261,7 +291,11 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Includes SRv6 SID Structure Sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSRv6SIDStructureSubTlv']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncludeSRv6SIDStructureSubTlv"]),
+        )
 
     @property
     def IncludeSRv6SIDStructureSubTlvTo(self):
@@ -272,7 +306,11 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Includes SRv6 SID Structure Sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSRv6SIDStructureSubTlvTo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncludeSRv6SIDStructureSubTlvTo"]),
+        )
 
     @property
     def Ipv6AdjSid(self):
@@ -283,7 +321,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AdjSid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AdjSid"]))
 
     @property
     def Ipv6AdjSidTo(self):
@@ -294,7 +333,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AdjSidTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AdjSidTo"]))
 
     @property
     def LocatorBlockLength(self):
@@ -305,7 +345,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLength"])
+        )
 
     @property
     def LocatorBlockLengthTo(self):
@@ -316,7 +359,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLengthTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLengthTo"])
+        )
 
     @property
     def LocatorNodeLength(self):
@@ -327,7 +373,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLength"])
+        )
 
     @property
     def LocatorNodeLengthTo(self):
@@ -338,7 +387,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLengthTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLengthTo"])
+        )
 
     @property
     def Name(self):
@@ -348,11 +400,12 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PFlag(self):
@@ -363,7 +416,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag:Persistent Flag: If set, the Segment Identifier(SID) is persistently allocated. The Segment Identifier(SID) value remains consistent across router restart and session/interface flap.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def PFlagTo(self):
@@ -374,7 +428,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag:Persistent Flag: If set, the Segment Identifier(SID) is persistently allocated. The Segment Identifier(SID) value remains consistent across router restart and session/interface flap.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlagTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlagTo"]))
 
     @property
     def Reserved1(self):
@@ -385,7 +440,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved1 Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved1"]))
 
     @property
     def Reserved1To(self):
@@ -396,7 +452,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved1 Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved1To']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved1To"]))
 
     @property
     def Reserved2(self):
@@ -407,7 +464,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved2 Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved2"]))
 
     @property
     def Reserved2To(self):
@@ -418,7 +476,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved2 Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved2To']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved2To"]))
 
     @property
     def ReservedFlag(self):
@@ -429,7 +488,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved bits value in Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReservedFlag"]))
 
     @property
     def ReservedFlagTo(self):
@@ -440,7 +500,10 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved bits value in Flag Field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedFlagTo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedFlagTo"])
+        )
 
     @property
     def SFlag(self):
@@ -451,7 +514,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S Flag: Set Flag. If Set, the Segment Identifier(SID) refers to a set of adjacencies.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlag"]))
 
     @property
     def SFlagTo(self):
@@ -462,7 +526,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S Flag: Set Flag. If Set, the Segment Identifier(SID) refers to a set of adjacencies.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlagTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlagTo"]))
 
     @property
     def Weight(self):
@@ -473,7 +538,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the weight of the adjacency Segment Identifier(SID) for the purpose of load balancing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     @property
     def WeightTo(self):
@@ -484,7 +550,8 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the weight of the adjacency Segment Identifier(SID) for the purpose of load balancing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WeightTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WeightTo"]))
 
     def update(self, Name=None):
         # type: (str) -> Ospfv3PseudoSRv6AdjSIDList
@@ -560,10 +627,12 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -580,10 +649,12 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -600,12 +671,51 @@ class Ospfv3PseudoSRv6AdjSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ActiveTo=None, Algorithm=None, AlgorithmTo=None, ArgumentLength=None, ArgumentLengthTo=None, BFlag=None, BFlagTo=None, CustomEndPointFunction=None, CustomEndPointFunctionTo=None, EndPointFunction=None, EndPointFunctionTo=None, FunctionLength=None, FunctionLengthTo=None, IncludeSRv6SIDStructureSubTlv=None, IncludeSRv6SIDStructureSubTlvTo=None, Ipv6AdjSid=None, Ipv6AdjSidTo=None, LocatorBlockLength=None, LocatorBlockLengthTo=None, LocatorNodeLength=None, LocatorNodeLengthTo=None, PFlag=None, PFlagTo=None, Reserved1=None, Reserved1To=None, Reserved2=None, Reserved2To=None, ReservedFlag=None, ReservedFlagTo=None, SFlag=None, SFlagTo=None, Weight=None, WeightTo=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ActiveTo=None,
+        Algorithm=None,
+        AlgorithmTo=None,
+        ArgumentLength=None,
+        ArgumentLengthTo=None,
+        BFlag=None,
+        BFlagTo=None,
+        CustomEndPointFunction=None,
+        CustomEndPointFunctionTo=None,
+        EndPointFunction=None,
+        EndPointFunctionTo=None,
+        FunctionLength=None,
+        FunctionLengthTo=None,
+        IncludeSRv6SIDStructureSubTlv=None,
+        IncludeSRv6SIDStructureSubTlvTo=None,
+        Ipv6AdjSid=None,
+        Ipv6AdjSidTo=None,
+        LocatorBlockLength=None,
+        LocatorBlockLengthTo=None,
+        LocatorNodeLength=None,
+        LocatorNodeLengthTo=None,
+        PFlag=None,
+        PFlagTo=None,
+        Reserved1=None,
+        Reserved1To=None,
+        Reserved2=None,
+        Reserved2To=None,
+        ReservedFlag=None,
+        ReservedFlagTo=None,
+        SFlag=None,
+        SFlagTo=None,
+        Weight=None,
+        WeightTo=None,
+    ):
         """Base class infrastructure that gets a list of ospfv3PseudoSRv6AdjSIDList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

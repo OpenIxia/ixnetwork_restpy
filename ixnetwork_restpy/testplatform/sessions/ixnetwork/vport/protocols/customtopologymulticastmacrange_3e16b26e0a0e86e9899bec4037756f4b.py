@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class CustomTopologyMulticastMacRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologyMulticastMacRange'
+    _SDM_NAME = "customTopologyMulticastMacRange"
     _SDM_ATT_MAP = {
-        'IncludeMacGroup': 'includeMacGroup',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
-        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
-        'MulticastMacCount': 'multicastMacCount',
-        'MulticastMacStep': 'multicastMacStep',
-        'NumberOfUnicastSourceMacsPerMulticast': 'numberOfUnicastSourceMacsPerMulticast',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastMac': 'startMulticastMac',
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
-        'VlanId': 'vlanId',
+        "IncludeMacGroup": "includeMacGroup",
+        "IntraGroupUnicastMacIncrement": "intraGroupUnicastMacIncrement",
+        "MulticastAddressNodeStep": "multicastAddressNodeStep",
+        "MulticastMacCount": "multicastMacCount",
+        "MulticastMacStep": "multicastMacStep",
+        "NumberOfUnicastSourceMacsPerMulticast": "numberOfUnicastSourceMacsPerMulticast",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastMac": "startMulticastMac",
+        "StartUnicastSourceMac": "startUnicastSourceMac",
+        "UnicastAddressNodeStep": "unicastAddressNodeStep",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fully-Meshed', 'one-To-One', 'manual-Mapping'],
+        "sourceGroupMapping": ["fully-Meshed", "one-To-One", "manual-Mapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeMacGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeMacGroup"])
+
     @IncludeMacGroup.setter
     def IncludeMacGroup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeMacGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeMacGroup"], value)
 
     @property
     def IntraGroupUnicastMacIncrement(self):
@@ -77,11 +79,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"])
+
     @IntraGroupUnicastMacIncrement.setter
     def IntraGroupUnicastMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"], value)
 
     @property
     def MulticastAddressNodeStep(self):
@@ -91,11 +94,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"])
+
     @MulticastAddressNodeStep.setter
     def MulticastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"], value)
 
     @property
     def MulticastMacCount(self):
@@ -105,11 +109,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacCount"])
+
     @MulticastMacCount.setter
     def MulticastMacCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacCount"], value)
 
     @property
     def MulticastMacStep(self):
@@ -119,11 +124,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacStep"])
+
     @MulticastMacStep.setter
     def MulticastMacStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacStep"], value)
 
     @property
     def NumberOfUnicastSourceMacsPerMulticast(self):
@@ -133,11 +139,16 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfUnicastSourceMacsPerMulticast'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfUnicastSourceMacsPerMulticast"]
+        )
+
     @NumberOfUnicastSourceMacsPerMulticast.setter
     def NumberOfUnicastSourceMacsPerMulticast(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfUnicastSourceMacsPerMulticast'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfUnicastSourceMacsPerMulticast"], value
+        )
 
     @property
     def SourceGroupMapping(self):
@@ -147,11 +158,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str(fully-Meshed | one-To-One | manual-Mapping): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastMac(self):
@@ -161,11 +173,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastMac"])
+
     @StartMulticastMac.setter
     def StartMulticastMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastMac"], value)
 
     @property
     def StartUnicastSourceMac(self):
@@ -175,11 +188,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"])
+
     @StartUnicastSourceMac.setter
     def StartUnicastSourceMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"], value)
 
     @property
     def UnicastAddressNodeStep(self):
@@ -189,11 +203,12 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"])
+
     @UnicastAddressNodeStep.setter
     def UnicastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"], value)
 
     @property
     def VlanId(self):
@@ -203,13 +218,27 @@ class CustomTopologyMulticastMacRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def update(
+        self,
+        IncludeMacGroup=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NumberOfUnicastSourceMacsPerMulticast=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastMacRange
         """Updates customTopologyMulticastMacRange resource on the server.
 
@@ -233,7 +262,20 @@ class CustomTopologyMulticastMacRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def add(
+        self,
+        IncludeMacGroup=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NumberOfUnicastSourceMacsPerMulticast=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastMacRange
         """Adds a new customTopologyMulticastMacRange resource on the server and adds it to the container.
 
@@ -271,7 +313,20 @@ class CustomTopologyMulticastMacRange(Base):
         """
         self._delete()
 
-    def find(self, IncludeMacGroup=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NumberOfUnicastSourceMacsPerMulticast=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def find(
+        self,
+        IncludeMacGroup=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NumberOfUnicastSourceMacsPerMulticast=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastMacRange
         """Finds and retrieves customTopologyMulticastMacRange resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,24 +35,23 @@ class SpbTopologyRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbTopologyRange'
+    _SDM_NAME = "spbTopologyRange"
     _SDM_ATT_MAP = {
-        'AuxMcidConfigName': 'auxMcidConfigName',
-        'AuxMcidSignature': 'auxMcidSignature',
-        'BridgePriority': 'bridgePriority',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootIdentiifer': 'cistRootIdentiifer',
-        'EnableVbit': 'enableVbit',
-        'Enabled': 'enabled',
-        'LinkMetric': 'linkMetric',
-        'McidConfigName': 'mcidConfigName',
-        'McidSignature': 'mcidSignature',
-        'NoOfPorts': 'noOfPorts',
-        'PortIdentifier': 'portIdentifier',
-        'SpSourceId': 'spSourceId',
+        "AuxMcidConfigName": "auxMcidConfigName",
+        "AuxMcidSignature": "auxMcidSignature",
+        "BridgePriority": "bridgePriority",
+        "CistExternalRootCost": "cistExternalRootCost",
+        "CistRootIdentiifer": "cistRootIdentiifer",
+        "EnableVbit": "enableVbit",
+        "Enabled": "enabled",
+        "LinkMetric": "linkMetric",
+        "McidConfigName": "mcidConfigName",
+        "McidSignature": "mcidSignature",
+        "NoOfPorts": "noOfPorts",
+        "PortIdentifier": "portIdentifier",
+        "SpSourceId": "spSourceId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbTopologyRange, self).__init__(parent, list_op)
@@ -67,10 +67,13 @@ class SpbTopologyRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_1c9fe669457e475f948c1f67d34ad28c import SpbBaseVidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_1c9fe669457e475f948c1f67d34ad28c import (
+            SpbBaseVidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbBaseVidRange', None) is not None:
-                return self._properties.get('SpbBaseVidRange')
+            if self._properties.get("SpbBaseVidRange", None) is not None:
+                return self._properties.get("SpbBaseVidRange")
         return SpbBaseVidRange(self)
 
     @property
@@ -81,11 +84,12 @@ class SpbTopologyRange(Base):
         -------
         - str: The auxiliary MCID configuration name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxMcidConfigName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxMcidConfigName"])
+
     @AuxMcidConfigName.setter
     def AuxMcidConfigName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxMcidConfigName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxMcidConfigName"], value)
 
     @property
     def AuxMcidSignature(self):
@@ -95,11 +99,12 @@ class SpbTopologyRange(Base):
         -------
         - str: The auxiliary MCID signature.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxMcidSignature'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxMcidSignature"])
+
     @AuxMcidSignature.setter
     def AuxMcidSignature(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxMcidSignature'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxMcidSignature"], value)
 
     @property
     def BridgePriority(self):
@@ -109,11 +114,12 @@ class SpbTopologyRange(Base):
         -------
         - number: The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgePriority"])
+
     @BridgePriority.setter
     def BridgePriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgePriority"], value)
 
     @property
     def CistExternalRootCost(self):
@@ -123,11 +129,12 @@ class SpbTopologyRange(Base):
         -------
         - number: The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistExternalRootCost"])
+
     @CistExternalRootCost.setter
     def CistExternalRootCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistExternalRootCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistExternalRootCost"], value)
 
     @property
     def CistRootIdentiifer(self):
@@ -137,11 +144,12 @@ class SpbTopologyRange(Base):
         -------
         - str: Bridge identifier of the CIST root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRootIdentiifer'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRootIdentiifer"])
+
     @CistRootIdentiifer.setter
     def CistRootIdentiifer(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRootIdentiifer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRootIdentiifer"], value)
 
     @property
     def EnableVbit(self):
@@ -151,11 +159,12 @@ class SpbTopologyRange(Base):
         -------
         - bool: If true, activates the V bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVbit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVbit"])
+
     @EnableVbit.setter
     def EnableVbit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVbit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVbit"], value)
 
     @property
     def Enabled(self):
@@ -165,11 +174,12 @@ class SpbTopologyRange(Base):
         -------
         - bool: If true, the topology range will be part of the simulated network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LinkMetric(self):
@@ -179,11 +189,12 @@ class SpbTopologyRange(Base):
         -------
         - number: The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
+
     @LinkMetric.setter
     def LinkMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMetric"], value)
 
     @property
     def McidConfigName(self):
@@ -193,11 +204,12 @@ class SpbTopologyRange(Base):
         -------
         - str: The MCID configuration name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['McidConfigName'])
+        return self._get_attribute(self._SDM_ATT_MAP["McidConfigName"])
+
     @McidConfigName.setter
     def McidConfigName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['McidConfigName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["McidConfigName"], value)
 
     @property
     def McidSignature(self):
@@ -207,11 +219,12 @@ class SpbTopologyRange(Base):
         -------
         - str: The MCID signature.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['McidSignature'])
+        return self._get_attribute(self._SDM_ATT_MAP["McidSignature"])
+
     @McidSignature.setter
     def McidSignature(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['McidSignature'], value)
+        self._set_attribute(self._SDM_ATT_MAP["McidSignature"], value)
 
     @property
     def NoOfPorts(self):
@@ -221,11 +234,12 @@ class SpbTopologyRange(Base):
         -------
         - number: The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfPorts"])
+
     @NoOfPorts.setter
     def NoOfPorts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfPorts"], value)
 
     @property
     def PortIdentifier(self):
@@ -235,11 +249,12 @@ class SpbTopologyRange(Base):
         -------
         - number: The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdentifier"])
+
     @PortIdentifier.setter
     def PortIdentifier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdentifier"], value)
 
     @property
     def SpSourceId(self):
@@ -249,13 +264,29 @@ class SpbTopologyRange(Base):
         -------
         - number: The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpSourceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpSourceId"])
+
     @SpSourceId.setter
     def SpSourceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpSourceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpSourceId"], value)
 
-    def update(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def update(
+        self,
+        AuxMcidConfigName=None,
+        AuxMcidSignature=None,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentiifer=None,
+        EnableVbit=None,
+        Enabled=None,
+        LinkMetric=None,
+        McidConfigName=None,
+        McidSignature=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Updates spbTopologyRange resource on the server.
 
@@ -281,7 +312,22 @@ class SpbTopologyRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def add(
+        self,
+        AuxMcidConfigName=None,
+        AuxMcidSignature=None,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentiifer=None,
+        EnableVbit=None,
+        Enabled=None,
+        LinkMetric=None,
+        McidConfigName=None,
+        McidSignature=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Adds a new spbTopologyRange resource on the server and adds it to the container.
 
@@ -321,7 +367,22 @@ class SpbTopologyRange(Base):
         """
         self._delete()
 
-    def find(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def find(
+        self,
+        AuxMcidConfigName=None,
+        AuxMcidSignature=None,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentiifer=None,
+        EnableVbit=None,
+        Enabled=None,
+        LinkMetric=None,
+        McidConfigName=None,
+        McidSignature=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Finds and retrieves spbTopologyRange resources from the server.
 

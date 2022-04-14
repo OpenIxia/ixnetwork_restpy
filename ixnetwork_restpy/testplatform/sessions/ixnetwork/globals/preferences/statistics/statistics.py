@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,23 @@ class Statistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statistics'
+    _SDM_NAME = "statistics"
     _SDM_ATT_MAP = {
-        'ForceLegacyPortNameInStats': 'forceLegacyPortNameInStats',
-        'PersistenceMode': 'persistenceMode',
-        'SnapshotCSVMode': 'snapshotCSVMode',
-        'SnapshotCSVPath': 'snapshotCSVPath',
+        "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
+        "PersistenceMode": "persistenceMode",
+        "SnapshotCSVMode": "snapshotCSVMode",
+        "SnapshotCSVPath": "snapshotCSVPath",
     }
     _SDM_ENUM_MAP = {
-        'persistenceMode': ['mixed', 'none', 'persistInBothLocations', 'persistInConfiguration', 'persistInUserSettings', 'preferencesNotSet'],
-        'snapshotCSVMode': ['appendCSVFile', 'newCSVFile', 'overwriteCSVFile'],
+        "persistenceMode": [
+            "mixed",
+            "none",
+            "persistInBothLocations",
+            "persistInConfiguration",
+            "persistInUserSettings",
+            "preferencesNotSet",
+        ],
+        "snapshotCSVMode": ["appendCSVFile", "newCSVFile", "overwriteCSVFile"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +63,12 @@ class Statistics(Base):
         -------
         - bool: When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"])
+
     @ForceLegacyPortNameInStats.setter
     def ForceLegacyPortNameInStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"], value)
 
     @property
     def PersistenceMode(self):
@@ -69,11 +78,12 @@ class Statistics(Base):
         -------
         - str(mixed | none | persistInBothLocations | persistInConfiguration | persistInUserSettings | preferencesNotSet): Set the Persistence Mode: whether to store the data in user location or configuration or both/none
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PersistenceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PersistenceMode"])
+
     @PersistenceMode.setter
     def PersistenceMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PersistenceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PersistenceMode"], value)
 
     @property
     def SnapshotCSVMode(self):
@@ -83,11 +93,12 @@ class Statistics(Base):
         -------
         - str(appendCSVFile | newCSVFile | overwriteCSVFile): Set the CSV Generation Mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SnapshotCSVMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SnapshotCSVMode"])
+
     @SnapshotCSVMode.setter
     def SnapshotCSVMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SnapshotCSVMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SnapshotCSVMode"], value)
 
     @property
     def SnapshotCSVPath(self):
@@ -97,13 +108,20 @@ class Statistics(Base):
         -------
         - str: Set the Snapshot CSV Path
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SnapshotCSVPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["SnapshotCSVPath"])
+
     @SnapshotCSVPath.setter
     def SnapshotCSVPath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SnapshotCSVPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SnapshotCSVPath"], value)
 
-    def update(self, ForceLegacyPortNameInStats=None, PersistenceMode=None, SnapshotCSVMode=None, SnapshotCSVPath=None):
+    def update(
+        self,
+        ForceLegacyPortNameInStats=None,
+        PersistenceMode=None,
+        SnapshotCSVMode=None,
+        SnapshotCSVPath=None,
+    ):
         # type: (bool, str, str, str) -> Statistics
         """Updates statistics resource on the server.
 
@@ -120,7 +138,13 @@ class Statistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ForceLegacyPortNameInStats=None, PersistenceMode=None, SnapshotCSVMode=None, SnapshotCSVPath=None):
+    def find(
+        self,
+        ForceLegacyPortNameInStats=None,
+        PersistenceMode=None,
+        SnapshotCSVMode=None,
+        SnapshotCSVPath=None,
+    ):
         # type: (bool, str, str, str) -> Statistics
         """Finds and retrieves statistics resources from the server.
 

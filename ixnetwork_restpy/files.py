@@ -18,7 +18,7 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import os
 
 
@@ -41,8 +41,8 @@ class Files(object):
     Parameters
     ----------
         file_path: (str)
-            The name of the file. 
-            The name can be fully qualified or not. 
+            The name of the file.
+            The name can be fully qualified or not.
             The file does not have to exist
         local_file : (bool default[True])
             If True then the file will be uploaded to the server to the default file storage location.

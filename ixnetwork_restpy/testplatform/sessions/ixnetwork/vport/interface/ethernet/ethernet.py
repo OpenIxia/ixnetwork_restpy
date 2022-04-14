@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class Ethernet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernet'
+    _SDM_NAME = "ethernet"
     _SDM_ATT_MAP = {
-        'MacAddress': 'macAddress',
-        'Mtu': 'mtu',
-        'UidFromMac': 'uidFromMac',
+        "MacAddress": "macAddress",
+        "Mtu": "mtu",
+        "UidFromMac": "uidFromMac",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ethernet, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class Ethernet(Base):
         -------
         - str: A 48-bit hardware address that uniquely identifies each node of a network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
+
     @MacAddress.setter
     def MacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacAddress"], value)
 
     @property
     def Mtu(self):
@@ -66,11 +67,12 @@ class Ethernet(Base):
         -------
         - number: The maximum packet size, in bytes, that a particular interface can handle.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def UidFromMac(self):
@@ -80,11 +82,12 @@ class Ethernet(Base):
         -------
         - bool: The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UidFromMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["UidFromMac"])
+
     @UidFromMac.setter
     def UidFromMac(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UidFromMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UidFromMac"], value)
 
     def update(self, MacAddress=None, Mtu=None, UidFromMac=None):
         # type: (str, int, bool) -> Ethernet

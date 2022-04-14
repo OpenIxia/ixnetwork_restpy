@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class L3HqosConfigList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l3HqosConfigList'
+    _SDM_NAME = "l3HqosConfigList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'L3HqosActionDesc': 'l3HqosActionDesc',
-        'L3HqosActionName': 'l3HqosActionName',
-        'L3HqosProfileName': 'l3HqosProfileName',
-        'L3HqosRuleActionPairName': 'l3HqosRuleActionPairName',
-        'L3HqosRuleName': 'l3HqosRuleName',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "L3HqosActionDesc": "l3HqosActionDesc",
+        "L3HqosActionName": "l3HqosActionName",
+        "L3HqosProfileName": "l3HqosProfileName",
+        "L3HqosRuleActionPairName": "l3HqosRuleActionPairName",
+        "L3HqosRuleName": "l3HqosRuleName",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L3HqosConfigList, self).__init__(parent, list_op)
@@ -59,7 +59,8 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -69,7 +70,7 @@ class L3HqosConfigList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -79,7 +80,7 @@ class L3HqosConfigList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def L3HqosActionDesc(self):
@@ -90,7 +91,10 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: pir <pir-value> [ pbs <pbs-value> | cir <cir-value> | cbs <cbs-value> | weight <weight-value> ] * Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L3HqosActionDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L3HqosActionDesc"])
+        )
 
     @property
     def L3HqosActionName(self):
@@ -101,7 +105,10 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L3 HQoS Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L3HqosActionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L3HqosActionName"])
+        )
 
     @property
     def L3HqosProfileName(self):
@@ -112,7 +119,10 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L3 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L3HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L3HqosProfileName"])
+        )
 
     @property
     def L3HqosRuleActionPairName(self):
@@ -123,7 +133,10 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L3 HQoS Rule Action Pair Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L3HqosRuleActionPairName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L3HqosRuleActionPairName"])
+        )
 
     @property
     def L3HqosRuleName(self):
@@ -134,7 +147,10 @@ class L3HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L3 HQoS Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L3HqosRuleName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L3HqosRuleName"])
+        )
 
     @property
     def Name(self):
@@ -144,11 +160,12 @@ class L3HqosConfigList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> L3HqosConfigList
@@ -209,7 +226,16 @@ class L3HqosConfigList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, L3HqosActionDesc=None, L3HqosActionName=None, L3HqosProfileName=None, L3HqosRuleActionPairName=None, L3HqosRuleName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        L3HqosActionDesc=None,
+        L3HqosActionName=None,
+        L3HqosProfileName=None,
+        L3HqosRuleActionPairName=None,
+        L3HqosRuleName=None,
+    ):
         """Base class infrastructure that gets a list of l3HqosConfigList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

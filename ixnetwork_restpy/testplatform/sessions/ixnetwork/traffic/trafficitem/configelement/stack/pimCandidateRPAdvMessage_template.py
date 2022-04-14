@@ -4,27 +4,27 @@ from ixnetwork_restpy.files import Files
 
 class PimCandidateRPAdvMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'pimCandidateRPAdvMessage'
+    _SDM_NAME = "pimCandidateRPAdvMessage"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'pimCandidateRPAdvMessage.header.version-1',
-        'HeaderType': 'pimCandidateRPAdvMessage.header.type-2',
-        'HeaderReserved': 'pimCandidateRPAdvMessage.header.reserved-3',
-        'HeaderChecksum': 'pimCandidateRPAdvMessage.header.checksum-4',
-        'HeaderPrefixCnt': 'pimCandidateRPAdvMessage.header.prefixCnt-5',
-        'HeaderPriority': 'pimCandidateRPAdvMessage.header.priority-6',
-        'HeaderHoldTime': 'pimCandidateRPAdvMessage.header.holdTime-7',
-        'EncodedUnicastRPAddressAddrFamily': 'pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.addrFamily-8',
-        'EncodedUnicastRPAddressEncodingType': 'pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.encodingType-9',
-        'UnicastAddrAddrIPv4': 'pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.unicastAddr.addrIPv4-10',
-        'UnicastAddrAddrIPv6': 'pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.unicastAddr.addrIPv6-11',
-        'EncodedGroupAddressAddrFamily': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.addrFamily-12',
-        'EncodedGroupAddressEncodingType': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.encodingType-13',
-        'EncodedGroupAddressB': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.b-14',
-        'EncodedGroupAddressReserved': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.reserved-15',
-        'EncodedGroupAddressZ': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.z-16',
-        'EncodedGroupAddressMaskLength': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.maskLength-17',
-        'GroupMulticastAddrGrpMcastAddrIPv4': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv4-18',
-        'GroupMulticastAddrGrpMcastAddrIPv6': 'pimCandidateRPAdvMessage.header.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv6-19',
+        "HeaderVersion": "pimCandidateRPAdvMessage.header.version-1",
+        "HeaderType": "pimCandidateRPAdvMessage.header.type-2",
+        "HeaderReserved": "pimCandidateRPAdvMessage.header.reserved-3",
+        "HeaderChecksum": "pimCandidateRPAdvMessage.header.checksum-4",
+        "HeaderPrefixCnt": "pimCandidateRPAdvMessage.header.prefixCnt-5",
+        "HeaderPriority": "pimCandidateRPAdvMessage.header.priority-6",
+        "HeaderHoldTime": "pimCandidateRPAdvMessage.header.holdTime-7",
+        "EncodedUnicastRPAddressAddrFamily": "pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.addrFamily-8",
+        "EncodedUnicastRPAddressEncodingType": "pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.encodingType-9",
+        "UnicastAddrAddrIPv4": "pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.unicastAddr.addrIPv4-10",
+        "UnicastAddrAddrIPv6": "pimCandidateRPAdvMessage.header.encodedUnicastRPAddress.unicastAddr.addrIPv6-11",
+        "EncodedGroupAddressAddrFamily": "pimCandidateRPAdvMessage.header.encodedGroupAddress.addrFamily-12",
+        "EncodedGroupAddressEncodingType": "pimCandidateRPAdvMessage.header.encodedGroupAddress.encodingType-13",
+        "EncodedGroupAddressB": "pimCandidateRPAdvMessage.header.encodedGroupAddress.b-14",
+        "EncodedGroupAddressReserved": "pimCandidateRPAdvMessage.header.encodedGroupAddress.reserved-15",
+        "EncodedGroupAddressZ": "pimCandidateRPAdvMessage.header.encodedGroupAddress.z-16",
+        "EncodedGroupAddressMaskLength": "pimCandidateRPAdvMessage.header.encodedGroupAddress.maskLength-17",
+        "GroupMulticastAddrGrpMcastAddrIPv4": "pimCandidateRPAdvMessage.header.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv4-18",
+        "GroupMulticastAddrGrpMcastAddrIPv6": "pimCandidateRPAdvMessage.header.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv6-19",
     }
 
     def __init__(self, parent, list_op=False):
@@ -38,7 +38,8 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderType(self):
@@ -48,7 +49,8 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderReserved(self):
@@ -58,7 +60,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderChecksum(self):
@@ -68,7 +73,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderChecksum"])
+        )
 
     @property
     def HeaderPrefixCnt(self):
@@ -78,7 +86,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPrefixCnt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPrefixCnt"])
+        )
 
     @property
     def HeaderPriority(self):
@@ -88,7 +99,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPriority"])
+        )
 
     @property
     def HeaderHoldTime(self):
@@ -98,7 +112,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHoldTime"])
+        )
 
     @property
     def EncodedUnicastRPAddressAddrFamily(self):
@@ -109,7 +126,11 @@ class PimCandidateRPAdvMessage(Base):
         Available enum values: IP, 1, IPv6, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressAddrFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedUnicastRPAddressAddrFamily"]),
+        )
 
     @property
     def EncodedUnicastRPAddressEncodingType(self):
@@ -119,7 +140,13 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressEncodingType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastRPAddressEncodingType"]
+            ),
+        )
 
     @property
     def UnicastAddrAddrIPv4(self):
@@ -129,7 +156,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastAddrAddrIPv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnicastAddrAddrIPv4"])
+        )
 
     @property
     def UnicastAddrAddrIPv6(self):
@@ -139,7 +169,10 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastAddrAddrIPv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnicastAddrAddrIPv6"])
+        )
 
     @property
     def EncodedGroupAddressAddrFamily(self):
@@ -150,7 +183,11 @@ class PimCandidateRPAdvMessage(Base):
         Available enum values: IP, 1, IPv6, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressAddrFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressAddrFamily"]),
+        )
 
     @property
     def EncodedGroupAddressEncodingType(self):
@@ -160,47 +197,64 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressEncodingType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressEncodingType"]),
+        )
 
     @property
     def EncodedGroupAddressB(self):
         """
-        Display Name: B 
+        Display Name: B
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressB"])
+        )
 
     @property
     def EncodedGroupAddressReserved(self):
         """
-        Display Name: Reserved 
+        Display Name: Reserved
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressReserved"])
+        )
 
     @property
     def EncodedGroupAddressZ(self):
         """
-        Display Name: Z 
+        Display Name: Z
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressZ']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressZ"])
+        )
 
     @property
     def EncodedGroupAddressMaskLength(self):
         """
-        Display Name: Mask Length 
+        Display Name: Mask Length
         Default Value: 32
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressMaskLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressMaskLength"]),
+        )
 
     @property
     def GroupMulticastAddrGrpMcastAddrIPv4(self):
@@ -210,7 +264,13 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupMulticastAddrGrpMcastAddrIPv4']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["GroupMulticastAddrGrpMcastAddrIPv4"]
+            ),
+        )
 
     @property
     def GroupMulticastAddrGrpMcastAddrIPv6(self):
@@ -220,7 +280,13 @@ class PimCandidateRPAdvMessage(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupMulticastAddrGrpMcastAddrIPv6']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["GroupMulticastAddrGrpMcastAddrIPv6"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

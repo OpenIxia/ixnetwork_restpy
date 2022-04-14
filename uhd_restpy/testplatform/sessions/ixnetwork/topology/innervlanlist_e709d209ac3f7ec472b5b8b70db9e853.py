@@ -134,7 +134,7 @@ class InnerVlanList(Base):
 
     def add(self, Name=None):
         # type: (str) -> InnerVlanList
-        """Adds a new innerVlanList resource on the json, only valid with config assistant
+        """Adds a new innerVlanList resource on the json, only valid with batch add utility
 
         Args
         ----

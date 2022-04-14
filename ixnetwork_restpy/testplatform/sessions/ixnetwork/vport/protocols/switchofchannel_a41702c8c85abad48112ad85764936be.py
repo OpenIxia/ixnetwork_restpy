@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class SwitchOfChannel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchOfChannel'
+    _SDM_NAME = "switchOfChannel"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'Enabled': 'enabled',
-        'RemoteIp': 'remoteIp',
+        "Description": "description",
+        "Enabled": "enabled",
+        "RemoteIp": "remoteIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchOfChannel, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class SwitchOfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_11b6533324088391328dd0b4470f73c4 import AuxiliaryConnection
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_11b6533324088391328dd0b4470f73c4 import (
+            AuxiliaryConnection,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AuxiliaryConnection', None) is not None:
-                return self._properties.get('AuxiliaryConnection')
+            if self._properties.get("AuxiliaryConnection", None) is not None:
+                return self._properties.get("AuxiliaryConnection")
         return AuxiliaryConnection(self)
 
     @property
@@ -71,11 +74,12 @@ class SwitchOfChannel(Base):
         -------
         - str: A description of the object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Enabled(self):
@@ -85,11 +89,12 @@ class SwitchOfChannel(Base):
         -------
         - bool: If true, the object is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RemoteIp(self):
@@ -99,11 +104,12 @@ class SwitchOfChannel(Base):
         -------
         - str: Signifies the Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
+
     @RemoteIp.setter
     def RemoteIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteIp"], value)
 
     def update(self, Description=None, Enabled=None, RemoteIp=None):
         # type: (str, bool, str) -> SwitchOfChannel

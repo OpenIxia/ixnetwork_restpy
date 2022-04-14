@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,24 @@ class L2tpOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2tpOptions'
+    _SDM_NAME = "l2tpOptions"
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
-        'RaTimeout': 'raTimeout',
-        'Role': 'role',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
-        'WaitForCompletionTimeout': 'waitForCompletionTimeout',
+        "Associates": "associates",
+        "EnablePerSessionStatGeneration": "enablePerSessionStatGeneration",
+        "Ipv6GlobalAddressMode": "ipv6GlobalAddressMode",
+        "MaxOutstandingReleases": "maxOutstandingReleases",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "OverrideGlobalRateControls": "overrideGlobalRateControls",
+        "PerSessionStatFilePrefix": "perSessionStatFilePrefix",
+        "RaTimeout": "raTimeout",
+        "Role": "role",
+        "SetupRateInitial": "setupRateInitial",
+        "TeardownRateInitial": "teardownRateInitial",
+        "UseWaitForCompletionTimeout": "useWaitForCompletionTimeout",
+        "WaitForCompletionTimeout": "waitForCompletionTimeout",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L2tpOptions, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class L2tpOptions(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Associates'])
+        return self._get_attribute(self._SDM_ATT_MAP["Associates"])
+
     @Associates.setter
     def Associates(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Associates"], value)
 
     @property
     def EnablePerSessionStatGeneration(self):
@@ -79,11 +80,12 @@ class L2tpOptions(Base):
         -------
         - bool: OBSOLETE
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePerSessionStatGeneration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePerSessionStatGeneration"])
+
     @EnablePerSessionStatGeneration.setter
     def EnablePerSessionStatGeneration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePerSessionStatGeneration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePerSessionStatGeneration"], value)
 
     @property
     def Ipv6GlobalAddressMode(self):
@@ -93,11 +95,12 @@ class L2tpOptions(Base):
         -------
         - str: Selects protocol used to set IPv6 global interfaces on PPP/L2TP interfaces
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6GlobalAddressMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6GlobalAddressMode"])
+
     @Ipv6GlobalAddressMode.setter
     def Ipv6GlobalAddressMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6GlobalAddressMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6GlobalAddressMode"], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -107,11 +110,12 @@ class L2tpOptions(Base):
         -------
         - number: This is the point at which session teardown will be restricted. Sessions are torn down at the configured speed until there are this number of sessions in disconnecting stage, at which point additional sessions are torn down only when others get fully disconnected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"])
+
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -121,11 +125,12 @@ class L2tpOptions(Base):
         -------
         - number: Max. no. of sessions outstanding while new sessions are being setup
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -135,7 +140,7 @@ class L2tpOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRateControls(self):
@@ -145,11 +150,12 @@ class L2tpOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRateControls"])
+
     @OverrideGlobalRateControls.setter
     def OverrideGlobalRateControls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRateControls"], value)
 
     @property
     def PerSessionStatFilePrefix(self):
@@ -159,11 +165,12 @@ class L2tpOptions(Base):
         -------
         - str: OBSOLETE
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PerSessionStatFilePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["PerSessionStatFilePrefix"])
+
     @PerSessionStatFilePrefix.setter
     def PerSessionStatFilePrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PerSessionStatFilePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PerSessionStatFilePrefix"], value)
 
     @property
     def RaTimeout(self):
@@ -173,11 +180,12 @@ class L2tpOptions(Base):
         -------
         - number: Router Advertisment RX timeout period (in seconds).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RaTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["RaTimeout"])
+
     @RaTimeout.setter
     def RaTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RaTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RaTimeout"], value)
 
     @property
     def Role(self):
@@ -187,11 +195,12 @@ class L2tpOptions(Base):
         -------
         - str: Role for L2TP element, access concentrator (LAC) or network server (LNS).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Role'])
+        return self._get_attribute(self._SDM_ATT_MAP["Role"])
+
     @Role.setter
     def Role(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Role'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Role"], value)
 
     @property
     def SetupRateInitial(self):
@@ -201,11 +210,12 @@ class L2tpOptions(Base):
         -------
         - number: Rate (per sec), for session setup
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateInitial"])
+
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateInitial"], value)
 
     @property
     def TeardownRateInitial(self):
@@ -215,11 +225,12 @@ class L2tpOptions(Base):
         -------
         - number: The rate per sec for destroying sessions
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateInitial"])
+
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateInitial"], value)
 
     @property
     def UseWaitForCompletionTimeout(self):
@@ -229,11 +240,12 @@ class L2tpOptions(Base):
         -------
         - bool: Enables configuration of session setup timeout period by the user.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseWaitForCompletionTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseWaitForCompletionTimeout"])
+
     @UseWaitForCompletionTimeout.setter
     def UseWaitForCompletionTimeout(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseWaitForCompletionTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseWaitForCompletionTimeout"], value)
 
     @property
     def WaitForCompletionTimeout(self):
@@ -243,13 +255,29 @@ class L2tpOptions(Base):
         -------
         - number: Session setup timeout period.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletionTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitForCompletionTimeout"])
+
     @WaitForCompletionTimeout.setter
     def WaitForCompletionTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitForCompletionTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitForCompletionTimeout"], value)
 
-    def update(self, Associates=None, EnablePerSessionStatGeneration=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None):
+    def update(
+        self,
+        Associates=None,
+        EnablePerSessionStatGeneration=None,
+        Ipv6GlobalAddressMode=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalRateControls=None,
+        PerSessionStatFilePrefix=None,
+        RaTimeout=None,
+        Role=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        UseWaitForCompletionTimeout=None,
+        WaitForCompletionTimeout=None,
+    ):
         # type: (List[str], bool, str, int, int, bool, str, int, str, int, int, bool, int) -> L2tpOptions
         """Updates l2tpOptions resource on the server.
 
@@ -275,7 +303,22 @@ class L2tpOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Associates=None, EnablePerSessionStatGeneration=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None):
+    def add(
+        self,
+        Associates=None,
+        EnablePerSessionStatGeneration=None,
+        Ipv6GlobalAddressMode=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalRateControls=None,
+        PerSessionStatFilePrefix=None,
+        RaTimeout=None,
+        Role=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        UseWaitForCompletionTimeout=None,
+        WaitForCompletionTimeout=None,
+    ):
         # type: (List[str], bool, str, int, int, bool, str, int, str, int, int, bool, int) -> L2tpOptions
         """Adds a new l2tpOptions resource on the server and adds it to the container.
 
@@ -315,7 +358,23 @@ class L2tpOptions(Base):
         """
         self._delete()
 
-    def find(self, Associates=None, EnablePerSessionStatGeneration=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None):
+    def find(
+        self,
+        Associates=None,
+        EnablePerSessionStatGeneration=None,
+        Ipv6GlobalAddressMode=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        OverrideGlobalRateControls=None,
+        PerSessionStatFilePrefix=None,
+        RaTimeout=None,
+        Role=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        UseWaitForCompletionTimeout=None,
+        WaitForCompletionTimeout=None,
+    ):
         # type: (List[str], bool, str, int, int, str, bool, str, int, str, int, int, bool, int) -> L2tpOptions
         """Finds and retrieves l2tpOptions resources from the server.
 
@@ -385,10 +444,14 @@ class L2tpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -407,10 +470,14 @@ class L2tpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -429,7 +496,11 @@ class L2tpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

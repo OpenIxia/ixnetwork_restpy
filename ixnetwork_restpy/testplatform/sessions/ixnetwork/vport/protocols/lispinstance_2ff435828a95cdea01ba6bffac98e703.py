@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,27 @@ class LispInstance(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lispInstance'
+    _SDM_NAME = "lispInstance"
     _SDM_ATT_MAP = {
-        'Act': 'act',
-        'AllowAllEids': 'allowAllEids',
-        'AuthenticationAlgorithm': 'authenticationAlgorithm',
-        'AuthoritativeBit': 'authoritativeBit',
-        'AutoComposeNegativeMapReply': 'autoComposeNegativeMapReply',
-        'Enabled': 'enabled',
-        'EtrRegistrationTimeout': 'etrRegistrationTimeout',
-        'InstanceId': 'instanceId',
-        'InternalMsmrSelectionMode': 'internalMsmrSelectionMode',
-        'Key': 'key',
-        'MapVersionNumber': 'mapVersionNumber',
-        'Reserved': 'reserved',
-        'Rsvd': 'rsvd',
-        'Ttl': 'ttl',
+        "Act": "act",
+        "AllowAllEids": "allowAllEids",
+        "AuthenticationAlgorithm": "authenticationAlgorithm",
+        "AuthoritativeBit": "authoritativeBit",
+        "AutoComposeNegativeMapReply": "autoComposeNegativeMapReply",
+        "Enabled": "enabled",
+        "EtrRegistrationTimeout": "etrRegistrationTimeout",
+        "InstanceId": "instanceId",
+        "InternalMsmrSelectionMode": "internalMsmrSelectionMode",
+        "Key": "key",
+        "MapVersionNumber": "mapVersionNumber",
+        "Reserved": "reserved",
+        "Rsvd": "rsvd",
+        "Ttl": "ttl",
     }
     _SDM_ENUM_MAP = {
-        'act': ['noAction', 'nativelyForward', 'sendMapRequest', 'drop'],
-        'authenticationAlgorithm': ['sha-1-96', 'sha-128-256'],
-        'internalMsmrSelectionMode': ['allMsmrInSameIxiaPort', 'custom', 'none'],
+        "act": ["noAction", "nativelyForward", "sendMapRequest", "drop"],
+        "authenticationAlgorithm": ["sha-1-96", "sha-128-256"],
+        "internalMsmrSelectionMode": ["allMsmrInSameIxiaPort", "custom", "none"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +72,13 @@ class LispInstance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_6d86dfd39ed3653dbc6a71137989c5ad import ItrRemoteEidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_6d86dfd39ed3653dbc6a71137989c5ad import (
+            ItrRemoteEidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ItrRemoteEidRange', None) is not None:
-                return self._properties.get('ItrRemoteEidRange')
+            if self._properties.get("ItrRemoteEidRange", None) is not None:
+                return self._properties.get("ItrRemoteEidRange")
         return ItrRemoteEidRange(self)
 
     @property
@@ -88,10 +92,13 @@ class LispInstance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_9229aba0e3a65c664e2285d3dcb3f60f import LocalEidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_9229aba0e3a65c664e2285d3dcb3f60f import (
+            LocalEidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LocalEidRange', None) is not None:
-                return self._properties.get('LocalEidRange')
+            if self._properties.get("LocalEidRange", None) is not None:
+                return self._properties.get("LocalEidRange")
         return LocalEidRange(self)
 
     @property
@@ -105,10 +112,13 @@ class LispInstance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_b4ceea809f63888622dd6232272f2c7e import MapServerResolver
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_b4ceea809f63888622dd6232272f2c7e import (
+            MapServerResolver,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MapServerResolver', None) is not None:
-                return self._properties.get('MapServerResolver')
+            if self._properties.get("MapServerResolver", None) is not None:
+                return self._properties.get("MapServerResolver")
         return MapServerResolver(self)
 
     @property
@@ -122,10 +132,13 @@ class LispInstance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_842afae7700143f32019dfe7904f2cdd import MsAllowedEidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_842afae7700143f32019dfe7904f2cdd import (
+            MsAllowedEidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsAllowedEidRange', None) is not None:
-                return self._properties.get('MsAllowedEidRange')
+            if self._properties.get("MsAllowedEidRange", None) is not None:
+                return self._properties.get("MsAllowedEidRange")
         return MsAllowedEidRange(self)
 
     @property
@@ -136,11 +149,12 @@ class LispInstance(Base):
         -------
         - str(noAction | nativelyForward | sendMapRequest | drop): It gives details about the action
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Act'])
+        return self._get_attribute(self._SDM_ATT_MAP["Act"])
+
     @Act.setter
     def Act(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Act'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Act"], value)
 
     @property
     def AllowAllEids(self):
@@ -150,11 +164,12 @@ class LispInstance(Base):
         -------
         - bool: It allows all the eids
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowAllEids'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowAllEids"])
+
     @AllowAllEids.setter
     def AllowAllEids(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllowAllEids'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllowAllEids"], value)
 
     @property
     def AuthenticationAlgorithm(self):
@@ -164,11 +179,12 @@ class LispInstance(Base):
         -------
         - str(sha-1-96 | sha-128-256): It gives details about the authentication algorithm
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationAlgorithm"])
+
     @AuthenticationAlgorithm.setter
     def AuthenticationAlgorithm(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationAlgorithm"], value)
 
     @property
     def AuthoritativeBit(self):
@@ -178,11 +194,12 @@ class LispInstance(Base):
         -------
         - bool: If true, it enables the authoritative bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthoritativeBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthoritativeBit"])
+
     @AuthoritativeBit.setter
     def AuthoritativeBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthoritativeBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthoritativeBit"], value)
 
     @property
     def AutoComposeNegativeMapReply(self):
@@ -192,11 +209,12 @@ class LispInstance(Base):
         -------
         - bool: If true, it enables the auto compose negative map reply
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoComposeNegativeMapReply'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoComposeNegativeMapReply"])
+
     @AutoComposeNegativeMapReply.setter
     def AutoComposeNegativeMapReply(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoComposeNegativeMapReply'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoComposeNegativeMapReply"], value)
 
     @property
     def Enabled(self):
@@ -206,11 +224,12 @@ class LispInstance(Base):
         -------
         - bool: If true, it enables the protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EtrRegistrationTimeout(self):
@@ -220,11 +239,12 @@ class LispInstance(Base):
         -------
         - number: It gives the etr registration timeout
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EtrRegistrationTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["EtrRegistrationTimeout"])
+
     @EtrRegistrationTimeout.setter
     def EtrRegistrationTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EtrRegistrationTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EtrRegistrationTimeout"], value)
 
     @property
     def InstanceId(self):
@@ -234,11 +254,12 @@ class LispInstance(Base):
         -------
         - str: It gives the instance id
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstanceId"])
+
     @InstanceId.setter
     def InstanceId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstanceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstanceId"], value)
 
     @property
     def InternalMsmrSelectionMode(self):
@@ -248,11 +269,12 @@ class LispInstance(Base):
         -------
         - str(allMsmrInSameIxiaPort | custom | none): it gives the details about the internal Msmr selection mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalMsmrSelectionMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalMsmrSelectionMode"])
+
     @InternalMsmrSelectionMode.setter
     def InternalMsmrSelectionMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalMsmrSelectionMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalMsmrSelectionMode"], value)
 
     @property
     def Key(self):
@@ -262,11 +284,12 @@ class LispInstance(Base):
         -------
         - str: It gives details about the key
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Key"])
+
     @Key.setter
     def Key(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Key'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Key"], value)
 
     @property
     def MapVersionNumber(self):
@@ -276,11 +299,12 @@ class LispInstance(Base):
         -------
         - number: It gives details about the map version number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapVersionNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapVersionNumber"])
+
     @MapVersionNumber.setter
     def MapVersionNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapVersionNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapVersionNumber"], value)
 
     @property
     def Reserved(self):
@@ -290,11 +314,12 @@ class LispInstance(Base):
         -------
         - number: It gives details about the reserved protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reserved'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reserved"])
+
     @Reserved.setter
     def Reserved(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Reserved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Reserved"], value)
 
     @property
     def Rsvd(self):
@@ -304,11 +329,12 @@ class LispInstance(Base):
         -------
         - number: It gives details about the rsvd
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rsvd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rsvd"])
+
     @Rsvd.setter
     def Rsvd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rsvd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rsvd"], value)
 
     @property
     def Ttl(self):
@@ -318,13 +344,30 @@ class LispInstance(Base):
         -------
         - number: It gives details about the ttl
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ttl'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ttl"])
+
     @Ttl.setter
     def Ttl(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ttl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ttl"], value)
 
-    def update(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
+    def update(
+        self,
+        Act=None,
+        AllowAllEids=None,
+        AuthenticationAlgorithm=None,
+        AuthoritativeBit=None,
+        AutoComposeNegativeMapReply=None,
+        Enabled=None,
+        EtrRegistrationTimeout=None,
+        InstanceId=None,
+        InternalMsmrSelectionMode=None,
+        Key=None,
+        MapVersionNumber=None,
+        Reserved=None,
+        Rsvd=None,
+        Ttl=None,
+    ):
         # type: (str, bool, str, bool, bool, bool, int, str, str, str, int, int, int, int) -> LispInstance
         """Updates lispInstance resource on the server.
 
@@ -351,7 +394,23 @@ class LispInstance(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
+    def add(
+        self,
+        Act=None,
+        AllowAllEids=None,
+        AuthenticationAlgorithm=None,
+        AuthoritativeBit=None,
+        AutoComposeNegativeMapReply=None,
+        Enabled=None,
+        EtrRegistrationTimeout=None,
+        InstanceId=None,
+        InternalMsmrSelectionMode=None,
+        Key=None,
+        MapVersionNumber=None,
+        Reserved=None,
+        Rsvd=None,
+        Ttl=None,
+    ):
         # type: (str, bool, str, bool, bool, bool, int, str, str, str, int, int, int, int) -> LispInstance
         """Adds a new lispInstance resource on the server and adds it to the container.
 
@@ -392,7 +451,23 @@ class LispInstance(Base):
         """
         self._delete()
 
-    def find(self, Act=None, AllowAllEids=None, AuthenticationAlgorithm=None, AuthoritativeBit=None, AutoComposeNegativeMapReply=None, Enabled=None, EtrRegistrationTimeout=None, InstanceId=None, InternalMsmrSelectionMode=None, Key=None, MapVersionNumber=None, Reserved=None, Rsvd=None, Ttl=None):
+    def find(
+        self,
+        Act=None,
+        AllowAllEids=None,
+        AuthenticationAlgorithm=None,
+        AuthoritativeBit=None,
+        AutoComposeNegativeMapReply=None,
+        Enabled=None,
+        EtrRegistrationTimeout=None,
+        InstanceId=None,
+        InternalMsmrSelectionMode=None,
+        Key=None,
+        MapVersionNumber=None,
+        Reserved=None,
+        Rsvd=None,
+        Ttl=None,
+    ):
         # type: (str, bool, str, bool, bool, bool, int, str, str, str, int, int, int, int) -> LispInstance
         """Finds and retrieves lispInstance resources from the server.
 

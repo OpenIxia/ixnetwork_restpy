@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class LearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedInfo'
+    _SDM_NAME = "learnedInfo"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'Columns': 'columns',
-        'State': 'state',
-        'Type': 'type',
-        'Values': 'values',
+        "Id__": "__id__",
+        "Columns": "columns",
+        "State": "state",
+        "Type": "type",
+        "Values": "values",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedInfo, self).__init__(parent, list_op)
 
     @property
     def Col(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e.Col): An instance of the Col class
@@ -58,10 +58,13 @@ class LearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import (
+            Col,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Col', None) is not None:
-                return self._properties.get('Col')
+            if self._properties.get("Col", None) is not None:
+                return self._properties.get("Col")
         return Col(self)
 
     @property
@@ -75,10 +78,13 @@ class LearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table_5866003f22dc964c958a5bc4c3040ef4 import Table
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table_5866003f22dc964c958a5bc4c3040ef4 import (
+            Table,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Table', None) is not None:
-                return self._properties.get('Table')
+            if self._properties.get("Table", None) is not None:
+                return self._properties.get("Table")
         return Table(self)
 
     @property
@@ -89,17 +95,17 @@ class LearnedInfo(Base):
         -------
         - list(str): A unique id for the learned information table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
+        return self._get_attribute(self._SDM_ATT_MAP["Id__"])
 
     @property
     def Columns(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str): The list of columns in the learned information table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Columns'])
+        return self._get_attribute(self._SDM_ATT_MAP["Columns"])
 
     @property
     def State(self):
@@ -109,29 +115,29 @@ class LearnedInfo(Base):
         -------
         - str: The state of the learned information query
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def Type(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: The type of learned information
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     @property
     def Values(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(list[str]): A list of rows of learned information values
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Values'])
+        return self._get_attribute(self._SDM_ATT_MAP["Values"])
 
     def add(self):
-        """Adds a new learnedInfo resource on the json, only valid with config assistant
+        """Adds a new learnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

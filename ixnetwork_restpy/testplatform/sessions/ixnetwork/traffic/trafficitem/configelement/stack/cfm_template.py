@@ -4,151 +4,151 @@ from ixnetwork_restpy.files import Files
 
 class Cfm(Base):
     __slots__ = ()
-    _SDM_NAME = 'cfm'
+    _SDM_NAME = "cfm"
     _SDM_ATT_MAP = {
-        'CommonHeaderMdLevel': 'cfm.cfmHeader.commonHeader.mdLevel-1',
-        'CommonHeaderVersion': 'cfm.cfmHeader.commonHeader.version-2',
-        'CommonHeaderOpCode': 'cfm.cfmHeader.commonHeader.opCode-3',
-        'CommonHeaderFlags': 'cfm.cfmHeader.commonHeader.flags-4',
-        'CommonHeaderFirstTLVOffset': 'cfm.cfmHeader.commonHeader.firstTLVOffset-5',
-        'CcmSequenceNumber': 'cfm.cfmHeader.selectPacketHeader.ccm.sequenceNumber-6',
-        'CcmMaintenanceAssociationEndPointIdentifier': 'cfm.cfmHeader.selectPacketHeader.ccm.maintenanceAssociationEndPointIdentifier-7',
-        'MaintenanceDomainPresentMaintenanceDomainNameFormat': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainNameFormat-8',
-        'MaintenanceDomainPresentMaintenanceDomainNameLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainNameLength-9',
-        'MaintenanceDomainPresentMaintenanceDomainName': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainName-10',
-        'MaintenanceDomainPresentShortMANameFormat': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMANameFormat-11',
-        'MaintenanceDomainPresentShortMANameLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMANameLength-12',
-        'MaintenanceDomainPresentShortMAName': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMAName-13',
-        'ZeroPaddingLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.zeroPadding.length-14',
-        'ZeroPaddingValue': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.zeroPadding.value-15',
-        'MaintenanceDomainNotPresentMaintenanceDomainNameFormat': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.maintenanceDomainNameFormat-16',
-        'MaintenanceDomainNotPresentShortMANameFormat': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMANameFormat-17',
-        'MaintenanceDomainNotPresentShortMANameLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMANameLength-18',
-        'MaintenanceDomainNotPresentShortMAName': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMAName-19',
-        'MaintenancedomainnotpresentZeroPaddingLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.zeroPadding.length-20',
-        'MaintenancedomainnotpresentZeroPaddingValue': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.zeroPadding.value-21',
-        'ItutY1731': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.itutY1731-22',
-        'MegIDReserved': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.reserved-23',
-        'MegIDMegIDFormat': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDFormat-24',
-        'MegIDMegIDLength': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDLength-25',
-        'MegIDMegIDValue': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDValue-26',
-        'Y1731TxFCf': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.txFCf-27',
-        'Y1731RxFCb': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.rxFCb-28',
-        'Y1731TxFCb': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.txFCb-29',
-        'Y1731Resvd0': 'cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.resvd0-30',
-        'DmmTxTimeStampf': 'cfm.cfmHeader.selectPacketHeader.dmm.txTimeStampf-31',
-        'DmmReservedForDMMReceivingEquipment': 'cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMMReceivingEquipment-32',
-        'DmmReservedForDMR': 'cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMR-33',
-        'DmmReservedForDMRReceivingEquipment': 'cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMRReceivingEquipment-34',
-        'DmrTxTimeStampf': 'cfm.cfmHeader.selectPacketHeader.dmr.txTimeStampf-35',
-        'DmrRxTimeStampf': 'cfm.cfmHeader.selectPacketHeader.dmr.rxTimeStampf-36',
-        'DmrTxTimeStampb': 'cfm.cfmHeader.selectPacketHeader.dmr.txTimeStampb-37',
-        'DmrReservedForDMRReceivingEquipment': 'cfm.cfmHeader.selectPacketHeader.dmr.reservedForDMRReceivingEquipment-38',
-        'LtmTransactionId': 'cfm.cfmHeader.selectPacketHeader.ltm.transactionId-39',
-        'LtmTtl': 'cfm.cfmHeader.selectPacketHeader.ltm.ttl-40',
-        'LtmOriginalMACAddress': 'cfm.cfmHeader.selectPacketHeader.ltm.originalMACAddress-41',
-        'LtmTargetMACAddress': 'cfm.cfmHeader.selectPacketHeader.ltm.targetMACAddress-42',
-        'LtrTransactionID': 'cfm.cfmHeader.selectPacketHeader.ltr.transactionID-43',
-        'LtrReplyTTL': 'cfm.cfmHeader.selectPacketHeader.ltr.replyTTL-44',
-        'LtrRelayAction': 'cfm.cfmHeader.selectPacketHeader.ltr.relayAction-45',
-        'LbmTransactionIDSeqNumber': 'cfm.cfmHeader.selectPacketHeader.lbm.transactionIDSeqNumber-46',
-        'LbrTransactionIDSeqNumber': 'cfm.cfmHeader.selectPacketHeader.lbr.transactionIDSeqNumber-47',
-        'LmrTxFCf': 'cfm.cfmHeader.selectPacketHeader.lmr.txFCf-48',
-        'LmrRxFCf': 'cfm.cfmHeader.selectPacketHeader.lmr.rxFCf-49',
-        'LmrTxFCb': 'cfm.cfmHeader.selectPacketHeader.lmr.txFCb-50',
-        'LmmTxFCf': 'cfm.cfmHeader.selectPacketHeader.lmm.txFCf-51',
-        'LmmRes_rxFCf_lmr': 'cfm.cfmHeader.selectPacketHeader.lmm.res_rxFCf_lmr-52',
-        'LmmRes_txFCb_lmr': 'cfm.cfmHeader.selectPacketHeader.lmm.res_txFCb_lmr-53',
-        'TstSequenceNumber': 'cfm.cfmHeader.selectPacketHeader.tst.SequenceNumber-54',
-        'ApsRequest_state': 'cfm.cfmHeader.selectPacketHeader.aps.request_state-55',
-        'Prot_typeA_prot_type': 'cfm.cfmHeader.selectPacketHeader.aps.prot_type.a_prot_type-56',
-        'Prot_typeB_prot_type': 'cfm.cfmHeader.selectPacketHeader.aps.prot_type.b_prot_type-57',
-        'Prot_typeD_prot_type': 'cfm.cfmHeader.selectPacketHeader.aps.prot_type.d_prot_type-58',
-        'Prot_typeR_prot_type': 'cfm.cfmHeader.selectPacketHeader.aps.prot_type.r_prot_type-59',
-        'ApsReq_sign': 'cfm.cfmHeader.selectPacketHeader.aps.req_sign-60',
-        'ApsBri_sign': 'cfm.cfmHeader.selectPacketHeader.aps.bri_sign-61',
-        'ApsReserved': 'cfm.cfmHeader.selectPacketHeader.aps.reserved-62',
-        'GnmGnmSubOpCode': 'cfm.cfmHeader.selectPacketHeader.gnm.gnmSubOpCode-63',
-        'BnmNominalBandwidth': 'cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.nominalBandwidth-64',
-        'BnmCurrentBandwidth': 'cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.currentBandwidth-65',
-        'BnmPortId': 'cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.portId-66',
-        'EndTLVEndOfTlv': 'cfm.cfmHeader.tlvs.selectTLVType.endTLV.endOfTlv-67',
-        'SenderIDTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.type-68',
-        'SenderIDTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.length-69',
-        'ChassisIDLengthnonzeroChassisIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisIDLength-70',
-        'ChassisIDLengthnonzeroChassisIDSubtype': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisIDSubtype-71',
-        'ChassisIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisID.length-72',
-        'ChassisIDValue': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisID.value-73',
-        'ManagementAddressDomainLengthnonzeroManagementAddressDomainLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressDomainLength-74',
-        'ManagementAddressDomainLengthnonzeroManagementAddressDomain': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressDomain-75',
-        'ManagementAddressLengthnonzeroManagementAddressLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthnonzero.managementAddressLength-76',
-        'ManagementAddressLengthnonzeroManagementAddress': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthnonzero.managementAddress-77',
-        'ManagementAddressLengthzeroManagementAddressLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthzero.managementAddressLength-78',
-        'ManagementAddressDomainLengthzeroManagementAddressDomainLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthzero.managementAddressDomainLength-79',
-        'ChassisIDLengthzeroChassisIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthzero.chassisIDLength-80',
-        'PortStatusTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.type-81',
-        'PortStatusTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.length-82',
-        'PortStatusTLVStatus': 'cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.status-83',
-        'DataTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.dataTLV.type-84',
-        'DataTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.dataTLV.length-85',
-        'DataTLVData': 'cfm.cfmHeader.tlvs.selectTLVType.dataTLV.data-86',
-        'TesttlvType': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.type-87',
-        'TesttlvLength': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.length-88',
-        'TesttlvPatternType': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.patternType-89',
-        'TstPatternLength1': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.tstPattern.length1-90',
-        'TstPatternData': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.tstPattern.data-91',
-        'CrcCrc': 'cfm.cfmHeader.tlvs.selectTLVType.testtlv.crc.crc-92',
-        'InterfaceStatusTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.type-93',
-        'InterfaceStatusTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.length-94',
-        'InterfaceStatusTLVStatus': 'cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.status-95',
-        'ReplyIngressTLVwithPortIdType': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.type-96',
-        'ReplyIngressTLVwithPortIdLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.length-97',
-        'ReplyIngressTLVwithPortIdIngressAction': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressAction-98',
-        'ReplyIngressTLVwithPortIdIngressMACAddress': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressMACAddress-99',
-        'ReplyIngressTLVwithPortIdIngressPortIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortIDLength-100',
-        'ReplyIngressTLVwithPortIdIngressPortIDSubtype': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortIDSubtype-101',
-        'IngressPortIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortID.length-102',
-        'IngressPortIDIngressPortID': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortID.ingressPortID-103',
-        'ReplyIngressTLVwithoutPortIdType': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.type-104',
-        'ReplyIngressTLVwithoutPortIdLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.length-105',
-        'ReplyIngressTLVwithoutPortIdIngressAction': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.ingressAction-106',
-        'ReplyIngressTLVwithoutPortIdIngressMACAddress': 'cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.ingressMACAddress-107',
-        'ReplyEgressTLVwithPortType': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.type-108',
-        'ReplyEgressTLVwithPortLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.length-109',
-        'ReplyEgressTLVwithPortEgressAction': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressAction-110',
-        'ReplyEgressTLVwithPortEgressMACAddress': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressMACAddress-111',
-        'ReplyEgressTLVwithPortEgressPortLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortLength-112',
-        'ReplyEgressTLVwithPortEgressPortIdSubType': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortIdSubType-113',
-        'EgressPortIDLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortID.length-114',
-        'EgressPortIDEgressPortID': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortID.egressPortID-115',
-        'ReplyEgressTLVwithoutPortType': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.type-116',
-        'ReplyEgressTLVwithoutPortLength': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.length-117',
-        'ReplyEgressTLVwithoutPortEgressAction': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.egressAction-118',
-        'ReplyEgressTLVwithoutPortEgressMACAddress': 'cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.egressMACAddress-119',
-        'LtmEgressIdentifierTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.type-120',
-        'LtmEgressIdentifierTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.length-121',
-        'LtmEgressIdentifierTLVEgressIdentifier': 'cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.egressIdentifier-122',
-        'LtrEgressIdentifierTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.type-123',
-        'LtrEgressIdentifierTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.length-124',
-        'LtrEgressIdentifierTLVLastEgressIdentifier': 'cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.lastEgressIdentifier-125',
-        'LtrEgressIdentifierTLVNextEgressIdentifier': 'cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.nextEgressIdentifier-126',
-        'ReservedForIEEE8021930Type': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.type-127',
-        'ReservedForIEEE8021930Length': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.length-128',
-        'ReservedForIEEE8021930Value': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.value-129',
-        'OrganizationSpecificTLVType': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.type-130',
-        'OrganizationSpecificTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.length-131',
-        'OrganizationSpecificTLVOui': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.oui-132',
-        'OrganizationSpecificTLVSubtype': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.subtype-133',
-        'ValueOptionalLength': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.valueOptional.length-134',
-        'ValueOptionalValue': 'cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.valueOptional.value-135',
-        'DefinedByITUTY1731Type': 'cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.type-136',
-        'DefinedByITUTY1731Length': 'cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.length-137',
-        'DefinedByITUTY1731Value': 'cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.value-138',
-        'ReservedForIEEE802164255Type': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.type-139',
-        'ReservedForIEEE802164255Length': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.length-140',
-        'ReservedForIEEE802164255Value': 'cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.value-141',
-        'UserDefinedTLVLength': 'cfm.cfmHeader.tlvs.selectTLVType.userDefinedTLV.length-142',
-        'UserDefinedTLVValue': 'cfm.cfmHeader.tlvs.selectTLVType.userDefinedTLV.value-143',
+        "CommonHeaderMdLevel": "cfm.cfmHeader.commonHeader.mdLevel-1",
+        "CommonHeaderVersion": "cfm.cfmHeader.commonHeader.version-2",
+        "CommonHeaderOpCode": "cfm.cfmHeader.commonHeader.opCode-3",
+        "CommonHeaderFlags": "cfm.cfmHeader.commonHeader.flags-4",
+        "CommonHeaderFirstTLVOffset": "cfm.cfmHeader.commonHeader.firstTLVOffset-5",
+        "CcmSequenceNumber": "cfm.cfmHeader.selectPacketHeader.ccm.sequenceNumber-6",
+        "CcmMaintenanceAssociationEndPointIdentifier": "cfm.cfmHeader.selectPacketHeader.ccm.maintenanceAssociationEndPointIdentifier-7",
+        "MaintenanceDomainPresentMaintenanceDomainNameFormat": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainNameFormat-8",
+        "MaintenanceDomainPresentMaintenanceDomainNameLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainNameLength-9",
+        "MaintenanceDomainPresentMaintenanceDomainName": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.maintenanceDomainName-10",
+        "MaintenanceDomainPresentShortMANameFormat": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMANameFormat-11",
+        "MaintenanceDomainPresentShortMANameLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMANameLength-12",
+        "MaintenanceDomainPresentShortMAName": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.shortMAName-13",
+        "ZeroPaddingLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.zeroPadding.length-14",
+        "ZeroPaddingValue": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainPresent.zeroPadding.value-15",
+        "MaintenanceDomainNotPresentMaintenanceDomainNameFormat": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.maintenanceDomainNameFormat-16",
+        "MaintenanceDomainNotPresentShortMANameFormat": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMANameFormat-17",
+        "MaintenanceDomainNotPresentShortMANameLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMANameLength-18",
+        "MaintenanceDomainNotPresentShortMAName": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.shortMAName-19",
+        "MaintenancedomainnotpresentZeroPaddingLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.zeroPadding.length-20",
+        "MaintenancedomainnotpresentZeroPaddingValue": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.maid.maintenanceDomainNotPresent.zeroPadding.value-21",
+        "ItutY1731": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.cfm.itutY1731-22",
+        "MegIDReserved": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.reserved-23",
+        "MegIDMegIDFormat": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDFormat-24",
+        "MegIDMegIDLength": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDLength-25",
+        "MegIDMegIDValue": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.megID.megIDValue-26",
+        "Y1731TxFCf": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.txFCf-27",
+        "Y1731RxFCb": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.rxFCb-28",
+        "Y1731TxFCb": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.txFCb-29",
+        "Y1731Resvd0": "cfm.cfmHeader.selectPacketHeader.ccm.cfmY1731Specific.y1731.resvd0-30",
+        "DmmTxTimeStampf": "cfm.cfmHeader.selectPacketHeader.dmm.txTimeStampf-31",
+        "DmmReservedForDMMReceivingEquipment": "cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMMReceivingEquipment-32",
+        "DmmReservedForDMR": "cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMR-33",
+        "DmmReservedForDMRReceivingEquipment": "cfm.cfmHeader.selectPacketHeader.dmm.reservedForDMRReceivingEquipment-34",
+        "DmrTxTimeStampf": "cfm.cfmHeader.selectPacketHeader.dmr.txTimeStampf-35",
+        "DmrRxTimeStampf": "cfm.cfmHeader.selectPacketHeader.dmr.rxTimeStampf-36",
+        "DmrTxTimeStampb": "cfm.cfmHeader.selectPacketHeader.dmr.txTimeStampb-37",
+        "DmrReservedForDMRReceivingEquipment": "cfm.cfmHeader.selectPacketHeader.dmr.reservedForDMRReceivingEquipment-38",
+        "LtmTransactionId": "cfm.cfmHeader.selectPacketHeader.ltm.transactionId-39",
+        "LtmTtl": "cfm.cfmHeader.selectPacketHeader.ltm.ttl-40",
+        "LtmOriginalMACAddress": "cfm.cfmHeader.selectPacketHeader.ltm.originalMACAddress-41",
+        "LtmTargetMACAddress": "cfm.cfmHeader.selectPacketHeader.ltm.targetMACAddress-42",
+        "LtrTransactionID": "cfm.cfmHeader.selectPacketHeader.ltr.transactionID-43",
+        "LtrReplyTTL": "cfm.cfmHeader.selectPacketHeader.ltr.replyTTL-44",
+        "LtrRelayAction": "cfm.cfmHeader.selectPacketHeader.ltr.relayAction-45",
+        "LbmTransactionIDSeqNumber": "cfm.cfmHeader.selectPacketHeader.lbm.transactionIDSeqNumber-46",
+        "LbrTransactionIDSeqNumber": "cfm.cfmHeader.selectPacketHeader.lbr.transactionIDSeqNumber-47",
+        "LmrTxFCf": "cfm.cfmHeader.selectPacketHeader.lmr.txFCf-48",
+        "LmrRxFCf": "cfm.cfmHeader.selectPacketHeader.lmr.rxFCf-49",
+        "LmrTxFCb": "cfm.cfmHeader.selectPacketHeader.lmr.txFCb-50",
+        "LmmTxFCf": "cfm.cfmHeader.selectPacketHeader.lmm.txFCf-51",
+        "LmmRes_rxFCf_lmr": "cfm.cfmHeader.selectPacketHeader.lmm.res_rxFCf_lmr-52",
+        "LmmRes_txFCb_lmr": "cfm.cfmHeader.selectPacketHeader.lmm.res_txFCb_lmr-53",
+        "TstSequenceNumber": "cfm.cfmHeader.selectPacketHeader.tst.SequenceNumber-54",
+        "ApsRequest_state": "cfm.cfmHeader.selectPacketHeader.aps.request_state-55",
+        "Prot_typeA_prot_type": "cfm.cfmHeader.selectPacketHeader.aps.prot_type.a_prot_type-56",
+        "Prot_typeB_prot_type": "cfm.cfmHeader.selectPacketHeader.aps.prot_type.b_prot_type-57",
+        "Prot_typeD_prot_type": "cfm.cfmHeader.selectPacketHeader.aps.prot_type.d_prot_type-58",
+        "Prot_typeR_prot_type": "cfm.cfmHeader.selectPacketHeader.aps.prot_type.r_prot_type-59",
+        "ApsReq_sign": "cfm.cfmHeader.selectPacketHeader.aps.req_sign-60",
+        "ApsBri_sign": "cfm.cfmHeader.selectPacketHeader.aps.bri_sign-61",
+        "ApsReserved": "cfm.cfmHeader.selectPacketHeader.aps.reserved-62",
+        "GnmGnmSubOpCode": "cfm.cfmHeader.selectPacketHeader.gnm.gnmSubOpCode-63",
+        "BnmNominalBandwidth": "cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.nominalBandwidth-64",
+        "BnmCurrentBandwidth": "cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.currentBandwidth-65",
+        "BnmPortId": "cfm.cfmHeader.selectPacketHeader.gnm.selectGnmSubHeader.bnm.portId-66",
+        "EndTLVEndOfTlv": "cfm.cfmHeader.tlvs.selectTLVType.endTLV.endOfTlv-67",
+        "SenderIDTLVType": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.type-68",
+        "SenderIDTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.length-69",
+        "ChassisIDLengthnonzeroChassisIDLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisIDLength-70",
+        "ChassisIDLengthnonzeroChassisIDSubtype": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisIDSubtype-71",
+        "ChassisIDLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisID.length-72",
+        "ChassisIDValue": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.chassisID.value-73",
+        "ManagementAddressDomainLengthnonzeroManagementAddressDomainLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressDomainLength-74",
+        "ManagementAddressDomainLengthnonzeroManagementAddressDomain": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressDomain-75",
+        "ManagementAddressLengthnonzeroManagementAddressLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthnonzero.managementAddressLength-76",
+        "ManagementAddressLengthnonzeroManagementAddress": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthnonzero.managementAddress-77",
+        "ManagementAddressLengthzeroManagementAddressLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthnonzero.managementAddressLength.managementAddressLengthzero.managementAddressLength-78",
+        "ManagementAddressDomainLengthzeroManagementAddressDomainLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthnonzero.managementAddressDomainLength.managementAddressDomainLengthzero.managementAddressDomainLength-79",
+        "ChassisIDLengthzeroChassisIDLength": "cfm.cfmHeader.tlvs.selectTLVType.senderIDTLV.chassisIDLength.chassisIDLengthzero.chassisIDLength-80",
+        "PortStatusTLVType": "cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.type-81",
+        "PortStatusTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.length-82",
+        "PortStatusTLVStatus": "cfm.cfmHeader.tlvs.selectTLVType.portStatusTLV.status-83",
+        "DataTLVType": "cfm.cfmHeader.tlvs.selectTLVType.dataTLV.type-84",
+        "DataTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.dataTLV.length-85",
+        "DataTLVData": "cfm.cfmHeader.tlvs.selectTLVType.dataTLV.data-86",
+        "TesttlvType": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.type-87",
+        "TesttlvLength": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.length-88",
+        "TesttlvPatternType": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.patternType-89",
+        "TstPatternLength1": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.tstPattern.length1-90",
+        "TstPatternData": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.tstPattern.data-91",
+        "CrcCrc": "cfm.cfmHeader.tlvs.selectTLVType.testtlv.crc.crc-92",
+        "InterfaceStatusTLVType": "cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.type-93",
+        "InterfaceStatusTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.length-94",
+        "InterfaceStatusTLVStatus": "cfm.cfmHeader.tlvs.selectTLVType.interfaceStatusTLV.status-95",
+        "ReplyIngressTLVwithPortIdType": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.type-96",
+        "ReplyIngressTLVwithPortIdLength": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.length-97",
+        "ReplyIngressTLVwithPortIdIngressAction": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressAction-98",
+        "ReplyIngressTLVwithPortIdIngressMACAddress": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressMACAddress-99",
+        "ReplyIngressTLVwithPortIdIngressPortIDLength": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortIDLength-100",
+        "ReplyIngressTLVwithPortIdIngressPortIDSubtype": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortIDSubtype-101",
+        "IngressPortIDLength": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortID.length-102",
+        "IngressPortIDIngressPortID": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithPortId.ingressPortID.ingressPortID-103",
+        "ReplyIngressTLVwithoutPortIdType": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.type-104",
+        "ReplyIngressTLVwithoutPortIdLength": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.length-105",
+        "ReplyIngressTLVwithoutPortIdIngressAction": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.ingressAction-106",
+        "ReplyIngressTLVwithoutPortIdIngressMACAddress": "cfm.cfmHeader.tlvs.selectTLVType.replyIngressTLV.replyIngressTLVwithoutPortId.ingressMACAddress-107",
+        "ReplyEgressTLVwithPortType": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.type-108",
+        "ReplyEgressTLVwithPortLength": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.length-109",
+        "ReplyEgressTLVwithPortEgressAction": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressAction-110",
+        "ReplyEgressTLVwithPortEgressMACAddress": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressMACAddress-111",
+        "ReplyEgressTLVwithPortEgressPortLength": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortLength-112",
+        "ReplyEgressTLVwithPortEgressPortIdSubType": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortIdSubType-113",
+        "EgressPortIDLength": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortID.length-114",
+        "EgressPortIDEgressPortID": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithPort.egressPortID.egressPortID-115",
+        "ReplyEgressTLVwithoutPortType": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.type-116",
+        "ReplyEgressTLVwithoutPortLength": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.length-117",
+        "ReplyEgressTLVwithoutPortEgressAction": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.egressAction-118",
+        "ReplyEgressTLVwithoutPortEgressMACAddress": "cfm.cfmHeader.tlvs.selectTLVType.replyEgressTLV.replyEgressTLVwithoutPort.egressMACAddress-119",
+        "LtmEgressIdentifierTLVType": "cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.type-120",
+        "LtmEgressIdentifierTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.length-121",
+        "LtmEgressIdentifierTLVEgressIdentifier": "cfm.cfmHeader.tlvs.selectTLVType.ltmEgressIdentifierTLV.egressIdentifier-122",
+        "LtrEgressIdentifierTLVType": "cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.type-123",
+        "LtrEgressIdentifierTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.length-124",
+        "LtrEgressIdentifierTLVLastEgressIdentifier": "cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.lastEgressIdentifier-125",
+        "LtrEgressIdentifierTLVNextEgressIdentifier": "cfm.cfmHeader.tlvs.selectTLVType.ltrEgressIdentifierTLV.nextEgressIdentifier-126",
+        "ReservedForIEEE8021930Type": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.type-127",
+        "ReservedForIEEE8021930Length": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.length-128",
+        "ReservedForIEEE8021930Value": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE8021930.value-129",
+        "OrganizationSpecificTLVType": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.type-130",
+        "OrganizationSpecificTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.length-131",
+        "OrganizationSpecificTLVOui": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.oui-132",
+        "OrganizationSpecificTLVSubtype": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.subtype-133",
+        "ValueOptionalLength": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.valueOptional.length-134",
+        "ValueOptionalValue": "cfm.cfmHeader.tlvs.selectTLVType.organizationSpecificTLV.valueOptional.value-135",
+        "DefinedByITUTY1731Type": "cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.type-136",
+        "DefinedByITUTY1731Length": "cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.length-137",
+        "DefinedByITUTY1731Value": "cfm.cfmHeader.tlvs.selectTLVType.definedByITUTY1731.value-138",
+        "ReservedForIEEE802164255Type": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.type-139",
+        "ReservedForIEEE802164255Length": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.length-140",
+        "ReservedForIEEE802164255Value": "cfm.cfmHeader.tlvs.selectTLVType.reservedForIEEE802164255.value-141",
+        "UserDefinedTLVLength": "cfm.cfmHeader.tlvs.selectTLVType.userDefinedTLV.length-142",
+        "UserDefinedTLVValue": "cfm.cfmHeader.tlvs.selectTLVType.userDefinedTLV.value-143",
     }
 
     def __init__(self, parent, list_op=False):
@@ -162,7 +162,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderMdLevel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderMdLevel"])
+        )
 
     @property
     def CommonHeaderVersion(self):
@@ -172,7 +175,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderVersion"])
+        )
 
     @property
     def CommonHeaderOpCode(self):
@@ -183,7 +189,10 @@ class Cfm(Base):
         Available enum values: Continuity Check Message (CCM), 1, Loopback Reply (LBR), 2, Loopback Message (LBM), 3, Linktrace Reply (LTR), 4, Linktrace Message (LTM), 5, Generic Notification Message (GNM), 32, Alarm Indication Signal (AIS), 33, Locked Signal (LCK), 35, Test Signal (TST), 37, Automatic Protection Switching_Linear (APS), 39, Automatic Protection Switching_Ring (APS), 40, Loss Measurement Reply (LMR), 42, Loss Measurement Message (LMM), 43, Delay Measurement Reply (DMR), 46, Delay Measurement Message (DMM), 47
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderOpCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderOpCode"])
+        )
 
     @property
     def CommonHeaderFlags(self):
@@ -193,7 +202,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderFlags"])
+        )
 
     @property
     def CommonHeaderFirstTLVOffset(self):
@@ -204,7 +216,10 @@ class Cfm(Base):
         Available enum values: CCM - 70, 70, LBM / LBR / APS / TST- 4, 4, LTR - 6, 6, LTM - 17, 17, AIS / LCK - 0, 0, LMM / LMR - 12, 12, DMM / DMR - 32, 32, GNM - 13, 13
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderFirstTLVOffset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderFirstTLVOffset"])
+        )
 
     @property
     def CcmSequenceNumber(self):
@@ -214,7 +229,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CcmSequenceNumber"])
+        )
 
     @property
     def CcmMaintenanceAssociationEndPointIdentifier(self):
@@ -224,7 +242,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmMaintenanceAssociationEndPointIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CcmMaintenanceAssociationEndPointIdentifier"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentMaintenanceDomainNameFormat(self):
@@ -235,7 +259,13 @@ class Cfm(Base):
         Available enum values: domain_name_based_str, 2, mac_addr_2_oct_int, 3, char_str, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentMaintenanceDomainNameFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentMaintenanceDomainNameFormat"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentMaintenanceDomainNameLength(self):
@@ -245,7 +275,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentMaintenanceDomainNameLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentMaintenanceDomainNameLength"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentMaintenanceDomainName(self):
@@ -255,7 +291,13 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentMaintenanceDomainName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentMaintenanceDomainName"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentShortMANameFormat(self):
@@ -266,7 +308,13 @@ class Cfm(Base):
         Available enum values: primary_vid, 1, char_str, 2, 2-oct_int, 3, rfc_2685_vpn_id, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentShortMANameFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentShortMANameFormat"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentShortMANameLength(self):
@@ -276,7 +324,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentShortMANameLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentShortMANameLength"]
+            ),
+        )
 
     @property
     def MaintenanceDomainPresentShortMAName(self):
@@ -286,7 +340,13 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainPresentShortMAName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainPresentShortMAName"]
+            ),
+        )
 
     @property
     def ZeroPaddingLength(self):
@@ -296,7 +356,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZeroPaddingLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ZeroPaddingLength"])
+        )
 
     @property
     def ZeroPaddingValue(self):
@@ -306,7 +369,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZeroPaddingValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ZeroPaddingValue"])
+        )
 
     @property
     def MaintenanceDomainNotPresentMaintenanceDomainNameFormat(self):
@@ -316,7 +382,15 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainNotPresentMaintenanceDomainNameFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "MaintenanceDomainNotPresentMaintenanceDomainNameFormat"
+                ]
+            ),
+        )
 
     @property
     def MaintenanceDomainNotPresentShortMANameFormat(self):
@@ -327,7 +401,13 @@ class Cfm(Base):
         Available enum values: primary_vid, 1, char_str, 2, 2-oct_int, 3, rfc_2685_vpn_id, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainNotPresentShortMANameFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainNotPresentShortMANameFormat"]
+            ),
+        )
 
     @property
     def MaintenanceDomainNotPresentShortMANameLength(self):
@@ -337,7 +417,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainNotPresentShortMANameLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainNotPresentShortMANameLength"]
+            ),
+        )
 
     @property
     def MaintenanceDomainNotPresentShortMAName(self):
@@ -347,7 +433,13 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenanceDomainNotPresentShortMAName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenanceDomainNotPresentShortMAName"]
+            ),
+        )
 
     @property
     def MaintenancedomainnotpresentZeroPaddingLength(self):
@@ -357,7 +449,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenancedomainnotpresentZeroPaddingLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenancedomainnotpresentZeroPaddingLength"]
+            ),
+        )
 
     @property
     def MaintenancedomainnotpresentZeroPaddingValue(self):
@@ -367,7 +465,13 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaintenancedomainnotpresentZeroPaddingValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaintenancedomainnotpresentZeroPaddingValue"]
+            ),
+        )
 
     @property
     def ItutY1731(self):
@@ -377,7 +481,8 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItutY1731']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItutY1731"]))
 
     @property
     def MegIDReserved(self):
@@ -387,7 +492,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegIDReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MegIDReserved"]))
 
     @property
     def MegIDMegIDFormat(self):
@@ -397,7 +503,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegIDMegIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MegIDMegIDFormat"])
+        )
 
     @property
     def MegIDMegIDLength(self):
@@ -407,7 +516,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegIDMegIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MegIDMegIDLength"])
+        )
 
     @property
     def MegIDMegIDValue(self):
@@ -417,7 +529,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegIDMegIDValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MegIDMegIDValue"])
+        )
 
     @property
     def Y1731TxFCf(self):
@@ -427,7 +542,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Y1731TxFCf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Y1731TxFCf"]))
 
     @property
     def Y1731RxFCb(self):
@@ -437,7 +553,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Y1731RxFCb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Y1731RxFCb"]))
 
     @property
     def Y1731TxFCb(self):
@@ -447,7 +564,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Y1731TxFCb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Y1731TxFCb"]))
 
     @property
     def Y1731Resvd0(self):
@@ -457,7 +575,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Y1731Resvd0']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Y1731Resvd0"]))
 
     @property
     def DmmTxTimeStampf(self):
@@ -467,7 +586,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmmTxTimeStampf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmmTxTimeStampf"])
+        )
 
     @property
     def DmmReservedForDMMReceivingEquipment(self):
@@ -477,7 +599,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmmReservedForDMMReceivingEquipment']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["DmmReservedForDMMReceivingEquipment"]
+            ),
+        )
 
     @property
     def DmmReservedForDMR(self):
@@ -487,7 +615,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmmReservedForDMR']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmmReservedForDMR"])
+        )
 
     @property
     def DmmReservedForDMRReceivingEquipment(self):
@@ -497,7 +628,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmmReservedForDMRReceivingEquipment']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["DmmReservedForDMRReceivingEquipment"]
+            ),
+        )
 
     @property
     def DmrTxTimeStampf(self):
@@ -507,7 +644,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmrTxTimeStampf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmrTxTimeStampf"])
+        )
 
     @property
     def DmrRxTimeStampf(self):
@@ -517,7 +657,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmrRxTimeStampf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmrRxTimeStampf"])
+        )
 
     @property
     def DmrTxTimeStampb(self):
@@ -527,7 +670,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmrTxTimeStampb']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmrTxTimeStampb"])
+        )
 
     @property
     def DmrReservedForDMRReceivingEquipment(self):
@@ -537,7 +683,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmrReservedForDMRReceivingEquipment']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["DmrReservedForDMRReceivingEquipment"]
+            ),
+        )
 
     @property
     def LtmTransactionId(self):
@@ -547,7 +699,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmTransactionId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtmTransactionId"])
+        )
 
     @property
     def LtmTtl(self):
@@ -557,7 +712,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LtmTtl"]))
 
     @property
     def LtmOriginalMACAddress(self):
@@ -567,7 +723,10 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmOriginalMACAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtmOriginalMACAddress"])
+        )
 
     @property
     def LtmTargetMACAddress(self):
@@ -577,7 +736,10 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmTargetMACAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtmTargetMACAddress"])
+        )
 
     @property
     def LtrTransactionID(self):
@@ -587,7 +749,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrTransactionID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtrTransactionID"])
+        )
 
     @property
     def LtrReplyTTL(self):
@@ -597,7 +762,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrReplyTTL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LtrReplyTTL"]))
 
     @property
     def LtrRelayAction(self):
@@ -608,7 +774,10 @@ class Cfm(Base):
         Available enum values: RlyHit, 1, RlyFDB, 2, RlyMPDB, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrRelayAction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtrRelayAction"])
+        )
 
     @property
     def LbmTransactionIDSeqNumber(self):
@@ -618,7 +787,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbmTransactionIDSeqNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LbmTransactionIDSeqNumber"])
+        )
 
     @property
     def LbrTransactionIDSeqNumber(self):
@@ -628,7 +800,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbrTransactionIDSeqNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LbrTransactionIDSeqNumber"])
+        )
 
     @property
     def LmrTxFCf(self):
@@ -638,7 +813,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrTxFCf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrTxFCf"]))
 
     @property
     def LmrRxFCf(self):
@@ -648,7 +824,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrRxFCf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrRxFCf"]))
 
     @property
     def LmrTxFCb(self):
@@ -658,7 +835,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrTxFCb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrTxFCb"]))
 
     @property
     def LmmTxFCf(self):
@@ -668,7 +846,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmmTxFCf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmmTxFCf"]))
 
     @property
     def LmmRes_rxFCf_lmr(self):
@@ -678,7 +857,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmmRes_rxFCf_lmr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmmRes_rxFCf_lmr"])
+        )
 
     @property
     def LmmRes_txFCb_lmr(self):
@@ -688,7 +870,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmmRes_txFCb_lmr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmmRes_txFCb_lmr"])
+        )
 
     @property
     def TstSequenceNumber(self):
@@ -698,7 +883,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstSequenceNumber"])
+        )
 
     @property
     def ApsRequest_state(self):
@@ -709,7 +897,10 @@ class Cfm(Base):
         Available enum values: Lockout Protection(LO), 1111, Signal Fail Protection(SF-P), 1110, Forced Switch(FS), 1101, Signal Fail Working(SF), 1011, Signal Degrade(SD), 1001, Manual Switch(MS), 111, Wait To Restore(WTR), 101, Exercise(EXER), 100, Reverse Request(RR), 10, Do Not Revert(DNR), 1, No Request, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApsRequest_state']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApsRequest_state"])
+        )
 
     @property
     def Prot_typeA_prot_type(self):
@@ -720,7 +911,10 @@ class Cfm(Base):
         Available enum values: No APS Channel, 0, APS Channel, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prot_typeA_prot_type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Prot_typeA_prot_type"])
+        )
 
     @property
     def Prot_typeB_prot_type(self):
@@ -731,7 +925,10 @@ class Cfm(Base):
         Available enum values: 1+1(Permanent Bridge), 0, 1:1 (No Permanent Bridge), 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prot_typeB_prot_type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Prot_typeB_prot_type"])
+        )
 
     @property
     def Prot_typeD_prot_type(self):
@@ -742,7 +939,10 @@ class Cfm(Base):
         Available enum values: Unidirectional Switch, 0, Bidirectional Switch, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prot_typeD_prot_type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Prot_typeD_prot_type"])
+        )
 
     @property
     def Prot_typeR_prot_type(self):
@@ -753,7 +953,10 @@ class Cfm(Base):
         Available enum values: Non-revertive Operation, 0, Revertive operation, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prot_typeR_prot_type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Prot_typeR_prot_type"])
+        )
 
     @property
     def ApsReq_sign(self):
@@ -764,7 +967,8 @@ class Cfm(Base):
         Available enum values: Null Signal, 0, Normal Traffic Signal, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApsReq_sign']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApsReq_sign"]))
 
     @property
     def ApsBri_sign(self):
@@ -775,7 +979,8 @@ class Cfm(Base):
         Available enum values: Null Signal, 0, Normal Traffic Signal, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApsBri_sign']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApsBri_sign"]))
 
     @property
     def ApsReserved(self):
@@ -785,7 +990,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApsReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApsReserved"]))
 
     @property
     def GnmGnmSubOpCode(self):
@@ -796,7 +1002,10 @@ class Cfm(Base):
         Available enum values: Bandwidth Notification Message (BNM), 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GnmGnmSubOpCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GnmGnmSubOpCode"])
+        )
 
     @property
     def BnmNominalBandwidth(self):
@@ -806,7 +1015,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BnmNominalBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BnmNominalBandwidth"])
+        )
 
     @property
     def BnmCurrentBandwidth(self):
@@ -816,7 +1028,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BnmCurrentBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BnmCurrentBandwidth"])
+        )
 
     @property
     def BnmPortId(self):
@@ -826,7 +1041,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BnmPortId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BnmPortId"]))
 
     @property
     def EndTLVEndOfTlv(self):
@@ -836,7 +1052,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndTLVEndOfTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndTLVEndOfTlv"])
+        )
 
     @property
     def SenderIDTLVType(self):
@@ -846,7 +1065,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderIDTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SenderIDTLVType"])
+        )
 
     @property
     def SenderIDTLVLength(self):
@@ -856,7 +1078,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderIDTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SenderIDTLVLength"])
+        )
 
     @property
     def ChassisIDLengthnonzeroChassisIDLength(self):
@@ -866,7 +1091,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIDLengthnonzeroChassisIDLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ChassisIDLengthnonzeroChassisIDLength"]
+            ),
+        )
 
     @property
     def ChassisIDLengthnonzeroChassisIDSubtype(self):
@@ -877,7 +1108,13 @@ class Cfm(Base):
         Available enum values: Chassis component, 1, Interface alias, 2, Port component, 3, MAC address, 4, Network address, 5, Interface name, 6, Locally assigned, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIDLengthnonzeroChassisIDSubtype']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ChassisIDLengthnonzeroChassisIDSubtype"]
+            ),
+        )
 
     @property
     def ChassisIDLength(self):
@@ -887,7 +1124,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChassisIDLength"])
+        )
 
     @property
     def ChassisIDValue(self):
@@ -897,7 +1137,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIDValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChassisIDValue"])
+        )
 
     @property
     def ManagementAddressDomainLengthnonzeroManagementAddressDomainLength(self):
@@ -907,7 +1150,15 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLengthnonzeroManagementAddressDomainLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ManagementAddressDomainLengthnonzeroManagementAddressDomainLength"
+                ]
+            ),
+        )
 
     @property
     def ManagementAddressDomainLengthnonzeroManagementAddressDomain(self):
@@ -917,7 +1168,15 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLengthnonzeroManagementAddressDomain']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ManagementAddressDomainLengthnonzeroManagementAddressDomain"
+                ]
+            ),
+        )
 
     @property
     def ManagementAddressLengthnonzeroManagementAddressLength(self):
@@ -927,7 +1186,15 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressLengthnonzeroManagementAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ManagementAddressLengthnonzeroManagementAddressLength"
+                ]
+            ),
+        )
 
     @property
     def ManagementAddressLengthnonzeroManagementAddress(self):
@@ -937,7 +1204,13 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressLengthnonzeroManagementAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ManagementAddressLengthnonzeroManagementAddress"]
+            ),
+        )
 
     @property
     def ManagementAddressLengthzeroManagementAddressLength(self):
@@ -947,7 +1220,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressLengthzeroManagementAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ManagementAddressLengthzeroManagementAddressLength"]
+            ),
+        )
 
     @property
     def ManagementAddressDomainLengthzeroManagementAddressDomainLength(self):
@@ -957,7 +1236,15 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLengthzeroManagementAddressDomainLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "ManagementAddressDomainLengthzeroManagementAddressDomainLength"
+                ]
+            ),
+        )
 
     @property
     def ChassisIDLengthzeroChassisIDLength(self):
@@ -967,7 +1254,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIDLengthzeroChassisIDLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ChassisIDLengthzeroChassisIDLength"]
+            ),
+        )
 
     @property
     def PortStatusTLVType(self):
@@ -977,7 +1270,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortStatusTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortStatusTLVType"])
+        )
 
     @property
     def PortStatusTLVLength(self):
@@ -987,7 +1283,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortStatusTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortStatusTLVLength"])
+        )
 
     @property
     def PortStatusTLVStatus(self):
@@ -998,7 +1297,10 @@ class Cfm(Base):
         Available enum values: Port blocked (psBlocked), 1, Port up (psUp), 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortStatusTLVStatus']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortStatusTLVStatus"])
+        )
 
     @property
     def DataTLVType(self):
@@ -1008,7 +1310,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataTLVType"]))
 
     @property
     def DataTLVLength(self):
@@ -1018,7 +1321,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataTLVLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataTLVLength"]))
 
     @property
     def DataTLVData(self):
@@ -1028,7 +1332,8 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataTLVData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataTLVData"]))
 
     @property
     def TesttlvType(self):
@@ -1038,7 +1343,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TesttlvType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TesttlvType"]))
 
     @property
     def TesttlvLength(self):
@@ -1048,7 +1354,8 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TesttlvLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TesttlvLength"]))
 
     @property
     def TesttlvPatternType(self):
@@ -1059,7 +1366,10 @@ class Cfm(Base):
         Available enum values: Null Signal without CRC-32, 0, Null Signal with CRC-32, 1, PRBS without CRC-32, 2, PRBS with CRC-32, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TesttlvPatternType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TesttlvPatternType"])
+        )
 
     @property
     def TstPatternLength1(self):
@@ -1069,7 +1379,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPatternLength1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstPatternLength1"])
+        )
 
     @property
     def TstPatternData(self):
@@ -1079,7 +1392,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPatternData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstPatternData"])
+        )
 
     @property
     def CrcCrc(self):
@@ -1089,7 +1405,8 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CrcCrc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CrcCrc"]))
 
     @property
     def InterfaceStatusTLVType(self):
@@ -1099,7 +1416,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceStatusTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterfaceStatusTLVType"])
+        )
 
     @property
     def InterfaceStatusTLVLength(self):
@@ -1109,7 +1429,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceStatusTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterfaceStatusTLVLength"])
+        )
 
     @property
     def InterfaceStatusTLVStatus(self):
@@ -1120,7 +1443,10 @@ class Cfm(Base):
         Available enum values: isUp, 1, isDown, 2, isTesting, 3, isUnknown, 4, isDormant, 5, isNotPresent, 6, isLowerlayerdown, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceStatusTLVStatus']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterfaceStatusTLVStatus"])
+        )
 
     @property
     def ReplyIngressTLVwithPortIdType(self):
@@ -1130,7 +1456,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdType"]),
+        )
 
     @property
     def ReplyIngressTLVwithPortIdLength(self):
@@ -1140,7 +1470,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdLength"]),
+        )
 
     @property
     def ReplyIngressTLVwithPortIdIngressAction(self):
@@ -1151,7 +1485,13 @@ class Cfm(Base):
         Available enum values: IngOK, 1, IngDown, 2, IngBlocked, 3, IngVID, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdIngressAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdIngressAction"]
+            ),
+        )
 
     @property
     def ReplyIngressTLVwithPortIdIngressMACAddress(self):
@@ -1161,7 +1501,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdIngressMACAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdIngressMACAddress"]
+            ),
+        )
 
     @property
     def ReplyIngressTLVwithPortIdIngressPortIDLength(self):
@@ -1171,7 +1517,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdIngressPortIDLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdIngressPortIDLength"]
+            ),
+        )
 
     @property
     def ReplyIngressTLVwithPortIdIngressPortIDSubtype(self):
@@ -1182,7 +1534,13 @@ class Cfm(Base):
         Available enum values: Interface alias, 1, Port component, 2, MAC address, 3, Network address, 4, Interface name, 5, Agent circuit ID, 6, Locally assigned, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithPortIdIngressPortIDSubtype']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithPortIdIngressPortIDSubtype"]
+            ),
+        )
 
     @property
     def IngressPortIDLength(self):
@@ -1192,7 +1550,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressPortIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressPortIDLength"])
+        )
 
     @property
     def IngressPortIDIngressPortID(self):
@@ -1202,7 +1563,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressPortIDIngressPortID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressPortIDIngressPortID"])
+        )
 
     @property
     def ReplyIngressTLVwithoutPortIdType(self):
@@ -1212,7 +1576,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithoutPortIdType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReplyIngressTLVwithoutPortIdType"]),
+        )
 
     @property
     def ReplyIngressTLVwithoutPortIdLength(self):
@@ -1222,7 +1590,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithoutPortIdLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithoutPortIdLength"]
+            ),
+        )
 
     @property
     def ReplyIngressTLVwithoutPortIdIngressAction(self):
@@ -1233,7 +1607,13 @@ class Cfm(Base):
         Available enum values: OK, 1, Down, 2, Blocked, 3, VID, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithoutPortIdIngressAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithoutPortIdIngressAction"]
+            ),
+        )
 
     @property
     def ReplyIngressTLVwithoutPortIdIngressMACAddress(self):
@@ -1243,7 +1623,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyIngressTLVwithoutPortIdIngressMACAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyIngressTLVwithoutPortIdIngressMACAddress"]
+            ),
+        )
 
     @property
     def ReplyEgressTLVwithPortType(self):
@@ -1253,7 +1639,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReplyEgressTLVwithPortType"])
+        )
 
     @property
     def ReplyEgressTLVwithPortLength(self):
@@ -1263,7 +1652,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReplyEgressTLVwithPortLength"])
+        )
 
     @property
     def ReplyEgressTLVwithPortEgressAction(self):
@@ -1274,7 +1666,13 @@ class Cfm(Base):
         Available enum values: EgrOK, 1, EgrDown, 2, EgrBlocked, 3, EgrVID, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortEgressAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithPortEgressAction"]
+            ),
+        )
 
     @property
     def ReplyEgressTLVwithPortEgressMACAddress(self):
@@ -1284,7 +1682,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortEgressMACAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithPortEgressMACAddress"]
+            ),
+        )
 
     @property
     def ReplyEgressTLVwithPortEgressPortLength(self):
@@ -1294,7 +1698,13 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortEgressPortLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithPortEgressPortLength"]
+            ),
+        )
 
     @property
     def ReplyEgressTLVwithPortEgressPortIdSubType(self):
@@ -1305,7 +1715,13 @@ class Cfm(Base):
         Available enum values: Interface alias, 1, Port component, 2, MAC address, 3, Network address, 4, Interface name, 5, Agent circuit ID, 6, Locally assigned, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithPortEgressPortIdSubType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithPortEgressPortIdSubType"]
+            ),
+        )
 
     @property
     def EgressPortIDLength(self):
@@ -1315,7 +1731,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressPortIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressPortIDLength"])
+        )
 
     @property
     def EgressPortIDEgressPortID(self):
@@ -1325,7 +1744,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressPortIDEgressPortID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressPortIDEgressPortID"])
+        )
 
     @property
     def ReplyEgressTLVwithoutPortType(self):
@@ -1335,7 +1757,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithoutPortType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReplyEgressTLVwithoutPortType"]),
+        )
 
     @property
     def ReplyEgressTLVwithoutPortLength(self):
@@ -1345,7 +1771,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithoutPortLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReplyEgressTLVwithoutPortLength"]),
+        )
 
     @property
     def ReplyEgressTLVwithoutPortEgressAction(self):
@@ -1356,7 +1786,13 @@ class Cfm(Base):
         Available enum values: OK, 1, Down, 2, Blocked, 3, VID, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithoutPortEgressAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithoutPortEgressAction"]
+            ),
+        )
 
     @property
     def ReplyEgressTLVwithoutPortEgressMACAddress(self):
@@ -1366,7 +1802,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyEgressTLVwithoutPortEgressMACAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReplyEgressTLVwithoutPortEgressMACAddress"]
+            ),
+        )
 
     @property
     def LtmEgressIdentifierTLVType(self):
@@ -1376,7 +1818,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmEgressIdentifierTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtmEgressIdentifierTLVType"])
+        )
 
     @property
     def LtmEgressIdentifierTLVLength(self):
@@ -1386,7 +1831,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmEgressIdentifierTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtmEgressIdentifierTLVLength"])
+        )
 
     @property
     def LtmEgressIdentifierTLVEgressIdentifier(self):
@@ -1396,7 +1844,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmEgressIdentifierTLVEgressIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LtmEgressIdentifierTLVEgressIdentifier"]
+            ),
+        )
 
     @property
     def LtrEgressIdentifierTLVType(self):
@@ -1406,7 +1860,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrEgressIdentifierTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtrEgressIdentifierTLVType"])
+        )
 
     @property
     def LtrEgressIdentifierTLVLength(self):
@@ -1416,7 +1873,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrEgressIdentifierTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtrEgressIdentifierTLVLength"])
+        )
 
     @property
     def LtrEgressIdentifierTLVLastEgressIdentifier(self):
@@ -1426,7 +1886,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrEgressIdentifierTLVLastEgressIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LtrEgressIdentifierTLVLastEgressIdentifier"]
+            ),
+        )
 
     @property
     def LtrEgressIdentifierTLVNextEgressIdentifier(self):
@@ -1436,7 +1902,13 @@ class Cfm(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtrEgressIdentifierTLVNextEgressIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LtrEgressIdentifierTLVNextEgressIdentifier"]
+            ),
+        )
 
     @property
     def ReservedForIEEE8021930Type(self):
@@ -1446,7 +1918,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE8021930Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE8021930Type"])
+        )
 
     @property
     def ReservedForIEEE8021930Length(self):
@@ -1456,7 +1931,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE8021930Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE8021930Length"])
+        )
 
     @property
     def ReservedForIEEE8021930Value(self):
@@ -1466,7 +1944,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE8021930Value']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE8021930Value"])
+        )
 
     @property
     def OrganizationSpecificTLVType(self):
@@ -1476,7 +1957,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTLVType"])
+        )
 
     @property
     def OrganizationSpecificTLVLength(self):
@@ -1486,7 +1970,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTLVLength"]),
+        )
 
     @property
     def OrganizationSpecificTLVOui(self):
@@ -1496,7 +1984,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTLVOui']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTLVOui"])
+        )
 
     @property
     def OrganizationSpecificTLVSubtype(self):
@@ -1506,7 +1997,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTLVSubtype']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTLVSubtype"]),
+        )
 
     @property
     def ValueOptionalLength(self):
@@ -1516,7 +2011,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueOptionalLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueOptionalLength"])
+        )
 
     @property
     def ValueOptionalValue(self):
@@ -1526,7 +2024,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueOptionalValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueOptionalValue"])
+        )
 
     @property
     def DefinedByITUTY1731Type(self):
@@ -1536,7 +2037,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefinedByITUTY1731Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefinedByITUTY1731Type"])
+        )
 
     @property
     def DefinedByITUTY1731Length(self):
@@ -1546,7 +2050,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefinedByITUTY1731Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefinedByITUTY1731Length"])
+        )
 
     @property
     def DefinedByITUTY1731Value(self):
@@ -1556,7 +2063,10 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefinedByITUTY1731Value']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefinedByITUTY1731Value"])
+        )
 
     @property
     def ReservedForIEEE802164255Type(self):
@@ -1566,7 +2076,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE802164255Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE802164255Type"])
+        )
 
     @property
     def ReservedForIEEE802164255Length(self):
@@ -1576,7 +2089,11 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE802164255Length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE802164255Length"]),
+        )
 
     @property
     def ReservedForIEEE802164255Value(self):
@@ -1586,7 +2103,11 @@ class Cfm(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedForIEEE802164255Value']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReservedForIEEE802164255Value"]),
+        )
 
     @property
     def UserDefinedTLVLength(self):
@@ -1596,7 +2117,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedTLVLength"])
+        )
 
     @property
     def UserDefinedTLVValue(self):
@@ -1606,7 +2130,10 @@ class Cfm(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedTLVValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedTLVValue"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

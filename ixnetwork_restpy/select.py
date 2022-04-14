@@ -18,11 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 
 
 class Select(object):
-    """ Select infrastructure
+    """Select infrastructure
 
     e.g.,
     POST .../operations/select
@@ -42,27 +42,32 @@ class Select(object):
                     {
                         "child": "multivalue",
                         "properties": ["format", "pattern"]
-                    },	
+                    },
                     {
                         "child": "^(singleValue)$",
                         "properties": ["*"]
-                    }	
+                    }
                 ]
             }
         ]
     }
     """
 
-    def __init__(self, connection, from_url, from_properties=['*'], children=[], inlines=[]):
+    def __init__(
+        self, connection, from_url, from_properties=["*"], children=[], inlines=[]
+    ):
         self._connection = connection
-        self._url = '%s/operations/select?xpath=true' % from_url[0:from_url.index('ixnetwork') + len('ixnetwork')]
+        self._url = (
+            "%s/operations/select?xpath=true"
+            % from_url[0 : from_url.index("ixnetwork") + len("ixnetwork")]
+        )
         self._payload = {
-            'selects': [
+            "selects": [
                 {
-                    'from': from_url,
-                    'properties': from_properties,
-                    'children': children,
-                    'inlines': inlines
+                    "from": from_url,
+                    "properties": from_properties,
+                    "children": children,
+                    "inlines": inlines,
                 }
             ]
         }

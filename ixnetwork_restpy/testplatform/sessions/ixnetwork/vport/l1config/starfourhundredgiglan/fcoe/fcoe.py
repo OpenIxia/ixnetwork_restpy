@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,29 @@ class Fcoe(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcoe'
+    _SDM_NAME = "fcoe"
     _SDM_ATT_MAP = {
-        'EnablePFCPauseDelay': 'enablePFCPauseDelay',
-        'FlowControlType': 'flowControlType',
-        'PfcPauseDelay': 'pfcPauseDelay',
-        'PfcPriorityGroups': 'pfcPriorityGroups',
-        'PfcQueueGroupSize': 'pfcQueueGroupSize',
-        'PfcQueueGroups': 'pfcQueueGroups',
-        'PriorityGroupSize': 'priorityGroupSize',
-        'SupportDataCenterMode': 'supportDataCenterMode',
+        "EnablePFCPauseDelay": "enablePFCPauseDelay",
+        "FlowControlType": "flowControlType",
+        "PfcPauseDelay": "pfcPauseDelay",
+        "PfcPriorityGroups": "pfcPriorityGroups",
+        "PfcQueueGroupSize": "pfcQueueGroupSize",
+        "PfcQueueGroups": "pfcQueueGroups",
+        "PriorityGroupSize": "priorityGroupSize",
+        "SupportDataCenterMode": "supportDataCenterMode",
     }
     _SDM_ENUM_MAP = {
-        'flowControlType': ['ieee802.1Qbb', 'ieee802.3x'],
-        'pfcQueueGroupSize': ['pfcQueueGroupSize-1', 'pfcQueueGroupSize-4', 'pfcQueueGroupSize-8'],
-        'priorityGroupSize': ['priorityGroupSize-1', 'priorityGroupSize-4', 'priorityGroupSize-8'],
+        "flowControlType": ["ieee802.1Qbb", "ieee802.3x"],
+        "pfcQueueGroupSize": [
+            "pfcQueueGroupSize-1",
+            "pfcQueueGroupSize-4",
+            "pfcQueueGroupSize-8",
+        ],
+        "priorityGroupSize": [
+            "priorityGroupSize-1",
+            "priorityGroupSize-4",
+            "priorityGroupSize-8",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,11 +69,12 @@ class Fcoe(Base):
         -------
         - bool: If true, PFC pause delay is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePFCPauseDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePFCPauseDelay"])
+
     @EnablePFCPauseDelay.setter
     def EnablePFCPauseDelay(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePFCPauseDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePFCPauseDelay"], value)
 
     @property
     def FlowControlType(self):
@@ -74,11 +84,12 @@ class Fcoe(Base):
         -------
         - str(ieee802.1Qbb | ieee802.3x): The type of flow control to be selected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowControlType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowControlType"])
+
     @FlowControlType.setter
     def FlowControlType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowControlType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowControlType"], value)
 
     @property
     def PfcPauseDelay(self):
@@ -88,25 +99,27 @@ class Fcoe(Base):
         -------
         - number: If selected, enables to increase the number of frames that is sent when a pause frame is received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcPauseDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPauseDelay"])
+
     @PfcPauseDelay.setter
     def PfcPauseDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcPauseDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcPauseDelay"], value)
 
     @property
     def PfcPriorityGroups(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the two/four/eight Priority Groups (or to None). The PFCs are numbered 0-7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriorityGroups"])
+
     @PfcPriorityGroups.setter
     def PfcPriorityGroups(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriorityGroups"], value)
 
     @property
     def PfcQueueGroupSize(self):
@@ -116,11 +129,12 @@ class Fcoe(Base):
         -------
         - str(pfcQueueGroupSize-1 | pfcQueueGroupSize-4 | pfcQueueGroupSize-8): Max PFC queue group size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcQueueGroupSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcQueueGroupSize"])
+
     @PfcQueueGroupSize.setter
     def PfcQueueGroupSize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcQueueGroupSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcQueueGroupSize"], value)
 
     @property
     def PfcQueueGroups(self):
@@ -130,25 +144,27 @@ class Fcoe(Base):
         -------
         - list(str): When you select 802.1Qbb as the flowControlType, you can use the Priority/PFC Queue settings to map each of the eight PFC priorities to one of the two/four/eight PFC Queue Groups (or to None).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcQueueGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcQueueGroups"])
+
     @PfcQueueGroups.setter
     def PfcQueueGroups(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcQueueGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcQueueGroups"], value)
 
     @property
     def PriorityGroupSize(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(priorityGroupSize-1 | priorityGroupSize-4 | priorityGroupSize-8): The maximum size of a Priority Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PriorityGroupSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PriorityGroupSize"])
+
     @PriorityGroupSize.setter
     def PriorityGroupSize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PriorityGroupSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PriorityGroupSize"], value)
 
     @property
     def SupportDataCenterMode(self):
@@ -158,13 +174,24 @@ class Fcoe(Base):
         -------
         - bool: If true, this mode automatically sets Transmit Mode to Interleaved Streams.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportDataCenterMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportDataCenterMode"])
+
     @SupportDataCenterMode.setter
     def SupportDataCenterMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportDataCenterMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportDataCenterMode"], value)
 
-    def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PfcQueueGroupSize=None, PfcQueueGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+    def update(
+        self,
+        EnablePFCPauseDelay=None,
+        FlowControlType=None,
+        PfcPauseDelay=None,
+        PfcPriorityGroups=None,
+        PfcQueueGroupSize=None,
+        PfcQueueGroups=None,
+        PriorityGroupSize=None,
+        SupportDataCenterMode=None,
+    ):
         # type: (bool, str, int, List[str], str, List[str], str, bool) -> Fcoe
         """Updates fcoe resource on the server.
 
@@ -185,7 +212,17 @@ class Fcoe(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PfcQueueGroupSize=None, PfcQueueGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+    def find(
+        self,
+        EnablePFCPauseDelay=None,
+        FlowControlType=None,
+        PfcPauseDelay=None,
+        PfcPriorityGroups=None,
+        PfcQueueGroupSize=None,
+        PfcQueueGroups=None,
+        PriorityGroupSize=None,
+        SupportDataCenterMode=None,
+    ):
         # type: (bool, str, int, List[str], str, List[str], str, bool) -> Fcoe
         """Finds and retrieves fcoe resources from the server.
 

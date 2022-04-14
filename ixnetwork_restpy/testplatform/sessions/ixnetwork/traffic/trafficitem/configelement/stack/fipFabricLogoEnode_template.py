@@ -4,61 +4,61 @@ from ixnetwork_restpy.files import Files
 
 class FipFabricLogoEnode(Base):
     __slots__ = ()
-    _SDM_NAME = 'fipFabricLogoEnode'
+    _SDM_NAME = "fipFabricLogoEnode"
     _SDM_ATT_MAP = {
-        'HeaderFipVersion': 'fipFabricLogoEnode.header.fipVersion-1',
-        'HeaderFipReserved': 'fipFabricLogoEnode.header.fipReserved-2',
-        'FipOperationCodeFipVirtualLinkInstantiation': 'fipFabricLogoEnode.header.fipOperation.fipOperationCode.fipVirtualLinkInstantiation-3',
-        'FipOperationFipOperationReserved1': 'fipFabricLogoEnode.header.fipOperation.fipOperationReserved1-4',
-        'FipSubcodeFipSubcode01h': 'fipFabricLogoEnode.header.fipOperation.fipSubcode.fipSubcode01h-5',
-        'FipOperationFipDescriptorListLength': 'fipFabricLogoEnode.header.fipOperation.fipDescriptorListLength-6',
-        'FipOperationFipFp': 'fipFabricLogoEnode.header.fipOperation.fipFp-7',
-        'FipOperationFipSp': 'fipFabricLogoEnode.header.fipOperation.fipSp-8',
-        'FipOperationFipReserved2': 'fipFabricLogoEnode.header.fipOperation.fipReserved2-9',
-        'FipOperationFipABit': 'fipFabricLogoEnode.header.fipOperation.fipABit-10',
-        'FipOperationFipSBit': 'fipFabricLogoEnode.header.fipOperation.fipSBit-11',
-        'FipOperationFipFBit': 'fipFabricLogoEnode.header.fipOperation.fipFBit-12',
-        'FipLogoDescriptorFipLogoDescriptorType': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorType-13',
-        'FipLogoDescriptorFipLogoDescriptorLength': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorLength-14',
-        'FipLogoDescriptorFipLogoDescriptorReserved': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorReserved-15',
-        'ExtendedLinkServicesExtendedLinkServiceInfo': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelRCtl.extendedLinkServices.extendedLinkServiceInfo-16',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelDId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelDId-17',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelCsCtlPriority': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelCsCtlPriority-18',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelSId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSId-19',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelType': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelType-20',
-        'FCtlExchangeContext': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.exchangeContext-21',
-        'FCtlSequenceContext': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.sequenceContext-22',
-        'FCtlFirstSequence': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.firstSequence-23',
-        'FCtlLastSequence': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.lastSequence-24',
-        'FCtlEndSequence': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.endSequence-25',
-        'FCtlEndConnection': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.endConnection-26',
-        'FCtlCsCtlPriority': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.csCtlPriority-27',
-        'FCtlSequenceInitiative': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.sequenceInitiative-28',
-        'FCtlFcXidReassigned': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcXidReassigned-29',
-        'FCtlFcInvalidateXid': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcInvalidateXid-30',
-        'FCtlAckForm': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.ackForm-31',
-        'FCtlFcDataCompression': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcDataCompression-32',
-        'FCtlFcDataEncryption': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcDataEncryption-33',
-        'FCtlRetransmittedSequence': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.retransmittedSequence-34',
-        'FCtlUnidirectionalTransmit': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.unidirectionalTransmit-35',
-        'FCtlContinueSeqCondition': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.continueSeqCondition-36',
-        'FCtlAbortSeqCondition': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.abortSeqCondition-37',
-        'FCtlRelativeOffsetPresent': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.relativeOffsetPresent-38',
-        'FCtlExchangeReassembly': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.exchangeReassembly-39',
-        'FCtlFillBytes': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fillBytes-40',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSeqId-41',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelDfCtl': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelDfCtl-42',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqCnt': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSeqCnt-43',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelOxId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelOxId-44',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelRxId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelRxId-45',
-        'FipLogoFibreChannelFipLogoDescriptorFibreChannelParameter': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelParameter-46',
-        'FipLogoDescriptorFcElsCommandCodeFipLogoDescriptorFcElsCommandCodeLogo': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsCommandCode.fipLogoDescriptorFcElsCommandCodeLogo-47',
-        'FipLogoDescriptorFcElsFipLogoDescriptorFcElsReserved': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsReserved-48',
-        'FipLogoDescriptorFcElsFipLogoDescriptorFcElsOriginatorSId': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsOriginatorSId-49',
-        'FipLogoDescriptorFcElsFipLogoDescriptorFcElsNPortPortName': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsNPortPortName-50',
-        'FipMacAddressDescriptorFipMacAddressDescriptorType': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-51',
-        'FipMacAddressDescriptorFipMacAddressDescriptorLength': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-52',
-        'FipMacAddressDescriptorFipMacAddressDescriptorValue': 'fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-53',
+        "HeaderFipVersion": "fipFabricLogoEnode.header.fipVersion-1",
+        "HeaderFipReserved": "fipFabricLogoEnode.header.fipReserved-2",
+        "FipOperationCodeFipVirtualLinkInstantiation": "fipFabricLogoEnode.header.fipOperation.fipOperationCode.fipVirtualLinkInstantiation-3",
+        "FipOperationFipOperationReserved1": "fipFabricLogoEnode.header.fipOperation.fipOperationReserved1-4",
+        "FipSubcodeFipSubcode01h": "fipFabricLogoEnode.header.fipOperation.fipSubcode.fipSubcode01h-5",
+        "FipOperationFipDescriptorListLength": "fipFabricLogoEnode.header.fipOperation.fipDescriptorListLength-6",
+        "FipOperationFipFp": "fipFabricLogoEnode.header.fipOperation.fipFp-7",
+        "FipOperationFipSp": "fipFabricLogoEnode.header.fipOperation.fipSp-8",
+        "FipOperationFipReserved2": "fipFabricLogoEnode.header.fipOperation.fipReserved2-9",
+        "FipOperationFipABit": "fipFabricLogoEnode.header.fipOperation.fipABit-10",
+        "FipOperationFipSBit": "fipFabricLogoEnode.header.fipOperation.fipSBit-11",
+        "FipOperationFipFBit": "fipFabricLogoEnode.header.fipOperation.fipFBit-12",
+        "FipLogoDescriptorFipLogoDescriptorType": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorType-13",
+        "FipLogoDescriptorFipLogoDescriptorLength": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorLength-14",
+        "FipLogoDescriptorFipLogoDescriptorReserved": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorReserved-15",
+        "ExtendedLinkServicesExtendedLinkServiceInfo": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelRCtl.extendedLinkServices.extendedLinkServiceInfo-16",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelDId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelDId-17",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelCsCtlPriority": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelCsCtlPriority-18",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelSId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSId-19",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelType": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelType-20",
+        "FCtlExchangeContext": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.exchangeContext-21",
+        "FCtlSequenceContext": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.sequenceContext-22",
+        "FCtlFirstSequence": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.firstSequence-23",
+        "FCtlLastSequence": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.lastSequence-24",
+        "FCtlEndSequence": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.endSequence-25",
+        "FCtlEndConnection": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.endConnection-26",
+        "FCtlCsCtlPriority": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.csCtlPriority-27",
+        "FCtlSequenceInitiative": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.sequenceInitiative-28",
+        "FCtlFcXidReassigned": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcXidReassigned-29",
+        "FCtlFcInvalidateXid": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcInvalidateXid-30",
+        "FCtlAckForm": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.ackForm-31",
+        "FCtlFcDataCompression": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcDataCompression-32",
+        "FCtlFcDataEncryption": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fcDataEncryption-33",
+        "FCtlRetransmittedSequence": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.retransmittedSequence-34",
+        "FCtlUnidirectionalTransmit": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.unidirectionalTransmit-35",
+        "FCtlContinueSeqCondition": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.continueSeqCondition-36",
+        "FCtlAbortSeqCondition": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.abortSeqCondition-37",
+        "FCtlRelativeOffsetPresent": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.relativeOffsetPresent-38",
+        "FCtlExchangeReassembly": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.exchangeReassembly-39",
+        "FCtlFillBytes": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelFCtl.fCtl.fillBytes-40",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSeqId-41",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelDfCtl": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelDfCtl-42",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqCnt": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelSeqCnt-43",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelOxId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelOxId-44",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelRxId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelRxId-45",
+        "FipLogoFibreChannelFipLogoDescriptorFibreChannelParameter": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoFibreChannel.fipLogoDescriptorFibreChannelParameter-46",
+        "FipLogoDescriptorFcElsCommandCodeFipLogoDescriptorFcElsCommandCodeLogo": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsCommandCode.fipLogoDescriptorFcElsCommandCodeLogo-47",
+        "FipLogoDescriptorFcElsFipLogoDescriptorFcElsReserved": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsReserved-48",
+        "FipLogoDescriptorFcElsFipLogoDescriptorFcElsOriginatorSId": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsOriginatorSId-49",
+        "FipLogoDescriptorFcElsFipLogoDescriptorFcElsNPortPortName": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipLogoDescriptor.fipLogoDescriptorFcEls.fipLogoDescriptorFcElsNPortPortName-50",
+        "FipMacAddressDescriptorFipMacAddressDescriptorType": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-51",
+        "FipMacAddressDescriptorFipMacAddressDescriptorLength": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-52",
+        "FipMacAddressDescriptorFipMacAddressDescriptorValue": "fipFabricLogoEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-53",
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,7 +72,10 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipVersion"])
+        )
 
     @property
     def HeaderFipReserved(self):
@@ -82,7 +85,10 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipReserved"])
+        )
 
     @property
     def FipOperationCodeFipVirtualLinkInstantiation(self):
@@ -92,7 +98,13 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationCodeFipVirtualLinkInstantiation']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationCodeFipVirtualLinkInstantiation"]
+            ),
+        )
 
     @property
     def FipOperationFipOperationReserved1(self):
@@ -102,7 +114,11 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipOperationReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationFipOperationReserved1"]),
+        )
 
     @property
     def FipSubcodeFipSubcode01h(self):
@@ -112,7 +128,10 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipSubcodeFipSubcode01h']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipSubcodeFipSubcode01h"])
+        )
 
     @property
     def FipOperationFipDescriptorListLength(self):
@@ -122,7 +141,13 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipDescriptorListLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationFipDescriptorListLength"]
+            ),
+        )
 
     @property
     def FipOperationFipFp(self):
@@ -133,7 +158,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFp"])
+        )
 
     @property
     def FipOperationFipSp(self):
@@ -144,7 +172,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSp"])
+        )
 
     @property
     def FipOperationFipReserved2(self):
@@ -154,7 +185,10 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipReserved2"])
+        )
 
     @property
     def FipOperationFipABit(self):
@@ -165,7 +199,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipABit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipABit"])
+        )
 
     @property
     def FipOperationFipSBit(self):
@@ -176,7 +213,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSBit"])
+        )
 
     @property
     def FipOperationFipFBit(self):
@@ -187,7 +227,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFBit"])
+        )
 
     @property
     def FipLogoDescriptorFipLogoDescriptorType(self):
@@ -197,7 +240,13 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFipLogoDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipLogoDescriptorFipLogoDescriptorType"]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFipLogoDescriptorLength(self):
@@ -207,7 +256,13 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFipLogoDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipLogoDescriptorFipLogoDescriptorLength"]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFipLogoDescriptorReserved(self):
@@ -217,7 +272,13 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFipLogoDescriptorReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipLogoDescriptorFipLogoDescriptorReserved"]
+            ),
+        )
 
     @property
     def ExtendedLinkServicesExtendedLinkServiceInfo(self):
@@ -228,7 +289,13 @@ class FipFabricLogoEnode(Base):
         Available enum values: Solicited Data, 33, Request, 34, Reply, 35
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedLinkServicesExtendedLinkServiceInfo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExtendedLinkServicesExtendedLinkServiceInfo"]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelDId(self):
@@ -238,7 +305,13 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelDId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipLogoFibreChannelFipLogoDescriptorFibreChannelDId"]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelCsCtlPriority(self):
@@ -248,7 +321,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelCsCtlPriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelCsCtlPriority"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelSId(self):
@@ -258,7 +339,13 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelSId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipLogoFibreChannelFipLogoDescriptorFibreChannelSId"]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelType(self):
@@ -268,7 +355,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelType"
+                ]
+            ),
+        )
 
     @property
     def FCtlExchangeContext(self):
@@ -279,7 +374,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeContext"])
+        )
 
     @property
     def FCtlSequenceContext(self):
@@ -290,7 +388,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceContext"])
+        )
 
     @property
     def FCtlFirstSequence(self):
@@ -301,7 +402,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFirstSequence"])
+        )
 
     @property
     def FCtlLastSequence(self):
@@ -312,7 +416,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlLastSequence"])
+        )
 
     @property
     def FCtlEndSequence(self):
@@ -323,7 +430,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndSequence"])
+        )
 
     @property
     def FCtlEndConnection(self):
@@ -334,7 +444,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndConnection"])
+        )
 
     @property
     def FCtlCsCtlPriority(self):
@@ -345,7 +458,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: CS_CTL, 0, Priority, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlCsCtlPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlCsCtlPriority"])
+        )
 
     @property
     def FCtlSequenceInitiative(self):
@@ -356,7 +472,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceInitiative"])
+        )
 
     @property
     def FCtlFcXidReassigned(self):
@@ -367,7 +486,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcXidReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcXidReassigned"])
+        )
 
     @property
     def FCtlFcInvalidateXid(self):
@@ -378,7 +500,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcInvalidateXid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcInvalidateXid"])
+        )
 
     @property
     def FCtlAckForm(self):
@@ -389,7 +514,8 @@ class FipFabricLogoEnode(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAckForm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlAckForm"]))
 
     @property
     def FCtlFcDataCompression(self):
@@ -400,7 +526,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataCompression"])
+        )
 
     @property
     def FCtlFcDataEncryption(self):
@@ -411,7 +540,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataEncryption"])
+        )
 
     @property
     def FCtlRetransmittedSequence(self):
@@ -422,7 +554,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRetransmittedSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRetransmittedSequence"])
+        )
 
     @property
     def FCtlUnidirectionalTransmit(self):
@@ -433,7 +568,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlUnidirectionalTransmit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlUnidirectionalTransmit"])
+        )
 
     @property
     def FCtlContinueSeqCondition(self):
@@ -444,7 +582,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlContinueSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlContinueSeqCondition"])
+        )
 
     @property
     def FCtlAbortSeqCondition(self):
@@ -455,7 +596,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlAbortSeqCondition"])
+        )
 
     @property
     def FCtlRelativeOffsetPresent(self):
@@ -466,7 +610,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRelativeOffsetPresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRelativeOffsetPresent"])
+        )
 
     @property
     def FCtlExchangeReassembly(self):
@@ -477,7 +624,10 @@ class FipFabricLogoEnode(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeReassembly"])
+        )
 
     @property
     def FCtlFillBytes(self):
@@ -488,7 +638,8 @@ class FipFabricLogoEnode(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFillBytes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlFillBytes"]))
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqId(self):
@@ -498,7 +649,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqId"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelDfCtl(self):
@@ -508,7 +667,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelDfCtl']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelDfCtl"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqCnt(self):
@@ -518,7 +685,15 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqCnt']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelSeqCnt"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelOxId(self):
@@ -528,7 +703,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelOxId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelOxId"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelRxId(self):
@@ -538,7 +721,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelRxId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelRxId"
+                ]
+            ),
+        )
 
     @property
     def FipLogoFibreChannelFipLogoDescriptorFibreChannelParameter(self):
@@ -548,7 +739,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoFibreChannelFipLogoDescriptorFibreChannelParameter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoFibreChannelFipLogoDescriptorFibreChannelParameter"
+                ]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFcElsCommandCodeFipLogoDescriptorFcElsCommandCodeLogo(self):
@@ -558,7 +757,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFcElsCommandCodeFipLogoDescriptorFcElsCommandCodeLogo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoDescriptorFcElsCommandCodeFipLogoDescriptorFcElsCommandCodeLogo"
+                ]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFcElsFipLogoDescriptorFcElsReserved(self):
@@ -568,7 +775,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFcElsFipLogoDescriptorFcElsReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoDescriptorFcElsFipLogoDescriptorFcElsReserved"
+                ]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFcElsFipLogoDescriptorFcElsOriginatorSId(self):
@@ -578,7 +793,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFcElsFipLogoDescriptorFcElsOriginatorSId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoDescriptorFcElsFipLogoDescriptorFcElsOriginatorSId"
+                ]
+            ),
+        )
 
     @property
     def FipLogoDescriptorFcElsFipLogoDescriptorFcElsNPortPortName(self):
@@ -588,7 +811,15 @@ class FipFabricLogoEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipLogoDescriptorFcElsFipLogoDescriptorFcElsNPortPortName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipLogoDescriptorFcElsFipLogoDescriptorFcElsNPortPortName"
+                ]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorType(self):
@@ -598,7 +829,13 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorType"]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorLength(self):
@@ -608,7 +845,15 @@ class FipFabricLogoEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipMacAddressDescriptorFipMacAddressDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorValue(self):
@@ -618,7 +863,13 @@ class FipFabricLogoEnode(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorValue"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

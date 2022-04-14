@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class Trilloamechoreply(Base):
     __slots__ = ()
-    _SDM_NAME = 'trill_oam_echo_reply'
+    _SDM_NAME = "trill_oam_echo_reply"
     _SDM_ATT_MAP = {
-        'HeaderSpid': 'trill_oam_echo_reply.header.spid-1',
-        'HeaderSequence': 'trill_oam_echo_reply.header.sequence-2',
-        'HeaderTlv_total_length': 'trill_oam_echo_reply.header.tlv_total_length-3',
-        'DefaultTlv_code': 'trill_oam_echo_reply.header..tlv_code-4',
-        'DefaultTlv_length': 'trill_oam_echo_reply.header..tlv_length-5',
-        'DefaultTlv_value': 'trill_oam_echo_reply.header..tlv_value-6',
+        "HeaderSpid": "trill_oam_echo_reply.header.spid-1",
+        "HeaderSequence": "trill_oam_echo_reply.header.sequence-2",
+        "HeaderTlv_total_length": "trill_oam_echo_reply.header.tlv_total_length-3",
+        "DefaultTlv_code": "trill_oam_echo_reply.header..tlv_code-4",
+        "DefaultTlv_length": "trill_oam_echo_reply.header..tlv_length-5",
+        "DefaultTlv_value": "trill_oam_echo_reply.header..tlv_value-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,8 @@ class Trilloamechoreply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSpid"]))
 
     @property
     def HeaderSequence(self):
@@ -35,7 +36,10 @@ class Trilloamechoreply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSequence"])
+        )
 
     @property
     def HeaderTlv_total_length(self):
@@ -45,7 +49,10 @@ class Trilloamechoreply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderTlv_total_length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderTlv_total_length"])
+        )
 
     @property
     def DefaultTlv_code(self):
@@ -55,7 +62,10 @@ class Trilloamechoreply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultTlv_code']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultTlv_code"])
+        )
 
     @property
     def DefaultTlv_length(self):
@@ -65,7 +75,10 @@ class Trilloamechoreply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultTlv_length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultTlv_length"])
+        )
 
     @property
     def DefaultTlv_value(self):
@@ -75,7 +88,10 @@ class Trilloamechoreply(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultTlv_value']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultTlv_value"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

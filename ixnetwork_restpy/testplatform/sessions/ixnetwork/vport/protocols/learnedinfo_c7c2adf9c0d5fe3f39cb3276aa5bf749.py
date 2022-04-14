@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class LearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedInfo'
+    _SDM_NAME = "learnedInfo"
     _SDM_ATT_MAP = {
-        'DesMinTxInterval': 'desMinTxInterval',
-        'MyDisc': 'myDisc',
-        'MyIpAddress': 'myIpAddress',
-        'PeerDisc': 'peerDisc',
-        'PeerFlags': 'peerFlags',
-        'PeerIpAddress': 'peerIpAddress',
-        'PeerState': 'peerState',
-        'PeerUpTime': 'peerUpTime',
-        'ProtocolUsingSession': 'protocolUsingSession',
-        'ReqMinEchoInterval': 'reqMinEchoInterval',
-        'ReqMinRxInterval': 'reqMinRxInterval',
-        'SessionState': 'sessionState',
-        'SessionType': 'sessionType',
+        "DesMinTxInterval": "desMinTxInterval",
+        "MyDisc": "myDisc",
+        "MyIpAddress": "myIpAddress",
+        "PeerDisc": "peerDisc",
+        "PeerFlags": "peerFlags",
+        "PeerIpAddress": "peerIpAddress",
+        "PeerState": "peerState",
+        "PeerUpTime": "peerUpTime",
+        "ProtocolUsingSession": "protocolUsingSession",
+        "ReqMinEchoInterval": "reqMinEchoInterval",
+        "ReqMinRxInterval": "reqMinRxInterval",
+        "SessionState": "sessionState",
+        "SessionType": "sessionType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedInfo, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class LearnedInfo(Base):
         -------
         - number: This is the minimum interval, in microseconds, that the local system would like to use when transmitting BFD Control packets. The value zero is reserved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DesMinTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["DesMinTxInterval"])
 
     @property
     def MyDisc(self):
@@ -73,7 +73,7 @@ class LearnedInfo(Base):
         -------
         - number: The discriminator for the session on this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MyDisc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MyDisc"])
 
     @property
     def MyIpAddress(self):
@@ -83,7 +83,7 @@ class LearnedInfo(Base):
         -------
         - str: The local IP address being used by the configured or auto-created BFD session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MyIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MyIpAddress"])
 
     @property
     def PeerDisc(self):
@@ -93,7 +93,7 @@ class LearnedInfo(Base):
         -------
         - number: The discriminator for the for side of the BFD session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerDisc'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDisc"])
 
     @property
     def PeerFlags(self):
@@ -103,7 +103,7 @@ class LearnedInfo(Base):
         -------
         - str: The number of peer generated flags received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerFlags'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerFlags"])
 
     @property
     def PeerIpAddress(self):
@@ -113,7 +113,7 @@ class LearnedInfo(Base):
         -------
         - str: The IP address for the far side of the BFD session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpAddress"])
 
     @property
     def PeerState(self):
@@ -123,7 +123,7 @@ class LearnedInfo(Base):
         -------
         - str: The state of the far side of the BFD session, either active or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerState'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerState"])
 
     @property
     def PeerUpTime(self):
@@ -133,7 +133,7 @@ class LearnedInfo(Base):
         -------
         - number: How long the peer has been active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerUpTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerUpTime"])
 
     @property
     def ProtocolUsingSession(self):
@@ -143,7 +143,7 @@ class LearnedInfo(Base):
         -------
         - str: Which protocol is using the BFD session (for example, OSPF, BGP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolUsingSession'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolUsingSession"])
 
     @property
     def ReqMinEchoInterval(self):
@@ -153,7 +153,7 @@ class LearnedInfo(Base):
         -------
         - number: This is the minimum interval, in microseconds, between received BFD Echo packets that this system is capable of supporting. If this value is zero, the transmitting system does not support the receipt of BFD Echo packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReqMinEchoInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReqMinEchoInterval"])
 
     @property
     def ReqMinRxInterval(self):
@@ -163,7 +163,7 @@ class LearnedInfo(Base):
         -------
         - number: The minimum receive interval, in microseconds, for the far side of the BFD session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReqMinRxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReqMinRxInterval"])
 
     @property
     def SessionState(self):
@@ -173,7 +173,7 @@ class LearnedInfo(Base):
         -------
         - str: Whether the session is active or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionState'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionState"])
 
     @property
     def SessionType(self):
@@ -183,10 +183,10 @@ class LearnedInfo(Base):
         -------
         - str: The type of BFD session, either single or multiple hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionType"])
 
     def add(self):
-        """Adds a new learnedInfo resource on the json, only valid with config assistant
+        """Adds a new learnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +198,22 @@ class LearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DesMinTxInterval=None, MyDisc=None, MyIpAddress=None, PeerDisc=None, PeerFlags=None, PeerIpAddress=None, PeerState=None, PeerUpTime=None, ProtocolUsingSession=None, ReqMinEchoInterval=None, ReqMinRxInterval=None, SessionState=None, SessionType=None):
+    def find(
+        self,
+        DesMinTxInterval=None,
+        MyDisc=None,
+        MyIpAddress=None,
+        PeerDisc=None,
+        PeerFlags=None,
+        PeerIpAddress=None,
+        PeerState=None,
+        PeerUpTime=None,
+        ProtocolUsingSession=None,
+        ReqMinEchoInterval=None,
+        ReqMinRxInterval=None,
+        SessionState=None,
+        SessionType=None,
+    ):
         # type: (int, int, str, int, str, str, str, int, str, int, int, str, str) -> LearnedInfo
         """Finds and retrieves learnedInfo resources from the server.
 

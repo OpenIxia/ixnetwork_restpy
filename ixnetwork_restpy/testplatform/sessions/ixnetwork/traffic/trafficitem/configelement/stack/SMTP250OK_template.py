@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class SMTP250OK(Base):
     __slots__ = ()
-    _SDM_NAME = 'SMTP_250_OK'
+    _SDM_NAME = "SMTP_250_OK"
     _SDM_ATT_MAP = {
-        'Response_Response Code': 'SMTP_250_OK.Response_.Response Code-1',
-        'Response_Space11': 'SMTP_250_OK.Response_.Space11-2',
-        'Response_Response parameter': 'SMTP_250_OK.Response_.Response parameter-3',
-        'Response_CRLF11': 'SMTP_250_OK.Response_.CRLF11-4',
+        "Response_Response Code": "SMTP_250_OK.Response_.Response Code-1",
+        "Response_Space11": "SMTP_250_OK.Response_.Space11-2",
+        "Response_Response parameter": "SMTP_250_OK.Response_.Response parameter-3",
+        "Response_CRLF11": "SMTP_250_OK.Response_.CRLF11-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class SMTP250OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Response_Response Code']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Response_Response Code"])
+        )
 
     @property
     def Response_Space11(self):
@@ -33,7 +36,10 @@ class SMTP250OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Response_Space11']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Response_Space11"])
+        )
 
     @property
     def Response_Responseparameter(self):
@@ -43,7 +49,10 @@ class SMTP250OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Response_Response parameter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Response_Response parameter"])
+        )
 
     @property
     def Response_CRLF11(self):
@@ -53,7 +62,10 @@ class SMTP250OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Response_CRLF11']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Response_CRLF11"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

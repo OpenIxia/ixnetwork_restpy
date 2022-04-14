@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class DcbxGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxGlobals'
+    _SDM_NAME = "dcbxGlobals"
     _SDM_ATT_MAP = {
-        'AllowMultipleSessions': 'allowMultipleSessions',
-        'FailOnMismatch': 'failOnMismatch',
-        'FlapLinkOnStart': 'flapLinkOnStart',
-        'ObjectId': 'objectId',
+        "AllowMultipleSessions": "allowMultipleSessions",
+        "FailOnMismatch": "failOnMismatch",
+        "FlapLinkOnStart": "flapLinkOnStart",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxGlobals, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class DcbxGlobals(Base):
         -------
         - bool: Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowMultipleSessions"])
+
     @AllowMultipleSessions.setter
     def AllowMultipleSessions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllowMultipleSessions"], value)
 
     @property
     def FailOnMismatch(self):
@@ -69,11 +70,12 @@ class DcbxGlobals(Base):
         -------
         - bool: If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FailOnMismatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["FailOnMismatch"])
+
     @FailOnMismatch.setter
     def FailOnMismatch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FailOnMismatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FailOnMismatch"], value)
 
     @property
     def FlapLinkOnStart(self):
@@ -83,11 +85,12 @@ class DcbxGlobals(Base):
         -------
         - bool: Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlapLinkOnStart"])
+
     @FlapLinkOnStart.setter
     def FlapLinkOnStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlapLinkOnStart"], value)
 
     @property
     def ObjectId(self):
@@ -97,9 +100,11 @@ class DcbxGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
-    def update(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
+    def update(
+        self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None
+    ):
         # type: (bool, bool, bool) -> DcbxGlobals
         """Updates dcbxGlobals resource on the server.
 
@@ -115,7 +120,9 @@ class DcbxGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
+    def add(
+        self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None
+    ):
         # type: (bool, bool, bool) -> DcbxGlobals
         """Adds a new dcbxGlobals resource on the server and adds it to the container.
 
@@ -145,7 +152,13 @@ class DcbxGlobals(Base):
         """
         self._delete()
 
-    def find(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None, ObjectId=None):
+    def find(
+        self,
+        AllowMultipleSessions=None,
+        FailOnMismatch=None,
+        FlapLinkOnStart=None,
+        ObjectId=None,
+    ):
         # type: (bool, bool, bool, str) -> DcbxGlobals
         """Finds and retrieves dcbxGlobals resources from the server.
 

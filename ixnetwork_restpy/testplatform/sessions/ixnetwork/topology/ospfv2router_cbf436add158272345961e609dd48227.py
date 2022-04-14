@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,75 +34,83 @@ class Ospfv2Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv2Router'
+    _SDM_NAME = "ospfv2Router"
     _SDM_ATT_MAP = {
-        'BIERPrefix': 'BIERPrefix',
-        'Active': 'active',
-        'AdvertiseFapm': 'advertiseFapm',
-        'Algorithm': 'algorithm',
-        'BBit': 'bBit',
-        'BierAFlag': 'bierAFlag',
-        'BierNFlag': 'bierNFlag',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DemandCircuit': 'demandCircuit',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLearnedLsa': 'discardLearnedLsa',
-        'DoNotGenerateRouterLsa': 'doNotGenerateRouterLsa',
-        'EBit': 'eBit',
-        'EFlag': 'eFlag',
-        'EnableBIER': 'enableBIER',
-        'EnableMappingServer': 'enableMappingServer',
-        'EnableMappingServerPreference': 'enableMappingServerPreference',
-        'EnableSegmentRouting': 'enableSegmentRouting',
-        'EnableSrlb': 'enableSrlb',
-        'Errors': 'errors',
-        'ExtendedPrefixFlags': 'extendedPrefixFlags',
-        'ExternalAttribute': 'externalAttribute',
-        'ExternalCapability': 'externalCapability',
-        'FapmMetric': 'fapmMetric',
-        'FlexAlgoCount': 'flexAlgoCount',
-        'GracefulRestart': 'gracefulRestart',
-        'HighPerfLearningModeForSR': 'highPerfLearningModeForSR',
-        'IgnoreSelfOriginatedLSA': 'ignoreSelfOriginatedLSA',
-        'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
-        'LFlag': 'lFlag',
-        'LocalRouterID': 'localRouterID',
-        'LoopBackAddress': 'loopBackAddress',
-        'LsaRefreshTime': 'lsaRefreshTime',
-        'LsaRetransmitTime': 'lsaRetransmitTime',
-        'MFlag': 'mFlag',
-        'MappingServerPreferenceValue': 'mappingServerPreferenceValue',
-        'MaxLsUpdatesPerBurst': 'maxLsUpdatesPerBurst',
-        'MulticastCapability': 'multicastCapability',
-        'Name': 'name',
-        'NoOfAddiotnalAlgoSidCount': 'noOfAddiotnalAlgoSidCount',
-        'NoOfAddressPrefix': 'noOfAddressPrefix',
-        'NoOfBIERSubDomains': 'noOfBIERSubDomains',
-        'NpFlag': 'npFlag',
-        'NssaCapability': 'nssaCapability',
-        'OobResyncBreakout': 'oobResyncBreakout',
-        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
-        'SRAlgorithmCount': 'sRAlgorithmCount',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'SidIndexLabel': 'sidIndexLabel',
-        'SrgbRangeCount': 'srgbRangeCount',
-        'SrlbRangeCount': 'srlbRangeCount',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'StrictLsaChecking': 'strictLsaChecking',
-        'SupportForRfc3623': 'supportForRfc3623',
-        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
-        'SupportReasonSoftRestart': 'supportReasonSoftRestart',
-        'SupportReasonSwitchRedundantCntrlProcessor': 'supportReasonSwitchRedundantCntrlProcessor',
-        'SupportReasonUnknown': 'supportReasonUnknown',
-        'TypeOfServiceRouting': 'typeOfServiceRouting',
-        'Unused': 'unused',
-        'VFlag': 'vFlag',
+        "BIERPrefix": "BIERPrefix",
+        "Active": "active",
+        "AdvertiseFapm": "advertiseFapm",
+        "Algorithm": "algorithm",
+        "BBit": "bBit",
+        "BierAFlag": "bierAFlag",
+        "BierNFlag": "bierNFlag",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DemandCircuit": "demandCircuit",
+        "DescriptiveName": "descriptiveName",
+        "DiscardLearnedLsa": "discardLearnedLsa",
+        "DoNotGenerateRouterLsa": "doNotGenerateRouterLsa",
+        "EBit": "eBit",
+        "EFlag": "eFlag",
+        "EnableBIER": "enableBIER",
+        "EnableMappingServer": "enableMappingServer",
+        "EnableMappingServerPreference": "enableMappingServerPreference",
+        "EnableSegmentRouting": "enableSegmentRouting",
+        "EnableSrlb": "enableSrlb",
+        "Errors": "errors",
+        "ExtendedPrefixFlags": "extendedPrefixFlags",
+        "ExternalAttribute": "externalAttribute",
+        "ExternalCapability": "externalCapability",
+        "FapmMetric": "fapmMetric",
+        "FlexAlgoCount": "flexAlgoCount",
+        "GracefulRestart": "gracefulRestart",
+        "HighPerfLearningModeForSR": "highPerfLearningModeForSR",
+        "IgnoreSelfOriginatedLSA": "ignoreSelfOriginatedLSA",
+        "InterFloodLsUpdateBurstGap": "interFloodLsUpdateBurstGap",
+        "LFlag": "lFlag",
+        "LocalRouterID": "localRouterID",
+        "LoopBackAddress": "loopBackAddress",
+        "LsaRefreshTime": "lsaRefreshTime",
+        "LsaRetransmitTime": "lsaRetransmitTime",
+        "MFlag": "mFlag",
+        "MappingServerPreferenceValue": "mappingServerPreferenceValue",
+        "MaxLsUpdatesPerBurst": "maxLsUpdatesPerBurst",
+        "MulticastCapability": "multicastCapability",
+        "Name": "name",
+        "NoOfAddiotnalAlgoSidCount": "noOfAddiotnalAlgoSidCount",
+        "NoOfAddressPrefix": "noOfAddressPrefix",
+        "NoOfBIERSubDomains": "noOfBIERSubDomains",
+        "NpFlag": "npFlag",
+        "NssaCapability": "nssaCapability",
+        "OobResyncBreakout": "oobResyncBreakout",
+        "OpaqueLsaForwarded": "opaqueLsaForwarded",
+        "SRAlgorithmCount": "sRAlgorithmCount",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "SidIndexLabel": "sidIndexLabel",
+        "SrgbRangeCount": "srgbRangeCount",
+        "SrlbRangeCount": "srlbRangeCount",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "StrictLsaChecking": "strictLsaChecking",
+        "SupportForRfc3623": "supportForRfc3623",
+        "SupportReasonSoftReloadUpgrade": "supportReasonSoftReloadUpgrade",
+        "SupportReasonSoftRestart": "supportReasonSoftRestart",
+        "SupportReasonSwitchRedundantCntrlProcessor": "supportReasonSwitchRedundantCntrlProcessor",
+        "SupportReasonUnknown": "supportReasonUnknown",
+        "TypeOfServiceRouting": "typeOfServiceRouting",
+        "Unused": "unused",
+        "VFlag": "vFlag",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -118,10 +127,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbiersubdomainlist_a244513d4753b7b3d307266e2c9b6c70 import OspfBierSubDomainList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbiersubdomainlist_a244513d4753b7b3d307266e2c9b6c70 import (
+            OspfBierSubDomainList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfBierSubDomainList', None) is not None:
-                return self._properties.get('OspfBierSubDomainList')
+            if self._properties.get("OspfBierSubDomainList", None) is not None:
+                return self._properties.get("OspfBierSubDomainList")
         return OspfBierSubDomainList(self)._select()
 
     @property
@@ -135,10 +147,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfflexalgorithmlist_4ae63bf2db7540120979d438049bb34e import OspfFlexAlgorithmList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfflexalgorithmlist_4ae63bf2db7540120979d438049bb34e import (
+            OspfFlexAlgorithmList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfFlexAlgorithmList', None) is not None:
-                return self._properties.get('OspfFlexAlgorithmList')
+            if self._properties.get("OspfFlexAlgorithmList", None) is not None:
+                return self._properties.get("OspfFlexAlgorithmList")
         return OspfFlexAlgorithmList(self)._select()
 
     @property
@@ -152,10 +167,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouterssid_5e55e392a518bc7ace38c8d3b21972c4 import OspfRoutersSid
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouterssid_5e55e392a518bc7ace38c8d3b21972c4 import (
+            OspfRoutersSid,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfRoutersSid', None) is not None:
-                return self._properties.get('OspfRoutersSid')
+            if self._properties.get("OspfRoutersSid", None) is not None:
+                return self._properties.get("OspfRoutersSid")
         return OspfRoutersSid(self)._select()
 
     @property
@@ -169,10 +187,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import OspfSRAlgorithmList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import (
+            OspfSRAlgorithmList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRAlgorithmList', None) is not None:
-                return self._properties.get('OspfSRAlgorithmList')
+            if self._properties.get("OspfSRAlgorithmList", None) is not None:
+                return self._properties.get("OspfSRAlgorithmList")
         return OspfSRAlgorithmList(self)
 
     @property
@@ -186,10 +207,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import OspfSRGBRangeSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import (
+            OspfSRGBRangeSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
-                return self._properties.get('OspfSRGBRangeSubObjectsList')
+            if self._properties.get("OspfSRGBRangeSubObjectsList", None) is not None:
+                return self._properties.get("OspfSRGBRangeSubObjectsList")
         return OspfSRGBRangeSubObjectsList(self)
 
     @property
@@ -203,10 +227,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import OspfSRLBRangeSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import (
+            OspfSRLBRangeSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
-                return self._properties.get('OspfSRLBRangeSubObjectsList')
+            if self._properties.get("OspfSRLBRangeSubObjectsList", None) is not None:
+                return self._properties.get("OspfSRLBRangeSubObjectsList")
         return OspfSRLBRangeSubObjectsList(self)
 
     @property
@@ -218,7 +245,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A BFR's BFR-Prefix is an IP address (either IPv4 or IPv6) of the BFR, and MUST be unique and routable within the BIER domain.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BIERPrefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BIERPrefix"]))
 
     @property
     def Active(self):
@@ -229,7 +257,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseFapm(self):
@@ -240,7 +269,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise FAPM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseFapm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseFapm"]))
 
     @property
     def Algorithm(self):
@@ -251,7 +281,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm for the Node SID/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def BBit(self):
@@ -262,7 +293,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA B-Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BBit"]))
 
     @property
     def BierAFlag(self):
@@ -273,7 +305,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attach Flag: If set an Area Border Router (ABR) will generate an Extended Prefix TLV for inter-area prefix that is locally connected or attached in other connected area
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BierAFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BierAFlag"]))
 
     @property
     def BierNFlag(self):
@@ -284,7 +317,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Node Flag: Set when the prefix identifies the advertising router i.e., the prefix is a host prefix advertising a globally reachable address typically associated with a loopback address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BierNFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BierNFlag"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -295,7 +329,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -305,7 +342,7 @@ class Ospfv2Router(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DemandCircuit(self):
@@ -316,7 +353,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5 : The DC-Bit should be set in all LSAs originated by Router implementing the Demand Circuit functionality.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DemandCircuit"]))
 
     @property
     def DescriptiveName(self):
@@ -326,7 +364,7 @@ class Ospfv2Router(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardLearnedLsa(self):
@@ -337,7 +375,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Discard Learned LSAs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedLsa']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedLsa"])
+        )
 
     @property
     def DoNotGenerateRouterLsa(self):
@@ -348,7 +389,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Generate Router LSA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DoNotGenerateRouterLsa']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DoNotGenerateRouterLsa"])
+        )
 
     @property
     def EBit(self):
@@ -359,7 +403,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA E-Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EBit"]))
 
     @property
     def EFlag(self):
@@ -370,7 +415,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def EnableBIER(self):
@@ -380,11 +426,12 @@ class Ospfv2Router(Base):
         -------
         - bool: Enable BIER
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBIER'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBIER"])
+
     @EnableBIER.setter
     def EnableBIER(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBIER'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBIER"], value)
 
     @property
     def EnableMappingServer(self):
@@ -395,7 +442,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Mapping Server of Segment Routing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMappingServer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMappingServer"])
+        )
 
     @property
     def EnableMappingServerPreference(self):
@@ -406,7 +456,11 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Mapping Server Preference of Segment Routing, used if multiple Mapping Servers are configured
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMappingServerPreference']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableMappingServerPreference"]),
+        )
 
     @property
     def EnableSegmentRouting(self):
@@ -416,11 +470,12 @@ class Ospfv2Router(Base):
         -------
         - bool: Enable Segment Routing
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSegmentRouting"])
+
     @EnableSegmentRouting.setter
     def EnableSegmentRouting(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSegmentRouting"], value)
 
     @property
     def EnableSrlb(self):
@@ -430,11 +485,12 @@ class Ospfv2Router(Base):
         -------
         - bool: Enable SRLB
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSrlb'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSrlb"])
+
     @EnableSrlb.setter
     def EnableSrlb(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSrlb'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSrlb"], value)
 
     @property
     def Errors(self):
@@ -443,7 +499,7 @@ class Ospfv2Router(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExtendedPrefixFlags(self):
@@ -454,7 +510,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Extended prefix flags advertised along with Node Loopback Address in Extended Prefix TLV by OSPFv2 routers. This is a hex field. The default value is 0x40. 0x40 signifies Node flag (N flag) is set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedPrefixFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedPrefixFlags"])
+        )
 
     @property
     def ExternalAttribute(self):
@@ -465,7 +524,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4 : The EA-bit describes the router's willingness to receive and forward External-Attributes-LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalAttribute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalAttribute"])
+        )
 
     @property
     def ExternalCapability(self):
@@ -476,7 +538,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1 : The E-bit represents OSPF's ExternalRoutingCapability. This bit can be set in all LSAs associated with the backbone, non-stub areas and AS-external-LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalCapability"])
+        )
 
     @property
     def FapmMetric(self):
@@ -487,7 +552,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAPM Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FapmMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FapmMetric"]))
 
     @property
     def FlexAlgoCount(self):
@@ -497,11 +563,12 @@ class Ospfv2Router(Base):
         -------
         - number: If the count is greater than 0, then the Flex Algo tab will appear after OSPF RTR tab. Default is 0. Range is 0-128.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlexAlgoCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlexAlgoCount"])
+
     @FlexAlgoCount.setter
     def FlexAlgoCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlexAlgoCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlexAlgoCount"], value)
 
     @property
     def GracefulRestart(self):
@@ -512,7 +579,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Graceful Restart,if enabled Discard Learned LSAs should be disabled in order to learn the LSAs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GracefulRestart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GracefulRestart"])
+        )
 
     @property
     def HighPerfLearningModeForSR(self):
@@ -523,7 +593,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This option can be used to increase scale. When enabled then the minimum information required to generate traffic is stored instead of the entire LSA. For example, for SR traffic generation, sid, vflag, SRGB details are stored and label is calculated accordingly. Please note when this flag is enabled, we will not store any LSAs so Learned Info will not display any details. Currently this is supported for only SR opaque LSAs, other Opaque LSAs like BIER, Graceful Restart is not supported, also not supported for BGP-LS scenarios.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HighPerfLearningModeForSR']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HighPerfLearningModeForSR"])
+        )
 
     @property
     def IgnoreSelfOriginatedLSA(self):
@@ -534,7 +607,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When Enabled, It will Ignore receiving of Self Originated LSAs, by doing so It will not readvertise LSAs with its own interface details so that flooding of LSAs can be avoided.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreSelfOriginatedLSA']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IgnoreSelfOriginatedLSA"])
+        )
 
     @property
     def InterFloodLsUpdateBurstGap(self):
@@ -545,7 +621,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Flood LSUpdate burst gap (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterFloodLsUpdateBurstGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterFloodLsUpdateBurstGap"])
+        )
 
     @property
     def LFlag(self):
@@ -556,7 +635,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LocalRouterID(self):
@@ -566,7 +646,7 @@ class Ospfv2Router(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def LoopBackAddress(self):
@@ -576,7 +656,7 @@ class Ospfv2Router(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoopBackAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoopBackAddress"])
 
     @property
     def LsaRefreshTime(self):
@@ -587,7 +667,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSA Refresh time (s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LsaRefreshTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LsaRefreshTime"])
+        )
 
     @property
     def LsaRetransmitTime(self):
@@ -598,7 +681,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSA Retransmit time(s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LsaRetransmitTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LsaRetransmitTime"])
+        )
 
     @property
     def MFlag(self):
@@ -609,7 +695,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def MappingServerPreferenceValue(self):
@@ -620,7 +707,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Preference Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MappingServerPreferenceValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MappingServerPreferenceValue"])
+        )
 
     @property
     def MaxLsUpdatesPerBurst(self):
@@ -631,7 +721,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max Flood LSUpdates Per Burst
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLsUpdatesPerBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxLsUpdatesPerBurst"])
+        )
 
     @property
     def MulticastCapability(self):
@@ -642,7 +735,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2 : The MC-bit describes the multicast capability of the various pieces of the OSPF routing domain.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastCapability"])
+        )
 
     @property
     def Name(self):
@@ -652,11 +748,12 @@ class Ospfv2Router(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfAddiotnalAlgoSidCount(self):
@@ -666,11 +763,12 @@ class Ospfv2Router(Base):
         -------
         - number: Additional Algo/SID Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfAddiotnalAlgoSidCount"])
+
     @NoOfAddiotnalAlgoSidCount.setter
     def NoOfAddiotnalAlgoSidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfAddiotnalAlgoSidCount"], value)
 
     @property
     def NoOfAddressPrefix(self):
@@ -680,11 +778,12 @@ class Ospfv2Router(Base):
         -------
         - number: Number Of Address Prefix Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfAddressPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfAddressPrefix"])
+
     @NoOfAddressPrefix.setter
     def NoOfAddressPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfAddressPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfAddressPrefix"], value)
 
     @property
     def NoOfBIERSubDomains(self):
@@ -694,11 +793,12 @@ class Ospfv2Router(Base):
         -------
         - number: Number of BIER Sub Domains
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfBIERSubDomains'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfBIERSubDomains"])
+
     @NoOfBIERSubDomains.setter
     def NoOfBIERSubDomains(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfBIERSubDomains'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfBIERSubDomains"], value)
 
     @property
     def NpFlag(self):
@@ -709,7 +809,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def NssaCapability(self):
@@ -720,7 +821,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3 : The N/P-bit used only in the Type-7 LSA header. It flags the NSSA border router to translate the Type-7 LSA into a Type-5 LSA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NssaCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NssaCapability"])
+        )
 
     @property
     def OobResyncBreakout(self):
@@ -731,7 +835,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable out-of-band resynchronization breakout
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OobResyncBreakout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OobResyncBreakout"])
+        )
 
     @property
     def OpaqueLsaForwarded(self):
@@ -742,7 +849,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6: The O-bit describes the router's willingness to receive and forward Opaque LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueLsaForwarded']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OpaqueLsaForwarded"])
+        )
 
     @property
     def SRAlgorithmCount(self):
@@ -752,11 +862,12 @@ class Ospfv2Router(Base):
         -------
         - number: SR Algorithm Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SRAlgorithmCount"])
+
     @SRAlgorithmCount.setter
     def SRAlgorithmCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SRAlgorithmCount"], value)
 
     @property
     def SessionInfo(self):
@@ -766,7 +877,7 @@ class Ospfv2Router(Base):
         -------
         - list(str[noIfaceUp | sameNbrRouterId | up]): Logs additional information about the session Information
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -776,7 +887,7 @@ class Ospfv2Router(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SidIndexLabel(self):
@@ -787,7 +898,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def SrgbRangeCount(self):
@@ -797,11 +909,12 @@ class Ospfv2Router(Base):
         -------
         - number: SRGB Range Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrgbRangeCount"])
+
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrgbRangeCount"], value)
 
     @property
     def SrlbRangeCount(self):
@@ -811,11 +924,12 @@ class Ospfv2Router(Base):
         -------
         - number: SRLB Range Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrlbRangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrlbRangeCount"])
+
     @SrlbRangeCount.setter
     def SrlbRangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrlbRangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrlbRangeCount"], value)
 
     @property
     def StateCounts(self):
@@ -824,7 +938,7 @@ class Ospfv2Router(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -834,7 +948,7 @@ class Ospfv2Router(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def StrictLsaChecking(self):
@@ -845,7 +959,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Terminate graceful restart when an LSA has changed
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StrictLsaChecking']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StrictLsaChecking"])
+        )
 
     @property
     def SupportForRfc3623(self):
@@ -856,7 +973,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support RFC 3623 features,if enabled Discard Learned LSAs should be disabled in order to learn the LSAs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportForRfc3623']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportForRfc3623"])
+        )
 
     @property
     def SupportReasonSoftReloadUpgrade(self):
@@ -867,7 +987,11 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support graceful restart helper mode when restart reason is Software Reload or Upgrade.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportReasonSoftReloadUpgrade']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SupportReasonSoftReloadUpgrade"]),
+        )
 
     @property
     def SupportReasonSoftRestart(self):
@@ -878,7 +1002,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support graceful restart helper mode when restart reason is OSPFv2 software restart.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportReasonSoftRestart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportReasonSoftRestart"])
+        )
 
     @property
     def SupportReasonSwitchRedundantCntrlProcessor(self):
@@ -889,7 +1016,13 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support graceful restart helper mode when restart reason is unplanned switchover.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportReasonSwitchRedundantCntrlProcessor']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SupportReasonSwitchRedundantCntrlProcessor"]
+            ),
+        )
 
     @property
     def SupportReasonUnknown(self):
@@ -900,7 +1033,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support graceful restart helper mode when restart reason is unknown and unplanned.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportReasonUnknown']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportReasonUnknown"])
+        )
 
     @property
     def TypeOfServiceRouting(self):
@@ -911,7 +1047,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0 : The T-bit represents OSPF's TOS routing capability.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfServiceRouting']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TypeOfServiceRouting"])
+        )
 
     @property
     def Unused(self):
@@ -922,7 +1061,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7 (Unused).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unused"]))
 
     @property
     def VFlag(self):
@@ -933,9 +1073,23 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
-    def update(self, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, FlexAlgoCount=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
+
+    def update(
+        self,
+        EnableBIER=None,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        FlexAlgoCount=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        NoOfAddressPrefix=None,
+        NoOfBIERSubDomains=None,
+        SRAlgorithmCount=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+    ):
         # type: (bool, bool, bool, int, str, int, int, int, int, int, int) -> Ospfv2Router
         """Updates ospfv2Router resource on the server.
 
@@ -962,9 +1116,22 @@ class Ospfv2Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, FlexAlgoCount=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+    def add(
+        self,
+        EnableBIER=None,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        FlexAlgoCount=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        NoOfAddressPrefix=None,
+        NoOfBIERSubDomains=None,
+        SRAlgorithmCount=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+    ):
         # type: (bool, bool, bool, int, str, int, int, int, int, int, int) -> Ospfv2Router
-        """Adds a new ospfv2Router resource on the json, only valid with config assistant
+        """Adds a new ospfv2Router resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -990,7 +1157,29 @@ class Ospfv2Router(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, Errors=None, FlexAlgoCount=None, LocalRouterID=None, LoopBackAddress=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SessionInfo=None, SessionStatus=None, SrgbRangeCount=None, SrlbRangeCount=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        EnableBIER=None,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        Errors=None,
+        FlexAlgoCount=None,
+        LocalRouterID=None,
+        LoopBackAddress=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        NoOfAddressPrefix=None,
+        NoOfBIERSubDomains=None,
+        SRAlgorithmCount=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ospfv2Router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv2Router resources from the server.
@@ -1075,10 +1264,12 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def OspfStartRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1107,10 +1298,12 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfStartRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ospfStartRouter", payload=payload, response_object=None)
 
     def OspfStopRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1139,10 +1332,12 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfStopRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ospfStopRouter", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1171,10 +1366,12 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1203,10 +1400,12 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1235,12 +1434,61 @@ class Ospfv2Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, AdvertiseFapm=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DemandCircuit=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, EnableMappingServerPreference=None, ExtendedPrefixFlags=None, ExternalAttribute=None, ExternalCapability=None, FapmMetric=None, GracefulRestart=None, HighPerfLearningModeForSR=None, IgnoreSelfOriginatedLSA=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MappingServerPreferenceValue=None, MaxLsUpdatesPerBurst=None, MulticastCapability=None, NpFlag=None, NssaCapability=None, OobResyncBreakout=None, OpaqueLsaForwarded=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TypeOfServiceRouting=None, Unused=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BIERPrefix=None,
+        Active=None,
+        AdvertiseFapm=None,
+        Algorithm=None,
+        BBit=None,
+        BierAFlag=None,
+        BierNFlag=None,
+        ConfigureSIDIndexLabel=None,
+        DemandCircuit=None,
+        DiscardLearnedLsa=None,
+        DoNotGenerateRouterLsa=None,
+        EBit=None,
+        EFlag=None,
+        EnableMappingServer=None,
+        EnableMappingServerPreference=None,
+        ExtendedPrefixFlags=None,
+        ExternalAttribute=None,
+        ExternalCapability=None,
+        FapmMetric=None,
+        GracefulRestart=None,
+        HighPerfLearningModeForSR=None,
+        IgnoreSelfOriginatedLSA=None,
+        InterFloodLsUpdateBurstGap=None,
+        LFlag=None,
+        LsaRefreshTime=None,
+        LsaRetransmitTime=None,
+        MFlag=None,
+        MappingServerPreferenceValue=None,
+        MaxLsUpdatesPerBurst=None,
+        MulticastCapability=None,
+        NpFlag=None,
+        NssaCapability=None,
+        OobResyncBreakout=None,
+        OpaqueLsaForwarded=None,
+        SidIndexLabel=None,
+        StrictLsaChecking=None,
+        SupportForRfc3623=None,
+        SupportReasonSoftReloadUpgrade=None,
+        SupportReasonSoftRestart=None,
+        SupportReasonSwitchRedundantCntrlProcessor=None,
+        SupportReasonUnknown=None,
+        TypeOfServiceRouting=None,
+        Unused=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of ospfv2Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

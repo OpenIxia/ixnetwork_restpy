@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,11 +35,9 @@ class Predefined(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'predefined'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "predefined"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Predefined, self).__init__(parent, list_op)
@@ -54,10 +53,13 @@ class Predefined(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import ActionTemplate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import (
+            ActionTemplate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ActionTemplate', None) is not None:
-                return self._properties.get('ActionTemplate')
+            if self._properties.get("ActionTemplate", None) is not None:
+                return self._properties.get("ActionTemplate")
         return ActionTemplate(self)
 
     def add(self):

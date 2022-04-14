@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,25 @@ class L2HqosConfigList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2HqosConfigList'
+    _SDM_NAME = "l2HqosConfigList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EgressL1HqosInstanceName': 'egressL1HqosInstanceName',
-        'EgressL2HqosInstanceName': 'egressL2HqosInstanceName',
-        'EgressL2HqosProfileName': 'egressL2HqosProfileName',
-        'IngressL1HqosInstanceName': 'ingressL1HqosInstanceName',
-        'IngressL2HqosInstanceName': 'ingressL2HqosInstanceName',
-        'IngressL2HqosProfileName': 'ingressL2HqosProfileName',
-        'L2HqosActionDesc': 'l2HqosActionDesc',
-        'L2HqosActionName': 'l2HqosActionName',
-        'L2HqosProfileName': 'l2HqosProfileName',
-        'L2HqosRuleActionPairName': 'l2HqosRuleActionPairName',
-        'L2HqosRuleName': 'l2HqosRuleName',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EgressL1HqosInstanceName": "egressL1HqosInstanceName",
+        "EgressL2HqosInstanceName": "egressL2HqosInstanceName",
+        "EgressL2HqosProfileName": "egressL2HqosProfileName",
+        "IngressL1HqosInstanceName": "ingressL1HqosInstanceName",
+        "IngressL2HqosInstanceName": "ingressL2HqosInstanceName",
+        "IngressL2HqosProfileName": "ingressL2HqosProfileName",
+        "L2HqosActionDesc": "l2HqosActionDesc",
+        "L2HqosActionName": "l2HqosActionName",
+        "L2HqosProfileName": "l2HqosProfileName",
+        "L2HqosRuleActionPairName": "l2HqosRuleActionPairName",
+        "L2HqosRuleName": "l2HqosRuleName",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L2HqosConfigList, self).__init__(parent, list_op)
@@ -65,7 +65,8 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -75,7 +76,7 @@ class L2HqosConfigList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -85,7 +86,7 @@ class L2HqosConfigList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EgressL1HqosInstanceName(self):
@@ -96,7 +97,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress L1 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressL1HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressL1HqosInstanceName"])
+        )
 
     @property
     def EgressL2HqosInstanceName(self):
@@ -107,7 +111,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress L2 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressL2HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressL2HqosInstanceName"])
+        )
 
     @property
     def EgressL2HqosProfileName(self):
@@ -118,7 +125,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress L2 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressL2HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressL2HqosProfileName"])
+        )
 
     @property
     def IngressL1HqosInstanceName(self):
@@ -129,7 +139,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress L1 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressL1HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressL1HqosInstanceName"])
+        )
 
     @property
     def IngressL2HqosInstanceName(self):
@@ -140,7 +153,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress L2 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressL2HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressL2HqosInstanceName"])
+        )
 
     @property
     def IngressL2HqosProfileName(self):
@@ -151,7 +167,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress L2 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressL2HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressL2HqosProfileName"])
+        )
 
     @property
     def L2HqosActionDesc(self):
@@ -162,7 +181,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: pir <pir-value> [ pbs <pbs-value> | cir <cir-value> | cbs <cbs-value> | weight <weight-value> ] * Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2HqosActionDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2HqosActionDesc"])
+        )
 
     @property
     def L2HqosActionName(self):
@@ -173,7 +195,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2 HQoS Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2HqosActionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2HqosActionName"])
+        )
 
     @property
     def L2HqosProfileName(self):
@@ -184,7 +209,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2HqosProfileName"])
+        )
 
     @property
     def L2HqosRuleActionPairName(self):
@@ -195,7 +223,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2 HQoS Rule Action Pair Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2HqosRuleActionPairName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2HqosRuleActionPairName"])
+        )
 
     @property
     def L2HqosRuleName(self):
@@ -206,7 +237,10 @@ class L2HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2 HQoS Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2HqosRuleName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2HqosRuleName"])
+        )
 
     @property
     def Name(self):
@@ -216,11 +250,12 @@ class L2HqosConfigList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> L2HqosConfigList
@@ -281,7 +316,22 @@ class L2HqosConfigList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, EgressL1HqosInstanceName=None, EgressL2HqosInstanceName=None, EgressL2HqosProfileName=None, IngressL1HqosInstanceName=None, IngressL2HqosInstanceName=None, IngressL2HqosProfileName=None, L2HqosActionDesc=None, L2HqosActionName=None, L2HqosProfileName=None, L2HqosRuleActionPairName=None, L2HqosRuleName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EgressL1HqosInstanceName=None,
+        EgressL2HqosInstanceName=None,
+        EgressL2HqosProfileName=None,
+        IngressL1HqosInstanceName=None,
+        IngressL2HqosInstanceName=None,
+        IngressL2HqosProfileName=None,
+        L2HqosActionDesc=None,
+        L2HqosActionName=None,
+        L2HqosProfileName=None,
+        L2HqosRuleActionPairName=None,
+        L2HqosRuleName=None,
+    ):
         """Base class infrastructure that gets a list of l2HqosConfigList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

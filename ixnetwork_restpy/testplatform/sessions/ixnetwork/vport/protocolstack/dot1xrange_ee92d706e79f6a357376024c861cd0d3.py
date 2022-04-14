@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,24 @@ class Dot1xRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dot1xRange'
+    _SDM_NAME = "dot1xRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FastInnerMethod': 'fastInnerMethod',
-        'FastProvisionMode': 'fastProvisionMode',
-        'FastStatelessResume': 'fastStatelessResume',
-        'HostAuthMode': 'hostAuthMode',
-        'HostName': 'hostName',
-        'HostPassword': 'hostPassword',
-        'NacSequence': 'nacSequence',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Protocol': 'protocol',
-        'UserName': 'userName',
-        'UserPassword': 'userPassword',
-        'WaitId': 'waitId',
+        "Enabled": "enabled",
+        "FastInnerMethod": "fastInnerMethod",
+        "FastProvisionMode": "fastProvisionMode",
+        "FastStatelessResume": "fastStatelessResume",
+        "HostAuthMode": "hostAuthMode",
+        "HostName": "hostName",
+        "HostPassword": "hostPassword",
+        "NacSequence": "nacSequence",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Protocol": "protocol",
+        "UserName": "userName",
+        "UserPassword": "userPassword",
+        "WaitId": "waitId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dot1xRange, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class Dot1xRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FastInnerMethod(self):
@@ -79,11 +80,12 @@ class Dot1xRange(Base):
         -------
         - str: FAST Inner Method.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastInnerMethod'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastInnerMethod"])
+
     @FastInnerMethod.setter
     def FastInnerMethod(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastInnerMethod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastInnerMethod"], value)
 
     @property
     def FastProvisionMode(self):
@@ -93,11 +95,12 @@ class Dot1xRange(Base):
         -------
         - str: FAST Provision Mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastProvisionMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastProvisionMode"])
+
     @FastProvisionMode.setter
     def FastProvisionMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastProvisionMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastProvisionMode"], value)
 
     @property
     def FastStatelessResume(self):
@@ -107,11 +110,12 @@ class Dot1xRange(Base):
         -------
         - str: FAST Stateless Resume.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastStatelessResume'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastStatelessResume"])
+
     @FastStatelessResume.setter
     def FastStatelessResume(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastStatelessResume'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastStatelessResume"], value)
 
     @property
     def HostAuthMode(self):
@@ -121,11 +125,12 @@ class Dot1xRange(Base):
         -------
         - str: Machine Authentification Method.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostAuthMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostAuthMode"])
+
     @HostAuthMode.setter
     def HostAuthMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostAuthMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostAuthMode"], value)
 
     @property
     def HostName(self):
@@ -135,11 +140,12 @@ class Dot1xRange(Base):
         -------
         - str: The MachineName used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
+
     @HostName.setter
     def HostName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostName"], value)
 
     @property
     def HostPassword(self):
@@ -149,11 +155,12 @@ class Dot1xRange(Base):
         -------
         - str: The MachinePassword used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostPassword"])
+
     @HostPassword.setter
     def HostPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostPassword"], value)
 
     @property
     def NacSequence(self):
@@ -163,11 +170,12 @@ class Dot1xRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NacSequence'])
+        return self._get_attribute(self._SDM_ATT_MAP["NacSequence"])
+
     @NacSequence.setter
     def NacSequence(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NacSequence'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NacSequence"], value)
 
     @property
     def Name(self):
@@ -177,11 +185,12 @@ class Dot1xRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -191,7 +200,7 @@ class Dot1xRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Protocol(self):
@@ -201,11 +210,12 @@ class Dot1xRange(Base):
         -------
         - str: Authentification Protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["Protocol"])
+
     @Protocol.setter
     def Protocol(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Protocol"], value)
 
     @property
     def UserName(self):
@@ -215,11 +225,12 @@ class Dot1xRange(Base):
         -------
         - str: The UserName used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserName'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserName"])
+
     @UserName.setter
     def UserName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserName"], value)
 
     @property
     def UserPassword(self):
@@ -229,11 +240,12 @@ class Dot1xRange(Base):
         -------
         - str: The UserPassword used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPassword"])
+
     @UserPassword.setter
     def UserPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPassword"], value)
 
     @property
     def WaitId(self):
@@ -243,13 +255,29 @@ class Dot1xRange(Base):
         -------
         - bool: This value is true if supplicant is waiting for RequestId from DUT part.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitId'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitId"])
+
     @WaitId.setter
     def WaitId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitId"], value)
 
-    def update(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
+    def update(
+        self,
+        Enabled=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        HostAuthMode=None,
+        HostName=None,
+        HostPassword=None,
+        NacSequence=None,
+        Name=None,
+        Protocol=None,
+        UserName=None,
+        UserPassword=None,
+        WaitId=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str, str, bool) -> Dot1xRange
         """Updates dot1xRange resource on the server.
 
@@ -275,7 +303,22 @@ class Dot1xRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
+    def add(
+        self,
+        Enabled=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        HostAuthMode=None,
+        HostName=None,
+        HostPassword=None,
+        NacSequence=None,
+        Name=None,
+        Protocol=None,
+        UserName=None,
+        UserPassword=None,
+        WaitId=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str, str, bool) -> Dot1xRange
         """Adds a new dot1xRange resource on the server and adds it to the container.
 
@@ -315,7 +358,23 @@ class Dot1xRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, HostAuthMode=None, HostName=None, HostPassword=None, NacSequence=None, Name=None, ObjectId=None, Protocol=None, UserName=None, UserPassword=None, WaitId=None):
+    def find(
+        self,
+        Enabled=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        HostAuthMode=None,
+        HostName=None,
+        HostPassword=None,
+        NacSequence=None,
+        Name=None,
+        ObjectId=None,
+        Protocol=None,
+        UserName=None,
+        UserPassword=None,
+        WaitId=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str, str, str, bool) -> Dot1xRange
         """Finds and retrieves dot1xRange resources from the server.
 
@@ -385,10 +444,14 @@ class Dot1xRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -407,10 +470,14 @@ class Dot1xRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -429,7 +496,11 @@ class Dot1xRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

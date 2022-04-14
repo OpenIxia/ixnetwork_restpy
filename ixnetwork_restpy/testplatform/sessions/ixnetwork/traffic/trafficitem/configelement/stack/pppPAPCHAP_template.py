@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class PppPAPCHAP(Base):
     __slots__ = ()
-    _SDM_NAME = 'pppPAPCHAP'
+    _SDM_NAME = "pppPAPCHAP"
     _SDM_ATT_MAP = {
-        'PapFieldsCode': 'pppPAPCHAP.header.authenticationProtocol.papFields.code-1',
-        'PapFieldsIdentifier': 'pppPAPCHAP.header.authenticationProtocol.papFields.identifier-2',
-        'PapFieldsLength': 'pppPAPCHAP.header.authenticationProtocol.papFields.length-3',
-        'AuthenticateRequestPeerIDLength': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.peerIDLength-4',
-        'AuthenticateRequestPeerID': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.peerID-5',
-        'AuthenticateRequestPasswordLength': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.passwordLength-6',
-        'AuthenticateRequestPassword': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.password-7',
-        'AuthenticateAckNackMessageLength': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateAckNack.messageLength-8',
-        'AuthenticateAckNackValue': 'pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateAckNack.value-9',
-        'ChapFieldsCode': 'pppPAPCHAP.header.authenticationProtocol.chapFields.code-10',
-        'ChapFieldsIdentifier': 'pppPAPCHAP.header.authenticationProtocol.chapFields.identifier-11',
-        'ChapFieldsLength': 'pppPAPCHAP.header.authenticationProtocol.chapFields.length-12',
-        'ChallengeResponseValueLength': 'pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.challengeResponse.valueLength-13',
-        'ChallengeResponseValue': 'pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.challengeResponse.value-14',
-        'MessageMessageLength': 'pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.message.messageLength-15',
-        'MessageValue': 'pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.message.value-16',
+        "PapFieldsCode": "pppPAPCHAP.header.authenticationProtocol.papFields.code-1",
+        "PapFieldsIdentifier": "pppPAPCHAP.header.authenticationProtocol.papFields.identifier-2",
+        "PapFieldsLength": "pppPAPCHAP.header.authenticationProtocol.papFields.length-3",
+        "AuthenticateRequestPeerIDLength": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.peerIDLength-4",
+        "AuthenticateRequestPeerID": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.peerID-5",
+        "AuthenticateRequestPasswordLength": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.passwordLength-6",
+        "AuthenticateRequestPassword": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateRequest.password-7",
+        "AuthenticateAckNackMessageLength": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateAckNack.messageLength-8",
+        "AuthenticateAckNackValue": "pppPAPCHAP.header.authenticationProtocol.papFields.dataFields.authenticateAckNack.value-9",
+        "ChapFieldsCode": "pppPAPCHAP.header.authenticationProtocol.chapFields.code-10",
+        "ChapFieldsIdentifier": "pppPAPCHAP.header.authenticationProtocol.chapFields.identifier-11",
+        "ChapFieldsLength": "pppPAPCHAP.header.authenticationProtocol.chapFields.length-12",
+        "ChallengeResponseValueLength": "pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.challengeResponse.valueLength-13",
+        "ChallengeResponseValue": "pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.challengeResponse.value-14",
+        "MessageMessageLength": "pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.message.messageLength-15",
+        "MessageValue": "pppPAPCHAP.header.authenticationProtocol.chapFields.dataFields.message.value-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -36,7 +36,8 @@ class PppPAPCHAP(Base):
         Available enum values: Authenticate_Request, 1, Authenticate-Ack, 2, Authenticate-Nak, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PapFieldsCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PapFieldsCode"]))
 
     @property
     def PapFieldsIdentifier(self):
@@ -46,7 +47,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PapFieldsIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PapFieldsIdentifier"])
+        )
 
     @property
     def PapFieldsLength(self):
@@ -56,7 +60,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PapFieldsLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PapFieldsLength"])
+        )
 
     @property
     def AuthenticateRequestPeerIDLength(self):
@@ -66,7 +73,11 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateRequestPeerIDLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticateRequestPeerIDLength"]),
+        )
 
     @property
     def AuthenticateRequestPeerID(self):
@@ -76,7 +87,10 @@ class PppPAPCHAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateRequestPeerID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticateRequestPeerID"])
+        )
 
     @property
     def AuthenticateRequestPasswordLength(self):
@@ -86,7 +100,11 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateRequestPasswordLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticateRequestPasswordLength"]),
+        )
 
     @property
     def AuthenticateRequestPassword(self):
@@ -96,7 +114,10 @@ class PppPAPCHAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateRequestPassword']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticateRequestPassword"])
+        )
 
     @property
     def AuthenticateAckNackMessageLength(self):
@@ -106,7 +127,11 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateAckNackMessageLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticateAckNackMessageLength"]),
+        )
 
     @property
     def AuthenticateAckNackValue(self):
@@ -116,7 +141,10 @@ class PppPAPCHAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticateAckNackValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticateAckNackValue"])
+        )
 
     @property
     def ChapFieldsCode(self):
@@ -127,7 +155,10 @@ class PppPAPCHAP(Base):
         Available enum values: Challenge, 1, Response, 2, Success, 3, Failure, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChapFieldsCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChapFieldsCode"])
+        )
 
     @property
     def ChapFieldsIdentifier(self):
@@ -137,7 +168,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChapFieldsIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChapFieldsIdentifier"])
+        )
 
     @property
     def ChapFieldsLength(self):
@@ -147,7 +181,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChapFieldsLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChapFieldsLength"])
+        )
 
     @property
     def ChallengeResponseValueLength(self):
@@ -157,7 +194,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChallengeResponseValueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChallengeResponseValueLength"])
+        )
 
     @property
     def ChallengeResponseValue(self):
@@ -167,7 +207,10 @@ class PppPAPCHAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChallengeResponseValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChallengeResponseValue"])
+        )
 
     @property
     def MessageMessageLength(self):
@@ -177,7 +220,10 @@ class PppPAPCHAP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MessageMessageLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MessageMessageLength"])
+        )
 
     @property
     def MessageValue(self):
@@ -187,7 +233,8 @@ class PppPAPCHAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MessageValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MessageValue"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

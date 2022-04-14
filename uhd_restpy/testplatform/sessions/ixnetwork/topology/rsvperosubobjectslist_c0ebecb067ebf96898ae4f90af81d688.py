@@ -202,7 +202,7 @@ class RsvpEroSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> RsvpEroSubObjectsList
-        """Adds a new rsvpEroSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new rsvpEroSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

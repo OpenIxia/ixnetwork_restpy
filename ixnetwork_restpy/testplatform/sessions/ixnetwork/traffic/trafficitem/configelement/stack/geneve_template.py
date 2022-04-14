@@ -4,16 +4,16 @@ from ixnetwork_restpy.files import Files
 
 class Geneve(Base):
     __slots__ = ()
-    _SDM_NAME = 'geneve'
+    _SDM_NAME = "geneve"
     _SDM_ATT_MAP = {
-        'Version': 'geneve.header.version-1',
-        'Optionslen': 'geneve.header.optionslen-2',
-        'Flags': 'geneve.header.flags-3',
-        'Protocol': 'geneve.header.protocol-4',
-        'Vni': 'geneve.header.vni-5',
-        'Reserved8': 'geneve.header.reserved8-6',
-        'Length': 'geneve.header.length-7',
-        'Options': 'geneve.header.options-8',
+        "Version": "geneve.header.version-1",
+        "Optionslen": "geneve.header.optionslen-2",
+        "Flags": "geneve.header.flags-3",
+        "Protocol": "geneve.header.protocol-4",
+        "Vni": "geneve.header.vni-5",
+        "Reserved8": "geneve.header.reserved8-6",
+        "Length": "geneve.header.length-7",
+        "Options": "geneve.header.options-8",
     }
 
     def __init__(self, parent, list_op=False):
@@ -27,7 +27,8 @@ class Geneve(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Optionslen(self):
@@ -37,7 +38,8 @@ class Geneve(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Optionslen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Optionslen"]))
 
     @property
     def Flags(self):
@@ -47,7 +49,8 @@ class Geneve(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Flags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Flags"]))
 
     @property
     def Protocol(self):
@@ -57,7 +60,8 @@ class Geneve(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Protocol']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Protocol"]))
 
     @property
     def Vni(self):
@@ -67,7 +71,8 @@ class Geneve(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vni']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vni"]))
 
     @property
     def Reserved8(self):
@@ -77,7 +82,8 @@ class Geneve(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved8']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved8"]))
 
     @property
     def Length(self):
@@ -87,7 +93,8 @@ class Geneve(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Length']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Length"]))
 
     @property
     def Options(self):
@@ -97,7 +104,8 @@ class Geneve(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Options']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Options"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

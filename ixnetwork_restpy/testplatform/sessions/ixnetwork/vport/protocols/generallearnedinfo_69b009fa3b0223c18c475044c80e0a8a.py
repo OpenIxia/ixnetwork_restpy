@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,46 +34,98 @@ class GeneralLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'generalLearnedInfo'
+    _SDM_NAME = "generalLearnedInfo"
     _SDM_ATT_MAP = {
-        'AisRx': 'aisRx',
-        'AisState': 'aisState',
-        'AisTx': 'aisTx',
-        'AlarmTypeAis': 'alarmTypeAis',
-        'AlarmTypeLck': 'alarmTypeLck',
-        'ApsLocalDataPath': 'apsLocalDataPath',
-        'ApsLocalFaultPath': 'apsLocalFaultPath',
-        'ApsLocalState': 'apsLocalState',
-        'ApsRemoteDataPath': 'apsRemoteDataPath',
-        'ApsRemoteFaultPath': 'apsRemoteFaultPath',
-        'ApsRemoteRequestState': 'apsRemoteRequestState',
-        'ContinuityCheckLocalState': 'continuityCheckLocalState',
-        'ContinuityCheckRemoteState': 'continuityCheckRemoteState',
-        'ContinuityCheckRxInterval': 'continuityCheckRxInterval',
-        'ContinuityCheckTxInterval': 'continuityCheckTxInterval',
-        'IncomingLabelOuterInner': 'incomingLabelOuterInner',
-        'LastAlarmDuration': 'lastAlarmDuration',
-        'LckRx': 'lckRx',
-        'LckState': 'lckState',
-        'LckTx': 'lckTx',
-        'Ldi': 'ldi',
-        'LocalPwStatus': 'localPwStatus',
-        'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
-        'RemoteDefectIndication': 'remoteDefectIndication',
-        'RemotePwStatus': 'remotePwStatus',
-        'Role': 'role',
-        'TimeSinceLastAlarm': 'timeSinceLastAlarm',
-        'Type': 'type',
+        "AisRx": "aisRx",
+        "AisState": "aisState",
+        "AisTx": "aisTx",
+        "AlarmTypeAis": "alarmTypeAis",
+        "AlarmTypeLck": "alarmTypeLck",
+        "ApsLocalDataPath": "apsLocalDataPath",
+        "ApsLocalFaultPath": "apsLocalFaultPath",
+        "ApsLocalState": "apsLocalState",
+        "ApsRemoteDataPath": "apsRemoteDataPath",
+        "ApsRemoteFaultPath": "apsRemoteFaultPath",
+        "ApsRemoteRequestState": "apsRemoteRequestState",
+        "ContinuityCheckLocalState": "continuityCheckLocalState",
+        "ContinuityCheckRemoteState": "continuityCheckRemoteState",
+        "ContinuityCheckRxInterval": "continuityCheckRxInterval",
+        "ContinuityCheckTxInterval": "continuityCheckTxInterval",
+        "IncomingLabelOuterInner": "incomingLabelOuterInner",
+        "LastAlarmDuration": "lastAlarmDuration",
+        "LckRx": "lckRx",
+        "LckState": "lckState",
+        "LckTx": "lckTx",
+        "Ldi": "ldi",
+        "LocalPwStatus": "localPwStatus",
+        "OutgoingLabelOuterInner": "outgoingLabelOuterInner",
+        "RemoteDefectIndication": "remoteDefectIndication",
+        "RemotePwStatus": "remotePwStatus",
+        "Role": "role",
+        "TimeSinceLastAlarm": "timeSinceLastAlarm",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'apsLocalDataPath': ['working', 'protect', 'na'],
-        'apsLocalFaultPath': ['working', 'protect', 'both', 'none', 'na'],
-        'apsLocalState': ['na', 'apsNoRequest', 'apsLockoutOfProtection', 'apsSignalFailOnWorking', 'apsManualSwitch', 'apsWaitToRestore', 'apsDoNotRevert', 'apsExercise', 'apsReverseRequest', 'pscNormal', 'pscUnavailable', 'pscProtectingAdmin', 'pscProtectingFailure', 'pscWaitToRevert', 'pscDoNotRevert', 'apsSignalFailOnProtection', 'apsForceSwitch'],
-        'apsRemoteDataPath': ['protect', 'na', 'working'],
-        'apsRemoteFaultPath': ['na', 'working', 'protect', 'both', 'none'],
-        'apsRemoteRequestState': ['na', 'apsNoRequest', 'apsLockoutOfProtection', 'apsSignalFailOnWorking', 'apsManualSwitch', 'apsWaitToRestore', 'apsDoNotRevert', 'apsExercise', 'apsReverseRequest', 'pscNormal', 'pscUnavailable', 'pscProtectingAdmin', 'pscProtectingFailure', 'pscWaitToRevert', 'pscDoNotRevert', 'apsSignalFailOnProtection', 'apsForceSwitch'],
-        'continuityCheckLocalState': ['na', 'bfdDown', 'bfdInit', 'bfdUp', 'y1731Down', 'y1731Init', 'y1731Up'],
-        'continuityCheckRemoteState': ['na', 'bfdDown', 'bfdInit', 'bfdUp', 'y1731Down', 'y1731Init', 'y1731Up'],
+        "apsLocalDataPath": ["working", "protect", "na"],
+        "apsLocalFaultPath": ["working", "protect", "both", "none", "na"],
+        "apsLocalState": [
+            "na",
+            "apsNoRequest",
+            "apsLockoutOfProtection",
+            "apsSignalFailOnWorking",
+            "apsManualSwitch",
+            "apsWaitToRestore",
+            "apsDoNotRevert",
+            "apsExercise",
+            "apsReverseRequest",
+            "pscNormal",
+            "pscUnavailable",
+            "pscProtectingAdmin",
+            "pscProtectingFailure",
+            "pscWaitToRevert",
+            "pscDoNotRevert",
+            "apsSignalFailOnProtection",
+            "apsForceSwitch",
+        ],
+        "apsRemoteDataPath": ["protect", "na", "working"],
+        "apsRemoteFaultPath": ["na", "working", "protect", "both", "none"],
+        "apsRemoteRequestState": [
+            "na",
+            "apsNoRequest",
+            "apsLockoutOfProtection",
+            "apsSignalFailOnWorking",
+            "apsManualSwitch",
+            "apsWaitToRestore",
+            "apsDoNotRevert",
+            "apsExercise",
+            "apsReverseRequest",
+            "pscNormal",
+            "pscUnavailable",
+            "pscProtectingAdmin",
+            "pscProtectingFailure",
+            "pscWaitToRevert",
+            "pscDoNotRevert",
+            "apsSignalFailOnProtection",
+            "apsForceSwitch",
+        ],
+        "continuityCheckLocalState": [
+            "na",
+            "bfdDown",
+            "bfdInit",
+            "bfdUp",
+            "y1731Down",
+            "y1731Init",
+            "y1731Up",
+        ],
+        "continuityCheckRemoteState": [
+            "na",
+            "bfdDown",
+            "bfdInit",
+            "bfdUp",
+            "y1731Down",
+            "y1731Init",
+            "y1731Up",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -86,7 +139,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the number of AIS frames received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AisRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AisRx"])
 
     @property
     def AisState(self):
@@ -96,7 +149,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the state of AIS, either Clear or Fault.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AisState'])
+        return self._get_attribute(self._SDM_ATT_MAP["AisState"])
 
     @property
     def AisTx(self):
@@ -106,7 +159,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the number of AIS frames transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AisTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AisTx"])
 
     @property
     def AlarmTypeAis(self):
@@ -116,7 +169,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the type of the AIS alarm, either ietf or y1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlarmTypeAis'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlarmTypeAis"])
 
     @property
     def AlarmTypeLck(self):
@@ -126,7 +179,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the type of the LCK alarm, either ietf or y1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlarmTypeLck'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlarmTypeLck"])
 
     @property
     def ApsLocalDataPath(self):
@@ -136,7 +189,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(working | protect | na): This signifies the path of the APS local data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsLocalDataPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsLocalDataPath"])
 
     @property
     def ApsLocalFaultPath(self):
@@ -146,7 +199,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(working | protect | both | none | na): This signifies the path of the APS local fault.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsLocalFaultPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsLocalFaultPath"])
 
     @property
     def ApsLocalState(self):
@@ -156,7 +209,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(na | apsNoRequest | apsLockoutOfProtection | apsSignalFailOnWorking | apsManualSwitch | apsWaitToRestore | apsDoNotRevert | apsExercise | apsReverseRequest | pscNormal | pscUnavailable | pscProtectingAdmin | pscProtectingFailure | pscWaitToRevert | pscDoNotRevert | apsSignalFailOnProtection | apsForceSwitch): This signifies the APS local state information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsLocalState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsLocalState"])
 
     @property
     def ApsRemoteDataPath(self):
@@ -166,7 +219,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(protect | na | working): This signifies the path of the APS remote data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsRemoteDataPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsRemoteDataPath"])
 
     @property
     def ApsRemoteFaultPath(self):
@@ -176,7 +229,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(na | working | protect | both | none): This signifies the path of the APS remote fault.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsRemoteFaultPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsRemoteFaultPath"])
 
     @property
     def ApsRemoteRequestState(self):
@@ -186,7 +239,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(na | apsNoRequest | apsLockoutOfProtection | apsSignalFailOnWorking | apsManualSwitch | apsWaitToRestore | apsDoNotRevert | apsExercise | apsReverseRequest | pscNormal | pscUnavailable | pscProtectingAdmin | pscProtectingFailure | pscWaitToRevert | pscDoNotRevert | apsSignalFailOnProtection | apsForceSwitch): This signifies the APS remote request state information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsRemoteRequestState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsRemoteRequestState"])
 
     @property
     def ContinuityCheckLocalState(self):
@@ -196,7 +249,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(na | bfdDown | bfdInit | bfdUp | y1731Down | y1731Init | y1731Up): This signifies the status of the Continuity Check Local State.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuityCheckLocalState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuityCheckLocalState"])
 
     @property
     def ContinuityCheckRemoteState(self):
@@ -206,7 +259,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str(na | bfdDown | bfdInit | bfdUp | y1731Down | y1731Init | y1731Up): This signifies the status of the Continuity Check Remote State.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuityCheckRemoteState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuityCheckRemoteState"])
 
     @property
     def ContinuityCheckRxInterval(self):
@@ -216,7 +269,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This Signifies the CC Rx Interval configured on the source side.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuityCheckRxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuityCheckRxInterval"])
 
     @property
     def ContinuityCheckTxInterval(self):
@@ -226,7 +279,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This Signifies the Negotiated CC Tx Interval on the source side.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuityCheckTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuityCheckTxInterval"])
 
     @property
     def IncomingLabelOuterInner(self):
@@ -236,7 +289,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the incoming label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelOuterInner"])
 
     @property
     def LastAlarmDuration(self):
@@ -246,7 +299,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the duration for how long the LSP/PW was in fault state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastAlarmDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastAlarmDuration"])
 
     @property
     def LckRx(self):
@@ -256,7 +309,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the number of LCK frames received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LckRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LckRx"])
 
     @property
     def LckState(self):
@@ -266,7 +319,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the state of LCK, either Clear or Fault.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LckState'])
+        return self._get_attribute(self._SDM_ATT_MAP["LckState"])
 
     @property
     def LckTx(self):
@@ -276,7 +329,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the number of LCK frames transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LckTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LckTx"])
 
     @property
     def Ldi(self):
@@ -286,7 +339,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the state of the LDI bit, either NA or Set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ldi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ldi"])
 
     @property
     def LocalPwStatus(self):
@@ -296,7 +349,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the local PW status.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPwStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPwStatus"])
 
     @property
     def OutgoingLabelOuterInner(self):
@@ -306,7 +359,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the Outgoing Label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelOuterInner"])
 
     @property
     def RemoteDefectIndication(self):
@@ -316,7 +369,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This Signifies the Defect Indication received in the cc message from remote port if any.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteDefectIndication'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteDefectIndication"])
 
     @property
     def RemotePwStatus(self):
@@ -326,7 +379,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the remote PW status.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemotePwStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemotePwStatus"])
 
     @property
     def Role(self):
@@ -336,7 +389,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the selection of this option to filter according to the following roles None,Protect and Working.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Role'])
+        return self._get_attribute(self._SDM_ATT_MAP["Role"])
 
     @property
     def TimeSinceLastAlarm(self):
@@ -346,7 +399,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the time elapsed since the LSP/PW has recovered from the last fault state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeSinceLastAlarm'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeSinceLastAlarm"])
 
     @property
     def Type(self):
@@ -356,10 +409,10 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the selection of this option to filter according to the following types LSP and PW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new generalLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new generalLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -371,7 +424,37 @@ class GeneralLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AisRx=None, AisState=None, AisTx=None, AlarmTypeAis=None, AlarmTypeLck=None, ApsLocalDataPath=None, ApsLocalFaultPath=None, ApsLocalState=None, ApsRemoteDataPath=None, ApsRemoteFaultPath=None, ApsRemoteRequestState=None, ContinuityCheckLocalState=None, ContinuityCheckRemoteState=None, ContinuityCheckRxInterval=None, ContinuityCheckTxInterval=None, IncomingLabelOuterInner=None, LastAlarmDuration=None, LckRx=None, LckState=None, LckTx=None, Ldi=None, LocalPwStatus=None, OutgoingLabelOuterInner=None, RemoteDefectIndication=None, RemotePwStatus=None, Role=None, TimeSinceLastAlarm=None, Type=None):
+    def find(
+        self,
+        AisRx=None,
+        AisState=None,
+        AisTx=None,
+        AlarmTypeAis=None,
+        AlarmTypeLck=None,
+        ApsLocalDataPath=None,
+        ApsLocalFaultPath=None,
+        ApsLocalState=None,
+        ApsRemoteDataPath=None,
+        ApsRemoteFaultPath=None,
+        ApsRemoteRequestState=None,
+        ContinuityCheckLocalState=None,
+        ContinuityCheckRemoteState=None,
+        ContinuityCheckRxInterval=None,
+        ContinuityCheckTxInterval=None,
+        IncomingLabelOuterInner=None,
+        LastAlarmDuration=None,
+        LckRx=None,
+        LckState=None,
+        LckTx=None,
+        Ldi=None,
+        LocalPwStatus=None,
+        OutgoingLabelOuterInner=None,
+        RemoteDefectIndication=None,
+        RemotePwStatus=None,
+        Role=None,
+        TimeSinceLastAlarm=None,
+        Type=None,
+    ):
         # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, int, int, str, str, int, str, int, str, str, str, str, str, str, str, str) -> GeneralLearnedInfo
         """Finds and retrieves generalLearnedInfo resources from the server.
 
@@ -454,7 +537,11 @@ class GeneralLearnedInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addRecordForTrigger', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addRecordForTrigger", payload=payload, response_object=None
+        )

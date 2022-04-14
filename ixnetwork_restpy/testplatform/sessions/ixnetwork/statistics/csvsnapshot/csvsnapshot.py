@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,25 +33,29 @@ class CsvSnapshot(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'csvSnapshot'
+    _SDM_NAME = "csvSnapshot"
     _SDM_ATT_MAP = {
-        'CsvDecimalPrecision': 'csvDecimalPrecision',
-        'CsvDumpTxPortLabelMap': 'csvDumpTxPortLabelMap',
-        'CsvFormatTimestamp': 'csvFormatTimestamp',
-        'CsvLocation': 'csvLocation',
-        'CsvName': 'csvName',
-        'CsvStringQuotes': 'csvStringQuotes',
-        'CsvSupportsCSVSorting': 'csvSupportsCSVSorting',
-        'NextGenRefreshBeforeSnapshot': 'nextGenRefreshBeforeSnapshot',
-        'OpenViewer': 'openViewer',
-        'SnapshotSettingsName': 'snapshotSettingsName',
-        'SnapshotViewContents': 'snapshotViewContents',
-        'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
-        'Views': 'views',
+        "CsvDecimalPrecision": "csvDecimalPrecision",
+        "CsvDumpTxPortLabelMap": "csvDumpTxPortLabelMap",
+        "CsvFormatTimestamp": "csvFormatTimestamp",
+        "CsvLocation": "csvLocation",
+        "CsvName": "csvName",
+        "CsvStringQuotes": "csvStringQuotes",
+        "CsvSupportsCSVSorting": "csvSupportsCSVSorting",
+        "NextGenRefreshBeforeSnapshot": "nextGenRefreshBeforeSnapshot",
+        "OpenViewer": "openViewer",
+        "SnapshotSettingsName": "snapshotSettingsName",
+        "SnapshotViewContents": "snapshotViewContents",
+        "SnapshotViewCsvGenerationMode": "snapshotViewCsvGenerationMode",
+        "Views": "views",
     }
     _SDM_ENUM_MAP = {
-        'snapshotViewContents': ['allPages', 'currentPage'],
-        'snapshotViewCsvGenerationMode': ['appendCSVFile', 'newCSVFile', 'overwriteCSVFile'],
+        "snapshotViewContents": ["allPages", "currentPage"],
+        "snapshotViewCsvGenerationMode": [
+            "appendCSVFile",
+            "newCSVFile",
+            "overwriteCSVFile",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,11 +69,12 @@ class CsvSnapshot(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvDecimalPrecision'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvDecimalPrecision"])
+
     @CsvDecimalPrecision.setter
     def CsvDecimalPrecision(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvDecimalPrecision'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvDecimalPrecision"], value)
 
     @property
     def CsvDumpTxPortLabelMap(self):
@@ -78,11 +84,12 @@ class CsvSnapshot(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvDumpTxPortLabelMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvDumpTxPortLabelMap"])
+
     @CsvDumpTxPortLabelMap.setter
     def CsvDumpTxPortLabelMap(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvDumpTxPortLabelMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvDumpTxPortLabelMap"], value)
 
     @property
     def CsvFormatTimestamp(self):
@@ -92,11 +99,12 @@ class CsvSnapshot(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvFormatTimestamp'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvFormatTimestamp"])
+
     @CsvFormatTimestamp.setter
     def CsvFormatTimestamp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvFormatTimestamp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvFormatTimestamp"], value)
 
     @property
     def CsvLocation(self):
@@ -106,11 +114,12 @@ class CsvSnapshot(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLocation"])
+
     @CsvLocation.setter
     def CsvLocation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvLocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvLocation"], value)
 
     @property
     def CsvName(self):
@@ -118,13 +127,14 @@ class CsvSnapshot(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvName'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvName"])
+
     @CsvName.setter
     def CsvName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvName"], value)
 
     @property
     def CsvStringQuotes(self):
@@ -134,11 +144,12 @@ class CsvSnapshot(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvStringQuotes'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvStringQuotes"])
+
     @CsvStringQuotes.setter
     def CsvStringQuotes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvStringQuotes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvStringQuotes"], value)
 
     @property
     def CsvSupportsCSVSorting(self):
@@ -148,25 +159,27 @@ class CsvSnapshot(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvSupportsCSVSorting'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvSupportsCSVSorting"])
+
     @CsvSupportsCSVSorting.setter
     def CsvSupportsCSVSorting(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvSupportsCSVSorting'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvSupportsCSVSorting"], value)
 
     @property
     def NextGenRefreshBeforeSnapshot(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextGenRefreshBeforeSnapshot'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextGenRefreshBeforeSnapshot"])
+
     @NextGenRefreshBeforeSnapshot.setter
     def NextGenRefreshBeforeSnapshot(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextGenRefreshBeforeSnapshot'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextGenRefreshBeforeSnapshot"], value)
 
     @property
     def OpenViewer(self):
@@ -174,13 +187,14 @@ class CsvSnapshot(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenViewer'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenViewer"])
+
     @OpenViewer.setter
     def OpenViewer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenViewer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenViewer"], value)
 
     @property
     def SnapshotSettingsName(self):
@@ -190,7 +204,7 @@ class CsvSnapshot(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SnapshotSettingsName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SnapshotSettingsName"])
 
     @property
     def SnapshotViewContents(self):
@@ -200,11 +214,12 @@ class CsvSnapshot(Base):
         -------
         - str(allPages | currentPage): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SnapshotViewContents'])
+        return self._get_attribute(self._SDM_ATT_MAP["SnapshotViewContents"])
+
     @SnapshotViewContents.setter
     def SnapshotViewContents(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SnapshotViewContents'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SnapshotViewContents"], value)
 
     @property
     def SnapshotViewCsvGenerationMode(self):
@@ -214,11 +229,12 @@ class CsvSnapshot(Base):
         -------
         - str(appendCSVFile | newCSVFile | overwriteCSVFile): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SnapshotViewCsvGenerationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SnapshotViewCsvGenerationMode"])
+
     @SnapshotViewCsvGenerationMode.setter
     def SnapshotViewCsvGenerationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SnapshotViewCsvGenerationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SnapshotViewCsvGenerationMode"], value)
 
     @property
     def Views(self):
@@ -228,13 +244,28 @@ class CsvSnapshot(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view]): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Views'])
+        return self._get_attribute(self._SDM_ATT_MAP["Views"])
+
     @Views.setter
     def Views(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Views'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Views"], value)
 
-    def update(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
+    def update(
+        self,
+        CsvDecimalPrecision=None,
+        CsvDumpTxPortLabelMap=None,
+        CsvFormatTimestamp=None,
+        CsvLocation=None,
+        CsvName=None,
+        CsvStringQuotes=None,
+        CsvSupportsCSVSorting=None,
+        NextGenRefreshBeforeSnapshot=None,
+        OpenViewer=None,
+        SnapshotViewContents=None,
+        SnapshotViewCsvGenerationMode=None,
+        Views=None,
+    ):
         # type: (int, bool, bool, str, str, bool, bool, bool, bool, str, str, List[str]) -> CsvSnapshot
         """Updates csvSnapshot resource on the server.
 
@@ -244,11 +275,11 @@ class CsvSnapshot(Base):
         - CsvDumpTxPortLabelMap (bool): NOT DEFINED
         - CsvFormatTimestamp (bool): NOT DEFINED
         - CsvLocation (str): NOT DEFINED
-        - CsvName (str): 
+        - CsvName (str):
         - CsvStringQuotes (bool): NOT DEFINED
         - CsvSupportsCSVSorting (bool): NOT DEFINED
         - NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
-        - OpenViewer (bool): 
+        - OpenViewer (bool):
         - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
         - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
         - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view])): NOT DEFINED
@@ -259,7 +290,22 @@ class CsvSnapshot(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotSettingsName=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
+    def find(
+        self,
+        CsvDecimalPrecision=None,
+        CsvDumpTxPortLabelMap=None,
+        CsvFormatTimestamp=None,
+        CsvLocation=None,
+        CsvName=None,
+        CsvStringQuotes=None,
+        CsvSupportsCSVSorting=None,
+        NextGenRefreshBeforeSnapshot=None,
+        OpenViewer=None,
+        SnapshotSettingsName=None,
+        SnapshotViewContents=None,
+        SnapshotViewCsvGenerationMode=None,
+        Views=None,
+    ):
         # type: (int, bool, bool, str, str, bool, bool, bool, bool, str, str, str, List[str]) -> CsvSnapshot
         """Finds and retrieves csvSnapshot resources from the server.
 
@@ -273,11 +319,11 @@ class CsvSnapshot(Base):
         - CsvDumpTxPortLabelMap (bool): NOT DEFINED
         - CsvFormatTimestamp (bool): NOT DEFINED
         - CsvLocation (str): NOT DEFINED
-        - CsvName (str): 
+        - CsvName (str):
         - CsvStringQuotes (bool): NOT DEFINED
         - CsvSupportsCSVSorting (bool): NOT DEFINED
         - NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
-        - OpenViewer (bool): 
+        - OpenViewer (bool):
         - SnapshotSettingsName (str): NOT DEFINED
         - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
         - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
@@ -326,10 +372,12 @@ class CsvSnapshot(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resetToDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resetToDefaults", payload=payload, response_object=None)
 
     def TakeCsvSnapshot(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -346,7 +394,9 @@ class CsvSnapshot(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('takeCsvSnapshot', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("takeCsvSnapshot", payload=payload, response_object=None)

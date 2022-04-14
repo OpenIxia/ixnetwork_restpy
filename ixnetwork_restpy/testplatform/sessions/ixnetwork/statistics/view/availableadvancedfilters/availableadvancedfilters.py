@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class AvailableAdvancedFilters(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'availableAdvancedFilters'
+    _SDM_NAME = "availableAdvancedFilters"
     _SDM_ATT_MAP = {
-        'Expression': 'expression',
-        'Name': 'name',
+        "Expression": "expression",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AvailableAdvancedFilters, self).__init__(parent, list_op)
@@ -52,7 +52,7 @@ class AvailableAdvancedFilters(Base):
         -------
         - str: Allows you to get the filter expression or the body from the id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Expression'])
+        return self._get_attribute(self._SDM_ATT_MAP["Expression"])
 
     @property
     def Name(self):
@@ -62,10 +62,10 @@ class AvailableAdvancedFilters(Base):
         -------
         - str: Allows you to get the filter name from the id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     def add(self):
-        """Adds a new availableAdvancedFilters resource on the json, only valid with config assistant
+        """Adds a new availableAdvancedFilters resource on the json, only valid with batch add utility
 
         Returns
         -------

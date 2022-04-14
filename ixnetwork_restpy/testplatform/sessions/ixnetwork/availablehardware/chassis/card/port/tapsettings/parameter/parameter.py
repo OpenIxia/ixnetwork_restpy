@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class Parameter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'parameter'
+    _SDM_NAME = "parameter"
     _SDM_ATT_MAP = {
-        'AvailableChoices': 'availableChoices',
-        'CurrentValue': 'currentValue',
-        'CustomDefaultValue': 'customDefaultValue',
-        'DefaultValue': 'defaultValue',
-        'IsReadOnly': 'isReadOnly',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
-        'Name': 'name',
+        "AvailableChoices": "availableChoices",
+        "CurrentValue": "currentValue",
+        "CustomDefaultValue": "customDefaultValue",
+        "DefaultValue": "defaultValue",
+        "IsReadOnly": "isReadOnly",
+        "MaxValue": "maxValue",
+        "MinValue": "minValue",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Parameter, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class Parameter(Base):
         -------
         - list(str): Available Choices
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableChoices'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableChoices"])
 
     @property
     def CurrentValue(self):
@@ -68,11 +68,12 @@ class Parameter(Base):
         -------
         - str: Parameter UI Display Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentValue"])
+
     @CurrentValue.setter
     def CurrentValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CurrentValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CurrentValue"], value)
 
     @property
     def CustomDefaultValue(self):
@@ -82,7 +83,7 @@ class Parameter(Base):
         -------
         - str: Parameter Custom Default Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomDefaultValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomDefaultValue"])
 
     @property
     def DefaultValue(self):
@@ -92,7 +93,7 @@ class Parameter(Base):
         -------
         - str: Parameter Default Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultValue"])
 
     @property
     def IsReadOnly(self):
@@ -102,7 +103,7 @@ class Parameter(Base):
         -------
         - bool: Parameter value type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsReadOnly'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsReadOnly"])
 
     @property
     def MaxValue(self):
@@ -112,7 +113,7 @@ class Parameter(Base):
         -------
         - str: Parameter Maximum Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxValue"])
 
     @property
     def MinValue(self):
@@ -122,7 +123,7 @@ class Parameter(Base):
         -------
         - str: Parameter Minimum Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinValue"])
 
     @property
     def Name(self):
@@ -132,7 +133,7 @@ class Parameter(Base):
         -------
         - str: Parameter Name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     def update(self, CurrentValue=None):
         # type: (str) -> Parameter
@@ -150,7 +151,7 @@ class Parameter(Base):
 
     def add(self, CurrentValue=None):
         # type: (str) -> Parameter
-        """Adds a new parameter resource on the json, only valid with config assistant
+        """Adds a new parameter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -166,7 +167,17 @@ class Parameter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableChoices=None, CurrentValue=None, CustomDefaultValue=None, DefaultValue=None, IsReadOnly=None, MaxValue=None, MinValue=None, Name=None):
+    def find(
+        self,
+        AvailableChoices=None,
+        CurrentValue=None,
+        CustomDefaultValue=None,
+        DefaultValue=None,
+        IsReadOnly=None,
+        MaxValue=None,
+        MinValue=None,
+        Name=None,
+    ):
         # type: (List[str], str, str, str, bool, str, str, str) -> Parameter
         """Finds and retrieves parameter resources from the server.
 

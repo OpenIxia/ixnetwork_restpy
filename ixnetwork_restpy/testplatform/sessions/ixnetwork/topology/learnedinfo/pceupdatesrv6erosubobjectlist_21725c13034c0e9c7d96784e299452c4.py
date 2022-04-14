@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class PceUpdateSrv6EroSubObjectList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pceUpdateSrv6EroSubObjectList'
+    _SDM_NAME = "pceUpdateSrv6EroSubObjectList"
     _SDM_ATT_MAP = {
-        'ActiveThisEro': 'activeThisEro',
-        'FBit': 'fBit',
-        'Ipv6NodeId': 'ipv6NodeId',
-        'LocalIpv6Address': 'localIpv6Address',
-        'LooseHop': 'looseHop',
-        'RemoteIpv6Address': 'remoteIpv6Address',
-        'Srv6FunctionCode': 'srv6FunctionCode',
-        'Srv6Identifier': 'srv6Identifier',
-        'Srv6NaiType': 'srv6NaiType',
+        "ActiveThisEro": "activeThisEro",
+        "FBit": "fBit",
+        "Ipv6NodeId": "ipv6NodeId",
+        "LocalIpv6Address": "localIpv6Address",
+        "LooseHop": "looseHop",
+        "RemoteIpv6Address": "remoteIpv6Address",
+        "Srv6FunctionCode": "srv6FunctionCode",
+        "Srv6Identifier": "srv6Identifier",
+        "Srv6NaiType": "srv6NaiType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PceUpdateSrv6EroSubObjectList, self).__init__(parent, list_op)
@@ -60,7 +60,8 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controls whether the ERO sub-object will be sent in the PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveThisEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveThisEro"]))
 
     @property
     def FBit(self):
@@ -71,7 +72,8 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A Flag which is used to carry additional information pertaining to SID. When this bit is set, the NAI value in the subobject body is null.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FBit"]))
 
     @property
     def Ipv6NodeId(self):
@@ -82,7 +84,8 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Node ID is specified as an IPv6 address. This control can be configured if NAI Type is set to IPv6 Node ID and F bit is disabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NodeId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NodeId"]))
 
     @property
     def LocalIpv6Address(self):
@@ -93,7 +96,10 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalIpv6Address"])
+        )
 
     @property
     def LooseHop(self):
@@ -104,7 +110,8 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if user wants to represent a loose-hop sub object in the LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LooseHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LooseHop"]))
 
     @property
     def RemoteIpv6Address(self):
@@ -115,7 +122,10 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This Control can be configured if NAI Type is set to IPv6 Adjacency and F bit is disabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteIpv6Address"])
+        )
 
     @property
     def Srv6FunctionCode(self):
@@ -126,7 +136,10 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Code is is the 16 bit field representing supported functions associated with SRv6 SIDs. This information is optional and included only for maintainability. Following function codes are currently defined - 0: Reserved 1: End Function 2: End.DX6 Function 3: End.DT6 Function 4: End.X Function
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6FunctionCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6FunctionCode"])
+        )
 
     @property
     def Srv6Identifier(self):
@@ -137,7 +150,10 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Identifier is the 128 bit IPv6 addresses representing SRv6 segment.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6Identifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6Identifier"])
+        )
 
     @property
     def Srv6NaiType(self):
@@ -148,10 +164,11 @@ class PceUpdateSrv6EroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SRv6 NAI Type which indicates the interpretation for NAI (Node or Adjacency Identifier).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6NaiType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6NaiType"]))
 
     def add(self):
-        """Adds a new pceUpdateSrv6EroSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateSrv6EroSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +215,19 @@ class PceUpdateSrv6EroSubObjectList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ActiveThisEro=None, FBit=None, Ipv6NodeId=None, LocalIpv6Address=None, LooseHop=None, RemoteIpv6Address=None, Srv6FunctionCode=None, Srv6Identifier=None, Srv6NaiType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActiveThisEro=None,
+        FBit=None,
+        Ipv6NodeId=None,
+        LocalIpv6Address=None,
+        LooseHop=None,
+        RemoteIpv6Address=None,
+        Srv6FunctionCode=None,
+        Srv6Identifier=None,
+        Srv6NaiType=None,
+    ):
         """Base class infrastructure that gets a list of pceUpdateSrv6EroSubObjectList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

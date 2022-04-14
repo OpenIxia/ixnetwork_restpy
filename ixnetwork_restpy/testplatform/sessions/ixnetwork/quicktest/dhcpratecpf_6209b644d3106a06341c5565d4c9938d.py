@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,15 @@ class DhcpRateCpf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpRateCpf'
+    _SDM_NAME = "dhcpRateCpf"
     _SDM_ATT_MAP = {
-        'ForceApplyQTConfig': 'forceApplyQTConfig',
-        'InputParameters': 'inputParameters',
-        'Mode': 'mode',
-        'Name': 'name',
+        "ForceApplyQTConfig": "forceApplyQTConfig",
+        "InputParameters": "inputParameters",
+        "Mode": "mode",
+        "Name": "name",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['existingMode', 'newMode'],
+        "mode": ["existingMode", "newMode"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,10 +60,13 @@ class DhcpRateCpf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_2169b5c93f6ddab60b911bcdc46cd3fc import Results
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_2169b5c93f6ddab60b911bcdc46cd3fc import (
+            Results,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Results', None) is not None:
-                return self._properties.get('Results')
+            if self._properties.get("Results", None) is not None:
+                return self._properties.get("Results")
         return Results(self)._select()
 
     @property
@@ -76,10 +80,13 @@ class DhcpRateCpf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_7e7c251ab89c08946f0aa859f3231872 import TestConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_7e7c251ab89c08946f0aa859f3231872 import (
+            TestConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TestConfig', None) is not None:
-                return self._properties.get('TestConfig')
+            if self._properties.get("TestConfig", None) is not None:
+                return self._properties.get("TestConfig")
         return TestConfig(self)._select()
 
     @property
@@ -90,11 +97,12 @@ class DhcpRateCpf(Base):
         -------
         - bool: Apply QT config
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceApplyQTConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceApplyQTConfig"])
+
     @ForceApplyQTConfig.setter
     def ForceApplyQTConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceApplyQTConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceApplyQTConfig"], value)
 
     @property
     def InputParameters(self):
@@ -104,11 +112,12 @@ class DhcpRateCpf(Base):
         -------
         - str: Input Parameters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InputParameters'])
+        return self._get_attribute(self._SDM_ATT_MAP["InputParameters"])
+
     @InputParameters.setter
     def InputParameters(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InputParameters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InputParameters"], value)
 
     @property
     def Mode(self):
@@ -118,11 +127,12 @@ class DhcpRateCpf(Base):
         -------
         - str(existingMode | newMode): Test mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def Name(self):
@@ -132,13 +142,16 @@ class DhcpRateCpf(Base):
         -------
         - str: Test name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None):
+    def update(
+        self, ForceApplyQTConfig=None, InputParameters=None, Mode=None, Name=None
+    ):
         # type: (bool, str, str, str) -> DhcpRateCpf
         """Updates dhcpRateCpf resource on the server.
 
@@ -244,10 +257,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -262,10 +277,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -274,17 +291,19 @@ class DhcpRateCpf(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -301,10 +320,14 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -322,10 +345,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -351,10 +376,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -378,10 +405,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -398,10 +427,12 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -419,7 +450,9 @@ class DhcpRateCpf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

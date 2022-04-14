@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,34 +33,33 @@ class CfmSlm(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmSlm'
+    _SDM_NAME = "cfmSlm"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'SlmAutoTestId': 'slmAutoTestId',
-        'SlmBurstCount': 'slmBurstCount',
-        'SlmBurstGap': 'slmBurstGap',
-        'SlmContinuousBurst': 'slmContinuousBurst',
-        'SlmDestinationType': 'slmDestinationType',
-        'SlmFlags': 'slmFlags',
-        'SlmFrameSize': 'slmFrameSize',
-        'SlmFrameTxCount': 'slmFrameTxCount',
-        'SlmFramesPerBurst': 'slmFramesPerBurst',
-        'SlmInitialTxfcf': 'slmInitialTxfcf',
-        'SlmMode': 'slmMode',
-        'SlmOverridePriority': 'slmOverridePriority',
-        'SlmPriority': 'slmPriority',
-        'SlmProactiveStart': 'slmProactiveStart',
-        'SlmSimulatedLossInTx': 'slmSimulatedLossInTx',
-        'SlmStateInfo': 'slmStateInfo',
-        'SlmTestId': 'slmTestId',
-        'SlmTestIdInfo': 'slmTestIdInfo',
-        'SlmTxFCfInfo': 'slmTxFCfInfo',
-        'SlmUnicastMac': 'slmUnicastMac',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "SlmAutoTestId": "slmAutoTestId",
+        "SlmBurstCount": "slmBurstCount",
+        "SlmBurstGap": "slmBurstGap",
+        "SlmContinuousBurst": "slmContinuousBurst",
+        "SlmDestinationType": "slmDestinationType",
+        "SlmFlags": "slmFlags",
+        "SlmFrameSize": "slmFrameSize",
+        "SlmFrameTxCount": "slmFrameTxCount",
+        "SlmFramesPerBurst": "slmFramesPerBurst",
+        "SlmInitialTxfcf": "slmInitialTxfcf",
+        "SlmMode": "slmMode",
+        "SlmOverridePriority": "slmOverridePriority",
+        "SlmPriority": "slmPriority",
+        "SlmProactiveStart": "slmProactiveStart",
+        "SlmSimulatedLossInTx": "slmSimulatedLossInTx",
+        "SlmStateInfo": "slmStateInfo",
+        "SlmTestId": "slmTestId",
+        "SlmTestIdInfo": "slmTestIdInfo",
+        "SlmTxFCfInfo": "slmTxFCfInfo",
+        "SlmUnicastMac": "slmUnicastMac",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CfmSlm, self).__init__(parent, list_op)
@@ -75,10 +75,13 @@ class CfmSlm(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopslmparams_2117fd9e6d0ad885042f04f4604813e9 import StopSlmParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopslmparams_2117fd9e6d0ad885042f04f4604813e9 import (
+            StopSlmParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopSlmParams', None) is not None:
-                return self._properties.get('StopSlmParams')
+            if self._properties.get("StopSlmParams", None) is not None:
+                return self._properties.get("StopSlmParams")
         return StopSlmParams(self)._select()
 
     @property
@@ -89,7 +92,7 @@ class CfmSlm(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -99,7 +102,7 @@ class CfmSlm(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -109,11 +112,12 @@ class CfmSlm(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SlmAutoTestId(self):
@@ -124,7 +128,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Generate SLM Test ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmAutoTestId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmAutoTestId"]))
 
     @property
     def SlmBurstCount(self):
@@ -135,7 +140,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Bursts.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmBurstCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmBurstCount"]))
 
     @property
     def SlmBurstGap(self):
@@ -146,7 +152,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time Gap between bursts in miliseconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmBurstGap']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmBurstGap"]))
 
     @property
     def SlmContinuousBurst(self):
@@ -157,7 +164,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, will send continuous bursts.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmContinuousBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmContinuousBurst"])
+        )
 
     @property
     def SlmDestinationType(self):
@@ -168,7 +178,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast/All Remote MEP/Unicast. Multicast will send SLM to class 1 multicast address, All Remote MEP option will send unicast SLM to individual Remote MEPs, Unicast option will send SLM to configured unicast MAC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmDestinationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmDestinationType"])
+        )
 
     @property
     def SlmFlags(self):
@@ -179,7 +192,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flags values to be sent in SLM PDU. Default 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmFlags"]))
 
     @property
     def SlmFrameSize(self):
@@ -190,7 +204,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SLM Frame Size.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmFrameSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmFrameSize"]))
 
     @property
     def SlmFrameTxCount(self):
@@ -201,7 +216,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SLM Frame Tx Count.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmFrameTxCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmFrameTxCount"])
+        )
 
     @property
     def SlmFramesPerBurst(self):
@@ -212,7 +230,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Frames Per Burst.Default Value: 1, represent periodic transmission.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmFramesPerBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmFramesPerBurst"])
+        )
 
     @property
     def SlmInitialTxfcf(self):
@@ -223,7 +244,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A 4-octet field which contains the initial value of the local counter TxFCl for SLM frames.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmInitialTxfcf']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmInitialTxfcf"])
+        )
 
     @property
     def SlmMode(self):
@@ -234,7 +258,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Synthetic Loss Measurement Method - One way or Two way
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmMode"]))
 
     @property
     def SlmOverridePriority(self):
@@ -245,7 +270,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, it overrides MEP VLAN priority in SLM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmOverridePriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmOverridePriority"])
+        )
 
     @property
     def SlmPriority(self):
@@ -256,7 +284,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN priority in SLM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmPriority"]))
 
     @property
     def SlmProactiveStart(self):
@@ -267,7 +296,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, MEP will Start sending SLM at startup.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmProactiveStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmProactiveStart"])
+        )
 
     @property
     def SlmSimulatedLossInTx(self):
@@ -278,7 +310,10 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Percentage loss simulation in SLM Tx side.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmSimulatedLossInTx']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmSimulatedLossInTx"])
+        )
 
     @property
     def SlmStateInfo(self):
@@ -288,7 +323,7 @@ class CfmSlm(Base):
         -------
         - list(str[expired | none | notStarted | running | stopped]): Displays the current SLM State. Valid states are Running, Stopped, Expired and Not Started.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlmStateInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlmStateInfo"])
 
     @property
     def SlmTestId(self):
@@ -299,7 +334,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configurable, Non-negative integer value. Minimum Value: 1, Maximum Value: 4294967296, Default Value: 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmTestId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmTestId"]))
 
     @property
     def SlmTestIdInfo(self):
@@ -309,7 +345,7 @@ class CfmSlm(Base):
         -------
         - list(number): Displays SLM Test ID Information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlmTestIdInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlmTestIdInfo"])
 
     @property
     def SlmTxFCfInfo(self):
@@ -319,7 +355,7 @@ class CfmSlm(Base):
         -------
         - list(number): Displays SLM Last TxFCf.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlmTxFCfInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlmTxFCfInfo"])
 
     @property
     def SlmUnicastMac(self):
@@ -330,7 +366,8 @@ class CfmSlm(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Unicast MAC destination address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmUnicastMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmUnicastMac"]))
 
     def update(self, Name=None):
         # type: (str) -> CfmSlm
@@ -349,7 +386,15 @@ class CfmSlm(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, SlmStateInfo=None, SlmTestIdInfo=None, SlmTxFCfInfo=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        SlmStateInfo=None,
+        SlmTestIdInfo=None,
+        SlmTxFCfInfo=None,
+    ):
         # type: (int, str, str, List[str], List[int], List[int]) -> CfmSlm
         """Finds and retrieves cfmSlm resources from the server.
 
@@ -427,10 +472,12 @@ class CfmSlm(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSlm', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startSlm", payload=payload, response_object=None)
 
     def StopSlm(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -465,12 +512,34 @@ class CfmSlm(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSlm', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopSlm", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, SlmAutoTestId=None, SlmBurstCount=None, SlmBurstGap=None, SlmContinuousBurst=None, SlmDestinationType=None, SlmFlags=None, SlmFrameSize=None, SlmFrameTxCount=None, SlmFramesPerBurst=None, SlmInitialTxfcf=None, SlmMode=None, SlmOverridePriority=None, SlmPriority=None, SlmProactiveStart=None, SlmSimulatedLossInTx=None, SlmTestId=None, SlmUnicastMac=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        SlmAutoTestId=None,
+        SlmBurstCount=None,
+        SlmBurstGap=None,
+        SlmContinuousBurst=None,
+        SlmDestinationType=None,
+        SlmFlags=None,
+        SlmFrameSize=None,
+        SlmFrameTxCount=None,
+        SlmFramesPerBurst=None,
+        SlmInitialTxfcf=None,
+        SlmMode=None,
+        SlmOverridePriority=None,
+        SlmPriority=None,
+        SlmProactiveStart=None,
+        SlmSimulatedLossInTx=None,
+        SlmTestId=None,
+        SlmUnicastMac=None,
+    ):
         """Base class infrastructure that gets a list of cfmSlm device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

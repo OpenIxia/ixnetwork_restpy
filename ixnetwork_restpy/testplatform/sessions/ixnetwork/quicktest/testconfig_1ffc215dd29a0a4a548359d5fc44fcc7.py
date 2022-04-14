@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,28 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'AutomaticEnableIptvStats': 'automaticEnableIptvStats',
-        'BackgroundTrafficEnabled': 'backgroundTrafficEnabled',
-        'Duration': 'duration',
-        'EnableJoinFailuresMode': 'enableJoinFailuresMode',
-        'EnableLeaveFailuresMode': 'enableLeaveFailuresMode',
-        'LoadType': 'loadType',
-        'Numtrials': 'numtrials',
-        'PassCriteriaJoinFailuresValue': 'passCriteriaJoinFailuresValue',
-        'PassCriteriaJoinLatencyValue': 'passCriteriaJoinLatencyValue',
-        'PassCriteriaLeaveFailuresValue': 'passCriteriaLeaveFailuresValue',
-        'PassCriteriaLeaveLatencyValue': 'passCriteriaLeaveLatencyValue',
-        'ProtocolItem': 'protocolItem',
-        'StartIptvEndpointsBeforeTraffic': 'startIptvEndpointsBeforeTraffic',
-        'TestTrafficType': 'testTrafficType',
-        'TrackByEgressVlanId': 'trackByEgressVlanId',
-        'TrackByFlowGroup': 'trackByFlowGroup',
-        'TrackByIpDestination': 'trackByIpDestination',
+        "AutomaticEnableIptvStats": "automaticEnableIptvStats",
+        "BackgroundTrafficEnabled": "backgroundTrafficEnabled",
+        "Duration": "duration",
+        "EnableJoinFailuresMode": "enableJoinFailuresMode",
+        "EnableLeaveFailuresMode": "enableLeaveFailuresMode",
+        "LoadType": "loadType",
+        "Numtrials": "numtrials",
+        "PassCriteriaJoinFailuresValue": "passCriteriaJoinFailuresValue",
+        "PassCriteriaJoinLatencyValue": "passCriteriaJoinLatencyValue",
+        "PassCriteriaLeaveFailuresValue": "passCriteriaLeaveFailuresValue",
+        "PassCriteriaLeaveLatencyValue": "passCriteriaLeaveLatencyValue",
+        "ProtocolItem": "protocolItem",
+        "StartIptvEndpointsBeforeTraffic": "startIptvEndpointsBeforeTraffic",
+        "TestTrafficType": "testTrafficType",
+        "TrackByEgressVlanId": "trackByEgressVlanId",
+        "TrackByFlowGroup": "trackByFlowGroup",
+        "TrackByIpDestination": "trackByIpDestination",
     }
     _SDM_ENUM_MAP = {
-        'loadType': ['custom'],
+        "loadType": ["custom"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,11 +68,12 @@ class TestConfig(Base):
         -------
         - str: If true, enables the automatic Iptv Statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutomaticEnableIptvStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutomaticEnableIptvStats"])
+
     @AutomaticEnableIptvStats.setter
     def AutomaticEnableIptvStats(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutomaticEnableIptvStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutomaticEnableIptvStats"], value)
 
     @property
     def BackgroundTrafficEnabled(self):
@@ -81,11 +83,12 @@ class TestConfig(Base):
         -------
         - str: If true, the traffic in background is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackgroundTrafficEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackgroundTrafficEnabled"])
+
     @BackgroundTrafficEnabled.setter
     def BackgroundTrafficEnabled(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BackgroundTrafficEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BackgroundTrafficEnabled"], value)
 
     @property
     def Duration(self):
@@ -95,11 +98,12 @@ class TestConfig(Base):
         -------
         - number: Period of time over which the configured IPTV subscribers and multicast traffic sources execute the configured behavior.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableJoinFailuresMode(self):
@@ -109,11 +113,12 @@ class TestConfig(Base):
         -------
         - str: If true, Failure Mode for Joined state is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableJoinFailuresMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableJoinFailuresMode"])
+
     @EnableJoinFailuresMode.setter
     def EnableJoinFailuresMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableJoinFailuresMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableJoinFailuresMode"], value)
 
     @property
     def EnableLeaveFailuresMode(self):
@@ -123,11 +128,12 @@ class TestConfig(Base):
         -------
         - str: If true, Failure Mode for Leave state is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLeaveFailuresMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLeaveFailuresMode"])
+
     @EnableLeaveFailuresMode.setter
     def EnableLeaveFailuresMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLeaveFailuresMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLeaveFailuresMode"], value)
 
     @property
     def LoadType(self):
@@ -137,11 +143,12 @@ class TestConfig(Base):
         -------
         - str(custom): The type of load used to modify the variable parameter value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def Numtrials(self):
@@ -151,11 +158,12 @@ class TestConfig(Base):
         -------
         - number: The number of trials that can be run for the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def PassCriteriaJoinFailuresValue(self):
@@ -165,11 +173,12 @@ class TestConfig(Base):
         -------
         - number: Denotes the value of Join actions marked as failed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaJoinFailuresValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaJoinFailuresValue"])
+
     @PassCriteriaJoinFailuresValue.setter
     def PassCriteriaJoinFailuresValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaJoinFailuresValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaJoinFailuresValue"], value)
 
     @property
     def PassCriteriaJoinLatencyValue(self):
@@ -179,11 +188,12 @@ class TestConfig(Base):
         -------
         - number: The amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaJoinLatencyValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaJoinLatencyValue"])
+
     @PassCriteriaJoinLatencyValue.setter
     def PassCriteriaJoinLatencyValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaJoinLatencyValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaJoinLatencyValue"], value)
 
     @property
     def PassCriteriaLeaveFailuresValue(self):
@@ -193,11 +203,12 @@ class TestConfig(Base):
         -------
         - number: How many Leave actions were marked as Failed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLeaveFailuresValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLeaveFailuresValue"])
+
     @PassCriteriaLeaveFailuresValue.setter
     def PassCriteriaLeaveFailuresValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLeaveFailuresValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLeaveFailuresValue"], value)
 
     @property
     def PassCriteriaLeaveLatencyValue(self):
@@ -207,11 +218,12 @@ class TestConfig(Base):
         -------
         - number: The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLeaveLatencyValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLeaveLatencyValue"])
+
     @PassCriteriaLeaveLatencyValue.setter
     def PassCriteriaLeaveLatencyValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLeaveLatencyValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLeaveLatencyValue"], value)
 
     @property
     def ProtocolItem(self):
@@ -221,11 +233,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def StartIptvEndpointsBeforeTraffic(self):
@@ -235,11 +248,12 @@ class TestConfig(Base):
         -------
         - str: The IPTV Endpoints are set before sending traffic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartIptvEndpointsBeforeTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartIptvEndpointsBeforeTraffic"])
+
     @StartIptvEndpointsBeforeTraffic.setter
     def StartIptvEndpointsBeforeTraffic(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartIptvEndpointsBeforeTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartIptvEndpointsBeforeTraffic"], value)
 
     @property
     def TestTrafficType(self):
@@ -249,11 +263,12 @@ class TestConfig(Base):
         -------
         - str: Indicates the type of traffic to be tested.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
     @property
     def TrackByEgressVlanId(self):
@@ -263,11 +278,12 @@ class TestConfig(Base):
         -------
         - str: If true, Custom Offset from Packet Locations can be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackByEgressVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackByEgressVlanId"])
+
     @TrackByEgressVlanId.setter
     def TrackByEgressVlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackByEgressVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackByEgressVlanId"], value)
 
     @property
     def TrackByFlowGroup(self):
@@ -277,11 +293,12 @@ class TestConfig(Base):
         -------
         - str: It configures flow tracking for all flow groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackByFlowGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackByFlowGroup"])
+
     @TrackByFlowGroup.setter
     def TrackByFlowGroup(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackByFlowGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackByFlowGroup"], value)
 
     @property
     def TrackByIpDestination(self):
@@ -291,13 +308,33 @@ class TestConfig(Base):
         -------
         - str: If true, flows are tracked by the IPv4 Destination Address as per the route ranges configured under destination endpoint.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackByIpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackByIpDestination"])
+
     @TrackByIpDestination.setter
     def TrackByIpDestination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackByIpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackByIpDestination"], value)
 
-    def update(self, AutomaticEnableIptvStats=None, BackgroundTrafficEnabled=None, Duration=None, EnableJoinFailuresMode=None, EnableLeaveFailuresMode=None, LoadType=None, Numtrials=None, PassCriteriaJoinFailuresValue=None, PassCriteriaJoinLatencyValue=None, PassCriteriaLeaveFailuresValue=None, PassCriteriaLeaveLatencyValue=None, ProtocolItem=None, StartIptvEndpointsBeforeTraffic=None, TestTrafficType=None, TrackByEgressVlanId=None, TrackByFlowGroup=None, TrackByIpDestination=None):
+    def update(
+        self,
+        AutomaticEnableIptvStats=None,
+        BackgroundTrafficEnabled=None,
+        Duration=None,
+        EnableJoinFailuresMode=None,
+        EnableLeaveFailuresMode=None,
+        LoadType=None,
+        Numtrials=None,
+        PassCriteriaJoinFailuresValue=None,
+        PassCriteriaJoinLatencyValue=None,
+        PassCriteriaLeaveFailuresValue=None,
+        PassCriteriaLeaveLatencyValue=None,
+        ProtocolItem=None,
+        StartIptvEndpointsBeforeTraffic=None,
+        TestTrafficType=None,
+        TrackByEgressVlanId=None,
+        TrackByFlowGroup=None,
+        TrackByIpDestination=None,
+    ):
         # type: (str, str, int, str, str, str, int, int, int, int, int, List[str], str, str, str, str, str) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -327,7 +364,26 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AutomaticEnableIptvStats=None, BackgroundTrafficEnabled=None, Duration=None, EnableJoinFailuresMode=None, EnableLeaveFailuresMode=None, LoadType=None, Numtrials=None, PassCriteriaJoinFailuresValue=None, PassCriteriaJoinLatencyValue=None, PassCriteriaLeaveFailuresValue=None, PassCriteriaLeaveLatencyValue=None, ProtocolItem=None, StartIptvEndpointsBeforeTraffic=None, TestTrafficType=None, TrackByEgressVlanId=None, TrackByFlowGroup=None, TrackByIpDestination=None):
+    def find(
+        self,
+        AutomaticEnableIptvStats=None,
+        BackgroundTrafficEnabled=None,
+        Duration=None,
+        EnableJoinFailuresMode=None,
+        EnableLeaveFailuresMode=None,
+        LoadType=None,
+        Numtrials=None,
+        PassCriteriaJoinFailuresValue=None,
+        PassCriteriaJoinLatencyValue=None,
+        PassCriteriaLeaveFailuresValue=None,
+        PassCriteriaLeaveLatencyValue=None,
+        ProtocolItem=None,
+        StartIptvEndpointsBeforeTraffic=None,
+        TestTrafficType=None,
+        TrackByEgressVlanId=None,
+        TrackByFlowGroup=None,
+        TrackByIpDestination=None,
+    ):
         # type: (str, str, int, str, str, str, int, int, int, int, int, List[str], str, str, str, str, str) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -398,10 +454,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -416,10 +474,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -428,17 +488,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -455,10 +517,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -476,10 +542,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -505,10 +573,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -532,10 +602,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -552,10 +624,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -573,7 +647,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class Msdp(Base):
     __slots__ = ()
-    _SDM_NAME = 'msdp'
+    _SDM_NAME = "msdp"
     _SDM_ATT_MAP = {
-        'Ipv4SourceActiveType': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.type-1',
-        'Ipv4SourceActiveLength': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.length-2',
-        'Ipv4SourceActiveEntryCount': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entryCount-3',
-        'Ipv4SourceActiveRpAddress': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.rpAddress-4',
-        'EntryReserved': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.reserved-5',
-        'EntrySourcePrefixLength': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.sourcePrefixLength-6',
-        'EntryGroupAddress': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.groupAddress-7',
-        'EntrySourceAddress': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.sourceAddress-8',
-        'Ipv4SourceActiveRequestType': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.type-9',
-        'Ipv4SourceActiveRequestLength': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.length-10',
-        'Ipv4SourceActiveRequestGprefixLen': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.gprefixLen-11',
-        'Ipv4SourceActiveRequestGroupAddressPrefix': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.groupAddressPrefix-12',
-        'Ipv4SourceActiveResponseType': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveResponse.type-13',
-        'Ipv4SourceActiveResponseLength': 'msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveResponse.length-14',
-        'KeepaliveType': 'msdp.msdpMessage.msdpMessegeType.keepalive.type-15',
-        'KeepaliveLength': 'msdp.msdpMessage.msdpMessegeType.keepalive.length-16',
+        "Ipv4SourceActiveType": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.type-1",
+        "Ipv4SourceActiveLength": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.length-2",
+        "Ipv4SourceActiveEntryCount": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entryCount-3",
+        "Ipv4SourceActiveRpAddress": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.rpAddress-4",
+        "EntryReserved": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.reserved-5",
+        "EntrySourcePrefixLength": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.sourcePrefixLength-6",
+        "EntryGroupAddress": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.groupAddress-7",
+        "EntrySourceAddress": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActive.entry.sourceAddress-8",
+        "Ipv4SourceActiveRequestType": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.type-9",
+        "Ipv4SourceActiveRequestLength": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.length-10",
+        "Ipv4SourceActiveRequestGprefixLen": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.gprefixLen-11",
+        "Ipv4SourceActiveRequestGroupAddressPrefix": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveRequest.groupAddressPrefix-12",
+        "Ipv4SourceActiveResponseType": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveResponse.type-13",
+        "Ipv4SourceActiveResponseLength": "msdp.msdpMessage.msdpMessegeType.ipv4SourceActiveResponse.length-14",
+        "KeepaliveType": "msdp.msdpMessage.msdpMessegeType.keepalive.type-15",
+        "KeepaliveLength": "msdp.msdpMessage.msdpMessegeType.keepalive.length-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveType"])
+        )
 
     @property
     def Ipv4SourceActiveLength(self):
@@ -45,7 +48,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveLength"])
+        )
 
     @property
     def Ipv4SourceActiveEntryCount(self):
@@ -55,7 +61,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveEntryCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveEntryCount"])
+        )
 
     @property
     def Ipv4SourceActiveRpAddress(self):
@@ -65,7 +74,10 @@ class Msdp(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveRpAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveRpAddress"])
+        )
 
     @property
     def EntryReserved(self):
@@ -75,7 +87,8 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntryReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EntryReserved"]))
 
     @property
     def EntrySourcePrefixLength(self):
@@ -85,7 +98,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntrySourcePrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EntrySourcePrefixLength"])
+        )
 
     @property
     def EntryGroupAddress(self):
@@ -95,7 +111,10 @@ class Msdp(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntryGroupAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EntryGroupAddress"])
+        )
 
     @property
     def EntrySourceAddress(self):
@@ -105,7 +124,10 @@ class Msdp(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntrySourceAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EntrySourceAddress"])
+        )
 
     @property
     def Ipv4SourceActiveRequestType(self):
@@ -115,7 +137,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveRequestType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveRequestType"])
+        )
 
     @property
     def Ipv4SourceActiveRequestLength(self):
@@ -125,7 +150,11 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveRequestLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveRequestLength"]),
+        )
 
     @property
     def Ipv4SourceActiveRequestGprefixLen(self):
@@ -135,7 +164,11 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveRequestGprefixLen']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveRequestGprefixLen"]),
+        )
 
     @property
     def Ipv4SourceActiveRequestGroupAddressPrefix(self):
@@ -145,7 +178,13 @@ class Msdp(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveRequestGroupAddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ipv4SourceActiveRequestGroupAddressPrefix"]
+            ),
+        )
 
     @property
     def Ipv4SourceActiveResponseType(self):
@@ -155,7 +194,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveResponseType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveResponseType"])
+        )
 
     @property
     def Ipv4SourceActiveResponseLength(self):
@@ -165,7 +207,11 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceActiveResponseLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceActiveResponseLength"]),
+        )
 
     @property
     def KeepaliveType(self):
@@ -175,7 +221,8 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepaliveType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveType"]))
 
     @property
     def KeepaliveLength(self):
@@ -185,7 +232,10 @@ class Msdp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepaliveLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveLength"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

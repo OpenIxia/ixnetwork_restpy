@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class EvbStationRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evbStationRange'
+    _SDM_NAME = "evbStationRange"
     _SDM_ATT_MAP = {
-        'ChannelCapability': 'channelCapability',
-        'ChassisId': 'chassisId',
-        'DefaultEr': 'defaultEr',
-        'Enabled': 'enabled',
-        'HoldTime': 'holdTime',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PortIdInterfaceName': 'portIdInterfaceName',
-        'PortIdMacAddress': 'portIdMacAddress',
-        'PortIdSubType': 'portIdSubType',
-        'SComponentMode': 'sComponentMode',
-        'TxDelay': 'txDelay',
-        'TxInterval': 'txInterval',
+        "ChannelCapability": "channelCapability",
+        "ChassisId": "chassisId",
+        "DefaultEr": "defaultEr",
+        "Enabled": "enabled",
+        "HoldTime": "holdTime",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PortIdInterfaceName": "portIdInterfaceName",
+        "PortIdMacAddress": "portIdMacAddress",
+        "PortIdSubType": "portIdSubType",
+        "SComponentMode": "sComponentMode",
+        "TxDelay": "txDelay",
+        "TxInterval": "txInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EvbStationRange, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class EvbStationRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_162ea2ac786a0c4f518cef35d874b832 import ErRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_162ea2ac786a0c4f518cef35d874b832 import (
+            ErRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ErRange', None) is not None:
-                return self._properties.get('ErRange')
+            if self._properties.get("ErRange", None) is not None:
+                return self._properties.get("ErRange")
         return ErRange(self)
 
     @property
@@ -79,11 +82,12 @@ class EvbStationRange(Base):
         -------
         - number: Advertised Channel Capability.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelCapability"])
+
     @ChannelCapability.setter
     def ChannelCapability(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChannelCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChannelCapability"], value)
 
     @property
     def ChassisId(self):
@@ -93,11 +97,12 @@ class EvbStationRange(Base):
         -------
         - str: The Chassis ID that will be advertised in the mandatory LLDP TLVs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisId"])
+
     @ChassisId.setter
     def ChassisId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChassisId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChassisId"], value)
 
     @property
     def DefaultEr(self):
@@ -105,13 +110,14 @@ class EvbStationRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange): 
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultEr'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultEr"])
+
     @DefaultEr.setter
     def DefaultEr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefaultEr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefaultEr"], value)
 
     @property
     def Enabled(self):
@@ -121,11 +127,12 @@ class EvbStationRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HoldTime(self):
@@ -135,11 +142,12 @@ class EvbStationRange(Base):
         -------
         - number: Multiplier to get actual TTL value used in an LLDPDU.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HoldTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["HoldTime"])
+
     @HoldTime.setter
     def HoldTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HoldTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HoldTime"], value)
 
     @property
     def Name(self):
@@ -149,11 +157,12 @@ class EvbStationRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -163,7 +172,7 @@ class EvbStationRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PortIdInterfaceName(self):
@@ -171,13 +180,14 @@ class EvbStationRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdInterfaceName"])
+
     @PortIdInterfaceName.setter
     def PortIdInterfaceName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdInterfaceName"], value)
 
     @property
     def PortIdMacAddress(self):
@@ -185,13 +195,14 @@ class EvbStationRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdMacAddress"])
+
     @PortIdMacAddress.setter
     def PortIdMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdMacAddress"], value)
 
     @property
     def PortIdSubType(self):
@@ -201,11 +212,12 @@ class EvbStationRange(Base):
         -------
         - number: Pop-up used for configuring the port id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdSubType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdSubType"])
+
     @PortIdSubType.setter
     def PortIdSubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdSubType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdSubType"], value)
 
     @property
     def SComponentMode(self):
@@ -215,11 +227,12 @@ class EvbStationRange(Base):
         -------
         - str: This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SComponentMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SComponentMode"])
+
     @SComponentMode.setter
     def SComponentMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SComponentMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SComponentMode"], value)
 
     @property
     def TxDelay(self):
@@ -229,11 +242,12 @@ class EvbStationRange(Base):
         -------
         - number: Minimum delay between successive LLDP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
     @property
     def TxInterval(self):
@@ -243,13 +257,28 @@ class EvbStationRange(Base):
         -------
         - number: This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxInterval"])
+
     @TxInterval.setter
     def TxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxInterval"], value)
 
-    def update(self, ChannelCapability=None, ChassisId=None, DefaultEr=None, Enabled=None, HoldTime=None, Name=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, SComponentMode=None, TxDelay=None, TxInterval=None):
+    def update(
+        self,
+        ChannelCapability=None,
+        ChassisId=None,
+        DefaultEr=None,
+        Enabled=None,
+        HoldTime=None,
+        Name=None,
+        PortIdInterfaceName=None,
+        PortIdMacAddress=None,
+        PortIdSubType=None,
+        SComponentMode=None,
+        TxDelay=None,
+        TxInterval=None,
+    ):
         # type: (int, str, str, bool, int, str, str, str, int, str, int, int) -> EvbStationRange
         """Updates evbStationRange resource on the server.
 
@@ -257,12 +286,12 @@ class EvbStationRange(Base):
         ----
         - ChannelCapability (number): Advertised Channel Capability.
         - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
         - Name (str): Name of range
-        - PortIdInterfaceName (str): 
-        - PortIdMacAddress (str): 
+        - PortIdInterfaceName (str):
+        - PortIdMacAddress (str):
         - PortIdSubType (number): Pop-up used for configuring the port id.
         - SComponentMode (str): This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
         - TxDelay (number): Minimum delay between successive LLDP packets.
@@ -274,7 +303,22 @@ class EvbStationRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ChannelCapability=None, ChassisId=None, DefaultEr=None, Enabled=None, HoldTime=None, Name=None, ObjectId=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, SComponentMode=None, TxDelay=None, TxInterval=None):
+    def find(
+        self,
+        ChannelCapability=None,
+        ChassisId=None,
+        DefaultEr=None,
+        Enabled=None,
+        HoldTime=None,
+        Name=None,
+        ObjectId=None,
+        PortIdInterfaceName=None,
+        PortIdMacAddress=None,
+        PortIdSubType=None,
+        SComponentMode=None,
+        TxDelay=None,
+        TxInterval=None,
+    ):
         # type: (int, str, str, bool, int, str, str, str, str, int, str, int, int) -> EvbStationRange
         """Finds and retrieves evbStationRange resources from the server.
 
@@ -286,13 +330,13 @@ class EvbStationRange(Base):
         ----
         - ChannelCapability (number): Advertised Channel Capability.
         - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
-        - PortIdInterfaceName (str): 
-        - PortIdMacAddress (str): 
+        - PortIdInterfaceName (str):
+        - PortIdMacAddress (str):
         - PortIdSubType (number): Pop-up used for configuring the port id.
         - SComponentMode (str): This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
         - TxDelay (number): Minimum delay between successive LLDP packets.
@@ -343,10 +387,14 @@ class EvbStationRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -365,10 +413,14 @@ class EvbStationRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -387,7 +439,11 @@ class EvbStationRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

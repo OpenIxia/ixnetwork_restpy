@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class StaticHostsRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'staticHostsRange'
+    _SDM_NAME = "staticHostsRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'EuiIncrement': 'euiIncrement',
-        'FirstEui': 'firstEui',
-        'IpPrefix': 'ipPrefix',
-        'IpPrefixAddr': 'ipPrefixAddr',
-        'IpPrefixPrefix': 'ipPrefixPrefix',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'SubnetCount': 'subnetCount',
+        "Count": "count",
+        "Enabled": "enabled",
+        "EuiIncrement": "euiIncrement",
+        "FirstEui": "firstEui",
+        "IpPrefix": "ipPrefix",
+        "IpPrefixAddr": "ipPrefixAddr",
+        "IpPrefixPrefix": "ipPrefixPrefix",
+        "IpType": "ipType",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "SubnetCount": "subnetCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StaticHostsRange, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class StaticHostsRange(Base):
         -------
         - number: The number of hosts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -74,11 +75,12 @@ class StaticHostsRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EuiIncrement(self):
@@ -88,11 +90,12 @@ class StaticHostsRange(Base):
         -------
         - str: Defines the EUI increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EuiIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["EuiIncrement"])
+
     @EuiIncrement.setter
     def EuiIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EuiIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EuiIncrement"], value)
 
     @property
     def FirstEui(self):
@@ -102,11 +105,12 @@ class StaticHostsRange(Base):
         -------
         - str: Defines the first EUI to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstEui'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstEui"])
+
     @FirstEui.setter
     def FirstEui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstEui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstEui"], value)
 
     @property
     def IpPrefix(self):
@@ -116,11 +120,12 @@ class StaticHostsRange(Base):
         -------
         - number: The network prefix length associated with this address pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
+
     @IpPrefix.setter
     def IpPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpPrefix"], value)
 
     @property
     def IpPrefixAddr(self):
@@ -130,11 +135,12 @@ class StaticHostsRange(Base):
         -------
         - str: Defines the IP prefix to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefixAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefixAddr"])
+
     @IpPrefixAddr.setter
     def IpPrefixAddr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpPrefixAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpPrefixAddr"], value)
 
     @property
     def IpPrefixPrefix(self):
@@ -144,11 +150,12 @@ class StaticHostsRange(Base):
         -------
         - number: The network prefix length for this IP prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefixPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefixPrefix"])
+
     @IpPrefixPrefix.setter
     def IpPrefixPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpPrefixPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpPrefixPrefix"], value)
 
     @property
     def IpType(self):
@@ -158,11 +165,12 @@ class StaticHostsRange(Base):
         -------
         - str: The IP version to be used for describing the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Name(self):
@@ -172,11 +180,12 @@ class StaticHostsRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -186,7 +195,7 @@ class StaticHostsRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SubnetCount(self):
@@ -196,13 +205,26 @@ class StaticHostsRange(Base):
         -------
         - number: The number of subnets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SubnetCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SubnetCount"])
+
     @SubnetCount.setter
     def SubnetCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SubnetCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SubnetCount"], value)
 
-    def update(self, Count=None, Enabled=None, EuiIncrement=None, FirstEui=None, IpPrefix=None, IpPrefixAddr=None, IpPrefixPrefix=None, IpType=None, Name=None, SubnetCount=None):
+    def update(
+        self,
+        Count=None,
+        Enabled=None,
+        EuiIncrement=None,
+        FirstEui=None,
+        IpPrefix=None,
+        IpPrefixAddr=None,
+        IpPrefixPrefix=None,
+        IpType=None,
+        Name=None,
+        SubnetCount=None,
+    ):
         # type: (int, bool, str, str, int, str, int, str, str, int) -> StaticHostsRange
         """Updates staticHostsRange resource on the server.
 
@@ -225,7 +247,20 @@ class StaticHostsRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, Enabled=None, EuiIncrement=None, FirstEui=None, IpPrefix=None, IpPrefixAddr=None, IpPrefixPrefix=None, IpType=None, Name=None, ObjectId=None, SubnetCount=None):
+    def find(
+        self,
+        Count=None,
+        Enabled=None,
+        EuiIncrement=None,
+        FirstEui=None,
+        IpPrefix=None,
+        IpPrefixAddr=None,
+        IpPrefixPrefix=None,
+        IpType=None,
+        Name=None,
+        ObjectId=None,
+        SubnetCount=None,
+    ):
         # type: (int, bool, str, str, int, str, int, str, str, str, int) -> StaticHostsRange
         """Finds and retrieves staticHostsRange resources from the server.
 
@@ -292,10 +327,14 @@ class StaticHostsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -314,10 +353,14 @@ class StaticHostsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -336,7 +379,11 @@ class StaticHostsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,20 @@ class Dcc(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcc'
+    _SDM_NAME = "dcc"
     _SDM_ATT_MAP = {
-        'AvailableSpeeds': 'availableSpeeds',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'Crc': 'crc',
-        'OverheadByte': 'overheadByte',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'TimeFill': 'timeFill',
+        "AvailableSpeeds": "availableSpeeds",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "Crc": "crc",
+        "OverheadByte": "overheadByte",
+        "SelectedSpeeds": "selectedSpeeds",
+        "TimeFill": "timeFill",
     }
     _SDM_ENUM_MAP = {
-        'crc': ['crc16', 'crc32'],
-        'overheadByte': ['loh', 'soh'],
-        'timeFill': ['flag7E', 'markIdle'],
+        "crc": ["crc16", "crc32"],
+        "overheadByte": ["loh", "soh"],
+        "timeFill": ["flag7E", "markIdle"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +60,7 @@ class Dcc(Base):
         -------
         - list(str[]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def CanModifySpeed(self):
@@ -69,7 +70,7 @@ class Dcc(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -79,7 +80,7 @@ class Dcc(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def Crc(self):
@@ -89,11 +90,12 @@ class Dcc(Base):
         -------
         - str(crc16 | crc32): Choose the type of Cyclic Redundancy Check to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Crc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Crc"])
+
     @Crc.setter
     def Crc(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Crc"], value)
 
     @property
     def OverheadByte(self):
@@ -103,11 +105,12 @@ class Dcc(Base):
         -------
         - str(loh | soh): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverheadByte'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverheadByte"])
+
     @OverheadByte.setter
     def OverheadByte(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverheadByte'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverheadByte"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -117,11 +120,12 @@ class Dcc(Base):
         -------
         - list(str[]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     @property
     def TimeFill(self):
@@ -131,11 +135,12 @@ class Dcc(Base):
         -------
         - str(flag7E | markIdle): Choose the type of bytes used to fill the gaps between DCC frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeFill'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeFill"])
+
     @TimeFill.setter
     def TimeFill(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeFill'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeFill"], value)
 
     def update(self, Crc=None, OverheadByte=None, SelectedSpeeds=None, TimeFill=None):
         # type: (str, str, List[str], str) -> Dcc
@@ -154,7 +159,16 @@ class Dcc(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, Crc=None, OverheadByte=None, SelectedSpeeds=None, TimeFill=None):
+    def find(
+        self,
+        AvailableSpeeds=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        Crc=None,
+        OverheadByte=None,
+        SelectedSpeeds=None,
+        TimeFill=None,
+    ):
         # type: (List[str], bool, bool, str, str, List[str], str) -> Dcc
         """Finds and retrieves dcc resources from the server.
 

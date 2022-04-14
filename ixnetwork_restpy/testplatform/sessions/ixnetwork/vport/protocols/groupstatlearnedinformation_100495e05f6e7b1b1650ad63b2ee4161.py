@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class GroupStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupStatLearnedInformation'
+    _SDM_NAME = "groupStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DurationInNSec': 'durationInNSec',
-        'DurationInSec': 'durationInSec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'GroupId': 'groupId',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NumberOfBucketStats': 'numberOfBucketStats',
-        'PacketCount': 'packetCount',
-        'ReferenceCount': 'referenceCount',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "ByteCount": "byteCount",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "DurationInNSec": "durationInNSec",
+        "DurationInSec": "durationInSec",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "GroupId": "groupId",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "NumberOfBucketStats": "numberOfBucketStats",
+        "PacketCount": "packetCount",
+        "ReferenceCount": "referenceCount",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupStatLearnedInformation, self).__init__(parent, list_op)
@@ -69,10 +69,16 @@ class GroupStatLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_4457768602bbf2c9ed3e3e2bb1a30d7c import GroupStatBucketLearnedInformation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_4457768602bbf2c9ed3e3e2bb1a30d7c import (
+            GroupStatBucketLearnedInformation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GroupStatBucketLearnedInformation', None) is not None:
-                return self._properties.get('GroupStatBucketLearnedInformation')
+            if (
+                self._properties.get("GroupStatBucketLearnedInformation", None)
+                is not None
+            ):
+                return self._properties.get("GroupStatBucketLearnedInformation")
         return GroupStatBucketLearnedInformation(self)
 
     @property
@@ -83,7 +89,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteCount"])
 
     @property
     def DataPathId(self):
@@ -93,7 +99,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -103,7 +109,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def DurationInNSec(self):
@@ -113,7 +119,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationInNSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationInNSec"])
 
     @property
     def DurationInSec(self):
@@ -123,7 +129,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationInSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationInSec"])
 
     @property
     def ErrorCode(self):
@@ -133,7 +139,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -143,7 +149,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def GroupId(self):
@@ -153,7 +159,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def Latency(self):
@@ -163,7 +169,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -173,7 +179,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -183,7 +189,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def NumberOfBucketStats(self):
@@ -193,7 +199,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBucketStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBucketStats"])
 
     @property
     def PacketCount(self):
@@ -203,7 +209,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCount"])
 
     @property
     def ReferenceCount(self):
@@ -213,7 +219,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceCount"])
 
     @property
     def RemoteIp(self):
@@ -223,7 +229,7 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -233,10 +239,10 @@ class GroupStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new groupStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new groupStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -248,7 +254,25 @@ class GroupStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteCount=None, DataPathId=None, DataPathIdAsHex=None, DurationInNSec=None, DurationInSec=None, ErrorCode=None, ErrorType=None, GroupId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, PacketCount=None, ReferenceCount=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        ByteCount=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        DurationInNSec=None,
+        DurationInSec=None,
+        ErrorCode=None,
+        ErrorType=None,
+        GroupId=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        NumberOfBucketStats=None,
+        PacketCount=None,
+        ReferenceCount=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str) -> GroupStatLearnedInformation
         """Finds and retrieves groupStatLearnedInformation resources from the server.
 

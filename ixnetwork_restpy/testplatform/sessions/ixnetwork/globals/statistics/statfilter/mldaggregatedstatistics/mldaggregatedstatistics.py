@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class MldAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mldAggregatedStatistics'
+    _SDM_NAME = "mldAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'DoneTx': 'doneTx',
-        'GrpAndSrcSpecificQueriesRx': 'grpAndSrcSpecificQueriesRx',
-        'HostInvalidPacketsRx': 'hostInvalidPacketsRx',
-        'HostTotalFramesRx': 'hostTotalFramesRx',
-        'HostTotalFramesTx': 'hostTotalFramesTx',
-        'Hostv1MembershipRptsRx': 'hostv1MembershipRptsRx',
-        'PortName': 'portName',
-        'V1GeneralQueriesRx': 'v1GeneralQueriesRx',
-        'V1GrpSpecificQueriesRx': 'v1GrpSpecificQueriesRx',
-        'V1MembershipRptsTx': 'v1MembershipRptsTx',
-        'V2GeneralQueriesRx': 'v2GeneralQueriesRx',
-        'V2GrpSpecificQueriesRx': 'v2GrpSpecificQueriesRx',
-        'V2MembershipRptsTx': 'v2MembershipRptsTx',
+        "DoneTx": "doneTx",
+        "GrpAndSrcSpecificQueriesRx": "grpAndSrcSpecificQueriesRx",
+        "HostInvalidPacketsRx": "hostInvalidPacketsRx",
+        "HostTotalFramesRx": "hostTotalFramesRx",
+        "HostTotalFramesTx": "hostTotalFramesTx",
+        "Hostv1MembershipRptsRx": "hostv1MembershipRptsRx",
+        "PortName": "portName",
+        "V1GeneralQueriesRx": "v1GeneralQueriesRx",
+        "V1GrpSpecificQueriesRx": "v1GrpSpecificQueriesRx",
+        "V1MembershipRptsTx": "v1MembershipRptsTx",
+        "V2GeneralQueriesRx": "v2GeneralQueriesRx",
+        "V2GrpSpecificQueriesRx": "v2GrpSpecificQueriesRx",
+        "V2MembershipRptsTx": "v2MembershipRptsTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MldAggregatedStatistics, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Done Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DoneTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DoneTx"])
+
     @DoneTx.setter
     def DoneTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DoneTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DoneTx"], value)
 
     @property
     def GrpAndSrcSpecificQueriesRx(self):
@@ -76,11 +77,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Grp. & Src. Specific Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrpAndSrcSpecificQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrpAndSrcSpecificQueriesRx"])
+
     @GrpAndSrcSpecificQueriesRx.setter
     def GrpAndSrcSpecificQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrpAndSrcSpecificQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrpAndSrcSpecificQueriesRx"], value)
 
     @property
     def HostInvalidPacketsRx(self):
@@ -90,11 +92,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Host Invalid Packets Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostInvalidPacketsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostInvalidPacketsRx"])
+
     @HostInvalidPacketsRx.setter
     def HostInvalidPacketsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostInvalidPacketsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostInvalidPacketsRx"], value)
 
     @property
     def HostTotalFramesRx(self):
@@ -104,11 +107,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Host Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostTotalFramesRx"])
+
     @HostTotalFramesRx.setter
     def HostTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostTotalFramesRx"], value)
 
     @property
     def HostTotalFramesTx(self):
@@ -118,11 +122,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Host Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostTotalFramesTx"])
+
     @HostTotalFramesTx.setter
     def HostTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostTotalFramesTx"], value)
 
     @property
     def Hostv1MembershipRptsRx(self):
@@ -132,11 +137,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Host v1 Membership Rpts. Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hostv1MembershipRptsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hostv1MembershipRptsRx"])
+
     @Hostv1MembershipRptsRx.setter
     def Hostv1MembershipRptsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Hostv1MembershipRptsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Hostv1MembershipRptsRx"], value)
 
     @property
     def PortName(self):
@@ -146,11 +152,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def V1GeneralQueriesRx(self):
@@ -160,11 +167,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v1 General Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V1GeneralQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V1GeneralQueriesRx"])
+
     @V1GeneralQueriesRx.setter
     def V1GeneralQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V1GeneralQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V1GeneralQueriesRx"], value)
 
     @property
     def V1GrpSpecificQueriesRx(self):
@@ -174,11 +182,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v1 Grp. Specific Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V1GrpSpecificQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V1GrpSpecificQueriesRx"])
+
     @V1GrpSpecificQueriesRx.setter
     def V1GrpSpecificQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V1GrpSpecificQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V1GrpSpecificQueriesRx"], value)
 
     @property
     def V1MembershipRptsTx(self):
@@ -188,11 +197,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v1 Membership Rpts. Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V1MembershipRptsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V1MembershipRptsTx"])
+
     @V1MembershipRptsTx.setter
     def V1MembershipRptsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V1MembershipRptsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V1MembershipRptsTx"], value)
 
     @property
     def V2GeneralQueriesRx(self):
@@ -202,11 +212,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v2 General Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V2GeneralQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V2GeneralQueriesRx"])
+
     @V2GeneralQueriesRx.setter
     def V2GeneralQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V2GeneralQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V2GeneralQueriesRx"], value)
 
     @property
     def V2GrpSpecificQueriesRx(self):
@@ -216,11 +227,12 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v2 Grp. Specific Queries Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V2GrpSpecificQueriesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V2GrpSpecificQueriesRx"])
+
     @V2GrpSpecificQueriesRx.setter
     def V2GrpSpecificQueriesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V2GrpSpecificQueriesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V2GrpSpecificQueriesRx"], value)
 
     @property
     def V2MembershipRptsTx(self):
@@ -230,13 +242,29 @@ class MldAggregatedStatistics(Base):
         -------
         - bool: v2 Membership Rpts. Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['V2MembershipRptsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["V2MembershipRptsTx"])
+
     @V2MembershipRptsTx.setter
     def V2MembershipRptsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['V2MembershipRptsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["V2MembershipRptsTx"], value)
 
-    def update(self, DoneTx=None, GrpAndSrcSpecificQueriesRx=None, HostInvalidPacketsRx=None, HostTotalFramesRx=None, HostTotalFramesTx=None, Hostv1MembershipRptsRx=None, PortName=None, V1GeneralQueriesRx=None, V1GrpSpecificQueriesRx=None, V1MembershipRptsTx=None, V2GeneralQueriesRx=None, V2GrpSpecificQueriesRx=None, V2MembershipRptsTx=None):
+    def update(
+        self,
+        DoneTx=None,
+        GrpAndSrcSpecificQueriesRx=None,
+        HostInvalidPacketsRx=None,
+        HostTotalFramesRx=None,
+        HostTotalFramesTx=None,
+        Hostv1MembershipRptsRx=None,
+        PortName=None,
+        V1GeneralQueriesRx=None,
+        V1GrpSpecificQueriesRx=None,
+        V1MembershipRptsTx=None,
+        V2GeneralQueriesRx=None,
+        V2GrpSpecificQueriesRx=None,
+        V2MembershipRptsTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> MldAggregatedStatistics
         """Updates mldAggregatedStatistics resource on the server.
 
@@ -262,7 +290,22 @@ class MldAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DoneTx=None, GrpAndSrcSpecificQueriesRx=None, HostInvalidPacketsRx=None, HostTotalFramesRx=None, HostTotalFramesTx=None, Hostv1MembershipRptsRx=None, PortName=None, V1GeneralQueriesRx=None, V1GrpSpecificQueriesRx=None, V1MembershipRptsTx=None, V2GeneralQueriesRx=None, V2GrpSpecificQueriesRx=None, V2MembershipRptsTx=None):
+    def find(
+        self,
+        DoneTx=None,
+        GrpAndSrcSpecificQueriesRx=None,
+        HostInvalidPacketsRx=None,
+        HostTotalFramesRx=None,
+        HostTotalFramesTx=None,
+        Hostv1MembershipRptsRx=None,
+        PortName=None,
+        V1GeneralQueriesRx=None,
+        V1GrpSpecificQueriesRx=None,
+        V1MembershipRptsTx=None,
+        V2GeneralQueriesRx=None,
+        V2GrpSpecificQueriesRx=None,
+        V2MembershipRptsTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> MldAggregatedStatistics
         """Finds and retrieves mldAggregatedStatistics resources from the server.
 

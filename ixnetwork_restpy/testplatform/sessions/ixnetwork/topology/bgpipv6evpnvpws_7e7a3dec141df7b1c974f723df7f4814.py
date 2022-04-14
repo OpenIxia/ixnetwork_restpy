@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,113 +35,121 @@ class BgpIPv6EvpnVpws(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpIPv6EvpnVpws'
+    _SDM_NAME = "bgpIPv6EvpnVpws"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdRouteLabel': 'adRouteLabel',
-        'AdvSrv6SidInIgp': 'advSrv6SidInIgp',
-        'AdvSrv6SidInIgpPMSI': 'advSrv6SidInIgpPMSI',
-        'AdvertiseL3vniSeparately': 'advertiseL3vniSeparately',
-        'AdvertiseSRv6SID': 'advertiseSRv6SID',
-        'AdvertiseSRv6SIDPMSI': 'advertiseSRv6SIDPMSI',
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'ArgumentLength': 'argumentLength',
-        'AsSetMode': 'asSetMode',
-        'AutoConfigOriginatingRouterIp': 'autoConfigOriginatingRouterIp',
-        'AutoConfigPMSITunnelId': 'autoConfigPMSITunnelId',
-        'AutoConfigureRdIpAddress': 'autoConfigureRdIpAddress',
-        'BMacFirstLabel': 'bMacFirstLabel',
-        'BMacSecondLabel': 'bMacSecondLabel',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableBMacSecondLabel': 'enableBMacSecondLabel',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableL3TargetOnlyForRouteType5': 'enableL3TargetOnlyForRouteType5',
-        'EnableL3vniTargetList': 'enableL3vniTargetList',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'Errors': 'errors',
-        'EsiType': 'esiType',
-        'EsiValue': 'esiValue',
-        'FunctionLength': 'functionLength',
-        'ImportRtListSameAsExportRtList': 'importRtListSameAsExportRtList',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'L3vniImportRtListSameAsL3vniExportRtList': 'l3vniImportRtListSameAsL3vniExportRtList',
-        'LocBlockLength': 'locBlockLength',
-        'LocNodeLength': 'locNodeLength',
-        'LocalPreference': 'localPreference',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'MulticastTunnelType': 'multicastTunnelType',
-        'Multiplier': 'multiplier',
-        'MvEnableTransposition': 'mvEnableTransposition',
-        'MvIncSrv6SidStructSsTlv': 'mvIncSrv6SidStructSsTlv',
-        'Name': 'name',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'NumBroadcastDomainV6': 'numBroadcastDomainV6',
-        'NumRtInExportRouteTargetList': 'numRtInExportRouteTargetList',
-        'NumRtInImportRouteTargetList': 'numRtInImportRouteTargetList',
-        'NumRtInL3vniExportRouteTargetList': 'numRtInL3vniExportRouteTargetList',
-        'NumRtInL3vniImportRouteTargetList': 'numRtInL3vniImportRouteTargetList',
-        'Origin': 'origin',
-        'OriginatingRouterIpv4': 'originatingRouterIpv4',
-        'OriginatingRouterIpv6': 'originatingRouterIpv6',
-        'OriginatorId': 'originatorId',
-        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
-        'PmsiTunnelIDv4': 'pmsiTunnelIDv4',
-        'PmsiTunnelIDv6': 'pmsiTunnelIDv6',
-        'RdASNumber': 'rdASNumber',
-        'RdEvi': 'rdEvi',
-        'RdIpAddress': 'rdIpAddress',
-        'RdType': 'rdType',
-        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
-        'SendSRv6SIDOptionalInfoPMSI': 'sendSRv6SIDOptionalInfoPMSI',
-        'SessionStatus': 'sessionStatus',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'Srv6EndpointBehavior': 'srv6EndpointBehavior',
-        'Srv6EndpointBehaviorPMSI': 'srv6EndpointBehaviorPMSI',
-        'Srv6SIDOptionalInformation': 'srv6SIDOptionalInformation',
-        'Srv6SIDOptionalInformationPMSI': 'srv6SIDOptionalInformationPMSI',
-        'Srv6SidFlags': 'srv6SidFlags',
-        'Srv6SidFlagsPMSI': 'srv6SidFlagsPMSI',
-        'Srv6SidLoc': 'srv6SidLoc',
-        'Srv6SidLocLen': 'srv6SidLocLen',
-        'Srv6SidLocLenPMSI': 'srv6SidLocLenPMSI',
-        'Srv6SidLocMetric': 'srv6SidLocMetric',
-        'Srv6SidLocMetricPMSI': 'srv6SidLocMetricPMSI',
-        'Srv6SidLocPMSI': 'srv6SidLocPMSI',
-        'Srv6SidReserved': 'srv6SidReserved',
-        'Srv6SidReserved1': 'srv6SidReserved1',
-        'Srv6SidReserved1PMSI': 'srv6SidReserved1PMSI',
-        'Srv6SidReserved2': 'srv6SidReserved2',
-        'Srv6SidReserved2PMSI': 'srv6SidReserved2PMSI',
-        'Srv6SidReservedPMSI': 'srv6SidReservedPMSI',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TranpositionLength': 'tranpositionLength',
-        'TranpositionOffset': 'tranpositionOffset',
-        'UpstreamDownstreamAssignedMplsLabel': 'upstreamDownstreamAssignedMplsLabel',
-        'UseIpv4MappedIpv6Address': 'useIpv4MappedIpv6Address',
-        'UseUpstreamDownstreamAssignedMplsLabel': 'useUpstreamDownstreamAssignedMplsLabel',
+        "Active": "active",
+        "AdRouteLabel": "adRouteLabel",
+        "AdvSrv6SidInIgp": "advSrv6SidInIgp",
+        "AdvSrv6SidInIgpPMSI": "advSrv6SidInIgpPMSI",
+        "AdvertiseL3vniSeparately": "advertiseL3vniSeparately",
+        "AdvertiseSRv6SID": "advertiseSRv6SID",
+        "AdvertiseSRv6SIDPMSI": "advertiseSRv6SIDPMSI",
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "ArgumentLength": "argumentLength",
+        "AsSetMode": "asSetMode",
+        "AutoConfigOriginatingRouterIp": "autoConfigOriginatingRouterIp",
+        "AutoConfigPMSITunnelId": "autoConfigPMSITunnelId",
+        "AutoConfigureRdIpAddress": "autoConfigureRdIpAddress",
+        "BMacFirstLabel": "bMacFirstLabel",
+        "BMacSecondLabel": "bMacSecondLabel",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableAggregatorId": "enableAggregatorId",
+        "EnableAsPathSegments": "enableAsPathSegments",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableBMacSecondLabel": "enableBMacSecondLabel",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableExtendedCommunity": "enableExtendedCommunity",
+        "EnableL3TargetOnlyForRouteType5": "enableL3TargetOnlyForRouteType5",
+        "EnableL3vniTargetList": "enableL3vniTargetList",
+        "EnableLocalPreference": "enableLocalPreference",
+        "EnableMultiExitDiscriminator": "enableMultiExitDiscriminator",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "Errors": "errors",
+        "EsiType": "esiType",
+        "EsiValue": "esiValue",
+        "FunctionLength": "functionLength",
+        "ImportRtListSameAsExportRtList": "importRtListSameAsExportRtList",
+        "IncludePmsiTunnelAttribute": "includePmsiTunnelAttribute",
+        "Ipv4NextHop": "ipv4NextHop",
+        "Ipv6NextHop": "ipv6NextHop",
+        "L3vniImportRtListSameAsL3vniExportRtList": "l3vniImportRtListSameAsL3vniExportRtList",
+        "LocBlockLength": "locBlockLength",
+        "LocNodeLength": "locNodeLength",
+        "LocalPreference": "localPreference",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "MulticastTunnelType": "multicastTunnelType",
+        "Multiplier": "multiplier",
+        "MvEnableTransposition": "mvEnableTransposition",
+        "MvIncSrv6SidStructSsTlv": "mvIncSrv6SidStructSsTlv",
+        "Name": "name",
+        "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
+        "NoOfClusters": "noOfClusters",
+        "NoOfCommunities": "noOfCommunities",
+        "NoOfExtendedCommunity": "noOfExtendedCommunity",
+        "NumBroadcastDomainV6": "numBroadcastDomainV6",
+        "NumRtInExportRouteTargetList": "numRtInExportRouteTargetList",
+        "NumRtInImportRouteTargetList": "numRtInImportRouteTargetList",
+        "NumRtInL3vniExportRouteTargetList": "numRtInL3vniExportRouteTargetList",
+        "NumRtInL3vniImportRouteTargetList": "numRtInL3vniImportRouteTargetList",
+        "Origin": "origin",
+        "OriginatingRouterIpv4": "originatingRouterIpv4",
+        "OriginatingRouterIpv6": "originatingRouterIpv6",
+        "OriginatorId": "originatorId",
+        "OverridePeerAsSetMode": "overridePeerAsSetMode",
+        "PmsiTunnelIDv4": "pmsiTunnelIDv4",
+        "PmsiTunnelIDv6": "pmsiTunnelIDv6",
+        "RdASNumber": "rdASNumber",
+        "RdEvi": "rdEvi",
+        "RdIpAddress": "rdIpAddress",
+        "RdType": "rdType",
+        "SendSRv6SIDOptionalInfo": "sendSRv6SIDOptionalInfo",
+        "SendSRv6SIDOptionalInfoPMSI": "sendSRv6SIDOptionalInfoPMSI",
+        "SessionStatus": "sessionStatus",
+        "SetNextHop": "setNextHop",
+        "SetNextHopIpType": "setNextHopIpType",
+        "Srv6EndpointBehavior": "srv6EndpointBehavior",
+        "Srv6EndpointBehaviorPMSI": "srv6EndpointBehaviorPMSI",
+        "Srv6SIDOptionalInformation": "srv6SIDOptionalInformation",
+        "Srv6SIDOptionalInformationPMSI": "srv6SIDOptionalInformationPMSI",
+        "Srv6SidFlags": "srv6SidFlags",
+        "Srv6SidFlagsPMSI": "srv6SidFlagsPMSI",
+        "Srv6SidLoc": "srv6SidLoc",
+        "Srv6SidLocLen": "srv6SidLocLen",
+        "Srv6SidLocLenPMSI": "srv6SidLocLenPMSI",
+        "Srv6SidLocMetric": "srv6SidLocMetric",
+        "Srv6SidLocMetricPMSI": "srv6SidLocMetricPMSI",
+        "Srv6SidLocPMSI": "srv6SidLocPMSI",
+        "Srv6SidReserved": "srv6SidReserved",
+        "Srv6SidReserved1": "srv6SidReserved1",
+        "Srv6SidReserved1PMSI": "srv6SidReserved1PMSI",
+        "Srv6SidReserved2": "srv6SidReserved2",
+        "Srv6SidReserved2PMSI": "srv6SidReserved2PMSI",
+        "Srv6SidReservedPMSI": "srv6SidReservedPMSI",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TranpositionLength": "tranpositionLength",
+        "TranpositionOffset": "tranpositionOffset",
+        "UpstreamDownstreamAssignedMplsLabel": "upstreamDownstreamAssignedMplsLabel",
+        "UseIpv4MappedIpv6Address": "useIpv4MappedIpv6Address",
+        "UseUpstreamDownstreamAssignedMplsLabel": "useUpstreamDownstreamAssignedMplsLabel",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -157,10 +166,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import (
+            BgpAsPathSegmentList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsPathSegmentList', None) is not None:
-                return self._properties.get('BgpAsPathSegmentList')
+            if self._properties.get("BgpAsPathSegmentList", None) is not None:
+                return self._properties.get("BgpAsPathSegmentList")
         return BgpAsPathSegmentList(self)
 
     @property
@@ -174,10 +186,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import (
+            BgpClusterIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpClusterIdList', None) is not None:
-                return self._properties.get('BgpClusterIdList')
+            if self._properties.get("BgpClusterIdList", None) is not None:
+                return self._properties.get("BgpClusterIdList")
         return BgpClusterIdList(self)
 
     @property
@@ -191,10 +206,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+            BgpCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpCommunitiesList', None) is not None:
-                return self._properties.get('BgpCommunitiesList')
+            if self._properties.get("BgpCommunitiesList", None) is not None:
+                return self._properties.get("BgpCommunitiesList")
         return BgpCommunitiesList(self)
 
     @property
@@ -208,10 +226,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import BgpExportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import (
+            BgpExportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExportRouteTargetList', None) is not None:
-                return self._properties.get('BgpExportRouteTargetList')
+            if self._properties.get("BgpExportRouteTargetList", None) is not None:
+                return self._properties.get("BgpExportRouteTargetList")
         return BgpExportRouteTargetList(self)
 
     @property
@@ -225,10 +246,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+            BgpExtendedCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-                return self._properties.get('BgpExtendedCommunitiesList')
+            if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
+                return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
 
     @property
@@ -242,10 +266,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import BgpImportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import (
+            BgpImportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpImportRouteTargetList', None) is not None:
-                return self._properties.get('BgpImportRouteTargetList')
+            if self._properties.get("BgpImportRouteTargetList", None) is not None:
+                return self._properties.get("BgpImportRouteTargetList")
         return BgpImportRouteTargetList(self)
 
     @property
@@ -259,10 +286,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniexportroutetargetlist_0ceb637a2c3fee9e0d0bdf68e75d9054 import BgpL3VNIExportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniexportroutetargetlist_0ceb637a2c3fee9e0d0bdf68e75d9054 import (
+            BgpL3VNIExportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpL3VNIExportRouteTargetList', None) is not None:
-                return self._properties.get('BgpL3VNIExportRouteTargetList')
+            if self._properties.get("BgpL3VNIExportRouteTargetList", None) is not None:
+                return self._properties.get("BgpL3VNIExportRouteTargetList")
         return BgpL3VNIExportRouteTargetList(self)
 
     @property
@@ -276,10 +306,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniimportroutetargetlist_f9fc41787790538b1714fae483245f7d import BgpL3VNIImportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniimportroutetargetlist_f9fc41787790538b1714fae483245f7d import (
+            BgpL3VNIImportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpL3VNIImportRouteTargetList', None) is not None:
-                return self._properties.get('BgpL3VNIImportRouteTargetList')
+            if self._properties.get("BgpL3VNIImportRouteTargetList", None) is not None:
+                return self._properties.get("BgpL3VNIImportRouteTargetList")
         return BgpL3VNIImportRouteTargetList(self)
 
     @property
@@ -293,10 +326,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.broadcastdomainv6vpws_59a832939f2a9320bf834055352368fd import BroadcastDomainV6Vpws
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.broadcastdomainv6vpws_59a832939f2a9320bf834055352368fd import (
+            BroadcastDomainV6Vpws,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BroadcastDomainV6Vpws', None) is not None:
-                return self._properties.get('BroadcastDomainV6Vpws')
+            if self._properties.get("BroadcastDomainV6Vpws", None) is not None:
+                return self._properties.get("BroadcastDomainV6Vpws")
         return BroadcastDomainV6Vpws(self)._select()
 
     @property
@@ -310,10 +346,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -327,10 +366,13 @@ class BgpIPv6EvpnVpws(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -342,7 +384,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdRouteLabel(self):
@@ -353,7 +396,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AD Route Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdRouteLabel"]))
 
     @property
     def AdvSrv6SidInIgp(self):
@@ -364,7 +408,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID in IGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvSrv6SidInIgp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6SidInIgp"])
+        )
 
     @property
     def AdvSrv6SidInIgpPMSI(self):
@@ -375,7 +422,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID in IGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvSrv6SidInIgpPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6SidInIgpPMSI"])
+        )
 
     @property
     def AdvertiseL3vniSeparately(self):
@@ -386,7 +436,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise L3 Route Separately
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseL3vniSeparately']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseL3vniSeparately"])
+        )
 
     @property
     def AdvertiseSRv6SID(self):
@@ -397,7 +450,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseSRv6SID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseSRv6SID"])
+        )
 
     @property
     def AdvertiseSRv6SIDPMSI(self):
@@ -408,7 +464,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseSRv6SIDPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseSRv6SIDPMSI"])
+        )
 
     @property
     def AggregatorAs(self):
@@ -419,7 +478,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"]))
 
     @property
     def AggregatorId(self):
@@ -430,7 +490,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
 
     @property
     def ArgumentLength(self):
@@ -441,7 +502,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLength"])
+        )
 
     @property
     def AsSetMode(self):
@@ -452,7 +516,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSetMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSetMode"]))
 
     @property
     def AutoConfigOriginatingRouterIp(self):
@@ -463,7 +528,11 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set to true, this field enables option to configure Originating router IP address automatically from BGP Router's local IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoConfigOriginatingRouterIp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AutoConfigOriginatingRouterIp"]),
+        )
 
     @property
     def AutoConfigPMSITunnelId(self):
@@ -474,7 +543,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Configure PMSI Tunnel ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoConfigPMSITunnelId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoConfigPMSITunnelId"])
+        )
 
     @property
     def AutoConfigureRdIpAddress(self):
@@ -485,7 +557,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto-Configure RD IP Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoConfigureRdIpAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoConfigureRdIpAddress"])
+        )
 
     @property
     def BMacFirstLabel(self):
@@ -496,7 +571,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B MAC First Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BMacFirstLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BMacFirstLabel"])
+        )
 
     @property
     def BMacSecondLabel(self):
@@ -507,21 +585,25 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B MAC Second Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BMacSecondLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BMacSecondLabel"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -531,7 +613,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -541,7 +623,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableAggregatorId(self):
@@ -552,7 +634,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorId"])
+        )
 
     @property
     def EnableAsPathSegments(self):
@@ -563,7 +648,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAsPathSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAsPathSegments"])
+        )
 
     @property
     def EnableAtomicAggregate(self):
@@ -574,7 +662,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+        )
 
     @property
     def EnableBMacSecondLabel(self):
@@ -585,7 +676,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable B MAC Second Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBMacSecondLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBMacSecondLabel"])
+        )
 
     @property
     def EnableCluster(self):
@@ -596,7 +690,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCluster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCluster"]))
 
     @property
     def EnableCommunity(self):
@@ -607,7 +702,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+        )
 
     @property
     def EnableExtendedCommunity(self):
@@ -618,7 +716,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExtendedCommunity"])
+        )
 
     @property
     def EnableL3TargetOnlyForRouteType5(self):
@@ -629,7 +730,11 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable L3 Target only for Route Type 5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableL3TargetOnlyForRouteType5']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableL3TargetOnlyForRouteType5"]),
+        )
 
     @property
     def EnableL3vniTargetList(self):
@@ -640,7 +745,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable L3 Target List
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableL3vniTargetList']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableL3vniTargetList"])
+        )
 
     @property
     def EnableLocalPreference(self):
@@ -651,7 +759,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLocalPreference"])
+        )
 
     @property
     def EnableMultiExitDiscriminator(self):
@@ -662,7 +773,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMultiExitDiscriminator"])
+        )
 
     @property
     def EnableNextHop(self):
@@ -673,7 +787,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"]))
 
     @property
     def EnableOrigin(self):
@@ -684,7 +799,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"]))
 
     @property
     def EnableOriginatorId(self):
@@ -695,7 +811,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+        )
 
     @property
     def Errors(self):
@@ -704,7 +823,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EsiType(self):
@@ -715,7 +834,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ESI Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EsiType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EsiType"]))
 
     @property
     def EsiValue(self):
@@ -725,7 +845,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - list(str): ESI Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EsiValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["EsiValue"])
 
     @property
     def FunctionLength(self):
@@ -736,7 +856,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLength"])
+        )
 
     @property
     def ImportRtListSameAsExportRtList(self):
@@ -746,11 +869,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - bool: Import RT List Same As Export RT List
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImportRtListSameAsExportRtList"])
+
     @ImportRtListSameAsExportRtList.setter
     def ImportRtListSameAsExportRtList(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImportRtListSameAsExportRtList"], value)
 
     @property
     def IncludePmsiTunnelAttribute(self):
@@ -761,7 +885,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include PMSI Tunnel Attribute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludePmsiTunnelAttribute"])
+        )
 
     @property
     def Ipv4NextHop(self):
@@ -772,7 +899,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NextHop"]))
 
     @property
     def Ipv6NextHop(self):
@@ -783,7 +911,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
 
     @property
     def L3vniImportRtListSameAsL3vniExportRtList(self):
@@ -793,11 +922,16 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - bool: L3 Import RT List Same As L3 Export RT List
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L3vniImportRtListSameAsL3vniExportRtList'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["L3vniImportRtListSameAsL3vniExportRtList"]
+        )
+
     @L3vniImportRtListSameAsL3vniExportRtList.setter
     def L3vniImportRtListSameAsL3vniExportRtList(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L3vniImportRtListSameAsL3vniExportRtList'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["L3vniImportRtListSameAsL3vniExportRtList"], value
+        )
 
     @property
     def LocBlockLength(self):
@@ -808,7 +942,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocBlockLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocBlockLength"])
+        )
 
     @property
     def LocNodeLength(self):
@@ -819,7 +956,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocNodeLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocNodeLength"]))
 
     @property
     def LocalPreference(self):
@@ -830,7 +968,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
+        )
 
     @property
     def MultiExitDiscriminator(self):
@@ -841,7 +982,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
 
     @property
     def MulticastTunnelType(self):
@@ -852,7 +996,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Tunnel Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastTunnelType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastTunnelType"])
+        )
 
     @property
     def Multiplier(self):
@@ -862,11 +1009,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def MvEnableTransposition(self):
@@ -877,7 +1025,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Transposition
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvEnableTransposition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvEnableTransposition"])
+        )
 
     @property
     def MvIncSrv6SidStructSsTlv(self):
@@ -888,7 +1039,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include SRv6 SID Structure Sub-Sub TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvIncSrv6SidStructSsTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvIncSrv6SidStructSsTlv"])
+        )
 
     @property
     def Name(self):
@@ -898,11 +1052,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
@@ -912,11 +1067,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number Of AS Path Segments Per Route Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"])
+
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"], value)
 
     @property
     def NoOfClusters(self):
@@ -926,11 +1082,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of Clusters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfClusters"])
+
     @NoOfClusters.setter
     def NoOfClusters(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfClusters"], value)
 
     @property
     def NoOfCommunities(self):
@@ -940,11 +1097,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCommunities"])
+
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
 
     @property
     def NoOfExtendedCommunity(self):
@@ -954,11 +1112,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of Extended Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"])
+
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"], value)
 
     @property
     def NumBroadcastDomainV6(self):
@@ -968,11 +1127,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: The number of broadcast domain to be configured under EVI
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumBroadcastDomainV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumBroadcastDomainV6"])
+
     @NumBroadcastDomainV6.setter
     def NumBroadcastDomainV6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumBroadcastDomainV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumBroadcastDomainV6"], value)
 
     @property
     def NumRtInExportRouteTargetList(self):
@@ -982,11 +1142,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of RTs in Export Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInExportRouteTargetList"])
+
     @NumRtInExportRouteTargetList.setter
     def NumRtInExportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInExportRouteTargetList"], value)
 
     @property
     def NumRtInImportRouteTargetList(self):
@@ -996,11 +1157,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of RTs in Import Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInImportRouteTargetList"])
+
     @NumRtInImportRouteTargetList.setter
     def NumRtInImportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInImportRouteTargetList"], value)
 
     @property
     def NumRtInL3vniExportRouteTargetList(self):
@@ -1010,11 +1172,16 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of RTs in L3 Export Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInL3vniExportRouteTargetList'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumRtInL3vniExportRouteTargetList"]
+        )
+
     @NumRtInL3vniExportRouteTargetList.setter
     def NumRtInL3vniExportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInL3vniExportRouteTargetList'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumRtInL3vniExportRouteTargetList"], value
+        )
 
     @property
     def NumRtInL3vniImportRouteTargetList(self):
@@ -1024,11 +1191,16 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - number: Number of RTs in L3 Import Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInL3vniImportRouteTargetList'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumRtInL3vniImportRouteTargetList"]
+        )
+
     @NumRtInL3vniImportRouteTargetList.setter
     def NumRtInL3vniImportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInL3vniImportRouteTargetList'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumRtInL3vniImportRouteTargetList"], value
+        )
 
     @property
     def Origin(self):
@@ -1039,7 +1211,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Origin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Origin"]))
 
     @property
     def OriginatingRouterIpv4(self):
@@ -1050,7 +1223,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures Originating Router IP address in IPv4 Address format
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatingRouterIpv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OriginatingRouterIpv4"])
+        )
 
     @property
     def OriginatingRouterIpv6(self):
@@ -1061,7 +1237,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures Originating Router IP address in IPv6 Address format
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatingRouterIpv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OriginatingRouterIpv6"])
+        )
 
     @property
     def OriginatorId(self):
@@ -1072,7 +1251,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OriginatorId"]))
 
     @property
     def OverridePeerAsSetMode(self):
@@ -1083,7 +1263,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePeerAsSetMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePeerAsSetMode"])
+        )
 
     @property
     def PmsiTunnelIDv4(self):
@@ -1094,7 +1277,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PMSI Tunnel ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PmsiTunnelIDv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PmsiTunnelIDv4"])
+        )
 
     @property
     def PmsiTunnelIDv6(self):
@@ -1105,7 +1291,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PMSI Tunnel ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PmsiTunnelIDv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PmsiTunnelIDv6"])
+        )
 
     @property
     def RdASNumber(self):
@@ -1116,7 +1305,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EVPN Route Distinguisher AS Number (2-byte or 4-Byte)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RdASNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RdASNumber"]))
 
     @property
     def RdEvi(self):
@@ -1127,7 +1317,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EVPN Route Distinguisher Assigned Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RdEvi']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RdEvi"]))
 
     @property
     def RdIpAddress(self):
@@ -1138,7 +1329,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RD IP Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RdIpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RdIpAddress"]))
 
     @property
     def RdType(self):
@@ -1149,7 +1341,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EVPN RR Distinguisher Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RdType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RdType"]))
 
     @property
     def SendSRv6SIDOptionalInfo(self):
@@ -1160,7 +1353,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendSRv6SIDOptionalInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendSRv6SIDOptionalInfo"])
+        )
 
     @property
     def SendSRv6SIDOptionalInfoPMSI(self):
@@ -1171,7 +1367,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendSRv6SIDOptionalInfoPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendSRv6SIDOptionalInfoPMSI"])
+        )
 
     @property
     def SessionStatus(self):
@@ -1181,7 +1380,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SetNextHop(self):
@@ -1192,7 +1391,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetNextHop"]))
 
     @property
     def SetNextHopIpType(self):
@@ -1203,7 +1403,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHopIpType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetNextHopIpType"])
+        )
 
     @property
     def Srv6EndpointBehavior(self):
@@ -1214,7 +1417,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Endpoint Behavior field Value for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehavior']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehavior"])
+        )
 
     @property
     def Srv6EndpointBehaviorPMSI(self):
@@ -1225,7 +1431,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Endpoint Behavior field Value for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehaviorPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorPMSI"])
+        )
 
     @property
     def Srv6SIDOptionalInformation(self):
@@ -1236,7 +1445,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SIDOptionalInformation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SIDOptionalInformation"])
+        )
 
     @property
     def Srv6SIDOptionalInformationPMSI(self):
@@ -1247,7 +1459,11 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SIDOptionalInformationPMSI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Srv6SIDOptionalInformationPMSI"]),
+        )
 
     @property
     def Srv6SidFlags(self):
@@ -1258,7 +1474,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Flags Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlags"]))
 
     @property
     def Srv6SidFlagsPMSI(self):
@@ -1269,7 +1486,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Flags Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidFlagsPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlagsPMSI"])
+        )
 
     @property
     def Srv6SidLoc(self):
@@ -1280,7 +1500,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLoc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLoc"]))
 
     @property
     def Srv6SidLocLen(self):
@@ -1291,7 +1512,8 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocLen"]))
 
     @property
     def Srv6SidLocLenPMSI(self):
@@ -1302,7 +1524,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocLenPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocLenPMSI"])
+        )
 
     @property
     def Srv6SidLocMetric(self):
@@ -1313,7 +1538,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocMetric"])
+        )
 
     @property
     def Srv6SidLocMetricPMSI(self):
@@ -1324,7 +1552,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocMetricPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocMetricPMSI"])
+        )
 
     @property
     def Srv6SidLocPMSI(self):
@@ -1335,7 +1566,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocPMSI"])
+        )
 
     @property
     def Srv6SidReserved(self):
@@ -1346,7 +1580,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved"])
+        )
 
     @property
     def Srv6SidReserved1(self):
@@ -1357,7 +1594,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved1 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1"])
+        )
 
     @property
     def Srv6SidReserved1PMSI(self):
@@ -1368,7 +1608,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved1 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved1PMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1PMSI"])
+        )
 
     @property
     def Srv6SidReserved2(self):
@@ -1379,7 +1622,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved2 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2"])
+        )
 
     @property
     def Srv6SidReserved2PMSI(self):
@@ -1390,7 +1636,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved2 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved2PMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2PMSI"])
+        )
 
     @property
     def Srv6SidReservedPMSI(self):
@@ -1401,7 +1650,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReservedPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReservedPMSI"])
+        )
 
     @property
     def StackedLayers(self):
@@ -1411,11 +1663,12 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -1424,7 +1677,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -1434,7 +1687,7 @@ class BgpIPv6EvpnVpws(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TranpositionLength(self):
@@ -1445,7 +1698,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transposition Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TranpositionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TranpositionLength"])
+        )
 
     @property
     def TranpositionOffset(self):
@@ -1456,7 +1712,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transposition Offset
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TranpositionOffset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TranpositionOffset"])
+        )
 
     @property
     def UpstreamDownstreamAssignedMplsLabel(self):
@@ -1467,7 +1726,13 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Upstream/Downstream Assigned MPLS Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpstreamDownstreamAssignedMplsLabel']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UpstreamDownstreamAssignedMplsLabel"]
+            ),
+        )
 
     @property
     def UseIpv4MappedIpv6Address(self):
@@ -1478,7 +1743,10 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use IPv4 Mapped IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseIpv4MappedIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseIpv4MappedIpv6Address"])
+        )
 
     @property
     def UseUpstreamDownstreamAssignedMplsLabel(self):
@@ -1489,9 +1757,32 @@ class BgpIPv6EvpnVpws(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Upstream/Downstream Assigned MPLS Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseUpstreamDownstreamAssignedMplsLabel']))
 
-    def update(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, L3vniImportRtListSameAsL3vniExportRtList=None, Multiplier=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumBroadcastDomainV6=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInL3vniExportRouteTargetList=None, NumRtInL3vniImportRouteTargetList=None, StackedLayers=None):
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UseUpstreamDownstreamAssignedMplsLabel"]
+            ),
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        ImportRtListSameAsExportRtList=None,
+        L3vniImportRtListSameAsL3vniExportRtList=None,
+        Multiplier=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NumBroadcastDomainV6=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInL3vniExportRouteTargetList=None,
+        NumRtInL3vniImportRouteTargetList=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, bool, int, str, int, int, int, int, int, int, int, int, int, List[str]) -> BgpIPv6EvpnVpws
         """Updates bgpIPv6EvpnVpws resource on the server.
 
@@ -1522,7 +1813,24 @@ class BgpIPv6EvpnVpws(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, L3vniImportRtListSameAsL3vniExportRtList=None, Multiplier=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumBroadcastDomainV6=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInL3vniExportRouteTargetList=None, NumRtInL3vniImportRouteTargetList=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        ImportRtListSameAsExportRtList=None,
+        L3vniImportRtListSameAsL3vniExportRtList=None,
+        Multiplier=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NumBroadcastDomainV6=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInL3vniExportRouteTargetList=None,
+        NumRtInL3vniImportRouteTargetList=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, bool, int, str, int, int, int, int, int, int, int, int, int, List[str]) -> BgpIPv6EvpnVpws
         """Adds a new bgpIPv6EvpnVpws resource on the server and adds it to the container.
 
@@ -1564,7 +1872,31 @@ class BgpIPv6EvpnVpws(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, EsiValue=None, ImportRtListSameAsExportRtList=None, L3vniImportRtListSameAsL3vniExportRtList=None, Multiplier=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumBroadcastDomainV6=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInL3vniExportRouteTargetList=None, NumRtInL3vniImportRouteTargetList=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        EsiValue=None,
+        ImportRtListSameAsExportRtList=None,
+        L3vniImportRtListSameAsL3vniExportRtList=None,
+        Multiplier=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NumBroadcastDomainV6=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInL3vniExportRouteTargetList=None,
+        NumRtInL3vniImportRouteTargetList=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves bgpIPv6EvpnVpws resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIPv6EvpnVpws resources from the server.
@@ -1651,10 +1983,12 @@ class BgpIPv6EvpnVpws(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1683,10 +2017,12 @@ class BgpIPv6EvpnVpws(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1715,10 +2051,12 @@ class BgpIPv6EvpnVpws(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1747,12 +2085,97 @@ class BgpIPv6EvpnVpws(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvSrv6SidInIgpPMSI=None, AdvertiseL3vniSeparately=None, AdvertiseSRv6SID=None, AdvertiseSRv6SIDPMSI=None, AggregatorAs=None, AggregatorId=None, ArgumentLength=None, AsSetMode=None, AutoConfigOriginatingRouterIp=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, FunctionLength=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocBlockLength=None, LocNodeLength=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, MvEnableTransposition=None, MvIncSrv6SidStructSsTlv=None, Origin=None, OriginatingRouterIpv4=None, OriginatingRouterIpv6=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdASNumber=None, RdEvi=None, RdIpAddress=None, RdType=None, SendSRv6SIDOptionalInfo=None, SendSRv6SIDOptionalInfoPMSI=None, SetNextHop=None, SetNextHopIpType=None, Srv6EndpointBehavior=None, Srv6EndpointBehaviorPMSI=None, Srv6SIDOptionalInformation=None, Srv6SIDOptionalInformationPMSI=None, Srv6SidFlags=None, Srv6SidFlagsPMSI=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocLenPMSI=None, Srv6SidLocMetric=None, Srv6SidLocMetricPMSI=None, Srv6SidLocPMSI=None, Srv6SidReserved=None, Srv6SidReserved1=None, Srv6SidReserved1PMSI=None, Srv6SidReserved2=None, Srv6SidReserved2PMSI=None, Srv6SidReservedPMSI=None, TranpositionLength=None, TranpositionOffset=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdRouteLabel=None,
+        AdvSrv6SidInIgp=None,
+        AdvSrv6SidInIgpPMSI=None,
+        AdvertiseL3vniSeparately=None,
+        AdvertiseSRv6SID=None,
+        AdvertiseSRv6SIDPMSI=None,
+        AggregatorAs=None,
+        AggregatorId=None,
+        ArgumentLength=None,
+        AsSetMode=None,
+        AutoConfigOriginatingRouterIp=None,
+        AutoConfigPMSITunnelId=None,
+        AutoConfigureRdIpAddress=None,
+        BMacFirstLabel=None,
+        BMacSecondLabel=None,
+        EnableAggregatorId=None,
+        EnableAsPathSegments=None,
+        EnableAtomicAggregate=None,
+        EnableBMacSecondLabel=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableExtendedCommunity=None,
+        EnableL3TargetOnlyForRouteType5=None,
+        EnableL3vniTargetList=None,
+        EnableLocalPreference=None,
+        EnableMultiExitDiscriminator=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EsiType=None,
+        FunctionLength=None,
+        IncludePmsiTunnelAttribute=None,
+        Ipv4NextHop=None,
+        Ipv6NextHop=None,
+        LocBlockLength=None,
+        LocNodeLength=None,
+        LocalPreference=None,
+        MultiExitDiscriminator=None,
+        MulticastTunnelType=None,
+        MvEnableTransposition=None,
+        MvIncSrv6SidStructSsTlv=None,
+        Origin=None,
+        OriginatingRouterIpv4=None,
+        OriginatingRouterIpv6=None,
+        OriginatorId=None,
+        OverridePeerAsSetMode=None,
+        PmsiTunnelIDv4=None,
+        PmsiTunnelIDv6=None,
+        RdASNumber=None,
+        RdEvi=None,
+        RdIpAddress=None,
+        RdType=None,
+        SendSRv6SIDOptionalInfo=None,
+        SendSRv6SIDOptionalInfoPMSI=None,
+        SetNextHop=None,
+        SetNextHopIpType=None,
+        Srv6EndpointBehavior=None,
+        Srv6EndpointBehaviorPMSI=None,
+        Srv6SIDOptionalInformation=None,
+        Srv6SIDOptionalInformationPMSI=None,
+        Srv6SidFlags=None,
+        Srv6SidFlagsPMSI=None,
+        Srv6SidLoc=None,
+        Srv6SidLocLen=None,
+        Srv6SidLocLenPMSI=None,
+        Srv6SidLocMetric=None,
+        Srv6SidLocMetricPMSI=None,
+        Srv6SidLocPMSI=None,
+        Srv6SidReserved=None,
+        Srv6SidReserved1=None,
+        Srv6SidReserved1PMSI=None,
+        Srv6SidReserved2=None,
+        Srv6SidReserved2PMSI=None,
+        Srv6SidReservedPMSI=None,
+        TranpositionLength=None,
+        TranpositionOffset=None,
+        UpstreamDownstreamAssignedMplsLabel=None,
+        UseIpv4MappedIpv6Address=None,
+        UseUpstreamDownstreamAssignedMplsLabel=None,
+    ):
         """Base class infrastructure that gets a list of bgpIPv6EvpnVpws device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

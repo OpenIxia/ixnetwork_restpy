@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class PppoxGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pppoxGlobals'
+    _SDM_NAME = "pppoxGlobals"
     _SDM_ATT_MAP = {
-        'EnforcePerPortRates': 'enforcePerPortRates',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
+        "EnforcePerPortRates": "enforcePerPortRates",
+        "MaxOutstandingReleases": "maxOutstandingReleases",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "SetupRateInitial": "setupRateInitial",
+        "TeardownRateInitial": "teardownRateInitial",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PppoxGlobals, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class PppoxGlobals(Base):
         -------
         - bool: If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnforcePerPortRates"])
+
     @EnforcePerPortRates.setter
     def EnforcePerPortRates(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnforcePerPortRates"], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -71,11 +72,12 @@ class PppoxGlobals(Base):
         -------
         - number: The maximum number of PPP session releases opened at any time by the PPP plugin.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"])
+
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -85,11 +87,12 @@ class PppoxGlobals(Base):
         -------
         - number: Threshold at which the plugin begins throttling back the number of new clients being set up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -99,7 +102,7 @@ class PppoxGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SetupRateInitial(self):
@@ -109,11 +112,12 @@ class PppoxGlobals(Base):
         -------
         - number: Initial setup rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateInitial"])
+
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateInitial"], value)
 
     @property
     def TeardownRateInitial(self):
@@ -123,13 +127,21 @@ class PppoxGlobals(Base):
         -------
         - number: Initial teardown rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateInitial"])
+
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateInitial"], value)
 
-    def update(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def update(
+        self,
+        EnforcePerPortRates=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, int, int, int, int) -> PppoxGlobals
         """Updates pppoxGlobals resource on the server.
 
@@ -147,7 +159,14 @@ class PppoxGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def add(
+        self,
+        EnforcePerPortRates=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, int, int, int, int) -> PppoxGlobals
         """Adds a new pppoxGlobals resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class PppoxGlobals(Base):
         """
         self._delete()
 
-    def find(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def find(
+        self,
+        EnforcePerPortRates=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, int, int, str, int, int) -> PppoxGlobals
         """Finds and retrieves pppoxGlobals resources from the server.
 

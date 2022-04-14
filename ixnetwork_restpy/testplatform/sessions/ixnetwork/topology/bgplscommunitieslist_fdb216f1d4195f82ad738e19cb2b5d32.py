@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class BgpLsCommunitiesList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpLsCommunitiesList'
+    _SDM_NAME = "bgpLsCommunitiesList"
     _SDM_ATT_MAP = {
-        'AsNumber': 'asNumber',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LastTwoOctets': 'lastTwoOctets',
-        'Name': 'name',
-        'Type': 'type',
+        "AsNumber": "asNumber",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LastTwoOctets": "lastTwoOctets",
+        "Name": "name",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpLsCommunitiesList, self).__init__(parent, list_op)
@@ -57,7 +57,8 @@ class BgpLsCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS #
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
 
     @property
     def Count(self):
@@ -67,7 +68,7 @@ class BgpLsCommunitiesList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -77,7 +78,7 @@ class BgpLsCommunitiesList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LastTwoOctets(self):
@@ -88,7 +89,8 @@ class BgpLsCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Last Two Octets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LastTwoOctets']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LastTwoOctets"]))
 
     @property
     def Name(self):
@@ -98,11 +100,12 @@ class BgpLsCommunitiesList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Type(self):
@@ -113,7 +116,8 @@ class BgpLsCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     def update(self, Name=None):
         # type: (str) -> BgpLsCommunitiesList
@@ -134,7 +138,7 @@ class BgpLsCommunitiesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpLsCommunitiesList
-        """Adds a new bgpLsCommunitiesList resource on the json, only valid with config assistant
+        """Adds a new bgpLsCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -192,7 +196,9 @@ class BgpLsCommunitiesList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AsNumber=None, LastTwoOctets=None, Type=None):
+    def get_device_ids(
+        self, PortNames=None, AsNumber=None, LastTwoOctets=None, Type=None
+    ):
         """Base class infrastructure that gets a list of bgpLsCommunitiesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

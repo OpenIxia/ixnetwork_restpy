@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,17 @@ class IntraAreaPrefix(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'intraAreaPrefix'
+    _SDM_NAME = "intraAreaPrefix"
     _SDM_ATT_MAP = {
-        'CountLsa': 'countLsa',
-        'IncrLinkStateId': 'incrLinkStateId',
-        'Prefixes': 'prefixes',
-        'RefLinkStateId': 'refLinkStateId',
-        'RefRouterId': 'refRouterId',
-        'ReferenceType': 'referenceType',
+        "CountLsa": "countLsa",
+        "IncrLinkStateId": "incrLinkStateId",
+        "Prefixes": "prefixes",
+        "RefLinkStateId": "refLinkStateId",
+        "RefRouterId": "refRouterId",
+        "ReferenceType": "referenceType",
     }
     _SDM_ENUM_MAP = {
-        'referenceType': ['routerLsa', 'networkLsa'],
+        "referenceType": ["routerLsa", "networkLsa"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,13 +56,14 @@ class IntraAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CountLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["CountLsa"])
+
     @CountLsa.setter
     def CountLsa(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CountLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CountLsa"], value)
 
     @property
     def IncrLinkStateId(self):
@@ -69,25 +71,27 @@ class IntraAreaPrefix(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrLinkStateId"])
+
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrLinkStateId"], value)
 
     @property
     def Prefixes(self):
         """
         Returns
         -------
-        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number)): 
+        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number)):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Prefixes'])
+        return self._get_attribute(self._SDM_ATT_MAP["Prefixes"])
+
     @Prefixes.setter
     def Prefixes(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Prefixes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Prefixes"], value)
 
     @property
     def RefLinkStateId(self):
@@ -95,13 +99,14 @@ class IntraAreaPrefix(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RefLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RefLinkStateId"])
+
     @RefLinkStateId.setter
     def RefLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RefLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RefLinkStateId"], value)
 
     @property
     def RefRouterId(self):
@@ -109,13 +114,14 @@ class IntraAreaPrefix(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RefRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RefRouterId"])
+
     @RefRouterId.setter
     def RefRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RefRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RefRouterId"], value)
 
     @property
     def ReferenceType(self):
@@ -123,25 +129,34 @@ class IntraAreaPrefix(Base):
         """
         Returns
         -------
-        - str(routerLsa | networkLsa): 
+        - str(routerLsa | networkLsa):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceType"])
+
     @ReferenceType.setter
     def ReferenceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReferenceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReferenceType"], value)
 
-    def update(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
+    def update(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        Prefixes=None,
+        RefLinkStateId=None,
+        RefRouterId=None,
+        ReferenceType=None,
+    ):
         """Updates intraAreaPrefix resource on the server.
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
-        - RefLinkStateId (str): 
-        - RefRouterId (str): 
-        - ReferenceType (str(routerLsa | networkLsa)): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))):
+        - RefLinkStateId (str):
+        - RefRouterId (str):
+        - ReferenceType (str(routerLsa | networkLsa)):
 
         Raises
         ------
@@ -149,17 +164,25 @@ class IntraAreaPrefix(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
-        """Adds a new intraAreaPrefix resource on the json, only valid with config assistant
+    def add(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        Prefixes=None,
+        RefLinkStateId=None,
+        RefRouterId=None,
+        ReferenceType=None,
+    ):
+        """Adds a new intraAreaPrefix resource on the json, only valid with batch add utility
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
-        - RefLinkStateId (str): 
-        - RefRouterId (str): 
-        - ReferenceType (str(routerLsa | networkLsa)): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))):
+        - RefLinkStateId (str):
+        - RefRouterId (str):
+        - ReferenceType (str(routerLsa | networkLsa)):
 
         Returns
         -------
@@ -171,7 +194,15 @@ class IntraAreaPrefix(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
+    def find(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        Prefixes=None,
+        RefLinkStateId=None,
+        RefRouterId=None,
+        ReferenceType=None,
+    ):
         """Finds and retrieves intraAreaPrefix resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve intraAreaPrefix resources from the server.
@@ -180,12 +211,12 @@ class IntraAreaPrefix(Base):
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
-        - RefLinkStateId (str): 
-        - RefRouterId (str): 
-        - ReferenceType (str(routerLsa | networkLsa)): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))):
+        - RefLinkStateId (str):
+        - RefRouterId (str):
+        - ReferenceType (str(routerLsa | networkLsa)):
 
         Returns
         -------

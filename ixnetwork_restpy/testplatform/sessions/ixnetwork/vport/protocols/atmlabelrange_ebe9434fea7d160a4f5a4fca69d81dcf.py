@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class AtmLabelRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atmLabelRange'
+    _SDM_NAME = "atmLabelRange"
     _SDM_ATT_MAP = {
-        'MaxVci': 'maxVci',
-        'MaxVpi': 'maxVpi',
-        'MinVci': 'minVci',
-        'MinVpi': 'minVpi',
+        "MaxVci": "maxVci",
+        "MaxVpi": "maxVpi",
+        "MinVci": "minVci",
+        "MinVpi": "minVpi",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AtmLabelRange, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class AtmLabelRange(Base):
         -------
         - number: The maximum virtual circuit identifier (VCI) value that will be included in the ATM label range. The valid maximum VCI value = 65,535 [0xFFFF (hex)].
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxVci'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxVci"])
+
     @MaxVci.setter
     def MaxVci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxVci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxVci"], value)
 
     @property
     def MaxVpi(self):
@@ -69,11 +70,12 @@ class AtmLabelRange(Base):
         -------
         - number: The maximum virtual path identifier (VPI) value that will be included in the ATM label range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxVpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxVpi"])
+
     @MaxVpi.setter
     def MaxVpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxVpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxVpi"], value)
 
     @property
     def MinVci(self):
@@ -83,11 +85,12 @@ class AtmLabelRange(Base):
         -------
         - number: The minimum virtual circuit identifier (VCI) value that will be included in the ATM label range.The valid minimum VCI value = 33.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinVci'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinVci"])
+
     @MinVci.setter
     def MinVci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinVci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinVci"], value)
 
     @property
     def MinVpi(self):
@@ -97,11 +100,12 @@ class AtmLabelRange(Base):
         -------
         - number: The minimum virtual path identifier (VPI) value that will be included in the ATM label range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinVpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinVpi"])
+
     @MinVpi.setter
     def MinVpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinVpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinVpi"], value)
 
     def update(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
         # type: (int, int, int, int) -> AtmLabelRange

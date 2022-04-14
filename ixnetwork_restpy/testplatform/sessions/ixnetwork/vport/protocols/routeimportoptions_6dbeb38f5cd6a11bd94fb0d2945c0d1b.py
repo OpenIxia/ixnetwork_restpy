@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class RouteImportOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeImportOptions'
+    _SDM_NAME = "routeImportOptions"
     _SDM_ATT_MAP = {
-        'AdverstiseBestRoutes': 'adverstiseBestRoutes',
-        'NextHopAsIs': 'nextHopAsIs',
-        'NumberOfRoutesPerBlock': 'numberOfRoutesPerBlock',
-        'RouteFileType': 'routeFileType',
-        'SendMultiExitDiscValue': 'sendMultiExitDiscValue',
+        "AdverstiseBestRoutes": "adverstiseBestRoutes",
+        "NextHopAsIs": "nextHopAsIs",
+        "NumberOfRoutesPerBlock": "numberOfRoutesPerBlock",
+        "RouteFileType": "routeFileType",
+        "SendMultiExitDiscValue": "sendMultiExitDiscValue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RouteImportOptions, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class RouteImportOptions(Base):
         -------
         - bool: If checked, only the best routes are imbibed and advertised. The sub-optimal routes are ignored.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdverstiseBestRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdverstiseBestRoutes"])
+
     @AdverstiseBestRoutes.setter
     def AdverstiseBestRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdverstiseBestRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdverstiseBestRoutes"], value)
 
     @property
     def NextHopAsIs(self):
@@ -70,11 +71,12 @@ class RouteImportOptions(Base):
         -------
         - bool: If true, it takes the next Hop AsIs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopAsIs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopAsIs"])
+
     @NextHopAsIs.setter
     def NextHopAsIs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopAsIs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopAsIs"], value)
 
     @property
     def NumberOfRoutesPerBlock(self):
@@ -84,11 +86,12 @@ class RouteImportOptions(Base):
         -------
         - number: Represents the maximum number of routes that can be forwared in a block.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutesPerBlock'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutesPerBlock"])
+
     @NumberOfRoutesPerBlock.setter
     def NumberOfRoutesPerBlock(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutesPerBlock'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutesPerBlock"], value)
 
     @property
     def RouteFileType(self):
@@ -98,11 +101,12 @@ class RouteImportOptions(Base):
         -------
         - str: The route file type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteFileType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteFileType"])
+
     @RouteFileType.setter
     def RouteFileType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteFileType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteFileType"], value)
 
     @property
     def SendMultiExitDiscValue(self):
@@ -112,13 +116,21 @@ class RouteImportOptions(Base):
         -------
         - bool: If enabled, the BGP router sends the MED value of the attribute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendMultiExitDiscValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendMultiExitDiscValue"])
+
     @SendMultiExitDiscValue.setter
     def SendMultiExitDiscValue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendMultiExitDiscValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendMultiExitDiscValue"], value)
 
-    def update(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+    def update(
+        self,
+        AdverstiseBestRoutes=None,
+        NextHopAsIs=None,
+        NumberOfRoutesPerBlock=None,
+        RouteFileType=None,
+        SendMultiExitDiscValue=None,
+    ):
         # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Updates routeImportOptions resource on the server.
 
@@ -136,7 +148,14 @@ class RouteImportOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+    def add(
+        self,
+        AdverstiseBestRoutes=None,
+        NextHopAsIs=None,
+        NumberOfRoutesPerBlock=None,
+        RouteFileType=None,
+        SendMultiExitDiscValue=None,
+    ):
         # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Adds a new routeImportOptions resource on the server and adds it to the container.
 
@@ -168,7 +187,14 @@ class RouteImportOptions(Base):
         """
         self._delete()
 
-    def find(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+    def find(
+        self,
+        AdverstiseBestRoutes=None,
+        NextHopAsIs=None,
+        NumberOfRoutesPerBlock=None,
+        RouteFileType=None,
+        SendMultiExitDiscValue=None,
+    ):
         # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Finds and retrieves routeImportOptions resources from the server.
 
@@ -228,10 +254,14 @@ class RouteImportOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSupportedBGPRouteFileTypes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getSupportedBGPRouteFileTypes", payload=payload, response_object=None
+        )
 
     def ImportOpaqueRouteRangeFromFile(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -249,7 +279,11 @@ class RouteImportOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('importOpaqueRouteRangeFromFile', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "importOpaqueRouteRangeFromFile", payload=payload, response_object=None
+        )

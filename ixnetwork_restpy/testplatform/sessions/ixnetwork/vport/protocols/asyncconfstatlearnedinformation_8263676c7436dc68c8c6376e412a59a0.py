@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,26 +34,25 @@ class AsyncConfStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'asyncConfStatLearnedInformation'
+    _SDM_NAME = "asyncConfStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FlowRemovedMaskMaster': 'flowRemovedMaskMaster',
-        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PacketInMaskMaster': 'packetInMaskMaster',
-        'PacketInMaskSlave': 'packetInMaskSlave',
-        'PortStatusMaskMaster': 'portStatusMaskMaster',
-        'PortStatusMaskSlave': 'portStatusMaskSlave',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "FlowRemovedMaskMaster": "flowRemovedMaskMaster",
+        "FlowRemovedMaskSlave": "flowRemovedMaskSlave",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "PacketInMaskMaster": "packetInMaskMaster",
+        "PacketInMaskSlave": "packetInMaskSlave",
+        "PortStatusMaskMaster": "portStatusMaskMaster",
+        "PortStatusMaskSlave": "portStatusMaskSlave",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AsyncConfStatLearnedInformation, self).__init__(parent, list_op)
@@ -65,7 +65,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -75,7 +75,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -85,7 +85,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -95,7 +95,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def FlowRemovedMaskMaster(self):
@@ -105,7 +105,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowRemovedMaskMaster'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowRemovedMaskMaster"])
 
     @property
     def FlowRemovedMaskSlave(self):
@@ -115,7 +115,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowRemovedMaskSlave'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowRemovedMaskSlave"])
 
     @property
     def Latency(self):
@@ -125,7 +125,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -135,7 +135,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -145,7 +145,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def PacketInMaskMaster(self):
@@ -155,7 +155,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInMaskMaster'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInMaskMaster"])
 
     @property
     def PacketInMaskSlave(self):
@@ -165,7 +165,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInMaskSlave'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInMaskSlave"])
 
     @property
     def PortStatusMaskMaster(self):
@@ -175,7 +175,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatusMaskMaster'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatusMaskMaster"])
 
     @property
     def PortStatusMaskSlave(self):
@@ -185,7 +185,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatusMaskSlave'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatusMaskSlave"])
 
     @property
     def RemoteIp(self):
@@ -195,7 +195,7 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -205,10 +205,10 @@ class AsyncConfStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new asyncConfStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new asyncConfStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -220,7 +220,24 @@ class AsyncConfStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, FlowRemovedMaskMaster=None, FlowRemovedMaskSlave=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketInMaskMaster=None, PacketInMaskSlave=None, PortStatusMaskMaster=None, PortStatusMaskSlave=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        FlowRemovedMaskMaster=None,
+        FlowRemovedMaskSlave=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        PacketInMaskMaster=None,
+        PacketInMaskSlave=None,
+        PortStatusMaskMaster=None,
+        PortStatusMaskSlave=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> AsyncConfStatLearnedInformation
         """Finds and retrieves asyncConfStatLearnedInformation resources from the server.
 

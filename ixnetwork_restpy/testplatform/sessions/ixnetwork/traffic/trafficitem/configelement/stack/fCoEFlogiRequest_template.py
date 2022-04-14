@@ -4,65 +4,65 @@ from ixnetwork_restpy.files import Files
 
 class FCoEFlogiRequest(Base):
     __slots__ = ()
-    _SDM_NAME = 'fCoEFlogiRequest'
+    _SDM_NAME = "fCoEFlogiRequest"
     _SDM_ATT_MAP = {
-        'FcoeHeaderVersion': 'fCoEFlogiRequest.header.fcoeHeader.version-1',
-        'FcoeHeaderReserved': 'fCoEFlogiRequest.header.fcoeHeader.reserved-2',
-        'FcoeHeaderESOF': 'fCoEFlogiRequest.header.fcoeHeader.eSOF-3',
-        'ExtendedLinkServicesExtendedLinkServiceInfo': 'fCoEFlogiRequest.header.fcHeader.RCtl.extendedLinkServices.extendedLinkServiceInfo-4',
-        'FcHeaderDId': 'fCoEFlogiRequest.header.fcHeader.DId-5',
-        'FcHeaderCsCtlPriority': 'fCoEFlogiRequest.header.fcHeader.CsCtlPriority-6',
-        'FcHeaderSId': 'fCoEFlogiRequest.header.fcHeader.SId-7',
-        'FcHeaderType': 'fCoEFlogiRequest.header.fcHeader.Type-8',
-        'FCtlExchangeContext': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.exchangeContext-9',
-        'FCtlSequenceContext': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.sequenceContext-10',
-        'FCtlFirstSequence': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.firstSequence-11',
-        'FCtlLastSequence': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.lastSequence-12',
-        'FCtlEndSequence': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.endSequence-13',
-        'FCtlEndConnection': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.endConnection-14',
-        'FCtlCsCtlPriority': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.csCtlPriority-15',
-        'FCtlSequenceInitiative': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.sequenceInitiative-16',
-        'FCtlFcXidReassigned': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcXidReassigned-17',
-        'FCtlFcInvalidateXid': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcInvalidateXid-18',
-        'FCtlAckForm': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.ackForm-19',
-        'FCtlFcDataCompression': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcDataCompression-20',
-        'FCtlFcDataEncryption': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcDataEncryption-21',
-        'FCtlRetransmittedSequence': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.retransmittedSequence-22',
-        'FCtlUnidirectionalTransmit': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.unidirectionalTransmit-23',
-        'FCtlContinueSeqCondition': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.continueSeqCondition-24',
-        'FCtlAbortSeqCondition': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.abortSeqCondition-25',
-        'FCtlRelativeOffsetPresent': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.relativeOffsetPresent-26',
-        'FCtlExchangeReassembly': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.exchangeReassembly-27',
-        'FCtlFillBytes': 'fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fillBytes-28',
-        'FcHeaderSeqId': 'fCoEFlogiRequest.header.fcHeader.SeqId-29',
-        'FcHeaderDfCtl': 'fCoEFlogiRequest.header.fcHeader.DfCtl-30',
-        'FcHeaderSeqCnt': 'fCoEFlogiRequest.header.fcHeader.SeqCnt-31',
-        'FcHeaderOxId': 'fCoEFlogiRequest.header.fcHeader.OxId-32',
-        'FcHeaderRxId': 'fCoEFlogiRequest.header.fcHeader.RxId-33',
-        'FcHeaderParameter': 'fCoEFlogiRequest.header.fcHeader.Parameter-34',
-        'FcElsCommandCodeFcElsCommandCodeFlogi': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommandCode.FcElsCommandCodeFlogi-35',
-        'FcElsRequestFcElsRequestReserved': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsRequestReserved-36',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersFc-phVersion': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersFc-phVersion-37',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferCredit': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBuffer-to-bufferCredit-38',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersCommonFeatures': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersCommonFeatures-39',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersBbScNumber': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBbScNumber-40',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize-41',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersRATov': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersRATov-42',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersEDTov': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersEDTov-43',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersNPortPortName': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersNPortPortName-44',
-        'FcElsCommonServiceParametersFcElsCommonServiceParametersFabricNodeName': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersFabricNodeName-45',
-        'FcElsRequestFcElsClass1SvcParameters': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass1SvcParameters-46',
-        'FcElsRequestFcElsClass2SvcParameters': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass2SvcParameters-47',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersServiceOptions': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersServiceOptions-48',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersInitiatorControl': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersInitiatorControl-49',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersRecipientControl': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersRecipientControl-50',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersClassReceiveSize': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersClassReceiveSize-51',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersTotalConcurrentSequence': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersTotalConcurrentSequence-52',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersEnd-to-endCredit': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersEnd-to-endCredit-53',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersOpenSeqPerExchange': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersOpenSeqPerExchange-54',
-        'FcElsClass3SvcParametersFcElsClass3SvcParametersCrTov': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersCrTov-55',
-        'FcElsRequestClass4SvcParameters': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.Class4SvcParameters-56',
-        'FcElsRequestFcElsVendorVersion': 'fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsVendorVersion-57',
+        "FcoeHeaderVersion": "fCoEFlogiRequest.header.fcoeHeader.version-1",
+        "FcoeHeaderReserved": "fCoEFlogiRequest.header.fcoeHeader.reserved-2",
+        "FcoeHeaderESOF": "fCoEFlogiRequest.header.fcoeHeader.eSOF-3",
+        "ExtendedLinkServicesExtendedLinkServiceInfo": "fCoEFlogiRequest.header.fcHeader.RCtl.extendedLinkServices.extendedLinkServiceInfo-4",
+        "FcHeaderDId": "fCoEFlogiRequest.header.fcHeader.DId-5",
+        "FcHeaderCsCtlPriority": "fCoEFlogiRequest.header.fcHeader.CsCtlPriority-6",
+        "FcHeaderSId": "fCoEFlogiRequest.header.fcHeader.SId-7",
+        "FcHeaderType": "fCoEFlogiRequest.header.fcHeader.Type-8",
+        "FCtlExchangeContext": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.exchangeContext-9",
+        "FCtlSequenceContext": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.sequenceContext-10",
+        "FCtlFirstSequence": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.firstSequence-11",
+        "FCtlLastSequence": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.lastSequence-12",
+        "FCtlEndSequence": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.endSequence-13",
+        "FCtlEndConnection": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.endConnection-14",
+        "FCtlCsCtlPriority": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.csCtlPriority-15",
+        "FCtlSequenceInitiative": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.sequenceInitiative-16",
+        "FCtlFcXidReassigned": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcXidReassigned-17",
+        "FCtlFcInvalidateXid": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcInvalidateXid-18",
+        "FCtlAckForm": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.ackForm-19",
+        "FCtlFcDataCompression": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcDataCompression-20",
+        "FCtlFcDataEncryption": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fcDataEncryption-21",
+        "FCtlRetransmittedSequence": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.retransmittedSequence-22",
+        "FCtlUnidirectionalTransmit": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.unidirectionalTransmit-23",
+        "FCtlContinueSeqCondition": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.continueSeqCondition-24",
+        "FCtlAbortSeqCondition": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.abortSeqCondition-25",
+        "FCtlRelativeOffsetPresent": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.relativeOffsetPresent-26",
+        "FCtlExchangeReassembly": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.exchangeReassembly-27",
+        "FCtlFillBytes": "fCoEFlogiRequest.header.fcHeader.FCtl.fCtl.fillBytes-28",
+        "FcHeaderSeqId": "fCoEFlogiRequest.header.fcHeader.SeqId-29",
+        "FcHeaderDfCtl": "fCoEFlogiRequest.header.fcHeader.DfCtl-30",
+        "FcHeaderSeqCnt": "fCoEFlogiRequest.header.fcHeader.SeqCnt-31",
+        "FcHeaderOxId": "fCoEFlogiRequest.header.fcHeader.OxId-32",
+        "FcHeaderRxId": "fCoEFlogiRequest.header.fcHeader.RxId-33",
+        "FcHeaderParameter": "fCoEFlogiRequest.header.fcHeader.Parameter-34",
+        "FcElsCommandCodeFcElsCommandCodeFlogi": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommandCode.FcElsCommandCodeFlogi-35",
+        "FcElsRequestFcElsRequestReserved": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsRequestReserved-36",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersFc-phVersion": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersFc-phVersion-37",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferCredit": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBuffer-to-bufferCredit-38",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersCommonFeatures": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersCommonFeatures-39",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersBbScNumber": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBbScNumber-40",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize-41",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersRATov": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersRATov-42",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersEDTov": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersEDTov-43",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersNPortPortName": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersNPortPortName-44",
+        "FcElsCommonServiceParametersFcElsCommonServiceParametersFabricNodeName": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsCommonServiceParameters.FcElsCommonServiceParametersFabricNodeName-45",
+        "FcElsRequestFcElsClass1SvcParameters": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass1SvcParameters-46",
+        "FcElsRequestFcElsClass2SvcParameters": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass2SvcParameters-47",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersServiceOptions": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersServiceOptions-48",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersInitiatorControl": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersInitiatorControl-49",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersRecipientControl": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersRecipientControl-50",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersClassReceiveSize": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersClassReceiveSize-51",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersTotalConcurrentSequence": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersTotalConcurrentSequence-52",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersEnd-to-endCredit": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersEnd-to-endCredit-53",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersOpenSeqPerExchange": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersOpenSeqPerExchange-54",
+        "FcElsClass3SvcParametersFcElsClass3SvcParametersCrTov": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsClass3SvcParameters.FcElsClass3SvcParametersCrTov-55",
+        "FcElsRequestClass4SvcParameters": "fCoEFlogiRequest.header.FcEls.FcElsRequest.Class4SvcParameters-56",
+        "FcElsRequestFcElsVendorVersion": "fCoEFlogiRequest.header.FcEls.FcElsRequest.FcElsVendorVersion-57",
     }
 
     def __init__(self, parent, list_op=False):
@@ -76,7 +76,10 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderVersion"])
+        )
 
     @property
     def FcoeHeaderReserved(self):
@@ -86,7 +89,10 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderReserved"])
+        )
 
     @property
     def FcoeHeaderESOF(self):
@@ -97,7 +103,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: SOFf - Fabric, 40, SOFi4 - Initiate Class 4, 41, SOFi2 - Initiate Class 2, 45, SOFi3 - Initiate Class 3, 46, SOFn4 - Normal Class 4, 49, SOFn2 - Normal Class 2, 53, SOFn3 - Normal Class 3, 54, SOFc4 - Connect Class 4, 57, SOFn1 - Normal Class 1 or 6, 250
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderESOF']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderESOF"])
+        )
 
     @property
     def ExtendedLinkServicesExtendedLinkServiceInfo(self):
@@ -108,7 +117,13 @@ class FCoEFlogiRequest(Base):
         Available enum values: Solicited Data, 33, Request, 34, Reply, 35
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedLinkServicesExtendedLinkServiceInfo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExtendedLinkServicesExtendedLinkServiceInfo"]
+            ),
+        )
 
     @property
     def FcHeaderDId(self):
@@ -118,7 +133,8 @@ class FCoEFlogiRequest(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDId"]))
 
     @property
     def FcHeaderCsCtlPriority(self):
@@ -128,7 +144,10 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderCsCtlPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderCsCtlPriority"])
+        )
 
     @property
     def FcHeaderSId(self):
@@ -138,7 +157,8 @@ class FCoEFlogiRequest(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSId"]))
 
     @property
     def FcHeaderType(self):
@@ -148,7 +168,8 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderType"]))
 
     @property
     def FCtlExchangeContext(self):
@@ -159,7 +180,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeContext"])
+        )
 
     @property
     def FCtlSequenceContext(self):
@@ -170,7 +194,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceContext"])
+        )
 
     @property
     def FCtlFirstSequence(self):
@@ -181,7 +208,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFirstSequence"])
+        )
 
     @property
     def FCtlLastSequence(self):
@@ -192,7 +222,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlLastSequence"])
+        )
 
     @property
     def FCtlEndSequence(self):
@@ -203,7 +236,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndSequence"])
+        )
 
     @property
     def FCtlEndConnection(self):
@@ -214,7 +250,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndConnection"])
+        )
 
     @property
     def FCtlCsCtlPriority(self):
@@ -225,7 +264,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: CS_CTL, 0, Priority Enable, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlCsCtlPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlCsCtlPriority"])
+        )
 
     @property
     def FCtlSequenceInitiative(self):
@@ -236,7 +278,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceInitiative"])
+        )
 
     @property
     def FCtlFcXidReassigned(self):
@@ -247,7 +292,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcXidReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcXidReassigned"])
+        )
 
     @property
     def FCtlFcInvalidateXid(self):
@@ -258,7 +306,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcInvalidateXid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcInvalidateXid"])
+        )
 
     @property
     def FCtlAckForm(self):
@@ -269,7 +320,8 @@ class FCoEFlogiRequest(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAckForm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlAckForm"]))
 
     @property
     def FCtlFcDataCompression(self):
@@ -280,7 +332,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataCompression"])
+        )
 
     @property
     def FCtlFcDataEncryption(self):
@@ -291,7 +346,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataEncryption"])
+        )
 
     @property
     def FCtlRetransmittedSequence(self):
@@ -302,7 +360,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRetransmittedSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRetransmittedSequence"])
+        )
 
     @property
     def FCtlUnidirectionalTransmit(self):
@@ -313,7 +374,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlUnidirectionalTransmit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlUnidirectionalTransmit"])
+        )
 
     @property
     def FCtlContinueSeqCondition(self):
@@ -324,7 +388,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlContinueSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlContinueSeqCondition"])
+        )
 
     @property
     def FCtlAbortSeqCondition(self):
@@ -335,7 +402,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlAbortSeqCondition"])
+        )
 
     @property
     def FCtlRelativeOffsetPresent(self):
@@ -346,7 +416,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRelativeOffsetPresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRelativeOffsetPresent"])
+        )
 
     @property
     def FCtlExchangeReassembly(self):
@@ -357,7 +430,10 @@ class FCoEFlogiRequest(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeReassembly"])
+        )
 
     @property
     def FCtlFillBytes(self):
@@ -368,7 +444,8 @@ class FCoEFlogiRequest(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFillBytes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlFillBytes"]))
 
     @property
     def FcHeaderSeqId(self):
@@ -378,7 +455,8 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqId"]))
 
     @property
     def FcHeaderDfCtl(self):
@@ -388,7 +466,8 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDfCtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDfCtl"]))
 
     @property
     def FcHeaderSeqCnt(self):
@@ -398,7 +477,10 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqCnt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqCnt"])
+        )
 
     @property
     def FcHeaderOxId(self):
@@ -408,7 +490,8 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderOxId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderOxId"]))
 
     @property
     def FcHeaderRxId(self):
@@ -418,7 +501,8 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderRxId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderRxId"]))
 
     @property
     def FcHeaderParameter(self):
@@ -428,7 +512,10 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderParameter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderParameter"])
+        )
 
     @property
     def FcElsCommandCodeFcElsCommandCodeFlogi(self):
@@ -438,7 +525,13 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommandCodeFcElsCommandCodeFlogi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FcElsCommandCodeFcElsCommandCodeFlogi"]
+            ),
+        )
 
     @property
     def FcElsRequestFcElsRequestReserved(self):
@@ -448,7 +541,11 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsRequestFcElsRequestReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FcElsRequestFcElsRequestReserved"]),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersFcphVersion(self):
@@ -458,17 +555,35 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersFc-phVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersFc-phVersion"
+                ]
+            ),
+        )
 
     @property
-    def FcElsCommonServiceParametersFcElsCommonServiceParametersBuffertobufferCredit(self):
+    def FcElsCommonServiceParametersFcElsCommonServiceParametersBuffertobufferCredit(
+        self,
+    ):
         """
         Display Name: Buffer-to-Buffer Credit
         Default Value: 128
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferCredit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferCredit"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersCommonFeatures(self):
@@ -478,7 +593,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersCommonFeatures']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersCommonFeatures"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersBbScNumber(self):
@@ -488,17 +611,35 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersBbScNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersBbScNumber"
+                ]
+            ),
+        )
 
     @property
-    def FcElsCommonServiceParametersFcElsCommonServiceParametersBuffertobufferReceiveDataFieldSize(self):
+    def FcElsCommonServiceParametersFcElsCommonServiceParametersBuffertobufferReceiveDataFieldSize(
+        self,
+    ):
         """
         Display Name: Buffer-to-Buffer Receive Data Field Size
         Default Value: 2112
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersBuffer-to-bufferReceiveDataFieldSize"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersRATov(self):
@@ -508,7 +649,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersRATov']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersRATov"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersEDTov(self):
@@ -518,7 +667,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersEDTov']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersEDTov"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersNPortPortName(self):
@@ -528,7 +685,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersNPortPortName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersNPortPortName"
+                ]
+            ),
+        )
 
     @property
     def FcElsCommonServiceParametersFcElsCommonServiceParametersFabricNodeName(self):
@@ -538,7 +703,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsCommonServiceParametersFcElsCommonServiceParametersFabricNodeName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsCommonServiceParametersFcElsCommonServiceParametersFabricNodeName"
+                ]
+            ),
+        )
 
     @property
     def FcElsRequestFcElsClass1SvcParameters(self):
@@ -548,7 +721,13 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsRequestFcElsClass1SvcParameters']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FcElsRequestFcElsClass1SvcParameters"]
+            ),
+        )
 
     @property
     def FcElsRequestFcElsClass2SvcParameters(self):
@@ -558,7 +737,13 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsRequestFcElsClass2SvcParameters']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FcElsRequestFcElsClass2SvcParameters"]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersServiceOptions(self):
@@ -568,7 +753,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersServiceOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersServiceOptions"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersInitiatorControl(self):
@@ -578,7 +771,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersInitiatorControl']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersInitiatorControl"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersRecipientControl(self):
@@ -588,7 +789,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersRecipientControl']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersRecipientControl"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersClassReceiveSize(self):
@@ -598,7 +807,15 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersClassReceiveSize']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersClassReceiveSize"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersTotalConcurrentSequence(self):
@@ -608,7 +825,15 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersTotalConcurrentSequence']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersTotalConcurrentSequence"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersEndtoendCredit(self):
@@ -618,7 +843,15 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersEnd-to-endCredit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersEnd-to-endCredit"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersOpenSeqPerExchange(self):
@@ -628,7 +861,15 @@ class FCoEFlogiRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersOpenSeqPerExchange']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersOpenSeqPerExchange"
+                ]
+            ),
+        )
 
     @property
     def FcElsClass3SvcParametersFcElsClass3SvcParametersCrTov(self):
@@ -638,7 +879,15 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsClass3SvcParametersFcElsClass3SvcParametersCrTov']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FcElsClass3SvcParametersFcElsClass3SvcParametersCrTov"
+                ]
+            ),
+        )
 
     @property
     def FcElsRequestClass4SvcParameters(self):
@@ -648,7 +897,11 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsRequestClass4SvcParameters']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FcElsRequestClass4SvcParameters"]),
+        )
 
     @property
     def FcElsRequestFcElsVendorVersion(self):
@@ -658,7 +911,11 @@ class FCoEFlogiRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcElsRequestFcElsVendorVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FcElsRequestFcElsVendorVersion"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

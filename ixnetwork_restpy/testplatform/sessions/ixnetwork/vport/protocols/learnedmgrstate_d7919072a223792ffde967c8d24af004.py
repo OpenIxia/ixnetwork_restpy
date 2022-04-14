@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class LearnedMgrState(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedMgrState'
+    _SDM_NAME = "learnedMgrState"
     _SDM_ATT_MAP = {
-        'Group': 'group',
-        'Source': 'source',
+        "Group": "group",
+        "Source": "source",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedMgrState, self).__init__(parent, list_op)
@@ -52,7 +52,7 @@ class LearnedMgrState(Base):
         -------
         - str: An IPv4 address used with the groupMaskWidth to create a range of multicast addresses. Not used with rangeType = pimsmJoinPruneTypeG. (default = 225.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Group'])
+        return self._get_attribute(self._SDM_ATT_MAP["Group"])
 
     @property
     def Source(self):
@@ -62,10 +62,10 @@ class LearnedMgrState(Base):
         -------
         - str: The source address that generates multicast traffic. It must be a unicast address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Source"])
 
     def add(self):
-        """Adds a new learnedMgrState resource on the json, only valid with config assistant
+        """Adds a new learnedMgrState resource on the json, only valid with batch add utility
 
         Returns
         -------

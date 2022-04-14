@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class DcbxAppProtocolAtt(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxAppProtocolAtt'
+    _SDM_NAME = "dcbxAppProtocolAtt"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'ObjectId': 'objectId',
-        'PriorityMap': 'priorityMap',
-        'ProtocolId': 'protocolId',
-        'Sel': 'sel',
+        "Enabled": "enabled",
+        "ObjectId": "objectId",
+        "PriorityMap": "priorityMap",
+        "ProtocolId": "protocolId",
+        "Sel": "sel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxAppProtocolAtt, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class DcbxAppProtocolAtt(Base):
         -------
         - bool: Include or exclude the mapping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ObjectId(self):
@@ -70,7 +71,7 @@ class DcbxAppProtocolAtt(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PriorityMap(self):
@@ -80,11 +81,12 @@ class DcbxAppProtocolAtt(Base):
         -------
         - list(number): Priority value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PriorityMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["PriorityMap"])
+
     @PriorityMap.setter
     def PriorityMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PriorityMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PriorityMap"], value)
 
     @property
     def ProtocolId(self):
@@ -94,11 +96,12 @@ class DcbxAppProtocolAtt(Base):
         -------
         - str: Protocol ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolId"])
+
     @ProtocolId.setter
     def ProtocolId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolId"], value)
 
     @property
     def Sel(self):
@@ -106,13 +109,14 @@ class DcbxAppProtocolAtt(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Sel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Sel"])
+
     @Sel.setter
     def Sel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Sel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Sel"], value)
 
     def update(self, Enabled=None, PriorityMap=None, ProtocolId=None, Sel=None):
         # type: (bool, List[int], str, int) -> DcbxAppProtocolAtt
@@ -123,7 +127,7 @@ class DcbxAppProtocolAtt(Base):
         - Enabled (bool): Include or exclude the mapping.
         - PriorityMap (list(number)): Priority value
         - ProtocolId (str): Protocol ID.
-        - Sel (number): 
+        - Sel (number):
 
         Raises
         ------
@@ -140,7 +144,7 @@ class DcbxAppProtocolAtt(Base):
         - Enabled (bool): Include or exclude the mapping.
         - PriorityMap (list(number)): Priority value
         - ProtocolId (str): Protocol ID.
-        - Sel (number): 
+        - Sel (number):
 
         Returns
         -------
@@ -162,7 +166,9 @@ class DcbxAppProtocolAtt(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, ObjectId=None, PriorityMap=None, ProtocolId=None, Sel=None):
+    def find(
+        self, Enabled=None, ObjectId=None, PriorityMap=None, ProtocolId=None, Sel=None
+    ):
         # type: (bool, str, List[int], str, int) -> DcbxAppProtocolAtt
         """Finds and retrieves dcbxAppProtocolAtt resources from the server.
 
@@ -176,7 +182,7 @@ class DcbxAppProtocolAtt(Base):
         - ObjectId (str): Unique identifier for this object
         - PriorityMap (list(number)): Priority value
         - ProtocolId (str): Protocol ID.
-        - Sel (number): 
+        - Sel (number):
 
         Returns
         -------
@@ -223,10 +229,14 @@ class DcbxAppProtocolAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -245,10 +255,14 @@ class DcbxAppProtocolAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -267,7 +281,11 @@ class DcbxAppProtocolAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class TunnelLeafRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tunnelLeafRange'
+    _SDM_NAME = "tunnelLeafRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IpCount': 'ipCount',
-        'IpStart': 'ipStart',
-        'SubLspDown': 'subLspDown',
+        "Enabled": "enabled",
+        "IpCount": "ipCount",
+        "IpStart": "ipStart",
+        "SubLspDown": "subLspDown",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TunnelLeafRange, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class TunnelLeafRange(Base):
         -------
         - bool: If true, enables the RSVP-TE Tunnel Tail Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpCount(self):
@@ -69,11 +70,12 @@ class TunnelLeafRange(Base):
         -------
         - number: The number of IPv4 addresses in the range of Tunnel Tail addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpCount"])
+
     @IpCount.setter
     def IpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpCount"], value)
 
     @property
     def IpStart(self):
@@ -83,11 +85,12 @@ class TunnelLeafRange(Base):
         -------
         - str: The first IPv4 address in the range of Tunnel Tail addresses to be associated with the Ixia-emulated RSVP-TE router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpStart"])
+
     @IpStart.setter
     def IpStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpStart"], value)
 
     @property
     def SubLspDown(self):
@@ -97,11 +100,12 @@ class TunnelLeafRange(Base):
         -------
         - bool: This can be true only for Tail Ranges of type 'Egress'. If enabled and a sub-lsp to the tail is up, it is torn-down by sending a Resv Tear to the ingress. From this point onwards, any Path sent to this Tail is dropped silently, thereby simulating that the sub-lsps terminating on the endpoints in this Tail Range is down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SubLspDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["SubLspDown"])
+
     @SubLspDown.setter
     def SubLspDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SubLspDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SubLspDown"], value)
 
     def update(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
         # type: (bool, int, str, bool) -> TunnelLeafRange

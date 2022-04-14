@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,29 @@ class Uni(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'uni'
+    _SDM_NAME = "uni"
     _SDM_ATT_MAP = {
-        'DataInstance': 'dataInstance',
-        'EnablePollingVerificationTimer': 'enablePollingVerificationTimer',
-        'Enabled': 'enabled',
-        'IsEvcStatusLearnedInfoRefreshed': 'isEvcStatusLearnedInfoRefreshed',
-        'IsLmiStatusLearnedInfoRefreshed': 'isLmiStatusLearnedInfoRefreshed',
-        'IsUniStatusLearnedInfoRefreshed': 'isUniStatusLearnedInfoRefreshed',
-        'Mode': 'mode',
-        'OverrideDataInstance': 'overrideDataInstance',
-        'OverrideReceiveSequenceNumber': 'overrideReceiveSequenceNumber',
-        'OverrideSendSequenceNumber': 'overrideSendSequenceNumber',
-        'PollingCounter': 'pollingCounter',
-        'PollingTimer': 'pollingTimer',
-        'PollingVerificationTimer': 'pollingVerificationTimer',
-        'ProtocolInterface': 'protocolInterface',
-        'ProtocolVersion': 'protocolVersion',
-        'ReceiveSequenceNumber': 'receiveSequenceNumber',
-        'SendSequenceNumber': 'sendSequenceNumber',
-        'StatusCounter': 'statusCounter',
+        "DataInstance": "dataInstance",
+        "EnablePollingVerificationTimer": "enablePollingVerificationTimer",
+        "Enabled": "enabled",
+        "IsEvcStatusLearnedInfoRefreshed": "isEvcStatusLearnedInfoRefreshed",
+        "IsLmiStatusLearnedInfoRefreshed": "isLmiStatusLearnedInfoRefreshed",
+        "IsUniStatusLearnedInfoRefreshed": "isUniStatusLearnedInfoRefreshed",
+        "Mode": "mode",
+        "OverrideDataInstance": "overrideDataInstance",
+        "OverrideReceiveSequenceNumber": "overrideReceiveSequenceNumber",
+        "OverrideSendSequenceNumber": "overrideSendSequenceNumber",
+        "PollingCounter": "pollingCounter",
+        "PollingTimer": "pollingTimer",
+        "PollingVerificationTimer": "pollingVerificationTimer",
+        "ProtocolInterface": "protocolInterface",
+        "ProtocolVersion": "protocolVersion",
+        "ReceiveSequenceNumber": "receiveSequenceNumber",
+        "SendSequenceNumber": "sendSequenceNumber",
+        "StatusCounter": "statusCounter",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['uniC', 'uniN'],
+        "mode": ["uniC", "uniN"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,10 +74,13 @@ class Uni(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evc_7500f87dab98e04d2ff46357ef4c0a19 import Evc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evc_7500f87dab98e04d2ff46357ef4c0a19 import (
+            Evc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Evc', None) is not None:
-                return self._properties.get('Evc')
+            if self._properties.get("Evc", None) is not None:
+                return self._properties.get("Evc")
         return Evc(self)
 
     @property
@@ -90,10 +94,13 @@ class Uni(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evcstatuslearnedinfo_c3b2e43e894cb8069d3a77cd8cf95e2c import EvcStatusLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evcstatuslearnedinfo_c3b2e43e894cb8069d3a77cd8cf95e2c import (
+            EvcStatusLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvcStatusLearnedInfo', None) is not None:
-                return self._properties.get('EvcStatusLearnedInfo')
+            if self._properties.get("EvcStatusLearnedInfo", None) is not None:
+                return self._properties.get("EvcStatusLearnedInfo")
         return EvcStatusLearnedInfo(self)
 
     @property
@@ -107,10 +114,13 @@ class Uni(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lmistatuslearnedinfo_eafb3fd4a42f8851d9c418f937223a26 import LmiStatusLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lmistatuslearnedinfo_eafb3fd4a42f8851d9c418f937223a26 import (
+            LmiStatusLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LmiStatusLearnedInfo', None) is not None:
-                return self._properties.get('LmiStatusLearnedInfo')
+            if self._properties.get("LmiStatusLearnedInfo", None) is not None:
+                return self._properties.get("LmiStatusLearnedInfo")
         return LmiStatusLearnedInfo(self)
 
     @property
@@ -124,10 +134,13 @@ class Uni(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatus_0096bbbaf5ab6dac178a8f65c71f8937 import UniStatus
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatus_0096bbbaf5ab6dac178a8f65c71f8937 import (
+            UniStatus,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UniStatus', None) is not None:
-                return self._properties.get('UniStatus')
+            if self._properties.get("UniStatus", None) is not None:
+                return self._properties.get("UniStatus")
         return UniStatus(self)
 
     @property
@@ -141,10 +154,13 @@ class Uni(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatuslearnedinfo_33a9891d20157d14ba19c5cd0bc4333e import UniStatusLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatuslearnedinfo_33a9891d20157d14ba19c5cd0bc4333e import (
+            UniStatusLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UniStatusLearnedInfo', None) is not None:
-                return self._properties.get('UniStatusLearnedInfo')
+            if self._properties.get("UniStatusLearnedInfo", None) is not None:
+                return self._properties.get("UniStatusLearnedInfo")
         return UniStatusLearnedInfo(self)
 
     @property
@@ -155,11 +171,12 @@ class Uni(Base):
         -------
         - number: This four-octet field indicates the Data Instance value to be sent in transmitted packet. It will be configurable only if Override Data Instance is enabled. By default it is grayed out with default value 0 for UNI-C and 1 for UNI-N. Max 4294967295, Min 0 for UNI-C and 1 for UNI- V. Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataInstance'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataInstance"])
+
     @DataInstance.setter
     def DataInstance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataInstance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataInstance"], value)
 
     @property
     def EnablePollingVerificationTimer(self):
@@ -169,11 +186,12 @@ class Uni(Base):
         -------
         - bool: If enabled, it shows the default value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePollingVerificationTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePollingVerificationTimer"])
+
     @EnablePollingVerificationTimer.setter
     def EnablePollingVerificationTimer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePollingVerificationTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePollingVerificationTimer"], value)
 
     @property
     def Enabled(self):
@@ -183,11 +201,12 @@ class Uni(Base):
         -------
         - bool: It signifies whether the protocol is enabled or disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IsEvcStatusLearnedInfoRefreshed(self):
@@ -197,7 +216,7 @@ class Uni(Base):
         -------
         - bool: It checks whether the EVC status learned info is refreshed or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEvcStatusLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEvcStatusLearnedInfoRefreshed"])
 
     @property
     def IsLmiStatusLearnedInfoRefreshed(self):
@@ -207,7 +226,7 @@ class Uni(Base):
         -------
         - bool: It checks whether the LMI status learned info is refreshed or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLmiStatusLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLmiStatusLearnedInfoRefreshed"])
 
     @property
     def IsUniStatusLearnedInfoRefreshed(self):
@@ -217,7 +236,7 @@ class Uni(Base):
         -------
         - bool: It checks whether the UNI status learned info is refreshed or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsUniStatusLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsUniStatusLearnedInfoRefreshed"])
 
     @property
     def Mode(self):
@@ -227,11 +246,12 @@ class Uni(Base):
         -------
         - str(uniC | uniN): It is a type of UNI end point.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def OverrideDataInstance(self):
@@ -241,11 +261,12 @@ class Uni(Base):
         -------
         - bool: If enabled, it updates the Data Instance field of Data Instance Information Element (IE). Default is false. Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideDataInstance'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideDataInstance"])
+
     @OverrideDataInstance.setter
     def OverrideDataInstance(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideDataInstance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideDataInstance"], value)
 
     @property
     def OverrideReceiveSequenceNumber(self):
@@ -255,11 +276,12 @@ class Uni(Base):
         -------
         - bool: If enabled, it updates the receive sequence number. This is used for negative testing. Default is false. Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideReceiveSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideReceiveSequenceNumber"])
+
     @OverrideReceiveSequenceNumber.setter
     def OverrideReceiveSequenceNumber(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideReceiveSequenceNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideReceiveSequenceNumber"], value)
 
     @property
     def OverrideSendSequenceNumber(self):
@@ -269,11 +291,12 @@ class Uni(Base):
         -------
         - bool: If enabled, it updates the send sequence number. This is used for negative testing. Default is false. Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideSendSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideSendSequenceNumber"])
+
     @OverrideSendSequenceNumber.setter
     def OverrideSendSequenceNumber(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideSendSequenceNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideSendSequenceNumber"], value)
 
     @property
     def PollingCounter(self):
@@ -283,11 +306,12 @@ class Uni(Base):
         -------
         - number: It signifies the full status (status of UNI and all EVCs) polling count. Range is 1- 65k. Default is 360. This is applicable only for UNI-C.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollingCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollingCounter"])
+
     @PollingCounter.setter
     def PollingCounter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollingCounter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollingCounter"], value)
 
     @property
     def PollingTimer(self):
@@ -297,11 +321,12 @@ class Uni(Base):
         -------
         - number: The range is 5-30 in seconds. Default is 10 seconds. This is applicable only for UNI-C.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollingTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollingTimer"])
+
     @PollingTimer.setter
     def PollingTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollingTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollingTimer"], value)
 
     @property
     def PollingVerificationTimer(self):
@@ -311,11 +336,12 @@ class Uni(Base):
         -------
         - number: This is applicable only for UNI-N. Range is 5-30 secs. Default is 15 seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollingVerificationTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollingVerificationTimer"])
+
     @PollingVerificationTimer.setter
     def PollingVerificationTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollingVerificationTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollingVerificationTimer"], value)
 
     @property
     def ProtocolInterface(self):
@@ -325,11 +351,12 @@ class Uni(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): It signifies the configured protocol interface. User has to select one interface to enable configuring UNI. Until and unless protocol interface is selected user will not be able to configure and enable UNI. Default is unassigned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def ProtocolVersion(self):
@@ -339,11 +366,12 @@ class Uni(Base):
         -------
         - number: This one-octet field indicates the version supported by the sending entity (UNI-C or UNI-N). Default value is ox1. Max 255, Min - 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolVersion"])
+
     @ProtocolVersion.setter
     def ProtocolVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolVersion"], value)
 
     @property
     def ReceiveSequenceNumber(self):
@@ -353,11 +381,12 @@ class Uni(Base):
         -------
         - number: This one-octet field indicates the sequence number to be sent in the 'Receive Sequence Number' in transmitted packet. It will be configurable only if Override Receive Sequence Number is enabled. Default value of this field is 0. Max 255, Min - 0 Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceiveSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveSequenceNumber"])
+
     @ReceiveSequenceNumber.setter
     def ReceiveSequenceNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReceiveSequenceNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReceiveSequenceNumber"], value)
 
     @property
     def SendSequenceNumber(self):
@@ -367,11 +396,12 @@ class Uni(Base):
         -------
         - number: This one-octet field indicates the sequence number to be sent in the 'Send Sequence Number' field in transmitted packet. It will be configurable only if Override Send Sequence Number is enabled. Default value of this field is 0. Max 255, Min - 0 Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendSequenceNumber"])
+
     @SendSequenceNumber.setter
     def SendSequenceNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendSequenceNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendSequenceNumber"], value)
 
     @property
     def StatusCounter(self):
@@ -381,13 +411,31 @@ class Uni(Base):
         -------
         - number: It signifies the count of consecutive errors. Range is 2 10. Default is 4.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StatusCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["StatusCounter"])
+
     @StatusCounter.setter
     def StatusCounter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StatusCounter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StatusCounter"], value)
 
-    def update(self, DataInstance=None, EnablePollingVerificationTimer=None, Enabled=None, Mode=None, OverrideDataInstance=None, OverrideReceiveSequenceNumber=None, OverrideSendSequenceNumber=None, PollingCounter=None, PollingTimer=None, PollingVerificationTimer=None, ProtocolInterface=None, ProtocolVersion=None, ReceiveSequenceNumber=None, SendSequenceNumber=None, StatusCounter=None):
+    def update(
+        self,
+        DataInstance=None,
+        EnablePollingVerificationTimer=None,
+        Enabled=None,
+        Mode=None,
+        OverrideDataInstance=None,
+        OverrideReceiveSequenceNumber=None,
+        OverrideSendSequenceNumber=None,
+        PollingCounter=None,
+        PollingTimer=None,
+        PollingVerificationTimer=None,
+        ProtocolInterface=None,
+        ProtocolVersion=None,
+        ReceiveSequenceNumber=None,
+        SendSequenceNumber=None,
+        StatusCounter=None,
+    ):
         # type: (int, bool, bool, str, bool, bool, bool, int, int, int, str, int, int, int, int) -> Uni
         """Updates uni resource on the server.
 
@@ -415,7 +463,24 @@ class Uni(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DataInstance=None, EnablePollingVerificationTimer=None, Enabled=None, Mode=None, OverrideDataInstance=None, OverrideReceiveSequenceNumber=None, OverrideSendSequenceNumber=None, PollingCounter=None, PollingTimer=None, PollingVerificationTimer=None, ProtocolInterface=None, ProtocolVersion=None, ReceiveSequenceNumber=None, SendSequenceNumber=None, StatusCounter=None):
+    def add(
+        self,
+        DataInstance=None,
+        EnablePollingVerificationTimer=None,
+        Enabled=None,
+        Mode=None,
+        OverrideDataInstance=None,
+        OverrideReceiveSequenceNumber=None,
+        OverrideSendSequenceNumber=None,
+        PollingCounter=None,
+        PollingTimer=None,
+        PollingVerificationTimer=None,
+        ProtocolInterface=None,
+        ProtocolVersion=None,
+        ReceiveSequenceNumber=None,
+        SendSequenceNumber=None,
+        StatusCounter=None,
+    ):
         # type: (int, bool, bool, str, bool, bool, bool, int, int, int, str, int, int, int, int) -> Uni
         """Adds a new uni resource on the server and adds it to the container.
 
@@ -457,7 +522,27 @@ class Uni(Base):
         """
         self._delete()
 
-    def find(self, DataInstance=None, EnablePollingVerificationTimer=None, Enabled=None, IsEvcStatusLearnedInfoRefreshed=None, IsLmiStatusLearnedInfoRefreshed=None, IsUniStatusLearnedInfoRefreshed=None, Mode=None, OverrideDataInstance=None, OverrideReceiveSequenceNumber=None, OverrideSendSequenceNumber=None, PollingCounter=None, PollingTimer=None, PollingVerificationTimer=None, ProtocolInterface=None, ProtocolVersion=None, ReceiveSequenceNumber=None, SendSequenceNumber=None, StatusCounter=None):
+    def find(
+        self,
+        DataInstance=None,
+        EnablePollingVerificationTimer=None,
+        Enabled=None,
+        IsEvcStatusLearnedInfoRefreshed=None,
+        IsLmiStatusLearnedInfoRefreshed=None,
+        IsUniStatusLearnedInfoRefreshed=None,
+        Mode=None,
+        OverrideDataInstance=None,
+        OverrideReceiveSequenceNumber=None,
+        OverrideSendSequenceNumber=None,
+        PollingCounter=None,
+        PollingTimer=None,
+        PollingVerificationTimer=None,
+        ProtocolInterface=None,
+        ProtocolVersion=None,
+        ReceiveSequenceNumber=None,
+        SendSequenceNumber=None,
+        StatusCounter=None,
+    ):
         # type: (int, bool, bool, bool, bool, bool, str, bool, bool, bool, int, int, int, str, int, int, int, int) -> Uni
         """Finds and retrieves uni resources from the server.
 
@@ -530,10 +615,14 @@ class Uni(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshEvcStatusLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshEvcStatusLearnedInfo", payload=payload, response_object=None
+        )
 
     def RefreshLmiStatusLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -551,10 +640,14 @@ class Uni(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLmiStatusLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLmiStatusLearnedInfo", payload=payload, response_object=None
+        )
 
     def RefreshUniStatusLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -572,7 +665,11 @@ class Uni(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshUniStatusLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshUniStatusLearnedInfo", payload=payload, response_object=None
+        )

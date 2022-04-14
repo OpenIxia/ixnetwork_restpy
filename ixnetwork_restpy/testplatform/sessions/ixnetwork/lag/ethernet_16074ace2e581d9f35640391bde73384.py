@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,35 @@ class Ethernet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernet'
+    _SDM_NAME = "ethernet"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlans': 'enableVlans',
-        'Errors': 'errors',
-        'Mac': 'mac',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NotifyMACMove': 'notifyMACMove',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'UseVlans': 'useVlans',
-        'VlanCount': 'vlanCount',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableVlans": "enableVlans",
+        "Errors": "errors",
+        "Mac": "mac",
+        "Mtu": "mtu",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NotifyMACMove": "notifyMACMove",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "UseVlans": "useVlans",
+        "VlanCount": "vlanCount",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +80,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.connector_14f09e8cbd52d663d00858c35d771fda import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.connector_14f09e8cbd52d663d00858c35d771fda import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -88,10 +100,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportlacp_20ffef1c99dfba818871a069644627d6 import Lagportlacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportlacp_20ffef1c99dfba818871a069644627d6 import (
+            Lagportlacp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportlacp', None) is not None:
-                return self._properties.get('Lagportlacp')
+            if self._properties.get("Lagportlacp", None) is not None:
+                return self._properties.get("Lagportlacp")
         return Lagportlacp(self)
 
     @property
@@ -105,11 +120,54 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportstaticlag_91864be5b58104e6349e12f415e28075 import Lagportstaticlag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportstaticlag_91864be5b58104e6349e12f415e28075 import (
+            Lagportstaticlag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportstaticlag', None) is not None:
-                return self._properties.get('Lagportstaticlag')
+            if self._properties.get("Lagportstaticlag", None) is not None:
+                return self._properties.get("Lagportstaticlag")
         return Lagportstaticlag(self)
+
+    @property
+    def Macsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.macsec_b8fff0e525c0f50d0e7ed41aac1716c1.Macsec): An instance of the Macsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.macsec_b8fff0e525c0f50d0e7ed41aac1716c1 import (
+            Macsec,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Macsec", None) is not None:
+                return self._properties.get("Macsec")
+        return Macsec(self)
+
+    @property
+    def Mka(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_475a18c2ad627c9a3faafb381476e70b.Mka): An instance of the Mka class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_475a18c2ad627c9a3faafb381476e70b import (
+            Mka,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mka", None) is not None:
+                return self._properties.get("Mka")
+        return Mka(self)
 
     @property
     def PbbEVpnParameter(self):
@@ -122,10 +180,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.pbbevpnparameter_cc8d242d8e4383f500d7418b3cff331b import PbbEVpnParameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.pbbevpnparameter_cc8d242d8e4383f500d7418b3cff331b import (
+            PbbEVpnParameter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PbbEVpnParameter', None) is not None:
-                return self._properties.get('PbbEVpnParameter')
+            if self._properties.get("PbbEVpnParameter", None) is not None:
+                return self._properties.get("PbbEVpnParameter")
         return PbbEVpnParameter(self)
 
     @property
@@ -139,10 +200,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.tag_5f7006f77d76d5947e1ccb4d9663920e import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.tag_5f7006f77d76d5947e1ccb4d9663920e import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -156,10 +220,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vlan_7d18813656829a125467de88e8aad791 import Vlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vlan_7d18813656829a125467de88e8aad791 import (
+            Vlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vlan', None) is not None:
-                return self._properties.get('Vlan')
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)
 
     @property
@@ -173,25 +240,29 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vpnparameter_669bbd373c0823a640ab751ee3944d2d import VpnParameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vpnparameter_669bbd373c0823a640ab751ee3944d2d import (
+            VpnParameter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VpnParameter', None) is not None:
-                return self._properties.get('VpnParameter')
+            if self._properties.get("VpnParameter", None) is not None:
+                return self._properties.get("VpnParameter")
         return VpnParameter(self)
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -201,7 +272,7 @@ class Ethernet(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -211,7 +282,7 @@ class Ethernet(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableVlans(self):
@@ -222,7 +293,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables VLANs for the sessions.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlans']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableVlans"]))
 
     @property
     def Errors(self):
@@ -231,7 +303,7 @@ class Ethernet(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Mac(self):
@@ -242,7 +314,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mac"]))
 
     @property
     def Mtu(self):
@@ -253,7 +326,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum transmission unit, min=68, max=14000
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mtu"]))
 
     @property
     def Multiplier(self):
@@ -263,11 +337,12 @@ class Ethernet(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -277,11 +352,12 @@ class Ethernet(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NotifyMACMove(self):
@@ -291,11 +367,12 @@ class Ethernet(Base):
         -------
         - bool: Flag to determine if MAC move notification to be sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NotifyMACMove'])
+        return self._get_attribute(self._SDM_ATT_MAP["NotifyMACMove"])
+
     @NotifyMACMove.setter
     def NotifyMACMove(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NotifyMACMove'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NotifyMACMove"], value)
 
     @property
     def SessionStatus(self):
@@ -305,7 +382,7 @@ class Ethernet(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -315,11 +392,12 @@ class Ethernet(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -328,7 +406,7 @@ class Ethernet(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -338,21 +416,22 @@ class Ethernet(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def UseVlans(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Flag to determine whether VLANs are enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseVlans'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseVlans"])
+
     @UseVlans.setter
     def UseVlans(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseVlans'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseVlans"], value)
 
     @property
     def VlanCount(self):
@@ -362,13 +441,23 @@ class Ethernet(Base):
         -------
         - number: Number of active VLANs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        StackedLayers=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         # type: (List[str], int, str, bool, List[str], bool, int) -> Ethernet
         """Updates ethernet resource on the server.
 
@@ -391,7 +480,16 @@ class Ethernet(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        StackedLayers=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         # type: (List[str], int, str, bool, List[str], bool, int) -> Ethernet
         """Adds a new ethernet resource on the server and adds it to the container.
 
@@ -425,7 +523,22 @@ class Ethernet(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NotifyMACMove=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, UseVlans=None, VlanCount=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         """Finds and retrieves ethernet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernet resources from the server.
@@ -503,10 +616,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -535,10 +650,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -567,10 +684,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -599,10 +718,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, Mtu=None):
         """Base class infrastructure that gets a list of ethernet device ids encapsulated by this object.

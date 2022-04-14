@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,48 +33,47 @@ class PimsmAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pimsmAggregatedStatistics'
+    _SDM_NAME = "pimsmAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'BootstrapMsgRx': 'bootstrapMsgRx',
-        'BootstrapMsgTx': 'bootstrapMsgTx',
-        'DatamdtTLVRx': 'datamdtTLVRx',
-        'DatamdtTLVTx': 'datamdtTLVTx',
-        'HellosRx': 'hellosRx',
-        'HellosTx': 'hellosTx',
-        'JoinSGRPTRx': 'joinSGRPTRx',
-        'JoinSGRPTTx': 'joinSGRPTTx',
-        'JoinSGRx': 'joinSGRx',
-        'JoinSGTx': 'joinSGTx',
-        'JoinXGRx': 'joinXGRx',
-        'JoinXGTx': 'joinXGTx',
-        'JoinXXRPRx': 'joinXXRPRx',
-        'JoinXXRPTx': 'joinXXRPTx',
-        'NbrsLearnt': 'nbrsLearnt',
-        'NormalCRPAdvMsgRx': 'normalCRPAdvMsgRx',
-        'NormalCRPAdvMsgTx': 'normalCRPAdvMsgTx',
-        'PortName': 'portName',
-        'PruneSGRPTRx': 'pruneSGRPTRx',
-        'PruneSGRPTTx': 'pruneSGRPTTx',
-        'PruneSGRx': 'pruneSGRx',
-        'PruneSGTx': 'pruneSGTx',
-        'PruneXGRx': 'pruneXGRx',
-        'PruneXGTx': 'pruneXGTx',
-        'PruneXXRPRx': 'pruneXXRPRx',
-        'PruneXXRPTx': 'pruneXXRPTx',
-        'RegisterRx': 'registerRx',
-        'RegisterTx': 'registerTx',
-        'RegisternullRx': 'registernullRx',
-        'RegisternullTx': 'registernullTx',
-        'RegisterstopRx': 'registerstopRx',
-        'RegisterstopTx': 'registerstopTx',
-        'RtrsConfigured': 'rtrsConfigured',
-        'RtrsRunning': 'rtrsRunning',
-        'SessionFlapCount': 'sessionFlapCount',
-        'ShutdownCRPAdvMsgRx': 'shutdownCRPAdvMsgRx',
-        'ShutdownCRPAdvMsgTx': 'shutdownCRPAdvMsgTx',
+        "BootstrapMsgRx": "bootstrapMsgRx",
+        "BootstrapMsgTx": "bootstrapMsgTx",
+        "DatamdtTLVRx": "datamdtTLVRx",
+        "DatamdtTLVTx": "datamdtTLVTx",
+        "HellosRx": "hellosRx",
+        "HellosTx": "hellosTx",
+        "JoinSGRPTRx": "joinSGRPTRx",
+        "JoinSGRPTTx": "joinSGRPTTx",
+        "JoinSGRx": "joinSGRx",
+        "JoinSGTx": "joinSGTx",
+        "JoinXGRx": "joinXGRx",
+        "JoinXGTx": "joinXGTx",
+        "JoinXXRPRx": "joinXXRPRx",
+        "JoinXXRPTx": "joinXXRPTx",
+        "NbrsLearnt": "nbrsLearnt",
+        "NormalCRPAdvMsgRx": "normalCRPAdvMsgRx",
+        "NormalCRPAdvMsgTx": "normalCRPAdvMsgTx",
+        "PortName": "portName",
+        "PruneSGRPTRx": "pruneSGRPTRx",
+        "PruneSGRPTTx": "pruneSGRPTTx",
+        "PruneSGRx": "pruneSGRx",
+        "PruneSGTx": "pruneSGTx",
+        "PruneXGRx": "pruneXGRx",
+        "PruneXGTx": "pruneXGTx",
+        "PruneXXRPRx": "pruneXXRPRx",
+        "PruneXXRPTx": "pruneXXRPTx",
+        "RegisterRx": "registerRx",
+        "RegisterTx": "registerTx",
+        "RegisternullRx": "registernullRx",
+        "RegisternullTx": "registernullTx",
+        "RegisterstopRx": "registerstopRx",
+        "RegisterstopTx": "registerstopTx",
+        "RtrsConfigured": "rtrsConfigured",
+        "RtrsRunning": "rtrsRunning",
+        "SessionFlapCount": "sessionFlapCount",
+        "ShutdownCRPAdvMsgRx": "shutdownCRPAdvMsgRx",
+        "ShutdownCRPAdvMsgTx": "shutdownCRPAdvMsgTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PimsmAggregatedStatistics, self).__init__(parent, list_op)
@@ -86,11 +86,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Bootstrap Msg Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BootstrapMsgRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BootstrapMsgRx"])
+
     @BootstrapMsgRx.setter
     def BootstrapMsgRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BootstrapMsgRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BootstrapMsgRx"], value)
 
     @property
     def BootstrapMsgTx(self):
@@ -100,11 +101,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Bootstrap Msg Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BootstrapMsgTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BootstrapMsgTx"])
+
     @BootstrapMsgTx.setter
     def BootstrapMsgTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BootstrapMsgTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BootstrapMsgTx"], value)
 
     @property
     def DatamdtTLVRx(self):
@@ -114,11 +116,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: DataMDT TLV Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatamdtTLVRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatamdtTLVRx"])
+
     @DatamdtTLVRx.setter
     def DatamdtTLVRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DatamdtTLVRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DatamdtTLVRx"], value)
 
     @property
     def DatamdtTLVTx(self):
@@ -128,11 +131,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: DataMDT TLV Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatamdtTLVTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatamdtTLVTx"])
+
     @DatamdtTLVTx.setter
     def DatamdtTLVTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DatamdtTLVTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DatamdtTLVTx"], value)
 
     @property
     def HellosRx(self):
@@ -142,11 +146,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosRx"])
+
     @HellosRx.setter
     def HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosRx"], value)
 
     @property
     def HellosTx(self):
@@ -156,11 +161,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosTx"])
+
     @HellosTx.setter
     def HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosTx"], value)
 
     @property
     def JoinSGRPTRx(self):
@@ -170,11 +176,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(S,G,RPT) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinSGRPTRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinSGRPTRx"])
+
     @JoinSGRPTRx.setter
     def JoinSGRPTRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinSGRPTRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinSGRPTRx"], value)
 
     @property
     def JoinSGRPTTx(self):
@@ -184,11 +191,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(S,G,RPT) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinSGRPTTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinSGRPTTx"])
+
     @JoinSGRPTTx.setter
     def JoinSGRPTTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinSGRPTTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinSGRPTTx"], value)
 
     @property
     def JoinSGRx(self):
@@ -198,11 +206,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(S,G) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinSGRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinSGRx"])
+
     @JoinSGRx.setter
     def JoinSGRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinSGRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinSGRx"], value)
 
     @property
     def JoinSGTx(self):
@@ -212,11 +221,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(S,G) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinSGTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinSGTx"])
+
     @JoinSGTx.setter
     def JoinSGTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinSGTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinSGTx"], value)
 
     @property
     def JoinXGRx(self):
@@ -226,11 +236,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(X,G) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinXGRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinXGRx"])
+
     @JoinXGRx.setter
     def JoinXGRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinXGRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinXGRx"], value)
 
     @property
     def JoinXGTx(self):
@@ -240,11 +251,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(X,G) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinXGTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinXGTx"])
+
     @JoinXGTx.setter
     def JoinXGTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinXGTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinXGTx"], value)
 
     @property
     def JoinXXRPRx(self):
@@ -254,11 +266,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(X,X,RP) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinXXRPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinXXRPRx"])
+
     @JoinXXRPRx.setter
     def JoinXXRPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinXXRPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinXXRPRx"], value)
 
     @property
     def JoinXXRPTx(self):
@@ -268,11 +281,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Join(X,X,RP) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinXXRPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinXXRPTx"])
+
     @JoinXXRPTx.setter
     def JoinXXRPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinXXRPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinXXRPTx"], value)
 
     @property
     def NbrsLearnt(self):
@@ -282,11 +296,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Nbrs. Learnt
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NbrsLearnt'])
+        return self._get_attribute(self._SDM_ATT_MAP["NbrsLearnt"])
+
     @NbrsLearnt.setter
     def NbrsLearnt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NbrsLearnt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NbrsLearnt"], value)
 
     @property
     def NormalCRPAdvMsgRx(self):
@@ -296,11 +311,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Normal C-RP-Adv Msg Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NormalCRPAdvMsgRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NormalCRPAdvMsgRx"])
+
     @NormalCRPAdvMsgRx.setter
     def NormalCRPAdvMsgRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NormalCRPAdvMsgRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NormalCRPAdvMsgRx"], value)
 
     @property
     def NormalCRPAdvMsgTx(self):
@@ -310,11 +326,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Normal C-RP-Adv Msg Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NormalCRPAdvMsgTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NormalCRPAdvMsgTx"])
+
     @NormalCRPAdvMsgTx.setter
     def NormalCRPAdvMsgTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NormalCRPAdvMsgTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NormalCRPAdvMsgTx"], value)
 
     @property
     def PortName(self):
@@ -324,11 +341,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def PruneSGRPTRx(self):
@@ -338,11 +356,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(S,G,RPT) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSGRPTRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSGRPTRx"])
+
     @PruneSGRPTRx.setter
     def PruneSGRPTRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSGRPTRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSGRPTRx"], value)
 
     @property
     def PruneSGRPTTx(self):
@@ -352,11 +371,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(S,G,RPT) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSGRPTTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSGRPTTx"])
+
     @PruneSGRPTTx.setter
     def PruneSGRPTTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSGRPTTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSGRPTTx"], value)
 
     @property
     def PruneSGRx(self):
@@ -366,11 +386,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(S,G) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSGRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSGRx"])
+
     @PruneSGRx.setter
     def PruneSGRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSGRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSGRx"], value)
 
     @property
     def PruneSGTx(self):
@@ -380,11 +401,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(S,G) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSGTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSGTx"])
+
     @PruneSGTx.setter
     def PruneSGTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSGTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSGTx"], value)
 
     @property
     def PruneXGRx(self):
@@ -394,11 +416,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(X,G) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneXGRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneXGRx"])
+
     @PruneXGRx.setter
     def PruneXGRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneXGRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneXGRx"], value)
 
     @property
     def PruneXGTx(self):
@@ -408,11 +431,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(X,G) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneXGTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneXGTx"])
+
     @PruneXGTx.setter
     def PruneXGTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneXGTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneXGTx"], value)
 
     @property
     def PruneXXRPRx(self):
@@ -422,11 +446,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(X,X,RP) Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneXXRPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneXXRPRx"])
+
     @PruneXXRPRx.setter
     def PruneXXRPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneXXRPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneXXRPRx"], value)
 
     @property
     def PruneXXRPTx(self):
@@ -436,11 +461,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Prune(X,X,RP) Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneXXRPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneXXRPTx"])
+
     @PruneXXRPTx.setter
     def PruneXXRPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneXXRPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneXXRPTx"], value)
 
     @property
     def RegisterRx(self):
@@ -450,11 +476,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Register Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisterRx"])
+
     @RegisterRx.setter
     def RegisterRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisterRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisterRx"], value)
 
     @property
     def RegisterTx(self):
@@ -464,11 +491,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Register Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisterTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisterTx"])
+
     @RegisterTx.setter
     def RegisterTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisterTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisterTx"], value)
 
     @property
     def RegisternullRx(self):
@@ -478,11 +506,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: RegisterNull Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisternullRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisternullRx"])
+
     @RegisternullRx.setter
     def RegisternullRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisternullRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisternullRx"], value)
 
     @property
     def RegisternullTx(self):
@@ -492,11 +521,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: RegisterNull Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisternullTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisternullTx"])
+
     @RegisternullTx.setter
     def RegisternullTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisternullTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisternullTx"], value)
 
     @property
     def RegisterstopRx(self):
@@ -506,11 +536,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: RegisterStop Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisterstopRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisterstopRx"])
+
     @RegisterstopRx.setter
     def RegisterstopRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisterstopRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisterstopRx"], value)
 
     @property
     def RegisterstopTx(self):
@@ -520,11 +551,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: RegisterStop Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisterstopTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisterstopTx"])
+
     @RegisterstopTx.setter
     def RegisterstopTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisterstopTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisterstopTx"], value)
 
     @property
     def RtrsConfigured(self):
@@ -534,11 +566,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Rtrs. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RtrsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["RtrsConfigured"])
+
     @RtrsConfigured.setter
     def RtrsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RtrsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RtrsConfigured"], value)
 
     @property
     def RtrsRunning(self):
@@ -548,11 +581,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Rtrs. Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RtrsRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["RtrsRunning"])
+
     @RtrsRunning.setter
     def RtrsRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RtrsRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RtrsRunning"], value)
 
     @property
     def SessionFlapCount(self):
@@ -562,11 +596,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def ShutdownCRPAdvMsgRx(self):
@@ -576,11 +611,12 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Shutdown C-RP-Adv Msg Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShutdownCRPAdvMsgRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShutdownCRPAdvMsgRx"])
+
     @ShutdownCRPAdvMsgRx.setter
     def ShutdownCRPAdvMsgRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShutdownCRPAdvMsgRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShutdownCRPAdvMsgRx"], value)
 
     @property
     def ShutdownCRPAdvMsgTx(self):
@@ -590,13 +626,53 @@ class PimsmAggregatedStatistics(Base):
         -------
         - bool: Shutdown C-RP-Adv Msg Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShutdownCRPAdvMsgTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShutdownCRPAdvMsgTx"])
+
     @ShutdownCRPAdvMsgTx.setter
     def ShutdownCRPAdvMsgTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShutdownCRPAdvMsgTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShutdownCRPAdvMsgTx"], value)
 
-    def update(self, BootstrapMsgRx=None, BootstrapMsgTx=None, DatamdtTLVRx=None, DatamdtTLVTx=None, HellosRx=None, HellosTx=None, JoinSGRPTRx=None, JoinSGRPTTx=None, JoinSGRx=None, JoinSGTx=None, JoinXGRx=None, JoinXGTx=None, JoinXXRPRx=None, JoinXXRPTx=None, NbrsLearnt=None, NormalCRPAdvMsgRx=None, NormalCRPAdvMsgTx=None, PortName=None, PruneSGRPTRx=None, PruneSGRPTTx=None, PruneSGRx=None, PruneSGTx=None, PruneXGRx=None, PruneXGTx=None, PruneXXRPRx=None, PruneXXRPTx=None, RegisterRx=None, RegisterTx=None, RegisternullRx=None, RegisternullTx=None, RegisterstopRx=None, RegisterstopTx=None, RtrsConfigured=None, RtrsRunning=None, SessionFlapCount=None, ShutdownCRPAdvMsgRx=None, ShutdownCRPAdvMsgTx=None):
+    def update(
+        self,
+        BootstrapMsgRx=None,
+        BootstrapMsgTx=None,
+        DatamdtTLVRx=None,
+        DatamdtTLVTx=None,
+        HellosRx=None,
+        HellosTx=None,
+        JoinSGRPTRx=None,
+        JoinSGRPTTx=None,
+        JoinSGRx=None,
+        JoinSGTx=None,
+        JoinXGRx=None,
+        JoinXGTx=None,
+        JoinXXRPRx=None,
+        JoinXXRPTx=None,
+        NbrsLearnt=None,
+        NormalCRPAdvMsgRx=None,
+        NormalCRPAdvMsgTx=None,
+        PortName=None,
+        PruneSGRPTRx=None,
+        PruneSGRPTTx=None,
+        PruneSGRx=None,
+        PruneSGTx=None,
+        PruneXGRx=None,
+        PruneXGTx=None,
+        PruneXXRPRx=None,
+        PruneXXRPTx=None,
+        RegisterRx=None,
+        RegisterTx=None,
+        RegisternullRx=None,
+        RegisternullTx=None,
+        RegisterstopRx=None,
+        RegisterstopTx=None,
+        RtrsConfigured=None,
+        RtrsRunning=None,
+        SessionFlapCount=None,
+        ShutdownCRPAdvMsgRx=None,
+        ShutdownCRPAdvMsgTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PimsmAggregatedStatistics
         """Updates pimsmAggregatedStatistics resource on the server.
 
@@ -646,7 +722,46 @@ class PimsmAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BootstrapMsgRx=None, BootstrapMsgTx=None, DatamdtTLVRx=None, DatamdtTLVTx=None, HellosRx=None, HellosTx=None, JoinSGRPTRx=None, JoinSGRPTTx=None, JoinSGRx=None, JoinSGTx=None, JoinXGRx=None, JoinXGTx=None, JoinXXRPRx=None, JoinXXRPTx=None, NbrsLearnt=None, NormalCRPAdvMsgRx=None, NormalCRPAdvMsgTx=None, PortName=None, PruneSGRPTRx=None, PruneSGRPTTx=None, PruneSGRx=None, PruneSGTx=None, PruneXGRx=None, PruneXGTx=None, PruneXXRPRx=None, PruneXXRPTx=None, RegisterRx=None, RegisterTx=None, RegisternullRx=None, RegisternullTx=None, RegisterstopRx=None, RegisterstopTx=None, RtrsConfigured=None, RtrsRunning=None, SessionFlapCount=None, ShutdownCRPAdvMsgRx=None, ShutdownCRPAdvMsgTx=None):
+    def find(
+        self,
+        BootstrapMsgRx=None,
+        BootstrapMsgTx=None,
+        DatamdtTLVRx=None,
+        DatamdtTLVTx=None,
+        HellosRx=None,
+        HellosTx=None,
+        JoinSGRPTRx=None,
+        JoinSGRPTTx=None,
+        JoinSGRx=None,
+        JoinSGTx=None,
+        JoinXGRx=None,
+        JoinXGTx=None,
+        JoinXXRPRx=None,
+        JoinXXRPTx=None,
+        NbrsLearnt=None,
+        NormalCRPAdvMsgRx=None,
+        NormalCRPAdvMsgTx=None,
+        PortName=None,
+        PruneSGRPTRx=None,
+        PruneSGRPTTx=None,
+        PruneSGRx=None,
+        PruneSGTx=None,
+        PruneXGRx=None,
+        PruneXGTx=None,
+        PruneXXRPRx=None,
+        PruneXXRPTx=None,
+        RegisterRx=None,
+        RegisterTx=None,
+        RegisternullRx=None,
+        RegisternullTx=None,
+        RegisterstopRx=None,
+        RegisterstopTx=None,
+        RtrsConfigured=None,
+        RtrsRunning=None,
+        SessionFlapCount=None,
+        ShutdownCRPAdvMsgRx=None,
+        ShutdownCRPAdvMsgTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PimsmAggregatedStatistics
         """Finds and retrieves pimsmAggregatedStatistics resources from the server.
 

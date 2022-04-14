@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,40 +35,48 @@ class CuspUP(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cuspUP'
+    _SDM_NAME = "cuspUP"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Capabilities': 'capabilities',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'CpIpv4Address': 'cpIpv4Address',
-        'CpIpv6Address': 'cpIpv6Address',
-        'CuspUPPort': 'cuspUPPort',
-        'DeadTimer': 'deadTimer',
-        'DescriptiveName': 'descriptiveName',
-        'EnableSyncRequest': 'enableSyncRequest',
-        'Errors': 'errors',
-        'EstablishmentTimer': 'establishmentTimer',
-        'HelloVendorID': 'helloVendorID',
-        'KaTimeoutCount': 'kaTimeoutCount',
-        'KeepaliveTimer': 'keepaliveTimer',
-        'MaxReconnectInterval': 'maxReconnectInterval',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfBoards': 'numberOfBoards',
-        'NumberOfIPv4AddressPools': 'numberOfIPv4AddressPools',
-        'ReconnectInterval': 'reconnectInterval',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SubVersion': 'subVersion',
-        'VendorID': 'vendorID',
-        'Version': 'version',
+        "Active": "active",
+        "Capabilities": "capabilities",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "CpIpv4Address": "cpIpv4Address",
+        "CpIpv6Address": "cpIpv6Address",
+        "CuspUPPort": "cuspUPPort",
+        "DeadTimer": "deadTimer",
+        "DescriptiveName": "descriptiveName",
+        "EnableSyncRequest": "enableSyncRequest",
+        "Errors": "errors",
+        "EstablishmentTimer": "establishmentTimer",
+        "HelloVendorID": "helloVendorID",
+        "KaTimeoutCount": "kaTimeoutCount",
+        "KeepaliveTimer": "keepaliveTimer",
+        "MaxReconnectInterval": "maxReconnectInterval",
+        "Mtu": "mtu",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberOfBoards": "numberOfBoards",
+        "NumberOfIPv4AddressPools": "numberOfIPv4AddressPools",
+        "ReconnectInterval": "reconnectInterval",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SubVersion": "subVersion",
+        "VendorID": "vendorID",
+        "Version": "version",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -84,10 +93,13 @@ class CuspUP(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupboardinfolist_6dabe687a7e1c3b332a4e0a1c44faa98 import CuspUPBoardInfoList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupboardinfolist_6dabe687a7e1c3b332a4e0a1c44faa98 import (
+            CuspUPBoardInfoList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspUPBoardInfoList', None) is not None:
-                return self._properties.get('CuspUPBoardInfoList')
+            if self._properties.get("CuspUPBoardInfoList", None) is not None:
+                return self._properties.get("CuspUPBoardInfoList")
         return CuspUPBoardInfoList(self)._select()
 
     @property
@@ -101,10 +113,13 @@ class CuspUP(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupipv4addresspoollist_79632bb6ecb359c28cc6ecb682282c28 import CuspUPIPv4AddressPoolList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupipv4addresspoollist_79632bb6ecb359c28cc6ecb682282c28 import (
+            CuspUPIPv4AddressPoolList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspUPIPv4AddressPoolList', None) is not None:
-                return self._properties.get('CuspUPIPv4AddressPoolList')
+            if self._properties.get("CuspUPIPv4AddressPoolList", None) is not None:
+                return self._properties.get("CuspUPIPv4AddressPoolList")
         return CuspUPIPv4AddressPoolList(self)._select()
 
     @property
@@ -116,7 +131,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Capabilities(self):
@@ -127,21 +143,23 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Negotiate whether the user table sends an ACK or not.0-The CP does not need to wait for a response.1-CP needs to wait for an answer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Capabilities']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Capabilities"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -151,7 +169,7 @@ class CuspUP(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CpIpv4Address(self):
@@ -162,7 +180,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the IPv4 address of the CP to connect to.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CpIpv4Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CpIpv4Address"]))
 
     @property
     def CpIpv6Address(self):
@@ -173,7 +192,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the IPv6 address of the CP to connect to.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CpIpv6Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CpIpv6Address"]))
 
     @property
     def CuspUPPort(self):
@@ -184,7 +204,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TCP Port Number of the CUSP CP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CuspUPPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CuspUPPort"]))
 
     @property
     def DeadTimer(self):
@@ -195,7 +216,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Expiry of this timer will close the CUSP session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeadTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DeadTimer"]))
 
     @property
     def DescriptiveName(self):
@@ -205,7 +227,7 @@ class CuspUP(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableSyncRequest(self):
@@ -216,7 +238,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send synchronisation request.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSyncRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSyncRequest"])
+        )
 
     @property
     def Errors(self):
@@ -225,7 +250,7 @@ class CuspUP(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EstablishmentTimer(self):
@@ -236,7 +261,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time to wait for the session to get established.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EstablishmentTimer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EstablishmentTimer"])
+        )
 
     @property
     def HelloVendorID(self):
@@ -247,7 +275,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vendor ID to be carried in HELLO message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloVendorID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloVendorID"]))
 
     @property
     def KaTimeoutCount(self):
@@ -258,7 +287,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times KA timer would run before being stopped.0 means never timeout.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KaTimeoutCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KaTimeoutCount"])
+        )
 
     @property
     def KeepaliveTimer(self):
@@ -269,7 +301,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval at which keep alive messages are sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepaliveTimer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveTimer"])
+        )
 
     @property
     def MaxReconnectInterval(self):
@@ -280,7 +315,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum time UP waits before it tries to reconnect to CP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxReconnectInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxReconnectInterval"])
+        )
 
     @property
     def Mtu(self):
@@ -291,7 +329,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum transmission unit, min=68, max=14000.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mtu"]))
 
     @property
     def Multiplier(self):
@@ -301,11 +340,12 @@ class CuspUP(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -315,11 +355,12 @@ class CuspUP(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfBoards(self):
@@ -329,11 +370,12 @@ class CuspUP(Base):
         -------
         - number: Number of boards present in the UP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBoards'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBoards"])
+
     @NumberOfBoards.setter
     def NumberOfBoards(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfBoards'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfBoards"], value)
 
     @property
     def NumberOfIPv4AddressPools(self):
@@ -343,11 +385,12 @@ class CuspUP(Base):
         -------
         - number: Number of IPv4 Address Pools used for CGN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfIPv4AddressPools'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfIPv4AddressPools"])
+
     @NumberOfIPv4AddressPools.setter
     def NumberOfIPv4AddressPools(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfIPv4AddressPools'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfIPv4AddressPools"], value)
 
     @property
     def ReconnectInterval(self):
@@ -358,7 +401,10 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time UP waits before it tries to reconnect to CP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReconnectInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReconnectInterval"])
+        )
 
     @property
     def SessionStatus(self):
@@ -368,7 +414,7 @@ class CuspUP(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -378,11 +424,12 @@ class CuspUP(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -391,7 +438,7 @@ class CuspUP(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -401,7 +448,7 @@ class CuspUP(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SubVersion(self):
@@ -412,7 +459,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub version number.One version per bit, 0-reserved, starting from 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubVersion"]))
 
     @property
     def VendorID(self):
@@ -423,7 +471,8 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FactoryID,reuse the manufacturer definition in Radius.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VendorID"]))
 
     @property
     def Version(self):
@@ -434,9 +483,18 @@ class CuspUP(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CUSP protocol major version number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfBoards=None, NumberOfIPv4AddressPools=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfBoards=None,
+        NumberOfIPv4AddressPools=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, List[str]) -> CuspUP
         """Updates cuspUP resource on the server.
 
@@ -458,7 +516,15 @@ class CuspUP(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfBoards=None, NumberOfIPv4AddressPools=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfBoards=None,
+        NumberOfIPv4AddressPools=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, List[str]) -> CuspUP
         """Adds a new cuspUP resource on the server and adds it to the container.
 
@@ -491,7 +557,21 @@ class CuspUP(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfBoards=None, NumberOfIPv4AddressPools=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfBoards=None,
+        NumberOfIPv4AddressPools=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves cuspUP resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cuspUP resources from the server.
@@ -568,10 +648,12 @@ class CuspUP(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -600,10 +682,12 @@ class CuspUP(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -632,10 +716,12 @@ class CuspUP(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -664,12 +750,34 @@ class CuspUP(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Capabilities=None, CpIpv4Address=None, CpIpv6Address=None, CuspUPPort=None, DeadTimer=None, EnableSyncRequest=None, EstablishmentTimer=None, HelloVendorID=None, KaTimeoutCount=None, KeepaliveTimer=None, MaxReconnectInterval=None, Mtu=None, ReconnectInterval=None, SubVersion=None, VendorID=None, Version=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Capabilities=None,
+        CpIpv4Address=None,
+        CpIpv6Address=None,
+        CuspUPPort=None,
+        DeadTimer=None,
+        EnableSyncRequest=None,
+        EstablishmentTimer=None,
+        HelloVendorID=None,
+        KaTimeoutCount=None,
+        KeepaliveTimer=None,
+        MaxReconnectInterval=None,
+        Mtu=None,
+        ReconnectInterval=None,
+        SubVersion=None,
+        VendorID=None,
+        Version=None,
+    ):
         """Base class infrastructure that gets a list of cuspUP device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

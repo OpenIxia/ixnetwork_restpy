@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class TriggeredTracerouteLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'triggeredTracerouteLearnedInfo'
+    _SDM_NAME = "triggeredTracerouteLearnedInfo"
     _SDM_ATT_MAP = {
-        'Fec': 'fec',
-        'Hops': 'hops',
-        'IncomingLabelStack': 'incomingLabelStack',
-        'NumberOfReplyingHops': 'numberOfReplyingHops',
-        'OutgoingLabelStack': 'outgoingLabelStack',
-        'Reachability': 'reachability',
-        'SenderHandle': 'senderHandle',
+        "Fec": "fec",
+        "Hops": "hops",
+        "IncomingLabelStack": "incomingLabelStack",
+        "NumberOfReplyingHops": "numberOfReplyingHops",
+        "OutgoingLabelStack": "outgoingLabelStack",
+        "Reachability": "reachability",
+        "SenderHandle": "senderHandle",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TriggeredTracerouteLearnedInfo, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class TriggeredTracerouteLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_a3016dbca8bb23ae95d92f74f704c574 import Hops
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_a3016dbca8bb23ae95d92f74f704c574 import (
+            Hops,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Hops', None) is not None:
-                return self._properties.get('Hops')
+            if self._properties.get("Hops", None) is not None:
+                return self._properties.get("Hops")
         return Hops(self)
 
     @property
@@ -74,7 +77,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - str: This signifies the FEC component.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Fec'])
+        return self._get_attribute(self._SDM_ATT_MAP["Fec"])
 
     @property
     def Hops(self):
@@ -84,7 +87,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - str: This signifies the number of LSP hops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hops'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hops"])
 
     @property
     def IncomingLabelStack(self):
@@ -94,7 +97,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - str: This signifies the information is sent to the MPLS-OAM module which is used for validation of FEC stack received in an echo request. This is the assigned labels stack by the Ixia router and bfd/ping messages are expected to be received from DUT with this stack values. The outer value corresponds to the PSN Tunnel Label and the inner value corresponds to the PW label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelStack"])
 
     @property
     def NumberOfReplyingHops(self):
@@ -104,7 +107,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - number: This signifies the total number of replying LSP hops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfReplyingHops'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfReplyingHops"])
 
     @property
     def OutgoingLabelStack(self):
@@ -114,7 +117,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - str: This signifies the information is sent to the MPLS-OAM module which is used for validation of FEC outgoing Label stack that is received in an echo request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelStack"])
 
     @property
     def Reachability(self):
@@ -124,7 +127,7 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - str: This signifies whether the LSP is reachable with a proper return code or not. If the return code is not set to 3, in the received reply message or if there is no reply message that is received, then the field will show unreachable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def SenderHandle(self):
@@ -134,10 +137,10 @@ class TriggeredTracerouteLearnedInfo(Base):
         -------
         - number: This signifies the sender handle details.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SenderHandle'])
+        return self._get_attribute(self._SDM_ATT_MAP["SenderHandle"])
 
     def add(self):
-        """Adds a new triggeredTracerouteLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new triggeredTracerouteLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -149,7 +152,16 @@ class TriggeredTracerouteLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Fec=None, Hops=None, IncomingLabelStack=None, NumberOfReplyingHops=None, OutgoingLabelStack=None, Reachability=None, SenderHandle=None):
+    def find(
+        self,
+        Fec=None,
+        Hops=None,
+        IncomingLabelStack=None,
+        NumberOfReplyingHops=None,
+        OutgoingLabelStack=None,
+        Reachability=None,
+        SenderHandle=None,
+    ):
         # type: (str, str, str, int, str, str, int) -> TriggeredTracerouteLearnedInfo
         """Finds and retrieves triggeredTracerouteLearnedInfo resources from the server.
 

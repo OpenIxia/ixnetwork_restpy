@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,22 @@ class Atm(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atm'
+    _SDM_NAME = "atm"
     _SDM_ATT_MAP = {
-        'Encapsulation': 'encapsulation',
-        'Vci': 'vci',
-        'Vpi': 'vpi',
+        "Encapsulation": "encapsulation",
+        "Vci": "vci",
+        "Vpi": "vpi",
     }
     _SDM_ENUM_MAP = {
-        'encapsulation': ['vcMuxIpv4', 'vcMuxIpv6', 'vcMuxBridgeFcs', 'vcMuxBridgeNoFcs', 'llcClip', 'llcBridgeFcs', 'llcBridgeNoFcs'],
+        "encapsulation": [
+            "vcMuxIpv4",
+            "vcMuxIpv6",
+            "vcMuxBridgeFcs",
+            "vcMuxBridgeNoFcs",
+            "llcClip",
+            "llcBridgeFcs",
+            "llcBridgeNoFcs",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,11 +62,12 @@ class Atm(Base):
         -------
         - str(vcMuxIpv4 | vcMuxIpv6 | vcMuxBridgeFcs | vcMuxBridgeNoFcs | llcClip | llcBridgeFcs | llcBridgeNoFcs): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
+        return self._get_attribute(self._SDM_ATT_MAP["Encapsulation"])
+
     @Encapsulation.setter
     def Encapsulation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Encapsulation"], value)
 
     @property
     def Vci(self):
@@ -67,11 +77,12 @@ class Atm(Base):
         -------
         - number: Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vci'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vci"])
+
     @Vci.setter
     def Vci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vci"], value)
 
     @property
     def Vpi(self):
@@ -81,11 +92,12 @@ class Atm(Base):
         -------
         - number: Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vpi"])
+
     @Vpi.setter
     def Vpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vpi"], value)
 
     def update(self, Encapsulation=None, Vci=None, Vpi=None):
         # type: (str, int, int) -> Atm

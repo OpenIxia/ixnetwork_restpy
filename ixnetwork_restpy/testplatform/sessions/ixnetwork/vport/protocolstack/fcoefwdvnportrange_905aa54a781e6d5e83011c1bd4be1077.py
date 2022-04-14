@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,27 @@ class FcoeFwdVnPortRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcoeFwdVnPortRange'
+    _SDM_NAME = "fcoeFwdVnPortRange"
     _SDM_ATT_MAP = {
-        'B2bRxSize': 'b2bRxSize',
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'NodeWwnIncrement': 'nodeWwnIncrement',
-        'NodeWwnStart': 'nodeWwnStart',
-        'ObjectId': 'objectId',
-        'PlogiDestId': 'plogiDestId',
-        'PlogiEnabled': 'plogiEnabled',
-        'PlogiMeshMode': 'plogiMeshMode',
-        'PlogiTargetName': 'plogiTargetName',
-        'PortIdIncrement': 'portIdIncrement',
-        'PortIdStart': 'portIdStart',
-        'PortWwnIncrement': 'portWwnIncrement',
-        'PortWwnStart': 'portWwnStart',
-        'Simulated': 'simulated',
-        'VxPortName': 'vxPortName',
+        "B2bRxSize": "b2bRxSize",
+        "Count": "count",
+        "Enabled": "enabled",
+        "Name": "name",
+        "NodeWwnIncrement": "nodeWwnIncrement",
+        "NodeWwnStart": "nodeWwnStart",
+        "ObjectId": "objectId",
+        "PlogiDestId": "plogiDestId",
+        "PlogiEnabled": "plogiEnabled",
+        "PlogiMeshMode": "plogiMeshMode",
+        "PlogiTargetName": "plogiTargetName",
+        "PortIdIncrement": "portIdIncrement",
+        "PortIdStart": "portIdStart",
+        "PortWwnIncrement": "portWwnIncrement",
+        "PortWwnStart": "portWwnStart",
+        "Simulated": "simulated",
+        "VxPortName": "vxPortName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcoeFwdVnPortRange, self).__init__(parent, list_op)
@@ -66,11 +66,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - number: The buffer-to-buffer receive data field size in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["B2bRxSize"])
+
     @B2bRxSize.setter
     def B2bRxSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["B2bRxSize"], value)
 
     @property
     def Count(self):
@@ -80,11 +81,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - number: The number of VN_Ports allocated by this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -94,11 +96,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -108,11 +111,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NodeWwnIncrement(self):
@@ -122,11 +126,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The Node Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"])
+
     @NodeWwnIncrement.setter
     def NodeWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"], value)
 
     @property
     def NodeWwnStart(self):
@@ -136,11 +141,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The Node Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnStart"])
+
     @NodeWwnStart.setter
     def NodeWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnStart"], value)
 
     @property
     def ObjectId(self):
@@ -150,7 +156,7 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PlogiDestId(self):
@@ -160,11 +166,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiDestId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiDestId"])
+
     @PlogiDestId.setter
     def PlogiDestId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiDestId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiDestId"], value)
 
     @property
     def PlogiEnabled(self):
@@ -174,11 +181,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - bool: Enables these N_Ports to attempt a PLOGI connection with specified destinations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiEnabled"])
+
     @PlogiEnabled.setter
     def PlogiEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiEnabled"], value)
 
     @property
     def PlogiMeshMode(self):
@@ -188,11 +196,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The association mode between PLOGI initiators and targets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiMeshMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiMeshMode"])
+
     @PlogiMeshMode.setter
     def PlogiMeshMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiMeshMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiMeshMode"], value)
 
     @property
     def PlogiTargetName(self):
@@ -202,11 +211,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: Indicates the N_Port range used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiTargetName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiTargetName"])
+
     @PlogiTargetName.setter
     def PlogiTargetName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiTargetName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiTargetName"], value)
 
     @property
     def PortIdIncrement(self):
@@ -216,11 +226,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The increment value used to generate new FC_ID values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdIncrement"])
+
     @PortIdIncrement.setter
     def PortIdIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdIncrement"], value)
 
     @property
     def PortIdStart(self):
@@ -230,11 +241,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The FC_ID value assigned to first VN_Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdStart"])
+
     @PortIdStart.setter
     def PortIdStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdStart"], value)
 
     @property
     def PortWwnIncrement(self):
@@ -244,11 +256,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The Port Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnIncrement"])
+
     @PortWwnIncrement.setter
     def PortWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnIncrement"], value)
 
     @property
     def PortWwnStart(self):
@@ -258,11 +271,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The Port Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnStart"])
+
     @PortWwnStart.setter
     def PortWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnStart"], value)
 
     @property
     def Simulated(self):
@@ -272,11 +286,12 @@ class FcoeFwdVnPortRange(Base):
         -------
         - bool: Enables these VN_Ports to be simulated behind FCoE Forwarder.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Simulated'])
+        return self._get_attribute(self._SDM_ATT_MAP["Simulated"])
+
     @Simulated.setter
     def Simulated(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Simulated'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Simulated"], value)
 
     @property
     def VxPortName(self):
@@ -286,13 +301,32 @@ class FcoeFwdVnPortRange(Base):
         -------
         - str: The FCoE Forwarder interface associated with this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VxPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["VxPortName"])
+
     @VxPortName.setter
     def VxPortName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VxPortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VxPortName"], value)
 
-    def update(self, B2bRxSize=None, Count=None, Enabled=None, Name=None, NodeWwnIncrement=None, NodeWwnStart=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortIdIncrement=None, PortIdStart=None, PortWwnIncrement=None, PortWwnStart=None, Simulated=None, VxPortName=None):
+    def update(
+        self,
+        B2bRxSize=None,
+        Count=None,
+        Enabled=None,
+        Name=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortIdIncrement=None,
+        PortIdStart=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        Simulated=None,
+        VxPortName=None,
+    ):
         # type: (int, int, bool, str, str, str, str, bool, str, str, str, str, str, str, bool, str) -> FcoeFwdVnPortRange
         """Updates fcoeFwdVnPortRange resource on the server.
 
@@ -321,7 +355,26 @@ class FcoeFwdVnPortRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, B2bRxSize=None, Count=None, Enabled=None, Name=None, NodeWwnIncrement=None, NodeWwnStart=None, ObjectId=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortIdIncrement=None, PortIdStart=None, PortWwnIncrement=None, PortWwnStart=None, Simulated=None, VxPortName=None):
+    def find(
+        self,
+        B2bRxSize=None,
+        Count=None,
+        Enabled=None,
+        Name=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        ObjectId=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortIdIncrement=None,
+        PortIdStart=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        Simulated=None,
+        VxPortName=None,
+    ):
         # type: (int, int, bool, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str) -> FcoeFwdVnPortRange
         """Finds and retrieves fcoeFwdVnPortRange resources from the server.
 
@@ -394,10 +447,14 @@ class FcoeFwdVnPortRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -416,10 +473,14 @@ class FcoeFwdVnPortRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -438,7 +499,11 @@ class FcoeFwdVnPortRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

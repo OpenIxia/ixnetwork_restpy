@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,118 +33,117 @@ class StaticUsersList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'staticUsersList'
+    _SDM_NAME = "staticUsersList"
     _SDM_ATT_MAP = {
-        'AccessType': 'accessType',
-        'AccountType': 'accountType',
-        'Active': 'active',
-        'AdvertiseFlag': 'advertiseFlag',
-        'AutoPopulateIanaAddress': 'autoPopulateIanaAddress',
-        'AutoPopulateIanaNhAddress': 'autoPopulateIanaNhAddress',
-        'AutoPopulateIanaNhWithLlPrefix': 'autoPopulateIanaNhWithLlPrefix',
-        'AutoPopulateIanaPrefix': 'autoPopulateIanaPrefix',
-        'AutoPopulateNdAddress': 'autoPopulateNdAddress',
-        'AutoPopulateNdNhAddress': 'autoPopulateNdNhAddress',
-        'AutoPopulateNdNhWithLlPrefix': 'autoPopulateNdNhWithLlPrefix',
-        'AutoPopulateNdPrefix': 'autoPopulateNdPrefix',
-        'AutoPopulatePdAddress': 'autoPopulatePdAddress',
-        'AutoPopulatePdNhAddress': 'autoPopulatePdNhAddress',
-        'AutoPopulatePdNhWithLlPrefix': 'autoPopulatePdNhWithLlPrefix',
-        'AutoPopulatePdPrefix': 'autoPopulatePdPrefix',
-        'Cbs': 'cbs',
-        'CbsEgress': 'cbsEgress',
-        'CbsUnit': 'cbsUnit',
-        'CbsUnitEgress': 'cbsUnitEgress',
-        'ChassisNumber': 'chassisNumber',
-        'Cir': 'cir',
-        'CirEgress': 'cirEgress',
-        'CirUnit': 'cirUnit',
-        'CirUnitEgress': 'cirUnitEgress',
-        'Cost': 'cost',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DetectInterval': 'detectInterval',
-        'DetectTimes': 'detectTimes',
-        'EchoEnable': 'echoEnable',
-        'EgressHqosLevel2InstanceName': 'egressHqosLevel2InstanceName',
-        'EgressHqosLevel3ProfileName': 'egressHqosLevel3ProfileName',
-        'EgressHqosLevel4ProfileName': 'egressHqosLevel4ProfileName',
-        'EgressPriority': 'egressPriority',
-        'EgressUPGroupName': 'egressUPGroupName',
-        'EnableIfDescTLV': 'enableIfDescTLV',
-        'EnableMSS': 'enableMSS',
-        'GatewayAddress': 'gatewayAddress',
-        'GatewayPrefixLength': 'gatewayPrefixLength',
-        'HqosBwModifyMethod': 'hqosBwModifyMethod',
-        'IanaAddress': 'ianaAddress',
-        'IanaAddressPrefixLength': 'ianaAddressPrefixLength',
-        'IanaDestAddress': 'ianaDestAddress',
-        'IanaDestAddressPrefixLength': 'ianaDestAddressPrefixLength',
-        'IanaNhAddress': 'ianaNhAddress',
-        'IanaNhAddressPrefixLength': 'ianaNhAddressPrefixLength',
-        'IncludeUserAuthInfo': 'includeUserAuthInfo',
-        'IngressHqosLevel2InstanceName': 'ingressHqosLevel2InstanceName',
-        'IngressHqosLevel3ProfileName': 'ingressHqosLevel3ProfileName',
-        'IngressHqosLevel4ProfileName': 'ingressHqosLevel4ProfileName',
-        'IngressPriority': 'ingressPriority',
-        'IngressUPGroupName': 'ingressUPGroupName',
-        'InnerVlan': 'innerVlan',
-        'InnerVlanPriority': 'innerVlanPriority',
-        'Ipv4DestAddress': 'ipv4DestAddress',
-        'Ipv4DestAddressPrefixLength': 'ipv4DestAddressPrefixLength',
-        'Ipv4Urf': 'ipv4Urf',
-        'Ipv4UserAddress': 'ipv4UserAddress',
-        'Ipv4UserPrefixLength': 'ipv4UserPrefixLength',
-        'Ipv6UserAddress': 'ipv6UserAddress',
-        'Ipv6UserPrefixLength': 'ipv6UserPrefixLength',
-        'LogicID': 'logicID',
-        'McastProfilev4Name': 'mcastProfilev4Name',
-        'McastProfilev6Name': 'mcastProfilev6Name',
-        'Mss': 'mss',
-        'Mtu': 'mtu',
-        'MvipStack': 'mvipStack',
-        'Name': 'name',
-        'NatInstance': 'natInstance',
-        'NdAddress': 'ndAddress',
-        'NdAddressPrefixLength': 'ndAddressPrefixLength',
-        'NdDestAddress': 'ndDestAddress',
-        'NdDestAddressPrefixLength': 'ndDestAddressPrefixLength',
-        'NdNhAddress': 'ndNhAddress',
-        'NdNhAddressPrefixLength': 'ndNhAddressPrefixLength',
-        'NextHopAddress': 'nextHopAddress',
-        'NextHopPrefixLength': 'nextHopPrefixLength',
-        'Pbs': 'pbs',
-        'PbsEgress': 'pbsEgress',
-        'PbsUnit': 'pbsUnit',
-        'PbsUnitEgress': 'pbsUnitEgress',
-        'PdAddress': 'pdAddress',
-        'PdAddressPrefixLength': 'pdAddressPrefixLength',
-        'PdDestAddress': 'pdDestAddress',
-        'PdDestAddressPrefixLength': 'pdDestAddressPrefixLength',
-        'PdNhAddress': 'pdNhAddress',
-        'PdNhAddressPrefixLength': 'pdNhAddressPrefixLength',
-        'Pir': 'pir',
-        'PirEgress': 'pirEgress',
-        'PirUnit': 'pirUnit',
-        'PirUnitEgress': 'pirUnitEgress',
-        'PortNumber': 'portNumber',
-        'PortType': 'portType',
-        'PortalForce': 'portalForce',
-        'RouteType': 'routeType',
-        'SlotNumber': 'slotNumber',
-        'StaleTimer': 'staleTimer',
-        'SubAccessType': 'subAccessType',
-        'SubTlvs': 'subTlvs',
-        'SubslotNumber': 'subslotNumber',
-        'Tag': 'tag',
-        'UserIPAuthorType': 'userIPAuthorType',
-        'UserIPRunType': 'userIPRunType',
-        'UserMACAddress': 'userMACAddress',
-        'WebForce': 'webForce',
-        'WebPortalProfileName': 'webPortalProfileName',
+        "AccessType": "accessType",
+        "AccountType": "accountType",
+        "Active": "active",
+        "AdvertiseFlag": "advertiseFlag",
+        "AutoPopulateIanaAddress": "autoPopulateIanaAddress",
+        "AutoPopulateIanaNhAddress": "autoPopulateIanaNhAddress",
+        "AutoPopulateIanaNhWithLlPrefix": "autoPopulateIanaNhWithLlPrefix",
+        "AutoPopulateIanaPrefix": "autoPopulateIanaPrefix",
+        "AutoPopulateNdAddress": "autoPopulateNdAddress",
+        "AutoPopulateNdNhAddress": "autoPopulateNdNhAddress",
+        "AutoPopulateNdNhWithLlPrefix": "autoPopulateNdNhWithLlPrefix",
+        "AutoPopulateNdPrefix": "autoPopulateNdPrefix",
+        "AutoPopulatePdAddress": "autoPopulatePdAddress",
+        "AutoPopulatePdNhAddress": "autoPopulatePdNhAddress",
+        "AutoPopulatePdNhWithLlPrefix": "autoPopulatePdNhWithLlPrefix",
+        "AutoPopulatePdPrefix": "autoPopulatePdPrefix",
+        "Cbs": "cbs",
+        "CbsEgress": "cbsEgress",
+        "CbsUnit": "cbsUnit",
+        "CbsUnitEgress": "cbsUnitEgress",
+        "ChassisNumber": "chassisNumber",
+        "Cir": "cir",
+        "CirEgress": "cirEgress",
+        "CirUnit": "cirUnit",
+        "CirUnitEgress": "cirUnitEgress",
+        "Cost": "cost",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DetectInterval": "detectInterval",
+        "DetectTimes": "detectTimes",
+        "EchoEnable": "echoEnable",
+        "EgressHqosLevel2InstanceName": "egressHqosLevel2InstanceName",
+        "EgressHqosLevel3ProfileName": "egressHqosLevel3ProfileName",
+        "EgressHqosLevel4ProfileName": "egressHqosLevel4ProfileName",
+        "EgressPriority": "egressPriority",
+        "EgressUPGroupName": "egressUPGroupName",
+        "EnableIfDescTLV": "enableIfDescTLV",
+        "EnableMSS": "enableMSS",
+        "GatewayAddress": "gatewayAddress",
+        "GatewayPrefixLength": "gatewayPrefixLength",
+        "HqosBwModifyMethod": "hqosBwModifyMethod",
+        "IanaAddress": "ianaAddress",
+        "IanaAddressPrefixLength": "ianaAddressPrefixLength",
+        "IanaDestAddress": "ianaDestAddress",
+        "IanaDestAddressPrefixLength": "ianaDestAddressPrefixLength",
+        "IanaNhAddress": "ianaNhAddress",
+        "IanaNhAddressPrefixLength": "ianaNhAddressPrefixLength",
+        "IncludeUserAuthInfo": "includeUserAuthInfo",
+        "IngressHqosLevel2InstanceName": "ingressHqosLevel2InstanceName",
+        "IngressHqosLevel3ProfileName": "ingressHqosLevel3ProfileName",
+        "IngressHqosLevel4ProfileName": "ingressHqosLevel4ProfileName",
+        "IngressPriority": "ingressPriority",
+        "IngressUPGroupName": "ingressUPGroupName",
+        "InnerVlan": "innerVlan",
+        "InnerVlanPriority": "innerVlanPriority",
+        "Ipv4DestAddress": "ipv4DestAddress",
+        "Ipv4DestAddressPrefixLength": "ipv4DestAddressPrefixLength",
+        "Ipv4Urf": "ipv4Urf",
+        "Ipv4UserAddress": "ipv4UserAddress",
+        "Ipv4UserPrefixLength": "ipv4UserPrefixLength",
+        "Ipv6UserAddress": "ipv6UserAddress",
+        "Ipv6UserPrefixLength": "ipv6UserPrefixLength",
+        "LogicID": "logicID",
+        "McastProfilev4Name": "mcastProfilev4Name",
+        "McastProfilev6Name": "mcastProfilev6Name",
+        "Mss": "mss",
+        "Mtu": "mtu",
+        "MvipStack": "mvipStack",
+        "Name": "name",
+        "NatInstance": "natInstance",
+        "NdAddress": "ndAddress",
+        "NdAddressPrefixLength": "ndAddressPrefixLength",
+        "NdDestAddress": "ndDestAddress",
+        "NdDestAddressPrefixLength": "ndDestAddressPrefixLength",
+        "NdNhAddress": "ndNhAddress",
+        "NdNhAddressPrefixLength": "ndNhAddressPrefixLength",
+        "NextHopAddress": "nextHopAddress",
+        "NextHopPrefixLength": "nextHopPrefixLength",
+        "Pbs": "pbs",
+        "PbsEgress": "pbsEgress",
+        "PbsUnit": "pbsUnit",
+        "PbsUnitEgress": "pbsUnitEgress",
+        "PdAddress": "pdAddress",
+        "PdAddressPrefixLength": "pdAddressPrefixLength",
+        "PdDestAddress": "pdDestAddress",
+        "PdDestAddressPrefixLength": "pdDestAddressPrefixLength",
+        "PdNhAddress": "pdNhAddress",
+        "PdNhAddressPrefixLength": "pdNhAddressPrefixLength",
+        "Pir": "pir",
+        "PirEgress": "pirEgress",
+        "PirUnit": "pirUnit",
+        "PirUnitEgress": "pirUnitEgress",
+        "PortNumber": "portNumber",
+        "PortType": "portType",
+        "PortalForce": "portalForce",
+        "RouteType": "routeType",
+        "SlotNumber": "slotNumber",
+        "StaleTimer": "staleTimer",
+        "SubAccessType": "subAccessType",
+        "SubTlvs": "subTlvs",
+        "SubslotNumber": "subslotNumber",
+        "Tag": "tag",
+        "UserIPAuthorType": "userIPAuthorType",
+        "UserIPRunType": "userIPRunType",
+        "UserMACAddress": "userMACAddress",
+        "WebForce": "webForce",
+        "WebPortalProfileName": "webPortalProfileName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StaticUsersList, self).__init__(parent, list_op)
@@ -157,7 +157,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Access Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AccessType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AccessType"]))
 
     @property
     def AccountType(self):
@@ -168,7 +169,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Account Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AccountType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AccountType"]))
 
     @property
     def Active(self):
@@ -179,7 +181,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseFlag(self):
@@ -190,7 +193,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseFlag"]))
 
     @property
     def AutoPopulateIanaAddress(self):
@@ -201,7 +205,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate IANA Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateIanaAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateIanaAddress"])
+        )
 
     @property
     def AutoPopulateIanaNhAddress(self):
@@ -212,7 +219,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate IANA Next Hop Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateIanaNhAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateIanaNhAddress"])
+        )
 
     @property
     def AutoPopulateIanaNhWithLlPrefix(self):
@@ -223,7 +233,11 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate IANA Next Hop with LL Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateIanaNhWithLlPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AutoPopulateIanaNhWithLlPrefix"]),
+        )
 
     @property
     def AutoPopulateIanaPrefix(self):
@@ -234,7 +248,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate IANA Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateIanaPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateIanaPrefix"])
+        )
 
     @property
     def AutoPopulateNdAddress(self):
@@ -245,7 +262,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate ND Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateNdAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateNdAddress"])
+        )
 
     @property
     def AutoPopulateNdNhAddress(self):
@@ -256,7 +276,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate ND Next Hop Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateNdNhAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateNdNhAddress"])
+        )
 
     @property
     def AutoPopulateNdNhWithLlPrefix(self):
@@ -267,7 +290,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate ND Next Hop with LL Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateNdNhWithLlPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateNdNhWithLlPrefix"])
+        )
 
     @property
     def AutoPopulateNdPrefix(self):
@@ -278,7 +304,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate ND Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulateNdPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulateNdPrefix"])
+        )
 
     @property
     def AutoPopulatePdAddress(self):
@@ -289,7 +318,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate PD Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulatePdAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulatePdAddress"])
+        )
 
     @property
     def AutoPopulatePdNhAddress(self):
@@ -300,7 +332,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate PD Next Hop Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulatePdNhAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulatePdNhAddress"])
+        )
 
     @property
     def AutoPopulatePdNhWithLlPrefix(self):
@@ -311,7 +346,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate PD Next Hop with LL Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulatePdNhWithLlPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulatePdNhWithLlPrefix"])
+        )
 
     @property
     def AutoPopulatePdPrefix(self):
@@ -322,7 +360,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Populate PD Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPopulatePdPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoPopulatePdPrefix"])
+        )
 
     @property
     def Cbs(self):
@@ -333,7 +374,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The token bucket in bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Cbs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Cbs"]))
 
     @property
     def CbsEgress(self):
@@ -344,7 +386,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The token bucket in bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CbsEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CbsEgress"]))
 
     @property
     def CbsUnit(self):
@@ -355,7 +398,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Guaranteed Token Bucket Unit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CbsUnit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CbsUnit"]))
 
     @property
     def CbsUnitEgress(self):
@@ -366,7 +410,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Guaranteed Token Bucket Unit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CbsUnitEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CbsUnitEgress"]))
 
     @property
     def ChassisNumber(self):
@@ -377,7 +422,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Chassis number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ChassisNumber"]))
 
     @property
     def Cir(self):
@@ -388,7 +434,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Committed Information Rate.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Cir']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Cir"]))
 
     @property
     def CirEgress(self):
@@ -399,7 +446,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Committed Information Rate.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CirEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CirEgress"]))
 
     @property
     def CirUnit(self):
@@ -410,7 +458,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Guaranteed rate units.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CirUnit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CirUnit"]))
 
     @property
     def CirUnitEgress(self):
@@ -421,7 +470,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Guaranteed rate units.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CirUnitEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CirUnitEgress"]))
 
     @property
     def Cost(self):
@@ -432,7 +482,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Cost
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Cost']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Cost"]))
 
     @property
     def Count(self):
@@ -442,7 +493,7 @@ class StaticUsersList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -452,7 +503,7 @@ class StaticUsersList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DetectInterval(self):
@@ -463,7 +514,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The time interval UP waits for a subscriber to respond to a detection probe.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DetectInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DetectInterval"])
+        )
 
     @property
     def DetectTimes(self):
@@ -474,7 +528,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of detection timeouts after which the subscriber session is deleted. 0 means no detection is performed.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DetectTimes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DetectTimes"]))
 
     @property
     def EchoEnable(self):
@@ -485,7 +540,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Both PPP/ARP are compatible, and the microcode will quickly return to ARP Req or PPP Echo. 0: off, 1: on.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoEnable']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoEnable"]))
 
     @property
     def EgressHqosLevel2InstanceName(self):
@@ -496,7 +552,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress HQoS Level 2 Instance Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressHqosLevel2InstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressHqosLevel2InstanceName"])
+        )
 
     @property
     def EgressHqosLevel3ProfileName(self):
@@ -507,7 +566,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress HQoS Level 3 Profile Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressHqosLevel3ProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressHqosLevel3ProfileName"])
+        )
 
     @property
     def EgressHqosLevel4ProfileName(self):
@@ -518,7 +580,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress HQoS Level 4 Profile Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressHqosLevel4ProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressHqosLevel4ProfileName"])
+        )
 
     @property
     def EgressPriority(self):
@@ -529,7 +594,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Downward direction priority.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressPriority"])
+        )
 
     @property
     def EgressUPGroupName(self):
@@ -540,7 +608,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress-User-Policy-Group Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressUPGroupName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressUPGroupName"])
+        )
 
     @property
     def EnableIfDescTLV(self):
@@ -551,7 +622,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IF DESC TLV. It will advertise back the IF DESC advertised by UP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIfDescTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIfDescTLV"])
+        )
 
     @property
     def EnableMSS(self):
@@ -562,7 +636,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MSS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMSS']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableMSS"]))
 
     @property
     def GatewayAddress(self):
@@ -573,7 +648,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Gateway Address of the subscriber.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GatewayAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GatewayAddress"])
+        )
 
     @property
     def GatewayPrefixLength(self):
@@ -584,7 +662,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Gateway Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GatewayPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GatewayPrefixLength"])
+        )
 
     @property
     def HqosBwModifyMethod(self):
@@ -595,7 +676,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): HQoS Bandwidth Modiy Method.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HqosBwModifyMethod']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HqosBwModifyMethod"])
+        )
 
     @property
     def IanaAddress(self):
@@ -606,7 +690,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IanaAddress"]))
 
     @property
     def IanaAddressPrefixLength(self):
@@ -617,7 +702,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IanaAddressPrefixLength"])
+        )
 
     @property
     def IanaDestAddress(self):
@@ -628,7 +716,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Destination Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaDestAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IanaDestAddress"])
+        )
 
     @property
     def IanaDestAddressPrefixLength(self):
@@ -639,7 +730,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Destination Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaDestAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IanaDestAddressPrefixLength"])
+        )
 
     @property
     def IanaNhAddress(self):
@@ -650,7 +744,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Next Hop Address to be used to reach the destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaNhAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IanaNhAddress"]))
 
     @property
     def IanaNhAddressPrefixLength(self):
@@ -661,7 +756,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IANA Next Hop Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IanaNhAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IanaNhAddressPrefixLength"])
+        )
 
     @property
     def IncludeUserAuthInfo(self):
@@ -672,7 +770,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include User Auth Info.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeUserAuthInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeUserAuthInfo"])
+        )
 
     @property
     def IngressHqosLevel2InstanceName(self):
@@ -683,7 +784,11 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress HQoS Level 2 Instance Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressHqosLevel2InstanceName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IngressHqosLevel2InstanceName"]),
+        )
 
     @property
     def IngressHqosLevel3ProfileName(self):
@@ -694,7 +799,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress HQoS Level 3 Profile Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressHqosLevel3ProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressHqosLevel3ProfileName"])
+        )
 
     @property
     def IngressHqosLevel4ProfileName(self):
@@ -705,7 +813,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress HQoS Level 4 Profile Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressHqosLevel4ProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressHqosLevel4ProfileName"])
+        )
 
     @property
     def IngressPriority(self):
@@ -716,7 +827,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Upward direction priority.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressPriority"])
+        )
 
     @property
     def IngressUPGroupName(self):
@@ -727,7 +841,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress-User-Policy-Group Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressUPGroupName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressUPGroupName"])
+        )
 
     @property
     def InnerVlan(self):
@@ -738,7 +855,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-Vid ( Inner VLAN ).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InnerVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InnerVlan"]))
 
     @property
     def InnerVlanPriority(self):
@@ -749,7 +867,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-Vid Priority( Inner VLAN Priority).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InnerVlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InnerVlanPriority"])
+        )
 
     @property
     def Ipv4DestAddress(self):
@@ -760,7 +881,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Destination Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4DestAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4DestAddress"])
+        )
 
     @property
     def Ipv4DestAddressPrefixLength(self):
@@ -771,7 +895,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Destination Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4DestAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4DestAddressPrefixLength"])
+        )
 
     @property
     def Ipv4Urf(self):
@@ -782,7 +909,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User Unicast Reverse Path Forwarding (URPF) flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Urf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4Urf"]))
 
     @property
     def Ipv4UserAddress(self):
@@ -793,7 +921,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the static user.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4UserAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4UserAddress"])
+        )
 
     @property
     def Ipv4UserPrefixLength(self):
@@ -804,7 +935,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4UserPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4UserPrefixLength"])
+        )
 
     @property
     def Ipv6UserAddress(self):
@@ -815,7 +949,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6UserAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6UserAddress"])
+        )
 
     @property
     def Ipv6UserPrefixLength(self):
@@ -826,7 +963,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6UserPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6UserPrefixLength"])
+        )
 
     @property
     def LogicID(self):
@@ -837,7 +977,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Virtual port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogicID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LogicID"]))
 
     @property
     def McastProfilev4Name(self):
@@ -848,7 +989,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Profilev4 Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastProfilev4Name']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["McastProfilev4Name"])
+        )
 
     @property
     def McastProfilev6Name(self):
@@ -859,7 +1003,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Profilev6 Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastProfilev6Name']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["McastProfilev6Name"])
+        )
 
     @property
     def Mss(self):
@@ -870,7 +1017,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MSS Value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mss']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mss"]))
 
     @property
     def Mtu(self):
@@ -881,7 +1029,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MTU
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mtu"]))
 
     @property
     def MvipStack(self):
@@ -892,7 +1041,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This drop box is provided to select ipv4 or ipv6 or dual stack subscribers.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvipStack']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvipStack"]))
 
     @property
     def Name(self):
@@ -902,11 +1052,12 @@ class StaticUsersList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NatInstance(self):
@@ -917,7 +1068,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nat Instance Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NatInstance']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NatInstance"]))
 
     @property
     def NdAddress(self):
@@ -928,7 +1080,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NdAddress"]))
 
     @property
     def NdAddressPrefixLength(self):
@@ -939,7 +1092,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NdAddressPrefixLength"])
+        )
 
     @property
     def NdDestAddress(self):
@@ -950,7 +1106,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Destination Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdDestAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NdDestAddress"]))
 
     @property
     def NdDestAddressPrefixLength(self):
@@ -961,7 +1118,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Destination Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdDestAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NdDestAddressPrefixLength"])
+        )
 
     @property
     def NdNhAddress(self):
@@ -972,7 +1132,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Next Hop Address to be used to reach the destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdNhAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NdNhAddress"]))
 
     @property
     def NdNhAddressPrefixLength(self):
@@ -983,7 +1144,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ND Next Hop Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdNhAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NdNhAddressPrefixLength"])
+        )
 
     @property
     def NextHopAddress(self):
@@ -994,7 +1158,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Next hop address to be used by the UP to reach the Destination address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopAddress"])
+        )
 
     @property
     def NextHopPrefixLength(self):
@@ -1005,7 +1172,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Next Hop Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopPrefixLength"])
+        )
 
     @property
     def Pbs(self):
@@ -1016,7 +1186,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst token buckets in bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Pbs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Pbs"]))
 
     @property
     def PbsEgress(self):
@@ -1027,7 +1198,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst token buckets in bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PbsEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PbsEgress"]))
 
     @property
     def PbsUnit(self):
@@ -1038,7 +1210,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst Token Bucket Unit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PbsUnit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PbsUnit"]))
 
     @property
     def PbsUnitEgress(self):
@@ -1049,7 +1222,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst Token Bucket Unit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PbsUnitEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PbsUnitEgress"]))
 
     @property
     def PdAddress(self):
@@ -1060,7 +1234,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PdAddress"]))
 
     @property
     def PdAddressPrefixLength(self):
@@ -1071,7 +1246,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PdAddressPrefixLength"])
+        )
 
     @property
     def PdDestAddress(self):
@@ -1082,7 +1260,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Destination Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdDestAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PdDestAddress"]))
 
     @property
     def PdDestAddressPrefixLength(self):
@@ -1093,7 +1272,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Destination Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdDestAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PdDestAddressPrefixLength"])
+        )
 
     @property
     def PdNhAddress(self):
@@ -1104,7 +1286,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Next Hop Address to be used to reach the destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdNhAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PdNhAddress"]))
 
     @property
     def PdNhAddressPrefixLength(self):
@@ -1115,7 +1298,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PD Next Hop Address Prefix Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PdNhAddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PdNhAddressPrefixLength"])
+        )
 
     @property
     def Pir(self):
@@ -1126,7 +1312,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peak Information Rate.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Pir']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Pir"]))
 
     @property
     def PirEgress(self):
@@ -1137,7 +1324,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peak Information Rate.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PirEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PirEgress"]))
 
     @property
     def PirUnit(self):
@@ -1148,7 +1336,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst rate units.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PirUnit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PirUnit"]))
 
     @property
     def PirUnitEgress(self):
@@ -1159,7 +1348,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst rate units.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PirUnitEgress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PirUnitEgress"]))
 
     @property
     def PortNumber(self):
@@ -1170,7 +1360,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Physical port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortNumber"]))
 
     @property
     def PortType(self):
@@ -1181,7 +1372,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the Port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortType"]))
 
     @property
     def PortalForce(self):
@@ -1192,7 +1384,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Push advertising switch, 0: off, 1: on.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortalForce']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortalForce"]))
 
     @property
     def RouteType(self):
@@ -1203,7 +1396,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteType"]))
 
     @property
     def SlotNumber(self):
@@ -1214,7 +1408,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlotNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlotNumber"]))
 
     @property
     def StaleTimer(self):
@@ -1225,7 +1420,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The timeout of this timer indicates removing details related to that static user due to inactivity.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StaleTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StaleTimer"]))
 
     @property
     def SubAccessType(self):
@@ -1236,7 +1432,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub Access Type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubAccessType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubAccessType"]))
 
     @property
     def SubTlvs(self):
@@ -1247,7 +1444,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub TLVs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTlvs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubTlvs"]))
 
     @property
     def SubslotNumber(self):
@@ -1258,7 +1456,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubslotNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubslotNumber"]))
 
     @property
     def Tag(self):
@@ -1269,7 +1468,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tag"]))
 
     @property
     def UserIPAuthorType(self):
@@ -1280,7 +1480,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User IP Author Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserIPAuthorType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserIPAuthorType"])
+        )
 
     @property
     def UserIPRunType(self):
@@ -1291,7 +1494,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User IP Run Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserIPRunType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UserIPRunType"]))
 
     @property
     def UserMACAddress(self):
@@ -1302,7 +1506,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System MAC Address of the user.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserMACAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserMACAddress"])
+        )
 
     @property
     def WebForce(self):
@@ -1313,7 +1520,8 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 WebForce push flag, 0: off, 1: on.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WebForce']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WebForce"]))
 
     @property
     def WebPortalProfileName(self):
@@ -1324,7 +1532,10 @@ class StaticUsersList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Web Portal Profile Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WebPortalProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WebPortalProfileName"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> StaticUsersList
@@ -1385,7 +1596,114 @@ class StaticUsersList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AccessType=None, AccountType=None, Active=None, AdvertiseFlag=None, AutoPopulateIanaAddress=None, AutoPopulateIanaNhAddress=None, AutoPopulateIanaNhWithLlPrefix=None, AutoPopulateIanaPrefix=None, AutoPopulateNdAddress=None, AutoPopulateNdNhAddress=None, AutoPopulateNdNhWithLlPrefix=None, AutoPopulateNdPrefix=None, AutoPopulatePdAddress=None, AutoPopulatePdNhAddress=None, AutoPopulatePdNhWithLlPrefix=None, AutoPopulatePdPrefix=None, Cbs=None, CbsEgress=None, CbsUnit=None, CbsUnitEgress=None, ChassisNumber=None, Cir=None, CirEgress=None, CirUnit=None, CirUnitEgress=None, Cost=None, DetectInterval=None, DetectTimes=None, EchoEnable=None, EgressHqosLevel2InstanceName=None, EgressHqosLevel3ProfileName=None, EgressHqosLevel4ProfileName=None, EgressPriority=None, EgressUPGroupName=None, EnableIfDescTLV=None, EnableMSS=None, GatewayAddress=None, GatewayPrefixLength=None, HqosBwModifyMethod=None, IanaAddress=None, IanaAddressPrefixLength=None, IanaDestAddress=None, IanaDestAddressPrefixLength=None, IanaNhAddress=None, IanaNhAddressPrefixLength=None, IncludeUserAuthInfo=None, IngressHqosLevel2InstanceName=None, IngressHqosLevel3ProfileName=None, IngressHqosLevel4ProfileName=None, IngressPriority=None, IngressUPGroupName=None, InnerVlan=None, InnerVlanPriority=None, Ipv4DestAddress=None, Ipv4DestAddressPrefixLength=None, Ipv4Urf=None, Ipv4UserAddress=None, Ipv4UserPrefixLength=None, Ipv6UserAddress=None, Ipv6UserPrefixLength=None, LogicID=None, McastProfilev4Name=None, McastProfilev6Name=None, Mss=None, Mtu=None, MvipStack=None, NatInstance=None, NdAddress=None, NdAddressPrefixLength=None, NdDestAddress=None, NdDestAddressPrefixLength=None, NdNhAddress=None, NdNhAddressPrefixLength=None, NextHopAddress=None, NextHopPrefixLength=None, Pbs=None, PbsEgress=None, PbsUnit=None, PbsUnitEgress=None, PdAddress=None, PdAddressPrefixLength=None, PdDestAddress=None, PdDestAddressPrefixLength=None, PdNhAddress=None, PdNhAddressPrefixLength=None, Pir=None, PirEgress=None, PirUnit=None, PirUnitEgress=None, PortNumber=None, PortType=None, PortalForce=None, RouteType=None, SlotNumber=None, StaleTimer=None, SubAccessType=None, SubTlvs=None, SubslotNumber=None, Tag=None, UserIPAuthorType=None, UserIPRunType=None, UserMACAddress=None, WebForce=None, WebPortalProfileName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AccessType=None,
+        AccountType=None,
+        Active=None,
+        AdvertiseFlag=None,
+        AutoPopulateIanaAddress=None,
+        AutoPopulateIanaNhAddress=None,
+        AutoPopulateIanaNhWithLlPrefix=None,
+        AutoPopulateIanaPrefix=None,
+        AutoPopulateNdAddress=None,
+        AutoPopulateNdNhAddress=None,
+        AutoPopulateNdNhWithLlPrefix=None,
+        AutoPopulateNdPrefix=None,
+        AutoPopulatePdAddress=None,
+        AutoPopulatePdNhAddress=None,
+        AutoPopulatePdNhWithLlPrefix=None,
+        AutoPopulatePdPrefix=None,
+        Cbs=None,
+        CbsEgress=None,
+        CbsUnit=None,
+        CbsUnitEgress=None,
+        ChassisNumber=None,
+        Cir=None,
+        CirEgress=None,
+        CirUnit=None,
+        CirUnitEgress=None,
+        Cost=None,
+        DetectInterval=None,
+        DetectTimes=None,
+        EchoEnable=None,
+        EgressHqosLevel2InstanceName=None,
+        EgressHqosLevel3ProfileName=None,
+        EgressHqosLevel4ProfileName=None,
+        EgressPriority=None,
+        EgressUPGroupName=None,
+        EnableIfDescTLV=None,
+        EnableMSS=None,
+        GatewayAddress=None,
+        GatewayPrefixLength=None,
+        HqosBwModifyMethod=None,
+        IanaAddress=None,
+        IanaAddressPrefixLength=None,
+        IanaDestAddress=None,
+        IanaDestAddressPrefixLength=None,
+        IanaNhAddress=None,
+        IanaNhAddressPrefixLength=None,
+        IncludeUserAuthInfo=None,
+        IngressHqosLevel2InstanceName=None,
+        IngressHqosLevel3ProfileName=None,
+        IngressHqosLevel4ProfileName=None,
+        IngressPriority=None,
+        IngressUPGroupName=None,
+        InnerVlan=None,
+        InnerVlanPriority=None,
+        Ipv4DestAddress=None,
+        Ipv4DestAddressPrefixLength=None,
+        Ipv4Urf=None,
+        Ipv4UserAddress=None,
+        Ipv4UserPrefixLength=None,
+        Ipv6UserAddress=None,
+        Ipv6UserPrefixLength=None,
+        LogicID=None,
+        McastProfilev4Name=None,
+        McastProfilev6Name=None,
+        Mss=None,
+        Mtu=None,
+        MvipStack=None,
+        NatInstance=None,
+        NdAddress=None,
+        NdAddressPrefixLength=None,
+        NdDestAddress=None,
+        NdDestAddressPrefixLength=None,
+        NdNhAddress=None,
+        NdNhAddressPrefixLength=None,
+        NextHopAddress=None,
+        NextHopPrefixLength=None,
+        Pbs=None,
+        PbsEgress=None,
+        PbsUnit=None,
+        PbsUnitEgress=None,
+        PdAddress=None,
+        PdAddressPrefixLength=None,
+        PdDestAddress=None,
+        PdDestAddressPrefixLength=None,
+        PdNhAddress=None,
+        PdNhAddressPrefixLength=None,
+        Pir=None,
+        PirEgress=None,
+        PirUnit=None,
+        PirUnitEgress=None,
+        PortNumber=None,
+        PortType=None,
+        PortalForce=None,
+        RouteType=None,
+        SlotNumber=None,
+        StaleTimer=None,
+        SubAccessType=None,
+        SubTlvs=None,
+        SubslotNumber=None,
+        Tag=None,
+        UserIPAuthorType=None,
+        UserIPRunType=None,
+        UserMACAddress=None,
+        WebForce=None,
+        WebPortalProfileName=None,
+    ):
         """Base class infrastructure that gets a list of staticUsersList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

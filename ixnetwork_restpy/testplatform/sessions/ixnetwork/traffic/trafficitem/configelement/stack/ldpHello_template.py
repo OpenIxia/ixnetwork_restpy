@@ -4,39 +4,39 @@ from ixnetwork_restpy.files import Files
 
 class LdpHello(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpHello'
+    _SDM_NAME = "ldpHello"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpHello.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpHello.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpHello.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpHello.header.labelSpace-4',
-        'HeaderUBit': 'ldpHello.header.uBit-5',
-        'HeaderType': 'ldpHello.header.type-6',
-        'HeaderLength': 'ldpHello.header.length-7',
-        'HeaderMessageID': 'ldpHello.header.messageID-8',
-        'CommonHelloParametersTLVUBit': 'ldpHello.header.commonHelloParametersTLV.uBit-9',
-        'CommonHelloParametersTLVFBit': 'ldpHello.header.commonHelloParametersTLV.fBit-10',
-        'CommonHelloParametersTLVType': 'ldpHello.header.commonHelloParametersTLV.type-11',
-        'CommonHelloParametersTLVLength': 'ldpHello.header.commonHelloParametersTLV.length-12',
-        'CommonHelloParametersTLVHoldTime': 'ldpHello.header.commonHelloParametersTLV.holdTime-13',
-        'CommonHelloParametersTLVTBit': 'ldpHello.header.commonHelloParametersTLV.tBit-14',
-        'CommonHelloParametersTLVRBit': 'ldpHello.header.commonHelloParametersTLV.rBit-15',
-        'CommonHelloParametersTLVReserved': 'ldpHello.header.commonHelloParametersTLV.reserved-16',
-        'Ipv4TransportAddressTLVUBit': 'ldpHello.header.optionalParameter.ipv4TransportAddressTLV.uBit-17',
-        'Ipv4TransportAddressTLVFBit': 'ldpHello.header.optionalParameter.ipv4TransportAddressTLV.fBit-18',
-        'Ipv4TransportAddressTLVType': 'ldpHello.header.optionalParameter.ipv4TransportAddressTLV.type-19',
-        'Ipv4TransportAddressTLVLength': 'ldpHello.header.optionalParameter.ipv4TransportAddressTLV.length-20',
-        'Ipv4TransportAddressTLVIpv4Address': 'ldpHello.header.optionalParameter.ipv4TransportAddressTLV.ipv4Address-21',
-        'ConfigurationSequenceNumberTLVUBit': 'ldpHello.header.optionalParameter.configurationSequenceNumberTLV.uBit-22',
-        'ConfigurationSequenceNumberTLVFBit': 'ldpHello.header.optionalParameter.configurationSequenceNumberTLV.fBit-23',
-        'ConfigurationSequenceNumberTLVType': 'ldpHello.header.optionalParameter.configurationSequenceNumberTLV.type-24',
-        'ConfigurationSequenceNumberTLVLength': 'ldpHello.header.optionalParameter.configurationSequenceNumberTLV.length-25',
-        'ConfigurationSequenceNumberTLVSequenceNumber': 'ldpHello.header.optionalParameter.configurationSequenceNumberTLV.sequenceNumber-26',
-        'Ipv6TransportAddressTLVUBit': 'ldpHello.header.optionalParameter.ipv6TransportAddressTLV.uBit-27',
-        'Ipv6TransportAddressTLVFBit': 'ldpHello.header.optionalParameter.ipv6TransportAddressTLV.fBit-28',
-        'Ipv6TransportAddressTLVType': 'ldpHello.header.optionalParameter.ipv6TransportAddressTLV.type-29',
-        'Ipv6TransportAddressTLVLength': 'ldpHello.header.optionalParameter.ipv6TransportAddressTLV.length-30',
-        'Ipv6TransportAddressTLVIpv6Address': 'ldpHello.header.optionalParameter.ipv6TransportAddressTLV.ipv6Address-31',
+        "HeaderVersion": "ldpHello.header.version-1",
+        "HeaderPduLengthinOctets": "ldpHello.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpHello.header.lsrID-3",
+        "HeaderLabelSpace": "ldpHello.header.labelSpace-4",
+        "HeaderUBit": "ldpHello.header.uBit-5",
+        "HeaderType": "ldpHello.header.type-6",
+        "HeaderLength": "ldpHello.header.length-7",
+        "HeaderMessageID": "ldpHello.header.messageID-8",
+        "CommonHelloParametersTLVUBit": "ldpHello.header.commonHelloParametersTLV.uBit-9",
+        "CommonHelloParametersTLVFBit": "ldpHello.header.commonHelloParametersTLV.fBit-10",
+        "CommonHelloParametersTLVType": "ldpHello.header.commonHelloParametersTLV.type-11",
+        "CommonHelloParametersTLVLength": "ldpHello.header.commonHelloParametersTLV.length-12",
+        "CommonHelloParametersTLVHoldTime": "ldpHello.header.commonHelloParametersTLV.holdTime-13",
+        "CommonHelloParametersTLVTBit": "ldpHello.header.commonHelloParametersTLV.tBit-14",
+        "CommonHelloParametersTLVRBit": "ldpHello.header.commonHelloParametersTLV.rBit-15",
+        "CommonHelloParametersTLVReserved": "ldpHello.header.commonHelloParametersTLV.reserved-16",
+        "Ipv4TransportAddressTLVUBit": "ldpHello.header.optionalParameter.ipv4TransportAddressTLV.uBit-17",
+        "Ipv4TransportAddressTLVFBit": "ldpHello.header.optionalParameter.ipv4TransportAddressTLV.fBit-18",
+        "Ipv4TransportAddressTLVType": "ldpHello.header.optionalParameter.ipv4TransportAddressTLV.type-19",
+        "Ipv4TransportAddressTLVLength": "ldpHello.header.optionalParameter.ipv4TransportAddressTLV.length-20",
+        "Ipv4TransportAddressTLVIpv4Address": "ldpHello.header.optionalParameter.ipv4TransportAddressTLV.ipv4Address-21",
+        "ConfigurationSequenceNumberTLVUBit": "ldpHello.header.optionalParameter.configurationSequenceNumberTLV.uBit-22",
+        "ConfigurationSequenceNumberTLVFBit": "ldpHello.header.optionalParameter.configurationSequenceNumberTLV.fBit-23",
+        "ConfigurationSequenceNumberTLVType": "ldpHello.header.optionalParameter.configurationSequenceNumberTLV.type-24",
+        "ConfigurationSequenceNumberTLVLength": "ldpHello.header.optionalParameter.configurationSequenceNumberTLV.length-25",
+        "ConfigurationSequenceNumberTLVSequenceNumber": "ldpHello.header.optionalParameter.configurationSequenceNumberTLV.sequenceNumber-26",
+        "Ipv6TransportAddressTLVUBit": "ldpHello.header.optionalParameter.ipv6TransportAddressTLV.uBit-27",
+        "Ipv6TransportAddressTLVFBit": "ldpHello.header.optionalParameter.ipv6TransportAddressTLV.fBit-28",
+        "Ipv6TransportAddressTLVType": "ldpHello.header.optionalParameter.ipv6TransportAddressTLV.type-29",
+        "Ipv6TransportAddressTLVLength": "ldpHello.header.optionalParameter.ipv6TransportAddressTLV.length-30",
+        "Ipv6TransportAddressTLVIpv6Address": "ldpHello.header.optionalParameter.ipv6TransportAddressTLV.ipv6Address-31",
     }
 
     def __init__(self, parent, list_op=False):
@@ -50,7 +50,8 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -60,7 +61,10 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -70,7 +74,8 @@ class LdpHello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -80,7 +85,10 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -91,7 +99,8 @@ class LdpHello(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -101,7 +110,8 @@ class LdpHello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -111,7 +121,8 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -121,7 +132,10 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     @property
     def CommonHelloParametersTLVUBit(self):
@@ -132,7 +146,10 @@ class LdpHello(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVUBit"])
+        )
 
     @property
     def CommonHelloParametersTLVFBit(self):
@@ -143,7 +160,10 @@ class LdpHello(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVFBit"])
+        )
 
     @property
     def CommonHelloParametersTLVType(self):
@@ -153,7 +173,10 @@ class LdpHello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVType"])
+        )
 
     @property
     def CommonHelloParametersTLVLength(self):
@@ -163,7 +186,11 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVLength"]),
+        )
 
     @property
     def CommonHelloParametersTLVHoldTime(self):
@@ -173,7 +200,11 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVHoldTime']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVHoldTime"]),
+        )
 
     @property
     def CommonHelloParametersTLVTBit(self):
@@ -184,7 +215,10 @@ class LdpHello(Base):
         Available enum values: Link hello, 0, Targeted hello, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVTBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVTBit"])
+        )
 
     @property
     def CommonHelloParametersTLVRBit(self):
@@ -195,7 +229,10 @@ class LdpHello(Base):
         Available enum values: No request, 0, Request periodic targeted hellos, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVRBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVRBit"])
+        )
 
     @property
     def CommonHelloParametersTLVReserved(self):
@@ -205,7 +242,11 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHelloParametersTLVReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonHelloParametersTLVReserved"]),
+        )
 
     @property
     def Ipv4TransportAddressTLVUBit(self):
@@ -216,7 +257,10 @@ class LdpHello(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4TransportAddressTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4TransportAddressTLVUBit"])
+        )
 
     @property
     def Ipv4TransportAddressTLVFBit(self):
@@ -227,7 +271,10 @@ class LdpHello(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4TransportAddressTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4TransportAddressTLVFBit"])
+        )
 
     @property
     def Ipv4TransportAddressTLVType(self):
@@ -237,7 +284,10 @@ class LdpHello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4TransportAddressTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4TransportAddressTLVType"])
+        )
 
     @property
     def Ipv4TransportAddressTLVLength(self):
@@ -247,7 +297,11 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4TransportAddressTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4TransportAddressTLVLength"]),
+        )
 
     @property
     def Ipv4TransportAddressTLVIpv4Address(self):
@@ -257,7 +311,13 @@ class LdpHello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4TransportAddressTLVIpv4Address']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ipv4TransportAddressTLVIpv4Address"]
+            ),
+        )
 
     @property
     def ConfigurationSequenceNumberTLVUBit(self):
@@ -268,7 +328,13 @@ class LdpHello(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigurationSequenceNumberTLVUBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigurationSequenceNumberTLVUBit"]
+            ),
+        )
 
     @property
     def ConfigurationSequenceNumberTLVFBit(self):
@@ -279,7 +345,13 @@ class LdpHello(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigurationSequenceNumberTLVFBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigurationSequenceNumberTLVFBit"]
+            ),
+        )
 
     @property
     def ConfigurationSequenceNumberTLVType(self):
@@ -289,7 +361,13 @@ class LdpHello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigurationSequenceNumberTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigurationSequenceNumberTLVType"]
+            ),
+        )
 
     @property
     def ConfigurationSequenceNumberTLVLength(self):
@@ -299,7 +377,13 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigurationSequenceNumberTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigurationSequenceNumberTLVLength"]
+            ),
+        )
 
     @property
     def ConfigurationSequenceNumberTLVSequenceNumber(self):
@@ -309,7 +393,13 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigurationSequenceNumberTLVSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigurationSequenceNumberTLVSequenceNumber"]
+            ),
+        )
 
     @property
     def Ipv6TransportAddressTLVUBit(self):
@@ -320,7 +410,10 @@ class LdpHello(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6TransportAddressTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6TransportAddressTLVUBit"])
+        )
 
     @property
     def Ipv6TransportAddressTLVFBit(self):
@@ -331,7 +424,10 @@ class LdpHello(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6TransportAddressTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6TransportAddressTLVFBit"])
+        )
 
     @property
     def Ipv6TransportAddressTLVType(self):
@@ -341,7 +437,10 @@ class LdpHello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6TransportAddressTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6TransportAddressTLVType"])
+        )
 
     @property
     def Ipv6TransportAddressTLVLength(self):
@@ -351,7 +450,11 @@ class LdpHello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6TransportAddressTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv6TransportAddressTLVLength"]),
+        )
 
     @property
     def Ipv6TransportAddressTLVIpv6Address(self):
@@ -361,7 +464,13 @@ class LdpHello(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6TransportAddressTLVIpv6Address']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ipv6TransportAddressTLVIpv6Address"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

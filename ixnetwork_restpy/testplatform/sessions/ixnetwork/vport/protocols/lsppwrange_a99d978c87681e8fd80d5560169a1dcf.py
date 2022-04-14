@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,121 +35,130 @@ class LspPwRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lspPwRange'
+    _SDM_NAME = "lspPwRange"
     _SDM_ATT_MAP = {
-        'AlarmTrafficClass': 'alarmTrafficClass',
-        'AlarmType': 'alarmType',
-        'ApsTrafficClass': 'apsTrafficClass',
-        'ApsType': 'apsType',
-        'CccvInterval': 'cccvInterval',
-        'CccvTrafficClass': 'cccvTrafficClass',
-        'CccvType': 'cccvType',
-        'Description': 'description',
-        'DestAcId': 'destAcId',
-        'DestAcIdStep': 'destAcIdStep',
-        'DestGlobalId': 'destGlobalId',
-        'DestLspNumber': 'destLspNumber',
-        'DestLspNumberStep': 'destLspNumberStep',
-        'DestMepId': 'destMepId',
-        'DestMepIdStep': 'destMepIdStep',
-        'DestNodeId': 'destNodeId',
-        'DestTunnelNumber': 'destTunnelNumber',
-        'DestTunnelNumberStep': 'destTunnelNumberStep',
-        'DestVplsIdAsNumber': 'destVplsIdAsNumber',
-        'DestVplsIdAsNumberStep': 'destVplsIdAsNumberStep',
-        'DestVplsIdAssignedNumber': 'destVplsIdAssignedNumber',
-        'DestVplsIdAssignedNumberStep': 'destVplsIdAssignedNumberStep',
-        'DestVplsIdIpAddress': 'destVplsIdIpAddress',
-        'DestVplsIdIpAddressStep': 'destVplsIdIpAddressStep',
-        'DestVplsIdType': 'destVplsIdType',
-        'DmTimeFormat': 'dmTimeFormat',
-        'DmTrafficClass': 'dmTrafficClass',
-        'DmType': 'dmType',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'IpAddress': 'ipAddress',
-        'IpAddressMask': 'ipAddressMask',
-        'IpAddressStep': 'ipAddressStep',
-        'IpHostPerLsp': 'ipHostPerLsp',
-        'IpType': 'ipType',
-        'LmCounterType': 'lmCounterType',
-        'LmInitialRxValue': 'lmInitialRxValue',
-        'LmInitialTxValue': 'lmInitialTxValue',
-        'LmRxStep': 'lmRxStep',
-        'LmTrafficClass': 'lmTrafficClass',
-        'LmTxStep': 'lmTxStep',
-        'LmType': 'lmType',
-        'LspIncomingLabel': 'lspIncomingLabel',
-        'LspIncomingLabelStep': 'lspIncomingLabelStep',
-        'LspOutgoingLabel': 'lspOutgoingLabel',
-        'LspOutgoingLabelStep': 'lspOutgoingLabelStep',
-        'MacAddress': 'macAddress',
-        'MacPerPw': 'macPerPw',
-        'MegIdIntegerStep': 'megIdIntegerStep',
-        'MegIdPrefix': 'megIdPrefix',
-        'MegLevel': 'megLevel',
-        'MinRxInterval': 'minRxInterval',
-        'MinTxInterval': 'minTxInterval',
-        'NumberOfLsp': 'numberOfLsp',
-        'NumberOfPwPerLsp': 'numberOfPwPerLsp',
-        'OnDemandCvTrafficClass': 'onDemandCvTrafficClass',
-        'PeerLspOrPwRange': 'peerLspOrPwRange',
-        'PeerNestedLspPwRange': 'peerNestedLspPwRange',
-        'PwIncomingLabel': 'pwIncomingLabel',
-        'PwIncomingLabelStep': 'pwIncomingLabelStep',
-        'PwIncomingLabelStepAcrossLsp': 'pwIncomingLabelStepAcrossLsp',
-        'PwOutgoingLabel': 'pwOutgoingLabel',
-        'PwOutgoingLabelStep': 'pwOutgoingLabelStep',
-        'PwOutgoingLabelStepAcrossLsp': 'pwOutgoingLabelStepAcrossLsp',
-        'PwStatusFaultReplyInterval': 'pwStatusFaultReplyInterval',
-        'PwStatusTrafficClass': 'pwStatusTrafficClass',
-        'RangeRole': 'rangeRole',
-        'RepeatMac': 'repeatMac',
-        'Revertive': 'revertive',
-        'SkipZeroVlanId': 'skipZeroVlanId',
-        'SrcAcId': 'srcAcId',
-        'SrcAcIdStep': 'srcAcIdStep',
-        'SrcGlobalId': 'srcGlobalId',
-        'SrcLspNumber': 'srcLspNumber',
-        'SrcLspNumberStep': 'srcLspNumberStep',
-        'SrcMepId': 'srcMepId',
-        'SrcMepIdStep': 'srcMepIdStep',
-        'SrcNodeId': 'srcNodeId',
-        'SrcTunnelNumber': 'srcTunnelNumber',
-        'SrcTunnelNumberStep': 'srcTunnelNumberStep',
-        'SrcVplsIdAsNumber': 'srcVplsIdAsNumber',
-        'SrcVplsIdAsNumberStep': 'srcVplsIdAsNumberStep',
-        'SrcVplsIdAssignedNumber': 'srcVplsIdAssignedNumber',
-        'SrcVplsIdAssignedNumberStep': 'srcVplsIdAssignedNumberStep',
-        'SrcVplsIdIpAddress': 'srcVplsIdIpAddress',
-        'SrcVplsIdIpAddressStep': 'srcVplsIdIpAddressStep',
-        'SrcVplsIdType': 'srcVplsIdType',
-        'SupportSlowStart': 'supportSlowStart',
-        'TrafficGroupId': 'trafficGroupId',
-        'TypeOfProtectionSwitching': 'typeOfProtectionSwitching',
-        'TypeOfRange': 'typeOfRange',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
-        'VlanIncrementMode': 'vlanIncrementMode',
-        'VlanPriority': 'vlanPriority',
-        'VlanTpId': 'vlanTpId',
-        'WaitToRevertTime': 'waitToRevertTime',
+        "AlarmTrafficClass": "alarmTrafficClass",
+        "AlarmType": "alarmType",
+        "ApsTrafficClass": "apsTrafficClass",
+        "ApsType": "apsType",
+        "CccvInterval": "cccvInterval",
+        "CccvTrafficClass": "cccvTrafficClass",
+        "CccvType": "cccvType",
+        "Description": "description",
+        "DestAcId": "destAcId",
+        "DestAcIdStep": "destAcIdStep",
+        "DestGlobalId": "destGlobalId",
+        "DestLspNumber": "destLspNumber",
+        "DestLspNumberStep": "destLspNumberStep",
+        "DestMepId": "destMepId",
+        "DestMepIdStep": "destMepIdStep",
+        "DestNodeId": "destNodeId",
+        "DestTunnelNumber": "destTunnelNumber",
+        "DestTunnelNumberStep": "destTunnelNumberStep",
+        "DestVplsIdAsNumber": "destVplsIdAsNumber",
+        "DestVplsIdAsNumberStep": "destVplsIdAsNumberStep",
+        "DestVplsIdAssignedNumber": "destVplsIdAssignedNumber",
+        "DestVplsIdAssignedNumberStep": "destVplsIdAssignedNumberStep",
+        "DestVplsIdIpAddress": "destVplsIdIpAddress",
+        "DestVplsIdIpAddressStep": "destVplsIdIpAddressStep",
+        "DestVplsIdType": "destVplsIdType",
+        "DmTimeFormat": "dmTimeFormat",
+        "DmTrafficClass": "dmTrafficClass",
+        "DmType": "dmType",
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "IpAddress": "ipAddress",
+        "IpAddressMask": "ipAddressMask",
+        "IpAddressStep": "ipAddressStep",
+        "IpHostPerLsp": "ipHostPerLsp",
+        "IpType": "ipType",
+        "LmCounterType": "lmCounterType",
+        "LmInitialRxValue": "lmInitialRxValue",
+        "LmInitialTxValue": "lmInitialTxValue",
+        "LmRxStep": "lmRxStep",
+        "LmTrafficClass": "lmTrafficClass",
+        "LmTxStep": "lmTxStep",
+        "LmType": "lmType",
+        "LspIncomingLabel": "lspIncomingLabel",
+        "LspIncomingLabelStep": "lspIncomingLabelStep",
+        "LspOutgoingLabel": "lspOutgoingLabel",
+        "LspOutgoingLabelStep": "lspOutgoingLabelStep",
+        "MacAddress": "macAddress",
+        "MacPerPw": "macPerPw",
+        "MegIdIntegerStep": "megIdIntegerStep",
+        "MegIdPrefix": "megIdPrefix",
+        "MegLevel": "megLevel",
+        "MinRxInterval": "minRxInterval",
+        "MinTxInterval": "minTxInterval",
+        "NumberOfLsp": "numberOfLsp",
+        "NumberOfPwPerLsp": "numberOfPwPerLsp",
+        "OnDemandCvTrafficClass": "onDemandCvTrafficClass",
+        "PeerLspOrPwRange": "peerLspOrPwRange",
+        "PeerNestedLspPwRange": "peerNestedLspPwRange",
+        "PwIncomingLabel": "pwIncomingLabel",
+        "PwIncomingLabelStep": "pwIncomingLabelStep",
+        "PwIncomingLabelStepAcrossLsp": "pwIncomingLabelStepAcrossLsp",
+        "PwOutgoingLabel": "pwOutgoingLabel",
+        "PwOutgoingLabelStep": "pwOutgoingLabelStep",
+        "PwOutgoingLabelStepAcrossLsp": "pwOutgoingLabelStepAcrossLsp",
+        "PwStatusFaultReplyInterval": "pwStatusFaultReplyInterval",
+        "PwStatusTrafficClass": "pwStatusTrafficClass",
+        "RangeRole": "rangeRole",
+        "RepeatMac": "repeatMac",
+        "Revertive": "revertive",
+        "SkipZeroVlanId": "skipZeroVlanId",
+        "SrcAcId": "srcAcId",
+        "SrcAcIdStep": "srcAcIdStep",
+        "SrcGlobalId": "srcGlobalId",
+        "SrcLspNumber": "srcLspNumber",
+        "SrcLspNumberStep": "srcLspNumberStep",
+        "SrcMepId": "srcMepId",
+        "SrcMepIdStep": "srcMepIdStep",
+        "SrcNodeId": "srcNodeId",
+        "SrcTunnelNumber": "srcTunnelNumber",
+        "SrcTunnelNumberStep": "srcTunnelNumberStep",
+        "SrcVplsIdAsNumber": "srcVplsIdAsNumber",
+        "SrcVplsIdAsNumberStep": "srcVplsIdAsNumberStep",
+        "SrcVplsIdAssignedNumber": "srcVplsIdAssignedNumber",
+        "SrcVplsIdAssignedNumberStep": "srcVplsIdAssignedNumberStep",
+        "SrcVplsIdIpAddress": "srcVplsIdIpAddress",
+        "SrcVplsIdIpAddressStep": "srcVplsIdIpAddressStep",
+        "SrcVplsIdType": "srcVplsIdType",
+        "SupportSlowStart": "supportSlowStart",
+        "TrafficGroupId": "trafficGroupId",
+        "TypeOfProtectionSwitching": "typeOfProtectionSwitching",
+        "TypeOfRange": "typeOfRange",
+        "VlanCount": "vlanCount",
+        "VlanId": "vlanId",
+        "VlanIncrementMode": "vlanIncrementMode",
+        "VlanPriority": "vlanPriority",
+        "VlanTpId": "vlanTpId",
+        "WaitToRevertTime": "waitToRevertTime",
     }
     _SDM_ENUM_MAP = {
-        'alarmType': ['ietf', 'y1731'],
-        'apsType': ['ietf', 'y1731'],
-        'cccvType': ['bfdCc', 'bfdCccv', 'y1731', 'none'],
-        'destVplsIdType': ['asNumber', 'ipAddress', 'asNumber4Bytes'],
-        'dmTimeFormat': ['ieee', 'ntp'],
-        'dmType': ['ietf', 'y1731'],
-        'ipType': ['ipv4', 'ipv6'],
-        'lmCounterType': ['32Bit', '64Bit'],
-        'lmType': ['ietf', 'y1731'],
-        'rangeRole': ['none', 'working', 'protect'],
-        'srcVplsIdType': ['asNumber', 'ipAddress', 'asNumber4Bytes'],
-        'typeOfProtectionSwitching': ['1+1Unidirectional', '1:1Bidirectional', '1+1Bidirectional'],
-        'typeOfRange': ['lsp', 'pw', 'nestedLspPw'],
-        'vlanIncrementMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        "alarmType": ["ietf", "y1731"],
+        "apsType": ["ietf", "y1731"],
+        "cccvType": ["bfdCc", "bfdCccv", "y1731", "none"],
+        "destVplsIdType": ["asNumber", "ipAddress", "asNumber4Bytes"],
+        "dmTimeFormat": ["ieee", "ntp"],
+        "dmType": ["ietf", "y1731"],
+        "ipType": ["ipv4", "ipv6"],
+        "lmCounterType": ["32Bit", "64Bit"],
+        "lmType": ["ietf", "y1731"],
+        "rangeRole": ["none", "working", "protect"],
+        "srcVplsIdType": ["asNumber", "ipAddress", "asNumber4Bytes"],
+        "typeOfProtectionSwitching": [
+            "1+1Unidirectional",
+            "1:1Bidirectional",
+            "1+1Bidirectional",
+        ],
+        "typeOfRange": ["lsp", "pw", "nestedLspPw"],
+        "vlanIncrementMode": [
+            "noIncrement",
+            "parallelIncrement",
+            "innerFirst",
+            "outerFirst",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -162,11 +172,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the Alarm Traffic Class for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlarmTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlarmTrafficClass"])
+
     @AlarmTrafficClass.setter
     def AlarmTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlarmTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlarmTrafficClass"], value)
 
     @property
     def AlarmType(self):
@@ -176,11 +187,12 @@ class LspPwRange(Base):
         -------
         - str(ietf | y1731): This signifies the Alarm Type. Possible values include IETF and Y.1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlarmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlarmType"])
+
     @AlarmType.setter
     def AlarmType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlarmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlarmType"], value)
 
     @property
     def ApsTrafficClass(self):
@@ -190,11 +202,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the Traffic Class of the APS message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsTrafficClass"])
+
     @ApsTrafficClass.setter
     def ApsTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApsTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApsTrafficClass"], value)
 
     @property
     def ApsType(self):
@@ -204,25 +217,27 @@ class LspPwRange(Base):
         -------
         - str(ietf | y1731): This signifies the APS type. Possible values include IETF and Y.1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsType"])
+
     @ApsType.setter
     def ApsType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApsType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApsType"], value)
 
     @property
     def CccvInterval(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: This signifies the CCCV Interval in milliseconds.If cccv type is bfd then this field will take any value between 3-600000, if cccv type is y1731 then cccv interval can be configured to values available in the drop down menu.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CccvInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["CccvInterval"])
+
     @CccvInterval.setter
     def CccvInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CccvInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CccvInterval"], value)
 
     @property
     def CccvTrafficClass(self):
@@ -232,11 +247,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the CCCV Traffic Class.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CccvTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["CccvTrafficClass"])
+
     @CccvTrafficClass.setter
     def CccvTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CccvTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CccvTrafficClass"], value)
 
     @property
     def CccvType(self):
@@ -246,11 +262,12 @@ class LspPwRange(Base):
         -------
         - str(bfdCc | bfdCccv | y1731 | none): This signifies the CCCV Type. Possible values include BFD CC, Y.1731 and None.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CccvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["CccvType"])
+
     @CccvType.setter
     def CccvType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CccvType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CccvType"], value)
 
     @property
     def Description(self):
@@ -260,11 +277,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the description of the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DestAcId(self):
@@ -274,11 +292,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination AC id. This is the ac id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestAcId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestAcId"])
+
     @DestAcId.setter
     def DestAcId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestAcId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestAcId"], value)
 
     @property
     def DestAcIdStep(self):
@@ -288,11 +307,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination AC id step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestAcIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestAcIdStep"])
+
     @DestAcIdStep.setter
     def DestAcIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestAcIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestAcIdStep"], value)
 
     @property
     def DestGlobalId(self):
@@ -302,11 +322,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the global id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestGlobalId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestGlobalId"])
+
     @DestGlobalId.setter
     def DestGlobalId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestGlobalId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestGlobalId"], value)
 
     @property
     def DestLspNumber(self):
@@ -316,11 +337,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the lsp number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestLspNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestLspNumber"])
+
     @DestLspNumber.setter
     def DestLspNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestLspNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestLspNumber"], value)
 
     @property
     def DestLspNumberStep(self):
@@ -330,11 +352,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source LSP Number step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestLspNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestLspNumberStep"])
+
     @DestLspNumberStep.setter
     def DestLspNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestLspNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestLspNumberStep"], value)
 
     @property
     def DestMepId(self):
@@ -344,11 +367,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination MEP Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestMepId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestMepId"])
+
     @DestMepId.setter
     def DestMepId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestMepId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestMepId"], value)
 
     @property
     def DestMepIdStep(self):
@@ -358,11 +382,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the Destination MEP Id step value in integer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestMepIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestMepIdStep"])
+
     @DestMepIdStep.setter
     def DestMepIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestMepIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestMepIdStep"], value)
 
     @property
     def DestNodeId(self):
@@ -372,11 +397,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination node id. This is the node id that is expected on the peer, if there is a mismatch with the one configured on the peer LSP/PW, On Demand Ping and On Demand Traceroute will result in failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestNodeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestNodeId"])
+
     @DestNodeId.setter
     def DestNodeId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestNodeId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestNodeId"], value)
 
     @property
     def DestTunnelNumber(self):
@@ -386,11 +412,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the tunnel number that is expected on the peer, if there is a mismatch with the one configured on the peer LSP or PW, On Demand Ping and On Demand Traceroute will result in failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestTunnelNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestTunnelNumber"])
+
     @DestTunnelNumber.setter
     def DestTunnelNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestTunnelNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestTunnelNumber"], value)
 
     @property
     def DestTunnelNumberStep(self):
@@ -400,11 +427,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination tunnel number step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestTunnelNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestTunnelNumberStep"])
+
     @DestTunnelNumberStep.setter
     def DestTunnelNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestTunnelNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestTunnelNumberStep"], value)
 
     @property
     def DestVplsIdAsNumber(self):
@@ -414,11 +442,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdAsNumber"])
+
     @DestVplsIdAsNumber.setter
     def DestVplsIdAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdAsNumber"], value)
 
     @property
     def DestVplsIdAsNumberStep(self):
@@ -428,11 +457,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the step of destination vpls id AS number by which the AS number will be incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdAsNumberStep"])
+
     @DestVplsIdAsNumberStep.setter
     def DestVplsIdAsNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdAsNumberStep"], value)
 
     @property
     def DestVplsIdAssignedNumber(self):
@@ -442,11 +472,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the destination VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber, the max value can be 4294967295.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdAssignedNumber"])
+
     @DestVplsIdAssignedNumber.setter
     def DestVplsIdAssignedNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdAssignedNumber"], value)
 
     @property
     def DestVplsIdAssignedNumberStep(self):
@@ -456,11 +487,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdAssignedNumberStep"])
+
     @DestVplsIdAssignedNumberStep.setter
     def DestVplsIdAssignedNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdAssignedNumberStep"], value)
 
     @property
     def DestVplsIdIpAddress(self):
@@ -470,11 +502,12 @@ class LspPwRange(Base):
         -------
         - str: This specifies the IP Address configured as destination VPLS Id IP Address when VPLS Id type is set as ipAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdIpAddress"])
+
     @DestVplsIdIpAddress.setter
     def DestVplsIdIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdIpAddress"], value)
 
     @property
     def DestVplsIdIpAddressStep(self):
@@ -484,11 +517,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the step of ip address by which the ip address will be incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdIpAddressStep"])
+
     @DestVplsIdIpAddressStep.setter
     def DestVplsIdIpAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdIpAddressStep"], value)
 
     @property
     def DestVplsIdType(self):
@@ -498,11 +532,12 @@ class LspPwRange(Base):
         -------
         - str(asNumber | ipAddress | asNumber4Bytes): This signifies the destination VplsId type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestVplsIdType"])
+
     @DestVplsIdType.setter
     def DestVplsIdType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestVplsIdType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestVplsIdType"], value)
 
     @property
     def DmTimeFormat(self):
@@ -512,11 +547,12 @@ class LspPwRange(Base):
         -------
         - str(ieee | ntp): This signifies the DM Time Format. Possible values include IEEE and NTP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmTimeFormat'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmTimeFormat"])
+
     @DmTimeFormat.setter
     def DmTimeFormat(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmTimeFormat'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmTimeFormat"], value)
 
     @property
     def DmTrafficClass(self):
@@ -526,11 +562,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the DM Traffic Class for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmTrafficClass"])
+
     @DmTrafficClass.setter
     def DmTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmTrafficClass"], value)
 
     @property
     def DmType(self):
@@ -540,11 +577,12 @@ class LspPwRange(Base):
         -------
         - str(ietf | y1731): This signifies the DM Type. Possible values include IETF and Y.1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmType"])
+
     @DmType.setter
     def DmType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmType"], value)
 
     @property
     def EnableVlan(self):
@@ -554,11 +592,12 @@ class LspPwRange(Base):
         -------
         - bool: If true, the MAC Traffic will have a vlan header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -568,11 +607,12 @@ class LspPwRange(Base):
         -------
         - bool: This signifies the enablement of this LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpAddress(self):
@@ -582,11 +622,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpAddressMask(self):
@@ -596,11 +637,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the IP Address Mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressMask"])
+
     @IpAddressMask.setter
     def IpAddressMask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressMask"], value)
 
     @property
     def IpAddressStep(self):
@@ -610,11 +652,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the IP Address Step Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressStep"])
+
     @IpAddressStep.setter
     def IpAddressStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressStep"], value)
 
     @property
     def IpHostPerLsp(self):
@@ -624,11 +667,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the total number of IP hosts per lsp.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpHostPerLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpHostPerLsp"])
+
     @IpHostPerLsp.setter
     def IpHostPerLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpHostPerLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpHostPerLsp"], value)
 
     @property
     def IpType(self):
@@ -638,11 +682,12 @@ class LspPwRange(Base):
         -------
         - str(ipv4 | ipv6): This signifies the IP Type. Possible values include IPv4 and IPv6.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def LmCounterType(self):
@@ -652,11 +697,12 @@ class LspPwRange(Base):
         -------
         - str(32Bit | 64Bit): This signifies the LM Counter Type. Possible values include 32 Bit and 64 Bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmCounterType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmCounterType"])
+
     @LmCounterType.setter
     def LmCounterType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmCounterType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmCounterType"], value)
 
     @property
     def LmInitialRxValue(self):
@@ -666,11 +712,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LM Initial Rx value for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmInitialRxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmInitialRxValue"])
+
     @LmInitialRxValue.setter
     def LmInitialRxValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmInitialRxValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmInitialRxValue"], value)
 
     @property
     def LmInitialTxValue(self):
@@ -680,11 +727,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LM Initial Tx value for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmInitialTxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmInitialTxValue"])
+
     @LmInitialTxValue.setter
     def LmInitialTxValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmInitialTxValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmInitialTxValue"], value)
 
     @property
     def LmRxStep(self):
@@ -694,11 +742,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LM Rx step value for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmRxStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmRxStep"])
+
     @LmRxStep.setter
     def LmRxStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmRxStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmRxStep"], value)
 
     @property
     def LmTrafficClass(self):
@@ -708,11 +757,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LM Traffic Class.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmTrafficClass"])
+
     @LmTrafficClass.setter
     def LmTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmTrafficClass"], value)
 
     @property
     def LmTxStep(self):
@@ -722,11 +772,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LM Tx Step value for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmTxStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmTxStep"])
+
     @LmTxStep.setter
     def LmTxStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmTxStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmTxStep"], value)
 
     @property
     def LmType(self):
@@ -736,11 +787,12 @@ class LspPwRange(Base):
         -------
         - str(ietf | y1731): This signifies the LM Type. Possible values include IETF and Y.1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmType"])
+
     @LmType.setter
     def LmType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmType"], value)
 
     @property
     def LspIncomingLabel(self):
@@ -750,11 +802,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LSP Incoming label value. All mpls-tp packets are expected to be received with this LSP label value, if there is a mismatch of this value with the peer's outgoing LSP label value, cccv sessions will not come up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspIncomingLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspIncomingLabel"])
+
     @LspIncomingLabel.setter
     def LspIncomingLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspIncomingLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspIncomingLabel"], value)
 
     @property
     def LspIncomingLabelStep(self):
@@ -764,11 +817,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LSP Incoming Label Step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspIncomingLabelStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspIncomingLabelStep"])
+
     @LspIncomingLabelStep.setter
     def LspIncomingLabelStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspIncomingLabelStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspIncomingLabelStep"], value)
 
     @property
     def LspOutgoingLabel(self):
@@ -778,11 +832,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LSP Outgoing Label value. All mpls-tp packets are transmitted with this LSP label from the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspOutgoingLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspOutgoingLabel"])
+
     @LspOutgoingLabel.setter
     def LspOutgoingLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspOutgoingLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspOutgoingLabel"], value)
 
     @property
     def LspOutgoingLabelStep(self):
@@ -792,11 +847,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the LSP Outgoing Label Step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspOutgoingLabelStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspOutgoingLabelStep"])
+
     @LspOutgoingLabelStep.setter
     def LspOutgoingLabelStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspOutgoingLabelStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspOutgoingLabelStep"], value)
 
     @property
     def MacAddress(self):
@@ -806,11 +862,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the starting MAC address of the range, this will be used for traffic generation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
+
     @MacAddress.setter
     def MacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacAddress"], value)
 
     @property
     def MacPerPw(self):
@@ -820,11 +877,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the number of MACs behind each PW, these are the MACs that are used for traffic generation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacPerPw'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacPerPw"])
+
     @MacPerPw.setter
     def MacPerPw(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacPerPw'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacPerPw"], value)
 
     @property
     def MegIdIntegerStep(self):
@@ -834,11 +892,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the MEG Id step value in integer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MegIdIntegerStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MegIdIntegerStep"])
+
     @MegIdIntegerStep.setter
     def MegIdIntegerStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MegIdIntegerStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MegIdIntegerStep"], value)
 
     @property
     def MegIdPrefix(self):
@@ -848,11 +907,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the prefix for the MEG Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MegIdPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["MegIdPrefix"])
+
     @MegIdPrefix.setter
     def MegIdPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MegIdPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MegIdPrefix"], value)
 
     @property
     def MegLevel(self):
@@ -862,11 +922,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the peer range of the nested LSP PW value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MegLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MegLevel"])
+
     @MegLevel.setter
     def MegLevel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MegLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MegLevel"], value)
 
     @property
     def MinRxInterval(self):
@@ -876,11 +937,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the CCCV minimum receive interval of cc messages, in milliseconds. Not valid for cccv type y1731.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRxInterval"])
+
     @MinRxInterval.setter
     def MinRxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRxInterval"], value)
 
     @property
     def MinTxInterval(self):
@@ -890,11 +952,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the CCCV minimum transmit interval of cc messages, in milliseconds. Valid for all types of cccv.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinTxInterval"])
+
     @MinTxInterval.setter
     def MinTxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinTxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinTxInterval"], value)
 
     @property
     def NumberOfLsp(self):
@@ -904,11 +967,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the total number of LSPs for this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfLsp"])
+
     @NumberOfLsp.setter
     def NumberOfLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfLsp"], value)
 
     @property
     def NumberOfPwPerLsp(self):
@@ -918,11 +982,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the total number of PWs per LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPwPerLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPwPerLsp"])
+
     @NumberOfPwPerLsp.setter
     def NumberOfPwPerLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfPwPerLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfPwPerLsp"], value)
 
     @property
     def OnDemandCvTrafficClass(self):
@@ -932,11 +997,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the On Demand CV Traffic Class for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["OnDemandCvTrafficClass"])
+
     @OnDemandCvTrafficClass.setter
     def OnDemandCvTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OnDemandCvTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OnDemandCvTrafficClass"], value)
 
     @property
     def PeerLspOrPwRange(self):
@@ -946,11 +1012,12 @@ class LspPwRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange): This signifies the type of Peer LSP Or PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerLspOrPwRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerLspOrPwRange"])
+
     @PeerLspOrPwRange.setter
     def PeerLspOrPwRange(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerLspOrPwRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerLspOrPwRange"], value)
 
     @property
     def PeerNestedLspPwRange(self):
@@ -960,11 +1027,12 @@ class LspPwRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange): This signifies the peer range of the nested LSP PW value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerNestedLspPwRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerNestedLspPwRange"])
+
     @PeerNestedLspPwRange.setter
     def PeerNestedLspPwRange(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerNestedLspPwRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerNestedLspPwRange"], value)
 
     @property
     def PwIncomingLabel(self):
@@ -974,11 +1042,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwIncomingLabel"])
+
     @PwIncomingLabel.setter
     def PwIncomingLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwIncomingLabel"], value)
 
     @property
     def PwIncomingLabelStep(self):
@@ -988,11 +1057,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Incoming Label Step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabelStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwIncomingLabelStep"])
+
     @PwIncomingLabelStep.setter
     def PwIncomingLabelStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabelStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwIncomingLabelStep"], value)
 
     @property
     def PwIncomingLabelStepAcrossLsp(self):
@@ -1002,11 +1072,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Incoming Label Step value across LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabelStepAcrossLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwIncomingLabelStepAcrossLsp"])
+
     @PwIncomingLabelStepAcrossLsp.setter
     def PwIncomingLabelStepAcrossLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabelStepAcrossLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwIncomingLabelStepAcrossLsp"], value)
 
     @property
     def PwOutgoingLabel(self):
@@ -1016,11 +1087,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Outgoing Label value. All mpls-tp packets are transmitted with this PW label from the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwOutgoingLabel"])
+
     @PwOutgoingLabel.setter
     def PwOutgoingLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwOutgoingLabel"], value)
 
     @property
     def PwOutgoingLabelStep(self):
@@ -1030,11 +1102,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Outgoing Label Step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwOutgoingLabelStep"])
+
     @PwOutgoingLabelStep.setter
     def PwOutgoingLabelStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwOutgoingLabelStep"], value)
 
     @property
     def PwOutgoingLabelStepAcrossLsp(self):
@@ -1044,11 +1117,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Outgoing Label Step value across LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStepAcrossLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwOutgoingLabelStepAcrossLsp"])
+
     @PwOutgoingLabelStepAcrossLsp.setter
     def PwOutgoingLabelStepAcrossLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStepAcrossLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwOutgoingLabelStepAcrossLsp"], value)
 
     @property
     def PwStatusFaultReplyInterval(self):
@@ -1058,11 +1132,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Status Fault Reply Interval in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusFaultReplyInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusFaultReplyInterval"])
+
     @PwStatusFaultReplyInterval.setter
     def PwStatusFaultReplyInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusFaultReplyInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusFaultReplyInterval"], value)
 
     @property
     def PwStatusTrafficClass(self):
@@ -1072,11 +1147,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the PW Status Traffic Class for LSP PW Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusTrafficClass"])
+
     @PwStatusTrafficClass.setter
     def PwStatusTrafficClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusTrafficClass"], value)
 
     @property
     def RangeRole(self):
@@ -1086,11 +1162,12 @@ class LspPwRange(Base):
         -------
         - str(none | working | protect): This signifies the role of the range. Possible values include None, Working and Protect.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RangeRole'])
+        return self._get_attribute(self._SDM_ATT_MAP["RangeRole"])
+
     @RangeRole.setter
     def RangeRole(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RangeRole'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RangeRole"], value)
 
     @property
     def RepeatMac(self):
@@ -1100,11 +1177,12 @@ class LspPwRange(Base):
         -------
         - bool: If true, and the Count is greater than 1, the same address value will be repeated for all MAC addresses within a PW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RepeatMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["RepeatMac"])
+
     @RepeatMac.setter
     def RepeatMac(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RepeatMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RepeatMac"], value)
 
     @property
     def Revertive(self):
@@ -1114,11 +1192,12 @@ class LspPwRange(Base):
         -------
         - bool: This signifies the switching mode, whether revertive or non-revertive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Revertive'])
+        return self._get_attribute(self._SDM_ATT_MAP["Revertive"])
+
     @Revertive.setter
     def Revertive(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Revertive'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Revertive"], value)
 
     @property
     def SkipZeroVlanId(self):
@@ -1128,11 +1207,12 @@ class LspPwRange(Base):
         -------
         - bool: This signifies the VLAN Id 0 will not be used for any MAC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipZeroVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipZeroVlanId"])
+
     @SkipZeroVlanId.setter
     def SkipZeroVlanId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipZeroVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipZeroVlanId"], value)
 
     @property
     def SrcAcId(self):
@@ -1142,11 +1222,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the AC Id that is carried in the Echo Request message that is transmitted from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcAcId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcAcId"])
+
     @SrcAcId.setter
     def SrcAcId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcAcId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcAcId"], value)
 
     @property
     def SrcAcIdStep(self):
@@ -1156,11 +1237,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source AC id step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcAcIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcAcIdStep"])
+
     @SrcAcIdStep.setter
     def SrcAcIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcAcIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcAcIdStep"], value)
 
     @property
     def SrcGlobalId(self):
@@ -1170,11 +1252,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source global id. This is the global id that is carried in the Echo Request message that is transmitted from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcGlobalId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcGlobalId"])
+
     @SrcGlobalId.setter
     def SrcGlobalId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcGlobalId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcGlobalId"], value)
 
     @property
     def SrcLspNumber(self):
@@ -1184,11 +1267,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the lsp number that is carried in the Echo Request message that is transmitted from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcLspNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcLspNumber"])
+
     @SrcLspNumber.setter
     def SrcLspNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcLspNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcLspNumber"], value)
 
     @property
     def SrcLspNumberStep(self):
@@ -1198,11 +1282,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source LSP Number step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcLspNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcLspNumberStep"])
+
     @SrcLspNumberStep.setter
     def SrcLspNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcLspNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcLspNumberStep"], value)
 
     @property
     def SrcMepId(self):
@@ -1212,11 +1297,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source MEP Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMepId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMepId"])
+
     @SrcMepId.setter
     def SrcMepId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcMepId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcMepId"], value)
 
     @property
     def SrcMepIdStep(self):
@@ -1226,11 +1312,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the Source MEP Id step value in integer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMepIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMepIdStep"])
+
     @SrcMepIdStep.setter
     def SrcMepIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcMepIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcMepIdStep"], value)
 
     @property
     def SrcNodeId(self):
@@ -1240,11 +1327,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the node id that is carried in the Echo Request message that is transmitted from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcNodeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcNodeId"])
+
     @SrcNodeId.setter
     def SrcNodeId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcNodeId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcNodeId"], value)
 
     @property
     def SrcTunnelNumber(self):
@@ -1254,11 +1342,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the tunnel number that is carried in the Echo Request message that is transmitted from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcTunnelNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcTunnelNumber"])
+
     @SrcTunnelNumber.setter
     def SrcTunnelNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcTunnelNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcTunnelNumber"], value)
 
     @property
     def SrcTunnelNumberStep(self):
@@ -1268,11 +1357,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source tunnel number step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcTunnelNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcTunnelNumberStep"])
+
     @SrcTunnelNumberStep.setter
     def SrcTunnelNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcTunnelNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcTunnelNumberStep"], value)
 
     @property
     def SrcVplsIdAsNumber(self):
@@ -1282,11 +1372,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the AS Number configured as Source VPLS Id AS Number when VPLS Id type is set as asNumber or asNumber4Bytes. If it is asNumber then the max AS Number can be 65535 and when it is asNumber4Bytes the max value can be 4294967295.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdAsNumber"])
+
     @SrcVplsIdAsNumber.setter
     def SrcVplsIdAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdAsNumber"], value)
 
     @property
     def SrcVplsIdAsNumberStep(self):
@@ -1296,11 +1387,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the step of AS number by which the number is incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdAsNumberStep"])
+
     @SrcVplsIdAsNumberStep.setter
     def SrcVplsIdAsNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdAsNumberStep"], value)
 
     @property
     def SrcVplsIdAssignedNumber(self):
@@ -1310,11 +1402,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the source VPLS Id Assigned Number. If the VPLS Id type is configured as either ipAddress or asNumber4Bytes then the max Assigned Number can be 65535 and when it is asNumber the max value can be 4294967295.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdAssignedNumber"])
+
     @SrcVplsIdAssignedNumber.setter
     def SrcVplsIdAssignedNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdAssignedNumber"], value)
 
     @property
     def SrcVplsIdAssignedNumberStep(self):
@@ -1324,11 +1417,12 @@ class LspPwRange(Base):
         -------
         - number: This specifies the step of Assigned number by which the number is incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdAssignedNumberStep"])
+
     @SrcVplsIdAssignedNumberStep.setter
     def SrcVplsIdAssignedNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdAssignedNumberStep"], value)
 
     @property
     def SrcVplsIdIpAddress(self):
@@ -1338,11 +1432,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the IP Address configured as Source VPLS Id IP Address when VPLS Id type is set as ipAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdIpAddress"])
+
     @SrcVplsIdIpAddress.setter
     def SrcVplsIdIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdIpAddress"], value)
 
     @property
     def SrcVplsIdIpAddressStep(self):
@@ -1352,11 +1447,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdIpAddressStep"])
+
     @SrcVplsIdIpAddressStep.setter
     def SrcVplsIdIpAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdIpAddressStep"], value)
 
     @property
     def SrcVplsIdType(self):
@@ -1366,25 +1462,27 @@ class LspPwRange(Base):
         -------
         - str(asNumber | ipAddress | asNumber4Bytes): This specifies the source VplsId type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcVplsIdType"])
+
     @SrcVplsIdType.setter
     def SrcVplsIdType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcVplsIdType"], value)
 
     @property
     def SupportSlowStart(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: This signifies the Support Slow Start. This field is valid only for cccv type bfd and grayed out for y1731. If this is enabled then cccv interval for the peer is not matched for bfd session establishment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportSlowStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportSlowStart"])
+
     @SupportSlowStart.setter
     def SupportSlowStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportSlowStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportSlowStart"], value)
 
     @property
     def TrafficGroupId(self):
@@ -1394,11 +1492,12 @@ class LspPwRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): This signifies the Traffic Group Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def TypeOfProtectionSwitching(self):
@@ -1408,11 +1507,12 @@ class LspPwRange(Base):
         -------
         - str(1+1Unidirectional | 1:1Bidirectional | 1+1Bidirectional): This signifies different types of protection switching mechanism.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeOfProtectionSwitching'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeOfProtectionSwitching"])
+
     @TypeOfProtectionSwitching.setter
     def TypeOfProtectionSwitching(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeOfProtectionSwitching'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeOfProtectionSwitching"], value)
 
     @property
     def TypeOfRange(self):
@@ -1422,11 +1522,12 @@ class LspPwRange(Base):
         -------
         - str(lsp | pw | nestedLspPw): This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeOfRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeOfRange"])
+
     @TypeOfRange.setter
     def TypeOfRange(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeOfRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeOfRange"], value)
 
     @property
     def VlanCount(self):
@@ -1436,11 +1537,12 @@ class LspPwRange(Base):
         -------
         - number: This signifies the number of VLANs configured for this MAC Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanId(self):
@@ -1450,11 +1552,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the VLAN option is enabled for the current MAC Range and a VLAN Id may be added to the packet, to identify the VLAN that the packet belongs to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanIncrementMode(self):
@@ -1464,11 +1567,12 @@ class LspPwRange(Base):
         -------
         - str(noIncrement | parallelIncrement | innerFirst | outerFirst): This signifies the mode that defines how the VLAN will be incremented across MACs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanIncrementMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanIncrementMode"])
+
     @VlanIncrementMode.setter
     def VlanIncrementMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanIncrementMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanIncrementMode"], value)
 
     @property
     def VlanPriority(self):
@@ -1478,11 +1582,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the user priority of the VLAN tag. This may have a value from 0 through 7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
     @property
     def VlanTpId(self):
@@ -1492,11 +1597,12 @@ class LspPwRange(Base):
         -------
         - str: This signifies the EtherType that identifies the protocol header that follows the VLAN header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanTpId"])
+
     @VlanTpId.setter
     def VlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanTpId"], value)
 
     @property
     def WaitToRevertTime(self):
@@ -1506,13 +1612,113 @@ class LspPwRange(Base):
         -------
         - number: This signifies the duration after which data traffic will be switched from protect to working path once working path has recovered from signal fail. This is configurable only if Revertive is checked.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitToRevertTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitToRevertTime"])
+
     @WaitToRevertTime.setter
     def WaitToRevertTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitToRevertTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitToRevertTime"], value)
 
-    def update(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+    def update(
+        self,
+        AlarmTrafficClass=None,
+        AlarmType=None,
+        ApsTrafficClass=None,
+        ApsType=None,
+        CccvInterval=None,
+        CccvTrafficClass=None,
+        CccvType=None,
+        Description=None,
+        DestAcId=None,
+        DestAcIdStep=None,
+        DestGlobalId=None,
+        DestLspNumber=None,
+        DestLspNumberStep=None,
+        DestMepId=None,
+        DestMepIdStep=None,
+        DestNodeId=None,
+        DestTunnelNumber=None,
+        DestTunnelNumberStep=None,
+        DestVplsIdAsNumber=None,
+        DestVplsIdAsNumberStep=None,
+        DestVplsIdAssignedNumber=None,
+        DestVplsIdAssignedNumberStep=None,
+        DestVplsIdIpAddress=None,
+        DestVplsIdIpAddressStep=None,
+        DestVplsIdType=None,
+        DmTimeFormat=None,
+        DmTrafficClass=None,
+        DmType=None,
+        EnableVlan=None,
+        Enabled=None,
+        IpAddress=None,
+        IpAddressMask=None,
+        IpAddressStep=None,
+        IpHostPerLsp=None,
+        IpType=None,
+        LmCounterType=None,
+        LmInitialRxValue=None,
+        LmInitialTxValue=None,
+        LmRxStep=None,
+        LmTrafficClass=None,
+        LmTxStep=None,
+        LmType=None,
+        LspIncomingLabel=None,
+        LspIncomingLabelStep=None,
+        LspOutgoingLabel=None,
+        LspOutgoingLabelStep=None,
+        MacAddress=None,
+        MacPerPw=None,
+        MegIdIntegerStep=None,
+        MegIdPrefix=None,
+        MegLevel=None,
+        MinRxInterval=None,
+        MinTxInterval=None,
+        NumberOfLsp=None,
+        NumberOfPwPerLsp=None,
+        OnDemandCvTrafficClass=None,
+        PeerLspOrPwRange=None,
+        PeerNestedLspPwRange=None,
+        PwIncomingLabel=None,
+        PwIncomingLabelStep=None,
+        PwIncomingLabelStepAcrossLsp=None,
+        PwOutgoingLabel=None,
+        PwOutgoingLabelStep=None,
+        PwOutgoingLabelStepAcrossLsp=None,
+        PwStatusFaultReplyInterval=None,
+        PwStatusTrafficClass=None,
+        RangeRole=None,
+        RepeatMac=None,
+        Revertive=None,
+        SkipZeroVlanId=None,
+        SrcAcId=None,
+        SrcAcIdStep=None,
+        SrcGlobalId=None,
+        SrcLspNumber=None,
+        SrcLspNumberStep=None,
+        SrcMepId=None,
+        SrcMepIdStep=None,
+        SrcNodeId=None,
+        SrcTunnelNumber=None,
+        SrcTunnelNumberStep=None,
+        SrcVplsIdAsNumber=None,
+        SrcVplsIdAsNumberStep=None,
+        SrcVplsIdAssignedNumber=None,
+        SrcVplsIdAssignedNumberStep=None,
+        SrcVplsIdIpAddress=None,
+        SrcVplsIdIpAddressStep=None,
+        SrcVplsIdType=None,
+        SupportSlowStart=None,
+        TrafficGroupId=None,
+        TypeOfProtectionSwitching=None,
+        TypeOfRange=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanIncrementMode=None,
+        VlanPriority=None,
+        VlanTpId=None,
+        WaitToRevertTime=None,
+    ):
         # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Updates lspPwRange resource on the server.
 
@@ -1622,7 +1828,106 @@ class LspPwRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+    def add(
+        self,
+        AlarmTrafficClass=None,
+        AlarmType=None,
+        ApsTrafficClass=None,
+        ApsType=None,
+        CccvInterval=None,
+        CccvTrafficClass=None,
+        CccvType=None,
+        Description=None,
+        DestAcId=None,
+        DestAcIdStep=None,
+        DestGlobalId=None,
+        DestLspNumber=None,
+        DestLspNumberStep=None,
+        DestMepId=None,
+        DestMepIdStep=None,
+        DestNodeId=None,
+        DestTunnelNumber=None,
+        DestTunnelNumberStep=None,
+        DestVplsIdAsNumber=None,
+        DestVplsIdAsNumberStep=None,
+        DestVplsIdAssignedNumber=None,
+        DestVplsIdAssignedNumberStep=None,
+        DestVplsIdIpAddress=None,
+        DestVplsIdIpAddressStep=None,
+        DestVplsIdType=None,
+        DmTimeFormat=None,
+        DmTrafficClass=None,
+        DmType=None,
+        EnableVlan=None,
+        Enabled=None,
+        IpAddress=None,
+        IpAddressMask=None,
+        IpAddressStep=None,
+        IpHostPerLsp=None,
+        IpType=None,
+        LmCounterType=None,
+        LmInitialRxValue=None,
+        LmInitialTxValue=None,
+        LmRxStep=None,
+        LmTrafficClass=None,
+        LmTxStep=None,
+        LmType=None,
+        LspIncomingLabel=None,
+        LspIncomingLabelStep=None,
+        LspOutgoingLabel=None,
+        LspOutgoingLabelStep=None,
+        MacAddress=None,
+        MacPerPw=None,
+        MegIdIntegerStep=None,
+        MegIdPrefix=None,
+        MegLevel=None,
+        MinRxInterval=None,
+        MinTxInterval=None,
+        NumberOfLsp=None,
+        NumberOfPwPerLsp=None,
+        OnDemandCvTrafficClass=None,
+        PeerLspOrPwRange=None,
+        PeerNestedLspPwRange=None,
+        PwIncomingLabel=None,
+        PwIncomingLabelStep=None,
+        PwIncomingLabelStepAcrossLsp=None,
+        PwOutgoingLabel=None,
+        PwOutgoingLabelStep=None,
+        PwOutgoingLabelStepAcrossLsp=None,
+        PwStatusFaultReplyInterval=None,
+        PwStatusTrafficClass=None,
+        RangeRole=None,
+        RepeatMac=None,
+        Revertive=None,
+        SkipZeroVlanId=None,
+        SrcAcId=None,
+        SrcAcIdStep=None,
+        SrcGlobalId=None,
+        SrcLspNumber=None,
+        SrcLspNumberStep=None,
+        SrcMepId=None,
+        SrcMepIdStep=None,
+        SrcNodeId=None,
+        SrcTunnelNumber=None,
+        SrcTunnelNumberStep=None,
+        SrcVplsIdAsNumber=None,
+        SrcVplsIdAsNumberStep=None,
+        SrcVplsIdAssignedNumber=None,
+        SrcVplsIdAssignedNumberStep=None,
+        SrcVplsIdIpAddress=None,
+        SrcVplsIdIpAddressStep=None,
+        SrcVplsIdType=None,
+        SupportSlowStart=None,
+        TrafficGroupId=None,
+        TypeOfProtectionSwitching=None,
+        TypeOfRange=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanIncrementMode=None,
+        VlanPriority=None,
+        VlanTpId=None,
+        WaitToRevertTime=None,
+    ):
         # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Adds a new lspPwRange resource on the server and adds it to the container.
 
@@ -1746,7 +2051,106 @@ class LspPwRange(Base):
         """
         self._delete()
 
-    def find(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+    def find(
+        self,
+        AlarmTrafficClass=None,
+        AlarmType=None,
+        ApsTrafficClass=None,
+        ApsType=None,
+        CccvInterval=None,
+        CccvTrafficClass=None,
+        CccvType=None,
+        Description=None,
+        DestAcId=None,
+        DestAcIdStep=None,
+        DestGlobalId=None,
+        DestLspNumber=None,
+        DestLspNumberStep=None,
+        DestMepId=None,
+        DestMepIdStep=None,
+        DestNodeId=None,
+        DestTunnelNumber=None,
+        DestTunnelNumberStep=None,
+        DestVplsIdAsNumber=None,
+        DestVplsIdAsNumberStep=None,
+        DestVplsIdAssignedNumber=None,
+        DestVplsIdAssignedNumberStep=None,
+        DestVplsIdIpAddress=None,
+        DestVplsIdIpAddressStep=None,
+        DestVplsIdType=None,
+        DmTimeFormat=None,
+        DmTrafficClass=None,
+        DmType=None,
+        EnableVlan=None,
+        Enabled=None,
+        IpAddress=None,
+        IpAddressMask=None,
+        IpAddressStep=None,
+        IpHostPerLsp=None,
+        IpType=None,
+        LmCounterType=None,
+        LmInitialRxValue=None,
+        LmInitialTxValue=None,
+        LmRxStep=None,
+        LmTrafficClass=None,
+        LmTxStep=None,
+        LmType=None,
+        LspIncomingLabel=None,
+        LspIncomingLabelStep=None,
+        LspOutgoingLabel=None,
+        LspOutgoingLabelStep=None,
+        MacAddress=None,
+        MacPerPw=None,
+        MegIdIntegerStep=None,
+        MegIdPrefix=None,
+        MegLevel=None,
+        MinRxInterval=None,
+        MinTxInterval=None,
+        NumberOfLsp=None,
+        NumberOfPwPerLsp=None,
+        OnDemandCvTrafficClass=None,
+        PeerLspOrPwRange=None,
+        PeerNestedLspPwRange=None,
+        PwIncomingLabel=None,
+        PwIncomingLabelStep=None,
+        PwIncomingLabelStepAcrossLsp=None,
+        PwOutgoingLabel=None,
+        PwOutgoingLabelStep=None,
+        PwOutgoingLabelStepAcrossLsp=None,
+        PwStatusFaultReplyInterval=None,
+        PwStatusTrafficClass=None,
+        RangeRole=None,
+        RepeatMac=None,
+        Revertive=None,
+        SkipZeroVlanId=None,
+        SrcAcId=None,
+        SrcAcIdStep=None,
+        SrcGlobalId=None,
+        SrcLspNumber=None,
+        SrcLspNumberStep=None,
+        SrcMepId=None,
+        SrcMepIdStep=None,
+        SrcNodeId=None,
+        SrcTunnelNumber=None,
+        SrcTunnelNumberStep=None,
+        SrcVplsIdAsNumber=None,
+        SrcVplsIdAsNumberStep=None,
+        SrcVplsIdAssignedNumber=None,
+        SrcVplsIdAssignedNumberStep=None,
+        SrcVplsIdIpAddress=None,
+        SrcVplsIdIpAddressStep=None,
+        SrcVplsIdType=None,
+        SupportSlowStart=None,
+        TrafficGroupId=None,
+        TypeOfProtectionSwitching=None,
+        TypeOfRange=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanIncrementMode=None,
+        VlanPriority=None,
+        VlanTpId=None,
+        WaitToRevertTime=None,
+    ):
         # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Finds and retrieves lspPwRange resources from the server.
 

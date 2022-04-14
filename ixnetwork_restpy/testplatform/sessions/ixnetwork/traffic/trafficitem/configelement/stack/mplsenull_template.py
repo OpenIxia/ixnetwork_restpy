@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class Mplsenull(Base):
     __slots__ = ()
-    _SDM_NAME = 'mpls_enull'
+    _SDM_NAME = "mpls_enull"
     _SDM_ATT_MAP = {
-        'LabelValue': 'mpls_enull.label.value-1',
-        'LabelExperimental': 'mpls_enull.label.experimental-2',
-        'LabelBottomOfStack': 'mpls_enull.label.bottomOfStack-3',
-        'LabelTtl': 'mpls_enull.label.ttl-4',
+        "LabelValue": "mpls_enull.label.value-1",
+        "LabelExperimental": "mpls_enull.label.experimental-2",
+        "LabelBottomOfStack": "mpls_enull.label.bottomOfStack-3",
+        "LabelTtl": "mpls_enull.label.ttl-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,8 @@ class Mplsenull(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelValue"]))
 
     @property
     def LabelExperimental(self):
@@ -33,7 +34,10 @@ class Mplsenull(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelExperimental']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelExperimental"])
+        )
 
     @property
     def LabelBottomOfStack(self):
@@ -43,7 +47,10 @@ class Mplsenull(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelBottomOfStack']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelBottomOfStack"])
+        )
 
     @property
     def LabelTtl(self):
@@ -53,7 +60,8 @@ class Mplsenull(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelTtl"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

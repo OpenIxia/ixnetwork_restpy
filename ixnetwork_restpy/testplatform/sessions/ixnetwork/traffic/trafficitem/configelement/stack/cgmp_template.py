@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class Cgmp(Base):
     __slots__ = ()
-    _SDM_NAME = 'cgmp'
+    _SDM_NAME = "cgmp"
     _SDM_ATT_MAP = {
-        'Version': 'cgmp.header.version-1',
-        'Type': 'cgmp.header.type-2',
-        'Reserved': 'cgmp.header.reserved-3',
-        'Count': 'cgmp.header.count-4',
-        'AddressSetGroupDestinationAddress': 'cgmp.header.addressSet.groupDestinationAddress-5',
-        'AddressSetUnicastSourceAddress': 'cgmp.header.addressSet.unicastSourceAddress-6',
+        "Version": "cgmp.header.version-1",
+        "Type": "cgmp.header.type-2",
+        "Reserved": "cgmp.header.reserved-3",
+        "Count": "cgmp.header.count-4",
+        "AddressSetGroupDestinationAddress": "cgmp.header.addressSet.groupDestinationAddress-5",
+        "AddressSetUnicastSourceAddress": "cgmp.header.addressSet.unicastSourceAddress-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,8 @@ class Cgmp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Type(self):
@@ -36,7 +37,8 @@ class Cgmp(Base):
         Available enum values: Join, 0, Leave, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
     def Reserved(self):
@@ -46,7 +48,8 @@ class Cgmp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def Count(self):
@@ -56,7 +59,8 @@ class Cgmp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Count']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Count"]))
 
     @property
     def AddressSetGroupDestinationAddress(self):
@@ -66,7 +70,11 @@ class Cgmp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressSetGroupDestinationAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AddressSetGroupDestinationAddress"]),
+        )
 
     @property
     def AddressSetUnicastSourceAddress(self):
@@ -76,7 +84,11 @@ class Cgmp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressSetUnicastSourceAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AddressSetUnicastSourceAddress"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class IsisDceSimulatedTopologyConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisDceSimulatedTopologyConfig'
+    _SDM_NAME = "isisDceSimulatedTopologyConfig"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DceNodeTopologyCount': 'dceNodeTopologyCount',
-        'DescriptiveName': 'descriptiveName',
-        'EnableHostName': 'enableHostName',
-        'HostName': 'hostName',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DceNodeTopologyCount": "dceNodeTopologyCount",
+        "DescriptiveName": "descriptiveName",
+        "EnableHostName": "enableHostName",
+        "HostName": "hostName",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisDceSimulatedTopologyConfig, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class IsisDceSimulatedTopologyConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist_88a5fd3dfb37184b7299bc183cfa4683 import DceNodeTopologyList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist_88a5fd3dfb37184b7299bc183cfa4683 import (
+            DceNodeTopologyList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeTopologyList', None) is not None:
-                return self._properties.get('DceNodeTopologyList')
+            if self._properties.get("DceNodeTopologyList", None) is not None:
+                return self._properties.get("DceNodeTopologyList")
         return DceNodeTopologyList(self)._select()
 
     @property
@@ -75,7 +78,8 @@ class IsisDceSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -85,7 +89,7 @@ class IsisDceSimulatedTopologyConfig(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DceNodeTopologyCount(self):
@@ -95,11 +99,12 @@ class IsisDceSimulatedTopologyConfig(Base):
         -------
         - number: Node Topology Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DceNodeTopologyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DceNodeTopologyCount"])
+
     @DceNodeTopologyCount.setter
     def DceNodeTopologyCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DceNodeTopologyCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DceNodeTopologyCount"], value)
 
     @property
     def DescriptiveName(self):
@@ -109,7 +114,7 @@ class IsisDceSimulatedTopologyConfig(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableHostName(self):
@@ -120,7 +125,10 @@ class IsisDceSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHostName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+        )
 
     @property
     def HostName(self):
@@ -131,7 +139,8 @@ class IsisDceSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HostName"]))
 
     @property
     def Name(self):
@@ -141,11 +150,12 @@ class IsisDceSimulatedTopologyConfig(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, DceNodeTopologyCount=None, Name=None):
         # type: (int, str) -> IsisDceSimulatedTopologyConfig
@@ -167,7 +177,7 @@ class IsisDceSimulatedTopologyConfig(Base):
 
     def add(self, DceNodeTopologyCount=None, Name=None):
         # type: (int, str) -> IsisDceSimulatedTopologyConfig
-        """Adds a new isisDceSimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisDceSimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -184,7 +194,9 @@ class IsisDceSimulatedTopologyConfig(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DceNodeTopologyCount=None, DescriptiveName=None, Name=None):
+    def find(
+        self, Count=None, DceNodeTopologyCount=None, DescriptiveName=None, Name=None
+    ):
         # type: (int, int, str, str) -> IsisDceSimulatedTopologyConfig
         """Finds and retrieves isisDceSimulatedTopologyConfig resources from the server.
 
@@ -242,10 +254,12 @@ class IsisDceSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -274,10 +288,12 @@ class IsisDceSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -306,12 +322,16 @@ class IsisDceSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableHostName=None, HostName=None):
+    def get_device_ids(
+        self, PortNames=None, Active=None, EnableHostName=None, HostName=None
+    ):
         """Base class infrastructure that gets a list of isisDceSimulatedTopologyConfig device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

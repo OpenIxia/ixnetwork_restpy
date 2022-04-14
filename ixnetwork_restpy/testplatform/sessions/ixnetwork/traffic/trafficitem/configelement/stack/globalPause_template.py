@@ -4,13 +4,13 @@ from ixnetwork_restpy.files import Files
 
 class GlobalPause(Base):
     __slots__ = ()
-    _SDM_NAME = 'globalPause'
+    _SDM_NAME = "globalPause"
     _SDM_ATT_MAP = {
-        'HeaderDstAddress': 'globalPause.header.header.dstAddress-1',
-        'HeaderSrcAddress': 'globalPause.header.header.srcAddress-2',
-        'HeaderEthertype': 'globalPause.header.header.ethertype-3',
-        'MacControlControlOpcode': 'globalPause.header.macControl.controlOpcode-4',
-        'MacControlPfcQueue0': 'globalPause.header.macControl.pfcQueue0-5',
+        "HeaderDstAddress": "globalPause.header.header.dstAddress-1",
+        "HeaderSrcAddress": "globalPause.header.header.srcAddress-2",
+        "HeaderEthertype": "globalPause.header.header.ethertype-3",
+        "MacControlControlOpcode": "globalPause.header.macControl.controlOpcode-4",
+        "MacControlPfcQueue0": "globalPause.header.macControl.pfcQueue0-5",
     }
 
     def __init__(self, parent, list_op=False):
@@ -24,7 +24,10 @@ class GlobalPause(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstAddress"])
+        )
 
     @property
     def HeaderSrcAddress(self):
@@ -34,7 +37,10 @@ class GlobalPause(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcAddress"])
+        )
 
     @property
     def HeaderEthertype(self):
@@ -44,7 +50,10 @@ class GlobalPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderEthertype']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderEthertype"])
+        )
 
     @property
     def MacControlControlOpcode(self):
@@ -54,7 +63,10 @@ class GlobalPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacControlControlOpcode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacControlControlOpcode"])
+        )
 
     @property
     def MacControlPfcQueue0(self):
@@ -64,7 +76,10 @@ class GlobalPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacControlPfcQueue0']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacControlPfcQueue0"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -236,7 +236,7 @@ class SimRouter(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimRouter
-        """Adds a new simRouter resource on the json, only valid with config assistant
+        """Adds a new simRouter resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -197,7 +197,7 @@ class NestedCounter(Base):
 
     def add(self, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
         # type: (int, int, int, int, int, int, int, str) -> NestedCounter
-        """Adds a new nestedCounter resource on the json, only valid with config assistant
+        """Adds a new nestedCounter resource on the json, only valid with batch add utility
 
         Args
         ----

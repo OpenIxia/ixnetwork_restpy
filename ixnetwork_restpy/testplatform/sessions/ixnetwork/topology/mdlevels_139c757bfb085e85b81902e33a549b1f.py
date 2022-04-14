@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class MdLevels(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mdLevels'
+    _SDM_NAME = "mdLevels"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'MdMegLevel': 'mdMegLevel',
-        'MdName': 'mdName',
-        'MdNameFormat': 'mdNameFormat',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "MdMegLevel": "mdMegLevel",
+        "MdName": "mdName",
+        "MdNameFormat": "mdNameFormat",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MdLevels, self).__init__(parent, list_op)
@@ -57,7 +57,8 @@ class MdLevels(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -67,7 +68,7 @@ class MdLevels(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -77,7 +78,7 @@ class MdLevels(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def MdMegLevel(self):
@@ -88,7 +89,8 @@ class MdLevels(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD/MEG Level
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdMegLevel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdMegLevel"]))
 
     @property
     def MdName(self):
@@ -99,7 +101,8 @@ class MdLevels(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD Name For MAC + Int, Please Use MAC-Int eg. 11:22:33:44:55:66-1 For Others, Use Any String
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdName"]))
 
     @property
     def MdNameFormat(self):
@@ -110,7 +113,8 @@ class MdLevels(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD Name Format
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdNameFormat']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdNameFormat"]))
 
     @property
     def Name(self):
@@ -120,11 +124,12 @@ class MdLevels(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> MdLevels
@@ -185,7 +190,14 @@ class MdLevels(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, MdMegLevel=None, MdName=None, MdNameFormat=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        MdMegLevel=None,
+        MdName=None,
+        MdNameFormat=None,
+    ):
         """Base class infrastructure that gets a list of mdLevels device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

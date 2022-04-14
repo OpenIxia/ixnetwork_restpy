@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,54 +33,53 @@ class BgpSRTEPoliciesListV6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpSRTEPoliciesListV6'
+    _SDM_NAME = "bgpSRTEPoliciesListV6"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AddPathId': 'addPathId',
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'AsSetMode': 'asSetMode',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Distinguisher': 'distinguisher',
-        'EnableAddPath': 'enableAddPath',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableLinkLocal': 'enableLinkLocal',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'EnableSendWithdraw': 'enableSendWithdraw',
-        'EndPointV4': 'endPointV4',
-        'EndPointV6': 'endPointV6',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6LinkLocalNextHop': 'ipv6LinkLocalNextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LocalPreference': 'localPreference',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'NumberOfTunnelsV6': 'numberOfTunnelsV6',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
-        'PolicyColor': 'policyColor',
-        'PolicyType': 'policyType',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'SrtepolicyName': 'srtepolicyName',
+        "Active": "active",
+        "AddPathId": "addPathId",
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "AsSetMode": "asSetMode",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Distinguisher": "distinguisher",
+        "EnableAddPath": "enableAddPath",
+        "EnableAggregatorId": "enableAggregatorId",
+        "EnableAsPathSegments": "enableAsPathSegments",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableExtendedCommunity": "enableExtendedCommunity",
+        "EnableLinkLocal": "enableLinkLocal",
+        "EnableLocalPreference": "enableLocalPreference",
+        "EnableMultiExitDiscriminator": "enableMultiExitDiscriminator",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "EnableSendWithdraw": "enableSendWithdraw",
+        "EndPointV4": "endPointV4",
+        "EndPointV6": "endPointV6",
+        "Ipv4NextHop": "ipv4NextHop",
+        "Ipv6LinkLocalNextHop": "ipv6LinkLocalNextHop",
+        "Ipv6NextHop": "ipv6NextHop",
+        "LocalPreference": "localPreference",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Name": "name",
+        "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
+        "NoOfClusters": "noOfClusters",
+        "NoOfCommunities": "noOfCommunities",
+        "NoOfExtendedCommunity": "noOfExtendedCommunity",
+        "NumberOfTunnelsV6": "numberOfTunnelsV6",
+        "Origin": "origin",
+        "OriginatorId": "originatorId",
+        "OverridePeerAsSetMode": "overridePeerAsSetMode",
+        "PolicyColor": "policyColor",
+        "PolicyType": "policyType",
+        "SetNextHop": "setNextHop",
+        "SetNextHopIpType": "setNextHopIpType",
+        "SrtepolicyName": "srtepolicyName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpSRTEPoliciesListV6, self).__init__(parent, list_op)
@@ -95,10 +95,13 @@ class BgpSRTEPoliciesListV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import (
+            BgpAsPathSegmentList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsPathSegmentList', None) is not None:
-                return self._properties.get('BgpAsPathSegmentList')
+            if self._properties.get("BgpAsPathSegmentList", None) is not None:
+                return self._properties.get("BgpAsPathSegmentList")
         return BgpAsPathSegmentList(self)
 
     @property
@@ -112,10 +115,13 @@ class BgpSRTEPoliciesListV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import (
+            BgpClusterIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpClusterIdList', None) is not None:
-                return self._properties.get('BgpClusterIdList')
+            if self._properties.get("BgpClusterIdList", None) is not None:
+                return self._properties.get("BgpClusterIdList")
         return BgpClusterIdList(self)
 
     @property
@@ -129,10 +135,13 @@ class BgpSRTEPoliciesListV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+            BgpCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpCommunitiesList', None) is not None:
-                return self._properties.get('BgpCommunitiesList')
+            if self._properties.get("BgpCommunitiesList", None) is not None:
+                return self._properties.get("BgpCommunitiesList")
         return BgpCommunitiesList(self)
 
     @property
@@ -146,10 +155,13 @@ class BgpSRTEPoliciesListV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+            BgpExtendedCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-                return self._properties.get('BgpExtendedCommunitiesList')
+            if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
+                return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
 
     @property
@@ -163,10 +175,16 @@ class BgpSRTEPoliciesListV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv6_ba44b4c7321d78274052ebe9409a31c5 import BgpSRTEPoliciesTunnelEncapsulationListV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv6_ba44b4c7321d78274052ebe9409a31c5 import (
+            BgpSRTEPoliciesTunnelEncapsulationListV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV6', None) is not None:
-                return self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV6')
+            if (
+                self._properties.get("BgpSRTEPoliciesTunnelEncapsulationListV6", None)
+                is not None
+            ):
+                return self._properties.get("BgpSRTEPoliciesTunnelEncapsulationListV6")
         return BgpSRTEPoliciesTunnelEncapsulationListV6(self)._select()
 
     @property
@@ -178,7 +196,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AddPathId(self):
@@ -189,7 +208,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP ADD Path Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddPathId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AddPathId"]))
 
     @property
     def AggregatorAs(self):
@@ -200,7 +220,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"]))
 
     @property
     def AggregatorId(self):
@@ -211,7 +232,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
 
     @property
     def AsSetMode(self):
@@ -222,7 +244,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSetMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSetMode"]))
 
     @property
     def Count(self):
@@ -232,7 +255,7 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -242,7 +265,7 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Distinguisher(self):
@@ -253,7 +276,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Distinguisher
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Distinguisher']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Distinguisher"]))
 
     @property
     def EnableAddPath(self):
@@ -264,7 +288,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Path ID when ADD Path Capability is enabled in BGP Peer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAddPath']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAddPath"]))
 
     @property
     def EnableAggregatorId(self):
@@ -275,7 +300,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorId"])
+        )
 
     @property
     def EnableAsPathSegments(self):
@@ -286,7 +314,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAsPathSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAsPathSegments"])
+        )
 
     @property
     def EnableAtomicAggregate(self):
@@ -297,7 +328,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+        )
 
     @property
     def EnableCluster(self):
@@ -308,7 +342,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCluster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCluster"]))
 
     @property
     def EnableCommunity(self):
@@ -319,7 +354,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+        )
 
     @property
     def EnableExtendedCommunity(self):
@@ -330,7 +368,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExtendedCommunity"])
+        )
 
     @property
     def EnableLinkLocal(self):
@@ -341,7 +382,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled pick Link Local IPv6 from interface.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLinkLocal']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLinkLocal"])
+        )
 
     @property
     def EnableLocalPreference(self):
@@ -352,7 +396,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLocalPreference"])
+        )
 
     @property
     def EnableMultiExitDiscriminator(self):
@@ -363,7 +410,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMultiExitDiscriminator"])
+        )
 
     @property
     def EnableNextHop(self):
@@ -374,7 +424,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"]))
 
     @property
     def EnableOrigin(self):
@@ -385,7 +436,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"]))
 
     @property
     def EnableOriginatorId(self):
@@ -396,7 +448,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+        )
 
     @property
     def EnableSendWithdraw(self):
@@ -407,7 +462,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Send Withdraw
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSendWithdraw']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSendWithdraw"])
+        )
 
     @property
     def EndPointV4(self):
@@ -418,7 +476,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 End Point
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointV4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndPointV4"]))
 
     @property
     def EndPointV6(self):
@@ -429,7 +488,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 End Point
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointV6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndPointV6"]))
 
     @property
     def Ipv4NextHop(self):
@@ -440,7 +500,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NextHop"]))
 
     @property
     def Ipv6LinkLocalNextHop(self):
@@ -451,7 +512,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When next hop type is Global+ Link Local use this Link Local IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6LinkLocalNextHop']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6LinkLocalNextHop"])
+        )
 
     @property
     def Ipv6NextHop(self):
@@ -462,7 +526,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
 
     @property
     def LocalPreference(self):
@@ -473,7 +538,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
+        )
 
     @property
     def MultiExitDiscriminator(self):
@@ -484,7 +552,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
 
     @property
     def Name(self):
@@ -494,11 +565,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
@@ -508,11 +580,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Number Of AS Path Segments Per Route Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"])
+
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"], value)
 
     @property
     def NoOfClusters(self):
@@ -522,11 +595,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Number of Clusters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfClusters"])
+
     @NoOfClusters.setter
     def NoOfClusters(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfClusters"], value)
 
     @property
     def NoOfCommunities(self):
@@ -536,11 +610,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Number of Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCommunities"])
+
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
 
     @property
     def NoOfExtendedCommunity(self):
@@ -550,11 +625,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Number of Extended Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"])
+
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"], value)
 
     @property
     def NumberOfTunnelsV6(self):
@@ -564,11 +640,12 @@ class BgpSRTEPoliciesListV6(Base):
         -------
         - number: Count of Tunnel TLVs Per Policy
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfTunnelsV6"])
+
     @NumberOfTunnelsV6.setter
     def NumberOfTunnelsV6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfTunnelsV6"], value)
 
     @property
     def Origin(self):
@@ -579,7 +656,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Origin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Origin"]))
 
     @property
     def OriginatorId(self):
@@ -590,7 +668,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OriginatorId"]))
 
     @property
     def OverridePeerAsSetMode(self):
@@ -601,7 +680,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePeerAsSetMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePeerAsSetMode"])
+        )
 
     @property
     def PolicyColor(self):
@@ -612,7 +694,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Color
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyColor']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PolicyColor"]))
 
     @property
     def PolicyType(self):
@@ -623,7 +706,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PolicyType"]))
 
     @property
     def SetNextHop(self):
@@ -634,7 +718,8 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetNextHop"]))
 
     @property
     def SetNextHopIpType(self):
@@ -645,7 +730,10 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHopIpType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetNextHopIpType"])
+        )
 
     @property
     def SrtepolicyName(self):
@@ -656,9 +744,20 @@ class BgpSRTEPoliciesListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Name For Reference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName']))
 
-    def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV6=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrtepolicyName"])
+        )
+
+    def update(
+        self,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NumberOfTunnelsV6=None,
+    ):
         # type: (str, int, int, int, int, int) -> BgpSRTEPoliciesListV6
         """Updates bgpSRTEPoliciesListV6 resource on the server.
 
@@ -680,7 +779,17 @@ class BgpSRTEPoliciesListV6(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV6=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NumberOfTunnelsV6=None,
+    ):
         # type: (int, str, str, int, int, int, int, int) -> BgpSRTEPoliciesListV6
         """Finds and retrieves bgpSRTEPoliciesListV6 resources from the server.
 
@@ -727,7 +836,45 @@ class BgpSRTEPoliciesListV6(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLinkLocal=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSendWithdraw=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6LinkLocalNextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AddPathId=None,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AsSetMode=None,
+        Distinguisher=None,
+        EnableAddPath=None,
+        EnableAggregatorId=None,
+        EnableAsPathSegments=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableExtendedCommunity=None,
+        EnableLinkLocal=None,
+        EnableLocalPreference=None,
+        EnableMultiExitDiscriminator=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableSendWithdraw=None,
+        EndPointV4=None,
+        EndPointV6=None,
+        Ipv4NextHop=None,
+        Ipv6LinkLocalNextHop=None,
+        Ipv6NextHop=None,
+        LocalPreference=None,
+        MultiExitDiscriminator=None,
+        Origin=None,
+        OriginatorId=None,
+        OverridePeerAsSetMode=None,
+        PolicyColor=None,
+        PolicyType=None,
+        SetNextHop=None,
+        SetNextHopIpType=None,
+        SrtepolicyName=None,
+    ):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesListV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

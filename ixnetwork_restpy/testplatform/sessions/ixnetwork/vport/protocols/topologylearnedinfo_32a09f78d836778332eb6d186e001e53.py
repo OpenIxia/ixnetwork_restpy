@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class TopologyLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'topologyLearnedInfo'
+    _SDM_NAME = "topologyLearnedInfo"
     _SDM_ATT_MAP = {
-        'InDataPathId': 'inDataPathId',
-        'InDataPathIdAshex': 'inDataPathIdAshex',
-        'InIp': 'inIp',
-        'InPortEthernetAddress': 'inPortEthernetAddress',
-        'InPortName': 'inPortName',
-        'InPortNumber': 'inPortNumber',
-        'OutDataPathId': 'outDataPathId',
-        'OutDataPathIdAsHex': 'outDataPathIdAsHex',
-        'OutIp': 'outIp',
-        'OutPortEthernetAddress': 'outPortEthernetAddress',
-        'OutPortName': 'outPortName',
-        'OutPortNumber': 'outPortNumber',
+        "InDataPathId": "inDataPathId",
+        "InDataPathIdAshex": "inDataPathIdAshex",
+        "InIp": "inIp",
+        "InPortEthernetAddress": "inPortEthernetAddress",
+        "InPortName": "inPortName",
+        "InPortNumber": "inPortNumber",
+        "OutDataPathId": "outDataPathId",
+        "OutDataPathIdAsHex": "outDataPathIdAsHex",
+        "OutIp": "outIp",
+        "OutPortEthernetAddress": "outPortEthernetAddress",
+        "OutPortName": "outPortName",
+        "OutPortNumber": "outPortNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TopologyLearnedInfo, self).__init__(parent, list_op)
@@ -62,7 +62,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Datapath Id of Datapath for LLDP Packet-In Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InDataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InDataPathId"])
 
     @property
     def InDataPathIdAshex(self):
@@ -72,7 +72,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet-In Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InDataPathIdAshex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InDataPathIdAshex"])
 
     @property
     def InIp(self):
@@ -82,7 +82,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the IP Address of Datapath for LLDP Packet-In Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["InIp"])
 
     @property
     def InPortEthernetAddress(self):
@@ -92,7 +92,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Ethernet Address for LLDP Packet-In Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPortEthernetAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPortEthernetAddress"])
 
     @property
     def InPortName(self):
@@ -102,7 +102,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Port Name for LLDP Packet-In Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPortName"])
 
     @property
     def InPortNumber(self):
@@ -112,7 +112,7 @@ class TopologyLearnedInfo(Base):
         -------
         - number: Indicates the Port Number for LLDP Packet-In Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPortNumber"])
 
     @property
     def OutDataPathId(self):
@@ -122,7 +122,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Datapath Id of Datapath for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutDataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutDataPathId"])
 
     @property
     def OutDataPathIdAsHex(self):
@@ -132,7 +132,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Datapath Id, in hexadecimal format, of Datapath for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutDataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutDataPathIdAsHex"])
 
     @property
     def OutIp(self):
@@ -142,7 +142,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the IP Address of Datapath for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutIp"])
 
     @property
     def OutPortEthernetAddress(self):
@@ -152,7 +152,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Ethernet Address for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPortEthernetAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPortEthernetAddress"])
 
     @property
     def OutPortName(self):
@@ -162,7 +162,7 @@ class TopologyLearnedInfo(Base):
         -------
         - str: Indicates the Port Name for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPortName"])
 
     @property
     def OutPortNumber(self):
@@ -172,10 +172,10 @@ class TopologyLearnedInfo(Base):
         -------
         - number: Indicates the Port Number for LLDP Packet Out Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPortNumber"])
 
     def add(self):
-        """Adds a new topologyLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new topologyLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -187,7 +187,21 @@ class TopologyLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, InDataPathId=None, InDataPathIdAshex=None, InIp=None, InPortEthernetAddress=None, InPortName=None, InPortNumber=None, OutDataPathId=None, OutDataPathIdAsHex=None, OutIp=None, OutPortEthernetAddress=None, OutPortName=None, OutPortNumber=None):
+    def find(
+        self,
+        InDataPathId=None,
+        InDataPathIdAshex=None,
+        InIp=None,
+        InPortEthernetAddress=None,
+        InPortName=None,
+        InPortNumber=None,
+        OutDataPathId=None,
+        OutDataPathIdAsHex=None,
+        OutIp=None,
+        OutPortEthernetAddress=None,
+        OutPortName=None,
+        OutPortNumber=None,
+    ):
         # type: (str, str, str, str, str, int, str, str, str, str, str, int) -> TopologyLearnedInfo
         """Finds and retrieves topologyLearnedInfo resources from the server.
 

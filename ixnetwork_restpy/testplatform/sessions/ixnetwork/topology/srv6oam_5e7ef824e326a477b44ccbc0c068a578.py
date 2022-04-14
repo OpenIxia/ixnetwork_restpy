@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,37 @@ class Srv6Oam(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'srv6Oam'
+    _SDM_NAME = "srv6Oam"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'LocalRouterId': 'localRouterId',
-        'LocatorBlkLen': 'locatorBlkLen',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumPingTraceRouteDest': 'numPingTraceRouteDest',
-        'ReplyDestUnreachCode': 'replyDestUnreachCode',
-        'RxCfgSrcAddrFlag': 'rxCfgSrcAddrFlag',
-        'RxSrcAddr': 'rxSrcAddr',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TracerouteDstPort': 'tracerouteDstPort',
+        "Active": "active",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "LocalRouterId": "localRouterId",
+        "LocatorBlkLen": "locatorBlkLen",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumPingTraceRouteDest": "numPingTraceRouteDest",
+        "ReplyDestUnreachCode": "replyDestUnreachCode",
+        "RxCfgSrcAddrFlag": "rxCfgSrcAddrFlag",
+        "RxSrcAddr": "rxSrcAddr",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TracerouteDstPort": "tracerouteDstPort",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,10 +82,13 @@ class Srv6Oam(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -90,10 +102,13 @@ class Srv6Oam(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamdestination_c9a2946900a6702b6551774cce8262f7 import Srv6OamDestination
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamdestination_c9a2946900a6702b6551774cce8262f7 import (
+            Srv6OamDestination,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Srv6OamDestination', None) is not None:
-                return self._properties.get('Srv6OamDestination')
+            if self._properties.get("Srv6OamDestination", None) is not None:
+                return self._properties.get("Srv6OamDestination")
         return Srv6OamDestination(self)._select()
 
     @property
@@ -105,21 +120,23 @@ class Srv6Oam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -129,7 +146,7 @@ class Srv6Oam(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -139,7 +156,7 @@ class Srv6Oam(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -148,7 +165,7 @@ class Srv6Oam(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def LocalRouterId(self):
@@ -158,7 +175,7 @@ class Srv6Oam(Base):
         -------
         - list(str): The MPLOAM Router ID value, in IPv4 format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
 
     @property
     def LocatorBlkLen(self):
@@ -169,7 +186,8 @@ class Srv6Oam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length, 48 or 64 bits. Useful while processing Compressed sids in SRH. SID (128 bits) = Locator Block Length + G-SID length + Arguments + G-sid index
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlkLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlkLen"]))
 
     @property
     def Multiplier(self):
@@ -179,11 +197,12 @@ class Srv6Oam(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -193,11 +212,12 @@ class Srv6Oam(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumPingTraceRouteDest(self):
@@ -207,11 +227,12 @@ class Srv6Oam(Base):
         -------
         - number: Specify number of destinations to be configured for Ping/Trace Route Requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumPingTraceRouteDest'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumPingTraceRouteDest"])
+
     @NumPingTraceRouteDest.setter
     def NumPingTraceRouteDest(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumPingTraceRouteDest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumPingTraceRouteDest"], value)
 
     @property
     def ReplyDestUnreachCode(self):
@@ -222,7 +243,10 @@ class Srv6Oam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options to select the Error Code while sending Destination Unreachable Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReplyDestUnreachCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReplyDestUnreachCode"])
+        )
 
     @property
     def RxCfgSrcAddrFlag(self):
@@ -233,7 +257,10 @@ class Srv6Oam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Source Address of IPv6 header in Response packets will be taken as per configuration. If Disabled, Source Address of IPv6 will be taken from the Interface on which the received destination (Egress) is configured (emulated/loopback interface).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxCfgSrcAddrFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RxCfgSrcAddrFlag"])
+        )
 
     @property
     def RxSrcAddr(self):
@@ -244,7 +271,8 @@ class Srv6Oam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address of IPv6 header in Response packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxSrcAddr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RxSrcAddr"]))
 
     @property
     def SessionStatus(self):
@@ -254,7 +282,7 @@ class Srv6Oam(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -264,11 +292,12 @@ class Srv6Oam(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -277,7 +306,7 @@ class Srv6Oam(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -287,7 +316,7 @@ class Srv6Oam(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TracerouteDstPort(self):
@@ -297,13 +326,22 @@ class Srv6Oam(Base):
         -------
         - number: Destination Port to be used for Trace Route
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TracerouteDstPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["TracerouteDstPort"])
+
     @TracerouteDstPort.setter
     def TracerouteDstPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TracerouteDstPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TracerouteDstPort"], value)
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumPingTraceRouteDest=None, StackedLayers=None, TracerouteDstPort=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumPingTraceRouteDest=None,
+        StackedLayers=None,
+        TracerouteDstPort=None,
+    ):
         # type: (List[str], int, str, int, List[str], int) -> Srv6Oam
         """Updates srv6Oam resource on the server.
 
@@ -325,7 +363,15 @@ class Srv6Oam(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumPingTraceRouteDest=None, StackedLayers=None, TracerouteDstPort=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumPingTraceRouteDest=None,
+        StackedLayers=None,
+        TracerouteDstPort=None,
+    ):
         # type: (List[str], int, str, int, List[str], int) -> Srv6Oam
         """Adds a new srv6Oam resource on the server and adds it to the container.
 
@@ -358,7 +404,22 @@ class Srv6Oam(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LocalRouterId=None, Multiplier=None, Name=None, NumPingTraceRouteDest=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TracerouteDstPort=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        LocalRouterId=None,
+        Multiplier=None,
+        Name=None,
+        NumPingTraceRouteDest=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        TracerouteDstPort=None,
+    ):
         """Finds and retrieves srv6Oam resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve srv6Oam resources from the server.
@@ -436,10 +497,12 @@ class Srv6Oam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -468,10 +531,12 @@ class Srv6Oam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -500,10 +565,12 @@ class Srv6Oam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -532,12 +599,22 @@ class Srv6Oam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, LocatorBlkLen=None, ReplyDestUnreachCode=None, RxCfgSrcAddrFlag=None, RxSrcAddr=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        LocatorBlkLen=None,
+        ReplyDestUnreachCode=None,
+        RxCfgSrcAddrFlag=None,
+        RxSrcAddr=None,
+    ):
         """Base class infrastructure that gets a list of srv6Oam device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

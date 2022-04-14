@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class DataStoreSettings(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dataStoreSettings'
+    _SDM_NAME = "dataStoreSettings"
     _SDM_ATT_MAP = {
-        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
-        'EnableDataStoreForAllViews': 'enableDataStoreForAllViews',
+        "DataStorePollingIntervalMultiplier": "dataStorePollingIntervalMultiplier",
+        "EnableDataStoreForAllViews": "enableDataStoreForAllViews",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DataStoreSettings, self).__init__(parent, list_op)
@@ -51,11 +51,16 @@ class DataStoreSettings(Base):
         -------
         - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DataStorePollingIntervalMultiplier"]
+        )
+
     @DataStorePollingIntervalMultiplier.setter
     def DataStorePollingIntervalMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DataStorePollingIntervalMultiplier"], value
+        )
 
     @property
     def EnableDataStoreForAllViews(self):
@@ -65,13 +70,16 @@ class DataStoreSettings(Base):
         -------
         - bool: If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataStoreForAllViews'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataStoreForAllViews"])
+
     @EnableDataStoreForAllViews.setter
     def EnableDataStoreForAllViews(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataStoreForAllViews'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataStoreForAllViews"], value)
 
-    def update(self, DataStorePollingIntervalMultiplier=None, EnableDataStoreForAllViews=None):
+    def update(
+        self, DataStorePollingIntervalMultiplier=None, EnableDataStoreForAllViews=None
+    ):
         # type: (int, bool) -> DataStoreSettings
         """Updates dataStoreSettings resource on the server.
 
@@ -86,7 +94,9 @@ class DataStoreSettings(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataStorePollingIntervalMultiplier=None, EnableDataStoreForAllViews=None):
+    def find(
+        self, DataStorePollingIntervalMultiplier=None, EnableDataStoreForAllViews=None
+    ):
         # type: (int, bool) -> DataStoreSettings
         """Finds and retrieves dataStoreSettings resources from the server.
 

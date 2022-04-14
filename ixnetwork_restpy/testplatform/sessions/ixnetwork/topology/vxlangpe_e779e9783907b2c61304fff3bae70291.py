@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,37 @@ class Vxlangpe(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vxlangpe'
+    _SDM_NAME = "vxlangpe"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableStaticInfo': 'enableStaticInfo',
-        'Errors': 'errors',
-        'ExternalLearning': 'externalLearning',
-        'Ipv4_multicast': 'ipv4_multicast',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OvsdbConnectorMultiplier': 'ovsdbConnectorMultiplier',
-        'RunningMode': 'runningMode',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'StaticInfoCount': 'staticInfoCount',
-        'Status': 'status',
-        'Vni': 'vni',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableStaticInfo": "enableStaticInfo",
+        "Errors": "errors",
+        "ExternalLearning": "externalLearning",
+        "Ipv4_multicast": "ipv4_multicast",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OvsdbConnectorMultiplier": "ovsdbConnectorMultiplier",
+        "RunningMode": "runningMode",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "StaticInfoCount": "staticInfoCount",
+        "Status": "status",
+        "Vni": "vni",
     }
     _SDM_ENUM_MAP = {
-        'runningMode': ['none', 'ovsdbStack', 'ovsdbControllerBfdStack'],
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "runningMode": ["none", "ovsdbStack", "ovsdbControllerBfdStack"],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,10 +82,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -90,10 +102,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import (
+            Ethernet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ethernet', None) is not None:
-                return self._properties.get('Ethernet')
+            if self._properties.get("Ethernet", None) is not None:
+                return self._properties.get("Ethernet")
         return Ethernet(self)
 
     @property
@@ -107,10 +122,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import (
+            Ipv4Loopback,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4Loopback', None) is not None:
-                return self._properties.get('Ipv4Loopback')
+            if self._properties.get("Ipv4Loopback", None) is not None:
+                return self._properties.get("Ipv4Loopback")
         return Ipv4Loopback(self)
 
     @property
@@ -124,10 +142,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import (
+            Ipv6Loopback,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6Loopback', None) is not None:
-                return self._properties.get('Ipv6Loopback')
+            if self._properties.get("Ipv6Loopback", None) is not None:
+                return self._properties.get("Ipv6Loopback")
         return Ipv6Loopback(self)
 
     @property
@@ -141,10 +162,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import (
+            LdpBasicRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpBasicRouter', None) is not None:
-                return self._properties.get('LdpBasicRouter')
+            if self._properties.get("LdpBasicRouter", None) is not None:
+                return self._properties.get("LdpBasicRouter")
         return LdpBasicRouter(self)
 
     @property
@@ -158,10 +182,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import (
+            LdpBasicRouterV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpBasicRouterV6', None) is not None:
-                return self._properties.get('LdpBasicRouterV6')
+            if self._properties.get("LdpBasicRouterV6", None) is not None:
+                return self._properties.get("LdpBasicRouterV6")
         return LdpBasicRouterV6(self)
 
     @property
@@ -175,10 +202,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import (
+            LdpTargetedRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouter', None) is not None:
-                return self._properties.get('LdpTargetedRouter')
+            if self._properties.get("LdpTargetedRouter", None) is not None:
+                return self._properties.get("LdpTargetedRouter")
         return LdpTargetedRouter(self)
 
     @property
@@ -192,10 +222,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import (
+            LdpTargetedRouterV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouterV6', None) is not None:
-                return self._properties.get('LdpTargetedRouterV6')
+            if self._properties.get("LdpTargetedRouterV6", None) is not None:
+                return self._properties.get("LdpTargetedRouterV6")
         return LdpTargetedRouterV6(self)
 
     @property
@@ -209,10 +242,13 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -226,25 +262,29 @@ class Vxlangpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanstaticinfo_6879422db4d58cf50c6662a6238ea2d4 import VxlanStaticInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanstaticinfo_6879422db4d58cf50c6662a6238ea2d4 import (
+            VxlanStaticInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VxlanStaticInfo', None) is not None:
-                return self._properties.get('VxlanStaticInfo')
+            if self._properties.get("VxlanStaticInfo", None) is not None:
+                return self._properties.get("VxlanStaticInfo")
         return VxlanStaticInfo(self)._select()
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -254,7 +294,7 @@ class Vxlangpe(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -264,7 +304,7 @@ class Vxlangpe(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableStaticInfo(self):
@@ -274,11 +314,12 @@ class Vxlangpe(Base):
         -------
         - bool: If true, VXLAN will use unicast entries for VTEP information instead of multicast learning.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStaticInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStaticInfo"])
+
     @EnableStaticInfo.setter
     def EnableStaticInfo(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStaticInfo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStaticInfo"], value)
 
     @property
     def Errors(self):
@@ -287,7 +328,7 @@ class Vxlangpe(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExternalLearning(self):
@@ -297,11 +338,12 @@ class Vxlangpe(Base):
         -------
         - bool: If true, VXLAN will use information received from another protocol which will handle the learning mechanism.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalLearning'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalLearning"])
+
     @ExternalLearning.setter
     def ExternalLearning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalLearning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalLearning"], value)
 
     @property
     def Ipv4_multicast(self):
@@ -312,7 +354,10 @@ class Vxlangpe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Multicast Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4_multicast']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4_multicast"])
+        )
 
     @property
     def Multiplier(self):
@@ -322,11 +367,12 @@ class Vxlangpe(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -336,11 +382,12 @@ class Vxlangpe(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OvsdbConnectorMultiplier(self):
@@ -350,11 +397,12 @@ class Vxlangpe(Base):
         -------
         - number: Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OvsdbConnectorMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["OvsdbConnectorMultiplier"])
+
     @OvsdbConnectorMultiplier.setter
     def OvsdbConnectorMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OvsdbConnectorMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OvsdbConnectorMultiplier"], value)
 
     @property
     def RunningMode(self):
@@ -364,11 +412,12 @@ class Vxlangpe(Base):
         -------
         - str(none | ovsdbStack | ovsdbControllerBfdStack): There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningMode"])
+
     @RunningMode.setter
     def RunningMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RunningMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RunningMode"], value)
 
     @property
     def SessionStatus(self):
@@ -378,7 +427,7 @@ class Vxlangpe(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -388,11 +437,12 @@ class Vxlangpe(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -401,7 +451,7 @@ class Vxlangpe(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def StaticInfoCount(self):
@@ -411,11 +461,12 @@ class Vxlangpe(Base):
         -------
         - number: Number of unicast VTEP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaticInfoCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaticInfoCount"])
+
     @StaticInfoCount.setter
     def StaticInfoCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaticInfoCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaticInfoCount"], value)
 
     @property
     def Status(self):
@@ -425,7 +476,7 @@ class Vxlangpe(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def Vni(self):
@@ -436,9 +487,21 @@ class Vxlangpe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VXLAN Network Identifier.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vni']))
 
-    def update(self, ConnectedVia=None, EnableStaticInfo=None, ExternalLearning=None, Multiplier=None, Name=None, OvsdbConnectorMultiplier=None, RunningMode=None, StackedLayers=None, StaticInfoCount=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vni"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        EnableStaticInfo=None,
+        ExternalLearning=None,
+        Multiplier=None,
+        Name=None,
+        OvsdbConnectorMultiplier=None,
+        RunningMode=None,
+        StackedLayers=None,
+        StaticInfoCount=None,
+    ):
         # type: (List[str], bool, bool, int, str, int, str, List[str], int) -> Vxlangpe
         """Updates vxlangpe resource on the server.
 
@@ -463,7 +526,18 @@ class Vxlangpe(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, EnableStaticInfo=None, ExternalLearning=None, Multiplier=None, Name=None, OvsdbConnectorMultiplier=None, RunningMode=None, StackedLayers=None, StaticInfoCount=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        EnableStaticInfo=None,
+        ExternalLearning=None,
+        Multiplier=None,
+        Name=None,
+        OvsdbConnectorMultiplier=None,
+        RunningMode=None,
+        StackedLayers=None,
+        StaticInfoCount=None,
+    ):
         # type: (List[str], bool, bool, int, str, int, str, List[str], int) -> Vxlangpe
         """Adds a new vxlangpe resource on the server and adds it to the container.
 
@@ -499,7 +573,24 @@ class Vxlangpe(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableStaticInfo=None, Errors=None, ExternalLearning=None, Multiplier=None, Name=None, OvsdbConnectorMultiplier=None, RunningMode=None, SessionStatus=None, StackedLayers=None, StateCounts=None, StaticInfoCount=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        EnableStaticInfo=None,
+        Errors=None,
+        ExternalLearning=None,
+        Multiplier=None,
+        Name=None,
+        OvsdbConnectorMultiplier=None,
+        RunningMode=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        StaticInfoCount=None,
+        Status=None,
+    ):
         """Finds and retrieves vxlangpe resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vxlangpe resources from the server.
@@ -579,10 +670,12 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -611,10 +704,14 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -633,10 +730,14 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetVXLANLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -671,10 +772,14 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getVXLANLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getVXLANLearnedInfo", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -703,10 +808,12 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -735,10 +842,12 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -767,10 +876,12 @@ class Vxlangpe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Ipv4_multicast=None, Vni=None):
         """Base class infrastructure that gets a list of vxlangpe device ids encapsulated by this object.

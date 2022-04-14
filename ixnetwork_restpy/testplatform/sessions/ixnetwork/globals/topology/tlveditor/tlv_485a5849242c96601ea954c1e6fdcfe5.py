@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class Tlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tlv'
+    _SDM_NAME = "tlv"
     _SDM_ATT_MAP = {
-        'AvailableIncludeInMessages': 'availableIncludeInMessages',
-        'Description': 'description',
-        'IncludeInMessages': 'includeInMessages',
-        'IsEditable': 'isEditable',
-        'IsRepeatable': 'isRepeatable',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "AvailableIncludeInMessages": "availableIncludeInMessages",
+        "Description": "description",
+        "IncludeInMessages": "includeInMessages",
+        "IsEditable": "isEditable",
+        "IsRepeatable": "isRepeatable",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Tlv, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class Tlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length_828f03942c0c7f1066634a834f100b60 import Length
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length_828f03942c0c7f1066634a834f100b60 import (
+            Length,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Length', None) is not None:
-                return self._properties.get('Length')
+            if self._properties.get("Length", None) is not None:
+                return self._properties.get("Length")
         return Length(self)._select()
 
     @property
@@ -78,10 +81,13 @@ class Tlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type_fb01e405e39d16957d5b5665edb1f0b0 import Type
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type_fb01e405e39d16957d5b5665edb1f0b0 import (
+            Type,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Type', None) is not None:
-                return self._properties.get('Type')
+            if self._properties.get("Type", None) is not None:
+                return self._properties.get("Type")
         return Type(self)._select()
 
     @property
@@ -95,10 +101,13 @@ class Tlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value_407e2b8dcab743cb358f96d452da3721 import Value
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value_407e2b8dcab743cb358f96d452da3721 import (
+            Value,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Value', None) is not None:
-                return self._properties.get('Value')
+            if self._properties.get("Value", None) is not None:
+                return self._properties.get("Value")
         return Value(self)._select()
 
     @property
@@ -109,7 +118,7 @@ class Tlv(Base):
         -------
         - list(str): A list of available messages which are used in the includeInMessages attribute
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableIncludeInMessages'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableIncludeInMessages"])
 
     @property
     def Description(self):
@@ -119,11 +128,12 @@ class Tlv(Base):
         -------
         - str: Description of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def IncludeInMessages(self):
@@ -133,11 +143,12 @@ class Tlv(Base):
         -------
         - list(str): Include the TLV in these protocol messages
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInMessages'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInMessages"])
+
     @IncludeInMessages.setter
     def IncludeInMessages(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInMessages'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInMessages"], value)
 
     @property
     def IsEditable(self):
@@ -147,11 +158,12 @@ class Tlv(Base):
         -------
         - bool: Indicates whether this is editable or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsRepeatable(self):
@@ -161,11 +173,12 @@ class Tlv(Base):
         -------
         - bool: Indicates whether this can be multiplied in the TLV definition
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRepeatable"])
+
     @IsRepeatable.setter
     def IsRepeatable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRepeatable"], value)
 
     @property
     def IsRequired(self):
@@ -175,11 +188,12 @@ class Tlv(Base):
         -------
         - bool: Flag indicating whether this is required or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -189,13 +203,22 @@ class Tlv(Base):
         -------
         - str: Name of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, Description=None, IncludeInMessages=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def update(
+        self,
+        Description=None,
+        IncludeInMessages=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, List[str], bool, bool, bool, str) -> Tlv
         """Updates tlv resource on the server.
 
@@ -214,7 +237,15 @@ class Tlv(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, IncludeInMessages=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def add(
+        self,
+        Description=None,
+        IncludeInMessages=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, List[str], bool, bool, bool, str) -> Tlv
         """Adds a new tlv resource on the server and adds it to the container.
 
@@ -247,7 +278,16 @@ class Tlv(Base):
         """
         self._delete()
 
-    def find(self, AvailableIncludeInMessages=None, Description=None, IncludeInMessages=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def find(
+        self,
+        AvailableIncludeInMessages=None,
+        Description=None,
+        IncludeInMessages=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (List[str], str, List[str], bool, bool, bool, str) -> Tlv
         """Finds and retrieves tlv resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,22 @@ class CurrentFeatures(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'currentFeatures'
+    _SDM_NAME = "currentFeatures"
     _SDM_ATT_MAP = {
-        'HundredMbFd': '100MbFd',
-        'HundredMbHd': '100MbHd',
-        'TenGbFd': '10GbFd',
-        'TenMbFd': '10MbFd',
-        'TenMbHd': '10MbHd',
-        'OneGbFd': '1GbFd',
-        'OneGbHd': '1GbHd',
-        'AsymmetricPause': 'asymmetricPause',
-        'AutoNegotiation': 'autoNegotiation',
-        'CopperMedium': 'copperMedium',
-        'FiberMedium': 'fiberMedium',
-        'Pause': 'pause',
+        "HundredMbFd": "100MbFd",
+        "HundredMbHd": "100MbHd",
+        "TenGbFd": "10GbFd",
+        "TenMbFd": "10MbFd",
+        "TenMbHd": "10MbHd",
+        "OneGbFd": "1GbFd",
+        "OneGbHd": "1GbHd",
+        "AsymmetricPause": "asymmetricPause",
+        "AutoNegotiation": "autoNegotiation",
+        "CopperMedium": "copperMedium",
+        "FiberMedium": "fiberMedium",
+        "Pause": "pause",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CurrentFeatures, self).__init__(parent, list_op)
@@ -61,11 +61,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 100 Mb full-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HundredMbFd'])
+        return self._get_attribute(self._SDM_ATT_MAP["HundredMbFd"])
+
     @HundredMbFd.setter
     def HundredMbFd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HundredMbFd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HundredMbFd"], value)
 
     @property
     def HundredMbHd(self):
@@ -75,11 +76,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 100 Mb half-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HundredMbHd'])
+        return self._get_attribute(self._SDM_ATT_MAP["HundredMbHd"])
+
     @HundredMbHd.setter
     def HundredMbHd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HundredMbHd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HundredMbHd"], value)
 
     @property
     def TenGbFd(self):
@@ -89,11 +91,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 10 Gb full-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TenGbFd'])
+        return self._get_attribute(self._SDM_ATT_MAP["TenGbFd"])
+
     @TenGbFd.setter
     def TenGbFd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TenGbFd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TenGbFd"], value)
 
     @property
     def TenMbFd(self):
@@ -103,11 +106,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 10 Mb full-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TenMbFd'])
+        return self._get_attribute(self._SDM_ATT_MAP["TenMbFd"])
+
     @TenMbFd.setter
     def TenMbFd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TenMbFd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TenMbFd"], value)
 
     @property
     def TenMbHd(self):
@@ -117,11 +121,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 10 Mb half-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TenMbHd'])
+        return self._get_attribute(self._SDM_ATT_MAP["TenMbHd"])
+
     @TenMbHd.setter
     def TenMbHd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TenMbHd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TenMbHd"], value)
 
     @property
     def OneGbFd(self):
@@ -131,11 +136,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 1 Gb full-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OneGbFd'])
+        return self._get_attribute(self._SDM_ATT_MAP["OneGbFd"])
+
     @OneGbFd.setter
     def OneGbFd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OneGbFd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OneGbFd"], value)
 
     @property
     def OneGbHd(self):
@@ -145,11 +151,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include 1 Gb half-duplex rate support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OneGbHd'])
+        return self._get_attribute(self._SDM_ATT_MAP["OneGbHd"])
+
     @OneGbHd.setter
     def OneGbHd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OneGbHd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OneGbHd"], value)
 
     @property
     def AsymmetricPause(self):
@@ -159,11 +166,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include Asymmetric pause.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsymmetricPause'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsymmetricPause"])
+
     @AsymmetricPause.setter
     def AsymmetricPause(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsymmetricPause'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsymmetricPause"], value)
 
     @property
     def AutoNegotiation(self):
@@ -173,11 +181,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include Auto-negotiation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoNegotiation"])
+
     @AutoNegotiation.setter
     def AutoNegotiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoNegotiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoNegotiation"], value)
 
     @property
     def CopperMedium(self):
@@ -187,11 +196,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include Copper medium.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CopperMedium'])
+        return self._get_attribute(self._SDM_ATT_MAP["CopperMedium"])
+
     @CopperMedium.setter
     def CopperMedium(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CopperMedium'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CopperMedium"], value)
 
     @property
     def FiberMedium(self):
@@ -201,11 +211,12 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include Fiber medium.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FiberMedium'])
+        return self._get_attribute(self._SDM_ATT_MAP["FiberMedium"])
+
     @FiberMedium.setter
     def FiberMedium(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FiberMedium'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FiberMedium"], value)
 
     @property
     def Pause(self):
@@ -215,13 +226,28 @@ class CurrentFeatures(Base):
         -------
         - bool: Indicates that the current features include Pause.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Pause'])
+        return self._get_attribute(self._SDM_ATT_MAP["Pause"])
+
     @Pause.setter
     def Pause(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Pause'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Pause"], value)
 
-    def update(self, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, Pause=None):
+    def update(
+        self,
+        HundredMbFd=None,
+        HundredMbHd=None,
+        TenGbFd=None,
+        TenMbFd=None,
+        TenMbHd=None,
+        OneGbFd=None,
+        OneGbHd=None,
+        AsymmetricPause=None,
+        AutoNegotiation=None,
+        CopperMedium=None,
+        FiberMedium=None,
+        Pause=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> CurrentFeatures
         """Updates currentFeatures resource on the server.
 
@@ -246,7 +272,21 @@ class CurrentFeatures(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, Pause=None):
+    def find(
+        self,
+        HundredMbFd=None,
+        HundredMbHd=None,
+        TenGbFd=None,
+        TenMbFd=None,
+        TenMbHd=None,
+        OneGbFd=None,
+        OneGbHd=None,
+        AsymmetricPause=None,
+        AutoNegotiation=None,
+        CopperMedium=None,
+        FiberMedium=None,
+        Pause=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> CurrentFeatures
         """Finds and retrieves currentFeatures resources from the server.
 

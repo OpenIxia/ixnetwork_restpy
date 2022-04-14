@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class Type(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'type'
+    _SDM_NAME = "type"
     _SDM_ATT_MAP = {
-        'IsEditable': 'isEditable',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "IsEditable": "isEditable",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Type, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class Type(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import (
+            Object,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Object', None) is not None:
-                return self._properties.get('Object')
+            if self._properties.get("Object", None) is not None:
+                return self._properties.get("Object")
         return Object(self)
 
     @property
@@ -69,11 +72,12 @@ class Type(Base):
         -------
         - bool: Indicates whether this is editable or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsRequired(self):
@@ -83,11 +87,12 @@ class Type(Base):
         -------
         - bool: Indicates whether this is required or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -97,11 +102,12 @@ class Type(Base):
         -------
         - str: Name of the node
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, IsEditable=None, IsRequired=None, Name=None):
         # type: (bool, bool, str) -> Type

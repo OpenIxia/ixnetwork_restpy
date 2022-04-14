@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class MeterConfigStatsBandLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'meterConfigStatsBandLearnedInformation'
+    _SDM_NAME = "meterConfigStatsBandLearnedInformation"
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Experimenter': 'experimenter',
-        'LocalIp': 'localIp',
-        'MeterId': 'meterId',
-        'PrecedenceLevel': 'precedenceLevel',
-        'Rate': 'rate',
-        'RemoteIp': 'remoteIp',
-        'Type': 'type',
+        "BurstSize": "burstSize",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "Experimenter": "experimenter",
+        "LocalIp": "localIp",
+        "MeterId": "meterId",
+        "PrecedenceLevel": "precedenceLevel",
+        "Rate": "rate",
+        "RemoteIp": "remoteIp",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MeterConfigStatsBandLearnedInformation, self).__init__(parent, list_op)
@@ -60,7 +60,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - number: Specifies the Burst Size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
 
     @property
     def DataPathId(self):
@@ -70,7 +70,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - number: The Data Path identifier of the OpenFlow Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -80,7 +80,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow Controller in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def Experimenter(self):
@@ -90,7 +90,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: Specifies the Experimenter Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
 
     @property
     def LocalIp(self):
@@ -100,7 +100,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MeterId(self):
@@ -110,7 +110,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - number: Specifies Meter Id
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def PrecedenceLevel(self):
@@ -120,7 +120,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: Specifies the Precedence Level Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrecedenceLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrecedenceLevel"])
 
     @property
     def Rate(self):
@@ -130,7 +130,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - number: Specifies the rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rate"])
 
     @property
     def RemoteIp(self):
@@ -140,7 +140,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def Type(self):
@@ -150,10 +150,10 @@ class MeterConfigStatsBandLearnedInformation(Base):
         -------
         - str: Specifies the Band Type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new meterConfigStatsBandLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new meterConfigStatsBandLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -165,7 +165,19 @@ class MeterConfigStatsBandLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BurstSize=None, DataPathId=None, DataPathIdAsHex=None, Experimenter=None, LocalIp=None, MeterId=None, PrecedenceLevel=None, Rate=None, RemoteIp=None, Type=None):
+    def find(
+        self,
+        BurstSize=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        Experimenter=None,
+        LocalIp=None,
+        MeterId=None,
+        PrecedenceLevel=None,
+        Rate=None,
+        RemoteIp=None,
+        Type=None,
+    ):
         # type: (int, int, str, str, str, int, str, int, str, str) -> MeterConfigStatsBandLearnedInformation
         """Finds and retrieves meterConfigStatsBandLearnedInformation resources from the server.
 

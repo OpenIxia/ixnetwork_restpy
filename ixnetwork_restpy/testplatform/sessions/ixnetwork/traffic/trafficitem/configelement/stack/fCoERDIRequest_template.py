@@ -4,50 +4,50 @@ from ixnetwork_restpy.files import Files
 
 class FCoERDIRequest(Base):
     __slots__ = ()
-    _SDM_NAME = 'fCoERDIRequest'
+    _SDM_NAME = "fCoERDIRequest"
     _SDM_ATT_MAP = {
-        'FcoeHeaderVersion': 'fCoERDIRequest.header.fcoeHeader.version-1',
-        'FcoeHeaderReserved': 'fCoERDIRequest.header.fcoeHeader.reserved-2',
-        'FcoeHeaderESOF': 'fCoERDIRequest.header.fcoeHeader.eSOF-3',
-        'FcHeaderRCTL': 'fCoERDIRequest.header.fcHeader.rCTL-4',
-        'FcHeaderDstId': 'fCoERDIRequest.header.fcHeader.dstId-5',
-        'FcHeaderCsCTLPriority': 'fCoERDIRequest.header.fcHeader.csCTLPriority-6',
-        'FcHeaderSrcId': 'fCoERDIRequest.header.fcHeader.srcId-7',
-        'FcHeaderType': 'fCoERDIRequest.header.fcHeader.type-8',
-        'FCTLCustom': 'fCoERDIRequest.header.fcHeader.fCTL.custom-9',
-        'BuildFCTLExchangeContext': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.exchangeContext-10',
-        'BuildFCTLSequenceContext': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.sequenceContext-11',
-        'BuildFCTLFirstSequence': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.firstSequence-12',
-        'BuildFCTLLastSequence': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.lastSequence-13',
-        'BuildFCTLEndSequence': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.endSequence-14',
-        'BuildFCTLEndConnection': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.endConnection-15',
-        'BuildFCTLCsCTLPriority': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.csCTLPriority-16',
-        'BuildFCTLSequenceInitiative': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.sequenceInitiative-17',
-        'BuildFCTLFcXIDReassigned': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcXIDReassigned-18',
-        'BuildFCTLFcInvalidateXID': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcInvalidateXID-19',
-        'BuildFCTLAckForm': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.ackForm-20',
-        'BuildFCTLFcDataCompression': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcDataCompression-21',
-        'BuildFCTLFcDataEncryption': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcDataEncryption-22',
-        'BuildFCTLRetransmittedSequence': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.retransmittedSequence-23',
-        'BuildFCTLUnidirectionalTransmit': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-24',
-        'BuildFCTLContinueSeqCondition': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.continueSeqCondition-25',
-        'BuildFCTLAbortSeqCondition': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.abortSeqCondition-26',
-        'BuildFCTLRelativeOffsetPresent': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-27',
-        'BuildFCTLExchangeReassembly': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.exchangeReassembly-28',
-        'BuildFCTLFillBytes': 'fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fillBytes-29',
-        'FcHeaderSeqID': 'fCoERDIRequest.header.fcHeader.seqID-30',
-        'FcHeaderDfCTL': 'fCoERDIRequest.header.fcHeader.dfCTL-31',
-        'FcHeaderSeqCNT': 'fCoERDIRequest.header.fcHeader.seqCNT-32',
-        'FcHeaderOxID': 'fCoERDIRequest.header.fcHeader.oxID-33',
-        'FcHeaderRxID': 'fCoERDIRequest.header.fcHeader.rxID-34',
-        'FcHeaderParameter': 'fCoERDIRequest.header.fcHeader.parameter-35',
-        'HeaderFcCmd': 'fCoERDIRequest.header.fcCmd-36',
-        'HeaderReserved1': 'fCoERDIRequest.header.reserved1-37',
-        'HeaderReserved2': 'fCoERDIRequest.header.reserved2-38',
-        'HeaderLength': 'fCoERDIRequest.header.length-39',
-        'HeaderReqSwitchName': 'fCoERDIRequest.header.reqSwitchName-40',
-        'HeaderReserved3': 'fCoERDIRequest.header.reserved3-41',
-        'HeaderReqDID': 'fCoERDIRequest.header.reqDID-42',
+        "FcoeHeaderVersion": "fCoERDIRequest.header.fcoeHeader.version-1",
+        "FcoeHeaderReserved": "fCoERDIRequest.header.fcoeHeader.reserved-2",
+        "FcoeHeaderESOF": "fCoERDIRequest.header.fcoeHeader.eSOF-3",
+        "FcHeaderRCTL": "fCoERDIRequest.header.fcHeader.rCTL-4",
+        "FcHeaderDstId": "fCoERDIRequest.header.fcHeader.dstId-5",
+        "FcHeaderCsCTLPriority": "fCoERDIRequest.header.fcHeader.csCTLPriority-6",
+        "FcHeaderSrcId": "fCoERDIRequest.header.fcHeader.srcId-7",
+        "FcHeaderType": "fCoERDIRequest.header.fcHeader.type-8",
+        "FCTLCustom": "fCoERDIRequest.header.fcHeader.fCTL.custom-9",
+        "BuildFCTLExchangeContext": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.exchangeContext-10",
+        "BuildFCTLSequenceContext": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.sequenceContext-11",
+        "BuildFCTLFirstSequence": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.firstSequence-12",
+        "BuildFCTLLastSequence": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.lastSequence-13",
+        "BuildFCTLEndSequence": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.endSequence-14",
+        "BuildFCTLEndConnection": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.endConnection-15",
+        "BuildFCTLCsCTLPriority": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.csCTLPriority-16",
+        "BuildFCTLSequenceInitiative": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.sequenceInitiative-17",
+        "BuildFCTLFcXIDReassigned": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcXIDReassigned-18",
+        "BuildFCTLFcInvalidateXID": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcInvalidateXID-19",
+        "BuildFCTLAckForm": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.ackForm-20",
+        "BuildFCTLFcDataCompression": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcDataCompression-21",
+        "BuildFCTLFcDataEncryption": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fcDataEncryption-22",
+        "BuildFCTLRetransmittedSequence": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.retransmittedSequence-23",
+        "BuildFCTLUnidirectionalTransmit": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-24",
+        "BuildFCTLContinueSeqCondition": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.continueSeqCondition-25",
+        "BuildFCTLAbortSeqCondition": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.abortSeqCondition-26",
+        "BuildFCTLRelativeOffsetPresent": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-27",
+        "BuildFCTLExchangeReassembly": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.exchangeReassembly-28",
+        "BuildFCTLFillBytes": "fCoERDIRequest.header.fcHeader.fCTL.buildFCTL.fillBytes-29",
+        "FcHeaderSeqID": "fCoERDIRequest.header.fcHeader.seqID-30",
+        "FcHeaderDfCTL": "fCoERDIRequest.header.fcHeader.dfCTL-31",
+        "FcHeaderSeqCNT": "fCoERDIRequest.header.fcHeader.seqCNT-32",
+        "FcHeaderOxID": "fCoERDIRequest.header.fcHeader.oxID-33",
+        "FcHeaderRxID": "fCoERDIRequest.header.fcHeader.rxID-34",
+        "FcHeaderParameter": "fCoERDIRequest.header.fcHeader.parameter-35",
+        "HeaderFcCmd": "fCoERDIRequest.header.fcCmd-36",
+        "HeaderReserved1": "fCoERDIRequest.header.reserved1-37",
+        "HeaderReserved2": "fCoERDIRequest.header.reserved2-38",
+        "HeaderLength": "fCoERDIRequest.header.length-39",
+        "HeaderReqSwitchName": "fCoERDIRequest.header.reqSwitchName-40",
+        "HeaderReserved3": "fCoERDIRequest.header.reserved3-41",
+        "HeaderReqDID": "fCoERDIRequest.header.reqDID-42",
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,7 +61,10 @@ class FCoERDIRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderVersion"])
+        )
 
     @property
     def FcoeHeaderReserved(self):
@@ -71,7 +74,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderReserved"])
+        )
 
     @property
     def FcoeHeaderESOF(self):
@@ -82,7 +88,10 @@ class FCoERDIRequest(Base):
         Available enum values: SOFf - Fabric, 40, SOFi4 - Initiate Class 4, 41, SOFi2 - Initiate Class 2, 45, SOFi3 - Initiate Class 3, 46, SOFn4 - Normal Class 4, 49, SOFn2 - Normal Class 2, 53, SOFn3 - Normal Class 3, 54, SOFc4 - Connect Class 4, 57, SOFn1 - Normal Class 1 or 6, 250
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcoeHeaderESOF']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcoeHeaderESOF"])
+        )
 
     @property
     def FcHeaderRCTL(self):
@@ -92,7 +101,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderRCTL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderRCTL"]))
 
     @property
     def FcHeaderDstId(self):
@@ -102,7 +112,8 @@ class FCoERDIRequest(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDstId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDstId"]))
 
     @property
     def FcHeaderCsCTLPriority(self):
@@ -112,7 +123,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderCsCTLPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderCsCTLPriority"])
+        )
 
     @property
     def FcHeaderSrcId(self):
@@ -122,7 +136,8 @@ class FCoERDIRequest(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSrcId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSrcId"]))
 
     @property
     def FcHeaderType(self):
@@ -132,7 +147,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderType"]))
 
     @property
     def FCTLCustom(self):
@@ -142,7 +158,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCTLCustom']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCTLCustom"]))
 
     @property
     def BuildFCTLExchangeContext(self):
@@ -153,7 +170,10 @@ class FCoERDIRequest(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeContext"])
+        )
 
     @property
     def BuildFCTLSequenceContext(self):
@@ -164,7 +184,10 @@ class FCoERDIRequest(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceContext"])
+        )
 
     @property
     def BuildFCTLFirstSequence(self):
@@ -175,7 +198,10 @@ class FCoERDIRequest(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFirstSequence"])
+        )
 
     @property
     def BuildFCTLLastSequence(self):
@@ -186,7 +212,10 @@ class FCoERDIRequest(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLLastSequence"])
+        )
 
     @property
     def BuildFCTLEndSequence(self):
@@ -197,7 +226,10 @@ class FCoERDIRequest(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndSequence"])
+        )
 
     @property
     def BuildFCTLEndConnection(self):
@@ -208,7 +240,10 @@ class FCoERDIRequest(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndConnection"])
+        )
 
     @property
     def BuildFCTLCsCTLPriority(self):
@@ -219,7 +254,10 @@ class FCoERDIRequest(Base):
         Available enum values: CS_CTL, 0, Priority, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLCsCTLPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLCsCTLPriority"])
+        )
 
     @property
     def BuildFCTLSequenceInitiative(self):
@@ -230,7 +268,10 @@ class FCoERDIRequest(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceInitiative"])
+        )
 
     @property
     def BuildFCTLFcXIDReassigned(self):
@@ -241,7 +282,10 @@ class FCoERDIRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcXIDReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcXIDReassigned"])
+        )
 
     @property
     def BuildFCTLFcInvalidateXID(self):
@@ -252,7 +296,10 @@ class FCoERDIRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcInvalidateXID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcInvalidateXID"])
+        )
 
     @property
     def BuildFCTLAckForm(self):
@@ -263,7 +310,10 @@ class FCoERDIRequest(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAckForm']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAckForm"])
+        )
 
     @property
     def BuildFCTLFcDataCompression(self):
@@ -274,7 +324,10 @@ class FCoERDIRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataCompression"])
+        )
 
     @property
     def BuildFCTLFcDataEncryption(self):
@@ -285,7 +338,10 @@ class FCoERDIRequest(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataEncryption"])
+        )
 
     @property
     def BuildFCTLRetransmittedSequence(self):
@@ -296,7 +352,11 @@ class FCoERDIRequest(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRetransmittedSequence']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRetransmittedSequence"]),
+        )
 
     @property
     def BuildFCTLUnidirectionalTransmit(self):
@@ -307,7 +367,11 @@ class FCoERDIRequest(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLUnidirectionalTransmit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLUnidirectionalTransmit"]),
+        )
 
     @property
     def BuildFCTLContinueSeqCondition(self):
@@ -318,7 +382,11 @@ class FCoERDIRequest(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLContinueSeqCondition']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLContinueSeqCondition"]),
+        )
 
     @property
     def BuildFCTLAbortSeqCondition(self):
@@ -329,7 +397,10 @@ class FCoERDIRequest(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAbortSeqCondition"])
+        )
 
     @property
     def BuildFCTLRelativeOffsetPresent(self):
@@ -340,7 +411,11 @@ class FCoERDIRequest(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRelativeOffsetPresent']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRelativeOffsetPresent"]),
+        )
 
     @property
     def BuildFCTLExchangeReassembly(self):
@@ -351,7 +426,10 @@ class FCoERDIRequest(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeReassembly"])
+        )
 
     @property
     def BuildFCTLFillBytes(self):
@@ -362,7 +440,10 @@ class FCoERDIRequest(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFillBytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFillBytes"])
+        )
 
     @property
     def FcHeaderSeqID(self):
@@ -372,7 +453,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqID"]))
 
     @property
     def FcHeaderDfCTL(self):
@@ -382,7 +464,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDfCTL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDfCTL"]))
 
     @property
     def FcHeaderSeqCNT(self):
@@ -392,7 +475,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqCNT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqCNT"])
+        )
 
     @property
     def FcHeaderOxID(self):
@@ -402,7 +488,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderOxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderOxID"]))
 
     @property
     def FcHeaderRxID(self):
@@ -412,7 +499,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderRxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderRxID"]))
 
     @property
     def FcHeaderParameter(self):
@@ -422,7 +510,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderParameter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderParameter"])
+        )
 
     @property
     def HeaderFcCmd(self):
@@ -433,7 +524,8 @@ class FCoERDIRequest(Base):
         Available enum values: SW_RJT, 16777216, SW_ACC, 33554432, ELP, 268435456, EFP, 285212672, DIA, 301989888, RDI, 318767104, HLO, 335544320, LSU, 352321536, LSA, 369098752, BF, 385875968, RCF, 402653184, SW_RSCN, 452984832, DRLIR, 503316480, DSCN, 536870912, LOOPD, 553648128, MR, 570425344, ACA, 587202560, RCA, 603979776, SFC, 620756992, UFC, 637534208, CEC, 687865856, EACA, 704708608, ESFC, 704774144, EUFC, 704839680, ERCA, 704905216, TCO, 704970752, ESC, 805306368, ESS, 822083584, MRRA, 872415232, STR, 889257984, EVFP, 905969664, FFI, 1342177280
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFcCmd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderFcCmd"]))
 
     @property
     def HeaderReserved1(self):
@@ -443,7 +535,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved1"])
+        )
 
     @property
     def HeaderReserved2(self):
@@ -453,7 +548,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved2"])
+        )
 
     @property
     def HeaderLength(self):
@@ -463,7 +561,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderReqSwitchName(self):
@@ -473,7 +572,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReqSwitchName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReqSwitchName"])
+        )
 
     @property
     def HeaderReserved3(self):
@@ -483,7 +585,10 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved3']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved3"])
+        )
 
     @property
     def HeaderReqDID(self):
@@ -493,7 +598,8 @@ class FCoERDIRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReqDID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderReqDID"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

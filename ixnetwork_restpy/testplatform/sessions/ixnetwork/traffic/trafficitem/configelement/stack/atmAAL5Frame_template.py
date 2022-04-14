@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class AtmAAL5Frame(Base):
     __slots__ = ()
-    _SDM_NAME = 'atmAAL5Frame'
+    _SDM_NAME = "atmAAL5Frame"
     _SDM_ATT_MAP = {
-        'HeaderLlcHeader': 'atmAAL5Frame.header.llcHeader-1',
-        'HeaderAal5OUI': 'atmAAL5Frame.header.aal5OUI-2',
-        'HeaderProtocolType': 'atmAAL5Frame.header.protocolType-3',
+        "HeaderLlcHeader": "atmAAL5Frame.header.llcHeader-1",
+        "HeaderAal5OUI": "atmAAL5Frame.header.aal5OUI-2",
+        "HeaderProtocolType": "atmAAL5Frame.header.protocolType-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class AtmAAL5Frame(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLlcHeader']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLlcHeader"])
+        )
 
     @property
     def HeaderAal5OUI(self):
@@ -32,7 +35,8 @@ class AtmAAL5Frame(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAal5OUI']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderAal5OUI"]))
 
     @property
     def HeaderProtocolType(self):
@@ -42,7 +46,10 @@ class AtmAAL5Frame(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolType"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

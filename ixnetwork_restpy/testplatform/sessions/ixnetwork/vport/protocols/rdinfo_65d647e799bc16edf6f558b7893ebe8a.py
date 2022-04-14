@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class RdInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rdInfo'
+    _SDM_NAME = "rdInfo"
     _SDM_ATT_MAP = {
-        'EthernetTagList': 'ethernetTagList',
-        'Rd': 'rd',
-        'TunnelIdentifier': 'tunnelIdentifier',
+        "EthernetTagList": "ethernetTagList",
+        "Rd": "rd",
+        "TunnelIdentifier": "tunnelIdentifier",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RdInfo, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class RdInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_2b730ff844de058a37c4e1ec1e4dfa87 import OpaqueElementInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_2b730ff844de058a37c4e1ec1e4dfa87 import (
+            OpaqueElementInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpaqueElementInfo', None) is not None:
-                return self._properties.get('OpaqueElementInfo')
+            if self._properties.get("OpaqueElementInfo", None) is not None:
+                return self._properties.get("OpaqueElementInfo")
         return OpaqueElementInfo(self)
 
     @property
@@ -70,7 +73,7 @@ class RdInfo(Base):
         -------
         - list(str): (Read Only) Ethernet Tag Id in hex format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetTagList'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetTagList"])
 
     @property
     def Rd(self):
@@ -80,7 +83,7 @@ class RdInfo(Base):
         -------
         - str: (Read Only) RD value in X:Y format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rd"])
 
     @property
     def TunnelIdentifier(self):
@@ -90,10 +93,10 @@ class RdInfo(Base):
         -------
         - str: (Read Only) P2P or P2MP Tunnel Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIdentifier"])
 
     def add(self):
-        """Adds a new rdInfo resource on the json, only valid with config assistant
+        """Adds a new rdInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

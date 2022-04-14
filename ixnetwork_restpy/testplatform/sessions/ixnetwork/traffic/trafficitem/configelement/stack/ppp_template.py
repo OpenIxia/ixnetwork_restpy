@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class Ppp(Base):
     __slots__ = ()
-    _SDM_NAME = 'ppp'
+    _SDM_NAME = "ppp"
     _SDM_ATT_MAP = {
-        'Address': 'ppp.header.address-1',
-        'Control': 'ppp.header.control-2',
-        'ProtocolType': 'ppp.header.protocolType-3',
+        "Address": "ppp.header.address-1",
+        "Control": "ppp.header.control-2",
+        "ProtocolType": "ppp.header.protocolType-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,8 @@ class Ppp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Address"]))
 
     @property
     def Control(self):
@@ -32,7 +33,8 @@ class Ppp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Control']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Control"]))
 
     @property
     def ProtocolType(self):
@@ -42,7 +44,8 @@ class Ppp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtocolType"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

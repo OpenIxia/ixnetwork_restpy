@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class IptvRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'iptvRange'
+    _SDM_NAME = "iptvRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'GeneralQueryResponseMode': 'generalQueryResponseMode',
-        'ImmediateResponse': 'immediateResponse',
-        'InterStbStartDelay': 'interStbStartDelay',
-        'JoinLatencyThreshold': 'joinLatencyThreshold',
-        'JoinLeaveMultiplier': 'joinLeaveMultiplier',
-        'LeaveLatencyThreshold': 'leaveLatencyThreshold',
-        'LogFailureTimestamps': 'logFailureTimestamps',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ReportFrequency': 'reportFrequency',
-        'RouterAlert': 'routerAlert',
-        'SpecificQueryResponseMode': 'specificQueryResponseMode',
-        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
-        'UnsolicitedResponseMode': 'unsolicitedResponseMode',
-        'Version': 'version',
-        'ViewingProfile': 'viewingProfile',
+        "Enabled": "enabled",
+        "GeneralQueryResponseMode": "generalQueryResponseMode",
+        "ImmediateResponse": "immediateResponse",
+        "InterStbStartDelay": "interStbStartDelay",
+        "JoinLatencyThreshold": "joinLatencyThreshold",
+        "JoinLeaveMultiplier": "joinLeaveMultiplier",
+        "LeaveLatencyThreshold": "leaveLatencyThreshold",
+        "LogFailureTimestamps": "logFailureTimestamps",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ReportFrequency": "reportFrequency",
+        "RouterAlert": "routerAlert",
+        "SpecificQueryResponseMode": "specificQueryResponseMode",
+        "StbLeaveJoinDelay": "stbLeaveJoinDelay",
+        "UnsolicitedResponseMode": "unsolicitedResponseMode",
+        "Version": "version",
+        "ViewingProfile": "viewingProfile",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IptvRange, self).__init__(parent, list_op)
@@ -71,10 +71,13 @@ class IptvRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvchannels_3a5ea07027b957260685005a3cd8f695 import IptvChannels
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvchannels_3a5ea07027b957260685005a3cd8f695 import (
+            IptvChannels,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IptvChannels', None) is not None:
-                return self._properties.get('IptvChannels')
+            if self._properties.get("IptvChannels", None) is not None:
+                return self._properties.get("IptvChannels")
         return IptvChannels(self)
 
     @property
@@ -85,39 +88,42 @@ class IptvRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GeneralQueryResponseMode(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If selected, responds to General Query messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueryResponseMode"])
+
     @GeneralQueryResponseMode.setter
     def GeneralQueryResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueryResponseMode"], value)
 
     @property
     def ImmediateResponse(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If selected, it will ignore the value specified in the Maximum Response Delay in the Membership Query message, assume that the Delay is always = 0 seconds and immediately respond to the Query by sending a Report.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImmediateResponse'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImmediateResponse"])
+
     @ImmediateResponse.setter
     def ImmediateResponse(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImmediateResponse'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImmediateResponse"], value)
 
     @property
     def InterStbStartDelay(self):
@@ -127,11 +133,12 @@ class IptvRange(Base):
         -------
         - number: Time in milliseconds between Join messages from clients within the same range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterStbStartDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterStbStartDelay"])
+
     @InterStbStartDelay.setter
     def InterStbStartDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterStbStartDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterStbStartDelay"], value)
 
     @property
     def JoinLatencyThreshold(self):
@@ -141,25 +148,27 @@ class IptvRange(Base):
         -------
         - number: The maximum time that is allowed for a multicast stream to arrive for channel for which a Join has been sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLatencyThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLatencyThreshold"])
+
     @JoinLatencyThreshold.setter
     def JoinLatencyThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLatencyThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLatencyThreshold"], value)
 
     @property
     def JoinLeaveMultiplier(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The number of times a host sends every Join or Leave message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"])
+
     @JoinLeaveMultiplier.setter
     def JoinLeaveMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"], value)
 
     @property
     def LeaveLatencyThreshold(self):
@@ -169,11 +178,12 @@ class IptvRange(Base):
         -------
         - number: The maximum time allowed for a multicast stream to stop for a channel for which a Leave has been sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeaveLatencyThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeaveLatencyThreshold"])
+
     @LeaveLatencyThreshold.setter
     def LeaveLatencyThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LeaveLatencyThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LeaveLatencyThreshold"], value)
 
     @property
     def LogFailureTimestamps(self):
@@ -183,11 +193,12 @@ class IptvRange(Base):
         -------
         - bool: If enabled, the timestamps for Join and Leave failures are saved to a log file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogFailureTimestamps'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogFailureTimestamps"])
+
     @LogFailureTimestamps.setter
     def LogFailureTimestamps(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogFailureTimestamps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogFailureTimestamps"], value)
 
     @property
     def Name(self):
@@ -197,11 +208,12 @@ class IptvRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -211,49 +223,52 @@ class IptvRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ReportFrequency(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: When Send Unsolicited Response is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportFrequency"])
+
     @ReportFrequency.setter
     def ReportFrequency(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportFrequency"], value)
 
     @property
     def RouterAlert(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If selected, sets the Send Router Alert bit in the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterAlert"])
+
     @RouterAlert.setter
     def RouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterAlert"], value)
 
     @property
     def SpecificQueryResponseMode(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If selected, responds to Group-Specific Query messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpecificQueryResponseMode"])
+
     @SpecificQueryResponseMode.setter
     def SpecificQueryResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpecificQueryResponseMode"], value)
 
     @property
     def StbLeaveJoinDelay(self):
@@ -263,39 +278,42 @@ class IptvRange(Base):
         -------
         - number: Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StbLeaveJoinDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["StbLeaveJoinDelay"])
+
     @StbLeaveJoinDelay.setter
     def StbLeaveJoinDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StbLeaveJoinDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StbLeaveJoinDelay"], value)
 
     @property
     def UnsolicitedResponseMode(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If selected, causes the emulated IGMP host to automatically send full membership messages at regular intervals, without waiting for a query message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnsolicitedResponseMode"])
+
     @UnsolicitedResponseMode.setter
     def UnsolicitedResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnsolicitedResponseMode"], value)
 
     @property
     def Version(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: IGMP/MLD protocol version.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
     @property
     def ViewingProfile(self):
@@ -305,13 +323,32 @@ class IptvRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../iptvProfile): Template describing the behavior of how clients view the lists of channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ViewingProfile'])
+        return self._get_attribute(self._SDM_ATT_MAP["ViewingProfile"])
+
     @ViewingProfile.setter
     def ViewingProfile(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ViewingProfile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ViewingProfile"], value)
 
-    def update(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+    def update(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        InterStbStartDelay=None,
+        JoinLatencyThreshold=None,
+        JoinLeaveMultiplier=None,
+        LeaveLatencyThreshold=None,
+        LogFailureTimestamps=None,
+        Name=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        StbLeaveJoinDelay=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+        ViewingProfile=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, bool, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Updates iptvRange resource on the server.
 
@@ -340,7 +377,25 @@ class IptvRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+    def add(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        InterStbStartDelay=None,
+        JoinLatencyThreshold=None,
+        JoinLeaveMultiplier=None,
+        LeaveLatencyThreshold=None,
+        LogFailureTimestamps=None,
+        Name=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        StbLeaveJoinDelay=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+        ViewingProfile=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, bool, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Adds a new iptvRange resource on the server and adds it to the container.
 
@@ -383,7 +438,26 @@ class IptvRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ObjectId=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+    def find(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        InterStbStartDelay=None,
+        JoinLatencyThreshold=None,
+        JoinLeaveMultiplier=None,
+        LeaveLatencyThreshold=None,
+        LogFailureTimestamps=None,
+        Name=None,
+        ObjectId=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        StbLeaveJoinDelay=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+        ViewingProfile=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, bool, str, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Finds and retrieves iptvRange resources from the server.
 
@@ -456,10 +530,14 @@ class IptvRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -478,10 +556,14 @@ class IptvRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -500,10 +582,14 @@ class IptvRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def IptvStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -527,10 +613,12 @@ class IptvRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('iptvStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("iptvStart", payload=payload, response_object=None)
 
     def IptvStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -554,7 +642,9 @@ class IptvRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('iptvStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("iptvStop", payload=payload, response_object=None)

@@ -110,7 +110,7 @@ class BgpClusterIdList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpClusterIdList
-        """Adds a new bgpClusterIdList resource on the json, only valid with config assistant
+        """Adds a new bgpClusterIdList resource on the json, only valid with batch add utility
 
         Args
         ----

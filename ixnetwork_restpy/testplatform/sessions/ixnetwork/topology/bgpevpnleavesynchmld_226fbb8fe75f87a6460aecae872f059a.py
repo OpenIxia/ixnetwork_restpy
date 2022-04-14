@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,25 @@ class BgpEvpnLeaveSynchMld(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEvpnLeaveSynchMld'
+    _SDM_NAME = "bgpEvpnLeaveSynchMld"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAutoWithdrawOfLeaveSynch': 'enableAutoWithdrawOfLeaveSynch',
-        'GroupAddressCountLeaveSynch': 'groupAddressCountLeaveSynch',
-        'GroupType': 'groupType',
-        'MaximumResponseTimeLeaveSynch': 'maximumResponseTimeLeaveSynch',
-        'MldVersionV1LeaveSynch': 'mldVersionV1LeaveSynch',
-        'MldVersionV2LeaveSynch': 'mldVersionV2LeaveSynch',
-        'Mode': 'mode',
-        'Name': 'name',
-        'SourceAddressCountLeaveSynch': 'sourceAddressCountLeaveSynch',
-        'SourceGroupMappingLeaveSynch': 'sourceGroupMappingLeaveSynch',
-        'StartGroupAddressLeaveSynch': 'startGroupAddressLeaveSynch',
-        'StartSourceAddressLeaveSynch': 'startSourceAddressLeaveSynch',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableAutoWithdrawOfLeaveSynch": "enableAutoWithdrawOfLeaveSynch",
+        "GroupAddressCountLeaveSynch": "groupAddressCountLeaveSynch",
+        "GroupType": "groupType",
+        "MaximumResponseTimeLeaveSynch": "maximumResponseTimeLeaveSynch",
+        "MldVersionV1LeaveSynch": "mldVersionV1LeaveSynch",
+        "MldVersionV2LeaveSynch": "mldVersionV2LeaveSynch",
+        "Mode": "mode",
+        "Name": "name",
+        "SourceAddressCountLeaveSynch": "sourceAddressCountLeaveSynch",
+        "SourceGroupMappingLeaveSynch": "sourceGroupMappingLeaveSynch",
+        "StartGroupAddressLeaveSynch": "startGroupAddressLeaveSynch",
+        "StartSourceAddressLeaveSynch": "startSourceAddressLeaveSynch",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpEvpnLeaveSynchMld, self).__init__(parent, list_op)
@@ -65,7 +65,8 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -75,7 +76,7 @@ class BgpEvpnLeaveSynchMld(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -85,7 +86,7 @@ class BgpEvpnLeaveSynchMld(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableAutoWithdrawOfLeaveSynch(self):
@@ -96,7 +97,11 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked it will automatically withdraw the advertised LeaveSynch Route after MRT expires
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAutoWithdrawOfLeaveSynch']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableAutoWithdrawOfLeaveSynch"]),
+        )
 
     @property
     def GroupAddressCountLeaveSynch(self):
@@ -107,7 +112,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddressCountLeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupAddressCountLeaveSynch"])
+        )
 
     @property
     def GroupType(self):
@@ -118,7 +126,8 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupType"]))
 
     @property
     def MaximumResponseTimeLeaveSynch(self):
@@ -129,7 +138,11 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Response Time in milli-second
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaximumResponseTimeLeaveSynch']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MaximumResponseTimeLeaveSynch"]),
+        )
 
     @property
     def MldVersionV1LeaveSynch(self):
@@ -140,7 +153,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MLD V1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MldVersionV1LeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MldVersionV1LeaveSynch"])
+        )
 
     @property
     def MldVersionV2LeaveSynch(self):
@@ -151,7 +167,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MLD V2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MldVersionV2LeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MldVersionV2LeaveSynch"])
+        )
 
     @property
     def Mode(self):
@@ -162,7 +181,8 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mode"]))
 
     @property
     def Name(self):
@@ -172,11 +192,12 @@ class BgpEvpnLeaveSynchMld(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SourceAddressCountLeaveSynch(self):
@@ -187,7 +208,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressCountLeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceAddressCountLeaveSynch"])
+        )
 
     @property
     def SourceGroupMappingLeaveSynch(self):
@@ -198,7 +222,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Group Mapping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceGroupMappingLeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceGroupMappingLeaveSynch"])
+        )
 
     @property
     def StartGroupAddressLeaveSynch(self):
@@ -209,7 +236,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressLeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartGroupAddressLeaveSynch"])
+        )
 
     @property
     def StartSourceAddressLeaveSynch(self):
@@ -220,7 +250,10 @@ class BgpEvpnLeaveSynchMld(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Source Address IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSourceAddressLeaveSynch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartSourceAddressLeaveSynch"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> BgpEvpnLeaveSynchMld
@@ -281,7 +314,22 @@ class BgpEvpnLeaveSynchMld(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableAutoWithdrawOfLeaveSynch=None, GroupAddressCountLeaveSynch=None, GroupType=None, MaximumResponseTimeLeaveSynch=None, MldVersionV1LeaveSynch=None, MldVersionV2LeaveSynch=None, Mode=None, SourceAddressCountLeaveSynch=None, SourceGroupMappingLeaveSynch=None, StartGroupAddressLeaveSynch=None, StartSourceAddressLeaveSynch=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnableAutoWithdrawOfLeaveSynch=None,
+        GroupAddressCountLeaveSynch=None,
+        GroupType=None,
+        MaximumResponseTimeLeaveSynch=None,
+        MldVersionV1LeaveSynch=None,
+        MldVersionV2LeaveSynch=None,
+        Mode=None,
+        SourceAddressCountLeaveSynch=None,
+        SourceGroupMappingLeaveSynch=None,
+        StartGroupAddressLeaveSynch=None,
+        StartSourceAddressLeaveSynch=None,
+    ):
         """Base class infrastructure that gets a list of bgpEvpnLeaveSynchMld device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

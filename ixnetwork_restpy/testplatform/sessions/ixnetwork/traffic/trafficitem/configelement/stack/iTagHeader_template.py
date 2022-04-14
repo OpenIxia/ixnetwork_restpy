@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class ITagHeader(Base):
     __slots__ = ()
-    _SDM_NAME = 'iTagHeader'
+    _SDM_NAME = "iTagHeader"
     _SDM_ATT_MAP = {
-        'ITAGEthertypeEthertypeValue': 'iTagHeader.iTAGEthertype.ethertypeValue-1',
-        'ITAGPcp': 'iTagHeader.iTAGEthertype.iTAG.pcp-2',
-        'ITAGDrop': 'iTagHeader.iTAGEthertype.iTAG.drop-3',
-        'ITAGFmt': 'iTagHeader.iTAGEthertype.iTAG.fmt-4',
-        'ITAGReserved': 'iTagHeader.iTAGEthertype.iTAG.reserved-5',
-        'ITAGISID': 'iTagHeader.iTAGEthertype.iTAG.iSID-6',
+        "ITAGEthertypeEthertypeValue": "iTagHeader.iTAGEthertype.ethertypeValue-1",
+        "ITAGPcp": "iTagHeader.iTAGEthertype.iTAG.pcp-2",
+        "ITAGDrop": "iTagHeader.iTAGEthertype.iTAG.drop-3",
+        "ITAGFmt": "iTagHeader.iTAGEthertype.iTAG.fmt-4",
+        "ITAGReserved": "iTagHeader.iTAGEthertype.iTAG.reserved-5",
+        "ITAGISID": "iTagHeader.iTAGEthertype.iTAG.iSID-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,10 @@ class ITagHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGEthertypeEthertypeValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ITAGEthertypeEthertypeValue"])
+        )
 
     @property
     def ITAGPcp(self):
@@ -35,7 +38,8 @@ class ITagHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGPcp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGPcp"]))
 
     @property
     def ITAGDrop(self):
@@ -45,7 +49,8 @@ class ITagHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGDrop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGDrop"]))
 
     @property
     def ITAGFmt(self):
@@ -56,7 +61,8 @@ class ITagHeader(Base):
         Available enum values: Payload Encapsulated Wi Fcs, 0, Payload Encapsulated Wo Fcs, 1, No Encapsulation, 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGFmt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGFmt"]))
 
     @property
     def ITAGReserved(self):
@@ -66,7 +72,8 @@ class ITagHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGReserved"]))
 
     @property
     def ITAGISID(self):
@@ -76,7 +83,8 @@ class ITagHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGISID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGISID"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

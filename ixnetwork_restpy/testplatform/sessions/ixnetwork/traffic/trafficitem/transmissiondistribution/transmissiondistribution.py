@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class TransmissionDistribution(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'transmissionDistribution'
+    _SDM_NAME = "transmissionDistribution"
     _SDM_ATT_MAP = {
-        'AvailableDistributions': 'availableDistributions',
-        'AvailableDistributionsSet': 'availableDistributionsSet',
-        'Distributions': 'distributions',
-        'DistributionsDisplayNames': 'distributionsDisplayNames',
+        "AvailableDistributions": "availableDistributions",
+        "AvailableDistributionsSet": "availableDistributionsSet",
+        "Distributions": "distributions",
+        "DistributionsDisplayNames": "distributionsDisplayNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TransmissionDistribution, self).__init__(parent, list_op)
@@ -54,7 +54,7 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Indicates the available transmission distributions for the traffic streams.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableDistributions'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableDistributions"])
 
     @property
     def AvailableDistributionsSet(self):
@@ -63,7 +63,7 @@ class TransmissionDistribution(Base):
         -------
         - list(dict(arg1:str,arg2:str)): Returns user friendly list of distribution fields
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableDistributionsSet'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableDistributionsSet"])
 
     @property
     def Distributions(self):
@@ -73,11 +73,12 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Indicates the predefined size distribution based on size and weight.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Distributions'])
+        return self._get_attribute(self._SDM_ATT_MAP["Distributions"])
+
     @Distributions.setter
     def Distributions(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Distributions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Distributions"], value)
 
     @property
     def DistributionsDisplayNames(self):
@@ -87,7 +88,7 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Returns user friendly list of distribution fields
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistributionsDisplayNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistributionsDisplayNames"])
 
     def update(self, Distributions=None):
         # type: (List[str]) -> TransmissionDistribution
@@ -105,7 +106,7 @@ class TransmissionDistribution(Base):
 
     def add(self, Distributions=None):
         # type: (List[str]) -> TransmissionDistribution
-        """Adds a new transmissionDistribution resource on the json, only valid with config assistant
+        """Adds a new transmissionDistribution resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -121,7 +122,13 @@ class TransmissionDistribution(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableDistributions=None, AvailableDistributionsSet=None, Distributions=None, DistributionsDisplayNames=None):
+    def find(
+        self,
+        AvailableDistributions=None,
+        AvailableDistributionsSet=None,
+        Distributions=None,
+        DistributionsDisplayNames=None,
+    ):
         """Finds and retrieves transmissionDistribution resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve transmissionDistribution resources from the server.

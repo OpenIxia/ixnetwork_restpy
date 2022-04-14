@@ -18,17 +18,20 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class EmulatedRouter(Base):
-    """EmulatedRouterPlugin plugin configures a single connected interface on the Port CPU 
-    routing traffic from all the unconnected interfaces available on the port CPU, 
+    """EmulatedRouterPlugin plugin configures a single connected interface on the Port CPU
+
+    routing traffic from all the unconnected interfaces available on the port CPU,
+
     emulating the function of a router.
     The EmulatedRouter class encapsulates a list of emulatedRouter resources that are managed by the user.
     A list of resources can be retrieved from the server using the EmulatedRouter.find() method.
@@ -36,13 +39,12 @@ class EmulatedRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'emulatedRouter'
+    _SDM_NAME = "emulatedRouter"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EmulatedRouter, self).__init__(parent, list_op)
@@ -58,10 +60,13 @@ class EmulatedRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_376501c2c5152d78acc977a5619f2d48 import Amt
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_376501c2c5152d78acc977a5619f2d48 import (
+            Amt,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Amt', None) is not None:
-                return self._properties.get('Amt')
+            if self._properties.get("Amt", None) is not None:
+                return self._properties.get("Amt")
         return Amt(self)
 
     @property
@@ -75,10 +80,13 @@ class EmulatedRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpendpoint_9b50c3d9e2a9ed98449cf2fa82da0253 import DhcpEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpendpoint_9b50c3d9e2a9ed98449cf2fa82da0253 import (
+            DhcpEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpEndpoint', None) is not None:
-                return self._properties.get('DhcpEndpoint')
+            if self._properties.get("DhcpEndpoint", None) is not None:
+                return self._properties.get("DhcpEndpoint")
         return DhcpEndpoint(self)
 
     @property
@@ -92,10 +100,13 @@ class EmulatedRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpserverendpoint_03e90bb95a88ea6deed782925554ca79 import DhcpServerEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpserverendpoint_03e90bb95a88ea6deed782925554ca79 import (
+            DhcpServerEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpServerEndpoint', None) is not None:
-                return self._properties.get('DhcpServerEndpoint')
+            if self._properties.get("DhcpServerEndpoint", None) is not None:
+                return self._properties.get("DhcpServerEndpoint")
         return DhcpServerEndpoint(self)
 
     @property
@@ -109,10 +120,13 @@ class EmulatedRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ip_1092fd1761dcd4d95fae3412f6aad4e4 import Ip
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ip_1092fd1761dcd4d95fae3412f6aad4e4 import (
+            Ip,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ip', None) is not None:
-                return self._properties.get('Ip')
+            if self._properties.get("Ip", None) is not None:
+                return self._properties.get("Ip")
         return Ip(self)
 
     @property
@@ -126,10 +140,13 @@ class EmulatedRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ipendpoint_4da9c5c153153e3473d042a065dec6c2 import IpEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ipendpoint_4da9c5c153153e3473d042a065dec6c2 import (
+            IpEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IpEndpoint', None) is not None:
-                return self._properties.get('IpEndpoint')
+            if self._properties.get("IpEndpoint", None) is not None:
+                return self._properties.get("IpEndpoint")
         return IpEndpoint(self)
 
     @property
@@ -140,11 +157,12 @@ class EmulatedRouter(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -154,7 +172,7 @@ class EmulatedRouter(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, Name=None):
         # type: (str) -> EmulatedRouter
@@ -261,10 +279,12 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -283,10 +303,14 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -305,10 +329,14 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -327,10 +355,14 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -354,10 +386,12 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -381,7 +415,9 @@ class EmulatedRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

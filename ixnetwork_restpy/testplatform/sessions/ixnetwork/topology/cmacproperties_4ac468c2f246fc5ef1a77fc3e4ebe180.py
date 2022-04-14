@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,86 +35,85 @@ class CMacProperties(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cMacProperties'
+    _SDM_NAME = "cMacProperties"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActiveTs': 'activeTs',
-        'AdvSrv6L2SidInIgp': 'advSrv6L2SidInIgp',
-        'AdvSrv6L3SidInIgp': 'advSrv6L3SidInIgp',
-        'AdvertiseIpv4Address': 'advertiseIpv4Address',
-        'AdvertiseIpv6Address': 'advertiseIpv6Address',
-        'AdvertiseSRv6L2SID': 'advertiseSRv6L2SID',
-        'AdvertiseSRv6L3SID': 'advertiseSRv6L3SID',
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'AsSetMode': 'asSetMode',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'EnableSecondLabel': 'enableSecondLabel',
-        'EnableStickyStaticFlag': 'enableStickyStaticFlag',
-        'EnableUserDefinedSequenceNumber': 'enableUserDefinedSequenceNumber',
-        'EviId': 'eviId',
-        'FirstLabelStart': 'firstLabelStart',
-        'IncludeDefaultGatewayExtendedCommunity': 'includeDefaultGatewayExtendedCommunity',
-        'Ipv4AddressPrefixLength': 'ipv4AddressPrefixLength',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6AddressPrefixLength': 'ipv6AddressPrefixLength',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LabelMode': 'labelMode',
-        'LabelStep': 'labelStep',
-        'LocalPreference': 'localPreference',
-        'Mac': 'mac',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
-        'PeerAddress': 'peerAddress',
-        'SecondLabelStart': 'secondLabelStart',
-        'SendSRv6L3SIDOptionalInfo': 'sendSRv6L3SIDOptionalInfo',
-        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
-        'SequenceNumber': 'sequenceNumber',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'Srv6EndpointBehavior': 'srv6EndpointBehavior',
-        'Srv6L2SidFlags': 'srv6L2SidFlags',
-        'Srv6L2SidLoc': 'srv6L2SidLoc',
-        'Srv6L2SidLocLen': 'srv6L2SidLocLen',
-        'Srv6L2SidLocMetric': 'srv6L2SidLocMetric',
-        'Srv6L2SidReserved': 'srv6L2SidReserved',
-        'Srv6L2SidStep': 'srv6L2SidStep',
-        'Srv6L3EndpointBehavior': 'srv6L3EndpointBehavior',
-        'Srv6L3SIDOptionalInformation': 'srv6L3SIDOptionalInformation',
-        'Srv6L3SidFlags': 'srv6L3SidFlags',
-        'Srv6L3SidLoc': 'srv6L3SidLoc',
-        'Srv6L3SidLocLen': 'srv6L3SidLocLen',
-        'Srv6L3SidLocMetric': 'srv6L3SidLocMetric',
-        'Srv6L3SidReserved': 'srv6L3SidReserved',
-        'Srv6L3SidReserved1': 'srv6L3SidReserved1',
-        'Srv6L3SidReserved2': 'srv6L3SidReserved2',
-        'Srv6L3SidStep': 'srv6L3SidStep',
-        'Srv6SIDOptionalInformation': 'srv6SIDOptionalInformation',
-        'Srv6SidReserved1': 'srv6SidReserved1',
-        'Srv6SidReserved2': 'srv6SidReserved2',
-        'UseSameSequenceNumber': 'useSameSequenceNumber',
+        "Active": "active",
+        "ActiveTs": "activeTs",
+        "AdvSrv6L2SidInIgp": "advSrv6L2SidInIgp",
+        "AdvSrv6L3SidInIgp": "advSrv6L3SidInIgp",
+        "AdvertiseIpv4Address": "advertiseIpv4Address",
+        "AdvertiseIpv6Address": "advertiseIpv6Address",
+        "AdvertiseSRv6L2SID": "advertiseSRv6L2SID",
+        "AdvertiseSRv6L3SID": "advertiseSRv6L3SID",
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "AsSetMode": "asSetMode",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableAggregatorId": "enableAggregatorId",
+        "EnableAsPathSegments": "enableAsPathSegments",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableExtendedCommunity": "enableExtendedCommunity",
+        "EnableLocalPreference": "enableLocalPreference",
+        "EnableMultiExitDiscriminator": "enableMultiExitDiscriminator",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "EnableSecondLabel": "enableSecondLabel",
+        "EnableStickyStaticFlag": "enableStickyStaticFlag",
+        "EnableUserDefinedSequenceNumber": "enableUserDefinedSequenceNumber",
+        "EviId": "eviId",
+        "FirstLabelStart": "firstLabelStart",
+        "IncludeDefaultGatewayExtendedCommunity": "includeDefaultGatewayExtendedCommunity",
+        "Ipv4AddressPrefixLength": "ipv4AddressPrefixLength",
+        "Ipv4NextHop": "ipv4NextHop",
+        "Ipv6AddressPrefixLength": "ipv6AddressPrefixLength",
+        "Ipv6NextHop": "ipv6NextHop",
+        "LabelMode": "labelMode",
+        "LabelStep": "labelStep",
+        "LocalPreference": "localPreference",
+        "Mac": "mac",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Name": "name",
+        "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
+        "NoOfClusters": "noOfClusters",
+        "NoOfCommunities": "noOfCommunities",
+        "NoOfExtendedCommunity": "noOfExtendedCommunity",
+        "Origin": "origin",
+        "OriginatorId": "originatorId",
+        "OverridePeerAsSetMode": "overridePeerAsSetMode",
+        "PeerAddress": "peerAddress",
+        "SecondLabelStart": "secondLabelStart",
+        "SendSRv6L3SIDOptionalInfo": "sendSRv6L3SIDOptionalInfo",
+        "SendSRv6SIDOptionalInfo": "sendSRv6SIDOptionalInfo",
+        "SequenceNumber": "sequenceNumber",
+        "SetNextHop": "setNextHop",
+        "SetNextHopIpType": "setNextHopIpType",
+        "Srv6EndpointBehavior": "srv6EndpointBehavior",
+        "Srv6L2SidFlags": "srv6L2SidFlags",
+        "Srv6L2SidLoc": "srv6L2SidLoc",
+        "Srv6L2SidLocLen": "srv6L2SidLocLen",
+        "Srv6L2SidLocMetric": "srv6L2SidLocMetric",
+        "Srv6L2SidReserved": "srv6L2SidReserved",
+        "Srv6L2SidStep": "srv6L2SidStep",
+        "Srv6L3EndpointBehavior": "srv6L3EndpointBehavior",
+        "Srv6L3SIDOptionalInformation": "srv6L3SIDOptionalInformation",
+        "Srv6L3SidFlags": "srv6L3SidFlags",
+        "Srv6L3SidLoc": "srv6L3SidLoc",
+        "Srv6L3SidLocLen": "srv6L3SidLocLen",
+        "Srv6L3SidLocMetric": "srv6L3SidLocMetric",
+        "Srv6L3SidReserved": "srv6L3SidReserved",
+        "Srv6L3SidReserved1": "srv6L3SidReserved1",
+        "Srv6L3SidReserved2": "srv6L3SidReserved2",
+        "Srv6L3SidStep": "srv6L3SidStep",
+        "Srv6SIDOptionalInformation": "srv6SIDOptionalInformation",
+        "Srv6SidReserved1": "srv6SidReserved1",
+        "Srv6SidReserved2": "srv6SidReserved2",
+        "UseSameSequenceNumber": "useSameSequenceNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CMacProperties, self).__init__(parent, list_op)
@@ -129,10 +129,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import (
+            BgpAsPathSegmentList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsPathSegmentList', None) is not None:
-                return self._properties.get('BgpAsPathSegmentList')
+            if self._properties.get("BgpAsPathSegmentList", None) is not None:
+                return self._properties.get("BgpAsPathSegmentList")
         return BgpAsPathSegmentList(self)
 
     @property
@@ -146,10 +149,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import (
+            BgpClusterIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpClusterIdList', None) is not None:
-                return self._properties.get('BgpClusterIdList')
+            if self._properties.get("BgpClusterIdList", None) is not None:
+                return self._properties.get("BgpClusterIdList")
         return BgpClusterIdList(self)
 
     @property
@@ -163,10 +169,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+            BgpCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpCommunitiesList', None) is not None:
-                return self._properties.get('BgpCommunitiesList')
+            if self._properties.get("BgpCommunitiesList", None) is not None:
+                return self._properties.get("BgpCommunitiesList")
         return BgpCommunitiesList(self)
 
     @property
@@ -180,10 +189,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+            BgpExtendedCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-                return self._properties.get('BgpExtendedCommunitiesList')
+            if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
+                return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
 
     @property
@@ -197,10 +209,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -214,10 +229,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -231,10 +249,13 @@ class CMacProperties(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -246,7 +267,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActiveTs(self):
@@ -257,7 +279,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Active TS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveTs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveTs"]))
 
     @property
     def AdvSrv6L2SidInIgp(self):
@@ -268,7 +291,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 L2 SID in IGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvSrv6L2SidInIgp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6L2SidInIgp"])
+        )
 
     @property
     def AdvSrv6L3SidInIgp(self):
@@ -279,7 +305,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 L3 SID in IGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvSrv6L3SidInIgp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6L3SidInIgp"])
+        )
 
     @property
     def AdvertiseIpv4Address(self):
@@ -290,7 +319,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseIpv4Address"])
+        )
 
     @property
     def AdvertiseIpv6Address(self):
@@ -301,7 +333,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseIpv6Address"])
+        )
 
     @property
     def AdvertiseSRv6L2SID(self):
@@ -312,7 +347,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseSRv6L2SID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseSRv6L2SID"])
+        )
 
     @property
     def AdvertiseSRv6L3SID(self):
@@ -323,7 +361,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable SRv6 L3 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseSRv6L3SID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseSRv6L3SID"])
+        )
 
     @property
     def AggregatorAs(self):
@@ -334,7 +375,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"]))
 
     @property
     def AggregatorId(self):
@@ -345,7 +387,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
 
     @property
     def AsSetMode(self):
@@ -356,7 +399,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSetMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSetMode"]))
 
     @property
     def Count(self):
@@ -366,7 +410,7 @@ class CMacProperties(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -376,7 +420,7 @@ class CMacProperties(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableAggregatorId(self):
@@ -387,7 +431,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorId"])
+        )
 
     @property
     def EnableAsPathSegments(self):
@@ -398,7 +445,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAsPathSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAsPathSegments"])
+        )
 
     @property
     def EnableAtomicAggregate(self):
@@ -409,7 +459,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+        )
 
     @property
     def EnableCluster(self):
@@ -420,7 +473,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCluster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCluster"]))
 
     @property
     def EnableCommunity(self):
@@ -431,7 +485,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+        )
 
     @property
     def EnableExtendedCommunity(self):
@@ -442,7 +499,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExtendedCommunity"])
+        )
 
     @property
     def EnableLocalPreference(self):
@@ -453,7 +513,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLocalPreference"])
+        )
 
     @property
     def EnableMultiExitDiscriminator(self):
@@ -464,7 +527,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMultiExitDiscriminator"])
+        )
 
     @property
     def EnableNextHop(self):
@@ -475,7 +541,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"]))
 
     @property
     def EnableOrigin(self):
@@ -486,7 +553,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"]))
 
     @property
     def EnableOriginatorId(self):
@@ -497,7 +565,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+        )
 
     @property
     def EnableSecondLabel(self):
@@ -508,7 +579,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Second Label (L3)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSecondLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSecondLabel"])
+        )
 
     @property
     def EnableStickyStaticFlag(self):
@@ -519,7 +593,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sticky/Static Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableStickyStaticFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableStickyStaticFlag"])
+        )
 
     @property
     def EnableUserDefinedSequenceNumber(self):
@@ -530,7 +607,11 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable User Defined Sequence Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableUserDefinedSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableUserDefinedSequenceNumber"]),
+        )
 
     @property
     def EviId(self):
@@ -541,7 +622,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EVI ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EviId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EviId"]))
 
     @property
     def FirstLabelStart(self):
@@ -552,7 +634,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): First Label (L2) Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FirstLabelStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FirstLabelStart"])
+        )
 
     @property
     def IncludeDefaultGatewayExtendedCommunity(self):
@@ -563,7 +648,13 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Default Gateway Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultGatewayExtendedCommunity']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IncludeDefaultGatewayExtendedCommunity"]
+            ),
+        )
 
     @property
     def Ipv4AddressPrefixLength(self):
@@ -574,7 +665,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address Prefix Length which is used to determine the intersubnetting between local and remote host
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4AddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4AddressPrefixLength"])
+        )
 
     @property
     def Ipv4NextHop(self):
@@ -585,7 +679,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NextHop"]))
 
     @property
     def Ipv6AddressPrefixLength(self):
@@ -596,7 +691,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address Prefix Length which is used to determine the intersubnetting between local and remote host
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AddressPrefixLength"])
+        )
 
     @property
     def Ipv6NextHop(self):
@@ -607,7 +705,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
 
     @property
     def LabelMode(self):
@@ -618,7 +717,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelMode"]))
 
     @property
     def LabelStep(self):
@@ -629,7 +729,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelStep"]))
 
     @property
     def LocalPreference(self):
@@ -640,7 +741,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
+        )
 
     @property
     def Mac(self):
@@ -650,7 +754,7 @@ class CMacProperties(Base):
         -------
         - list(str): MAC addresses of the devices
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mac'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mac"])
 
     @property
     def MultiExitDiscriminator(self):
@@ -661,7 +765,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
 
     @property
     def Name(self):
@@ -671,11 +778,12 @@ class CMacProperties(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
@@ -685,11 +793,12 @@ class CMacProperties(Base):
         -------
         - number: Number Of AS Path Segments Per Route Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"])
+
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"], value)
 
     @property
     def NoOfClusters(self):
@@ -699,11 +808,12 @@ class CMacProperties(Base):
         -------
         - number: Number of Clusters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfClusters"])
+
     @NoOfClusters.setter
     def NoOfClusters(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfClusters"], value)
 
     @property
     def NoOfCommunities(self):
@@ -713,11 +823,12 @@ class CMacProperties(Base):
         -------
         - number: Number of Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCommunities"])
+
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
 
     @property
     def NoOfExtendedCommunity(self):
@@ -727,11 +838,12 @@ class CMacProperties(Base):
         -------
         - number: Number of Extended Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"])
+
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"], value)
 
     @property
     def Origin(self):
@@ -742,7 +854,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Origin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Origin"]))
 
     @property
     def OriginatorId(self):
@@ -753,7 +866,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OriginatorId"]))
 
     @property
     def OverridePeerAsSetMode(self):
@@ -764,7 +878,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePeerAsSetMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePeerAsSetMode"])
+        )
 
     @property
     def PeerAddress(self):
@@ -775,7 +892,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peer IP Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeerAddress"]))
 
     @property
     def SecondLabelStart(self):
@@ -786,7 +904,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Second Label (L3) Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SecondLabelStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SecondLabelStart"])
+        )
 
     @property
     def SendSRv6L3SIDOptionalInfo(self):
@@ -797,7 +918,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 L3 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendSRv6L3SIDOptionalInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendSRv6L3SIDOptionalInfo"])
+        )
 
     @property
     def SendSRv6SIDOptionalInfo(self):
@@ -808,7 +932,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 L2 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendSRv6SIDOptionalInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendSRv6SIDOptionalInfo"])
+        )
 
     @property
     def SequenceNumber(self):
@@ -819,7 +946,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sequence Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
+        )
 
     @property
     def SetNextHop(self):
@@ -830,7 +960,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetNextHop"]))
 
     @property
     def SetNextHopIpType(self):
@@ -841,7 +972,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHopIpType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetNextHopIpType"])
+        )
 
     @property
     def Srv6EndpointBehavior(self):
@@ -852,7 +986,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 Endpoint Behavior field Value for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehavior']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehavior"])
+        )
 
     @property
     def Srv6L2SidFlags(self):
@@ -863,7 +1000,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Flags Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidFlags"])
+        )
 
     @property
     def Srv6L2SidLoc(self):
@@ -874,7 +1014,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID. It consists of Locator, Func and Args
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidLoc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidLoc"]))
 
     @property
     def Srv6L2SidLocLen(self):
@@ -885,7 +1026,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Locator Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidLocLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidLocLen"])
+        )
 
     @property
     def Srv6L2SidLocMetric(self):
@@ -896,7 +1040,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Locator Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidLocMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidLocMetric"])
+        )
 
     @property
     def Srv6L2SidReserved(self):
@@ -907,7 +1054,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Reserved Value (SRv6 SID Service TLV Level)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidReserved"])
+        )
 
     @property
     def Srv6L2SidStep(self):
@@ -918,7 +1068,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range SRv6 SID Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L2SidStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6L2SidStep"]))
 
     @property
     def Srv6L3EndpointBehavior(self):
@@ -929,7 +1080,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 Endpoint Behavior field Value for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3EndpointBehavior']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3EndpointBehavior"])
+        )
 
     @property
     def Srv6L3SIDOptionalInformation(self):
@@ -940,7 +1094,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SIDOptionalInformation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SIDOptionalInformation"])
+        )
 
     @property
     def Srv6L3SidFlags(self):
@@ -951,7 +1108,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Flags Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidFlags"])
+        )
 
     @property
     def Srv6L3SidLoc(self):
@@ -962,7 +1122,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID. It consists of Locator, Func and Args
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidLoc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidLoc"]))
 
     @property
     def Srv6L3SidLocLen(self):
@@ -973,7 +1134,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Locator Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidLocLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidLocLen"])
+        )
 
     @property
     def Srv6L3SidLocMetric(self):
@@ -984,7 +1148,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Locator Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidLocMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidLocMetric"])
+        )
 
     @property
     def Srv6L3SidReserved(self):
@@ -995,7 +1162,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Reserved Value (SRv6 SID Service TLV Level)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidReserved"])
+        )
 
     @property
     def Srv6L3SidReserved1(self):
@@ -1006,7 +1176,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Reserved1 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidReserved1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidReserved1"])
+        )
 
     @property
     def Srv6L3SidReserved2(self):
@@ -1017,7 +1190,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L3 SID Reserved2 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidReserved2"])
+        )
 
     @property
     def Srv6L3SidStep(self):
@@ -1028,7 +1204,8 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range SRv6 SID Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6L3SidStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6L3SidStep"]))
 
     @property
     def Srv6SIDOptionalInformation(self):
@@ -1039,7 +1216,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SIDOptionalInformation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SIDOptionalInformation"])
+        )
 
     @property
     def Srv6SidReserved1(self):
@@ -1050,7 +1230,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Reserved1 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1"])
+        )
 
     @property
     def Srv6SidReserved2(self):
@@ -1061,7 +1244,10 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 L2 SID Reserved2 Field for Service Information sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2"])
+        )
 
     @property
     def UseSameSequenceNumber(self):
@@ -1072,9 +1258,19 @@ class CMacProperties(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Same Sequence Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber']))
 
-    def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseSameSequenceNumber"])
+        )
+
+    def update(
+        self,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+    ):
         # type: (str, int, int, int, int) -> CMacProperties
         """Updates cMacProperties resource on the server.
 
@@ -1095,7 +1291,14 @@ class CMacProperties(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+    def add(
+        self,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+    ):
         # type: (str, int, int, int, int) -> CMacProperties
         """Adds a new cMacProperties resource on the server and adds it to the container.
 
@@ -1127,7 +1330,17 @@ class CMacProperties(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, Mac=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Mac=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+    ):
         # type: (int, str, List[str], str, int, int, int, int) -> CMacProperties
         """Finds and retrieves cMacProperties resources from the server.
 
@@ -1189,10 +1402,12 @@ class CMacProperties(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ReadvertiseCMac(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1227,10 +1442,12 @@ class CMacProperties(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseCMac', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("readvertiseCMac", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1259,10 +1476,12 @@ class CMacProperties(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1291,12 +1510,84 @@ class CMacProperties(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ActiveTs=None, AdvSrv6L2SidInIgp=None, AdvSrv6L3SidInIgp=None, AdvertiseIpv4Address=None, AdvertiseIpv6Address=None, AdvertiseSRv6L2SID=None, AdvertiseSRv6L3SID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSecondLabel=None, EnableStickyStaticFlag=None, EnableUserDefinedSequenceNumber=None, EviId=None, FirstLabelStart=None, IncludeDefaultGatewayExtendedCommunity=None, Ipv4AddressPrefixLength=None, Ipv4NextHop=None, Ipv6AddressPrefixLength=None, Ipv6NextHop=None, LabelMode=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PeerAddress=None, SecondLabelStart=None, SendSRv6L3SIDOptionalInfo=None, SendSRv6SIDOptionalInfo=None, SequenceNumber=None, SetNextHop=None, SetNextHopIpType=None, Srv6EndpointBehavior=None, Srv6L2SidFlags=None, Srv6L2SidLoc=None, Srv6L2SidLocLen=None, Srv6L2SidLocMetric=None, Srv6L2SidReserved=None, Srv6L2SidStep=None, Srv6L3EndpointBehavior=None, Srv6L3SIDOptionalInformation=None, Srv6L3SidFlags=None, Srv6L3SidLoc=None, Srv6L3SidLocLen=None, Srv6L3SidLocMetric=None, Srv6L3SidReserved=None, Srv6L3SidReserved1=None, Srv6L3SidReserved2=None, Srv6L3SidStep=None, Srv6SIDOptionalInformation=None, Srv6SidReserved1=None, Srv6SidReserved2=None, UseSameSequenceNumber=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ActiveTs=None,
+        AdvSrv6L2SidInIgp=None,
+        AdvSrv6L3SidInIgp=None,
+        AdvertiseIpv4Address=None,
+        AdvertiseIpv6Address=None,
+        AdvertiseSRv6L2SID=None,
+        AdvertiseSRv6L3SID=None,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AsSetMode=None,
+        EnableAggregatorId=None,
+        EnableAsPathSegments=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableExtendedCommunity=None,
+        EnableLocalPreference=None,
+        EnableMultiExitDiscriminator=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableSecondLabel=None,
+        EnableStickyStaticFlag=None,
+        EnableUserDefinedSequenceNumber=None,
+        EviId=None,
+        FirstLabelStart=None,
+        IncludeDefaultGatewayExtendedCommunity=None,
+        Ipv4AddressPrefixLength=None,
+        Ipv4NextHop=None,
+        Ipv6AddressPrefixLength=None,
+        Ipv6NextHop=None,
+        LabelMode=None,
+        LabelStep=None,
+        LocalPreference=None,
+        MultiExitDiscriminator=None,
+        Origin=None,
+        OriginatorId=None,
+        OverridePeerAsSetMode=None,
+        PeerAddress=None,
+        SecondLabelStart=None,
+        SendSRv6L3SIDOptionalInfo=None,
+        SendSRv6SIDOptionalInfo=None,
+        SequenceNumber=None,
+        SetNextHop=None,
+        SetNextHopIpType=None,
+        Srv6EndpointBehavior=None,
+        Srv6L2SidFlags=None,
+        Srv6L2SidLoc=None,
+        Srv6L2SidLocLen=None,
+        Srv6L2SidLocMetric=None,
+        Srv6L2SidReserved=None,
+        Srv6L2SidStep=None,
+        Srv6L3EndpointBehavior=None,
+        Srv6L3SIDOptionalInformation=None,
+        Srv6L3SidFlags=None,
+        Srv6L3SidLoc=None,
+        Srv6L3SidLocLen=None,
+        Srv6L3SidLocMetric=None,
+        Srv6L3SidReserved=None,
+        Srv6L3SidReserved1=None,
+        Srv6L3SidReserved2=None,
+        Srv6L3SidStep=None,
+        Srv6SIDOptionalInformation=None,
+        Srv6SidReserved1=None,
+        Srv6SidReserved2=None,
+        UseSameSequenceNumber=None,
+    ):
         """Base class infrastructure that gets a list of cMacProperties device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

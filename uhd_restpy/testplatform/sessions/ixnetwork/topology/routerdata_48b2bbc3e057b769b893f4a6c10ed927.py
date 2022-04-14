@@ -110,7 +110,7 @@ class RouterData(Base):
 
     def add(self, Name=None):
         # type: (str) -> RouterData
-        """Adds a new routerData resource on the json, only valid with config assistant
+        """Adds a new routerData resource on the json, only valid with batch add utility
 
         Args
         ----

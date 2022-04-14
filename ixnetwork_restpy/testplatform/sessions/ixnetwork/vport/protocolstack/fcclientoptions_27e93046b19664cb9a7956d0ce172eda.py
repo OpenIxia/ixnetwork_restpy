@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,22 @@ class FcClientOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcClientOptions'
+    _SDM_NAME = "fcClientOptions"
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'B2bCredit': 'b2bCredit',
-        'B2bRxSize': 'b2bRxSize',
-        'EdTov': 'edTov',
-        'EdTovMode': 'edTovMode',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'RtTov': 'rtTov',
-        'RtTovMode': 'rtTovMode',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "Associates": "associates",
+        "B2bCredit": "b2bCredit",
+        "B2bRxSize": "b2bRxSize",
+        "EdTov": "edTov",
+        "EdTovMode": "edTovMode",
+        "MaxPacketsPerSecond": "maxPacketsPerSecond",
+        "ObjectId": "objectId",
+        "OverrideGlobalRate": "overrideGlobalRate",
+        "RtTov": "rtTov",
+        "RtTovMode": "rtTovMode",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcClientOptions, self).__init__(parent, list_op)
@@ -63,11 +63,12 @@ class FcClientOptions(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Associates'])
+        return self._get_attribute(self._SDM_ATT_MAP["Associates"])
+
     @Associates.setter
     def Associates(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Associates"], value)
 
     @property
     def B2bCredit(self):
@@ -77,11 +78,12 @@ class FcClientOptions(Base):
         -------
         - number: The buffer-to-buffer credit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['B2bCredit'])
+        return self._get_attribute(self._SDM_ATT_MAP["B2bCredit"])
+
     @B2bCredit.setter
     def B2bCredit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['B2bCredit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["B2bCredit"], value)
 
     @property
     def B2bRxSize(self):
@@ -91,11 +93,12 @@ class FcClientOptions(Base):
         -------
         - number: The buffer-to-buffer receive data field size in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["B2bRxSize"])
+
     @B2bRxSize.setter
     def B2bRxSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["B2bRxSize"], value)
 
     @property
     def EdTov(self):
@@ -105,11 +108,12 @@ class FcClientOptions(Base):
         -------
         - number: The user-provided Error Detect TimeOut Value. Can be edited in Override E_D_TOV mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EdTov'])
+        return self._get_attribute(self._SDM_ATT_MAP["EdTov"])
+
     @EdTov.setter
     def EdTov(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EdTov'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EdTov"], value)
 
     @property
     def EdTovMode(self):
@@ -119,11 +123,12 @@ class FcClientOptions(Base):
         -------
         - str: Allows the user to provide the Error Detect TimeOut Value or have the Ixia port obtain it from Login.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EdTovMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EdTovMode"])
+
     @EdTovMode.setter
     def EdTovMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EdTovMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EdTovMode"], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -133,11 +138,12 @@ class FcClientOptions(Base):
         -------
         - number: The maximum number of requests transmitted in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"])
+
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"], value)
 
     @property
     def ObjectId(self):
@@ -147,7 +153,7 @@ class FcClientOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRate(self):
@@ -157,11 +163,12 @@ class FcClientOptions(Base):
         -------
         - bool: Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"])
+
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"], value)
 
     @property
     def RtTov(self):
@@ -171,11 +178,12 @@ class FcClientOptions(Base):
         -------
         - number: The user-provided Receiver-Transmitter TimeOut Value. Can be edited in Override R_T_TOV mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RtTov'])
+        return self._get_attribute(self._SDM_ATT_MAP["RtTov"])
+
     @RtTov.setter
     def RtTov(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RtTov'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RtTov"], value)
 
     @property
     def RtTovMode(self):
@@ -185,11 +193,12 @@ class FcClientOptions(Base):
         -------
         - str: Allows the user to provide the Receiver-Transmitter TimeOut Value or have the Ixia port obtain it from Login.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RtTovMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RtTovMode"])
+
     @RtTovMode.setter
     def RtTovMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RtTovMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RtTovMode"], value)
 
     @property
     def SetupRate(self):
@@ -199,11 +208,12 @@ class FcClientOptions(Base):
         -------
         - number: The number of interfaces scheduled to be configured in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -213,13 +223,27 @@ class FcClientOptions(Base):
         -------
         - number: The number of interfaces scheduled to be deconfigured in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
-    def update(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+    def update(
+        self,
+        Associates=None,
+        B2bCredit=None,
+        B2bRxSize=None,
+        EdTov=None,
+        EdTovMode=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+        RtTovMode=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, int, int, str, int, bool, int, str, int, int) -> FcClientOptions
         """Updates fcClientOptions resource on the server.
 
@@ -243,7 +267,20 @@ class FcClientOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+    def add(
+        self,
+        Associates=None,
+        B2bCredit=None,
+        B2bRxSize=None,
+        EdTov=None,
+        EdTovMode=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+        RtTovMode=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, int, int, str, int, bool, int, str, int, int) -> FcClientOptions
         """Adds a new fcClientOptions resource on the server and adds it to the container.
 
@@ -281,7 +318,21 @@ class FcClientOptions(Base):
         """
         self._delete()
 
-    def find(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self,
+        Associates=None,
+        B2bCredit=None,
+        B2bRxSize=None,
+        EdTov=None,
+        EdTovMode=None,
+        MaxPacketsPerSecond=None,
+        ObjectId=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+        RtTovMode=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, int, int, str, int, str, bool, int, str, int, int) -> FcClientOptions
         """Finds and retrieves fcClientOptions resources from the server.
 
@@ -349,10 +400,14 @@ class FcClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -371,10 +426,14 @@ class FcClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -393,7 +452,11 @@ class FcClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

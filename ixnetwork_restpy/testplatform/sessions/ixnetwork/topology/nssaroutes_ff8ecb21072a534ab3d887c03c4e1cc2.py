@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,32 +34,31 @@ class NssaRoutes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'nssaRoutes'
+    _SDM_NAME = "nssaRoutes"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'ForwardingAddress': 'forwardingAddress',
-        'IncludeForwardingAddress': 'includeForwardingAddress',
-        'LFlag': 'lFlag',
-        'LinkStateId': 'linkStateId',
-        'LinkStateIdStep': 'linkStateIdStep',
-        'MFlag': 'mFlag',
-        'Metric': 'metric',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
-        'Prefix': 'prefix',
-        'Propagate': 'propagate',
-        'RangeSize': 'rangeSize',
-        'SidIndexLabel': 'sidIndexLabel',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EFlag": "eFlag",
+        "ForwardingAddress": "forwardingAddress",
+        "IncludeForwardingAddress": "includeForwardingAddress",
+        "LFlag": "lFlag",
+        "LinkStateId": "linkStateId",
+        "LinkStateIdStep": "linkStateIdStep",
+        "MFlag": "mFlag",
+        "Metric": "metric",
+        "Name": "name",
+        "NetworkAddress": "networkAddress",
+        "NpFlag": "npFlag",
+        "Prefix": "prefix",
+        "Propagate": "propagate",
+        "RangeSize": "rangeSize",
+        "SidIndexLabel": "sidIndexLabel",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NssaRoutes, self).__init__(parent, list_op)
@@ -72,7 +72,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
@@ -83,7 +84,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -94,7 +96,10 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Lets the corresponding router send Prefix SID. By default, it is selected
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -104,7 +109,7 @@ class NssaRoutes(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -114,7 +119,7 @@ class NssaRoutes(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EFlag(self):
@@ -125,7 +130,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def ForwardingAddress(self):
@@ -136,7 +142,10 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Forwarding Address of IPv6 NSSA LSAs that will be generated due to this range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ForwardingAddress"])
+        )
 
     @property
     def IncludeForwardingAddress(self):
@@ -147,7 +156,10 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Forwarding Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeForwardingAddress"])
+        )
 
     @property
     def LFlag(self):
@@ -158,7 +170,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LinkStateId(self):
@@ -169,7 +182,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Link State Id for the LSAs to be generated for this set of IPv6 NSSA networks.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkStateId"]))
 
     @property
     def LinkStateIdStep(self):
@@ -180,7 +194,10 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id Step for the LSAs to be generated for this set of IPv6 NSSA networks.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateIdStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkStateIdStep"])
+        )
 
     @property
     def MFlag(self):
@@ -191,7 +208,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def Metric(self):
@@ -202,7 +220,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def Name(self):
@@ -212,11 +231,12 @@ class NssaRoutes(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkAddress(self):
@@ -227,7 +247,10 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefixes of the simulated IPv6 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkAddress"])
+        )
 
     @property
     def NpFlag(self):
@@ -238,7 +261,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def Prefix(self):
@@ -249,7 +273,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Prefix"]))
 
     @property
     def Propagate(self):
@@ -260,7 +285,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Propagate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Propagate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Propagate"]))
 
     @property
     def RangeSize(self):
@@ -271,7 +297,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RangeSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RangeSize"]))
 
     @property
     def SidIndexLabel(self):
@@ -282,7 +309,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def VFlag(self):
@@ -293,7 +321,8 @@ class NssaRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     def update(self, Name=None):
         # type: (str) -> NssaRoutes
@@ -314,7 +343,7 @@ class NssaRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> NssaRoutes
-        """Adds a new nssaRoutes resource on the json, only valid with config assistant
+        """Adds a new nssaRoutes resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -387,10 +416,12 @@ class NssaRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Advertise(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -419,10 +450,12 @@ class NssaRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertise", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -439,10 +472,12 @@ class NssaRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -459,10 +494,12 @@ class NssaRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def Withdraw(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -491,12 +528,35 @@ class NssaRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdraw", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, ForwardingAddress=None, IncludeForwardingAddress=None, LFlag=None, LinkStateId=None, LinkStateIdStep=None, MFlag=None, Metric=None, NetworkAddress=None, NpFlag=None, Prefix=None, Propagate=None, RangeSize=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Algorithm=None,
+        ConfigureSIDIndexLabel=None,
+        EFlag=None,
+        ForwardingAddress=None,
+        IncludeForwardingAddress=None,
+        LFlag=None,
+        LinkStateId=None,
+        LinkStateIdStep=None,
+        MFlag=None,
+        Metric=None,
+        NetworkAddress=None,
+        NpFlag=None,
+        Prefix=None,
+        Propagate=None,
+        RangeSize=None,
+        SidIndexLabel=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of nssaRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class OrganizationSpecificOamPduData(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'organizationSpecificOamPduData'
+    _SDM_NAME = "organizationSpecificOamPduData"
     _SDM_ATT_MAP = {
-        'Oui': 'oui',
-        'Value': 'value',
+        "Oui": "oui",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OrganizationSpecificOamPduData, self).__init__(parent, list_op)
@@ -51,13 +51,14 @@ class OrganizationSpecificOamPduData(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Oui'])
+        return self._get_attribute(self._SDM_ATT_MAP["Oui"])
+
     @Oui.setter
     def Oui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Oui"], value)
 
     @property
     def Value(self):
@@ -65,13 +66,14 @@ class OrganizationSpecificOamPduData(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Oui=None, Value=None):
         # type: (str, str) -> OrganizationSpecificOamPduData
@@ -79,8 +81,8 @@ class OrganizationSpecificOamPduData(Base):
 
         Args
         ----
-        - Oui (str): 
-        - Value (str): 
+        - Oui (str):
+        - Value (str):
 
         Raises
         ------
@@ -94,8 +96,8 @@ class OrganizationSpecificOamPduData(Base):
 
         Args
         ----
-        - Oui (str): 
-        - Value (str): 
+        - Oui (str):
+        - Value (str):
 
         Returns
         -------
@@ -127,8 +129,8 @@ class OrganizationSpecificOamPduData(Base):
 
         Args
         ----
-        - Oui (str): 
-        - Value (str): 
+        - Oui (str):
+        - Value (str):
 
         Returns
         -------

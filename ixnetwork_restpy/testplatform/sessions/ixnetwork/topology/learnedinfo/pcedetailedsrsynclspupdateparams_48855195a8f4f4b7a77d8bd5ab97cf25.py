@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,49 +34,48 @@ class PceDetailedSrSyncLspUpdateParams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pceDetailedSrSyncLspUpdateParams'
+    _SDM_NAME = "pceDetailedSrSyncLspUpdateParams"
     _SDM_ATT_MAP = {
-        'AssociationId': 'associationId',
-        'Bandwidth': 'bandwidth',
-        'BindingType': 'bindingType',
-        'Bos': 'bos',
-        'ConfigureBandwidth': 'configureBandwidth',
-        'ConfigureEro': 'configureEro',
-        'ConfigureLsp': 'configureLsp',
-        'ConfigureLspa': 'configureLspa',
-        'ConfigureMetric': 'configureMetric',
-        'ExcludeAny': 'excludeAny',
-        'HoldingPriority': 'holdingPriority',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeAssociation': 'includeAssociation',
-        'IncludeConfiguredERO': 'includeConfiguredERO',
-        'IncludeSrp': 'includeSrp',
-        'IncludeSymbolicPathName': 'includeSymbolicPathName',
-        'IncludeTEPathBindingTLV': 'includeTEPathBindingTLV',
-        'IncludeXro': 'includeXro',
-        'LocalProtection': 'localProtection',
-        'MplsLabel': 'mplsLabel',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'NumberOfMetricSubObjects': 'numberOfMetricSubObjects',
-        'NumberOfXroSubObjects': 'numberOfXroSubObjects',
-        'OverridePLSPID': 'overridePLSPID',
-        'OverrideSrpId': 'overrideSrpId',
-        'PceTriggersChoiceList': 'pceTriggersChoiceList',
-        'PlspIdTriggerParam': 'plspIdTriggerParam',
-        'ProtectionLsp': 'protectionLsp',
-        'RemoveAssociation': 'removeAssociation',
-        'SendEmptyTLV': 'sendEmptyTLV',
-        'SetupPriority': 'setupPriority',
-        'SrpId': 'srpId',
-        'Srv6SID': 'srv6SID',
-        'StandbyMode': 'standbyMode',
-        'Tc': 'tc',
-        'Ttl': 'ttl',
-        'XroFailBit': 'xroFailBit',
+        "AssociationId": "associationId",
+        "Bandwidth": "bandwidth",
+        "BindingType": "bindingType",
+        "Bos": "bos",
+        "ConfigureBandwidth": "configureBandwidth",
+        "ConfigureEro": "configureEro",
+        "ConfigureLsp": "configureLsp",
+        "ConfigureLspa": "configureLspa",
+        "ConfigureMetric": "configureMetric",
+        "ExcludeAny": "excludeAny",
+        "HoldingPriority": "holdingPriority",
+        "IncludeAll": "includeAll",
+        "IncludeAny": "includeAny",
+        "IncludeAssociation": "includeAssociation",
+        "IncludeConfiguredERO": "includeConfiguredERO",
+        "IncludeSrp": "includeSrp",
+        "IncludeSymbolicPathName": "includeSymbolicPathName",
+        "IncludeTEPathBindingTLV": "includeTEPathBindingTLV",
+        "IncludeXro": "includeXro",
+        "LocalProtection": "localProtection",
+        "MplsLabel": "mplsLabel",
+        "NumberOfEroSubObjects": "numberOfEroSubObjects",
+        "NumberOfMetricSubObjects": "numberOfMetricSubObjects",
+        "NumberOfXroSubObjects": "numberOfXroSubObjects",
+        "OverridePLSPID": "overridePLSPID",
+        "OverrideSrpId": "overrideSrpId",
+        "PceTriggersChoiceList": "pceTriggersChoiceList",
+        "PlspIdTriggerParam": "plspIdTriggerParam",
+        "ProtectionLsp": "protectionLsp",
+        "RemoveAssociation": "removeAssociation",
+        "SendEmptyTLV": "sendEmptyTLV",
+        "SetupPriority": "setupPriority",
+        "SrpId": "srpId",
+        "Srv6SID": "srv6SID",
+        "StandbyMode": "standbyMode",
+        "Tc": "tc",
+        "Ttl": "ttl",
+        "XroFailBit": "xroFailBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PceDetailedSrSyncLspUpdateParams, self).__init__(parent, list_op)
@@ -91,10 +91,13 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrerosubobjectlist_d9e41e4990a041fcca2fc6fd076cf303 import PceUpdateSrEroSubObjectList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrerosubobjectlist_d9e41e4990a041fcca2fc6fd076cf303 import (
+            PceUpdateSrEroSubObjectList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceUpdateSrEroSubObjectList', None) is not None:
-                return self._properties.get('PceUpdateSrEroSubObjectList')
+            if self._properties.get("PceUpdateSrEroSubObjectList", None) is not None:
+                return self._properties.get("PceUpdateSrEroSubObjectList")
         return PceUpdateSrEroSubObjectList(self)
 
     @property
@@ -108,10 +111,13 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrmetricsubobjectlist_161f8505e21b0db145157226f5332ddd import PceUpdateSrMetricSubObjectList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrmetricsubobjectlist_161f8505e21b0db145157226f5332ddd import (
+            PceUpdateSrMetricSubObjectList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceUpdateSrMetricSubObjectList', None) is not None:
-                return self._properties.get('PceUpdateSrMetricSubObjectList')
+            if self._properties.get("PceUpdateSrMetricSubObjectList", None) is not None:
+                return self._properties.get("PceUpdateSrMetricSubObjectList")
         return PceUpdateSrMetricSubObjectList(self)
 
     @property
@@ -125,10 +131,13 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist_3cb16b2513bf72ff7ee4a5e0387625cf import PceUpdateXroSubObjectList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist_3cb16b2513bf72ff7ee4a5e0387625cf import (
+            PceUpdateXroSubObjectList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceUpdateXroSubObjectList', None) is not None:
-                return self._properties.get('PceUpdateXroSubObjectList')
+            if self._properties.get("PceUpdateXroSubObjectList", None) is not None:
+                return self._properties.get("PceUpdateXroSubObjectList")
         return PceUpdateXroSubObjectList(self)
 
     @property
@@ -140,7 +149,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Association ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssociationId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AssociationId"]))
 
     @property
     def Bandwidth(self):
@@ -151,7 +161,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bps)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bandwidth"]))
 
     @property
     def BindingType(self):
@@ -162,7 +173,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label SRv6 SID Default value is 20bit MPLS Label.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BindingType"]))
 
     @property
     def Bos(self):
@@ -173,7 +185,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bos']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bos"]))
 
     @property
     def ConfigureBandwidth(self):
@@ -184,7 +197,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Bandwidth
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureBandwidth"])
+        )
 
     @property
     def ConfigureEro(self):
@@ -195,7 +211,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ConfigureEro"]))
 
     @property
     def ConfigureLsp(self):
@@ -206,7 +223,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureLsp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ConfigureLsp"]))
 
     @property
     def ConfigureLspa(self):
@@ -217,7 +235,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure LSPA
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureLspa']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ConfigureLspa"]))
 
     @property
     def ConfigureMetric(self):
@@ -228,7 +247,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureMetric"])
+        )
 
     @property
     def ExcludeAny(self):
@@ -239,7 +261,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAny"]))
 
     @property
     def HoldingPriority(self):
@@ -250,7 +273,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldingPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldingPriority"])
+        )
 
     @property
     def IncludeAll(self):
@@ -261,7 +287,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAll']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAll"]))
 
     @property
     def IncludeAny(self):
@@ -272,7 +299,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
 
     @property
     def IncludeAssociation(self):
@@ -283,7 +311,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association object will be included in a PcUpdate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAssociation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAssociation"])
+        )
 
     @property
     def IncludeConfiguredERO(self):
@@ -294,7 +325,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, entire ERO will be go out in packet even if there is Binding SID, meaning no SR-ERO/SRv6-ERO validation will be done.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeConfiguredERO']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeConfiguredERO"])
+        )
 
     @property
     def IncludeSrp(self):
@@ -305,7 +339,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether SRP object will be included in a PCInitiate message. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSrp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeSrp"]))
 
     @property
     def IncludeSymbolicPathName(self):
@@ -316,7 +351,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if Symbolic-Path-Name TLV is to be included in PCUpate trigger message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSymbolicPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeSymbolicPathName"])
+        )
 
     @property
     def IncludeTEPathBindingTLV(self):
@@ -327,7 +365,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if TE-PATH-BINDING TLV is to be included in PCUpate trigger message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTEPathBindingTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTEPathBindingTLV"])
+        )
 
     @property
     def IncludeXro(self):
@@ -338,7 +379,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether XRO object will be included in a PcUpdate message. All other attributes in sub-tab Update XRO would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeXro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeXro"]))
 
     @property
     def LocalProtection(self):
@@ -349,7 +391,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalProtection"])
+        )
 
     @property
     def MplsLabel(self):
@@ -360,7 +405,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MplsLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MplsLabel"]))
 
     @property
     def NumberOfEroSubObjects(self):
@@ -370,11 +416,12 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         -------
         - number: Value that indicates the number of ERO Sub Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"])
+
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"], value)
 
     @property
     def NumberOfMetricSubObjects(self):
@@ -384,11 +431,12 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         -------
         - number: Value that indicates the number of Metric Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObjects"])
+
     @NumberOfMetricSubObjects.setter
     def NumberOfMetricSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObjects"], value)
 
     @property
     def NumberOfXroSubObjects(self):
@@ -398,11 +446,12 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         -------
         - number: Value that indicates the number of XRO Sub Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfXroSubObjects"])
+
     @NumberOfXroSubObjects.setter
     def NumberOfXroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfXroSubObjects"], value)
 
     @property
     def OverridePLSPID(self):
@@ -413,7 +462,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the user to Send PcUpdate with an unknown PLSP-ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePLSPID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePLSPID"])
+        )
 
     @property
     def OverrideSrpId(self):
@@ -424,7 +476,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether SRP object will be included in a PCUpdate trigger parameters. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverrideSrpId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OverrideSrpId"]))
 
     @property
     def PceTriggersChoiceList(self):
@@ -435,7 +488,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Based on options selected, IxNetwork sends information to PCPU and refreshes the statistical data in the corresponding tab of Learned Information
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PceTriggersChoiceList']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PceTriggersChoiceList"])
+        )
 
     @property
     def PlspIdTriggerParam(self):
@@ -446,7 +502,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The value of PLSP-ID that should be put in the PcUpdate Message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PlspIdTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PlspIdTriggerParam"])
+        )
 
     @property
     def ProtectionLsp(self):
@@ -457,7 +516,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Protection LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionLsp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtectionLsp"]))
 
     @property
     def RemoveAssociation(self):
@@ -468,7 +528,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remove Association
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoveAssociation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoveAssociation"])
+        )
 
     @property
     def SendEmptyTLV(self):
@@ -479,7 +542,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled all fields after Binding Type will be grayed out.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendEmptyTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SendEmptyTLV"]))
 
     @property
     def SetupPriority(self):
@@ -490,7 +554,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetupPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetupPriority"]))
 
     @property
     def SrpId(self):
@@ -501,7 +566,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SRP object is used to correlate between initiation requests sent by the PCE and the error reports and state reports sent by the PCC. This number is unique per PCEP session and is incremented per initiation.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrpId"]))
 
     @property
     def Srv6SID(self):
@@ -512,7 +578,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID with a format of a 16 byte IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SID"]))
 
     @property
     def StandbyMode(self):
@@ -523,7 +590,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Standby Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StandbyMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StandbyMode"]))
 
     @property
     def Tc(self):
@@ -534,7 +602,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tc"]))
 
     @property
     def Ttl(self):
@@ -545,7 +614,8 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ttl"]))
 
     @property
     def XroFailBit(self):
@@ -556,9 +626,15 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): XRO Fail bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XroFailBit']))
 
-    def update(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["XroFailBit"]))
+
+    def update(
+        self,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObjects=None,
+        NumberOfXroSubObjects=None,
+    ):
         # type: (int, int, int) -> PceDetailedSrSyncLspUpdateParams
         """Updates pceDetailedSrSyncLspUpdateParams resource on the server.
 
@@ -577,9 +653,14 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+    def add(
+        self,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObjects=None,
+        NumberOfXroSubObjects=None,
+    ):
         # type: (int, int, int) -> PceDetailedSrSyncLspUpdateParams
-        """Adds a new pceDetailedSrSyncLspUpdateParams resource on the json, only valid with config assistant
+        """Adds a new pceDetailedSrSyncLspUpdateParams resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -597,7 +678,12 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+    def find(
+        self,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObjects=None,
+        NumberOfXroSubObjects=None,
+    ):
         # type: (int, int, int) -> PceDetailedSrSyncLspUpdateParams
         """Finds and retrieves pceDetailedSrSyncLspUpdateParams resources from the server.
 
@@ -656,10 +742,12 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPcUpdate', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPcUpdate", payload=payload, response_object=None)
 
     def SendReturnDelegation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -678,12 +766,54 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendReturnDelegation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendReturnDelegation", payload=payload, response_object=None
+        )
 
-    def get_device_ids(self, PortNames=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, IncludeConfiguredERO=None, IncludeSrp=None, IncludeSymbolicPathName=None, IncludeTEPathBindingTLV=None, IncludeXro=None, LocalProtection=None, MplsLabel=None, OverridePLSPID=None, OverrideSrpId=None, PceTriggersChoiceList=None, PlspIdTriggerParam=None, ProtectionLsp=None, RemoveAssociation=None, SendEmptyTLV=None, SetupPriority=None, SrpId=None, Srv6SID=None, StandbyMode=None, Tc=None, Ttl=None, XroFailBit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AssociationId=None,
+        Bandwidth=None,
+        BindingType=None,
+        Bos=None,
+        ConfigureBandwidth=None,
+        ConfigureEro=None,
+        ConfigureLsp=None,
+        ConfigureLspa=None,
+        ConfigureMetric=None,
+        ExcludeAny=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IncludeAssociation=None,
+        IncludeConfiguredERO=None,
+        IncludeSrp=None,
+        IncludeSymbolicPathName=None,
+        IncludeTEPathBindingTLV=None,
+        IncludeXro=None,
+        LocalProtection=None,
+        MplsLabel=None,
+        OverridePLSPID=None,
+        OverrideSrpId=None,
+        PceTriggersChoiceList=None,
+        PlspIdTriggerParam=None,
+        ProtectionLsp=None,
+        RemoveAssociation=None,
+        SendEmptyTLV=None,
+        SetupPriority=None,
+        SrpId=None,
+        Srv6SID=None,
+        StandbyMode=None,
+        Tc=None,
+        Ttl=None,
+        XroFailBit=None,
+    ):
         """Base class infrastructure that gets a list of pceDetailedSrSyncLspUpdateParams device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

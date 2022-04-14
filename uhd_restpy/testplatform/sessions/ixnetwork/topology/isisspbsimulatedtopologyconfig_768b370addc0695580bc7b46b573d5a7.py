@@ -179,7 +179,7 @@ class IsisSpbSimulatedTopologyConfig(Base):
 
     def add(self, Name=None, SpbNodeTopologyCount=None):
         # type: (str, int) -> IsisSpbSimulatedTopologyConfig
-        """Adds a new isisSpbSimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisSpbSimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----

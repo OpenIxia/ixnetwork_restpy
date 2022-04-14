@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,44 +34,43 @@ class ExternalRoutes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'externalRoutes'
+    _SDM_NAME = "externalRoutes"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EBit': 'eBit',
-        'EFlag': 'eFlag',
-        'ExternalRouteTag': 'externalRouteTag',
-        'FBit': 'fBit',
-        'ForwardingAddress': 'forwardingAddress',
-        'LABit': 'lABit',
-        'LFlag': 'lFlag',
-        'LinkStateId': 'linkStateId',
-        'LinkStateIdStep': 'linkStateIdStep',
-        'MCBit': 'mCBit',
-        'MFlag': 'mFlag',
-        'Metric': 'metric',
-        'NUBit': 'nUBit',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
-        'PBit': 'pBit',
-        'Prefix': 'prefix',
-        'RangeSize': 'rangeSize',
-        'RefLSType': 'refLSType',
-        'ReferencedLinkStateId': 'referencedLinkStateId',
-        'SidIndexLabel': 'sidIndexLabel',
-        'TBit': 'tBit',
-        'UnusedBit4': 'unusedBit4',
-        'UnusedBit5': 'unusedBit5',
-        'UnusedBit6': 'unusedBit6',
-        'UnusedBit7': 'unusedBit7',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EBit": "eBit",
+        "EFlag": "eFlag",
+        "ExternalRouteTag": "externalRouteTag",
+        "FBit": "fBit",
+        "ForwardingAddress": "forwardingAddress",
+        "LABit": "lABit",
+        "LFlag": "lFlag",
+        "LinkStateId": "linkStateId",
+        "LinkStateIdStep": "linkStateIdStep",
+        "MCBit": "mCBit",
+        "MFlag": "mFlag",
+        "Metric": "metric",
+        "NUBit": "nUBit",
+        "Name": "name",
+        "NetworkAddress": "networkAddress",
+        "NpFlag": "npFlag",
+        "PBit": "pBit",
+        "Prefix": "prefix",
+        "RangeSize": "rangeSize",
+        "RefLSType": "refLSType",
+        "ReferencedLinkStateId": "referencedLinkStateId",
+        "SidIndexLabel": "sidIndexLabel",
+        "TBit": "tBit",
+        "UnusedBit4": "unusedBit4",
+        "UnusedBit5": "unusedBit5",
+        "UnusedBit6": "unusedBit6",
+        "UnusedBit7": "unusedBit7",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ExternalRoutes, self).__init__(parent, list_op)
@@ -84,7 +84,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
@@ -95,7 +96,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -106,7 +108,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Lets the corresponding router send Prefix SID. By default, it is selected
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -116,7 +121,7 @@ class ExternalRoutes(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -126,7 +131,7 @@ class ExternalRoutes(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EBit(self):
@@ -137,7 +142,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): External Metric Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EBit"]))
 
     @property
     def EFlag(self):
@@ -148,7 +154,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def ExternalRouteTag(self):
@@ -159,7 +166,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): External Route Tag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalRouteTag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalRouteTag"])
+        )
 
     @property
     def FBit(self):
@@ -170,7 +180,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Forwarding Address Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FBit"]))
 
     @property
     def ForwardingAddress(self):
@@ -181,7 +192,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 128 Bits IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ForwardingAddress"])
+        )
 
     @property
     def LABit(self):
@@ -192,7 +206,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-LA Bit(Local Address)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LABit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LABit"]))
 
     @property
     def LFlag(self):
@@ -203,7 +218,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LinkStateId(self):
@@ -214,7 +230,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id of the simulated IPv6 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkStateId"]))
 
     @property
     def LinkStateIdStep(self):
@@ -225,7 +242,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id Step for the LSAs to be generated for this set of IPv6 Inter-Area networks.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateIdStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkStateIdStep"])
+        )
 
     @property
     def MCBit(self):
@@ -236,7 +256,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-MC Bit(Multicast)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MCBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MCBit"]))
 
     @property
     def MFlag(self):
@@ -247,7 +268,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def Metric(self):
@@ -258,7 +280,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def NUBit(self):
@@ -269,7 +292,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-NU Bit(No Unicast)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NUBit"]))
 
     @property
     def Name(self):
@@ -279,11 +303,12 @@ class ExternalRoutes(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkAddress(self):
@@ -294,7 +319,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefixes of the simulated IPv6 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkAddress"])
+        )
 
     @property
     def NpFlag(self):
@@ -305,7 +333,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def PBit(self):
@@ -316,7 +345,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-P Bit(Propagate)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PBit"]))
 
     @property
     def Prefix(self):
@@ -327,7 +357,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Prefix"]))
 
     @property
     def RangeSize(self):
@@ -338,7 +369,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RangeSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RangeSize"]))
 
     @property
     def RefLSType(self):
@@ -349,7 +381,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reference LS Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RefLSType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RefLSType"]))
 
     @property
     def ReferencedLinkStateId(self):
@@ -360,7 +393,10 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Referenced Link State Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReferencedLinkStateId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReferencedLinkStateId"])
+        )
 
     @property
     def SidIndexLabel(self):
@@ -371,7 +407,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def TBit(self):
@@ -382,7 +419,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): External Route Tag Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TBit"]))
 
     @property
     def UnusedBit4(self):
@@ -393,7 +431,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(4)Unused
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnusedBit4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnusedBit4"]))
 
     @property
     def UnusedBit5(self):
@@ -404,7 +443,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(5)Unused
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnusedBit5']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnusedBit5"]))
 
     @property
     def UnusedBit6(self):
@@ -415,7 +455,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(6)Unused
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnusedBit6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnusedBit6"]))
 
     @property
     def UnusedBit7(self):
@@ -426,7 +467,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Options-(7)Unused
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnusedBit7']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnusedBit7"]))
 
     @property
     def VFlag(self):
@@ -437,7 +479,8 @@ class ExternalRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     def update(self, Name=None):
         # type: (str) -> ExternalRoutes
@@ -458,7 +501,7 @@ class ExternalRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> ExternalRoutes
-        """Adds a new externalRoutes resource on the json, only valid with config assistant
+        """Adds a new externalRoutes resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -531,10 +574,12 @@ class ExternalRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Advertise(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -563,10 +608,12 @@ class ExternalRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertise", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -583,10 +630,12 @@ class ExternalRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -603,10 +652,12 @@ class ExternalRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def Withdraw(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -635,12 +686,47 @@ class ExternalRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdraw", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, LABit=None, LFlag=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, MFlag=None, Metric=None, NUBit=None, NetworkAddress=None, NpFlag=None, PBit=None, Prefix=None, RangeSize=None, RefLSType=None, ReferencedLinkStateId=None, SidIndexLabel=None, TBit=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Algorithm=None,
+        ConfigureSIDIndexLabel=None,
+        EBit=None,
+        EFlag=None,
+        ExternalRouteTag=None,
+        FBit=None,
+        ForwardingAddress=None,
+        LABit=None,
+        LFlag=None,
+        LinkStateId=None,
+        LinkStateIdStep=None,
+        MCBit=None,
+        MFlag=None,
+        Metric=None,
+        NUBit=None,
+        NetworkAddress=None,
+        NpFlag=None,
+        PBit=None,
+        Prefix=None,
+        RangeSize=None,
+        RefLSType=None,
+        ReferencedLinkStateId=None,
+        SidIndexLabel=None,
+        TBit=None,
+        UnusedBit4=None,
+        UnusedBit5=None,
+        UnusedBit6=None,
+        UnusedBit7=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of externalRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -458,7 +458,7 @@ class OspfPseudoRouter(Base):
 
     def add(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
         # type: (bool, bool, str, int, int, int) -> OspfPseudoRouter
-        """Adds a new ospfPseudoRouter resource on the json, only valid with config assistant
+        """Adds a new ospfPseudoRouter resource on the json, only valid with batch add utility
 
         Args
         ----

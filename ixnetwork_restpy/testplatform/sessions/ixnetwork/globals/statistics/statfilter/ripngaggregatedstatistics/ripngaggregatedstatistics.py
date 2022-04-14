@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class RipngAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ripngAggregatedStatistics'
+    _SDM_NAME = "ripngAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'PortName': 'portName',
-        'RegularUpdatePacketTx': 'regularUpdatePacketTx',
-        'RequestPacketRx': 'requestPacketRx',
-        'ResponsePacketRx': 'responsePacketRx',
-        'ResponsePacketTx': 'responsePacketTx',
-        'RoutersConfigured': 'routersConfigured',
-        'RoutersRunning': 'routersRunning',
-        'RoutesAdvertisedRx': 'routesAdvertisedRx',
-        'RoutesAdvertisedTx': 'routesAdvertisedTx',
-        'RoutesPoisonedTx': 'routesPoisonedTx',
-        'RoutesWithdrawsRx': 'routesWithdrawsRx',
-        'RoutesWithdrawsTx': 'routesWithdrawsTx',
-        'TriggeredUpdatePacketTx': 'triggeredUpdatePacketTx',
+        "PortName": "portName",
+        "RegularUpdatePacketTx": "regularUpdatePacketTx",
+        "RequestPacketRx": "requestPacketRx",
+        "ResponsePacketRx": "responsePacketRx",
+        "ResponsePacketTx": "responsePacketTx",
+        "RoutersConfigured": "routersConfigured",
+        "RoutersRunning": "routersRunning",
+        "RoutesAdvertisedRx": "routesAdvertisedRx",
+        "RoutesAdvertisedTx": "routesAdvertisedTx",
+        "RoutesPoisonedTx": "routesPoisonedTx",
+        "RoutesWithdrawsRx": "routesWithdrawsRx",
+        "RoutesWithdrawsTx": "routesWithdrawsTx",
+        "TriggeredUpdatePacketTx": "triggeredUpdatePacketTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RipngAggregatedStatistics, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RegularUpdatePacketTx(self):
@@ -76,11 +77,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Regular Update Packet Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegularUpdatePacketTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegularUpdatePacketTx"])
+
     @RegularUpdatePacketTx.setter
     def RegularUpdatePacketTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegularUpdatePacketTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegularUpdatePacketTx"], value)
 
     @property
     def RequestPacketRx(self):
@@ -90,11 +92,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Request Packet Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestPacketRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestPacketRx"])
+
     @RequestPacketRx.setter
     def RequestPacketRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestPacketRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestPacketRx"], value)
 
     @property
     def ResponsePacketRx(self):
@@ -104,11 +107,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Response Packet Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponsePacketRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponsePacketRx"])
+
     @ResponsePacketRx.setter
     def ResponsePacketRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResponsePacketRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResponsePacketRx"], value)
 
     @property
     def ResponsePacketTx(self):
@@ -118,11 +122,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Response Packet Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponsePacketTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponsePacketTx"])
+
     @ResponsePacketTx.setter
     def ResponsePacketTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResponsePacketTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResponsePacketTx"], value)
 
     @property
     def RoutersConfigured(self):
@@ -132,11 +137,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routers Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutersConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutersConfigured"])
+
     @RoutersConfigured.setter
     def RoutersConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutersConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutersConfigured"], value)
 
     @property
     def RoutersRunning(self):
@@ -146,11 +152,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routers Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutersRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutersRunning"])
+
     @RoutersRunning.setter
     def RoutersRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutersRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutersRunning"], value)
 
     @property
     def RoutesAdvertisedRx(self):
@@ -160,11 +167,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routes Advertised Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesAdvertisedRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesAdvertisedRx"])
+
     @RoutesAdvertisedRx.setter
     def RoutesAdvertisedRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesAdvertisedRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesAdvertisedRx"], value)
 
     @property
     def RoutesAdvertisedTx(self):
@@ -174,11 +182,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routes Advertised Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesAdvertisedTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesAdvertisedTx"])
+
     @RoutesAdvertisedTx.setter
     def RoutesAdvertisedTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesAdvertisedTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesAdvertisedTx"], value)
 
     @property
     def RoutesPoisonedTx(self):
@@ -188,11 +197,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routes Poisoned Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesPoisonedTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesPoisonedTx"])
+
     @RoutesPoisonedTx.setter
     def RoutesPoisonedTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesPoisonedTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesPoisonedTx"], value)
 
     @property
     def RoutesWithdrawsRx(self):
@@ -202,11 +212,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routes Withdraws Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesWithdrawsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesWithdrawsRx"])
+
     @RoutesWithdrawsRx.setter
     def RoutesWithdrawsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesWithdrawsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesWithdrawsRx"], value)
 
     @property
     def RoutesWithdrawsTx(self):
@@ -216,11 +227,12 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Routes Withdraws Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesWithdrawsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesWithdrawsTx"])
+
     @RoutesWithdrawsTx.setter
     def RoutesWithdrawsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesWithdrawsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesWithdrawsTx"], value)
 
     @property
     def TriggeredUpdatePacketTx(self):
@@ -230,13 +242,29 @@ class RipngAggregatedStatistics(Base):
         -------
         - bool: Triggered Update Packet Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggeredUpdatePacketTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggeredUpdatePacketTx"])
+
     @TriggeredUpdatePacketTx.setter
     def TriggeredUpdatePacketTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggeredUpdatePacketTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggeredUpdatePacketTx"], value)
 
-    def update(self, PortName=None, RegularUpdatePacketTx=None, RequestPacketRx=None, ResponsePacketRx=None, ResponsePacketTx=None, RoutersConfigured=None, RoutersRunning=None, RoutesAdvertisedRx=None, RoutesAdvertisedTx=None, RoutesPoisonedTx=None, RoutesWithdrawsRx=None, RoutesWithdrawsTx=None, TriggeredUpdatePacketTx=None):
+    def update(
+        self,
+        PortName=None,
+        RegularUpdatePacketTx=None,
+        RequestPacketRx=None,
+        ResponsePacketRx=None,
+        ResponsePacketTx=None,
+        RoutersConfigured=None,
+        RoutersRunning=None,
+        RoutesAdvertisedRx=None,
+        RoutesAdvertisedTx=None,
+        RoutesPoisonedTx=None,
+        RoutesWithdrawsRx=None,
+        RoutesWithdrawsTx=None,
+        TriggeredUpdatePacketTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> RipngAggregatedStatistics
         """Updates ripngAggregatedStatistics resource on the server.
 
@@ -262,7 +290,22 @@ class RipngAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, PortName=None, RegularUpdatePacketTx=None, RequestPacketRx=None, ResponsePacketRx=None, ResponsePacketTx=None, RoutersConfigured=None, RoutersRunning=None, RoutesAdvertisedRx=None, RoutesAdvertisedTx=None, RoutesPoisonedTx=None, RoutesWithdrawsRx=None, RoutesWithdrawsTx=None, TriggeredUpdatePacketTx=None):
+    def find(
+        self,
+        PortName=None,
+        RegularUpdatePacketTx=None,
+        RequestPacketRx=None,
+        ResponsePacketRx=None,
+        ResponsePacketTx=None,
+        RoutersConfigured=None,
+        RoutersRunning=None,
+        RoutesAdvertisedRx=None,
+        RoutesAdvertisedTx=None,
+        RoutesPoisonedTx=None,
+        RoutesWithdrawsRx=None,
+        RoutesWithdrawsTx=None,
+        TriggeredUpdatePacketTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> RipngAggregatedStatistics
         """Finds and retrieves ripngAggregatedStatistics resources from the server.
 

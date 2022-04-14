@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,25 +34,24 @@ class DescriptionStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'descriptionStatLearnedInformation'
+    _SDM_NAME = "descriptionStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathDescription': 'dataPathDescription',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'HardwareDescription': 'hardwareDescription',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'ManufacturerDescription': 'manufacturerDescription',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'SerialNumber': 'serialNumber',
-        'SoftwareDescription': 'softwareDescription',
+        "DataPathDescription": "dataPathDescription",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "HardwareDescription": "hardwareDescription",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "ManufacturerDescription": "manufacturerDescription",
+        "NegotiatedVersion": "negotiatedVersion",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "SerialNumber": "serialNumber",
+        "SoftwareDescription": "softwareDescription",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DescriptionStatLearnedInformation, self).__init__(parent, list_op)
@@ -64,7 +64,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates a description of datapath.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathDescription"])
 
     @property
     def DataPathId(self):
@@ -74,7 +74,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -84,7 +84,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the datapath ID, in Hex, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -94,7 +94,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -104,7 +104,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def HardwareDescription(self):
@@ -114,7 +114,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the hardware description of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HardwareDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["HardwareDescription"])
 
     @property
     def Latency(self):
@@ -124,7 +124,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -134,7 +134,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def ManufacturerDescription(self):
@@ -144,7 +144,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the description of the switch manufacturer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ManufacturerDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["ManufacturerDescription"])
 
     @property
     def NegotiatedVersion(self):
@@ -154,7 +154,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def RemoteIp(self):
@@ -164,7 +164,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the IP of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -174,7 +174,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the reply state of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def SerialNumber(self):
@@ -184,7 +184,7 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the Serial Number of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SerialNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SerialNumber"])
 
     @property
     def SoftwareDescription(self):
@@ -194,10 +194,10 @@ class DescriptionStatLearnedInformation(Base):
         -------
         - str: Indicates the description of the software installed on the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SoftwareDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["SoftwareDescription"])
 
     def add(self):
-        """Adds a new descriptionStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new descriptionStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -209,7 +209,23 @@ class DescriptionStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathDescription=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, HardwareDescription=None, Latency=None, LocalIp=None, ManufacturerDescription=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, SerialNumber=None, SoftwareDescription=None):
+    def find(
+        self,
+        DataPathDescription=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        HardwareDescription=None,
+        Latency=None,
+        LocalIp=None,
+        ManufacturerDescription=None,
+        NegotiatedVersion=None,
+        RemoteIp=None,
+        ReplyState=None,
+        SerialNumber=None,
+        SoftwareDescription=None,
+    ):
         # type: (str, str, str, str, str, str, int, str, str, str, str, str, str, str) -> DescriptionStatLearnedInformation
         """Finds and retrieves descriptionStatLearnedInformation resources from the server.
 

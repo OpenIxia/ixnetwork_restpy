@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,19 @@ class LearnedGroupInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedGroupInfo'
+    _SDM_NAME = "learnedGroupInfo"
     _SDM_ATT_MAP = {
-        'CompatibilityMode': 'compatibilityMode',
-        'CompatibilityTimer': 'compatibilityTimer',
-        'FilterMode': 'filterMode',
-        'GroupAddress': 'groupAddress',
-        'GroupTimer': 'groupTimer',
-        'SourceAddress': 'sourceAddress',
-        'SourceTimer': 'sourceTimer',
+        "CompatibilityMode": "compatibilityMode",
+        "CompatibilityTimer": "compatibilityTimer",
+        "FilterMode": "filterMode",
+        "GroupAddress": "groupAddress",
+        "GroupTimer": "groupTimer",
+        "SourceAddress": "sourceAddress",
+        "SourceTimer": "sourceTimer",
     }
     _SDM_ENUM_MAP = {
-        'compatibilityMode': ['igmpv1', 'igmpv2', 'igmpv3'],
-        'filterMode': ['include', 'exclude'],
+        "compatibilityMode": ["igmpv1", "igmpv2", "igmpv3"],
+        "filterMode": ["include", "exclude"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +60,7 @@ class LearnedGroupInfo(Base):
         -------
         - str(igmpv1 | igmpv2 | igmpv3): (read only) The IGMP version compatibility mode of the IGMP querier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CompatibilityMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["CompatibilityMode"])
 
     @property
     def CompatibilityTimer(self):
@@ -69,7 +70,7 @@ class LearnedGroupInfo(Base):
         -------
         - number: (read only) The number of seconds remaining in the compatibility timer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CompatibilityTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["CompatibilityTimer"])
 
     @property
     def FilterMode(self):
@@ -79,7 +80,7 @@ class LearnedGroupInfo(Base):
         -------
         - str(include | exclude): (read only) Displays the filter mode of the querier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterMode"])
 
     @property
     def GroupAddress(self):
@@ -89,7 +90,7 @@ class LearnedGroupInfo(Base):
         -------
         - str: (read only) The IPv4 address for the multicast group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
 
     @property
     def GroupTimer(self):
@@ -99,7 +100,7 @@ class LearnedGroupInfo(Base):
         -------
         - number: (read only) The number of seconds remaining in the group address timer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupTimer"])
 
     @property
     def SourceAddress(self):
@@ -109,7 +110,7 @@ class LearnedGroupInfo(Base):
         -------
         - str: (read only) The source IP addresses from which the host receives messages for this multicast group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddress"])
 
     @property
     def SourceTimer(self):
@@ -119,10 +120,10 @@ class LearnedGroupInfo(Base):
         -------
         - number: (read only) The number of seconds remaining in the source address timer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceTimer"])
 
     def add(self):
-        """Adds a new learnedGroupInfo resource on the json, only valid with config assistant
+        """Adds a new learnedGroupInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -134,7 +135,16 @@ class LearnedGroupInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CompatibilityMode=None, CompatibilityTimer=None, FilterMode=None, GroupAddress=None, GroupTimer=None, SourceAddress=None, SourceTimer=None):
+    def find(
+        self,
+        CompatibilityMode=None,
+        CompatibilityTimer=None,
+        FilterMode=None,
+        GroupAddress=None,
+        GroupTimer=None,
+        SourceAddress=None,
+        SourceTimer=None,
+    ):
         # type: (str, int, str, str, int, str, int) -> LearnedGroupInfo
         """Finds and retrieves learnedGroupInfo resources from the server.
 

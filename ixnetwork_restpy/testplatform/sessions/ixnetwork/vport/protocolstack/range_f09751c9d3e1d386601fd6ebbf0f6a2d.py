@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,11 +35,9 @@ class Range(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'range'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "range"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Range, self).__init__(parent, list_op)
@@ -54,10 +53,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_682976c6326e34be9f9449006999e86f import Dot1xRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_682976c6326e34be9f9449006999e86f import (
+            Dot1xRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1xRange', None) is not None:
-                return self._properties.get('Dot1xRange')
+            if self._properties.get("Dot1xRange", None) is not None:
+                return self._properties.get("Dot1xRange")
         return Dot1xRange(self)
 
     @property
@@ -71,10 +73,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_a7dda97e00932911a10a97160bd335f6 import EsmcRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_a7dda97e00932911a10a97160bd335f6 import (
+            EsmcRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EsmcRange', None) is not None:
-                return self._properties.get('EsmcRange')
+            if self._properties.get("EsmcRange", None) is not None:
+                return self._properties.get("EsmcRange")
         return EsmcRange(self)
 
     @property
@@ -88,10 +93,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdvxport_c60d16b7ad4ef9355774501078a8cf02 import FcoeFwdVxPort
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdvxport_c60d16b7ad4ef9355774501078a8cf02 import (
+            FcoeFwdVxPort,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeFwdVxPort', None) is not None:
-                return self._properties.get('FcoeFwdVxPort')
+            if self._properties.get("FcoeFwdVxPort", None) is not None:
+                return self._properties.get("FcoeFwdVxPort")
         return FcoeFwdVxPort(self)._select()
 
     @property
@@ -105,10 +113,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_a6da3999113bf1fc76f8b7ad16bf6936 import MacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_a6da3999113bf1fc76f8b7ad16bf6936 import (
+            MacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MacRange', None) is not None:
-                return self._properties.get('MacRange')
+            if self._properties.get("MacRange", None) is not None:
+                return self._properties.get("MacRange")
         return MacRange(self)._select()
 
     @property
@@ -122,10 +133,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_bda34eb0c3a2a906b073d8a3e72933eb import PtpRangeOverMac
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_bda34eb0c3a2a906b073d8a3e72933eb import (
+            PtpRangeOverMac,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpRangeOverMac', None) is not None:
-                return self._properties.get('PtpRangeOverMac')
+            if self._properties.get("PtpRangeOverMac", None) is not None:
+                return self._properties.get("PtpRangeOverMac")
         return PtpRangeOverMac(self)
 
     @property
@@ -139,10 +153,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_66e902e44da20531c734b4b83929bd75 import VicClientRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_66e902e44da20531c734b4b83929bd75 import (
+            VicClientRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicClientRange', None) is not None:
-                return self._properties.get('VicClientRange')
+            if self._properties.get("VicClientRange", None) is not None:
+                return self._properties.get("VicClientRange")
         return VicClientRange(self)
 
     @property
@@ -156,10 +173,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_855e022c98ec9382f75e9bd5233946a1 import VlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_855e022c98ec9382f75e9bd5233946a1 import (
+            VlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VlanRange', None) is not None:
-                return self._properties.get('VlanRange')
+            if self._properties.get("VlanRange", None) is not None:
+                return self._properties.get("VlanRange")
         return VlanRange(self)._select()
 
     def add(self):
@@ -235,10 +255,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -257,10 +279,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -279,10 +305,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -301,10 +331,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def FcoeFwdPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -321,10 +355,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeFwdPause", payload=payload, response_object=None)
 
     def FcoeFwdResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -341,10 +377,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeFwdResume", payload=payload, response_object=None)
 
     def FcoeFwdSendClearVlink(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -362,10 +400,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdSendClearVlink', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fcoeFwdSendClearVlink", payload=payload, response_object=None
+        )
 
     def FcoeFwdStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -389,10 +431,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeFwdStart", payload=payload, response_object=None)
 
     def FcoeFwdStartFipAdvertisements(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -409,10 +453,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdStartFipAdvertisements', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fcoeFwdStartFipAdvertisements", payload=payload, response_object=None
+        )
 
     def FcoeFwdStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -436,10 +484,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeFwdStop", payload=payload, response_object=None)
 
     def FcoeFwdStopFipAdvertisements(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -456,10 +506,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeFwdStopFipAdvertisements', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fcoeFwdStopFipAdvertisements", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -483,10 +537,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -510,7 +566,9 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

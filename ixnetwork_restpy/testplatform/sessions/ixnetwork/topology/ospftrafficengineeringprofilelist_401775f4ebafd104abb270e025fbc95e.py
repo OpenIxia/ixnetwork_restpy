@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,30 +33,29 @@ class OspfTrafficEngineeringProfileList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfTrafficEngineeringProfileList'
+    _SDM_NAME = "ospfTrafficEngineeringProfileList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdministratorGroup': 'administratorGroup',
-        'AdvertiseExtAdminGroup': 'advertiseExtAdminGroup',
-        'BandwidthPriority0': 'bandwidthPriority0',
-        'BandwidthPriority1': 'bandwidthPriority1',
-        'BandwidthPriority2': 'bandwidthPriority2',
-        'BandwidthPriority3': 'bandwidthPriority3',
-        'BandwidthPriority4': 'bandwidthPriority4',
-        'BandwidthPriority5': 'bandwidthPriority5',
-        'BandwidthPriority6': 'bandwidthPriority6',
-        'BandwidthPriority7': 'bandwidthPriority7',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'ExtAdminGroup': 'extAdminGroup',
-        'ExtAdminGroupLength': 'extAdminGroupLength',
-        'MaxBandwidth': 'maxBandwidth',
-        'MaxReservableBandwidth': 'maxReservableBandwidth',
-        'MetricLevel': 'metricLevel',
-        'Name': 'name',
+        "Active": "active",
+        "AdministratorGroup": "administratorGroup",
+        "AdvertiseExtAdminGroup": "advertiseExtAdminGroup",
+        "BandwidthPriority0": "bandwidthPriority0",
+        "BandwidthPriority1": "bandwidthPriority1",
+        "BandwidthPriority2": "bandwidthPriority2",
+        "BandwidthPriority3": "bandwidthPriority3",
+        "BandwidthPriority4": "bandwidthPriority4",
+        "BandwidthPriority5": "bandwidthPriority5",
+        "BandwidthPriority6": "bandwidthPriority6",
+        "BandwidthPriority7": "bandwidthPriority7",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "ExtAdminGroup": "extAdminGroup",
+        "ExtAdminGroupLength": "extAdminGroupLength",
+        "MaxBandwidth": "maxBandwidth",
+        "MaxReservableBandwidth": "maxReservableBandwidth",
+        "MetricLevel": "metricLevel",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfTrafficEngineeringProfileList, self).__init__(parent, list_op)
@@ -69,7 +69,8 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdministratorGroup(self):
@@ -80,7 +81,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Administrator Group
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdministratorGroup']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdministratorGroup"])
+        )
 
     @property
     def AdvertiseExtAdminGroup(self):
@@ -91,7 +95,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Ext Admin Group
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseExtAdminGroup']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseExtAdminGroup"])
+        )
 
     @property
     def BandwidthPriority0(self):
@@ -102,7 +109,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 0 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority0']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority0"])
+        )
 
     @property
     def BandwidthPriority1(self):
@@ -113,7 +123,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 1 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority1"])
+        )
 
     @property
     def BandwidthPriority2(self):
@@ -124,7 +137,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 2 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority2"])
+        )
 
     @property
     def BandwidthPriority3(self):
@@ -135,7 +151,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 3 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority3']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority3"])
+        )
 
     @property
     def BandwidthPriority4(self):
@@ -146,7 +165,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 4 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority4"])
+        )
 
     @property
     def BandwidthPriority5(self):
@@ -157,7 +179,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 5 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority5']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority5"])
+        )
 
     @property
     def BandwidthPriority6(self):
@@ -168,7 +193,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 6 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority6"])
+        )
 
     @property
     def BandwidthPriority7(self):
@@ -179,7 +207,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 7 (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthPriority7']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthPriority7"])
+        )
 
     @property
     def Count(self):
@@ -189,7 +220,7 @@ class OspfTrafficEngineeringProfileList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -199,7 +230,7 @@ class OspfTrafficEngineeringProfileList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def ExtAdminGroup(self):
@@ -210,7 +241,8 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Admin Group
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtAdminGroup']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExtAdminGroup"]))
 
     @property
     def ExtAdminGroupLength(self):
@@ -221,7 +253,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Admin Group Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtAdminGroupLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtAdminGroupLength"])
+        )
 
     @property
     def MaxBandwidth(self):
@@ -232,7 +267,8 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Bandwidth (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxBandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxBandwidth"]))
 
     @property
     def MaxReservableBandwidth(self):
@@ -243,7 +279,10 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Reservable Bandwidth (B/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxReservableBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxReservableBandwidth"])
+        )
 
     @property
     def MetricLevel(self):
@@ -254,7 +293,8 @@ class OspfTrafficEngineeringProfileList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TE Metric Level
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricLevel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricLevel"]))
 
     @property
     def Name(self):
@@ -264,11 +304,12 @@ class OspfTrafficEngineeringProfileList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> OspfTrafficEngineeringProfileList
@@ -329,7 +370,26 @@ class OspfTrafficEngineeringProfileList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdministratorGroup=None, AdvertiseExtAdminGroup=None, BandwidthPriority0=None, BandwidthPriority1=None, BandwidthPriority2=None, BandwidthPriority3=None, BandwidthPriority4=None, BandwidthPriority5=None, BandwidthPriority6=None, BandwidthPriority7=None, ExtAdminGroup=None, ExtAdminGroupLength=None, MaxBandwidth=None, MaxReservableBandwidth=None, MetricLevel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdministratorGroup=None,
+        AdvertiseExtAdminGroup=None,
+        BandwidthPriority0=None,
+        BandwidthPriority1=None,
+        BandwidthPriority2=None,
+        BandwidthPriority3=None,
+        BandwidthPriority4=None,
+        BandwidthPriority5=None,
+        BandwidthPriority6=None,
+        BandwidthPriority7=None,
+        ExtAdminGroup=None,
+        ExtAdminGroupLength=None,
+        MaxBandwidth=None,
+        MaxReservableBandwidth=None,
+        MetricLevel=None,
+    ):
         """Base class infrastructure that gets a list of ospfTrafficEngineeringProfileList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

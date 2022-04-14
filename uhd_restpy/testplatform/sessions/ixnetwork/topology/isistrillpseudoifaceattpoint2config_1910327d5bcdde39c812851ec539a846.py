@@ -122,7 +122,7 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisTrillPseudoIfaceAttPoint2Config
-        """Adds a new isisTrillPseudoIfaceAttPoint2Config resource on the json, only valid with config assistant
+        """Adds a new isisTrillPseudoIfaceAttPoint2Config resource on the json, only valid with batch add utility
 
         Args
         ----

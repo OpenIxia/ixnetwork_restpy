@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,43 +34,42 @@ class SwitchTablesList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchTablesList'
+    _SDM_NAME = "switchTablesList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMask': 'applySetFieldMask',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'ApplySetFieldMissMask': 'applySetFieldMissMask',
-        'AutoConfigNextTable': 'autoConfigNextTable',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FeaturesSupported': 'featuresSupported',
-        'Instruction': 'instruction',
-        'InstructionMiss': 'instructionMiss',
-        'Match': 'match',
-        'MatchMask': 'matchMask',
-        'MaxTableEntries': 'maxTableEntries',
-        'MetadataMatch': 'metadataMatch',
-        'MetadataWrite': 'metadataWrite',
-        'Name': 'name',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
-        'ParentSwitch': 'parentSwitch',
-        'TableId': 'tableId',
-        'TableName': 'tableName',
-        'WildcardFeature': 'wildcardFeature',
-        'WildcardFeatureMask': 'wildcardFeatureMask',
-        'WriteActions': 'writeActions',
-        'WriteActionsMiss': 'writeActionsMiss',
-        'WriteSetField': 'writeSetField',
-        'WriteSetFieldMask': 'writeSetFieldMask',
-        'WriteSetFieldMiss': 'writeSetFieldMiss',
-        'WriteSetFieldMissMask': 'writeSetFieldMissMask',
+        "Active": "active",
+        "ApplyActions": "applyActions",
+        "ApplyActionsMiss": "applyActionsMiss",
+        "ApplySetField": "applySetField",
+        "ApplySetFieldMask": "applySetFieldMask",
+        "ApplySetFieldMiss": "applySetFieldMiss",
+        "ApplySetFieldMissMask": "applySetFieldMissMask",
+        "AutoConfigNextTable": "autoConfigNextTable",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FeaturesSupported": "featuresSupported",
+        "Instruction": "instruction",
+        "InstructionMiss": "instructionMiss",
+        "Match": "match",
+        "MatchMask": "matchMask",
+        "MaxTableEntries": "maxTableEntries",
+        "MetadataMatch": "metadataMatch",
+        "MetadataWrite": "metadataWrite",
+        "Name": "name",
+        "NextTable": "nextTable",
+        "NextTableMiss": "nextTableMiss",
+        "ParentSwitch": "parentSwitch",
+        "TableId": "tableId",
+        "TableName": "tableName",
+        "WildcardFeature": "wildcardFeature",
+        "WildcardFeatureMask": "wildcardFeatureMask",
+        "WriteActions": "writeActions",
+        "WriteActionsMiss": "writeActionsMiss",
+        "WriteSetField": "writeSetField",
+        "WriteSetFieldMask": "writeSetFieldMask",
+        "WriteSetFieldMiss": "writeSetFieldMiss",
+        "WriteSetFieldMissMask": "writeSetFieldMissMask",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchTablesList, self).__init__(parent, list_op)
@@ -83,7 +83,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ApplyActions(self):
@@ -94,7 +95,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplyActions']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApplyActions"]))
 
     @property
     def ApplyActionsMiss(self):
@@ -105,7 +107,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of apply action miss capability that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplyActionsMiss']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApplyActionsMiss"])
+        )
 
     @property
     def ApplySetField(self):
@@ -116,7 +121,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplySetField']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApplySetField"]))
 
     @property
     def ApplySetFieldMask(self):
@@ -127,7 +133,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Mask capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApplySetFieldMask"])
+        )
 
     @property
     def ApplySetFieldMiss(self):
@@ -138,7 +147,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Miss capability that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApplySetFieldMiss"])
+        )
 
     @property
     def ApplySetFieldMissMask(self):
@@ -149,7 +161,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Apply Set Field Miss capability that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMissMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApplySetFieldMissMask"])
+        )
 
     @property
     def AutoConfigNextTable(self):
@@ -160,7 +175,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Next Table and Next Table Miss are automatically configured
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoConfigNextTable']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoConfigNextTable"])
+        )
 
     @property
     def Count(self):
@@ -170,7 +188,7 @@ class SwitchTablesList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -180,7 +198,7 @@ class SwitchTablesList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FeaturesSupported(self):
@@ -191,7 +209,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the table feature properties to enable them
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FeaturesSupported']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FeaturesSupported"])
+        )
 
     @property
     def Instruction(self):
@@ -202,7 +223,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Instructions that the table flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Instruction']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Instruction"]))
 
     @property
     def InstructionMiss(self):
@@ -213,7 +235,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Instruction miss capabilities that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstructionMiss']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstructionMiss"])
+        )
 
     @property
     def Match(self):
@@ -224,7 +249,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of match capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Match']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Match"]))
 
     @property
     def MatchMask(self):
@@ -235,7 +261,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of match mask capability that the table will support.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MatchMask']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MatchMask"]))
 
     @property
     def MaxTableEntries(self):
@@ -246,7 +273,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify Maximum Entries per Table.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxTableEntries']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxTableEntries"])
+        )
 
     @property
     def MetadataMatch(self):
@@ -257,7 +287,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the bits of Metadata which the table can match
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetadataMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetadataMatch"]))
 
     @property
     def MetadataWrite(self):
@@ -268,7 +299,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the bits of Metadata which the table can write
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetadataWrite']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetadataWrite"]))
 
     @property
     def Name(self):
@@ -278,11 +310,12 @@ class SwitchTablesList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NextTable(self):
@@ -293,7 +326,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the next table property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextTable']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextTable"]))
 
     @property
     def NextTableMiss(self):
@@ -304,7 +338,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the next table miss property (in incrementing order) seperated by , or - (for range) Eg: 1,2,3,4 or 1-4 or 1, 10-20.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextTableMiss']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextTableMiss"]))
 
     @property
     def ParentSwitch(self):
@@ -314,7 +349,7 @@ class SwitchTablesList(Base):
         -------
         - str: Parent Switch Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ParentSwitch'])
+        return self._get_attribute(self._SDM_ATT_MAP["ParentSwitch"])
 
     @property
     def TableId(self):
@@ -325,7 +360,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the Table Id, {0 - 254}
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TableId"]))
 
     @property
     def TableName(self):
@@ -336,7 +372,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the name of the Table.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TableName"]))
 
     @property
     def WildcardFeature(self):
@@ -347,7 +384,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of wildcard capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WildcardFeature']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WildcardFeature"])
+        )
 
     @property
     def WildcardFeatureMask(self):
@@ -358,7 +398,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of wildcard mask capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WildcardFeatureMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WildcardFeatureMask"])
+        )
 
     @property
     def WriteActions(self):
@@ -369,7 +412,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteActions']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WriteActions"]))
 
     @property
     def WriteActionsMiss(self):
@@ -380,7 +424,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of write action miss capability that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteActionsMiss']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WriteActionsMiss"])
+        )
 
     @property
     def WriteSetField(self):
@@ -391,7 +438,8 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteSetField']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WriteSetField"]))
 
     @property
     def WriteSetFieldMask(self):
@@ -402,7 +450,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Mask capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WriteSetFieldMask"])
+        )
 
     @property
     def WriteSetFieldMiss(self):
@@ -413,7 +464,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Miss capability that the table miss flow entry will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WriteSetFieldMiss"])
+        )
 
     @property
     def WriteSetFieldMissMask(self):
@@ -424,7 +478,10 @@ class SwitchTablesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the type of Write Set Field Miss mask capability that the table will support
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMissMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WriteSetFieldMissMask"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> SwitchTablesList
@@ -445,7 +502,7 @@ class SwitchTablesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> SwitchTablesList
-        """Adds a new switchTablesList resource on the json, only valid with config assistant
+        """Adds a new switchTablesList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -504,7 +561,38 @@ class SwitchTablesList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMask=None, ApplySetFieldMiss=None, ApplySetFieldMissMask=None, AutoConfigNextTable=None, FeaturesSupported=None, Instruction=None, InstructionMiss=None, Match=None, MatchMask=None, MaxTableEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardFeature=None, WildcardFeatureMask=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMask=None, WriteSetFieldMiss=None, WriteSetFieldMissMask=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ApplyActions=None,
+        ApplyActionsMiss=None,
+        ApplySetField=None,
+        ApplySetFieldMask=None,
+        ApplySetFieldMiss=None,
+        ApplySetFieldMissMask=None,
+        AutoConfigNextTable=None,
+        FeaturesSupported=None,
+        Instruction=None,
+        InstructionMiss=None,
+        Match=None,
+        MatchMask=None,
+        MaxTableEntries=None,
+        MetadataMatch=None,
+        MetadataWrite=None,
+        NextTable=None,
+        NextTableMiss=None,
+        TableId=None,
+        TableName=None,
+        WildcardFeature=None,
+        WildcardFeatureMask=None,
+        WriteActions=None,
+        WriteActionsMiss=None,
+        WriteSetField=None,
+        WriteSetFieldMask=None,
+        WriteSetFieldMiss=None,
+        WriteSetFieldMissMask=None,
+    ):
         """Base class infrastructure that gets a list of switchTablesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

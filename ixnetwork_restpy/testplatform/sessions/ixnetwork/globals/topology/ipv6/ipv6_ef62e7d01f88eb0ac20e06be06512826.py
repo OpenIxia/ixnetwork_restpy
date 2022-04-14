@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,25 @@ class Ipv6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6'
+    _SDM_NAME = "ipv6"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DisableLinkLocal': 'disableLinkLocal',
-        'EnableNaRouterBit': 'enableNaRouterBit',
-        'EnableRaMFlag': 'enableRaMFlag',
-        'EnableRaOFlag': 'enableRaOFlag',
-        'InitialRaCount': 'initialRaCount',
-        'MaxInitialRaInterval': 'maxInitialRaInterval',
-        'MaxRaInterval': 'maxRaInterval',
-        'Name': 'name',
-        'PermanentMacForGateway': 'permanentMacForGateway',
-        'RaRtrLifetime': 'raRtrLifetime',
-        'ReSendNsOnLinkUp': 'reSendNsOnLinkUp',
-        'RowNames': 'rowNames',
-        'SuppressNsForDuplicateGateway': 'suppressNsForDuplicateGateway',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DisableLinkLocal": "disableLinkLocal",
+        "EnableNaRouterBit": "enableNaRouterBit",
+        "EnableRaMFlag": "enableRaMFlag",
+        "EnableRaOFlag": "enableRaOFlag",
+        "InitialRaCount": "initialRaCount",
+        "MaxInitialRaInterval": "maxInitialRaInterval",
+        "MaxRaInterval": "maxRaInterval",
+        "Name": "name",
+        "PermanentMacForGateway": "permanentMacForGateway",
+        "RaRtrLifetime": "raRtrLifetime",
+        "ReSendNsOnLinkUp": "reSendNsOnLinkUp",
+        "RowNames": "rowNames",
+        "SuppressNsForDuplicateGateway": "suppressNsForDuplicateGateway",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv6, self).__init__(parent, list_op)
@@ -67,10 +67,13 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.nsrate.nsrate_2743e8b1b7c27242856a5d009e73521d import NsRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.nsrate.nsrate_2743e8b1b7c27242856a5d009e73521d import (
+            NsRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NsRate', None) is not None:
-                return self._properties.get('NsRate')
+            if self._properties.get("NsRate", None) is not None:
+                return self._properties.get("NsRate")
         return NsRate(self)._select()
 
     @property
@@ -84,10 +87,13 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -101,10 +107,13 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -115,7 +124,7 @@ class Ipv6(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -125,7 +134,7 @@ class Ipv6(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DisableLinkLocal(self):
@@ -136,7 +145,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Disable Link Local Address for IPv6.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DisableLinkLocal']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DisableLinkLocal"])
+        )
 
     @property
     def EnableNaRouterBit(self):
@@ -147,7 +159,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Router bit will be set in Neighbor Advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNaRouterBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableNaRouterBit"])
+        )
 
     @property
     def EnableRaMFlag(self):
@@ -158,7 +173,8 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Managed address configuration flag will be set in Router Advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRaMFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRaMFlag"]))
 
     @property
     def EnableRaOFlag(self):
@@ -169,7 +185,8 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Other configuration flag will be set in Router Advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRaOFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRaOFlag"]))
 
     @property
     def InitialRaCount(self):
@@ -180,7 +197,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Router Advertisement sent count. Values can range from 0 to 10.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialRaCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialRaCount"])
+        )
 
     @property
     def MaxInitialRaInterval(self):
@@ -191,7 +211,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Initial Router Advertisement interval. Values can range from 3 to 16.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxInitialRaInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxInitialRaInterval"])
+        )
 
     @property
     def MaxRaInterval(self):
@@ -202,7 +225,8 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Periodic Router Advertisement interval. Values can range from 9 to 1800.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRaInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxRaInterval"]))
 
     @property
     def Name(self):
@@ -212,11 +236,12 @@ class Ipv6(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PermanentMacForGateway(self):
@@ -227,7 +252,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When enabled, adds permanent entries for Gateways with manual MAC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PermanentMacForGateway']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PermanentMacForGateway"])
+        )
 
     @property
     def RaRtrLifetime(self):
@@ -238,7 +266,8 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router lifetime in Router Advertisement. Values can range from 0 to 9000.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RaRtrLifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RaRtrLifetime"]))
 
     @property
     def ReSendNsOnLinkUp(self):
@@ -249,7 +278,10 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Resends neighbor solicitation after link up.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReSendNsOnLinkUp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReSendNsOnLinkUp"])
+        )
 
     @property
     def RowNames(self):
@@ -259,7 +291,7 @@ class Ipv6(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def SuppressNsForDuplicateGateway(self):
@@ -270,7 +302,11 @@ class Ipv6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Optimizes the gateway MAC discovery by sending a single NS request for each unique destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressNsForDuplicateGateway']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SuppressNsForDuplicateGateway"]),
+        )
 
     def update(self, Name=None):
         # type: (str) -> Ipv6
@@ -332,7 +368,21 @@ class Ipv6(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, DisableLinkLocal=None, EnableNaRouterBit=None, EnableRaMFlag=None, EnableRaOFlag=None, InitialRaCount=None, MaxInitialRaInterval=None, MaxRaInterval=None, PermanentMacForGateway=None, RaRtrLifetime=None, ReSendNsOnLinkUp=None, SuppressNsForDuplicateGateway=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        DisableLinkLocal=None,
+        EnableNaRouterBit=None,
+        EnableRaMFlag=None,
+        EnableRaOFlag=None,
+        InitialRaCount=None,
+        MaxInitialRaInterval=None,
+        MaxRaInterval=None,
+        PermanentMacForGateway=None,
+        RaRtrLifetime=None,
+        ReSendNsOnLinkUp=None,
+        SuppressNsForDuplicateGateway=None,
+    ):
         """Base class infrastructure that gets a list of ipv6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

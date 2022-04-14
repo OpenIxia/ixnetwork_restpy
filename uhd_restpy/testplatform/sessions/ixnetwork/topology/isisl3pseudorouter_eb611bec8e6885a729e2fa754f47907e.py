@@ -1174,7 +1174,7 @@ class IsisL3PseudoRouter(Base):
 
     def add(self, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
         # type: (bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
-        """Adds a new isisL3PseudoRouter resource on the json, only valid with config assistant
+        """Adds a new isisL3PseudoRouter resource on the json, only valid with batch add utility
 
         Args
         ----

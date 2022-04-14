@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,11 +34,9 @@ class Defaults(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'defaults'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "defaults"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Defaults, self).__init__(parent, list_op)
@@ -53,14 +52,17 @@ class Defaults(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import Template
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import (
+            Template,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Template', None) is not None:
-                return self._properties.get('Template')
+            if self._properties.get("Template", None) is not None:
+                return self._properties.get("Template")
         return Template(self)
 
     def add(self):
-        """Adds a new defaults resource on the json, only valid with config assistant
+        """Adds a new defaults resource on the json, only valid with batch add utility
 
         Returns
         -------

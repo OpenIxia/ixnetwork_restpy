@@ -146,7 +146,7 @@ class PnTLVList(Base):
 
     def add(self, Name=None):
         # type: (str) -> PnTLVList
-        """Adds a new pnTLVList resource on the json, only valid with config assistant
+        """Adds a new pnTLVList resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -220,7 +220,7 @@ class LdpFECProperty(Base):
 
     def add(self, Name=None):
         # type: (str) -> LdpFECProperty
-        """Adds a new ldpFECProperty resource on the json, only valid with config assistant
+        """Adds a new ldpFECProperty resource on the json, only valid with batch add utility
 
         Args
         ----

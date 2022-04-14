@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,20 @@ class SessionLifetime(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'sessionLifetime'
+    _SDM_NAME = "sessionLifetime"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'EnableLifetime': 'enableLifetime',
-        'EnableRestart': 'enableRestart',
-        'MaxLifetime': 'maxLifetime',
-        'MaxRestarts': 'maxRestarts',
-        'MinLifetime': 'minLifetime',
-        'RowNames': 'rowNames',
-        'ScaleMode': 'scaleMode',
-        'UnlimitedRestarts': 'unlimitedRestarts',
+        "Count": "count",
+        "EnableLifetime": "enableLifetime",
+        "EnableRestart": "enableRestart",
+        "MaxLifetime": "maxLifetime",
+        "MaxRestarts": "maxRestarts",
+        "MinLifetime": "minLifetime",
+        "RowNames": "rowNames",
+        "ScaleMode": "scaleMode",
+        "UnlimitedRestarts": "unlimitedRestarts",
     }
     _SDM_ENUM_MAP = {
-        'scaleMode': ['port', 'deviceGroup'],
+        "scaleMode": ["port", "deviceGroup"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +60,7 @@ class SessionLifetime(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def EnableLifetime(self):
@@ -70,7 +71,10 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables session for lifetime.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLifetime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLifetime"])
+        )
 
     @property
     def EnableRestart(self):
@@ -81,7 +85,8 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables automatic session restart after the stop at lifetime expiry.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRestart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRestart"]))
 
     @property
     def MaxLifetime(self):
@@ -92,7 +97,8 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum session lifetime (in seconds).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxLifetime"]))
 
     @property
     def MaxRestarts(self):
@@ -103,7 +109,8 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of times each session is automatically restarted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRestarts']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxRestarts"]))
 
     @property
     def MinLifetime(self):
@@ -114,7 +121,8 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum session lifetime (in seconds).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinLifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MinLifetime"]))
 
     @property
     def RowNames(self):
@@ -124,7 +132,7 @@ class SessionLifetime(Base):
         -------
         - list(str): Names of rows.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def ScaleMode(self):
@@ -134,11 +142,12 @@ class SessionLifetime(Base):
         -------
         - str(port | deviceGroup): Indicates whether the control is specified per port or per device group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScaleMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScaleMode"])
+
     @ScaleMode.setter
     def ScaleMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ScaleMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScaleMode"], value)
 
     @property
     def UnlimitedRestarts(self):
@@ -149,7 +158,10 @@ class SessionLifetime(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows each session to always be automatically restarted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnlimitedRestarts']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnlimitedRestarts"])
+        )
 
     def update(self, ScaleMode=None):
         # type: (str) -> SessionLifetime
@@ -210,7 +222,16 @@ class SessionLifetime(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, EnableLifetime=None, EnableRestart=None, MaxLifetime=None, MaxRestarts=None, MinLifetime=None, UnlimitedRestarts=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        EnableLifetime=None,
+        EnableRestart=None,
+        MaxLifetime=None,
+        MaxRestarts=None,
+        MinLifetime=None,
+        UnlimitedRestarts=None,
+    ):
         """Base class infrastructure that gets a list of sessionLifetime device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

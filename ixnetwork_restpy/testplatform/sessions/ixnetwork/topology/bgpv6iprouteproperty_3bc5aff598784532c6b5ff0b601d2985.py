@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,91 +35,90 @@ class BgpV6IPRouteProperty(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpV6IPRouteProperty'
+    _SDM_NAME = "bgpV6IPRouteProperty"
     _SDM_ATT_MAP = {
-        'OverridePeerAsSetMode': 'OverridePeerAsSetMode',
-        'Active': 'active',
-        'AddPathId': 'addPathId',
-        'AdvertiseAsBGPLSPrefix': 'advertiseAsBGPLSPrefix',
-        'AdvertiseAsBgp3107': 'advertiseAsBgp3107',
-        'AdvertiseAsBgp3107Sr': 'advertiseAsBgp3107Sr',
-        'AdvertiseAsRfc8277': 'advertiseAsRfc8277',
-        'AdvertiseAsRfc8277SR': 'advertiseAsRfc8277SR',
-        'AdvertiseNexthopAsV4': 'advertiseNexthopAsV4',
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'AggregatorIdMode': 'aggregatorIdMode',
-        'AsNumSuffixRange': 'asNumSuffixRange',
-        'AsPathASString': 'asPathASString',
-        'AsPathPerRoute': 'asPathPerRoute',
-        'AsRandomSeed': 'asRandomSeed',
-        'AsSegDist': 'asSegDist',
-        'AsSetMode': 'asSetMode',
-        'Count': 'count',
-        'Delay': 'delay',
-        'DescriptiveName': 'descriptiveName',
-        'Downtime': 'downtime',
-        'EnableAddPath': 'enableAddPath',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAigp': 'enableAigp',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableFlapping': 'enableFlapping',
-        'EnableLLNextHop': 'enableLLNextHop',
-        'EnableLargeCommunities': 'enableLargeCommunities',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'EnableRandomAsPath': 'enableRandomAsPath',
-        'EnableSRGB': 'enableSRGB',
-        'EnableWeight': 'enableWeight',
-        'FlapFromRouteIndex': 'flapFromRouteIndex',
-        'FlapToRouteIndex': 'flapToRouteIndex',
-        'IncrementMode': 'incrementMode',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LabelEnd': 'labelEnd',
-        'LabelStart': 'labelStart',
-        'LabelStep': 'labelStep',
-        'LocalPreference': 'localPreference',
-        'MaxASNumPerSegment': 'maxASNumPerSegment',
-        'MaxNoOfASPathSegmentsPerRouteRange': 'maxNoOfASPathSegmentsPerRouteRange',
-        'MinASNumPerSegment': 'minASNumPerSegment',
-        'MinNoOfASPathSegmentsPerRouteRange': 'minNoOfASPathSegmentsPerRouteRange',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NextHopIPType': 'nextHopIPType',
-        'NextHopIncrementMode': 'nextHopIncrementMode',
-        'NextHopType': 'nextHopType',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExternalCommunities': 'noOfExternalCommunities',
-        'NoOfLabels': 'noOfLabels',
-        'NoOfLargeCommunities': 'noOfLargeCommunities',
-        'NoOfSegmentIds': 'noOfSegmentIds',
-        'NoOfTlvs': 'noOfTlvs',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'PackingFrom': 'packingFrom',
-        'PackingTo': 'packingTo',
-        'PartialFlap': 'partialFlap',
-        'RouteOrigin': 'routeOrigin',
-        'SegmentId': 'segmentId',
-        'SendMulticastWithProperSAFI': 'sendMulticastWithProperSAFI',
-        'SkipMulticast': 'skipMulticast',
-        'SpecialLabel': 'specialLabel',
-        'Uptime': 'uptime',
-        'UseTraditionalNlri': 'useTraditionalNlri',
-        'Weight': 'weight',
+        "OverridePeerAsSetMode": "OverridePeerAsSetMode",
+        "Active": "active",
+        "AddPathId": "addPathId",
+        "AdvertiseAsBGPLSPrefix": "advertiseAsBGPLSPrefix",
+        "AdvertiseAsBgp3107": "advertiseAsBgp3107",
+        "AdvertiseAsBgp3107Sr": "advertiseAsBgp3107Sr",
+        "AdvertiseAsRfc8277": "advertiseAsRfc8277",
+        "AdvertiseAsRfc8277SR": "advertiseAsRfc8277SR",
+        "AdvertiseNexthopAsV4": "advertiseNexthopAsV4",
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "AggregatorIdMode": "aggregatorIdMode",
+        "AsNumSuffixRange": "asNumSuffixRange",
+        "AsPathASString": "asPathASString",
+        "AsPathPerRoute": "asPathPerRoute",
+        "AsRandomSeed": "asRandomSeed",
+        "AsSegDist": "asSegDist",
+        "AsSetMode": "asSetMode",
+        "Count": "count",
+        "Delay": "delay",
+        "DescriptiveName": "descriptiveName",
+        "Downtime": "downtime",
+        "EnableAddPath": "enableAddPath",
+        "EnableAggregatorId": "enableAggregatorId",
+        "EnableAigp": "enableAigp",
+        "EnableAsPathSegments": "enableAsPathSegments",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableExtendedCommunity": "enableExtendedCommunity",
+        "EnableFlapping": "enableFlapping",
+        "EnableLLNextHop": "enableLLNextHop",
+        "EnableLargeCommunities": "enableLargeCommunities",
+        "EnableLocalPreference": "enableLocalPreference",
+        "EnableMultiExitDiscriminator": "enableMultiExitDiscriminator",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "EnableRandomAsPath": "enableRandomAsPath",
+        "EnableSRGB": "enableSRGB",
+        "EnableWeight": "enableWeight",
+        "FlapFromRouteIndex": "flapFromRouteIndex",
+        "FlapToRouteIndex": "flapToRouteIndex",
+        "IncrementMode": "incrementMode",
+        "Ipv4NextHop": "ipv4NextHop",
+        "Ipv6NextHop": "ipv6NextHop",
+        "LabelEnd": "labelEnd",
+        "LabelStart": "labelStart",
+        "LabelStep": "labelStep",
+        "LocalPreference": "localPreference",
+        "MaxASNumPerSegment": "maxASNumPerSegment",
+        "MaxNoOfASPathSegmentsPerRouteRange": "maxNoOfASPathSegmentsPerRouteRange",
+        "MinASNumPerSegment": "minASNumPerSegment",
+        "MinNoOfASPathSegmentsPerRouteRange": "minNoOfASPathSegmentsPerRouteRange",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Name": "name",
+        "NextHopIPType": "nextHopIPType",
+        "NextHopIncrementMode": "nextHopIncrementMode",
+        "NextHopType": "nextHopType",
+        "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
+        "NoOfClusters": "noOfClusters",
+        "NoOfCommunities": "noOfCommunities",
+        "NoOfExternalCommunities": "noOfExternalCommunities",
+        "NoOfLabels": "noOfLabels",
+        "NoOfLargeCommunities": "noOfLargeCommunities",
+        "NoOfSegmentIds": "noOfSegmentIds",
+        "NoOfTlvs": "noOfTlvs",
+        "Origin": "origin",
+        "OriginatorId": "originatorId",
+        "PackingFrom": "packingFrom",
+        "PackingTo": "packingTo",
+        "PartialFlap": "partialFlap",
+        "RouteOrigin": "routeOrigin",
+        "SegmentId": "segmentId",
+        "SendMulticastWithProperSAFI": "sendMulticastWithProperSAFI",
+        "SkipMulticast": "skipMulticast",
+        "SpecialLabel": "specialLabel",
+        "Uptime": "uptime",
+        "UseTraditionalNlri": "useTraditionalNlri",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpV6IPRouteProperty, self).__init__(parent, list_op)
@@ -134,10 +134,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgp8277srsegmentidlist_0718aa70c2b1ee20aec9def96e59fdcc import Bgp8277SRSegmentIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgp8277srsegmentidlist_0718aa70c2b1ee20aec9def96e59fdcc import (
+            Bgp8277SRSegmentIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bgp8277SRSegmentIdList', None) is not None:
-                return self._properties.get('Bgp8277SRSegmentIdList')
+            if self._properties.get("Bgp8277SRSegmentIdList", None) is not None:
+                return self._properties.get("Bgp8277SRSegmentIdList")
         return Bgp8277SRSegmentIdList(self)
 
     @property
@@ -151,10 +154,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rfc8277labelstack_c6a926d8802154f2012482423beab167 import Rfc8277LabelStack
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rfc8277labelstack_c6a926d8802154f2012482423beab167 import (
+            Rfc8277LabelStack,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc8277LabelStack', None) is not None:
-                return self._properties.get('Rfc8277LabelStack')
+            if self._properties.get("Rfc8277LabelStack", None) is not None:
+                return self._properties.get("Rfc8277LabelStack")
         return Rfc8277LabelStack(self)
 
     @property
@@ -168,10 +174,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaigplist_b76a0c0926b383c03300a5c9015e1c36 import BgpAigpList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaigplist_b76a0c0926b383c03300a5c9015e1c36 import (
+            BgpAigpList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAigpList', None) is not None:
-                return self._properties.get('BgpAigpList')
+            if self._properties.get("BgpAigpList", None) is not None:
+                return self._properties.get("BgpAigpList")
         return BgpAigpList(self)
 
     @property
@@ -185,10 +194,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import (
+            BgpAsPathSegmentList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsPathSegmentList', None) is not None:
-                return self._properties.get('BgpAsPathSegmentList')
+            if self._properties.get("BgpAsPathSegmentList", None) is not None:
+                return self._properties.get("BgpAsPathSegmentList")
         return BgpAsPathSegmentList(self)
 
     @property
@@ -202,10 +214,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import (
+            BgpClusterIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpClusterIdList', None) is not None:
-                return self._properties.get('BgpClusterIdList')
+            if self._properties.get("BgpClusterIdList", None) is not None:
+                return self._properties.get("BgpClusterIdList")
         return BgpClusterIdList(self)
 
     @property
@@ -219,10 +234,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+            BgpCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpCommunitiesList', None) is not None:
-                return self._properties.get('BgpCommunitiesList')
+            if self._properties.get("BgpCommunitiesList", None) is not None:
+                return self._properties.get("BgpCommunitiesList")
         return BgpCommunitiesList(self)
 
     @property
@@ -236,10 +254,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+            BgpExtendedCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-                return self._properties.get('BgpExtendedCommunitiesList')
+            if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
+                return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
 
     @property
@@ -253,10 +274,16 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_11861be5207f57b1a32d83eeb1d62224 import BgpNonVPNRRLargeCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_11861be5207f57b1a32d83eeb1d62224 import (
+            BgpNonVPNRRLargeCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpNonVPNRRLargeCommunitiesList', None) is not None:
-                return self._properties.get('BgpNonVPNRRLargeCommunitiesList')
+            if (
+                self._properties.get("BgpNonVPNRRLargeCommunitiesList", None)
+                is not None
+            ):
+                return self._properties.get("BgpNonVPNRRLargeCommunitiesList")
         return BgpNonVPNRRLargeCommunitiesList(self)
 
     @property
@@ -270,10 +297,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -287,10 +317,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -304,10 +337,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -321,10 +357,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.generateipv6routesparams_6a6e5a59a1ed54f9f9343ab3545821c1 import GenerateIpv6RoutesParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.generateipv6routesparams_6a6e5a59a1ed54f9f9343ab3545821c1 import (
+            GenerateIpv6RoutesParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GenerateIpv6RoutesParams', None) is not None:
-                return self._properties.get('GenerateIpv6RoutesParams')
+            if self._properties.get("GenerateIpv6RoutesParams", None) is not None:
+                return self._properties.get("GenerateIpv6RoutesParams")
         return GenerateIpv6RoutesParams(self)._select()
 
     @property
@@ -338,10 +377,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.generateroutesparams_117e1ed7232c32aa1932f4f8d5499699 import GenerateRoutesParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.generateroutesparams_117e1ed7232c32aa1932f4f8d5499699 import (
+            GenerateRoutesParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GenerateRoutesParams', None) is not None:
-                return self._properties.get('GenerateRoutesParams')
+            if self._properties.get("GenerateRoutesParams", None) is not None:
+                return self._properties.get("GenerateRoutesParams")
         return GenerateRoutesParams(self)._select()
 
     @property
@@ -355,10 +397,13 @@ class BgpV6IPRouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.importbgproutesparams_4d60eb735df5bf7c597595458b68aa31 import ImportBgpRoutesParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.importbgproutesparams_4d60eb735df5bf7c597595458b68aa31 import (
+            ImportBgpRoutesParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ImportBgpRoutesParams', None) is not None:
-                return self._properties.get('ImportBgpRoutesParams')
+            if self._properties.get("ImportBgpRoutesParams", None) is not None:
+                return self._properties.get("ImportBgpRoutesParams")
         return ImportBgpRoutesParams(self)._select()
 
     @property
@@ -370,7 +415,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePeerAsSetMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePeerAsSetMode"])
+        )
 
     @property
     def Active(self):
@@ -381,7 +429,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AddPathId(self):
@@ -392,7 +441,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP ADD Path Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddPathId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AddPathId"]))
 
     @property
     def AdvertiseAsBGPLSPrefix(self):
@@ -403,7 +453,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise as BGP-LS Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseAsBGPLSPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseAsBGPLSPrefix"])
+        )
 
     @property
     def AdvertiseAsBgp3107(self):
@@ -413,11 +466,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - bool: Will cause this route to be sent as BGP 3107 MPLS SAFI route
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseAsBgp3107'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseAsBgp3107"])
+
     @AdvertiseAsBgp3107.setter
     def AdvertiseAsBgp3107(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseAsBgp3107'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseAsBgp3107"], value)
 
     @property
     def AdvertiseAsBgp3107Sr(self):
@@ -427,11 +481,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - bool: Will cause this route to be sent as BGP 3107 SR MPLS SAFI route
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseAsBgp3107Sr'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseAsBgp3107Sr"])
+
     @AdvertiseAsBgp3107Sr.setter
     def AdvertiseAsBgp3107Sr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseAsBgp3107Sr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseAsBgp3107Sr"], value)
 
     @property
     def AdvertiseAsRfc8277(self):
@@ -441,11 +496,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - bool: Will cause this route to be sent as RFC 8277 MPLS SAFI route
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseAsRfc8277'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseAsRfc8277"])
+
     @AdvertiseAsRfc8277.setter
     def AdvertiseAsRfc8277(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseAsRfc8277'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseAsRfc8277"], value)
 
     @property
     def AdvertiseAsRfc8277SR(self):
@@ -455,11 +511,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - bool: Will cause this route to be sent as RFC 8277 MPLS SAFI route
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseAsRfc8277SR'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseAsRfc8277SR"])
+
     @AdvertiseAsRfc8277SR.setter
     def AdvertiseAsRfc8277SR(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseAsRfc8277SR'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseAsRfc8277SR"], value)
 
     @property
     def AdvertiseNexthopAsV4(self):
@@ -470,7 +527,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Nexthop as V4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseNexthopAsV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseNexthopAsV4"])
+        )
 
     @property
     def AggregatorAs(self):
@@ -481,7 +541,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"]))
 
     @property
     def AggregatorId(self):
@@ -492,7 +553,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
 
     @property
     def AggregatorIdMode(self):
@@ -503,7 +565,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorIdMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AggregatorIdMode"])
+        )
 
     @property
     def AsNumSuffixRange(self):
@@ -514,7 +579,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 Values or value ranges separated by comma(,). e.g. 100,150-200,400,600-800 etc. Cannot be kept empty. Should be >= (Max Number of AS Path Segments) x (Max AS Numbers Per Segment)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumSuffixRange']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumSuffixRange"])
+        )
 
     @property
     def AsPathASString(self):
@@ -524,7 +592,7 @@ class BgpV6IPRouteProperty(Base):
         -------
         - list(str): Displays configured AS paths. Random AS paths are appended after Non-Random AS paths when configured. Each row displays the AS Path configured for the 1st route of a Route Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPathASString'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPathASString"])
 
     @property
     def AsPathPerRoute(self):
@@ -535,7 +603,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When there are multiple routes in a route range, this option decides whether to use same or different AS paths randomly generated for all the routes within that route range. For the Different option, each route will be sent in different update messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsPathPerRoute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsPathPerRoute"])
+        )
 
     @property
     def AsRandomSeed(self):
@@ -546,7 +617,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Seed value decides the way the AS Values are generated. To generate different AS Paths for different Route ranges, select unique Seed Values.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsRandomSeed']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsRandomSeed"]))
 
     @property
     def AsSegDist(self):
@@ -557,7 +629,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type of AS Segment generated. If user selects Random, then any of the four types (AS-SET, AS-SEQ, AS-SET-CONFEDERATION, AS-SEQ-CONFEDERATION) will get randomly generated.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSegDist']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSegDist"]))
 
     @property
     def AsSetMode(self):
@@ -568,7 +641,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSetMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSetMode"]))
 
     @property
     def Count(self):
@@ -578,7 +652,7 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Delay(self):
@@ -589,7 +663,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Delay in Seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Delay']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Delay"]))
 
     @property
     def DescriptiveName(self):
@@ -599,7 +674,7 @@ class BgpV6IPRouteProperty(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Downtime(self):
@@ -610,7 +685,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Downtime In Seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Downtime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Downtime"]))
 
     @property
     def EnableAddPath(self):
@@ -621,7 +697,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Path ID when ADD Path Capability is enabled in BGP Peer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAddPath']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAddPath"]))
 
     @property
     def EnableAggregatorId(self):
@@ -632,7 +709,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorId"])
+        )
 
     @property
     def EnableAigp(self):
@@ -643,7 +723,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AIGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAigp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAigp"]))
 
     @property
     def EnableAsPathSegments(self):
@@ -654,7 +735,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Non-Random AS Path Segments
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAsPathSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAsPathSegments"])
+        )
 
     @property
     def EnableAtomicAggregate(self):
@@ -665,7 +749,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+        )
 
     @property
     def EnableCluster(self):
@@ -676,7 +763,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCluster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCluster"]))
 
     @property
     def EnableCommunity(self):
@@ -687,7 +775,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+        )
 
     @property
     def EnableExtendedCommunity(self):
@@ -698,7 +789,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExtendedCommunity"])
+        )
 
     @property
     def EnableFlapping(self):
@@ -709,18 +803,24 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Flapping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFlapping']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableFlapping"])
+        )
 
     @property
     def EnableLLNextHop(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Link-local address in Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLLNextHop']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLLNextHop"])
+        )
 
     @property
     def EnableLargeCommunities(self):
@@ -731,7 +831,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Large Communities Attribute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLargeCommunities']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLargeCommunities"])
+        )
 
     @property
     def EnableLocalPreference(self):
@@ -742,7 +845,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLocalPreference"])
+        )
 
     @property
     def EnableMultiExitDiscriminator(self):
@@ -753,7 +859,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMultiExitDiscriminator"])
+        )
 
     @property
     def EnableNextHop(self):
@@ -764,7 +873,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"]))
 
     @property
     def EnableOrigin(self):
@@ -775,7 +885,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"]))
 
     @property
     def EnableOriginatorId(self):
@@ -786,7 +897,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+        )
 
     @property
     def EnableRandomAsPath(self):
@@ -797,7 +911,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables generation/advertisement of Random AS Path Segments.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRandomAsPath']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRandomAsPath"])
+        )
 
     @property
     def EnableSRGB(self):
@@ -808,7 +925,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable SRGB TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRGB']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSRGB"]))
 
     @property
     def EnableWeight(self):
@@ -819,7 +937,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableWeight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableWeight"]))
 
     @property
     def FlapFromRouteIndex(self):
@@ -830,7 +949,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flap From Route Index
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlapFromRouteIndex']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlapFromRouteIndex"])
+        )
 
     @property
     def FlapToRouteIndex(self):
@@ -841,7 +963,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flap To Route Index
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlapToRouteIndex']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlapToRouteIndex"])
+        )
 
     @property
     def IncrementMode(self):
@@ -852,7 +977,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Either Fixed or Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncrementMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncrementMode"]))
 
     @property
     def Ipv4NextHop(self):
@@ -863,7 +989,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NextHop"]))
 
     @property
     def Ipv6NextHop(self):
@@ -874,7 +1001,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
 
     @property
     def LabelEnd(self):
@@ -885,7 +1013,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range Label End
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelEnd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelEnd"]))
 
     @property
     def LabelStart(self):
@@ -896,7 +1025,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range Label Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelStart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelStart"]))
 
     @property
     def LabelStep(self):
@@ -907,7 +1037,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range Label Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelStep"]))
 
     @property
     def LocalPreference(self):
@@ -918,7 +1049,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
+        )
 
     @property
     def MaxASNumPerSegment(self):
@@ -929,7 +1063,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Number Of AS Numbers generated per Segment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxASNumPerSegment']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxASNumPerSegment"])
+        )
 
     @property
     def MaxNoOfASPathSegmentsPerRouteRange(self):
@@ -940,7 +1077,13 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Number Of AS Path Segments Per Route Range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxNoOfASPathSegmentsPerRouteRange']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaxNoOfASPathSegmentsPerRouteRange"]
+            ),
+        )
 
     @property
     def MinASNumPerSegment(self):
@@ -951,7 +1094,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Number Of AS Numbers generated per Segments.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinASNumPerSegment']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MinASNumPerSegment"])
+        )
 
     @property
     def MinNoOfASPathSegmentsPerRouteRange(self):
@@ -962,7 +1108,13 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Number Of AS Path Segments Per Route Range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinNoOfASPathSegmentsPerRouteRange']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MinNoOfASPathSegmentsPerRouteRange"]
+            ),
+        )
 
     @property
     def MultiExitDiscriminator(self):
@@ -973,7 +1125,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
 
     @property
     def Name(self):
@@ -983,11 +1138,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NextHopIPType(self):
@@ -998,7 +1154,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopIPType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextHopIPType"]))
 
     @property
     def NextHopIncrementMode(self):
@@ -1009,7 +1166,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Next Hop Increment Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopIncrementMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopIncrementMode"])
+        )
 
     @property
     def NextHopType(self):
@@ -1020,7 +1180,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextHopType"]))
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
@@ -1030,11 +1191,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number Of non-random or manually configured AS Path Segments Per Route Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"])
+
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"], value)
 
     @property
     def NoOfClusters(self):
@@ -1044,11 +1206,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Clusters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfClusters"])
+
     @NoOfClusters.setter
     def NoOfClusters(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfClusters"], value)
 
     @property
     def NoOfCommunities(self):
@@ -1058,11 +1221,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCommunities"])
+
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
 
     @property
     def NoOfExternalCommunities(self):
@@ -1072,11 +1236,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Extended Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfExternalCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfExternalCommunities"])
+
     @NoOfExternalCommunities.setter
     def NoOfExternalCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfExternalCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfExternalCommunities"], value)
 
     @property
     def NoOfLabels(self):
@@ -1086,11 +1251,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Labels
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfLabels'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfLabels"])
+
     @NoOfLabels.setter
     def NoOfLabels(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfLabels'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfLabels"], value)
 
     @property
     def NoOfLargeCommunities(self):
@@ -1100,11 +1266,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Large Communities (Should be in the range 1-32)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfLargeCommunities"])
+
     @NoOfLargeCommunities.setter
     def NoOfLargeCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfLargeCommunities"], value)
 
     @property
     def NoOfSegmentIds(self):
@@ -1114,11 +1281,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of Segment Ids
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfSegmentIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfSegmentIds"])
+
     @NoOfSegmentIds.setter
     def NoOfSegmentIds(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfSegmentIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfSegmentIds"], value)
 
     @property
     def NoOfTlvs(self):
@@ -1128,11 +1296,12 @@ class BgpV6IPRouteProperty(Base):
         -------
         - number: Number of TLVs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfTlvs"])
+
     @NoOfTlvs.setter
     def NoOfTlvs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfTlvs"], value)
 
     @property
     def Origin(self):
@@ -1143,7 +1312,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Origin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Origin"]))
 
     @property
     def OriginatorId(self):
@@ -1154,7 +1324,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OriginatorId"]))
 
     @property
     def PackingFrom(self):
@@ -1165,7 +1336,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Packing From
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PackingFrom']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PackingFrom"]))
 
     @property
     def PackingTo(self):
@@ -1176,7 +1348,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Packing To
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PackingTo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PackingTo"]))
 
     @property
     def PartialFlap(self):
@@ -1187,7 +1360,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Partial Flap
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialFlap']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartialFlap"]))
 
     @property
     def RouteOrigin(self):
@@ -1198,7 +1372,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteOrigin"]))
 
     @property
     def SegmentId(self):
@@ -1209,7 +1384,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID or Segment ID, converts to label value by adding offset into SRGB Start Label Value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SegmentId"]))
 
     @property
     def SendMulticastWithProperSAFI(self):
@@ -1220,7 +1396,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send Routes with SAFI as Multicast (2)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendMulticastWithProperSAFI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendMulticastWithProperSAFI"])
+        )
 
     @property
     def SkipMulticast(self):
@@ -1231,7 +1410,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Skip the Multicast routes for this route range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SkipMulticast']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SkipMulticast"]))
 
     @property
     def SpecialLabel(self):
@@ -1242,7 +1422,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If we are emulating Egress then Label field may not hold Label value calculated based on SRGB and Offset but Implicit IPv4 NULL or Explicit NULL
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SpecialLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SpecialLabel"]))
 
     @property
     def Uptime(self):
@@ -1253,7 +1434,8 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Uptime In Seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Uptime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Uptime"]))
 
     @property
     def UseTraditionalNlri(self):
@@ -1264,7 +1446,10 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Traditional NLRI
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseTraditionalNlri']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseTraditionalNlri"])
+        )
 
     @property
     def Weight(self):
@@ -1275,9 +1460,25 @@ class BgpV6IPRouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
-    def update(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, AdvertiseAsRfc8277SR=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfLargeCommunities=None, NoOfSegmentIds=None, NoOfTlvs=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
+
+    def update(
+        self,
+        AdvertiseAsBgp3107=None,
+        AdvertiseAsBgp3107Sr=None,
+        AdvertiseAsRfc8277=None,
+        AdvertiseAsRfc8277SR=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExternalCommunities=None,
+        NoOfLabels=None,
+        NoOfLargeCommunities=None,
+        NoOfSegmentIds=None,
+        NoOfTlvs=None,
+    ):
         # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Updates bgpV6IPRouteProperty resource on the server.
 
@@ -1306,7 +1507,22 @@ class BgpV6IPRouteProperty(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, AdvertiseAsRfc8277SR=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfLargeCommunities=None, NoOfSegmentIds=None, NoOfTlvs=None):
+    def add(
+        self,
+        AdvertiseAsBgp3107=None,
+        AdvertiseAsBgp3107Sr=None,
+        AdvertiseAsRfc8277=None,
+        AdvertiseAsRfc8277SR=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExternalCommunities=None,
+        NoOfLabels=None,
+        NoOfLargeCommunities=None,
+        NoOfSegmentIds=None,
+        NoOfTlvs=None,
+    ):
         # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Adds a new bgpV6IPRouteProperty resource on the server and adds it to the container.
 
@@ -1346,7 +1562,25 @@ class BgpV6IPRouteProperty(Base):
         """
         self._delete()
 
-    def find(self, AdvertiseAsBgp3107=None, AdvertiseAsBgp3107Sr=None, AdvertiseAsRfc8277=None, AdvertiseAsRfc8277SR=None, AsPathASString=None, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExternalCommunities=None, NoOfLabels=None, NoOfLargeCommunities=None, NoOfSegmentIds=None, NoOfTlvs=None):
+    def find(
+        self,
+        AdvertiseAsBgp3107=None,
+        AdvertiseAsBgp3107Sr=None,
+        AdvertiseAsRfc8277=None,
+        AdvertiseAsRfc8277SR=None,
+        AsPathASString=None,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExternalCommunities=None,
+        NoOfLabels=None,
+        NoOfLargeCommunities=None,
+        NoOfSegmentIds=None,
+        NoOfTlvs=None,
+    ):
         # type: (bool, bool, bool, bool, List[str], int, str, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Finds and retrieves bgpV6IPRouteProperty resources from the server.
 
@@ -1416,10 +1650,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def AgeOutRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1451,10 +1687,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ageOutRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ageOutRoutes", payload=payload, response_object=None)
 
     def Ageoutroutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1474,10 +1712,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ageoutroutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ageoutroutes", payload=payload, response_object=None)
 
     def GenerateIpv6Routes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1510,10 +1750,14 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateIpv6Routes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "generateIpv6Routes", payload=payload, response_object=None
+        )
 
     def GenerateRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1552,10 +1796,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateRoutes", payload=payload, response_object=None)
 
     def ImportBgpRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1591,10 +1837,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('importBgpRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("importBgpRoutes", payload=payload, response_object=None)
 
     def ReadvertiseRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1623,10 +1871,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("readvertiseRoutes", payload=payload, response_object=None)
 
     def Readvertiseroutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1645,10 +1895,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseroutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("readvertiseroutes", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1677,10 +1929,12 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1709,12 +1963,81 @@ class BgpV6IPRouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, OverridePeerAsSetMode=None, Active=None, AddPathId=None, AdvertiseAsBGPLSPrefix=None, AdvertiseNexthopAsV4=None, AggregatorAs=None, AggregatorId=None, AggregatorIdMode=None, AsNumSuffixRange=None, AsPathPerRoute=None, AsRandomSeed=None, AsSegDist=None, AsSetMode=None, Delay=None, Downtime=None, EnableAddPath=None, EnableAggregatorId=None, EnableAigp=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableFlapping=None, EnableLLNextHop=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRandomAsPath=None, EnableSRGB=None, EnableWeight=None, FlapFromRouteIndex=None, FlapToRouteIndex=None, IncrementMode=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelEnd=None, LabelStart=None, LabelStep=None, LocalPreference=None, MaxASNumPerSegment=None, MaxNoOfASPathSegmentsPerRouteRange=None, MinASNumPerSegment=None, MinNoOfASPathSegmentsPerRouteRange=None, MultiExitDiscriminator=None, NextHopIPType=None, NextHopIncrementMode=None, NextHopType=None, Origin=None, OriginatorId=None, PackingFrom=None, PackingTo=None, PartialFlap=None, RouteOrigin=None, SegmentId=None, SendMulticastWithProperSAFI=None, SkipMulticast=None, SpecialLabel=None, Uptime=None, UseTraditionalNlri=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        OverridePeerAsSetMode=None,
+        Active=None,
+        AddPathId=None,
+        AdvertiseAsBGPLSPrefix=None,
+        AdvertiseNexthopAsV4=None,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AggregatorIdMode=None,
+        AsNumSuffixRange=None,
+        AsPathPerRoute=None,
+        AsRandomSeed=None,
+        AsSegDist=None,
+        AsSetMode=None,
+        Delay=None,
+        Downtime=None,
+        EnableAddPath=None,
+        EnableAggregatorId=None,
+        EnableAigp=None,
+        EnableAsPathSegments=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableExtendedCommunity=None,
+        EnableFlapping=None,
+        EnableLLNextHop=None,
+        EnableLargeCommunities=None,
+        EnableLocalPreference=None,
+        EnableMultiExitDiscriminator=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableRandomAsPath=None,
+        EnableSRGB=None,
+        EnableWeight=None,
+        FlapFromRouteIndex=None,
+        FlapToRouteIndex=None,
+        IncrementMode=None,
+        Ipv4NextHop=None,
+        Ipv6NextHop=None,
+        LabelEnd=None,
+        LabelStart=None,
+        LabelStep=None,
+        LocalPreference=None,
+        MaxASNumPerSegment=None,
+        MaxNoOfASPathSegmentsPerRouteRange=None,
+        MinASNumPerSegment=None,
+        MinNoOfASPathSegmentsPerRouteRange=None,
+        MultiExitDiscriminator=None,
+        NextHopIPType=None,
+        NextHopIncrementMode=None,
+        NextHopType=None,
+        Origin=None,
+        OriginatorId=None,
+        PackingFrom=None,
+        PackingTo=None,
+        PartialFlap=None,
+        RouteOrigin=None,
+        SegmentId=None,
+        SendMulticastWithProperSAFI=None,
+        SkipMulticast=None,
+        SpecialLabel=None,
+        Uptime=None,
+        UseTraditionalNlri=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of bgpV6IPRouteProperty device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

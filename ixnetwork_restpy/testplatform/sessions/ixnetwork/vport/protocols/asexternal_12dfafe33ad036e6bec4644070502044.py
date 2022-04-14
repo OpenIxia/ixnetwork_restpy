@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,29 +34,29 @@ class AsExternal(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'asExternal'
+    _SDM_NAME = "asExternal"
     _SDM_ATT_MAP = {
-        'AddPrefix': 'addPrefix',
-        'AddPrefixIncrementBy': 'addPrefixIncrementBy',
-        'AddPrefixLength': 'addPrefixLength',
-        'AddPrefixOption': 'addPrefixOption',
-        'EBit': 'eBit',
-        'ExternalRouteTag': 'externalRouteTag',
-        'FBit': 'fBit',
-        'ForwardingAddress': 'forwardingAddress',
-        'IncrLinkStateId': 'incrLinkStateId',
-        'LsaCount': 'lsaCount',
-        'Metric': 'metric',
-        'OptBitLa': 'optBitLa',
-        'OptBitMc': 'optBitMc',
-        'OptBitNu': 'optBitNu',
-        'OptBitP': 'optBitP',
-        'ReferenceLinkStateId': 'referenceLinkStateId',
-        'ReferenceLsType': 'referenceLsType',
-        'TBit': 'tBit',
+        "AddPrefix": "addPrefix",
+        "AddPrefixIncrementBy": "addPrefixIncrementBy",
+        "AddPrefixLength": "addPrefixLength",
+        "AddPrefixOption": "addPrefixOption",
+        "EBit": "eBit",
+        "ExternalRouteTag": "externalRouteTag",
+        "FBit": "fBit",
+        "ForwardingAddress": "forwardingAddress",
+        "IncrLinkStateId": "incrLinkStateId",
+        "LsaCount": "lsaCount",
+        "Metric": "metric",
+        "OptBitLa": "optBitLa",
+        "OptBitMc": "optBitMc",
+        "OptBitNu": "optBitNu",
+        "OptBitP": "optBitP",
+        "ReferenceLinkStateId": "referenceLinkStateId",
+        "ReferenceLsType": "referenceLsType",
+        "TBit": "tBit",
     }
     _SDM_ENUM_MAP = {
-        'referenceLsType': ['ignore', 'routerLsa', 'networkLsa'],
+        "referenceLsType": ["ignore", "routerLsa", "networkLsa"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,13 +68,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddPrefix"])
+
     @AddPrefix.setter
     def AddPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddPrefix"], value)
 
     @property
     def AddPrefixIncrementBy(self):
@@ -81,13 +83,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddPrefixIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddPrefixIncrementBy"])
+
     @AddPrefixIncrementBy.setter
     def AddPrefixIncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddPrefixIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddPrefixIncrementBy"], value)
 
     @property
     def AddPrefixLength(self):
@@ -95,13 +98,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddPrefixLength"])
+
     @AddPrefixLength.setter
     def AddPrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddPrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddPrefixLength"], value)
 
     @property
     def AddPrefixOption(self):
@@ -109,13 +113,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddPrefixOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddPrefixOption"])
+
     @AddPrefixOption.setter
     def AddPrefixOption(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddPrefixOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddPrefixOption"], value)
 
     @property
     def EBit(self):
@@ -123,13 +128,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def ExternalRouteTag(self):
@@ -137,13 +143,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRouteTag'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRouteTag"])
+
     @ExternalRouteTag.setter
     def ExternalRouteTag(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRouteTag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRouteTag"], value)
 
     @property
     def FBit(self):
@@ -151,13 +158,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["FBit"])
+
     @FBit.setter
     def FBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FBit"], value)
 
     @property
     def ForwardingAddress(self):
@@ -165,13 +173,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForwardingAddress"])
+
     @ForwardingAddress.setter
     def ForwardingAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForwardingAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForwardingAddress"], value)
 
     @property
     def IncrLinkStateId(self):
@@ -179,13 +188,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrLinkStateId"])
+
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrLinkStateId"], value)
 
     @property
     def LsaCount(self):
@@ -193,13 +203,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaCount"])
+
     @LsaCount.setter
     def LsaCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsaCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsaCount"], value)
 
     @property
     def Metric(self):
@@ -207,13 +218,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def OptBitLa(self):
@@ -221,13 +233,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitLa'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitLa"])
+
     @OptBitLa.setter
     def OptBitLa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitLa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitLa"], value)
 
     @property
     def OptBitMc(self):
@@ -235,13 +248,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitMc"])
+
     @OptBitMc.setter
     def OptBitMc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitMc"], value)
 
     @property
     def OptBitNu(self):
@@ -249,13 +263,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitNu'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitNu"])
+
     @OptBitNu.setter
     def OptBitNu(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitNu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitNu"], value)
 
     @property
     def OptBitP(self):
@@ -263,13 +278,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitP'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitP"])
+
     @OptBitP.setter
     def OptBitP(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitP'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitP"], value)
 
     @property
     def ReferenceLinkStateId(self):
@@ -277,13 +293,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceLinkStateId"])
+
     @ReferenceLinkStateId.setter
     def ReferenceLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReferenceLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReferenceLinkStateId"], value)
 
     @property
     def ReferenceLsType(self):
@@ -291,13 +308,14 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - str(ignore | routerLsa | networkLsa): 
+        - str(ignore | routerLsa | networkLsa):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceLsType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceLsType"])
+
     @ReferenceLsType.setter
     def ReferenceLsType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReferenceLsType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReferenceLsType"], value)
 
     @property
     def TBit(self):
@@ -305,38 +323,59 @@ class AsExternal(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["TBit"])
+
     @TBit.setter
     def TBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TBit"], value)
 
-    def update(self, AddPrefix=None, AddPrefixIncrementBy=None, AddPrefixLength=None, AddPrefixOption=None, EBit=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, ReferenceLinkStateId=None, ReferenceLsType=None, TBit=None):
+    def update(
+        self,
+        AddPrefix=None,
+        AddPrefixIncrementBy=None,
+        AddPrefixLength=None,
+        AddPrefixOption=None,
+        EBit=None,
+        ExternalRouteTag=None,
+        FBit=None,
+        ForwardingAddress=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        ReferenceLinkStateId=None,
+        ReferenceLsType=None,
+        TBit=None,
+    ):
         # type: (str, int, int, int, bool, str, bool, str, str, int, int, bool, bool, bool, bool, str, str, bool) -> AsExternal
         """Updates asExternal resource on the server.
 
         Args
         ----
-        - AddPrefix (str): 
-        - AddPrefixIncrementBy (number): 
-        - AddPrefixLength (number): 
-        - AddPrefixOption (number): 
-        - EBit (bool): 
-        - ExternalRouteTag (str): 
-        - FBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - ReferenceLinkStateId (str): 
-        - ReferenceLsType (str(ignore | routerLsa | networkLsa)): 
-        - TBit (bool): 
+        - AddPrefix (str):
+        - AddPrefixIncrementBy (number):
+        - AddPrefixLength (number):
+        - AddPrefixOption (number):
+        - EBit (bool):
+        - ExternalRouteTag (str):
+        - FBit (bool):
+        - ForwardingAddress (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - ReferenceLinkStateId (str):
+        - ReferenceLsType (str(ignore | routerLsa | networkLsa)):
+        - TBit (bool):
 
         Raises
         ------
@@ -344,30 +383,50 @@ class AsExternal(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddPrefix=None, AddPrefixIncrementBy=None, AddPrefixLength=None, AddPrefixOption=None, EBit=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, ReferenceLinkStateId=None, ReferenceLsType=None, TBit=None):
+    def add(
+        self,
+        AddPrefix=None,
+        AddPrefixIncrementBy=None,
+        AddPrefixLength=None,
+        AddPrefixOption=None,
+        EBit=None,
+        ExternalRouteTag=None,
+        FBit=None,
+        ForwardingAddress=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        ReferenceLinkStateId=None,
+        ReferenceLsType=None,
+        TBit=None,
+    ):
         # type: (str, int, int, int, bool, str, bool, str, str, int, int, bool, bool, bool, bool, str, str, bool) -> AsExternal
-        """Adds a new asExternal resource on the json, only valid with config assistant
+        """Adds a new asExternal resource on the json, only valid with batch add utility
 
         Args
         ----
-        - AddPrefix (str): 
-        - AddPrefixIncrementBy (number): 
-        - AddPrefixLength (number): 
-        - AddPrefixOption (number): 
-        - EBit (bool): 
-        - ExternalRouteTag (str): 
-        - FBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - ReferenceLinkStateId (str): 
-        - ReferenceLsType (str(ignore | routerLsa | networkLsa)): 
-        - TBit (bool): 
+        - AddPrefix (str):
+        - AddPrefixIncrementBy (number):
+        - AddPrefixLength (number):
+        - AddPrefixOption (number):
+        - EBit (bool):
+        - ExternalRouteTag (str):
+        - FBit (bool):
+        - ForwardingAddress (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - ReferenceLinkStateId (str):
+        - ReferenceLsType (str(ignore | routerLsa | networkLsa)):
+        - TBit (bool):
 
         Returns
         -------
@@ -379,7 +438,27 @@ class AsExternal(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AddPrefix=None, AddPrefixIncrementBy=None, AddPrefixLength=None, AddPrefixOption=None, EBit=None, ExternalRouteTag=None, FBit=None, ForwardingAddress=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, ReferenceLinkStateId=None, ReferenceLsType=None, TBit=None):
+    def find(
+        self,
+        AddPrefix=None,
+        AddPrefixIncrementBy=None,
+        AddPrefixLength=None,
+        AddPrefixOption=None,
+        EBit=None,
+        ExternalRouteTag=None,
+        FBit=None,
+        ForwardingAddress=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        ReferenceLinkStateId=None,
+        ReferenceLsType=None,
+        TBit=None,
+    ):
         # type: (str, int, int, int, bool, str, bool, str, str, int, int, bool, bool, bool, bool, str, str, bool) -> AsExternal
         """Finds and retrieves asExternal resources from the server.
 
@@ -389,24 +468,24 @@ class AsExternal(Base):
 
         Args
         ----
-        - AddPrefix (str): 
-        - AddPrefixIncrementBy (number): 
-        - AddPrefixLength (number): 
-        - AddPrefixOption (number): 
-        - EBit (bool): 
-        - ExternalRouteTag (str): 
-        - FBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - ReferenceLinkStateId (str): 
-        - ReferenceLsType (str(ignore | routerLsa | networkLsa)): 
-        - TBit (bool): 
+        - AddPrefix (str):
+        - AddPrefixIncrementBy (number):
+        - AddPrefixLength (number):
+        - AddPrefixOption (number):
+        - EBit (bool):
+        - ExternalRouteTag (str):
+        - FBit (bool):
+        - ForwardingAddress (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - ReferenceLinkStateId (str):
+        - ReferenceLsType (str(ignore | routerLsa | networkLsa)):
+        - TBit (bool):
 
         Returns
         -------

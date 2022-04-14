@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,39 +34,58 @@ class LearnedMartiniLabel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedMartiniLabel'
+    _SDM_NAME = "learnedMartiniLabel"
     _SDM_ATT_MAP = {
-        'CBit': 'cBit',
-        'Cas': 'cas',
-        'CemOption': 'cemOption',
-        'CemPayloadBytes': 'cemPayloadBytes',
-        'Description': 'description',
-        'DisCeAddress': 'disCeAddress',
-        'Frequency': 'frequency',
-        'GroupId': 'groupId',
-        'IncludeRtpHeader': 'includeRtpHeader',
-        'Label': 'label',
-        'LabelSpaceId': 'labelSpaceId',
-        'LocalPwSubStatus': 'localPwSubStatus',
-        'MaxAtmCell': 'maxAtmCell',
-        'Mtu': 'mtu',
-        'PayloadSize': 'payloadSize',
-        'PayloadType': 'payloadType',
-        'Peer': 'peer',
-        'PeerPwSubStatus': 'peerPwSubStatus',
-        'PwState': 'pwState',
-        'Sp': 'sp',
-        'Ssrc': 'ssrc',
-        'TdmBitrate': 'tdmBitrate',
-        'TimestampMode': 'timestampMode',
-        'VcId': 'vcId',
-        'VcType': 'vcType',
+        "CBit": "cBit",
+        "Cas": "cas",
+        "CemOption": "cemOption",
+        "CemPayloadBytes": "cemPayloadBytes",
+        "Description": "description",
+        "DisCeAddress": "disCeAddress",
+        "Frequency": "frequency",
+        "GroupId": "groupId",
+        "IncludeRtpHeader": "includeRtpHeader",
+        "Label": "label",
+        "LabelSpaceId": "labelSpaceId",
+        "LocalPwSubStatus": "localPwSubStatus",
+        "MaxAtmCell": "maxAtmCell",
+        "Mtu": "mtu",
+        "PayloadSize": "payloadSize",
+        "PayloadType": "payloadType",
+        "Peer": "peer",
+        "PeerPwSubStatus": "peerPwSubStatus",
+        "PwState": "pwState",
+        "Sp": "sp",
+        "Ssrc": "ssrc",
+        "TdmBitrate": "tdmBitrate",
+        "TimestampMode": "timestampMode",
+        "VcId": "vcId",
+        "VcType": "vcType",
     }
     _SDM_ENUM_MAP = {
-        'cas': ['e1Trunk', 't1EsfTrunk', 't1SfTrunk'],
-        'sp': ['hexVal1', 'hexVal2', 'hexVal3', 'hexVal4'],
-        'timestampMode': ['absolute', 'differential'],
-        'vcType': ['frameRelay', 'atmaal5', 'atmxCell', 'vlan', 'ethernet', 'hdlc', 'ppp', 'cem', 'atmvcc', 'atmvpc', 'ip', 'satopE1', 'satopT1', 'satopE3', 'satopT3', 'cesoPsnBasic', 'cesoPsnCas', 'frameRelayRfc4619'],
+        "cas": ["e1Trunk", "t1EsfTrunk", "t1SfTrunk"],
+        "sp": ["hexVal1", "hexVal2", "hexVal3", "hexVal4"],
+        "timestampMode": ["absolute", "differential"],
+        "vcType": [
+            "frameRelay",
+            "atmaal5",
+            "atmxCell",
+            "vlan",
+            "ethernet",
+            "hdlc",
+            "ppp",
+            "cem",
+            "atmvcc",
+            "atmvpc",
+            "ip",
+            "satopE1",
+            "satopT1",
+            "satopE3",
+            "satopT3",
+            "cesoPsnBasic",
+            "cesoPsnCas",
+            "frameRelayRfc4619",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -79,7 +99,7 @@ class LearnedMartiniLabel(Base):
         -------
         - bool: If enabled, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CBit"])
 
     @property
     def Cas(self):
@@ -89,7 +109,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str(e1Trunk | t1EsfTrunk | t1SfTrunk): Indicates the CAS value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cas'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cas"])
 
     @property
     def CemOption(self):
@@ -99,7 +119,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The value of the CEM option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CemOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["CemOption"])
 
     @property
     def CemPayloadBytes(self):
@@ -109,7 +129,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: (For Circuit Emulation Service over MPLS/CEM). The length of the CEM payload (in bytes).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CemPayloadBytes'])
+        return self._get_attribute(self._SDM_ATT_MAP["CemPayloadBytes"])
 
     @property
     def Description(self):
@@ -119,7 +139,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str: An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def DisCeAddress(self):
@@ -129,7 +149,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str: If the L2 interface type for the VC whose learned information is seen is IP, this field indicates the learned IP address of the remote end CE of the IP vrtual circuit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisCeAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisCeAddress"])
 
     @property
     def Frequency(self):
@@ -139,7 +159,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: Indicates the frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Frequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Frequency"])
 
     @property
     def GroupId(self):
@@ -149,7 +169,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: An arbitrary 32-bit value used to identify a group of VCs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def IncludeRtpHeader(self):
@@ -159,7 +179,7 @@ class LearnedMartiniLabel(Base):
         -------
         - bool: If enables, includes the RTP information in the header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeRtpHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeRtpHeader"])
 
     @property
     def Label(self):
@@ -169,7 +189,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The label value added to the packet(s) by the upstream LDP peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def LabelSpaceId(self):
@@ -179,7 +199,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: (2 octets) Identifies the set of labels that will be used. Part of the LDP identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelSpaceId"])
 
     @property
     def LocalPwSubStatus(self):
@@ -189,7 +209,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: It reflects the status carried in the PW status notification received from the peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPwSubStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPwSubStatus"])
 
     @property
     def MaxAtmCell(self):
@@ -199,7 +219,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The maximum number of ATM Cells which may be concatenated and sent in a single MPLS frame. This parameter is part of the FEC element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxAtmCell'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxAtmCell"])
 
     @property
     def Mtu(self):
@@ -209,7 +229,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: (in octets) The 2-octet value for the maximum Transmission Unit (MTU).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
 
     @property
     def PayloadSize(self):
@@ -219,7 +239,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: Indicates the payload size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PayloadSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PayloadSize"])
 
     @property
     def PayloadType(self):
@@ -229,7 +249,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The payload type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PayloadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PayloadType"])
 
     @property
     def Peer(self):
@@ -239,7 +259,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str: The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Peer'])
+        return self._get_attribute(self._SDM_ATT_MAP["Peer"])
 
     @property
     def PeerPwSubStatus(self):
@@ -249,7 +269,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: It reflects the status carried in the PW status last sent to the peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerPwSubStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerPwSubStatus"])
 
     @property
     def PwState(self):
@@ -259,7 +279,7 @@ class LearnedMartiniLabel(Base):
         -------
         - bool: The PseudoWire State - either Up or Down. For the PseudoWire to be Up (Up status), the VC ID, VC Type, and Peer must match.If the Enable VC Group Matching (on PseudoWire Status) option is enabled for the router, the VC Group ID must also be matched for the PseudoWire State to be Up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwState'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwState"])
 
     @property
     def Sp(self):
@@ -269,7 +289,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str(hexVal1 | hexVal2 | hexVal3 | hexVal4): Indicates the SP value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Sp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Sp"])
 
     @property
     def Ssrc(self):
@@ -279,7 +299,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: Indicates the SSRC value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ssrc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ssrc"])
 
     @property
     def TdmBitrate(self):
@@ -289,7 +309,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The tdm bit rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TdmBitrate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TdmBitrate"])
 
     @property
     def TimestampMode(self):
@@ -299,7 +319,7 @@ class LearnedMartiniLabel(Base):
         -------
         - str(absolute | differential): Indicates the timestamp mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimestampMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimestampMode"])
 
     @property
     def VcId(self):
@@ -309,7 +329,7 @@ class LearnedMartiniLabel(Base):
         -------
         - number: The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VcId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VcId"])
 
     @property
     def VcType(self):
@@ -319,10 +339,10 @@ class LearnedMartiniLabel(Base):
         -------
         - str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619): The type of L2 VC depends on the Layer 2 protocol types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VcType'])
+        return self._get_attribute(self._SDM_ATT_MAP["VcType"])
 
     def add(self):
-        """Adds a new learnedMartiniLabel resource on the json, only valid with config assistant
+        """Adds a new learnedMartiniLabel resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -334,7 +354,34 @@ class LearnedMartiniLabel(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CBit=None, Cas=None, CemOption=None, CemPayloadBytes=None, Description=None, DisCeAddress=None, Frequency=None, GroupId=None, IncludeRtpHeader=None, Label=None, LabelSpaceId=None, LocalPwSubStatus=None, MaxAtmCell=None, Mtu=None, PayloadSize=None, PayloadType=None, Peer=None, PeerPwSubStatus=None, PwState=None, Sp=None, Ssrc=None, TdmBitrate=None, TimestampMode=None, VcId=None, VcType=None):
+    def find(
+        self,
+        CBit=None,
+        Cas=None,
+        CemOption=None,
+        CemPayloadBytes=None,
+        Description=None,
+        DisCeAddress=None,
+        Frequency=None,
+        GroupId=None,
+        IncludeRtpHeader=None,
+        Label=None,
+        LabelSpaceId=None,
+        LocalPwSubStatus=None,
+        MaxAtmCell=None,
+        Mtu=None,
+        PayloadSize=None,
+        PayloadType=None,
+        Peer=None,
+        PeerPwSubStatus=None,
+        PwState=None,
+        Sp=None,
+        Ssrc=None,
+        TdmBitrate=None,
+        TimestampMode=None,
+        VcId=None,
+        VcType=None,
+    ):
         # type: (bool, str, int, int, str, str, int, int, bool, int, int, int, int, int, int, int, str, int, bool, str, int, int, str, int, str) -> LearnedMartiniLabel
         """Finds and retrieves learnedMartiniLabel resources from the server.
 

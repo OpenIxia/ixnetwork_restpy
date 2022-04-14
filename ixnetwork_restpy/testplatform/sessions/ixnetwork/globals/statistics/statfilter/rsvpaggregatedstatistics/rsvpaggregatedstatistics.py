@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,57 +33,56 @@ class RsvpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpAggregatedStatistics'
+    _SDM_NAME = "rsvpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'AcksRx': 'acksRx',
-        'AcksTx': 'acksTx',
-        'BundleMessagesRx': 'bundleMessagesRx',
-        'BundleMessagesTx': 'bundleMessagesTx',
-        'DownStateCount': 'downStateCount',
-        'EgressLSPsUp': 'egressLSPsUp',
-        'EgressOutofOrderMsgsRx': 'egressOutofOrderMsgsRx',
-        'EgressSubLSPsUp': 'egressSubLSPsUp',
-        'HellosRx': 'hellosRx',
-        'HellosTx': 'hellosTx',
-        'IngressLSPsConfigured': 'ingressLSPsConfigured',
-        'IngressLSPsUp': 'ingressLSPsUp',
-        'IngressSubLSPsConfigured': 'ingressSubLSPsConfigured',
-        'IngressSubLSPsUp': 'ingressSubLSPsUp',
-        'NacksRx': 'nacksRx',
-        'NacksTx': 'nacksTx',
-        'NumberofPathReOptimizations': 'numberofPathReOptimizations',
-        'OwnGracefulRestarts': 'ownGracefulRestarts',
-        'PathERRsRx': 'pathERRsRx',
-        'PathERRsTx': 'pathERRsTx',
-        'PathLifetimeExpirations': 'pathLifetimeExpirations',
-        'PathReevaluationRequestTx': 'pathReevaluationRequestTx',
-        'PathSentStateCount': 'pathSentStateCount',
-        'PathTearsRx': 'pathTearsRx',
-        'PathTearsTx': 'pathTearsTx',
-        'PathsRx': 'pathsRx',
-        'PathsTx': 'pathsTx',
-        'PathswithRecoveryLabelRx': 'pathswithRecoveryLabelRx',
-        'PathswithRecoveryLabelTx': 'pathswithRecoveryLabelTx',
-        'PeerGracefulRestarts': 'peerGracefulRestarts',
-        'PortName': 'portName',
-        'RateControlBlockedLSPSetup': 'rateControlBlockedLSPSetup',
-        'ResvCONFsRx': 'resvCONFsRx',
-        'ResvCONFsTx': 'resvCONFsTx',
-        'ResvERRsRx': 'resvERRsRx',
-        'ResvERRsTx': 'resvERRsTx',
-        'ResvLifetimeExpirations': 'resvLifetimeExpirations',
-        'ResvTearsRx': 'resvTearsRx',
-        'ResvTearsTx': 'resvTearsTx',
-        'ResvsRx': 'resvsRx',
-        'ResvsTx': 'resvsTx',
-        'SessionFlapCount': 'sessionFlapCount',
-        'SrefreshsRx': 'srefreshsRx',
-        'SrefreshsTx': 'srefreshsTx',
-        'UnrecoveredRESVsDeleted': 'unrecoveredRESVsDeleted',
-        'UpStateCount': 'upStateCount',
+        "AcksRx": "acksRx",
+        "AcksTx": "acksTx",
+        "BundleMessagesRx": "bundleMessagesRx",
+        "BundleMessagesTx": "bundleMessagesTx",
+        "DownStateCount": "downStateCount",
+        "EgressLSPsUp": "egressLSPsUp",
+        "EgressOutofOrderMsgsRx": "egressOutofOrderMsgsRx",
+        "EgressSubLSPsUp": "egressSubLSPsUp",
+        "HellosRx": "hellosRx",
+        "HellosTx": "hellosTx",
+        "IngressLSPsConfigured": "ingressLSPsConfigured",
+        "IngressLSPsUp": "ingressLSPsUp",
+        "IngressSubLSPsConfigured": "ingressSubLSPsConfigured",
+        "IngressSubLSPsUp": "ingressSubLSPsUp",
+        "NacksRx": "nacksRx",
+        "NacksTx": "nacksTx",
+        "NumberofPathReOptimizations": "numberofPathReOptimizations",
+        "OwnGracefulRestarts": "ownGracefulRestarts",
+        "PathERRsRx": "pathERRsRx",
+        "PathERRsTx": "pathERRsTx",
+        "PathLifetimeExpirations": "pathLifetimeExpirations",
+        "PathReevaluationRequestTx": "pathReevaluationRequestTx",
+        "PathSentStateCount": "pathSentStateCount",
+        "PathTearsRx": "pathTearsRx",
+        "PathTearsTx": "pathTearsTx",
+        "PathsRx": "pathsRx",
+        "PathsTx": "pathsTx",
+        "PathswithRecoveryLabelRx": "pathswithRecoveryLabelRx",
+        "PathswithRecoveryLabelTx": "pathswithRecoveryLabelTx",
+        "PeerGracefulRestarts": "peerGracefulRestarts",
+        "PortName": "portName",
+        "RateControlBlockedLSPSetup": "rateControlBlockedLSPSetup",
+        "ResvCONFsRx": "resvCONFsRx",
+        "ResvCONFsTx": "resvCONFsTx",
+        "ResvERRsRx": "resvERRsRx",
+        "ResvERRsTx": "resvERRsTx",
+        "ResvLifetimeExpirations": "resvLifetimeExpirations",
+        "ResvTearsRx": "resvTearsRx",
+        "ResvTearsTx": "resvTearsTx",
+        "ResvsRx": "resvsRx",
+        "ResvsTx": "resvsTx",
+        "SessionFlapCount": "sessionFlapCount",
+        "SrefreshsRx": "srefreshsRx",
+        "SrefreshsTx": "srefreshsTx",
+        "UnrecoveredRESVsDeleted": "unrecoveredRESVsDeleted",
+        "UpStateCount": "upStateCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpAggregatedStatistics, self).__init__(parent, list_op)
@@ -95,11 +95,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: ACKs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AcksRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AcksRx"])
+
     @AcksRx.setter
     def AcksRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AcksRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AcksRx"], value)
 
     @property
     def AcksTx(self):
@@ -109,11 +110,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: ACKs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AcksTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AcksTx"])
+
     @AcksTx.setter
     def AcksTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AcksTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AcksTx"], value)
 
     @property
     def BundleMessagesRx(self):
@@ -123,11 +125,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Bundle Messages Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BundleMessagesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BundleMessagesRx"])
+
     @BundleMessagesRx.setter
     def BundleMessagesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BundleMessagesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BundleMessagesRx"], value)
 
     @property
     def BundleMessagesTx(self):
@@ -137,11 +140,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Bundle Messages Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BundleMessagesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BundleMessagesTx"])
+
     @BundleMessagesTx.setter
     def BundleMessagesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BundleMessagesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BundleMessagesTx"], value)
 
     @property
     def DownStateCount(self):
@@ -151,11 +155,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Down State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownStateCount"])
+
     @DownStateCount.setter
     def DownStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownStateCount"], value)
 
     @property
     def EgressLSPsUp(self):
@@ -165,11 +170,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Egress LSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressLSPsUp"])
+
     @EgressLSPsUp.setter
     def EgressLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressLSPsUp"], value)
 
     @property
     def EgressOutofOrderMsgsRx(self):
@@ -179,11 +185,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Egress Out of Order Msgs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressOutofOrderMsgsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressOutofOrderMsgsRx"])
+
     @EgressOutofOrderMsgsRx.setter
     def EgressOutofOrderMsgsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressOutofOrderMsgsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressOutofOrderMsgsRx"], value)
 
     @property
     def EgressSubLSPsUp(self):
@@ -193,11 +200,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Egress SubLSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressSubLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressSubLSPsUp"])
+
     @EgressSubLSPsUp.setter
     def EgressSubLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressSubLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressSubLSPsUp"], value)
 
     @property
     def HellosRx(self):
@@ -207,11 +215,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: HELLOs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosRx"])
+
     @HellosRx.setter
     def HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosRx"], value)
 
     @property
     def HellosTx(self):
@@ -221,11 +230,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: HELLOs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosTx"])
+
     @HellosTx.setter
     def HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosTx"], value)
 
     @property
     def IngressLSPsConfigured(self):
@@ -235,11 +245,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Ingress LSPs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressLSPsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressLSPsConfigured"])
+
     @IngressLSPsConfigured.setter
     def IngressLSPsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IngressLSPsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IngressLSPsConfigured"], value)
 
     @property
     def IngressLSPsUp(self):
@@ -249,11 +260,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Ingress LSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressLSPsUp"])
+
     @IngressLSPsUp.setter
     def IngressLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IngressLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IngressLSPsUp"], value)
 
     @property
     def IngressSubLSPsConfigured(self):
@@ -263,11 +275,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Ingress SubLSPs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressSubLSPsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressSubLSPsConfigured"])
+
     @IngressSubLSPsConfigured.setter
     def IngressSubLSPsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IngressSubLSPsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IngressSubLSPsConfigured"], value)
 
     @property
     def IngressSubLSPsUp(self):
@@ -277,11 +290,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Ingress SubLSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressSubLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressSubLSPsUp"])
+
     @IngressSubLSPsUp.setter
     def IngressSubLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IngressSubLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IngressSubLSPsUp"], value)
 
     @property
     def NacksRx(self):
@@ -291,11 +305,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: NACKs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NacksRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NacksRx"])
+
     @NacksRx.setter
     def NacksRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NacksRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NacksRx"], value)
 
     @property
     def NacksTx(self):
@@ -305,11 +320,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: NACKs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NacksTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NacksTx"])
+
     @NacksTx.setter
     def NacksTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NacksTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NacksTx"], value)
 
     @property
     def NumberofPathReOptimizations(self):
@@ -319,11 +335,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Number of Path Re-Optimizations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberofPathReOptimizations'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberofPathReOptimizations"])
+
     @NumberofPathReOptimizations.setter
     def NumberofPathReOptimizations(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberofPathReOptimizations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberofPathReOptimizations"], value)
 
     @property
     def OwnGracefulRestarts(self):
@@ -333,11 +350,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Own Graceful-Restarts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OwnGracefulRestarts'])
+        return self._get_attribute(self._SDM_ATT_MAP["OwnGracefulRestarts"])
+
     @OwnGracefulRestarts.setter
     def OwnGracefulRestarts(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OwnGracefulRestarts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OwnGracefulRestarts"], value)
 
     @property
     def PathERRsRx(self):
@@ -347,11 +365,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path-ERRs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathERRsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathERRsRx"])
+
     @PathERRsRx.setter
     def PathERRsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathERRsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathERRsRx"], value)
 
     @property
     def PathERRsTx(self):
@@ -361,11 +380,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path-ERRs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathERRsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathERRsTx"])
+
     @PathERRsTx.setter
     def PathERRsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathERRsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathERRsTx"], value)
 
     @property
     def PathLifetimeExpirations(self):
@@ -375,11 +395,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: PATH Lifetime Expirations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathLifetimeExpirations'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathLifetimeExpirations"])
+
     @PathLifetimeExpirations.setter
     def PathLifetimeExpirations(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathLifetimeExpirations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathLifetimeExpirations"], value)
 
     @property
     def PathReevaluationRequestTx(self):
@@ -389,11 +410,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path Re-evaluation Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathReevaluationRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathReevaluationRequestTx"])
+
     @PathReevaluationRequestTx.setter
     def PathReevaluationRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathReevaluationRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathReevaluationRequestTx"], value)
 
     @property
     def PathSentStateCount(self):
@@ -403,11 +425,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path Sent State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathSentStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathSentStateCount"])
+
     @PathSentStateCount.setter
     def PathSentStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathSentStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathSentStateCount"], value)
 
     @property
     def PathTearsRx(self):
@@ -417,11 +440,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path Tears Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathTearsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathTearsRx"])
+
     @PathTearsRx.setter
     def PathTearsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathTearsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathTearsRx"], value)
 
     @property
     def PathTearsTx(self):
@@ -431,11 +455,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Path Tears Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathTearsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathTearsTx"])
+
     @PathTearsTx.setter
     def PathTearsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathTearsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathTearsTx"], value)
 
     @property
     def PathsRx(self):
@@ -445,11 +470,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Paths Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathsRx"])
+
     @PathsRx.setter
     def PathsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathsRx"], value)
 
     @property
     def PathsTx(self):
@@ -459,11 +485,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Paths Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathsTx"])
+
     @PathsTx.setter
     def PathsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathsTx"], value)
 
     @property
     def PathswithRecoveryLabelRx(self):
@@ -473,11 +500,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Paths with Recovery-Label Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathswithRecoveryLabelRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathswithRecoveryLabelRx"])
+
     @PathswithRecoveryLabelRx.setter
     def PathswithRecoveryLabelRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathswithRecoveryLabelRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathswithRecoveryLabelRx"], value)
 
     @property
     def PathswithRecoveryLabelTx(self):
@@ -487,11 +515,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Paths with Recovery-Label Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathswithRecoveryLabelTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathswithRecoveryLabelTx"])
+
     @PathswithRecoveryLabelTx.setter
     def PathswithRecoveryLabelTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PathswithRecoveryLabelTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathswithRecoveryLabelTx"], value)
 
     @property
     def PeerGracefulRestarts(self):
@@ -501,11 +530,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Peer Graceful-Restarts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerGracefulRestarts'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerGracefulRestarts"])
+
     @PeerGracefulRestarts.setter
     def PeerGracefulRestarts(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerGracefulRestarts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerGracefulRestarts"], value)
 
     @property
     def PortName(self):
@@ -515,11 +545,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RateControlBlockedLSPSetup(self):
@@ -529,11 +560,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Rate Control Blocked LSP Setup
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RateControlBlockedLSPSetup'])
+        return self._get_attribute(self._SDM_ATT_MAP["RateControlBlockedLSPSetup"])
+
     @RateControlBlockedLSPSetup.setter
     def RateControlBlockedLSPSetup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RateControlBlockedLSPSetup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RateControlBlockedLSPSetup"], value)
 
     @property
     def ResvCONFsRx(self):
@@ -543,11 +575,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV-CONFs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvCONFsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvCONFsRx"])
+
     @ResvCONFsRx.setter
     def ResvCONFsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvCONFsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvCONFsRx"], value)
 
     @property
     def ResvCONFsTx(self):
@@ -557,11 +590,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV-CONFs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvCONFsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvCONFsTx"])
+
     @ResvCONFsTx.setter
     def ResvCONFsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvCONFsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvCONFsTx"], value)
 
     @property
     def ResvERRsRx(self):
@@ -571,11 +605,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV-ERRs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvERRsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvERRsRx"])
+
     @ResvERRsRx.setter
     def ResvERRsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvERRsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvERRsRx"], value)
 
     @property
     def ResvERRsTx(self):
@@ -585,11 +620,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV-ERRs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvERRsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvERRsTx"])
+
     @ResvERRsTx.setter
     def ResvERRsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvERRsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvERRsTx"], value)
 
     @property
     def ResvLifetimeExpirations(self):
@@ -599,11 +635,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV Lifetime Expirations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvLifetimeExpirations'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvLifetimeExpirations"])
+
     @ResvLifetimeExpirations.setter
     def ResvLifetimeExpirations(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvLifetimeExpirations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvLifetimeExpirations"], value)
 
     @property
     def ResvTearsRx(self):
@@ -613,11 +650,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV Tears Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvTearsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvTearsRx"])
+
     @ResvTearsRx.setter
     def ResvTearsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvTearsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvTearsRx"], value)
 
     @property
     def ResvTearsTx(self):
@@ -627,11 +665,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESV Tears Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvTearsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvTearsTx"])
+
     @ResvTearsTx.setter
     def ResvTearsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvTearsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvTearsTx"], value)
 
     @property
     def ResvsRx(self):
@@ -641,11 +680,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESVs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvsRx"])
+
     @ResvsRx.setter
     def ResvsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvsRx"], value)
 
     @property
     def ResvsTx(self):
@@ -655,11 +695,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: RESVs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResvsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResvsTx"])
+
     @ResvsTx.setter
     def ResvsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResvsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResvsTx"], value)
 
     @property
     def SessionFlapCount(self):
@@ -669,11 +710,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def SrefreshsRx(self):
@@ -683,11 +725,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: SREFRESHs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrefreshsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrefreshsRx"])
+
     @SrefreshsRx.setter
     def SrefreshsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrefreshsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrefreshsRx"], value)
 
     @property
     def SrefreshsTx(self):
@@ -697,11 +740,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: SREFRESHs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrefreshsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrefreshsTx"])
+
     @SrefreshsTx.setter
     def SrefreshsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrefreshsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrefreshsTx"], value)
 
     @property
     def UnrecoveredRESVsDeleted(self):
@@ -711,11 +755,12 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: UnRecovered RESVs Deleted
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnrecoveredRESVsDeleted'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnrecoveredRESVsDeleted"])
+
     @UnrecoveredRESVsDeleted.setter
     def UnrecoveredRESVsDeleted(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnrecoveredRESVsDeleted'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnrecoveredRESVsDeleted"], value)
 
     @property
     def UpStateCount(self):
@@ -725,13 +770,62 @@ class RsvpAggregatedStatistics(Base):
         -------
         - bool: Up State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpStateCount"])
+
     @UpStateCount.setter
     def UpStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpStateCount"], value)
 
-    def update(self, AcksRx=None, AcksTx=None, BundleMessagesRx=None, BundleMessagesTx=None, DownStateCount=None, EgressLSPsUp=None, EgressOutofOrderMsgsRx=None, EgressSubLSPsUp=None, HellosRx=None, HellosTx=None, IngressLSPsConfigured=None, IngressLSPsUp=None, IngressSubLSPsConfigured=None, IngressSubLSPsUp=None, NacksRx=None, NacksTx=None, NumberofPathReOptimizations=None, OwnGracefulRestarts=None, PathERRsRx=None, PathERRsTx=None, PathLifetimeExpirations=None, PathReevaluationRequestTx=None, PathSentStateCount=None, PathTearsRx=None, PathTearsTx=None, PathsRx=None, PathsTx=None, PathswithRecoveryLabelRx=None, PathswithRecoveryLabelTx=None, PeerGracefulRestarts=None, PortName=None, RateControlBlockedLSPSetup=None, ResvCONFsRx=None, ResvCONFsTx=None, ResvERRsRx=None, ResvERRsTx=None, ResvLifetimeExpirations=None, ResvTearsRx=None, ResvTearsTx=None, ResvsRx=None, ResvsTx=None, SessionFlapCount=None, SrefreshsRx=None, SrefreshsTx=None, UnrecoveredRESVsDeleted=None, UpStateCount=None):
+    def update(
+        self,
+        AcksRx=None,
+        AcksTx=None,
+        BundleMessagesRx=None,
+        BundleMessagesTx=None,
+        DownStateCount=None,
+        EgressLSPsUp=None,
+        EgressOutofOrderMsgsRx=None,
+        EgressSubLSPsUp=None,
+        HellosRx=None,
+        HellosTx=None,
+        IngressLSPsConfigured=None,
+        IngressLSPsUp=None,
+        IngressSubLSPsConfigured=None,
+        IngressSubLSPsUp=None,
+        NacksRx=None,
+        NacksTx=None,
+        NumberofPathReOptimizations=None,
+        OwnGracefulRestarts=None,
+        PathERRsRx=None,
+        PathERRsTx=None,
+        PathLifetimeExpirations=None,
+        PathReevaluationRequestTx=None,
+        PathSentStateCount=None,
+        PathTearsRx=None,
+        PathTearsTx=None,
+        PathsRx=None,
+        PathsTx=None,
+        PathswithRecoveryLabelRx=None,
+        PathswithRecoveryLabelTx=None,
+        PeerGracefulRestarts=None,
+        PortName=None,
+        RateControlBlockedLSPSetup=None,
+        ResvCONFsRx=None,
+        ResvCONFsTx=None,
+        ResvERRsRx=None,
+        ResvERRsTx=None,
+        ResvLifetimeExpirations=None,
+        ResvTearsRx=None,
+        ResvTearsTx=None,
+        ResvsRx=None,
+        ResvsTx=None,
+        SessionFlapCount=None,
+        SrefreshsRx=None,
+        SrefreshsTx=None,
+        UnrecoveredRESVsDeleted=None,
+        UpStateCount=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> RsvpAggregatedStatistics
         """Updates rsvpAggregatedStatistics resource on the server.
 
@@ -790,7 +884,55 @@ class RsvpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AcksRx=None, AcksTx=None, BundleMessagesRx=None, BundleMessagesTx=None, DownStateCount=None, EgressLSPsUp=None, EgressOutofOrderMsgsRx=None, EgressSubLSPsUp=None, HellosRx=None, HellosTx=None, IngressLSPsConfigured=None, IngressLSPsUp=None, IngressSubLSPsConfigured=None, IngressSubLSPsUp=None, NacksRx=None, NacksTx=None, NumberofPathReOptimizations=None, OwnGracefulRestarts=None, PathERRsRx=None, PathERRsTx=None, PathLifetimeExpirations=None, PathReevaluationRequestTx=None, PathSentStateCount=None, PathTearsRx=None, PathTearsTx=None, PathsRx=None, PathsTx=None, PathswithRecoveryLabelRx=None, PathswithRecoveryLabelTx=None, PeerGracefulRestarts=None, PortName=None, RateControlBlockedLSPSetup=None, ResvCONFsRx=None, ResvCONFsTx=None, ResvERRsRx=None, ResvERRsTx=None, ResvLifetimeExpirations=None, ResvTearsRx=None, ResvTearsTx=None, ResvsRx=None, ResvsTx=None, SessionFlapCount=None, SrefreshsRx=None, SrefreshsTx=None, UnrecoveredRESVsDeleted=None, UpStateCount=None):
+    def find(
+        self,
+        AcksRx=None,
+        AcksTx=None,
+        BundleMessagesRx=None,
+        BundleMessagesTx=None,
+        DownStateCount=None,
+        EgressLSPsUp=None,
+        EgressOutofOrderMsgsRx=None,
+        EgressSubLSPsUp=None,
+        HellosRx=None,
+        HellosTx=None,
+        IngressLSPsConfigured=None,
+        IngressLSPsUp=None,
+        IngressSubLSPsConfigured=None,
+        IngressSubLSPsUp=None,
+        NacksRx=None,
+        NacksTx=None,
+        NumberofPathReOptimizations=None,
+        OwnGracefulRestarts=None,
+        PathERRsRx=None,
+        PathERRsTx=None,
+        PathLifetimeExpirations=None,
+        PathReevaluationRequestTx=None,
+        PathSentStateCount=None,
+        PathTearsRx=None,
+        PathTearsTx=None,
+        PathsRx=None,
+        PathsTx=None,
+        PathswithRecoveryLabelRx=None,
+        PathswithRecoveryLabelTx=None,
+        PeerGracefulRestarts=None,
+        PortName=None,
+        RateControlBlockedLSPSetup=None,
+        ResvCONFsRx=None,
+        ResvCONFsTx=None,
+        ResvERRsRx=None,
+        ResvERRsTx=None,
+        ResvLifetimeExpirations=None,
+        ResvTearsRx=None,
+        ResvTearsTx=None,
+        ResvsRx=None,
+        ResvsTx=None,
+        SessionFlapCount=None,
+        SrefreshsRx=None,
+        SrefreshsTx=None,
+        UnrecoveredRESVsDeleted=None,
+        UpStateCount=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> RsvpAggregatedStatistics
         """Finds and retrieves rsvpAggregatedStatistics resources from the server.
 

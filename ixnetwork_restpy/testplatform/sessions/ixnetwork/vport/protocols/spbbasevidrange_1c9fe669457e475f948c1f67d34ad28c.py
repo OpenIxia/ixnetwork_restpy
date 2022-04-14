@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class SpbBaseVidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbBaseVidRange'
+    _SDM_NAME = "spbBaseVidRange"
     _SDM_ATT_MAP = {
-        'BMacAddress': 'bMacAddress',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpId': 'bVlanTpId',
-        'BaseVid': 'baseVid',
-        'EctAlgorithmType': 'ectAlgorithmType',
-        'EnableAutoBmacEnabled': 'enableAutoBmacEnabled',
-        'EnableUseFlagBit': 'enableUseFlagBit',
+        "BMacAddress": "bMacAddress",
+        "BVlanPriority": "bVlanPriority",
+        "BVlanTpId": "bVlanTpId",
+        "BaseVid": "baseVid",
+        "EctAlgorithmType": "ectAlgorithmType",
+        "EnableAutoBmacEnabled": "enableAutoBmacEnabled",
+        "EnableUseFlagBit": "enableUseFlagBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbBaseVidRange, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class SpbBaseVidRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_31c007fedf45d93a5e16f9377610bf83 import SpbIsIdRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_31c007fedf45d93a5e16f9377610bf83 import (
+            SpbIsIdRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbIsIdRange', None) is not None:
-                return self._properties.get('SpbIsIdRange')
+            if self._properties.get("SpbIsIdRange", None) is not None:
+                return self._properties.get("SpbIsIdRange")
         return SpbIsIdRange(self)
 
     @property
@@ -75,11 +78,12 @@ class SpbBaseVidRange(Base):
         -------
         - str: The B-MAC address. The default value is the System ID of the router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["BMacAddress"])
+
     @BMacAddress.setter
     def BMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BMacAddress"], value)
 
     @property
     def BVlanPriority(self):
@@ -89,11 +93,12 @@ class SpbBaseVidRange(Base):
         -------
         - number: The user priority of the Base VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanPriority"])
+
     @BVlanPriority.setter
     def BVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanPriority"], value)
 
     @property
     def BVlanTpId(self):
@@ -103,11 +108,12 @@ class SpbBaseVidRange(Base):
         -------
         - number: The tag priority identifier for base VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanTpId"])
+
     @BVlanTpId.setter
     def BVlanTpId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanTpId"], value)
 
     @property
     def BaseVid(self):
@@ -117,11 +123,12 @@ class SpbBaseVidRange(Base):
         -------
         - number: The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVid'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVid"])
+
     @BaseVid.setter
     def BaseVid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseVid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseVid"], value)
 
     @property
     def EctAlgorithmType(self):
@@ -131,11 +138,12 @@ class SpbBaseVidRange(Base):
         -------
         - number: The type of SPB Equal Cost Tree (ECT) algorithm. The default value is 01-80-C2-01.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EctAlgorithmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EctAlgorithmType"])
+
     @EctAlgorithmType.setter
     def EctAlgorithmType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EctAlgorithmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EctAlgorithmType"], value)
 
     @property
     def EnableAutoBmacEnabled(self):
@@ -145,11 +153,12 @@ class SpbBaseVidRange(Base):
         -------
         - bool: If true, enables auto base MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoBmacEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAutoBmacEnabled"])
+
     @EnableAutoBmacEnabled.setter
     def EnableAutoBmacEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAutoBmacEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAutoBmacEnabled"], value)
 
     @property
     def EnableUseFlagBit(self):
@@ -159,13 +168,23 @@ class SpbBaseVidRange(Base):
         -------
         - bool: If set to true, allows to use flag bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableUseFlagBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableUseFlagBit"])
+
     @EnableUseFlagBit.setter
     def EnableUseFlagBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableUseFlagBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableUseFlagBit"], value)
 
-    def update(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
+    def update(
+        self,
+        BMacAddress=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithmType=None,
+        EnableAutoBmacEnabled=None,
+        EnableUseFlagBit=None,
+    ):
         # type: (str, int, int, int, int, bool, bool) -> SpbBaseVidRange
         """Updates spbBaseVidRange resource on the server.
 
@@ -185,7 +204,16 @@ class SpbBaseVidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
+    def add(
+        self,
+        BMacAddress=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithmType=None,
+        EnableAutoBmacEnabled=None,
+        EnableUseFlagBit=None,
+    ):
         # type: (str, int, int, int, int, bool, bool) -> SpbBaseVidRange
         """Adds a new spbBaseVidRange resource on the server and adds it to the container.
 
@@ -219,7 +247,16 @@ class SpbBaseVidRange(Base):
         """
         self._delete()
 
-    def find(self, BMacAddress=None, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithmType=None, EnableAutoBmacEnabled=None, EnableUseFlagBit=None):
+    def find(
+        self,
+        BMacAddress=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithmType=None,
+        EnableAutoBmacEnabled=None,
+        EnableUseFlagBit=None,
+    ):
         # type: (str, int, int, int, int, bool, bool) -> SpbBaseVidRange
         """Finds and retrieves spbBaseVidRange resources from the server.
 

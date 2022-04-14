@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class AcName(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'acName'
+    _SDM_NAME = "acName"
     _SDM_ATT_MAP = {
-        'AcName': 'acName',
-        'ObjectId': 'objectId',
-        'Percentage': 'percentage',
-        'Select': 'select',
+        "AcName": "acName",
+        "ObjectId": "objectId",
+        "Percentage": "percentage",
+        "Select": "select",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AcName, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class AcName(Base):
         -------
         - str: Access Concentrator Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AcName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AcName"])
+
     @AcName.setter
     def AcName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AcName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AcName"], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +70,7 @@ class AcName(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Percentage(self):
@@ -79,11 +80,12 @@ class AcName(Base):
         -------
         - number: Percentage of PPPoE sessions for this AC Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
+        return self._get_attribute(self._SDM_ATT_MAP["Percentage"])
+
     @Percentage.setter
     def Percentage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Percentage"], value)
 
     @property
     def Select(self):
@@ -93,11 +95,12 @@ class AcName(Base):
         -------
         - bool: Enable/disable AC Name entry
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Select'])
+        return self._get_attribute(self._SDM_ATT_MAP["Select"])
+
     @Select.setter
     def Select(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Select'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Select"], value)
 
     def update(self, AcName=None, Percentage=None, Select=None):
         # type: (str, int, bool) -> AcName
@@ -205,10 +208,14 @@ class AcName(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -227,10 +234,14 @@ class AcName(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -249,7 +260,11 @@ class AcName(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

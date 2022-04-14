@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class IsisL3SimulatedTopologyConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisL3SimulatedTopologyConfig'
+    _SDM_NAME = "isisL3SimulatedTopologyConfig"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableHostName': 'enableHostName',
-        'HostName': 'hostName',
-        'IsisL3Ipv4NodeRouteCount': 'isisL3Ipv4NodeRouteCount',
-        'IsisL3Ipv6NodeRouteCount': 'isisL3Ipv6NodeRouteCount',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableHostName": "enableHostName",
+        "HostName": "hostName",
+        "IsisL3Ipv4NodeRouteCount": "isisL3Ipv4NodeRouteCount",
+        "IsisL3Ipv6NodeRouteCount": "isisL3Ipv6NodeRouteCount",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisL3SimulatedTopologyConfig, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class IsisL3SimulatedTopologyConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv4noderoutelist_ae7695e0538209b004b305811ac652f1 import IsisL3ipv4NodeRouteList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv4noderoutelist_ae7695e0538209b004b305811ac652f1 import (
+            IsisL3ipv4NodeRouteList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3ipv4NodeRouteList', None) is not None:
-                return self._properties.get('IsisL3ipv4NodeRouteList')
+            if self._properties.get("IsisL3ipv4NodeRouteList", None) is not None:
+                return self._properties.get("IsisL3ipv4NodeRouteList")
         return IsisL3ipv4NodeRouteList(self)._select()
 
     @property
@@ -78,10 +81,13 @@ class IsisL3SimulatedTopologyConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv6noderoutelist_305cdb4f4026728819c2e41364d4f782 import IsisL3ipv6NodeRouteList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv6noderoutelist_305cdb4f4026728819c2e41364d4f782 import (
+            IsisL3ipv6NodeRouteList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3ipv6NodeRouteList', None) is not None:
-                return self._properties.get('IsisL3ipv6NodeRouteList')
+            if self._properties.get("IsisL3ipv6NodeRouteList", None) is not None:
+                return self._properties.get("IsisL3ipv6NodeRouteList")
         return IsisL3ipv6NodeRouteList(self)._select()
 
     @property
@@ -93,7 +99,8 @@ class IsisL3SimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -103,7 +110,7 @@ class IsisL3SimulatedTopologyConfig(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -113,7 +120,7 @@ class IsisL3SimulatedTopologyConfig(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableHostName(self):
@@ -124,7 +131,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHostName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+        )
 
     @property
     def HostName(self):
@@ -135,7 +145,8 @@ class IsisL3SimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HostName"]))
 
     @property
     def IsisL3Ipv4NodeRouteCount(self):
@@ -145,11 +156,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         -------
         - number: Node Route Range Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL3Ipv4NodeRouteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL3Ipv4NodeRouteCount"])
+
     @IsisL3Ipv4NodeRouteCount.setter
     def IsisL3Ipv4NodeRouteCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL3Ipv4NodeRouteCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL3Ipv4NodeRouteCount"], value)
 
     @property
     def IsisL3Ipv6NodeRouteCount(self):
@@ -159,11 +171,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         -------
         - number: Node Route Range Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL3Ipv6NodeRouteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL3Ipv6NodeRouteCount"])
+
     @IsisL3Ipv6NodeRouteCount.setter
     def IsisL3Ipv6NodeRouteCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL3Ipv6NodeRouteCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL3Ipv6NodeRouteCount"], value)
 
     @property
     def Name(self):
@@ -173,13 +186,16 @@ class IsisL3SimulatedTopologyConfig(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+    def update(
+        self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None
+    ):
         # type: (int, int, str) -> IsisL3SimulatedTopologyConfig
         """Updates isisL3SimulatedTopologyConfig resource on the server.
 
@@ -198,9 +214,11 @@ class IsisL3SimulatedTopologyConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+    def add(
+        self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None
+    ):
         # type: (int, int, str) -> IsisL3SimulatedTopologyConfig
-        """Adds a new isisL3SimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisL3SimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -218,7 +236,14 @@ class IsisL3SimulatedTopologyConfig(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        IsisL3Ipv4NodeRouteCount=None,
+        IsisL3Ipv6NodeRouteCount=None,
+        Name=None,
+    ):
         # type: (int, str, int, int, str) -> IsisL3SimulatedTopologyConfig
         """Finds and retrieves isisL3SimulatedTopologyConfig resources from the server.
 
@@ -277,10 +302,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -309,10 +336,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -341,12 +370,16 @@ class IsisL3SimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableHostName=None, HostName=None):
+    def get_device_ids(
+        self, PortNames=None, Active=None, EnableHostName=None, HostName=None
+    ):
         """Base class infrastructure that gets a list of isisL3SimulatedTopologyConfig device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

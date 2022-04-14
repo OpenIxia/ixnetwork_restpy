@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,29 @@ class Topology(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'topology'
+    _SDM_NAME = "topology"
     _SDM_ATT_MAP = {
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'LagCount': 'lagCount',
-        'Name': 'name',
-        'Note': 'note',
-        'PortCount': 'portCount',
-        'Ports': 'ports',
-        'PortsStateCount': 'portsStateCount',
-        'Status': 'status',
-        'Vports': 'vports',
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "LagCount": "lagCount",
+        "Name": "name",
+        "Note": "note",
+        "PortCount": "portCount",
+        "Ports": "ports",
+        "PortsStateCount": "portsStateCount",
+        "Status": "status",
+        "Vports": "vports",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -65,10 +74,13 @@ class Topology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import (
+            DeviceGroup,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DeviceGroup', None) is not None:
-                return self._properties.get('DeviceGroup')
+            if self._properties.get("DeviceGroup", None) is not None:
+                return self._properties.get("DeviceGroup")
         return DeviceGroup(self)
 
     @property
@@ -79,7 +91,7 @@ class Topology(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -88,7 +100,7 @@ class Topology(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def LagCount(self):
@@ -98,7 +110,7 @@ class Topology(Base):
         -------
         - number: Number of /lags assigned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LagCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LagCount"])
 
     @property
     def Name(self):
@@ -108,11 +120,12 @@ class Topology(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Note(self):
@@ -122,11 +135,12 @@ class Topology(Base):
         -------
         - str: Any Note about the Topology
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Note'])
+        return self._get_attribute(self._SDM_ATT_MAP["Note"])
+
     @Note.setter
     def Note(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Note'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Note"], value)
 
     @property
     def PortCount(self):
@@ -136,7 +150,7 @@ class Topology(Base):
         -------
         - number: Number of /vports assigned (including unmapped ports)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortCount"])
 
     @property
     def Ports(self):
@@ -146,11 +160,12 @@ class Topology(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport]): Logical port information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ports'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ports"])
+
     @Ports.setter
     def Ports(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ports'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ports"], value)
 
     @property
     def PortsStateCount(self):
@@ -159,7 +174,7 @@ class Topology(Base):
         -------
         - dict(arg1:number,arg2:number,arg3:number,arg4:number): State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other, arg5:busy, arg6:unassigned, arg7:lag
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortsStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortsStateCount"])
 
     @property
     def Status(self):
@@ -169,21 +184,22 @@ class Topology(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def Vports(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Virtual port information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vports'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vports"])
+
     @Vports.setter
     def Vports(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vports'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vports"], value)
 
     def update(self, Name=None, Note=None, Ports=None, Vports=None):
         # type: (str, str, List[str], List[str]) -> Topology
@@ -233,7 +249,19 @@ class Topology(Base):
         """
         self._delete()
 
-    def find(self, DescriptiveName=None, Errors=None, LagCount=None, Name=None, Note=None, PortCount=None, Ports=None, PortsStateCount=None, Status=None, Vports=None):
+    def find(
+        self,
+        DescriptiveName=None,
+        Errors=None,
+        LagCount=None,
+        Name=None,
+        Note=None,
+        PortCount=None,
+        Ports=None,
+        PortsStateCount=None,
+        Status=None,
+        Vports=None,
+    ):
         """Finds and retrieves topology resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve topology resources from the server.
@@ -296,10 +324,12 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def AdjustPortCount(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -317,10 +347,12 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('adjustPortCount', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("adjustPortCount", payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -338,10 +370,14 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchAndUpdateConfigFromCloud", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -358,10 +394,12 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -378,10 +416,12 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -398,7 +438,9 @@ class Topology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

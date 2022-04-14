@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class L2VcIpRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2VcIpRange'
+    _SDM_NAME = "l2VcIpRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IncrementBy': 'incrementBy',
-        'Mask': 'mask',
-        'NumHosts': 'numHosts',
-        'PeerAddress': 'peerAddress',
-        'StartAddress': 'startAddress',
+        "Enabled": "enabled",
+        "IncrementBy": "incrementBy",
+        "Mask": "mask",
+        "NumHosts": "numHosts",
+        "PeerAddress": "peerAddress",
+        "StartAddress": "startAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L2VcIpRange, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class L2VcIpRange(Base):
         -------
         - bool: Enables the Layer 2 IP address range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IncrementBy(self):
@@ -69,11 +70,12 @@ class L2VcIpRange(Base):
         -------
         - number: The value to be added for creating each additional L2 VC IP route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementBy"])
+
     @IncrementBy.setter
     def IncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementBy"], value)
 
     @property
     def Mask(self):
@@ -83,11 +85,12 @@ class L2VcIpRange(Base):
         -------
         - number: The number of bits in the mask applied to the network address. The masked bits in the first network address form the address prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def NumHosts(self):
@@ -97,11 +100,12 @@ class L2VcIpRange(Base):
         -------
         - number: The number of emulated LDP hosts to be created on this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumHosts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumHosts"])
+
     @NumHosts.setter
     def NumHosts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumHosts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumHosts"], value)
 
     @property
     def PeerAddress(self):
@@ -111,7 +115,7 @@ class L2VcIpRange(Base):
         -------
         - str: The 32-bit IPv4 address of the LDP peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerAddress"])
 
     @property
     def StartAddress(self):
@@ -121,13 +125,21 @@ class L2VcIpRange(Base):
         -------
         - str: The IP address that starts the L2 VC IP range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartAddress"])
+
     @StartAddress.setter
     def StartAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartAddress"], value)
 
-    def update(self, Enabled=None, IncrementBy=None, Mask=None, NumHosts=None, StartAddress=None):
+    def update(
+        self,
+        Enabled=None,
+        IncrementBy=None,
+        Mask=None,
+        NumHosts=None,
+        StartAddress=None,
+    ):
         # type: (bool, int, int, int, str) -> L2VcIpRange
         """Updates l2VcIpRange resource on the server.
 
@@ -145,7 +157,15 @@ class L2VcIpRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None, IncrementBy=None, Mask=None, NumHosts=None, PeerAddress=None, StartAddress=None):
+    def find(
+        self,
+        Enabled=None,
+        IncrementBy=None,
+        Mask=None,
+        NumHosts=None,
+        PeerAddress=None,
+        StartAddress=None,
+    ):
         # type: (bool, int, int, int, str, str) -> L2VcIpRange
         """Finds and retrieves l2VcIpRange resources from the server.
 

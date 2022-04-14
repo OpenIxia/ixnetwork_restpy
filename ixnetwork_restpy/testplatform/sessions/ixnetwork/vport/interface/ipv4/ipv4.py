@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class Ipv4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv4'
+    _SDM_NAME = "ipv4"
     _SDM_ATT_MAP = {
-        'Gateway': 'gateway',
-        'Ip': 'ip',
-        'MaskWidth': 'maskWidth',
+        "Gateway": "gateway",
+        "Ip": "ip",
+        "MaskWidth": "maskWidth",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv4, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class Ipv4(Base):
         -------
         - str: The IPv4 address of the Gateway to the network, typically an interface on the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gateway'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gateway"])
+
     @Gateway.setter
     def Gateway(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gateway'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gateway"], value)
 
     @property
     def Ip(self):
@@ -68,11 +69,12 @@ class Ipv4(Base):
         -------
         - str: The 32-bit IPv4 address assigned to this unconnected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ip"])
+
     @Ip.setter
     def Ip(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ip"], value)
 
     @property
     def MaskWidth(self):
@@ -82,11 +84,12 @@ class Ipv4(Base):
         -------
         - number: The number of bits in the mask used with the IPv4 address. The default is 24 bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     def update(self, Gateway=None, Ip=None, MaskWidth=None):
         # type: (str, str, int) -> Ipv4

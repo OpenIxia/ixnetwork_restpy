@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,54 +33,53 @@ class CuspCPAccessInterfaceConfigList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cuspCPAccessInterfaceConfigList'
+    _SDM_NAME = "cuspCPAccessInterfaceConfigList"
     _SDM_ATT_MAP = {
-        'AccessMode': 'accessMode',
-        'Active': 'active',
-        'ArpProxy': 'arpProxy',
-        'ArpTrigger': 'arpTrigger',
-        'AuthMethod': 'authMethod',
-        'AuthMethodv6': 'authMethodv6',
-        'BasAccessType': 'basAccessType',
-        'ChassisNumber': 'chassisNumber',
-        'ConfigureAccessType': 'configureAccessType',
-        'ConfigureBrasSubInterface': 'configureBrasSubInterface',
-        'ConfigureInterfacesVia': 'configureInterfacesVia',
-        'ConfigureVlan': 'configureVlan',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EgressL1HqosInstanceName': 'egressL1HqosInstanceName',
-        'EgressL1HqosProfileName': 'egressL1HqosProfileName',
-        'EndCvlanId': 'endCvlanId',
-        'EndSvlanId': 'endSvlanId',
-        'IncludeL1HqosProfile': 'includeL1HqosProfile',
-        'IngressL1HqosInstanceName': 'ingressL1HqosInstanceName',
-        'IngressL1HqosProfileName': 'ingressL1HqosProfileName',
-        'InterfaceType': 'interfaceType',
-        'IpoeFlowCheck': 'ipoeFlowCheck',
-        'Ipv4Trigger': 'ipv4Trigger',
-        'Ipv6Trigger': 'ipv6Trigger',
-        'L1HqosActionDesc': 'l1HqosActionDesc',
-        'L1HqosActionName': 'l1HqosActionName',
-        'L1HqosProfileName': 'l1HqosProfileName',
-        'L1HqosRuleActionPairName': 'l1HqosRuleActionPairName',
-        'L1HqosRuleName': 'l1HqosRuleName',
-        'LogicID': 'logicID',
-        'Name': 'name',
-        'NdProxy': 'ndProxy',
-        'NdTrigger': 'ndTrigger',
-        'PortNumber': 'portNumber',
-        'PortType': 'portType',
-        'PppOnly': 'pppOnly',
-        'PppoeFlowCheck': 'pppoeFlowCheck',
-        'SlotNumber': 'slotNumber',
-        'StartCvlanId': 'startCvlanId',
-        'StartSvlanId': 'startSvlanId',
-        'SubPortNumber': 'subPortNumber',
-        'SubslotNumber': 'subslotNumber',
+        "AccessMode": "accessMode",
+        "Active": "active",
+        "ArpProxy": "arpProxy",
+        "ArpTrigger": "arpTrigger",
+        "AuthMethod": "authMethod",
+        "AuthMethodv6": "authMethodv6",
+        "BasAccessType": "basAccessType",
+        "ChassisNumber": "chassisNumber",
+        "ConfigureAccessType": "configureAccessType",
+        "ConfigureBrasSubInterface": "configureBrasSubInterface",
+        "ConfigureInterfacesVia": "configureInterfacesVia",
+        "ConfigureVlan": "configureVlan",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EgressL1HqosInstanceName": "egressL1HqosInstanceName",
+        "EgressL1HqosProfileName": "egressL1HqosProfileName",
+        "EndCvlanId": "endCvlanId",
+        "EndSvlanId": "endSvlanId",
+        "IncludeL1HqosProfile": "includeL1HqosProfile",
+        "IngressL1HqosInstanceName": "ingressL1HqosInstanceName",
+        "IngressL1HqosProfileName": "ingressL1HqosProfileName",
+        "InterfaceType": "interfaceType",
+        "IpoeFlowCheck": "ipoeFlowCheck",
+        "Ipv4Trigger": "ipv4Trigger",
+        "Ipv6Trigger": "ipv6Trigger",
+        "L1HqosActionDesc": "l1HqosActionDesc",
+        "L1HqosActionName": "l1HqosActionName",
+        "L1HqosProfileName": "l1HqosProfileName",
+        "L1HqosRuleActionPairName": "l1HqosRuleActionPairName",
+        "L1HqosRuleName": "l1HqosRuleName",
+        "LogicID": "logicID",
+        "Name": "name",
+        "NdProxy": "ndProxy",
+        "NdTrigger": "ndTrigger",
+        "PortNumber": "portNumber",
+        "PortType": "portType",
+        "PppOnly": "pppOnly",
+        "PppoeFlowCheck": "pppoeFlowCheck",
+        "SlotNumber": "slotNumber",
+        "StartCvlanId": "startCvlanId",
+        "StartSvlanId": "startSvlanId",
+        "SubPortNumber": "subPortNumber",
+        "SubslotNumber": "subslotNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CuspCPAccessInterfaceConfigList, self).__init__(parent, list_op)
@@ -93,7 +93,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mode of access.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AccessMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AccessMode"]))
 
     @property
     def Active(self):
@@ -104,7 +105,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ArpProxy(self):
@@ -115,7 +117,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/disable ARP proxy, allowing processing of ARP requests across different Port and Vlans .
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArpProxy']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ArpProxy"]))
 
     @property
     def ArpTrigger(self):
@@ -126,7 +129,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether ARP packets can trigger a subscriber to go online.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArpTrigger']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ArpTrigger"]))
 
     @property
     def AuthMethod(self):
@@ -137,7 +141,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auth Method on this interface for IPv4 scenario.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthMethod']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuthMethod"]))
 
     @property
     def AuthMethodv6(self):
@@ -148,7 +153,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auth Method on this interface for IPv6 scenario.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthMethodv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuthMethodv6"]))
 
     @property
     def BasAccessType(self):
@@ -159,7 +165,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BAS Access Type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BasAccessType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BasAccessType"]))
 
     @property
     def ChassisNumber(self):
@@ -170,7 +177,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Frame number (set to 0 if there is no frame number).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ChassisNumber"]))
 
     @property
     def ConfigureAccessType(self):
@@ -181,7 +189,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Sub-Interface BRAS function as per CMCC vBRAS Yang model.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureAccessType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureAccessType"])
+        )
 
     @property
     def ConfigureBrasSubInterface(self):
@@ -192,7 +203,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure BRAS Sub-Interface as per CMCC vBRAS Yang model.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureBrasSubInterface']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureBrasSubInterface"])
+        )
 
     @property
     def ConfigureInterfacesVia(self):
@@ -203,7 +217,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines how should the BRAS Access Interface configuration be done, by CUSP or by NETCONF.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureInterfacesVia']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureInterfacesVia"])
+        )
 
     @property
     def ConfigureVlan(self):
@@ -214,7 +231,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure VLAN under Sub-Interface.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ConfigureVlan"]))
 
     @property
     def Count(self):
@@ -224,7 +242,7 @@ class CuspCPAccessInterfaceConfigList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -234,7 +252,7 @@ class CuspCPAccessInterfaceConfigList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EgressL1HqosInstanceName(self):
@@ -245,7 +263,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress L1 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressL1HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressL1HqosInstanceName"])
+        )
 
     @property
     def EgressL1HqosProfileName(self):
@@ -256,7 +277,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Egress L1 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EgressL1HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EgressL1HqosProfileName"])
+        )
 
     @property
     def EndCvlanId(self):
@@ -267,7 +291,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): End C-VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndCvlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndCvlanId"]))
 
     @property
     def EndSvlanId(self):
@@ -278,7 +303,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): End S-VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndSvlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndSvlanId"]))
 
     @property
     def IncludeL1HqosProfile(self):
@@ -289,7 +315,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include L1 HQoS Profile
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeL1HqosProfile']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeL1HqosProfile"])
+        )
 
     @property
     def IngressL1HqosInstanceName(self):
@@ -300,7 +329,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress L1 HQoS Instance Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressL1HqosInstanceName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressL1HqosInstanceName"])
+        )
 
     @property
     def IngressL1HqosProfileName(self):
@@ -311,7 +343,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ingress L1 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IngressL1HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IngressL1HqosProfileName"])
+        )
 
     @property
     def InterfaceType(self):
@@ -322,7 +357,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the interface.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InterfaceType"]))
 
     @property
     def IpoeFlowCheck(self):
@@ -333,7 +369,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Used for UP detection.Enable/Disbale traffic detection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpoeFlowCheck']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpoeFlowCheck"]))
 
     @property
     def Ipv4Trigger(self):
@@ -344,7 +381,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether IPv4 packets can trigger a subscriber to go online.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Trigger']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4Trigger"]))
 
     @property
     def Ipv6Trigger(self):
@@ -355,7 +393,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether IPv4 packets can trigger a subscriber to go online.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Trigger']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Trigger"]))
 
     @property
     def L1HqosActionDesc(self):
@@ -366,7 +405,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: pir <pir-value> [ pbs <pbs-value> | weight <weight-value> ] * Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L1HqosActionDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L1HqosActionDesc"])
+        )
 
     @property
     def L1HqosActionName(self):
@@ -377,7 +419,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L1 HQoS Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L1HqosActionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L1HqosActionName"])
+        )
 
     @property
     def L1HqosProfileName(self):
@@ -388,7 +433,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L1 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L1HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L1HqosProfileName"])
+        )
 
     @property
     def L1HqosRuleActionPairName(self):
@@ -399,7 +447,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L1 HQoS Rule Action Pair Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L1HqosRuleActionPairName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L1HqosRuleActionPairName"])
+        )
 
     @property
     def L1HqosRuleName(self):
@@ -410,7 +461,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L1 HQoS Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L1HqosRuleName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L1HqosRuleName"])
+        )
 
     @property
     def LogicID(self):
@@ -421,7 +475,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Virtual port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogicID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LogicID"]))
 
     @property
     def Name(self):
@@ -431,11 +486,12 @@ class CuspCPAccessInterfaceConfigList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NdProxy(self):
@@ -446,7 +502,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/disable ND proxy, allowing processing of ND NS requests across different Port and Vlans .
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdProxy']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NdProxy"]))
 
     @property
     def NdTrigger(self):
@@ -457,7 +514,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether ND packets can trigger a subscriber to go online.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NdTrigger']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NdTrigger"]))
 
     @property
     def PortNumber(self):
@@ -468,7 +526,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Physical port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortNumber"]))
 
     @property
     def PortType(self):
@@ -479,7 +538,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the Port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortType"]))
 
     @property
     def PppOnly(self):
@@ -490,7 +550,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Access to PPP users is only allowed if this is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PppOnly']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PppOnly"]))
 
     @property
     def PppoeFlowCheck(self):
@@ -501,7 +562,10 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Used for UP detection.Enable/Disbale traffic detection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PppoeFlowCheck']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PppoeFlowCheck"])
+        )
 
     @property
     def SlotNumber(self):
@@ -512,7 +576,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlotNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlotNumber"]))
 
     @property
     def StartCvlanId(self):
@@ -523,7 +588,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start C-VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartCvlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartCvlanId"]))
 
     @property
     def StartSvlanId(self):
@@ -534,7 +600,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start S-VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSvlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartSvlanId"]))
 
     @property
     def SubPortNumber(self):
@@ -545,7 +612,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub-Port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubPortNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubPortNumber"]))
 
     @property
     def SubslotNumber(self):
@@ -556,7 +624,8 @@ class CuspCPAccessInterfaceConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubslotNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubslotNumber"]))
 
     def update(self, Name=None):
         # type: (str) -> CuspCPAccessInterfaceConfigList
@@ -617,7 +686,50 @@ class CuspCPAccessInterfaceConfigList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AccessMode=None, Active=None, ArpProxy=None, ArpTrigger=None, AuthMethod=None, AuthMethodv6=None, BasAccessType=None, ChassisNumber=None, ConfigureAccessType=None, ConfigureBrasSubInterface=None, ConfigureInterfacesVia=None, ConfigureVlan=None, EgressL1HqosInstanceName=None, EgressL1HqosProfileName=None, EndCvlanId=None, EndSvlanId=None, IncludeL1HqosProfile=None, IngressL1HqosInstanceName=None, IngressL1HqosProfileName=None, InterfaceType=None, IpoeFlowCheck=None, Ipv4Trigger=None, Ipv6Trigger=None, L1HqosActionDesc=None, L1HqosActionName=None, L1HqosProfileName=None, L1HqosRuleActionPairName=None, L1HqosRuleName=None, LogicID=None, NdProxy=None, NdTrigger=None, PortNumber=None, PortType=None, PppOnly=None, PppoeFlowCheck=None, SlotNumber=None, StartCvlanId=None, StartSvlanId=None, SubPortNumber=None, SubslotNumber=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AccessMode=None,
+        Active=None,
+        ArpProxy=None,
+        ArpTrigger=None,
+        AuthMethod=None,
+        AuthMethodv6=None,
+        BasAccessType=None,
+        ChassisNumber=None,
+        ConfigureAccessType=None,
+        ConfigureBrasSubInterface=None,
+        ConfigureInterfacesVia=None,
+        ConfigureVlan=None,
+        EgressL1HqosInstanceName=None,
+        EgressL1HqosProfileName=None,
+        EndCvlanId=None,
+        EndSvlanId=None,
+        IncludeL1HqosProfile=None,
+        IngressL1HqosInstanceName=None,
+        IngressL1HqosProfileName=None,
+        InterfaceType=None,
+        IpoeFlowCheck=None,
+        Ipv4Trigger=None,
+        Ipv6Trigger=None,
+        L1HqosActionDesc=None,
+        L1HqosActionName=None,
+        L1HqosProfileName=None,
+        L1HqosRuleActionPairName=None,
+        L1HqosRuleName=None,
+        LogicID=None,
+        NdProxy=None,
+        NdTrigger=None,
+        PortNumber=None,
+        PortType=None,
+        PppOnly=None,
+        PppoeFlowCheck=None,
+        SlotNumber=None,
+        StartCvlanId=None,
+        StartSvlanId=None,
+        SubPortNumber=None,
+        SubslotNumber=None,
+    ):
         """Base class infrastructure that gets a list of cuspCPAccessInterfaceConfigList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

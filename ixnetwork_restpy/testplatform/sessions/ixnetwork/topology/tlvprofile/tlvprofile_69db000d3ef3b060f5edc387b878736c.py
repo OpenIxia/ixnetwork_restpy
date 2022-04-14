@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,11 +34,9 @@ class TlvProfile(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tlvProfile'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "tlvProfile"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TlvProfile, self).__init__(parent, list_op)
@@ -53,10 +52,13 @@ class TlvProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv_8e41257d3d01ec013783dd0fd6697862 import DefaultTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv_8e41257d3d01ec013783dd0fd6697862 import (
+            DefaultTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DefaultTlv', None) is not None:
-                return self._properties.get('DefaultTlv')
+            if self._properties.get("DefaultTlv", None) is not None:
+                return self._properties.get("DefaultTlv")
         return DefaultTlv(self)
 
     @property
@@ -70,14 +72,17 @@ class TlvProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv_d2b702d35a057ccb264f716c5f342298 import Tlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv_d2b702d35a057ccb264f716c5f342298 import (
+            Tlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tlv', None) is not None:
-                return self._properties.get('Tlv')
+            if self._properties.get("Tlv", None) is not None:
+                return self._properties.get("Tlv")
         return Tlv(self)
 
     def add(self):
-        """Adds a new tlvProfile resource on the json, only valid with config assistant
+        """Adds a new tlvProfile resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -141,7 +146,9 @@ class TlvProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('copyTlv', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyTlv", payload=payload, response_object=None)

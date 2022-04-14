@@ -4,18 +4,18 @@ from ixnetwork_restpy.files import Files
 
 class Igmpv3MembershipQuery(Base):
     __slots__ = ()
-    _SDM_NAME = 'igmpv3MembershipQuery'
+    _SDM_NAME = "igmpv3MembershipQuery"
     _SDM_ATT_MAP = {
-        'HeaderType': 'igmpv3MembershipQuery.header.type-1',
-        'HeaderMaximumResponseCodeunits110Second': 'igmpv3MembershipQuery.header.maximumResponseCodeunits110Second-2',
-        'HeaderChecksum': 'igmpv3MembershipQuery.header.checksum-3',
-        'HeaderGroupAddress': 'igmpv3MembershipQuery.header.groupAddress-4',
-        'HeaderReserved': 'igmpv3MembershipQuery.header.reserved-5',
-        'HeaderSuppressRoutersideProcessingSflag': 'igmpv3MembershipQuery.header.suppressRoutersideProcessingSflag-6',
-        'HeaderQrv': 'igmpv3MembershipQuery.header.qrv-7',
-        'HeaderQqic': 'igmpv3MembershipQuery.header.qqic-8',
-        'HeaderNumberOfSources': 'igmpv3MembershipQuery.header.numberOfSources-9',
-        'MulticastSourcesMulticastSource': 'igmpv3MembershipQuery.header.multicastSources.multicastSource-10',
+        "HeaderType": "igmpv3MembershipQuery.header.type-1",
+        "HeaderMaximumResponseCodeunits110Second": "igmpv3MembershipQuery.header.maximumResponseCodeunits110Second-2",
+        "HeaderChecksum": "igmpv3MembershipQuery.header.checksum-3",
+        "HeaderGroupAddress": "igmpv3MembershipQuery.header.groupAddress-4",
+        "HeaderReserved": "igmpv3MembershipQuery.header.reserved-5",
+        "HeaderSuppressRoutersideProcessingSflag": "igmpv3MembershipQuery.header.suppressRoutersideProcessingSflag-6",
+        "HeaderQrv": "igmpv3MembershipQuery.header.qrv-7",
+        "HeaderQqic": "igmpv3MembershipQuery.header.qqic-8",
+        "HeaderNumberOfSources": "igmpv3MembershipQuery.header.numberOfSources-9",
+        "MulticastSourcesMulticastSource": "igmpv3MembershipQuery.header.multicastSources.multicastSource-10",
     }
 
     def __init__(self, parent, list_op=False):
@@ -29,7 +29,8 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderMaximumResponseCodeunits110Second(self):
@@ -39,7 +40,13 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMaximumResponseCodeunits110Second']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["HeaderMaximumResponseCodeunits110Second"]
+            ),
+        )
 
     @property
     def HeaderChecksum(self):
@@ -49,7 +56,10 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderChecksum"])
+        )
 
     @property
     def HeaderGroupAddress(self):
@@ -59,7 +69,10 @@ class Igmpv3MembershipQuery(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderGroupAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderGroupAddress"])
+        )
 
     @property
     def HeaderReserved(self):
@@ -69,7 +82,10 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderSuppressRoutersideProcessingSflag(self):
@@ -79,7 +95,13 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSuppressRoutersideProcessingSflag']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["HeaderSuppressRoutersideProcessingSflag"]
+            ),
+        )
 
     @property
     def HeaderQrv(self):
@@ -89,7 +111,8 @@ class Igmpv3MembershipQuery(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderQrv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderQrv"]))
 
     @property
     def HeaderQqic(self):
@@ -99,7 +122,8 @@ class Igmpv3MembershipQuery(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderQqic']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderQqic"]))
 
     @property
     def HeaderNumberOfSources(self):
@@ -109,7 +133,10 @@ class Igmpv3MembershipQuery(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNumberOfSources']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderNumberOfSources"])
+        )
 
     @property
     def MulticastSourcesMulticastSource(self):
@@ -119,7 +146,11 @@ class Igmpv3MembershipQuery(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastSourcesMulticastSource']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MulticastSourcesMulticastSource"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

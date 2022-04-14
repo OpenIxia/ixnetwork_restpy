@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,31 +33,30 @@ class BgpEvpnSpmsiV4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEvpnSpmsiV4'
+    _SDM_NAME = "bgpEvpnSpmsiV4"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableSpmsiTraffic': 'enableSpmsiTraffic',
-        'GroupAddress': 'groupAddress',
-        'GroupAddressCountSPMSI': 'groupAddressCountSPMSI',
-        'GroupAddressStep': 'groupAddressStep',
-        'Mode': 'mode',
-        'MulticastTunnelType': 'multicastTunnelType',
-        'Name': 'name',
-        'SPmsiTunnelCount': 'sPmsiTunnelCount',
-        'SenderAddress': 'senderAddress',
-        'SenderAddressStep': 'senderAddressStep',
-        'SourceAddressCountSPMSI': 'sourceAddressCountSPMSI',
-        'SourceGroupMappingSPMSI': 'sourceGroupMappingSPMSI',
-        'StartGroupAddressSPMSI': 'startGroupAddressSPMSI',
-        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
-        'UpstreamAssignedLabel': 'upstreamAssignedLabel',
-        'UpstreamAssignedLabelStep': 'upstreamAssignedLabelStep',
-        'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableSpmsiTraffic": "enableSpmsiTraffic",
+        "GroupAddress": "groupAddress",
+        "GroupAddressCountSPMSI": "groupAddressCountSPMSI",
+        "GroupAddressStep": "groupAddressStep",
+        "Mode": "mode",
+        "MulticastTunnelType": "multicastTunnelType",
+        "Name": "name",
+        "SPmsiTunnelCount": "sPmsiTunnelCount",
+        "SenderAddress": "senderAddress",
+        "SenderAddressStep": "senderAddressStep",
+        "SourceAddressCountSPMSI": "sourceAddressCountSPMSI",
+        "SourceGroupMappingSPMSI": "sourceGroupMappingSPMSI",
+        "StartGroupAddressSPMSI": "startGroupAddressSPMSI",
+        "StartSourceAddressIpv4": "startSourceAddressIpv4",
+        "UpstreamAssignedLabel": "upstreamAssignedLabel",
+        "UpstreamAssignedLabelStep": "upstreamAssignedLabelStep",
+        "UseUpstreamAssignedLabel": "useUpstreamAssignedLabel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpEvpnSpmsiV4, self).__init__(parent, list_op)
@@ -70,7 +70,8 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -80,7 +81,7 @@ class BgpEvpnSpmsiV4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -90,7 +91,7 @@ class BgpEvpnSpmsiV4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableSpmsiTraffic(self):
@@ -100,11 +101,12 @@ class BgpEvpnSpmsiV4(Base):
         -------
         - bool: Enable SPMSI Traffic
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSpmsiTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSpmsiTraffic"])
+
     @EnableSpmsiTraffic.setter
     def EnableSpmsiTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSpmsiTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSpmsiTraffic"], value)
 
     @property
     def GroupAddress(self):
@@ -115,7 +117,8 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupAddress"]))
 
     @property
     def GroupAddressCountSPMSI(self):
@@ -126,7 +129,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-Group Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddressCountSPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupAddressCountSPMSI"])
+        )
 
     @property
     def GroupAddressStep(self):
@@ -137,7 +143,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddressStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupAddressStep"])
+        )
 
     @property
     def Mode(self):
@@ -148,7 +157,8 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mode"]))
 
     @property
     def MulticastTunnelType(self):
@@ -159,7 +169,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Tunnel Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastTunnelType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastTunnelType"])
+        )
 
     @property
     def Name(self):
@@ -169,11 +182,12 @@ class BgpEvpnSpmsiV4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SPmsiTunnelCount(self):
@@ -184,7 +198,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-PMSI Tunnel Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SPmsiTunnelCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SPmsiTunnelCount"])
+        )
 
     @property
     def SenderAddress(self):
@@ -195,7 +212,8 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sender Address/P-Root Node Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SenderAddress"]))
 
     @property
     def SenderAddressStep(self):
@@ -206,7 +224,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sender Address/P-Root Node Address Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderAddressStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SenderAddressStep"])
+        )
 
     @property
     def SourceAddressCountSPMSI(self):
@@ -217,7 +238,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-Source Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressCountSPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceAddressCountSPMSI"])
+        )
 
     @property
     def SourceGroupMappingSPMSI(self):
@@ -228,7 +252,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Group Mapping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceGroupMappingSPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceGroupMappingSPMSI"])
+        )
 
     @property
     def StartGroupAddressSPMSI(self):
@@ -239,7 +266,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start C-Group Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressSPMSI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartGroupAddressSPMSI"])
+        )
 
     @property
     def StartSourceAddressIpv4(self):
@@ -250,7 +280,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start C-Source Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSourceAddressIpv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartSourceAddressIpv4"])
+        )
 
     @property
     def UpstreamAssignedLabel(self):
@@ -261,7 +294,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Upstream Assigned Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpstreamAssignedLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UpstreamAssignedLabel"])
+        )
 
     @property
     def UpstreamAssignedLabelStep(self):
@@ -272,7 +308,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Upstream Assigned Label Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpstreamAssignedLabelStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UpstreamAssignedLabelStep"])
+        )
 
     @property
     def UseUpstreamAssignedLabel(self):
@@ -283,7 +322,10 @@ class BgpEvpnSpmsiV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Upstream Assigned Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseUpstreamAssignedLabel"])
+        )
 
     def update(self, EnableSpmsiTraffic=None, Name=None):
         # type: (bool, str) -> BgpEvpnSpmsiV4
@@ -303,7 +345,9 @@ class BgpEvpnSpmsiV4(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, EnableSpmsiTraffic=None, Name=None):
+    def find(
+        self, Count=None, DescriptiveName=None, EnableSpmsiTraffic=None, Name=None
+    ):
         # type: (int, str, bool, str) -> BgpEvpnSpmsiV4
         """Finds and retrieves bgpEvpnSpmsiV4 resources from the server.
 
@@ -346,7 +390,26 @@ class BgpEvpnSpmsiV4(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, GroupAddress=None, GroupAddressCountSPMSI=None, GroupAddressStep=None, Mode=None, MulticastTunnelType=None, SPmsiTunnelCount=None, SenderAddress=None, SenderAddressStep=None, SourceAddressCountSPMSI=None, SourceGroupMappingSPMSI=None, StartGroupAddressSPMSI=None, StartSourceAddressIpv4=None, UpstreamAssignedLabel=None, UpstreamAssignedLabelStep=None, UseUpstreamAssignedLabel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        GroupAddress=None,
+        GroupAddressCountSPMSI=None,
+        GroupAddressStep=None,
+        Mode=None,
+        MulticastTunnelType=None,
+        SPmsiTunnelCount=None,
+        SenderAddress=None,
+        SenderAddressStep=None,
+        SourceAddressCountSPMSI=None,
+        SourceGroupMappingSPMSI=None,
+        StartGroupAddressSPMSI=None,
+        StartSourceAddressIpv4=None,
+        UpstreamAssignedLabel=None,
+        UpstreamAssignedLabelStep=None,
+        UseUpstreamAssignedLabel=None,
+    ):
         """Base class infrastructure that gets a list of bgpEvpnSpmsiV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

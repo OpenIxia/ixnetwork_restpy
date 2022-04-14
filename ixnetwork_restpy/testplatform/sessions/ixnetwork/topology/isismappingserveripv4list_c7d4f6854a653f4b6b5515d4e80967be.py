@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,32 +33,31 @@ class IsisMappingServerIPV4List(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisMappingServerIPV4List'
+    _SDM_NAME = "isisMappingServerIPV4List"
     _SDM_ATT_MAP = {
-        'AFlag': 'aFlag',
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'Count': 'count',
-        'DFlag': 'dFlag',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'FECPrefix': 'fECPrefix',
-        'LFlag': 'lFlag',
-        'LastFECAddress': 'lastFECAddress',
-        'MFlag': 'mFlag',
-        'NFlag': 'nFlag',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'PrefixLength': 'prefixLength',
-        'RFlag': 'rFlag',
-        'Range': 'range',
-        'SFlag': 'sFlag',
-        'StartSIDLabel': 'startSIDLabel',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        "AFlag": "aFlag",
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "Count": "count",
+        "DFlag": "dFlag",
+        "DescriptiveName": "descriptiveName",
+        "EFlag": "eFlag",
+        "FECPrefix": "fECPrefix",
+        "LFlag": "lFlag",
+        "LastFECAddress": "lastFECAddress",
+        "MFlag": "mFlag",
+        "NFlag": "nFlag",
+        "Name": "name",
+        "PFlag": "pFlag",
+        "PrefixLength": "prefixLength",
+        "RFlag": "rFlag",
+        "Range": "range",
+        "SFlag": "sFlag",
+        "StartSIDLabel": "startSIDLabel",
+        "VFlag": "vFlag",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisMappingServerIPV4List, self).__init__(parent, list_op)
@@ -71,7 +71,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attached flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AFlag"]))
 
     @property
     def Active(self):
@@ -82,7 +83,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
@@ -93,7 +95,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def Count(self):
@@ -103,7 +106,7 @@ class IsisMappingServerIPV4List(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DFlag(self):
@@ -114,7 +117,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When the SID/Label Binding TLV is leaked from level-2 to level-1, this flag MUST be set, else it should be clear
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DFlag"]))
 
     @property
     def DescriptiveName(self):
@@ -124,7 +128,7 @@ class IsisMappingServerIPV4List(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EFlag(self):
@@ -135,7 +139,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def FECPrefix(self):
@@ -146,7 +151,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 FEC Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FECPrefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FECPrefix"]))
 
     @property
     def LFlag(self):
@@ -157,7 +163,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LastFECAddress(self):
@@ -167,7 +174,7 @@ class IsisMappingServerIPV4List(Base):
         -------
         - list(str): Last IPv4 FEC Address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastFECAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastFECAddress"])
 
     @property
     def MFlag(self):
@@ -178,7 +185,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mirror Context flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def NFlag(self):
@@ -189,7 +197,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): N Flag: Indicates the nodal prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NFlag"]))
 
     @property
     def Name(self):
@@ -199,11 +208,12 @@ class IsisMappingServerIPV4List(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PFlag(self):
@@ -214,7 +224,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P Flag: Indicates that to reach to a prefix, this router would be penultimate hop.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def PrefixLength(self):
@@ -225,7 +236,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Length of the IPv4 FEC prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def RFlag(self):
@@ -236,7 +248,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RFlag"]))
 
     @property
     def Range(self):
@@ -247,7 +260,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This the count of continuous IPv4 address prefixes and their respective continuous SID/labels
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Range']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Range"]))
 
     @property
     def SFlag(self):
@@ -258,7 +272,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enabling this flag lets the SID/Label Binding TLV to get flooded across the entire routing domain, else this TLV should not be leaked between levels
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlag"]))
 
     @property
     def StartSIDLabel(self):
@@ -269,7 +284,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Starting value of SID/ Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSIDLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartSIDLabel"]))
 
     @property
     def VFlag(self):
@@ -280,7 +296,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     @property
     def Weight(self):
@@ -291,7 +308,8 @@ class IsisMappingServerIPV4List(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None):
         # type: (str) -> IsisMappingServerIPV4List
@@ -370,10 +388,12 @@ class IsisMappingServerIPV4List(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertise", payload=payload, response_object=None)
 
     def Withdraw(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -392,12 +412,34 @@ class IsisMappingServerIPV4List(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdraw", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, AFlag=None, Active=None, Algorithm=None, DFlag=None, EFlag=None, FECPrefix=None, LFlag=None, MFlag=None, NFlag=None, PFlag=None, PrefixLength=None, RFlag=None, Range=None, SFlag=None, StartSIDLabel=None, VFlag=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AFlag=None,
+        Active=None,
+        Algorithm=None,
+        DFlag=None,
+        EFlag=None,
+        FECPrefix=None,
+        LFlag=None,
+        MFlag=None,
+        NFlag=None,
+        PFlag=None,
+        PrefixLength=None,
+        RFlag=None,
+        Range=None,
+        SFlag=None,
+        StartSIDLabel=None,
+        VFlag=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of isisMappingServerIPV4List device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,98 +35,106 @@ class IsisL3(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisL3'
+    _SDM_NAME = "isisL3"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdjSID': 'adjSID',
-        'AdjSidCount': 'adjSidCount',
-        'AdvertiseLinkMsd': 'advertiseLinkMsd',
-        'AuthType': 'authType',
-        'AutoAdjustArea': 'autoAdjustArea',
-        'AutoAdjustMTU': 'autoAdjustMTU',
-        'AutoAdjustSupportedProtocols': 'autoAdjustSupportedProtocols',
-        'BFlag': 'bFlag',
-        'CircuitTranmitPasswordOrMD5Key': 'circuitTranmitPasswordOrMD5Key',
-        'ConfiguredHoldTime': 'configuredHoldTime',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
-        'DedicatedOneToOne': 'dedicatedOneToOne',
-        'DescriptiveName': 'descriptiveName',
-        'Enable': 'enable',
-        'Enable3WayHandshake': 'enable3WayHandshake',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableAppSpecSrlg': 'enableAppSpecSrlg',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableBit4': 'enableBit4',
-        'EnableBit5': 'enableBit5',
-        'EnableBit6': 'enableBit6',
-        'EnableBit7': 'enableBit7',
-        'EnableBit8': 'enableBit8',
-        'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
-        'EnableIPv6SID': 'enableIPv6SID',
-        'EnableLinkProtection': 'enableLinkProtection',
-        'EnableMT': 'enableMT',
-        'EnableMt': 'enableMt',
-        'EnableNFlag': 'enableNFlag',
-        'EnableRFlag': 'enableRFlag',
-        'EnableSRLG': 'enableSRLG',
-        'EnableXFlag': 'enableXFlag',
-        'Enhanced': 'enhanced',
-        'Errors': 'errors',
-        'ExtendedLocalCircuitId': 'extendedLocalCircuitId',
-        'ExtraTraffic': 'extraTraffic',
-        'FFlag': 'fFlag',
-        'Funcflags': 'funcflags',
-        'Function': 'function',
-        'IncludeMaxSlMsd': 'includeMaxSlMsd',
-        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
-        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
-        'IncludeMaximumTEncapMsd': 'includeMaximumTEncapMsd',
-        'IncludeMaximumTInsertMsd': 'includeMaximumTInsertMsd',
-        'InterfaceMetric': 'interfaceMetric',
-        'Ipv6MTMetric': 'ipv6MTMetric',
-        'Ipv6SidValue': 'ipv6SidValue',
-        'LFlag': 'lFlag',
-        'Level1DeadInterval': 'level1DeadInterval',
-        'Level1HelloInterval': 'level1HelloInterval',
-        'Level1Priority': 'level1Priority',
-        'Level2DeadInterval': 'level2DeadInterval',
-        'Level2HelloInterval': 'level2HelloInterval',
-        'Level2Priority': 'level2Priority',
-        'LevelType': 'levelType',
-        'LocalSystemID': 'localSystemID',
-        'MaxEndDMsd': 'maxEndDMsd',
-        'MaxEndPopMsd': 'maxEndPopMsd',
-        'MaxSlMsd': 'maxSlMsd',
-        'MaxTEncap': 'maxTEncap',
-        'MaxTInsertMsd': 'maxTInsertMsd',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetworkType': 'networkType',
-        'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
-        'NoOfMtIds': 'noOfMtIds',
-        'NoOfTeProfile': 'noOfTeProfile',
-        'OverrideFFlag': 'overrideFFlag',
-        'PFlag': 'pFlag',
-        'Reserved0x40': 'reserved0x40',
-        'Reserved0x80': 'reserved0x80',
-        'SFlag': 'sFlag',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
-        'Srv6SidFlags': 'srv6SidFlags',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SuppressHello': 'suppressHello',
-        'Unprotected': 'unprotected',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        "Active": "active",
+        "AdjSID": "adjSID",
+        "AdjSidCount": "adjSidCount",
+        "AdvertiseLinkMsd": "advertiseLinkMsd",
+        "AuthType": "authType",
+        "AutoAdjustArea": "autoAdjustArea",
+        "AutoAdjustMTU": "autoAdjustMTU",
+        "AutoAdjustSupportedProtocols": "autoAdjustSupportedProtocols",
+        "BFlag": "bFlag",
+        "CircuitTranmitPasswordOrMD5Key": "circuitTranmitPasswordOrMD5Key",
+        "ConfiguredHoldTime": "configuredHoldTime",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DedicatedOnePlusOne": "dedicatedOnePlusOne",
+        "DedicatedOneToOne": "dedicatedOneToOne",
+        "DescriptiveName": "descriptiveName",
+        "Enable": "enable",
+        "Enable3WayHandshake": "enable3WayHandshake",
+        "EnableAdjSID": "enableAdjSID",
+        "EnableAppSpecSrlg": "enableAppSpecSrlg",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableBit4": "enableBit4",
+        "EnableBit5": "enableBit5",
+        "EnableBit6": "enableBit6",
+        "EnableBit7": "enableBit7",
+        "EnableBit8": "enableBit8",
+        "EnableConfiguredHoldTime": "enableConfiguredHoldTime",
+        "EnableIPv6SID": "enableIPv6SID",
+        "EnableLinkProtection": "enableLinkProtection",
+        "EnableMT": "enableMT",
+        "EnableMt": "enableMt",
+        "EnableNFlag": "enableNFlag",
+        "EnableRFlag": "enableRFlag",
+        "EnableSRLG": "enableSRLG",
+        "EnableXFlag": "enableXFlag",
+        "Enhanced": "enhanced",
+        "Errors": "errors",
+        "ExtendedLocalCircuitId": "extendedLocalCircuitId",
+        "ExtraTraffic": "extraTraffic",
+        "FFlag": "fFlag",
+        "Funcflags": "funcflags",
+        "Function": "function",
+        "IncludeMaxSlMsd": "includeMaxSlMsd",
+        "IncludeMaximumEndDMsd": "includeMaximumEndDMsd",
+        "IncludeMaximumEndPopMsd": "includeMaximumEndPopMsd",
+        "IncludeMaximumTEncapMsd": "includeMaximumTEncapMsd",
+        "IncludeMaximumTInsertMsd": "includeMaximumTInsertMsd",
+        "InterfaceMetric": "interfaceMetric",
+        "Ipv6MTMetric": "ipv6MTMetric",
+        "Ipv6SidValue": "ipv6SidValue",
+        "LFlag": "lFlag",
+        "Level1DeadInterval": "level1DeadInterval",
+        "Level1HelloInterval": "level1HelloInterval",
+        "Level1Priority": "level1Priority",
+        "Level2DeadInterval": "level2DeadInterval",
+        "Level2HelloInterval": "level2HelloInterval",
+        "Level2Priority": "level2Priority",
+        "LevelType": "levelType",
+        "LocalSystemID": "localSystemID",
+        "MaxEndDMsd": "maxEndDMsd",
+        "MaxEndPopMsd": "maxEndPopMsd",
+        "MaxSlMsd": "maxSlMsd",
+        "MaxTEncap": "maxTEncap",
+        "MaxTInsertMsd": "maxTInsertMsd",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NetworkType": "networkType",
+        "NoOfAppSpecSrlg": "noOfAppSpecSrlg",
+        "NoOfMtIds": "noOfMtIds",
+        "NoOfTeProfile": "noOfTeProfile",
+        "OverrideFFlag": "overrideFFlag",
+        "PFlag": "pFlag",
+        "Reserved0x40": "reserved0x40",
+        "Reserved0x80": "reserved0x80",
+        "SFlag": "sFlag",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "Shared": "shared",
+        "SrlgCount": "srlgCount",
+        "Srv6SidFlags": "srv6SidFlags",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SuppressHello": "suppressHello",
+        "Unprotected": "unprotected",
+        "VFlag": "vFlag",
+        "Weight": "weight",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -142,10 +151,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -159,10 +171,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisappspecsrlglist_c86dcbcff988ad5c54aecdd16dd33b6f import IsisAppSpecSrlgList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisappspecsrlglist_c86dcbcff988ad5c54aecdd16dd33b6f import (
+            IsisAppSpecSrlgList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisAppSpecSrlgList', None) is not None:
-                return self._properties.get('IsisAppSpecSrlgList')
+            if self._properties.get("IsisAppSpecSrlgList", None) is not None:
+                return self._properties.get("IsisAppSpecSrlgList")
         return IsisAppSpecSrlgList(self)._select()
 
     @property
@@ -176,10 +191,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_546f33e99cab8ba1beaa9a395387c9df import IsisMTIDList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_546f33e99cab8ba1beaa9a395387c9df import (
+            IsisMTIDList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisMTIDList', None) is not None:
-                return self._properties.get('IsisMTIDList')
+            if self._properties.get("IsisMTIDList", None) is not None:
+                return self._properties.get("IsisMTIDList")
         return IsisMTIDList(self)._select()
 
     @property
@@ -193,15 +211,18 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6adjsidlist_dd39940f27d58c46a476b64e85215861 import IsisSRv6AdjSIDList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6adjsidlist_dd39940f27d58c46a476b64e85215861 import (
+            IsisSRv6AdjSIDList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSRv6AdjSIDList', None) is not None:
-                return self._properties.get('IsisSRv6AdjSIDList')
+            if self._properties.get("IsisSRv6AdjSIDList", None) is not None:
+                return self._properties.get("IsisSRv6AdjSIDList")
         return IsisSRv6AdjSIDList(self)._select()
 
     @property
     def IsisTrafficEngineering(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612.IsisTrafficEngineering): An instance of the IsisTrafficEngineering class
@@ -210,10 +231,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612 import IsisTrafficEngineering
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612 import (
+            IsisTrafficEngineering,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrafficEngineering', None) is not None:
-                return self._properties.get('IsisTrafficEngineering')
+            if self._properties.get("IsisTrafficEngineering", None) is not None:
+                return self._properties.get("IsisTrafficEngineering")
         return IsisTrafficEngineering(self)._select()
 
     @property
@@ -227,10 +251,16 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineeringprofilelist_c47e6899658130ebf14e5ea5147ac23a import IsisTrafficEngineeringProfileList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineeringprofilelist_c47e6899658130ebf14e5ea5147ac23a import (
+            IsisTrafficEngineeringProfileList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrafficEngineeringProfileList', None) is not None:
-                return self._properties.get('IsisTrafficEngineeringProfileList')
+            if (
+                self._properties.get("IsisTrafficEngineeringProfileList", None)
+                is not None
+            ):
+                return self._properties.get("IsisTrafficEngineeringProfileList")
         return IsisTrafficEngineeringProfileList(self)._select()
 
     @property
@@ -244,10 +274,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -261,10 +294,13 @@ class IsisL3(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import (
+            SrlgValueList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SrlgValueList', None) is not None:
-                return self._properties.get('SrlgValueList')
+            if self._properties.get("SrlgValueList", None) is not None:
+                return self._properties.get("SrlgValueList")
         return SrlgValueList(self)
 
     @property
@@ -276,7 +312,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdjSID(self):
@@ -287,7 +324,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AdjSID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdjSID"]))
 
     @property
     def AdjSidCount(self):
@@ -297,11 +335,12 @@ class IsisL3(Base):
         -------
         - number: Adj SID Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdjSidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdjSidCount"])
+
     @AdjSidCount.setter
     def AdjSidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdjSidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdjSidCount"], value)
 
     @property
     def AdvertiseLinkMsd(self):
@@ -312,7 +351,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Link MSD
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseLinkMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseLinkMsd"])
+        )
 
     @property
     def AuthType(self):
@@ -323,7 +365,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuthType"]))
 
     @property
     def AutoAdjustArea(self):
@@ -334,7 +377,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Adjust Area
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoAdjustArea']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoAdjustArea"])
+        )
 
     @property
     def AutoAdjustMTU(self):
@@ -345,7 +391,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Adjust MTU
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoAdjustMTU']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoAdjustMTU"]))
 
     @property
     def AutoAdjustSupportedProtocols(self):
@@ -356,7 +403,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Adjust Supported Protocols
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoAdjustSupportedProtocols']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoAdjustSupportedProtocols"])
+        )
 
     @property
     def BFlag(self):
@@ -367,7 +417,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Backup Flag, if set, the Adj-SID is eligible for protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def CircuitTranmitPasswordOrMD5Key(self):
@@ -378,7 +429,11 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Circuit Transmit Password / MD5-Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CircuitTranmitPasswordOrMD5Key']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CircuitTranmitPasswordOrMD5Key"]),
+        )
 
     @property
     def ConfiguredHoldTime(self):
@@ -389,21 +444,25 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configured Hold Time
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfiguredHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfiguredHoldTime"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -413,7 +472,7 @@ class IsisL3(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DedicatedOnePlusOne(self):
@@ -424,7 +483,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DedicatedOnePlusOne']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DedicatedOnePlusOne"])
+        )
 
     @property
     def DedicatedOneToOne(self):
@@ -435,7 +497,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DedicatedOneToOne']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DedicatedOneToOne"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -445,7 +510,7 @@ class IsisL3(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Enable(self):
@@ -456,7 +521,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This,if enabled, sends the prefix attributes flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enable"]))
 
     @property
     def Enable3WayHandshake(self):
@@ -467,7 +533,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable 3-way Handshake
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable3WayHandshake']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Enable3WayHandshake"])
+        )
 
     @property
     def EnableAdjSID(self):
@@ -478,7 +547,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAdjSID"]))
 
     @property
     def EnableAppSpecSrlg(self):
@@ -489,7 +559,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables Application Specific SRLG on the ISIS link between two mentioned interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAppSpecSrlg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAppSpecSrlg"])
+        )
 
     @property
     def EnableBfdRegistration(self):
@@ -500,7 +573,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+        )
 
     @property
     def EnableBit4(self):
@@ -511,7 +587,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit4"]))
 
     @property
     def EnableBit5(self):
@@ -522,7 +599,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit5"]))
 
     @property
     def EnableBit6(self):
@@ -533,7 +611,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit6"]))
 
     @property
     def EnableBit7(self):
@@ -544,7 +623,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit7"]))
 
     @property
     def EnableBit8(self):
@@ -555,7 +635,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit8"]))
 
     @property
     def EnableConfiguredHoldTime(self):
@@ -566,7 +647,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Configured Hold Time
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableConfiguredHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableConfiguredHoldTime"])
+        )
 
     @property
     def EnableIPv6SID(self):
@@ -577,7 +661,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IPv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIPv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableIPv6SID"]))
 
     @property
     def EnableLinkProtection(self):
@@ -588,18 +673,22 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the link protection on the ISIS link between two mentioned interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLinkProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLinkProtection"])
+        )
 
     @property
     def EnableMT(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MT
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableMT"]))
 
     @property
     def EnableMt(self):
@@ -609,11 +698,12 @@ class IsisL3(Base):
         -------
         - bool: Enable MT
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMt'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMt"])
+
     @EnableMt.setter
     def EnableMt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMt"], value)
 
     @property
     def EnableNFlag(self):
@@ -624,7 +714,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNFlag"]))
 
     @property
     def EnableRFlag(self):
@@ -635,7 +726,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRFlag"]))
 
     @property
     def EnableSRLG(self):
@@ -646,7 +738,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the SRLG on the ISIS link between two mentioned interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRLG']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSRLG"]))
 
     @property
     def EnableXFlag(self):
@@ -657,7 +750,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag, which is the 1st bit of the byte.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableXFlag"]))
 
     @property
     def Enhanced(self):
@@ -668,7 +762,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enhanced']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enhanced"]))
 
     @property
     def Errors(self):
@@ -677,7 +772,7 @@ class IsisL3(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExtendedLocalCircuitId(self):
@@ -688,7 +783,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Extended Local Circuit Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedLocalCircuitId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedLocalCircuitId"])
+        )
 
     @property
     def ExtraTraffic(self):
@@ -699,7 +797,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtraTraffic']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExtraTraffic"]))
 
     @property
     def FFlag(self):
@@ -710,29 +809,32 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Address Family Flag,False value refers to an adjacency with outgoing IPv4 encapsulationTrue value refers to an adjacency with outgoing IPv6 encapsulation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FFlag"]))
 
     @property
     def Funcflags(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is the function flags
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Funcflags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Funcflags"]))
 
     @property
     def Function(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies endpoint function codes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Function']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Function"]))
 
     @property
     def IncludeMaxSlMsd(self):
@@ -743,7 +845,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum Segment Left MSD in SRv6 capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaxSlMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaxSlMsd"])
+        )
 
     @property
     def IncludeMaximumEndDMsd(self):
@@ -754,7 +859,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum End D MSD in SRv6 capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumEndDMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumEndDMsd"])
+        )
 
     @property
     def IncludeMaximumEndPopMsd(self):
@@ -765,7 +873,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Max-End-Pop-MSD n SRv6 capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumEndPopMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumEndPopMsd"])
+        )
 
     @property
     def IncludeMaximumTEncapMsd(self):
@@ -776,7 +887,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Encap MSD in SRv6 capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumTEncapMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumTEncapMsd"])
+        )
 
     @property
     def IncludeMaximumTInsertMsd(self):
@@ -787,7 +901,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Insert MSDin SRv6 capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumTInsertMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumTInsertMsd"])
+        )
 
     @property
     def InterfaceMetric(self):
@@ -798,29 +915,34 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+        )
 
     @property
     def Ipv6MTMetric(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 MT Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6MTMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6MTMetric"]))
 
     @property
     def Ipv6SidValue(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6SidValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6SidValue"]))
 
     @property
     def LFlag(self):
@@ -831,7 +953,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag, if set, then the value/index carried by the Adj-SID has local significance
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def Level1DeadInterval(self):
@@ -842,7 +965,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 1 Dead Interval (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level1DeadInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level1DeadInterval"])
+        )
 
     @property
     def Level1HelloInterval(self):
@@ -853,7 +979,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 1 Hello Interval (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level1HelloInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level1HelloInterval"])
+        )
 
     @property
     def Level1Priority(self):
@@ -864,7 +993,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 1 Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level1Priority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level1Priority"])
+        )
 
     @property
     def Level2DeadInterval(self):
@@ -875,7 +1007,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 2 Dead Interval (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level2DeadInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level2DeadInterval"])
+        )
 
     @property
     def Level2HelloInterval(self):
@@ -886,7 +1021,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 2 Hello Interval (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level2HelloInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level2HelloInterval"])
+        )
 
     @property
     def Level2Priority(self):
@@ -897,7 +1035,10 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level 2 Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Level2Priority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Level2Priority"])
+        )
 
     @property
     def LevelType(self):
@@ -908,7 +1049,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Level Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LevelType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LevelType"]))
 
     @property
     def LocalSystemID(self):
@@ -918,7 +1060,7 @@ class IsisL3(Base):
         -------
         - list(str): System ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalSystemID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalSystemID"])
 
     @property
     def MaxEndDMsd(self):
@@ -929,7 +1071,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and End.DT6 functions. If this field is zero, then the router cannot apply End.DX6 or End.DT6 functions. If the extension header is right underneath the outer IPv6, header is an SRH.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxEndDMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndDMsd"]))
 
     @property
     def MaxEndPopMsd(self):
@@ -940,7 +1083,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxEndPopMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndPopMsd"]))
 
     @property
     def MaxSlMsd(self):
@@ -951,7 +1095,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxSlMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxSlMsd"]))
 
     @property
     def MaxTEncap(self):
@@ -962,7 +1107,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxTEncap']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxTEncap"]))
 
     @property
     def MaxTInsertMsd(self):
@@ -973,7 +1119,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be inserted as part of the T.insert behavior. If the value of this field is zero, then the router cannot apply any variation of the T.insert behavior.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxTInsertMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxTInsertMsd"]))
 
     @property
     def Multiplier(self):
@@ -983,11 +1130,12 @@ class IsisL3(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -997,11 +1145,12 @@ class IsisL3(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkType(self):
@@ -1012,7 +1161,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Network Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NetworkType"]))
 
     @property
     def NoOfAppSpecSrlg(self):
@@ -1022,11 +1172,12 @@ class IsisL3(Base):
         -------
         - number: This field value shows how many SRLG Value columns would be there in the GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfAppSpecSrlg"])
+
     @NoOfAppSpecSrlg.setter
     def NoOfAppSpecSrlg(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfAppSpecSrlg"], value)
 
     @property
     def NoOfMtIds(self):
@@ -1036,11 +1187,12 @@ class IsisL3(Base):
         -------
         - number: Number of Multi Topologies
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfMtIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfMtIds"])
+
     @NoOfMtIds.setter
     def NoOfMtIds(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfMtIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfMtIds"], value)
 
     @property
     def NoOfTeProfile(self):
@@ -1050,11 +1202,12 @@ class IsisL3(Base):
         -------
         - number: Number of TE Profile
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfTeProfile'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfTeProfile"])
+
     @NoOfTeProfile.setter
     def NoOfTeProfile(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfTeProfile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfTeProfile"], value)
 
     @property
     def OverrideFFlag(self):
@@ -1065,7 +1218,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When false, then F flag value in the packet will be set TRUE/ FALSE depending on whether IPv6/ IPv4 stack is present beside ISIS respectively. When true, then F flag value will be the one as configured.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverrideFFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OverrideFFlag"]))
 
     @property
     def PFlag(self):
@@ -1076,7 +1230,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Persistent flag: when set, this indicates that the Adj-SID value remains persistent across router restart and/or interface flap.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def Reserved0x40(self):
@@ -1087,7 +1242,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x40.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved0x40']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved0x40"]))
 
     @property
     def Reserved0x80(self):
@@ -1098,7 +1254,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x80.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved0x80']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved0x80"]))
 
     @property
     def SFlag(self):
@@ -1109,7 +1266,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set flag: when set, this indicates that the Adj-SID refers to a set of adjacencies
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlag"]))
 
     @property
     def SessionInfo(self):
@@ -1119,7 +1277,7 @@ class IsisL3(Base):
         -------
         - list(str[ifaceSessInfoFsmNotStarted | ifaceSessInfoNotAllNbrInFull | iPAddressNotRcvd | none]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -1129,7 +1287,7 @@ class IsisL3(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def Shared(self):
@@ -1140,7 +1298,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Shared']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Shared"]))
 
     @property
     def SrlgCount(self):
@@ -1150,22 +1309,24 @@ class IsisL3(Base):
         -------
         - number: This field value shows how many SRLG Value columns would be there in the GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrlgCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrlgCount"])
+
     @SrlgCount.setter
     def SrlgCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrlgCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrlgCount"], value)
 
     @property
     def Srv6SidFlags(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the value of the SRv6 SID Flags
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlags"]))
 
     @property
     def StackedLayers(self):
@@ -1175,11 +1336,12 @@ class IsisL3(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -1188,7 +1350,7 @@ class IsisL3(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -1198,7 +1360,7 @@ class IsisL3(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SuppressHello(self):
@@ -1209,7 +1371,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello suppression
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressHello']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SuppressHello"]))
 
     @property
     def Unprotected(self):
@@ -1220,7 +1383,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unprotected']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unprotected"]))
 
     @property
     def VFlag(self):
@@ -1231,7 +1395,8 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag, if set, the Adjacency SID carries a value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     @property
     def Weight(self):
@@ -1242,9 +1407,22 @@ class IsisL3(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
-    def update(self, AdjSidCount=None, ConnectedVia=None, EnableMt=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
+
+    def update(
+        self,
+        AdjSidCount=None,
+        ConnectedVia=None,
+        EnableMt=None,
+        Multiplier=None,
+        Name=None,
+        NoOfAppSpecSrlg=None,
+        NoOfMtIds=None,
+        NoOfTeProfile=None,
+        SrlgCount=None,
+        StackedLayers=None,
+    ):
         # type: (int, List[str], bool, int, str, int, int, int, int, List[str]) -> IsisL3
         """Updates isisL3 resource on the server.
 
@@ -1270,7 +1448,19 @@ class IsisL3(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdjSidCount=None, ConnectedVia=None, EnableMt=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+    def add(
+        self,
+        AdjSidCount=None,
+        ConnectedVia=None,
+        EnableMt=None,
+        Multiplier=None,
+        Name=None,
+        NoOfAppSpecSrlg=None,
+        NoOfMtIds=None,
+        NoOfTeProfile=None,
+        SrlgCount=None,
+        StackedLayers=None,
+    ):
         # type: (int, List[str], bool, int, str, int, int, int, int, List[str]) -> IsisL3
         """Adds a new isisL3 resource on the server and adds it to the container.
 
@@ -1307,7 +1497,27 @@ class IsisL3(Base):
         """
         self._delete()
 
-    def find(self, AdjSidCount=None, ConnectedVia=None, Count=None, DescriptiveName=None, EnableMt=None, Errors=None, LocalSystemID=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SessionInfo=None, SessionStatus=None, SrlgCount=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        AdjSidCount=None,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        EnableMt=None,
+        Errors=None,
+        LocalSystemID=None,
+        Multiplier=None,
+        Name=None,
+        NoOfAppSpecSrlg=None,
+        NoOfMtIds=None,
+        NoOfTeProfile=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        SrlgCount=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves isisL3 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3 resources from the server.
@@ -1390,10 +1600,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1422,10 +1634,14 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1444,10 +1660,14 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1482,10 +1702,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
     def IsisStartInterface(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1514,10 +1736,14 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStartInterface', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "isisStartInterface", payload=payload, response_object=None
+        )
 
     def IsisStopInterface(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1546,10 +1772,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStopInterface', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("isisStopInterface", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1578,10 +1806,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def ResumeHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1610,10 +1840,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumeHello", payload=payload, response_object=None)
 
     def Resumehello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1632,10 +1864,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumehello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumehello", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1664,10 +1898,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1696,10 +1932,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1728,10 +1966,12 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopHello", payload=payload, response_object=None)
 
     def Stophello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1750,12 +1990,86 @@ class IsisL3(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stophello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stophello", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AdvertiseLinkMsd=None, AuthType=None, AutoAdjustArea=None, AutoAdjustMTU=None, AutoAdjustSupportedProtocols=None, BFlag=None, CircuitTranmitPasswordOrMD5Key=None, ConfiguredHoldTime=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, Enable=None, Enable3WayHandshake=None, EnableAdjSID=None, EnableAppSpecSrlg=None, EnableBfdRegistration=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableConfiguredHoldTime=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableNFlag=None, EnableRFlag=None, EnableSRLG=None, EnableXFlag=None, Enhanced=None, ExtendedLocalCircuitId=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, InterfaceMetric=None, Ipv6MTMetric=None, Ipv6SidValue=None, LFlag=None, Level1DeadInterval=None, Level1HelloInterval=None, Level1Priority=None, Level2DeadInterval=None, Level2HelloInterval=None, Level2Priority=None, LevelType=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, NetworkType=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, SuppressHello=None, Unprotected=None, VFlag=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdjSID=None,
+        AdvertiseLinkMsd=None,
+        AuthType=None,
+        AutoAdjustArea=None,
+        AutoAdjustMTU=None,
+        AutoAdjustSupportedProtocols=None,
+        BFlag=None,
+        CircuitTranmitPasswordOrMD5Key=None,
+        ConfiguredHoldTime=None,
+        DedicatedOnePlusOne=None,
+        DedicatedOneToOne=None,
+        Enable=None,
+        Enable3WayHandshake=None,
+        EnableAdjSID=None,
+        EnableAppSpecSrlg=None,
+        EnableBfdRegistration=None,
+        EnableBit4=None,
+        EnableBit5=None,
+        EnableBit6=None,
+        EnableBit7=None,
+        EnableBit8=None,
+        EnableConfiguredHoldTime=None,
+        EnableIPv6SID=None,
+        EnableLinkProtection=None,
+        EnableMT=None,
+        EnableNFlag=None,
+        EnableRFlag=None,
+        EnableSRLG=None,
+        EnableXFlag=None,
+        Enhanced=None,
+        ExtendedLocalCircuitId=None,
+        ExtraTraffic=None,
+        FFlag=None,
+        Funcflags=None,
+        Function=None,
+        IncludeMaxSlMsd=None,
+        IncludeMaximumEndDMsd=None,
+        IncludeMaximumEndPopMsd=None,
+        IncludeMaximumTEncapMsd=None,
+        IncludeMaximumTInsertMsd=None,
+        InterfaceMetric=None,
+        Ipv6MTMetric=None,
+        Ipv6SidValue=None,
+        LFlag=None,
+        Level1DeadInterval=None,
+        Level1HelloInterval=None,
+        Level1Priority=None,
+        Level2DeadInterval=None,
+        Level2HelloInterval=None,
+        Level2Priority=None,
+        LevelType=None,
+        MaxEndDMsd=None,
+        MaxEndPopMsd=None,
+        MaxSlMsd=None,
+        MaxTEncap=None,
+        MaxTInsertMsd=None,
+        NetworkType=None,
+        OverrideFFlag=None,
+        PFlag=None,
+        Reserved0x40=None,
+        Reserved0x80=None,
+        SFlag=None,
+        Shared=None,
+        Srv6SidFlags=None,
+        SuppressHello=None,
+        Unprotected=None,
+        VFlag=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of isisL3 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

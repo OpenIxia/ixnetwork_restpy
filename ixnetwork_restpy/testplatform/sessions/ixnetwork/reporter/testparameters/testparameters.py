@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class TestParameters(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testParameters'
+    _SDM_NAME = "testParameters"
     _SDM_ATT_MAP = {
-        'TestCategory': 'testCategory',
-        'TestDUTName': 'testDUTName',
-        'TestHighlights': 'testHighlights',
-        'TestId': 'testId',
-        'TestName': 'testName',
-        'TestObjectives': 'testObjectives',
-        'TesterName': 'testerName',
+        "TestCategory": "testCategory",
+        "TestDUTName": "testDUTName",
+        "TestHighlights": "testHighlights",
+        "TestId": "testId",
+        "TestName": "testName",
+        "TestObjectives": "testObjectives",
+        "TesterName": "testerName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TestParameters, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class TestParameters(Base):
         -------
         - str: The category of the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestCategory'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestCategory"])
+
     @TestCategory.setter
     def TestCategory(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestCategory'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestCategory"], value)
 
     @property
     def TestDUTName(self):
@@ -70,11 +71,12 @@ class TestParameters(Base):
         -------
         - str: The name of the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestDUTName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestDUTName"])
+
     @TestDUTName.setter
     def TestDUTName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestDUTName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestDUTName"], value)
 
     @property
     def TestHighlights(self):
@@ -84,11 +86,12 @@ class TestParameters(Base):
         -------
         - str: The test highlights that are relevant.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestHighlights'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestHighlights"])
+
     @TestHighlights.setter
     def TestHighlights(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestHighlights'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestHighlights"], value)
 
     @property
     def TestId(self):
@@ -98,7 +101,7 @@ class TestParameters(Base):
         -------
         - number: The unique identifier of the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestId"])
 
     @property
     def TestName(self):
@@ -108,11 +111,12 @@ class TestParameters(Base):
         -------
         - str: The name of the test for which the report is generated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestName"])
+
     @TestName.setter
     def TestName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestName"], value)
 
     @property
     def TestObjectives(self):
@@ -122,11 +126,12 @@ class TestParameters(Base):
         -------
         - str: The objective of running the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestObjectives'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestObjectives"])
+
     @TestObjectives.setter
     def TestObjectives(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestObjectives'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestObjectives"], value)
 
     @property
     def TesterName(self):
@@ -136,13 +141,22 @@ class TestParameters(Base):
         -------
         - str: The name of the tester.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TesterName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TesterName"])
+
     @TesterName.setter
     def TesterName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TesterName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TesterName"], value)
 
-    def update(self, TestCategory=None, TestDUTName=None, TestHighlights=None, TestName=None, TestObjectives=None, TesterName=None):
+    def update(
+        self,
+        TestCategory=None,
+        TestDUTName=None,
+        TestHighlights=None,
+        TestName=None,
+        TestObjectives=None,
+        TesterName=None,
+    ):
         # type: (str, str, str, str, str, str) -> TestParameters
         """Updates testParameters resource on the server.
 
@@ -161,7 +175,16 @@ class TestParameters(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, TestCategory=None, TestDUTName=None, TestHighlights=None, TestId=None, TestName=None, TestObjectives=None, TesterName=None):
+    def find(
+        self,
+        TestCategory=None,
+        TestDUTName=None,
+        TestHighlights=None,
+        TestId=None,
+        TestName=None,
+        TestObjectives=None,
+        TesterName=None,
+    ):
         # type: (str, str, str, int, str, str, str) -> TestParameters
         """Finds and retrieves testParameters resources from the server.
 

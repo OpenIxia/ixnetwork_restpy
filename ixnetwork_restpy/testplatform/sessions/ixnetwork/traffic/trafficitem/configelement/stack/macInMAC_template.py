@@ -4,31 +4,31 @@ from ixnetwork_restpy.files import Files
 
 class MacInMAC(Base):
     __slots__ = ()
-    _SDM_NAME = 'macInMAC'
+    _SDM_NAME = "macInMAC"
     _SDM_ATT_MAP = {
-        'HeaderBdestinationAddressEthernet': 'macInMAC.header.bdestinationAddressEthernet-1',
-        'HeaderBsourceAddressEthernet': 'macInMAC.header.bsourceAddressEthernet-2',
-        'BethernetTypeEtherTypeBtag': 'macInMAC.header.bethernetType.etherTypeBtag-3',
-        'BvlanTagBvlanPriority': 'macInMAC.header.bethernetType.bvlanTag.bvlanPriority-4',
-        'BvlanTagBvlanCanonicalFormatIndicator': 'macInMAC.header.bethernetType.bvlanTag.bvlanCanonicalFormatIndicator-5',
-        'BvlanTagBvlanID': 'macInMAC.header.bethernetType.bvlanTag.bvlanID-6',
-        'ItagEtherTypeEtherTypeItag': 'macInMAC.header.itagEtherType.etherTypeItag-7',
-        'ItagPcp': 'macInMAC.header.itag.pcp-8',
-        'ItagDei': 'macInMAC.header.itag.dei-9',
-        'ItagFmt': 'macInMAC.header.itag.fmt-10',
-        'ItagReserved': 'macInMAC.header.itag.reserved-11',
-        'ItagIsid': 'macInMAC.header.itag.isid-12',
-        'HeaderCdestinationAddressEthernet': 'macInMAC.header.cdestinationAddressEthernet-13',
-        'HeaderCsourceAddressEthernet': 'macInMAC.header.csourceAddressEthernet-14',
-        'StagEtherTypeStag': 'macInMAC.header.stag.etherTypeStag-15',
-        'SvlanTagSvlanPriority': 'macInMAC.header.stag.svlanTag.svlanPriority-16',
-        'SvlanTagSvlanCanonicalFormatIndicator': 'macInMAC.header.stag.svlanTag.svlanCanonicalFormatIndicator-17',
-        'SvlanTagSvlanID': 'macInMAC.header.stag.svlanTag.svlanID-18',
-        'CtagEtherTypeCtag': 'macInMAC.header.ctag.etherTypeCtag-19',
-        'CvlanTagCvlanPriority': 'macInMAC.header.ctag.cvlanTag.cvlanPriority-20',
-        'CvlanTagCvlanCanonicalFormatIndicator': 'macInMAC.header.ctag.cvlanTag.cvlanCanonicalFormatIndicator-21',
-        'CvlanTagCvlanID': 'macInMAC.header.ctag.cvlanTag.cvlanID-22',
-        'HeaderType': 'macInMAC.header.type-23',
+        "HeaderBdestinationAddressEthernet": "macInMAC.header.bdestinationAddressEthernet-1",
+        "HeaderBsourceAddressEthernet": "macInMAC.header.bsourceAddressEthernet-2",
+        "BethernetTypeEtherTypeBtag": "macInMAC.header.bethernetType.etherTypeBtag-3",
+        "BvlanTagBvlanPriority": "macInMAC.header.bethernetType.bvlanTag.bvlanPriority-4",
+        "BvlanTagBvlanCanonicalFormatIndicator": "macInMAC.header.bethernetType.bvlanTag.bvlanCanonicalFormatIndicator-5",
+        "BvlanTagBvlanID": "macInMAC.header.bethernetType.bvlanTag.bvlanID-6",
+        "ItagEtherTypeEtherTypeItag": "macInMAC.header.itagEtherType.etherTypeItag-7",
+        "ItagPcp": "macInMAC.header.itag.pcp-8",
+        "ItagDei": "macInMAC.header.itag.dei-9",
+        "ItagFmt": "macInMAC.header.itag.fmt-10",
+        "ItagReserved": "macInMAC.header.itag.reserved-11",
+        "ItagIsid": "macInMAC.header.itag.isid-12",
+        "HeaderCdestinationAddressEthernet": "macInMAC.header.cdestinationAddressEthernet-13",
+        "HeaderCsourceAddressEthernet": "macInMAC.header.csourceAddressEthernet-14",
+        "StagEtherTypeStag": "macInMAC.header.stag.etherTypeStag-15",
+        "SvlanTagSvlanPriority": "macInMAC.header.stag.svlanTag.svlanPriority-16",
+        "SvlanTagSvlanCanonicalFormatIndicator": "macInMAC.header.stag.svlanTag.svlanCanonicalFormatIndicator-17",
+        "SvlanTagSvlanID": "macInMAC.header.stag.svlanTag.svlanID-18",
+        "CtagEtherTypeCtag": "macInMAC.header.ctag.etherTypeCtag-19",
+        "CvlanTagCvlanPriority": "macInMAC.header.ctag.cvlanTag.cvlanPriority-20",
+        "CvlanTagCvlanCanonicalFormatIndicator": "macInMAC.header.ctag.cvlanTag.cvlanCanonicalFormatIndicator-21",
+        "CvlanTagCvlanID": "macInMAC.header.ctag.cvlanTag.cvlanID-22",
+        "HeaderType": "macInMAC.header.type-23",
     }
 
     def __init__(self, parent, list_op=False):
@@ -42,7 +42,11 @@ class MacInMAC(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBdestinationAddressEthernet']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderBdestinationAddressEthernet"]),
+        )
 
     @property
     def HeaderBsourceAddressEthernet(self):
@@ -52,7 +56,10 @@ class MacInMAC(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBsourceAddressEthernet']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBsourceAddressEthernet"])
+        )
 
     @property
     def BethernetTypeEtherTypeBtag(self):
@@ -62,7 +69,10 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BethernetTypeEtherTypeBtag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BethernetTypeEtherTypeBtag"])
+        )
 
     @property
     def BvlanTagBvlanPriority(self):
@@ -72,7 +82,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BvlanTagBvlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BvlanTagBvlanPriority"])
+        )
 
     @property
     def BvlanTagBvlanCanonicalFormatIndicator(self):
@@ -82,7 +95,13 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BvlanTagBvlanCanonicalFormatIndicator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["BvlanTagBvlanCanonicalFormatIndicator"]
+            ),
+        )
 
     @property
     def BvlanTagBvlanID(self):
@@ -92,7 +111,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BvlanTagBvlanID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BvlanTagBvlanID"])
+        )
 
     @property
     def ItagEtherTypeEtherTypeItag(self):
@@ -102,7 +124,10 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagEtherTypeEtherTypeItag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ItagEtherTypeEtherTypeItag"])
+        )
 
     @property
     def ItagPcp(self):
@@ -112,7 +137,8 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagPcp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItagPcp"]))
 
     @property
     def ItagDei(self):
@@ -122,7 +148,8 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagDei']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItagDei"]))
 
     @property
     def ItagFmt(self):
@@ -133,7 +160,8 @@ class MacInMAC(Base):
         Available enum values: Payload Encapsulated Wi Fcs, 0, Payload Encapsulated Wo Fcs, 1, No Encapsulation, 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagFmt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItagFmt"]))
 
     @property
     def ItagReserved(self):
@@ -143,7 +171,8 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItagReserved"]))
 
     @property
     def ItagIsid(self):
@@ -153,7 +182,8 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagIsid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ItagIsid"]))
 
     @property
     def HeaderCdestinationAddressEthernet(self):
@@ -163,7 +193,11 @@ class MacInMAC(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCdestinationAddressEthernet']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderCdestinationAddressEthernet"]),
+        )
 
     @property
     def HeaderCsourceAddressEthernet(self):
@@ -173,7 +207,10 @@ class MacInMAC(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCsourceAddressEthernet']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCsourceAddressEthernet"])
+        )
 
     @property
     def StagEtherTypeStag(self):
@@ -183,7 +220,10 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StagEtherTypeStag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StagEtherTypeStag"])
+        )
 
     @property
     def SvlanTagSvlanPriority(self):
@@ -193,7 +233,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SvlanTagSvlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SvlanTagSvlanPriority"])
+        )
 
     @property
     def SvlanTagSvlanCanonicalFormatIndicator(self):
@@ -203,7 +246,13 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SvlanTagSvlanCanonicalFormatIndicator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SvlanTagSvlanCanonicalFormatIndicator"]
+            ),
+        )
 
     @property
     def SvlanTagSvlanID(self):
@@ -213,7 +262,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SvlanTagSvlanID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SvlanTagSvlanID"])
+        )
 
     @property
     def CtagEtherTypeCtag(self):
@@ -223,7 +275,10 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CtagEtherTypeCtag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CtagEtherTypeCtag"])
+        )
 
     @property
     def CvlanTagCvlanPriority(self):
@@ -233,7 +288,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CvlanTagCvlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CvlanTagCvlanPriority"])
+        )
 
     @property
     def CvlanTagCvlanCanonicalFormatIndicator(self):
@@ -243,7 +301,13 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CvlanTagCvlanCanonicalFormatIndicator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CvlanTagCvlanCanonicalFormatIndicator"]
+            ),
+        )
 
     @property
     def CvlanTagCvlanID(self):
@@ -253,7 +317,10 @@ class MacInMAC(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CvlanTagCvlanID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CvlanTagCvlanID"])
+        )
 
     @property
     def HeaderType(self):
@@ -263,7 +330,8 @@ class MacInMAC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

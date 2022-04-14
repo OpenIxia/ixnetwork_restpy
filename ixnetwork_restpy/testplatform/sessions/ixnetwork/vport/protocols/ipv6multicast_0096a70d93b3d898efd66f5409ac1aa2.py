@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class Ipv6Multicast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6Multicast'
+    _SDM_NAME = "ipv6Multicast"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'HostName': 'hostName',
-        'Ipv6MulticastGroupAddress': 'ipv6MulticastGroupAddress',
-        'LspId': 'lspId',
-        'SequenceNumber': 'sequenceNumber',
-        'VlanId': 'vlanId',
+        "Age": "age",
+        "HostName": "hostName",
+        "Ipv6MulticastGroupAddress": "ipv6MulticastGroupAddress",
+        "LspId": "lspId",
+        "SequenceNumber": "sequenceNumber",
+        "VlanId": "vlanId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv6Multicast, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Ipv6Multicast(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6unicastitem_73a56a6835701d696b28341a9b498502 import Ipv6UnicastItem
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6unicastitem_73a56a6835701d696b28341a9b498502 import (
+            Ipv6UnicastItem,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6UnicastItem', None) is not None:
-                return self._properties.get('Ipv6UnicastItem')
+            if self._properties.get("Ipv6UnicastItem", None) is not None:
+                return self._properties.get("Ipv6UnicastItem")
         return Ipv6UnicastItem(self)
 
     @property
@@ -73,7 +76,7 @@ class Ipv6Multicast(Base):
         -------
         - number: This indicates the age in time in seconds, since it was last refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def HostName(self):
@@ -83,7 +86,7 @@ class Ipv6Multicast(Base):
         -------
         - str: The host name as retrieved from the related packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def Ipv6MulticastGroupAddress(self):
@@ -93,7 +96,7 @@ class Ipv6Multicast(Base):
         -------
         - str: This indicates the IPv6 Multicast Group Address in the Group Record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MulticastGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MulticastGroupAddress"])
 
     @property
     def LspId(self):
@@ -103,7 +106,7 @@ class Ipv6Multicast(Base):
         -------
         - str: This indicates the LSP identification number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspId"])
 
     @property
     def SequenceNumber(self):
@@ -113,7 +116,7 @@ class Ipv6Multicast(Base):
         -------
         - number: This indicates the sequence number of the LSP containing the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def VlanId(self):
@@ -123,10 +126,10 @@ class Ipv6Multicast(Base):
         -------
         - number: This indicates the VLAN ID in the Group Record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     def add(self):
-        """Adds a new ipv6Multicast resource on the json, only valid with config assistant
+        """Adds a new ipv6Multicast resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -138,7 +141,15 @@ class Ipv6Multicast(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, HostName=None, Ipv6MulticastGroupAddress=None, LspId=None, SequenceNumber=None, VlanId=None):
+    def find(
+        self,
+        Age=None,
+        HostName=None,
+        Ipv6MulticastGroupAddress=None,
+        LspId=None,
+        SequenceNumber=None,
+        VlanId=None,
+    ):
         # type: (int, str, str, str, int, int) -> Ipv6Multicast
         """Finds and retrieves ipv6Multicast resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class LearnedIpv4Label(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedIpv4Label'
+    _SDM_NAME = "learnedIpv4Label"
     _SDM_ATT_MAP = {
-        'Fec': 'fec',
-        'FecPrefixLen': 'fecPrefixLen',
-        'Label': 'label',
-        'LabelSpaceId': 'labelSpaceId',
-        'PeerIpAddress': 'peerIpAddress',
+        "Fec": "fec",
+        "FecPrefixLen": "fecPrefixLen",
+        "Label": "label",
+        "LabelSpaceId": "labelSpaceId",
+        "PeerIpAddress": "peerIpAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedIpv4Label, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class LearnedIpv4Label(Base):
         -------
         - str: Forwarding equivalence class (FEC) type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Fec'])
+        return self._get_attribute(self._SDM_ATT_MAP["Fec"])
 
     @property
     def FecPrefixLen(self):
@@ -65,7 +65,7 @@ class LearnedIpv4Label(Base):
         -------
         - number: The length of the prefix associated with the FEC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FecPrefixLen'])
+        return self._get_attribute(self._SDM_ATT_MAP["FecPrefixLen"])
 
     @property
     def Label(self):
@@ -75,7 +75,7 @@ class LearnedIpv4Label(Base):
         -------
         - number: The label value added to the packet(s) by the upstream LDP peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def LabelSpaceId(self):
@@ -85,7 +85,7 @@ class LearnedIpv4Label(Base):
         -------
         - number: Part of the LSR ID. It forms the last 2 octets of the 6-octet LDP identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelSpaceId"])
 
     @property
     def PeerIpAddress(self):
@@ -95,10 +95,10 @@ class LearnedIpv4Label(Base):
         -------
         - str: The RID of the upstream LDP peer. Part of the LSR ID. It must be globally unique. It forms the first 4 octets of the 6-octet LDP identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpAddress"])
 
     def add(self):
-        """Adds a new learnedIpv4Label resource on the json, only valid with config assistant
+        """Adds a new learnedIpv4Label resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -110,7 +110,14 @@ class LearnedIpv4Label(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Fec=None, FecPrefixLen=None, Label=None, LabelSpaceId=None, PeerIpAddress=None):
+    def find(
+        self,
+        Fec=None,
+        FecPrefixLen=None,
+        Label=None,
+        LabelSpaceId=None,
+        PeerIpAddress=None,
+    ):
         # type: (str, int, int, int, str) -> LearnedIpv4Label
         """Finds and retrieves learnedIpv4Label resources from the server.
 

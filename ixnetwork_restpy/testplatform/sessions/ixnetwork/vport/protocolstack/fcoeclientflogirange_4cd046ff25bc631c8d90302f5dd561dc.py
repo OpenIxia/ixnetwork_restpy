@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,44 +33,43 @@ class FcoeClientFlogiRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcoeClientFlogiRange'
+    _SDM_NAME = "fcoeClientFlogiRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'FipAddressingMode': 'fipAddressingMode',
-        'FipDestinationMacAddress': 'fipDestinationMacAddress',
-        'FipEnabled': 'fipEnabled',
-        'FipOptionSet': 'fipOptionSet',
-        'FipOptionSetName': 'fipOptionSetName',
-        'FipSolicitTimeout': 'fipSolicitTimeout',
-        'FipVendorId': 'fipVendorId',
-        'FipVlanDiscovery': 'fipVlanDiscovery',
-        'FipVlanDiscoveryUntagged': 'fipVlanDiscoveryUntagged',
-        'Name': 'name',
-        'NameServerCommands': 'nameServerCommands',
-        'NameServerQuery': 'nameServerQuery',
-        'NameServerQueryCommand': 'nameServerQueryCommand',
-        'NameServerQueryParameterType': 'nameServerQueryParameterType',
-        'NameServerQueryParameterValue': 'nameServerQueryParameterValue',
-        'NameServerRegistration': 'nameServerRegistration',
-        'NodeWwnIncrement': 'nodeWwnIncrement',
-        'NodeWwnStart': 'nodeWwnStart',
-        'ObjectId': 'objectId',
-        'PlogiDestId': 'plogiDestId',
-        'PlogiEnabled': 'plogiEnabled',
-        'PlogiMeshMode': 'plogiMeshMode',
-        'PlogiTargetName': 'plogiTargetName',
-        'PortWwnIncrement': 'portWwnIncrement',
-        'PortWwnStart': 'portWwnStart',
-        'PrliEnabled': 'prliEnabled',
-        'SourceOui': 'sourceOui',
-        'SourceOuiIncrement': 'sourceOuiIncrement',
-        'StateChangeRegistration': 'stateChangeRegistration',
-        'StateChangeRegistrationOption': 'stateChangeRegistrationOption',
-        'UnicastFipSolicit': 'unicastFipSolicit',
+        "Count": "count",
+        "Enabled": "enabled",
+        "FipAddressingMode": "fipAddressingMode",
+        "FipDestinationMacAddress": "fipDestinationMacAddress",
+        "FipEnabled": "fipEnabled",
+        "FipOptionSet": "fipOptionSet",
+        "FipOptionSetName": "fipOptionSetName",
+        "FipSolicitTimeout": "fipSolicitTimeout",
+        "FipVendorId": "fipVendorId",
+        "FipVlanDiscovery": "fipVlanDiscovery",
+        "FipVlanDiscoveryUntagged": "fipVlanDiscoveryUntagged",
+        "Name": "name",
+        "NameServerCommands": "nameServerCommands",
+        "NameServerQuery": "nameServerQuery",
+        "NameServerQueryCommand": "nameServerQueryCommand",
+        "NameServerQueryParameterType": "nameServerQueryParameterType",
+        "NameServerQueryParameterValue": "nameServerQueryParameterValue",
+        "NameServerRegistration": "nameServerRegistration",
+        "NodeWwnIncrement": "nodeWwnIncrement",
+        "NodeWwnStart": "nodeWwnStart",
+        "ObjectId": "objectId",
+        "PlogiDestId": "plogiDestId",
+        "PlogiEnabled": "plogiEnabled",
+        "PlogiMeshMode": "plogiMeshMode",
+        "PlogiTargetName": "plogiTargetName",
+        "PortWwnIncrement": "portWwnIncrement",
+        "PortWwnStart": "portWwnStart",
+        "PrliEnabled": "prliEnabled",
+        "SourceOui": "sourceOui",
+        "SourceOuiIncrement": "sourceOuiIncrement",
+        "StateChangeRegistration": "stateChangeRegistration",
+        "StateChangeRegistrationOption": "stateChangeRegistrationOption",
+        "UnicastFipSolicit": "unicastFipSolicit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcoeClientFlogiRange, self).__init__(parent, list_op)
@@ -82,11 +82,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - number: The number of FLOGI VN_Ports to be created by this VN_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -96,11 +97,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FipAddressingMode(self):
@@ -110,11 +112,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The addressing mode specified by FLOGI/FDISC requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipAddressingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipAddressingMode"])
+
     @FipAddressingMode.setter
     def FipAddressingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipAddressingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipAddressingMode"], value)
 
     @property
     def FipDestinationMacAddress(self):
@@ -124,11 +127,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Represents the address to which FIP Solicit Unicast is sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipDestinationMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipDestinationMacAddress"])
+
     @FipDestinationMacAddress.setter
     def FipDestinationMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipDestinationMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipDestinationMacAddress"], value)
 
     @property
     def FipEnabled(self):
@@ -138,11 +142,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: Enable FCoE Initialization Protocol (FIP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipEnabled"])
+
     @FipEnabled.setter
     def FipEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipEnabled"], value)
 
     @property
     def FipOptionSet(self):
@@ -152,11 +157,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../fcoeClientOptionSet): List of TLV options used with FIP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipOptionSet'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipOptionSet"])
+
     @FipOptionSet.setter
     def FipOptionSet(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipOptionSet'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipOptionSet"], value)
 
     @property
     def FipOptionSetName(self):
@@ -166,11 +172,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The name of the Option Set used by this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipOptionSetName'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipOptionSetName"])
+
     @FipOptionSetName.setter
     def FipOptionSetName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipOptionSetName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipOptionSetName"], value)
 
     @property
     def FipSolicitTimeout(self):
@@ -180,11 +187,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - number: Period of time (in seconds) that the client waits for a message of type FIP Discovery Advertisement Multicast before failing.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipSolicitTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipSolicitTimeout"])
+
     @FipSolicitTimeout.setter
     def FipSolicitTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipSolicitTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipSolicitTimeout"], value)
 
     @property
     def FipVendorId(self):
@@ -194,11 +202,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The Vendor Identifier value (8-byte).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipVendorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipVendorId"])
+
     @FipVendorId.setter
     def FipVendorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipVendorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipVendorId"], value)
 
     @property
     def FipVlanDiscovery(self):
@@ -208,11 +217,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: Enable FIP VLAN Discovery.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipVlanDiscovery'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipVlanDiscovery"])
+
     @FipVlanDiscovery.setter
     def FipVlanDiscovery(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipVlanDiscovery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipVlanDiscovery"], value)
 
     @property
     def FipVlanDiscoveryUntagged(self):
@@ -222,11 +232,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: If enabled, VLAN Discovery will be performed using plain Ethernet frames, i.e. without any VLAN tags.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FipVlanDiscoveryUntagged'])
+        return self._get_attribute(self._SDM_ATT_MAP["FipVlanDiscoveryUntagged"])
+
     @FipVlanDiscoveryUntagged.setter
     def FipVlanDiscoveryUntagged(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FipVlanDiscoveryUntagged'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FipVlanDiscoveryUntagged"], value)
 
     @property
     def Name(self):
@@ -236,11 +247,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NameServerCommands(self):
@@ -250,11 +262,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - list(number): Signifies the Name Server Commands that will be sent by the client.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerCommands'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerCommands"])
+
     @NameServerCommands.setter
     def NameServerCommands(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerCommands'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerCommands"], value)
 
     @property
     def NameServerQuery(self):
@@ -264,11 +277,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: If set, the N_Port will attempt to query a Name Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQuery'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQuery"])
+
     @NameServerQuery.setter
     def NameServerQuery(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQuery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQuery"], value)
 
     @property
     def NameServerQueryCommand(self):
@@ -278,11 +292,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Name Server request command codes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryCommand'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryCommand"])
+
     @NameServerQueryCommand.setter
     def NameServerQueryCommand(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryCommand'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryCommand"], value)
 
     @property
     def NameServerQueryParameterType(self):
@@ -292,11 +307,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: State Change Registration Parameter Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryParameterType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryParameterType"])
+
     @NameServerQueryParameterType.setter
     def NameServerQueryParameterType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryParameterType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryParameterType"], value)
 
     @property
     def NameServerQueryParameterValue(self):
@@ -306,11 +322,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: State Change Registration Parameter Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryParameterValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryParameterValue"])
+
     @NameServerQueryParameterValue.setter
     def NameServerQueryParameterValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryParameterValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryParameterValue"], value)
 
     @property
     def NameServerRegistration(self):
@@ -320,11 +337,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: If set, the N_Port will attempt to register to a Name Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerRegistration"])
+
     @NameServerRegistration.setter
     def NameServerRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerRegistration"], value)
 
     @property
     def NodeWwnIncrement(self):
@@ -334,11 +352,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The Node Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"])
+
     @NodeWwnIncrement.setter
     def NodeWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"], value)
 
     @property
     def NodeWwnStart(self):
@@ -348,11 +367,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The Node Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnStart"])
+
     @NodeWwnStart.setter
     def NodeWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnStart"], value)
 
     @property
     def ObjectId(self):
@@ -362,7 +382,7 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PlogiDestId(self):
@@ -372,11 +392,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiDestId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiDestId"])
+
     @PlogiDestId.setter
     def PlogiDestId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiDestId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiDestId"], value)
 
     @property
     def PlogiEnabled(self):
@@ -386,11 +407,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: Enables these N_Ports to attempt a PLOGI connection with specified destinations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiEnabled"])
+
     @PlogiEnabled.setter
     def PlogiEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiEnabled"], value)
 
     @property
     def PlogiMeshMode(self):
@@ -400,11 +422,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The association mode between PLOGI initiators and targets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiMeshMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiMeshMode"])
+
     @PlogiMeshMode.setter
     def PlogiMeshMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiMeshMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiMeshMode"], value)
 
     @property
     def PlogiTargetName(self):
@@ -414,11 +437,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: Indicates the N_Port range used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiTargetName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiTargetName"])
+
     @PlogiTargetName.setter
     def PlogiTargetName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiTargetName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiTargetName"], value)
 
     @property
     def PortWwnIncrement(self):
@@ -428,11 +452,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The Port Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnIncrement"])
+
     @PortWwnIncrement.setter
     def PortWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnIncrement"], value)
 
     @property
     def PortWwnStart(self):
@@ -442,11 +467,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The Port Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnStart"])
+
     @PortWwnStart.setter
     def PortWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnStart"], value)
 
     @property
     def PrliEnabled(self):
@@ -456,11 +482,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: Process login.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrliEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrliEnabled"])
+
     @PrliEnabled.setter
     def PrliEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrliEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrliEnabled"], value)
 
     @property
     def SourceOui(self):
@@ -470,11 +497,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The OUI ID (3-byte) associated to all N_Ports in this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceOui'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceOui"])
+
     @SourceOui.setter
     def SourceOui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceOui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceOui"], value)
 
     @property
     def SourceOuiIncrement(self):
@@ -484,11 +512,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: The OUI ID incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceOuiIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceOuiIncrement"])
+
     @SourceOuiIncrement.setter
     def SourceOuiIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceOuiIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceOuiIncrement"], value)
 
     @property
     def StateChangeRegistration(self):
@@ -498,11 +527,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - bool: If set, the N_Port will attempt to subscribe to State Change events.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateChangeRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateChangeRegistration"])
+
     @StateChangeRegistration.setter
     def StateChangeRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StateChangeRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StateChangeRegistration"], value)
 
     @property
     def StateChangeRegistrationOption(self):
@@ -512,11 +542,12 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: State Change Registration option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateChangeRegistrationOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateChangeRegistrationOption"])
+
     @StateChangeRegistrationOption.setter
     def StateChangeRegistrationOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StateChangeRegistrationOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StateChangeRegistrationOption"], value)
 
     @property
     def UnicastFipSolicit(self):
@@ -526,13 +557,48 @@ class FcoeClientFlogiRange(Base):
         -------
         - str: None - Fip Solicit is made as multicast. Listen/Learn FIFO - The client waits a message of type FIP Discovery Advertisement Multicast and replies with FIP Solicit Unicast to the server. Listen/Learn PB - In this mode the FCoE Client listens for Unsolicited Advertisements from FCFs; when the waiting period is over, the FCF with the highest priority is chosen and a Discovery Solicitation unicast is sent to it. Explicit - The client sends directly a FIP Solicit Unicast to the address from FIP Destination MAC Address field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastFipSolicit'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastFipSolicit"])
+
     @UnicastFipSolicit.setter
     def UnicastFipSolicit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastFipSolicit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastFipSolicit"], value)
 
-    def update(self, Count=None, Enabled=None, FipAddressingMode=None, FipDestinationMacAddress=None, FipEnabled=None, FipOptionSet=None, FipOptionSetName=None, FipSolicitTimeout=None, FipVendorId=None, FipVlanDiscovery=None, FipVlanDiscoveryUntagged=None, Name=None, NameServerCommands=None, NameServerQuery=None, NameServerQueryCommand=None, NameServerQueryParameterType=None, NameServerQueryParameterValue=None, NameServerRegistration=None, NodeWwnIncrement=None, NodeWwnStart=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortWwnIncrement=None, PortWwnStart=None, PrliEnabled=None, SourceOui=None, SourceOuiIncrement=None, StateChangeRegistration=None, StateChangeRegistrationOption=None, UnicastFipSolicit=None):
+    def update(
+        self,
+        Count=None,
+        Enabled=None,
+        FipAddressingMode=None,
+        FipDestinationMacAddress=None,
+        FipEnabled=None,
+        FipOptionSet=None,
+        FipOptionSetName=None,
+        FipSolicitTimeout=None,
+        FipVendorId=None,
+        FipVlanDiscovery=None,
+        FipVlanDiscoveryUntagged=None,
+        Name=None,
+        NameServerCommands=None,
+        NameServerQuery=None,
+        NameServerQueryCommand=None,
+        NameServerQueryParameterType=None,
+        NameServerQueryParameterValue=None,
+        NameServerRegistration=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        PrliEnabled=None,
+        SourceOui=None,
+        SourceOuiIncrement=None,
+        StateChangeRegistration=None,
+        StateChangeRegistrationOption=None,
+        UnicastFipSolicit=None,
+    ):
         # type: (int, bool, str, str, bool, str, str, int, str, bool, bool, str, List[int], bool, str, str, str, bool, str, str, str, bool, str, str, str, str, bool, str, str, bool, str, str) -> FcoeClientFlogiRange
         """Updates fcoeClientFlogiRange resource on the server.
 
@@ -577,7 +643,42 @@ class FcoeClientFlogiRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, Enabled=None, FipAddressingMode=None, FipDestinationMacAddress=None, FipEnabled=None, FipOptionSet=None, FipOptionSetName=None, FipSolicitTimeout=None, FipVendorId=None, FipVlanDiscovery=None, FipVlanDiscoveryUntagged=None, Name=None, NameServerCommands=None, NameServerQuery=None, NameServerQueryCommand=None, NameServerQueryParameterType=None, NameServerQueryParameterValue=None, NameServerRegistration=None, NodeWwnIncrement=None, NodeWwnStart=None, ObjectId=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortWwnIncrement=None, PortWwnStart=None, PrliEnabled=None, SourceOui=None, SourceOuiIncrement=None, StateChangeRegistration=None, StateChangeRegistrationOption=None, UnicastFipSolicit=None):
+    def find(
+        self,
+        Count=None,
+        Enabled=None,
+        FipAddressingMode=None,
+        FipDestinationMacAddress=None,
+        FipEnabled=None,
+        FipOptionSet=None,
+        FipOptionSetName=None,
+        FipSolicitTimeout=None,
+        FipVendorId=None,
+        FipVlanDiscovery=None,
+        FipVlanDiscoveryUntagged=None,
+        Name=None,
+        NameServerCommands=None,
+        NameServerQuery=None,
+        NameServerQueryCommand=None,
+        NameServerQueryParameterType=None,
+        NameServerQueryParameterValue=None,
+        NameServerRegistration=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        ObjectId=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        PrliEnabled=None,
+        SourceOui=None,
+        SourceOuiIncrement=None,
+        StateChangeRegistration=None,
+        StateChangeRegistrationOption=None,
+        UnicastFipSolicit=None,
+    ):
         # type: (int, bool, str, str, bool, str, str, int, str, bool, bool, str, List[int], bool, str, str, str, bool, str, str, str, str, bool, str, str, str, str, bool, str, str, bool, str, str) -> FcoeClientFlogiRange
         """Finds and retrieves fcoeClientFlogiRange resources from the server.
 
@@ -666,10 +767,14 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -688,10 +793,14 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -710,10 +819,14 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def FcoeClientFlogi(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -737,10 +850,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientFlogi', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientFlogi", payload=payload, response_object=None)
 
     def FcoeClientFlogo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -764,10 +879,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientFlogo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientFlogo", payload=payload, response_object=None)
 
     def FcoeClientPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -784,10 +901,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientPause", payload=payload, response_object=None)
 
     def FcoeClientPlogi(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -811,10 +930,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientPlogi', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientPlogi", payload=payload, response_object=None)
 
     def FcoeClientPlogo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -838,10 +959,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientPlogo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientPlogo", payload=payload, response_object=None)
 
     def FcoeClientResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -858,10 +981,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientResume", payload=payload, response_object=None)
 
     def FcoeClientStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -885,10 +1010,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientStart", payload=payload, response_object=None)
 
     def FcoeClientStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -912,10 +1039,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcoeClientStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcoeClientStop", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -939,10 +1068,12 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -966,7 +1097,9 @@ class FcoeClientFlogiRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

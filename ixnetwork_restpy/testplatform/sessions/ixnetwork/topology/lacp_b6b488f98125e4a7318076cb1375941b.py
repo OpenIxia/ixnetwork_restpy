@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,45 +35,53 @@ class Lacp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lacp'
+    _SDM_NAME = "lacp"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActorKey': 'actorKey',
-        'ActorPortNumber': 'actorPortNumber',
-        'ActorPortPriority': 'actorPortPriority',
-        'ActorSystemId': 'actorSystemId',
-        'ActorSystemPriority': 'actorSystemPriority',
-        'AdministrativeKey': 'administrativeKey',
-        'AggregationFlagState': 'aggregationFlagState',
-        'CollectingFlag': 'collectingFlag',
-        'CollectorsMaxdelay': 'collectorsMaxdelay',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DistributingFlag': 'distributingFlag',
-        'Errors': 'errors',
-        'InterMarkerPDUDelay': 'interMarkerPDUDelay',
-        'InterMarkerPDUDelayRandomMax': 'interMarkerPDUDelayRandomMax',
-        'InterMarkerPDUDelayRandomMin': 'interMarkerPDUDelayRandomMin',
-        'LacpActivity': 'lacpActivity',
-        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
-        'LacpduTimeout': 'lacpduTimeout',
-        'MarkerRequestMode': 'markerRequestMode',
-        'MarkerResponseWaitTime': 'markerResponseWaitTime',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PeriodicSendingOfMarkerRequest': 'periodicSendingOfMarkerRequest',
-        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
-        'SessionStatus': 'sessionStatus',
-        'SourceMac': 'sourceMac',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SupportRespondingToMarker': 'supportRespondingToMarker',
-        'SynchronizationFlag': 'synchronizationFlag',
+        "Active": "active",
+        "ActorKey": "actorKey",
+        "ActorPortNumber": "actorPortNumber",
+        "ActorPortPriority": "actorPortPriority",
+        "ActorSystemId": "actorSystemId",
+        "ActorSystemPriority": "actorSystemPriority",
+        "AdministrativeKey": "administrativeKey",
+        "AggregationFlagState": "aggregationFlagState",
+        "CollectingFlag": "collectingFlag",
+        "CollectorsMaxdelay": "collectorsMaxdelay",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DistributingFlag": "distributingFlag",
+        "Errors": "errors",
+        "InterMarkerPDUDelay": "interMarkerPDUDelay",
+        "InterMarkerPDUDelayRandomMax": "interMarkerPDUDelayRandomMax",
+        "InterMarkerPDUDelayRandomMin": "interMarkerPDUDelayRandomMin",
+        "LacpActivity": "lacpActivity",
+        "LacpduPeriodicTimeInterval": "lacpduPeriodicTimeInterval",
+        "LacpduTimeout": "lacpduTimeout",
+        "MarkerRequestMode": "markerRequestMode",
+        "MarkerResponseWaitTime": "markerResponseWaitTime",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PeriodicSendingOfMarkerRequest": "periodicSendingOfMarkerRequest",
+        "SendMarkerRequestOnLagChange": "sendMarkerRequestOnLagChange",
+        "SessionStatus": "sessionStatus",
+        "SourceMac": "sourceMac",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SupportRespondingToMarker": "supportRespondingToMarker",
+        "SynchronizationFlag": "synchronizationFlag",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -87,7 +96,8 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActorKey(self):
@@ -98,7 +108,8 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorKey"]))
 
     @property
     def ActorPortNumber(self):
@@ -109,7 +120,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Port Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorPortNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorPortNumber"])
+        )
 
     @property
     def ActorPortPriority(self):
@@ -120,7 +134,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actor Port Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorPortPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorPortPriority"])
+        )
 
     @property
     def ActorSystemId(self):
@@ -131,7 +148,8 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actor System Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorSystemId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorSystemId"]))
 
     @property
     def ActorSystemPriority(self):
@@ -142,7 +160,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actor System Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorSystemPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorSystemPriority"])
+        )
 
     @property
     def AdministrativeKey(self):
@@ -153,7 +174,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Administrative Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdministrativeKey']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdministrativeKey"])
+        )
 
     @property
     def AggregationFlagState(self):
@@ -164,7 +188,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregation Flag State
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregationFlagState']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AggregationFlagState"])
+        )
 
     @property
     def CollectingFlag(self):
@@ -175,7 +202,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Collecting Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectingFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectingFlag"])
+        )
 
     @property
     def CollectorsMaxdelay(self):
@@ -186,21 +216,25 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Collectors Maximum Delay
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectorsMaxdelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectorsMaxdelay"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -210,7 +244,7 @@ class Lacp(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -220,7 +254,7 @@ class Lacp(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DistributingFlag(self):
@@ -231,7 +265,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Distributing Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DistributingFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DistributingFlag"])
+        )
 
     @property
     def Errors(self):
@@ -240,7 +277,7 @@ class Lacp(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def InterMarkerPDUDelay(self):
@@ -251,7 +288,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterMarkerPDUDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterMarkerPDUDelay"])
+        )
 
     @property
     def InterMarkerPDUDelayRandomMax(self):
@@ -262,7 +302,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay Random Max (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterMarkerPDUDelayRandomMax']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterMarkerPDUDelayRandomMax"])
+        )
 
     @property
     def InterMarkerPDUDelayRandomMin(self):
@@ -273,7 +316,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Marker PDU Delay Random Min (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterMarkerPDUDelayRandomMin']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterMarkerPDUDelayRandomMin"])
+        )
 
     @property
     def LacpActivity(self):
@@ -284,7 +330,8 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LACP Actvity
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacpActivity']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacpActivity"]))
 
     @property
     def LacpduPeriodicTimeInterval(self):
@@ -295,7 +342,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Lacp PDU Periodic Time Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacpduPeriodicTimeInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LacpduPeriodicTimeInterval"])
+        )
 
     @property
     def LacpduTimeout(self):
@@ -306,7 +356,8 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Lacp PDU Timeout
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacpduTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacpduTimeout"]))
 
     @property
     def MarkerRequestMode(self):
@@ -317,7 +368,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Marker Request Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MarkerRequestMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MarkerRequestMode"])
+        )
 
     @property
     def MarkerResponseWaitTime(self):
@@ -328,7 +382,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Marker Response Wait Time (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MarkerResponseWaitTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MarkerResponseWaitTime"])
+        )
 
     @property
     def Multiplier(self):
@@ -338,11 +395,12 @@ class Lacp(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -352,11 +410,12 @@ class Lacp(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PeriodicSendingOfMarkerRequest(self):
@@ -367,7 +426,11 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Periodic Sending Of Marker Request
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeriodicSendingOfMarkerRequest']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["PeriodicSendingOfMarkerRequest"]),
+        )
 
     @property
     def SendMarkerRequestOnLagChange(self):
@@ -378,7 +441,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send Marker Request On Lag Change
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendMarkerRequestOnLagChange']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendMarkerRequestOnLagChange"])
+        )
 
     @property
     def SessionStatus(self):
@@ -388,7 +454,7 @@ class Lacp(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SourceMac(self):
@@ -398,7 +464,7 @@ class Lacp(Base):
         -------
         - list(str): Source MAC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMac"])
 
     @property
     def StackedLayers(self):
@@ -408,11 +474,12 @@ class Lacp(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -421,7 +488,7 @@ class Lacp(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -431,7 +498,7 @@ class Lacp(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SupportRespondingToMarker(self):
@@ -442,7 +509,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support Responding To Marker
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportRespondingToMarker']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportRespondingToMarker"])
+        )
 
     @property
     def SynchronizationFlag(self):
@@ -453,7 +523,10 @@ class Lacp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Synchronization Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SynchronizationFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SynchronizationFlag"])
+        )
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Lacp
@@ -506,7 +579,20 @@ class Lacp(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, SourceMac=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        SourceMac=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves lacp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lacp resources from the server.
@@ -582,10 +668,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def LacpStartPDU(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -614,10 +702,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('lacpStartPDU', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("lacpStartPDU", payload=payload, response_object=None)
 
     def LacpStopPDU(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -646,10 +736,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('lacpStopPDU', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("lacpStopPDU", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -678,10 +770,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendMarker(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -710,10 +804,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMarker', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendMarker", payload=payload, response_object=None)
 
     def SendMarkerRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -732,10 +828,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMarkerRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendMarkerRequest", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -764,10 +862,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartPDU(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -786,10 +886,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startPDU', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startPDU", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -818,10 +920,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopPDU(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -840,12 +944,40 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPDU', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopPDU", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, CollectingFlag=None, CollectorsMaxdelay=None, DistributingFlag=None, InterMarkerPDUDelay=None, InterMarkerPDUDelayRandomMax=None, InterMarkerPDUDelayRandomMin=None, LacpActivity=None, LacpduPeriodicTimeInterval=None, LacpduTimeout=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PeriodicSendingOfMarkerRequest=None, SendMarkerRequestOnLagChange=None, SupportRespondingToMarker=None, SynchronizationFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ActorKey=None,
+        ActorPortNumber=None,
+        ActorPortPriority=None,
+        ActorSystemId=None,
+        ActorSystemPriority=None,
+        AdministrativeKey=None,
+        AggregationFlagState=None,
+        CollectingFlag=None,
+        CollectorsMaxdelay=None,
+        DistributingFlag=None,
+        InterMarkerPDUDelay=None,
+        InterMarkerPDUDelayRandomMax=None,
+        InterMarkerPDUDelayRandomMin=None,
+        LacpActivity=None,
+        LacpduPeriodicTimeInterval=None,
+        LacpduTimeout=None,
+        MarkerRequestMode=None,
+        MarkerResponseWaitTime=None,
+        PeriodicSendingOfMarkerRequest=None,
+        SendMarkerRequestOnLagChange=None,
+        SupportRespondingToMarker=None,
+        SynchronizationFlag=None,
+    ):
         """Base class infrastructure that gets a list of lacp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

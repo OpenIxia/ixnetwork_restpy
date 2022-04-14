@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,18 @@ class Experimenter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'experimenter'
+    _SDM_NAME = "experimenter"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
-        'ExperimenterDataMiss': 'experimenterDataMiss',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterFieldMiss': 'experimenterFieldMiss',
-        'ExperimenterId': 'experimenterId',
-        'ExperimenterIdMiss': 'experimenterIdMiss',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterDataLengthMiss": "experimenterDataLengthMiss",
+        "ExperimenterDataMiss": "experimenterDataMiss",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterFieldMiss": "experimenterFieldMiss",
+        "ExperimenterId": "experimenterId",
+        "ExperimenterIdMiss": "experimenterIdMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Experimenter, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class Experimenter(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -71,11 +72,12 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterDataLengthMiss(self):
@@ -85,11 +87,12 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"])
+
     @ExperimenterDataLengthMiss.setter
     def ExperimenterDataLengthMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"], value)
 
     @property
     def ExperimenterDataMiss(self):
@@ -99,11 +102,12 @@ class Experimenter(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"])
+
     @ExperimenterDataMiss.setter
     def ExperimenterDataMiss(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"], value)
 
     @property
     def ExperimenterField(self):
@@ -113,11 +117,12 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def ExperimenterFieldMiss(self):
@@ -127,11 +132,12 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterFieldMiss"])
+
     @ExperimenterFieldMiss.setter
     def ExperimenterFieldMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterFieldMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterFieldMiss"], value)
 
     @property
     def ExperimenterId(self):
@@ -141,11 +147,12 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
     @property
     def ExperimenterIdMiss(self):
@@ -155,13 +162,24 @@ class Experimenter(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"])
+
     @ExperimenterIdMiss.setter
     def ExperimenterIdMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"], value)
 
-    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def update(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterField=None,
+        ExperimenterFieldMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int, int, int) -> Experimenter
         """Updates experimenter resource on the server.
 
@@ -182,7 +200,17 @@ class Experimenter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterField=None,
+        ExperimenterFieldMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int, int, int) -> Experimenter
         """Finds and retrieves experimenter resources from the server.
 

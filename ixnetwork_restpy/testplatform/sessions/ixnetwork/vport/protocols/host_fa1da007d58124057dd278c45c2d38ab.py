@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,26 +35,26 @@ class Host(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'host'
+    _SDM_NAME = "host"
     _SDM_ATT_MAP = {
-        'EnableImmediateResp': 'enableImmediateResp',
-        'EnableQueryResMode': 'enableQueryResMode',
-        'EnableRouterAlert': 'enableRouterAlert',
-        'EnableSpecificResMode': 'enableSpecificResMode',
-        'EnableSuppressReport': 'enableSuppressReport',
-        'EnableUnsolicitedResMode': 'enableUnsolicitedResMode',
-        'Enabled': 'enabled',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'ProtocolInterface': 'protocolInterface',
-        'ReportFreq': 'reportFreq',
-        'RobustnessVariable': 'robustnessVariable',
-        'TrafficGroupId': 'trafficGroupId',
-        'Version': 'version',
+        "EnableImmediateResp": "enableImmediateResp",
+        "EnableQueryResMode": "enableQueryResMode",
+        "EnableRouterAlert": "enableRouterAlert",
+        "EnableSpecificResMode": "enableSpecificResMode",
+        "EnableSuppressReport": "enableSuppressReport",
+        "EnableUnsolicitedResMode": "enableUnsolicitedResMode",
+        "Enabled": "enabled",
+        "InterfaceIndex": "interfaceIndex",
+        "InterfaceType": "interfaceType",
+        "Interfaces": "interfaces",
+        "ProtocolInterface": "protocolInterface",
+        "ReportFreq": "reportFreq",
+        "RobustnessVariable": "robustnessVariable",
+        "TrafficGroupId": "trafficGroupId",
+        "Version": "version",
     }
     _SDM_ENUM_MAP = {
-        'version': ['version1', 'version2'],
+        "version": ["version1", "version2"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,10 +71,13 @@ class Host(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_f61fdd85e4f0ee7466748db193fd2ec8 import GroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_f61fdd85e4f0ee7466748db193fd2ec8 import (
+            GroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GroupRange', None) is not None:
-                return self._properties.get('GroupRange')
+            if self._properties.get("GroupRange", None) is not None:
+                return self._properties.get("GroupRange")
         return GroupRange(self)
 
     @property
@@ -84,11 +88,12 @@ class Host(Base):
         -------
         - bool: If enabled, the MLD host will ignore the value specified in the maximum response delay in the query message, assume that the delay is always = 0 seconds, and immediately respond to the query by sending a report.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableImmediateResp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableImmediateResp"])
+
     @EnableImmediateResp.setter
     def EnableImmediateResp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableImmediateResp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableImmediateResp"], value)
 
     @property
     def EnableQueryResMode(self):
@@ -98,11 +103,12 @@ class Host(Base):
         -------
         - bool: Enables the simulation for the host to respond to general queries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableQueryResMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableQueryResMode"])
+
     @EnableQueryResMode.setter
     def EnableQueryResMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableQueryResMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableQueryResMode"], value)
 
     @property
     def EnableRouterAlert(self):
@@ -112,11 +118,12 @@ class Host(Base):
         -------
         - bool: Sets the router alert bit in listener report messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRouterAlert"])
+
     @EnableRouterAlert.setter
     def EnableRouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRouterAlert"], value)
 
     @property
     def EnableSpecificResMode(self):
@@ -126,11 +133,12 @@ class Host(Base):
         -------
         - bool: Enables the simulation for the host to respond to group specific queries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSpecificResMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSpecificResMode"])
+
     @EnableSpecificResMode.setter
     def EnableSpecificResMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSpecificResMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSpecificResMode"], value)
 
     @property
     def EnableSuppressReport(self):
@@ -140,11 +148,12 @@ class Host(Base):
         -------
         - bool: Suppress generation of V2 reports on receipt of v1 reports having common groups. If enabled, it indicates that a host/group member will allow its MLDv2 Membership Record to be 'suppressed by a membership report for Version 1. The suppression will only be for group reports received from another port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSuppressReport'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSuppressReport"])
+
     @EnableSuppressReport.setter
     def EnableSuppressReport(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSuppressReport'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSuppressReport"], value)
 
     @property
     def EnableUnsolicitedResMode(self):
@@ -154,11 +163,12 @@ class Host(Base):
         -------
         - bool: If enabled, causes the emulated MLD host to automatically send full membership messages at regular intervals, without waiting for a query message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableUnsolicitedResMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableUnsolicitedResMode"])
+
     @EnableUnsolicitedResMode.setter
     def EnableUnsolicitedResMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableUnsolicitedResMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableUnsolicitedResMode"], value)
 
     @property
     def Enabled(self):
@@ -168,11 +178,12 @@ class Host(Base):
         -------
         - bool: Enables the use of the host in the MLD simulation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterfaceIndex(self):
@@ -182,11 +193,12 @@ class Host(Base):
         -------
         - number: The assigned protocol interface ID for this MLD interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIndex"])
+
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIndex"], value)
 
     @property
     def InterfaceType(self):
@@ -196,11 +208,12 @@ class Host(Base):
         -------
         - str: The type of interface to be selected for this MLD interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Interfaces(self):
@@ -210,25 +223,27 @@ class Host(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def ProtocolInterface(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def ReportFreq(self):
@@ -238,11 +253,12 @@ class Host(Base):
         -------
         - number: Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportFreq'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportFreq"])
+
     @ReportFreq.setter
     def ReportFreq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportFreq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportFreq"], value)
 
     @property
     def RobustnessVariable(self):
@@ -252,11 +268,12 @@ class Host(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable'])
+        return self._get_attribute(self._SDM_ATT_MAP["RobustnessVariable"])
+
     @RobustnessVariable.setter
     def RobustnessVariable(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RobustnessVariable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RobustnessVariable"], value)
 
     @property
     def TrafficGroupId(self):
@@ -266,11 +283,12 @@ class Host(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def Version(self):
@@ -280,13 +298,31 @@ class Host(Base):
         -------
         - str(version1 | version2): Sets the MLD version number that is to be simulated on the host: 1 or 2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+    def update(
+        self,
+        EnableImmediateResp=None,
+        EnableQueryResMode=None,
+        EnableRouterAlert=None,
+        EnableSpecificResMode=None,
+        EnableSuppressReport=None,
+        EnableUnsolicitedResMode=None,
+        Enabled=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        ProtocolInterface=None,
+        ReportFreq=None,
+        RobustnessVariable=None,
+        TrafficGroupId=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Updates host resource on the server.
 
@@ -314,7 +350,24 @@ class Host(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+    def add(
+        self,
+        EnableImmediateResp=None,
+        EnableQueryResMode=None,
+        EnableRouterAlert=None,
+        EnableSpecificResMode=None,
+        EnableSuppressReport=None,
+        EnableUnsolicitedResMode=None,
+        Enabled=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        ProtocolInterface=None,
+        ReportFreq=None,
+        RobustnessVariable=None,
+        TrafficGroupId=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Adds a new host resource on the server and adds it to the container.
 
@@ -356,7 +409,24 @@ class Host(Base):
         """
         self._delete()
 
-    def find(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+    def find(
+        self,
+        EnableImmediateResp=None,
+        EnableQueryResMode=None,
+        EnableRouterAlert=None,
+        EnableSpecificResMode=None,
+        EnableSuppressReport=None,
+        EnableUnsolicitedResMode=None,
+        Enabled=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        ProtocolInterface=None,
+        ReportFreq=None,
+        RobustnessVariable=None,
+        TrafficGroupId=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Finds and retrieves host resources from the server.
 
@@ -426,7 +496,11 @@ class Host(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )

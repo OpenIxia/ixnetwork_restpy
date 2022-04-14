@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,33 +35,41 @@ class IgmpHost(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpHost'
+    _SDM_NAME = "igmpHost"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableIptv': 'enableIptv',
-        'EnableProxyReporting': 'enableProxyReporting',
-        'Errors': 'errors',
-        'GQResponseMode': 'gQResponseMode',
-        'GSResponseMode': 'gSResponseMode',
-        'ImResponse': 'imResponse',
-        'JlMultiplier': 'jlMultiplier',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NoOfGrpRanges': 'noOfGrpRanges',
-        'ReportFreq': 'reportFreq',
-        'RouterAlert': 'routerAlert',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'USResponseMode': 'uSResponseMode',
-        'VersionType': 'versionType',
+        "Active": "active",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableIptv": "enableIptv",
+        "EnableProxyReporting": "enableProxyReporting",
+        "Errors": "errors",
+        "GQResponseMode": "gQResponseMode",
+        "GSResponseMode": "gSResponseMode",
+        "ImResponse": "imResponse",
+        "JlMultiplier": "jlMultiplier",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NoOfGrpRanges": "noOfGrpRanges",
+        "ReportFreq": "reportFreq",
+        "RouterAlert": "routerAlert",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "USResponseMode": "uSResponseMode",
+        "VersionType": "versionType",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -77,10 +86,13 @@ class IgmpHost(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpmcastipv4grouplist_9d36f1712e120291f6d70f4be5ea1fe4 import IgmpMcastIPv4GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpmcastipv4grouplist_9d36f1712e120291f6d70f4be5ea1fe4 import (
+            IgmpMcastIPv4GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpMcastIPv4GroupList', None) is not None:
-                return self._properties.get('IgmpMcastIPv4GroupList')
+            if self._properties.get("IgmpMcastIPv4GroupList", None) is not None:
+                return self._properties.get("IgmpMcastIPv4GroupList")
         return IgmpMcastIPv4GroupList(self)._select()
 
     @property
@@ -94,10 +106,13 @@ class IgmpHost(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.iptv_0fb517c26bbef4136d857dbc8aaa8c72 import Iptv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.iptv_0fb517c26bbef4136d857dbc8aaa8c72 import (
+            Iptv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Iptv', None) is not None:
-                return self._properties.get('Iptv')
+            if self._properties.get("Iptv", None) is not None:
+                return self._properties.get("Iptv")
         return Iptv(self)._select()
 
     @property
@@ -111,10 +126,13 @@ class IgmpHost(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -126,21 +144,23 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -150,7 +170,7 @@ class IgmpHost(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -160,7 +180,7 @@ class IgmpHost(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableIptv(self):
@@ -171,7 +191,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IPTV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIptv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableIptv"]))
 
     @property
     def EnableProxyReporting(self):
@@ -182,7 +203,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Proxy Reporting
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableProxyReporting']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableProxyReporting"])
+        )
 
     @property
     def Errors(self):
@@ -191,7 +215,7 @@ class IgmpHost(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def GQResponseMode(self):
@@ -202,7 +226,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): General Query Response Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GQResponseMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GQResponseMode"])
+        )
 
     @property
     def GSResponseMode(self):
@@ -213,7 +240,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Specific Response Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GSResponseMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GSResponseMode"])
+        )
 
     @property
     def ImResponse(self):
@@ -224,7 +254,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Immediate Response
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ImResponse']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ImResponse"]))
 
     @property
     def JlMultiplier(self):
@@ -234,11 +265,12 @@ class IgmpHost(Base):
         -------
         - number: No. of Join/Leave messages to send per opertation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JlMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["JlMultiplier"])
+
     @JlMultiplier.setter
     def JlMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JlMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JlMultiplier"], value)
 
     @property
     def Multiplier(self):
@@ -248,11 +280,12 @@ class IgmpHost(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -262,11 +295,12 @@ class IgmpHost(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfGrpRanges(self):
@@ -276,11 +310,12 @@ class IgmpHost(Base):
         -------
         - number: Defines the number of group range per host required
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfGrpRanges'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfGrpRanges"])
+
     @NoOfGrpRanges.setter
     def NoOfGrpRanges(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfGrpRanges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfGrpRanges"], value)
 
     @property
     def ReportFreq(self):
@@ -291,7 +326,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Report Frequency measured in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReportFreq']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReportFreq"]))
 
     @property
     def RouterAlert(self):
@@ -302,7 +338,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables Router Alert option of IPv4 Packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterAlert']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouterAlert"]))
 
     @property
     def SessionStatus(self):
@@ -312,7 +349,7 @@ class IgmpHost(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -322,11 +359,12 @@ class IgmpHost(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -335,7 +373,7 @@ class IgmpHost(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -345,7 +383,7 @@ class IgmpHost(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def USResponseMode(self):
@@ -356,7 +394,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Unsolicited Response Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['USResponseMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["USResponseMode"])
+        )
 
     @property
     def VersionType(self):
@@ -367,9 +408,18 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the IGMP Version Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionType']))
 
-    def update(self, ConnectedVia=None, JlMultiplier=None, Multiplier=None, Name=None, NoOfGrpRanges=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VersionType"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        JlMultiplier=None,
+        Multiplier=None,
+        Name=None,
+        NoOfGrpRanges=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, int, str, int, List[str]) -> IgmpHost
         """Updates igmpHost resource on the server.
 
@@ -391,7 +441,15 @@ class IgmpHost(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, JlMultiplier=None, Multiplier=None, Name=None, NoOfGrpRanges=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        JlMultiplier=None,
+        Multiplier=None,
+        Name=None,
+        NoOfGrpRanges=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, int, str, int, List[str]) -> IgmpHost
         """Adds a new igmpHost resource on the server and adds it to the container.
 
@@ -424,7 +482,21 @@ class IgmpHost(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, JlMultiplier=None, Multiplier=None, Name=None, NoOfGrpRanges=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        JlMultiplier=None,
+        Multiplier=None,
+        Name=None,
+        NoOfGrpRanges=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves igmpHost resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpHost resources from the server.
@@ -501,10 +573,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def IgmpStartHost(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -533,10 +607,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpStartHost', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpStartHost", payload=payload, response_object=None)
 
     def IgmpStopHost(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -565,10 +641,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpStopHost', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpStopHost", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -597,10 +675,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -629,10 +709,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartIGMP(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -667,10 +749,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startIGMP', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startIGMP", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -699,10 +783,12 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopIGMP(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -737,12 +823,27 @@ class IgmpHost(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopIGMP', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopIGMP", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableIptv=None, EnableProxyReporting=None, GQResponseMode=None, GSResponseMode=None, ImResponse=None, ReportFreq=None, RouterAlert=None, USResponseMode=None, VersionType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnableIptv=None,
+        EnableProxyReporting=None,
+        GQResponseMode=None,
+        GSResponseMode=None,
+        ImResponse=None,
+        ReportFreq=None,
+        RouterAlert=None,
+        USResponseMode=None,
+        VersionType=None,
+    ):
         """Base class infrastructure that gets a list of igmpHost device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

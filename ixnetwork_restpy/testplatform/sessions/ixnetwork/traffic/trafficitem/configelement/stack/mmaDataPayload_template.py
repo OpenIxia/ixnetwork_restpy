@@ -4,10 +4,10 @@ from ixnetwork_restpy.files import Files
 
 class MmaDataPayload(Base):
     __slots__ = ()
-    _SDM_NAME = 'mmaDataPayload'
+    _SDM_NAME = "mmaDataPayload"
     _SDM_ATT_MAP = {
-        'PayloadLength': 'mmaDataPayload.payload.length-1',
-        'PayloadDataPayload': 'mmaDataPayload.payload.dataPayload-2',
+        "PayloadLength": "mmaDataPayload.payload.length-1",
+        "PayloadDataPayload": "mmaDataPayload.payload.dataPayload-2",
     }
 
     def __init__(self, parent, list_op=False):
@@ -21,7 +21,8 @@ class MmaDataPayload(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PayloadLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PayloadLength"]))
 
     @property
     def PayloadDataPayload(self):
@@ -31,7 +32,10 @@ class MmaDataPayload(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PayloadDataPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PayloadDataPayload"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

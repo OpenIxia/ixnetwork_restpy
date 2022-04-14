@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,57 +35,56 @@ class SenderRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'senderRange'
+    _SDM_NAME = "senderRange"
     _SDM_ATT_MAP = {
-        'AutoGenerateSessionName': 'autoGenerateSessionName',
-        'BackupLspIdPoolStart': 'backupLspIdPoolStart',
-        'Bandwidth': 'bandwidth',
-        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
-        'EnableBfdMpls': 'enableBfdMpls',
-        'EnableFastReroute': 'enableFastReroute',
-        'EnableLspPing': 'enableLspPing',
-        'EnablePathReoptimization': 'enablePathReoptimization',
-        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
-        'EnableResourceAffinities': 'enableResourceAffinities',
-        'Enabled': 'enabled',
-        'ExcludeAny': 'excludeAny',
-        'FastRerouteBandwidth': 'fastRerouteBandwidth',
-        'FastRerouteDetour': 'fastRerouteDetour',
-        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
-        'FastRerouteFacilityBackupDesired': 'fastRerouteFacilityBackupDesired',
-        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
-        'FastRerouteHopLimit': 'fastRerouteHopLimit',
-        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
-        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
-        'FastRerouteOne2OneBackupDesired': 'fastRerouteOne2OneBackupDesired',
-        'FastRerouteSendDetour': 'fastRerouteSendDetour',
-        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
-        'HoldingPriority': 'holdingPriority',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IpCount': 'ipCount',
-        'IpStart': 'ipStart',
-        'LabelRecordingDesired': 'labelRecordingDesired',
-        'LocalProtectionDesired': 'localProtectionDesired',
-        'LspIdCount': 'lspIdCount',
-        'LspIdStart': 'lspIdStart',
-        'MaximumPacketSize': 'maximumPacketSize',
-        'MinimumPolicedUnit': 'minimumPolicedUnit',
-        'NodeProtectionDesired': 'nodeProtectionDesired',
-        'PathTearTlv': 'pathTearTlv',
-        'PathTlv': 'pathTlv',
-        'PeakDataRate': 'peakDataRate',
-        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
-        'RefreshInterval': 'refreshInterval',
-        'SeStyleDesired': 'seStyleDesired',
-        'SessionName': 'sessionName',
-        'SetupPriority': 'setupPriority',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'TokenBucketRate': 'tokenBucketRate',
-        'TokenBucketSize': 'tokenBucketSize',
+        "AutoGenerateSessionName": "autoGenerateSessionName",
+        "BackupLspIdPoolStart": "backupLspIdPoolStart",
+        "Bandwidth": "bandwidth",
+        "BandwidthProtectionDesired": "bandwidthProtectionDesired",
+        "EnableBfdMpls": "enableBfdMpls",
+        "EnableFastReroute": "enableFastReroute",
+        "EnableLspPing": "enableLspPing",
+        "EnablePathReoptimization": "enablePathReoptimization",
+        "EnablePeriodicReEvaluationRequest": "enablePeriodicReEvaluationRequest",
+        "EnableResourceAffinities": "enableResourceAffinities",
+        "Enabled": "enabled",
+        "ExcludeAny": "excludeAny",
+        "FastRerouteBandwidth": "fastRerouteBandwidth",
+        "FastRerouteDetour": "fastRerouteDetour",
+        "FastRerouteExcludeAny": "fastRerouteExcludeAny",
+        "FastRerouteFacilityBackupDesired": "fastRerouteFacilityBackupDesired",
+        "FastRerouteHoldingPriority": "fastRerouteHoldingPriority",
+        "FastRerouteHopLimit": "fastRerouteHopLimit",
+        "FastRerouteIncludeAll": "fastRerouteIncludeAll",
+        "FastRerouteIncludeAny": "fastRerouteIncludeAny",
+        "FastRerouteOne2OneBackupDesired": "fastRerouteOne2OneBackupDesired",
+        "FastRerouteSendDetour": "fastRerouteSendDetour",
+        "FastRerouteSetupPriority": "fastRerouteSetupPriority",
+        "HoldingPriority": "holdingPriority",
+        "IncludeAll": "includeAll",
+        "IncludeAny": "includeAny",
+        "IpCount": "ipCount",
+        "IpStart": "ipStart",
+        "LabelRecordingDesired": "labelRecordingDesired",
+        "LocalProtectionDesired": "localProtectionDesired",
+        "LspIdCount": "lspIdCount",
+        "LspIdStart": "lspIdStart",
+        "MaximumPacketSize": "maximumPacketSize",
+        "MinimumPolicedUnit": "minimumPolicedUnit",
+        "NodeProtectionDesired": "nodeProtectionDesired",
+        "PathTearTlv": "pathTearTlv",
+        "PathTlv": "pathTlv",
+        "PeakDataRate": "peakDataRate",
+        "ReEvaluationRequestInterval": "reEvaluationRequestInterval",
+        "RefreshInterval": "refreshInterval",
+        "SeStyleDesired": "seStyleDesired",
+        "SessionName": "sessionName",
+        "SetupPriority": "setupPriority",
+        "TimeoutMultiplier": "timeoutMultiplier",
+        "TokenBucketRate": "tokenBucketRate",
+        "TokenBucketSize": "tokenBucketSize",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SenderRange, self).__init__(parent, list_op)
@@ -100,10 +100,13 @@ class SenderRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtoleaf_590a82cb1a4f074669740053fac87499 import TunnelHeadToLeaf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtoleaf_590a82cb1a4f074669740053fac87499 import (
+            TunnelHeadToLeaf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TunnelHeadToLeaf', None) is not None:
-                return self._properties.get('TunnelHeadToLeaf')
+            if self._properties.get("TunnelHeadToLeaf", None) is not None:
+                return self._properties.get("TunnelHeadToLeaf")
         return TunnelHeadToLeaf(self)
 
     @property
@@ -117,10 +120,13 @@ class SenderRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtrafficendpoint_ab7d1610c6278d8cc717b77fc4c80da2 import TunnelHeadTrafficEndPoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtrafficendpoint_ab7d1610c6278d8cc717b77fc4c80da2 import (
+            TunnelHeadTrafficEndPoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TunnelHeadTrafficEndPoint', None) is not None:
-                return self._properties.get('TunnelHeadTrafficEndPoint')
+            if self._properties.get("TunnelHeadTrafficEndPoint", None) is not None:
+                return self._properties.get("TunnelHeadTrafficEndPoint")
         return TunnelHeadTrafficEndPoint(self)
 
     @property
@@ -131,11 +137,12 @@ class SenderRange(Base):
         -------
         - bool: If enabled, the session name is generated automatically. If it is not enabled, the session name field is activated and must be filled in.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoGenerateSessionName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoGenerateSessionName"])
+
     @AutoGenerateSessionName.setter
     def AutoGenerateSessionName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoGenerateSessionName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoGenerateSessionName"], value)
 
     @property
     def BackupLspIdPoolStart(self):
@@ -145,11 +152,12 @@ class SenderRange(Base):
         -------
         - number: It helps to set the LSP Id for the re-optimized LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackupLspIdPoolStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackupLspIdPoolStart"])
+
     @BackupLspIdPoolStart.setter
     def BackupLspIdPoolStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BackupLspIdPoolStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BackupLspIdPoolStart"], value)
 
     @property
     def Bandwidth(self):
@@ -159,11 +167,12 @@ class SenderRange(Base):
         -------
         - str: The bandwidth requested for the connection, expressed in kbits/sec.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["Bandwidth"])
+
     @Bandwidth.setter
     def Bandwidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Bandwidth"], value)
 
     @property
     def BandwidthProtectionDesired(self):
@@ -173,11 +182,12 @@ class SenderRange(Base):
         -------
         - bool: Indicates that PLRs should skip at least the next node for a backup path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BandwidthProtectionDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["BandwidthProtectionDesired"])
+
     @BandwidthProtectionDesired.setter
     def BandwidthProtectionDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BandwidthProtectionDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BandwidthProtectionDesired"], value)
 
     @property
     def EnableBfdMpls(self):
@@ -187,11 +197,12 @@ class SenderRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdMpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdMpls"])
+
     @EnableBfdMpls.setter
     def EnableBfdMpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdMpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdMpls"], value)
 
     @property
     def EnableFastReroute(self):
@@ -201,11 +212,12 @@ class SenderRange(Base):
         -------
         - bool: Enables the use of the fast reroute feature.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFastReroute'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFastReroute"])
+
     @EnableFastReroute.setter
     def EnableFastReroute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFastReroute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFastReroute"], value)
 
     @property
     def EnableLspPing(self):
@@ -215,11 +227,12 @@ class SenderRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLspPing'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLspPing"])
+
     @EnableLspPing.setter
     def EnableLspPing(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLspPing'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLspPing"], value)
 
     @property
     def EnablePathReoptimization(self):
@@ -229,11 +242,12 @@ class SenderRange(Base):
         -------
         - bool: If true, enables the Path Re-optimization option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePathReoptimization'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePathReoptimization"])
+
     @EnablePathReoptimization.setter
     def EnablePathReoptimization(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePathReoptimization'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePathReoptimization"], value)
 
     @property
     def EnablePeriodicReEvaluationRequest(self):
@@ -243,11 +257,16 @@ class SenderRange(Base):
         -------
         - bool: If true, enables the head LSR to send periodic path re-evaluation request in every Re-Optimization Interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicReEvaluationRequest'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnablePeriodicReEvaluationRequest"]
+        )
+
     @EnablePeriodicReEvaluationRequest.setter
     def EnablePeriodicReEvaluationRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicReEvaluationRequest'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnablePeriodicReEvaluationRequest"], value
+        )
 
     @property
     def EnableResourceAffinities(self):
@@ -257,11 +276,12 @@ class SenderRange(Base):
         -------
         - bool: Enables the use of RSVP resource class affinities for LSP tunnels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableResourceAffinities'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableResourceAffinities"])
+
     @EnableResourceAffinities.setter
     def EnableResourceAffinities(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableResourceAffinities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableResourceAffinities"], value)
 
     @property
     def Enabled(self):
@@ -271,11 +291,12 @@ class SenderRange(Base):
         -------
         - bool: Enables the sender range entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExcludeAny(self):
@@ -285,11 +306,12 @@ class SenderRange(Base):
         -------
         - number: Represents a set of attribute filters associated with a tunnel, any of which renders a link unacceptable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExcludeAny'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExcludeAny"])
+
     @ExcludeAny.setter
     def ExcludeAny(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExcludeAny'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExcludeAny"], value)
 
     @property
     def FastRerouteBandwidth(self):
@@ -299,11 +321,12 @@ class SenderRange(Base):
         -------
         - str: An estimate of the bandwidth needed for the protection path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteBandwidth"])
+
     @FastRerouteBandwidth.setter
     def FastRerouteBandwidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteBandwidth"], value)
 
     @property
     def FastRerouteDetour(self):
@@ -312,10 +335,11 @@ class SenderRange(Base):
         -------
         - list(dict(arg1:str,arg2:str)): Used to provide backup LSP tunnels for local repair of LSP tunnels, in the event of failure of a node or link. Contains the specifics of the detour LSPs: nodes to use and nodes to avoid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteDetour'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteDetour"])
+
     @FastRerouteDetour.setter
     def FastRerouteDetour(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteDetour'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteDetour"], value)
 
     @property
     def FastRerouteExcludeAny(self):
@@ -325,11 +349,12 @@ class SenderRange(Base):
         -------
         - number: Capability filters used to dictate which backup paths are acceptable or unacceptable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteExcludeAny'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteExcludeAny"])
+
     @FastRerouteExcludeAny.setter
     def FastRerouteExcludeAny(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteExcludeAny'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteExcludeAny"], value)
 
     @property
     def FastRerouteFacilityBackupDesired(self):
@@ -339,11 +364,16 @@ class SenderRange(Base):
         -------
         - bool: If enabled, indicates that facility backup should be used. With this method, the MPLS label stack allows the creation of a bypass tunnel to protect a set of LSPs with similar characteristics/constraints. Protects both links and nodes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteFacilityBackupDesired'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["FastRerouteFacilityBackupDesired"]
+        )
+
     @FastRerouteFacilityBackupDesired.setter
     def FastRerouteFacilityBackupDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteFacilityBackupDesired'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["FastRerouteFacilityBackupDesired"], value
+        )
 
     @property
     def FastRerouteHoldingPriority(self):
@@ -353,11 +383,12 @@ class SenderRange(Base):
         -------
         - number: The priority value for the backup path, pertaining to holding resources - whether a session can be preempted BY another session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteHoldingPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteHoldingPriority"])
+
     @FastRerouteHoldingPriority.setter
     def FastRerouteHoldingPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteHoldingPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteHoldingPriority"], value)
 
     @property
     def FastRerouteHopLimit(self):
@@ -367,11 +398,12 @@ class SenderRange(Base):
         -------
         - number: Indicates the number of extra hops that may be added by a protection path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteHopLimit'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteHopLimit"])
+
     @FastRerouteHopLimit.setter
     def FastRerouteHopLimit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteHopLimit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteHopLimit"], value)
 
     @property
     def FastRerouteIncludeAll(self):
@@ -381,11 +413,12 @@ class SenderRange(Base):
         -------
         - number: Capability filters used to dictate which backup paths are acceptable or unacceptable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAll'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAll"])
+
     @FastRerouteIncludeAll.setter
     def FastRerouteIncludeAll(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAll"], value)
 
     @property
     def FastRerouteIncludeAny(self):
@@ -395,11 +428,12 @@ class SenderRange(Base):
         -------
         - number: Capability filters used to dictate which backup paths are acceptable or unacceptable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAny'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAny"])
+
     @FastRerouteIncludeAny.setter
     def FastRerouteIncludeAny(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAny'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAny"], value)
 
     @property
     def FastRerouteOne2OneBackupDesired(self):
@@ -409,11 +443,12 @@ class SenderRange(Base):
         -------
         - bool: If enabled, indicates that one-to-one backup should be used. With this method, one detour LSP will be created for each protected LSP for each place where the LSP could potentially be repaired locally. Protects both links and nodes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteOne2OneBackupDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteOne2OneBackupDesired"])
+
     @FastRerouteOne2OneBackupDesired.setter
     def FastRerouteOne2OneBackupDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteOne2OneBackupDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteOne2OneBackupDesired"], value)
 
     @property
     def FastRerouteSendDetour(self):
@@ -423,11 +458,12 @@ class SenderRange(Base):
         -------
         - bool: Enables the generation of a DETOUR object for one to one operation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteSendDetour'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteSendDetour"])
+
     @FastRerouteSendDetour.setter
     def FastRerouteSendDetour(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteSendDetour'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteSendDetour"], value)
 
     @property
     def FastRerouteSetupPriority(self):
@@ -437,11 +473,12 @@ class SenderRange(Base):
         -------
         - number: Indicate the priority for taking and holding resources along the backup path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastRerouteSetupPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastRerouteSetupPriority"])
+
     @FastRerouteSetupPriority.setter
     def FastRerouteSetupPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastRerouteSetupPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastRerouteSetupPriority"], value)
 
     @property
     def HoldingPriority(self):
@@ -451,11 +488,12 @@ class SenderRange(Base):
         -------
         - number: Priority in holding onto resources. Range is 0 to 7, with 0 the highest priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HoldingPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["HoldingPriority"])
+
     @HoldingPriority.setter
     def HoldingPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HoldingPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HoldingPriority"], value)
 
     @property
     def IncludeAll(self):
@@ -465,11 +503,12 @@ class SenderRange(Base):
         -------
         - number: 32-bit value. Represents a set of attribute filters associated with a tunnel, all of which must be present for a link to be acceptable (with respect to this test). When all bits are set to 0 (null set), it automatically passes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeAll'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeAll"])
+
     @IncludeAll.setter
     def IncludeAll(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeAll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeAll"], value)
 
     @property
     def IncludeAny(self):
@@ -479,11 +518,12 @@ class SenderRange(Base):
         -------
         - number: 32-bit value. Represents a set of attribute filters associated with a tunnel, any of which makes a link acceptable (with respect to this test). When all bits are set to 0 (null set), it automatically passes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeAny'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeAny"])
+
     @IncludeAny.setter
     def IncludeAny(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeAny'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeAny"], value)
 
     @property
     def IpCount(self):
@@ -493,11 +533,12 @@ class SenderRange(Base):
         -------
         - number: The number of routers in the destination range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpCount"])
+
     @IpCount.setter
     def IpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpCount"], value)
 
     @property
     def IpStart(self):
@@ -507,11 +548,12 @@ class SenderRange(Base):
         -------
         - str: The IP address of the first destination router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpStart"])
+
     @IpStart.setter
     def IpStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpStart"], value)
 
     @property
     def LabelRecordingDesired(self):
@@ -521,11 +563,12 @@ class SenderRange(Base):
         -------
         - bool: If enabled, indicates that label information is to be included when doing a route record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelRecordingDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelRecordingDesired"])
+
     @LabelRecordingDesired.setter
     def LabelRecordingDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelRecordingDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelRecordingDesired"], value)
 
     @property
     def LocalProtectionDesired(self):
@@ -535,11 +578,12 @@ class SenderRange(Base):
         -------
         - bool: (Enabled by default) This permits transit routers to use a local traffic rerouting repair mechanism in the event of a fault on an adjacent downstream link or node. This may result in a violation of the explicit route object.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalProtectionDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalProtectionDesired"])
+
     @LocalProtectionDesired.setter
     def LocalProtectionDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalProtectionDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalProtectionDesired"], value)
 
     @property
     def LspIdCount(self):
@@ -549,11 +593,12 @@ class SenderRange(Base):
         -------
         - number: The number of LSP IDs in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspIdCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspIdCount"])
+
     @LspIdCount.setter
     def LspIdCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspIdCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspIdCount"], value)
 
     @property
     def LspIdStart(self):
@@ -563,11 +608,12 @@ class SenderRange(Base):
         -------
         - number: The first label-switched path ID (LSP ID) value in the range of LSP IDs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspIdStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspIdStart"])
+
     @LspIdStart.setter
     def LspIdStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspIdStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspIdStart"], value)
 
     @property
     def MaximumPacketSize(self):
@@ -577,11 +623,12 @@ class SenderRange(Base):
         -------
         - number: 32-bit integer. The maximum number of bytes allowed to cross the interface in a transmitted packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaximumPacketSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaximumPacketSize"])
+
     @MaximumPacketSize.setter
     def MaximumPacketSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaximumPacketSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaximumPacketSize"], value)
 
     @property
     def MinimumPolicedUnit(self):
@@ -591,11 +638,12 @@ class SenderRange(Base):
         -------
         - number: 32-bit integer. The minimum allowable size for a policed unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinimumPolicedUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinimumPolicedUnit"])
+
     @MinimumPolicedUnit.setter
     def MinimumPolicedUnit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinimumPolicedUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinimumPolicedUnit"], value)
 
     @property
     def NodeProtectionDesired(self):
@@ -605,11 +653,12 @@ class SenderRange(Base):
         -------
         - bool: For Fast Reroute - if enabled, sets the Node Protection Desired Flag in the Session_Attribute object of the RRO message. It indicates to PLRs associated with the protected LSP path, that a backup path is desired that bypasses (avoids) at least the next node on the LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeProtectionDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeProtectionDesired"])
+
     @NodeProtectionDesired.setter
     def NodeProtectionDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeProtectionDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeProtectionDesired"], value)
 
     @property
     def PathTearTlv(self):
@@ -618,10 +667,11 @@ class SenderRange(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): A set of custom TLVs to be included in TEAR messages, constructed with the rsvpCustomTlv command.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathTearTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathTearTlv"])
+
     @PathTearTlv.setter
     def PathTearTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PathTearTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathTearTlv"], value)
 
     @property
     def PathTlv(self):
@@ -630,10 +680,11 @@ class SenderRange(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): A set of custom TLVs to be included in PATH messages, constructed with the rsvpCustomTlv command.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathTlv"])
+
     @PathTlv.setter
     def PathTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PathTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathTlv"], value)
 
     @property
     def PeakDataRate(self):
@@ -643,11 +694,12 @@ class SenderRange(Base):
         -------
         - number: The maximum traffic rate that can be maintained. The policing mechanism allows some burstiness, but restricts it so the overall packet transmission rate is less than the rate at which tokens.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeakDataRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeakDataRate"])
+
     @PeakDataRate.setter
     def PeakDataRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeakDataRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeakDataRate"], value)
 
     @property
     def ReEvaluationRequestInterval(self):
@@ -657,11 +709,12 @@ class SenderRange(Base):
         -------
         - number: Represents the time period (in milliseconds) at which the path re-evaluation request is sent by the head LSR. The default value is: 180000 ms (3 mins).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReEvaluationRequestInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReEvaluationRequestInterval"])
+
     @ReEvaluationRequestInterval.setter
     def ReEvaluationRequestInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReEvaluationRequestInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReEvaluationRequestInterval"], value)
 
     @property
     def RefreshInterval(self):
@@ -671,11 +724,12 @@ class SenderRange(Base):
         -------
         - number: The interval between summary refresh messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RefreshInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RefreshInterval"])
+
     @RefreshInterval.setter
     def RefreshInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RefreshInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RefreshInterval"], value)
 
     @property
     def SeStyleDesired(self):
@@ -685,11 +739,12 @@ class SenderRange(Base):
         -------
         - bool: This indicates that the tunnel ingress node may reroute this tunnel without tearing it down. A tunnel egress node should use the SE Style when responding with an RESV message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SeStyleDesired'])
+        return self._get_attribute(self._SDM_ATT_MAP["SeStyleDesired"])
+
     @SeStyleDesired.setter
     def SeStyleDesired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SeStyleDesired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SeStyleDesired"], value)
 
     @property
     def SessionName(self):
@@ -699,11 +754,12 @@ class SenderRange(Base):
         -------
         - str: If enableAutoSessionName is not set, this is the name assigned to this session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionName"])
+
     @SessionName.setter
     def SessionName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionName"], value)
 
     @property
     def SetupPriority(self):
@@ -713,11 +769,12 @@ class SenderRange(Base):
         -------
         - number: This is the session priority with respect to taking resources, such as preempting another session. The valid range is from 0 to 7. The highest priority is indicated by 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupPriority"])
+
     @SetupPriority.setter
     def SetupPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupPriority"], value)
 
     @property
     def TimeoutMultiplier(self):
@@ -727,11 +784,12 @@ class SenderRange(Base):
         -------
         - number: The number of Hellos before a neighbor is declared dead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"])
+
     @TimeoutMultiplier.setter
     def TimeoutMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"], value)
 
     @property
     def TokenBucketRate(self):
@@ -741,11 +799,12 @@ class SenderRange(Base):
         -------
         - number: The rate of transfer for data in a flow. In this application, it is used with a traffic policing mechanism. The data tokens enter the bucket, filling the bucket. The data from a number of tokens is combined to form and send a packet. The goal is to determine a rate which will not overflow the specified token bucket size, and cause new data (tokens) to be rejected/discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TokenBucketRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TokenBucketRate"])
+
     @TokenBucketRate.setter
     def TokenBucketRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TokenBucketRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TokenBucketRate"], value)
 
     @property
     def TokenBucketSize(self):
@@ -755,13 +814,62 @@ class SenderRange(Base):
         -------
         - number: The maximum capacity (in bytes) the token bucket can hold, and above which newly received tokens cannot be processed and are discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TokenBucketSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["TokenBucketSize"])
+
     @TokenBucketSize.setter
     def TokenBucketSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TokenBucketSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TokenBucketSize"], value)
 
-    def update(self, AutoGenerateSessionName=None, BackupLspIdPoolStart=None, Bandwidth=None, BandwidthProtectionDesired=None, EnableBfdMpls=None, EnableFastReroute=None, EnableLspPing=None, EnablePathReoptimization=None, EnablePeriodicReEvaluationRequest=None, EnableResourceAffinities=None, Enabled=None, ExcludeAny=None, FastRerouteBandwidth=None, FastRerouteDetour=None, FastRerouteExcludeAny=None, FastRerouteFacilityBackupDesired=None, FastRerouteHoldingPriority=None, FastRerouteHopLimit=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteOne2OneBackupDesired=None, FastRerouteSendDetour=None, FastRerouteSetupPriority=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IpCount=None, IpStart=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspIdCount=None, LspIdStart=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, PathTearTlv=None, PathTlv=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, SeStyleDesired=None, SessionName=None, SetupPriority=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None):
+    def update(
+        self,
+        AutoGenerateSessionName=None,
+        BackupLspIdPoolStart=None,
+        Bandwidth=None,
+        BandwidthProtectionDesired=None,
+        EnableBfdMpls=None,
+        EnableFastReroute=None,
+        EnableLspPing=None,
+        EnablePathReoptimization=None,
+        EnablePeriodicReEvaluationRequest=None,
+        EnableResourceAffinities=None,
+        Enabled=None,
+        ExcludeAny=None,
+        FastRerouteBandwidth=None,
+        FastRerouteDetour=None,
+        FastRerouteExcludeAny=None,
+        FastRerouteFacilityBackupDesired=None,
+        FastRerouteHoldingPriority=None,
+        FastRerouteHopLimit=None,
+        FastRerouteIncludeAll=None,
+        FastRerouteIncludeAny=None,
+        FastRerouteOne2OneBackupDesired=None,
+        FastRerouteSendDetour=None,
+        FastRerouteSetupPriority=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IpCount=None,
+        IpStart=None,
+        LabelRecordingDesired=None,
+        LocalProtectionDesired=None,
+        LspIdCount=None,
+        LspIdStart=None,
+        MaximumPacketSize=None,
+        MinimumPolicedUnit=None,
+        NodeProtectionDesired=None,
+        PathTearTlv=None,
+        PathTlv=None,
+        PeakDataRate=None,
+        ReEvaluationRequestInterval=None,
+        RefreshInterval=None,
+        SeStyleDesired=None,
+        SessionName=None,
+        SetupPriority=None,
+        TimeoutMultiplier=None,
+        TokenBucketRate=None,
+        TokenBucketSize=None,
+    ):
         """Updates senderRange resource on the server.
 
         Args
@@ -819,7 +927,55 @@ class SenderRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoGenerateSessionName=None, BackupLspIdPoolStart=None, Bandwidth=None, BandwidthProtectionDesired=None, EnableBfdMpls=None, EnableFastReroute=None, EnableLspPing=None, EnablePathReoptimization=None, EnablePeriodicReEvaluationRequest=None, EnableResourceAffinities=None, Enabled=None, ExcludeAny=None, FastRerouteBandwidth=None, FastRerouteDetour=None, FastRerouteExcludeAny=None, FastRerouteFacilityBackupDesired=None, FastRerouteHoldingPriority=None, FastRerouteHopLimit=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteOne2OneBackupDesired=None, FastRerouteSendDetour=None, FastRerouteSetupPriority=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IpCount=None, IpStart=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspIdCount=None, LspIdStart=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, PathTearTlv=None, PathTlv=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, SeStyleDesired=None, SessionName=None, SetupPriority=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None):
+    def add(
+        self,
+        AutoGenerateSessionName=None,
+        BackupLspIdPoolStart=None,
+        Bandwidth=None,
+        BandwidthProtectionDesired=None,
+        EnableBfdMpls=None,
+        EnableFastReroute=None,
+        EnableLspPing=None,
+        EnablePathReoptimization=None,
+        EnablePeriodicReEvaluationRequest=None,
+        EnableResourceAffinities=None,
+        Enabled=None,
+        ExcludeAny=None,
+        FastRerouteBandwidth=None,
+        FastRerouteDetour=None,
+        FastRerouteExcludeAny=None,
+        FastRerouteFacilityBackupDesired=None,
+        FastRerouteHoldingPriority=None,
+        FastRerouteHopLimit=None,
+        FastRerouteIncludeAll=None,
+        FastRerouteIncludeAny=None,
+        FastRerouteOne2OneBackupDesired=None,
+        FastRerouteSendDetour=None,
+        FastRerouteSetupPriority=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IpCount=None,
+        IpStart=None,
+        LabelRecordingDesired=None,
+        LocalProtectionDesired=None,
+        LspIdCount=None,
+        LspIdStart=None,
+        MaximumPacketSize=None,
+        MinimumPolicedUnit=None,
+        NodeProtectionDesired=None,
+        PathTearTlv=None,
+        PathTlv=None,
+        PeakDataRate=None,
+        ReEvaluationRequestInterval=None,
+        RefreshInterval=None,
+        SeStyleDesired=None,
+        SessionName=None,
+        SetupPriority=None,
+        TimeoutMultiplier=None,
+        TokenBucketRate=None,
+        TokenBucketSize=None,
+    ):
         """Adds a new senderRange resource on the server and adds it to the container.
 
         Args
@@ -891,7 +1047,55 @@ class SenderRange(Base):
         """
         self._delete()
 
-    def find(self, AutoGenerateSessionName=None, BackupLspIdPoolStart=None, Bandwidth=None, BandwidthProtectionDesired=None, EnableBfdMpls=None, EnableFastReroute=None, EnableLspPing=None, EnablePathReoptimization=None, EnablePeriodicReEvaluationRequest=None, EnableResourceAffinities=None, Enabled=None, ExcludeAny=None, FastRerouteBandwidth=None, FastRerouteDetour=None, FastRerouteExcludeAny=None, FastRerouteFacilityBackupDesired=None, FastRerouteHoldingPriority=None, FastRerouteHopLimit=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteOne2OneBackupDesired=None, FastRerouteSendDetour=None, FastRerouteSetupPriority=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IpCount=None, IpStart=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspIdCount=None, LspIdStart=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, PathTearTlv=None, PathTlv=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, SeStyleDesired=None, SessionName=None, SetupPriority=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None):
+    def find(
+        self,
+        AutoGenerateSessionName=None,
+        BackupLspIdPoolStart=None,
+        Bandwidth=None,
+        BandwidthProtectionDesired=None,
+        EnableBfdMpls=None,
+        EnableFastReroute=None,
+        EnableLspPing=None,
+        EnablePathReoptimization=None,
+        EnablePeriodicReEvaluationRequest=None,
+        EnableResourceAffinities=None,
+        Enabled=None,
+        ExcludeAny=None,
+        FastRerouteBandwidth=None,
+        FastRerouteDetour=None,
+        FastRerouteExcludeAny=None,
+        FastRerouteFacilityBackupDesired=None,
+        FastRerouteHoldingPriority=None,
+        FastRerouteHopLimit=None,
+        FastRerouteIncludeAll=None,
+        FastRerouteIncludeAny=None,
+        FastRerouteOne2OneBackupDesired=None,
+        FastRerouteSendDetour=None,
+        FastRerouteSetupPriority=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IpCount=None,
+        IpStart=None,
+        LabelRecordingDesired=None,
+        LocalProtectionDesired=None,
+        LspIdCount=None,
+        LspIdStart=None,
+        MaximumPacketSize=None,
+        MinimumPolicedUnit=None,
+        NodeProtectionDesired=None,
+        PathTearTlv=None,
+        PathTlv=None,
+        PeakDataRate=None,
+        ReEvaluationRequestInterval=None,
+        RefreshInterval=None,
+        SeStyleDesired=None,
+        SessionName=None,
+        SetupPriority=None,
+        TimeoutMultiplier=None,
+        TokenBucketRate=None,
+        TokenBucketSize=None,
+    ):
         """Finds and retrieves senderRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve senderRange resources from the server.
@@ -991,10 +1195,12 @@ class SenderRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('doMakeBeforeBreak', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("doMakeBeforeBreak", payload=payload, response_object=None)
 
     def SendReEvaluationRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1012,7 +1218,11 @@ class SenderRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendReEvaluationRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendReEvaluationRequest", payload=payload, response_object=None
+        )

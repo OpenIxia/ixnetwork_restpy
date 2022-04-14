@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,76 +33,75 @@ class IsisAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisAggregatedStatistics'
+    _SDM_NAME = "isisAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'Ipv4GroupRecordsLearned': 'ipv4GroupRecordsLearned',
-        'Ipv6GroupRecordsLearned': 'ipv6GroupRecordsLearned',
-        'L1CSNPRx': 'l1CSNPRx',
-        'L1CSNPTx': 'l1CSNPTx',
-        'L1DBSize': 'l1DBSize',
-        'L1FullStateCount': 'l1FullStateCount',
-        'L1HellosRx': 'l1HellosRx',
-        'L1HellosTx': 'l1HellosTx',
-        'L1InitStateCount': 'l1InitStateCount',
-        'L1LSPRx': 'l1LSPRx',
-        'L1LSPTx': 'l1LSPTx',
-        'L1Neighbors': 'l1Neighbors',
-        'L1PSNPRx': 'l1PSNPRx',
-        'L1PSNPTx': 'l1PSNPTx',
-        'L1PTPHellosRx': 'l1PTPHellosRx',
-        'L1PTPHellosTx': 'l1PTPHellosTx',
-        'L1SessConfigured': 'l1SessConfigured',
-        'L1SessUp': 'l1SessUp',
-        'L1SessionFlapCount': 'l1SessionFlapCount',
-        'L2CSNPRx': 'l2CSNPRx',
-        'L2CSNPTx': 'l2CSNPTx',
-        'L2DBSize': 'l2DBSize',
-        'L2FullStateCount': 'l2FullStateCount',
-        'L2HellosRx': 'l2HellosRx',
-        'L2HellosTx': 'l2HellosTx',
-        'L2InitStateCount': 'l2InitStateCount',
-        'L2LSPRx': 'l2LSPRx',
-        'L2LSPTx': 'l2LSPTx',
-        'L2Neighbors': 'l2Neighbors',
-        'L2PSNPRx': 'l2PSNPRx',
-        'L2PSNPTx': 'l2PSNPTx',
-        'L2PTPHellosRx': 'l2PTPHellosRx',
-        'L2PTPHellosTx': 'l2PTPHellosTx',
-        'L2SessConfigured': 'l2SessConfigured',
-        'L2SessUp': 'l2SessUp',
-        'L2SessionFlapCount': 'l2SessionFlapCount',
-        'MGROUPCSNPsRx': 'mGROUPCSNPsRx',
-        'MGROUPCSNPsTx': 'mGROUPCSNPsTx',
-        'MGROUPLSPRx': 'mGROUPLSPRx',
-        'MGROUPLSPTx': 'mGROUPLSPTx',
-        'MGROUPPSNPsRx': 'mGROUPPSNPsRx',
-        'MGROUPPSNPsTx': 'mGROUPPSNPsTx',
-        'MacGroupRecordsLearned': 'macGroupRecordsLearned',
-        'MulticastIPv4GroupRecordRx': 'multicastIPv4GroupRecordRx',
-        'MulticastIPv4GroupRecordTx': 'multicastIPv4GroupRecordTx',
-        'MulticastIPv6GroupRecordRx': 'multicastIPv6GroupRecordRx',
-        'MulticastIPv6GroupRecordTx': 'multicastIPv6GroupRecordTx',
-        'MulticastMACGroupRecordRx': 'multicastMACGroupRecordRx',
-        'MulticastMACGroupRecordTx': 'multicastMACGroupRecordTx',
-        'PortName': 'portName',
-        'RateControlBlockedSendingLSPMGROUP': 'rateControlBlockedSendingLSPMGROUP',
-        'RbchannelEchoReplyRx': 'rbchannelEchoReplyRx',
-        'RbchannelEchoReplyTx': 'rbchannelEchoReplyTx',
-        'RbchannelEchoRequestRx': 'rbchannelEchoRequestRx',
-        'RbchannelEchoRequestTx': 'rbchannelEchoRequestTx',
-        'RbchannelErrNotifRx': 'rbchannelErrNotifRx',
-        'RbchannelErrNotifTx': 'rbchannelErrNotifTx',
-        'RbchannelErrorRx': 'rbchannelErrorRx',
-        'RbchannelErrorTx': 'rbchannelErrorTx',
-        'RbchannelFramesRx': 'rbchannelFramesRx',
-        'RbchannelFramesTx': 'rbchannelFramesTx',
-        'RbridgesLearned': 'rbridgesLearned',
-        'UnicastMACGroupRecordRx': 'unicastMACGroupRecordRx',
-        'UnicastMACGroupRecordTx': 'unicastMACGroupRecordTx',
-        'UnicastMACRangesLearned': 'unicastMACRangesLearned',
+        "Ipv4GroupRecordsLearned": "ipv4GroupRecordsLearned",
+        "Ipv6GroupRecordsLearned": "ipv6GroupRecordsLearned",
+        "L1CSNPRx": "l1CSNPRx",
+        "L1CSNPTx": "l1CSNPTx",
+        "L1DBSize": "l1DBSize",
+        "L1FullStateCount": "l1FullStateCount",
+        "L1HellosRx": "l1HellosRx",
+        "L1HellosTx": "l1HellosTx",
+        "L1InitStateCount": "l1InitStateCount",
+        "L1LSPRx": "l1LSPRx",
+        "L1LSPTx": "l1LSPTx",
+        "L1Neighbors": "l1Neighbors",
+        "L1PSNPRx": "l1PSNPRx",
+        "L1PSNPTx": "l1PSNPTx",
+        "L1PTPHellosRx": "l1PTPHellosRx",
+        "L1PTPHellosTx": "l1PTPHellosTx",
+        "L1SessConfigured": "l1SessConfigured",
+        "L1SessUp": "l1SessUp",
+        "L1SessionFlapCount": "l1SessionFlapCount",
+        "L2CSNPRx": "l2CSNPRx",
+        "L2CSNPTx": "l2CSNPTx",
+        "L2DBSize": "l2DBSize",
+        "L2FullStateCount": "l2FullStateCount",
+        "L2HellosRx": "l2HellosRx",
+        "L2HellosTx": "l2HellosTx",
+        "L2InitStateCount": "l2InitStateCount",
+        "L2LSPRx": "l2LSPRx",
+        "L2LSPTx": "l2LSPTx",
+        "L2Neighbors": "l2Neighbors",
+        "L2PSNPRx": "l2PSNPRx",
+        "L2PSNPTx": "l2PSNPTx",
+        "L2PTPHellosRx": "l2PTPHellosRx",
+        "L2PTPHellosTx": "l2PTPHellosTx",
+        "L2SessConfigured": "l2SessConfigured",
+        "L2SessUp": "l2SessUp",
+        "L2SessionFlapCount": "l2SessionFlapCount",
+        "MGROUPCSNPsRx": "mGROUPCSNPsRx",
+        "MGROUPCSNPsTx": "mGROUPCSNPsTx",
+        "MGROUPLSPRx": "mGROUPLSPRx",
+        "MGROUPLSPTx": "mGROUPLSPTx",
+        "MGROUPPSNPsRx": "mGROUPPSNPsRx",
+        "MGROUPPSNPsTx": "mGROUPPSNPsTx",
+        "MacGroupRecordsLearned": "macGroupRecordsLearned",
+        "MulticastIPv4GroupRecordRx": "multicastIPv4GroupRecordRx",
+        "MulticastIPv4GroupRecordTx": "multicastIPv4GroupRecordTx",
+        "MulticastIPv6GroupRecordRx": "multicastIPv6GroupRecordRx",
+        "MulticastIPv6GroupRecordTx": "multicastIPv6GroupRecordTx",
+        "MulticastMACGroupRecordRx": "multicastMACGroupRecordRx",
+        "MulticastMACGroupRecordTx": "multicastMACGroupRecordTx",
+        "PortName": "portName",
+        "RateControlBlockedSendingLSPMGROUP": "rateControlBlockedSendingLSPMGROUP",
+        "RbchannelEchoReplyRx": "rbchannelEchoReplyRx",
+        "RbchannelEchoReplyTx": "rbchannelEchoReplyTx",
+        "RbchannelEchoRequestRx": "rbchannelEchoRequestRx",
+        "RbchannelEchoRequestTx": "rbchannelEchoRequestTx",
+        "RbchannelErrNotifRx": "rbchannelErrNotifRx",
+        "RbchannelErrNotifTx": "rbchannelErrNotifTx",
+        "RbchannelErrorRx": "rbchannelErrorRx",
+        "RbchannelErrorTx": "rbchannelErrorTx",
+        "RbchannelFramesRx": "rbchannelFramesRx",
+        "RbchannelFramesTx": "rbchannelFramesTx",
+        "RbridgesLearned": "rbridgesLearned",
+        "UnicastMACGroupRecordRx": "unicastMACGroupRecordRx",
+        "UnicastMACGroupRecordTx": "unicastMACGroupRecordTx",
+        "UnicastMACRangesLearned": "unicastMACRangesLearned",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisAggregatedStatistics, self).__init__(parent, list_op)
@@ -114,11 +114,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: IPv4 Group Records Learned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4GroupRecordsLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4GroupRecordsLearned"])
+
     @Ipv4GroupRecordsLearned.setter
     def Ipv4GroupRecordsLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4GroupRecordsLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4GroupRecordsLearned"], value)
 
     @property
     def Ipv6GroupRecordsLearned(self):
@@ -128,11 +129,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: IPv6 Group Records Learned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6GroupRecordsLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6GroupRecordsLearned"])
+
     @Ipv6GroupRecordsLearned.setter
     def Ipv6GroupRecordsLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6GroupRecordsLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6GroupRecordsLearned"], value)
 
     @property
     def L1CSNPRx(self):
@@ -142,11 +144,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 CSNP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1CSNPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1CSNPRx"])
+
     @L1CSNPRx.setter
     def L1CSNPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1CSNPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1CSNPRx"], value)
 
     @property
     def L1CSNPTx(self):
@@ -156,11 +159,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 CSNP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1CSNPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1CSNPTx"])
+
     @L1CSNPTx.setter
     def L1CSNPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1CSNPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1CSNPTx"], value)
 
     @property
     def L1DBSize(self):
@@ -170,11 +174,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 DB Size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1DBSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1DBSize"])
+
     @L1DBSize.setter
     def L1DBSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1DBSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1DBSize"], value)
 
     @property
     def L1FullStateCount(self):
@@ -184,11 +189,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Full State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1FullStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1FullStateCount"])
+
     @L1FullStateCount.setter
     def L1FullStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1FullStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1FullStateCount"], value)
 
     @property
     def L1HellosRx(self):
@@ -198,11 +204,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1HellosRx"])
+
     @L1HellosRx.setter
     def L1HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1HellosRx"], value)
 
     @property
     def L1HellosTx(self):
@@ -212,11 +219,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1HellosTx"])
+
     @L1HellosTx.setter
     def L1HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1HellosTx"], value)
 
     @property
     def L1InitStateCount(self):
@@ -226,11 +234,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Init State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1InitStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1InitStateCount"])
+
     @L1InitStateCount.setter
     def L1InitStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1InitStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1InitStateCount"], value)
 
     @property
     def L1LSPRx(self):
@@ -240,11 +249,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 LSP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1LSPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1LSPRx"])
+
     @L1LSPRx.setter
     def L1LSPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1LSPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1LSPRx"], value)
 
     @property
     def L1LSPTx(self):
@@ -254,11 +264,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 LSP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1LSPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1LSPTx"])
+
     @L1LSPTx.setter
     def L1LSPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1LSPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1LSPTx"], value)
 
     @property
     def L1Neighbors(self):
@@ -268,11 +279,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Neighbors
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1Neighbors'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1Neighbors"])
+
     @L1Neighbors.setter
     def L1Neighbors(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1Neighbors'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1Neighbors"], value)
 
     @property
     def L1PSNPRx(self):
@@ -282,11 +294,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 PSNP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1PSNPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1PSNPRx"])
+
     @L1PSNPRx.setter
     def L1PSNPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1PSNPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1PSNPRx"], value)
 
     @property
     def L1PSNPTx(self):
@@ -296,11 +309,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 PSNP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1PSNPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1PSNPTx"])
+
     @L1PSNPTx.setter
     def L1PSNPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1PSNPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1PSNPTx"], value)
 
     @property
     def L1PTPHellosRx(self):
@@ -310,11 +324,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 PTP Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1PTPHellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1PTPHellosRx"])
+
     @L1PTPHellosRx.setter
     def L1PTPHellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1PTPHellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1PTPHellosRx"], value)
 
     @property
     def L1PTPHellosTx(self):
@@ -324,11 +339,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 PTP Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1PTPHellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1PTPHellosTx"])
+
     @L1PTPHellosTx.setter
     def L1PTPHellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1PTPHellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1PTPHellosTx"], value)
 
     @property
     def L1SessConfigured(self):
@@ -338,11 +354,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1SessConfigured"])
+
     @L1SessConfigured.setter
     def L1SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1SessConfigured"], value)
 
     @property
     def L1SessUp(self):
@@ -352,11 +369,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1SessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1SessUp"])
+
     @L1SessUp.setter
     def L1SessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1SessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1SessUp"], value)
 
     @property
     def L1SessionFlapCount(self):
@@ -366,11 +384,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L1 Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L1SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L1SessionFlapCount"])
+
     @L1SessionFlapCount.setter
     def L1SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L1SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L1SessionFlapCount"], value)
 
     @property
     def L2CSNPRx(self):
@@ -380,11 +399,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 CSNP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2CSNPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2CSNPRx"])
+
     @L2CSNPRx.setter
     def L2CSNPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2CSNPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2CSNPRx"], value)
 
     @property
     def L2CSNPTx(self):
@@ -394,11 +414,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 CSNP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2CSNPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2CSNPTx"])
+
     @L2CSNPTx.setter
     def L2CSNPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2CSNPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2CSNPTx"], value)
 
     @property
     def L2DBSize(self):
@@ -408,11 +429,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 DB Size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2DBSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2DBSize"])
+
     @L2DBSize.setter
     def L2DBSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2DBSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2DBSize"], value)
 
     @property
     def L2FullStateCount(self):
@@ -422,11 +444,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Full State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2FullStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2FullStateCount"])
+
     @L2FullStateCount.setter
     def L2FullStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2FullStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2FullStateCount"], value)
 
     @property
     def L2HellosRx(self):
@@ -436,11 +459,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2HellosRx"])
+
     @L2HellosRx.setter
     def L2HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2HellosRx"], value)
 
     @property
     def L2HellosTx(self):
@@ -450,11 +474,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2HellosTx"])
+
     @L2HellosTx.setter
     def L2HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2HellosTx"], value)
 
     @property
     def L2InitStateCount(self):
@@ -464,11 +489,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Init State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2InitStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2InitStateCount"])
+
     @L2InitStateCount.setter
     def L2InitStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2InitStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2InitStateCount"], value)
 
     @property
     def L2LSPRx(self):
@@ -478,11 +504,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 LSP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2LSPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2LSPRx"])
+
     @L2LSPRx.setter
     def L2LSPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2LSPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2LSPRx"], value)
 
     @property
     def L2LSPTx(self):
@@ -492,11 +519,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 LSP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2LSPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2LSPTx"])
+
     @L2LSPTx.setter
     def L2LSPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2LSPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2LSPTx"], value)
 
     @property
     def L2Neighbors(self):
@@ -506,11 +534,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Neighbors
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2Neighbors'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2Neighbors"])
+
     @L2Neighbors.setter
     def L2Neighbors(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2Neighbors'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2Neighbors"], value)
 
     @property
     def L2PSNPRx(self):
@@ -520,11 +549,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 PSNP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2PSNPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2PSNPRx"])
+
     @L2PSNPRx.setter
     def L2PSNPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2PSNPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2PSNPRx"], value)
 
     @property
     def L2PSNPTx(self):
@@ -534,11 +564,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 PSNP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2PSNPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2PSNPTx"])
+
     @L2PSNPTx.setter
     def L2PSNPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2PSNPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2PSNPTx"], value)
 
     @property
     def L2PTPHellosRx(self):
@@ -548,11 +579,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 PTP Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2PTPHellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2PTPHellosRx"])
+
     @L2PTPHellosRx.setter
     def L2PTPHellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2PTPHellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2PTPHellosRx"], value)
 
     @property
     def L2PTPHellosTx(self):
@@ -562,11 +594,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 PTP Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2PTPHellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2PTPHellosTx"])
+
     @L2PTPHellosTx.setter
     def L2PTPHellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2PTPHellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2PTPHellosTx"], value)
 
     @property
     def L2SessConfigured(self):
@@ -576,11 +609,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2SessConfigured"])
+
     @L2SessConfigured.setter
     def L2SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2SessConfigured"], value)
 
     @property
     def L2SessUp(self):
@@ -590,11 +624,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2SessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2SessUp"])
+
     @L2SessUp.setter
     def L2SessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2SessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2SessUp"], value)
 
     @property
     def L2SessionFlapCount(self):
@@ -604,11 +639,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: L2 Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2SessionFlapCount"])
+
     @L2SessionFlapCount.setter
     def L2SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2SessionFlapCount"], value)
 
     @property
     def MGROUPCSNPsRx(self):
@@ -618,11 +654,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP CSNPs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPCSNPsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPCSNPsRx"])
+
     @MGROUPCSNPsRx.setter
     def MGROUPCSNPsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPCSNPsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPCSNPsRx"], value)
 
     @property
     def MGROUPCSNPsTx(self):
@@ -632,11 +669,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP CSNPs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPCSNPsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPCSNPsTx"])
+
     @MGROUPCSNPsTx.setter
     def MGROUPCSNPsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPCSNPsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPCSNPsTx"], value)
 
     @property
     def MGROUPLSPRx(self):
@@ -646,11 +684,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP LSP Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPLSPRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPLSPRx"])
+
     @MGROUPLSPRx.setter
     def MGROUPLSPRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPLSPRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPLSPRx"], value)
 
     @property
     def MGROUPLSPTx(self):
@@ -660,11 +699,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP LSP Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPLSPTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPLSPTx"])
+
     @MGROUPLSPTx.setter
     def MGROUPLSPTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPLSPTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPLSPTx"], value)
 
     @property
     def MGROUPPSNPsRx(self):
@@ -674,11 +714,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP PSNPs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPPSNPsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPPSNPsRx"])
+
     @MGROUPPSNPsRx.setter
     def MGROUPPSNPsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPPSNPsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPPSNPsRx"], value)
 
     @property
     def MGROUPPSNPsTx(self):
@@ -688,11 +729,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: M-GROUP PSNPs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MGROUPPSNPsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MGROUPPSNPsTx"])
+
     @MGROUPPSNPsTx.setter
     def MGROUPPSNPsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MGROUPPSNPsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MGROUPPSNPsTx"], value)
 
     @property
     def MacGroupRecordsLearned(self):
@@ -702,11 +744,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: MAC Group Records Learned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacGroupRecordsLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacGroupRecordsLearned"])
+
     @MacGroupRecordsLearned.setter
     def MacGroupRecordsLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacGroupRecordsLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacGroupRecordsLearned"], value)
 
     @property
     def MulticastIPv4GroupRecordRx(self):
@@ -716,11 +759,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast IPv4 Group Record Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIPv4GroupRecordRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIPv4GroupRecordRx"])
+
     @MulticastIPv4GroupRecordRx.setter
     def MulticastIPv4GroupRecordRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIPv4GroupRecordRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIPv4GroupRecordRx"], value)
 
     @property
     def MulticastIPv4GroupRecordTx(self):
@@ -730,11 +774,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast IPv4 Group Record Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIPv4GroupRecordTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIPv4GroupRecordTx"])
+
     @MulticastIPv4GroupRecordTx.setter
     def MulticastIPv4GroupRecordTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIPv4GroupRecordTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIPv4GroupRecordTx"], value)
 
     @property
     def MulticastIPv6GroupRecordRx(self):
@@ -744,11 +789,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast IPv6 Group Record Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIPv6GroupRecordRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIPv6GroupRecordRx"])
+
     @MulticastIPv6GroupRecordRx.setter
     def MulticastIPv6GroupRecordRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIPv6GroupRecordRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIPv6GroupRecordRx"], value)
 
     @property
     def MulticastIPv6GroupRecordTx(self):
@@ -758,11 +804,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast IPv6 Group Record Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIPv6GroupRecordTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIPv6GroupRecordTx"])
+
     @MulticastIPv6GroupRecordTx.setter
     def MulticastIPv6GroupRecordTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIPv6GroupRecordTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIPv6GroupRecordTx"], value)
 
     @property
     def MulticastMACGroupRecordRx(self):
@@ -772,11 +819,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast MAC Group Record Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMACGroupRecordRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMACGroupRecordRx"])
+
     @MulticastMACGroupRecordRx.setter
     def MulticastMACGroupRecordRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMACGroupRecordRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMACGroupRecordRx"], value)
 
     @property
     def MulticastMACGroupRecordTx(self):
@@ -786,11 +834,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Multicast MAC Group Record Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMACGroupRecordTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMACGroupRecordTx"])
+
     @MulticastMACGroupRecordTx.setter
     def MulticastMACGroupRecordTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMACGroupRecordTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMACGroupRecordTx"], value)
 
     @property
     def PortName(self):
@@ -800,11 +849,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RateControlBlockedSendingLSPMGROUP(self):
@@ -814,11 +864,16 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Rate Control Blocked Sending LSP/MGROUP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RateControlBlockedSendingLSPMGROUP'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["RateControlBlockedSendingLSPMGROUP"]
+        )
+
     @RateControlBlockedSendingLSPMGROUP.setter
     def RateControlBlockedSendingLSPMGROUP(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RateControlBlockedSendingLSPMGROUP'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["RateControlBlockedSendingLSPMGROUP"], value
+        )
 
     @property
     def RbchannelEchoReplyRx(self):
@@ -828,11 +883,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Echo Reply Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelEchoReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelEchoReplyRx"])
+
     @RbchannelEchoReplyRx.setter
     def RbchannelEchoReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelEchoReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelEchoReplyRx"], value)
 
     @property
     def RbchannelEchoReplyTx(self):
@@ -842,11 +898,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Echo Reply Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelEchoReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelEchoReplyTx"])
+
     @RbchannelEchoReplyTx.setter
     def RbchannelEchoReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelEchoReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelEchoReplyTx"], value)
 
     @property
     def RbchannelEchoRequestRx(self):
@@ -856,11 +913,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Echo Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelEchoRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelEchoRequestRx"])
+
     @RbchannelEchoRequestRx.setter
     def RbchannelEchoRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelEchoRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelEchoRequestRx"], value)
 
     @property
     def RbchannelEchoRequestTx(self):
@@ -870,11 +928,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Echo Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelEchoRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelEchoRequestTx"])
+
     @RbchannelEchoRequestTx.setter
     def RbchannelEchoRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelEchoRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelEchoRequestTx"], value)
 
     @property
     def RbchannelErrNotifRx(self):
@@ -884,11 +943,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel ErrNotif Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelErrNotifRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelErrNotifRx"])
+
     @RbchannelErrNotifRx.setter
     def RbchannelErrNotifRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelErrNotifRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelErrNotifRx"], value)
 
     @property
     def RbchannelErrNotifTx(self):
@@ -898,11 +958,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel ErrNotif Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelErrNotifTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelErrNotifTx"])
+
     @RbchannelErrNotifTx.setter
     def RbchannelErrNotifTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelErrNotifTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelErrNotifTx"], value)
 
     @property
     def RbchannelErrorRx(self):
@@ -912,11 +973,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Error Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelErrorRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelErrorRx"])
+
     @RbchannelErrorRx.setter
     def RbchannelErrorRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelErrorRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelErrorRx"], value)
 
     @property
     def RbchannelErrorTx(self):
@@ -926,11 +988,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Error Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelErrorTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelErrorTx"])
+
     @RbchannelErrorTx.setter
     def RbchannelErrorTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelErrorTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelErrorTx"], value)
 
     @property
     def RbchannelFramesRx(self):
@@ -940,11 +1003,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelFramesRx"])
+
     @RbchannelFramesRx.setter
     def RbchannelFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelFramesRx"], value)
 
     @property
     def RbchannelFramesTx(self):
@@ -954,11 +1018,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBChannel Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbchannelFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbchannelFramesTx"])
+
     @RbchannelFramesTx.setter
     def RbchannelFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbchannelFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbchannelFramesTx"], value)
 
     @property
     def RbridgesLearned(self):
@@ -968,11 +1033,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: RBridges Learned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RbridgesLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["RbridgesLearned"])
+
     @RbridgesLearned.setter
     def RbridgesLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RbridgesLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RbridgesLearned"], value)
 
     @property
     def UnicastMACGroupRecordRx(self):
@@ -982,11 +1048,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Unicast MAC Group Record Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastMACGroupRecordRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastMACGroupRecordRx"])
+
     @UnicastMACGroupRecordRx.setter
     def UnicastMACGroupRecordRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastMACGroupRecordRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastMACGroupRecordRx"], value)
 
     @property
     def UnicastMACGroupRecordTx(self):
@@ -996,11 +1063,12 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Unicast MAC Group Record Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastMACGroupRecordTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastMACGroupRecordTx"])
+
     @UnicastMACGroupRecordTx.setter
     def UnicastMACGroupRecordTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastMACGroupRecordTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastMACGroupRecordTx"], value)
 
     @property
     def UnicastMACRangesLearned(self):
@@ -1010,13 +1078,81 @@ class IsisAggregatedStatistics(Base):
         -------
         - bool: Unicast MAC Ranges Learned
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastMACRangesLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastMACRangesLearned"])
+
     @UnicastMACRangesLearned.setter
     def UnicastMACRangesLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastMACRangesLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastMACRangesLearned"], value)
 
-    def update(self, Ipv4GroupRecordsLearned=None, Ipv6GroupRecordsLearned=None, L1CSNPRx=None, L1CSNPTx=None, L1DBSize=None, L1FullStateCount=None, L1HellosRx=None, L1HellosTx=None, L1InitStateCount=None, L1LSPRx=None, L1LSPTx=None, L1Neighbors=None, L1PSNPRx=None, L1PSNPTx=None, L1PTPHellosRx=None, L1PTPHellosTx=None, L1SessConfigured=None, L1SessUp=None, L1SessionFlapCount=None, L2CSNPRx=None, L2CSNPTx=None, L2DBSize=None, L2FullStateCount=None, L2HellosRx=None, L2HellosTx=None, L2InitStateCount=None, L2LSPRx=None, L2LSPTx=None, L2Neighbors=None, L2PSNPRx=None, L2PSNPTx=None, L2PTPHellosRx=None, L2PTPHellosTx=None, L2SessConfigured=None, L2SessUp=None, L2SessionFlapCount=None, MGROUPCSNPsRx=None, MGROUPCSNPsTx=None, MGROUPLSPRx=None, MGROUPLSPTx=None, MGROUPPSNPsRx=None, MGROUPPSNPsTx=None, MacGroupRecordsLearned=None, MulticastIPv4GroupRecordRx=None, MulticastIPv4GroupRecordTx=None, MulticastIPv6GroupRecordRx=None, MulticastIPv6GroupRecordTx=None, MulticastMACGroupRecordRx=None, MulticastMACGroupRecordTx=None, PortName=None, RateControlBlockedSendingLSPMGROUP=None, RbchannelEchoReplyRx=None, RbchannelEchoReplyTx=None, RbchannelEchoRequestRx=None, RbchannelEchoRequestTx=None, RbchannelErrNotifRx=None, RbchannelErrNotifTx=None, RbchannelErrorRx=None, RbchannelErrorTx=None, RbchannelFramesRx=None, RbchannelFramesTx=None, RbridgesLearned=None, UnicastMACGroupRecordRx=None, UnicastMACGroupRecordTx=None, UnicastMACRangesLearned=None):
+    def update(
+        self,
+        Ipv4GroupRecordsLearned=None,
+        Ipv6GroupRecordsLearned=None,
+        L1CSNPRx=None,
+        L1CSNPTx=None,
+        L1DBSize=None,
+        L1FullStateCount=None,
+        L1HellosRx=None,
+        L1HellosTx=None,
+        L1InitStateCount=None,
+        L1LSPRx=None,
+        L1LSPTx=None,
+        L1Neighbors=None,
+        L1PSNPRx=None,
+        L1PSNPTx=None,
+        L1PTPHellosRx=None,
+        L1PTPHellosTx=None,
+        L1SessConfigured=None,
+        L1SessUp=None,
+        L1SessionFlapCount=None,
+        L2CSNPRx=None,
+        L2CSNPTx=None,
+        L2DBSize=None,
+        L2FullStateCount=None,
+        L2HellosRx=None,
+        L2HellosTx=None,
+        L2InitStateCount=None,
+        L2LSPRx=None,
+        L2LSPTx=None,
+        L2Neighbors=None,
+        L2PSNPRx=None,
+        L2PSNPTx=None,
+        L2PTPHellosRx=None,
+        L2PTPHellosTx=None,
+        L2SessConfigured=None,
+        L2SessUp=None,
+        L2SessionFlapCount=None,
+        MGROUPCSNPsRx=None,
+        MGROUPCSNPsTx=None,
+        MGROUPLSPRx=None,
+        MGROUPLSPTx=None,
+        MGROUPPSNPsRx=None,
+        MGROUPPSNPsTx=None,
+        MacGroupRecordsLearned=None,
+        MulticastIPv4GroupRecordRx=None,
+        MulticastIPv4GroupRecordTx=None,
+        MulticastIPv6GroupRecordRx=None,
+        MulticastIPv6GroupRecordTx=None,
+        MulticastMACGroupRecordRx=None,
+        MulticastMACGroupRecordTx=None,
+        PortName=None,
+        RateControlBlockedSendingLSPMGROUP=None,
+        RbchannelEchoReplyRx=None,
+        RbchannelEchoReplyTx=None,
+        RbchannelEchoRequestRx=None,
+        RbchannelEchoRequestTx=None,
+        RbchannelErrNotifRx=None,
+        RbchannelErrNotifTx=None,
+        RbchannelErrorRx=None,
+        RbchannelErrorTx=None,
+        RbchannelFramesRx=None,
+        RbchannelFramesTx=None,
+        RbridgesLearned=None,
+        UnicastMACGroupRecordRx=None,
+        UnicastMACGroupRecordTx=None,
+        UnicastMACRangesLearned=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IsisAggregatedStatistics
         """Updates isisAggregatedStatistics resource on the server.
 
@@ -1094,7 +1230,74 @@ class IsisAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Ipv4GroupRecordsLearned=None, Ipv6GroupRecordsLearned=None, L1CSNPRx=None, L1CSNPTx=None, L1DBSize=None, L1FullStateCount=None, L1HellosRx=None, L1HellosTx=None, L1InitStateCount=None, L1LSPRx=None, L1LSPTx=None, L1Neighbors=None, L1PSNPRx=None, L1PSNPTx=None, L1PTPHellosRx=None, L1PTPHellosTx=None, L1SessConfigured=None, L1SessUp=None, L1SessionFlapCount=None, L2CSNPRx=None, L2CSNPTx=None, L2DBSize=None, L2FullStateCount=None, L2HellosRx=None, L2HellosTx=None, L2InitStateCount=None, L2LSPRx=None, L2LSPTx=None, L2Neighbors=None, L2PSNPRx=None, L2PSNPTx=None, L2PTPHellosRx=None, L2PTPHellosTx=None, L2SessConfigured=None, L2SessUp=None, L2SessionFlapCount=None, MGROUPCSNPsRx=None, MGROUPCSNPsTx=None, MGROUPLSPRx=None, MGROUPLSPTx=None, MGROUPPSNPsRx=None, MGROUPPSNPsTx=None, MacGroupRecordsLearned=None, MulticastIPv4GroupRecordRx=None, MulticastIPv4GroupRecordTx=None, MulticastIPv6GroupRecordRx=None, MulticastIPv6GroupRecordTx=None, MulticastMACGroupRecordRx=None, MulticastMACGroupRecordTx=None, PortName=None, RateControlBlockedSendingLSPMGROUP=None, RbchannelEchoReplyRx=None, RbchannelEchoReplyTx=None, RbchannelEchoRequestRx=None, RbchannelEchoRequestTx=None, RbchannelErrNotifRx=None, RbchannelErrNotifTx=None, RbchannelErrorRx=None, RbchannelErrorTx=None, RbchannelFramesRx=None, RbchannelFramesTx=None, RbridgesLearned=None, UnicastMACGroupRecordRx=None, UnicastMACGroupRecordTx=None, UnicastMACRangesLearned=None):
+    def find(
+        self,
+        Ipv4GroupRecordsLearned=None,
+        Ipv6GroupRecordsLearned=None,
+        L1CSNPRx=None,
+        L1CSNPTx=None,
+        L1DBSize=None,
+        L1FullStateCount=None,
+        L1HellosRx=None,
+        L1HellosTx=None,
+        L1InitStateCount=None,
+        L1LSPRx=None,
+        L1LSPTx=None,
+        L1Neighbors=None,
+        L1PSNPRx=None,
+        L1PSNPTx=None,
+        L1PTPHellosRx=None,
+        L1PTPHellosTx=None,
+        L1SessConfigured=None,
+        L1SessUp=None,
+        L1SessionFlapCount=None,
+        L2CSNPRx=None,
+        L2CSNPTx=None,
+        L2DBSize=None,
+        L2FullStateCount=None,
+        L2HellosRx=None,
+        L2HellosTx=None,
+        L2InitStateCount=None,
+        L2LSPRx=None,
+        L2LSPTx=None,
+        L2Neighbors=None,
+        L2PSNPRx=None,
+        L2PSNPTx=None,
+        L2PTPHellosRx=None,
+        L2PTPHellosTx=None,
+        L2SessConfigured=None,
+        L2SessUp=None,
+        L2SessionFlapCount=None,
+        MGROUPCSNPsRx=None,
+        MGROUPCSNPsTx=None,
+        MGROUPLSPRx=None,
+        MGROUPLSPTx=None,
+        MGROUPPSNPsRx=None,
+        MGROUPPSNPsTx=None,
+        MacGroupRecordsLearned=None,
+        MulticastIPv4GroupRecordRx=None,
+        MulticastIPv4GroupRecordTx=None,
+        MulticastIPv6GroupRecordRx=None,
+        MulticastIPv6GroupRecordTx=None,
+        MulticastMACGroupRecordRx=None,
+        MulticastMACGroupRecordTx=None,
+        PortName=None,
+        RateControlBlockedSendingLSPMGROUP=None,
+        RbchannelEchoReplyRx=None,
+        RbchannelEchoReplyTx=None,
+        RbchannelEchoRequestRx=None,
+        RbchannelEchoRequestTx=None,
+        RbchannelErrNotifRx=None,
+        RbchannelErrNotifTx=None,
+        RbchannelErrorRx=None,
+        RbchannelErrorTx=None,
+        RbchannelFramesRx=None,
+        RbchannelFramesTx=None,
+        RbridgesLearned=None,
+        UnicastMACGroupRecordRx=None,
+        UnicastMACGroupRecordTx=None,
+        UnicastMACRangesLearned=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IsisAggregatedStatistics
         """Finds and retrieves isisAggregatedStatistics resources from the server.
 

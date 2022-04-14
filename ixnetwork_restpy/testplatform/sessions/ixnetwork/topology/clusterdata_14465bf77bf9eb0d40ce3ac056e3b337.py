@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class ClusterData(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'clusterData'
+    _SDM_NAME = "clusterData"
     _SDM_ATT_MAP = {
-        'ActionTriggered': 'actionTriggered',
-        'AttachAtStart': 'attachAtStart',
-        'AutoSyncAtStart': 'autoSyncAtStart',
-        'BindingStatus': 'bindingStatus',
-        'BindingsCount': 'bindingsCount',
-        'Count': 'count',
-        'CurrentRetryCount': 'currentRetryCount',
-        'DescriptiveName': 'descriptiveName',
-        'ErrorStatus': 'errorStatus',
-        'LogicalSwitchName': 'logicalSwitchName',
-        'MaxRetryCount': 'maxRetryCount',
-        'Name': 'name',
-        'PhysicalPortName': 'physicalPortName',
-        'PhysicalSwitchName': 'physicalSwitchName',
-        'ProgressStatus': 'progressStatus',
-        'RetryStatus': 'retryStatus',
-        'Vlan': 'vlan',
-        'Vni': 'vni',
+        "ActionTriggered": "actionTriggered",
+        "AttachAtStart": "attachAtStart",
+        "AutoSyncAtStart": "autoSyncAtStart",
+        "BindingStatus": "bindingStatus",
+        "BindingsCount": "bindingsCount",
+        "Count": "count",
+        "CurrentRetryCount": "currentRetryCount",
+        "DescriptiveName": "descriptiveName",
+        "ErrorStatus": "errorStatus",
+        "LogicalSwitchName": "logicalSwitchName",
+        "MaxRetryCount": "maxRetryCount",
+        "Name": "name",
+        "PhysicalPortName": "physicalPortName",
+        "PhysicalSwitchName": "physicalSwitchName",
+        "ProgressStatus": "progressStatus",
+        "RetryStatus": "retryStatus",
+        "Vlan": "vlan",
+        "Vni": "vni",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ClusterData, self).__init__(parent, list_op)
@@ -68,7 +68,10 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Displays what Action Triggered for each Binding. Possible values: No Action, Attach, Detach
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActionTriggered']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActionTriggered"])
+        )
 
     @property
     def AttachAtStart(self):
@@ -79,7 +82,8 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attach at Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AttachAtStart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AttachAtStart"]))
 
     @property
     def AutoSyncAtStart(self):
@@ -90,7 +94,10 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Synchronize TOR Database at Start.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoSyncAtStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoSyncAtStart"])
+        )
 
     @property
     def BindingStatus(self):
@@ -100,7 +107,7 @@ class ClusterData(Base):
         -------
         - list(str[attached | attaching | detached | detaching | disconnected]): Additional information about the Binding's state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BindingStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["BindingStatus"])
 
     @property
     def BindingsCount(self):
@@ -110,11 +117,12 @@ class ClusterData(Base):
         -------
         - number: Bindings Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BindingsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["BindingsCount"])
+
     @BindingsCount.setter
     def BindingsCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BindingsCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BindingsCount"], value)
 
     @property
     def Count(self):
@@ -124,7 +132,7 @@ class ClusterData(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CurrentRetryCount(self):
@@ -134,7 +142,7 @@ class ClusterData(Base):
         -------
         - number: This field will Show current retry count value Controller is doing to Synchronize TOR Database Automatically when TOR is reconnecting while doing the action.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentRetryCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentRetryCount"])
 
     @property
     def DescriptiveName(self):
@@ -144,7 +152,7 @@ class ClusterData(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def ErrorStatus(self):
@@ -154,7 +162,7 @@ class ClusterData(Base):
         -------
         - list(str[deleteBindingError | deleteBindingTimeout | deleteLsError | deleteLsTimeout | differentLsName | duplicateVlanLsPort | insertBindingError | insertBindingTimeout | insertLsError | insertLsTimeout | none | vlanMappedToDifferentLSs]): Error information about the Binding
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorStatus"])
 
     @property
     def LogicalSwitchName(self):
@@ -165,7 +173,10 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Logical_Switch Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogicalSwitchName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LogicalSwitchName"])
+        )
 
     @property
     def MaxRetryCount(self):
@@ -175,11 +186,12 @@ class ClusterData(Base):
         -------
         - number: Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRetryCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRetryCount"])
+
     @MaxRetryCount.setter
     def MaxRetryCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRetryCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRetryCount"], value)
 
     @property
     def Name(self):
@@ -189,11 +201,12 @@ class ClusterData(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PhysicalPortName(self):
@@ -204,7 +217,10 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Physical_Port name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PhysicalPortName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PhysicalPortName"])
+        )
 
     @property
     def PhysicalSwitchName(self):
@@ -215,7 +231,10 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Physical_Switch name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PhysicalSwitchName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PhysicalSwitchName"])
+        )
 
     @property
     def ProgressStatus(self):
@@ -225,7 +244,7 @@ class ClusterData(Base):
         -------
         - str: Gives info Controller is busy doing some actions. There are 3 states: 1. None - Default State. 2. In Progress - Processing is in Progress. 3. Done - Controller is done processing all requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProgressStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProgressStatus"])
 
     @property
     def RetryStatus(self):
@@ -235,7 +254,7 @@ class ClusterData(Base):
         -------
         - str: This field will Show if Controller has failed to complete the entire action even after Max Retry Count attempts There are 2 states: 1. None - Default State. 2. Retry Failed - Controller has done Max Retry Count attempts to complete the action, but failed
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetryStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetryStatus"])
 
     @property
     def Vlan(self):
@@ -246,7 +265,8 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vlan"]))
 
     @property
     def Vni(self):
@@ -257,7 +277,8 @@ class ClusterData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VNI
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vni']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vni"]))
 
     def update(self, BindingsCount=None, MaxRetryCount=None, Name=None):
         # type: (int, int, str) -> ClusterData
@@ -278,7 +299,19 @@ class ClusterData(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BindingStatus=None, BindingsCount=None, Count=None, CurrentRetryCount=None, DescriptiveName=None, ErrorStatus=None, MaxRetryCount=None, Name=None, ProgressStatus=None, RetryStatus=None):
+    def find(
+        self,
+        BindingStatus=None,
+        BindingsCount=None,
+        Count=None,
+        CurrentRetryCount=None,
+        DescriptiveName=None,
+        ErrorStatus=None,
+        MaxRetryCount=None,
+        Name=None,
+        ProgressStatus=None,
+        RetryStatus=None,
+    ):
         # type: (List[str], int, int, int, str, List[str], int, str, str, str) -> ClusterData
         """Finds and retrieves clusterData resources from the server.
 
@@ -344,10 +377,12 @@ class ClusterData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('attach', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("attach", payload=payload, response_object=None)
 
     def Detach(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -366,10 +401,12 @@ class ClusterData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('detach', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("detach", payload=payload, response_object=None)
 
     def ResetRetryStatus(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -388,10 +425,12 @@ class ClusterData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resetRetryStatus', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resetRetryStatus", payload=payload, response_object=None)
 
     def SyncUmrMmrTables(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -410,12 +449,25 @@ class ClusterData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('syncUmrMmrTables', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("syncUmrMmrTables", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ActionTriggered=None, AttachAtStart=None, AutoSyncAtStart=None, LogicalSwitchName=None, PhysicalPortName=None, PhysicalSwitchName=None, Vlan=None, Vni=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActionTriggered=None,
+        AttachAtStart=None,
+        AutoSyncAtStart=None,
+        LogicalSwitchName=None,
+        PhysicalPortName=None,
+        PhysicalSwitchName=None,
+        Vlan=None,
+        Vni=None,
+    ):
         """Base class infrastructure that gets a list of clusterData device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

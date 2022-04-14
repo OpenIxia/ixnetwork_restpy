@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,31 +33,30 @@ class OspfFlexAlgorithmList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfFlexAlgorithmList'
+    _SDM_NAME = "ospfFlexAlgorithmList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CalcType': 'calcType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableExcludeAg': 'enableExcludeAg',
-        'EnableFadfTlv': 'enableFadfTlv',
-        'EnableIncludeAllAg': 'enableIncludeAllAg',
-        'EnableIncludeAnyAg': 'enableIncludeAnyAg',
-        'ExcludeAgExtAg': 'excludeAgExtAg',
-        'ExcludeAgExtAgLen': 'excludeAgExtAgLen',
-        'FadFlag': 'fadFlag',
-        'FadfLen': 'fadfLen',
-        'FlexAlgo': 'flexAlgo',
-        'IncludeAllAgExtAg': 'includeAllAgExtAg',
-        'IncludeAllAgExtAgLen': 'includeAllAgExtAgLen',
-        'IncludeAnyAgExtAg': 'includeAnyAgExtAg',
-        'IncludeAnyAgExtAgLen': 'includeAnyAgExtAgLen',
-        'MetricType': 'metricType',
-        'Name': 'name',
-        'Priority': 'priority',
+        "Active": "active",
+        "CalcType": "calcType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableExcludeAg": "enableExcludeAg",
+        "EnableFadfTlv": "enableFadfTlv",
+        "EnableIncludeAllAg": "enableIncludeAllAg",
+        "EnableIncludeAnyAg": "enableIncludeAnyAg",
+        "ExcludeAgExtAg": "excludeAgExtAg",
+        "ExcludeAgExtAgLen": "excludeAgExtAgLen",
+        "FadFlag": "fadFlag",
+        "FadfLen": "fadfLen",
+        "FlexAlgo": "flexAlgo",
+        "IncludeAllAgExtAg": "includeAllAgExtAg",
+        "IncludeAllAgExtAgLen": "includeAllAgExtAgLen",
+        "IncludeAnyAgExtAg": "includeAnyAgExtAg",
+        "IncludeAnyAgExtAgLen": "includeAnyAgExtAgLen",
+        "MetricType": "metricType",
+        "Name": "name",
+        "Priority": "priority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfFlexAlgorithmList, self).__init__(parent, list_op)
@@ -70,7 +70,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def CalcType(self):
@@ -81,7 +82,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Calc Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CalcType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CalcType"]))
 
     @property
     def Count(self):
@@ -91,7 +93,7 @@ class OspfFlexAlgorithmList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -101,7 +103,7 @@ class OspfFlexAlgorithmList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableExcludeAg(self):
@@ -112,7 +114,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, Flexible Algorithm Exclude Admin Group Sub TLV is advertised with FAD TLV. By default, it is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExcludeAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExcludeAg"])
+        )
 
     @property
     def EnableFadfTlv(self):
@@ -123,7 +128,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, OSPF Flexible Algorithm Definition Flags Sub-TLV (FADF sub-TLV) is advertised with FAD TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFadfTlv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableFadfTlv"]))
 
     @property
     def EnableIncludeAllAg(self):
@@ -134,7 +140,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, Flexible Algorithm Extended Include All Admin Group Sub TLV is advertised with FAD TLV. By default, it is not enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIncludeAllAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIncludeAllAg"])
+        )
 
     @property
     def EnableIncludeAnyAg(self):
@@ -145,7 +154,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, Flexible Algorithm Include Any Admin Group Sub TLV is advertised with FAD TLV. By default, it is not enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIncludeAnyAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIncludeAnyAg"])
+        )
 
     @property
     def ExcludeAgExtAg(self):
@@ -156,7 +168,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG denotes the Extended Admin Group. The default value is 0x00000001.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAgExtAg"])
+        )
 
     @property
     def ExcludeAgExtAgLen(self):
@@ -167,7 +182,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAgExtAgLen"])
+        )
 
     @property
     def FadFlag(self):
@@ -178,7 +196,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): To set the M-Flag, the MSB should be set to 1. For Example : in Hex 0x80000000.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FadFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FadFlag"]))
 
     @property
     def FadfLen(self):
@@ -189,7 +208,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FADF AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FadfLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FadfLen"]))
 
     @property
     def FlexAlgo(self):
@@ -200,7 +220,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flex Algo
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlexAlgo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlexAlgo"]))
 
     @property
     def IncludeAllAgExtAg(self):
@@ -211,7 +232,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Include-All AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAllAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAllAgExtAg"])
+        )
 
     @property
     def IncludeAllAgExtAgLen(self):
@@ -222,7 +246,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAllAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAllAgExtAgLen"])
+        )
 
     @property
     def IncludeAnyAgExtAg(self):
@@ -233,7 +260,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Include-Any AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAnyAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAnyAgExtAg"])
+        )
 
     @property
     def IncludeAnyAgExtAgLen(self):
@@ -244,7 +274,10 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAnyAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAnyAgExtAgLen"])
+        )
 
     @property
     def MetricType(self):
@@ -255,7 +288,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricType"]))
 
     @property
     def Name(self):
@@ -265,11 +299,12 @@ class OspfFlexAlgorithmList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Priority(self):
@@ -280,7 +315,8 @@ class OspfFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     def update(self, Name=None):
         # type: (str) -> OspfFlexAlgorithmList
@@ -341,7 +377,27 @@ class OspfFlexAlgorithmList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, CalcType=None, EnableExcludeAg=None, EnableFadfTlv=None, EnableIncludeAllAg=None, EnableIncludeAnyAg=None, ExcludeAgExtAg=None, ExcludeAgExtAgLen=None, FadFlag=None, FadfLen=None, FlexAlgo=None, IncludeAllAgExtAg=None, IncludeAllAgExtAgLen=None, IncludeAnyAgExtAg=None, IncludeAnyAgExtAgLen=None, MetricType=None, Priority=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        CalcType=None,
+        EnableExcludeAg=None,
+        EnableFadfTlv=None,
+        EnableIncludeAllAg=None,
+        EnableIncludeAnyAg=None,
+        ExcludeAgExtAg=None,
+        ExcludeAgExtAgLen=None,
+        FadFlag=None,
+        FadfLen=None,
+        FlexAlgo=None,
+        IncludeAllAgExtAg=None,
+        IncludeAllAgExtAgLen=None,
+        IncludeAnyAgExtAg=None,
+        IncludeAnyAgExtAgLen=None,
+        MetricType=None,
+        Priority=None,
+    ):
         """Base class infrastructure that gets a list of ospfFlexAlgorithmList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

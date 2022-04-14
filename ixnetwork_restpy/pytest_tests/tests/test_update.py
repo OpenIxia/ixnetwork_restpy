@@ -41,7 +41,12 @@ def test_update_for_classic_nodes(ixnetwork):
     eth_range.MacRange.update(Enabled=False, Count=10)
 
     # finding the updated MacRanges and checking for updated values
-    mac_ranges = ixnetwork.Vport.find().ProtocolStack.EthernetEndpoint.find().Range.find().MacRange
+    mac_ranges = (
+        ixnetwork.Vport.find()
+        .ProtocolStack.EthernetEndpoint.find()
+        .Range.find()
+        .MacRange
+    )
     assert len(mac_ranges) == 4
     for mac_range in mac_ranges:
         assert mac_range.Enabled is False

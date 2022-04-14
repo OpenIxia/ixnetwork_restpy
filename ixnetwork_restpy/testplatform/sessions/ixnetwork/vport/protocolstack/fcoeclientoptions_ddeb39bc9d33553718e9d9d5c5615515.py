@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class FcoeClientOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcoeClientOptions'
+    _SDM_NAME = "fcoeClientOptions"
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "Associates": "associates",
+        "MaxPacketsPerSecond": "maxPacketsPerSecond",
+        "ObjectId": "objectId",
+        "OverrideGlobalRate": "overrideGlobalRate",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcoeClientOptions, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class FcoeClientOptions(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../protocolStack]): The 'Associates' property applies only to 'client mode'endpoints (e.g. DHCP/L2TP/PPP). It describes a listof server endpoints that will: + always be started before the client endpoint is started + always be stopped after the client endpoint is stopped.This allows orderly, synchronized start and stop sequences to occur between associated client and server endpoints.This feature should be used when you have two or more IXIADHCP/PPP/L2TP endpoints (client and server) in a networkconfiguration. It prevents extraneous session negotiationtimeouts that may occur due to: + a server being started after a client was started + a server being stopped before a client was stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Associates'])
+        return self._get_attribute(self._SDM_ATT_MAP["Associates"])
+
     @Associates.setter
     def Associates(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Associates"], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -71,11 +72,12 @@ class FcoeClientOptions(Base):
         -------
         - number: The maximum number of requests transmitted in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"])
+
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"], value)
 
     @property
     def ObjectId(self):
@@ -85,7 +87,7 @@ class FcoeClientOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRate(self):
@@ -95,11 +97,12 @@ class FcoeClientOptions(Base):
         -------
         - bool: Global rate settings are automatically distributed to all port groups.If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"])
+
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"], value)
 
     @property
     def SetupRate(self):
@@ -109,11 +112,12 @@ class FcoeClientOptions(Base):
         -------
         - number: The number of interfaces scheduled to be configured in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -123,13 +127,21 @@ class FcoeClientOptions(Base):
         -------
         - number: The number of interfaces scheduled to be deconfigured in each second, for this port group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
-    def update(self, Associates=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
+    def update(
+        self,
+        Associates=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, bool, int, int) -> FcoeClientOptions
         """Updates fcoeClientOptions resource on the server.
 
@@ -147,7 +159,14 @@ class FcoeClientOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Associates=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
+    def add(
+        self,
+        Associates=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, bool, int, int) -> FcoeClientOptions
         """Adds a new fcoeClientOptions resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class FcoeClientOptions(Base):
         """
         self._delete()
 
-    def find(self, Associates=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self,
+        Associates=None,
+        MaxPacketsPerSecond=None,
+        ObjectId=None,
+        OverrideGlobalRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (List[str], int, str, bool, int, int) -> FcoeClientOptions
         """Finds and retrieves fcoeClientOptions resources from the server.
 
@@ -241,10 +268,14 @@ class FcoeClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -263,10 +294,14 @@ class FcoeClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -285,7 +320,11 @@ class FcoeClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

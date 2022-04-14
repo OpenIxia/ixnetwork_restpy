@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,20 @@ class Ingress(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ingress'
+    _SDM_NAME = "ingress"
     _SDM_ATT_MAP = {
-        'EnableEro': 'enableEro',
-        'Ero': 'ero',
-        'PrefixLength': 'prefixLength',
-        'PrependDutToEro': 'prependDutToEro',
-        'ReservationErrorTlv': 'reservationErrorTlv',
-        'Rro': 'rro',
-        'SendRro': 'sendRro',
-        'TunnelIdsCount': 'tunnelIdsCount',
-        'TunnelIdsStart': 'tunnelIdsStart',
+        "EnableEro": "enableEro",
+        "Ero": "ero",
+        "PrefixLength": "prefixLength",
+        "PrependDutToEro": "prependDutToEro",
+        "ReservationErrorTlv": "reservationErrorTlv",
+        "Rro": "rro",
+        "SendRro": "sendRro",
+        "TunnelIdsCount": "tunnelIdsCount",
+        "TunnelIdsStart": "tunnelIdsStart",
     }
     _SDM_ENUM_MAP = {
-        'prependDutToEro': ['none', 'prependLoose', 'prependStrict'],
+        "prependDutToEro": ["none", "prependLoose", "prependStrict"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +63,13 @@ class Ingress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.senderrange_5f32a5353c2a36df08769d2b836cbf75 import SenderRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.senderrange_5f32a5353c2a36df08769d2b836cbf75 import (
+            SenderRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SenderRange', None) is not None:
-                return self._properties.get('SenderRange')
+            if self._properties.get("SenderRange", None) is not None:
+                return self._properties.get("SenderRange")
         return SenderRange(self)
 
     @property
@@ -76,11 +80,12 @@ class Ingress(Base):
         -------
         - bool: Enables use of the ERO option in Ingress mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableEro'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableEro"])
+
     @EnableEro.setter
     def EnableEro(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableEro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableEro"], value)
 
     @property
     def Ero(self):
@@ -89,10 +94,11 @@ class Ingress(Base):
         -------
         - list(dict(arg1:str[ip | as],arg2:str,arg3:number,arg4:bool)): Enables use of the ERO option in Ingress mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ero'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ero"])
+
     @Ero.setter
     def Ero(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ero'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ero"], value)
 
     @property
     def PrefixLength(self):
@@ -102,11 +108,12 @@ class Ingress(Base):
         -------
         - number: If the DUT's address is to be prepended to the ERO list, this indicates what prefix length is to be used for the entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
+
     @PrefixLength.setter
     def PrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLength"], value)
 
     @property
     def PrependDutToEro(self):
@@ -116,11 +123,12 @@ class Ingress(Base):
         -------
         - str(none | prependLoose | prependStrict): Enables the user to insert the DUT address at the beginning of the list of hops in the path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrependDutToEro'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrependDutToEro"])
+
     @PrependDutToEro.setter
     def PrependDutToEro(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrependDutToEro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrependDutToEro"], value)
 
     @property
     def ReservationErrorTlv(self):
@@ -129,10 +137,11 @@ class Ingress(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): a set of custom TLVs to be included in RESV ERR messages. These may only be used for ingress routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReservationErrorTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReservationErrorTlv"])
+
     @ReservationErrorTlv.setter
     def ReservationErrorTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ReservationErrorTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReservationErrorTlv"], value)
 
     @property
     def Rro(self):
@@ -141,10 +150,11 @@ class Ingress(Base):
         -------
         - list(dict(arg1:str[ip | label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool)): If enabled, an RRO is reflected back to the originating router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rro'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rro"])
+
     @Rro.setter
     def Rro(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Rro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rro"], value)
 
     @property
     def SendRro(self):
@@ -154,11 +164,12 @@ class Ingress(Base):
         -------
         - bool: When the destination range is used in Ingress mode, this indicates that a SEND RRO option is to be included in RSVP messages sent downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendRro'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendRro"])
+
     @SendRro.setter
     def SendRro(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendRro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendRro"], value)
 
     @property
     def TunnelIdsCount(self):
@@ -168,11 +179,12 @@ class Ingress(Base):
         -------
         - number: The number of destination routers. Each router's address is one greater than the previous one's.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIdsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIdsCount"])
+
     @TunnelIdsCount.setter
     def TunnelIdsCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelIdsCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelIdsCount"], value)
 
     @property
     def TunnelIdsStart(self):
@@ -182,13 +194,25 @@ class Ingress(Base):
         -------
         - number: Sets the start of the range of Tunnel IDs to be used in simulations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIdsStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIdsStart"])
+
     @TunnelIdsStart.setter
     def TunnelIdsStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelIdsStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelIdsStart"], value)
 
-    def update(self, EnableEro=None, Ero=None, PrefixLength=None, PrependDutToEro=None, ReservationErrorTlv=None, Rro=None, SendRro=None, TunnelIdsCount=None, TunnelIdsStart=None):
+    def update(
+        self,
+        EnableEro=None,
+        Ero=None,
+        PrefixLength=None,
+        PrependDutToEro=None,
+        ReservationErrorTlv=None,
+        Rro=None,
+        SendRro=None,
+        TunnelIdsCount=None,
+        TunnelIdsStart=None,
+    ):
         """Updates ingress resource on the server.
 
         Args
@@ -209,7 +233,18 @@ class Ingress(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableEro=None, Ero=None, PrefixLength=None, PrependDutToEro=None, ReservationErrorTlv=None, Rro=None, SendRro=None, TunnelIdsCount=None, TunnelIdsStart=None):
+    def find(
+        self,
+        EnableEro=None,
+        Ero=None,
+        PrefixLength=None,
+        PrependDutToEro=None,
+        ReservationErrorTlv=None,
+        Rro=None,
+        SendRro=None,
+        TunnelIdsCount=None,
+        TunnelIdsStart=None,
+    ):
         """Finds and retrieves ingress resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ingress resources from the server.

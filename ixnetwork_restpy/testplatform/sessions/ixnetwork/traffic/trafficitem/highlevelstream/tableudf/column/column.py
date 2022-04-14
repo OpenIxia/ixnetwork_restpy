@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,24 @@ class Column(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'column'
+    _SDM_NAME = "column"
     _SDM_ATT_MAP = {
-        'Format': 'format',
-        'Offset': 'offset',
-        'Size': 'size',
-        'Values': 'values',
+        "Format": "format",
+        "Offset": "offset",
+        "Size": "size",
+        "Values": "values",
     }
     _SDM_ENUM_MAP = {
-        'format': ['ascii', 'binary', 'custom', 'decimal', 'hex', 'ipv4', 'ipv6', 'mac'],
+        "format": [
+            "ascii",
+            "binary",
+            "custom",
+            "decimal",
+            "hex",
+            "ipv4",
+            "ipv6",
+            "mac",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,11 +66,12 @@ class Column(Base):
         -------
         - str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac): The format of the Table UDF list (column).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Format'])
+        return self._get_attribute(self._SDM_ATT_MAP["Format"])
+
     @Format.setter
     def Format(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Format'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Format"], value)
 
     @property
     def Offset(self):
@@ -70,11 +81,12 @@ class Column(Base):
         -------
         - number: >The offset value, in bytes, of the Table UDF list (column).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
+        return self._get_attribute(self._SDM_ATT_MAP["Offset"])
+
     @Offset.setter
     def Offset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Offset"], value)
 
     @property
     def Size(self):
@@ -84,11 +96,12 @@ class Column(Base):
         -------
         - number: The size, in bytes, of the Table UDF list (column).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Size'])
+        return self._get_attribute(self._SDM_ATT_MAP["Size"])
+
     @Size.setter
     def Size(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Size'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Size"], value)
 
     @property
     def Values(self):
@@ -98,11 +111,12 @@ class Column(Base):
         -------
         - list(str): The value of the table UDF column.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Values'])
+        return self._get_attribute(self._SDM_ATT_MAP["Values"])
+
     @Values.setter
     def Values(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Values"], value)
 
     def update(self, Format=None, Offset=None, Size=None, Values=None):
         # type: (str, int, int, List[str]) -> Column

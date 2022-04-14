@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class SwitchConfigLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchConfigLearnedInformation'
+    _SDM_NAME = "switchConfigLearnedInformation"
     _SDM_ATT_MAP = {
-        'ConfigFlags': 'configFlags',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MissSendLength': 'missSendLength',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "ConfigFlags": "configFlags",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MissSendLength": "missSendLength",
+        "NegotiatedVersion": "negotiatedVersion",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchConfigLearnedInformation, self).__init__(parent, list_op)
@@ -61,7 +61,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfigFlags'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfigFlags"])
 
     @property
     def DataPathId(self):
@@ -71,7 +71,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -81,7 +81,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -91,7 +91,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -101,7 +101,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def Latency(self):
@@ -111,7 +111,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -121,7 +121,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MissSendLength(self):
@@ -131,7 +131,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MissSendLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MissSendLength"])
 
     @property
     def NegotiatedVersion(self):
@@ -141,7 +141,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def RemoteIp(self):
@@ -151,7 +151,7 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -161,10 +161,10 @@ class SwitchConfigLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new switchConfigLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new switchConfigLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -176,7 +176,20 @@ class SwitchConfigLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ConfigFlags=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, MissSendLength=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        ConfigFlags=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        Latency=None,
+        LocalIp=None,
+        MissSendLength=None,
+        NegotiatedVersion=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, str, int, str, int, str, str, str) -> SwitchConfigLearnedInformation
         """Finds and retrieves switchConfigLearnedInformation resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,11 @@ class Cluster(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cluster'
+    _SDM_NAME = "cluster"
     _SDM_ATT_MAP = {
-        'Val': 'val',
+        "Val": "val",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Cluster, self).__init__(parent, list_op)
@@ -50,11 +50,12 @@ class Cluster(Base):
         -------
         - list(number): The value of the cluster list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Val'])
+        return self._get_attribute(self._SDM_ATT_MAP["Val"])
+
     @Val.setter
     def Val(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Val'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Val"], value)
 
     def update(self, Val=None):
         # type: (List[int]) -> Cluster

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,11 +35,9 @@ class Range(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'range'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "range"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Range, self).__init__(parent, list_op)
@@ -54,10 +53,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtrange_c30714357bfd52ca745eef6c0f18c5ca import AmtRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtrange_c30714357bfd52ca745eef6c0f18c5ca import (
+            AmtRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AmtRange', None) is not None:
-                return self._properties.get('AmtRange')
+            if self._properties.get("AmtRange", None) is not None:
+                return self._properties.get("AmtRange")
         return AmtRange(self)
 
     @property
@@ -71,10 +73,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancprange_2ea066ca6251ae0e66eba1b4757f581b import AncpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancprange_2ea066ca6251ae0e66eba1b4757f581b import (
+            AncpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpRange', None) is not None:
-                return self._properties.get('AncpRange')
+            if self._properties.get("AncpRange", None) is not None:
+                return self._properties.get("AncpRange")
         return AncpRange(self)
 
     @property
@@ -88,10 +93,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsrange_70e4bc9bf3ba3a1fe34d4e53c9a71948 import DhcpHostsRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsrange_70e4bc9bf3ba3a1fe34d4e53c9a71948 import (
+            DhcpHostsRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpHostsRange', None) is not None:
-                return self._properties.get('DhcpHostsRange')
+            if self._properties.get("DhcpHostsRange", None) is not None:
+                return self._properties.get("DhcpHostsRange")
         return DhcpHostsRange(self)._select()
 
     @property
@@ -105,10 +113,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientrange_ff5b9570c055ad45108176e4e58006ac import Dhcpv6ClientRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientrange_ff5b9570c055ad45108176e4e58006ac import (
+            Dhcpv6ClientRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6ClientRange', None) is not None:
-                return self._properties.get('Dhcpv6ClientRange')
+            if self._properties.get("Dhcpv6ClientRange", None) is not None:
+                return self._properties.get("Dhcpv6ClientRange")
         return Dhcpv6ClientRange(self)
 
     @property
@@ -122,10 +133,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientrange_900d6f78357742dfc6aca640710b4738 import Dhcpv6PdClientRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientrange_900d6f78357742dfc6aca640710b4738 import (
+            Dhcpv6PdClientRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6PdClientRange', None) is not None:
-                return self._properties.get('Dhcpv6PdClientRange')
+            if self._properties.get("Dhcpv6PdClientRange", None) is not None:
+                return self._properties.get("Dhcpv6PdClientRange")
         return Dhcpv6PdClientRange(self)
 
     @property
@@ -139,10 +153,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serverrange_df17d93db47d222fa805ac9ef5d314f5 import Dhcpv6ServerRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serverrange_df17d93db47d222fa805ac9ef5d314f5 import (
+            Dhcpv6ServerRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6ServerRange', None) is not None:
-                return self._properties.get('Dhcpv6ServerRange')
+            if self._properties.get("Dhcpv6ServerRange", None) is not None:
+                return self._properties.get("Dhcpv6ServerRange")
         return Dhcpv6ServerRange(self)
 
     @property
@@ -156,10 +173,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_0cabd375a60423aea8a933838a756d8f import Dot1xRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_0cabd375a60423aea8a933838a756d8f import (
+            Dot1xRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1xRange', None) is not None:
-                return self._properties.get('Dot1xRange')
+            if self._properties.get("Dot1xRange", None) is not None:
+                return self._properties.get("Dot1xRange")
         return Dot1xRange(self)
 
     @property
@@ -173,10 +193,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudprange_9dfad48a90ca0c0cfb78b6840b704c87 import EapoUdpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudprange_9dfad48a90ca0c0cfb78b6840b704c87 import (
+            EapoUdpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EapoUdpRange', None) is not None:
-                return self._properties.get('EapoUdpRange')
+            if self._properties.get("EapoUdpRange", None) is not None:
+                return self._properties.get("EapoUdpRange")
         return EapoUdpRange(self)
 
     @property
@@ -190,10 +213,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_67d1cda720e9c4133ac380ea2825713f import EsmcRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_67d1cda720e9c4133ac380ea2825713f import (
+            EsmcRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EsmcRange', None) is not None:
-                return self._properties.get('EsmcRange')
+            if self._properties.get("EsmcRange", None) is not None:
+                return self._properties.get("EsmcRange")
         return EsmcRange(self)
 
     @property
@@ -207,10 +233,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmldrange_495a146d779c2edff7ad8d7641c42d6d import IgmpMldRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmldrange_495a146d779c2edff7ad8d7641c42d6d import (
+            IgmpMldRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpMldRange', None) is not None:
-                return self._properties.get('IgmpMldRange')
+            if self._properties.get("IgmpMldRange", None) is not None:
+                return self._properties.get("IgmpMldRange")
         return IgmpMldRange(self)
 
     @property
@@ -224,10 +253,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerierrange_d3dd1d3aefebe1e8797c7e2579f88a64 import IgmpQuerierRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerierrange_d3dd1d3aefebe1e8797c7e2579f88a64 import (
+            IgmpQuerierRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpQuerierRange', None) is not None:
-                return self._properties.get('IgmpQuerierRange')
+            if self._properties.get("IgmpQuerierRange", None) is not None:
+                return self._properties.get("IgmpQuerierRange")
         return IgmpQuerierRange(self)
 
     @property
@@ -241,10 +273,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprange_45bb94a7d746c54afe92c2696c8db58b import IpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprange_45bb94a7d746c54afe92c2696c8db58b import (
+            IpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IpRange', None) is not None:
-                return self._properties.get('IpRange')
+            if self._properties.get("IpRange", None) is not None:
+                return self._properties.get("IpRange")
         return IpRange(self)._select()
 
     @property
@@ -258,10 +293,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvrange_0c55f401f5e321d2da90f609ba548ba2 import IptvRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvrange_0c55f401f5e321d2da90f609ba548ba2 import (
+            IptvRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IptvRange', None) is not None:
-                return self._properties.get('IptvRange')
+            if self._properties.get("IptvRange", None) is not None:
+                return self._properties.get("IptvRange")
         return IptvRange(self)
 
     @property
@@ -275,10 +313,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tprange_8a33787da0657f424b04237d50654654 import L2tpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tprange_8a33787da0657f424b04237d50654654 import (
+            L2tpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpRange', None) is not None:
-                return self._properties.get('L2tpRange')
+            if self._properties.get("L2tpRange", None) is not None:
+                return self._properties.get("L2tpRange")
         return L2tpRange(self)._select()
 
     @property
@@ -292,10 +333,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_c6b5498b7996a893191e02072e4a4864 import MacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_c6b5498b7996a893191e02072e4a4864 import (
+            MacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MacRange', None) is not None:
-                return self._properties.get('MacRange')
+            if self._properties.get("MacRange", None) is not None:
+                return self._properties.get("MacRange")
         return MacRange(self)._select()
 
     @property
@@ -309,10 +353,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeoverip_5b22a3bff21c10389c12bfcb60d24c1e import PtpRangeOverIp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeoverip_5b22a3bff21c10389c12bfcb60d24c1e import (
+            PtpRangeOverIp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpRangeOverIp', None) is not None:
-                return self._properties.get('PtpRangeOverIp')
+            if self._properties.get("PtpRangeOverIp", None) is not None:
+                return self._properties.get("PtpRangeOverIp")
         return PtpRangeOverIp(self)
 
     @property
@@ -326,10 +373,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_3139c9f1f6a6036fd4a409865b9d6c5d import PtpRangeOverMac
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_3139c9f1f6a6036fd4a409865b9d6c5d import (
+            PtpRangeOverMac,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpRangeOverMac', None) is not None:
-                return self._properties.get('PtpRangeOverMac')
+            if self._properties.get("PtpRangeOverMac", None) is not None:
+                return self._properties.get("PtpRangeOverMac")
         return PtpRangeOverMac(self)
 
     @property
@@ -343,10 +393,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.radiusrange_fc18bb096ed4fd1bf131e9c5b29da4a4 import RadiusRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.radiusrange_fc18bb096ed4fd1bf131e9c5b29da4a4 import (
+            RadiusRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RadiusRange', None) is not None:
-                return self._properties.get('RadiusRange')
+            if self._properties.get("RadiusRange", None) is not None:
+                return self._properties.get("RadiusRange")
         return RadiusRange(self)
 
     @property
@@ -360,10 +413,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampcontrolrange_e213980642c577ef2950e72399b781be import TwampControlRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampcontrolrange_e213980642c577ef2950e72399b781be import (
+            TwampControlRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TwampControlRange', None) is not None:
-                return self._properties.get('TwampControlRange')
+            if self._properties.get("TwampControlRange", None) is not None:
+                return self._properties.get("TwampControlRange")
         return TwampControlRange(self)
 
     @property
@@ -377,10 +433,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserverrange_6e2ee43528c3f3fd5f9d84bd1cb56742 import TwampServerRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserverrange_6e2ee43528c3f3fd5f9d84bd1cb56742 import (
+            TwampServerRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TwampServerRange', None) is not None:
-                return self._properties.get('TwampServerRange')
+            if self._properties.get("TwampServerRange", None) is not None:
+                return self._properties.get("TwampServerRange")
         return TwampServerRange(self)
 
     @property
@@ -394,10 +453,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twamptestrange_15e2a99d6636ef47a318503639095a4c import TwampTestRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twamptestrange_15e2a99d6636ef47a318503639095a4c import (
+            TwampTestRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TwampTestRange', None) is not None:
-                return self._properties.get('TwampTestRange')
+            if self._properties.get("TwampTestRange", None) is not None:
+                return self._properties.get("TwampTestRange")
         return TwampTestRange(self)
 
     @property
@@ -411,10 +473,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_3718cacd985a0ba898ee13e41f238fab import VicClientRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_3718cacd985a0ba898ee13e41f238fab import (
+            VicClientRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicClientRange', None) is not None:
-                return self._properties.get('VicClientRange')
+            if self._properties.get("VicClientRange", None) is not None:
+                return self._properties.get("VicClientRange")
         return VicClientRange(self)
 
     @property
@@ -428,10 +493,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_60e81f7cb2e6f37b78d5ad16d4e90da3 import VlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_60e81f7cb2e6f37b78d5ad16d4e90da3 import (
+            VlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VlanRange', None) is not None:
-                return self._properties.get('VlanRange')
+            if self._properties.get("VlanRange", None) is not None:
+                return self._properties.get("VlanRange")
         return VlanRange(self)._select()
 
     @property
@@ -445,10 +513,13 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthrange_afc1abd9087723aff2b31b4bde129213 import WebAuthRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthrange_afc1abd9087723aff2b31b4bde129213 import (
+            WebAuthRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WebAuthRange', None) is not None:
-                return self._properties.get('WebAuthRange')
+            if self._properties.get("WebAuthRange", None) is not None:
+                return self._properties.get("WebAuthRange")
         return WebAuthRange(self)
 
     def add(self):
@@ -526,10 +597,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DhcpHostsPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -546,10 +621,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpHostsPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpHostsPause", payload=payload, response_object=None)
 
     def DhcpHostsResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -566,10 +643,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpHostsResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpHostsResume", payload=payload, response_object=None)
 
     def DhcpHostsStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -593,10 +672,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpHostsStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpHostsStart", payload=payload, response_object=None)
 
     def DhcpHostsStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -620,10 +701,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpHostsStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpHostsStop", payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -642,10 +725,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -664,10 +751,14 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Ipv6SendNdpNS(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -693,10 +784,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ipv6SendNdpNS', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ipv6SendNdpNS", payload=payload, response_object=None)
 
     def Ipv6SendNdpRS(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -722,10 +815,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ipv6SendNdpRS', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ipv6SendNdpRS", payload=payload, response_object=None)
 
     def L2tpCancel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -742,10 +837,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpCancel', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpCancel", payload=payload, response_object=None)
 
     def L2tpConfigure(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -762,10 +859,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpConfigure', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpConfigure", payload=payload, response_object=None)
 
     def L2tpDeconfigure(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -782,10 +881,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpDeconfigure', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpDeconfigure", payload=payload, response_object=None)
 
     def L2tpPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -809,10 +910,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpPause", payload=payload, response_object=None)
 
     def L2tpResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -836,10 +939,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpResume", payload=payload, response_object=None)
 
     def L2tpRetry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -863,10 +968,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpRetry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpRetry", payload=payload, response_object=None)
 
     def L2tpSendNdpRs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -892,10 +999,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpSendNdpRs', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpSendNdpRs", payload=payload, response_object=None)
 
     def L2tpStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -919,10 +1028,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpStart", payload=payload, response_object=None)
 
     def L2tpStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -946,10 +1057,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('l2tpStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("l2tpStop", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -973,10 +1086,12 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1000,7 +1115,9 @@ class Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

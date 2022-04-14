@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class FcFportOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcFportOptions'
+    _SDM_NAME = "fcFportOptions"
     _SDM_ATT_MAP = {
-        'B2bCredit': 'b2bCredit',
-        'EdTov': 'edTov',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'RtTov': 'rtTov',
+        "B2bCredit": "b2bCredit",
+        "EdTov": "edTov",
+        "MaxPacketsPerSecond": "maxPacketsPerSecond",
+        "ObjectId": "objectId",
+        "OverrideGlobalRate": "overrideGlobalRate",
+        "RtTov": "rtTov",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcFportOptions, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class FcFportOptions(Base):
         -------
         - number: The buffer-to-buffer credit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['B2bCredit'])
+        return self._get_attribute(self._SDM_ATT_MAP["B2bCredit"])
+
     @B2bCredit.setter
     def B2bCredit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['B2bCredit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["B2bCredit"], value)
 
     @property
     def EdTov(self):
@@ -71,11 +72,12 @@ class FcFportOptions(Base):
         -------
         - number: The user-provided Error Detect TimeOut Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EdTov'])
+        return self._get_attribute(self._SDM_ATT_MAP["EdTov"])
+
     @EdTov.setter
     def EdTov(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EdTov'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EdTov"], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -85,11 +87,12 @@ class FcFportOptions(Base):
         -------
         - number: The maximum number of PLOGI requests transmitted in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"])
+
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"], value)
 
     @property
     def ObjectId(self):
@@ -99,7 +102,7 @@ class FcFportOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRate(self):
@@ -109,11 +112,12 @@ class FcFportOptions(Base):
         -------
         - bool: Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"])
+
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"], value)
 
     @property
     def RtTov(self):
@@ -123,13 +127,21 @@ class FcFportOptions(Base):
         -------
         - number: The user-provided Receiver-Transmitter TimeOut Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RtTov'])
+        return self._get_attribute(self._SDM_ATT_MAP["RtTov"])
+
     @RtTov.setter
     def RtTov(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RtTov'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RtTov"], value)
 
-    def update(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None):
+    def update(
+        self,
+        B2bCredit=None,
+        EdTov=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+    ):
         # type: (int, int, int, bool, int) -> FcFportOptions
         """Updates fcFportOptions resource on the server.
 
@@ -147,7 +159,14 @@ class FcFportOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None):
+    def add(
+        self,
+        B2bCredit=None,
+        EdTov=None,
+        MaxPacketsPerSecond=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+    ):
         # type: (int, int, int, bool, int) -> FcFportOptions
         """Adds a new fcFportOptions resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class FcFportOptions(Base):
         """
         self._delete()
 
-    def find(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, RtTov=None):
+    def find(
+        self,
+        B2bCredit=None,
+        EdTov=None,
+        MaxPacketsPerSecond=None,
+        ObjectId=None,
+        OverrideGlobalRate=None,
+        RtTov=None,
+    ):
         # type: (int, int, int, str, bool, int) -> FcFportOptions
         """Finds and retrieves fcFportOptions resources from the server.
 
@@ -241,10 +268,14 @@ class FcFportOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -263,10 +294,14 @@ class FcFportOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -285,7 +320,11 @@ class FcFportOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

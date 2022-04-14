@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,16 @@ class PassCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'passCriteria'
+    _SDM_NAME = "passCriteria"
     _SDM_ATT_MAP = {
-        'EnablePassFail': 'enablePassFail',
-        'EnableRibInPassFail': 'enableRibInPassFail',
-        'PassFailFrequency': 'passFailFrequency',
-        'RibInConvergenceFactorScale': 'ribInConvergenceFactorScale',
-        'RibInConvergenceTime': 'ribInConvergenceTime',
+        "EnablePassFail": "enablePassFail",
+        "EnableRibInPassFail": "enableRibInPassFail",
+        "PassFailFrequency": "passFailFrequency",
+        "RibInConvergenceFactorScale": "ribInConvergenceFactorScale",
+        "RibInConvergenceTime": "ribInConvergenceTime",
     }
     _SDM_ENUM_MAP = {
-        'passFailFrequency': ['iteration'],
+        "passFailFrequency": ["iteration"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,13 +54,14 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePassFail"])
+
     @EnablePassFail.setter
     def EnablePassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePassFail"], value)
 
     @property
     def EnableRibInPassFail(self):
@@ -67,13 +69,14 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRibInPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRibInPassFail"])
+
     @EnableRibInPassFail.setter
     def EnableRibInPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRibInPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRibInPassFail"], value)
 
     @property
     def PassFailFrequency(self):
@@ -81,13 +84,14 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(iteration): 
+        - str(iteration):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailFrequency"])
+
     @PassFailFrequency.setter
     def PassFailFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailFrequency"], value)
 
     @property
     def RibInConvergenceFactorScale(self):
@@ -95,13 +99,14 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RibInConvergenceFactorScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["RibInConvergenceFactorScale"])
+
     @RibInConvergenceFactorScale.setter
     def RibInConvergenceFactorScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RibInConvergenceFactorScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RibInConvergenceFactorScale"], value)
 
     @property
     def RibInConvergenceTime(self):
@@ -109,25 +114,33 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RibInConvergenceTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RibInConvergenceTime"])
+
     @RibInConvergenceTime.setter
     def RibInConvergenceTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RibInConvergenceTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RibInConvergenceTime"], value)
 
-    def update(self, EnablePassFail=None, EnableRibInPassFail=None, PassFailFrequency=None, RibInConvergenceFactorScale=None, RibInConvergenceTime=None):
+    def update(
+        self,
+        EnablePassFail=None,
+        EnableRibInPassFail=None,
+        PassFailFrequency=None,
+        RibInConvergenceFactorScale=None,
+        RibInConvergenceTime=None,
+    ):
         # type: (bool, bool, str, str, int) -> PassCriteria
         """Updates passCriteria resource on the server.
 
         Args
         ----
-        - EnablePassFail (bool): 
-        - EnableRibInPassFail (bool): 
-        - PassFailFrequency (str(iteration)): 
-        - RibInConvergenceFactorScale (str): 
-        - RibInConvergenceTime (number): 
+        - EnablePassFail (bool):
+        - EnableRibInPassFail (bool):
+        - PassFailFrequency (str(iteration)):
+        - RibInConvergenceFactorScale (str):
+        - RibInConvergenceTime (number):
 
         Raises
         ------
@@ -135,7 +148,14 @@ class PassCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnablePassFail=None, EnableRibInPassFail=None, PassFailFrequency=None, RibInConvergenceFactorScale=None, RibInConvergenceTime=None):
+    def find(
+        self,
+        EnablePassFail=None,
+        EnableRibInPassFail=None,
+        PassFailFrequency=None,
+        RibInConvergenceFactorScale=None,
+        RibInConvergenceTime=None,
+    ):
         # type: (bool, bool, str, str, int) -> PassCriteria
         """Finds and retrieves passCriteria resources from the server.
 
@@ -145,11 +165,11 @@ class PassCriteria(Base):
 
         Args
         ----
-        - EnablePassFail (bool): 
-        - EnableRibInPassFail (bool): 
-        - PassFailFrequency (str(iteration)): 
-        - RibInConvergenceFactorScale (str): 
-        - RibInConvergenceTime (number): 
+        - EnablePassFail (bool):
+        - EnableRibInPassFail (bool):
+        - PassFailFrequency (str(iteration)):
+        - RibInConvergenceFactorScale (str):
+        - RibInConvergenceTime (number):
 
         Returns
         -------
@@ -194,10 +214,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -212,10 +234,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -224,17 +248,19 @@ class PassCriteria(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -251,10 +277,14 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -272,10 +302,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -301,10 +333,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -328,10 +362,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -348,10 +384,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -369,7 +407,9 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

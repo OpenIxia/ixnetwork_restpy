@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class PcRequestMatchCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pcRequestMatchCriteria'
+    _SDM_NAME = "pcRequestMatchCriteria"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestIpv4Address': 'destIpv4Address',
-        'DestIpv6Address': 'destIpv6Address',
-        'IpVersion': 'ipVersion',
-        'IroType': 'iroType',
-        'MatchEndPoints': 'matchEndPoints',
-        'Name': 'name',
-        'SrcIpv4Address': 'srcIpv4Address',
-        'SrcIpv6Address': 'srcIpv6Address',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DestIpv4Address": "destIpv4Address",
+        "DestIpv6Address": "destIpv6Address",
+        "IpVersion": "ipVersion",
+        "IroType": "iroType",
+        "MatchEndPoints": "matchEndPoints",
+        "Name": "name",
+        "SrcIpv4Address": "srcIpv4Address",
+        "SrcIpv6Address": "srcIpv6Address",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PcRequestMatchCriteria, self).__init__(parent, list_op)
@@ -61,7 +61,8 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -71,7 +72,7 @@ class PcRequestMatchCriteria(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -81,7 +82,7 @@ class PcRequestMatchCriteria(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestIpv4Address(self):
@@ -92,7 +93,10 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestIpv4Address"])
+        )
 
     @property
     def DestIpv6Address(self):
@@ -103,7 +107,10 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestIpv6Address"])
+        )
 
     @property
     def IpVersion(self):
@@ -114,7 +121,8 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP Version
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpVersion"]))
 
     @property
     def IroType(self):
@@ -125,7 +133,8 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Match IRO Option
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IroType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IroType"]))
 
     @property
     def MatchEndPoints(self):
@@ -136,7 +145,10 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates Whether response parameters will be matched based on endpoints in the PCReq messaged received from PCC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MatchEndPoints']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MatchEndPoints"])
+        )
 
     @property
     def Name(self):
@@ -146,11 +158,12 @@ class PcRequestMatchCriteria(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SrcIpv4Address(self):
@@ -161,7 +174,10 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcIpv4Address"])
+        )
 
     @property
     def SrcIpv6Address(self):
@@ -172,7 +188,10 @@ class PcRequestMatchCriteria(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcIpv6Address"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> PcRequestMatchCriteria
@@ -233,7 +252,18 @@ class PcRequestMatchCriteria(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, DestIpv4Address=None, DestIpv6Address=None, IpVersion=None, IroType=None, MatchEndPoints=None, SrcIpv4Address=None, SrcIpv6Address=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        DestIpv4Address=None,
+        DestIpv6Address=None,
+        IpVersion=None,
+        IroType=None,
+        MatchEndPoints=None,
+        SrcIpv4Address=None,
+        SrcIpv6Address=None,
+    ):
         """Base class infrastructure that gets a list of pcRequestMatchCriteria device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

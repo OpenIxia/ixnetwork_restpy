@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,28 @@ class Target(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'target'
+    _SDM_NAME = "target"
     _SDM_ATT_MAP = {
-        'TargetList': 'targetList',
-        'TargetListEx': 'targetListEx',
+        "TargetList": "targetList",
+        "TargetListEx": "targetListEx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Target, self).__init__(parent, list_op)
 
     @property
     def TargetList(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number)): Configures a target attribute to be associated with advertised L3 VPN route ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetList"])
+
     @TargetList.setter
     def TargetList(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetList"], value)
 
     @property
     def TargetListEx(self):
@@ -62,10 +63,11 @@ class Target(Base):
         -------
         - list(dict(arg1:str[as | ip | asNumber2],arg2:number,arg3:str,arg4:number,arg5:number,arg6:number,arg7:str)): Configures a list of export targets to be associated with advertised L3 VPN route ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetListEx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetListEx"])
+
     @TargetListEx.setter
     def TargetListEx(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TargetListEx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetListEx"], value)
 
     def update(self, TargetList=None, TargetListEx=None):
         """Updates target resource on the server.

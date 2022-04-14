@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class UserDefinedAfiSafiRoutes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'userDefinedAfiSafiRoutes'
+    _SDM_NAME = "userDefinedAfiSafiRoutes"
     _SDM_ATT_MAP = {
-        'Data': 'data',
-        'Enabled': 'enabled',
-        'Length': 'length',
+        "Data": "data",
+        "Enabled": "enabled",
+        "Length": "length",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(UserDefinedAfiSafiRoutes, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class UserDefinedAfiSafiRoutes(Base):
         -------
         - str: Data to be transmitted for AFI/SAFI, and regular enable-disable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Data'])
+        return self._get_attribute(self._SDM_ATT_MAP["Data"])
+
     @Data.setter
     def Data(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Data'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Data"], value)
 
     @property
     def Enabled(self):
@@ -68,11 +69,12 @@ class UserDefinedAfiSafiRoutes(Base):
         -------
         - bool: If true, the user-defined afi/safi is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Length(self):
@@ -82,11 +84,12 @@ class UserDefinedAfiSafiRoutes(Base):
         -------
         - number: The data is padded up to length with left alignment otherwise chopped till length.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Length'])
+        return self._get_attribute(self._SDM_ATT_MAP["Length"])
+
     @Length.setter
     def Length(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Length'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Length"], value)
 
     def update(self, Data=None, Enabled=None, Length=None):
         # type: (str, bool, int) -> UserDefinedAfiSafiRoutes

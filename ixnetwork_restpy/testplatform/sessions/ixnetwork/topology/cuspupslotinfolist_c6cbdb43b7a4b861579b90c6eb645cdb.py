@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class CuspUPSlotInfoList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cuspUPSlotInfoList'
+    _SDM_NAME = "cuspUPSlotInfoList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfSlots': 'numberOfSlots',
-        'SlotNumber': 'slotNumber',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NumberOfSlots": "numberOfSlots",
+        "SlotNumber": "slotNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CuspUPSlotInfoList, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class CuspUPSlotInfoList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupsubslotinfolist_30553bdb9ea57538a078853b0707e8c7 import CuspUPSubslotInfoList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupsubslotinfolist_30553bdb9ea57538a078853b0707e8c7 import (
+            CuspUPSubslotInfoList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspUPSubslotInfoList', None) is not None:
-                return self._properties.get('CuspUPSubslotInfoList')
+            if self._properties.get("CuspUPSubslotInfoList", None) is not None:
+                return self._properties.get("CuspUPSubslotInfoList")
         return CuspUPSubslotInfoList(self)._select()
 
     @property
@@ -73,7 +76,8 @@ class CuspUPSlotInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -83,7 +87,7 @@ class CuspUPSlotInfoList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -93,7 +97,7 @@ class CuspUPSlotInfoList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -103,11 +107,12 @@ class CuspUPSlotInfoList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfSlots(self):
@@ -117,11 +122,12 @@ class CuspUPSlotInfoList(Base):
         -------
         - number: Number of sub slots present in the board. It is atleast 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlots'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSlots"])
+
     @NumberOfSlots.setter
     def NumberOfSlots(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSlots'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSlots"], value)
 
     @property
     def SlotNumber(self):
@@ -132,7 +138,8 @@ class CuspUPSlotInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlotNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlotNumber"]))
 
     def update(self, Name=None, NumberOfSlots=None):
         # type: (str, int) -> CuspUPSlotInfoList

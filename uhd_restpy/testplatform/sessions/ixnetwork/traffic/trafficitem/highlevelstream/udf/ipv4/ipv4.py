@@ -181,7 +181,7 @@ class Ipv4(Base):
 
     def add(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
         # type: (int, int, int, int, bool, int, str) -> Ipv4
-        """Adds a new ipv4 resource on the json, only valid with config assistant
+        """Adds a new ipv4 resource on the json, only valid with batch add utility
 
         Args
         ----

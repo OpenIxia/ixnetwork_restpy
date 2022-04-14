@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class LbLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lbLearnedInfo'
+    _SDM_NAME = "lbLearnedInfo"
     _SDM_ATT_MAP = {
-        'CVlan': 'cVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'MdLevel': 'mdLevel',
-        'Reachability': 'reachability',
-        'Rtt': 'rtt',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
-        'TransactionId': 'transactionId',
+        "CVlan": "cVlan",
+        "DstMacAddress": "dstMacAddress",
+        "MdLevel": "mdLevel",
+        "Reachability": "reachability",
+        "Rtt": "rtt",
+        "SVlan": "sVlan",
+        "SrcMacAddress": "srcMacAddress",
+        "TransactionId": "transactionId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LbLearnedInfo, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class LbLearnedInfo(Base):
         -------
         - str: (read only) The stacked VLAN identifier for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def DstMacAddress(self):
@@ -68,7 +68,7 @@ class LbLearnedInfo(Base):
         -------
         - str: (read only) The destination MAC address for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def MdLevel(self):
@@ -78,7 +78,7 @@ class LbLearnedInfo(Base):
         -------
         - number: (read only) The MD level for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def Reachability(self):
@@ -88,7 +88,7 @@ class LbLearnedInfo(Base):
         -------
         - bool: (read only) Indiates the status of the Ping. If true, the ping was responded to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def Rtt(self):
@@ -98,7 +98,7 @@ class LbLearnedInfo(Base):
         -------
         - number: (read only) The round trip time for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rtt"])
 
     @property
     def SVlan(self):
@@ -108,7 +108,7 @@ class LbLearnedInfo(Base):
         -------
         - str: (read only) The single VLAN identifier for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SrcMacAddress(self):
@@ -118,7 +118,7 @@ class LbLearnedInfo(Base):
         -------
         - str: (read only) The source MAC address for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     @property
     def TransactionId(self):
@@ -128,10 +128,10 @@ class LbLearnedInfo(Base):
         -------
         - number: (read only) The transaction identifier attached to the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransactionId"])
 
     def add(self):
-        """Adds a new lbLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new lbLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -143,7 +143,17 @@ class LbLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CVlan=None, DstMacAddress=None, MdLevel=None, Reachability=None, Rtt=None, SVlan=None, SrcMacAddress=None, TransactionId=None):
+    def find(
+        self,
+        CVlan=None,
+        DstMacAddress=None,
+        MdLevel=None,
+        Reachability=None,
+        Rtt=None,
+        SVlan=None,
+        SrcMacAddress=None,
+        TransactionId=None,
+    ):
         # type: (str, str, int, bool, int, str, str, int) -> LbLearnedInfo
         """Finds and retrieves lbLearnedInfo resources from the server.
 

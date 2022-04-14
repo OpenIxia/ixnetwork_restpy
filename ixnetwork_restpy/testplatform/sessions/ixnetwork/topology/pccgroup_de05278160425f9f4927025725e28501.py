@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,42 +35,50 @@ class PccGroup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pccGroup'
+    _SDM_NAME = "pccGroup"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Authentication': 'authentication',
-        'BurstInterval': 'burstInterval',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DeadInterval': 'deadInterval',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'KeepaliveInterval': 'keepaliveInterval',
-        'LearnedInfoTriggerParamCount': 'learnedInfoTriggerParamCount',
-        'LspInstantiationCapability': 'lspInstantiationCapability',
-        'LspUpdateCapability': 'lspUpdateCapability',
-        'MD5Key': 'mD5Key',
-        'MaxInitiatedLspPerInterval': 'maxInitiatedLspPerInterval',
-        'MaxLspPerPcUpdate': 'maxLspPerPcUpdate',
-        'MaxLspsPerPcInitiate': 'maxLspsPerPcInitiate',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PcReplyLspsPerPcc': 'pcReplyLspsPerPcc',
-        'PccIpv4Address': 'pccIpv4Address',
-        'PceInitiatedLspsPerPcc': 'pceInitiatedLspsPerPcc',
-        'PcePpagTLVType': 'pcePpagTLVType',
-        'PceTEPathBindingTLVType': 'pceTEPathBindingTLVType',
-        'RateControl': 'rateControl',
-        'SessionStatus': 'sessionStatus',
-        'SrPceCapability': 'srPceCapability',
-        'Srv6PceCapability': 'srv6PceCapability',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'StatefulPceCapability': 'statefulPceCapability',
-        'Status': 'status',
+        "Active": "active",
+        "Authentication": "authentication",
+        "BurstInterval": "burstInterval",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DeadInterval": "deadInterval",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "KeepaliveInterval": "keepaliveInterval",
+        "LearnedInfoTriggerParamCount": "learnedInfoTriggerParamCount",
+        "LspInstantiationCapability": "lspInstantiationCapability",
+        "LspUpdateCapability": "lspUpdateCapability",
+        "MD5Key": "mD5Key",
+        "MaxInitiatedLspPerInterval": "maxInitiatedLspPerInterval",
+        "MaxLspPerPcUpdate": "maxLspPerPcUpdate",
+        "MaxLspsPerPcInitiate": "maxLspsPerPcInitiate",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PcReplyLspsPerPcc": "pcReplyLspsPerPcc",
+        "PccIpv4Address": "pccIpv4Address",
+        "PceInitiatedLspsPerPcc": "pceInitiatedLspsPerPcc",
+        "PcePpagTLVType": "pcePpagTLVType",
+        "PceTEPathBindingTLVType": "pceTEPathBindingTLVType",
+        "RateControl": "rateControl",
+        "SessionStatus": "sessionStatus",
+        "SrPceCapability": "srPceCapability",
+        "Srv6PceCapability": "srv6PceCapability",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "StatefulPceCapability": "statefulPceCapability",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -86,10 +95,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -103,10 +115,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import (
+            LearnedInfoUpdate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfoUpdate', None) is not None:
-                return self._properties.get('LearnedInfoUpdate')
+            if self._properties.get("LearnedInfoUpdate", None) is not None:
+                return self._properties.get("LearnedInfoUpdate")
         return LearnedInfoUpdate(self)
 
     @property
@@ -120,10 +135,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7 import PcReplyLspParameters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7 import (
+            PcReplyLspParameters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcReplyLspParameters', None) is not None:
-                return self._properties.get('PcReplyLspParameters')
+            if self._properties.get("PcReplyLspParameters", None) is not None:
+                return self._properties.get("PcReplyLspParameters")
         return PcReplyLspParameters(self)._select()
 
     @property
@@ -137,10 +155,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3 import PcRequestMatchCriteria
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3 import (
+            PcRequestMatchCriteria,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcRequestMatchCriteria', None) is not None:
-                return self._properties.get('PcRequestMatchCriteria')
+            if self._properties.get("PcRequestMatchCriteria", None) is not None:
+                return self._properties.get("PcRequestMatchCriteria")
         return PcRequestMatchCriteria(self)._select()
 
     @property
@@ -154,10 +175,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b import PceInitiateLSPParameters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b import (
+            PceInitiateLSPParameters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceInitiateLSPParameters', None) is not None:
-                return self._properties.get('PceInitiateLSPParameters')
+            if self._properties.get("PceInitiateLSPParameters", None) is not None:
+                return self._properties.get("PceInitiateLSPParameters")
         return PceInitiateLSPParameters(self)._select()
 
     @property
@@ -171,10 +195,13 @@ class PccGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_56e35469c1c2fd61a62bd38b8ef07d70 import PceTriggerParamList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_56e35469c1c2fd61a62bd38b8ef07d70 import (
+            PceTriggerParamList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceTriggerParamList', None) is not None:
-                return self._properties.get('PceTriggerParamList')
+            if self._properties.get("PceTriggerParamList", None) is not None:
+                return self._properties.get("PceTriggerParamList")
         return PceTriggerParamList(self)
 
     @property
@@ -186,7 +213,8 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Authentication(self):
@@ -197,7 +225,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of cryptographic authentication to be used on this link interface
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Authentication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+        )
 
     @property
     def BurstInterval(self):
@@ -208,21 +239,23 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval in milisecond in which desired rate of messages needs to be maintained.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BurstInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BurstInterval"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -232,7 +265,7 @@ class PccGroup(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DeadInterval(self):
@@ -243,7 +276,8 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is the time interval, after the expiration of which, a PCEP peer declares the session down if no PCEP message has been received.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeadInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DeadInterval"]))
 
     @property
     def DescriptiveName(self):
@@ -253,7 +287,7 @@ class PccGroup(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -262,7 +296,7 @@ class PccGroup(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def KeepaliveInterval(self):
@@ -273,7 +307,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Frequency/Time Interval of sending PCEP messages to keep the session active.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepaliveInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveInterval"])
+        )
 
     @property
     def LearnedInfoTriggerParamCount(self):
@@ -284,7 +321,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger Param Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LearnedInfoTriggerParamCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LearnedInfoTriggerParamCount"])
+        )
 
     @property
     def LspInstantiationCapability(self):
@@ -295,7 +335,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If Stateful PCE Capability is enabled then this control should be activated to set the LSP Instantiation capability in the Stateful PCE Capability TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspInstantiationCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspInstantiationCapability"])
+        )
 
     @property
     def LspUpdateCapability(self):
@@ -306,7 +349,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If the Stateful PCE Capability is enabled then this control should be activated to set the update capability in the Stateful PCE Capability TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspUpdateCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspUpdateCapability"])
+        )
 
     @property
     def MD5Key(self):
@@ -317,7 +363,8 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A value to be used as the secret MD5 Key.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MD5Key']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MD5Key"]))
 
     @property
     def MaxInitiatedLspPerInterval(self):
@@ -328,7 +375,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of messages can be sent per interval.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxInitiatedLspPerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxInitiatedLspPerInterval"])
+        )
 
     @property
     def MaxLspPerPcUpdate(self):
@@ -339,7 +389,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controls the maximum number of LSPs that can be present in a PcUpdate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLspPerPcUpdate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxLspPerPcUpdate"])
+        )
 
     @property
     def MaxLspsPerPcInitiate(self):
@@ -350,7 +403,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controls the maximum number of LSPs that can be present in a PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLspsPerPcInitiate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxLspsPerPcInitiate"])
+        )
 
     @property
     def Multiplier(self):
@@ -360,11 +416,12 @@ class PccGroup(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -374,11 +431,12 @@ class PccGroup(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PcReplyLspsPerPcc(self):
@@ -388,11 +446,12 @@ class PccGroup(Base):
         -------
         - number: Controls the maximum number of PCE LSPs that can be send as PATH Response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcReplyLspsPerPcc'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcReplyLspsPerPcc"])
+
     @PcReplyLspsPerPcc.setter
     def PcReplyLspsPerPcc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcReplyLspsPerPcc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcReplyLspsPerPcc"], value)
 
     @property
     def PccIpv4Address(self):
@@ -403,7 +462,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the PCC. This column is greyed out in case of PCEv6.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PccIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PccIpv4Address"])
+        )
 
     @property
     def PceInitiatedLspsPerPcc(self):
@@ -413,11 +475,12 @@ class PccGroup(Base):
         -------
         - number: Controls the maximum number of PCE LSPs that can be Initiated per PCC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PceInitiatedLspsPerPcc'])
+        return self._get_attribute(self._SDM_ATT_MAP["PceInitiatedLspsPerPcc"])
+
     @PceInitiatedLspsPerPcc.setter
     def PceInitiatedLspsPerPcc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PceInitiatedLspsPerPcc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PceInitiatedLspsPerPcc"], value)
 
     @property
     def PcePpagTLVType(self):
@@ -428,7 +491,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PPAG TLV Type specifies PCE's capability of interpreting this type of PPAG TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PcePpagTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PcePpagTLVType"])
+        )
 
     @property
     def PceTEPathBindingTLVType(self):
@@ -439,7 +505,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PCE TE-PATH-BINDING TLV Type is a TLV that carries MPLS label binding or SRv6 Binding SID. This is only configurable if the Binding SID Draft Version is set to ietf-pce-binding-label-sid. The minimum value is 0. The maximum value is 65535. The default value is 31.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PceTEPathBindingTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PceTEPathBindingTLVType"])
+        )
 
     @property
     def RateControl(self):
@@ -450,7 +519,8 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The rate control is an optional feature associated with PCE initiated LSP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RateControl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RateControl"]))
 
     @property
     def SessionStatus(self):
@@ -460,7 +530,7 @@ class PccGroup(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SrPceCapability(self):
@@ -471,7 +541,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SR PCE Capability TLV is an optional TLV associated with the OPEN Object to exchange SR capability of PCEP speakers.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrPceCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrPceCapability"])
+        )
 
     @property
     def Srv6PceCapability(self):
@@ -482,7 +555,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type. This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6PceCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6PceCapability"])
+        )
 
     @property
     def StackedLayers(self):
@@ -492,11 +568,12 @@ class PccGroup(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -505,7 +582,7 @@ class PccGroup(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def StatefulPceCapability(self):
@@ -516,7 +593,10 @@ class PccGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the server will work like a Stateful PCE else like a stateless PCE.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StatefulPceCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StatefulPceCapability"])
+        )
 
     @property
     def Status(self):
@@ -526,9 +606,17 @@ class PccGroup(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, PcReplyLspsPerPcc=None, PceInitiatedLspsPerPcc=None, StackedLayers=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        PcReplyLspsPerPcc=None,
+        PceInitiatedLspsPerPcc=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, List[str]) -> PccGroup
         """Updates pccGroup resource on the server.
 
@@ -550,7 +638,15 @@ class PccGroup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, PcReplyLspsPerPcc=None, PceInitiatedLspsPerPcc=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        PcReplyLspsPerPcc=None,
+        PceInitiatedLspsPerPcc=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, List[str]) -> PccGroup
         """Adds a new pccGroup resource on the server and adds it to the container.
 
@@ -583,7 +679,21 @@ class PccGroup(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, PcReplyLspsPerPcc=None, PceInitiatedLspsPerPcc=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        PcReplyLspsPerPcc=None,
+        PceInitiatedLspsPerPcc=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves pccGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pccGroup resources from the server.
@@ -660,10 +770,12 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearPceAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -698,10 +810,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPceAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearPceAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceBasicAllRsvpLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -736,10 +852,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicAllRsvpLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicAllRsvpLspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceBasicAllSrLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -774,10 +894,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicAllSrLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicAllSrLspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceBasicAllSrv6LspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -812,10 +936,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicAllSrv6LspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicAllSrv6LspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceBasicRsvpPccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -850,10 +978,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicRsvpPccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicRsvpPccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicRsvpPccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -888,10 +1022,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicRsvpPccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicRsvpPccSyncLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicRsvpPceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -926,10 +1066,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicRsvpPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicRsvpPceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicSrPccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -964,10 +1110,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrPccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicSrPccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1002,10 +1154,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrPccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrPccSyncLspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceBasicSrPceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1040,10 +1196,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrPceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicSrv6PccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1078,10 +1240,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrv6PccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicSrv6PccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1116,10 +1284,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrv6PccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrv6PccSyncLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceBasicSrv6PceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1154,10 +1328,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceBasicSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceBasicSrv6PceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedAllRsvpLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1192,10 +1372,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedAllRsvpLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedAllRsvpLspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceDetailedAllSrLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1230,10 +1414,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedAllSrLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedAllSrLspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceDetailedAllSrv6LspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1268,10 +1456,14 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedAllSrv6LspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedAllSrv6LspLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPceDetailedRsvpPccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1306,10 +1498,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedRsvpPccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedRsvpPccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedRsvpPccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1344,10 +1542,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedRsvpPccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedRsvpPccSyncLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedRsvpPceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1382,10 +1586,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedRsvpPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedRsvpPceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrPccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1420,10 +1630,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrPccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrPccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1458,10 +1674,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrPccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrPccSyncLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrPceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1496,10 +1718,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrPceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrv6PccRequestedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1534,10 +1762,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrv6PccRequestedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrv6PccSyncLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1572,10 +1806,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrv6PccSyncLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrv6PccSyncLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPceDetailedSrv6PceInitiatedLspLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1610,10 +1850,16 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPceDetailedSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPceDetailedSrv6PceInitiatedLspLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1642,10 +1888,12 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1674,10 +1922,12 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1706,12 +1956,36 @@ class PccGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, KeepaliveInterval=None, LearnedInfoTriggerParamCount=None, LspInstantiationCapability=None, LspUpdateCapability=None, MD5Key=None, MaxInitiatedLspPerInterval=None, MaxLspPerPcUpdate=None, MaxLspsPerPcInitiate=None, PccIpv4Address=None, PcePpagTLVType=None, PceTEPathBindingTLVType=None, RateControl=None, SrPceCapability=None, Srv6PceCapability=None, StatefulPceCapability=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Authentication=None,
+        BurstInterval=None,
+        DeadInterval=None,
+        KeepaliveInterval=None,
+        LearnedInfoTriggerParamCount=None,
+        LspInstantiationCapability=None,
+        LspUpdateCapability=None,
+        MD5Key=None,
+        MaxInitiatedLspPerInterval=None,
+        MaxLspPerPcUpdate=None,
+        MaxLspsPerPcInitiate=None,
+        PccIpv4Address=None,
+        PcePpagTLVType=None,
+        PceTEPathBindingTLVType=None,
+        RateControl=None,
+        SrPceCapability=None,
+        Srv6PceCapability=None,
+        StatefulPceCapability=None,
+    ):
         """Base class infrastructure that gets a list of pccGroup device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

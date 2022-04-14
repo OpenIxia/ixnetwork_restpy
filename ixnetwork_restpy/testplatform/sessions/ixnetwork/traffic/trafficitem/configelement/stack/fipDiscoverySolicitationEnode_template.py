@@ -4,30 +4,30 @@ from ixnetwork_restpy.files import Files
 
 class FipDiscoverySolicitationEnode(Base):
     __slots__ = ()
-    _SDM_NAME = 'fipDiscoverySolicitationEnode'
+    _SDM_NAME = "fipDiscoverySolicitationEnode"
     _SDM_ATT_MAP = {
-        'HeaderFipVersion': 'fipDiscoverySolicitationEnode.header.fipVersion-1',
-        'HeaderFipReserved': 'fipDiscoverySolicitationEnode.header.fipReserved-2',
-        'FipOperationCodeFipDiscovery': 'fipDiscoverySolicitationEnode.header.fipOperation.fipOperationCode.fipDiscovery-3',
-        'FipOperationFipOperationReserved1': 'fipDiscoverySolicitationEnode.header.fipOperation.fipOperationReserved1-4',
-        'FipSubcodeFipSubcode01h': 'fipDiscoverySolicitationEnode.header.fipOperation.fipSubcode.fipSubcode01h-5',
-        'FipOperationFipDescriptorListLength': 'fipDiscoverySolicitationEnode.header.fipOperation.fipDescriptorListLength-6',
-        'FipOperationFipFp': 'fipDiscoverySolicitationEnode.header.fipOperation.fipFp-7',
-        'FipOperationFipSp': 'fipDiscoverySolicitationEnode.header.fipOperation.fipSp-8',
-        'FipOperationFipReserved2': 'fipDiscoverySolicitationEnode.header.fipOperation.fipReserved2-9',
-        'FipOperationFipABit': 'fipDiscoverySolicitationEnode.header.fipOperation.fipABit-10',
-        'FipOperationFipSBit': 'fipDiscoverySolicitationEnode.header.fipOperation.fipSBit-11',
-        'FipOperationFipFBit': 'fipDiscoverySolicitationEnode.header.fipOperation.fipFBit-12',
-        'FipMacAddressDescriptorFipMacAddressDescriptorType': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13',
-        'FipMacAddressDescriptorFipMacAddressDescriptorLength': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14',
-        'FipMacAddressDescriptorFipMacAddressDescriptorValue': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15',
-        'FipNameIdentifierDescriptorFipNameIdentifierDescriptorType': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorType-16',
-        'FipNameIdentifierDescriptorFipNameIdentifierDescriptorLength': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorLength-17',
-        'FipNameIdentifierDescriptorFipNameIdentifierDescriptorReserved': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorReserved-18',
-        'FipNameIdentifierDescriptorFipNameIdentifierDescriptorValue': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorValue-19',
-        'FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorType': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorType-20',
-        'FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorLength': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorLength-21',
-        'FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorValue': 'fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorValue-22',
+        "HeaderFipVersion": "fipDiscoverySolicitationEnode.header.fipVersion-1",
+        "HeaderFipReserved": "fipDiscoverySolicitationEnode.header.fipReserved-2",
+        "FipOperationCodeFipDiscovery": "fipDiscoverySolicitationEnode.header.fipOperation.fipOperationCode.fipDiscovery-3",
+        "FipOperationFipOperationReserved1": "fipDiscoverySolicitationEnode.header.fipOperation.fipOperationReserved1-4",
+        "FipSubcodeFipSubcode01h": "fipDiscoverySolicitationEnode.header.fipOperation.fipSubcode.fipSubcode01h-5",
+        "FipOperationFipDescriptorListLength": "fipDiscoverySolicitationEnode.header.fipOperation.fipDescriptorListLength-6",
+        "FipOperationFipFp": "fipDiscoverySolicitationEnode.header.fipOperation.fipFp-7",
+        "FipOperationFipSp": "fipDiscoverySolicitationEnode.header.fipOperation.fipSp-8",
+        "FipOperationFipReserved2": "fipDiscoverySolicitationEnode.header.fipOperation.fipReserved2-9",
+        "FipOperationFipABit": "fipDiscoverySolicitationEnode.header.fipOperation.fipABit-10",
+        "FipOperationFipSBit": "fipDiscoverySolicitationEnode.header.fipOperation.fipSBit-11",
+        "FipOperationFipFBit": "fipDiscoverySolicitationEnode.header.fipOperation.fipFBit-12",
+        "FipMacAddressDescriptorFipMacAddressDescriptorType": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13",
+        "FipMacAddressDescriptorFipMacAddressDescriptorLength": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14",
+        "FipMacAddressDescriptorFipMacAddressDescriptorValue": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15",
+        "FipNameIdentifierDescriptorFipNameIdentifierDescriptorType": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorType-16",
+        "FipNameIdentifierDescriptorFipNameIdentifierDescriptorLength": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorLength-17",
+        "FipNameIdentifierDescriptorFipNameIdentifierDescriptorReserved": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorReserved-18",
+        "FipNameIdentifierDescriptorFipNameIdentifierDescriptorValue": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipNameIdentifierDescriptor.fipNameIdentifierDescriptorValue-19",
+        "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorType": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorType-20",
+        "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorLength": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorLength-21",
+        "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorValue": "fipDiscoverySolicitationEnode.header.fipDescriptors.fipSelectFipDescriptor.fipDescriptorMaxFcoeSize.fipMaxFcoeSizeDescriptorValue-22",
     }
 
     def __init__(self, parent, list_op=False):
@@ -41,7 +41,10 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipVersion"])
+        )
 
     @property
     def HeaderFipReserved(self):
@@ -51,7 +54,10 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipReserved"])
+        )
 
     @property
     def FipOperationCodeFipDiscovery(self):
@@ -61,7 +67,10 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationCodeFipDiscovery']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationCodeFipDiscovery"])
+        )
 
     @property
     def FipOperationFipOperationReserved1(self):
@@ -71,7 +80,11 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipOperationReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationFipOperationReserved1"]),
+        )
 
     @property
     def FipSubcodeFipSubcode01h(self):
@@ -81,7 +94,10 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipSubcodeFipSubcode01h']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipSubcodeFipSubcode01h"])
+        )
 
     @property
     def FipOperationFipDescriptorListLength(self):
@@ -91,7 +107,13 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipDescriptorListLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationFipDescriptorListLength"]
+            ),
+        )
 
     @property
     def FipOperationFipFp(self):
@@ -102,7 +124,10 @@ class FipDiscoverySolicitationEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFp"])
+        )
 
     @property
     def FipOperationFipSp(self):
@@ -113,7 +138,10 @@ class FipDiscoverySolicitationEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSp"])
+        )
 
     @property
     def FipOperationFipReserved2(self):
@@ -123,7 +151,10 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipReserved2"])
+        )
 
     @property
     def FipOperationFipABit(self):
@@ -134,7 +165,10 @@ class FipDiscoverySolicitationEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipABit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipABit"])
+        )
 
     @property
     def FipOperationFipSBit(self):
@@ -145,7 +179,10 @@ class FipDiscoverySolicitationEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSBit"])
+        )
 
     @property
     def FipOperationFipFBit(self):
@@ -156,7 +193,10 @@ class FipDiscoverySolicitationEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFBit"])
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorType(self):
@@ -166,7 +206,13 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorType"]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorLength(self):
@@ -176,7 +222,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipMacAddressDescriptorFipMacAddressDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorValue(self):
@@ -186,7 +240,13 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorValue"]
+            ),
+        )
 
     @property
     def FipNameIdentifierDescriptorFipNameIdentifierDescriptorType(self):
@@ -196,7 +256,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipNameIdentifierDescriptorFipNameIdentifierDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipNameIdentifierDescriptorFipNameIdentifierDescriptorType"
+                ]
+            ),
+        )
 
     @property
     def FipNameIdentifierDescriptorFipNameIdentifierDescriptorLength(self):
@@ -206,7 +274,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipNameIdentifierDescriptorFipNameIdentifierDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipNameIdentifierDescriptorFipNameIdentifierDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipNameIdentifierDescriptorFipNameIdentifierDescriptorReserved(self):
@@ -216,7 +292,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipNameIdentifierDescriptorFipNameIdentifierDescriptorReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipNameIdentifierDescriptorFipNameIdentifierDescriptorReserved"
+                ]
+            ),
+        )
 
     @property
     def FipNameIdentifierDescriptorFipNameIdentifierDescriptorValue(self):
@@ -226,7 +310,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipNameIdentifierDescriptorFipNameIdentifierDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipNameIdentifierDescriptorFipNameIdentifierDescriptorValue"
+                ]
+            ),
+        )
 
     @property
     def FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorType(self):
@@ -236,7 +328,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorType"
+                ]
+            ),
+        )
 
     @property
     def FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorLength(self):
@@ -246,7 +346,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorValue(self):
@@ -256,7 +364,15 @@ class FipDiscoverySolicitationEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipDescriptorMaxFcoeSizeFipMaxFcoeSizeDescriptorValue"
+                ]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

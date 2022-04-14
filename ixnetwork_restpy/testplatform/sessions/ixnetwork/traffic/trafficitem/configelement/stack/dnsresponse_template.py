@@ -4,48 +4,48 @@ from ixnetwork_restpy.files import Files
 
 class Dnsresponse(Base):
     __slots__ = ()
-    _SDM_NAME = 'dns_response'
+    _SDM_NAME = "dns_response"
     _SDM_ATT_MAP = {
-        'HeaderTid': 'dns_response.header.tid-1',
-        'DnsflagsQRBit': 'dns_response.header.dnsflags.QRBit-2',
-        'DnsflagsOpcode': 'dns_response.header.dnsflags.opcode-3',
-        'DnsflagsAABit': 'dns_response.header.dnsflags.AABit-4',
-        'DnsflagsTCBit': 'dns_response.header.dnsflags.TCBit-5',
-        'DnsflagsRDBit': 'dns_response.header.dnsflags.RDBit-6',
-        'DnsflagsRABit': 'dns_response.header.dnsflags.RABit-7',
-        'DnsflagsZBit': 'dns_response.header.dnsflags.ZBit-8',
-        'DnsflagsADBit': 'dns_response.header.dnsflags.ADBit-9',
-        'DnsflagsCDBit': 'dns_response.header.dnsflags.CDBit-10',
-        'DnsflagsRcode': 'dns_response.header.dnsflags.rcode-11',
-        'HeaderQCount': 'dns_response.header.QCount-12',
-        'HeaderACount': 'dns_response.header.ACount-13',
-        'HeaderAuthCount': 'dns_response.header.AuthCount-14',
-        'HeaderInfoCount': 'dns_response.header.InfoCount-15',
-        'QueriesLength': 'dns_response.header.queries.length-16',
-        'QueriesName': 'dns_response.header.queries.Name-17',
-        'QueriesType': 'dns_response.header.queries.Type-18',
-        'QueriesClass': 'dns_response.header.queries.Class-19',
-        'AnswersLength': 'dns_response.header.rrtype.answers.length-20',
-        'AnswersName': 'dns_response.header.rrtype.answers.Name-21',
-        'AnswersType': 'dns_response.header.rrtype.answers.Type-22',
-        'AnswersClass': 'dns_response.header.rrtype.answers.Class-23',
-        'AnswersTtl': 'dns_response.header.rrtype.answers.Ttl-24',
-        'AnswersRdlen': 'dns_response.header.rrtype.answers.rdlen-25',
-        'AnswersRdata': 'dns_response.header.rrtype.answers.rdata-26',
-        'AuthnameserversLength': 'dns_response.header.rrtype.authnameservers.length-27',
-        'AuthnameserversName': 'dns_response.header.rrtype.authnameservers.Name-28',
-        'AuthnameserversType': 'dns_response.header.rrtype.authnameservers.Type-29',
-        'AuthnameserversClass': 'dns_response.header.rrtype.authnameservers.Class-30',
-        'AuthnameserversTtl': 'dns_response.header.rrtype.authnameservers.Ttl-31',
-        'AuthnameserversRdlen': 'dns_response.header.rrtype.authnameservers.rdlen-32',
-        'AuthnameserversRdata': 'dns_response.header.rrtype.authnameservers.rdata-33',
-        'AdditionalinfoLength': 'dns_response.header.rrtype.additionalinfo.length-34',
-        'AdditionalinfoName': 'dns_response.header.rrtype.additionalinfo.Name-35',
-        'AdditionalinfoType': 'dns_response.header.rrtype.additionalinfo.Type-36',
-        'AdditionalinfoClass': 'dns_response.header.rrtype.additionalinfo.Class-37',
-        'AdditionalinfoTtl': 'dns_response.header.rrtype.additionalinfo.Ttl-38',
-        'AdditionalinfoRdlen': 'dns_response.header.rrtype.additionalinfo.rdlen-39',
-        'AdditionalinfoRdata': 'dns_response.header.rrtype.additionalinfo.rdata-40',
+        "HeaderTid": "dns_response.header.tid-1",
+        "DnsflagsQRBit": "dns_response.header.dnsflags.QRBit-2",
+        "DnsflagsOpcode": "dns_response.header.dnsflags.opcode-3",
+        "DnsflagsAABit": "dns_response.header.dnsflags.AABit-4",
+        "DnsflagsTCBit": "dns_response.header.dnsflags.TCBit-5",
+        "DnsflagsRDBit": "dns_response.header.dnsflags.RDBit-6",
+        "DnsflagsRABit": "dns_response.header.dnsflags.RABit-7",
+        "DnsflagsZBit": "dns_response.header.dnsflags.ZBit-8",
+        "DnsflagsADBit": "dns_response.header.dnsflags.ADBit-9",
+        "DnsflagsCDBit": "dns_response.header.dnsflags.CDBit-10",
+        "DnsflagsRcode": "dns_response.header.dnsflags.rcode-11",
+        "HeaderQCount": "dns_response.header.QCount-12",
+        "HeaderACount": "dns_response.header.ACount-13",
+        "HeaderAuthCount": "dns_response.header.AuthCount-14",
+        "HeaderInfoCount": "dns_response.header.InfoCount-15",
+        "QueriesLength": "dns_response.header.queries.length-16",
+        "QueriesName": "dns_response.header.queries.Name-17",
+        "QueriesType": "dns_response.header.queries.Type-18",
+        "QueriesClass": "dns_response.header.queries.Class-19",
+        "AnswersLength": "dns_response.header.rrtype.answers.length-20",
+        "AnswersName": "dns_response.header.rrtype.answers.Name-21",
+        "AnswersType": "dns_response.header.rrtype.answers.Type-22",
+        "AnswersClass": "dns_response.header.rrtype.answers.Class-23",
+        "AnswersTtl": "dns_response.header.rrtype.answers.Ttl-24",
+        "AnswersRdlen": "dns_response.header.rrtype.answers.rdlen-25",
+        "AnswersRdata": "dns_response.header.rrtype.answers.rdata-26",
+        "AuthnameserversLength": "dns_response.header.rrtype.authnameservers.length-27",
+        "AuthnameserversName": "dns_response.header.rrtype.authnameservers.Name-28",
+        "AuthnameserversType": "dns_response.header.rrtype.authnameservers.Type-29",
+        "AuthnameserversClass": "dns_response.header.rrtype.authnameservers.Class-30",
+        "AuthnameserversTtl": "dns_response.header.rrtype.authnameservers.Ttl-31",
+        "AuthnameserversRdlen": "dns_response.header.rrtype.authnameservers.rdlen-32",
+        "AuthnameserversRdata": "dns_response.header.rrtype.authnameservers.rdata-33",
+        "AdditionalinfoLength": "dns_response.header.rrtype.additionalinfo.length-34",
+        "AdditionalinfoName": "dns_response.header.rrtype.additionalinfo.Name-35",
+        "AdditionalinfoType": "dns_response.header.rrtype.additionalinfo.Type-36",
+        "AdditionalinfoClass": "dns_response.header.rrtype.additionalinfo.Class-37",
+        "AdditionalinfoTtl": "dns_response.header.rrtype.additionalinfo.Ttl-38",
+        "AdditionalinfoRdlen": "dns_response.header.rrtype.additionalinfo.rdlen-39",
+        "AdditionalinfoRdata": "dns_response.header.rrtype.additionalinfo.rdata-40",
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +59,8 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderTid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderTid"]))
 
     @property
     def DnsflagsQRBit(self):
@@ -70,7 +71,8 @@ class Dnsresponse(Base):
         Available enum values: Query, 0, Response, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsQRBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsQRBit"]))
 
     @property
     def DnsflagsOpcode(self):
@@ -81,7 +83,10 @@ class Dnsresponse(Base):
         Available enum values: Query, 0, Inverse Query, 1, Status, 2, Notify, 4, Update, 5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsOpcode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsOpcode"])
+        )
 
     @property
     def DnsflagsAABit(self):
@@ -91,7 +96,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsAABit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsAABit"]))
 
     @property
     def DnsflagsTCBit(self):
@@ -101,7 +107,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsTCBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsTCBit"]))
 
     @property
     def DnsflagsRDBit(self):
@@ -111,7 +118,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsRDBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsRDBit"]))
 
     @property
     def DnsflagsRABit(self):
@@ -121,7 +129,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsRABit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsRABit"]))
 
     @property
     def DnsflagsZBit(self):
@@ -131,7 +140,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsZBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsZBit"]))
 
     @property
     def DnsflagsADBit(self):
@@ -141,7 +151,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsADBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsADBit"]))
 
     @property
     def DnsflagsCDBit(self):
@@ -151,7 +162,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsCDBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsCDBit"]))
 
     @property
     def DnsflagsRcode(self):
@@ -162,7 +174,8 @@ class Dnsresponse(Base):
         Available enum values: No Error, 0, Format Error, 1, Server Failure, 2, Non-Existent Domain, 3, Not Implemented, 4, Query Refused, 5, YXDomain, 6, YXRRSet, 7, NXRRSet, 8, NotAuth, 9, NotZone, 10, Bad OPT Version, 16, TSIG Signature failure, 16, BADKEY, 17, BADTIME, 18, BADMODE, 19, BADNAME, 20, BADALG, 21
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DnsflagsRcode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DnsflagsRcode"]))
 
     @property
     def HeaderQCount(self):
@@ -172,7 +185,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderQCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderQCount"]))
 
     @property
     def HeaderACount(self):
@@ -182,7 +196,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderACount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderACount"]))
 
     @property
     def HeaderAuthCount(self):
@@ -192,7 +207,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAuthCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAuthCount"])
+        )
 
     @property
     def HeaderInfoCount(self):
@@ -202,7 +220,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderInfoCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderInfoCount"])
+        )
 
     @property
     def QueriesLength(self):
@@ -212,7 +233,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueriesLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QueriesLength"]))
 
     @property
     def QueriesName(self):
@@ -222,7 +244,8 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueriesName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QueriesName"]))
 
     @property
     def QueriesType(self):
@@ -233,7 +256,8 @@ class Dnsresponse(Base):
         Available enum values: A, 1, AAAA, 28, CNAME, 5, DNAME, 39, DNSKEY, 48
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueriesType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QueriesType"]))
 
     @property
     def QueriesClass(self):
@@ -244,7 +268,8 @@ class Dnsresponse(Base):
         Available enum values: Internet(IN), 1, Chaos(CH), 3, Hesiod(HS), 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueriesClass']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QueriesClass"]))
 
     @property
     def AnswersLength(self):
@@ -254,7 +279,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersLength"]))
 
     @property
     def AnswersName(self):
@@ -264,7 +290,8 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersName"]))
 
     @property
     def AnswersType(self):
@@ -275,7 +302,8 @@ class Dnsresponse(Base):
         Available enum values: A, 1, AAAA, 28, CNAME, 5, DNAME, 39, DNSKEY, 48
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersType"]))
 
     @property
     def AnswersClass(self):
@@ -286,7 +314,8 @@ class Dnsresponse(Base):
         Available enum values: Internet(IN), 1, Chaos(CH), 3, Hesiod(HS), 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersClass']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersClass"]))
 
     @property
     def AnswersTtl(self):
@@ -296,7 +325,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersTtl"]))
 
     @property
     def AnswersRdlen(self):
@@ -306,7 +336,8 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersRdlen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersRdlen"]))
 
     @property
     def AnswersRdata(self):
@@ -316,7 +347,8 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnswersRdata']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AnswersRdata"]))
 
     @property
     def AuthnameserversLength(self):
@@ -326,7 +358,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversLength"])
+        )
 
     @property
     def AuthnameserversName(self):
@@ -336,7 +371,10 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversName"])
+        )
 
     @property
     def AuthnameserversType(self):
@@ -347,7 +385,10 @@ class Dnsresponse(Base):
         Available enum values: A, 1, AAAA, 28, CNAME, 5, DNAME, 39, DNSKEY, 48
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversType"])
+        )
 
     @property
     def AuthnameserversClass(self):
@@ -358,7 +399,10 @@ class Dnsresponse(Base):
         Available enum values: Internet(IN), 1, Chaos(CH), 3, Hesiod(HS), 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversClass']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversClass"])
+        )
 
     @property
     def AuthnameserversTtl(self):
@@ -368,7 +412,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversTtl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversTtl"])
+        )
 
     @property
     def AuthnameserversRdlen(self):
@@ -378,7 +425,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversRdlen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversRdlen"])
+        )
 
     @property
     def AuthnameserversRdata(self):
@@ -388,7 +438,10 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthnameserversRdata']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthnameserversRdata"])
+        )
 
     @property
     def AdditionalinfoLength(self):
@@ -398,7 +451,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoLength"])
+        )
 
     @property
     def AdditionalinfoName(self):
@@ -408,7 +464,10 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoName"])
+        )
 
     @property
     def AdditionalinfoType(self):
@@ -419,7 +478,10 @@ class Dnsresponse(Base):
         Available enum values: A, 1, AAAA, 28, CNAME, 5, DNAME, 39, DNSKEY, 48
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoType"])
+        )
 
     @property
     def AdditionalinfoClass(self):
@@ -430,7 +492,10 @@ class Dnsresponse(Base):
         Available enum values: Internet(IN), 1, Chaos(CH), 3, Hesiod(HS), 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoClass']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoClass"])
+        )
 
     @property
     def AdditionalinfoTtl(self):
@@ -440,7 +505,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoTtl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoTtl"])
+        )
 
     @property
     def AdditionalinfoRdlen(self):
@@ -450,7 +518,10 @@ class Dnsresponse(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoRdlen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoRdlen"])
+        )
 
     @property
     def AdditionalinfoRdata(self):
@@ -460,7 +531,10 @@ class Dnsresponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdditionalinfoRdata']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdditionalinfoRdata"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

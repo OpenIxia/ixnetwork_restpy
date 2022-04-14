@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class ApplyAction(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'applyAction'
+    _SDM_NAME = "applyAction"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
-        'ExperimenterDataMiss': 'experimenterDataMiss',
-        'ExperimenterId': 'experimenterId',
-        'ExperimenterIdMiss': 'experimenterIdMiss',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterDataLengthMiss": "experimenterDataLengthMiss",
+        "ExperimenterDataMiss": "experimenterDataMiss",
+        "ExperimenterId": "experimenterId",
+        "ExperimenterIdMiss": "experimenterIdMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ApplyAction, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class ApplyAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_cb65e7e380c3e82fd0727515601c37f8 import ApplyActionMissType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_cb65e7e380c3e82fd0727515601c37f8 import (
+            ApplyActionMissType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplyActionMissType', None) is not None:
-                return self._properties.get('ApplyActionMissType')
+            if self._properties.get("ApplyActionMissType", None) is not None:
+                return self._properties.get("ApplyActionMissType")
         return ApplyActionMissType(self)._select()
 
     @property
@@ -75,10 +78,13 @@ class ApplyAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_c99bd67b1f4afee24406c78527adb40f import ApplyActionType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_c99bd67b1f4afee24406c78527adb40f import (
+            ApplyActionType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplyActionType', None) is not None:
-                return self._properties.get('ApplyActionType')
+            if self._properties.get("ApplyActionType", None) is not None:
+                return self._properties.get("ApplyActionType")
         return ApplyActionType(self)._select()
 
     @property
@@ -89,11 +95,12 @@ class ApplyAction(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -103,11 +110,12 @@ class ApplyAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterDataLengthMiss(self):
@@ -117,11 +125,12 @@ class ApplyAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"])
+
     @ExperimenterDataLengthMiss.setter
     def ExperimenterDataLengthMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLengthMiss"], value)
 
     @property
     def ExperimenterDataMiss(self):
@@ -131,11 +140,12 @@ class ApplyAction(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"])
+
     @ExperimenterDataMiss.setter
     def ExperimenterDataMiss(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataMiss"], value)
 
     @property
     def ExperimenterId(self):
@@ -145,11 +155,12 @@ class ApplyAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
     @property
     def ExperimenterIdMiss(self):
@@ -159,13 +170,22 @@ class ApplyAction(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"])
+
     @ExperimenterIdMiss.setter
     def ExperimenterIdMiss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterIdMiss"], value)
 
-    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def update(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int) -> ApplyAction
         """Updates applyAction resource on the server.
 
@@ -184,7 +204,15 @@ class ApplyAction(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterDataLengthMiss=None,
+        ExperimenterDataMiss=None,
+        ExperimenterId=None,
+        ExperimenterIdMiss=None,
+    ):
         # type: (str, int, int, str, int, int) -> ApplyAction
         """Finds and retrieves applyAction resources from the server.
 

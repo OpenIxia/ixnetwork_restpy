@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class PacketInList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'packetInList'
+    _SDM_NAME = "packetInList"
     _SDM_ATT_MAP = {
-        'AuxiliaryId': 'auxiliaryId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FlowTable': 'flowTable',
-        'InPort': 'inPort',
-        'Name': 'name',
-        'PacketInName': 'packetInName',
-        'PhysicalInPort': 'physicalInPort',
-        'SendPacketIn': 'sendPacketIn',
-        'SwitchName': 'switchName',
+        "AuxiliaryId": "auxiliaryId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FlowTable": "flowTable",
+        "InPort": "inPort",
+        "Name": "name",
+        "PacketInName": "packetInName",
+        "PhysicalInPort": "physicalInPort",
+        "SendPacketIn": "sendPacketIn",
+        "SwitchName": "switchName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PacketInList, self).__init__(parent, list_op)
@@ -61,7 +61,8 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The identifier for auxiliary connections.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxiliaryId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuxiliaryId"]))
 
     @property
     def Count(self):
@@ -71,7 +72,7 @@ class PacketInList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -81,7 +82,7 @@ class PacketInList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FlowTable(self):
@@ -92,7 +93,8 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Switch looks up for each PacketIn configured in the Flow Table.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowTable']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowTable"]))
 
     @property
     def InPort(self):
@@ -103,7 +105,8 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Switch Port on which, this Packet has come.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InPort"]))
 
     @property
     def Name(self):
@@ -113,11 +116,12 @@ class PacketInList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PacketInName(self):
@@ -128,7 +132,8 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the packet-in.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketInName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PacketInName"]))
 
     @property
     def PhysicalInPort(self):
@@ -139,7 +144,10 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The physical In port value for this PacketIn range. It is the underlying physical port when packet is received on a logical port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PhysicalInPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PhysicalInPort"])
+        )
 
     @property
     def SendPacketIn(self):
@@ -150,7 +158,8 @@ class PacketInList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Switch starts sending PacketIn messages when the session comes up.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendPacketIn']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SendPacketIn"]))
 
     @property
     def SwitchName(self):
@@ -160,7 +169,7 @@ class PacketInList(Base):
         -------
         - str: Parent Switch Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchName"])
 
     def update(self, Name=None):
         # type: (str) -> PacketInList
@@ -181,7 +190,7 @@ class PacketInList(Base):
 
     def add(self, Name=None):
         # type: (str) -> PacketInList
-        """Adds a new packetInList resource on the json, only valid with config assistant
+        """Adds a new packetInList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -257,10 +266,12 @@ class PacketInList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPause', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPause", payload=payload, response_object=None)
 
     def SendStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -279,10 +290,12 @@ class PacketInList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendStart', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendStart", payload=payload, response_object=None)
 
     def SendStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -301,12 +314,23 @@ class PacketInList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendStop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendStop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, AuxiliaryId=None, FlowTable=None, InPort=None, PacketInName=None, PhysicalInPort=None, SendPacketIn=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AuxiliaryId=None,
+        FlowTable=None,
+        InPort=None,
+        PacketInName=None,
+        PhysicalInPort=None,
+        SendPacketIn=None,
+    ):
         """Base class infrastructure that gets a list of packetInList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

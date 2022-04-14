@@ -4,31 +4,31 @@ from ixnetwork_restpy.files import Files
 
 class PimdmHelloMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'pimdmHelloMessage'
+    _SDM_NAME = "pimdmHelloMessage"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'pimdmHelloMessage.header.version-1',
-        'HeaderType': 'pimdmHelloMessage.header.type-2',
-        'HeaderReserved': 'pimdmHelloMessage.header.reserved-3',
-        'HeaderHeaderChecksum': 'pimdmHelloMessage.header.headerChecksum-4',
-        'HoldtimeType': 'pimdmHelloMessage.header.helloOptionsFields.options.holdtime.type-5',
-        'HoldtimeLength': 'pimdmHelloMessage.header.helloOptionsFields.options.holdtime.length-6',
-        'HoldtimeHoldtimesec': 'pimdmHelloMessage.header.helloOptionsFields.options.holdtime.holdtimesec-7',
-        'LanPruneDelayType': 'pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.type-8',
-        'LanPruneDelayLength': 'pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.length-9',
-        'LanPruneDelayTBit': 'pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.tBit-10',
-        'LanPruneDelayLanDelay': 'pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.lanDelay-11',
-        'LanPruneDelayOverrideInterval': 'pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.overrideInterval-12',
-        'GenerationIDType': 'pimdmHelloMessage.header.helloOptionsFields.options.generationID.type-13',
-        'GenerationIDLength': 'pimdmHelloMessage.header.helloOptionsFields.options.generationID.length-14',
-        'GenerationIDGenerationID': 'pimdmHelloMessage.header.helloOptionsFields.options.generationID.generationID-15',
-        'StateRefreshCapableType': 'pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.type-16',
-        'StateRefreshCapableLength': 'pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.length-17',
-        'StateRefreshCapableVersion': 'pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.version-18',
-        'StateRefreshCapableInterval': 'pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.interval-19',
-        'StateRefreshCapableReserved': 'pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.reserved-20',
-        'UserDefinedFieldType': 'pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.type-21',
-        'UserDefinedFieldLength': 'pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.length-22',
-        'UserDefinedFieldValue': 'pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.value-23',
+        "HeaderVersion": "pimdmHelloMessage.header.version-1",
+        "HeaderType": "pimdmHelloMessage.header.type-2",
+        "HeaderReserved": "pimdmHelloMessage.header.reserved-3",
+        "HeaderHeaderChecksum": "pimdmHelloMessage.header.headerChecksum-4",
+        "HoldtimeType": "pimdmHelloMessage.header.helloOptionsFields.options.holdtime.type-5",
+        "HoldtimeLength": "pimdmHelloMessage.header.helloOptionsFields.options.holdtime.length-6",
+        "HoldtimeHoldtimesec": "pimdmHelloMessage.header.helloOptionsFields.options.holdtime.holdtimesec-7",
+        "LanPruneDelayType": "pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.type-8",
+        "LanPruneDelayLength": "pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.length-9",
+        "LanPruneDelayTBit": "pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.tBit-10",
+        "LanPruneDelayLanDelay": "pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.lanDelay-11",
+        "LanPruneDelayOverrideInterval": "pimdmHelloMessage.header.helloOptionsFields.options.lanPruneDelay.overrideInterval-12",
+        "GenerationIDType": "pimdmHelloMessage.header.helloOptionsFields.options.generationID.type-13",
+        "GenerationIDLength": "pimdmHelloMessage.header.helloOptionsFields.options.generationID.length-14",
+        "GenerationIDGenerationID": "pimdmHelloMessage.header.helloOptionsFields.options.generationID.generationID-15",
+        "StateRefreshCapableType": "pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.type-16",
+        "StateRefreshCapableLength": "pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.length-17",
+        "StateRefreshCapableVersion": "pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.version-18",
+        "StateRefreshCapableInterval": "pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.interval-19",
+        "StateRefreshCapableReserved": "pimdmHelloMessage.header.helloOptionsFields.options.stateRefreshCapable.reserved-20",
+        "UserDefinedFieldType": "pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.type-21",
+        "UserDefinedFieldLength": "pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.length-22",
+        "UserDefinedFieldValue": "pimdmHelloMessage.header.helloOptionsFields.options.userDefinedField.value-23",
     }
 
     def __init__(self, parent, list_op=False):
@@ -42,7 +42,8 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderType(self):
@@ -53,7 +54,8 @@ class PimdmHelloMessage(Base):
         Available enum values: Hello, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderReserved(self):
@@ -63,7 +65,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderHeaderChecksum(self):
@@ -73,7 +78,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHeaderChecksum"])
+        )
 
     @property
     def HoldtimeType(self):
@@ -83,7 +91,8 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldtimeType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HoldtimeType"]))
 
     @property
     def HoldtimeLength(self):
@@ -93,7 +102,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldtimeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldtimeLength"])
+        )
 
     @property
     def HoldtimeHoldtimesec(self):
@@ -103,7 +115,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldtimeHoldtimesec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldtimeHoldtimesec"])
+        )
 
     @property
     def LanPruneDelayType(self):
@@ -113,7 +128,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LanPruneDelayType"])
+        )
 
     @property
     def LanPruneDelayLength(self):
@@ -123,7 +141,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LanPruneDelayLength"])
+        )
 
     @property
     def LanPruneDelayTBit(self):
@@ -133,7 +154,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayTBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LanPruneDelayTBit"])
+        )
 
     @property
     def LanPruneDelayLanDelay(self):
@@ -143,7 +167,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayLanDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LanPruneDelayLanDelay"])
+        )
 
     @property
     def LanPruneDelayOverrideInterval(self):
@@ -153,7 +180,11 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayOverrideInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LanPruneDelayOverrideInterval"]),
+        )
 
     @property
     def GenerationIDType(self):
@@ -163,7 +194,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenerationIDType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenerationIDType"])
+        )
 
     @property
     def GenerationIDLength(self):
@@ -173,7 +207,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenerationIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenerationIDLength"])
+        )
 
     @property
     def GenerationIDGenerationID(self):
@@ -183,7 +220,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenerationIDGenerationID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenerationIDGenerationID"])
+        )
 
     @property
     def StateRefreshCapableType(self):
@@ -193,7 +233,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StateRefreshCapableType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StateRefreshCapableType"])
+        )
 
     @property
     def StateRefreshCapableLength(self):
@@ -203,7 +246,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StateRefreshCapableLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StateRefreshCapableLength"])
+        )
 
     @property
     def StateRefreshCapableVersion(self):
@@ -213,7 +259,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StateRefreshCapableVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StateRefreshCapableVersion"])
+        )
 
     @property
     def StateRefreshCapableInterval(self):
@@ -223,7 +272,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StateRefreshCapableInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StateRefreshCapableInterval"])
+        )
 
     @property
     def StateRefreshCapableReserved(self):
@@ -233,7 +285,10 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StateRefreshCapableReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StateRefreshCapableReserved"])
+        )
 
     @property
     def UserDefinedFieldType(self):
@@ -243,17 +298,23 @@ class PimdmHelloMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedFieldType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedFieldType"])
+        )
 
     @property
     def UserDefinedFieldLength(self):
         """
-        Display Name: Length 
+        Display Name: Length
         Default Value: 1
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedFieldLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedFieldLength"])
+        )
 
     @property
     def UserDefinedFieldValue(self):
@@ -263,7 +324,10 @@ class PimdmHelloMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedFieldValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedFieldValue"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

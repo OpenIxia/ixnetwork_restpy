@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class MatchCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'matchCriteria'
+    _SDM_NAME = "matchCriteria"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Description': 'description',
-        'DisplayName': 'displayName',
-        'IsEditable': 'isEditable',
-        'IsEnabled': 'isEnabled',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "Count": "count",
+        "Description": "description",
+        "DisplayName": "displayName",
+        "IsEditable": "isEditable",
+        "IsEnabled": "isEnabled",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MatchCriteria, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class MatchCriteria(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field_f65a45047b747ab6446cd586626ccd2d import Field
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field_f65a45047b747ab6446cd586626ccd2d import (
+            Field,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Field', None) is not None:
-                return self._properties.get('Field')
+            if self._properties.get("Field", None) is not None:
+                return self._properties.get("Field")
         return Field(self)
 
     @property
@@ -76,10 +79,13 @@ class MatchCriteria(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import MatchCriteria
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import (
+            MatchCriteria,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MatchCriteria', None) is not None:
-                return self._properties.get('MatchCriteria')
+            if self._properties.get("MatchCriteria", None) is not None:
+                return self._properties.get("MatchCriteria")
         return MatchCriteria(self)._select()
 
     @property
@@ -90,7 +96,7 @@ class MatchCriteria(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Description(self):
@@ -100,11 +106,12 @@ class MatchCriteria(Base):
         -------
         - str: Description of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DisplayName(self):
@@ -114,7 +121,7 @@ class MatchCriteria(Base):
         -------
         - str: Display name used by GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def IsEditable(self):
@@ -124,11 +131,12 @@ class MatchCriteria(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsEnabled(self):
@@ -138,11 +146,12 @@ class MatchCriteria(Base):
         -------
         - bool: Enables disables the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def IsRequired(self):
@@ -152,11 +161,12 @@ class MatchCriteria(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -166,13 +176,21 @@ class MatchCriteria(Base):
         -------
         - str: Name of packet field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+    def update(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> MatchCriteria
         """Updates matchCriteria resource on the server.
 
@@ -190,7 +208,16 @@ class MatchCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        Description=None,
+        DisplayName=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (int, str, str, bool, bool, bool, str) -> MatchCriteria
         """Finds and retrieves matchCriteria resources from the server.
 

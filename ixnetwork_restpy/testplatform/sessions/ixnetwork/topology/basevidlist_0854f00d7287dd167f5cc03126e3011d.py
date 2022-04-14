@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class BaseVidList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'baseVidList'
+    _SDM_NAME = "baseVidList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVid': 'baseVid',
-        'BaseVlanPriority': 'baseVlanPriority',
-        'BvlanTpid': 'bvlanTpid',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EctAlgorithm': 'ectAlgorithm',
-        'Name': 'name',
-        'TopologyId': 'topologyId',
-        'UseFlagBit': 'useFlagBit',
+        "Active": "active",
+        "BaseVid": "baseVid",
+        "BaseVlanPriority": "baseVlanPriority",
+        "BvlanTpid": "bvlanTpid",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EctAlgorithm": "ectAlgorithm",
+        "Name": "name",
+        "TopologyId": "topologyId",
+        "UseFlagBit": "useFlagBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BaseVidList, self).__init__(parent, list_op)
@@ -60,7 +60,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BaseVid(self):
@@ -71,7 +72,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Base VID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseVid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BaseVid"]))
 
     @property
     def BaseVlanPriority(self):
@@ -82,7 +84,10 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseVlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BaseVlanPriority"])
+        )
 
     @property
     def BvlanTpid(self):
@@ -93,7 +98,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BvlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BvlanTpid"]))
 
     @property
     def Count(self):
@@ -103,7 +109,7 @@ class BaseVidList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -113,7 +119,7 @@ class BaseVidList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EctAlgorithm(self):
@@ -124,7 +130,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ECT AlgorithmType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EctAlgorithm"]))
 
     @property
     def Name(self):
@@ -134,11 +141,12 @@ class BaseVidList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def TopologyId(self):
@@ -149,7 +157,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     @property
     def UseFlagBit(self):
@@ -160,7 +169,8 @@ class BaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Flag Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseFlagBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseFlagBit"]))
 
     def update(self, Name=None):
         # type: (str) -> BaseVidList
@@ -221,7 +231,17 @@ class BaseVidList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, BaseVid=None, BaseVlanPriority=None, BvlanTpid=None, EctAlgorithm=None, TopologyId=None, UseFlagBit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BaseVid=None,
+        BaseVlanPriority=None,
+        BvlanTpid=None,
+        EctAlgorithm=None,
+        TopologyId=None,
+        UseFlagBit=None,
+    ):
         """Base class infrastructure that gets a list of baseVidList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

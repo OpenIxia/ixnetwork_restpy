@@ -73,7 +73,7 @@ class TestConfig(Base):
 
     def add(self, EnableThreshold=None):
         # type: (bool) -> TestConfig
-        """Adds a new testConfig resource on the json, only valid with config assistant
+        """Adds a new testConfig resource on the json, only valid with batch add utility
 
         Args
         ----

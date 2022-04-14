@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class MatchMask(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'matchMask'
+    _SDM_NAME = "matchMask"
     _SDM_ATT_MAP = {
-        'ArpDestinationIpv4AddressMask': 'arpDestinationIpv4AddressMask',
-        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
-        'ArpSourceIpv4AddressMask': 'arpSourceIpv4AddressMask',
-        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
-        'EthernetDestinationMask': 'ethernetDestinationMask',
-        'EthernetSourceMask': 'ethernetSourceMask',
-        'Ipv4DestinationMask': 'ipv4DestinationMask',
-        'Ipv4SourceMask': 'ipv4SourceMask',
-        'Ipv6DestinationMask': 'ipv6DestinationMask',
-        'Ipv6ExtHeaderMask': 'ipv6ExtHeaderMask',
-        'Ipv6FlowLabelMask': 'ipv6FlowLabelMask',
-        'Ipv6SourceMask': 'ipv6SourceMask',
-        'MetadataMask': 'metadataMask',
-        'PbbIsidMask': 'pbbIsidMask',
-        'TunnelIdMask': 'tunnelIdMask',
-        'VlanMask': 'vlanMask',
+        "ArpDestinationIpv4AddressMask": "arpDestinationIpv4AddressMask",
+        "ArpDstHwAddressMask": "arpDstHwAddressMask",
+        "ArpSourceIpv4AddressMask": "arpSourceIpv4AddressMask",
+        "ArpSrcHwAddressMask": "arpSrcHwAddressMask",
+        "EthernetDestinationMask": "ethernetDestinationMask",
+        "EthernetSourceMask": "ethernetSourceMask",
+        "Ipv4DestinationMask": "ipv4DestinationMask",
+        "Ipv4SourceMask": "ipv4SourceMask",
+        "Ipv6DestinationMask": "ipv6DestinationMask",
+        "Ipv6ExtHeaderMask": "ipv6ExtHeaderMask",
+        "Ipv6FlowLabelMask": "ipv6FlowLabelMask",
+        "Ipv6SourceMask": "ipv6SourceMask",
+        "MetadataMask": "metadataMask",
+        "PbbIsidMask": "pbbIsidMask",
+        "TunnelIdMask": "tunnelIdMask",
+        "VlanMask": "vlanMask",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MatchMask, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, ARP Destination IPv4 Address Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDestinationIpv4AddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDestinationIpv4AddressMask"])
+
     @ArpDestinationIpv4AddressMask.setter
     def ArpDestinationIpv4AddressMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDestinationIpv4AddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDestinationIpv4AddressMask"], value)
 
     @property
     def ArpDstHwAddressMask(self):
@@ -79,11 +80,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, ARP Destination Hardware Address Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddressMask"])
+
     @ArpDstHwAddressMask.setter
     def ArpDstHwAddressMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstHwAddressMask"], value)
 
     @property
     def ArpSourceIpv4AddressMask(self):
@@ -93,11 +95,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, ARP Source IPv4 Address Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSourceIpv4AddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSourceIpv4AddressMask"])
+
     @ArpSourceIpv4AddressMask.setter
     def ArpSourceIpv4AddressMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSourceIpv4AddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSourceIpv4AddressMask"], value)
 
     @property
     def ArpSrcHwAddressMask(self):
@@ -107,11 +110,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, ARP Source Hardware Address Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddressMask"])
+
     @ArpSrcHwAddressMask.setter
     def ArpSrcHwAddressMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcHwAddressMask"], value)
 
     @property
     def EthernetDestinationMask(self):
@@ -121,11 +125,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, Ethernet Destination Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestinationMask"])
+
     @EthernetDestinationMask.setter
     def EthernetDestinationMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestinationMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestinationMask"], value)
 
     @property
     def EthernetSourceMask(self):
@@ -135,11 +140,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, Ethernet Source Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSourceMask"])
+
     @EthernetSourceMask.setter
     def EthernetSourceMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSourceMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSourceMask"], value)
 
     @property
     def Ipv4DestinationMask(self):
@@ -149,11 +155,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv4 Destination Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4DestinationMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4DestinationMask"])
+
     @Ipv4DestinationMask.setter
     def Ipv4DestinationMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4DestinationMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4DestinationMask"], value)
 
     @property
     def Ipv4SourceMask(self):
@@ -163,11 +170,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv4 Source Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceMask"])
+
     @Ipv4SourceMask.setter
     def Ipv4SourceMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4SourceMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4SourceMask"], value)
 
     @property
     def Ipv6DestinationMask(self):
@@ -177,11 +185,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv6 Destination Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6DestinationMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6DestinationMask"])
+
     @Ipv6DestinationMask.setter
     def Ipv6DestinationMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6DestinationMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6DestinationMask"], value)
 
     @property
     def Ipv6ExtHeaderMask(self):
@@ -191,11 +200,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv6 Ext Header Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeaderMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeaderMask"])
+
     @Ipv6ExtHeaderMask.setter
     def Ipv6ExtHeaderMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeaderMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ExtHeaderMask"], value)
 
     @property
     def Ipv6FlowLabelMask(self):
@@ -205,11 +215,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv6 Flow Label Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabelMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabelMask"])
+
     @Ipv6FlowLabelMask.setter
     def Ipv6FlowLabelMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabelMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabelMask"], value)
 
     @property
     def Ipv6SourceMask(self):
@@ -219,11 +230,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, IPv6 Source Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6SourceMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6SourceMask"])
+
     @Ipv6SourceMask.setter
     def Ipv6SourceMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6SourceMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6SourceMask"], value)
 
     @property
     def MetadataMask(self):
@@ -233,11 +245,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, MetaData Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataMask"])
+
     @MetadataMask.setter
     def MetadataMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MetadataMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetadataMask"], value)
 
     @property
     def PbbIsidMask(self):
@@ -247,11 +260,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, Tunnel ID Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsidMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsidMask"])
+
     @PbbIsidMask.setter
     def PbbIsidMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PbbIsidMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PbbIsidMask"], value)
 
     @property
     def TunnelIdMask(self):
@@ -261,11 +275,12 @@ class MatchMask(Base):
         -------
         - bool: If selected, Tunnel ID Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIdMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIdMask"])
+
     @TunnelIdMask.setter
     def TunnelIdMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelIdMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelIdMask"], value)
 
     @property
     def VlanMask(self):
@@ -275,13 +290,32 @@ class MatchMask(Base):
         -------
         - bool: If selected, VLAN Mask matching is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanMask"])
+
     @VlanMask.setter
     def VlanMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanMask"], value)
 
-    def update(self, ArpDestinationIpv4AddressMask=None, ArpDstHwAddressMask=None, ArpSourceIpv4AddressMask=None, ArpSrcHwAddressMask=None, EthernetDestinationMask=None, EthernetSourceMask=None, Ipv4DestinationMask=None, Ipv4SourceMask=None, Ipv6DestinationMask=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabelMask=None, Ipv6SourceMask=None, MetadataMask=None, PbbIsidMask=None, TunnelIdMask=None, VlanMask=None):
+    def update(
+        self,
+        ArpDestinationIpv4AddressMask=None,
+        ArpDstHwAddressMask=None,
+        ArpSourceIpv4AddressMask=None,
+        ArpSrcHwAddressMask=None,
+        EthernetDestinationMask=None,
+        EthernetSourceMask=None,
+        Ipv4DestinationMask=None,
+        Ipv4SourceMask=None,
+        Ipv6DestinationMask=None,
+        Ipv6ExtHeaderMask=None,
+        Ipv6FlowLabelMask=None,
+        Ipv6SourceMask=None,
+        MetadataMask=None,
+        PbbIsidMask=None,
+        TunnelIdMask=None,
+        VlanMask=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> MatchMask
         """Updates matchMask resource on the server.
 
@@ -310,7 +344,25 @@ class MatchMask(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpDestinationIpv4AddressMask=None, ArpDstHwAddressMask=None, ArpSourceIpv4AddressMask=None, ArpSrcHwAddressMask=None, EthernetDestinationMask=None, EthernetSourceMask=None, Ipv4DestinationMask=None, Ipv4SourceMask=None, Ipv6DestinationMask=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabelMask=None, Ipv6SourceMask=None, MetadataMask=None, PbbIsidMask=None, TunnelIdMask=None, VlanMask=None):
+    def find(
+        self,
+        ArpDestinationIpv4AddressMask=None,
+        ArpDstHwAddressMask=None,
+        ArpSourceIpv4AddressMask=None,
+        ArpSrcHwAddressMask=None,
+        EthernetDestinationMask=None,
+        EthernetSourceMask=None,
+        Ipv4DestinationMask=None,
+        Ipv4SourceMask=None,
+        Ipv6DestinationMask=None,
+        Ipv6ExtHeaderMask=None,
+        Ipv6FlowLabelMask=None,
+        Ipv6SourceMask=None,
+        MetadataMask=None,
+        PbbIsidMask=None,
+        TunnelIdMask=None,
+        VlanMask=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> MatchMask
         """Finds and retrieves matchMask resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,31 @@ class Ipv6Loopback(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6Loopback'
+    _SDM_NAME = "ipv6Loopback"
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'Prefix': 'prefix',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Address": "address",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "Prefix": "prefix",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,10 +76,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import (
+            Bfdv6Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bfdv6Interface', None) is not None:
-                return self._properties.get('Bfdv6Interface')
+            if self._properties.get("Bfdv6Interface", None) is not None:
+                return self._properties.get("Bfdv6Interface")
         return Bfdv6Interface(self)
 
     @property
@@ -84,10 +96,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import (
+            BgpIpv6Peer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpIpv6Peer', None) is not None:
-                return self._properties.get('BgpIpv6Peer')
+            if self._properties.get("BgpIpv6Peer", None) is not None:
+                return self._properties.get("BgpIpv6Peer")
         return BgpIpv6Peer(self)
 
     @property
@@ -101,10 +116,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -118,10 +136,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.greoipv6_aad01583ffa3746a541812fe996bbcd0 import Greoipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.greoipv6_aad01583ffa3746a541812fe996bbcd0 import (
+            Greoipv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Greoipv6', None) is not None:
-                return self._properties.get('Greoipv6')
+            if self._properties.get("Greoipv6", None) is not None:
+                return self._properties.get("Greoipv6")
         return Greoipv6(self)
 
     @property
@@ -135,10 +156,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import (
+            LdpTargetedRouterV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouterV6', None) is not None:
-                return self._properties.get('LdpTargetedRouterV6')
+            if self._properties.get("LdpTargetedRouterV6", None) is not None:
+                return self._properties.get("LdpTargetedRouterV6")
         return LdpTargetedRouterV6(self)
 
     @property
@@ -152,10 +176,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import (
+            MldHost,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldHost', None) is not None:
-                return self._properties.get('MldHost')
+            if self._properties.get("MldHost", None) is not None:
+                return self._properties.get("MldHost")
         return MldHost(self)
 
     @property
@@ -169,10 +196,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import (
+            MldQuerier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldQuerier', None) is not None:
-                return self._properties.get('MldQuerier')
+            if self._properties.get("MldQuerier", None) is not None:
+                return self._properties.get("MldQuerier")
         return MldQuerier(self)
 
     @property
@@ -186,10 +216,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import Ntpclock
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import (
+            Ntpclock,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ntpclock', None) is not None:
-                return self._properties.get('Ntpclock')
+            if self._properties.get("Ntpclock", None) is not None:
+                return self._properties.get("Ntpclock")
         return Ntpclock(self)
 
     @property
@@ -203,10 +236,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import Ospfv3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import (
+            Ospfv3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv3', None) is not None:
-                return self._properties.get('Ospfv3')
+            if self._properties.get("Ospfv3", None) is not None:
+                return self._properties.get("Ospfv3")
         return Ospfv3(self)
 
     @property
@@ -220,10 +256,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import (
+            PimV6Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PimV6Interface', None) is not None:
-                return self._properties.get('PimV6Interface')
+            if self._properties.get("PimV6Interface", None) is not None:
+                return self._properties.get("PimV6Interface")
         return PimV6Interface(self)
 
     @property
@@ -237,10 +276,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import Srv6Oam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import (
+            Srv6Oam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Srv6Oam', None) is not None:
-                return self._properties.get('Srv6Oam')
+            if self._properties.get("Srv6Oam", None) is not None:
+                return self._properties.get("Srv6Oam")
         return Srv6Oam(self)
 
     @property
@@ -254,10 +296,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -271,10 +316,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import (
+            Vxlanv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlanv6', None) is not None:
-                return self._properties.get('Vxlanv6')
+            if self._properties.get("Vxlanv6", None) is not None:
+                return self._properties.get("Vxlanv6")
         return Vxlanv6(self)
 
     @property
@@ -288,10 +336,13 @@ class Ipv6Loopback(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import Vxlanv6gpe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import (
+            Vxlanv6gpe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlanv6gpe', None) is not None:
-                return self._properties.get('Vxlanv6gpe')
+            if self._properties.get("Vxlanv6gpe", None) is not None:
+                return self._properties.get("Vxlanv6gpe")
         return Vxlanv6gpe(self)
 
     @property
@@ -303,21 +354,23 @@ class Ipv6Loopback(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Address"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -327,7 +380,7 @@ class Ipv6Loopback(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -337,7 +390,7 @@ class Ipv6Loopback(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -346,7 +399,7 @@ class Ipv6Loopback(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Multiplier(self):
@@ -356,11 +409,12 @@ class Ipv6Loopback(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -370,11 +424,12 @@ class Ipv6Loopback(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Prefix(self):
@@ -385,7 +440,8 @@ class Ipv6Loopback(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Prefix"]))
 
     @property
     def SessionStatus(self):
@@ -395,7 +451,7 @@ class Ipv6Loopback(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -405,11 +461,12 @@ class Ipv6Loopback(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -418,7 +475,7 @@ class Ipv6Loopback(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -428,7 +485,7 @@ class Ipv6Loopback(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Ipv6Loopback
@@ -481,7 +538,19 @@ class Ipv6Loopback(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ipv6Loopback resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6Loopback resources from the server.
@@ -556,10 +625,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CancelPing(self, *args, **kwargs):
         """Executes the cancelPing operation on the server.
@@ -590,10 +661,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('cancelPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("cancelPing", payload=payload, response_object=None)
 
     def PingStatus(self, *args, **kwargs):
         """Executes the pingStatus operation on the server.
@@ -624,10 +697,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pingStatus', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pingStatus", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -656,10 +731,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
@@ -693,10 +770,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPing", payload=payload, response_object=None)
 
     def SendPingAsync(self, *args, **kwargs):
         """Executes the sendPingAsync operation on the server.
@@ -730,10 +809,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPingAsync", payload=payload, response_object=None)
 
     def SendPingWithCountAndPayload(self, *args, **kwargs):
         """Executes the sendPingWithCountAndPayload operation on the server.
@@ -776,10 +857,14 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingWithCountAndPayload', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPingWithCountAndPayload", payload=payload, response_object=None
+        )
 
     def SendPingWithCountAndPayloadAsync(self, *args, **kwargs):
         """Executes the sendPingWithCountAndPayloadAsync operation on the server.
@@ -822,10 +907,14 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingWithCountAndPayloadAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPingWithCountAndPayloadAsync", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -854,10 +943,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -886,10 +977,12 @@ class Ipv6Loopback(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Address=None, Prefix=None):
         """Base class infrastructure that gets a list of ipv6Loopback device ids encapsulated by this object.

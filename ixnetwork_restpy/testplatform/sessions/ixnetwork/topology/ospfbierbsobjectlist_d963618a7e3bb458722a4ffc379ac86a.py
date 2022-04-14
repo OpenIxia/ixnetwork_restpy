@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class OspfBierBSObjectList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfBierBSObjectList'
+    _SDM_NAME = "ospfBierBSObjectList"
     _SDM_ATT_MAP = {
-        'BIERBitStringLength': 'BIERBitStringLength',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LabelStart': 'labelStart',
-        'MaxSI': 'maxSI',
-        'Name': 'name',
+        "BIERBitStringLength": "BIERBitStringLength",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LabelStart": "labelStart",
+        "MaxSI": "maxSI",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfBierBSObjectList, self).__init__(parent, list_op)
@@ -57,7 +57,10 @@ class OspfBierBSObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a 4 bits field encoding the supported BitString length associated with this BFR-prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BIERBitStringLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BIERBitStringLength"])
+        )
 
     @property
     def Count(self):
@@ -67,7 +70,7 @@ class OspfBierBSObjectList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -77,7 +80,7 @@ class OspfBierBSObjectList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LabelStart(self):
@@ -88,7 +91,8 @@ class OspfBierBSObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelStart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelStart"]))
 
     @property
     def MaxSI(self):
@@ -99,7 +103,8 @@ class OspfBierBSObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): It is a 1 octet field encoding the maximum Set Identifier used in the encapsulation for this BIER sub-domain for this bitstring length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxSI']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxSI"]))
 
     @property
     def Name(self):
@@ -109,11 +114,12 @@ class OspfBierBSObjectList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> OspfBierBSObjectList
@@ -134,7 +140,7 @@ class OspfBierBSObjectList(Base):
 
     def add(self, Name=None):
         # type: (str) -> OspfBierBSObjectList
-        """Adds a new ospfBierBSObjectList resource on the json, only valid with config assistant
+        """Adds a new ospfBierBSObjectList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -192,7 +198,9 @@ class OspfBierBSObjectList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERBitStringLength=None, LabelStart=None, MaxSI=None):
+    def get_device_ids(
+        self, PortNames=None, BIERBitStringLength=None, LabelStart=None, MaxSI=None
+    ):
         """Base class infrastructure that gets a list of ospfBierBSObjectList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

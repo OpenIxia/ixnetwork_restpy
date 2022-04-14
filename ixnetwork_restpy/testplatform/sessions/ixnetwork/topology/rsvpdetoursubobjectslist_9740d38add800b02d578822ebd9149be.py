@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class RsvpDetourSubObjectsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpDetourSubObjectsList'
+    _SDM_NAME = "rsvpDetourSubObjectsList"
     _SDM_ATT_MAP = {
-        'AvoidNodeId': 'avoidNodeId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'PlrId': 'plrId',
+        "AvoidNodeId": "avoidNodeId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "PlrId": "plrId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpDetourSubObjectsList, self).__init__(parent, list_op)
@@ -56,7 +56,8 @@ class RsvpDetourSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Avoid Node ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvoidNodeId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AvoidNodeId"]))
 
     @property
     def Count(self):
@@ -66,7 +67,7 @@ class RsvpDetourSubObjectsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -76,7 +77,7 @@ class RsvpDetourSubObjectsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -86,11 +87,12 @@ class RsvpDetourSubObjectsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PlrId(self):
@@ -101,7 +103,8 @@ class RsvpDetourSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PLR ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PlrId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PlrId"]))
 
     def update(self, Name=None):
         # type: (str) -> RsvpDetourSubObjectsList
@@ -122,7 +125,7 @@ class RsvpDetourSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> RsvpDetourSubObjectsList
-        """Adds a new rsvpDetourSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new rsvpDetourSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class Static(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'static'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "static"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Static, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class Static(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atm_9bbaac5d21c0632b71ee4c92d14864c3 import Atm
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atm_9bbaac5d21c0632b71ee4c92d14864c3 import (
+            Atm,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Atm', None) is not None:
-                return self._properties.get('Atm')
+            if self._properties.get("Atm", None) is not None:
+                return self._properties.get("Atm")
         return Atm(self)
 
     @property
@@ -69,10 +71,13 @@ class Static(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fr_ebc5d45018c74d53700c88afea530ca2 import Fr
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fr_ebc5d45018c74d53700c88afea530ca2 import (
+            Fr,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Fr', None) is not None:
-                return self._properties.get('Fr')
+            if self._properties.get("Fr", None) is not None:
+                return self._properties.get("Fr")
         return Fr(self)
 
     @property
@@ -86,10 +91,13 @@ class Static(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacegroup_c2c90e7b7cf8bf4a351e197fc18ccb92 import InterfaceGroup
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacegroup_c2c90e7b7cf8bf4a351e197fc18ccb92 import (
+            InterfaceGroup,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InterfaceGroup', None) is not None:
-                return self._properties.get('InterfaceGroup')
+            if self._properties.get("InterfaceGroup", None) is not None:
+                return self._properties.get("InterfaceGroup")
         return InterfaceGroup(self)
 
     @property
@@ -103,10 +111,13 @@ class Static(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ip_205717d3d79aa12a8dcea858982c666e import Ip
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ip_205717d3d79aa12a8dcea858982c666e import (
+            Ip,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ip', None) is not None:
-                return self._properties.get('Ip')
+            if self._properties.get("Ip", None) is not None:
+                return self._properties.get("Ip")
         return Ip(self)
 
     @property
@@ -120,10 +131,13 @@ class Static(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_a0c3771a1420d267c519e60205c6a8e6 import Lan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_a0c3771a1420d267c519e60205c6a8e6 import (
+            Lan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lan', None) is not None:
-                return self._properties.get('Lan')
+            if self._properties.get("Lan", None) is not None:
+                return self._properties.get("Lan")
         return Lan(self)
 
     def find(self):

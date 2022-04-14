@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,12 @@ class MeasurementMode(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'measurementMode'
+    _SDM_NAME = "measurementMode"
     _SDM_ATT_MAP = {
-        'MeasurementMode': 'measurementMode',
+        "MeasurementMode": "measurementMode",
     }
     _SDM_ENUM_MAP = {
-        'measurementMode': ['cumulativeMode', 'instantaneousMode', 'mixedMode'],
+        "measurementMode": ["cumulativeMode", "instantaneousMode", "mixedMode"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,11 +52,12 @@ class MeasurementMode(Base):
         -------
         - str(cumulativeMode | instantaneousMode | mixedMode): Mode of the measurement: mixed, instantaneous, cumulative
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeasurementMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeasurementMode"])
+
     @MeasurementMode.setter
     def MeasurementMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeasurementMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeasurementMode"], value)
 
     def update(self, MeasurementMode=None):
         # type: (str) -> MeasurementMode

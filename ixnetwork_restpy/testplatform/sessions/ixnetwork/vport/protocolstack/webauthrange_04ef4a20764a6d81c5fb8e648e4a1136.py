@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class WebAuthRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'webAuthRange'
+    _SDM_NAME = "webAuthRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Expect': 'expect',
-        'InputValue1': 'inputValue1',
-        'InputValue2': 'inputValue2',
-        'InputValue3': 'inputValue3',
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Enabled": "enabled",
+        "Expect": "expect",
+        "InputValue1": "inputValue1",
+        "InputValue2": "inputValue2",
+        "InputValue3": "inputValue3",
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(WebAuthRange, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class WebAuthRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Expect(self):
@@ -72,11 +73,12 @@ class WebAuthRange(Base):
         -------
         - str: Statistics will be maintained for expected/actual success/failure
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Expect'])
+        return self._get_attribute(self._SDM_ATT_MAP["Expect"])
+
     @Expect.setter
     def Expect(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Expect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Expect"], value)
 
     @property
     def InputValue1(self):
@@ -86,11 +88,12 @@ class WebAuthRange(Base):
         -------
         - str: The value to be returned for the input field in the HTTP POST message sent back to the DUT. If the Input field 1 is a radio type, then this value must match one of the choices present on the form. Standard text increment options are supported
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InputValue1'])
+        return self._get_attribute(self._SDM_ATT_MAP["InputValue1"])
+
     @InputValue1.setter
     def InputValue1(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InputValue1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InputValue1"], value)
 
     @property
     def InputValue2(self):
@@ -100,11 +103,12 @@ class WebAuthRange(Base):
         -------
         - str: The value to be returned for the input field in the HTTP POST message sent back to the DUT. If the Input field 2 is a radio type, then this value must match one of the choices present on the form. Standard text increment options are supported
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InputValue2'])
+        return self._get_attribute(self._SDM_ATT_MAP["InputValue2"])
+
     @InputValue2.setter
     def InputValue2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InputValue2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InputValue2"], value)
 
     @property
     def InputValue3(self):
@@ -114,11 +118,12 @@ class WebAuthRange(Base):
         -------
         - str: The value to be returned for the input field in the HTTP POST message sent back to the DUT. If the Input field 3 is a radio type, then this value must match one of the choices present on the form. Standard text increment options are supported
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InputValue3'])
+        return self._get_attribute(self._SDM_ATT_MAP["InputValue3"])
+
     @InputValue3.setter
     def InputValue3(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InputValue3'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InputValue3"], value)
 
     @property
     def Name(self):
@@ -128,11 +133,12 @@ class WebAuthRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -142,9 +148,17 @@ class WebAuthRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
-    def update(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None):
+    def update(
+        self,
+        Enabled=None,
+        Expect=None,
+        InputValue1=None,
+        InputValue2=None,
+        InputValue3=None,
+        Name=None,
+    ):
         # type: (bool, str, str, str, str, str) -> WebAuthRange
         """Updates webAuthRange resource on the server.
 
@@ -163,7 +177,15 @@ class WebAuthRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None):
+    def add(
+        self,
+        Enabled=None,
+        Expect=None,
+        InputValue1=None,
+        InputValue2=None,
+        InputValue3=None,
+        Name=None,
+    ):
         # type: (bool, str, str, str, str, str) -> WebAuthRange
         """Adds a new webAuthRange resource on the server and adds it to the container.
 
@@ -196,7 +218,16 @@ class WebAuthRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None, ObjectId=None):
+    def find(
+        self,
+        Enabled=None,
+        Expect=None,
+        InputValue1=None,
+        InputValue2=None,
+        InputValue3=None,
+        Name=None,
+        ObjectId=None,
+    ):
         # type: (bool, str, str, str, str, str, str) -> WebAuthRange
         """Finds and retrieves webAuthRange resources from the server.
 
@@ -259,10 +290,14 @@ class WebAuthRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -281,10 +316,14 @@ class WebAuthRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -303,7 +342,11 @@ class WebAuthRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

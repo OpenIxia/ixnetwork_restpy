@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class TunnelHeadTrafficEndPoint(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tunnelHeadTrafficEndPoint'
+    _SDM_NAME = "tunnelHeadTrafficEndPoint"
     _SDM_ATT_MAP = {
-        'EndPointType': 'endPointType',
-        'InsertExplicitTrafficItem': 'insertExplicitTrafficItem',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'IpCount': 'ipCount',
-        'IpStart': 'ipStart',
+        "EndPointType": "endPointType",
+        "InsertExplicitTrafficItem": "insertExplicitTrafficItem",
+        "InsertIpv6ExplicitNull": "insertIpv6ExplicitNull",
+        "IpCount": "ipCount",
+        "IpStart": "ipStart",
     }
     _SDM_ENUM_MAP = {
-        'endPointType': ['ipv4', 'ipv6', '17', '18'],
+        "endPointType": ["ipv4", "ipv6", "17", "18"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,25 +58,27 @@ class TunnelHeadTrafficEndPoint(Base):
         -------
         - str(ipv4 | ipv6 | 17 | 18): IPv4/IPv6 address. It has the same values as of IP Type for traffic item in parent Tail Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EndPointType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EndPointType"])
+
     @EndPointType.setter
     def EndPointType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EndPointType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EndPointType"], value)
 
     @property
     def InsertExplicitTrafficItem(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InsertExplicitTrafficItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["InsertExplicitTrafficItem"])
+
     @InsertExplicitTrafficItem.setter
     def InsertExplicitTrafficItem(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InsertExplicitTrafficItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InsertExplicitTrafficItem"], value)
 
     @property
     def InsertIpv6ExplicitNull(self):
@@ -85,11 +88,12 @@ class TunnelHeadTrafficEndPoint(Base):
         -------
         - bool: This causes an IPv6 Explicit NULL to be inserted as the innermost label in addition to learned label when trying to generate IPv6 traffic over the IPv4 LSP. The purpose of this is to route the traffic to the IPv6 Protocol Stack at the egress for routing towards the IPv6 destination.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'])
+        return self._get_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"])
+
     @InsertIpv6ExplicitNull.setter
     def InsertIpv6ExplicitNull(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"], value)
 
     @property
     def IpCount(self):
@@ -99,11 +103,12 @@ class TunnelHeadTrafficEndPoint(Base):
         -------
         - number: Allows value greater than or equal to Tunnel Head IP Count (1 by default). This can be used to simulate traffic from multiple source endpoints to be sent over the LSPs originated from the Head Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpCount"])
+
     @IpCount.setter
     def IpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpCount"], value)
 
     @property
     def IpStart(self):
@@ -113,13 +118,21 @@ class TunnelHeadTrafficEndPoint(Base):
         -------
         - str: The Source IP address, one of IPv4 or IPv6, to be used for traffic to be sent over LSPs from the Head End Point.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpStart"])
+
     @IpStart.setter
     def IpStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpStart"], value)
 
-    def update(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
+    def update(
+        self,
+        EndPointType=None,
+        InsertExplicitTrafficItem=None,
+        InsertIpv6ExplicitNull=None,
+        IpCount=None,
+        IpStart=None,
+    ):
         # type: (str, bool, bool, int, str) -> TunnelHeadTrafficEndPoint
         """Updates tunnelHeadTrafficEndPoint resource on the server.
 
@@ -137,7 +150,14 @@ class TunnelHeadTrafficEndPoint(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
+    def add(
+        self,
+        EndPointType=None,
+        InsertExplicitTrafficItem=None,
+        InsertIpv6ExplicitNull=None,
+        IpCount=None,
+        IpStart=None,
+    ):
         # type: (str, bool, bool, int, str) -> TunnelHeadTrafficEndPoint
         """Adds a new tunnelHeadTrafficEndPoint resource on the server and adds it to the container.
 
@@ -169,7 +189,14 @@ class TunnelHeadTrafficEndPoint(Base):
         """
         self._delete()
 
-    def find(self, EndPointType=None, InsertExplicitTrafficItem=None, InsertIpv6ExplicitNull=None, IpCount=None, IpStart=None):
+    def find(
+        self,
+        EndPointType=None,
+        InsertExplicitTrafficItem=None,
+        InsertIpv6ExplicitNull=None,
+        IpCount=None,
+        IpStart=None,
+    ):
         # type: (str, bool, bool, int, str) -> TunnelHeadTrafficEndPoint
         """Finds and retrieves tunnelHeadTrafficEndPoint resources from the server.
 

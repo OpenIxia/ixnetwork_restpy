@@ -122,7 +122,7 @@ class BgpAsNumberList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpAsNumberList
-        """Adds a new bgpAsNumberList resource on the json, only valid with config assistant
+        """Adds a new bgpAsNumberList resource on the json, only valid with batch add utility
 
         Args
         ----

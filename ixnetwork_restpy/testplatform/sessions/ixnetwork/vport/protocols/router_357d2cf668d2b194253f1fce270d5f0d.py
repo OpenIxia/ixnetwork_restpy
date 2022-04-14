@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InstanceIdForEidToRlocMapCacheRefresh': 'instanceIdForEidToRlocMapCacheRefresh',
-        'InstanceIdForMapServerCacheRefresh': 'instanceIdForMapServerCacheRefresh',
-        'IsEidToRlocMapCacheInfoRefreshed': 'isEidToRlocMapCacheInfoRefreshed',
-        'IsEidToRlocMapCacheRefreshAllInstances': 'isEidToRlocMapCacheRefreshAllInstances',
-        'IsMapServerCacheInfoRefreshed': 'isMapServerCacheInfoRefreshed',
-        'IsMapServerCacheRefreshAllInstances': 'isMapServerCacheRefreshAllInstances',
-        'MappingServiceMode': 'mappingServiceMode',
-        'RouterId': 'routerId',
-        'TunnelRouterMode': 'tunnelRouterMode',
+        "Enabled": "enabled",
+        "InstanceIdForEidToRlocMapCacheRefresh": "instanceIdForEidToRlocMapCacheRefresh",
+        "InstanceIdForMapServerCacheRefresh": "instanceIdForMapServerCacheRefresh",
+        "IsEidToRlocMapCacheInfoRefreshed": "isEidToRlocMapCacheInfoRefreshed",
+        "IsEidToRlocMapCacheRefreshAllInstances": "isEidToRlocMapCacheRefreshAllInstances",
+        "IsMapServerCacheInfoRefreshed": "isMapServerCacheInfoRefreshed",
+        "IsMapServerCacheRefreshAllInstances": "isMapServerCacheRefreshAllInstances",
+        "MappingServiceMode": "mappingServiceMode",
+        "RouterId": "routerId",
+        "TunnelRouterMode": "tunnelRouterMode",
     }
     _SDM_ENUM_MAP = {
-        'mappingServiceMode': ['standAlone', 'alt', 'na'],
-        'tunnelRouterMode': ['itr', 'etr', 'xtr', 'msmr'],
+        "mappingServiceMode": ["standAlone", "alt", "na"],
+        "tunnelRouterMode": ["itr", "etr", "xtr", "msmr"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,10 +67,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eidtorlocmapcacheinfo_d2216efccc3628c42dd062f5723dbcd0 import EidToRlocMapCacheInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eidtorlocmapcacheinfo_d2216efccc3628c42dd062f5723dbcd0 import (
+            EidToRlocMapCacheInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EidToRlocMapCacheInfo', None) is not None:
-                return self._properties.get('EidToRlocMapCacheInfo')
+            if self._properties.get("EidToRlocMapCacheInfo", None) is not None:
+                return self._properties.get("EidToRlocMapCacheInfo")
         return EidToRlocMapCacheInfo(self)
 
     @property
@@ -83,10 +87,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_8401addef6ad210808a84a79291dafa1 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_8401addef6ad210808a84a79291dafa1 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -100,10 +107,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lispinstance_2ff435828a95cdea01ba6bffac98e703 import LispInstance
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lispinstance_2ff435828a95cdea01ba6bffac98e703 import (
+            LispInstance,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LispInstance', None) is not None:
-                return self._properties.get('LispInstance')
+            if self._properties.get("LispInstance", None) is not None:
+                return self._properties.get("LispInstance")
         return LispInstance(self)
 
     @property
@@ -117,10 +127,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapservercacheinfo_e631a8f0d76b2164fb127901735b2cf0 import MapServerCacheInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapservercacheinfo_e631a8f0d76b2164fb127901735b2cf0 import (
+            MapServerCacheInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MapServerCacheInfo', None) is not None:
-                return self._properties.get('MapServerCacheInfo')
+            if self._properties.get("MapServerCacheInfo", None) is not None:
+                return self._properties.get("MapServerCacheInfo")
         return MapServerCacheInfo(self)
 
     @property
@@ -131,11 +144,12 @@ class Router(Base):
         -------
         - bool: If true, it enables the router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InstanceIdForEidToRlocMapCacheRefresh(self):
@@ -145,11 +159,16 @@ class Router(Base):
         -------
         - number: It shows the instance ID for Eid to RLOc the refreshed Map Cache
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceIdForEidToRlocMapCacheRefresh'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["InstanceIdForEidToRlocMapCacheRefresh"]
+        )
+
     @InstanceIdForEidToRlocMapCacheRefresh.setter
     def InstanceIdForEidToRlocMapCacheRefresh(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstanceIdForEidToRlocMapCacheRefresh'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["InstanceIdForEidToRlocMapCacheRefresh"], value
+        )
 
     @property
     def InstanceIdForMapServerCacheRefresh(self):
@@ -159,11 +178,16 @@ class Router(Base):
         -------
         - number: It shows the instance ID for refreshed Map Server Cache
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceIdForMapServerCacheRefresh'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["InstanceIdForMapServerCacheRefresh"]
+        )
+
     @InstanceIdForMapServerCacheRefresh.setter
     def InstanceIdForMapServerCacheRefresh(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstanceIdForMapServerCacheRefresh'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["InstanceIdForMapServerCacheRefresh"], value
+        )
 
     @property
     def IsEidToRlocMapCacheInfoRefreshed(self):
@@ -173,7 +197,9 @@ class Router(Base):
         -------
         - bool: If true, it shows the Eid to Rloc Map Cache information refreshed
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEidToRlocMapCacheInfoRefreshed'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["IsEidToRlocMapCacheInfoRefreshed"]
+        )
 
     @property
     def IsEidToRlocMapCacheRefreshAllInstances(self):
@@ -183,11 +209,16 @@ class Router(Base):
         -------
         - bool: If true, it shows the Eid to Rloc Map Cache refreshed in all instances
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEidToRlocMapCacheRefreshAllInstances'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["IsEidToRlocMapCacheRefreshAllInstances"]
+        )
+
     @IsEidToRlocMapCacheRefreshAllInstances.setter
     def IsEidToRlocMapCacheRefreshAllInstances(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEidToRlocMapCacheRefreshAllInstances'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["IsEidToRlocMapCacheRefreshAllInstances"], value
+        )
 
     @property
     def IsMapServerCacheInfoRefreshed(self):
@@ -197,7 +228,7 @@ class Router(Base):
         -------
         - bool: If true, it shows the Map Server Cache Information refreshed (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMapServerCacheInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMapServerCacheInfoRefreshed"])
 
     @property
     def IsMapServerCacheRefreshAllInstances(self):
@@ -207,11 +238,16 @@ class Router(Base):
         -------
         - bool: If true, it shows the Map Server Cache All Instances refreshed (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMapServerCacheRefreshAllInstances'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["IsMapServerCacheRefreshAllInstances"]
+        )
+
     @IsMapServerCacheRefreshAllInstances.setter
     def IsMapServerCacheRefreshAllInstances(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsMapServerCacheRefreshAllInstances'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["IsMapServerCacheRefreshAllInstances"], value
+        )
 
     @property
     def MappingServiceMode(self):
@@ -221,11 +257,12 @@ class Router(Base):
         -------
         - str(standAlone | alt | na): It shows the mapping of service mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MappingServiceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MappingServiceMode"])
+
     @MappingServiceMode.setter
     def MappingServiceMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MappingServiceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MappingServiceMode"], value)
 
     @property
     def RouterId(self):
@@ -235,11 +272,12 @@ class Router(Base):
         -------
         - str: It shows the Router id
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def TunnelRouterMode(self):
@@ -249,13 +287,24 @@ class Router(Base):
         -------
         - str(itr | etr | xtr | msmr): It shows the tunnel Router mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelRouterMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelRouterMode"])
+
     @TunnelRouterMode.setter
     def TunnelRouterMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelRouterMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelRouterMode"], value)
 
-    def update(self, Enabled=None, InstanceIdForEidToRlocMapCacheRefresh=None, InstanceIdForMapServerCacheRefresh=None, IsEidToRlocMapCacheRefreshAllInstances=None, IsMapServerCacheRefreshAllInstances=None, MappingServiceMode=None, RouterId=None, TunnelRouterMode=None):
+    def update(
+        self,
+        Enabled=None,
+        InstanceIdForEidToRlocMapCacheRefresh=None,
+        InstanceIdForMapServerCacheRefresh=None,
+        IsEidToRlocMapCacheRefreshAllInstances=None,
+        IsMapServerCacheRefreshAllInstances=None,
+        MappingServiceMode=None,
+        RouterId=None,
+        TunnelRouterMode=None,
+    ):
         # type: (bool, int, int, bool, bool, str, str, str) -> Router
         """Updates router resource on the server.
 
@@ -276,7 +325,17 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InstanceIdForEidToRlocMapCacheRefresh=None, InstanceIdForMapServerCacheRefresh=None, IsEidToRlocMapCacheRefreshAllInstances=None, IsMapServerCacheRefreshAllInstances=None, MappingServiceMode=None, RouterId=None, TunnelRouterMode=None):
+    def add(
+        self,
+        Enabled=None,
+        InstanceIdForEidToRlocMapCacheRefresh=None,
+        InstanceIdForMapServerCacheRefresh=None,
+        IsEidToRlocMapCacheRefreshAllInstances=None,
+        IsMapServerCacheRefreshAllInstances=None,
+        MappingServiceMode=None,
+        RouterId=None,
+        TunnelRouterMode=None,
+    ):
         # type: (bool, int, int, bool, bool, str, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
@@ -311,7 +370,19 @@ class Router(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InstanceIdForEidToRlocMapCacheRefresh=None, InstanceIdForMapServerCacheRefresh=None, IsEidToRlocMapCacheInfoRefreshed=None, IsEidToRlocMapCacheRefreshAllInstances=None, IsMapServerCacheInfoRefreshed=None, IsMapServerCacheRefreshAllInstances=None, MappingServiceMode=None, RouterId=None, TunnelRouterMode=None):
+    def find(
+        self,
+        Enabled=None,
+        InstanceIdForEidToRlocMapCacheRefresh=None,
+        InstanceIdForMapServerCacheRefresh=None,
+        IsEidToRlocMapCacheInfoRefreshed=None,
+        IsEidToRlocMapCacheRefreshAllInstances=None,
+        IsMapServerCacheInfoRefreshed=None,
+        IsMapServerCacheRefreshAllInstances=None,
+        MappingServiceMode=None,
+        RouterId=None,
+        TunnelRouterMode=None,
+    ):
         # type: (bool, int, int, bool, bool, bool, bool, str, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
@@ -376,7 +447,11 @@ class Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class LmLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lmLearnedInfo'
+    _SDM_NAME = "lmLearnedInfo"
     _SDM_ATT_MAP = {
-        'IncomingLabelOuterInner': 'incomingLabelOuterInner',
-        'LastLmResponseDutRx': 'lastLmResponseDutRx',
-        'LastLmResponseDutTx': 'lastLmResponseDutTx',
-        'LastLmResponseMyTx': 'lastLmResponseMyTx',
-        'LmQueriesSent': 'lmQueriesSent',
-        'LmRemoteUsing64Bit': 'lmRemoteUsing64Bit',
-        'LmResponsesReceived': 'lmResponsesReceived',
-        'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
-        'Type': 'type',
+        "IncomingLabelOuterInner": "incomingLabelOuterInner",
+        "LastLmResponseDutRx": "lastLmResponseDutRx",
+        "LastLmResponseDutTx": "lastLmResponseDutTx",
+        "LastLmResponseMyTx": "lastLmResponseMyTx",
+        "LmQueriesSent": "lmQueriesSent",
+        "LmRemoteUsing64Bit": "lmRemoteUsing64Bit",
+        "LmResponsesReceived": "lmResponsesReceived",
+        "OutgoingLabelOuterInner": "outgoingLabelOuterInner",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LmLearnedInfo, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class LmLearnedInfo(Base):
         -------
         - str: This signifies the incoming label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelOuterInner"])
 
     @property
     def LastLmResponseDutRx(self):
@@ -69,7 +69,7 @@ class LmLearnedInfo(Base):
         -------
         - number: This signifies the value of the DUT Rx counter in the last LM Response received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastLmResponseDutRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastLmResponseDutRx"])
 
     @property
     def LastLmResponseDutTx(self):
@@ -79,7 +79,7 @@ class LmLearnedInfo(Base):
         -------
         - number: This signifies the value of the DUT Tx counter in the last LM Response received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastLmResponseDutTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastLmResponseDutTx"])
 
     @property
     def LastLmResponseMyTx(self):
@@ -89,7 +89,7 @@ class LmLearnedInfo(Base):
         -------
         - number: This signifies the value of the My Tx counter in the last LM Response received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastLmResponseMyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastLmResponseMyTx"])
 
     @property
     def LmQueriesSent(self):
@@ -99,7 +99,7 @@ class LmLearnedInfo(Base):
         -------
         - number: This signifies the number of LM queries sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmQueriesSent'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmQueriesSent"])
 
     @property
     def LmRemoteUsing64Bit(self):
@@ -109,7 +109,7 @@ class LmLearnedInfo(Base):
         -------
         - bool: This specifies whether the remote end is using 64bit counter or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmRemoteUsing64Bit'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmRemoteUsing64Bit"])
 
     @property
     def LmResponsesReceived(self):
@@ -119,7 +119,7 @@ class LmLearnedInfo(Base):
         -------
         - number: This signifies the number of LM responses received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmResponsesReceived'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmResponsesReceived"])
 
     @property
     def OutgoingLabelOuterInner(self):
@@ -129,7 +129,7 @@ class LmLearnedInfo(Base):
         -------
         - str: This signifies the Outgoing Label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelOuterInner"])
 
     @property
     def Type(self):
@@ -139,10 +139,10 @@ class LmLearnedInfo(Base):
         -------
         - str: This signifies the Selection of this option to filter according to the following types LSP and PW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new lmLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new lmLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -154,7 +154,18 @@ class LmLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, IncomingLabelOuterInner=None, LastLmResponseDutRx=None, LastLmResponseDutTx=None, LastLmResponseMyTx=None, LmQueriesSent=None, LmRemoteUsing64Bit=None, LmResponsesReceived=None, OutgoingLabelOuterInner=None, Type=None):
+    def find(
+        self,
+        IncomingLabelOuterInner=None,
+        LastLmResponseDutRx=None,
+        LastLmResponseDutTx=None,
+        LastLmResponseMyTx=None,
+        LmQueriesSent=None,
+        LmRemoteUsing64Bit=None,
+        LmResponsesReceived=None,
+        OutgoingLabelOuterInner=None,
+        Type=None,
+    ):
         # type: (str, int, int, int, int, bool, int, str, str) -> LmLearnedInfo
         """Finds and retrieves lmLearnedInfo resources from the server.
 

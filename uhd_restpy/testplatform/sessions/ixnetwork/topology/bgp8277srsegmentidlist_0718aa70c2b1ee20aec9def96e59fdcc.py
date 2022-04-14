@@ -122,7 +122,7 @@ class Bgp8277SRSegmentIdList(Base):
 
     def add(self, Name=None):
         # type: (str) -> Bgp8277SRSegmentIdList
-        """Adds a new Bgp8277SRSegmentIdList resource on the json, only valid with config assistant
+        """Adds a new Bgp8277SRSegmentIdList resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,27 @@ class Evc(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evc'
+    _SDM_NAME = "evc"
     _SDM_ATT_MAP = {
-        'DefaultEvc': 'defaultEvc',
-        'Enabled': 'enabled',
-        'EvcIdentifier': 'evcIdentifier',
-        'EvcIdentifierLength': 'evcIdentifierLength',
-        'EvcStatus': 'evcStatus',
-        'EvcType': 'evcType',
-        'ReferenceId': 'referenceId',
-        'UntaggedPriorityTagged': 'untaggedPriorityTagged',
+        "DefaultEvc": "defaultEvc",
+        "Enabled": "enabled",
+        "EvcIdentifier": "evcIdentifier",
+        "EvcIdentifierLength": "evcIdentifierLength",
+        "EvcStatus": "evcStatus",
+        "EvcType": "evcType",
+        "ReferenceId": "referenceId",
+        "UntaggedPriorityTagged": "untaggedPriorityTagged",
     }
     _SDM_ENUM_MAP = {
-        'evcStatus': ['notActive', 'newAndNotActive', 'active', 'newAndActive', 'partiallyActive', 'newAndPartiallyActive'],
-        'evcType': ['pointToPoint', 'multipointToMultipoint'],
+        "evcStatus": [
+            "notActive",
+            "newAndNotActive",
+            "active",
+            "newAndActive",
+            "partiallyActive",
+            "newAndPartiallyActive",
+        ],
+        "evcType": ["pointToPoint", "multipointToMultipoint"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +72,13 @@ class Evc(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_c7210d4d2555c28ee509abc680d0b951 import BwProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_c7210d4d2555c28ee509abc680d0b951 import (
+            BwProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BwProfile', None) is not None:
-                return self._properties.get('BwProfile')
+            if self._properties.get("BwProfile", None) is not None:
+                return self._properties.get("BwProfile")
         return BwProfile(self)
 
     @property
@@ -81,10 +92,13 @@ class Evc(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cevlanidrange_c020c993f4d4b311a0a67accf3fbe3cd import CeVlanIdRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cevlanidrange_c020c993f4d4b311a0a67accf3fbe3cd import (
+            CeVlanIdRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CeVlanIdRange', None) is not None:
-                return self._properties.get('CeVlanIdRange')
+            if self._properties.get("CeVlanIdRange", None) is not None:
+                return self._properties.get("CeVlanIdRange")
         return CeVlanIdRange(self)
 
     @property
@@ -95,11 +109,12 @@ class Evc(Base):
         -------
         - bool: If enabled, default EVC bit is set to 1. It indicates that all CE-VLAN IDs that are not specified in this or other CE-VLAN ID/EVC Map IEs are mapped to this EVC. At most one EVC can be identified as a Default EVC on the UNI. The 'Default EVC' bit has significance only if CE-VLAN ID/EVC Map Type is equal to 'Bundling' (see UNI Status information element octet 3). It must be set to 0 when it is not significant. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultEvc'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultEvc"])
+
     @DefaultEvc.setter
     def DefaultEvc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefaultEvc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefaultEvc"], value)
 
     @property
     def Enabled(self):
@@ -109,11 +124,12 @@ class Evc(Base):
         -------
         - bool: If enabled, the EVC is in effect.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EvcIdentifier(self):
@@ -123,11 +139,12 @@ class Evc(Base):
         -------
         - str: It signifies the content of EVC ID. The length is determined by EVC ID Length. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvcIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvcIdentifier"])
+
     @EvcIdentifier.setter
     def EvcIdentifier(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvcIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvcIdentifier"], value)
 
     @property
     def EvcIdentifierLength(self):
@@ -137,11 +154,12 @@ class Evc(Base):
         -------
         - number: It signifies one octet and indicates the length of EVC ID content. Default is 1. Min is 1 and Max is 100.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvcIdentifierLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvcIdentifierLength"])
+
     @EvcIdentifierLength.setter
     def EvcIdentifierLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvcIdentifierLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvcIdentifierLength"], value)
 
     @property
     def EvcStatus(self):
@@ -151,11 +169,12 @@ class Evc(Base):
         -------
         - str(notActive | newAndNotActive | active | newAndActive | partiallyActive | newAndPartiallyActive): Default is New and Active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvcStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvcStatus"])
+
     @EvcStatus.setter
     def EvcStatus(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvcStatus'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvcStatus"], value)
 
     @property
     def EvcType(self):
@@ -165,11 +184,12 @@ class Evc(Base):
         -------
         - str(pointToPoint | multipointToMultipoint): It is a drop down of Point-to-Point which is 0 and Multipoint-to-Multipoint which is 1. Default is Point-to-Point.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvcType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvcType"])
+
     @EvcType.setter
     def EvcType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvcType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvcType"], value)
 
     @property
     def ReferenceId(self):
@@ -179,11 +199,12 @@ class Evc(Base):
         -------
         - number: Default value is 1. Max two octet maximum value, Min 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceId"])
+
     @ReferenceId.setter
     def ReferenceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReferenceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReferenceId"], value)
 
     @property
     def UntaggedPriorityTagged(self):
@@ -193,13 +214,24 @@ class Evc(Base):
         -------
         - bool: If enabled, Untagged/Priority Tagged bit is set to 1. It indicates that this EVC Map Entry identifies the CE VLAN ID for Untagged/Priority Service Frames. The 'Untagged/Priority Tagged' bit has significance only if CE-VLAN ID/EVC Map Type is not equal to 'All to one Bundling' (see UNI Status information element octet 3). It must be set to 0 when it is not significant. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UntaggedPriorityTagged'])
+        return self._get_attribute(self._SDM_ATT_MAP["UntaggedPriorityTagged"])
+
     @UntaggedPriorityTagged.setter
     def UntaggedPriorityTagged(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UntaggedPriorityTagged'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UntaggedPriorityTagged"], value)
 
-    def update(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+    def update(
+        self,
+        DefaultEvc=None,
+        Enabled=None,
+        EvcIdentifier=None,
+        EvcIdentifierLength=None,
+        EvcStatus=None,
+        EvcType=None,
+        ReferenceId=None,
+        UntaggedPriorityTagged=None,
+    ):
         # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Updates evc resource on the server.
 
@@ -220,7 +252,17 @@ class Evc(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+    def add(
+        self,
+        DefaultEvc=None,
+        Enabled=None,
+        EvcIdentifier=None,
+        EvcIdentifierLength=None,
+        EvcStatus=None,
+        EvcType=None,
+        ReferenceId=None,
+        UntaggedPriorityTagged=None,
+    ):
         # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Adds a new evc resource on the server and adds it to the container.
 
@@ -255,7 +297,17 @@ class Evc(Base):
         """
         self._delete()
 
-    def find(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+    def find(
+        self,
+        DefaultEvc=None,
+        Enabled=None,
+        EvcIdentifier=None,
+        EvcIdentifierLength=None,
+        EvcStatus=None,
+        EvcType=None,
+        ReferenceId=None,
+        UntaggedPriorityTagged=None,
+    ):
         # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Finds and retrieves evc resources from the server.
 

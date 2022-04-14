@@ -160,7 +160,7 @@ class Error(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceColumnsDisplayName'])
 
     def add(self):
-        """Adds a new error resource on the json, only valid with config assistant
+        """Adds a new error resource on the json, only valid with batch add utility
 
         Returns
         -------

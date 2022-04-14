@@ -219,7 +219,7 @@ class SimInterface(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimInterface
-        """Adds a new simInterface resource on the json, only valid with config assistant
+        """Adds a new simInterface resource on the json, only valid with batch add utility
 
         Args
         ----

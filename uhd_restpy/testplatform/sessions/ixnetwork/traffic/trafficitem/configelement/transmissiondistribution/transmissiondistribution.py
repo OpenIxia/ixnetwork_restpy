@@ -105,7 +105,7 @@ class TransmissionDistribution(Base):
 
     def add(self, Distributions=None):
         # type: (List[str]) -> TransmissionDistribution
-        """Adds a new transmissionDistribution resource on the json, only valid with config assistant
+        """Adds a new transmissionDistribution resource on the json, only valid with batch add utility
 
         Args
         ----

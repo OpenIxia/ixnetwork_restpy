@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class InterAreaRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interAreaRouter'
+    _SDM_NAME = "interAreaRouter"
     _SDM_ATT_MAP = {
-        'IncrLinkStateId': 'incrLinkStateId',
-        'LsaCount': 'lsaCount',
-        'Metric': 'metric',
-        'OptBitDc': 'optBitDc',
-        'OptBitE': 'optBitE',
-        'OptBitMc': 'optBitMc',
-        'OptBitN': 'optBitN',
-        'OptBitR': 'optBitR',
-        'OptBitV6': 'optBitV6',
-        'Option': 'option',
-        'RouterId': 'routerId',
-        'RouterIdIncrementBy': 'routerIdIncrementBy',
+        "IncrLinkStateId": "incrLinkStateId",
+        "LsaCount": "lsaCount",
+        "Metric": "metric",
+        "OptBitDc": "optBitDc",
+        "OptBitE": "optBitE",
+        "OptBitMc": "optBitMc",
+        "OptBitN": "optBitN",
+        "OptBitR": "optBitR",
+        "OptBitV6": "optBitV6",
+        "Option": "option",
+        "RouterId": "routerId",
+        "RouterIdIncrementBy": "routerIdIncrementBy",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(InterAreaRouter, self).__init__(parent, list_op)
@@ -60,13 +60,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrLinkStateId"])
+
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrLinkStateId"], value)
 
     @property
     def LsaCount(self):
@@ -74,13 +75,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaCount"])
+
     @LsaCount.setter
     def LsaCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsaCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsaCount"], value)
 
     @property
     def Metric(self):
@@ -88,13 +90,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def OptBitDc(self):
@@ -102,13 +105,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitDc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitDc"])
+
     @OptBitDc.setter
     def OptBitDc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitDc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitDc"], value)
 
     @property
     def OptBitE(self):
@@ -116,13 +120,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitE'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitE"])
+
     @OptBitE.setter
     def OptBitE(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitE'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitE"], value)
 
     @property
     def OptBitMc(self):
@@ -130,13 +135,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitMc"])
+
     @OptBitMc.setter
     def OptBitMc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitMc"], value)
 
     @property
     def OptBitN(self):
@@ -144,13 +150,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitN'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitN"])
+
     @OptBitN.setter
     def OptBitN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitN"], value)
 
     @property
     def OptBitR(self):
@@ -158,13 +165,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitR'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitR"])
+
     @OptBitR.setter
     def OptBitR(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitR'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitR"], value)
 
     @property
     def OptBitV6(self):
@@ -172,13 +180,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitV6"])
+
     @OptBitV6.setter
     def OptBitV6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitV6"], value)
 
     @property
     def Option(self):
@@ -186,13 +195,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Option'])
+        return self._get_attribute(self._SDM_ATT_MAP["Option"])
+
     @Option.setter
     def Option(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Option'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Option"], value)
 
     @property
     def RouterId(self):
@@ -200,13 +210,14 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def RouterIdIncrementBy(self):
@@ -214,32 +225,47 @@ class InterAreaRouter(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterIdIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterIdIncrementBy"])
+
     @RouterIdIncrementBy.setter
     def RouterIdIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterIdIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterIdIncrementBy"], value)
 
-    def update(self, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, RouterId=None, RouterIdIncrementBy=None):
+    def update(
+        self,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        RouterId=None,
+        RouterIdIncrementBy=None,
+    ):
         # type: (str, int, int, bool, bool, bool, bool, bool, bool, int, str, str) -> InterAreaRouter
         """Updates interAreaRouter resource on the server.
 
         Args
         ----
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - RouterId (str): 
-        - RouterIdIncrementBy (str): 
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - RouterId (str):
+        - RouterIdIncrementBy (str):
 
         Raises
         ------
@@ -247,24 +273,38 @@ class InterAreaRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, RouterId=None, RouterIdIncrementBy=None):
+    def add(
+        self,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        RouterId=None,
+        RouterIdIncrementBy=None,
+    ):
         # type: (str, int, int, bool, bool, bool, bool, bool, bool, int, str, str) -> InterAreaRouter
-        """Adds a new interAreaRouter resource on the json, only valid with config assistant
+        """Adds a new interAreaRouter resource on the json, only valid with batch add utility
 
         Args
         ----
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - RouterId (str): 
-        - RouterIdIncrementBy (str): 
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - RouterId (str):
+        - RouterIdIncrementBy (str):
 
         Returns
         -------
@@ -276,7 +316,21 @@ class InterAreaRouter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, RouterId=None, RouterIdIncrementBy=None):
+    def find(
+        self,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        RouterId=None,
+        RouterIdIncrementBy=None,
+    ):
         # type: (str, int, int, bool, bool, bool, bool, bool, bool, int, str, str) -> InterAreaRouter
         """Finds and retrieves interAreaRouter resources from the server.
 
@@ -286,18 +340,18 @@ class InterAreaRouter(Base):
 
         Args
         ----
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - RouterId (str): 
-        - RouterIdIncrementBy (str): 
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - RouterId (str):
+        - RouterIdIncrementBy (str):
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class FeaturesSupported(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'featuresSupported'
+    _SDM_NAME = "featuresSupported"
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'Experimenter': 'experimenter',
-        'ExperimenterMiss': 'experimenterMiss',
-        'Instruction': 'instruction',
-        'InstructionMiss': 'instructionMiss',
-        'Match': 'match',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
-        'Wildcards': 'wildcards',
-        'WriteActions': 'writeActions',
-        'WriteActionsMiss': 'writeActionsMiss',
-        'WriteSetField': 'writeSetField',
-        'WriteSetFieldMiss': 'writeSetFieldMiss',
+        "ApplyActions": "applyActions",
+        "ApplyActionsMiss": "applyActionsMiss",
+        "ApplySetField": "applySetField",
+        "ApplySetFieldMiss": "applySetFieldMiss",
+        "Experimenter": "experimenter",
+        "ExperimenterMiss": "experimenterMiss",
+        "Instruction": "instruction",
+        "InstructionMiss": "instructionMiss",
+        "Match": "match",
+        "NextTable": "nextTable",
+        "NextTableMiss": "nextTableMiss",
+        "Wildcards": "wildcards",
+        "WriteActions": "writeActions",
+        "WriteActionsMiss": "writeActionsMiss",
+        "WriteSetField": "writeSetField",
+        "WriteSetFieldMiss": "writeSetFieldMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FeaturesSupported, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of apply action instructions that the table flow entry will support. The selected actions associated with a flow are applied immediately.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyActions"])
+
     @ApplyActions.setter
     def ApplyActions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplyActions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplyActions"], value)
 
     @property
     def ApplyActionsMiss(self):
@@ -79,11 +80,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of apply action miss instructions that the table miss flow entry will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyActionsMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyActionsMiss"])
+
     @ApplyActionsMiss.setter
     def ApplyActionsMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplyActionsMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplyActionsMiss"], value)
 
     @property
     def ApplySetField(self):
@@ -93,11 +95,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Apply set field property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplySetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplySetField"])
+
     @ApplySetField.setter
     def ApplySetField(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplySetField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplySetField"], value)
 
     @property
     def ApplySetFieldMiss(self):
@@ -107,11 +110,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Apply set field for table-miss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplySetFieldMiss"])
+
     @ApplySetFieldMiss.setter
     def ApplySetFieldMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplySetFieldMiss"], value)
 
     @property
     def Experimenter(self):
@@ -121,11 +125,12 @@ class FeaturesSupported(Base):
         -------
         - bool: This view lists all the experimenter properties that can be configured. Experimenter messages provide a standard way for OpenFlow switches to offer additional functionality within the OpenFlow message type space.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
+
     @Experimenter.setter
     def Experimenter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Experimenter"], value)
 
     @property
     def ExperimenterMiss(self):
@@ -135,11 +140,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Experimenter for table-miss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterMiss"])
+
     @ExperimenterMiss.setter
     def ExperimenterMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterMiss"], value)
 
     @property
     def Instruction(self):
@@ -149,11 +155,12 @@ class FeaturesSupported(Base):
         -------
         - bool: It select the type of instructions that the table flow entry will support
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Instruction'])
+        return self._get_attribute(self._SDM_ATT_MAP["Instruction"])
+
     @Instruction.setter
     def Instruction(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Instruction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Instruction"], value)
 
     @property
     def InstructionMiss(self):
@@ -163,11 +170,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of instruction miss capabilities that the table miss flow entry will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstructionMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstructionMiss"])
+
     @InstructionMiss.setter
     def InstructionMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstructionMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstructionMiss"], value)
 
     @property
     def Match(self):
@@ -177,11 +185,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of match instructions that the table will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Match'])
+        return self._get_attribute(self._SDM_ATT_MAP["Match"])
+
     @Match.setter
     def Match(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Match'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Match"], value)
 
     @property
     def NextTable(self):
@@ -191,11 +200,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Specify the array of tables that can be directly reached from the present table using the GoTo Table instruction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextTable'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextTable"])
+
     @NextTable.setter
     def NextTable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextTable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextTable"], value)
 
     @property
     def NextTableMiss(self):
@@ -205,11 +215,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Specify the Next table Miss value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextTableMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextTableMiss"])
+
     @NextTableMiss.setter
     def NextTableMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextTableMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextTableMiss"], value)
 
     @property
     def Wildcards(self):
@@ -219,11 +230,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of wildcard instructions that the table will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Wildcards'])
+        return self._get_attribute(self._SDM_ATT_MAP["Wildcards"])
+
     @Wildcards.setter
     def Wildcards(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Wildcards'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Wildcards"], value)
 
     @property
     def WriteActions(self):
@@ -233,11 +245,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of write action instructions that the table flow entry will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteActions"])
+
     @WriteActions.setter
     def WriteActions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteActions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteActions"], value)
 
     @property
     def WriteActionsMiss(self):
@@ -247,11 +260,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Select the type of write action miss instructions that the table miss flow entry will support.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteActionsMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteActionsMiss"])
+
     @WriteActionsMiss.setter
     def WriteActionsMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteActionsMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteActionsMiss"], value)
 
     @property
     def WriteSetField(self):
@@ -261,11 +275,12 @@ class FeaturesSupported(Base):
         -------
         - bool: Apply set field for table-miss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteSetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteSetField"])
+
     @WriteSetField.setter
     def WriteSetField(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteSetField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteSetField"], value)
 
     @property
     def WriteSetFieldMiss(self):
@@ -275,13 +290,32 @@ class FeaturesSupported(Base):
         -------
         - bool: Write set field for table-miss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteSetFieldMiss"])
+
     @WriteSetFieldMiss.setter
     def WriteSetFieldMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteSetFieldMiss"], value)
 
-    def update(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Experimenter=None, ExperimenterMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+    def update(
+        self,
+        ApplyActions=None,
+        ApplyActionsMiss=None,
+        ApplySetField=None,
+        ApplySetFieldMiss=None,
+        Experimenter=None,
+        ExperimenterMiss=None,
+        Instruction=None,
+        InstructionMiss=None,
+        Match=None,
+        NextTable=None,
+        NextTableMiss=None,
+        Wildcards=None,
+        WriteActions=None,
+        WriteActionsMiss=None,
+        WriteSetField=None,
+        WriteSetFieldMiss=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> FeaturesSupported
         """Updates featuresSupported resource on the server.
 
@@ -310,7 +344,25 @@ class FeaturesSupported(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Experimenter=None, ExperimenterMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+    def find(
+        self,
+        ApplyActions=None,
+        ApplyActionsMiss=None,
+        ApplySetField=None,
+        ApplySetFieldMiss=None,
+        Experimenter=None,
+        ExperimenterMiss=None,
+        Instruction=None,
+        InstructionMiss=None,
+        Match=None,
+        NextTable=None,
+        NextTableMiss=None,
+        Wildcards=None,
+        WriteActions=None,
+        WriteActionsMiss=None,
+        WriteSetField=None,
+        WriteSetFieldMiss=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> FeaturesSupported
         """Finds and retrieves featuresSupported resources from the server.
 

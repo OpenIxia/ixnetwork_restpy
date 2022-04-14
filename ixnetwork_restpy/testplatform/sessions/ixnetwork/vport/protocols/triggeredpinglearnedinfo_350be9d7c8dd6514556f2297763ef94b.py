@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class TriggeredPingLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'triggeredPingLearnedInfo'
+    _SDM_NAME = "triggeredPingLearnedInfo"
     _SDM_ATT_MAP = {
-        'Fec': 'fec',
-        'IncomingLabelStack': 'incomingLabelStack',
-        'OutgoingLabelStack': 'outgoingLabelStack',
-        'PeerIpAddress': 'peerIpAddress',
-        'Reachability': 'reachability',
-        'ReturnCode': 'returnCode',
-        'ReturnSubCode': 'returnSubCode',
-        'Rtt': 'rtt',
+        "Fec": "fec",
+        "IncomingLabelStack": "incomingLabelStack",
+        "OutgoingLabelStack": "outgoingLabelStack",
+        "PeerIpAddress": "peerIpAddress",
+        "Reachability": "reachability",
+        "ReturnCode": "returnCode",
+        "ReturnSubCode": "returnSubCode",
+        "Rtt": "rtt",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TriggeredPingLearnedInfo, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the Forwarding Equivalence Class component.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Fec'])
+        return self._get_attribute(self._SDM_ATT_MAP["Fec"])
 
     @property
     def IncomingLabelStack(self):
@@ -68,7 +68,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the incoming label stack value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelStack"])
 
     @property
     def OutgoingLabelStack(self):
@@ -78,7 +78,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the outgoing label stack value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelStack"])
 
     @property
     def PeerIpAddress(self):
@@ -88,7 +88,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the learnt IP address for the session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpAddress"])
 
     @property
     def Reachability(self):
@@ -98,7 +98,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the specification of whether the queried MEP could be reached or not, Failure/Partial/Complete.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def ReturnCode(self):
@@ -108,7 +108,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the return code value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnCode"])
 
     @property
     def ReturnSubCode(self):
@@ -118,7 +118,7 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - number: This signifies the return subcode value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnSubCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnSubCode"])
 
     @property
     def Rtt(self):
@@ -128,10 +128,10 @@ class TriggeredPingLearnedInfo(Base):
         -------
         - str: This signifies the Round Trip Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rtt"])
 
     def add(self):
-        """Adds a new triggeredPingLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new triggeredPingLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -143,7 +143,17 @@ class TriggeredPingLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Fec=None, IncomingLabelStack=None, OutgoingLabelStack=None, PeerIpAddress=None, Reachability=None, ReturnCode=None, ReturnSubCode=None, Rtt=None):
+    def find(
+        self,
+        Fec=None,
+        IncomingLabelStack=None,
+        OutgoingLabelStack=None,
+        PeerIpAddress=None,
+        Reachability=None,
+        ReturnCode=None,
+        ReturnSubCode=None,
+        Rtt=None,
+    ):
         # type: (str, str, str, str, str, str, int, str) -> TriggeredPingLearnedInfo
         """Finds and retrieves triggeredPingLearnedInfo resources from the server.
 

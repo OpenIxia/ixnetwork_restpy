@@ -128,7 +128,7 @@ class Egress(Base):
 
     def add(self, CommitEgressPage=None, CurrentPage=None):
         # type: (bool, int) -> Egress
-        """Adds a new egress resource on the json, only valid with config assistant
+        """Adds a new egress resource on the json, only valid with batch add utility
 
         Args
         ----

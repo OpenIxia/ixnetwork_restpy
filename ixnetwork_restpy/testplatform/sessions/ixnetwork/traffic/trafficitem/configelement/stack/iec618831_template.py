@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class Iec618831(Base):
     __slots__ = ()
-    _SDM_NAME = 'iec61883-1'
+    _SDM_NAME = "iec61883-1"
     _SDM_ATT_MAP = {
-        'CIP-1Cip1firstBit': 'iec61883-1.header.CIP-1.cip1firstBit-1',
-        'CIP-1Cip1secondBit': 'iec61883-1.header.CIP-1.cip1secondBit-2',
-        'CIP-1SourceIdentifier': 'iec61883-1.header.CIP-1.sourceIdentifier-3',
-        'CIP-1DataBlockSize': 'iec61883-1.header.CIP-1.dataBlockSize-4',
-        'CIP-1QuadletPaddingCount': 'iec61883-1.header.CIP-1.quadletPaddingCount-5',
-        'CIP-1FractionNumber': 'iec61883-1.header.CIP-1.fractionNumber-6',
-        'CIP-1SourcePacketHeader': 'iec61883-1.header.CIP-1.sourcePacketHeader-7',
-        'CIP-1Reserved': 'iec61883-1.header.CIP-1.Reserved-8',
-        'CIP-1DataBlockCount': 'iec61883-1.header.CIP-1.dataBlockCount-9',
-        'CIP-2Cip2firstBit': 'iec61883-1.header.CIP-2.cip2firstBit-10',
-        'CIP-2Cip2secondBit': 'iec61883-1.header.CIP-2.cip2secondBit-11',
-        'CIP-2StreamFormat': 'iec61883-1.header.CIP-2.streamFormat-12',
-        '8BitFDFFormatDependentField': 'iec61883-1.header.selectFDF.8BitFDF.formatDependentField-13',
-        '8BitFDFSynchronisationTiming': 'iec61883-1.header.selectFDF.8BitFDF.synchronisationTiming-14',
-        '24BitFDFFormatDependentField': 'iec61883-1.header.selectFDF.24BitFDF.formatDependentField-15',
-        '24BitFDFAvtpSourcePacketHeader': 'iec61883-1.header.selectFDF.24BitFDF.avtpSourcePacketHeader-16',
+        "CIP-1Cip1firstBit": "iec61883-1.header.CIP-1.cip1firstBit-1",
+        "CIP-1Cip1secondBit": "iec61883-1.header.CIP-1.cip1secondBit-2",
+        "CIP-1SourceIdentifier": "iec61883-1.header.CIP-1.sourceIdentifier-3",
+        "CIP-1DataBlockSize": "iec61883-1.header.CIP-1.dataBlockSize-4",
+        "CIP-1QuadletPaddingCount": "iec61883-1.header.CIP-1.quadletPaddingCount-5",
+        "CIP-1FractionNumber": "iec61883-1.header.CIP-1.fractionNumber-6",
+        "CIP-1SourcePacketHeader": "iec61883-1.header.CIP-1.sourcePacketHeader-7",
+        "CIP-1Reserved": "iec61883-1.header.CIP-1.Reserved-8",
+        "CIP-1DataBlockCount": "iec61883-1.header.CIP-1.dataBlockCount-9",
+        "CIP-2Cip2firstBit": "iec61883-1.header.CIP-2.cip2firstBit-10",
+        "CIP-2Cip2secondBit": "iec61883-1.header.CIP-2.cip2secondBit-11",
+        "CIP-2StreamFormat": "iec61883-1.header.CIP-2.streamFormat-12",
+        "8BitFDFFormatDependentField": "iec61883-1.header.selectFDF.8BitFDF.formatDependentField-13",
+        "8BitFDFSynchronisationTiming": "iec61883-1.header.selectFDF.8BitFDF.synchronisationTiming-14",
+        "24BitFDFFormatDependentField": "iec61883-1.header.selectFDF.24BitFDF.formatDependentField-15",
+        "24BitFDFAvtpSourcePacketHeader": "iec61883-1.header.selectFDF.24BitFDF.avtpSourcePacketHeader-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1Cip1firstBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1Cip1firstBit"])
+        )
 
     @property
     def CIP1Cip1secondBit(self):
@@ -45,7 +48,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1Cip1secondBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1Cip1secondBit"])
+        )
 
     @property
     def CIP1SourceIdentifier(self):
@@ -55,7 +61,10 @@ class Iec618831(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1SourceIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1SourceIdentifier"])
+        )
 
     @property
     def CIP1DataBlockSize(self):
@@ -65,7 +74,10 @@ class Iec618831(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1DataBlockSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1DataBlockSize"])
+        )
 
     @property
     def CIP1QuadletPaddingCount(self):
@@ -75,7 +87,10 @@ class Iec618831(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1QuadletPaddingCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1QuadletPaddingCount"])
+        )
 
     @property
     def CIP1FractionNumber(self):
@@ -85,7 +100,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1FractionNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1FractionNumber"])
+        )
 
     @property
     def CIP1SourcePacketHeader(self):
@@ -95,7 +113,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1SourcePacketHeader']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1SourcePacketHeader"])
+        )
 
     @property
     def CIP1Reserved(self):
@@ -105,7 +126,8 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CIP-1Reserved"]))
 
     @property
     def CIP1DataBlockCount(self):
@@ -115,7 +137,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-1DataBlockCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-1DataBlockCount"])
+        )
 
     @property
     def CIP2Cip2firstBit(self):
@@ -125,7 +150,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-2Cip2firstBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-2Cip2firstBit"])
+        )
 
     @property
     def CIP2Cip2secondBit(self):
@@ -135,7 +163,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-2Cip2secondBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-2Cip2secondBit"])
+        )
 
     @property
     def CIP2StreamFormat(self):
@@ -145,7 +176,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CIP-2StreamFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CIP-2StreamFormat"])
+        )
 
     @property
     def _8BitFDFFormatDependentField(self):
@@ -155,7 +189,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['8BitFDFFormatDependentField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["8BitFDFFormatDependentField"])
+        )
 
     @property
     def _8BitFDFSynchronisationTiming(self):
@@ -165,7 +202,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['8BitFDFSynchronisationTiming']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["8BitFDFSynchronisationTiming"])
+        )
 
     @property
     def _24BitFDFFormatDependentField(self):
@@ -175,7 +215,10 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['24BitFDFFormatDependentField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["24BitFDFFormatDependentField"])
+        )
 
     @property
     def _24BitFDFAvtpSourcePacketHeader(self):
@@ -185,7 +228,11 @@ class Iec618831(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['24BitFDFAvtpSourcePacketHeader']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["24BitFDFAvtpSourcePacketHeader"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

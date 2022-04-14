@@ -144,7 +144,7 @@ class DynamicFrameSize(Base):
 
     def add(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
         # type: (int, int, int, str) -> DynamicFrameSize
-        """Adds a new dynamicFrameSize resource on the json, only valid with config assistant
+        """Adds a new dynamicFrameSize resource on the json, only valid with batch add utility
 
         Args
         ----

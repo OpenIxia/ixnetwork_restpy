@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class ExecWatch(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'execWatch'
+    _SDM_NAME = "execWatch"
     _SDM_ATT_MAP = {
-        'AverageExecutionTime': 'averageExecutionTime',
-        'ExecToWatch': 'execToWatch',
-        'IsDisabled': 'isDisabled',
-        'LastExecutionTime': 'lastExecutionTime',
-        'LastNotification': 'lastNotification',
-        'MaxExecutionTime': 'maxExecutionTime',
-        'PollInterval': 'pollInterval',
-        'Token': 'token',
-        'Topic': 'topic',
+        "AverageExecutionTime": "averageExecutionTime",
+        "ExecToWatch": "execToWatch",
+        "IsDisabled": "isDisabled",
+        "LastExecutionTime": "lastExecutionTime",
+        "LastNotification": "lastNotification",
+        "MaxExecutionTime": "maxExecutionTime",
+        "PollInterval": "pollInterval",
+        "Token": "token",
+        "Topic": "topic",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ExecWatch, self).__init__(parent, list_op)
@@ -58,9 +58,9 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageExecutionTime"])
 
     @property
     def ExecToWatch(self):
@@ -68,13 +68,14 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExecToWatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExecToWatch"])
+
     @ExecToWatch.setter
     def ExecToWatch(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExecToWatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExecToWatch"], value)
 
     @property
     def IsDisabled(self):
@@ -82,9 +83,9 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsDisabled"])
 
     @property
     def LastExecutionTime(self):
@@ -92,9 +93,9 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastExecutionTime"])
 
     @property
     def LastNotification(self):
@@ -102,9 +103,9 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastNotification"])
 
     @property
     def MaxExecutionTime(self):
@@ -114,11 +115,12 @@ class ExecWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxExecutionTime"])
+
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxExecutionTime"], value)
 
     @property
     def PollInterval(self):
@@ -128,11 +130,12 @@ class ExecWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
     @property
     def Token(self):
@@ -140,9 +143,9 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Token'])
+        return self._get_attribute(self._SDM_ATT_MAP["Token"])
 
     @property
     def Topic(self):
@@ -150,24 +153,27 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topic"])
+
     @Topic.setter
     def Topic(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topic"], value)
 
-    def update(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
+    def update(
+        self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None
+    ):
         # type: (str, int, int, str) -> ExecWatch
         """Updates execWatch resource on the server.
 
         Args
         ----
-        - ExecToWatch (str): 
+        - ExecToWatch (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Topic (str): 
+        - Topic (str):
 
         Raises
         ------
@@ -175,16 +181,18 @@ class ExecWatch(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
+    def add(
+        self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None
+    ):
         # type: (str, int, int, str) -> ExecWatch
         """Adds a new execWatch resource on the server and adds it to the container.
 
         Args
         ----
-        - ExecToWatch (str): 
+        - ExecToWatch (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Topic (str): 
+        - Topic (str):
 
         Returns
         -------
@@ -206,7 +214,18 @@ class ExecWatch(Base):
         """
         self._delete()
 
-    def find(self, AverageExecutionTime=None, ExecToWatch=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, PollInterval=None, Token=None, Topic=None):
+    def find(
+        self,
+        AverageExecutionTime=None,
+        ExecToWatch=None,
+        IsDisabled=None,
+        LastExecutionTime=None,
+        LastNotification=None,
+        MaxExecutionTime=None,
+        PollInterval=None,
+        Token=None,
+        Topic=None,
+    ):
         # type: (int, str, bool, int, str, int, int, int, str) -> ExecWatch
         """Finds and retrieves execWatch resources from the server.
 
@@ -216,15 +235,15 @@ class ExecWatch(Base):
 
         Args
         ----
-        - AverageExecutionTime (number): 
-        - ExecToWatch (str): 
-        - IsDisabled (bool): 
-        - LastExecutionTime (number): 
-        - LastNotification (str): 
+        - AverageExecutionTime (number):
+        - ExecToWatch (str):
+        - IsDisabled (bool):
+        - LastExecutionTime (number):
+        - LastNotification (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Token (number): 
-        - Topic (str): 
+        - Token (number):
+        - Topic (str):
 
         Returns
         -------

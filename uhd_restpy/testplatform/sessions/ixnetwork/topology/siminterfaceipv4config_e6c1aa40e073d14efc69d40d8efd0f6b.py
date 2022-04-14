@@ -163,7 +163,7 @@ class SimInterfaceIPv4Config(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimInterfaceIPv4Config
-        """Adds a new simInterfaceIPv4Config resource on the json, only valid with config assistant
+        """Adds a new simInterfaceIPv4Config resource on the json, only valid with batch add utility
 
         Args
         ----

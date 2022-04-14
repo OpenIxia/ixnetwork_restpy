@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class Globals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'globals'
+    _SDM_NAME = "globals"
     _SDM_ATT_MAP = {
-        'Comments': 'comments',
-        'EnableAbortIfLinkDown': 'enableAbortIfLinkDown',
-        'EnableCapture': 'enableCapture',
-        'EnableCheckLinkState': 'enableCheckLinkState',
-        'EnableGenerateReportAfterRun': 'enableGenerateReportAfterRun',
-        'EnableRebootCpu': 'enableRebootCpu',
-        'EnableSwitchToResult': 'enableSwitchToResult',
-        'EnableSwitchToStats': 'enableSwitchToStats',
-        'LinkDownTimeout': 'linkDownTimeout',
-        'MaxLinesToDisplay': 'maxLinesToDisplay',
-        'OutputRootPath': 'outputRootPath',
-        'ProductLabel': 'productLabel',
-        'SaveCaptureBeforeRun': 'saveCaptureBeforeRun',
-        'SerialNumber': 'serialNumber',
-        'SleepTimeAfterReboot': 'sleepTimeAfterReboot',
-        'TitlePageComments': 'titlePageComments',
-        'UseDefaultRootPath': 'useDefaultRootPath',
-        'Version': 'version',
+        "Comments": "comments",
+        "EnableAbortIfLinkDown": "enableAbortIfLinkDown",
+        "EnableCapture": "enableCapture",
+        "EnableCheckLinkState": "enableCheckLinkState",
+        "EnableGenerateReportAfterRun": "enableGenerateReportAfterRun",
+        "EnableRebootCpu": "enableRebootCpu",
+        "EnableSwitchToResult": "enableSwitchToResult",
+        "EnableSwitchToStats": "enableSwitchToStats",
+        "LinkDownTimeout": "linkDownTimeout",
+        "MaxLinesToDisplay": "maxLinesToDisplay",
+        "OutputRootPath": "outputRootPath",
+        "ProductLabel": "productLabel",
+        "SaveCaptureBeforeRun": "saveCaptureBeforeRun",
+        "SerialNumber": "serialNumber",
+        "SleepTimeAfterReboot": "sleepTimeAfterReboot",
+        "TitlePageComments": "titlePageComments",
+        "UseDefaultRootPath": "useDefaultRootPath",
+        "Version": "version",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Globals, self).__init__(parent, list_op)
@@ -67,11 +67,12 @@ class Globals(Base):
         -------
         - str: User-specified comments for reporting
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Comments'])
+        return self._get_attribute(self._SDM_ATT_MAP["Comments"])
+
     @Comments.setter
     def Comments(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Comments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Comments"], value)
 
     @property
     def EnableAbortIfLinkDown(self):
@@ -81,11 +82,12 @@ class Globals(Base):
         -------
         - bool: Controls how long to wait for an up link state before aborting the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAbortIfLinkDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAbortIfLinkDown"])
+
     @EnableAbortIfLinkDown.setter
     def EnableAbortIfLinkDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAbortIfLinkDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAbortIfLinkDown"], value)
 
     @property
     def EnableCapture(self):
@@ -95,11 +97,12 @@ class Globals(Base):
         -------
         - bool: Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCapture'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCapture"])
+
     @EnableCapture.setter
     def EnableCapture(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCapture'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCapture"], value)
 
     @property
     def EnableCheckLinkState(self):
@@ -109,11 +112,12 @@ class Globals(Base):
         -------
         - bool: Initiates a link state check of the port before a test is run.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCheckLinkState'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCheckLinkState"])
+
     @EnableCheckLinkState.setter
     def EnableCheckLinkState(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCheckLinkState'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCheckLinkState"], value)
 
     @property
     def EnableGenerateReportAfterRun(self):
@@ -123,11 +127,12 @@ class Globals(Base):
         -------
         - bool: When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGenerateReportAfterRun'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGenerateReportAfterRun"])
+
     @EnableGenerateReportAfterRun.setter
     def EnableGenerateReportAfterRun(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGenerateReportAfterRun'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGenerateReportAfterRun"], value)
 
     @property
     def EnableRebootCpu(self):
@@ -137,11 +142,12 @@ class Globals(Base):
         -------
         - bool: Reboots the port CPU before a test is run.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRebootCpu'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRebootCpu"])
+
     @EnableRebootCpu.setter
     def EnableRebootCpu(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRebootCpu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRebootCpu"], value)
 
     @property
     def EnableSwitchToResult(self):
@@ -151,11 +157,12 @@ class Globals(Base):
         -------
         - bool: When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSwitchToResult'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSwitchToResult"])
+
     @EnableSwitchToResult.setter
     def EnableSwitchToResult(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSwitchToResult'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSwitchToResult"], value)
 
     @property
     def EnableSwitchToStats(self):
@@ -165,11 +172,12 @@ class Globals(Base):
         -------
         - bool: If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSwitchToStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSwitchToStats"])
+
     @EnableSwitchToStats.setter
     def EnableSwitchToStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSwitchToStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSwitchToStats"], value)
 
     @property
     def LinkDownTimeout(self):
@@ -179,11 +187,12 @@ class Globals(Base):
         -------
         - number: Select this option to simulate a port link being down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkDownTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkDownTimeout"])
+
     @LinkDownTimeout.setter
     def LinkDownTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkDownTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkDownTimeout"], value)
 
     @property
     def MaxLinesToDisplay(self):
@@ -193,11 +202,12 @@ class Globals(Base):
         -------
         - number: The maximum number of lines to display.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLinesToDisplay'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLinesToDisplay"])
+
     @MaxLinesToDisplay.setter
     def MaxLinesToDisplay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxLinesToDisplay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxLinesToDisplay"], value)
 
     @property
     def OutputRootPath(self):
@@ -207,11 +217,12 @@ class Globals(Base):
         -------
         - str: This object holds the configurable output root path of IxNetwork for quick test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputRootPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputRootPath"])
+
     @OutputRootPath.setter
     def OutputRootPath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputRootPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputRootPath"], value)
 
     @property
     def ProductLabel(self):
@@ -221,11 +232,12 @@ class Globals(Base):
         -------
         - str: User-specified product label for reporting
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProductLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProductLabel"])
+
     @ProductLabel.setter
     def ProductLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProductLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProductLabel"], value)
 
     @property
     def SaveCaptureBeforeRun(self):
@@ -235,11 +247,12 @@ class Globals(Base):
         -------
         - bool: This command saves the current capture data to the specified directory before run.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SaveCaptureBeforeRun'])
+        return self._get_attribute(self._SDM_ATT_MAP["SaveCaptureBeforeRun"])
+
     @SaveCaptureBeforeRun.setter
     def SaveCaptureBeforeRun(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SaveCaptureBeforeRun'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SaveCaptureBeforeRun"], value)
 
     @property
     def SerialNumber(self):
@@ -249,11 +262,12 @@ class Globals(Base):
         -------
         - str: User-specified serial number for reporting
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SerialNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SerialNumber"])
+
     @SerialNumber.setter
     def SerialNumber(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SerialNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SerialNumber"], value)
 
     @property
     def SleepTimeAfterReboot(self):
@@ -263,11 +277,12 @@ class Globals(Base):
         -------
         - number: If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SleepTimeAfterReboot'])
+        return self._get_attribute(self._SDM_ATT_MAP["SleepTimeAfterReboot"])
+
     @SleepTimeAfterReboot.setter
     def SleepTimeAfterReboot(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SleepTimeAfterReboot'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SleepTimeAfterReboot"], value)
 
     @property
     def TitlePageComments(self):
@@ -277,11 +292,12 @@ class Globals(Base):
         -------
         - str: User-specified comments for title page
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TitlePageComments'])
+        return self._get_attribute(self._SDM_ATT_MAP["TitlePageComments"])
+
     @TitlePageComments.setter
     def TitlePageComments(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TitlePageComments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TitlePageComments"], value)
 
     @property
     def UseDefaultRootPath(self):
@@ -291,11 +307,12 @@ class Globals(Base):
         -------
         - bool: This object uses the default root path for quick test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseDefaultRootPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseDefaultRootPath"])
+
     @UseDefaultRootPath.setter
     def UseDefaultRootPath(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseDefaultRootPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseDefaultRootPath"], value)
 
     @property
     def Version(self):
@@ -305,13 +322,34 @@ class Globals(Base):
         -------
         - str: User-specified version for reporting
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
+    def update(
+        self,
+        Comments=None,
+        EnableAbortIfLinkDown=None,
+        EnableCapture=None,
+        EnableCheckLinkState=None,
+        EnableGenerateReportAfterRun=None,
+        EnableRebootCpu=None,
+        EnableSwitchToResult=None,
+        EnableSwitchToStats=None,
+        LinkDownTimeout=None,
+        MaxLinesToDisplay=None,
+        OutputRootPath=None,
+        ProductLabel=None,
+        SaveCaptureBeforeRun=None,
+        SerialNumber=None,
+        SleepTimeAfterReboot=None,
+        TitlePageComments=None,
+        UseDefaultRootPath=None,
+        Version=None,
+    ):
         # type: (str, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, bool, str, int, str, bool, str) -> Globals
         """Updates globals resource on the server.
 
@@ -342,7 +380,27 @@ class Globals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
+    def find(
+        self,
+        Comments=None,
+        EnableAbortIfLinkDown=None,
+        EnableCapture=None,
+        EnableCheckLinkState=None,
+        EnableGenerateReportAfterRun=None,
+        EnableRebootCpu=None,
+        EnableSwitchToResult=None,
+        EnableSwitchToStats=None,
+        LinkDownTimeout=None,
+        MaxLinesToDisplay=None,
+        OutputRootPath=None,
+        ProductLabel=None,
+        SaveCaptureBeforeRun=None,
+        SerialNumber=None,
+        SleepTimeAfterReboot=None,
+        TitlePageComments=None,
+        UseDefaultRootPath=None,
+        Version=None,
+    ):
         # type: (str, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, bool, str, int, str, bool, str) -> Globals
         """Finds and retrieves globals resources from the server.
 
@@ -414,10 +472,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -432,10 +492,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -444,17 +506,19 @@ class Globals(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -471,10 +535,14 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -492,10 +560,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -521,10 +591,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -548,10 +620,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -568,10 +642,12 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -589,7 +665,9 @@ class Globals(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class PimRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pimRouter'
+    _SDM_NAME = "pimRouter"
     _SDM_ATT_MAP = {
-        'BootstrapMessagePerInterval': 'bootstrapMessagePerInterval',
-        'CRpAdvertiseMessagePerInterval': 'cRpAdvertiseMessagePerInterval',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardJoinPruneProcessing': 'discardJoinPruneProcessing',
-        'EnableRateControl': 'enableRateControl',
-        'HelloMessagePerInterval': 'helloMessagePerInterval',
-        'Interval': 'interval',
-        'JoinPruneMessagePerInterval': 'joinPruneMessagePerInterval',
-        'Name': 'name',
-        'RegisterMessagePerInterval': 'registerMessagePerInterval',
-        'RegisterStopMessagePerInterval': 'registerStopMessagePerInterval',
-        'RowNames': 'rowNames',
+        "BootstrapMessagePerInterval": "bootstrapMessagePerInterval",
+        "CRpAdvertiseMessagePerInterval": "cRpAdvertiseMessagePerInterval",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DiscardJoinPruneProcessing": "discardJoinPruneProcessing",
+        "EnableRateControl": "enableRateControl",
+        "HelloMessagePerInterval": "helloMessagePerInterval",
+        "Interval": "interval",
+        "JoinPruneMessagePerInterval": "joinPruneMessagePerInterval",
+        "Name": "name",
+        "RegisterMessagePerInterval": "registerMessagePerInterval",
+        "RegisterStopMessagePerInterval": "registerStopMessagePerInterval",
+        "RowNames": "rowNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PimRouter, self).__init__(parent, list_op)
@@ -63,7 +63,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bootstrap Messages Per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BootstrapMessagePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BootstrapMessagePerInterval"])
+        )
 
     @property
     def CRpAdvertiseMessagePerInterval(self):
@@ -74,7 +77,11 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-RP Advertise Messages per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CRpAdvertiseMessagePerInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CRpAdvertiseMessagePerInterval"]),
+        )
 
     @property
     def Count(self):
@@ -84,7 +91,7 @@ class PimRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -94,7 +101,7 @@ class PimRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardJoinPruneProcessing(self):
@@ -105,7 +112,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Discard join/Prune Processing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardJoinPruneProcessing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DiscardJoinPruneProcessing"])
+        )
 
     @property
     def EnableRateControl(self):
@@ -116,7 +126,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Rate Control
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRateControl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRateControl"])
+        )
 
     @property
     def HelloMessagePerInterval(self):
@@ -127,7 +140,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Messages per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloMessagePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloMessagePerInterval"])
+        )
 
     @property
     def Interval(self):
@@ -138,7 +154,8 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Interval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Interval"]))
 
     @property
     def JoinPruneMessagePerInterval(self):
@@ -149,7 +166,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Join/Prune Messages per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JoinPruneMessagePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["JoinPruneMessagePerInterval"])
+        )
 
     @property
     def Name(self):
@@ -159,11 +179,12 @@ class PimRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RegisterMessagePerInterval(self):
@@ -174,7 +195,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Register Messages Per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegisterMessagePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegisterMessagePerInterval"])
+        )
 
     @property
     def RegisterStopMessagePerInterval(self):
@@ -185,7 +209,11 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Register Stop Messages Per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegisterStopMessagePerInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RegisterStopMessagePerInterval"]),
+        )
 
     @property
     def RowNames(self):
@@ -195,7 +223,7 @@ class PimRouter(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     def update(self, Name=None):
         # type: (str) -> PimRouter
@@ -257,7 +285,19 @@ class PimRouter(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BootstrapMessagePerInterval=None, CRpAdvertiseMessagePerInterval=None, DiscardJoinPruneProcessing=None, EnableRateControl=None, HelloMessagePerInterval=None, Interval=None, JoinPruneMessagePerInterval=None, RegisterMessagePerInterval=None, RegisterStopMessagePerInterval=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BootstrapMessagePerInterval=None,
+        CRpAdvertiseMessagePerInterval=None,
+        DiscardJoinPruneProcessing=None,
+        EnableRateControl=None,
+        HelloMessagePerInterval=None,
+        Interval=None,
+        JoinPruneMessagePerInterval=None,
+        RegisterMessagePerInterval=None,
+        RegisterStopMessagePerInterval=None,
+    ):
         """Base class infrastructure that gets a list of pimRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

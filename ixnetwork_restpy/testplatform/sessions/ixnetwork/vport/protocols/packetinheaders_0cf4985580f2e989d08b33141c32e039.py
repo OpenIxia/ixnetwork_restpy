@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class PacketInHeaders(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'packetInHeaders'
+    _SDM_NAME = "packetInHeaders"
     _SDM_ATT_MAP = {
-        'EthernetDestinationAddress': 'ethernetDestinationAddress',
-        'EthernetSourceAddress': 'ethernetSourceAddress',
-        'EthernetType': 'ethernetType',
-        'Ipv4DestinationAddress': 'ipv4DestinationAddress',
-        'Ipv4Protocol': 'ipv4Protocol',
-        'Ipv4SourceAddress': 'ipv4SourceAddress',
-        'Ipv6DestinationAddress': 'ipv6DestinationAddress',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6SourceAddress': 'ipv6SourceAddress',
-        'TcpDestinationPort': 'tcpDestinationPort',
-        'TcpSourcePort': 'tcpSourcePort',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
-        'UniquePacketCount': 'uniquePacketCount',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "EthernetDestinationAddress": "ethernetDestinationAddress",
+        "EthernetSourceAddress": "ethernetSourceAddress",
+        "EthernetType": "ethernetType",
+        "Ipv4DestinationAddress": "ipv4DestinationAddress",
+        "Ipv4Protocol": "ipv4Protocol",
+        "Ipv4SourceAddress": "ipv4SourceAddress",
+        "Ipv6DestinationAddress": "ipv6DestinationAddress",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6SourceAddress": "ipv6SourceAddress",
+        "TcpDestinationPort": "tcpDestinationPort",
+        "TcpSourcePort": "tcpSourcePort",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UdpSourcePort": "udpSourcePort",
+        "UniquePacketCount": "uniquePacketCount",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PacketInHeaders, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the Ethernet destination address for the packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestinationAddress"])
+
     @EthernetDestinationAddress.setter
     def EthernetDestinationAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestinationAddress"], value)
 
     @property
     def EthernetSourceAddress(self):
@@ -79,11 +80,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the ethernet address of the source from which this packet arrived.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSourceAddress"])
+
     @EthernetSourceAddress.setter
     def EthernetSourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSourceAddress"], value)
 
     @property
     def EthernetType(self):
@@ -93,11 +95,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the ethernet frame type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
+
     @EthernetType.setter
     def EthernetType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetType"], value)
 
     @property
     def Ipv4DestinationAddress(self):
@@ -107,11 +110,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the IPv4 destination address for this packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4DestinationAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4DestinationAddress"])
+
     @Ipv4DestinationAddress.setter
     def Ipv4DestinationAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4DestinationAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4DestinationAddress"], value)
 
     @property
     def Ipv4Protocol(self):
@@ -121,11 +125,12 @@ class PacketInHeaders(Base):
         -------
         - str: Defines the protocol used in the data portion of the IP datagram.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Protocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Protocol"])
+
     @Ipv4Protocol.setter
     def Ipv4Protocol(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Protocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Protocol"], value)
 
     @property
     def Ipv4SourceAddress(self):
@@ -135,11 +140,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the IPv4 address of the source from which this packet arrived.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceAddress"])
+
     @Ipv4SourceAddress.setter
     def Ipv4SourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4SourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4SourceAddress"], value)
 
     @property
     def Ipv6DestinationAddress(self):
@@ -149,11 +155,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the IPv6 destination address for this packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6DestinationAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6DestinationAddress"])
+
     @Ipv6DestinationAddress.setter
     def Ipv6DestinationAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6DestinationAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6DestinationAddress"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -163,11 +170,12 @@ class PacketInHeaders(Base):
         -------
         - str: Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def Ipv6SourceAddress(self):
@@ -177,11 +185,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the IPv6 address of the source from which this packet arrived.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6SourceAddress"])
+
     @Ipv6SourceAddress.setter
     def Ipv6SourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6SourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6SourceAddress"], value)
 
     @property
     def TcpDestinationPort(self):
@@ -191,11 +200,12 @@ class PacketInHeaders(Base):
         -------
         - str: Identifies the TCP port number of the destination application program.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestinationPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestinationPort"])
+
     @TcpDestinationPort.setter
     def TcpDestinationPort(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpDestinationPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpDestinationPort"], value)
 
     @property
     def TcpSourcePort(self):
@@ -205,11 +215,12 @@ class PacketInHeaders(Base):
         -------
         - str: Identifies the TCP port number of the source application program.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSourcePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSourcePort"])
+
     @TcpSourcePort.setter
     def TcpSourcePort(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpSourcePort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpSourcePort"], value)
 
     @property
     def UdpDestinationPort(self):
@@ -219,11 +230,12 @@ class PacketInHeaders(Base):
         -------
         - str: Identifies the UDP port number of the destination application program.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+
     @UdpDestinationPort.setter
     def UdpDestinationPort(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestinationPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestinationPort"], value)
 
     @property
     def UdpSourcePort(self):
@@ -233,11 +245,12 @@ class PacketInHeaders(Base):
         -------
         - str: Identifies the UDP port number of the source application program.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSourcePort"])
+
     @UdpSourcePort.setter
     def UdpSourcePort(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSourcePort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSourcePort"], value)
 
     @property
     def UniquePacketCount(self):
@@ -247,7 +260,7 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the packet-in count in this Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniquePacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniquePacketCount"])
 
     @property
     def VlanId(self):
@@ -257,11 +270,12 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the field specifying the VLAN to which the frame belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -271,13 +285,31 @@ class PacketInHeaders(Base):
         -------
         - str: Indicates the frame priority level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, EthernetDestinationAddress=None, EthernetSourceAddress=None, EthernetType=None, Ipv4DestinationAddress=None, Ipv4Protocol=None, Ipv4SourceAddress=None, Ipv6DestinationAddress=None, Ipv6FlowLabel=None, Ipv6SourceAddress=None, TcpDestinationPort=None, TcpSourcePort=None, UdpDestinationPort=None, UdpSourcePort=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        EthernetDestinationAddress=None,
+        EthernetSourceAddress=None,
+        EthernetType=None,
+        Ipv4DestinationAddress=None,
+        Ipv4Protocol=None,
+        Ipv4SourceAddress=None,
+        Ipv6DestinationAddress=None,
+        Ipv6FlowLabel=None,
+        Ipv6SourceAddress=None,
+        TcpDestinationPort=None,
+        TcpSourcePort=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str) -> PacketInHeaders
         """Updates packetInHeaders resource on the server.
 
@@ -305,7 +337,25 @@ class PacketInHeaders(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EthernetDestinationAddress=None, EthernetSourceAddress=None, EthernetType=None, Ipv4DestinationAddress=None, Ipv4Protocol=None, Ipv4SourceAddress=None, Ipv6DestinationAddress=None, Ipv6FlowLabel=None, Ipv6SourceAddress=None, TcpDestinationPort=None, TcpSourcePort=None, UdpDestinationPort=None, UdpSourcePort=None, UniquePacketCount=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        EthernetDestinationAddress=None,
+        EthernetSourceAddress=None,
+        EthernetType=None,
+        Ipv4DestinationAddress=None,
+        Ipv4Protocol=None,
+        Ipv4SourceAddress=None,
+        Ipv6DestinationAddress=None,
+        Ipv6FlowLabel=None,
+        Ipv6SourceAddress=None,
+        TcpDestinationPort=None,
+        TcpSourcePort=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        UniquePacketCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str) -> PacketInHeaders
         """Finds and retrieves packetInHeaders resources from the server.
 

@@ -4,39 +4,39 @@ from ixnetwork_restpy.files import Files
 
 class Lacp(Base):
     __slots__ = ()
-    _SDM_NAME = 'lacp'
+    _SDM_NAME = "lacp"
     _SDM_ATT_MAP = {
-        'DstAddress': 'lacp.header.header.dstAddress-1',
-        'SrcAddress': 'lacp.header.header.srcAddress-2',
-        'LengthType': 'lacp.header.header.lengthType-3',
-        'Subtype': 'lacp.header.header.subtype-4',
-        'Version': 'lacp.header.header.version-5',
-        'ActorTlvType': 'lacp.header.actor.tlvType-6',
-        'ActorTlvLength': 'lacp.header.actor.tlvLength-7',
-        'ActorSystemPriority': 'lacp.header.actor.systemPriority-8',
-        'ActorSystem': 'lacp.header.actor.system-9',
-        'ActorKey': 'lacp.header.actor.key-10',
-        'ActorPortPriority': 'lacp.header.actor.portPriority-11',
-        'ActorPort': 'lacp.header.actor.port-12',
-        'ActorState': 'lacp.header.actor.state-13',
-        'ActorReserved': 'lacp.header.actor.reserved-14',
-        'PartnerTlvType': 'lacp.header.partner.tlvType-15',
-        'PartnerTlvLength': 'lacp.header.partner.tlvLength-16',
-        'PartnerSystemPriority': 'lacp.header.partner.systemPriority-17',
-        'PartnerSystem': 'lacp.header.partner.system-18',
-        'PartnerKey': 'lacp.header.partner.key-19',
-        'PartnerPortPriority': 'lacp.header.partner.portPriority-20',
-        'PartnerPort': 'lacp.header.partner.port-21',
-        'PartnerState': 'lacp.header.partner.state-22',
-        'PartnerReserved': 'lacp.header.partner.reserved-23',
-        'CollectorTlvType': 'lacp.header.collector.tlvType-24',
-        'CollectorTlvLength': 'lacp.header.collector.tlvLength-25',
-        'CollectorMaxDelay': 'lacp.header.collector.maxDelay-26',
-        'CollectorReserved': 'lacp.header.collector.reserved-27',
-        'TerminatorTlvType': 'lacp.header.terminator.tlvType-28',
-        'TerminatorTlvLength': 'lacp.header.terminator.tlvLength-29',
-        'HeaderReserved': 'lacp.header.reserved-30',
-        'HeaderFcs': 'lacp.header.fcs-31',
+        "DstAddress": "lacp.header.header.dstAddress-1",
+        "SrcAddress": "lacp.header.header.srcAddress-2",
+        "LengthType": "lacp.header.header.lengthType-3",
+        "Subtype": "lacp.header.header.subtype-4",
+        "Version": "lacp.header.header.version-5",
+        "ActorTlvType": "lacp.header.actor.tlvType-6",
+        "ActorTlvLength": "lacp.header.actor.tlvLength-7",
+        "ActorSystemPriority": "lacp.header.actor.systemPriority-8",
+        "ActorSystem": "lacp.header.actor.system-9",
+        "ActorKey": "lacp.header.actor.key-10",
+        "ActorPortPriority": "lacp.header.actor.portPriority-11",
+        "ActorPort": "lacp.header.actor.port-12",
+        "ActorState": "lacp.header.actor.state-13",
+        "ActorReserved": "lacp.header.actor.reserved-14",
+        "PartnerTlvType": "lacp.header.partner.tlvType-15",
+        "PartnerTlvLength": "lacp.header.partner.tlvLength-16",
+        "PartnerSystemPriority": "lacp.header.partner.systemPriority-17",
+        "PartnerSystem": "lacp.header.partner.system-18",
+        "PartnerKey": "lacp.header.partner.key-19",
+        "PartnerPortPriority": "lacp.header.partner.portPriority-20",
+        "PartnerPort": "lacp.header.partner.port-21",
+        "PartnerState": "lacp.header.partner.state-22",
+        "PartnerReserved": "lacp.header.partner.reserved-23",
+        "CollectorTlvType": "lacp.header.collector.tlvType-24",
+        "CollectorTlvLength": "lacp.header.collector.tlvLength-25",
+        "CollectorMaxDelay": "lacp.header.collector.maxDelay-26",
+        "CollectorReserved": "lacp.header.collector.reserved-27",
+        "TerminatorTlvType": "lacp.header.terminator.tlvType-28",
+        "TerminatorTlvLength": "lacp.header.terminator.tlvLength-29",
+        "HeaderReserved": "lacp.header.reserved-30",
+        "HeaderFcs": "lacp.header.fcs-31",
     }
 
     def __init__(self, parent, list_op=False):
@@ -50,7 +50,8 @@ class Lacp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstAddress"]))
 
     @property
     def SrcAddress(self):
@@ -60,7 +61,8 @@ class Lacp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcAddress"]))
 
     @property
     def LengthType(self):
@@ -70,7 +72,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LengthType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LengthType"]))
 
     @property
     def Subtype(self):
@@ -80,7 +83,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Subtype']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Subtype"]))
 
     @property
     def Version(self):
@@ -90,7 +94,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def ActorTlvType(self):
@@ -100,7 +105,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorTlvType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorTlvType"]))
 
     @property
     def ActorTlvLength(self):
@@ -110,7 +116,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorTlvLength"])
+        )
 
     @property
     def ActorSystemPriority(self):
@@ -120,7 +129,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorSystemPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorSystemPriority"])
+        )
 
     @property
     def ActorSystem(self):
@@ -130,7 +142,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorSystem']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorSystem"]))
 
     @property
     def ActorKey(self):
@@ -140,7 +153,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorKey"]))
 
     @property
     def ActorPortPriority(self):
@@ -150,7 +164,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorPortPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorPortPriority"])
+        )
 
     @property
     def ActorPort(self):
@@ -160,7 +177,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorPort"]))
 
     @property
     def ActorState(self):
@@ -170,7 +188,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorState']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorState"]))
 
     @property
     def ActorReserved(self):
@@ -180,7 +199,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorReserved"]))
 
     @property
     def PartnerTlvType(self):
@@ -190,7 +210,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartnerTlvType"])
+        )
 
     @property
     def PartnerTlvLength(self):
@@ -200,7 +223,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartnerTlvLength"])
+        )
 
     @property
     def PartnerSystemPriority(self):
@@ -210,7 +236,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerSystemPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartnerSystemPriority"])
+        )
 
     @property
     def PartnerSystem(self):
@@ -220,7 +249,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerSystem']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartnerSystem"]))
 
     @property
     def PartnerKey(self):
@@ -230,7 +260,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartnerKey"]))
 
     @property
     def PartnerPortPriority(self):
@@ -240,7 +271,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerPortPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartnerPortPriority"])
+        )
 
     @property
     def PartnerPort(self):
@@ -250,7 +284,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartnerPort"]))
 
     @property
     def PartnerState(self):
@@ -260,7 +295,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerState']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartnerState"]))
 
     @property
     def PartnerReserved(self):
@@ -270,7 +306,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartnerReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartnerReserved"])
+        )
 
     @property
     def CollectorTlvType(self):
@@ -280,7 +319,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectorTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectorTlvType"])
+        )
 
     @property
     def CollectorTlvLength(self):
@@ -290,7 +332,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectorTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectorTlvLength"])
+        )
 
     @property
     def CollectorMaxDelay(self):
@@ -300,7 +345,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectorMaxDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectorMaxDelay"])
+        )
 
     @property
     def CollectorReserved(self):
@@ -310,7 +358,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CollectorReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CollectorReserved"])
+        )
 
     @property
     def TerminatorTlvType(self):
@@ -320,7 +371,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TerminatorTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TerminatorTlvType"])
+        )
 
     @property
     def TerminatorTlvLength(self):
@@ -330,7 +384,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TerminatorTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TerminatorTlvLength"])
+        )
 
     @property
     def HeaderReserved(self):
@@ -340,7 +397,10 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderFcs(self):
@@ -350,7 +410,8 @@ class Lacp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFcs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderFcs"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

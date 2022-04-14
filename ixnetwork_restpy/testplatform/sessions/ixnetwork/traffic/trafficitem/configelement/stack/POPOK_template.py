@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class POPOK(Base):
     __slots__ = ()
-    _SDM_NAME = 'POP_OK'
+    _SDM_NAME = "POP_OK"
     _SDM_ATT_MAP = {
-        'RESPONSE_OKResponse Indicator': 'POP_OK.RESPONSE_OK.Response Indicator-1',
-        'RESPONSE_OKSpace8': 'POP_OK.RESPONSE_OK.Space8-2',
-        'RESPONSE_OKResponse description': 'POP_OK.RESPONSE_OK.Response description-3',
-        'RESPONSE_OKCRLF_': 'POP_OK.RESPONSE_OK.CRLF_-4',
+        "RESPONSE_OKResponse Indicator": "POP_OK.RESPONSE_OK.Response Indicator-1",
+        "RESPONSE_OKSpace8": "POP_OK.RESPONSE_OK.Space8-2",
+        "RESPONSE_OKResponse description": "POP_OK.RESPONSE_OK.Response description-3",
+        "RESPONSE_OKCRLF_": "POP_OK.RESPONSE_OK.CRLF_-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,11 @@ class POPOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE_OKResponse Indicator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RESPONSE_OKResponse Indicator"]),
+        )
 
     @property
     def RESPONSE_OKSpace8(self):
@@ -33,7 +37,10 @@ class POPOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE_OKSpace8']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE_OKSpace8"])
+        )
 
     @property
     def RESPONSE_OKResponsedescription(self):
@@ -43,7 +50,11 @@ class POPOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE_OKResponse description']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RESPONSE_OKResponse description"]),
+        )
 
     @property
     def RESPONSE_OKCRLF_(self):
@@ -53,7 +64,10 @@ class POPOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE_OKCRLF_']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE_OKCRLF_"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,91 +33,90 @@ class GlobalProtocolStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'globalProtocolStatistics'
+    _SDM_NAME = "globalProtocolStatistics"
     _SDM_ATT_MAP = {
-        'ArpReplyRx': 'arpReplyRx',
-        'ArpReplyTx': 'arpReplyTx',
-        'ArpRequestRx': 'arpRequestRx',
-        'ArpRequestTx': 'arpRequestTx',
-        'BfdRoutersConfigured': 'bfdRoutersConfigured',
-        'BfdRoutersRunning': 'bfdRoutersRunning',
-        'BgpSessConfigured': 'bgpSessConfigured',
-        'BgpSessUp': 'bgpSessUp',
-        'CfmY1731PBBTEBridgesConfigured': 'cfmY1731PBBTEBridgesConfigured',
-        'ControlPacketRx': 'controlPacketRx',
-        'ControlPacketTx': 'controlPacketTx',
-        'EigrpIPv6RoutersConfigured': 'eigrpIPv6RoutersConfigured',
-        'EigrpIPv6RoutersRunning': 'eigrpIPv6RoutersRunning',
-        'EigrpRoutersConfigured': 'eigrpRoutersConfigured',
-        'EigrpRoutersRunning': 'eigrpRoutersRunning',
-        'ElmiStatus': 'elmiStatus',
-        'ElmiUNICConfigured': 'elmiUNICConfigured',
-        'ElmiUNICRunning': 'elmiUNICRunning',
-        'ElmiUNINConfigured': 'elmiUNINConfigured',
-        'ElmiUNINRunning': 'elmiUNINRunning',
-        'IgmpHostTotalFramesRx': 'igmpHostTotalFramesRx',
-        'IgmpHostTotalFramesTx': 'igmpHostTotalFramesTx',
-        'IgmpQuerierTotalFramesRx': 'igmpQuerierTotalFramesRx',
-        'IgmpQuerierTotalFramesTx': 'igmpQuerierTotalFramesTx',
-        'IsisFullL1Nbrs': 'isisFullL1Nbrs',
-        'IsisFullL2Nbrs': 'isisFullL2Nbrs',
-        'IsisL1SessConfigured': 'isisL1SessConfigured',
-        'IsisL1SessUp': 'isisL1SessUp',
-        'IsisL2SessConfigured': 'isisL2SessConfigured',
-        'IsisL2SessUp': 'isisL2SessUp',
-        'LdpBasicSessUp': 'ldpBasicSessUp',
-        'LdpTargetedSessConfigured': 'ldpTargetedSessConfigured',
-        'LdpTargetedSessUp': 'ldpTargetedSessUp',
-        'LispEIDsConfigured': 'lispEIDsConfigured',
-        'LispEIDsResolved': 'lispEIDsResolved',
-        'LispETRConfigured': 'lispETRConfigured',
-        'LispETRRunning': 'lispETRRunning',
-        'LispITRConfigured': 'lispITRConfigured',
-        'LispITRRunning': 'lispITRRunning',
-        'LispMSMRConfigured': 'lispMSMRConfigured',
-        'LispMSMRRunning': 'lispMSMRRunning',
-        'LispxTRConfigured': 'lispxTRConfigured',
-        'LispxTRRunning': 'lispxTRRunning',
-        'MldHostTotalFramesRx': 'mldHostTotalFramesRx',
-        'MldHostTotalFramesTx': 'mldHostTotalFramesTx',
-        'MldQuerierTotalFramesRx': 'mldQuerierTotalFramesRx',
-        'MldQuerierTotalFramesTx': 'mldQuerierTotalFramesTx',
-        'MplsoamBFDSessionCount': 'mplsoamBFDSessionCount',
-        'MplsoamBFDUpSessions': 'mplsoamBFDUpSessions',
-        'MplstpCCCVConfigured': 'mplstpCCCVConfigured',
-        'MplstpCCCVDown': 'mplstpCCCVDown',
-        'MplstpCCCVUp': 'mplstpCCCVUp',
-        'NeighborAdvertisementRx': 'neighborAdvertisementRx',
-        'NeighborAdvertisementTx': 'neighborAdvertisementTx',
-        'NeighborSolicitationRx': 'neighborSolicitationRx',
-        'NeighborSolicitationTx': 'neighborSolicitationTx',
-        'OamLinksConfigured': 'oamLinksConfigured',
-        'OamLinksRunning': 'oamLinksRunning',
-        'OpenflowSessConfigured': 'openflowSessConfigured',
-        'OpenflowSessConfiguredUp': 'openflowSessConfiguredUp',
-        'OpenflowSessLearnedUp': 'openflowSessLearnedUp',
-        'OspfFullNbrs': 'ospfFullNbrs',
-        'OspfSessionConfigured': 'ospfSessionConfigured',
-        'Ospfv3FullNbrs': 'ospfv3FullNbrs',
-        'Ospfv3SessConfigured': 'ospfv3SessConfigured',
-        'PimsmNbrsLearnt': 'pimsmNbrsLearnt',
-        'PimsmRtrsConfigured': 'pimsmRtrsConfigured',
-        'PimsmRtrsRunning': 'pimsmRtrsRunning',
-        'PingReplyRx': 'pingReplyRx',
-        'PingReplyTx': 'pingReplyTx',
-        'PingRequestRx': 'pingRequestRx',
-        'PingRequestTx': 'pingRequestTx',
-        'PortName': 'portName',
-        'RsvpEgressLSPsUp': 'rsvpEgressLSPsUp',
-        'RsvpIngressLSPsConfigured': 'rsvpIngressLSPsConfigured',
-        'RsvpIngressLSPsUp': 'rsvpIngressLSPsUp',
-        'StpBPDUsRx': 'stpBPDUsRx',
-        'StpBPDUsTx': 'stpBPDUsTx',
-        'TransmitArpGratuitous': 'transmitArpGratuitous',
-        'TransmitArpReverse': 'transmitArpReverse',
+        "ArpReplyRx": "arpReplyRx",
+        "ArpReplyTx": "arpReplyTx",
+        "ArpRequestRx": "arpRequestRx",
+        "ArpRequestTx": "arpRequestTx",
+        "BfdRoutersConfigured": "bfdRoutersConfigured",
+        "BfdRoutersRunning": "bfdRoutersRunning",
+        "BgpSessConfigured": "bgpSessConfigured",
+        "BgpSessUp": "bgpSessUp",
+        "CfmY1731PBBTEBridgesConfigured": "cfmY1731PBBTEBridgesConfigured",
+        "ControlPacketRx": "controlPacketRx",
+        "ControlPacketTx": "controlPacketTx",
+        "EigrpIPv6RoutersConfigured": "eigrpIPv6RoutersConfigured",
+        "EigrpIPv6RoutersRunning": "eigrpIPv6RoutersRunning",
+        "EigrpRoutersConfigured": "eigrpRoutersConfigured",
+        "EigrpRoutersRunning": "eigrpRoutersRunning",
+        "ElmiStatus": "elmiStatus",
+        "ElmiUNICConfigured": "elmiUNICConfigured",
+        "ElmiUNICRunning": "elmiUNICRunning",
+        "ElmiUNINConfigured": "elmiUNINConfigured",
+        "ElmiUNINRunning": "elmiUNINRunning",
+        "IgmpHostTotalFramesRx": "igmpHostTotalFramesRx",
+        "IgmpHostTotalFramesTx": "igmpHostTotalFramesTx",
+        "IgmpQuerierTotalFramesRx": "igmpQuerierTotalFramesRx",
+        "IgmpQuerierTotalFramesTx": "igmpQuerierTotalFramesTx",
+        "IsisFullL1Nbrs": "isisFullL1Nbrs",
+        "IsisFullL2Nbrs": "isisFullL2Nbrs",
+        "IsisL1SessConfigured": "isisL1SessConfigured",
+        "IsisL1SessUp": "isisL1SessUp",
+        "IsisL2SessConfigured": "isisL2SessConfigured",
+        "IsisL2SessUp": "isisL2SessUp",
+        "LdpBasicSessUp": "ldpBasicSessUp",
+        "LdpTargetedSessConfigured": "ldpTargetedSessConfigured",
+        "LdpTargetedSessUp": "ldpTargetedSessUp",
+        "LispEIDsConfigured": "lispEIDsConfigured",
+        "LispEIDsResolved": "lispEIDsResolved",
+        "LispETRConfigured": "lispETRConfigured",
+        "LispETRRunning": "lispETRRunning",
+        "LispITRConfigured": "lispITRConfigured",
+        "LispITRRunning": "lispITRRunning",
+        "LispMSMRConfigured": "lispMSMRConfigured",
+        "LispMSMRRunning": "lispMSMRRunning",
+        "LispxTRConfigured": "lispxTRConfigured",
+        "LispxTRRunning": "lispxTRRunning",
+        "MldHostTotalFramesRx": "mldHostTotalFramesRx",
+        "MldHostTotalFramesTx": "mldHostTotalFramesTx",
+        "MldQuerierTotalFramesRx": "mldQuerierTotalFramesRx",
+        "MldQuerierTotalFramesTx": "mldQuerierTotalFramesTx",
+        "MplsoamBFDSessionCount": "mplsoamBFDSessionCount",
+        "MplsoamBFDUpSessions": "mplsoamBFDUpSessions",
+        "MplstpCCCVConfigured": "mplstpCCCVConfigured",
+        "MplstpCCCVDown": "mplstpCCCVDown",
+        "MplstpCCCVUp": "mplstpCCCVUp",
+        "NeighborAdvertisementRx": "neighborAdvertisementRx",
+        "NeighborAdvertisementTx": "neighborAdvertisementTx",
+        "NeighborSolicitationRx": "neighborSolicitationRx",
+        "NeighborSolicitationTx": "neighborSolicitationTx",
+        "OamLinksConfigured": "oamLinksConfigured",
+        "OamLinksRunning": "oamLinksRunning",
+        "OpenflowSessConfigured": "openflowSessConfigured",
+        "OpenflowSessConfiguredUp": "openflowSessConfiguredUp",
+        "OpenflowSessLearnedUp": "openflowSessLearnedUp",
+        "OspfFullNbrs": "ospfFullNbrs",
+        "OspfSessionConfigured": "ospfSessionConfigured",
+        "Ospfv3FullNbrs": "ospfv3FullNbrs",
+        "Ospfv3SessConfigured": "ospfv3SessConfigured",
+        "PimsmNbrsLearnt": "pimsmNbrsLearnt",
+        "PimsmRtrsConfigured": "pimsmRtrsConfigured",
+        "PimsmRtrsRunning": "pimsmRtrsRunning",
+        "PingReplyRx": "pingReplyRx",
+        "PingReplyTx": "pingReplyTx",
+        "PingRequestRx": "pingRequestRx",
+        "PingRequestTx": "pingRequestTx",
+        "PortName": "portName",
+        "RsvpEgressLSPsUp": "rsvpEgressLSPsUp",
+        "RsvpIngressLSPsConfigured": "rsvpIngressLSPsConfigured",
+        "RsvpIngressLSPsUp": "rsvpIngressLSPsUp",
+        "StpBPDUsRx": "stpBPDUsRx",
+        "StpBPDUsTx": "stpBPDUsTx",
+        "TransmitArpGratuitous": "transmitArpGratuitous",
+        "TransmitArpReverse": "transmitArpReverse",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GlobalProtocolStatistics, self).__init__(parent, list_op)
@@ -129,11 +129,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Arp Reply Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpReplyRx"])
+
     @ArpReplyRx.setter
     def ArpReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpReplyRx"], value)
 
     @property
     def ArpReplyTx(self):
@@ -143,11 +144,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Arp Reply Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpReplyTx"])
+
     @ArpReplyTx.setter
     def ArpReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpReplyTx"], value)
 
     @property
     def ArpRequestRx(self):
@@ -157,11 +159,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Arp Request Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpRequestRx"])
+
     @ArpRequestRx.setter
     def ArpRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpRequestRx"], value)
 
     @property
     def ArpRequestTx(self):
@@ -171,11 +174,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Arp Request Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpRequestTx"])
+
     @ArpRequestTx.setter
     def ArpRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpRequestTx"], value)
 
     @property
     def BfdRoutersConfigured(self):
@@ -185,11 +189,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: BFD Routers Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdRoutersConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdRoutersConfigured"])
+
     @BfdRoutersConfigured.setter
     def BfdRoutersConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdRoutersConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdRoutersConfigured"], value)
 
     @property
     def BfdRoutersRunning(self):
@@ -199,11 +204,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: BFD Routers Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdRoutersRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdRoutersRunning"])
+
     @BfdRoutersRunning.setter
     def BfdRoutersRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdRoutersRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdRoutersRunning"], value)
 
     @property
     def BgpSessConfigured(self):
@@ -213,11 +219,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: BGP Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BgpSessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["BgpSessConfigured"])
+
     @BgpSessConfigured.setter
     def BgpSessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BgpSessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BgpSessConfigured"], value)
 
     @property
     def BgpSessUp(self):
@@ -227,11 +234,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: BGP Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BgpSessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["BgpSessUp"])
+
     @BgpSessUp.setter
     def BgpSessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BgpSessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BgpSessUp"], value)
 
     @property
     def CfmY1731PBBTEBridgesConfigured(self):
@@ -241,11 +249,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: CFM/Y.1731/PBB-TE Bridges Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CfmY1731PBBTEBridgesConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["CfmY1731PBBTEBridgesConfigured"])
+
     @CfmY1731PBBTEBridgesConfigured.setter
     def CfmY1731PBBTEBridgesConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CfmY1731PBBTEBridgesConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CfmY1731PBBTEBridgesConfigured"], value)
 
     @property
     def ControlPacketRx(self):
@@ -255,11 +264,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Control Packet Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlPacketRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlPacketRx"])
+
     @ControlPacketRx.setter
     def ControlPacketRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlPacketRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlPacketRx"], value)
 
     @property
     def ControlPacketTx(self):
@@ -269,11 +279,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Control Packet Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlPacketTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlPacketTx"])
+
     @ControlPacketTx.setter
     def ControlPacketTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlPacketTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlPacketTx"], value)
 
     @property
     def EigrpIPv6RoutersConfigured(self):
@@ -283,11 +294,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: EIGRP IPv6 Routers Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpIPv6RoutersConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpIPv6RoutersConfigured"])
+
     @EigrpIPv6RoutersConfigured.setter
     def EigrpIPv6RoutersConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpIPv6RoutersConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpIPv6RoutersConfigured"], value)
 
     @property
     def EigrpIPv6RoutersRunning(self):
@@ -297,11 +309,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: EIGRP IPv6 Routers Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpIPv6RoutersRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpIPv6RoutersRunning"])
+
     @EigrpIPv6RoutersRunning.setter
     def EigrpIPv6RoutersRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpIPv6RoutersRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpIPv6RoutersRunning"], value)
 
     @property
     def EigrpRoutersConfigured(self):
@@ -311,11 +324,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: EIGRP Routers Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpRoutersConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpRoutersConfigured"])
+
     @EigrpRoutersConfigured.setter
     def EigrpRoutersConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpRoutersConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpRoutersConfigured"], value)
 
     @property
     def EigrpRoutersRunning(self):
@@ -325,11 +339,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: EIGRP Routers Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpRoutersRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpRoutersRunning"])
+
     @EigrpRoutersRunning.setter
     def EigrpRoutersRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpRoutersRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpRoutersRunning"], value)
 
     @property
     def ElmiStatus(self):
@@ -339,11 +354,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ELMI Status
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElmiStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElmiStatus"])
+
     @ElmiStatus.setter
     def ElmiStatus(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ElmiStatus'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ElmiStatus"], value)
 
     @property
     def ElmiUNICConfigured(self):
@@ -353,11 +369,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ELMI UNI-C Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElmiUNICConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElmiUNICConfigured"])
+
     @ElmiUNICConfigured.setter
     def ElmiUNICConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ElmiUNICConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ElmiUNICConfigured"], value)
 
     @property
     def ElmiUNICRunning(self):
@@ -367,11 +384,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ELMI UNI-C Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElmiUNICRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElmiUNICRunning"])
+
     @ElmiUNICRunning.setter
     def ElmiUNICRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ElmiUNICRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ElmiUNICRunning"], value)
 
     @property
     def ElmiUNINConfigured(self):
@@ -381,11 +399,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ELMI UNI-N Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElmiUNINConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElmiUNINConfigured"])
+
     @ElmiUNINConfigured.setter
     def ElmiUNINConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ElmiUNINConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ElmiUNINConfigured"], value)
 
     @property
     def ElmiUNINRunning(self):
@@ -395,11 +414,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ELMI UNI-N Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElmiUNINRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElmiUNINRunning"])
+
     @ElmiUNINRunning.setter
     def ElmiUNINRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ElmiUNINRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ElmiUNINRunning"], value)
 
     @property
     def IgmpHostTotalFramesRx(self):
@@ -409,11 +429,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: IGMP Host Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpHostTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpHostTotalFramesRx"])
+
     @IgmpHostTotalFramesRx.setter
     def IgmpHostTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpHostTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpHostTotalFramesRx"], value)
 
     @property
     def IgmpHostTotalFramesTx(self):
@@ -423,11 +444,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: IGMP Host Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpHostTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpHostTotalFramesTx"])
+
     @IgmpHostTotalFramesTx.setter
     def IgmpHostTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpHostTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpHostTotalFramesTx"], value)
 
     @property
     def IgmpQuerierTotalFramesRx(self):
@@ -437,11 +459,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: IGMP Querier Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpQuerierTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpQuerierTotalFramesRx"])
+
     @IgmpQuerierTotalFramesRx.setter
     def IgmpQuerierTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpQuerierTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpQuerierTotalFramesRx"], value)
 
     @property
     def IgmpQuerierTotalFramesTx(self):
@@ -451,11 +474,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: IGMP Querier Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpQuerierTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpQuerierTotalFramesTx"])
+
     @IgmpQuerierTotalFramesTx.setter
     def IgmpQuerierTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpQuerierTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpQuerierTotalFramesTx"], value)
 
     @property
     def IsisFullL1Nbrs(self):
@@ -465,11 +489,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS Full L1 Nbrs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisFullL1Nbrs'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisFullL1Nbrs"])
+
     @IsisFullL1Nbrs.setter
     def IsisFullL1Nbrs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisFullL1Nbrs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisFullL1Nbrs"], value)
 
     @property
     def IsisFullL2Nbrs(self):
@@ -479,11 +504,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS Full L2 Nbrs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisFullL2Nbrs'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisFullL2Nbrs"])
+
     @IsisFullL2Nbrs.setter
     def IsisFullL2Nbrs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisFullL2Nbrs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisFullL2Nbrs"], value)
 
     @property
     def IsisL1SessConfigured(self):
@@ -493,11 +519,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS L1 Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL1SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL1SessConfigured"])
+
     @IsisL1SessConfigured.setter
     def IsisL1SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL1SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL1SessConfigured"], value)
 
     @property
     def IsisL1SessUp(self):
@@ -507,11 +534,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS L1 Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL1SessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL1SessUp"])
+
     @IsisL1SessUp.setter
     def IsisL1SessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL1SessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL1SessUp"], value)
 
     @property
     def IsisL2SessConfigured(self):
@@ -521,11 +549,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS L2 Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL2SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL2SessConfigured"])
+
     @IsisL2SessConfigured.setter
     def IsisL2SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL2SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL2SessConfigured"], value)
 
     @property
     def IsisL2SessUp(self):
@@ -535,11 +564,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: ISIS L2 Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsisL2SessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsisL2SessUp"])
+
     @IsisL2SessUp.setter
     def IsisL2SessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsisL2SessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsisL2SessUp"], value)
 
     @property
     def LdpBasicSessUp(self):
@@ -549,11 +579,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LDP Basic Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LdpBasicSessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LdpBasicSessUp"])
+
     @LdpBasicSessUp.setter
     def LdpBasicSessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LdpBasicSessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LdpBasicSessUp"], value)
 
     @property
     def LdpTargetedSessConfigured(self):
@@ -563,11 +594,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LDP Targeted Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LdpTargetedSessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LdpTargetedSessConfigured"])
+
     @LdpTargetedSessConfigured.setter
     def LdpTargetedSessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LdpTargetedSessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LdpTargetedSessConfigured"], value)
 
     @property
     def LdpTargetedSessUp(self):
@@ -577,11 +609,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LDP Targeted Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LdpTargetedSessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LdpTargetedSessUp"])
+
     @LdpTargetedSessUp.setter
     def LdpTargetedSessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LdpTargetedSessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LdpTargetedSessUp"], value)
 
     @property
     def LispEIDsConfigured(self):
@@ -591,11 +624,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP EIDs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispEIDsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispEIDsConfigured"])
+
     @LispEIDsConfigured.setter
     def LispEIDsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispEIDsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispEIDsConfigured"], value)
 
     @property
     def LispEIDsResolved(self):
@@ -605,11 +639,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP EIDs Resolved
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispEIDsResolved'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispEIDsResolved"])
+
     @LispEIDsResolved.setter
     def LispEIDsResolved(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispEIDsResolved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispEIDsResolved"], value)
 
     @property
     def LispETRConfigured(self):
@@ -619,11 +654,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP ETR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispETRConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispETRConfigured"])
+
     @LispETRConfigured.setter
     def LispETRConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispETRConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispETRConfigured"], value)
 
     @property
     def LispETRRunning(self):
@@ -633,11 +669,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP ETR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispETRRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispETRRunning"])
+
     @LispETRRunning.setter
     def LispETRRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispETRRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispETRRunning"], value)
 
     @property
     def LispITRConfigured(self):
@@ -647,11 +684,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP ITR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispITRConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispITRConfigured"])
+
     @LispITRConfigured.setter
     def LispITRConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispITRConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispITRConfigured"], value)
 
     @property
     def LispITRRunning(self):
@@ -661,11 +699,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP ITR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispITRRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispITRRunning"])
+
     @LispITRRunning.setter
     def LispITRRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispITRRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispITRRunning"], value)
 
     @property
     def LispMSMRConfigured(self):
@@ -675,11 +714,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP MS/MR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispMSMRConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispMSMRConfigured"])
+
     @LispMSMRConfigured.setter
     def LispMSMRConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispMSMRConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispMSMRConfigured"], value)
 
     @property
     def LispMSMRRunning(self):
@@ -689,11 +729,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP MS/MR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispMSMRRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispMSMRRunning"])
+
     @LispMSMRRunning.setter
     def LispMSMRRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispMSMRRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispMSMRRunning"], value)
 
     @property
     def LispxTRConfigured(self):
@@ -703,11 +744,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP xTR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispxTRConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispxTRConfigured"])
+
     @LispxTRConfigured.setter
     def LispxTRConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispxTRConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispxTRConfigured"], value)
 
     @property
     def LispxTRRunning(self):
@@ -717,11 +759,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: LISP xTR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispxTRRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispxTRRunning"])
+
     @LispxTRRunning.setter
     def LispxTRRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispxTRRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispxTRRunning"], value)
 
     @property
     def MldHostTotalFramesRx(self):
@@ -731,11 +774,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MLD Host Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldHostTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldHostTotalFramesRx"])
+
     @MldHostTotalFramesRx.setter
     def MldHostTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldHostTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldHostTotalFramesRx"], value)
 
     @property
     def MldHostTotalFramesTx(self):
@@ -745,11 +789,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MLD Host Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldHostTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldHostTotalFramesTx"])
+
     @MldHostTotalFramesTx.setter
     def MldHostTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldHostTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldHostTotalFramesTx"], value)
 
     @property
     def MldQuerierTotalFramesRx(self):
@@ -759,11 +804,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MLD Querier Total Frames Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldQuerierTotalFramesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldQuerierTotalFramesRx"])
+
     @MldQuerierTotalFramesRx.setter
     def MldQuerierTotalFramesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldQuerierTotalFramesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldQuerierTotalFramesRx"], value)
 
     @property
     def MldQuerierTotalFramesTx(self):
@@ -773,11 +819,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MLD Querier Total Frames Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldQuerierTotalFramesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldQuerierTotalFramesTx"])
+
     @MldQuerierTotalFramesTx.setter
     def MldQuerierTotalFramesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldQuerierTotalFramesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldQuerierTotalFramesTx"], value)
 
     @property
     def MplsoamBFDSessionCount(self):
@@ -787,11 +834,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MPLSOAM BFD Session Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsoamBFDSessionCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsoamBFDSessionCount"])
+
     @MplsoamBFDSessionCount.setter
     def MplsoamBFDSessionCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsoamBFDSessionCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsoamBFDSessionCount"], value)
 
     @property
     def MplsoamBFDUpSessions(self):
@@ -801,11 +849,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MPLSOAM BFD Up-Sessions
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsoamBFDUpSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsoamBFDUpSessions"])
+
     @MplsoamBFDUpSessions.setter
     def MplsoamBFDUpSessions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsoamBFDUpSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsoamBFDUpSessions"], value)
 
     @property
     def MplstpCCCVConfigured(self):
@@ -815,11 +864,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MPLSTP CCCV Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplstpCCCVConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplstpCCCVConfigured"])
+
     @MplstpCCCVConfigured.setter
     def MplstpCCCVConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplstpCCCVConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplstpCCCVConfigured"], value)
 
     @property
     def MplstpCCCVDown(self):
@@ -829,11 +879,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MPLSTP CCCV Down
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplstpCCCVDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplstpCCCVDown"])
+
     @MplstpCCCVDown.setter
     def MplstpCCCVDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplstpCCCVDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplstpCCCVDown"], value)
 
     @property
     def MplstpCCCVUp(self):
@@ -843,11 +894,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: MPLSTP CCCV Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplstpCCCVUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplstpCCCVUp"])
+
     @MplstpCCCVUp.setter
     def MplstpCCCVUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplstpCCCVUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplstpCCCVUp"], value)
 
     @property
     def NeighborAdvertisementRx(self):
@@ -857,11 +909,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Neighbor Advertisement Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborAdvertisementRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborAdvertisementRx"])
+
     @NeighborAdvertisementRx.setter
     def NeighborAdvertisementRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborAdvertisementRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborAdvertisementRx"], value)
 
     @property
     def NeighborAdvertisementTx(self):
@@ -871,11 +924,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Neighbor Advertisement Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborAdvertisementTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborAdvertisementTx"])
+
     @NeighborAdvertisementTx.setter
     def NeighborAdvertisementTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborAdvertisementTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborAdvertisementTx"], value)
 
     @property
     def NeighborSolicitationRx(self):
@@ -885,11 +939,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Neighbor Solicitation Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborSolicitationRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborSolicitationRx"])
+
     @NeighborSolicitationRx.setter
     def NeighborSolicitationRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborSolicitationRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborSolicitationRx"], value)
 
     @property
     def NeighborSolicitationTx(self):
@@ -899,11 +954,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Neighbor Solicitation Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborSolicitationTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborSolicitationTx"])
+
     @NeighborSolicitationTx.setter
     def NeighborSolicitationTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborSolicitationTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborSolicitationTx"], value)
 
     @property
     def OamLinksConfigured(self):
@@ -913,11 +969,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OAM Links Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OamLinksConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["OamLinksConfigured"])
+
     @OamLinksConfigured.setter
     def OamLinksConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OamLinksConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OamLinksConfigured"], value)
 
     @property
     def OamLinksRunning(self):
@@ -927,11 +984,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OAM Links Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OamLinksRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["OamLinksRunning"])
+
     @OamLinksRunning.setter
     def OamLinksRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OamLinksRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OamLinksRunning"], value)
 
     @property
     def OpenflowSessConfigured(self):
@@ -941,11 +999,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OpenFlow Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenflowSessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenflowSessConfigured"])
+
     @OpenflowSessConfigured.setter
     def OpenflowSessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenflowSessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenflowSessConfigured"], value)
 
     @property
     def OpenflowSessConfiguredUp(self):
@@ -955,11 +1014,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OpenFlow Sess. Configured Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenflowSessConfiguredUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenflowSessConfiguredUp"])
+
     @OpenflowSessConfiguredUp.setter
     def OpenflowSessConfiguredUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenflowSessConfiguredUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenflowSessConfiguredUp"], value)
 
     @property
     def OpenflowSessLearnedUp(self):
@@ -969,11 +1029,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OpenFlow Sess. Learned Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenflowSessLearnedUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenflowSessLearnedUp"])
+
     @OpenflowSessLearnedUp.setter
     def OpenflowSessLearnedUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenflowSessLearnedUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenflowSessLearnedUp"], value)
 
     @property
     def OspfFullNbrs(self):
@@ -983,11 +1044,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OSPF Full Nbrs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OspfFullNbrs'])
+        return self._get_attribute(self._SDM_ATT_MAP["OspfFullNbrs"])
+
     @OspfFullNbrs.setter
     def OspfFullNbrs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OspfFullNbrs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OspfFullNbrs"], value)
 
     @property
     def OspfSessionConfigured(self):
@@ -997,11 +1059,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OSPF Session Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OspfSessionConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["OspfSessionConfigured"])
+
     @OspfSessionConfigured.setter
     def OspfSessionConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OspfSessionConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OspfSessionConfigured"], value)
 
     @property
     def Ospfv3FullNbrs(self):
@@ -1011,11 +1074,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OSPFv3 Full Nbrs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ospfv3FullNbrs'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ospfv3FullNbrs"])
+
     @Ospfv3FullNbrs.setter
     def Ospfv3FullNbrs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ospfv3FullNbrs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ospfv3FullNbrs"], value)
 
     @property
     def Ospfv3SessConfigured(self):
@@ -1025,11 +1089,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: OSPFv3 Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ospfv3SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ospfv3SessConfigured"])
+
     @Ospfv3SessConfigured.setter
     def Ospfv3SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ospfv3SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ospfv3SessConfigured"], value)
 
     @property
     def PimsmNbrsLearnt(self):
@@ -1039,11 +1104,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: PIMSM Nbrs. Learnt
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PimsmNbrsLearnt'])
+        return self._get_attribute(self._SDM_ATT_MAP["PimsmNbrsLearnt"])
+
     @PimsmNbrsLearnt.setter
     def PimsmNbrsLearnt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PimsmNbrsLearnt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PimsmNbrsLearnt"], value)
 
     @property
     def PimsmRtrsConfigured(self):
@@ -1053,11 +1119,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: PIMSM Rtrs. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PimsmRtrsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["PimsmRtrsConfigured"])
+
     @PimsmRtrsConfigured.setter
     def PimsmRtrsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PimsmRtrsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PimsmRtrsConfigured"], value)
 
     @property
     def PimsmRtrsRunning(self):
@@ -1067,11 +1134,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: PIMSM Rtrs. Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PimsmRtrsRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["PimsmRtrsRunning"])
+
     @PimsmRtrsRunning.setter
     def PimsmRtrsRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PimsmRtrsRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PimsmRtrsRunning"], value)
 
     @property
     def PingReplyRx(self):
@@ -1081,11 +1149,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Ping Reply Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingReplyRx"])
+
     @PingReplyRx.setter
     def PingReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingReplyRx"], value)
 
     @property
     def PingReplyTx(self):
@@ -1095,11 +1164,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Ping Reply Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingReplyTx"])
+
     @PingReplyTx.setter
     def PingReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingReplyTx"], value)
 
     @property
     def PingRequestRx(self):
@@ -1109,11 +1179,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Ping Request Rx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingRequestRx"])
+
     @PingRequestRx.setter
     def PingRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingRequestRx"], value)
 
     @property
     def PingRequestTx(self):
@@ -1123,11 +1194,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Ping Request Tx.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingRequestTx"])
+
     @PingRequestTx.setter
     def PingRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingRequestTx"], value)
 
     @property
     def PortName(self):
@@ -1137,11 +1209,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RsvpEgressLSPsUp(self):
@@ -1151,11 +1224,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: RSVP Egress LSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpEgressLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpEgressLSPsUp"])
+
     @RsvpEgressLSPsUp.setter
     def RsvpEgressLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpEgressLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpEgressLSPsUp"], value)
 
     @property
     def RsvpIngressLSPsConfigured(self):
@@ -1165,11 +1239,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: RSVP Ingress LSPs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpIngressLSPsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpIngressLSPsConfigured"])
+
     @RsvpIngressLSPsConfigured.setter
     def RsvpIngressLSPsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpIngressLSPsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpIngressLSPsConfigured"], value)
 
     @property
     def RsvpIngressLSPsUp(self):
@@ -1179,11 +1254,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: RSVP Ingress LSPs Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpIngressLSPsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpIngressLSPsUp"])
+
     @RsvpIngressLSPsUp.setter
     def RsvpIngressLSPsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpIngressLSPsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpIngressLSPsUp"], value)
 
     @property
     def StpBPDUsRx(self):
@@ -1193,11 +1269,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: STP BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsRx"])
+
     @StpBPDUsRx.setter
     def StpBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsRx"], value)
 
     @property
     def StpBPDUsTx(self):
@@ -1207,11 +1284,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: STP BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsTx"])
+
     @StpBPDUsTx.setter
     def StpBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsTx"], value)
 
     @property
     def TransmitArpGratuitous(self):
@@ -1221,11 +1299,12 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Transmit Arp Gratuitous
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitArpGratuitous'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitArpGratuitous"])
+
     @TransmitArpGratuitous.setter
     def TransmitArpGratuitous(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitArpGratuitous'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitArpGratuitous"], value)
 
     @property
     def TransmitArpReverse(self):
@@ -1235,13 +1314,96 @@ class GlobalProtocolStatistics(Base):
         -------
         - bool: Transmit Arp Reverse
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitArpReverse'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitArpReverse"])
+
     @TransmitArpReverse.setter
     def TransmitArpReverse(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitArpReverse'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitArpReverse"], value)
 
-    def update(self, ArpReplyRx=None, ArpReplyTx=None, ArpRequestRx=None, ArpRequestTx=None, BfdRoutersConfigured=None, BfdRoutersRunning=None, BgpSessConfigured=None, BgpSessUp=None, CfmY1731PBBTEBridgesConfigured=None, ControlPacketRx=None, ControlPacketTx=None, EigrpIPv6RoutersConfigured=None, EigrpIPv6RoutersRunning=None, EigrpRoutersConfigured=None, EigrpRoutersRunning=None, ElmiStatus=None, ElmiUNICConfigured=None, ElmiUNICRunning=None, ElmiUNINConfigured=None, ElmiUNINRunning=None, IgmpHostTotalFramesRx=None, IgmpHostTotalFramesTx=None, IgmpQuerierTotalFramesRx=None, IgmpQuerierTotalFramesTx=None, IsisFullL1Nbrs=None, IsisFullL2Nbrs=None, IsisL1SessConfigured=None, IsisL1SessUp=None, IsisL2SessConfigured=None, IsisL2SessUp=None, LdpBasicSessUp=None, LdpTargetedSessConfigured=None, LdpTargetedSessUp=None, LispEIDsConfigured=None, LispEIDsResolved=None, LispETRConfigured=None, LispETRRunning=None, LispITRConfigured=None, LispITRRunning=None, LispMSMRConfigured=None, LispMSMRRunning=None, LispxTRConfigured=None, LispxTRRunning=None, MldHostTotalFramesRx=None, MldHostTotalFramesTx=None, MldQuerierTotalFramesRx=None, MldQuerierTotalFramesTx=None, MplsoamBFDSessionCount=None, MplsoamBFDUpSessions=None, MplstpCCCVConfigured=None, MplstpCCCVDown=None, MplstpCCCVUp=None, NeighborAdvertisementRx=None, NeighborAdvertisementTx=None, NeighborSolicitationRx=None, NeighborSolicitationTx=None, OamLinksConfigured=None, OamLinksRunning=None, OpenflowSessConfigured=None, OpenflowSessConfiguredUp=None, OpenflowSessLearnedUp=None, OspfFullNbrs=None, OspfSessionConfigured=None, Ospfv3FullNbrs=None, Ospfv3SessConfigured=None, PimsmNbrsLearnt=None, PimsmRtrsConfigured=None, PimsmRtrsRunning=None, PingReplyRx=None, PingReplyTx=None, PingRequestRx=None, PingRequestTx=None, PortName=None, RsvpEgressLSPsUp=None, RsvpIngressLSPsConfigured=None, RsvpIngressLSPsUp=None, StpBPDUsRx=None, StpBPDUsTx=None, TransmitArpGratuitous=None, TransmitArpReverse=None):
+    def update(
+        self,
+        ArpReplyRx=None,
+        ArpReplyTx=None,
+        ArpRequestRx=None,
+        ArpRequestTx=None,
+        BfdRoutersConfigured=None,
+        BfdRoutersRunning=None,
+        BgpSessConfigured=None,
+        BgpSessUp=None,
+        CfmY1731PBBTEBridgesConfigured=None,
+        ControlPacketRx=None,
+        ControlPacketTx=None,
+        EigrpIPv6RoutersConfigured=None,
+        EigrpIPv6RoutersRunning=None,
+        EigrpRoutersConfigured=None,
+        EigrpRoutersRunning=None,
+        ElmiStatus=None,
+        ElmiUNICConfigured=None,
+        ElmiUNICRunning=None,
+        ElmiUNINConfigured=None,
+        ElmiUNINRunning=None,
+        IgmpHostTotalFramesRx=None,
+        IgmpHostTotalFramesTx=None,
+        IgmpQuerierTotalFramesRx=None,
+        IgmpQuerierTotalFramesTx=None,
+        IsisFullL1Nbrs=None,
+        IsisFullL2Nbrs=None,
+        IsisL1SessConfigured=None,
+        IsisL1SessUp=None,
+        IsisL2SessConfigured=None,
+        IsisL2SessUp=None,
+        LdpBasicSessUp=None,
+        LdpTargetedSessConfigured=None,
+        LdpTargetedSessUp=None,
+        LispEIDsConfigured=None,
+        LispEIDsResolved=None,
+        LispETRConfigured=None,
+        LispETRRunning=None,
+        LispITRConfigured=None,
+        LispITRRunning=None,
+        LispMSMRConfigured=None,
+        LispMSMRRunning=None,
+        LispxTRConfigured=None,
+        LispxTRRunning=None,
+        MldHostTotalFramesRx=None,
+        MldHostTotalFramesTx=None,
+        MldQuerierTotalFramesRx=None,
+        MldQuerierTotalFramesTx=None,
+        MplsoamBFDSessionCount=None,
+        MplsoamBFDUpSessions=None,
+        MplstpCCCVConfigured=None,
+        MplstpCCCVDown=None,
+        MplstpCCCVUp=None,
+        NeighborAdvertisementRx=None,
+        NeighborAdvertisementTx=None,
+        NeighborSolicitationRx=None,
+        NeighborSolicitationTx=None,
+        OamLinksConfigured=None,
+        OamLinksRunning=None,
+        OpenflowSessConfigured=None,
+        OpenflowSessConfiguredUp=None,
+        OpenflowSessLearnedUp=None,
+        OspfFullNbrs=None,
+        OspfSessionConfigured=None,
+        Ospfv3FullNbrs=None,
+        Ospfv3SessConfigured=None,
+        PimsmNbrsLearnt=None,
+        PimsmRtrsConfigured=None,
+        PimsmRtrsRunning=None,
+        PingReplyRx=None,
+        PingReplyTx=None,
+        PingRequestRx=None,
+        PingRequestTx=None,
+        PortName=None,
+        RsvpEgressLSPsUp=None,
+        RsvpIngressLSPsConfigured=None,
+        RsvpIngressLSPsUp=None,
+        StpBPDUsRx=None,
+        StpBPDUsTx=None,
+        TransmitArpGratuitous=None,
+        TransmitArpReverse=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> GlobalProtocolStatistics
         """Updates globalProtocolStatistics resource on the server.
 
@@ -1334,7 +1496,89 @@ class GlobalProtocolStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpReplyRx=None, ArpReplyTx=None, ArpRequestRx=None, ArpRequestTx=None, BfdRoutersConfigured=None, BfdRoutersRunning=None, BgpSessConfigured=None, BgpSessUp=None, CfmY1731PBBTEBridgesConfigured=None, ControlPacketRx=None, ControlPacketTx=None, EigrpIPv6RoutersConfigured=None, EigrpIPv6RoutersRunning=None, EigrpRoutersConfigured=None, EigrpRoutersRunning=None, ElmiStatus=None, ElmiUNICConfigured=None, ElmiUNICRunning=None, ElmiUNINConfigured=None, ElmiUNINRunning=None, IgmpHostTotalFramesRx=None, IgmpHostTotalFramesTx=None, IgmpQuerierTotalFramesRx=None, IgmpQuerierTotalFramesTx=None, IsisFullL1Nbrs=None, IsisFullL2Nbrs=None, IsisL1SessConfigured=None, IsisL1SessUp=None, IsisL2SessConfigured=None, IsisL2SessUp=None, LdpBasicSessUp=None, LdpTargetedSessConfigured=None, LdpTargetedSessUp=None, LispEIDsConfigured=None, LispEIDsResolved=None, LispETRConfigured=None, LispETRRunning=None, LispITRConfigured=None, LispITRRunning=None, LispMSMRConfigured=None, LispMSMRRunning=None, LispxTRConfigured=None, LispxTRRunning=None, MldHostTotalFramesRx=None, MldHostTotalFramesTx=None, MldQuerierTotalFramesRx=None, MldQuerierTotalFramesTx=None, MplsoamBFDSessionCount=None, MplsoamBFDUpSessions=None, MplstpCCCVConfigured=None, MplstpCCCVDown=None, MplstpCCCVUp=None, NeighborAdvertisementRx=None, NeighborAdvertisementTx=None, NeighborSolicitationRx=None, NeighborSolicitationTx=None, OamLinksConfigured=None, OamLinksRunning=None, OpenflowSessConfigured=None, OpenflowSessConfiguredUp=None, OpenflowSessLearnedUp=None, OspfFullNbrs=None, OspfSessionConfigured=None, Ospfv3FullNbrs=None, Ospfv3SessConfigured=None, PimsmNbrsLearnt=None, PimsmRtrsConfigured=None, PimsmRtrsRunning=None, PingReplyRx=None, PingReplyTx=None, PingRequestRx=None, PingRequestTx=None, PortName=None, RsvpEgressLSPsUp=None, RsvpIngressLSPsConfigured=None, RsvpIngressLSPsUp=None, StpBPDUsRx=None, StpBPDUsTx=None, TransmitArpGratuitous=None, TransmitArpReverse=None):
+    def find(
+        self,
+        ArpReplyRx=None,
+        ArpReplyTx=None,
+        ArpRequestRx=None,
+        ArpRequestTx=None,
+        BfdRoutersConfigured=None,
+        BfdRoutersRunning=None,
+        BgpSessConfigured=None,
+        BgpSessUp=None,
+        CfmY1731PBBTEBridgesConfigured=None,
+        ControlPacketRx=None,
+        ControlPacketTx=None,
+        EigrpIPv6RoutersConfigured=None,
+        EigrpIPv6RoutersRunning=None,
+        EigrpRoutersConfigured=None,
+        EigrpRoutersRunning=None,
+        ElmiStatus=None,
+        ElmiUNICConfigured=None,
+        ElmiUNICRunning=None,
+        ElmiUNINConfigured=None,
+        ElmiUNINRunning=None,
+        IgmpHostTotalFramesRx=None,
+        IgmpHostTotalFramesTx=None,
+        IgmpQuerierTotalFramesRx=None,
+        IgmpQuerierTotalFramesTx=None,
+        IsisFullL1Nbrs=None,
+        IsisFullL2Nbrs=None,
+        IsisL1SessConfigured=None,
+        IsisL1SessUp=None,
+        IsisL2SessConfigured=None,
+        IsisL2SessUp=None,
+        LdpBasicSessUp=None,
+        LdpTargetedSessConfigured=None,
+        LdpTargetedSessUp=None,
+        LispEIDsConfigured=None,
+        LispEIDsResolved=None,
+        LispETRConfigured=None,
+        LispETRRunning=None,
+        LispITRConfigured=None,
+        LispITRRunning=None,
+        LispMSMRConfigured=None,
+        LispMSMRRunning=None,
+        LispxTRConfigured=None,
+        LispxTRRunning=None,
+        MldHostTotalFramesRx=None,
+        MldHostTotalFramesTx=None,
+        MldQuerierTotalFramesRx=None,
+        MldQuerierTotalFramesTx=None,
+        MplsoamBFDSessionCount=None,
+        MplsoamBFDUpSessions=None,
+        MplstpCCCVConfigured=None,
+        MplstpCCCVDown=None,
+        MplstpCCCVUp=None,
+        NeighborAdvertisementRx=None,
+        NeighborAdvertisementTx=None,
+        NeighborSolicitationRx=None,
+        NeighborSolicitationTx=None,
+        OamLinksConfigured=None,
+        OamLinksRunning=None,
+        OpenflowSessConfigured=None,
+        OpenflowSessConfiguredUp=None,
+        OpenflowSessLearnedUp=None,
+        OspfFullNbrs=None,
+        OspfSessionConfigured=None,
+        Ospfv3FullNbrs=None,
+        Ospfv3SessConfigured=None,
+        PimsmNbrsLearnt=None,
+        PimsmRtrsConfigured=None,
+        PimsmRtrsRunning=None,
+        PingReplyRx=None,
+        PingReplyTx=None,
+        PingRequestRx=None,
+        PingRequestTx=None,
+        PortName=None,
+        RsvpEgressLSPsUp=None,
+        RsvpIngressLSPsConfigured=None,
+        RsvpIngressLSPsUp=None,
+        StpBPDUsRx=None,
+        StpBPDUsTx=None,
+        TransmitArpGratuitous=None,
+        TransmitArpReverse=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> GlobalProtocolStatistics
         """Finds and retrieves globalProtocolStatistics resources from the server.
 

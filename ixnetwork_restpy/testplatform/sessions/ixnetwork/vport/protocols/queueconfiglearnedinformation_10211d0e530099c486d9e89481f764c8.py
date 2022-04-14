@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,28 +34,27 @@ class QueueConfigLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'queueConfigLearnedInformation'
+    _SDM_NAME = "queueConfigLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterId': 'experimenterId',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PortNumber': 'portNumber',
-        'PropertyRate': 'propertyRate',
-        'QueueId': 'queueId',
-        'QueuePortNumber': 'queuePortNumber',
-        'QueueProperty': 'queueProperty',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterId": "experimenterId",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "PortNumber": "portNumber",
+        "PropertyRate": "propertyRate",
+        "QueueId": "queueId",
+        "QueuePortNumber": "queuePortNumber",
+        "QueueProperty": "queueProperty",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(QueueConfigLearnedInformation, self).__init__(parent, list_op)
@@ -67,7 +67,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -77,7 +77,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -87,7 +87,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -97,7 +97,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def ExperimenterData(self):
@@ -107,7 +107,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: The experimenter data field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
 
     @property
     def ExperimenterDataLength(self):
@@ -117,7 +117,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Value of the Experimenter data length field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
 
     @property
     def ExperimenterId(self):
@@ -127,7 +127,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Value of the experimenter ID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
 
     @property
     def Latency(self):
@@ -137,7 +137,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -147,7 +147,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -157,7 +157,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def PortNumber(self):
@@ -167,7 +167,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Indicates the Port number to which the queue belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
 
     @property
     def PropertyRate(self):
@@ -177,7 +177,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Indicates the minimum transmission rate of the queue if the queue supports the minimum rate property
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PropertyRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PropertyRate"])
 
     @property
     def QueueId(self):
@@ -187,7 +187,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: Indicates the identifier of the queue
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
 
     @property
     def QueuePortNumber(self):
@@ -197,7 +197,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - number: The Switch port number on which Queue has been configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueuePortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueuePortNumber"])
 
     @property
     def QueueProperty(self):
@@ -207,7 +207,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the supported properties of the queue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueProperty'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueProperty"])
 
     @property
     def RemoteIp(self):
@@ -217,7 +217,7 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the IP of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -227,10 +227,10 @@ class QueueConfigLearnedInformation(Base):
         -------
         - str: Indicates the reply state of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new queueConfigLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new queueConfigLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -242,7 +242,26 @@ class QueueConfigLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PortNumber=None, PropertyRate=None, QueueId=None, QueuePortNumber=None, QueueProperty=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterId=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        PortNumber=None,
+        PropertyRate=None,
+        QueueId=None,
+        QueuePortNumber=None,
+        QueueProperty=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, str, int, int, int, str, str, int, int, int, int, str, str, str) -> QueueConfigLearnedInformation
         """Finds and retrieves queueConfigLearnedInformation resources from the server.
 

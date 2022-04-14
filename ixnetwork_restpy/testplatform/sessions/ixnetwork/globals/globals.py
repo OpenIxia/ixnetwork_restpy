@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,21 @@ class Globals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'globals'
+    _SDM_NAME = "globals"
     _SDM_ATT_MAP = {
-        'ApplicationName': 'applicationName',
-        'BuildNumber': 'buildNumber',
-        'CommandArgs': 'commandArgs',
-        'ConfigFileName': 'configFileName',
-        'ConfigSummary': 'configSummary',
-        'IsConfigDifferent': 'isConfigDifferent',
-        'IxosBuildNumber': 'ixosBuildNumber',
-        'PersistencePath': 'persistencePath',
-        'ProductVersion': 'productVersion',
-        'ProtocolbuildNumber': 'protocolbuildNumber',
-        'RpfPort': 'rpfPort',
-        'Username': 'username',
+        "ApplicationName": "applicationName",
+        "BuildNumber": "buildNumber",
+        "CommandArgs": "commandArgs",
+        "ConfigFileName": "configFileName",
+        "ConfigSummary": "configSummary",
+        "IxosBuildNumber": "ixosBuildNumber",
+        "PersistencePath": "persistencePath",
+        "ProductVersion": "productVersion",
+        "ProtocolbuildNumber": "protocolbuildNumber",
+        "RpfPort": "rpfPort",
+        "Username": "username",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Globals, self).__init__(parent, list_op)
@@ -64,10 +63,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.apperrors import AppErrors
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.apperrors import (
+            AppErrors,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AppErrors', None) is not None:
-                return self._properties.get('AppErrors')
+            if self._properties.get("AppErrors", None) is not None:
+                return self._properties.get("AppErrors")
         return AppErrors(self)
 
     @property
@@ -81,10 +83,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics import Diagnostics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics import (
+            Diagnostics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Diagnostics', None) is not None:
-                return self._properties.get('Diagnostics')
+            if self._properties.get("Diagnostics", None) is not None:
+                return self._properties.get("Diagnostics")
         return Diagnostics(self)._select()
 
     @property
@@ -98,10 +103,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.interfaces.interfaces import Interfaces
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.interfaces.interfaces import (
+            Interfaces,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interfaces', None) is not None:
-                return self._properties.get('Interfaces')
+            if self._properties.get("Interfaces", None) is not None:
+                return self._properties.get("Interfaces")
         return Interfaces(self)._select()
 
     @property
@@ -115,10 +123,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.ixnet.ixnet import Ixnet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.ixnet.ixnet import (
+            Ixnet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ixnet', None) is not None:
-                return self._properties.get('Ixnet')
+            if self._properties.get("Ixnet", None) is not None:
+                return self._properties.get("Ixnet")
         return Ixnet(self)._select()
 
     @property
@@ -132,10 +143,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.licensing.licensing import Licensing
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.licensing.licensing import (
+            Licensing,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Licensing', None) is not None:
-                return self._properties.get('Licensing')
+            if self._properties.get("Licensing", None) is not None:
+                return self._properties.get("Licensing")
         return Licensing(self)._select()
 
     @property
@@ -149,10 +163,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions import PortTestOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions import (
+            PortTestOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PortTestOptions', None) is not None:
-                return self._properties.get('PortTestOptions')
+            if self._properties.get("PortTestOptions", None) is not None:
+                return self._properties.get("PortTestOptions")
         return PortTestOptions(self)._select()
 
     @property
@@ -166,10 +183,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.preferences import Preferences
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.preferences import (
+            Preferences,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Preferences', None) is not None:
-                return self._properties.get('Preferences')
+            if self._properties.get("Preferences", None) is not None:
+                return self._properties.get("Preferences")
         return Preferences(self)._select()
 
     @property
@@ -183,10 +203,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.progressdialog.progressdialog import ProgressDialog
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.progressdialog.progressdialog import (
+            ProgressDialog,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ProgressDialog', None) is not None:
-                return self._properties.get('ProgressDialog')
+            if self._properties.get("ProgressDialog", None) is not None:
+                return self._properties.get("ProgressDialog")
         return ProgressDialog(self)._select()
 
     @property
@@ -200,10 +223,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack import ProtocolStack
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack import (
+            ProtocolStack,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ProtocolStack', None) is not None:
-                return self._properties.get('ProtocolStack')
+            if self._properties.get("ProtocolStack", None) is not None:
+                return self._properties.get("ProtocolStack")
         return ProtocolStack(self)._select()
 
     @property
@@ -217,10 +243,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.scriptgen import Scriptgen
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.scriptgen import (
+            Scriptgen,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Scriptgen', None) is not None:
-                return self._properties.get('Scriptgen')
+            if self._properties.get("Scriptgen", None) is not None:
+                return self._properties.get("Scriptgen")
         return Scriptgen(self)._select()
 
     @property
@@ -234,15 +263,18 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statistics import Statistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statistics import (
+            Statistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Statistics', None) is not None:
-                return self._properties.get('Statistics')
+            if self._properties.get("Statistics", None) is not None:
+                return self._properties.get("Statistics")
         return Statistics(self)._select()
 
     @property
     def TestInspector(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.testinspector.TestInspector): An instance of the TestInspector class
@@ -251,10 +283,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.testinspector import TestInspector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.testinspector import (
+            TestInspector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TestInspector', None) is not None:
-                return self._properties.get('TestInspector')
+            if self._properties.get("TestInspector", None) is not None:
+                return self._properties.get("TestInspector")
         return TestInspector(self)._select()
 
     @property
@@ -268,10 +303,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow import Testworkflow
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow import (
+            Testworkflow,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Testworkflow', None) is not None:
-                return self._properties.get('Testworkflow')
+            if self._properties.get("Testworkflow", None) is not None:
+                return self._properties.get("Testworkflow")
         return Testworkflow(self)._select()
 
     @property
@@ -285,10 +323,13 @@ class Globals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import Topology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import (
+            Topology,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Topology', None) is not None:
-                return self._properties.get('Topology')
+            if self._properties.get("Topology", None) is not None:
+                return self._properties.get("Topology")
         return Topology(self)._select()
 
     @property
@@ -297,9 +338,9 @@ class Globals(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplicationName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplicationName"])
 
     @property
     def BuildNumber(self):
@@ -309,7 +350,7 @@ class Globals(Base):
         -------
         - str: The IxNetwork software build number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["BuildNumber"])
 
     @property
     def CommandArgs(self):
@@ -317,9 +358,9 @@ class Globals(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CommandArgs'])
+        return self._get_attribute(self._SDM_ATT_MAP["CommandArgs"])
 
     @property
     def ConfigFileName(self):
@@ -329,7 +370,7 @@ class Globals(Base):
         -------
         - str: The name of the configuration file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfigFileName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfigFileName"])
 
     @property
     def ConfigSummary(self):
@@ -338,17 +379,7 @@ class Globals(Base):
         -------
         - list(dict(arg1:str,arg2:str,arg3:list[dict(arg1:str,arg2:str)])): A high level summary description of the currently loaded configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfigSummary'])
-
-    @property
-    def IsConfigDifferent(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: (Read only) If true, then the current IxNetwork configuration is different than the configuration that was previously loaded.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['IsConfigDifferent'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfigSummary"])
 
     @property
     def IxosBuildNumber(self):
@@ -358,7 +389,7 @@ class Globals(Base):
         -------
         - str: The IxOS software build number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxosBuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxosBuildNumber"])
 
     @property
     def PersistencePath(self):
@@ -368,7 +399,7 @@ class Globals(Base):
         -------
         - str: This attribute returns a directory of the IxNetwork API server machine, where users can drop their files from the client scripts using IxNetwork APIs. To Put files in this directory, users do not require to run IxNetwork API server in administrative mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PersistencePath'])
+        return self._get_attribute(self._SDM_ATT_MAP["PersistencePath"])
 
     @property
     def ProductVersion(self):
@@ -376,9 +407,9 @@ class Globals(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProductVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProductVersion"])
 
     @property
     def ProtocolbuildNumber(self):
@@ -388,7 +419,7 @@ class Globals(Base):
         -------
         - str: The build number of the protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolbuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolbuildNumber"])
 
     @property
     def RpfPort(self):
@@ -396,9 +427,9 @@ class Globals(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpfPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpfPort"])
 
     @property
     def Username(self):
@@ -408,9 +439,22 @@ class Globals(Base):
         -------
         - str: The name of the user.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Username'])
+        return self._get_attribute(self._SDM_ATT_MAP["Username"])
 
-    def find(self, ApplicationName=None, BuildNumber=None, CommandArgs=None, ConfigFileName=None, ConfigSummary=None, IsConfigDifferent=None, IxosBuildNumber=None, PersistencePath=None, ProductVersion=None, ProtocolbuildNumber=None, RpfPort=None, Username=None):
+    def find(
+        self,
+        ApplicationName=None,
+        BuildNumber=None,
+        CommandArgs=None,
+        ConfigFileName=None,
+        ConfigSummary=None,
+        IxosBuildNumber=None,
+        PersistencePath=None,
+        ProductVersion=None,
+        ProtocolbuildNumber=None,
+        RpfPort=None,
+        Username=None,
+    ):
         """Finds and retrieves globals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globals resources from the server.
@@ -419,17 +463,16 @@ class Globals(Base):
 
         Args
         ----
-        - ApplicationName (str): 
+        - ApplicationName (str):
         - BuildNumber (str): The IxNetwork software build number.
-        - CommandArgs (str): 
+        - CommandArgs (str):
         - ConfigFileName (str): The name of the configuration file.
         - ConfigSummary (list(dict(arg1:str,arg2:str,arg3:list[dict(arg1:str,arg2:str)]))): A high level summary description of the currently loaded configuration
-        - IsConfigDifferent (bool): (Read only) If true, then the current IxNetwork configuration is different than the configuration that was previously loaded.
         - IxosBuildNumber (str): The IxOS software build number.
         - PersistencePath (str): This attribute returns a directory of the IxNetwork API server machine, where users can drop their files from the client scripts using IxNetwork APIs. To Put files in this directory, users do not require to run IxNetwork API server in administrative mode
-        - ProductVersion (str): 
+        - ProductVersion (str):
         - ProtocolbuildNumber (str): The build number of the protocol.
-        - RpfPort (number): 
+        - RpfPort (number):
         - Username (str): The name of the user.
 
         Returns

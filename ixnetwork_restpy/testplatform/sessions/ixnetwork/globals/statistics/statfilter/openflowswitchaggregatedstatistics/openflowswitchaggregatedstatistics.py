@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,109 +33,108 @@ class OpenflowSwitchAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'openflowSwitchAggregatedStatistics'
+    _SDM_NAME = "openflowSwitchAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'ActionErrorsTx': 'actionErrorsTx',
-        'AuxiliaryConnectionsConfigured': 'auxiliaryConnectionsConfigured',
-        'AuxiliaryConnectionsUp': 'auxiliaryConnectionsUp',
-        'BarrierRepliesTx': 'barrierRepliesTx',
-        'BarrierRequestsRx': 'barrierRequestsRx',
-        'DescriptionStatRepliesTx': 'descriptionStatRepliesTx',
-        'DescriptionStatRequestsRx': 'descriptionStatRequestsRx',
-        'EchoRepliesRx': 'echoRepliesRx',
-        'EchoRepliesTx': 'echoRepliesTx',
-        'EchoRequestsRx': 'echoRequestsRx',
-        'EchoRequestsTx': 'echoRequestsTx',
-        'ErrorsTx': 'errorsTx',
-        'ExperimenterErrorsTx': 'experimenterErrorsTx',
-        'FeatureRepliesTx': 'featureRepliesTx',
-        'FeatureRequestsRx': 'featureRequestsRx',
-        'FlowAddsRx': 'flowAddsRx',
-        'FlowAggregateStatRepliesTx': 'flowAggregateStatRepliesTx',
-        'FlowAggregateStatRequestsRx': 'flowAggregateStatRequestsRx',
-        'FlowDelsRx': 'flowDelsRx',
-        'FlowModErrorsTx': 'flowModErrorsTx',
-        'FlowModsRx': 'flowModsRx',
-        'FlowRemovesTx': 'flowRemovesTx',
-        'FlowStatRepliesTx': 'flowStatRepliesTx',
-        'FlowStatRequestsRx': 'flowStatRequestsRx',
-        'FlowTxRateflowssec': 'flowTxRateflowssec',
-        'GetAsynchronousConfigRepliesTx': 'getAsynchronousConfigRepliesTx',
-        'GetAsynchronousConfigRequestsRx': 'getAsynchronousConfigRequestsRx',
-        'GetConfigRepliesTx': 'getConfigRepliesTx',
-        'GetConfigRequestsRx': 'getConfigRequestsRx',
-        'GetQueueConfigRepliesTx': 'getQueueConfigRepliesTx',
-        'GetQueueConfigRequestsRx': 'getQueueConfigRequestsRx',
-        'GroupAddsRx': 'groupAddsRx',
-        'GroupDelsRx': 'groupDelsRx',
-        'GroupDescRepliesTx': 'groupDescRepliesTx',
-        'GroupDescRequestsRx': 'groupDescRequestsRx',
-        'GroupFeatureRepliesTx': 'groupFeatureRepliesTx',
-        'GroupFeatureRequestsRx': 'groupFeatureRequestsRx',
-        'GroupModErrorsTx': 'groupModErrorsTx',
-        'GroupModsRx': 'groupModsRx',
-        'GroupStatRepliesTx': 'groupStatRepliesTx',
-        'GroupStatRequestsRx': 'groupStatRequestsRx',
-        'HelloErrorsTx': 'helloErrorsTx',
-        'HellosRx': 'hellosRx',
-        'HellosTx': 'hellosTx',
-        'InstructionErrorsTx': 'instructionErrorsTx',
-        'MatchErrorsTx': 'matchErrorsTx',
-        'MeterAddsRx': 'meterAddsRx',
-        'MeterConfigRepliesTx': 'meterConfigRepliesTx',
-        'MeterConfigRequestsRx': 'meterConfigRequestsRx',
-        'MeterDelsRx': 'meterDelsRx',
-        'MeterFeatureRepliesTx': 'meterFeatureRepliesTx',
-        'MeterFeatureRequestsRx': 'meterFeatureRequestsRx',
-        'MeterModErrorsTx': 'meterModErrorsTx',
-        'MeterModsRx': 'meterModsRx',
-        'MeterStatRepliesTx': 'meterStatRepliesTx',
-        'MeterStatRequestsRx': 'meterStatRequestsRx',
-        'OfChannelConfigured': 'ofChannelConfigured',
-        'OfChannelConfiguredUp': 'ofChannelConfiguredUp',
-        'OfChannelFlapCount': 'ofChannelFlapCount',
-        'PacketInsTx': 'packetInsTx',
-        'PacketOutsRx': 'packetOutsRx',
-        'PacketinDelaymicrosec': 'packetinDelaymicrosec',
-        'PacketinReasonAction': 'packetinReasonAction',
-        'PacketinReasonInvalidTTL': 'packetinReasonInvalidTTL',
-        'PacketinReasonNoMatch': 'packetinReasonNoMatch',
-        'PacketinTxRatepacketssec': 'packetinTxRatepacketssec',
-        'PacketoutRxRatepacketssec': 'packetoutRxRatepacketssec',
-        'PortDescRepliesTx': 'portDescRepliesTx',
-        'PortDescRequestsRx': 'portDescRequestsRx',
-        'PortModErrorsTx': 'portModErrorsTx',
-        'PortModsRx': 'portModsRx',
-        'PortName': 'portName',
-        'PortStatRepliesTx': 'portStatRepliesTx',
-        'PortStatRequestsRx': 'portStatRequestsRx',
-        'PortStatusesTx': 'portStatusesTx',
-        'QueueOpErrorsTx': 'queueOpErrorsTx',
-        'QueueStatRepliesTx': 'queueStatRepliesTx',
-        'QueueStatRequestsRx': 'queueStatRequestsRx',
-        'RequestErrorsTx': 'requestErrorsTx',
-        'RoleRepliesTx': 'roleRepliesTx',
-        'RoleRequestErrorsTx': 'roleRequestErrorsTx',
-        'RoleRequestsRx': 'roleRequestsRx',
-        'SetAsynchronousConfigRx': 'setAsynchronousConfigRx',
-        'SetConfigRx': 'setConfigRx',
-        'StatRepliesTx': 'statRepliesTx',
-        'StatRequestsRx': 'statRequestsRx',
-        'SwitchConfigErrorsTx': 'switchConfigErrorsTx',
-        'TableFeatureErrorsTx': 'tableFeatureErrorsTx',
-        'TableFeatureRepliesTx': 'tableFeatureRepliesTx',
-        'TableFeatureRequestsRx': 'tableFeatureRequestsRx',
-        'TableModErrorsTx': 'tableModErrorsTx',
-        'TableModsRx': 'tableModsRx',
-        'TableStatRepliesTx': 'tableStatRepliesTx',
-        'TableStatRequestsRx': 'tableStatRequestsRx',
-        'VendorMessagesRx': 'vendorMessagesRx',
-        'VendorMessagesTx': 'vendorMessagesTx',
-        'VendorStatRepliesTx': 'vendorStatRepliesTx',
-        'VendorStatRequestsRx': 'vendorStatRequestsRx',
+        "ActionErrorsTx": "actionErrorsTx",
+        "AuxiliaryConnectionsConfigured": "auxiliaryConnectionsConfigured",
+        "AuxiliaryConnectionsUp": "auxiliaryConnectionsUp",
+        "BarrierRepliesTx": "barrierRepliesTx",
+        "BarrierRequestsRx": "barrierRequestsRx",
+        "DescriptionStatRepliesTx": "descriptionStatRepliesTx",
+        "DescriptionStatRequestsRx": "descriptionStatRequestsRx",
+        "EchoRepliesRx": "echoRepliesRx",
+        "EchoRepliesTx": "echoRepliesTx",
+        "EchoRequestsRx": "echoRequestsRx",
+        "EchoRequestsTx": "echoRequestsTx",
+        "ErrorsTx": "errorsTx",
+        "ExperimenterErrorsTx": "experimenterErrorsTx",
+        "FeatureRepliesTx": "featureRepliesTx",
+        "FeatureRequestsRx": "featureRequestsRx",
+        "FlowAddsRx": "flowAddsRx",
+        "FlowAggregateStatRepliesTx": "flowAggregateStatRepliesTx",
+        "FlowAggregateStatRequestsRx": "flowAggregateStatRequestsRx",
+        "FlowDelsRx": "flowDelsRx",
+        "FlowModErrorsTx": "flowModErrorsTx",
+        "FlowModsRx": "flowModsRx",
+        "FlowRemovesTx": "flowRemovesTx",
+        "FlowStatRepliesTx": "flowStatRepliesTx",
+        "FlowStatRequestsRx": "flowStatRequestsRx",
+        "FlowTxRateflowssec": "flowTxRateflowssec",
+        "GetAsynchronousConfigRepliesTx": "getAsynchronousConfigRepliesTx",
+        "GetAsynchronousConfigRequestsRx": "getAsynchronousConfigRequestsRx",
+        "GetConfigRepliesTx": "getConfigRepliesTx",
+        "GetConfigRequestsRx": "getConfigRequestsRx",
+        "GetQueueConfigRepliesTx": "getQueueConfigRepliesTx",
+        "GetQueueConfigRequestsRx": "getQueueConfigRequestsRx",
+        "GroupAddsRx": "groupAddsRx",
+        "GroupDelsRx": "groupDelsRx",
+        "GroupDescRepliesTx": "groupDescRepliesTx",
+        "GroupDescRequestsRx": "groupDescRequestsRx",
+        "GroupFeatureRepliesTx": "groupFeatureRepliesTx",
+        "GroupFeatureRequestsRx": "groupFeatureRequestsRx",
+        "GroupModErrorsTx": "groupModErrorsTx",
+        "GroupModsRx": "groupModsRx",
+        "GroupStatRepliesTx": "groupStatRepliesTx",
+        "GroupStatRequestsRx": "groupStatRequestsRx",
+        "HelloErrorsTx": "helloErrorsTx",
+        "HellosRx": "hellosRx",
+        "HellosTx": "hellosTx",
+        "InstructionErrorsTx": "instructionErrorsTx",
+        "MatchErrorsTx": "matchErrorsTx",
+        "MeterAddsRx": "meterAddsRx",
+        "MeterConfigRepliesTx": "meterConfigRepliesTx",
+        "MeterConfigRequestsRx": "meterConfigRequestsRx",
+        "MeterDelsRx": "meterDelsRx",
+        "MeterFeatureRepliesTx": "meterFeatureRepliesTx",
+        "MeterFeatureRequestsRx": "meterFeatureRequestsRx",
+        "MeterModErrorsTx": "meterModErrorsTx",
+        "MeterModsRx": "meterModsRx",
+        "MeterStatRepliesTx": "meterStatRepliesTx",
+        "MeterStatRequestsRx": "meterStatRequestsRx",
+        "OfChannelConfigured": "ofChannelConfigured",
+        "OfChannelConfiguredUp": "ofChannelConfiguredUp",
+        "OfChannelFlapCount": "ofChannelFlapCount",
+        "PacketInsTx": "packetInsTx",
+        "PacketOutsRx": "packetOutsRx",
+        "PacketinDelaymicrosec": "packetinDelaymicrosec",
+        "PacketinReasonAction": "packetinReasonAction",
+        "PacketinReasonInvalidTTL": "packetinReasonInvalidTTL",
+        "PacketinReasonNoMatch": "packetinReasonNoMatch",
+        "PacketinTxRatepacketssec": "packetinTxRatepacketssec",
+        "PacketoutRxRatepacketssec": "packetoutRxRatepacketssec",
+        "PortDescRepliesTx": "portDescRepliesTx",
+        "PortDescRequestsRx": "portDescRequestsRx",
+        "PortModErrorsTx": "portModErrorsTx",
+        "PortModsRx": "portModsRx",
+        "PortName": "portName",
+        "PortStatRepliesTx": "portStatRepliesTx",
+        "PortStatRequestsRx": "portStatRequestsRx",
+        "PortStatusesTx": "portStatusesTx",
+        "QueueOpErrorsTx": "queueOpErrorsTx",
+        "QueueStatRepliesTx": "queueStatRepliesTx",
+        "QueueStatRequestsRx": "queueStatRequestsRx",
+        "RequestErrorsTx": "requestErrorsTx",
+        "RoleRepliesTx": "roleRepliesTx",
+        "RoleRequestErrorsTx": "roleRequestErrorsTx",
+        "RoleRequestsRx": "roleRequestsRx",
+        "SetAsynchronousConfigRx": "setAsynchronousConfigRx",
+        "SetConfigRx": "setConfigRx",
+        "StatRepliesTx": "statRepliesTx",
+        "StatRequestsRx": "statRequestsRx",
+        "SwitchConfigErrorsTx": "switchConfigErrorsTx",
+        "TableFeatureErrorsTx": "tableFeatureErrorsTx",
+        "TableFeatureRepliesTx": "tableFeatureRepliesTx",
+        "TableFeatureRequestsRx": "tableFeatureRequestsRx",
+        "TableModErrorsTx": "tableModErrorsTx",
+        "TableModsRx": "tableModsRx",
+        "TableStatRepliesTx": "tableStatRepliesTx",
+        "TableStatRequestsRx": "tableStatRequestsRx",
+        "VendorMessagesRx": "vendorMessagesRx",
+        "VendorMessagesTx": "vendorMessagesTx",
+        "VendorStatRepliesTx": "vendorStatRepliesTx",
+        "VendorStatRequestsRx": "vendorStatRequestsRx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OpenflowSwitchAggregatedStatistics, self).__init__(parent, list_op)
@@ -147,11 +147,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Action Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionErrorsTx"])
+
     @ActionErrorsTx.setter
     def ActionErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActionErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActionErrorsTx"], value)
 
     @property
     def AuxiliaryConnectionsConfigured(self):
@@ -161,11 +162,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Auxiliary Connections Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionsConfigured"])
+
     @AuxiliaryConnectionsConfigured.setter
     def AuxiliaryConnectionsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionsConfigured"], value)
 
     @property
     def AuxiliaryConnectionsUp(self):
@@ -175,11 +177,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Auxiliary Connections Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionsUp"])
+
     @AuxiliaryConnectionsUp.setter
     def AuxiliaryConnectionsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionsUp"], value)
 
     @property
     def BarrierRepliesTx(self):
@@ -189,11 +192,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Barrier Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BarrierRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BarrierRepliesTx"])
+
     @BarrierRepliesTx.setter
     def BarrierRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BarrierRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BarrierRepliesTx"], value)
 
     @property
     def BarrierRequestsRx(self):
@@ -203,11 +207,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Barrier Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BarrierRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BarrierRequestsRx"])
+
     @BarrierRequestsRx.setter
     def BarrierRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BarrierRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BarrierRequestsRx"], value)
 
     @property
     def DescriptionStatRepliesTx(self):
@@ -217,11 +222,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Description Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptionStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptionStatRepliesTx"])
+
     @DescriptionStatRepliesTx.setter
     def DescriptionStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DescriptionStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DescriptionStatRepliesTx"], value)
 
     @property
     def DescriptionStatRequestsRx(self):
@@ -231,11 +237,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Description Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptionStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptionStatRequestsRx"])
+
     @DescriptionStatRequestsRx.setter
     def DescriptionStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DescriptionStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DescriptionStatRequestsRx"], value)
 
     @property
     def EchoRepliesRx(self):
@@ -245,11 +252,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Echo Replies Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoRepliesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoRepliesRx"])
+
     @EchoRepliesRx.setter
     def EchoRepliesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoRepliesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoRepliesRx"], value)
 
     @property
     def EchoRepliesTx(self):
@@ -259,11 +267,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Echo Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoRepliesTx"])
+
     @EchoRepliesTx.setter
     def EchoRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoRepliesTx"], value)
 
     @property
     def EchoRequestsRx(self):
@@ -273,11 +282,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Echo Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoRequestsRx"])
+
     @EchoRequestsRx.setter
     def EchoRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoRequestsRx"], value)
 
     @property
     def EchoRequestsTx(self):
@@ -287,11 +297,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Echo Requests Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoRequestsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoRequestsTx"])
+
     @EchoRequestsTx.setter
     def EchoRequestsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoRequestsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoRequestsTx"], value)
 
     @property
     def ErrorsTx(self):
@@ -301,11 +312,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorsTx"])
+
     @ErrorsTx.setter
     def ErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ErrorsTx"], value)
 
     @property
     def ExperimenterErrorsTx(self):
@@ -315,11 +327,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Experimenter Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterErrorsTx"])
+
     @ExperimenterErrorsTx.setter
     def ExperimenterErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterErrorsTx"], value)
 
     @property
     def FeatureRepliesTx(self):
@@ -329,11 +342,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Feature Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FeatureRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FeatureRepliesTx"])
+
     @FeatureRepliesTx.setter
     def FeatureRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FeatureRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FeatureRepliesTx"], value)
 
     @property
     def FeatureRequestsRx(self):
@@ -343,11 +357,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Feature Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FeatureRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FeatureRequestsRx"])
+
     @FeatureRequestsRx.setter
     def FeatureRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FeatureRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FeatureRequestsRx"], value)
 
     @property
     def FlowAddsRx(self):
@@ -357,11 +372,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Adds Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowAddsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowAddsRx"])
+
     @FlowAddsRx.setter
     def FlowAddsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowAddsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowAddsRx"], value)
 
     @property
     def FlowAggregateStatRepliesTx(self):
@@ -371,11 +387,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Aggregate Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowAggregateStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowAggregateStatRepliesTx"])
+
     @FlowAggregateStatRepliesTx.setter
     def FlowAggregateStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowAggregateStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowAggregateStatRepliesTx"], value)
 
     @property
     def FlowAggregateStatRequestsRx(self):
@@ -385,11 +402,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Aggregate Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowAggregateStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowAggregateStatRequestsRx"])
+
     @FlowAggregateStatRequestsRx.setter
     def FlowAggregateStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowAggregateStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowAggregateStatRequestsRx"], value)
 
     @property
     def FlowDelsRx(self):
@@ -399,11 +417,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Dels Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowDelsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowDelsRx"])
+
     @FlowDelsRx.setter
     def FlowDelsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowDelsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowDelsRx"], value)
 
     @property
     def FlowModErrorsTx(self):
@@ -413,11 +432,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Mod Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowModErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowModErrorsTx"])
+
     @FlowModErrorsTx.setter
     def FlowModErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowModErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowModErrorsTx"], value)
 
     @property
     def FlowModsRx(self):
@@ -427,11 +447,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Mods Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowModsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowModsRx"])
+
     @FlowModsRx.setter
     def FlowModsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowModsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowModsRx"], value)
 
     @property
     def FlowRemovesTx(self):
@@ -441,11 +462,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Removes Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowRemovesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowRemovesTx"])
+
     @FlowRemovesTx.setter
     def FlowRemovesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowRemovesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowRemovesTx"], value)
 
     @property
     def FlowStatRepliesTx(self):
@@ -455,11 +477,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatRepliesTx"])
+
     @FlowStatRepliesTx.setter
     def FlowStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatRepliesTx"], value)
 
     @property
     def FlowStatRequestsRx(self):
@@ -469,11 +492,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatRequestsRx"])
+
     @FlowStatRequestsRx.setter
     def FlowStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatRequestsRx"], value)
 
     @property
     def FlowTxRateflowssec(self):
@@ -483,11 +507,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Flow Tx Rate (flows/sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowTxRateflowssec'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowTxRateflowssec"])
+
     @FlowTxRateflowssec.setter
     def FlowTxRateflowssec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowTxRateflowssec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowTxRateflowssec"], value)
 
     @property
     def GetAsynchronousConfigRepliesTx(self):
@@ -497,11 +522,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Asynchronous Config Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetAsynchronousConfigRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetAsynchronousConfigRepliesTx"])
+
     @GetAsynchronousConfigRepliesTx.setter
     def GetAsynchronousConfigRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetAsynchronousConfigRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetAsynchronousConfigRepliesTx"], value)
 
     @property
     def GetAsynchronousConfigRequestsRx(self):
@@ -511,11 +537,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Asynchronous Config Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetAsynchronousConfigRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetAsynchronousConfigRequestsRx"])
+
     @GetAsynchronousConfigRequestsRx.setter
     def GetAsynchronousConfigRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetAsynchronousConfigRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetAsynchronousConfigRequestsRx"], value)
 
     @property
     def GetConfigRepliesTx(self):
@@ -525,11 +552,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Config Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetConfigRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetConfigRepliesTx"])
+
     @GetConfigRepliesTx.setter
     def GetConfigRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetConfigRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetConfigRepliesTx"], value)
 
     @property
     def GetConfigRequestsRx(self):
@@ -539,11 +567,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Config Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetConfigRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetConfigRequestsRx"])
+
     @GetConfigRequestsRx.setter
     def GetConfigRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetConfigRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetConfigRequestsRx"], value)
 
     @property
     def GetQueueConfigRepliesTx(self):
@@ -553,11 +582,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Queue Config Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetQueueConfigRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetQueueConfigRepliesTx"])
+
     @GetQueueConfigRepliesTx.setter
     def GetQueueConfigRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetQueueConfigRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetQueueConfigRepliesTx"], value)
 
     @property
     def GetQueueConfigRequestsRx(self):
@@ -567,11 +597,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Get Queue Config Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GetQueueConfigRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GetQueueConfigRequestsRx"])
+
     @GetQueueConfigRequestsRx.setter
     def GetQueueConfigRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GetQueueConfigRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GetQueueConfigRequestsRx"], value)
 
     @property
     def GroupAddsRx(self):
@@ -581,11 +612,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Adds Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddsRx"])
+
     @GroupAddsRx.setter
     def GroupAddsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddsRx"], value)
 
     @property
     def GroupDelsRx(self):
@@ -595,11 +627,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Dels Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDelsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDelsRx"])
+
     @GroupDelsRx.setter
     def GroupDelsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDelsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDelsRx"], value)
 
     @property
     def GroupDescRepliesTx(self):
@@ -609,11 +642,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Desc Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDescRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDescRepliesTx"])
+
     @GroupDescRepliesTx.setter
     def GroupDescRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDescRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDescRepliesTx"], value)
 
     @property
     def GroupDescRequestsRx(self):
@@ -623,11 +657,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Desc Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDescRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDescRequestsRx"])
+
     @GroupDescRequestsRx.setter
     def GroupDescRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDescRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDescRequestsRx"], value)
 
     @property
     def GroupFeatureRepliesTx(self):
@@ -637,11 +672,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Feature Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupFeatureRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupFeatureRepliesTx"])
+
     @GroupFeatureRepliesTx.setter
     def GroupFeatureRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupFeatureRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupFeatureRepliesTx"], value)
 
     @property
     def GroupFeatureRequestsRx(self):
@@ -651,11 +687,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Feature Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupFeatureRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupFeatureRequestsRx"])
+
     @GroupFeatureRequestsRx.setter
     def GroupFeatureRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupFeatureRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupFeatureRequestsRx"], value)
 
     @property
     def GroupModErrorsTx(self):
@@ -665,11 +702,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Mod Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupModErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupModErrorsTx"])
+
     @GroupModErrorsTx.setter
     def GroupModErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupModErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupModErrorsTx"], value)
 
     @property
     def GroupModsRx(self):
@@ -679,11 +717,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Mods Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupModsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupModsRx"])
+
     @GroupModsRx.setter
     def GroupModsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupModsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupModsRx"], value)
 
     @property
     def GroupStatRepliesTx(self):
@@ -693,11 +732,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupStatRepliesTx"])
+
     @GroupStatRepliesTx.setter
     def GroupStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupStatRepliesTx"], value)
 
     @property
     def GroupStatRequestsRx(self):
@@ -707,11 +747,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Group Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupStatRequestsRx"])
+
     @GroupStatRequestsRx.setter
     def GroupStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupStatRequestsRx"], value)
 
     @property
     def HelloErrorsTx(self):
@@ -721,11 +762,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Hello Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloErrorsTx"])
+
     @HelloErrorsTx.setter
     def HelloErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloErrorsTx"], value)
 
     @property
     def HellosRx(self):
@@ -735,11 +777,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosRx"])
+
     @HellosRx.setter
     def HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosRx"], value)
 
     @property
     def HellosTx(self):
@@ -749,11 +792,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosTx"])
+
     @HellosTx.setter
     def HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosTx"], value)
 
     @property
     def InstructionErrorsTx(self):
@@ -763,11 +807,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Instruction Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstructionErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstructionErrorsTx"])
+
     @InstructionErrorsTx.setter
     def InstructionErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstructionErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstructionErrorsTx"], value)
 
     @property
     def MatchErrorsTx(self):
@@ -777,11 +822,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Match Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MatchErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MatchErrorsTx"])
+
     @MatchErrorsTx.setter
     def MatchErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MatchErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MatchErrorsTx"], value)
 
     @property
     def MeterAddsRx(self):
@@ -791,11 +837,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Adds Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterAddsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterAddsRx"])
+
     @MeterAddsRx.setter
     def MeterAddsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterAddsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterAddsRx"], value)
 
     @property
     def MeterConfigRepliesTx(self):
@@ -805,11 +852,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Config Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterConfigRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterConfigRepliesTx"])
+
     @MeterConfigRepliesTx.setter
     def MeterConfigRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterConfigRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterConfigRepliesTx"], value)
 
     @property
     def MeterConfigRequestsRx(self):
@@ -819,11 +867,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Config Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterConfigRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterConfigRequestsRx"])
+
     @MeterConfigRequestsRx.setter
     def MeterConfigRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterConfigRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterConfigRequestsRx"], value)
 
     @property
     def MeterDelsRx(self):
@@ -833,11 +882,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Dels Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterDelsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterDelsRx"])
+
     @MeterDelsRx.setter
     def MeterDelsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterDelsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterDelsRx"], value)
 
     @property
     def MeterFeatureRepliesTx(self):
@@ -847,11 +897,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Feature Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterFeatureRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterFeatureRepliesTx"])
+
     @MeterFeatureRepliesTx.setter
     def MeterFeatureRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterFeatureRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterFeatureRepliesTx"], value)
 
     @property
     def MeterFeatureRequestsRx(self):
@@ -861,11 +912,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Feature Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterFeatureRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterFeatureRequestsRx"])
+
     @MeterFeatureRequestsRx.setter
     def MeterFeatureRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterFeatureRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterFeatureRequestsRx"], value)
 
     @property
     def MeterModErrorsTx(self):
@@ -875,11 +927,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Mod Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterModErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterModErrorsTx"])
+
     @MeterModErrorsTx.setter
     def MeterModErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterModErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterModErrorsTx"], value)
 
     @property
     def MeterModsRx(self):
@@ -889,11 +942,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Mods Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterModsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterModsRx"])
+
     @MeterModsRx.setter
     def MeterModsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterModsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterModsRx"], value)
 
     @property
     def MeterStatRepliesTx(self):
@@ -903,11 +957,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterStatRepliesTx"])
+
     @MeterStatRepliesTx.setter
     def MeterStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterStatRepliesTx"], value)
 
     @property
     def MeterStatRequestsRx(self):
@@ -917,11 +972,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Meter Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterStatRequestsRx"])
+
     @MeterStatRequestsRx.setter
     def MeterStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterStatRequestsRx"], value)
 
     @property
     def OfChannelConfigured(self):
@@ -931,11 +987,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: OF Channel Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfChannelConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfChannelConfigured"])
+
     @OfChannelConfigured.setter
     def OfChannelConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfChannelConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfChannelConfigured"], value)
 
     @property
     def OfChannelConfiguredUp(self):
@@ -945,11 +1002,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: OF Channel Configured Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfChannelConfiguredUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfChannelConfiguredUp"])
+
     @OfChannelConfiguredUp.setter
     def OfChannelConfiguredUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfChannelConfiguredUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfChannelConfiguredUp"], value)
 
     @property
     def OfChannelFlapCount(self):
@@ -959,11 +1017,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: OF Channel Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfChannelFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfChannelFlapCount"])
+
     @OfChannelFlapCount.setter
     def OfChannelFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfChannelFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfChannelFlapCount"], value)
 
     @property
     def PacketInsTx(self):
@@ -973,11 +1032,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Packet Ins Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInsTx"])
+
     @PacketInsTx.setter
     def PacketInsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketInsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketInsTx"], value)
 
     @property
     def PacketOutsRx(self):
@@ -987,11 +1047,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Packet Outs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketOutsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketOutsRx"])
+
     @PacketOutsRx.setter
     def PacketOutsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketOutsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketOutsRx"], value)
 
     @property
     def PacketinDelaymicrosec(self):
@@ -1001,11 +1062,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketIn Delay (micro sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketinDelaymicrosec'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketinDelaymicrosec"])
+
     @PacketinDelaymicrosec.setter
     def PacketinDelaymicrosec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketinDelaymicrosec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketinDelaymicrosec"], value)
 
     @property
     def PacketinReasonAction(self):
@@ -1015,11 +1077,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketIn Reason Action
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketinReasonAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketinReasonAction"])
+
     @PacketinReasonAction.setter
     def PacketinReasonAction(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketinReasonAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketinReasonAction"], value)
 
     @property
     def PacketinReasonInvalidTTL(self):
@@ -1029,11 +1092,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketIn Reason Invalid TTL
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketinReasonInvalidTTL'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketinReasonInvalidTTL"])
+
     @PacketinReasonInvalidTTL.setter
     def PacketinReasonInvalidTTL(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketinReasonInvalidTTL'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketinReasonInvalidTTL"], value)
 
     @property
     def PacketinReasonNoMatch(self):
@@ -1043,11 +1107,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketIn Reason No Match
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketinReasonNoMatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketinReasonNoMatch"])
+
     @PacketinReasonNoMatch.setter
     def PacketinReasonNoMatch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketinReasonNoMatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketinReasonNoMatch"], value)
 
     @property
     def PacketinTxRatepacketssec(self):
@@ -1057,11 +1122,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketIn Tx Rate (packets/sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketinTxRatepacketssec'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketinTxRatepacketssec"])
+
     @PacketinTxRatepacketssec.setter
     def PacketinTxRatepacketssec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketinTxRatepacketssec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketinTxRatepacketssec"], value)
 
     @property
     def PacketoutRxRatepacketssec(self):
@@ -1071,11 +1137,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: PacketOut Rx Rate (packets/sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketoutRxRatepacketssec'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketoutRxRatepacketssec"])
+
     @PacketoutRxRatepacketssec.setter
     def PacketoutRxRatepacketssec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketoutRxRatepacketssec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketoutRxRatepacketssec"], value)
 
     @property
     def PortDescRepliesTx(self):
@@ -1085,11 +1152,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Desc Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDescRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDescRepliesTx"])
+
     @PortDescRepliesTx.setter
     def PortDescRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDescRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDescRepliesTx"], value)
 
     @property
     def PortDescRequestsRx(self):
@@ -1099,11 +1167,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Desc Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDescRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDescRequestsRx"])
+
     @PortDescRequestsRx.setter
     def PortDescRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDescRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDescRequestsRx"], value)
 
     @property
     def PortModErrorsTx(self):
@@ -1113,11 +1182,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Mod Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortModErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortModErrorsTx"])
+
     @PortModErrorsTx.setter
     def PortModErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortModErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortModErrorsTx"], value)
 
     @property
     def PortModsRx(self):
@@ -1127,11 +1197,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Mods Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortModsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortModsRx"])
+
     @PortModsRx.setter
     def PortModsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortModsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortModsRx"], value)
 
     @property
     def PortName(self):
@@ -1141,11 +1212,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def PortStatRepliesTx(self):
@@ -1155,11 +1227,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatRepliesTx"])
+
     @PortStatRepliesTx.setter
     def PortStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortStatRepliesTx"], value)
 
     @property
     def PortStatRequestsRx(self):
@@ -1169,11 +1242,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatRequestsRx"])
+
     @PortStatRequestsRx.setter
     def PortStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortStatRequestsRx"], value)
 
     @property
     def PortStatusesTx(self):
@@ -1183,11 +1257,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Port Statuses Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatusesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatusesTx"])
+
     @PortStatusesTx.setter
     def PortStatusesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortStatusesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortStatusesTx"], value)
 
     @property
     def QueueOpErrorsTx(self):
@@ -1197,11 +1272,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Queue Op Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueOpErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueOpErrorsTx"])
+
     @QueueOpErrorsTx.setter
     def QueueOpErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueOpErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueOpErrorsTx"], value)
 
     @property
     def QueueStatRepliesTx(self):
@@ -1211,11 +1287,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Queue Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueStatRepliesTx"])
+
     @QueueStatRepliesTx.setter
     def QueueStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueStatRepliesTx"], value)
 
     @property
     def QueueStatRequestsRx(self):
@@ -1225,11 +1302,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Queue Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueStatRequestsRx"])
+
     @QueueStatRequestsRx.setter
     def QueueStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueStatRequestsRx"], value)
 
     @property
     def RequestErrorsTx(self):
@@ -1239,11 +1317,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Request Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestErrorsTx"])
+
     @RequestErrorsTx.setter
     def RequestErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestErrorsTx"], value)
 
     @property
     def RoleRepliesTx(self):
@@ -1253,11 +1332,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Role Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoleRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoleRepliesTx"])
+
     @RoleRepliesTx.setter
     def RoleRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoleRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoleRepliesTx"], value)
 
     @property
     def RoleRequestErrorsTx(self):
@@ -1267,11 +1347,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Role Request Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoleRequestErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoleRequestErrorsTx"])
+
     @RoleRequestErrorsTx.setter
     def RoleRequestErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoleRequestErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoleRequestErrorsTx"], value)
 
     @property
     def RoleRequestsRx(self):
@@ -1281,11 +1362,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Role Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoleRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoleRequestsRx"])
+
     @RoleRequestsRx.setter
     def RoleRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoleRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoleRequestsRx"], value)
 
     @property
     def SetAsynchronousConfigRx(self):
@@ -1295,11 +1377,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Set Asynchronous Config Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetAsynchronousConfigRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetAsynchronousConfigRx"])
+
     @SetAsynchronousConfigRx.setter
     def SetAsynchronousConfigRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetAsynchronousConfigRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetAsynchronousConfigRx"], value)
 
     @property
     def SetConfigRx(self):
@@ -1309,11 +1392,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Set Config Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetConfigRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetConfigRx"])
+
     @SetConfigRx.setter
     def SetConfigRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetConfigRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetConfigRx"], value)
 
     @property
     def StatRepliesTx(self):
@@ -1323,11 +1407,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StatRepliesTx"])
+
     @StatRepliesTx.setter
     def StatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StatRepliesTx"], value)
 
     @property
     def StatRequestsRx(self):
@@ -1337,11 +1422,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StatRequestsRx"])
+
     @StatRequestsRx.setter
     def StatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StatRequestsRx"], value)
 
     @property
     def SwitchConfigErrorsTx(self):
@@ -1351,11 +1437,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Switch Config Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchConfigErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchConfigErrorsTx"])
+
     @SwitchConfigErrorsTx.setter
     def SwitchConfigErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchConfigErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchConfigErrorsTx"], value)
 
     @property
     def TableFeatureErrorsTx(self):
@@ -1365,11 +1452,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Feature Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableFeatureErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableFeatureErrorsTx"])
+
     @TableFeatureErrorsTx.setter
     def TableFeatureErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableFeatureErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableFeatureErrorsTx"], value)
 
     @property
     def TableFeatureRepliesTx(self):
@@ -1379,11 +1467,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Feature Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableFeatureRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableFeatureRepliesTx"])
+
     @TableFeatureRepliesTx.setter
     def TableFeatureRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableFeatureRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableFeatureRepliesTx"], value)
 
     @property
     def TableFeatureRequestsRx(self):
@@ -1393,11 +1482,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Feature Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableFeatureRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableFeatureRequestsRx"])
+
     @TableFeatureRequestsRx.setter
     def TableFeatureRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableFeatureRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableFeatureRequestsRx"], value)
 
     @property
     def TableModErrorsTx(self):
@@ -1407,11 +1497,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Mod Errors Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableModErrorsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableModErrorsTx"])
+
     @TableModErrorsTx.setter
     def TableModErrorsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableModErrorsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableModErrorsTx"], value)
 
     @property
     def TableModsRx(self):
@@ -1421,11 +1512,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Mods Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableModsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableModsRx"])
+
     @TableModsRx.setter
     def TableModsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableModsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableModsRx"], value)
 
     @property
     def TableStatRepliesTx(self):
@@ -1435,11 +1527,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableStatRepliesTx"])
+
     @TableStatRepliesTx.setter
     def TableStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableStatRepliesTx"], value)
 
     @property
     def TableStatRequestsRx(self):
@@ -1449,11 +1542,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Table Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableStatRequestsRx"])
+
     @TableStatRequestsRx.setter
     def TableStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableStatRequestsRx"], value)
 
     @property
     def VendorMessagesRx(self):
@@ -1463,11 +1557,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Vendor Messages Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorMessagesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorMessagesRx"])
+
     @VendorMessagesRx.setter
     def VendorMessagesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorMessagesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorMessagesRx"], value)
 
     @property
     def VendorMessagesTx(self):
@@ -1477,11 +1572,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Vendor Messages Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorMessagesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorMessagesTx"])
+
     @VendorMessagesTx.setter
     def VendorMessagesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorMessagesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorMessagesTx"], value)
 
     @property
     def VendorStatRepliesTx(self):
@@ -1491,11 +1587,12 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Vendor Stat Replies Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorStatRepliesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorStatRepliesTx"])
+
     @VendorStatRepliesTx.setter
     def VendorStatRepliesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorStatRepliesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorStatRepliesTx"], value)
 
     @property
     def VendorStatRequestsRx(self):
@@ -1505,13 +1602,114 @@ class OpenflowSwitchAggregatedStatistics(Base):
         -------
         - bool: Vendor Stat Requests Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorStatRequestsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorStatRequestsRx"])
+
     @VendorStatRequestsRx.setter
     def VendorStatRequestsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorStatRequestsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorStatRequestsRx"], value)
 
-    def update(self, ActionErrorsTx=None, AuxiliaryConnectionsConfigured=None, AuxiliaryConnectionsUp=None, BarrierRepliesTx=None, BarrierRequestsRx=None, DescriptionStatRepliesTx=None, DescriptionStatRequestsRx=None, EchoRepliesRx=None, EchoRepliesTx=None, EchoRequestsRx=None, EchoRequestsTx=None, ErrorsTx=None, ExperimenterErrorsTx=None, FeatureRepliesTx=None, FeatureRequestsRx=None, FlowAddsRx=None, FlowAggregateStatRepliesTx=None, FlowAggregateStatRequestsRx=None, FlowDelsRx=None, FlowModErrorsTx=None, FlowModsRx=None, FlowRemovesTx=None, FlowStatRepliesTx=None, FlowStatRequestsRx=None, FlowTxRateflowssec=None, GetAsynchronousConfigRepliesTx=None, GetAsynchronousConfigRequestsRx=None, GetConfigRepliesTx=None, GetConfigRequestsRx=None, GetQueueConfigRepliesTx=None, GetQueueConfigRequestsRx=None, GroupAddsRx=None, GroupDelsRx=None, GroupDescRepliesTx=None, GroupDescRequestsRx=None, GroupFeatureRepliesTx=None, GroupFeatureRequestsRx=None, GroupModErrorsTx=None, GroupModsRx=None, GroupStatRepliesTx=None, GroupStatRequestsRx=None, HelloErrorsTx=None, HellosRx=None, HellosTx=None, InstructionErrorsTx=None, MatchErrorsTx=None, MeterAddsRx=None, MeterConfigRepliesTx=None, MeterConfigRequestsRx=None, MeterDelsRx=None, MeterFeatureRepliesTx=None, MeterFeatureRequestsRx=None, MeterModErrorsTx=None, MeterModsRx=None, MeterStatRepliesTx=None, MeterStatRequestsRx=None, OfChannelConfigured=None, OfChannelConfiguredUp=None, OfChannelFlapCount=None, PacketInsTx=None, PacketOutsRx=None, PacketinDelaymicrosec=None, PacketinReasonAction=None, PacketinReasonInvalidTTL=None, PacketinReasonNoMatch=None, PacketinTxRatepacketssec=None, PacketoutRxRatepacketssec=None, PortDescRepliesTx=None, PortDescRequestsRx=None, PortModErrorsTx=None, PortModsRx=None, PortName=None, PortStatRepliesTx=None, PortStatRequestsRx=None, PortStatusesTx=None, QueueOpErrorsTx=None, QueueStatRepliesTx=None, QueueStatRequestsRx=None, RequestErrorsTx=None, RoleRepliesTx=None, RoleRequestErrorsTx=None, RoleRequestsRx=None, SetAsynchronousConfigRx=None, SetConfigRx=None, StatRepliesTx=None, StatRequestsRx=None, SwitchConfigErrorsTx=None, TableFeatureErrorsTx=None, TableFeatureRepliesTx=None, TableFeatureRequestsRx=None, TableModErrorsTx=None, TableModsRx=None, TableStatRepliesTx=None, TableStatRequestsRx=None, VendorMessagesRx=None, VendorMessagesTx=None, VendorStatRepliesTx=None, VendorStatRequestsRx=None):
+    def update(
+        self,
+        ActionErrorsTx=None,
+        AuxiliaryConnectionsConfigured=None,
+        AuxiliaryConnectionsUp=None,
+        BarrierRepliesTx=None,
+        BarrierRequestsRx=None,
+        DescriptionStatRepliesTx=None,
+        DescriptionStatRequestsRx=None,
+        EchoRepliesRx=None,
+        EchoRepliesTx=None,
+        EchoRequestsRx=None,
+        EchoRequestsTx=None,
+        ErrorsTx=None,
+        ExperimenterErrorsTx=None,
+        FeatureRepliesTx=None,
+        FeatureRequestsRx=None,
+        FlowAddsRx=None,
+        FlowAggregateStatRepliesTx=None,
+        FlowAggregateStatRequestsRx=None,
+        FlowDelsRx=None,
+        FlowModErrorsTx=None,
+        FlowModsRx=None,
+        FlowRemovesTx=None,
+        FlowStatRepliesTx=None,
+        FlowStatRequestsRx=None,
+        FlowTxRateflowssec=None,
+        GetAsynchronousConfigRepliesTx=None,
+        GetAsynchronousConfigRequestsRx=None,
+        GetConfigRepliesTx=None,
+        GetConfigRequestsRx=None,
+        GetQueueConfigRepliesTx=None,
+        GetQueueConfigRequestsRx=None,
+        GroupAddsRx=None,
+        GroupDelsRx=None,
+        GroupDescRepliesTx=None,
+        GroupDescRequestsRx=None,
+        GroupFeatureRepliesTx=None,
+        GroupFeatureRequestsRx=None,
+        GroupModErrorsTx=None,
+        GroupModsRx=None,
+        GroupStatRepliesTx=None,
+        GroupStatRequestsRx=None,
+        HelloErrorsTx=None,
+        HellosRx=None,
+        HellosTx=None,
+        InstructionErrorsTx=None,
+        MatchErrorsTx=None,
+        MeterAddsRx=None,
+        MeterConfigRepliesTx=None,
+        MeterConfigRequestsRx=None,
+        MeterDelsRx=None,
+        MeterFeatureRepliesTx=None,
+        MeterFeatureRequestsRx=None,
+        MeterModErrorsTx=None,
+        MeterModsRx=None,
+        MeterStatRepliesTx=None,
+        MeterStatRequestsRx=None,
+        OfChannelConfigured=None,
+        OfChannelConfiguredUp=None,
+        OfChannelFlapCount=None,
+        PacketInsTx=None,
+        PacketOutsRx=None,
+        PacketinDelaymicrosec=None,
+        PacketinReasonAction=None,
+        PacketinReasonInvalidTTL=None,
+        PacketinReasonNoMatch=None,
+        PacketinTxRatepacketssec=None,
+        PacketoutRxRatepacketssec=None,
+        PortDescRepliesTx=None,
+        PortDescRequestsRx=None,
+        PortModErrorsTx=None,
+        PortModsRx=None,
+        PortName=None,
+        PortStatRepliesTx=None,
+        PortStatRequestsRx=None,
+        PortStatusesTx=None,
+        QueueOpErrorsTx=None,
+        QueueStatRepliesTx=None,
+        QueueStatRequestsRx=None,
+        RequestErrorsTx=None,
+        RoleRepliesTx=None,
+        RoleRequestErrorsTx=None,
+        RoleRequestsRx=None,
+        SetAsynchronousConfigRx=None,
+        SetConfigRx=None,
+        StatRepliesTx=None,
+        StatRequestsRx=None,
+        SwitchConfigErrorsTx=None,
+        TableFeatureErrorsTx=None,
+        TableFeatureRepliesTx=None,
+        TableFeatureRequestsRx=None,
+        TableModErrorsTx=None,
+        TableModsRx=None,
+        TableStatRepliesTx=None,
+        TableStatRequestsRx=None,
+        VendorMessagesRx=None,
+        VendorMessagesTx=None,
+        VendorStatRepliesTx=None,
+        VendorStatRequestsRx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> OpenflowSwitchAggregatedStatistics
         """Updates openflowSwitchAggregatedStatistics resource on the server.
 
@@ -1622,7 +1820,107 @@ class OpenflowSwitchAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActionErrorsTx=None, AuxiliaryConnectionsConfigured=None, AuxiliaryConnectionsUp=None, BarrierRepliesTx=None, BarrierRequestsRx=None, DescriptionStatRepliesTx=None, DescriptionStatRequestsRx=None, EchoRepliesRx=None, EchoRepliesTx=None, EchoRequestsRx=None, EchoRequestsTx=None, ErrorsTx=None, ExperimenterErrorsTx=None, FeatureRepliesTx=None, FeatureRequestsRx=None, FlowAddsRx=None, FlowAggregateStatRepliesTx=None, FlowAggregateStatRequestsRx=None, FlowDelsRx=None, FlowModErrorsTx=None, FlowModsRx=None, FlowRemovesTx=None, FlowStatRepliesTx=None, FlowStatRequestsRx=None, FlowTxRateflowssec=None, GetAsynchronousConfigRepliesTx=None, GetAsynchronousConfigRequestsRx=None, GetConfigRepliesTx=None, GetConfigRequestsRx=None, GetQueueConfigRepliesTx=None, GetQueueConfigRequestsRx=None, GroupAddsRx=None, GroupDelsRx=None, GroupDescRepliesTx=None, GroupDescRequestsRx=None, GroupFeatureRepliesTx=None, GroupFeatureRequestsRx=None, GroupModErrorsTx=None, GroupModsRx=None, GroupStatRepliesTx=None, GroupStatRequestsRx=None, HelloErrorsTx=None, HellosRx=None, HellosTx=None, InstructionErrorsTx=None, MatchErrorsTx=None, MeterAddsRx=None, MeterConfigRepliesTx=None, MeterConfigRequestsRx=None, MeterDelsRx=None, MeterFeatureRepliesTx=None, MeterFeatureRequestsRx=None, MeterModErrorsTx=None, MeterModsRx=None, MeterStatRepliesTx=None, MeterStatRequestsRx=None, OfChannelConfigured=None, OfChannelConfiguredUp=None, OfChannelFlapCount=None, PacketInsTx=None, PacketOutsRx=None, PacketinDelaymicrosec=None, PacketinReasonAction=None, PacketinReasonInvalidTTL=None, PacketinReasonNoMatch=None, PacketinTxRatepacketssec=None, PacketoutRxRatepacketssec=None, PortDescRepliesTx=None, PortDescRequestsRx=None, PortModErrorsTx=None, PortModsRx=None, PortName=None, PortStatRepliesTx=None, PortStatRequestsRx=None, PortStatusesTx=None, QueueOpErrorsTx=None, QueueStatRepliesTx=None, QueueStatRequestsRx=None, RequestErrorsTx=None, RoleRepliesTx=None, RoleRequestErrorsTx=None, RoleRequestsRx=None, SetAsynchronousConfigRx=None, SetConfigRx=None, StatRepliesTx=None, StatRequestsRx=None, SwitchConfigErrorsTx=None, TableFeatureErrorsTx=None, TableFeatureRepliesTx=None, TableFeatureRequestsRx=None, TableModErrorsTx=None, TableModsRx=None, TableStatRepliesTx=None, TableStatRequestsRx=None, VendorMessagesRx=None, VendorMessagesTx=None, VendorStatRepliesTx=None, VendorStatRequestsRx=None):
+    def find(
+        self,
+        ActionErrorsTx=None,
+        AuxiliaryConnectionsConfigured=None,
+        AuxiliaryConnectionsUp=None,
+        BarrierRepliesTx=None,
+        BarrierRequestsRx=None,
+        DescriptionStatRepliesTx=None,
+        DescriptionStatRequestsRx=None,
+        EchoRepliesRx=None,
+        EchoRepliesTx=None,
+        EchoRequestsRx=None,
+        EchoRequestsTx=None,
+        ErrorsTx=None,
+        ExperimenterErrorsTx=None,
+        FeatureRepliesTx=None,
+        FeatureRequestsRx=None,
+        FlowAddsRx=None,
+        FlowAggregateStatRepliesTx=None,
+        FlowAggregateStatRequestsRx=None,
+        FlowDelsRx=None,
+        FlowModErrorsTx=None,
+        FlowModsRx=None,
+        FlowRemovesTx=None,
+        FlowStatRepliesTx=None,
+        FlowStatRequestsRx=None,
+        FlowTxRateflowssec=None,
+        GetAsynchronousConfigRepliesTx=None,
+        GetAsynchronousConfigRequestsRx=None,
+        GetConfigRepliesTx=None,
+        GetConfigRequestsRx=None,
+        GetQueueConfigRepliesTx=None,
+        GetQueueConfigRequestsRx=None,
+        GroupAddsRx=None,
+        GroupDelsRx=None,
+        GroupDescRepliesTx=None,
+        GroupDescRequestsRx=None,
+        GroupFeatureRepliesTx=None,
+        GroupFeatureRequestsRx=None,
+        GroupModErrorsTx=None,
+        GroupModsRx=None,
+        GroupStatRepliesTx=None,
+        GroupStatRequestsRx=None,
+        HelloErrorsTx=None,
+        HellosRx=None,
+        HellosTx=None,
+        InstructionErrorsTx=None,
+        MatchErrorsTx=None,
+        MeterAddsRx=None,
+        MeterConfigRepliesTx=None,
+        MeterConfigRequestsRx=None,
+        MeterDelsRx=None,
+        MeterFeatureRepliesTx=None,
+        MeterFeatureRequestsRx=None,
+        MeterModErrorsTx=None,
+        MeterModsRx=None,
+        MeterStatRepliesTx=None,
+        MeterStatRequestsRx=None,
+        OfChannelConfigured=None,
+        OfChannelConfiguredUp=None,
+        OfChannelFlapCount=None,
+        PacketInsTx=None,
+        PacketOutsRx=None,
+        PacketinDelaymicrosec=None,
+        PacketinReasonAction=None,
+        PacketinReasonInvalidTTL=None,
+        PacketinReasonNoMatch=None,
+        PacketinTxRatepacketssec=None,
+        PacketoutRxRatepacketssec=None,
+        PortDescRepliesTx=None,
+        PortDescRequestsRx=None,
+        PortModErrorsTx=None,
+        PortModsRx=None,
+        PortName=None,
+        PortStatRepliesTx=None,
+        PortStatRequestsRx=None,
+        PortStatusesTx=None,
+        QueueOpErrorsTx=None,
+        QueueStatRepliesTx=None,
+        QueueStatRequestsRx=None,
+        RequestErrorsTx=None,
+        RoleRepliesTx=None,
+        RoleRequestErrorsTx=None,
+        RoleRequestsRx=None,
+        SetAsynchronousConfigRx=None,
+        SetConfigRx=None,
+        StatRepliesTx=None,
+        StatRequestsRx=None,
+        SwitchConfigErrorsTx=None,
+        TableFeatureErrorsTx=None,
+        TableFeatureRepliesTx=None,
+        TableFeatureRequestsRx=None,
+        TableModErrorsTx=None,
+        TableModsRx=None,
+        TableStatRepliesTx=None,
+        TableStatRequestsRx=None,
+        VendorMessagesRx=None,
+        VendorMessagesTx=None,
+        VendorStatRepliesTx=None,
+        VendorStatRequestsRx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> OpenflowSwitchAggregatedStatistics
         """Finds and retrieves openflowSwitchAggregatedStatistics resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,48 @@ class RangeList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rangeList'
+    _SDM_NAME = "rangeList"
     _SDM_ATT_MAP = {
-        'AvailableWidths': 'availableWidths',
-        'BitOffset': 'bitOffset',
-        'StartValueCountStepList': 'startValueCountStepList',
-        'Width': 'width',
+        "AvailableWidths": "availableWidths",
+        "BitOffset": "bitOffset",
+        "StartValueCountStepList": "startValueCountStepList",
+        "Width": "width",
     }
     _SDM_ENUM_MAP = {
-        'width': ['1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '3', '30', '31', '32', '4', '5', '6', '7', '8', '9'],
+        "width": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "2",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "3",
+            "30",
+            "31",
+            "32",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,7 +89,7 @@ class RangeList(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableWidths"])
 
     @property
     def BitOffset(self):
@@ -65,11 +99,12 @@ class RangeList(Base):
         -------
         - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BitOffset"])
+
     @BitOffset.setter
     def BitOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BitOffset"], value)
 
     @property
     def StartValueCountStepList(self):
@@ -79,11 +114,12 @@ class RangeList(Base):
         -------
         - list(number): Specifies the Start Value, Count and Step Value of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartValueCountStepList'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartValueCountStepList"])
+
     @StartValueCountStepList.setter
     def StartValueCountStepList(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartValueCountStepList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartValueCountStepList"], value)
 
     @property
     def Width(self):
@@ -93,11 +129,12 @@ class RangeList(Base):
         -------
         - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Width'])
+        return self._get_attribute(self._SDM_ATT_MAP["Width"])
+
     @Width.setter
     def Width(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Width"], value)
 
     def update(self, BitOffset=None, StartValueCountStepList=None, Width=None):
         # type: (int, List[int], str) -> RangeList
@@ -117,7 +154,7 @@ class RangeList(Base):
 
     def add(self, BitOffset=None, StartValueCountStepList=None, Width=None):
         # type: (int, List[int], str) -> RangeList
-        """Adds a new rangeList resource on the json, only valid with config assistant
+        """Adds a new rangeList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -135,7 +172,13 @@ class RangeList(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableWidths=None, BitOffset=None, StartValueCountStepList=None, Width=None):
+    def find(
+        self,
+        AvailableWidths=None,
+        BitOffset=None,
+        StartValueCountStepList=None,
+        Width=None,
+    ):
         # type: (List[str], int, List[int], str) -> RangeList
         """Finds and retrieves rangeList resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,35 +34,34 @@ class PortStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'portStatLearnedInformation'
+    _SDM_NAME = "portStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'Collisions': 'collisions',
-        'CrcErrors': 'crcErrors',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Duration': 'duration',
-        'DurationInNsec': 'durationInNsec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FrameAlignmentErrors': 'frameAlignmentErrors',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PacketsDroppedByRx': 'packetsDroppedByRx',
-        'PacketsDroppedByTx': 'packetsDroppedByTx',
-        'PacketsWithRxOverrun': 'packetsWithRxOverrun',
-        'PortNo': 'portNo',
-        'ReceivedBytes': 'receivedBytes',
-        'ReceivedErrors': 'receivedErrors',
-        'ReceivedPackets': 'receivedPackets',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'TransmitErrors': 'transmitErrors',
-        'TransmittedBytes': 'transmittedBytes',
-        'TransmittedPackets': 'transmittedPackets',
+        "Collisions": "collisions",
+        "CrcErrors": "crcErrors",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "Duration": "duration",
+        "DurationInNsec": "durationInNsec",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "FrameAlignmentErrors": "frameAlignmentErrors",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "PacketsDroppedByRx": "packetsDroppedByRx",
+        "PacketsDroppedByTx": "packetsDroppedByTx",
+        "PacketsWithRxOverrun": "packetsWithRxOverrun",
+        "PortNo": "portNo",
+        "ReceivedBytes": "receivedBytes",
+        "ReceivedErrors": "receivedErrors",
+        "ReceivedPackets": "receivedPackets",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "TransmitErrors": "transmitErrors",
+        "TransmittedBytes": "transmittedBytes",
+        "TransmittedPackets": "transmittedPackets",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PortStatLearnedInformation, self).__init__(parent, list_op)
@@ -74,7 +74,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Indicates the number of collisions.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Collisions'])
+        return self._get_attribute(self._SDM_ATT_MAP["Collisions"])
 
     @property
     def CrcErrors(self):
@@ -84,7 +84,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of CRC errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CrcErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["CrcErrors"])
 
     @property
     def DataPathId(self):
@@ -94,7 +94,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the datapath ID of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -104,7 +104,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def Duration(self):
@@ -114,7 +114,7 @@ class PortStatLearnedInformation(Base):
         -------
         - number: The time in seconds, for which the port has been alive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
 
     @property
     def DurationInNsec(self):
@@ -124,7 +124,7 @@ class PortStatLearnedInformation(Base):
         -------
         - number: The time in nanoseconds, for which the port has been alive beyond Duration (sec).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationInNsec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationInNsec"])
 
     @property
     def ErrorCode(self):
@@ -134,7 +134,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -144,7 +144,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def FrameAlignmentErrors(self):
@@ -154,7 +154,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of Frame Alignment errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameAlignmentErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameAlignmentErrors"])
 
     @property
     def Latency(self):
@@ -164,7 +164,7 @@ class PortStatLearnedInformation(Base):
         -------
         - number: Signifies the latency measurement for the OpenFlow channel in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -174,7 +174,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the local IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -184,7 +184,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def PacketsDroppedByRx(self):
@@ -194,7 +194,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of packets dropped by the receiving port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsDroppedByRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsDroppedByRx"])
 
     @property
     def PacketsDroppedByTx(self):
@@ -204,7 +204,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of packets dropped by the transmitting port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsDroppedByTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsDroppedByTx"])
 
     @property
     def PacketsWithRxOverrun(self):
@@ -214,7 +214,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of packets with received overruns.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsWithRxOverrun'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsWithRxOverrun"])
 
     @property
     def PortNo(self):
@@ -224,7 +224,7 @@ class PortStatLearnedInformation(Base):
         -------
         - number: Signifies the port number used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNo'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNo"])
 
     @property
     def ReceivedBytes(self):
@@ -234,7 +234,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of bytes received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedBytes'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedBytes"])
 
     @property
     def ReceivedErrors(self):
@@ -244,7 +244,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of received errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedErrors"])
 
     @property
     def ReceivedPackets(self):
@@ -254,7 +254,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of packets received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedPackets'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedPackets"])
 
     @property
     def RemoteIp(self):
@@ -264,7 +264,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -274,7 +274,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the reply state of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def TransmitErrors(self):
@@ -284,7 +284,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of Transmit errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitErrors"])
 
     @property
     def TransmittedBytes(self):
@@ -294,7 +294,7 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of bytes transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmittedBytes'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmittedBytes"])
 
     @property
     def TransmittedPackets(self):
@@ -304,10 +304,10 @@ class PortStatLearnedInformation(Base):
         -------
         - str: Signifies the number of packets transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmittedPackets'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmittedPackets"])
 
     def add(self):
-        """Adds a new portStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new portStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -319,7 +319,33 @@ class PortStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Collisions=None, CrcErrors=None, DataPathId=None, DataPathIdAsHex=None, Duration=None, DurationInNsec=None, ErrorCode=None, ErrorType=None, FrameAlignmentErrors=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketsDroppedByRx=None, PacketsDroppedByTx=None, PacketsWithRxOverrun=None, PortNo=None, ReceivedBytes=None, ReceivedErrors=None, ReceivedPackets=None, RemoteIp=None, ReplyState=None, TransmitErrors=None, TransmittedBytes=None, TransmittedPackets=None):
+    def find(
+        self,
+        Collisions=None,
+        CrcErrors=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        Duration=None,
+        DurationInNsec=None,
+        ErrorCode=None,
+        ErrorType=None,
+        FrameAlignmentErrors=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        PacketsDroppedByRx=None,
+        PacketsDroppedByTx=None,
+        PacketsWithRxOverrun=None,
+        PortNo=None,
+        ReceivedBytes=None,
+        ReceivedErrors=None,
+        ReceivedPackets=None,
+        RemoteIp=None,
+        ReplyState=None,
+        TransmitErrors=None,
+        TransmittedBytes=None,
+        TransmittedPackets=None,
+    ):
         # type: (str, str, str, str, int, int, str, str, str, int, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> PortStatLearnedInformation
         """Finds and retrieves portStatLearnedInformation resources from the server.
 

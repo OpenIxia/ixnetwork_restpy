@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class Ipv6Unicast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6Unicast'
+    _SDM_NAME = "ipv6Unicast"
     _SDM_ATT_MAP = {
-        'AsPath': 'asPath',
-        'Community': 'community',
-        'IpPrefix': 'ipPrefix',
-        'LocalPreference': 'localPreference',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Neighbor': 'neighbor',
-        'NextHop': 'nextHop',
-        'OriginType': 'originType',
-        'PrefixLength': 'prefixLength',
+        "AsPath": "asPath",
+        "Community": "community",
+        "IpPrefix": "ipPrefix",
+        "LocalPreference": "localPreference",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Neighbor": "neighbor",
+        "NextHop": "nextHop",
+        "OriginType": "originType",
+        "PrefixLength": "prefixLength",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv6Unicast, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class Ipv6Unicast(Base):
         -------
         - str: Indicates the local IP address of the BGP router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPath"])
 
     @property
     def Community(self):
@@ -69,7 +69,7 @@ class Ipv6Unicast(Base):
         -------
         - str: The BGP Community attribute to be added to the BGP entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Community'])
+        return self._get_attribute(self._SDM_ATT_MAP["Community"])
 
     @property
     def IpPrefix(self):
@@ -79,7 +79,7 @@ class Ipv6Unicast(Base):
         -------
         - str: The route IP prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
 
     @property
     def LocalPreference(self):
@@ -89,7 +89,7 @@ class Ipv6Unicast(Base):
         -------
         - number: Indicates the value of the local preference attribute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
 
     @property
     def MultiExitDiscriminator(self):
@@ -99,7 +99,7 @@ class Ipv6Unicast(Base):
         -------
         - number: A metric field of the route file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator'])
+        return self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
 
     @property
     def Neighbor(self):
@@ -109,7 +109,7 @@ class Ipv6Unicast(Base):
         -------
         - str: The descriptive identifier for the BGP neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def NextHop(self):
@@ -119,7 +119,7 @@ class Ipv6Unicast(Base):
         -------
         - str: A 4-octet IP address which indicates the next hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     @property
     def OriginType(self):
@@ -129,7 +129,7 @@ class Ipv6Unicast(Base):
         -------
         - str: An indication of where the route entry originated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginType"])
 
     @property
     def PrefixLength(self):
@@ -139,10 +139,10 @@ class Ipv6Unicast(Base):
         -------
         - number: The length of the route IP prefix, in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
 
     def add(self):
-        """Adds a new ipv6Unicast resource on the json, only valid with config assistant
+        """Adds a new ipv6Unicast resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -154,7 +154,18 @@ class Ipv6Unicast(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AsPath=None, Community=None, IpPrefix=None, LocalPreference=None, MultiExitDiscriminator=None, Neighbor=None, NextHop=None, OriginType=None, PrefixLength=None):
+    def find(
+        self,
+        AsPath=None,
+        Community=None,
+        IpPrefix=None,
+        LocalPreference=None,
+        MultiExitDiscriminator=None,
+        Neighbor=None,
+        NextHop=None,
+        OriginType=None,
+        PrefixLength=None,
+    ):
         # type: (str, str, str, int, int, str, str, str, int) -> Ipv6Unicast
         """Finds and retrieves ipv6Unicast resources from the server.
 

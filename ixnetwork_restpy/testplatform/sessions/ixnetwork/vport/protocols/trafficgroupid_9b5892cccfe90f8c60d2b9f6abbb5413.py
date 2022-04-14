@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,12 +35,11 @@ class TrafficGroupId(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trafficGroupId'
+    _SDM_NAME = "trafficGroupId"
     _SDM_ATT_MAP = {
-        'TrafficGroupId': 'trafficGroupId',
+        "TrafficGroupId": "trafficGroupId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TrafficGroupId, self).__init__(parent, list_op)
@@ -50,13 +50,14 @@ class TrafficGroupId(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): 
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     def update(self, TrafficGroupId=None):
         # type: (str) -> TrafficGroupId
@@ -64,7 +65,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): 
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
 
         Raises
         ------
@@ -78,7 +79,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): 
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
 
         Returns
         -------
@@ -110,7 +111,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): 
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
 
         Returns
         -------

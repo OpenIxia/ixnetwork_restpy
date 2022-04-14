@@ -18,19 +18,19 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 from ixnetwork_restpy.base import Base
 
 
 class Steps(Base):
-    """List of all possible steps for this multivalue
-    """
-    _SDM_NAME = 'nest'
+    """List of all possible steps for this multivalue"""
+
+    _SDM_NAME = "nest"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Step': 'step',
-        'Owner': 'owner',
-        'Description': 'description'
+        "Enabled": "enabled",
+        "Step": "step",
+        "Owner": "owner",
+        "Description": "description",
     }
 
     def __init__(self, parent, list_op=False):
@@ -44,7 +44,7 @@ class Steps(Base):
         -------
         - str: The description of the step
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def Owner(self):
@@ -54,7 +54,7 @@ class Steps(Base):
         -------
         - str: The href of the owner
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
+        return self._get_attribute(self._SDM_ATT_MAP["Owner"])
 
     @property
     def Enabled(self):
@@ -64,10 +64,11 @@ class Steps(Base):
         -------
         - bool: Enable the step or disable the step
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, enabled):
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], enabled)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], enabled)
 
     @property
     def Step(self):
@@ -77,10 +78,11 @@ class Steps(Base):
         -------
         - str: The value of the step
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     def update(self, Enabled=None, Step=None):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
@@ -108,25 +110,25 @@ class Steps(Base):
     def _custom_select(self, Description=None):
         filters = []
         if Description is not None:
-            filters.append({'property': 'description', 'regex': Description})
+            filters.append({"property": "description", "regex": Description})
         payload = {
-            'selects': [
+            "selects": [
                 {
-                    'from': self._parent.href,
-                    'properties': [],
-                    'children': [
+                    "from": self._parent.href,
+                    "properties": [],
+                    "children": [
                         {
-                            'child': Steps._SDM_NAME,
-                            'properties': ['*'],
-                            'filters': filters
+                            "child": Steps._SDM_NAME,
+                            "properties": ["*"],
+                            "filters": filters,
                         }
                     ],
-                    'inlines': []
+                    "inlines": [],
                 }
             ]
         }
-        end = self._parent.href.index('ixnetwork') + len('ixnetwork')
-        url = '%s/operations/select' % self._parent.href[0:end]
+        end = self._parent.href.index("ixnetwork") + len("ixnetwork")
+        url = "%s/operations/select" % self._parent.href[0:end]
         self._set_properties(None, clear=True)
         for properties in self._connection._execute(url, payload)[0][Steps._SDM_NAME]:
             self._set_properties(properties)

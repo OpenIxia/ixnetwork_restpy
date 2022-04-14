@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,28 @@ class AppLibProfile(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'appLibProfile'
+    _SDM_NAME = "appLibProfile"
     _SDM_ATT_MAP = {
-        'AvailableFlows': 'availableFlows',
-        'ConfiguredFlows': 'configuredFlows',
-        'EnablePerIPStats': 'enablePerIPStats',
-        'ObjectiveDistribution': 'objectiveDistribution',
-        'ObjectiveType': 'objectiveType',
-        'ObjectiveValue': 'objectiveValue',
-        'TrafficState': 'trafficState',
+        "AvailableFlows": "availableFlows",
+        "ConfiguredFlows": "configuredFlows",
+        "EnablePerIPStats": "enablePerIPStats",
+        "ObjectiveDistribution": "objectiveDistribution",
+        "ObjectiveType": "objectiveType",
+        "ObjectiveValue": "objectiveValue",
+        "TrafficState": "trafficState",
     }
     _SDM_ENUM_MAP = {
-        'objectiveDistribution': ['applyFullObjectiveToEachPort', 'splitObjectiveEvenlyAmongPorts'],
-        'objectiveType': ['simulatedUsers', 'throughputGbps', 'throughputKbps', 'throughputMbps'],
-        'trafficState': ['Configured', 'Interim', 'Running', 'Unconfigured'],
+        "objectiveDistribution": [
+            "applyFullObjectiveToEachPort",
+            "splitObjectiveEvenlyAmongPorts",
+        ],
+        "objectiveType": [
+            "simulatedUsers",
+            "throughputGbps",
+            "throughputKbps",
+            "throughputMbps",
+        ],
+        "trafficState": ["Configured", "Interim", "Running", "Unconfigured"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +73,13 @@ class AppLibProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.applibflow import AppLibFlow
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.applibflow import (
+            AppLibFlow,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AppLibFlow', None) is not None:
-                return self._properties.get('AppLibFlow')
+            if self._properties.get("AppLibFlow", None) is not None:
+                return self._properties.get("AppLibFlow")
         return AppLibFlow(self)
 
     @property
@@ -78,7 +90,7 @@ class AppLibProfile(Base):
         -------
         - list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise]): (Read only) All available application library flows.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableFlows"])
 
     @property
     def ConfiguredFlows(self):
@@ -88,11 +100,12 @@ class AppLibProfile(Base):
         -------
         - list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise]): Configured application library flows within profile.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfiguredFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfiguredFlows"])
+
     @ConfiguredFlows.setter
     def ConfiguredFlows(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConfiguredFlows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConfiguredFlows"], value)
 
     @property
     def EnablePerIPStats(self):
@@ -102,11 +115,12 @@ class AppLibProfile(Base):
         -------
         - bool: Enable Per IP Stats. When true then Per IP statistic drilldown is available.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePerIPStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePerIPStats"])
+
     @EnablePerIPStats.setter
     def EnablePerIPStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePerIPStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePerIPStats"], value)
 
     @property
     def ObjectiveDistribution(self):
@@ -116,11 +130,12 @@ class AppLibProfile(Base):
         -------
         - str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts): Objective distribution value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectiveDistribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectiveDistribution"])
+
     @ObjectiveDistribution.setter
     def ObjectiveDistribution(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ObjectiveDistribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ObjectiveDistribution"], value)
 
     @property
     def ObjectiveType(self):
@@ -130,11 +145,12 @@ class AppLibProfile(Base):
         -------
         - str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps): The objective type of the test.A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectiveType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectiveType"])
+
     @ObjectiveType.setter
     def ObjectiveType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ObjectiveType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ObjectiveType"], value)
 
     @property
     def ObjectiveValue(self):
@@ -144,11 +160,12 @@ class AppLibProfile(Base):
         -------
         - number: The absolute value of either simulated users or throughput in its measure unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectiveValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectiveValue"])
+
     @ObjectiveValue.setter
     def ObjectiveValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ObjectiveValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ObjectiveValue"], value)
 
     @property
     def TrafficState(self):
@@ -158,9 +175,16 @@ class AppLibProfile(Base):
         -------
         - str(Configured | Interim | Running | Unconfigured): (Read only) A read-only field which indicates the current state of the traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficState'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficState"])
 
-    def update(self, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None):
+    def update(
+        self,
+        ConfiguredFlows=None,
+        EnablePerIPStats=None,
+        ObjectiveDistribution=None,
+        ObjectiveType=None,
+        ObjectiveValue=None,
+    ):
         # type: (List[str], bool, str, str, int) -> AppLibProfile
         """Updates appLibProfile resource on the server.
 
@@ -178,7 +202,14 @@ class AppLibProfile(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None):
+    def add(
+        self,
+        ConfiguredFlows=None,
+        EnablePerIPStats=None,
+        ObjectiveDistribution=None,
+        ObjectiveType=None,
+        ObjectiveValue=None,
+    ):
         # type: (List[str], bool, str, str, int) -> AppLibProfile
         """Adds a new appLibProfile resource on the server and adds it to the container.
 
@@ -210,7 +241,16 @@ class AppLibProfile(Base):
         """
         self._delete()
 
-    def find(self, AvailableFlows=None, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None, TrafficState=None):
+    def find(
+        self,
+        AvailableFlows=None,
+        ConfiguredFlows=None,
+        EnablePerIPStats=None,
+        ObjectiveDistribution=None,
+        ObjectiveType=None,
+        ObjectiveValue=None,
+        TrafficState=None,
+    ):
         # type: (List[str], List[str], bool, str, str, int, str) -> AppLibProfile
         """Finds and retrieves appLibProfile resources from the server.
 
@@ -272,10 +312,12 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addAppLibraryFlow', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addAppLibraryFlow", payload=payload, response_object=None)
 
     def AddAppLibraryFlowEx(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -293,10 +335,14 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addAppLibraryFlowEx', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addAppLibraryFlowEx", payload=payload, response_object=None
+        )
 
     def DistributeFlowsEvenly(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -313,10 +359,14 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('distributeFlowsEvenly', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "distributeFlowsEvenly", payload=payload, response_object=None
+        )
 
     def RemoveAppLibraryFlow(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -334,10 +384,14 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAppLibraryFlow', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "removeAppLibraryFlow", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -354,10 +408,12 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -374,7 +430,9 @@ class AppLibProfile(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

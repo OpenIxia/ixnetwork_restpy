@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class StatFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statFilter'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "statFilter"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StatFilter, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.bfdaggregatedstatistics.bfdaggregatedstatistics import BfdAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.bfdaggregatedstatistics.bfdaggregatedstatistics import (
+            BfdAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BfdAggregatedStatistics', None) is not None:
-                return self._properties.get('BfdAggregatedStatistics')
+            if self._properties.get("BfdAggregatedStatistics", None) is not None:
+                return self._properties.get("BfdAggregatedStatistics")
         return BfdAggregatedStatistics(self)._select()
 
     @property
@@ -69,10 +71,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.bgpaggregatedstatistics.bgpaggregatedstatistics import BgpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.bgpaggregatedstatistics.bgpaggregatedstatistics import (
+            BgpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAggregatedStatistics', None) is not None:
-                return self._properties.get('BgpAggregatedStatistics')
+            if self._properties.get("BgpAggregatedStatistics", None) is not None:
+                return self._properties.get("BgpAggregatedStatistics")
         return BgpAggregatedStatistics(self)._select()
 
     @property
@@ -86,10 +91,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.cfmaggregatedstatistics.cfmaggregatedstatistics import CfmAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.cfmaggregatedstatistics.cfmaggregatedstatistics import (
+            CfmAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmAggregatedStatistics', None) is not None:
-                return self._properties.get('CfmAggregatedStatistics')
+            if self._properties.get("CfmAggregatedStatistics", None) is not None:
+                return self._properties.get("CfmAggregatedStatistics")
         return CfmAggregatedStatistics(self)._select()
 
     @property
@@ -103,10 +111,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.eigrpaggregatedstatistics.eigrpaggregatedstatistics import EigrpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.eigrpaggregatedstatistics.eigrpaggregatedstatistics import (
+            EigrpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EigrpAggregatedStatistics', None) is not None:
-                return self._properties.get('EigrpAggregatedStatistics')
+            if self._properties.get("EigrpAggregatedStatistics", None) is not None:
+                return self._properties.get("EigrpAggregatedStatistics")
         return EigrpAggregatedStatistics(self)._select()
 
     @property
@@ -120,10 +131,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.globalprotocolstatistics.globalprotocolstatistics import GlobalProtocolStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.globalprotocolstatistics.globalprotocolstatistics import (
+            GlobalProtocolStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GlobalProtocolStatistics', None) is not None:
-                return self._properties.get('GlobalProtocolStatistics')
+            if self._properties.get("GlobalProtocolStatistics", None) is not None:
+                return self._properties.get("GlobalProtocolStatistics")
         return GlobalProtocolStatistics(self)._select()
 
     @property
@@ -137,10 +151,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.igmpaggregatedstatistics.igmpaggregatedstatistics import IgmpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.igmpaggregatedstatistics.igmpaggregatedstatistics import (
+            IgmpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpAggregatedStatistics', None) is not None:
-                return self._properties.get('IgmpAggregatedStatistics')
+            if self._properties.get("IgmpAggregatedStatistics", None) is not None:
+                return self._properties.get("IgmpAggregatedStatistics")
         return IgmpAggregatedStatistics(self)._select()
 
     @property
@@ -154,10 +171,16 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.igmpquerieraggregatedstatistics.igmpquerieraggregatedstatistics import IgmpQuerierAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.igmpquerieraggregatedstatistics.igmpquerieraggregatedstatistics import (
+            IgmpQuerierAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpQuerierAggregatedStatistics', None) is not None:
-                return self._properties.get('IgmpQuerierAggregatedStatistics')
+            if (
+                self._properties.get("IgmpQuerierAggregatedStatistics", None)
+                is not None
+            ):
+                return self._properties.get("IgmpQuerierAggregatedStatistics")
         return IgmpQuerierAggregatedStatistics(self)._select()
 
     @property
@@ -171,10 +194,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.isisaggregatedstatistics.isisaggregatedstatistics import IsisAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.isisaggregatedstatistics.isisaggregatedstatistics import (
+            IsisAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisAggregatedStatistics', None) is not None:
-                return self._properties.get('IsisAggregatedStatistics')
+            if self._properties.get("IsisAggregatedStatistics", None) is not None:
+                return self._properties.get("IsisAggregatedStatistics")
         return IsisAggregatedStatistics(self)._select()
 
     @property
@@ -188,10 +214,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.lacpaggregatedstatistics.lacpaggregatedstatistics import LacpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.lacpaggregatedstatistics.lacpaggregatedstatistics import (
+            LacpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LacpAggregatedStatistics', None) is not None:
-                return self._properties.get('LacpAggregatedStatistics')
+            if self._properties.get("LacpAggregatedStatistics", None) is not None:
+                return self._properties.get("LacpAggregatedStatistics")
         return LacpAggregatedStatistics(self)._select()
 
     @property
@@ -205,10 +234,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ldpaggregatedstatistics.ldpaggregatedstatistics import LdpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ldpaggregatedstatistics.ldpaggregatedstatistics import (
+            LdpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpAggregatedStatistics', None) is not None:
-                return self._properties.get('LdpAggregatedStatistics')
+            if self._properties.get("LdpAggregatedStatistics", None) is not None:
+                return self._properties.get("LdpAggregatedStatistics")
         return LdpAggregatedStatistics(self)._select()
 
     @property
@@ -222,10 +254,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.lispaggregatedstatistics.lispaggregatedstatistics import LispAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.lispaggregatedstatistics.lispaggregatedstatistics import (
+            LispAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LispAggregatedStatistics', None) is not None:
-                return self._properties.get('LispAggregatedStatistics')
+            if self._properties.get("LispAggregatedStatistics", None) is not None:
+                return self._properties.get("LispAggregatedStatistics")
         return LispAggregatedStatistics(self)._select()
 
     @property
@@ -239,10 +274,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.mldaggregatedstatistics.mldaggregatedstatistics import MldAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.mldaggregatedstatistics.mldaggregatedstatistics import (
+            MldAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldAggregatedStatistics', None) is not None:
-                return self._properties.get('MldAggregatedStatistics')
+            if self._properties.get("MldAggregatedStatistics", None) is not None:
+                return self._properties.get("MldAggregatedStatistics")
         return MldAggregatedStatistics(self)._select()
 
     @property
@@ -256,10 +294,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.mldquerieraggregatedstatistics.mldquerieraggregatedstatistics import MldQuerierAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.mldquerieraggregatedstatistics.mldquerieraggregatedstatistics import (
+            MldQuerierAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldQuerierAggregatedStatistics', None) is not None:
-                return self._properties.get('MldQuerierAggregatedStatistics')
+            if self._properties.get("MldQuerierAggregatedStatistics", None) is not None:
+                return self._properties.get("MldQuerierAggregatedStatistics")
         return MldQuerierAggregatedStatistics(self)._select()
 
     @property
@@ -273,10 +314,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.oamaggregatedstatistics.oamaggregatedstatistics import OamAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.oamaggregatedstatistics.oamaggregatedstatistics import (
+            OamAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OamAggregatedStatistics', None) is not None:
-                return self._properties.get('OamAggregatedStatistics')
+            if self._properties.get("OamAggregatedStatistics", None) is not None:
+                return self._properties.get("OamAggregatedStatistics")
         return OamAggregatedStatistics(self)._select()
 
     @property
@@ -290,10 +334,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.openflowaggregatedstatistics.openflowaggregatedstatistics import OpenflowAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.openflowaggregatedstatistics.openflowaggregatedstatistics import (
+            OpenflowAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenflowAggregatedStatistics', None) is not None:
-                return self._properties.get('OpenflowAggregatedStatistics')
+            if self._properties.get("OpenflowAggregatedStatistics", None) is not None:
+                return self._properties.get("OpenflowAggregatedStatistics")
         return OpenflowAggregatedStatistics(self)._select()
 
     @property
@@ -307,10 +354,16 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.openflowswitchaggregatedstatistics.openflowswitchaggregatedstatistics import OpenflowSwitchAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.openflowswitchaggregatedstatistics.openflowswitchaggregatedstatistics import (
+            OpenflowSwitchAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenflowSwitchAggregatedStatistics', None) is not None:
-                return self._properties.get('OpenflowSwitchAggregatedStatistics')
+            if (
+                self._properties.get("OpenflowSwitchAggregatedStatistics", None)
+                is not None
+            ):
+                return self._properties.get("OpenflowSwitchAggregatedStatistics")
         return OpenflowSwitchAggregatedStatistics(self)._select()
 
     @property
@@ -324,10 +377,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ospfaggregatedstatistics.ospfaggregatedstatistics import OspfAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ospfaggregatedstatistics.ospfaggregatedstatistics import (
+            OspfAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfAggregatedStatistics', None) is not None:
-                return self._properties.get('OspfAggregatedStatistics')
+            if self._properties.get("OspfAggregatedStatistics", None) is not None:
+                return self._properties.get("OspfAggregatedStatistics")
         return OspfAggregatedStatistics(self)._select()
 
     @property
@@ -341,10 +397,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ospfv3aggregatedstatistics.ospfv3aggregatedstatistics import Ospfv3AggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ospfv3aggregatedstatistics.ospfv3aggregatedstatistics import (
+            Ospfv3AggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv3AggregatedStatistics', None) is not None:
-                return self._properties.get('Ospfv3AggregatedStatistics')
+            if self._properties.get("Ospfv3AggregatedStatistics", None) is not None:
+                return self._properties.get("Ospfv3AggregatedStatistics")
         return Ospfv3AggregatedStatistics(self)._select()
 
     @property
@@ -358,10 +417,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.pimsmaggregatedstatistics.pimsmaggregatedstatistics import PimsmAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.pimsmaggregatedstatistics.pimsmaggregatedstatistics import (
+            PimsmAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PimsmAggregatedStatistics', None) is not None:
-                return self._properties.get('PimsmAggregatedStatistics')
+            if self._properties.get("PimsmAggregatedStatistics", None) is not None:
+                return self._properties.get("PimsmAggregatedStatistics")
         return PimsmAggregatedStatistics(self)._select()
 
     @property
@@ -375,10 +437,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.portstatistics.portstatistics import PortStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.portstatistics.portstatistics import (
+            PortStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PortStatistics', None) is not None:
-                return self._properties.get('PortStatistics')
+            if self._properties.get("PortStatistics", None) is not None:
+                return self._properties.get("PortStatistics")
         return PortStatistics(self)._select()
 
     @property
@@ -392,10 +457,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ripaggregatedstatistics.ripaggregatedstatistics import RipAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ripaggregatedstatistics.ripaggregatedstatistics import (
+            RipAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RipAggregatedStatistics', None) is not None:
-                return self._properties.get('RipAggregatedStatistics')
+            if self._properties.get("RipAggregatedStatistics", None) is not None:
+                return self._properties.get("RipAggregatedStatistics")
         return RipAggregatedStatistics(self)._select()
 
     @property
@@ -409,10 +477,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ripngaggregatedstatistics.ripngaggregatedstatistics import RipngAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.ripngaggregatedstatistics.ripngaggregatedstatistics import (
+            RipngAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RipngAggregatedStatistics', None) is not None:
-                return self._properties.get('RipngAggregatedStatistics')
+            if self._properties.get("RipngAggregatedStatistics", None) is not None:
+                return self._properties.get("RipngAggregatedStatistics")
         return RipngAggregatedStatistics(self)._select()
 
     @property
@@ -426,10 +497,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.rsvpaggregatedstatistics.rsvpaggregatedstatistics import RsvpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.rsvpaggregatedstatistics.rsvpaggregatedstatistics import (
+            RsvpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpAggregatedStatistics', None) is not None:
-                return self._properties.get('RsvpAggregatedStatistics')
+            if self._properties.get("RsvpAggregatedStatistics", None) is not None:
+                return self._properties.get("RsvpAggregatedStatistics")
         return RsvpAggregatedStatistics(self)._select()
 
     @property
@@ -443,10 +517,13 @@ class StatFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.stpaggregatedstatistics.stpaggregatedstatistics import StpAggregatedStatistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.stpaggregatedstatistics.stpaggregatedstatistics import (
+            StpAggregatedStatistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StpAggregatedStatistics', None) is not None:
-                return self._properties.get('StpAggregatedStatistics')
+            if self._properties.get("StpAggregatedStatistics", None) is not None:
+                return self._properties.get("StpAggregatedStatistics")
         return StpAggregatedStatistics(self)._select()
 
     def find(self):

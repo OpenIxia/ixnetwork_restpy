@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class Statistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statistics'
+    _SDM_NAME = "statistics"
     _SDM_ATT_MAP = {
-        'CsvLoggingResultsFolder': 'csvLoggingResultsFolder',
-        'CsvLoggingRootFolder': 'csvLoggingRootFolder',
+        "CsvLoggingResultsFolder": "csvLoggingResultsFolder",
+        "CsvLoggingRootFolder": "csvLoggingRootFolder",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Statistics, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.advanced import Advanced
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.advanced import (
+            Advanced,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Advanced', None) is not None:
-                return self._properties.get('Advanced')
+            if self._properties.get("Advanced", None) is not None:
+                return self._properties.get("Advanced")
         return Advanced(self)._select()
 
     @property
@@ -71,10 +74,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.datacenter.datacenter import Datacenter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.datacenter.datacenter import (
+            Datacenter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Datacenter', None) is not None:
-                return self._properties.get('Datacenter')
+            if self._properties.get("Datacenter", None) is not None:
+                return self._properties.get("Datacenter")
         return Datacenter(self)._select()
 
     @property
@@ -88,10 +94,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.statfilter import StatFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.statfilter.statfilter import (
+            StatFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StatFilter', None) is not None:
-                return self._properties.get('StatFilter')
+            if self._properties.get("StatFilter", None) is not None:
+                return self._properties.get("StatFilter")
         return StatFilter(self)._select()
 
     @property
@@ -105,10 +114,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.testinspector import TestInspector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.testinspector import (
+            TestInspector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TestInspector', None) is not None:
-                return self._properties.get('TestInspector')
+            if self._properties.get("TestInspector", None) is not None:
+                return self._properties.get("TestInspector")
         return TestInspector(self)._select()
 
     @property
@@ -119,7 +131,7 @@ class Statistics(Base):
         -------
         - str: Fetch the current result folder
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLoggingResultsFolder'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLoggingResultsFolder"])
 
     @property
     def CsvLoggingRootFolder(self):
@@ -129,11 +141,12 @@ class Statistics(Base):
         -------
         - str: Set the CSV Logging Path (the root folder for test results {csv logging, snapshot}) which is stored in config
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLoggingRootFolder'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLoggingRootFolder"])
+
     @CsvLoggingRootFolder.setter
     def CsvLoggingRootFolder(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvLoggingRootFolder'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvLoggingRootFolder"], value)
 
     def update(self, CsvLoggingRootFolder=None):
         # type: (str) -> Statistics

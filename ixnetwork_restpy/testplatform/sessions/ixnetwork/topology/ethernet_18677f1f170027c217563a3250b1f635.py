@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,35 @@ class Ethernet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernet'
+    _SDM_NAME = "ethernet"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlans': 'enableVlans',
-        'Errors': 'errors',
-        'Mac': 'mac',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NotifyMACMove': 'notifyMACMove',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'UseVlans': 'useVlans',
-        'VlanCount': 'vlanCount',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableVlans": "enableVlans",
+        "Errors": "errors",
+        "Mac": "mac",
+        "Mtu": "mtu",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NotifyMACMove": "notifyMACMove",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "UseVlans": "useVlans",
+        "VlanCount": "vlanCount",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +80,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import BondedGRE
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import (
+            BondedGRE,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BondedGRE', None) is not None:
-                return self._properties.get('BondedGRE')
+            if self._properties.get("BondedGRE", None) is not None:
+                return self._properties.get("BondedGRE")
         return BondedGRE(self)
 
     @property
@@ -88,10 +100,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import (
+            CfmBridge,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmBridge', None) is not None:
-                return self._properties.get('CfmBridge')
+            if self._properties.get("CfmBridge", None) is not None:
+                return self._properties.get("CfmBridge")
         return CfmBridge(self)
 
     @property
@@ -105,10 +120,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -122,10 +140,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22 import Dhcpv4client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22 import (
+            Dhcpv4client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv4client', None) is not None:
-                return self._properties.get('Dhcpv4client')
+            if self._properties.get("Dhcpv4client", None) is not None:
+                return self._properties.get("Dhcpv4client")
         return Dhcpv4client(self)
 
     @property
@@ -139,10 +160,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import (
+            Dhcpv6client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6client', None) is not None:
-                return self._properties.get('Dhcpv6client')
+            if self._properties.get("Dhcpv6client", None) is not None:
+                return self._properties.get("Dhcpv6client")
         return Dhcpv6client(self)
 
     @property
@@ -156,10 +180,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_be6aa3d6904655b1d213e3bea5751c84 import DotOneX
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_be6aa3d6904655b1d213e3bea5751c84 import (
+            DotOneX,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DotOneX', None) is not None:
-                return self._properties.get('DotOneX')
+            if self._properties.get("DotOneX", None) is not None:
+                return self._properties.get("DotOneX")
         return DotOneX(self)
 
     @property
@@ -173,10 +200,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRe', None) is not None:
-                return self._properties.get('ECpriRe')
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
         return ECpriRe(self)
 
     @property
@@ -190,10 +220,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRec', None) is not None:
-                return self._properties.get('ECpriRec')
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
         return ECpriRec(self)
 
     @property
@@ -207,10 +240,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.esmc_4d9a2f8edc72794b61857303b0afb00d import Esmc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.esmc_4d9a2f8edc72794b61857303b0afb00d import (
+            Esmc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Esmc', None) is not None:
-                return self._properties.get('Esmc')
+            if self._properties.get("Esmc", None) is not None:
+                return self._properties.get("Esmc")
         return Esmc(self)
 
     @property
@@ -224,10 +260,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import (
+            Ipv4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4', None) is not None:
-                return self._properties.get('Ipv4')
+            if self._properties.get("Ipv4", None) is not None:
+                return self._properties.get("Ipv4")
         return Ipv4(self)
 
     @property
@@ -241,10 +280,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390 import (
+            Ipv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6', None) is not None:
-                return self._properties.get('Ipv6')
+            if self._properties.get("Ipv6", None) is not None:
+                return self._properties.get("Ipv6")
         return Ipv6(self)
 
     @property
@@ -258,10 +300,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import Ipv6Autoconfiguration
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import (
+            Ipv6Autoconfiguration,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6Autoconfiguration', None) is not None:
-                return self._properties.get('Ipv6Autoconfiguration')
+            if self._properties.get("Ipv6Autoconfiguration", None) is not None:
+                return self._properties.get("Ipv6Autoconfiguration")
         return Ipv6Autoconfiguration(self)
 
     @property
@@ -275,10 +320,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import IsisDceSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import (
+            IsisDceSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisDceSimRouter', None) is not None:
-                return self._properties.get('IsisDceSimRouter')
+            if self._properties.get("IsisDceSimRouter", None) is not None:
+                return self._properties.get("IsisDceSimRouter")
         return IsisDceSimRouter(self)
 
     @property
@@ -292,10 +340,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import IsisFabricPath
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import (
+            IsisFabricPath,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisFabricPath', None) is not None:
-                return self._properties.get('IsisFabricPath')
+            if self._properties.get("IsisFabricPath", None) is not None:
+                return self._properties.get("IsisFabricPath")
         return IsisFabricPath(self)
 
     @property
@@ -309,10 +360,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import IsisL3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import (
+            IsisL3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3', None) is not None:
-                return self._properties.get('IsisL3')
+            if self._properties.get("IsisL3", None) is not None:
+                return self._properties.get("IsisL3")
         return IsisL3(self)
 
     @property
@@ -326,10 +380,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import IsisSpbBcb
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import (
+            IsisSpbBcb,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbBcb', None) is not None:
-                return self._properties.get('IsisSpbBcb')
+            if self._properties.get("IsisSpbBcb", None) is not None:
+                return self._properties.get("IsisSpbBcb")
         return IsisSpbBcb(self)
 
     @property
@@ -343,10 +400,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import IsisSpbBeb
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import (
+            IsisSpbBeb,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbBeb', None) is not None:
-                return self._properties.get('IsisSpbBeb')
+            if self._properties.get("IsisSpbBeb", None) is not None:
+                return self._properties.get("IsisSpbBeb")
         return IsisSpbBeb(self)
 
     @property
@@ -360,10 +420,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import IsisSpbSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import (
+            IsisSpbSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbSimRouter', None) is not None:
-                return self._properties.get('IsisSpbSimRouter')
+            if self._properties.get("IsisSpbSimRouter", None) is not None:
+                return self._properties.get("IsisSpbSimRouter")
         return IsisSpbSimRouter(self)
 
     @property
@@ -377,10 +440,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import IsisTrill
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import (
+            IsisTrill,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrill', None) is not None:
-                return self._properties.get('IsisTrill')
+            if self._properties.get("IsisTrill", None) is not None:
+                return self._properties.get("IsisTrill")
         return IsisTrill(self)
 
     @property
@@ -394,10 +460,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import IsisTrillSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import (
+            IsisTrillSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillSimRouter', None) is not None:
-                return self._properties.get('IsisTrillSimRouter')
+            if self._properties.get("IsisTrillSimRouter", None) is not None:
+                return self._properties.get("IsisTrillSimRouter")
         return IsisTrillSimRouter(self)
 
     @property
@@ -411,10 +480,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import Lacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import (
+            Lacp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lacp', None) is not None:
-                return self._properties.get('Lacp')
+            if self._properties.get("Lacp", None) is not None:
+                return self._properties.get("Lacp")
         return Lacp(self)
 
     @property
@@ -428,10 +500,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import Lagportlacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import (
+            Lagportlacp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportlacp', None) is not None:
-                return self._properties.get('Lagportlacp')
+            if self._properties.get("Lagportlacp", None) is not None:
+                return self._properties.get("Lagportlacp")
         return Lagportlacp(self)
 
     @property
@@ -445,10 +520,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import (
+            Lagportstaticlag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportstaticlag', None) is not None:
-                return self._properties.get('Lagportstaticlag')
+            if self._properties.get("Lagportstaticlag", None) is not None:
+                return self._properties.get("Lagportstaticlag")
         return Lagportstaticlag(self)
 
     @property
@@ -462,10 +540,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcpv6relayagent_f435ed323783b3dadd80a122fef5c031 import LightweightDhcpv6relayAgent
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcpv6relayagent_f435ed323783b3dadd80a122fef5c031 import (
+            LightweightDhcpv6relayAgent,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LightweightDhcpv6relayAgent', None) is not None:
-                return self._properties.get('LightweightDhcpv6relayAgent')
+            if self._properties.get("LightweightDhcpv6relayAgent", None) is not None:
+                return self._properties.get("LightweightDhcpv6relayAgent")
         return LightweightDhcpv6relayAgent(self)
 
     @property
@@ -473,16 +554,19 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040.Macsec): An instance of the Macsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d.Macsec): An instance of the Macsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040 import Macsec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d import (
+            Macsec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Macsec', None) is not None:
-                return self._properties.get('Macsec')
+            if self._properties.get("Macsec", None) is not None:
+                return self._properties.get("Macsec")
         return Macsec(self)
 
     @property
@@ -496,10 +580,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871 import Mka
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871 import (
+            Mka,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Mka', None) is not None:
-                return self._properties.get('Mka')
+            if self._properties.get("Mka", None) is not None:
+                return self._properties.get("Mka")
         return Mka(self)
 
     @property
@@ -513,10 +600,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import Mpls
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import (
+            Mpls,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Mpls', None) is not None:
-                return self._properties.get('Mpls')
+            if self._properties.get("Mpls", None) is not None:
+                return self._properties.get("Mpls")
         return Mpls(self)
 
     @property
@@ -530,10 +620,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import MsrpListener
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import (
+            MsrpListener,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsrpListener', None) is not None:
-                return self._properties.get('MsrpListener')
+            if self._properties.get("MsrpListener", None) is not None:
+                return self._properties.get("MsrpListener")
         return MsrpListener(self)
 
     @property
@@ -547,10 +640,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import MsrpTalker
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import (
+            MsrpTalker,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsrpTalker', None) is not None:
-                return self._properties.get('MsrpTalker')
+            if self._properties.get("MsrpTalker", None) is not None:
+                return self._properties.get("MsrpTalker")
         return MsrpTalker(self)
 
     @property
@@ -564,10 +660,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pbbevpnparameter_d05ae0a5a8ee8ea80a2b7ad1c575fa72 import PbbEVpnParameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pbbevpnparameter_d05ae0a5a8ee8ea80a2b7ad1c575fa72 import (
+            PbbEVpnParameter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PbbEVpnParameter', None) is not None:
-                return self._properties.get('PbbEVpnParameter')
+            if self._properties.get("PbbEVpnParameter", None) is not None:
+                return self._properties.get("PbbEVpnParameter")
         return PbbEVpnParameter(self)
 
     @property
@@ -581,10 +680,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import Pppoxclient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import (
+            Pppoxclient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pppoxclient', None) is not None:
-                return self._properties.get('Pppoxclient')
+            if self._properties.get("Pppoxclient", None) is not None:
+                return self._properties.get("Pppoxclient")
         return Pppoxclient(self)
 
     @property
@@ -598,10 +700,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import Pppoxserver
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import (
+            Pppoxserver,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pppoxserver', None) is not None:
-                return self._properties.get('Pppoxserver')
+            if self._properties.get("Pppoxserver", None) is not None:
+                return self._properties.get("Pppoxserver")
         return Pppoxserver(self)
 
     @property
@@ -615,10 +720,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import (
+            Ptp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ptp', None) is not None:
-                return self._properties.get('Ptp')
+            if self._properties.get("Ptp", None) is not None:
+                return self._properties.get("Ptp")
         return Ptp(self)
 
     @property
@@ -632,10 +740,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import (
+            StaticLag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StaticLag', None) is not None:
-                return self._properties.get('StaticLag')
+            if self._properties.get("StaticLag", None) is not None:
+                return self._properties.get("StaticLag")
         return StaticLag(self)
 
     @property
@@ -643,16 +754,19 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4 import StaticMacsec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d import (
+            StaticMacsec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StaticMacsec', None) is not None:
-                return self._properties.get('StaticMacsec')
+            if self._properties.get("StaticMacsec", None) is not None:
+                return self._properties.get("StaticMacsec")
         return StaticMacsec(self)
 
     @property
@@ -666,10 +780,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import Streams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import (
+            Streams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Streams', None) is not None:
-                return self._properties.get('Streams')
+            if self._properties.get("Streams", None) is not None:
+                return self._properties.get("Streams")
         return Streams(self)
 
     @property
@@ -683,10 +800,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -700,10 +820,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import (
+            Vlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vlan', None) is not None:
-                return self._properties.get('Vlan')
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)
 
     @property
@@ -717,25 +840,29 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vpnparameter_399bfde0d4939f8b431c339b39bb4720 import VpnParameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vpnparameter_399bfde0d4939f8b431c339b39bb4720 import (
+            VpnParameter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VpnParameter', None) is not None:
-                return self._properties.get('VpnParameter')
+            if self._properties.get("VpnParameter", None) is not None:
+                return self._properties.get("VpnParameter")
         return VpnParameter(self)
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -745,7 +872,7 @@ class Ethernet(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -755,7 +882,7 @@ class Ethernet(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableVlans(self):
@@ -766,7 +893,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables VLANs for the sessions.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlans']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableVlans"]))
 
     @property
     def Errors(self):
@@ -775,7 +903,7 @@ class Ethernet(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Mac(self):
@@ -786,7 +914,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mac"]))
 
     @property
     def Mtu(self):
@@ -797,7 +926,8 @@ class Ethernet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum transmission unit, min=68, max=14000
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mtu"]))
 
     @property
     def Multiplier(self):
@@ -807,11 +937,12 @@ class Ethernet(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -821,11 +952,12 @@ class Ethernet(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NotifyMACMove(self):
@@ -835,11 +967,12 @@ class Ethernet(Base):
         -------
         - bool: Flag to determine if MAC move notification to be sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NotifyMACMove'])
+        return self._get_attribute(self._SDM_ATT_MAP["NotifyMACMove"])
+
     @NotifyMACMove.setter
     def NotifyMACMove(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NotifyMACMove'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NotifyMACMove"], value)
 
     @property
     def SessionStatus(self):
@@ -849,7 +982,7 @@ class Ethernet(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -859,11 +992,12 @@ class Ethernet(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -872,7 +1006,7 @@ class Ethernet(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -882,21 +1016,22 @@ class Ethernet(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def UseVlans(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Flag to determine whether VLANs are enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseVlans'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseVlans"])
+
     @UseVlans.setter
     def UseVlans(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseVlans'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseVlans"], value)
 
     @property
     def VlanCount(self):
@@ -906,13 +1041,23 @@ class Ethernet(Base):
         -------
         - number: Number of active VLANs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        StackedLayers=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         # type: (List[str], int, str, bool, List[str], bool, int) -> Ethernet
         """Updates ethernet resource on the server.
 
@@ -935,7 +1080,16 @@ class Ethernet(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NotifyMACMove=None, StackedLayers=None, UseVlans=None, VlanCount=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        StackedLayers=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         # type: (List[str], int, str, bool, List[str], bool, int) -> Ethernet
         """Adds a new ethernet resource on the server and adds it to the container.
 
@@ -969,7 +1123,22 @@ class Ethernet(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NotifyMACMove=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, UseVlans=None, VlanCount=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NotifyMACMove=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         """Finds and retrieves ethernet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernet resources from the server.
@@ -1047,10 +1216,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1068,10 +1239,14 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchAndUpdateConfigFromCloud", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1100,10 +1275,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1132,10 +1309,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1164,10 +1343,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, Mtu=None):
         """Base class infrastructure that gets a list of ethernet device ids encapsulated by this object.

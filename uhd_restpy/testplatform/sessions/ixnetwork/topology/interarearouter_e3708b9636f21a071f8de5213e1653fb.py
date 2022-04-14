@@ -278,7 +278,7 @@ class InterAreaRouter(Base):
 
     def add(self, Name=None):
         # type: (str) -> InterAreaRouter
-        """Adds a new interAreaRouter resource on the json, only valid with config assistant
+        """Adds a new interAreaRouter resource on the json, only valid with batch add utility
 
         Args
         ----

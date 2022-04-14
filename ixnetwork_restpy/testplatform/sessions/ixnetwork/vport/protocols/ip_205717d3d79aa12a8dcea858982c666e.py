@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class Ip(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ip'
+    _SDM_NAME = "ip"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'IpStart': 'ipStart',
-        'IpType': 'ipType',
-        'Mask': 'mask',
-        'ProtocolInterface': 'protocolInterface',
-        'Step': 'step',
-        'TrafficGroupId': 'trafficGroupId',
+        "Count": "count",
+        "Enabled": "enabled",
+        "IpStart": "ipStart",
+        "IpType": "ipType",
+        "Mask": "mask",
+        "ProtocolInterface": "protocolInterface",
+        "Step": "step",
+        "TrafficGroupId": "trafficGroupId",
     }
     _SDM_ENUM_MAP = {
-        'ipType': ['ipv4', 'ipv6'],
+        "ipType": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,11 +61,12 @@ class Ip(Base):
         -------
         - number: The total number of addresses to create for this range of IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -74,11 +76,12 @@ class Ip(Base):
         -------
         - bool: Enables this IP address entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpStart(self):
@@ -88,11 +91,12 @@ class Ip(Base):
         -------
         - str: The first IP address in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpStart"])
+
     @IpStart.setter
     def IpStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpStart"], value)
 
     @property
     def IpType(self):
@@ -102,11 +106,12 @@ class Ip(Base):
         -------
         - str(ipv4 | ipv6): The Internet Protocol (IP version).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Mask(self):
@@ -116,11 +121,12 @@ class Ip(Base):
         -------
         - number: The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def ProtocolInterface(self):
@@ -130,11 +136,12 @@ class Ip(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): There may be multiple interfaces listed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def Step(self):
@@ -144,11 +151,12 @@ class Ip(Base):
         -------
         - number: The increment value to be used for each additional address, to create a range of IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     @property
     def TrafficGroupId(self):
@@ -158,13 +166,24 @@ class Ip(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+    def update(
+        self,
+        Count=None,
+        Enabled=None,
+        IpStart=None,
+        IpType=None,
+        Mask=None,
+        ProtocolInterface=None,
+        Step=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Updates ip resource on the server.
 
@@ -185,7 +204,17 @@ class Ip(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+    def add(
+        self,
+        Count=None,
+        Enabled=None,
+        IpStart=None,
+        IpType=None,
+        Mask=None,
+        ProtocolInterface=None,
+        Step=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Adds a new ip resource on the server and adds it to the container.
 
@@ -220,7 +249,17 @@ class Ip(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+    def find(
+        self,
+        Count=None,
+        Enabled=None,
+        IpStart=None,
+        IpType=None,
+        Mask=None,
+        ProtocolInterface=None,
+        Step=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Finds and retrieves ip resources from the server.
 

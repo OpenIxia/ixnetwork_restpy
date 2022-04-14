@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,48 +35,56 @@ class Ldppwvpls(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldppwvpls'
+    _SDM_NAME = "ldppwvpls"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AutoPeerID': 'autoPeerID',
-        'AutoPeerId': 'autoPeerId',
-        'BfdPwCV': 'bfdPwCV',
-        'BfdUdpCV': 'bfdUdpCV',
-        'CBitEnabled': 'cBitEnabled',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescEnabled': 'descEnabled',
-        'Description': 'description',
-        'DescriptiveName': 'descriptiveName',
-        'DownInterval': 'downInterval',
-        'DownStart': 'downStart',
-        'EnableCCCVNegotiation': 'enableCCCVNegotiation',
-        'EnablePWStatus': 'enablePWStatus',
-        'Errors': 'errors',
-        'GroupId': 'groupId',
-        'InterfaceType': 'interfaceType',
-        'Ipv6PeerId': 'ipv6PeerId',
-        'LSPPingCV': 'lSPPingCV',
-        'Label': 'label',
-        'LocalRouterID': 'localRouterID',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PWACHCC': 'pWACHCC',
-        'PWStatusCode': 'pWStatusCode',
-        'PeerId': 'peerId',
-        'PwStatusSendNotification': 'pwStatusSendNotification',
-        'RepeatCount': 'repeatCount',
-        'RouterAlertCC': 'routerAlertCC',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'UpInterval': 'upInterval',
-        'VCIDStart': 'vCIDStart',
+        "Active": "active",
+        "AutoPeerID": "autoPeerID",
+        "AutoPeerId": "autoPeerId",
+        "BfdPwCV": "bfdPwCV",
+        "BfdUdpCV": "bfdUdpCV",
+        "CBitEnabled": "cBitEnabled",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescEnabled": "descEnabled",
+        "Description": "description",
+        "DescriptiveName": "descriptiveName",
+        "DownInterval": "downInterval",
+        "DownStart": "downStart",
+        "EnableCCCVNegotiation": "enableCCCVNegotiation",
+        "EnablePWStatus": "enablePWStatus",
+        "Errors": "errors",
+        "GroupId": "groupId",
+        "InterfaceType": "interfaceType",
+        "Ipv6PeerId": "ipv6PeerId",
+        "LSPPingCV": "lSPPingCV",
+        "Label": "label",
+        "LocalRouterID": "localRouterID",
+        "Mtu": "mtu",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PWACHCC": "pWACHCC",
+        "PWStatusCode": "pWStatusCode",
+        "PeerId": "peerId",
+        "PwStatusSendNotification": "pwStatusSendNotification",
+        "RepeatCount": "repeatCount",
+        "RouterAlertCC": "routerAlertCC",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "UpInterval": "upInterval",
+        "VCIDStart": "vCIDStart",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -92,10 +101,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -109,10 +121,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import (
+            Ethernet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ethernet', None) is not None:
-                return self._properties.get('Ethernet')
+            if self._properties.get("Ethernet", None) is not None:
+                return self._properties.get("Ethernet")
         return Ethernet(self)
 
     @property
@@ -126,10 +141,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import (
+            Ipv4Loopback,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4Loopback', None) is not None:
-                return self._properties.get('Ipv4Loopback')
+            if self._properties.get("Ipv4Loopback", None) is not None:
+                return self._properties.get("Ipv4Loopback")
         return Ipv4Loopback(self)
 
     @property
@@ -143,10 +161,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import (
+            Ipv6Loopback,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6Loopback', None) is not None:
-                return self._properties.get('Ipv6Loopback')
+            if self._properties.get("Ipv6Loopback", None) is not None:
+                return self._properties.get("Ipv6Loopback")
         return Ipv6Loopback(self)
 
     @property
@@ -160,10 +181,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import (
+            LdpBasicRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpBasicRouter', None) is not None:
-                return self._properties.get('LdpBasicRouter')
+            if self._properties.get("LdpBasicRouter", None) is not None:
+                return self._properties.get("LdpBasicRouter")
         return LdpBasicRouter(self)
 
     @property
@@ -177,10 +201,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import (
+            LdpBasicRouterV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpBasicRouterV6', None) is not None:
-                return self._properties.get('LdpBasicRouterV6')
+            if self._properties.get("LdpBasicRouterV6", None) is not None:
+                return self._properties.get("LdpBasicRouterV6")
         return LdpBasicRouterV6(self)
 
     @property
@@ -194,10 +221,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import (
+            LdpTargetedRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouter', None) is not None:
-                return self._properties.get('LdpTargetedRouter')
+            if self._properties.get("LdpTargetedRouter", None) is not None:
+                return self._properties.get("LdpTargetedRouter")
         return LdpTargetedRouter(self)
 
     @property
@@ -211,10 +241,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import (
+            LdpTargetedRouterV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouterV6', None) is not None:
-                return self._properties.get('LdpTargetedRouterV6')
+            if self._properties.get("LdpTargetedRouterV6", None) is not None:
+                return self._properties.get("LdpTargetedRouterV6")
         return LdpTargetedRouterV6(self)
 
     @property
@@ -228,10 +261,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import Mpls
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import (
+            Mpls,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Mpls', None) is not None:
-                return self._properties.get('Mpls')
+            if self._properties.get("Mpls", None) is not None:
+                return self._properties.get("Mpls")
         return Mpls(self)
 
     @property
@@ -245,10 +281,13 @@ class Ldppwvpls(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -260,18 +299,20 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AutoPeerID(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LDP Peer IP would be taken from LDP router's peer configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoPeerID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoPeerID"]))
 
     @property
     def AutoPeerId(self):
@@ -281,11 +322,12 @@ class Ldppwvpls(Base):
         -------
         - bool: If selected, LDP Peer IP would be taken from LDP router's peer configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoPeerId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoPeerId"])
+
     @AutoPeerId.setter
     def AutoPeerId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoPeerId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoPeerId"], value)
 
     @property
     def BfdPwCV(self):
@@ -296,7 +338,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BFD PW-ACH CV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BfdPwCV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdPwCV"]))
 
     @property
     def BfdUdpCV(self):
@@ -307,7 +350,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BFD IP/UDP CV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BfdUdpCV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdUdpCV"]))
 
     @property
     def CBitEnabled(self):
@@ -318,21 +362,23 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, sets the C-Bit (flag). It is the highest order bit in the VC Type field. If the bit is set, it indicates the presence of a control word on this VC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CBitEnabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CBitEnabled"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -342,7 +388,7 @@ class Ldppwvpls(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescEnabled(self):
@@ -353,7 +399,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, indicates that an optional Interface Description is present
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DescEnabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DescEnabled"]))
 
     @property
     def Description(self):
@@ -364,7 +411,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An optional user-defined Interface Description. It may be used with ALL VC types. Valid length is 0 to 80 octets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Description']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Description"]))
 
     @property
     def DescriptiveName(self):
@@ -374,7 +422,7 @@ class Ldppwvpls(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DownInterval(self):
@@ -385,7 +433,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval for which the PW status will remain down
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DownInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DownInterval"]))
 
     @property
     def DownStart(self):
@@ -396,7 +445,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The duration in time after session becomes up and a notification message being sent to make the session down
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DownStart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DownStart"]))
 
     @property
     def EnableCCCVNegotiation(self):
@@ -407,7 +457,10 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, indicates that CCCV Negotiation is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCCCVNegotiation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCCCVNegotiation"])
+        )
 
     @property
     def EnablePWStatus(self):
@@ -418,7 +471,10 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, this enables the use of PW Status TLV in notification messages to notify the PW status
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePWStatus']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePWStatus"])
+        )
 
     @property
     def Errors(self):
@@ -427,7 +483,7 @@ class Ldppwvpls(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def GroupId(self):
@@ -438,7 +494,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A user-defined 32-bit value used to identify a group of VCs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupId"]))
 
     @property
     def InterfaceType(self):
@@ -449,7 +506,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The 15-bit VC Type used in the VC FEC element.It depends on the Layer 2 protocol used on the interface
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InterfaceType"]))
 
     @property
     def Ipv6PeerId(self):
@@ -460,7 +518,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The 128-bit IPv6 address of the LDP Peer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PeerId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PeerId"]))
 
     @property
     def LSPPingCV(self):
@@ -471,7 +530,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Ping CV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPPingCV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LSPPingCV"]))
 
     @property
     def Label(self):
@@ -482,7 +542,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Label']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Label"]))
 
     @property
     def LocalRouterID(self):
@@ -492,7 +553,7 @@ class Ldppwvpls(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def Mtu(self):
@@ -503,7 +564,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The 2-octet value for the maximum Transmission Unit (MTU).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mtu"]))
 
     @property
     def Multiplier(self):
@@ -513,11 +575,12 @@ class Ldppwvpls(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -527,11 +590,12 @@ class Ldppwvpls(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PWACHCC(self):
@@ -542,7 +606,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PW-ACH CC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PWACHCC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PWACHCC"]))
 
     @property
     def PWStatusCode(self):
@@ -553,7 +618,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PW Status Code to be sent when to transition to down state if PW Status Send Notification is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PWStatusCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PWStatusCode"]))
 
     @property
     def PeerId(self):
@@ -564,7 +630,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The 32-bit IPv4 address of the LDP Peer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeerId"]))
 
     @property
     def PwStatusSendNotification(self):
@@ -575,7 +642,10 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, it signifies whether to send a notification message with a PW status for the corresponding PW
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PwStatusSendNotification']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PwStatusSendNotification"])
+        )
 
     @property
     def RepeatCount(self):
@@ -586,7 +656,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of times to repeat the Up/Down status of the PW. '0' means keep toggling the Up/Down state indefinitely.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RepeatCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RepeatCount"]))
 
     @property
     def RouterAlertCC(self):
@@ -597,7 +668,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router Alert CC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterAlertCC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouterAlertCC"]))
 
     @property
     def SessionStatus(self):
@@ -607,7 +679,7 @@ class Ldppwvpls(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -617,11 +689,12 @@ class Ldppwvpls(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -630,7 +703,7 @@ class Ldppwvpls(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -640,7 +713,7 @@ class Ldppwvpls(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def UpInterval(self):
@@ -651,7 +724,8 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time Interval for which the PW status will remain in Up state before transitioning again to Down state.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UpInterval"]))
 
     @property
     def VCIDStart(self):
@@ -662,9 +736,17 @@ class Ldppwvpls(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The value of the VC ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VCIDStart']))
 
-    def update(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VCIDStart"]))
+
+    def update(
+        self,
+        AutoPeerId=None,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (bool, List[str], int, str, List[str]) -> Ldppwvpls
         """Updates ldppwvpls resource on the server.
 
@@ -685,7 +767,14 @@ class Ldppwvpls(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+    def add(
+        self,
+        AutoPeerId=None,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (bool, List[str], int, str, List[str]) -> Ldppwvpls
         """Adds a new ldppwvpls resource on the server and adds it to the container.
 
@@ -717,7 +806,21 @@ class Ldppwvpls(Base):
         """
         self._delete()
 
-    def find(self, AutoPeerId=None, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LocalRouterID=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        AutoPeerId=None,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        LocalRouterID=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ldppwvpls resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ldppwvpls resources from the server.
@@ -794,10 +897,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def PurgeVCRanges(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -826,10 +931,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgeVCRanges', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("purgeVCRanges", payload=payload, response_object=None)
 
     def Purgevcranges(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -848,10 +955,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgevcranges', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("purgevcranges", payload=payload, response_object=None)
 
     def PurgeVPLSMac(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -894,10 +1003,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgeVPLSMac', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("purgeVPLSMac", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -926,10 +1037,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -958,10 +1071,12 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -990,12 +1105,42 @@ class Ldppwvpls(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AutoPeerID=None, BfdPwCV=None, BfdUdpCV=None, CBitEnabled=None, DescEnabled=None, Description=None, DownInterval=None, DownStart=None, EnableCCCVNegotiation=None, EnablePWStatus=None, GroupId=None, InterfaceType=None, Ipv6PeerId=None, LSPPingCV=None, Label=None, Mtu=None, PWACHCC=None, PWStatusCode=None, PeerId=None, PwStatusSendNotification=None, RepeatCount=None, RouterAlertCC=None, UpInterval=None, VCIDStart=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AutoPeerID=None,
+        BfdPwCV=None,
+        BfdUdpCV=None,
+        CBitEnabled=None,
+        DescEnabled=None,
+        Description=None,
+        DownInterval=None,
+        DownStart=None,
+        EnableCCCVNegotiation=None,
+        EnablePWStatus=None,
+        GroupId=None,
+        InterfaceType=None,
+        Ipv6PeerId=None,
+        LSPPingCV=None,
+        Label=None,
+        Mtu=None,
+        PWACHCC=None,
+        PWStatusCode=None,
+        PeerId=None,
+        PwStatusSendNotification=None,
+        RepeatCount=None,
+        RouterAlertCC=None,
+        UpInterval=None,
+        VCIDStart=None,
+    ):
         """Base class infrastructure that gets a list of ldppwvpls device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

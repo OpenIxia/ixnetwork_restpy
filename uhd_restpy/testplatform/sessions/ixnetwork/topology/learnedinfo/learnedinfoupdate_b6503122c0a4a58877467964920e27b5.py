@@ -145,7 +145,7 @@ class LearnedInfoUpdate(Base):
         return PceDetailedSrv6SyncLspUpdateParams(self)
 
     def add(self):
-        """Adds a new learnedInfoUpdate resource on the json, only valid with config assistant
+        """Adds a new learnedInfoUpdate resource on the json, only valid with batch add utility
 
         Returns
         -------

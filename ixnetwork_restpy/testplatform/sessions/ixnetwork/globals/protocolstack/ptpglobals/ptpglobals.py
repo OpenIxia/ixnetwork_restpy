@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class PtpGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ptpGlobals'
+    _SDM_NAME = "ptpGlobals"
     _SDM_ATT_MAP = {
-        'MaxOutstanding': 'maxOutstanding',
-        'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "MaxOutstanding": "maxOutstanding",
+        "ObjectId": "objectId",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PtpGlobals, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class PtpGlobals(Base):
         -------
         - number: The number of PTP connections to be in initiation or terminating state at any time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstanding"])
+
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstanding"], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +70,7 @@ class PtpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SetupRate(self):
@@ -79,11 +80,12 @@ class PtpGlobals(Base):
         -------
         - number: Initiation rate for the PTP connection establishement.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -93,11 +95,12 @@ class PtpGlobals(Base):
         -------
         - number: Teardown rate for the PTP connection establishement.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
     def update(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
         # type: (int, int, int) -> PtpGlobals
@@ -145,7 +148,9 @@ class PtpGlobals(Base):
         """
         self._delete()
 
-    def find(self, MaxOutstanding=None, ObjectId=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self, MaxOutstanding=None, ObjectId=None, SetupRate=None, TeardownRate=None
+    ):
         # type: (int, str, int, int) -> PtpGlobals
         """Finds and retrieves ptpGlobals resources from the server.
 

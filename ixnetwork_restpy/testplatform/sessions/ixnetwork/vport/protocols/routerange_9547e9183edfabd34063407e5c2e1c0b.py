@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class RouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeRange'
+    _SDM_NAME = "routeRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'MaskWidth': 'maskWidth',
-        'Metric': 'metric',
-        'NextHop': 'nextHop',
-        'NumberOfRoute': 'numberOfRoute',
-        'RouteTag': 'routeTag',
-        'Step': 'step',
+        "Enabled": "enabled",
+        "FirstRoute": "firstRoute",
+        "MaskWidth": "maskWidth",
+        "Metric": "metric",
+        "NextHop": "nextHop",
+        "NumberOfRoute": "numberOfRoute",
+        "RouteTag": "routeTag",
+        "Step": "step",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RouteRange, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class RouteRange(Base):
         -------
         - bool: Enables the selected route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstRoute(self):
@@ -73,11 +74,12 @@ class RouteRange(Base):
         -------
         - str: The IPv6 address of the first route/network to be generated for this RIPng route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstRoute"])
+
     @FirstRoute.setter
     def FirstRoute(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstRoute"], value)
 
     @property
     def MaskWidth(self):
@@ -87,11 +89,12 @@ class RouteRange(Base):
         -------
         - number: The network mask to be used when generating routes This value indicates the number of bits, counting from the MSB (at the left end), that will comprise the network part of the IPv6 address. The remainder of the address will indicate the host part of the address. The default mask width is 64 bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     @property
     def Metric(self):
@@ -101,11 +104,12 @@ class RouteRange(Base):
         -------
         - number: The current metric cost to reach the destination. A value between 0 and 15. A value of 16 indicates that the destination is unreachable. (The RIPng Interface Metric is added to this value.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NextHop(self):
@@ -115,11 +119,12 @@ class RouteRange(Base):
         -------
         - str: (For use in the Next Hop RTE.)The link-local IPv6 address of the next hop router. The value 0:0:0:0:0:0:0:0 indicates that the next hop router should be the originator of the RIPng route advertisement. (This router is the Next Hop.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
+
     @NextHop.setter
     def NextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHop"], value)
 
     @property
     def NumberOfRoute(self):
@@ -129,11 +134,12 @@ class RouteRange(Base):
         -------
         - number: The total number of routes to be included in this route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoute"])
+
     @NumberOfRoute.setter
     def NumberOfRoute(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoute"], value)
 
     @property
     def RouteTag(self):
@@ -143,11 +149,12 @@ class RouteRange(Base):
         -------
         - number: A route attribute advertised with a route: internal vs. external. For external routes, the route tag can be the AS from which the routes were learned or an arbitrary, assigned integer value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteTag"])
+
     @RouteTag.setter
     def RouteTag(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteTag"], value)
 
     @property
     def Step(self):
@@ -157,13 +164,24 @@ class RouteRange(Base):
         -------
         - number: The increment step value to be used when creating additional routes/network addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
-    def update(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+    def update(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        MaskWidth=None,
+        Metric=None,
+        NextHop=None,
+        NumberOfRoute=None,
+        RouteTag=None,
+        Step=None,
+    ):
         # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Updates routeRange resource on the server.
 
@@ -184,7 +202,17 @@ class RouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+    def add(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        MaskWidth=None,
+        Metric=None,
+        NextHop=None,
+        NumberOfRoute=None,
+        RouteTag=None,
+        Step=None,
+    ):
         # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
@@ -219,7 +247,17 @@ class RouteRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+    def find(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        MaskWidth=None,
+        Metric=None,
+        NextHop=None,
+        NumberOfRoute=None,
+        RouteTag=None,
+        Step=None,
+    ):
         # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 

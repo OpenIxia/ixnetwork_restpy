@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,28 @@ class EndpointSet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'endpointSet'
+    _SDM_NAME = "endpointSet"
     _SDM_ATT_MAP = {
-        'AllowEmptyTopologySets': 'allowEmptyTopologySets',
-        'DestinationFilter': 'destinationFilter',
-        'Destinations': 'destinations',
-        'DestinationsDescription': 'destinationsDescription',
-        'Error': 'error',
-        'ErrorString': 'errorString',
-        'FullyMeshedEndpoints': 'fullyMeshedEndpoints',
-        'FullyMeshedEndpointsDescription': 'fullyMeshedEndpointsDescription',
-        'MulticastDestinations': 'multicastDestinations',
-        'MulticastReceivers': 'multicastReceivers',
-        'Name': 'name',
-        'NgpfFilters': 'ngpfFilters',
-        'ScalableDestinations': 'scalableDestinations',
-        'ScalableSources': 'scalableSources',
-        'SourceFilter': 'sourceFilter',
-        'Sources': 'sources',
-        'SourcesDescription': 'sourcesDescription',
-        'TrafficGroups': 'trafficGroups',
+        "AllowEmptyTopologySets": "allowEmptyTopologySets",
+        "DestinationFilter": "destinationFilter",
+        "Destinations": "destinations",
+        "DestinationsDescription": "destinationsDescription",
+        "Error": "error",
+        "ErrorString": "errorString",
+        "FullyMeshedEndpoints": "fullyMeshedEndpoints",
+        "FullyMeshedEndpointsDescription": "fullyMeshedEndpointsDescription",
+        "MulticastDestinations": "multicastDestinations",
+        "MulticastReceivers": "multicastReceivers",
+        "Name": "name",
+        "NgpfFilters": "ngpfFilters",
+        "ScalableDestinations": "scalableDestinations",
+        "ScalableSources": "scalableSources",
+        "SourceFilter": "sourceFilter",
+        "Sources": "sources",
+        "SourcesDescription": "sourcesDescription",
+        "TrafficGroups": "trafficGroups",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EndpointSet, self).__init__(parent, list_op)
@@ -69,11 +69,12 @@ class EndpointSet(Base):
         -------
         - bool: Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowEmptyTopologySets'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowEmptyTopologySets"])
+
     @AllowEmptyTopologySets.setter
     def AllowEmptyTopologySets(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllowEmptyTopologySets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllowEmptyTopologySets"], value)
 
     @property
     def DestinationFilter(self):
@@ -83,11 +84,12 @@ class EndpointSet(Base):
         -------
         - str: The list of conditions used for filtering destinations endpoints.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationFilter"])
+
     @DestinationFilter.setter
     def DestinationFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestinationFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestinationFilter"], value)
 
     @property
     def Destinations(self):
@@ -97,11 +99,12 @@ class EndpointSet(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): Indicates the number of destination endpoints configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Destinations'])
+        return self._get_attribute(self._SDM_ATT_MAP["Destinations"])
+
     @Destinations.setter
     def Destinations(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Destinations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Destinations"], value)
 
     @property
     def DestinationsDescription(self):
@@ -111,7 +114,7 @@ class EndpointSet(Base):
         -------
         - str: Summary description of destination endpoints.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationsDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationsDescription"])
 
     @property
     def Error(self):
@@ -119,9 +122,9 @@ class EndpointSet(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Error'])
+        return self._get_attribute(self._SDM_ATT_MAP["Error"])
 
     @property
     def ErrorString(self):
@@ -129,9 +132,9 @@ class EndpointSet(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorString'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorString"])
 
     @property
     def FullyMeshedEndpoints(self):
@@ -139,13 +142,14 @@ class EndpointSet(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): 
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FullyMeshedEndpoints'])
+        return self._get_attribute(self._SDM_ATT_MAP["FullyMeshedEndpoints"])
+
     @FullyMeshedEndpoints.setter
     def FullyMeshedEndpoints(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FullyMeshedEndpoints'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FullyMeshedEndpoints"], value)
 
     @property
     def FullyMeshedEndpointsDescription(self):
@@ -155,7 +159,7 @@ class EndpointSet(Base):
         -------
         - str: Summary description of fully meshed endpoints.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FullyMeshedEndpointsDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["FullyMeshedEndpointsDescription"])
 
     @property
     def MulticastDestinations(self):
@@ -164,10 +168,11 @@ class EndpointSet(Base):
         -------
         - list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number)): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastDestinations'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastDestinations"])
+
     @MulticastDestinations.setter
     def MulticastDestinations(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MulticastDestinations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastDestinations"], value)
 
     @property
     def MulticastReceivers(self):
@@ -176,10 +181,11 @@ class EndpointSet(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number)): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastReceivers'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastReceivers"])
+
     @MulticastReceivers.setter
     def MulticastReceivers(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MulticastReceivers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastReceivers"], value)
 
     @property
     def Name(self):
@@ -189,11 +195,12 @@ class EndpointSet(Base):
         -------
         - str: The name of the endpoint set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NgpfFilters(self):
@@ -202,10 +209,11 @@ class EndpointSet(Base):
         -------
         - list(dict(arg1:str,arg2:list[number])): The list of next generation structures used to filter endpoints. The structure consists of a string tag and list of integer indexes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NgpfFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NgpfFilters"])
+
     @NgpfFilters.setter
     def NgpfFilters(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['NgpfFilters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NgpfFilters"], value)
 
     @property
     def ScalableDestinations(self):
@@ -214,10 +222,11 @@ class EndpointSet(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number)): A list of scalable destination structures
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScalableDestinations'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScalableDestinations"])
+
     @ScalableDestinations.setter
     def ScalableDestinations(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ScalableDestinations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScalableDestinations"], value)
 
     @property
     def ScalableSources(self):
@@ -226,10 +235,11 @@ class EndpointSet(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number,arg5:number)): A list of scalable source structures.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScalableSources'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScalableSources"])
+
     @ScalableSources.setter
     def ScalableSources(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ScalableSources'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScalableSources"], value)
 
     @property
     def SourceFilter(self):
@@ -239,11 +249,12 @@ class EndpointSet(Base):
         -------
         - str: The list of conditions used for filtering source endpoints.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceFilter"])
+
     @SourceFilter.setter
     def SourceFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceFilter"], value)
 
     @property
     def Sources(self):
@@ -253,11 +264,12 @@ class EndpointSet(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*]): Indicates the number of source endpoints configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Sources'])
+        return self._get_attribute(self._SDM_ATT_MAP["Sources"])
+
     @Sources.setter
     def Sources(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Sources'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Sources"], value)
 
     @property
     def SourcesDescription(self):
@@ -267,7 +279,7 @@ class EndpointSet(Base):
         -------
         - str: Summary description of source endpoints.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourcesDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourcesDescription"])
 
     @property
     def TrafficGroups(self):
@@ -277,13 +289,29 @@ class EndpointSet(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../*]): Indicates the traffic groups selected in the source/destination endpoint set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroups"])
+
     @TrafficGroups.setter
     def TrafficGroups(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroups"], value)
 
-    def update(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, FullyMeshedEndpoints=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, TrafficGroups=None):
+    def update(
+        self,
+        AllowEmptyTopologySets=None,
+        DestinationFilter=None,
+        Destinations=None,
+        FullyMeshedEndpoints=None,
+        MulticastDestinations=None,
+        MulticastReceivers=None,
+        Name=None,
+        NgpfFilters=None,
+        ScalableDestinations=None,
+        ScalableSources=None,
+        SourceFilter=None,
+        Sources=None,
+        TrafficGroups=None,
+    ):
         """Updates endpointSet resource on the server.
 
         Args
@@ -291,7 +319,7 @@ class EndpointSet(Base):
         - AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
         - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
         - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
-        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])):
         - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
         - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
         - Name (str): The name of the endpoint set.
@@ -308,7 +336,22 @@ class EndpointSet(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, FullyMeshedEndpoints=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, TrafficGroups=None):
+    def add(
+        self,
+        AllowEmptyTopologySets=None,
+        DestinationFilter=None,
+        Destinations=None,
+        FullyMeshedEndpoints=None,
+        MulticastDestinations=None,
+        MulticastReceivers=None,
+        Name=None,
+        NgpfFilters=None,
+        ScalableDestinations=None,
+        ScalableSources=None,
+        SourceFilter=None,
+        Sources=None,
+        TrafficGroups=None,
+    ):
         """Adds a new endpointSet resource on the server and adds it to the container.
 
         Args
@@ -316,7 +359,7 @@ class EndpointSet(Base):
         - AllowEmptyTopologySets (bool): Enable this to allow the setting of sources and destinations without throwing an error even if the combination produces an empty topology set.
         - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
         - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
-        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])):
         - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
         - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
         - Name (str): The name of the endpoint set.
@@ -347,7 +390,27 @@ class EndpointSet(Base):
         """
         self._delete()
 
-    def find(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, DestinationsDescription=None, Error=None, ErrorString=None, FullyMeshedEndpoints=None, FullyMeshedEndpointsDescription=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, SourcesDescription=None, TrafficGroups=None):
+    def find(
+        self,
+        AllowEmptyTopologySets=None,
+        DestinationFilter=None,
+        Destinations=None,
+        DestinationsDescription=None,
+        Error=None,
+        ErrorString=None,
+        FullyMeshedEndpoints=None,
+        FullyMeshedEndpointsDescription=None,
+        MulticastDestinations=None,
+        MulticastReceivers=None,
+        Name=None,
+        NgpfFilters=None,
+        ScalableDestinations=None,
+        ScalableSources=None,
+        SourceFilter=None,
+        Sources=None,
+        SourcesDescription=None,
+        TrafficGroups=None,
+    ):
         """Finds and retrieves endpointSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve endpointSet resources from the server.
@@ -360,9 +423,9 @@ class EndpointSet(Base):
         - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
         - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
         - DestinationsDescription (str): Summary description of destination endpoints.
-        - Error (bool): 
-        - ErrorString (str): 
-        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
+        - Error (bool):
+        - ErrorString (str):
+        - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])):
         - FullyMeshedEndpointsDescription (str): Summary description of fully meshed endpoints.
         - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.
         - MulticastReceivers (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:number,arg3:number,arg4:number))): A list of virtual multicast receivers. Each list item consists of a multicast receiver object reference, port index, host index and group or join/prune index depending on the type of object reference.
@@ -432,7 +495,11 @@ class EndpointSet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('findMulticastReceiverGroupIndex', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "findMulticastReceiverGroupIndex", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class TrillNodeTopologyList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trillNodeTopologyList'
+    _SDM_NAME = "trillNodeTopologyList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
-        'Name': 'name',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'TopologyId': 'topologyId',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InterestedVlanRangeCount": "interestedVlanRangeCount",
+        "Name": "name",
+        "NoOfTreesToCompute": "noOfTreesToCompute",
+        "TopologyId": "topologyId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TrillNodeTopologyList, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class TrillNodeTopologyList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_c042412b751d673b9fbaaf71ca229e77 import InterestedVlanList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_c042412b751d673b9fbaaf71ca229e77 import (
+            InterestedVlanList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InterestedVlanList', None) is not None:
-                return self._properties.get('InterestedVlanList')
+            if self._properties.get("InterestedVlanList", None) is not None:
+                return self._properties.get("InterestedVlanList")
         return InterestedVlanList(self)._select()
 
     @property
@@ -74,7 +77,8 @@ class TrillNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -84,7 +88,7 @@ class TrillNodeTopologyList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -94,7 +98,7 @@ class TrillNodeTopologyList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InterestedVlanRangeCount(self):
@@ -104,11 +108,12 @@ class TrillNodeTopologyList(Base):
         -------
         - number: Interested VLAN Range Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterestedVlanRangeCount"])
+
     @InterestedVlanRangeCount.setter
     def InterestedVlanRangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterestedVlanRangeCount"], value)
 
     @property
     def Name(self):
@@ -118,11 +123,12 @@ class TrillNodeTopologyList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfTreesToCompute(self):
@@ -133,7 +139,10 @@ class TrillNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Trees to Compute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NoOfTreesToCompute"])
+        )
 
     @property
     def TopologyId(self):
@@ -144,7 +153,8 @@ class TrillNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     def update(self, InterestedVlanRangeCount=None, Name=None):
         # type: (int, str) -> TrillNodeTopologyList
@@ -164,7 +174,9 @@ class TrillNodeTopologyList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, InterestedVlanRangeCount=None, Name=None):
+    def find(
+        self, Count=None, DescriptiveName=None, InterestedVlanRangeCount=None, Name=None
+    ):
         # type: (int, str, int, str) -> TrillNodeTopologyList
         """Finds and retrieves trillNodeTopologyList resources from the server.
 
@@ -207,7 +219,9 @@ class TrillNodeTopologyList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, NoOfTreesToCompute=None, TopologyId=None):
+    def get_device_ids(
+        self, PortNames=None, Active=None, NoOfTreesToCompute=None, TopologyId=None
+    ):
         """Base class infrastructure that gets a list of trillNodeTopologyList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,69 +35,69 @@ class NeighborRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'neighborRange'
+    _SDM_NAME = "neighborRange"
     _SDM_ATT_MAP = {
-        'AsNumMode': 'asNumMode',
-        'Authentication': 'authentication',
-        'BfdModeOfOperation': 'bfdModeOfOperation',
-        'BgpId': 'bgpId',
-        'DutIpAddress': 'dutIpAddress',
-        'Enable4ByteAsNum': 'enable4ByteAsNum',
-        'EnableActAsRestarted': 'enableActAsRestarted',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableBgpId': 'enableBgpId',
-        'EnableDiscardIxiaGeneratedRoutes': 'enableDiscardIxiaGeneratedRoutes',
-        'EnableGracefulRestart': 'enableGracefulRestart',
-        'EnableLinkFlap': 'enableLinkFlap',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOptionalParameters': 'enableOptionalParameters',
-        'EnableSendIxiaSignatureWithRoutes': 'enableSendIxiaSignatureWithRoutes',
-        'EnableStaggeredStart': 'enableStaggeredStart',
-        'Enabled': 'enabled',
-        'Evpn': 'evpn',
-        'EvpnNextHopCount': 'evpnNextHopCount',
-        'HoldTimer': 'holdTimer',
-        'InterfaceStartIndex': 'interfaceStartIndex',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'IpV4Mdt': 'ipV4Mdt',
-        'IpV4Mpls': 'ipV4Mpls',
-        'IpV4MplsVpn': 'ipV4MplsVpn',
-        'IpV4Multicast': 'ipV4Multicast',
-        'IpV4MulticastVpn': 'ipV4MulticastVpn',
-        'IpV4Unicast': 'ipV4Unicast',
-        'IpV6Mpls': 'ipV6Mpls',
-        'IpV6MplsVpn': 'ipV6MplsVpn',
-        'IpV6Multicast': 'ipV6Multicast',
-        'IpV6MulticastVpn': 'ipV6MulticastVpn',
-        'IpV6Unicast': 'ipV6Unicast',
-        'IsAsbr': 'isAsbr',
-        'IsInterfaceLearnedInfoAvailable': 'isInterfaceLearnedInfoAvailable',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'LinkFlapDownTime': 'linkFlapDownTime',
-        'LinkFlapUpTime': 'linkFlapUpTime',
-        'LocalAsNumber': 'localAsNumber',
-        'LocalIpAddress': 'localIpAddress',
-        'Md5Key': 'md5Key',
-        'NextHop': 'nextHop',
-        'NumUpdatesPerIteration': 'numUpdatesPerIteration',
-        'RangeCount': 'rangeCount',
-        'RemoteAsNumber': 'remoteAsNumber',
-        'RestartTime': 'restartTime',
-        'StaggeredStartPeriod': 'staggeredStartPeriod',
-        'StaleTime': 'staleTime',
-        'TcpWindowSize': 'tcpWindowSize',
-        'TrafficGroupId': 'trafficGroupId',
-        'TtlValue': 'ttlValue',
-        'Type': 'type',
-        'UpdateInterval': 'updateInterval',
-        'Vpls': 'vpls',
+        "AsNumMode": "asNumMode",
+        "Authentication": "authentication",
+        "BfdModeOfOperation": "bfdModeOfOperation",
+        "BgpId": "bgpId",
+        "DutIpAddress": "dutIpAddress",
+        "Enable4ByteAsNum": "enable4ByteAsNum",
+        "EnableActAsRestarted": "enableActAsRestarted",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableBgpId": "enableBgpId",
+        "EnableDiscardIxiaGeneratedRoutes": "enableDiscardIxiaGeneratedRoutes",
+        "EnableGracefulRestart": "enableGracefulRestart",
+        "EnableLinkFlap": "enableLinkFlap",
+        "EnableNextHop": "enableNextHop",
+        "EnableOptionalParameters": "enableOptionalParameters",
+        "EnableSendIxiaSignatureWithRoutes": "enableSendIxiaSignatureWithRoutes",
+        "EnableStaggeredStart": "enableStaggeredStart",
+        "Enabled": "enabled",
+        "Evpn": "evpn",
+        "EvpnNextHopCount": "evpnNextHopCount",
+        "HoldTimer": "holdTimer",
+        "InterfaceStartIndex": "interfaceStartIndex",
+        "InterfaceType": "interfaceType",
+        "Interfaces": "interfaces",
+        "IpV4Mdt": "ipV4Mdt",
+        "IpV4Mpls": "ipV4Mpls",
+        "IpV4MplsVpn": "ipV4MplsVpn",
+        "IpV4Multicast": "ipV4Multicast",
+        "IpV4MulticastVpn": "ipV4MulticastVpn",
+        "IpV4Unicast": "ipV4Unicast",
+        "IpV6Mpls": "ipV6Mpls",
+        "IpV6MplsVpn": "ipV6MplsVpn",
+        "IpV6Multicast": "ipV6Multicast",
+        "IpV6MulticastVpn": "ipV6MulticastVpn",
+        "IpV6Unicast": "ipV6Unicast",
+        "IsAsbr": "isAsbr",
+        "IsInterfaceLearnedInfoAvailable": "isInterfaceLearnedInfoAvailable",
+        "IsLearnedInfoRefreshed": "isLearnedInfoRefreshed",
+        "LinkFlapDownTime": "linkFlapDownTime",
+        "LinkFlapUpTime": "linkFlapUpTime",
+        "LocalAsNumber": "localAsNumber",
+        "LocalIpAddress": "localIpAddress",
+        "Md5Key": "md5Key",
+        "NextHop": "nextHop",
+        "NumUpdatesPerIteration": "numUpdatesPerIteration",
+        "RangeCount": "rangeCount",
+        "RemoteAsNumber": "remoteAsNumber",
+        "RestartTime": "restartTime",
+        "StaggeredStartPeriod": "staggeredStartPeriod",
+        "StaleTime": "staleTime",
+        "TcpWindowSize": "tcpWindowSize",
+        "TrafficGroupId": "trafficGroupId",
+        "TtlValue": "ttlValue",
+        "Type": "type",
+        "UpdateInterval": "updateInterval",
+        "Vpls": "vpls",
     }
     _SDM_ENUM_MAP = {
-        'asNumMode': ['fixed', 'increment'],
-        'authentication': ['null', 'md5'],
-        'bfdModeOfOperation': ['multiHop', 'singleHop'],
-        'type': ['internal', 'external'],
+        "asNumMode": ["fixed", "increment"],
+        "authentication": ["null", "md5"],
+        "bfdModeOfOperation": ["multiHop", "singleHop"],
+        "type": ["internal", "external"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -113,10 +114,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp4vpnbgpadvplsrange_c396d4abd272d60c3ff5958f98263958 import Bgp4VpnBgpAdVplsRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp4vpnbgpadvplsrange_c396d4abd272d60c3ff5958f98263958 import (
+            Bgp4VpnBgpAdVplsRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bgp4VpnBgpAdVplsRange', None) is not None:
-                return self._properties.get('Bgp4VpnBgpAdVplsRange')
+            if self._properties.get("Bgp4VpnBgpAdVplsRange", None) is not None:
+                return self._properties.get("Bgp4VpnBgpAdVplsRange")
         return Bgp4VpnBgpAdVplsRange(self)
 
     @property
@@ -130,10 +134,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernetsegments_a0eef4099ef38ee0e07ecf7430536119 import EthernetSegments
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernetsegments_a0eef4099ef38ee0e07ecf7430536119 import (
+            EthernetSegments,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EthernetSegments', None) is not None:
-                return self._properties.get('EthernetSegments')
+            if self._properties.get("EthernetSegments", None) is not None:
+                return self._properties.get("EthernetSegments")
         return EthernetSegments(self)
 
     @property
@@ -147,10 +154,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacelearnedinfo_44709d044bd5612e19aaa934437e496a import InterfaceLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacelearnedinfo_44709d044bd5612e19aaa934437e496a import (
+            InterfaceLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InterfaceLearnedInfo', None) is not None:
-                return self._properties.get('InterfaceLearnedInfo')
+            if self._properties.get("InterfaceLearnedInfo", None) is not None:
+                return self._properties.get("InterfaceLearnedInfo")
         return InterfaceLearnedInfo(self)._select()
 
     @property
@@ -164,10 +174,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2site_261b4b7984b4a56f96a23ca529af873f import L2Site
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2site_261b4b7984b4a56f96a23ca529af873f import (
+            L2Site,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2Site', None) is not None:
-                return self._properties.get('L2Site')
+            if self._properties.get("L2Site", None) is not None:
+                return self._properties.get("L2Site")
         return L2Site(self)
 
     @property
@@ -181,10 +194,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l3site_1184c1264fe43eeeb88002bee9622490 import L3Site
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l3site_1184c1264fe43eeeb88002bee9622490 import (
+            L3Site,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L3Site', None) is not None:
-                return self._properties.get('L3Site')
+            if self._properties.get("L3Site", None) is not None:
+                return self._properties.get("L3Site")
         return L3Site(self)
 
     @property
@@ -198,10 +214,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df26bdb55c5d9a2a87a7eb099776d203 import LearnedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df26bdb55c5d9a2a87a7eb099776d203 import (
+            LearnedFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedFilter', None) is not None:
-                return self._properties.get('LearnedFilter')
+            if self._properties.get("LearnedFilter", None) is not None:
+                return self._properties.get("LearnedFilter")
         return LearnedFilter(self)._select()
 
     @property
@@ -215,10 +234,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_1802ba18af469548428332b926b4e374 import LearnedInformation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_1802ba18af469548428332b926b4e374 import (
+            LearnedInformation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInformation', None) is not None:
-                return self._properties.get('LearnedInformation')
+            if self._properties.get("LearnedInformation", None) is not None:
+                return self._properties.get("LearnedInformation")
         return LearnedInformation(self)._select()
 
     @property
@@ -232,10 +254,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsrouterange_d92b7c314e154932c6a571f5bccc9139 import MplsRouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsrouterange_d92b7c314e154932c6a571f5bccc9139 import (
+            MplsRouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MplsRouteRange', None) is not None:
-                return self._properties.get('MplsRouteRange')
+            if self._properties.get("MplsRouteRange", None) is not None:
+                return self._properties.get("MplsRouteRange")
         return MplsRouteRange(self)
 
     @property
@@ -249,10 +274,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquerouterange_758cfa0f54d8a32ec8c2cdda163db9de import OpaqueRouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquerouterange_758cfa0f54d8a32ec8c2cdda163db9de import (
+            OpaqueRouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpaqueRouteRange', None) is not None:
-                return self._properties.get('OpaqueRouteRange')
+            if self._properties.get("OpaqueRouteRange", None) is not None:
+                return self._properties.get("OpaqueRouteRange")
         return OpaqueRouteRange(self)
 
     @property
@@ -266,10 +294,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routeimportoptions_6dbeb38f5cd6a11bd94fb0d2945c0d1b import RouteImportOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routeimportoptions_6dbeb38f5cd6a11bd94fb0d2945c0d1b import (
+            RouteImportOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteImportOptions', None) is not None:
-                return self._properties.get('RouteImportOptions')
+            if self._properties.get("RouteImportOptions", None) is not None:
+                return self._properties.get("RouteImportOptions")
         return RouteImportOptions(self)
 
     @property
@@ -283,10 +314,13 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_0d3bbd0c1e734e0573f923091baa82c2 import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_0d3bbd0c1e734e0573f923091baa82c2 import (
+            RouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteRange', None) is not None:
-                return self._properties.get('RouteRange')
+            if self._properties.get("RouteRange", None) is not None:
+                return self._properties.get("RouteRange")
         return RouteRange(self)
 
     @property
@@ -300,25 +334,29 @@ class NeighborRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userdefinedafisafi_963e12659eb9e18aba3316a600da5e38 import UserDefinedAfiSafi
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userdefinedafisafi_963e12659eb9e18aba3316a600da5e38 import (
+            UserDefinedAfiSafi,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UserDefinedAfiSafi', None) is not None:
-                return self._properties.get('UserDefinedAfiSafi')
+            if self._properties.get("UserDefinedAfiSafi", None) is not None:
+                return self._properties.get("UserDefinedAfiSafi")
         return UserDefinedAfiSafi(self)
 
     @property
     def AsNumMode(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(fixed | increment): (External only) Indicates that each new session uses a different AS number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsNumMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsNumMode"])
+
     @AsNumMode.setter
     def AsNumMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsNumMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsNumMode"], value)
 
     @property
     def Authentication(self):
@@ -328,11 +366,12 @@ class NeighborRange(Base):
         -------
         - str(null | md5): Select the type of cryptographic authentication to be used for the BGP peers in this peer range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Authentication'])
+        return self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+
     @Authentication.setter
     def Authentication(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Authentication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Authentication"], value)
 
     @property
     def BfdModeOfOperation(self):
@@ -342,11 +381,12 @@ class NeighborRange(Base):
         -------
         - str(multiHop | singleHop): Indicates whether to use a single-hop or a multi-hop mode of operation for the BFD session being created with a BGP peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdModeOfOperation'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdModeOfOperation"])
+
     @BfdModeOfOperation.setter
     def BfdModeOfOperation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdModeOfOperation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdModeOfOperation"], value)
 
     @property
     def BgpId(self):
@@ -356,11 +396,12 @@ class NeighborRange(Base):
         -------
         - str: The BGP ID used in OPEN messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BgpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BgpId"])
+
     @BgpId.setter
     def BgpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BgpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BgpId"], value)
 
     @property
     def DutIpAddress(self):
@@ -370,11 +411,12 @@ class NeighborRange(Base):
         -------
         - str: The IP address of the DUT router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DutIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DutIpAddress"])
+
     @DutIpAddress.setter
     def DutIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DutIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DutIpAddress"], value)
 
     @property
     def Enable4ByteAsNum(self):
@@ -384,11 +426,12 @@ class NeighborRange(Base):
         -------
         - bool: Enables the 4-byte Autonomous System (AS) number of the DUT/SUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enable4ByteAsNum'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enable4ByteAsNum"])
+
     @Enable4ByteAsNum.setter
     def Enable4ByteAsNum(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enable4ByteAsNum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enable4ByteAsNum"], value)
 
     @property
     def EnableActAsRestarted(self):
@@ -398,11 +441,12 @@ class NeighborRange(Base):
         -------
         - bool: Controls the operation of BGP Graceful Restart.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableActAsRestarted'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableActAsRestarted"])
+
     @EnableActAsRestarted.setter
     def EnableActAsRestarted(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableActAsRestarted'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableActAsRestarted"], value)
 
     @property
     def EnableBfdRegistration(self):
@@ -412,11 +456,12 @@ class NeighborRange(Base):
         -------
         - bool: Enables the BFD registration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"], value)
 
     @property
     def EnableBgpId(self):
@@ -426,11 +471,12 @@ class NeighborRange(Base):
         -------
         - bool: The BGP ID used in OPEN messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBgpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBgpId"])
+
     @EnableBgpId.setter
     def EnableBgpId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBgpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBgpId"], value)
 
     @property
     def EnableDiscardIxiaGeneratedRoutes(self):
@@ -440,11 +486,16 @@ class NeighborRange(Base):
         -------
         - bool: If true, enables the discard of Ixia generated routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardIxiaGeneratedRoutes'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableDiscardIxiaGeneratedRoutes"]
+        )
+
     @EnableDiscardIxiaGeneratedRoutes.setter
     def EnableDiscardIxiaGeneratedRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDiscardIxiaGeneratedRoutes'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableDiscardIxiaGeneratedRoutes"], value
+        )
 
     @property
     def EnableGracefulRestart(self):
@@ -454,11 +505,12 @@ class NeighborRange(Base):
         -------
         - bool: Controls the operation of BGP Graceful Restart.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGracefulRestart"])
+
     @EnableGracefulRestart.setter
     def EnableGracefulRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGracefulRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGracefulRestart"], value)
 
     @property
     def EnableLinkFlap(self):
@@ -468,11 +520,12 @@ class NeighborRange(Base):
         -------
         - bool: If true, enables link flap
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLinkFlap'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLinkFlap"])
+
     @EnableLinkFlap.setter
     def EnableLinkFlap(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLinkFlap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLinkFlap"], value)
 
     @property
     def EnableNextHop(self):
@@ -482,11 +535,12 @@ class NeighborRange(Base):
         -------
         - bool: Used for IPv4 traffic. Controls the use of the NEXT_HOP attribute. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"])
+
     @EnableNextHop.setter
     def EnableNextHop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextHop"], value)
 
     @property
     def EnableOptionalParameters(self):
@@ -496,11 +550,12 @@ class NeighborRange(Base):
         -------
         - bool: Controls how an OPEN is conducted in the presence of optional parameters.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOptionalParameters'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOptionalParameters"])
+
     @EnableOptionalParameters.setter
     def EnableOptionalParameters(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOptionalParameters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOptionalParameters"], value)
 
     @property
     def EnableSendIxiaSignatureWithRoutes(self):
@@ -510,11 +565,16 @@ class NeighborRange(Base):
         -------
         - bool: If true, enables sending of Ixia signature with routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSendIxiaSignatureWithRoutes'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableSendIxiaSignatureWithRoutes"]
+        )
+
     @EnableSendIxiaSignatureWithRoutes.setter
     def EnableSendIxiaSignatureWithRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSendIxiaSignatureWithRoutes'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableSendIxiaSignatureWithRoutes"], value
+        )
 
     @property
     def EnableStaggeredStart(self):
@@ -524,11 +584,12 @@ class NeighborRange(Base):
         -------
         - bool: Controls the staggering and period of initial start messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStaggeredStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStaggeredStart"])
+
     @EnableStaggeredStart.setter
     def EnableStaggeredStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStaggeredStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStaggeredStart"], value)
 
     @property
     def Enabled(self):
@@ -538,11 +599,12 @@ class NeighborRange(Base):
         -------
         - bool: Enables or disables simulation of the router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Evpn(self):
@@ -552,11 +614,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Evpn'])
+        return self._get_attribute(self._SDM_ATT_MAP["Evpn"])
+
     @Evpn.setter
     def Evpn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Evpn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Evpn"], value)
 
     @property
     def EvpnNextHopCount(self):
@@ -566,11 +629,12 @@ class NeighborRange(Base):
         -------
         - number: It is used to replicate the traffic among the available Next Hops in Ingress Replication mode. Default value is 1. Minimum value is 1 and maximum value is 255.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvpnNextHopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvpnNextHopCount"])
+
     @EvpnNextHopCount.setter
     def EvpnNextHopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvpnNextHopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvpnNextHopCount"], value)
 
     @property
     def HoldTimer(self):
@@ -580,11 +644,12 @@ class NeighborRange(Base):
         -------
         - number: The period of time between KEEP-ALIVE messages sent to the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HoldTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["HoldTimer"])
+
     @HoldTimer.setter
     def HoldTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HoldTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HoldTimer"], value)
 
     @property
     def InterfaceStartIndex(self):
@@ -594,11 +659,12 @@ class NeighborRange(Base):
         -------
         - number: The assigned protocol interface ID for this SM interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceStartIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceStartIndex"])
+
     @InterfaceStartIndex.setter
     def InterfaceStartIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceStartIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceStartIndex"], value)
 
     @property
     def InterfaceType(self):
@@ -608,11 +674,12 @@ class NeighborRange(Base):
         -------
         - str: The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Interfaces(self):
@@ -622,11 +689,12 @@ class NeighborRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def IpV4Mdt(self):
@@ -636,11 +704,12 @@ class NeighborRange(Base):
         -------
         - bool: Enables the use of this Data MDT range on the simulated interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4Mdt'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4Mdt"])
+
     @IpV4Mdt.setter
     def IpV4Mdt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4Mdt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4Mdt"], value)
 
     @property
     def IpV4Mpls(self):
@@ -650,11 +719,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv4 MPLS address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4Mpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4Mpls"])
+
     @IpV4Mpls.setter
     def IpV4Mpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4Mpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4Mpls"], value)
 
     @property
     def IpV4MplsVpn(self):
@@ -664,11 +734,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4MplsVpn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4MplsVpn"])
+
     @IpV4MplsVpn.setter
     def IpV4MplsVpn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4MplsVpn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4MplsVpn"], value)
 
     @property
     def IpV4Multicast(self):
@@ -678,11 +749,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv4 multicast address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4Multicast'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4Multicast"])
+
     @IpV4Multicast.setter
     def IpV4Multicast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4Multicast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4Multicast"], value)
 
     @property
     def IpV4MulticastVpn(self):
@@ -692,11 +764,12 @@ class NeighborRange(Base):
         -------
         - bool: If true, this BGP router/peer supports the IPv4 Multicast/VPN address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4MulticastVpn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4MulticastVpn"])
+
     @IpV4MulticastVpn.setter
     def IpV4MulticastVpn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4MulticastVpn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4MulticastVpn"], value)
 
     @property
     def IpV4Unicast(self):
@@ -706,11 +779,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv4 unicast address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV4Unicast'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV4Unicast"])
+
     @IpV4Unicast.setter
     def IpV4Unicast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV4Unicast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV4Unicast"], value)
 
     @property
     def IpV6Mpls(self):
@@ -720,11 +794,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv6 MPLS address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV6Mpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV6Mpls"])
+
     @IpV6Mpls.setter
     def IpV6Mpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV6Mpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV6Mpls"], value)
 
     @property
     def IpV6MplsVpn(self):
@@ -734,11 +809,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv6 MPLS/VPN address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV6MplsVpn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV6MplsVpn"])
+
     @IpV6MplsVpn.setter
     def IpV6MplsVpn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV6MplsVpn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV6MplsVpn"], value)
 
     @property
     def IpV6Multicast(self):
@@ -748,11 +824,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv6 multicast address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV6Multicast'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV6Multicast"])
+
     @IpV6Multicast.setter
     def IpV6Multicast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV6Multicast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV6Multicast"], value)
 
     @property
     def IpV6MulticastVpn(self):
@@ -762,11 +839,12 @@ class NeighborRange(Base):
         -------
         - bool: If true, this BGP router/peer supports the IPv6 Multicast/VPN address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV6MulticastVpn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV6MulticastVpn"])
+
     @IpV6MulticastVpn.setter
     def IpV6MulticastVpn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV6MulticastVpn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV6MulticastVpn"], value)
 
     @property
     def IpV6Unicast(self):
@@ -776,11 +854,12 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports the IPv6 unicast address family.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpV6Unicast'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpV6Unicast"])
+
     @IpV6Unicast.setter
     def IpV6Unicast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpV6Unicast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpV6Unicast"], value)
 
     @property
     def IsAsbr(self):
@@ -790,11 +869,12 @@ class NeighborRange(Base):
         -------
         - bool: If true, it is ASBR
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsAsbr'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsAsbr"])
+
     @IsAsbr.setter
     def IsAsbr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsAsbr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsAsbr"], value)
 
     @property
     def IsInterfaceLearnedInfoAvailable(self):
@@ -804,7 +884,7 @@ class NeighborRange(Base):
         -------
         - bool: If true, learned information is made avavilable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsInterfaceLearnedInfoAvailable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsInterfaceLearnedInfoAvailable"])
 
     @property
     def IsLearnedInfoRefreshed(self):
@@ -814,7 +894,7 @@ class NeighborRange(Base):
         -------
         - bool: If true, learned information is refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLearnedInfoRefreshed"])
 
     @property
     def LinkFlapDownTime(self):
@@ -824,11 +904,12 @@ class NeighborRange(Base):
         -------
         - number: Signifies the link flap down time
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkFlapDownTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkFlapDownTime"])
+
     @LinkFlapDownTime.setter
     def LinkFlapDownTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkFlapDownTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkFlapDownTime"], value)
 
     @property
     def LinkFlapUpTime(self):
@@ -838,11 +919,12 @@ class NeighborRange(Base):
         -------
         - number: Signifies the link flap up time
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkFlapUpTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkFlapUpTime"])
+
     @LinkFlapUpTime.setter
     def LinkFlapUpTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkFlapUpTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkFlapUpTime"], value)
 
     @property
     def LocalAsNumber(self):
@@ -852,11 +934,12 @@ class NeighborRange(Base):
         -------
         - str: (External only) The first AS Num assigned to the simulated neighbor router. May be set for external neighbors on any port type, but only Linux-based ports may set this for internal neighbors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalAsNumber"])
+
     @LocalAsNumber.setter
     def LocalAsNumber(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalAsNumber"], value)
 
     @property
     def LocalIpAddress(self):
@@ -866,11 +949,12 @@ class NeighborRange(Base):
         -------
         - str: The first IP address for the simulated neighbor routers and the number of routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpAddress"])
+
     @LocalIpAddress.setter
     def LocalIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpAddress"], value)
 
     @property
     def Md5Key(self):
@@ -880,11 +964,12 @@ class NeighborRange(Base):
         -------
         - str: (Active only when MD5 is selected in the Authentication Type field.) (String) Enter a value to be used as a secret MD5 Key for authentication. The maximum length allowed is 255 characters.One MD5 key can be configured per BGP peer range. Sessions from all peers in this peer range will use this MD5 key if MD5 is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Md5Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Md5Key"])
+
     @Md5Key.setter
     def Md5Key(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Md5Key'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Md5Key"], value)
 
     @property
     def NextHop(self):
@@ -894,11 +979,12 @@ class NeighborRange(Base):
         -------
         - str: If enableNextHop is true, this is the IPv4 address used as the next hop. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
+
     @NextHop.setter
     def NextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHop"], value)
 
     @property
     def NumUpdatesPerIteration(self):
@@ -908,11 +994,12 @@ class NeighborRange(Base):
         -------
         - number: When the protocol server operates on older ports that do not possess a local processor, this tuning parameter controls how many UPDATE messages will be sent at a time. When many routers are being simulated on such a port, changing this value may help to increase or decrease performance. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumUpdatesPerIteration'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumUpdatesPerIteration"])
+
     @NumUpdatesPerIteration.setter
     def NumUpdatesPerIteration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumUpdatesPerIteration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumUpdatesPerIteration"], value)
 
     @property
     def RangeCount(self):
@@ -922,25 +1009,27 @@ class NeighborRange(Base):
         -------
         - number: The number of routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RangeCount"])
+
     @RangeCount.setter
     def RangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RangeCount"], value)
 
     @property
     def RemoteAsNumber(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The remote Autonomous System number associated with the routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteAsNumber"])
+
     @RemoteAsNumber.setter
     def RemoteAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteAsNumber"], value)
 
     @property
     def RestartTime(self):
@@ -950,11 +1039,12 @@ class NeighborRange(Base):
         -------
         - number: Controls the operation of BGP Graceful Restart.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RestartTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RestartTime"])
+
     @RestartTime.setter
     def RestartTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RestartTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RestartTime"], value)
 
     @property
     def StaggeredStartPeriod(self):
@@ -964,11 +1054,12 @@ class NeighborRange(Base):
         -------
         - number: Controls the staggering and period of initial start messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaggeredStartPeriod'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaggeredStartPeriod"])
+
     @StaggeredStartPeriod.setter
     def StaggeredStartPeriod(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaggeredStartPeriod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaggeredStartPeriod"], value)
 
     @property
     def StaleTime(self):
@@ -978,11 +1069,12 @@ class NeighborRange(Base):
         -------
         - number: Controls the operation of BGP Graceful Restart.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaleTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaleTime"])
+
     @StaleTime.setter
     def StaleTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaleTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaleTime"], value)
 
     @property
     def TcpWindowSize(self):
@@ -992,11 +1084,12 @@ class NeighborRange(Base):
         -------
         - number: (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpWindowSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpWindowSize"])
+
     @TcpWindowSize.setter
     def TcpWindowSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpWindowSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpWindowSize"], value)
 
     @property
     def TrafficGroupId(self):
@@ -1006,11 +1099,12 @@ class NeighborRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def TtlValue(self):
@@ -1020,11 +1114,12 @@ class NeighborRange(Base):
         -------
         - number: The limited number of iterations that a unit of data can experience before the data is discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TtlValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["TtlValue"])
+
     @TtlValue.setter
     def TtlValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TtlValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TtlValue"], value)
 
     @property
     def Type(self):
@@ -1034,11 +1129,12 @@ class NeighborRange(Base):
         -------
         - str(internal | external): Indicates that the neighbor is either an internal or external router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def UpdateInterval(self):
@@ -1048,11 +1144,12 @@ class NeighborRange(Base):
         -------
         - number: The frequency with which UPDATE messages are sent to the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateInterval"])
+
     @UpdateInterval.setter
     def UpdateInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateInterval"], value)
 
     @property
     def Vpls(self):
@@ -1062,13 +1159,69 @@ class NeighborRange(Base):
         -------
         - bool: If enabled, this BGP router/peer supports BGP VPLS per the Kompella draft.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vpls"])
+
     @Vpls.setter
     def Vpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vpls"], value)
 
-    def update(self, AsNumMode=None, Authentication=None, BfdModeOfOperation=None, BgpId=None, DutIpAddress=None, Enable4ByteAsNum=None, EnableActAsRestarted=None, EnableBfdRegistration=None, EnableBgpId=None, EnableDiscardIxiaGeneratedRoutes=None, EnableGracefulRestart=None, EnableLinkFlap=None, EnableNextHop=None, EnableOptionalParameters=None, EnableSendIxiaSignatureWithRoutes=None, EnableStaggeredStart=None, Enabled=None, Evpn=None, EvpnNextHopCount=None, HoldTimer=None, InterfaceStartIndex=None, InterfaceType=None, Interfaces=None, IpV4Mdt=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastVpn=None, IpV6Unicast=None, IsAsbr=None, LinkFlapDownTime=None, LinkFlapUpTime=None, LocalAsNumber=None, LocalIpAddress=None, Md5Key=None, NextHop=None, NumUpdatesPerIteration=None, RangeCount=None, RemoteAsNumber=None, RestartTime=None, StaggeredStartPeriod=None, StaleTime=None, TcpWindowSize=None, TrafficGroupId=None, TtlValue=None, Type=None, UpdateInterval=None, Vpls=None):
+    def update(
+        self,
+        AsNumMode=None,
+        Authentication=None,
+        BfdModeOfOperation=None,
+        BgpId=None,
+        DutIpAddress=None,
+        Enable4ByteAsNum=None,
+        EnableActAsRestarted=None,
+        EnableBfdRegistration=None,
+        EnableBgpId=None,
+        EnableDiscardIxiaGeneratedRoutes=None,
+        EnableGracefulRestart=None,
+        EnableLinkFlap=None,
+        EnableNextHop=None,
+        EnableOptionalParameters=None,
+        EnableSendIxiaSignatureWithRoutes=None,
+        EnableStaggeredStart=None,
+        Enabled=None,
+        Evpn=None,
+        EvpnNextHopCount=None,
+        HoldTimer=None,
+        InterfaceStartIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpV4Mdt=None,
+        IpV4Mpls=None,
+        IpV4MplsVpn=None,
+        IpV4Multicast=None,
+        IpV4MulticastVpn=None,
+        IpV4Unicast=None,
+        IpV6Mpls=None,
+        IpV6MplsVpn=None,
+        IpV6Multicast=None,
+        IpV6MulticastVpn=None,
+        IpV6Unicast=None,
+        IsAsbr=None,
+        LinkFlapDownTime=None,
+        LinkFlapUpTime=None,
+        LocalAsNumber=None,
+        LocalIpAddress=None,
+        Md5Key=None,
+        NextHop=None,
+        NumUpdatesPerIteration=None,
+        RangeCount=None,
+        RemoteAsNumber=None,
+        RestartTime=None,
+        StaggeredStartPeriod=None,
+        StaleTime=None,
+        TcpWindowSize=None,
+        TrafficGroupId=None,
+        TtlValue=None,
+        Type=None,
+        UpdateInterval=None,
+        Vpls=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, str, int, bool) -> NeighborRange
         """Updates neighborRange resource on the server.
 
@@ -1134,7 +1287,62 @@ class NeighborRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AsNumMode=None, Authentication=None, BfdModeOfOperation=None, BgpId=None, DutIpAddress=None, Enable4ByteAsNum=None, EnableActAsRestarted=None, EnableBfdRegistration=None, EnableBgpId=None, EnableDiscardIxiaGeneratedRoutes=None, EnableGracefulRestart=None, EnableLinkFlap=None, EnableNextHop=None, EnableOptionalParameters=None, EnableSendIxiaSignatureWithRoutes=None, EnableStaggeredStart=None, Enabled=None, Evpn=None, EvpnNextHopCount=None, HoldTimer=None, InterfaceStartIndex=None, InterfaceType=None, Interfaces=None, IpV4Mdt=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastVpn=None, IpV6Unicast=None, IsAsbr=None, LinkFlapDownTime=None, LinkFlapUpTime=None, LocalAsNumber=None, LocalIpAddress=None, Md5Key=None, NextHop=None, NumUpdatesPerIteration=None, RangeCount=None, RemoteAsNumber=None, RestartTime=None, StaggeredStartPeriod=None, StaleTime=None, TcpWindowSize=None, TrafficGroupId=None, TtlValue=None, Type=None, UpdateInterval=None, Vpls=None):
+    def add(
+        self,
+        AsNumMode=None,
+        Authentication=None,
+        BfdModeOfOperation=None,
+        BgpId=None,
+        DutIpAddress=None,
+        Enable4ByteAsNum=None,
+        EnableActAsRestarted=None,
+        EnableBfdRegistration=None,
+        EnableBgpId=None,
+        EnableDiscardIxiaGeneratedRoutes=None,
+        EnableGracefulRestart=None,
+        EnableLinkFlap=None,
+        EnableNextHop=None,
+        EnableOptionalParameters=None,
+        EnableSendIxiaSignatureWithRoutes=None,
+        EnableStaggeredStart=None,
+        Enabled=None,
+        Evpn=None,
+        EvpnNextHopCount=None,
+        HoldTimer=None,
+        InterfaceStartIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpV4Mdt=None,
+        IpV4Mpls=None,
+        IpV4MplsVpn=None,
+        IpV4Multicast=None,
+        IpV4MulticastVpn=None,
+        IpV4Unicast=None,
+        IpV6Mpls=None,
+        IpV6MplsVpn=None,
+        IpV6Multicast=None,
+        IpV6MulticastVpn=None,
+        IpV6Unicast=None,
+        IsAsbr=None,
+        LinkFlapDownTime=None,
+        LinkFlapUpTime=None,
+        LocalAsNumber=None,
+        LocalIpAddress=None,
+        Md5Key=None,
+        NextHop=None,
+        NumUpdatesPerIteration=None,
+        RangeCount=None,
+        RemoteAsNumber=None,
+        RestartTime=None,
+        StaggeredStartPeriod=None,
+        StaleTime=None,
+        TcpWindowSize=None,
+        TrafficGroupId=None,
+        TtlValue=None,
+        Type=None,
+        UpdateInterval=None,
+        Vpls=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, str, int, bool) -> NeighborRange
         """Adds a new neighborRange resource on the server and adds it to the container.
 
@@ -1214,7 +1422,64 @@ class NeighborRange(Base):
         """
         self._delete()
 
-    def find(self, AsNumMode=None, Authentication=None, BfdModeOfOperation=None, BgpId=None, DutIpAddress=None, Enable4ByteAsNum=None, EnableActAsRestarted=None, EnableBfdRegistration=None, EnableBgpId=None, EnableDiscardIxiaGeneratedRoutes=None, EnableGracefulRestart=None, EnableLinkFlap=None, EnableNextHop=None, EnableOptionalParameters=None, EnableSendIxiaSignatureWithRoutes=None, EnableStaggeredStart=None, Enabled=None, Evpn=None, EvpnNextHopCount=None, HoldTimer=None, InterfaceStartIndex=None, InterfaceType=None, Interfaces=None, IpV4Mdt=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastVpn=None, IpV6Unicast=None, IsAsbr=None, IsInterfaceLearnedInfoAvailable=None, IsLearnedInfoRefreshed=None, LinkFlapDownTime=None, LinkFlapUpTime=None, LocalAsNumber=None, LocalIpAddress=None, Md5Key=None, NextHop=None, NumUpdatesPerIteration=None, RangeCount=None, RemoteAsNumber=None, RestartTime=None, StaggeredStartPeriod=None, StaleTime=None, TcpWindowSize=None, TrafficGroupId=None, TtlValue=None, Type=None, UpdateInterval=None, Vpls=None):
+    def find(
+        self,
+        AsNumMode=None,
+        Authentication=None,
+        BfdModeOfOperation=None,
+        BgpId=None,
+        DutIpAddress=None,
+        Enable4ByteAsNum=None,
+        EnableActAsRestarted=None,
+        EnableBfdRegistration=None,
+        EnableBgpId=None,
+        EnableDiscardIxiaGeneratedRoutes=None,
+        EnableGracefulRestart=None,
+        EnableLinkFlap=None,
+        EnableNextHop=None,
+        EnableOptionalParameters=None,
+        EnableSendIxiaSignatureWithRoutes=None,
+        EnableStaggeredStart=None,
+        Enabled=None,
+        Evpn=None,
+        EvpnNextHopCount=None,
+        HoldTimer=None,
+        InterfaceStartIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpV4Mdt=None,
+        IpV4Mpls=None,
+        IpV4MplsVpn=None,
+        IpV4Multicast=None,
+        IpV4MulticastVpn=None,
+        IpV4Unicast=None,
+        IpV6Mpls=None,
+        IpV6MplsVpn=None,
+        IpV6Multicast=None,
+        IpV6MulticastVpn=None,
+        IpV6Unicast=None,
+        IsAsbr=None,
+        IsInterfaceLearnedInfoAvailable=None,
+        IsLearnedInfoRefreshed=None,
+        LinkFlapDownTime=None,
+        LinkFlapUpTime=None,
+        LocalAsNumber=None,
+        LocalIpAddress=None,
+        Md5Key=None,
+        NextHop=None,
+        NumUpdatesPerIteration=None,
+        RangeCount=None,
+        RemoteAsNumber=None,
+        RestartTime=None,
+        StaggeredStartPeriod=None,
+        StaleTime=None,
+        TcpWindowSize=None,
+        TrafficGroupId=None,
+        TtlValue=None,
+        Type=None,
+        UpdateInterval=None,
+        Vpls=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, str, int, bool) -> NeighborRange
         """Finds and retrieves neighborRange resources from the server.
 
@@ -1324,10 +1589,14 @@ class NeighborRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )
 
     def GetInterfaceLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1345,10 +1614,14 @@ class NeighborRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceLearnedInfo", payload=payload, response_object=None
+        )
 
     def RefreshLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1366,7 +1639,11 @@ class NeighborRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

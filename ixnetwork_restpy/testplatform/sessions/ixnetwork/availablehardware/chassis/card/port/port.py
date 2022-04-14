@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class Port(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'port'
+    _SDM_NAME = "port"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'IsAvailable': 'isAvailable',
-        'IsBusy': 'isBusy',
-        'IsLinkUp': 'isLinkUp',
-        'IsUsable': 'isUsable',
-        'Owner': 'owner',
-        'PortId': 'portId',
+        "Description": "description",
+        "IsAvailable": "isAvailable",
+        "IsBusy": "isBusy",
+        "IsLinkUp": "isLinkUp",
+        "IsUsable": "isUsable",
+        "Owner": "owner",
+        "PortId": "portId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Port, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class Port(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.tapsettings import TapSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.tapsettings import (
+            TapSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TapSettings', None) is not None:
-                return self._properties.get('TapSettings')
+            if self._properties.get("TapSettings", None) is not None:
+                return self._properties.get("TapSettings")
         return TapSettings(self)
 
     @property
@@ -74,7 +77,7 @@ class Port(Base):
         -------
         - str: The port description/mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def IsAvailable(self):
@@ -84,7 +87,7 @@ class Port(Base):
         -------
         - bool: The link is available on the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsAvailable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsAvailable"])
 
     @property
     def IsBusy(self):
@@ -94,7 +97,7 @@ class Port(Base):
         -------
         - bool: The link is unavailable on the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsBusy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsBusy"])
 
     @property
     def IsLinkUp(self):
@@ -104,7 +107,7 @@ class Port(Base):
         -------
         - bool: The link is up on the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLinkUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLinkUp"])
 
     @property
     def IsUsable(self):
@@ -114,7 +117,7 @@ class Port(Base):
         -------
         - bool: (read only) Returns true of false depending on whether the port can be used, based on the value of parent card aggregationMode. If card aggregationMode is notSupported and normal it always returns true. If card aggregationMode is tenGigAggregation, only the ports with index 1, 5, 9, and 13 returns true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsUsable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsUsable"])
 
     @property
     def Owner(self):
@@ -124,7 +127,7 @@ class Port(Base):
         -------
         - str: The current owner of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
+        return self._get_attribute(self._SDM_ATT_MAP["Owner"])
 
     @property
     def PortId(self):
@@ -134,10 +137,10 @@ class Port(Base):
         -------
         - number: The physical port ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortId"])
 
     def add(self):
-        """Adds a new port resource on the json, only valid with config assistant
+        """Adds a new port resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -149,7 +152,16 @@ class Port(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Description=None, IsAvailable=None, IsBusy=None, IsLinkUp=None, IsUsable=None, Owner=None, PortId=None):
+    def find(
+        self,
+        Description=None,
+        IsAvailable=None,
+        IsBusy=None,
+        IsLinkUp=None,
+        IsUsable=None,
+        Owner=None,
+        PortId=None,
+    ):
         # type: (str, bool, bool, bool, bool, str, int) -> Port
         """Finds and retrieves port resources from the server.
 
@@ -210,10 +222,12 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearOwnership', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("clearOwnership", payload=payload, response_object=None)
 
     def CopyTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -223,7 +237,7 @@ class Port(Base):
 
         copyTapSettings(Arg2=list, async_operation=bool)
         ------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -231,10 +245,12 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('copyTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyTapSettings", payload=payload, response_object=None)
 
     def DeleteCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -251,10 +267,14 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deleteCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "deleteCustomDefaults", payload=payload, response_object=None
+        )
 
     def GetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -271,10 +291,12 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTapSettings", payload=payload, response_object=None)
 
     def RestoreCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -291,10 +313,14 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restoreCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "restoreCustomDefaults", payload=payload, response_object=None
+        )
 
     def RestoreDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -311,10 +337,12 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restoreDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restoreDefaults", payload=payload, response_object=None)
 
     def SaveCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -331,10 +359,14 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "saveCustomDefaults", payload=payload, response_object=None
+        )
 
     def SetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -351,7 +383,9 @@ class Port(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setTapSettings", payload=payload, response_object=None)

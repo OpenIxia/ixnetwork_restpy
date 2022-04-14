@@ -4,20 +4,20 @@ from ixnetwork_restpy.files import Files
 
 class Mldv2Query(Base):
     __slots__ = ()
-    _SDM_NAME = 'mldv2Query'
+    _SDM_NAME = "mldv2Query"
     _SDM_ATT_MAP = {
-        'Mldv2ListenerQueryType': 'mldv2Query.mldv2ListenerQuery.type-1',
-        'Mldv2ListenerQueryCode': 'mldv2Query.mldv2ListenerQuery.code-2',
-        'Mldv2ListenerQueryMldv2Checksum': 'mldv2Query.mldv2ListenerQuery.mldv2Checksum-3',
-        'Mldv2ListenerQueryMaximumResponseCode': 'mldv2Query.mldv2ListenerQuery.maximumResponseCode-4',
-        'Mldv2ListenerQueryReserved': 'mldv2Query.mldv2ListenerQuery.reserved-5',
-        'Mldv2ListenerQueryMulticastAddress': 'mldv2Query.mldv2ListenerQuery.multicastAddress-6',
-        'Mldv2ListenerQueryResv': 'mldv2Query.mldv2ListenerQuery.resv-7',
-        'SFlagValue': 'mldv2Query.mldv2ListenerQuery.sFlag.value-8',
-        'Mldv2ListenerQueryQrv': 'mldv2Query.mldv2ListenerQuery.qrv-9',
-        'Mldv2ListenerQueryQqic': 'mldv2Query.mldv2ListenerQuery.qqic-10',
-        'Mldv2ListenerQueryNumberOfSources': 'mldv2Query.mldv2ListenerQuery.numberOfSources-11',
-        'SourceAddressEntriesSourceAddress': 'mldv2Query.mldv2ListenerQuery.sourceAddressEntries.sourceAddress-12',
+        "Mldv2ListenerQueryType": "mldv2Query.mldv2ListenerQuery.type-1",
+        "Mldv2ListenerQueryCode": "mldv2Query.mldv2ListenerQuery.code-2",
+        "Mldv2ListenerQueryMldv2Checksum": "mldv2Query.mldv2ListenerQuery.mldv2Checksum-3",
+        "Mldv2ListenerQueryMaximumResponseCode": "mldv2Query.mldv2ListenerQuery.maximumResponseCode-4",
+        "Mldv2ListenerQueryReserved": "mldv2Query.mldv2ListenerQuery.reserved-5",
+        "Mldv2ListenerQueryMulticastAddress": "mldv2Query.mldv2ListenerQuery.multicastAddress-6",
+        "Mldv2ListenerQueryResv": "mldv2Query.mldv2ListenerQuery.resv-7",
+        "SFlagValue": "mldv2Query.mldv2ListenerQuery.sFlag.value-8",
+        "Mldv2ListenerQueryQrv": "mldv2Query.mldv2ListenerQuery.qrv-9",
+        "Mldv2ListenerQueryQqic": "mldv2Query.mldv2ListenerQuery.qqic-10",
+        "Mldv2ListenerQueryNumberOfSources": "mldv2Query.mldv2ListenerQuery.numberOfSources-11",
+        "SourceAddressEntriesSourceAddress": "mldv2Query.mldv2ListenerQuery.sourceAddressEntries.sourceAddress-12",
     }
 
     def __init__(self, parent, list_op=False):
@@ -31,7 +31,10 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryType"])
+        )
 
     @property
     def Mldv2ListenerQueryCode(self):
@@ -41,7 +44,10 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryCode"])
+        )
 
     @property
     def Mldv2ListenerQueryMldv2Checksum(self):
@@ -51,7 +57,11 @@ class Mldv2Query(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryMldv2Checksum']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryMldv2Checksum"]),
+        )
 
     @property
     def Mldv2ListenerQueryMaximumResponseCode(self):
@@ -61,7 +71,13 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryMaximumResponseCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Mldv2ListenerQueryMaximumResponseCode"]
+            ),
+        )
 
     @property
     def Mldv2ListenerQueryReserved(self):
@@ -71,7 +87,10 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryReserved"])
+        )
 
     @property
     def Mldv2ListenerQueryMulticastAddress(self):
@@ -81,7 +100,13 @@ class Mldv2Query(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryMulticastAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Mldv2ListenerQueryMulticastAddress"]
+            ),
+        )
 
     @property
     def Mldv2ListenerQueryResv(self):
@@ -91,7 +116,10 @@ class Mldv2Query(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryResv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryResv"])
+        )
 
     @property
     def SFlagValue(self):
@@ -102,7 +130,8 @@ class Mldv2Query(Base):
         Available enum values: OFF, 0, ON, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlagValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlagValue"]))
 
     @property
     def Mldv2ListenerQueryQrv(self):
@@ -112,7 +141,10 @@ class Mldv2Query(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryQrv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryQrv"])
+        )
 
     @property
     def Mldv2ListenerQueryQqic(self):
@@ -122,7 +154,10 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryQqic']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryQqic"])
+        )
 
     @property
     def Mldv2ListenerQueryNumberOfSources(self):
@@ -132,7 +167,11 @@ class Mldv2Query(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mldv2ListenerQueryNumberOfSources']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Mldv2ListenerQueryNumberOfSources"]),
+        )
 
     @property
     def SourceAddressEntriesSourceAddress(self):
@@ -142,7 +181,11 @@ class Mldv2Query(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressEntriesSourceAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SourceAddressEntriesSourceAddress"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class SelectWatch(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'selectWatch'
+    _SDM_NAME = "selectWatch"
     _SDM_ATT_MAP = {
-        'AverageExecutionTime': 'averageExecutionTime',
-        'IsDisabled': 'isDisabled',
-        'LastExecutionTime': 'lastExecutionTime',
-        'LastNotification': 'lastNotification',
-        'MaxExecutionTime': 'maxExecutionTime',
-        'PollInterval': 'pollInterval',
-        'Selects': 'selects',
-        'Token': 'token',
-        'Topic': 'topic',
+        "AverageExecutionTime": "averageExecutionTime",
+        "IsDisabled": "isDisabled",
+        "LastExecutionTime": "lastExecutionTime",
+        "LastNotification": "lastNotification",
+        "MaxExecutionTime": "maxExecutionTime",
+        "PollInterval": "pollInterval",
+        "Selects": "selects",
+        "Token": "token",
+        "Topic": "topic",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SelectWatch, self).__init__(parent, list_op)
@@ -58,9 +58,9 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageExecutionTime"])
 
     @property
     def IsDisabled(self):
@@ -68,9 +68,9 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsDisabled"])
 
     @property
     def LastExecutionTime(self):
@@ -78,9 +78,9 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastExecutionTime"])
 
     @property
     def LastNotification(self):
@@ -88,9 +88,9 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastNotification"])
 
     @property
     def MaxExecutionTime(self):
@@ -100,11 +100,12 @@ class SelectWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxExecutionTime"])
+
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxExecutionTime"], value)
 
     @property
     def PollInterval(self):
@@ -114,23 +115,25 @@ class SelectWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
     @property
     def Selects(self):
         """
         Returns
         -------
-        - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])): 
+        - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Selects'])
+        return self._get_attribute(self._SDM_ATT_MAP["Selects"])
+
     @Selects.setter
     def Selects(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Selects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Selects"], value)
 
     @property
     def Token(self):
@@ -138,9 +141,9 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Token'])
+        return self._get_attribute(self._SDM_ATT_MAP["Token"])
 
     @property
     def Topic(self):
@@ -148,23 +151,26 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topic"])
+
     @Topic.setter
     def Topic(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topic"], value)
 
-    def update(self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None):
+    def update(
+        self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None
+    ):
         """Updates selectWatch resource on the server.
 
         Args
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
-        - Topic (str): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Topic (str):
 
         Raises
         ------
@@ -179,8 +185,8 @@ class SelectWatch(Base):
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
-        - Topic (str): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Topic (str):
 
         Returns
         -------
@@ -202,7 +208,18 @@ class SelectWatch(Base):
         """
         self._delete()
 
-    def find(self, AverageExecutionTime=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, PollInterval=None, Selects=None, Token=None, Topic=None):
+    def find(
+        self,
+        AverageExecutionTime=None,
+        IsDisabled=None,
+        LastExecutionTime=None,
+        LastNotification=None,
+        MaxExecutionTime=None,
+        PollInterval=None,
+        Selects=None,
+        Token=None,
+        Topic=None,
+    ):
         """Finds and retrieves selectWatch resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve selectWatch resources from the server.
@@ -211,15 +228,15 @@ class SelectWatch(Base):
 
         Args
         ----
-        - AverageExecutionTime (number): 
-        - IsDisabled (bool): 
-        - LastExecutionTime (number): 
-        - LastNotification (str): 
+        - AverageExecutionTime (number):
+        - IsDisabled (bool):
+        - LastExecutionTime (number):
+        - LastNotification (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
-        - Token (number): 
-        - Topic (str): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Token (number):
+        - Topic (str):
 
         Returns
         -------

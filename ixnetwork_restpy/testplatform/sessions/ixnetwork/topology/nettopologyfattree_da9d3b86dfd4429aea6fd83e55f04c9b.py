@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class NetTopologyFatTree(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyFatTree'
+    _SDM_NAME = "netTopologyFatTree"
     _SDM_ATT_MAP = {
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LevelCount': 'levelCount',
-        'LinkMultiplier': 'linkMultiplier',
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LevelCount": "levelCount",
+        "LinkMultiplier": "linkMultiplier",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyFatTree, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class NetTopologyFatTree(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.level_2d6a41b0a919905f176ad907ea4fdab6 import Level
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.level_2d6a41b0a919905f176ad907ea4fdab6 import (
+            Level,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Level', None) is not None:
-                return self._properties.get('Level')
+            if self._properties.get("Level", None) is not None:
+                return self._properties.get("Level")
         return Level(self)
 
     @property
@@ -71,11 +74,12 @@ class NetTopologyFatTree(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LevelCount(self):
@@ -85,11 +89,12 @@ class NetTopologyFatTree(Base):
         -------
         - number: Number of Levels
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LevelCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LevelCount"])
+
     @LevelCount.setter
     def LevelCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LevelCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LevelCount"], value)
 
     @property
     def LinkMultiplier(self):
@@ -99,11 +104,12 @@ class NetTopologyFatTree(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     def update(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
         # type: (bool, int, int) -> NetTopologyFatTree

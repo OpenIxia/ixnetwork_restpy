@@ -4,18 +4,18 @@ from ixnetwork_restpy.files import Files
 
 class Tmpls(Base):
     __slots__ = ()
-    _SDM_NAME = 'tmpls'
+    _SDM_NAME = "tmpls"
     _SDM_ATT_MAP = {
-        'TmpLabelValue': 'tmpls.header.tmpLabel.value-1',
-        'TmpLabelExperimental': 'tmpls.header.tmpLabel.experimental-2',
-        'TmpLabelBottomOfStackBit': 'tmpls.header.tmpLabel.bottomOfStackBit-3',
-        'TmpLabelTtl': 'tmpls.header.tmpLabel.ttl-4',
-        'TmcLabelValue': 'tmpls.header.tmcLabel.value-5',
-        'TmcLabelExperimental': 'tmpls.header.tmcLabel.experimental-6',
-        'TmcLabelBottomOfStackBit': 'tmpls.header.tmcLabel.bottomOfStackBit-7',
-        'TmcLabelTtl': 'tmpls.header.tmcLabel.ttl-8',
-        'HeaderCDstMAC': 'tmpls.header.cDstMAC-9',
-        'HeaderCSrcMAC': 'tmpls.header.cSrcMAC-10',
+        "TmpLabelValue": "tmpls.header.tmpLabel.value-1",
+        "TmpLabelExperimental": "tmpls.header.tmpLabel.experimental-2",
+        "TmpLabelBottomOfStackBit": "tmpls.header.tmpLabel.bottomOfStackBit-3",
+        "TmpLabelTtl": "tmpls.header.tmpLabel.ttl-4",
+        "TmcLabelValue": "tmpls.header.tmcLabel.value-5",
+        "TmcLabelExperimental": "tmpls.header.tmcLabel.experimental-6",
+        "TmcLabelBottomOfStackBit": "tmpls.header.tmcLabel.bottomOfStackBit-7",
+        "TmcLabelTtl": "tmpls.header.tmcLabel.ttl-8",
+        "HeaderCDstMAC": "tmpls.header.cDstMAC-9",
+        "HeaderCSrcMAC": "tmpls.header.cSrcMAC-10",
     }
 
     def __init__(self, parent, list_op=False):
@@ -29,7 +29,8 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmpLabelValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TmpLabelValue"]))
 
     @property
     def TmpLabelExperimental(self):
@@ -39,7 +40,10 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmpLabelExperimental']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TmpLabelExperimental"])
+        )
 
     @property
     def TmpLabelBottomOfStackBit(self):
@@ -49,7 +53,10 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmpLabelBottomOfStackBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TmpLabelBottomOfStackBit"])
+        )
 
     @property
     def TmpLabelTtl(self):
@@ -59,7 +66,8 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmpLabelTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TmpLabelTtl"]))
 
     @property
     def TmcLabelValue(self):
@@ -69,7 +77,8 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmcLabelValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TmcLabelValue"]))
 
     @property
     def TmcLabelExperimental(self):
@@ -79,7 +88,10 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmcLabelExperimental']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TmcLabelExperimental"])
+        )
 
     @property
     def TmcLabelBottomOfStackBit(self):
@@ -89,7 +101,10 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmcLabelBottomOfStackBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TmcLabelBottomOfStackBit"])
+        )
 
     @property
     def TmcLabelTtl(self):
@@ -99,7 +114,8 @@ class Tmpls(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TmcLabelTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TmcLabelTtl"]))
 
     @property
     def HeaderCDstMAC(self):
@@ -109,7 +125,8 @@ class Tmpls(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCDstMAC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCDstMAC"]))
 
     @property
     def HeaderCSrcMAC(self):
@@ -119,7 +136,8 @@ class Tmpls(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCSrcMAC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCSrcMAC"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

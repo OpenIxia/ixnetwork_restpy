@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,41 +35,49 @@ class OpenFlowChannel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'openFlowChannel'
+    _SDM_NAME = "openFlowChannel"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CalcFlowRate': 'calcFlowRate',
-        'CalcFlowRateWithBarrier': 'calcFlowRateWithBarrier',
-        'ConnectedVia': 'connectedVia',
-        'ControllerIndex': 'controllerIndex',
-        'ControllerName': 'controllerName',
-        'Count': 'count',
-        'DatapathId': 'datapathId',
-        'DatapathIdHex': 'datapathIdHex',
-        'DescriptiveName': 'descriptiveName',
-        'EnableHelloElement': 'enableHelloElement',
-        'Errors': 'errors',
-        'FlowTxBurstSize': 'flowTxBurstSize',
-        'GroupsPerChannel': 'groupsPerChannel',
-        'InterFlowBurstGap': 'interFlowBurstGap',
-        'LocalIp': 'localIp',
-        'MaxFlowsAtATime': 'maxFlowsAtATime',
-        'MetersPerChannel': 'metersPerChannel',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'RemoteIp': 'remoteIp',
-        'SendRoleRequest': 'sendRoleRequest',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StartupGenerationId': 'startupGenerationId',
-        'StartupRoleRequest': 'startupRoleRequest',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TablesPerChannel': 'tablesPerChannel',
-        'UseDatapathID': 'useDatapathID',
+        "Active": "active",
+        "CalcFlowRate": "calcFlowRate",
+        "CalcFlowRateWithBarrier": "calcFlowRateWithBarrier",
+        "ConnectedVia": "connectedVia",
+        "ControllerIndex": "controllerIndex",
+        "ControllerName": "controllerName",
+        "Count": "count",
+        "DatapathId": "datapathId",
+        "DatapathIdHex": "datapathIdHex",
+        "DescriptiveName": "descriptiveName",
+        "EnableHelloElement": "enableHelloElement",
+        "Errors": "errors",
+        "FlowTxBurstSize": "flowTxBurstSize",
+        "GroupsPerChannel": "groupsPerChannel",
+        "InterFlowBurstGap": "interFlowBurstGap",
+        "LocalIp": "localIp",
+        "MaxFlowsAtATime": "maxFlowsAtATime",
+        "MetersPerChannel": "metersPerChannel",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "RemoteIp": "remoteIp",
+        "SendRoleRequest": "sendRoleRequest",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StartupGenerationId": "startupGenerationId",
+        "StartupRoleRequest": "startupRoleRequest",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TablesPerChannel": "tablesPerChannel",
+        "UseDatapathID": "useDatapathID",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -85,10 +94,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups_b0203364879843ea921d92b31d3b37a9 import Groups
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups_b0203364879843ea921d92b31d3b37a9 import (
+            Groups,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Groups', None) is not None:
-                return self._properties.get('Groups')
+            if self._properties.get("Groups", None) is not None:
+                return self._properties.get("Groups")
         return Groups(self)
 
     @property
@@ -102,10 +114,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters_8b28210732dd4e9a4bab19a7e6241a11 import Meters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters_8b28210732dd4e9a4bab19a7e6241a11 import (
+            Meters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Meters', None) is not None:
-                return self._properties.get('Meters')
+            if self._properties.get("Meters", None) is not None:
+                return self._properties.get("Meters")
         return Meters(self)
 
     @property
@@ -119,10 +134,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables_3d687bbed07969785585da03f7a19e75 import Tables
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables_3d687bbed07969785585da03f7a19e75 import (
+            Tables,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tables', None) is not None:
-                return self._properties.get('Tables')
+            if self._properties.get("Tables", None) is not None:
+                return self._properties.get("Tables")
         return Tables(self)
 
     @property
@@ -134,7 +152,8 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def CalcFlowRate(self):
@@ -145,7 +164,8 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the statistics on the rate of transmission of flows per second by the controller is published.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CalcFlowRate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CalcFlowRate"]))
 
     @property
     def CalcFlowRateWithBarrier(self):
@@ -156,21 +176,25 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, statistics on the rate of transmission of flows per second by the controller, along with Barrier Request messages is published.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CalcFlowRateWithBarrier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CalcFlowRateWithBarrier"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def ControllerIndex(self):
@@ -180,7 +204,7 @@ class OpenFlowChannel(Base):
         -------
         - list(str): Parent Controller Index
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControllerIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControllerIndex"])
 
     @property
     def ControllerName(self):
@@ -190,7 +214,7 @@ class OpenFlowChannel(Base):
         -------
         - str: Parent Controller Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControllerName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControllerName"])
 
     @property
     def Count(self):
@@ -200,7 +224,7 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DatapathId(self):
@@ -211,7 +235,8 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID of the OF Channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DatapathId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DatapathId"]))
 
     @property
     def DatapathIdHex(self):
@@ -222,7 +247,8 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Datapath ID in hexadecimal format.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DatapathIdHex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DatapathIdHex"]))
 
     @property
     def DescriptiveName(self):
@@ -232,7 +258,7 @@ class OpenFlowChannel(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableHelloElement(self):
@@ -243,7 +269,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Controller sends a hello message consisting of an OpenFlow header and a set of variable size hello elements to inform the initial handshake of the connection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloElement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloElement"])
+        )
 
     @property
     def Errors(self):
@@ -252,7 +281,7 @@ class OpenFlowChannel(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FlowTxBurstSize(self):
@@ -263,7 +292,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the number of Flow transmitting packets that can be sent in a single burst within the time frame specified by the Inter Flow Burst Gap value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowTxBurstSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlowTxBurstSize"])
+        )
 
     @property
     def GroupsPerChannel(self):
@@ -273,11 +305,12 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of Groups per Channel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupsPerChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupsPerChannel"])
+
     @GroupsPerChannel.setter
     def GroupsPerChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupsPerChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupsPerChannel"], value)
 
     @property
     def InterFlowBurstGap(self):
@@ -288,7 +321,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the duration (in milliseconds) for which the controller waits between successive flow advertisements.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterFlowBurstGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterFlowBurstGap"])
+        )
 
     @property
     def LocalIp(self):
@@ -298,7 +334,7 @@ class OpenFlowChannel(Base):
         -------
         - list(str): The local IP address of the interface. This field is auto-populated and cannot be changed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MaxFlowsAtATime(self):
@@ -309,7 +345,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Max Number of Flows Processed at a Time is the size of an internal buffer maintained by the Ixiacontroller, which prevents it from sending more flows than the Openflow switch can consume at a time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxFlowsAtATime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxFlowsAtATime"])
+        )
 
     @property
     def MetersPerChannel(self):
@@ -319,11 +358,12 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of Meters per Channel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetersPerChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetersPerChannel"])
+
     @MetersPerChannel.setter
     def MetersPerChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MetersPerChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetersPerChannel"], value)
 
     @property
     def Multiplier(self):
@@ -333,11 +373,12 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -347,11 +388,12 @@ class OpenFlowChannel(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RemoteIp(self):
@@ -362,7 +404,8 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the DUT at the other end of the OF Channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteIp"]))
 
     @property
     def SendRoleRequest(self):
@@ -373,7 +416,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the controller sends a Role Request message after the connection is established; to change its role according to the Role Request option selected.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendRoleRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendRoleRequest"])
+        )
 
     @property
     def SessionStatus(self):
@@ -383,7 +429,7 @@ class OpenFlowChannel(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -393,11 +439,12 @@ class OpenFlowChannel(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StartupGenerationId(self):
@@ -408,7 +455,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A 64-bit sequence number field that identifies a given mastership view.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartupGenerationId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartupGenerationId"])
+        )
 
     @property
     def StartupRoleRequest(self):
@@ -419,7 +469,10 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This defines role of the controller.Options include: 1) No Change 2) Equal 3) Master 4) Slave
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartupRoleRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartupRoleRequest"])
+        )
 
     @property
     def StateCounts(self):
@@ -428,7 +481,7 @@ class OpenFlowChannel(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -438,7 +491,7 @@ class OpenFlowChannel(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TablesPerChannel(self):
@@ -448,11 +501,12 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of Tables per Channel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TablesPerChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["TablesPerChannel"])
+
     @TablesPerChannel.setter
     def TablesPerChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TablesPerChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TablesPerChannel"], value)
 
     @property
     def UseDatapathID(self):
@@ -463,9 +517,19 @@ class OpenFlowChannel(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Datapath ID and IP address are used as the OF Channel identifier.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseDatapathID']))
 
-    def update(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseDatapathID"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        GroupsPerChannel=None,
+        MetersPerChannel=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TablesPerChannel=None,
+    ):
         # type: (List[str], int, int, int, str, List[str], int) -> OpenFlowChannel
         """Updates openFlowChannel resource on the server.
 
@@ -488,7 +552,16 @@ class OpenFlowChannel(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        GroupsPerChannel=None,
+        MetersPerChannel=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TablesPerChannel=None,
+    ):
         # type: (List[str], int, int, int, str, List[str], int) -> OpenFlowChannel
         """Adds a new openFlowChannel resource on the server and adds it to the container.
 
@@ -522,7 +595,25 @@ class OpenFlowChannel(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, ControllerIndex=None, ControllerName=None, Count=None, DescriptiveName=None, Errors=None, GroupsPerChannel=None, LocalIp=None, MetersPerChannel=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TablesPerChannel=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        ControllerIndex=None,
+        ControllerName=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        GroupsPerChannel=None,
+        LocalIp=None,
+        MetersPerChannel=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        TablesPerChannel=None,
+    ):
         """Finds and retrieves openFlowChannel resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve openFlowChannel resources from the server.
@@ -603,10 +694,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def GetAsynchronousConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -641,10 +734,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAsynchronousConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAsynchronousConfiguration", payload=payload, response_object=None
+        )
 
     def InvokeSendRoleRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -663,10 +760,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('invokeSendRoleRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "invokeSendRoleRequest", payload=payload, response_object=None
+        )
 
     def PauseEchoReply(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -701,10 +802,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseEchoReply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pauseEchoReply", payload=payload, response_object=None)
 
     def PauseEchoRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -739,10 +842,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseEchoRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pauseEchoRequest", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -771,10 +876,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def ResumeEchoReply(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -809,10 +916,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeEchoReply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumeEchoReply", payload=payload, response_object=None)
 
     def ResumeEchoRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -847,10 +956,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeEchoRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumeEchoRequest", payload=payload, response_object=None)
 
     def SendBarrierRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -885,10 +996,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendBarrierRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendBarrierRequest", payload=payload, response_object=None
+        )
 
     def SendConfigRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -923,10 +1038,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendConfigRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendConfigRequest", payload=payload, response_object=None)
 
     def SendDescriptionStatRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -961,10 +1078,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendDescriptionStatRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendDescriptionStatRequest", payload=payload, response_object=None
+        )
 
     def SendEchoRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1007,10 +1128,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendEchoRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendEchoRequest", payload=payload, response_object=None)
 
     def SendExperimenterMessage(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1061,10 +1184,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendExperimenterMessage', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendExperimenterMessage", payload=payload, response_object=None
+        )
 
     def SendExperimenterStatRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1115,10 +1242,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendExperimenterStatRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendExperimenterStatRequest", payload=payload, response_object=None
+        )
 
     def SendFeatureRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1153,10 +1284,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendFeatureRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendFeatureRequest", payload=payload, response_object=None
+        )
 
     def SendGetQueueConfigRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1199,10 +1334,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGetQueueConfigRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendGetQueueConfigRequest", payload=payload, response_object=None
+        )
 
     def SendGroupDescriptionRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1237,10 +1376,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupDescriptionRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendGroupDescriptionRequest", payload=payload, response_object=None
+        )
 
     def SendGroupFeaturesRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1275,10 +1418,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupFeaturesRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendGroupFeaturesRequest", payload=payload, response_object=None
+        )
 
     def SendGroupStatsRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1321,10 +1468,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupStatsRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendGroupStatsRequest", payload=payload, response_object=None
+        )
 
     def SendMeterConfigRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1367,10 +1518,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterConfigRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendMeterConfigRequest", payload=payload, response_object=None
+        )
 
     def SendMeterFeaturesRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1405,10 +1560,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterFeaturesRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendMeterFeaturesRequest", payload=payload, response_object=None
+        )
 
     def SendMeterStatRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1429,10 +1588,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterStatRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendMeterStatRequest", payload=payload, response_object=None
+        )
 
     def SendMeterStatsRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1467,10 +1630,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterStatsRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendMeterStatsRequest", payload=payload, response_object=None
+        )
 
     def SendPortDescription(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1505,10 +1672,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortDescription', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPortDescription", payload=payload, response_object=None
+        )
 
     def SendPortStatsRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1551,10 +1722,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortStatsRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPortStatsRequest", payload=payload, response_object=None
+        )
 
     def SendQueueStatsRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1605,10 +1780,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendQueueStatsRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendQueueStatsRequest", payload=payload, response_object=None
+        )
 
     def SendTableModRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1655,10 +1834,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTableModRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendTableModRequest", payload=payload, response_object=None
+        )
 
     def SendTableStatsRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1693,10 +1876,14 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTableStatsRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendTableStatsRequest", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1725,10 +1912,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartChannel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1757,10 +1946,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startChannel', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startChannel", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1789,10 +1980,12 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopChannel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1821,12 +2014,31 @@ class OpenFlowChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopChannel', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopChannel", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, CalcFlowRate=None, CalcFlowRateWithBarrier=None, DatapathId=None, DatapathIdHex=None, EnableHelloElement=None, FlowTxBurstSize=None, InterFlowBurstGap=None, MaxFlowsAtATime=None, RemoteIp=None, SendRoleRequest=None, StartupGenerationId=None, StartupRoleRequest=None, UseDatapathID=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        CalcFlowRate=None,
+        CalcFlowRateWithBarrier=None,
+        DatapathId=None,
+        DatapathIdHex=None,
+        EnableHelloElement=None,
+        FlowTxBurstSize=None,
+        InterFlowBurstGap=None,
+        MaxFlowsAtATime=None,
+        RemoteIp=None,
+        SendRoleRequest=None,
+        StartupGenerationId=None,
+        StartupRoleRequest=None,
+        UseDatapathID=None,
+    ):
         """Base class infrastructure that gets a list of openFlowChannel device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

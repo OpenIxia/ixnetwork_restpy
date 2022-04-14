@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,14 @@ class BMacMappedIp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bMacMappedIp'
+    _SDM_NAME = "bMacMappedIp"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IpAddress': 'ipAddress',
-        'IpType': 'ipType',
+        "Enabled": "enabled",
+        "IpAddress": "ipAddress",
+        "IpType": "ipType",
     }
     _SDM_ENUM_MAP = {
-        'ipType': ['ipV4', 'ipV6'],
+        "ipType": ["ipV4", "ipV6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +56,12 @@ class BMacMappedIp(Base):
         -------
         - bool: If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpAddress(self):
@@ -69,11 +71,12 @@ class BMacMappedIp(Base):
         -------
         - str: IP address value is given here depending on the IP Type. Default value is all zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpType(self):
@@ -83,11 +86,12 @@ class BMacMappedIp(Base):
         -------
         - str(ipV4 | ipV6): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     def update(self, Enabled=None, IpAddress=None, IpType=None):
         # type: (bool, str, str) -> BMacMappedIp

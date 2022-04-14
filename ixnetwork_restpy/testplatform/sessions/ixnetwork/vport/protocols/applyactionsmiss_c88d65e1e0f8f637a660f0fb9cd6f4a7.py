@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class ApplyActionsMiss(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'applyActionsMiss'
+    _SDM_NAME = "applyActionsMiss"
     _SDM_ATT_MAP = {
-        'CopyTtlIn': 'copyTtlIn',
-        'CopyTtlOut': 'copyTtlOut',
-        'DecrementMplsTtl': 'decrementMplsTtl',
-        'DecrementNetworkTtl': 'decrementNetworkTtl',
-        'Group': 'group',
-        'Output': 'output',
-        'PopMpls': 'popMpls',
-        'PopPbb': 'popPbb',
-        'PopVlan': 'popVlan',
-        'PushMpls': 'pushMpls',
-        'PushPbb': 'pushPbb',
-        'PushVlan': 'pushVlan',
-        'SetField': 'setField',
-        'SetMplsTtl': 'setMplsTtl',
-        'SetNetworkTtl': 'setNetworkTtl',
-        'SetQueue': 'setQueue',
+        "CopyTtlIn": "copyTtlIn",
+        "CopyTtlOut": "copyTtlOut",
+        "DecrementMplsTtl": "decrementMplsTtl",
+        "DecrementNetworkTtl": "decrementNetworkTtl",
+        "Group": "group",
+        "Output": "output",
+        "PopMpls": "popMpls",
+        "PopPbb": "popPbb",
+        "PopVlan": "popVlan",
+        "PushMpls": "pushMpls",
+        "PushPbb": "pushPbb",
+        "PushVlan": "pushVlan",
+        "SetField": "setField",
+        "SetMplsTtl": "setMplsTtl",
+        "SetNetworkTtl": "setNetworkTtl",
+        "SetQueue": "setQueue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ApplyActionsMiss, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Copy TTL In Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CopyTtlIn'])
+        return self._get_attribute(self._SDM_ATT_MAP["CopyTtlIn"])
+
     @CopyTtlIn.setter
     def CopyTtlIn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CopyTtlIn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CopyTtlIn"], value)
 
     @property
     def CopyTtlOut(self):
@@ -79,11 +80,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Copy TTL Out Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CopyTtlOut'])
+        return self._get_attribute(self._SDM_ATT_MAP["CopyTtlOut"])
+
     @CopyTtlOut.setter
     def CopyTtlOut(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CopyTtlOut'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CopyTtlOut"], value)
 
     @property
     def DecrementMplsTtl(self):
@@ -93,11 +95,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Decrement MPLS TTL Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["DecrementMplsTtl"])
+
     @DecrementMplsTtl.setter
     def DecrementMplsTtl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DecrementMplsTtl"], value)
 
     @property
     def DecrementNetworkTtl(self):
@@ -107,11 +110,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Decrement Network TTL Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["DecrementNetworkTtl"])
+
     @DecrementNetworkTtl.setter
     def DecrementNetworkTtl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DecrementNetworkTtl"], value)
 
     @property
     def Group(self):
@@ -121,11 +125,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Group Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Group'])
+        return self._get_attribute(self._SDM_ATT_MAP["Group"])
+
     @Group.setter
     def Group(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Group'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Group"], value)
 
     @property
     def Output(self):
@@ -135,11 +140,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Output Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Output'])
+        return self._get_attribute(self._SDM_ATT_MAP["Output"])
+
     @Output.setter
     def Output(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Output'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Output"], value)
 
     @property
     def PopMpls(self):
@@ -149,11 +155,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Pop MPLS Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PopMpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["PopMpls"])
+
     @PopMpls.setter
     def PopMpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PopMpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PopMpls"], value)
 
     @property
     def PopPbb(self):
@@ -163,11 +170,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Pop PBB Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PopPbb'])
+        return self._get_attribute(self._SDM_ATT_MAP["PopPbb"])
+
     @PopPbb.setter
     def PopPbb(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PopPbb'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PopPbb"], value)
 
     @property
     def PopVlan(self):
@@ -177,11 +185,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Pop VLAN Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PopVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["PopVlan"])
+
     @PopVlan.setter
     def PopVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PopVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PopVlan"], value)
 
     @property
     def PushMpls(self):
@@ -191,11 +200,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Push MPLS Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PushMpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["PushMpls"])
+
     @PushMpls.setter
     def PushMpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PushMpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PushMpls"], value)
 
     @property
     def PushPbb(self):
@@ -205,11 +215,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Push PBB Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PushPbb'])
+        return self._get_attribute(self._SDM_ATT_MAP["PushPbb"])
+
     @PushPbb.setter
     def PushPbb(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PushPbb'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PushPbb"], value)
 
     @property
     def PushVlan(self):
@@ -219,11 +230,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Push VLAN Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PushVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["PushVlan"])
+
     @PushVlan.setter
     def PushVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PushVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PushVlan"], value)
 
     @property
     def SetField(self):
@@ -233,11 +245,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Set Field Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetField"])
+
     @SetField.setter
     def SetField(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetField"], value)
 
     @property
     def SetMplsTtl(self):
@@ -247,11 +260,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Set MPLS TTL Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetMplsTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetMplsTtl"])
+
     @SetMplsTtl.setter
     def SetMplsTtl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetMplsTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetMplsTtl"], value)
 
     @property
     def SetNetworkTtl(self):
@@ -261,11 +275,12 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Set Network TTL Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetNetworkTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetNetworkTtl"])
+
     @SetNetworkTtl.setter
     def SetNetworkTtl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetNetworkTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetNetworkTtl"], value)
 
     @property
     def SetQueue(self):
@@ -275,13 +290,32 @@ class ApplyActionsMiss(Base):
         -------
         - bool: If selected, Set Queue Apply Actions is supported for table miss flow entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetQueue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetQueue"])
+
     @SetQueue.setter
     def SetQueue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetQueue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetQueue"], value)
 
-    def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+    def update(
+        self,
+        CopyTtlIn=None,
+        CopyTtlOut=None,
+        DecrementMplsTtl=None,
+        DecrementNetworkTtl=None,
+        Group=None,
+        Output=None,
+        PopMpls=None,
+        PopPbb=None,
+        PopVlan=None,
+        PushMpls=None,
+        PushPbb=None,
+        PushVlan=None,
+        SetField=None,
+        SetMplsTtl=None,
+        SetNetworkTtl=None,
+        SetQueue=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplyActionsMiss
         """Updates applyActionsMiss resource on the server.
 
@@ -310,7 +344,25 @@ class ApplyActionsMiss(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+    def find(
+        self,
+        CopyTtlIn=None,
+        CopyTtlOut=None,
+        DecrementMplsTtl=None,
+        DecrementNetworkTtl=None,
+        Group=None,
+        Output=None,
+        PopMpls=None,
+        PopPbb=None,
+        PopVlan=None,
+        PushMpls=None,
+        PushPbb=None,
+        PushVlan=None,
+        SetField=None,
+        SetMplsTtl=None,
+        SetNetworkTtl=None,
+        SetQueue=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplyActionsMiss
         """Finds and retrieves applyActionsMiss resources from the server.
 

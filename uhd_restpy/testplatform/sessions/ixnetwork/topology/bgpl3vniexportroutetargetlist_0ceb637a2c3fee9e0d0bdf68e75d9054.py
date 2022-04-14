@@ -158,7 +158,7 @@ class BgpL3VNIExportRouteTargetList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpL3VNIExportRouteTargetList
-        """Adds a new bgpL3VNIExportRouteTargetList resource on the json, only valid with config assistant
+        """Adds a new bgpL3VNIExportRouteTargetList resource on the json, only valid with batch add utility
 
         Args
         ----

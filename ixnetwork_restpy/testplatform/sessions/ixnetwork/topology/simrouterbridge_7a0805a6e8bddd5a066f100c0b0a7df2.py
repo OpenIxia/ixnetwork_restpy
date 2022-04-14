@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class SimRouterBridge(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'simRouterBridge'
+    _SDM_NAME = "simRouterBridge"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NodeIndex': 'nodeIndex',
-        'SystemId': 'systemId',
-        'SystemMAC': 'systemMAC',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NodeIndex": "nodeIndex",
+        "SystemId": "systemId",
+        "SystemMAC": "systemMAC",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SimRouterBridge, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class SimRouterBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb import CfmSimulatedMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb import (
+            CfmSimulatedMp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmSimulatedMp', None) is not None:
-                return self._properties.get('CfmSimulatedMp')
+            if self._properties.get("CfmSimulatedMp", None) is not None:
+                return self._properties.get("CfmSimulatedMp")
         return CfmSimulatedMp(self)
 
     @property
@@ -76,10 +79,13 @@ class SimRouterBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -93,10 +99,13 @@ class SimRouterBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudonode_6416adf40a9c10f6ed462f220e3c16ff import IsisDcePseudoNode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudonode_6416adf40a9c10f6ed462f220e3c16ff import (
+            IsisDcePseudoNode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisDcePseudoNode', None) is not None:
-                return self._properties.get('IsisDcePseudoNode')
+            if self._properties.get("IsisDcePseudoNode", None) is not None:
+                return self._properties.get("IsisDcePseudoNode")
         return IsisDcePseudoNode(self)
 
     @property
@@ -110,10 +119,13 @@ class SimRouterBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudonode_e0862fd97cf99212ff106c16f6c049cb import IsisSpbPseudoNode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudonode_e0862fd97cf99212ff106c16f6c049cb import (
+            IsisSpbPseudoNode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbPseudoNode', None) is not None:
-                return self._properties.get('IsisSpbPseudoNode')
+            if self._properties.get("IsisSpbPseudoNode", None) is not None:
+                return self._properties.get("IsisSpbPseudoNode")
         return IsisSpbPseudoNode(self)
 
     @property
@@ -127,10 +139,13 @@ class SimRouterBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudonode_173e4463dccc2001457569c77f3570e0 import IsisTrillPseudoNode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudonode_173e4463dccc2001457569c77f3570e0 import (
+            IsisTrillPseudoNode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillPseudoNode', None) is not None:
-                return self._properties.get('IsisTrillPseudoNode')
+            if self._properties.get("IsisTrillPseudoNode", None) is not None:
+                return self._properties.get("IsisTrillPseudoNode")
         return IsisTrillPseudoNode(self)
 
     @property
@@ -141,7 +156,7 @@ class SimRouterBridge(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -151,7 +166,7 @@ class SimRouterBridge(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -161,11 +176,12 @@ class SimRouterBridge(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NodeIndex(self):
@@ -176,7 +192,8 @@ class SimRouterBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Node index (starting from index-1)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NodeIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NodeIndex"]))
 
     @property
     def SystemId(self):
@@ -187,7 +204,8 @@ class SimRouterBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System Id in hex format.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SystemId"]))
 
     @property
     def SystemMAC(self):
@@ -198,7 +216,8 @@ class SimRouterBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System MAC Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemMAC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SystemMAC"]))
 
     def update(self, Name=None):
         # type: (str) -> SimRouterBridge
@@ -219,7 +238,7 @@ class SimRouterBridge(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimRouterBridge
-        """Adds a new simRouterBridge resource on the json, only valid with config assistant
+        """Adds a new simRouterBridge resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -292,10 +311,12 @@ class SimRouterBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -312,10 +333,12 @@ class SimRouterBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -332,12 +355,16 @@ class SimRouterBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, NodeIndex=None, SystemId=None, SystemMAC=None):
+    def get_device_ids(
+        self, PortNames=None, NodeIndex=None, SystemId=None, SystemMAC=None
+    ):
         """Base class infrastructure that gets a list of simRouterBridge device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

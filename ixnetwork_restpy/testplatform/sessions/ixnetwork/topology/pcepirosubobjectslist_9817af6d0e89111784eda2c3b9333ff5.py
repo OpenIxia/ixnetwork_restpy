@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class PcepIroSubObjectsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pcepIroSubObjectsList'
+    _SDM_NAME = "pcepIroSubObjectsList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumber': 'asNumber',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterfaceId': 'interfaceId',
-        'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
-        'Name': 'name',
-        'PrefixLength': 'prefixLength',
-        'RouterId': 'routerId',
-        'SubObjectType': 'subObjectType',
+        "Active": "active",
+        "AsNumber": "asNumber",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InterfaceId": "interfaceId",
+        "Ipv4Address": "ipv4Address",
+        "Ipv6Address": "ipv6Address",
+        "Name": "name",
+        "PrefixLength": "prefixLength",
+        "RouterId": "routerId",
+        "SubObjectType": "subObjectType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PcepIroSubObjectsList, self).__init__(parent, list_op)
@@ -62,7 +62,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Active
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AsNumber(self):
@@ -73,7 +74,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
 
     @property
     def Count(self):
@@ -83,7 +85,7 @@ class PcepIroSubObjectsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -93,7 +95,7 @@ class PcepIroSubObjectsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InterfaceId(self):
@@ -104,7 +106,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InterfaceId"]))
 
     @property
     def Ipv4Address(self):
@@ -115,7 +118,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4Address"]))
 
     @property
     def Ipv6Address(self):
@@ -126,7 +130,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"]))
 
     @property
     def Name(self):
@@ -136,11 +141,12 @@ class PcepIroSubObjectsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PrefixLength(self):
@@ -151,7 +157,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def RouterId(self):
@@ -162,7 +169,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouterId"]))
 
     @property
     def SubObjectType(self):
@@ -173,7 +181,8 @@ class PcepIroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub Object Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubObjectType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubObjectType"]))
 
     def update(self, Name=None):
         # type: (str) -> PcepIroSubObjectsList
@@ -194,7 +203,7 @@ class PcepIroSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> PcepIroSubObjectsList
-        """Adds a new pcepIroSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new pcepIroSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -252,7 +261,18 @@ class PcepIroSubObjectsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AsNumber=None, InterfaceId=None, Ipv4Address=None, Ipv6Address=None, PrefixLength=None, RouterId=None, SubObjectType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AsNumber=None,
+        InterfaceId=None,
+        Ipv4Address=None,
+        Ipv6Address=None,
+        PrefixLength=None,
+        RouterId=None,
+        SubObjectType=None,
+    ):
         """Base class infrastructure that gets a list of pcepIroSubObjectsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

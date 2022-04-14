@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class LearnedLsa(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedLsa'
+    _SDM_NAME = "learnedLsa"
     _SDM_ATT_MAP = {
-        'AdvRouterId': 'advRouterId',
-        'Age': 'age',
-        'LinkStateId': 'linkStateId',
-        'PrefixLength': 'prefixLength',
-        'PrefixV4Address': 'prefixV4Address',
-        'PrefixV6Address': 'prefixV6Address',
-        'SequenceNo': 'sequenceNo',
-        'Type': 'type',
+        "AdvRouterId": "advRouterId",
+        "Age": "age",
+        "LinkStateId": "linkStateId",
+        "PrefixLength": "prefixLength",
+        "PrefixV4Address": "prefixV4Address",
+        "PrefixV6Address": "prefixV6Address",
+        "SequenceNo": "sequenceNo",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedLsa, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class LearnedLsa(Base):
         -------
         - str: The router ID for the originating router of the LSA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvRouterId"])
 
     @property
     def Age(self):
@@ -68,7 +68,7 @@ class LearnedLsa(Base):
         -------
         - number: The number of seconds that have elapsed since the origination of the LSA by the advertising router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def LinkStateId(self):
@@ -78,7 +78,7 @@ class LearnedLsa(Base):
         -------
         - str: An identifier for this LSA that was assigned by the originating router. A unique identifier for the LSA is created when the Link State ID, LS Type, and Advertising Router information are used together.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkStateId"])
 
     @property
     def PrefixLength(self):
@@ -88,7 +88,7 @@ class LearnedLsa(Base):
         -------
         - number: Indicates the Prefix Length
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
 
     @property
     def PrefixV4Address(self):
@@ -98,7 +98,7 @@ class LearnedLsa(Base):
         -------
         - str: Indicates the IPv4 Address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixV4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixV4Address"])
 
     @property
     def PrefixV6Address(self):
@@ -108,7 +108,7 @@ class LearnedLsa(Base):
         -------
         - str: Indicates the IPv6 Address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixV6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixV6Address"])
 
     @property
     def SequenceNo(self):
@@ -118,7 +118,7 @@ class LearnedLsa(Base):
         -------
         - str: The sequence number for this LSA. Each instance of an LSA is given an LS sequence number, in order to detect duplicates or old LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNo"])
 
     @property
     def Type(self):
@@ -128,10 +128,10 @@ class LearnedLsa(Base):
         -------
         - str: The router type of the learned LSA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new learnedLsa resource on the json, only valid with config assistant
+        """Adds a new learnedLsa resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -143,7 +143,17 @@ class LearnedLsa(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdvRouterId=None, Age=None, LinkStateId=None, PrefixLength=None, PrefixV4Address=None, PrefixV6Address=None, SequenceNo=None, Type=None):
+    def find(
+        self,
+        AdvRouterId=None,
+        Age=None,
+        LinkStateId=None,
+        PrefixLength=None,
+        PrefixV4Address=None,
+        PrefixV6Address=None,
+        SequenceNo=None,
+        Type=None,
+    ):
         # type: (str, int, str, int, str, str, str, str) -> LearnedLsa
         """Finds and retrieves learnedLsa resources from the server.
 

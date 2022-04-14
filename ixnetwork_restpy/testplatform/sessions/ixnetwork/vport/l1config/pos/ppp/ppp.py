@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,43 +33,43 @@ class Ppp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ppp'
+    _SDM_NAME = "ppp"
     _SDM_ATT_MAP = {
-        'AvailableSpeeds': 'availableSpeeds',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'ConfigurationRetries': 'configurationRetries',
-        'EnableAccmNegotiation': 'enableAccmNegotiation',
-        'EnableIpV4': 'enableIpV4',
-        'EnableIpV6': 'enableIpV6',
-        'EnableLqm': 'enableLqm',
-        'EnableMpls': 'enableMpls',
-        'EnableOsi': 'enableOsi',
-        'Enabled': 'enabled',
-        'LocalIpAddress': 'localIpAddress',
-        'LocalIpV6IdType': 'localIpV6IdType',
-        'LocalIpV6Iid': 'localIpV6Iid',
-        'LocalIpV6MacBasedIid': 'localIpV6MacBasedIid',
-        'LocalIpV6NegotiationMode': 'localIpV6NegotiationMode',
-        'LqmReportInterval': 'lqmReportInterval',
-        'PeerIpV6IdType': 'peerIpV6IdType',
-        'PeerIpV6Iid': 'peerIpV6Iid',
-        'PeerIpV6MacBasedIid': 'peerIpV6MacBasedIid',
-        'PeerIpV6NegotiationMode': 'peerIpV6NegotiationMode',
-        'PppLinkState': 'pppLinkState',
-        'RetryTimeout': 'retryTimeout',
-        'RxAlignment': 'rxAlignment',
-        'RxMaxReceiveUnit': 'rxMaxReceiveUnit',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'TxAlignment': 'txAlignment',
-        'TxMaxReceiveUnit': 'txMaxReceiveUnit',
-        'UseMagicNumber': 'useMagicNumber',
+        "AvailableSpeeds": "availableSpeeds",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "ConfigurationRetries": "configurationRetries",
+        "EnableAccmNegotiation": "enableAccmNegotiation",
+        "EnableIpV4": "enableIpV4",
+        "EnableIpV6": "enableIpV6",
+        "EnableLqm": "enableLqm",
+        "EnableMpls": "enableMpls",
+        "EnableOsi": "enableOsi",
+        "Enabled": "enabled",
+        "LocalIpAddress": "localIpAddress",
+        "LocalIpV6IdType": "localIpV6IdType",
+        "LocalIpV6Iid": "localIpV6Iid",
+        "LocalIpV6MacBasedIid": "localIpV6MacBasedIid",
+        "LocalIpV6NegotiationMode": "localIpV6NegotiationMode",
+        "LqmReportInterval": "lqmReportInterval",
+        "PeerIpV6IdType": "peerIpV6IdType",
+        "PeerIpV6Iid": "peerIpV6Iid",
+        "PeerIpV6MacBasedIid": "peerIpV6MacBasedIid",
+        "PeerIpV6NegotiationMode": "peerIpV6NegotiationMode",
+        "PppLinkState": "pppLinkState",
+        "RetryTimeout": "retryTimeout",
+        "RxAlignment": "rxAlignment",
+        "RxMaxReceiveUnit": "rxMaxReceiveUnit",
+        "SelectedSpeeds": "selectedSpeeds",
+        "TxAlignment": "txAlignment",
+        "TxMaxReceiveUnit": "txMaxReceiveUnit",
+        "UseMagicNumber": "useMagicNumber",
     }
     _SDM_ENUM_MAP = {
-        'localIpV6IdType': ['ipV6', 'lastNegotiated', 'macBased', 'random'],
-        'localIpV6NegotiationMode': ['localMay', 'localMust', 'peerMust'],
-        'peerIpV6IdType': ['ipV6', 'lastNegotiated', 'macBased', 'random'],
-        'peerIpV6NegotiationMode': ['localMust', 'peerMay', 'peerMust'],
+        "localIpV6IdType": ["ipV6", "lastNegotiated", "macBased", "random"],
+        "localIpV6NegotiationMode": ["localMay", "localMust", "peerMust"],
+        "peerIpV6IdType": ["ipV6", "lastNegotiated", "macBased", "random"],
+        "peerIpV6NegotiationMode": ["localMust", "peerMay", "peerMust"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -82,7 +83,7 @@ class Ppp(Base):
         -------
         - list(str[]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def CanModifySpeed(self):
@@ -92,7 +93,7 @@ class Ppp(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -102,7 +103,7 @@ class Ppp(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def ConfigurationRetries(self):
@@ -112,11 +113,12 @@ class Ppp(Base):
         -------
         - number: The number of additional PPP configuration requests to send before beginning the termination process (if the peer is not properly acknowledging them). The default is 9 requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfigurationRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfigurationRetries"])
+
     @ConfigurationRetries.setter
     def ConfigurationRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConfigurationRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConfigurationRetries"], value)
 
     @property
     def EnableAccmNegotiation(self):
@@ -126,11 +128,12 @@ class Ppp(Base):
         -------
         - bool: Enables negotiation of Asynchronous Control Character Mask (ACCM).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAccmNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAccmNegotiation"])
+
     @EnableAccmNegotiation.setter
     def EnableAccmNegotiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAccmNegotiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAccmNegotiation"], value)
 
     @property
     def EnableIpV4(self):
@@ -140,11 +143,12 @@ class Ppp(Base):
         -------
         - bool: Enables the IPv4 Network Control Protocol (IPCP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIpV4'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIpV4"])
+
     @EnableIpV4.setter
     def EnableIpV4(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIpV4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIpV4"], value)
 
     @property
     def EnableIpV6(self):
@@ -154,11 +158,12 @@ class Ppp(Base):
         -------
         - bool: Enables the IPv6 Network Control Protocol (IPCP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIpV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIpV6"])
+
     @EnableIpV6.setter
     def EnableIpV6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIpV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIpV6"], value)
 
     @property
     def EnableLqm(self):
@@ -168,11 +173,12 @@ class Ppp(Base):
         -------
         - bool: Enables Link Quality Monitoring (LQM) on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLqm'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLqm"])
+
     @EnableLqm.setter
     def EnableLqm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLqm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLqm"], value)
 
     @property
     def EnableMpls(self):
@@ -182,11 +188,12 @@ class Ppp(Base):
         -------
         - bool: Enables MPLS on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMpls'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMpls"])
+
     @EnableMpls.setter
     def EnableMpls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMpls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMpls"], value)
 
     @property
     def EnableOsi(self):
@@ -196,11 +203,12 @@ class Ppp(Base):
         -------
         - bool: Enables the Open System Interconnection (OSI) Network Layer Control Protocol (OSINLCP).localIpV6IdType
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOsi'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOsi"])
+
     @EnableOsi.setter
     def EnableOsi(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOsi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOsi"], value)
 
     @property
     def Enabled(self):
@@ -210,11 +218,12 @@ class Ppp(Base):
         -------
         - bool: If true, enables PPP for the POS port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LocalIpAddress(self):
@@ -224,11 +233,12 @@ class Ppp(Base):
         -------
         - str: The local port's requested IPv4 address. This address is sent by the local peer to the remote peer, as a Configuration Option in an IPCP Configuration Request packet. The default is 0.0.0.1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpAddress"])
+
     @LocalIpAddress.setter
     def LocalIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpAddress"], value)
 
     @property
     def LocalIpV6IdType(self):
@@ -238,11 +248,12 @@ class Ppp(Base):
         -------
         - str(ipV6 | lastNegotiated | macBased | random): The type of Interface Identifier (IID). It is a Configuration Options sent in the Configuration Request packet. A globally unique, non-zero Interface Identifier is preferred.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpV6IdType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpV6IdType"])
+
     @LocalIpV6IdType.setter
     def LocalIpV6IdType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpV6IdType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpV6IdType"], value)
 
     @property
     def LocalIpV6Iid(self):
@@ -252,11 +263,12 @@ class Ppp(Base):
         -------
         - str: (a 64-bit/8-octet value) The IPv6 Interface Identifier. It MUST be unique on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpV6Iid'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpV6Iid"])
+
     @LocalIpV6Iid.setter
     def LocalIpV6Iid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpV6Iid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpV6Iid"], value)
 
     @property
     def LocalIpV6MacBasedIid(self):
@@ -266,11 +278,12 @@ class Ppp(Base):
         -------
         - str: (a 48-bit/6-octet value) The MAC Interface Identifier. It MUST be unique on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpV6MacBasedIid'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpV6MacBasedIid"])
+
     @LocalIpV6MacBasedIid.setter
     def LocalIpV6MacBasedIid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpV6MacBasedIid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpV6MacBasedIid"], value)
 
     @property
     def LocalIpV6NegotiationMode(self):
@@ -280,11 +293,12 @@ class Ppp(Base):
         -------
         - str(localMay | localMust | peerMust): Before the negotiation of the Interface Identifier (IID), the node chooses a tentative Interface Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpV6NegotiationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpV6NegotiationMode"])
+
     @LocalIpV6NegotiationMode.setter
     def LocalIpV6NegotiationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalIpV6NegotiationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalIpV6NegotiationMode"], value)
 
     @property
     def LqmReportInterval(self):
@@ -294,11 +308,12 @@ class Ppp(Base):
         -------
         - number: The number of seconds between Link Quality Monitoring (LQM) reports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LqmReportInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LqmReportInterval"])
+
     @LqmReportInterval.setter
     def LqmReportInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LqmReportInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LqmReportInterval"], value)
 
     @property
     def PeerIpV6IdType(self):
@@ -308,11 +323,12 @@ class Ppp(Base):
         -------
         - str(ipV6 | lastNegotiated | macBased | random): The type of Interface Identifier (IID). It is a Configuration Options sent in the Configuration Request packet. A globally unique, non-zero Interface Identifier is preferred.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpV6IdType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpV6IdType"])
+
     @PeerIpV6IdType.setter
     def PeerIpV6IdType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerIpV6IdType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerIpV6IdType"], value)
 
     @property
     def PeerIpV6Iid(self):
@@ -322,11 +338,12 @@ class Ppp(Base):
         -------
         - str: (a 64-bit/8-octet value) The IPv6 Interface Identifier. It MUST be unique on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpV6Iid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpV6Iid"])
+
     @PeerIpV6Iid.setter
     def PeerIpV6Iid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerIpV6Iid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerIpV6Iid"], value)
 
     @property
     def PeerIpV6MacBasedIid(self):
@@ -336,11 +353,12 @@ class Ppp(Base):
         -------
         - str: (a 48-bit/6-octet value) The MAC Interface Identifier. It MUST be unique on the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpV6MacBasedIid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpV6MacBasedIid"])
+
     @PeerIpV6MacBasedIid.setter
     def PeerIpV6MacBasedIid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerIpV6MacBasedIid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerIpV6MacBasedIid"], value)
 
     @property
     def PeerIpV6NegotiationMode(self):
@@ -350,11 +368,12 @@ class Ppp(Base):
         -------
         - str(localMust | peerMay | peerMust): Before the negotiation of the Interface Identifier (IID), the node chooses a tentative Interface Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpV6NegotiationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpV6NegotiationMode"])
+
     @PeerIpV6NegotiationMode.setter
     def PeerIpV6NegotiationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerIpV6NegotiationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerIpV6NegotiationMode"], value)
 
     @property
     def PppLinkState(self):
@@ -364,7 +383,7 @@ class Ppp(Base):
         -------
         - str: (Read-only) Indicates the current port link state. If PPP is enabled, the fully operational link state is indicated as PPP Up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PppLinkState'])
+        return self._get_attribute(self._SDM_ATT_MAP["PppLinkState"])
 
     @property
     def RetryTimeout(self):
@@ -374,11 +393,12 @@ class Ppp(Base):
         -------
         - number: The time, in seconds, between retransmissions of successive configuration or termination requests. The default is 8 seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetryTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetryTimeout"])
+
     @RetryTimeout.setter
     def RetryTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RetryTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RetryTimeout"], value)
 
     @property
     def RxAlignment(self):
@@ -388,11 +408,12 @@ class Ppp(Base):
         -------
         - number: The byte alignment desired for Receive, in bytes. The default is 0 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxAlignment'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxAlignment"])
+
     @RxAlignment.setter
     def RxAlignment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RxAlignment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxAlignment"], value)
 
     @property
     def RxMaxReceiveUnit(self):
@@ -402,11 +423,12 @@ class Ppp(Base):
         -------
         - number: The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxMaxReceiveUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxMaxReceiveUnit"])
+
     @RxMaxReceiveUnit.setter
     def RxMaxReceiveUnit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RxMaxReceiveUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxMaxReceiveUnit"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -416,11 +438,12 @@ class Ppp(Base):
         -------
         - list(str[]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     @property
     def TxAlignment(self):
@@ -430,11 +453,12 @@ class Ppp(Base):
         -------
         - number: The byte alignment desired for Transmit, in bytes. The default is 0 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxAlignment'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxAlignment"])
+
     @TxAlignment.setter
     def TxAlignment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxAlignment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxAlignment"], value)
 
     @property
     def TxMaxReceiveUnit(self):
@@ -444,11 +468,12 @@ class Ppp(Base):
         -------
         - number: The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxMaxReceiveUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxMaxReceiveUnit"])
+
     @TxMaxReceiveUnit.setter
     def TxMaxReceiveUnit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxMaxReceiveUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxMaxReceiveUnit"], value)
 
     @property
     def UseMagicNumber(self):
@@ -458,13 +483,41 @@ class Ppp(Base):
         -------
         - bool: If enabled, magic number handling is enabled for negotiation and usage. The magic number is used primarily to detect looped connections.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseMagicNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseMagicNumber"])
+
     @UseMagicNumber.setter
     def UseMagicNumber(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseMagicNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseMagicNumber"], value)
 
-    def update(self, ConfigurationRetries=None, EnableAccmNegotiation=None, EnableIpV4=None, EnableIpV6=None, EnableLqm=None, EnableMpls=None, EnableOsi=None, Enabled=None, LocalIpAddress=None, LocalIpV6IdType=None, LocalIpV6Iid=None, LocalIpV6MacBasedIid=None, LocalIpV6NegotiationMode=None, LqmReportInterval=None, PeerIpV6IdType=None, PeerIpV6Iid=None, PeerIpV6MacBasedIid=None, PeerIpV6NegotiationMode=None, RetryTimeout=None, RxAlignment=None, RxMaxReceiveUnit=None, SelectedSpeeds=None, TxAlignment=None, TxMaxReceiveUnit=None, UseMagicNumber=None):
+    def update(
+        self,
+        ConfigurationRetries=None,
+        EnableAccmNegotiation=None,
+        EnableIpV4=None,
+        EnableIpV6=None,
+        EnableLqm=None,
+        EnableMpls=None,
+        EnableOsi=None,
+        Enabled=None,
+        LocalIpAddress=None,
+        LocalIpV6IdType=None,
+        LocalIpV6Iid=None,
+        LocalIpV6MacBasedIid=None,
+        LocalIpV6NegotiationMode=None,
+        LqmReportInterval=None,
+        PeerIpV6IdType=None,
+        PeerIpV6Iid=None,
+        PeerIpV6MacBasedIid=None,
+        PeerIpV6NegotiationMode=None,
+        RetryTimeout=None,
+        RxAlignment=None,
+        RxMaxReceiveUnit=None,
+        SelectedSpeeds=None,
+        TxAlignment=None,
+        TxMaxReceiveUnit=None,
+        UseMagicNumber=None,
+    ):
         # type: (int, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, int, str, str, str, str, int, int, int, List[str], int, int, bool) -> Ppp
         """Updates ppp resource on the server.
 
@@ -502,7 +555,38 @@ class Ppp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, ConfigurationRetries=None, EnableAccmNegotiation=None, EnableIpV4=None, EnableIpV6=None, EnableLqm=None, EnableMpls=None, EnableOsi=None, Enabled=None, LocalIpAddress=None, LocalIpV6IdType=None, LocalIpV6Iid=None, LocalIpV6MacBasedIid=None, LocalIpV6NegotiationMode=None, LqmReportInterval=None, PeerIpV6IdType=None, PeerIpV6Iid=None, PeerIpV6MacBasedIid=None, PeerIpV6NegotiationMode=None, PppLinkState=None, RetryTimeout=None, RxAlignment=None, RxMaxReceiveUnit=None, SelectedSpeeds=None, TxAlignment=None, TxMaxReceiveUnit=None, UseMagicNumber=None):
+    def find(
+        self,
+        AvailableSpeeds=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        ConfigurationRetries=None,
+        EnableAccmNegotiation=None,
+        EnableIpV4=None,
+        EnableIpV6=None,
+        EnableLqm=None,
+        EnableMpls=None,
+        EnableOsi=None,
+        Enabled=None,
+        LocalIpAddress=None,
+        LocalIpV6IdType=None,
+        LocalIpV6Iid=None,
+        LocalIpV6MacBasedIid=None,
+        LocalIpV6NegotiationMode=None,
+        LqmReportInterval=None,
+        PeerIpV6IdType=None,
+        PeerIpV6Iid=None,
+        PeerIpV6MacBasedIid=None,
+        PeerIpV6NegotiationMode=None,
+        PppLinkState=None,
+        RetryTimeout=None,
+        RxAlignment=None,
+        RxMaxReceiveUnit=None,
+        SelectedSpeeds=None,
+        TxAlignment=None,
+        TxMaxReceiveUnit=None,
+        UseMagicNumber=None,
+    ):
         # type: (List[str], bool, bool, int, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, int, str, str, str, str, str, int, int, int, List[str], int, int, bool) -> Ppp
         """Finds and retrieves ppp resources from the server.
 

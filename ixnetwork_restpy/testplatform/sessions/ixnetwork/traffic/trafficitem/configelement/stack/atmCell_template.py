@@ -4,13 +4,13 @@ from ixnetwork_restpy.files import Files
 
 class AtmCell(Base):
     __slots__ = ()
-    _SDM_NAME = 'atmCell'
+    _SDM_NAME = "atmCell"
     _SDM_ATT_MAP = {
-        'AtmCellVpi': 'atmCell.atmCell.vpi-1',
-        'AtmCellVci': 'atmCell.atmCell.vci-2',
-        'AtmCellPti': 'atmCell.atmCell.pti-3',
-        'AtmCellCellRelayCbit': 'atmCell.atmCell.cellRelayCbit-4',
-        'AtmCellCellData': 'atmCell.atmCell.cellData-5',
+        "AtmCellVpi": "atmCell.atmCell.vpi-1",
+        "AtmCellVci": "atmCell.atmCell.vci-2",
+        "AtmCellPti": "atmCell.atmCell.pti-3",
+        "AtmCellCellRelayCbit": "atmCell.atmCell.cellRelayCbit-4",
+        "AtmCellCellData": "atmCell.atmCell.cellData-5",
     }
 
     def __init__(self, parent, list_op=False):
@@ -24,7 +24,8 @@ class AtmCell(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmCellVpi']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AtmCellVpi"]))
 
     @property
     def AtmCellVci(self):
@@ -34,7 +35,8 @@ class AtmCell(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmCellVci']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AtmCellVci"]))
 
     @property
     def AtmCellPti(self):
@@ -44,7 +46,8 @@ class AtmCell(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmCellPti']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AtmCellPti"]))
 
     @property
     def AtmCellCellRelayCbit(self):
@@ -54,7 +57,10 @@ class AtmCell(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmCellCellRelayCbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmCellCellRelayCbit"])
+        )
 
     @property
     def AtmCellCellData(self):
@@ -64,7 +70,10 @@ class AtmCell(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmCellCellData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmCellCellData"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

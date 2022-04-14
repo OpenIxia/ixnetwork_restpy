@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,17 @@ class StartRate(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'startRate'
+    _SDM_NAME = "startRate"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'Interval': 'interval',
-        'Rate': 'rate',
-        'RowNames': 'rowNames',
-        'ScaleMode': 'scaleMode',
+        "Count": "count",
+        "Enabled": "enabled",
+        "Interval": "interval",
+        "Rate": "rate",
+        "RowNames": "rowNames",
+        "ScaleMode": "scaleMode",
     }
     _SDM_ENUM_MAP = {
-        'scaleMode': ['port', 'deviceGroup'],
+        "scaleMode": ["port", "deviceGroup"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,7 +57,7 @@ class StartRate(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Enabled(self):
@@ -67,7 +68,8 @@ class StartRate(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enabled"]))
 
     @property
     def Interval(self):
@@ -78,7 +80,8 @@ class StartRate(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The time interval in milliseconds during which the rate is calculated(rate = count/interval)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Interval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Interval"]))
 
     @property
     def Rate(self):
@@ -89,7 +92,8 @@ class StartRate(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times an action is triggered per time interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Rate"]))
 
     @property
     def RowNames(self):
@@ -99,7 +103,7 @@ class StartRate(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def ScaleMode(self):
@@ -109,11 +113,12 @@ class StartRate(Base):
         -------
         - str(port | deviceGroup): Indicates whether the control is specified per port or per device group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScaleMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScaleMode"])
+
     @ScaleMode.setter
     def ScaleMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ScaleMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScaleMode"], value)
 
     def update(self, ScaleMode=None):
         # type: (str) -> StartRate

@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class HTTPGET(Base):
     __slots__ = ()
-    _SDM_NAME = 'HTTP_GET'
+    _SDM_NAME = "HTTP_GET"
     _SDM_ATT_MAP = {
-        'RequestRequest Method': 'HTTP_GET.header.Request.Request Method-1',
-        'RequestSpace1': 'HTTP_GET.header.Request.Space1-2',
-        'RequestRequest URI': 'HTTP_GET.header.Request.Request URI-3',
-        'RequestSpace2': 'HTTP_GET.header.Request.Space2-4',
-        'RequestRequest version': 'HTTP_GET.header.Request.Request version-5',
-        'RequestCRLF1': 'HTTP_GET.header.Request.CRLF1-6',
-        'HeaderHost': 'HTTP_GET.header.Host-7',
-        'HeaderUser-Agent': 'HTTP_GET.header.User-Agent-8',
-        'HeaderAccept': 'HTTP_GET.header.Accept-9',
-        'HeaderAccept-Language': 'HTTP_GET.header.Accept-Language-10',
-        'HeaderAccept-Encoding': 'HTTP_GET.header.Accept-Encoding-11',
-        'HeaderAccept-Charset': 'HTTP_GET.header.Accept-Charset-12',
-        'HeaderKeep-Alive': 'HTTP_GET.header.Keep-Alive-13',
-        'HeaderConnection': 'HTTP_GET.header.Connection-14',
-        'HeaderReferer': 'HTTP_GET.header.Referer-15',
-        'HeaderCRLF': 'HTTP_GET.header.CRLF-16',
+        "RequestRequest Method": "HTTP_GET.header.Request.Request Method-1",
+        "RequestSpace1": "HTTP_GET.header.Request.Space1-2",
+        "RequestRequest URI": "HTTP_GET.header.Request.Request URI-3",
+        "RequestSpace2": "HTTP_GET.header.Request.Space2-4",
+        "RequestRequest version": "HTTP_GET.header.Request.Request version-5",
+        "RequestCRLF1": "HTTP_GET.header.Request.CRLF1-6",
+        "HeaderHost": "HTTP_GET.header.Host-7",
+        "HeaderUser-Agent": "HTTP_GET.header.User-Agent-8",
+        "HeaderAccept": "HTTP_GET.header.Accept-9",
+        "HeaderAccept-Language": "HTTP_GET.header.Accept-Language-10",
+        "HeaderAccept-Encoding": "HTTP_GET.header.Accept-Encoding-11",
+        "HeaderAccept-Charset": "HTTP_GET.header.Accept-Charset-12",
+        "HeaderKeep-Alive": "HTTP_GET.header.Keep-Alive-13",
+        "HeaderConnection": "HTTP_GET.header.Connection-14",
+        "HeaderReferer": "HTTP_GET.header.Referer-15",
+        "HeaderCRLF": "HTTP_GET.header.CRLF-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestRequest Method']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RequestRequest Method"])
+        )
 
     @property
     def RequestSpace1(self):
@@ -45,7 +48,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestSpace1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RequestSpace1"]))
 
     @property
     def RequestRequestURI(self):
@@ -55,7 +59,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestRequest URI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RequestRequest URI"])
+        )
 
     @property
     def RequestSpace2(self):
@@ -65,7 +72,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestSpace2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RequestSpace2"]))
 
     @property
     def RequestRequestversion(self):
@@ -75,7 +83,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestRequest version']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RequestRequest version"])
+        )
 
     @property
     def RequestCRLF1(self):
@@ -85,7 +96,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestCRLF1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RequestCRLF1"]))
 
     @property
     def HeaderHost(self):
@@ -95,7 +107,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHost']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderHost"]))
 
     @property
     def HeaderUserAgent(self):
@@ -105,7 +118,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUser-Agent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderUser-Agent"])
+        )
 
     @property
     def HeaderAccept(self):
@@ -115,7 +131,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept"]))
 
     @property
     def HeaderAcceptLanguage(self):
@@ -125,7 +142,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Language']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Language"])
+        )
 
     @property
     def HeaderAcceptEncoding(self):
@@ -135,7 +155,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Encoding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Encoding"])
+        )
 
     @property
     def HeaderAcceptCharset(self):
@@ -145,7 +168,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Charset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Charset"])
+        )
 
     @property
     def HeaderKeepAlive(self):
@@ -155,7 +181,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderKeep-Alive']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderKeep-Alive"])
+        )
 
     @property
     def HeaderConnection(self):
@@ -165,7 +194,10 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderConnection"])
+        )
 
     @property
     def HeaderReferer(self):
@@ -175,7 +207,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReferer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderReferer"]))
 
     @property
     def HeaderCRLF(self):
@@ -185,7 +218,8 @@ class HTTPGET(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCRLF"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

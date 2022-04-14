@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class Link(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'link'
+    _SDM_NAME = "link"
     _SDM_ATT_MAP = {
-        'CountLsa': 'countLsa',
-        'IncrLinkStateId': 'incrLinkStateId',
-        'LocalInterfaceAddress': 'localInterfaceAddress',
-        'OptBitDc': 'optBitDc',
-        'OptBitE': 'optBitE',
-        'OptBitMc': 'optBitMc',
-        'OptBitN': 'optBitN',
-        'OptBitR': 'optBitR',
-        'OptBitV6': 'optBitV6',
-        'Option': 'option',
-        'Prefixes': 'prefixes',
-        'RouterPriority': 'routerPriority',
+        "CountLsa": "countLsa",
+        "IncrLinkStateId": "incrLinkStateId",
+        "LocalInterfaceAddress": "localInterfaceAddress",
+        "OptBitDc": "optBitDc",
+        "OptBitE": "optBitE",
+        "OptBitMc": "optBitMc",
+        "OptBitN": "optBitN",
+        "OptBitR": "optBitR",
+        "OptBitV6": "optBitV6",
+        "Option": "option",
+        "Prefixes": "prefixes",
+        "RouterPriority": "routerPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Link, self).__init__(parent, list_op)
@@ -60,13 +60,14 @@ class Link(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CountLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["CountLsa"])
+
     @CountLsa.setter
     def CountLsa(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CountLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CountLsa"], value)
 
     @property
     def IncrLinkStateId(self):
@@ -74,13 +75,14 @@ class Link(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrLinkStateId"])
+
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrLinkStateId"], value)
 
     @property
     def LocalInterfaceAddress(self):
@@ -88,13 +90,14 @@ class Link(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalInterfaceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalInterfaceAddress"])
+
     @LocalInterfaceAddress.setter
     def LocalInterfaceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalInterfaceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalInterfaceAddress"], value)
 
     @property
     def OptBitDc(self):
@@ -102,13 +105,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitDc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitDc"])
+
     @OptBitDc.setter
     def OptBitDc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitDc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitDc"], value)
 
     @property
     def OptBitE(self):
@@ -116,13 +120,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitE'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitE"])
+
     @OptBitE.setter
     def OptBitE(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitE'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitE"], value)
 
     @property
     def OptBitMc(self):
@@ -130,13 +135,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitMc"])
+
     @OptBitMc.setter
     def OptBitMc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitMc"], value)
 
     @property
     def OptBitN(self):
@@ -144,13 +150,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitN'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitN"])
+
     @OptBitN.setter
     def OptBitN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitN"], value)
 
     @property
     def OptBitR(self):
@@ -158,13 +165,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitR'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitR"])
+
     @OptBitR.setter
     def OptBitR(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitR'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitR"], value)
 
     @property
     def OptBitV6(self):
@@ -172,13 +180,14 @@ class Link(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitV6"])
+
     @OptBitV6.setter
     def OptBitV6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitV6"], value)
 
     @property
     def Option(self):
@@ -186,25 +195,27 @@ class Link(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Option'])
+        return self._get_attribute(self._SDM_ATT_MAP["Option"])
+
     @Option.setter
     def Option(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Option'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Option"], value)
 
     @property
     def Prefixes(self):
         """
         Returns
         -------
-        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number)): 
+        - list(dict(arg1:str,arg2:number,arg3:number,arg4:number)):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Prefixes'])
+        return self._get_attribute(self._SDM_ATT_MAP["Prefixes"])
+
     @Prefixes.setter
     def Prefixes(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Prefixes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Prefixes"], value)
 
     @property
     def RouterPriority(self):
@@ -212,31 +223,46 @@ class Link(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterPriority"])
+
     @RouterPriority.setter
     def RouterPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterPriority"], value)
 
-    def update(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
+    def update(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        LocalInterfaceAddress=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        Prefixes=None,
+        RouterPriority=None,
+    ):
         """Updates link resource on the server.
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - LocalInterfaceAddress (str): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
-        - RouterPriority (number): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - LocalInterfaceAddress (str):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))):
+        - RouterPriority (number):
 
         Raises
         ------
@@ -244,23 +270,37 @@ class Link(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
-        """Adds a new link resource on the json, only valid with config assistant
+    def add(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        LocalInterfaceAddress=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        Prefixes=None,
+        RouterPriority=None,
+    ):
+        """Adds a new link resource on the json, only valid with batch add utility
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - LocalInterfaceAddress (str): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
-        - RouterPriority (number): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - LocalInterfaceAddress (str):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))):
+        - RouterPriority (number):
 
         Returns
         -------
@@ -272,7 +312,21 @@ class Link(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
+    def find(
+        self,
+        CountLsa=None,
+        IncrLinkStateId=None,
+        LocalInterfaceAddress=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        Prefixes=None,
+        RouterPriority=None,
+    ):
         """Finds and retrieves link resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve link resources from the server.
@@ -281,18 +335,18 @@ class Link(Base):
 
         Args
         ----
-        - CountLsa (number): 
-        - IncrLinkStateId (str): 
-        - LocalInterfaceAddress (str): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
-        - RouterPriority (number): 
+        - CountLsa (number):
+        - IncrLinkStateId (str):
+        - LocalInterfaceAddress (str):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))):
+        - RouterPriority (number):
 
         Returns
         -------

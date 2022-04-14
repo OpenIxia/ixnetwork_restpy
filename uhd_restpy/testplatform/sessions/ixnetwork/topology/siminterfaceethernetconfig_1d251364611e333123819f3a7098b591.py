@@ -168,7 +168,7 @@ class SimInterfaceEthernetConfig(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimInterfaceEthernetConfig
-        """Adds a new simInterfaceEthernetConfig resource on the json, only valid with config assistant
+        """Adds a new simInterfaceEthernetConfig resource on the json, only valid with batch add utility
 
         Args
         ----

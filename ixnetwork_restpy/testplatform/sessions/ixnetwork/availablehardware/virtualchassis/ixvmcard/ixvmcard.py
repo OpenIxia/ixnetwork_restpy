@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,26 @@ class IxVmCard(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ixVmCard'
+    _SDM_NAME = "ixVmCard"
     _SDM_ATT_MAP = {
-        'CardId': 'cardId',
-        'CardName': 'cardName',
-        'CardState': 'cardState',
-        'KeepAliveTimeout': 'keepAliveTimeout',
-        'ManagementIp': 'managementIp',
+        "CardId": "cardId",
+        "CardName": "cardName",
+        "CardState": "cardState",
+        "KeepAliveTimeout": "keepAliveTimeout",
+        "ManagementIp": "managementIp",
     }
     _SDM_ENUM_MAP = {
-        'cardState': ['cardDisconnected', 'cardIpInUse', 'cardOK', 'cardRemoved', 'cardUnableToConnect', 'cardUnitialized', 'cardUnknownError', 'cardUnsynchronized', 'cardVersionMismatch'],
+        "cardState": [
+            "cardDisconnected",
+            "cardIpInUse",
+            "cardOK",
+            "cardRemoved",
+            "cardUnableToConnect",
+            "cardUnitialized",
+            "cardUnknownError",
+            "cardUnsynchronized",
+            "cardVersionMismatch",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +71,13 @@ class IxVmCard(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport import IxVmPort
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport import (
+            IxVmPort,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IxVmPort', None) is not None:
-                return self._properties.get('IxVmPort')
+            if self._properties.get("IxVmPort", None) is not None:
+                return self._properties.get("IxVmPort")
         return IxVmPort(self)
 
     @property
@@ -74,11 +88,12 @@ class IxVmCard(Base):
         -------
         - str: Represents slot on the chassis
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CardId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CardId"])
+
     @CardId.setter
     def CardId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CardId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CardId"], value)
 
     @property
     def CardName(self):
@@ -88,11 +103,12 @@ class IxVmCard(Base):
         -------
         - str: Represents the card name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CardName'])
+        return self._get_attribute(self._SDM_ATT_MAP["CardName"])
+
     @CardName.setter
     def CardName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CardName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CardName"], value)
 
     @property
     def CardState(self):
@@ -102,7 +118,7 @@ class IxVmCard(Base):
         -------
         - str(cardDisconnected | cardIpInUse | cardOK | cardRemoved | cardUnableToConnect | cardUnitialized | cardUnknownError | cardUnsynchronized | cardVersionMismatch): Represents the card state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CardState'])
+        return self._get_attribute(self._SDM_ATT_MAP["CardState"])
 
     @property
     def KeepAliveTimeout(self):
@@ -112,11 +128,12 @@ class IxVmCard(Base):
         -------
         - number: Represents the keepalive timeout
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepAliveTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepAliveTimeout"])
+
     @KeepAliveTimeout.setter
     def KeepAliveTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepAliveTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepAliveTimeout"], value)
 
     @property
     def ManagementIp(self):
@@ -126,13 +143,16 @@ class IxVmCard(Base):
         -------
         - str: Represents the management Ip
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ManagementIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ManagementIp"])
+
     @ManagementIp.setter
     def ManagementIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ManagementIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ManagementIp"], value)
 
-    def update(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
+    def update(
+        self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None
+    ):
         # type: (str, str, int, str) -> IxVmCard
         """Updates ixVmCard resource on the server.
 
@@ -180,7 +200,14 @@ class IxVmCard(Base):
         """
         self._delete()
 
-    def find(self, CardId=None, CardName=None, CardState=None, KeepAliveTimeout=None, ManagementIp=None):
+    def find(
+        self,
+        CardId=None,
+        CardName=None,
+        CardState=None,
+        KeepAliveTimeout=None,
+        ManagementIp=None,
+    ):
         # type: (str, str, str, int, str) -> IxVmCard
         """Finds and retrieves ixVmCard resources from the server.
 

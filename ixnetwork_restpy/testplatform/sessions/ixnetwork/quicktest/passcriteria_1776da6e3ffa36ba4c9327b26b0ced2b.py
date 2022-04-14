@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,43 +33,43 @@ class PassCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'passCriteria'
+    _SDM_NAME = "passCriteria"
     _SDM_ATT_MAP = {
-        'DataErrorThresholdMode': 'dataErrorThresholdMode',
-        'DataErrorThresholdValue': 'dataErrorThresholdValue',
-        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
-        'EnableFrameLossPassFail': 'enableFrameLossPassFail',
-        'EnableLatencyPassFail': 'enableLatencyPassFail',
-        'EnablePassFail': 'enablePassFail',
-        'EnableRatePassFail': 'enableRatePassFail',
-        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
-        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
-        'LatencyThresholdMode': 'latencyThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
-        'LatencyThresholdValue': 'latencyThresholdValue',
-        'LatencyVarThresholdMode': 'latencyVarThresholdMode',
-        'LatencyVariationThresholdScale': 'latencyVariationThresholdScale',
-        'LatencyVariationThresholdValue': 'latencyVariationThresholdValue',
-        'LossThresholdMode': 'lossThresholdMode',
-        'LossThresholdValue': 'lossThresholdValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
-        'PassFailFrequency': 'passFailFrequency',
-        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
-        'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
+        "DataErrorThresholdMode": "dataErrorThresholdMode",
+        "DataErrorThresholdValue": "dataErrorThresholdValue",
+        "EnableDataIntegrityPassFail": "enableDataIntegrityPassFail",
+        "EnableFrameLossPassFail": "enableFrameLossPassFail",
+        "EnableLatencyPassFail": "enableLatencyPassFail",
+        "EnablePassFail": "enablePassFail",
+        "EnableRatePassFail": "enableRatePassFail",
+        "EnableSequenceErrorsPassFail": "enableSequenceErrorsPassFail",
+        "EnableStandardDeviationPassFail": "enableStandardDeviationPassFail",
+        "LatencyThresholdMode": "latencyThresholdMode",
+        "LatencyThresholdScale": "latencyThresholdScale",
+        "LatencyThresholdValue": "latencyThresholdValue",
+        "LatencyVarThresholdMode": "latencyVarThresholdMode",
+        "LatencyVariationThresholdScale": "latencyVariationThresholdScale",
+        "LatencyVariationThresholdValue": "latencyVariationThresholdValue",
+        "LossThresholdMode": "lossThresholdMode",
+        "LossThresholdValue": "lossThresholdValue",
+        "PassCriteriaLoadRateMode": "passCriteriaLoadRateMode",
+        "PassCriteriaLoadRateScale": "passCriteriaLoadRateScale",
+        "PassCriteriaLoadRateValue": "passCriteriaLoadRateValue",
+        "PassFailFrequency": "passFailFrequency",
+        "SeqErrorsThresholdMode": "seqErrorsThresholdMode",
+        "SeqErrorsThresholdValue": "seqErrorsThresholdValue",
     }
     _SDM_ENUM_MAP = {
-        'dataErrorThresholdMode': ['average', 'maximum'],
-        'latencyThresholdMode': ['average', 'maximum'],
-        'latencyThresholdScale': ['ms', 'ns', 'us'],
-        'latencyVarThresholdMode': ['average', 'maximum'],
-        'latencyVariationThresholdScale': ['ms', 'ns', 'us'],
-        'lossThresholdMode': ['average', 'maximum'],
-        'passCriteriaLoadRateMode': ['average', 'minimum'],
-        'passCriteriaLoadRateScale': ['fps', 'gbps', 'kbps', 'mbps', 'percent'],
-        'passFailFrequency': ['framesizes', 'trials'],
-        'seqErrorsThresholdMode': ['average', 'maximum'],
+        "dataErrorThresholdMode": ["average", "maximum"],
+        "latencyThresholdMode": ["average", "maximum"],
+        "latencyThresholdScale": ["ms", "ns", "us"],
+        "latencyVarThresholdMode": ["average", "maximum"],
+        "latencyVariationThresholdScale": ["ms", "ns", "us"],
+        "lossThresholdMode": ["average", "maximum"],
+        "passCriteriaLoadRateMode": ["average", "minimum"],
+        "passCriteriaLoadRateScale": ["fps", "gbps", "kbps", "mbps", "percent"],
+        "passFailFrequency": ["framesizes", "trials"],
+        "seqErrorsThresholdMode": ["average", "maximum"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -82,11 +83,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): The threshold mode for the data error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataErrorThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataErrorThresholdMode"])
+
     @DataErrorThresholdMode.setter
     def DataErrorThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataErrorThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataErrorThresholdMode"], value)
 
     @property
     def DataErrorThresholdValue(self):
@@ -96,11 +98,12 @@ class PassCriteria(Base):
         -------
         - number: The data error threshold value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataErrorThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataErrorThresholdValue"])
+
     @DataErrorThresholdValue.setter
     def DataErrorThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataErrorThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataErrorThresholdValue"], value)
 
     @property
     def EnableDataIntegrityPassFail(self):
@@ -110,11 +113,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables the checking of data integrity for the pass or fail of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrityPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataIntegrityPassFail"])
+
     @EnableDataIntegrityPassFail.setter
     def EnableDataIntegrityPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrityPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataIntegrityPassFail"], value)
 
     @property
     def EnableFrameLossPassFail(self):
@@ -124,11 +128,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables the checking of frame loss for the pass or fail of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFrameLossPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFrameLossPassFail"])
+
     @EnableFrameLossPassFail.setter
     def EnableFrameLossPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFrameLossPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFrameLossPassFail"], value)
 
     @property
     def EnableLatencyPassFail(self):
@@ -138,11 +143,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables latency at which trails pass or fail.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLatencyPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLatencyPassFail"])
+
     @EnableLatencyPassFail.setter
     def EnableLatencyPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLatencyPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLatencyPassFail"], value)
 
     @property
     def EnablePassFail(self):
@@ -152,11 +158,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, IxNetwork applies the Pass Criteria to each trial in the test and determines whether the trial passed or failed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePassFail"])
+
     @EnablePassFail.setter
     def EnablePassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePassFail"], value)
 
     @property
     def EnableRatePassFail(self):
@@ -166,11 +173,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables the rate of pass or failure of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRatePassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRatePassFail"])
+
     @EnableRatePassFail.setter
     def EnableRatePassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRatePassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRatePassFail"], value)
 
     @property
     def EnableSequenceErrorsPassFail(self):
@@ -180,11 +188,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, sets the amount of time required by the DUT to forward frames and the sequence errors for the pass or fail of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSequenceErrorsPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSequenceErrorsPassFail"])
+
     @EnableSequenceErrorsPassFail.setter
     def EnableSequenceErrorsPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSequenceErrorsPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSequenceErrorsPassFail"], value)
 
     @property
     def EnableStandardDeviationPassFail(self):
@@ -194,11 +203,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables standard deviation in the pass or failure of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStandardDeviationPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStandardDeviationPassFail"])
+
     @EnableStandardDeviationPassFail.setter
     def EnableStandardDeviationPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStandardDeviationPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStandardDeviationPassFail"], value)
 
     @property
     def LatencyThresholdMode(self):
@@ -208,11 +218,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): The threshold latency mode value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyThresholdMode"])
+
     @LatencyThresholdMode.setter
     def LatencyThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyThresholdMode"], value)
 
     @property
     def LatencyThresholdScale(self):
@@ -222,11 +233,12 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): The latency threshold scale value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyThresholdScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyThresholdScale"])
+
     @LatencyThresholdScale.setter
     def LatencyThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyThresholdScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyThresholdScale"], value)
 
     @property
     def LatencyThresholdValue(self):
@@ -236,11 +248,12 @@ class PassCriteria(Base):
         -------
         - number: The latency threshold value of the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyThresholdValue"])
+
     @LatencyThresholdValue.setter
     def LatencyThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyThresholdValue"], value)
 
     @property
     def LatencyVarThresholdMode(self):
@@ -250,11 +263,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): The threshold mode for the latency variation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyVarThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyVarThresholdMode"])
+
     @LatencyVarThresholdMode.setter
     def LatencyVarThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyVarThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyVarThresholdMode"], value)
 
     @property
     def LatencyVariationThresholdScale(self):
@@ -264,11 +278,12 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): signifies the latency variation in the threshold scale.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyVariationThresholdScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyVariationThresholdScale"])
+
     @LatencyVariationThresholdScale.setter
     def LatencyVariationThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyVariationThresholdScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyVariationThresholdScale"], value)
 
     @property
     def LatencyVariationThresholdValue(self):
@@ -278,11 +293,12 @@ class PassCriteria(Base):
         -------
         - number: signifies the latency variation in the threshold value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyVariationThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyVariationThresholdValue"])
+
     @LatencyVariationThresholdValue.setter
     def LatencyVariationThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyVariationThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyVariationThresholdValue"], value)
 
     @property
     def LossThresholdMode(self):
@@ -292,11 +308,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies threshold mode of the frame loss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LossThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LossThresholdMode"])
+
     @LossThresholdMode.setter
     def LossThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LossThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LossThresholdMode"], value)
 
     @property
     def LossThresholdValue(self):
@@ -306,11 +323,12 @@ class PassCriteria(Base):
         -------
         - number: Denotes the loss in threshold value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LossThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LossThresholdValue"])
+
     @LossThresholdValue.setter
     def LossThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LossThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LossThresholdValue"], value)
 
     @property
     def PassCriteriaLoadRateMode(self):
@@ -320,11 +338,12 @@ class PassCriteria(Base):
         -------
         - str(average | minimum): The Pass Criteria per trial rate at which the DUT should be able to transmit and receive, expressed as a percentage of the maximum theoretical line speed or in terms of frames per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateMode"])
+
     @PassCriteriaLoadRateMode.setter
     def PassCriteriaLoadRateMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateMode"], value)
 
     @property
     def PassCriteriaLoadRateScale(self):
@@ -334,11 +353,12 @@ class PassCriteria(Base):
         -------
         - str(fps | gbps | kbps | mbps | percent): The load rate scale for the Pass Criteria per trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateScale"])
+
     @PassCriteriaLoadRateScale.setter
     def PassCriteriaLoadRateScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateScale"], value)
 
     @property
     def PassCriteriaLoadRateValue(self):
@@ -348,11 +368,12 @@ class PassCriteria(Base):
         -------
         - number: The load rate value for the Pass Criteria per trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateValue"])
+
     @PassCriteriaLoadRateValue.setter
     def PassCriteriaLoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateValue"], value)
 
     @property
     def PassFailFrequency(self):
@@ -362,11 +383,12 @@ class PassCriteria(Base):
         -------
         - str(framesizes | trials): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailFrequency"])
+
     @PassFailFrequency.setter
     def PassFailFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailFrequency"], value)
 
     @property
     def SeqErrorsThresholdMode(self):
@@ -376,11 +398,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): The sequence error value for the threshold mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SeqErrorsThresholdMode"])
+
     @SeqErrorsThresholdMode.setter
     def SeqErrorsThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SeqErrorsThresholdMode"], value)
 
     @property
     def SeqErrorsThresholdValue(self):
@@ -390,13 +413,39 @@ class PassCriteria(Base):
         -------
         - number: The value for the sequence error threshold.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SeqErrorsThresholdValue"])
+
     @SeqErrorsThresholdValue.setter
     def SeqErrorsThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SeqErrorsThresholdValue"], value)
 
-    def update(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+    def update(
+        self,
+        DataErrorThresholdMode=None,
+        DataErrorThresholdValue=None,
+        EnableDataIntegrityPassFail=None,
+        EnableFrameLossPassFail=None,
+        EnableLatencyPassFail=None,
+        EnablePassFail=None,
+        EnableRatePassFail=None,
+        EnableSequenceErrorsPassFail=None,
+        EnableStandardDeviationPassFail=None,
+        LatencyThresholdMode=None,
+        LatencyThresholdScale=None,
+        LatencyThresholdValue=None,
+        LatencyVarThresholdMode=None,
+        LatencyVariationThresholdScale=None,
+        LatencyVariationThresholdValue=None,
+        LossThresholdMode=None,
+        LossThresholdValue=None,
+        PassCriteriaLoadRateMode=None,
+        PassCriteriaLoadRateScale=None,
+        PassCriteriaLoadRateValue=None,
+        PassFailFrequency=None,
+        SeqErrorsThresholdMode=None,
+        SeqErrorsThresholdValue=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, int, str, str, int, str, str, int) -> PassCriteria
         """Updates passCriteria resource on the server.
 
@@ -432,7 +481,32 @@ class PassCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+    def find(
+        self,
+        DataErrorThresholdMode=None,
+        DataErrorThresholdValue=None,
+        EnableDataIntegrityPassFail=None,
+        EnableFrameLossPassFail=None,
+        EnableLatencyPassFail=None,
+        EnablePassFail=None,
+        EnableRatePassFail=None,
+        EnableSequenceErrorsPassFail=None,
+        EnableStandardDeviationPassFail=None,
+        LatencyThresholdMode=None,
+        LatencyThresholdScale=None,
+        LatencyThresholdValue=None,
+        LatencyVarThresholdMode=None,
+        LatencyVariationThresholdScale=None,
+        LatencyVariationThresholdValue=None,
+        LossThresholdMode=None,
+        LossThresholdValue=None,
+        PassCriteriaLoadRateMode=None,
+        PassCriteriaLoadRateScale=None,
+        PassCriteriaLoadRateValue=None,
+        PassFailFrequency=None,
+        SeqErrorsThresholdMode=None,
+        SeqErrorsThresholdValue=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, int, str, str, int, str, str, int) -> PassCriteria
         """Finds and retrieves passCriteria resources from the server.
 
@@ -509,10 +583,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -527,10 +603,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -539,17 +617,19 @@ class PassCriteria(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -566,10 +646,14 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -587,10 +671,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -616,10 +702,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -643,10 +731,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -663,10 +753,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -684,7 +776,9 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

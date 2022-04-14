@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class DrillDown(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'drillDown'
+    _SDM_NAME = "drillDown"
     _SDM_ATT_MAP = {
-        'AvailableDrillDownOptions': 'availableDrillDownOptions',
-        'TargetDrillDownOption': 'targetDrillDownOption',
-        'TargetRow': 'targetRow',
-        'TargetRowFilter': 'targetRowFilter',
-        'TargetRowIndex': 'targetRowIndex',
+        "AvailableDrillDownOptions": "availableDrillDownOptions",
+        "TargetDrillDownOption": "targetDrillDownOption",
+        "TargetRow": "targetRow",
+        "TargetRowFilter": "targetRowFilter",
+        "TargetRowIndex": "targetRowIndex",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DrillDown, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class DrillDown(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.availabletargetrowfilters.availabletargetrowfilters import AvailableTargetRowFilters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.availabletargetrowfilters.availabletargetrowfilters import (
+            AvailableTargetRowFilters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableTargetRowFilters', None) is not None:
-                return self._properties.get('AvailableTargetRowFilters')
+            if self._properties.get("AvailableTargetRowFilters", None) is not None:
+                return self._properties.get("AvailableTargetRowFilters")
         return AvailableTargetRowFilters(self)
 
     @property
@@ -73,7 +76,7 @@ class DrillDown(Base):
         -------
         - list(str): Gets the available drill down options for the selected row.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableDrillDownOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableDrillDownOptions"])
 
     @property
     def TargetDrillDownOption(self):
@@ -83,11 +86,12 @@ class DrillDown(Base):
         -------
         - str: Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetDrillDownOption"])
+
     @TargetDrillDownOption.setter
     def TargetDrillDownOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetDrillDownOption"], value)
 
     @property
     def TargetRow(self):
@@ -97,7 +101,7 @@ class DrillDown(Base):
         -------
         - list(str): Gets the target row, set previously, at step 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetRow"])
 
     @property
     def TargetRowFilter(self):
@@ -107,11 +111,12 @@ class DrillDown(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetRowFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetRowFilter"])
+
     @TargetRowFilter.setter
     def TargetRowFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetRowFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetRowFilter"], value)
 
     @property
     def TargetRowIndex(self):
@@ -121,13 +126,16 @@ class DrillDown(Base):
         -------
         - number: Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetRowIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetRowIndex"])
+
     @TargetRowIndex.setter
     def TargetRowIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetRowIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetRowIndex"], value)
 
-    def update(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
+    def update(
+        self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None
+    ):
         # type: (str, str, int) -> DrillDown
         """Updates drillDown resource on the server.
 
@@ -143,7 +151,9 @@ class DrillDown(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
+    def add(
+        self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None
+    ):
         # type: (str, str, int) -> DrillDown
         """Adds a new drillDown resource on the server and adds it to the container.
 
@@ -173,7 +183,14 @@ class DrillDown(Base):
         """
         self._delete()
 
-    def find(self, AvailableDrillDownOptions=None, TargetDrillDownOption=None, TargetRow=None, TargetRowFilter=None, TargetRowIndex=None):
+    def find(
+        self,
+        AvailableDrillDownOptions=None,
+        TargetDrillDownOption=None,
+        TargetRow=None,
+        TargetRowFilter=None,
+        TargetRowIndex=None,
+    ):
         # type: (List[str], str, List[str], str, int) -> DrillDown
         """Finds and retrieves drillDown resources from the server.
 
@@ -232,7 +249,9 @@ class DrillDown(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('doDrillDown', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("doDrillDown", payload=payload, response_object=None)

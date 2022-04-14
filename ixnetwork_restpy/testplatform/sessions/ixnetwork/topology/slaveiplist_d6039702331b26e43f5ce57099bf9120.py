@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class SlaveIPList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'slaveIPList'
+    _SDM_NAME = "slaveIPList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'SlaveCount': 'slaveCount',
-        'SlaveIpAddress': 'slaveIpAddress',
-        'SlaveIpIncrementBy': 'slaveIpIncrementBy',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "SlaveCount": "slaveCount",
+        "SlaveIpAddress": "slaveIpAddress",
+        "SlaveIpIncrementBy": "slaveIpIncrementBy",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SlaveIPList, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class SlaveIPList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -65,7 +65,7 @@ class SlaveIPList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -75,11 +75,12 @@ class SlaveIPList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SlaveCount(self):
@@ -90,7 +91,8 @@ class SlaveIPList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The total number of Unicast slaves to be used for this master.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlaveCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlaveCount"]))
 
     @property
     def SlaveIpAddress(self):
@@ -101,7 +103,10 @@ class SlaveIPList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Defines the base address to be used for enumerating all the addresses for this master.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlaveIpAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlaveIpAddress"])
+        )
 
     @property
     def SlaveIpIncrementBy(self):
@@ -112,7 +117,10 @@ class SlaveIPList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Defines the increment to be used for enumerating all the addresses for this master.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlaveIpIncrementBy']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlaveIpIncrementBy"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> SlaveIPList
@@ -173,7 +181,13 @@ class SlaveIPList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        SlaveCount=None,
+        SlaveIpAddress=None,
+        SlaveIpIncrementBy=None,
+    ):
         """Base class infrastructure that gets a list of slaveIPList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

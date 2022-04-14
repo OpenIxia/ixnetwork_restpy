@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class Llc(Base):
     __slots__ = ()
-    _SDM_NAME = 'llc'
+    _SDM_NAME = "llc"
     _SDM_ATT_MAP = {
-        'HeaderDsap': 'llc.header.dsap-1',
-        'HeaderSsap': 'llc.header.ssap-2',
-        'HeaderControlField': 'llc.header.controlField-3',
+        "HeaderDsap": "llc.header.dsap-1",
+        "HeaderSsap": "llc.header.ssap-2",
+        "HeaderControlField": "llc.header.controlField-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,8 @@ class Llc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDsap']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDsap"]))
 
     @property
     def HeaderSsap(self):
@@ -32,7 +33,8 @@ class Llc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSsap']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSsap"]))
 
     @property
     def HeaderControlField(self):
@@ -42,7 +44,10 @@ class Llc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderControlField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderControlField"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

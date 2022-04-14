@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class Locator(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'locator'
+    _SDM_NAME = "locator"
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'Enabled': 'enabled',
-        'Family': 'family',
-        'LispInterfaceId': 'lispInterfaceId',
-        'LocalLocator': 'localLocator',
-        'MPriority': 'mPriority',
-        'MWeight': 'mWeight',
-        'Priority': 'priority',
-        'ProtocolInterfaceIpItemId': 'protocolInterfaceIpItemId',
-        'Reachability': 'reachability',
-        'Weight': 'weight',
+        "Address": "address",
+        "Enabled": "enabled",
+        "Family": "family",
+        "LispInterfaceId": "lispInterfaceId",
+        "LocalLocator": "localLocator",
+        "MPriority": "mPriority",
+        "MWeight": "mWeight",
+        "Priority": "priority",
+        "ProtocolInterfaceIpItemId": "protocolInterfaceIpItemId",
+        "Reachability": "reachability",
+        "Weight": "weight",
     }
     _SDM_ENUM_MAP = {
-        'family': ['ipv4', 'ipv6'],
+        "family": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class Locator(Base):
         -------
         - str: It gives details about the Ip
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Address"])
+
     @Address.setter
     def Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Address"], value)
 
     @property
     def Enabled(self):
@@ -77,11 +79,12 @@ class Locator(Base):
         -------
         - bool: It True, it enables the protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Family(self):
@@ -91,11 +94,12 @@ class Locator(Base):
         -------
         - str(ipv4 | ipv6): It gives details about the family
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Family'])
+        return self._get_attribute(self._SDM_ATT_MAP["Family"])
+
     @Family.setter
     def Family(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Family'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Family"], value)
 
     @property
     def LispInterfaceId(self):
@@ -105,11 +109,12 @@ class Locator(Base):
         -------
         - number: It gives details about the LISP interface id
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LispInterfaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LispInterfaceId"])
+
     @LispInterfaceId.setter
     def LispInterfaceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LispInterfaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LispInterfaceId"], value)
 
     @property
     def LocalLocator(self):
@@ -119,11 +124,12 @@ class Locator(Base):
         -------
         - bool: If True, It gives the address of the local locator
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalLocator'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalLocator"])
+
     @LocalLocator.setter
     def LocalLocator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalLocator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalLocator"], value)
 
     @property
     def MPriority(self):
@@ -133,11 +139,12 @@ class Locator(Base):
         -------
         - number: It denotes the m priority
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["MPriority"])
+
     @MPriority.setter
     def MPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MPriority"], value)
 
     @property
     def MWeight(self):
@@ -147,11 +154,12 @@ class Locator(Base):
         -------
         - number: It denotes the m weight
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MWeight'])
+        return self._get_attribute(self._SDM_ATT_MAP["MWeight"])
+
     @MWeight.setter
     def MWeight(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MWeight'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MWeight"], value)
 
     @property
     def Priority(self):
@@ -161,11 +169,12 @@ class Locator(Base):
         -------
         - number: It gives the priority
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def ProtocolInterfaceIpItemId(self):
@@ -175,11 +184,12 @@ class Locator(Base):
         -------
         - number: It gives details about the protocol interface ip item id
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaceIpItemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterfaceIpItemId"])
+
     @ProtocolInterfaceIpItemId.setter
     def ProtocolInterfaceIpItemId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterfaceIpItemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterfaceIpItemId"], value)
 
     @property
     def Reachability(self):
@@ -189,11 +199,12 @@ class Locator(Base):
         -------
         - bool: If true, it defines the reachability
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
+
     @Reachability.setter
     def Reachability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Reachability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Reachability"], value)
 
     @property
     def Weight(self):
@@ -203,13 +214,27 @@ class Locator(Base):
         -------
         - number: It gives details about the weight
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
+
     @Weight.setter
     def Weight(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Weight'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Weight"], value)
 
-    def update(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+    def update(
+        self,
+        Address=None,
+        Enabled=None,
+        Family=None,
+        LispInterfaceId=None,
+        LocalLocator=None,
+        MPriority=None,
+        MWeight=None,
+        Priority=None,
+        ProtocolInterfaceIpItemId=None,
+        Reachability=None,
+        Weight=None,
+    ):
         # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Updates locator resource on the server.
 
@@ -233,7 +258,20 @@ class Locator(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+    def add(
+        self,
+        Address=None,
+        Enabled=None,
+        Family=None,
+        LispInterfaceId=None,
+        LocalLocator=None,
+        MPriority=None,
+        MWeight=None,
+        Priority=None,
+        ProtocolInterfaceIpItemId=None,
+        Reachability=None,
+        Weight=None,
+    ):
         # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Adds a new locator resource on the server and adds it to the container.
 
@@ -271,7 +309,20 @@ class Locator(Base):
         """
         self._delete()
 
-    def find(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+    def find(
+        self,
+        Address=None,
+        Enabled=None,
+        Family=None,
+        LispInterfaceId=None,
+        LocalLocator=None,
+        MPriority=None,
+        MWeight=None,
+        Priority=None,
+        ProtocolInterfaceIpItemId=None,
+        Reachability=None,
+        Weight=None,
+    ):
         # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Finds and retrieves locator resources from the server.
 

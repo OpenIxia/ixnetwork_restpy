@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,34 @@ class DelayVariation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'delayVariation'
+    _SDM_NAME = "delayVariation"
     _SDM_ATT_MAP = {
-        'Distribution': 'distribution',
-        'Enabled': 'enabled',
-        'ExponentialMeanArrival': 'exponentialMeanArrival',
-        'GaussianStandardDeviation': 'gaussianStandardDeviation',
-        'UniformSpread': 'uniformSpread',
-        'Units': 'units',
+        "Distribution": "distribution",
+        "Enabled": "enabled",
+        "ExponentialMeanArrival": "exponentialMeanArrival",
+        "GaussianStandardDeviation": "gaussianStandardDeviation",
+        "UniformSpread": "uniformSpread",
+        "Units": "units",
     }
     _SDM_ENUM_MAP = {
-        'distribution': ['exponential', 'gaussian', 'kExponential', 'kGaussian', 'kUniform', 'uniform'],
-        'units': ['kilometers', 'kKilometers', 'kMicroseconds', 'kMilliseconds', 'kSeconds', 'microseconds', 'milliseconds', 'seconds'],
+        "distribution": [
+            "exponential",
+            "gaussian",
+            "kExponential",
+            "kGaussian",
+            "kUniform",
+            "uniform",
+        ],
+        "units": [
+            "kilometers",
+            "kKilometers",
+            "kMicroseconds",
+            "kMilliseconds",
+            "kSeconds",
+            "microseconds",
+            "milliseconds",
+            "seconds",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +74,12 @@ class DelayVariation(Base):
         -------
         - str(exponential | gaussian | kExponential | kGaussian | kUniform | uniform): Specify the distribution of the random variation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Distribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["Distribution"])
+
     @Distribution.setter
     def Distribution(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Distribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Distribution"], value)
 
     @property
     def Enabled(self):
@@ -71,11 +89,12 @@ class DelayVariation(Base):
         -------
         - bool: If true, randomly vary the packet delay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExponentialMeanArrival(self):
@@ -85,11 +104,12 @@ class DelayVariation(Base):
         -------
         - number: Mean arrival time for the exponential distribution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExponentialMeanArrival'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExponentialMeanArrival"])
+
     @ExponentialMeanArrival.setter
     def ExponentialMeanArrival(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExponentialMeanArrival'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExponentialMeanArrival"], value)
 
     @property
     def GaussianStandardDeviation(self):
@@ -99,11 +119,12 @@ class DelayVariation(Base):
         -------
         - number: Standard deviation for the Gaussian distribution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GaussianStandardDeviation'])
+        return self._get_attribute(self._SDM_ATT_MAP["GaussianStandardDeviation"])
+
     @GaussianStandardDeviation.setter
     def GaussianStandardDeviation(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GaussianStandardDeviation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GaussianStandardDeviation"], value)
 
     @property
     def UniformSpread(self):
@@ -113,11 +134,12 @@ class DelayVariation(Base):
         -------
         - number: Spread for the uniform distribution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniformSpread'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniformSpread"])
+
     @UniformSpread.setter
     def UniformSpread(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UniformSpread'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UniformSpread"], value)
 
     @property
     def Units(self):
@@ -127,13 +149,22 @@ class DelayVariation(Base):
         -------
         - str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Specify the units for the value of the spread, standard deviation, or mean arrival time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Units'])
+        return self._get_attribute(self._SDM_ATT_MAP["Units"])
+
     @Units.setter
     def Units(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Units"], value)
 
-    def update(self, Distribution=None, Enabled=None, ExponentialMeanArrival=None, GaussianStandardDeviation=None, UniformSpread=None, Units=None):
+    def update(
+        self,
+        Distribution=None,
+        Enabled=None,
+        ExponentialMeanArrival=None,
+        GaussianStandardDeviation=None,
+        UniformSpread=None,
+        Units=None,
+    ):
         # type: (str, bool, int, int, int, str) -> DelayVariation
         """Updates delayVariation resource on the server.
 
@@ -152,7 +183,15 @@ class DelayVariation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Distribution=None, Enabled=None, ExponentialMeanArrival=None, GaussianStandardDeviation=None, UniformSpread=None, Units=None):
+    def find(
+        self,
+        Distribution=None,
+        Enabled=None,
+        ExponentialMeanArrival=None,
+        GaussianStandardDeviation=None,
+        UniformSpread=None,
+        Units=None,
+    ):
         # type: (str, bool, int, int, int, str) -> DelayVariation
         """Finds and retrieves delayVariation resources from the server.
 

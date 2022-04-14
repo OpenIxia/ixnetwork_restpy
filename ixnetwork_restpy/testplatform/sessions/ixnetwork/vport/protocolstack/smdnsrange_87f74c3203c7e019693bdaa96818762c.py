@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class SmDnsRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'smDnsRange'
+    _SDM_NAME = "smDnsRange"
     _SDM_ATT_MAP = {
-        'CacheReplies': 'cacheReplies',
-        'EdnsReceiveBufferSize': 'ednsReceiveBufferSize',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ResolveDns': 'resolveDns',
-        'ServerIp': 'serverIp',
-        'UseAdditionalRecords': 'useAdditionalRecords',
-        'UseEdns': 'useEdns',
-        'UseTcp': 'useTcp',
+        "CacheReplies": "cacheReplies",
+        "EdnsReceiveBufferSize": "ednsReceiveBufferSize",
+        "Enabled": "enabled",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ResolveDns": "resolveDns",
+        "ServerIp": "serverIp",
+        "UseAdditionalRecords": "useAdditionalRecords",
+        "UseEdns": "useEdns",
+        "UseTcp": "useTcp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SmDnsRange, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class SmDnsRange(Base):
         -------
         - bool: Cache DNS Replies
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CacheReplies'])
+        return self._get_attribute(self._SDM_ATT_MAP["CacheReplies"])
+
     @CacheReplies.setter
     def CacheReplies(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CacheReplies'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CacheReplies"], value)
 
     @property
     def EdnsReceiveBufferSize(self):
@@ -73,11 +74,12 @@ class SmDnsRange(Base):
         -------
         - number: UDP Payload Size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EdnsReceiveBufferSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EdnsReceiveBufferSize"])
+
     @EdnsReceiveBufferSize.setter
     def EdnsReceiveBufferSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EdnsReceiveBufferSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EdnsReceiveBufferSize"], value)
 
     @property
     def Enabled(self):
@@ -87,11 +89,12 @@ class SmDnsRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -101,11 +104,12 @@ class SmDnsRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -115,7 +119,7 @@ class SmDnsRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ResolveDns(self):
@@ -125,11 +129,12 @@ class SmDnsRange(Base):
         -------
         - bool: Resolve DNS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResolveDns'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResolveDns"])
+
     @ResolveDns.setter
     def ResolveDns(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResolveDns'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResolveDns"], value)
 
     @property
     def ServerIp(self):
@@ -139,11 +144,12 @@ class SmDnsRange(Base):
         -------
         - str: DNS server IP address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerIp"])
+
     @ServerIp.setter
     def ServerIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerIp"], value)
 
     @property
     def UseAdditionalRecords(self):
@@ -153,11 +159,12 @@ class SmDnsRange(Base):
         -------
         - bool: Use Additional Records if included by the server to avoid doing redundant A/AAAA queries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseAdditionalRecords'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseAdditionalRecords"])
+
     @UseAdditionalRecords.setter
     def UseAdditionalRecords(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseAdditionalRecords'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseAdditionalRecords"], value)
 
     @property
     def UseEdns(self):
@@ -167,11 +174,12 @@ class SmDnsRange(Base):
         -------
         - bool: Use EDNS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseEdns'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseEdns"])
+
     @UseEdns.setter
     def UseEdns(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseEdns'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseEdns"], value)
 
     @property
     def UseTcp(self):
@@ -181,13 +189,25 @@ class SmDnsRange(Base):
         -------
         - bool: Use TCP connections for DNS queries instead of UDP packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseTcp'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseTcp"])
+
     @UseTcp.setter
     def UseTcp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseTcp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseTcp"], value)
 
-    def update(self, CacheReplies=None, EdnsReceiveBufferSize=None, Enabled=None, Name=None, ResolveDns=None, ServerIp=None, UseAdditionalRecords=None, UseEdns=None, UseTcp=None):
+    def update(
+        self,
+        CacheReplies=None,
+        EdnsReceiveBufferSize=None,
+        Enabled=None,
+        Name=None,
+        ResolveDns=None,
+        ServerIp=None,
+        UseAdditionalRecords=None,
+        UseEdns=None,
+        UseTcp=None,
+    ):
         # type: (bool, int, bool, str, bool, str, bool, bool, bool) -> SmDnsRange
         """Updates smDnsRange resource on the server.
 
@@ -209,7 +229,19 @@ class SmDnsRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CacheReplies=None, EdnsReceiveBufferSize=None, Enabled=None, Name=None, ObjectId=None, ResolveDns=None, ServerIp=None, UseAdditionalRecords=None, UseEdns=None, UseTcp=None):
+    def find(
+        self,
+        CacheReplies=None,
+        EdnsReceiveBufferSize=None,
+        Enabled=None,
+        Name=None,
+        ObjectId=None,
+        ResolveDns=None,
+        ServerIp=None,
+        UseAdditionalRecords=None,
+        UseEdns=None,
+        UseTcp=None,
+    ):
         # type: (bool, int, bool, str, str, bool, str, bool, bool, bool) -> SmDnsRange
         """Finds and retrieves smDnsRange resources from the server.
 
@@ -275,10 +307,14 @@ class SmDnsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -297,10 +333,14 @@ class SmDnsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -319,7 +359,11 @@ class SmDnsRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

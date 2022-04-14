@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class MacPools(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'macPools'
+    _SDM_NAME = "macPools"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlans': 'enableVlans',
-        'LastMacAddress': 'lastMacAddress',
-        'Mac': 'mac',
-        'Name': 'name',
-        'NumberOfAddresses': 'numberOfAddresses',
-        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
-        'PrefixLength': 'prefixLength',
-        'UseVlans': 'useVlans',
-        'VlanCount': 'vlanCount',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableVlans": "enableVlans",
+        "LastMacAddress": "lastMacAddress",
+        "Mac": "mac",
+        "Name": "name",
+        "NumberOfAddresses": "numberOfAddresses",
+        "NumberOfAddressesAsy": "numberOfAddressesAsy",
+        "PrefixLength": "prefixLength",
+        "UseVlans": "useVlans",
+        "VlanCount": "vlanCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MacPools, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -82,10 +85,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -99,10 +105,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -116,10 +125,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -133,10 +145,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools_2d6f2aedde61c058965d4e1b21741352 import Ipv4PrefixPools
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools_2d6f2aedde61c058965d4e1b21741352 import (
+            Ipv4PrefixPools,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4PrefixPools', None) is not None:
-                return self._properties.get('Ipv4PrefixPools')
+            if self._properties.get("Ipv4PrefixPools", None) is not None:
+                return self._properties.get("Ipv4PrefixPools")
         return Ipv4PrefixPools(self)
 
     @property
@@ -150,10 +165,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools_f83aba85ff769655b348dc60ddcb30f2 import Ipv6PrefixPools
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools_f83aba85ff769655b348dc60ddcb30f2 import (
+            Ipv6PrefixPools,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6PrefixPools', None) is not None:
-                return self._properties.get('Ipv6PrefixPools')
+            if self._properties.get("Ipv6PrefixPools", None) is not None:
+                return self._properties.get("Ipv6PrefixPools")
         return Ipv6PrefixPools(self)
 
     @property
@@ -167,10 +185,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig_791b0bf61c8f6877cabfa2621478ab8a import IsisSpbMacCloudConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig_791b0bf61c8f6877cabfa2621478ab8a import (
+            IsisSpbMacCloudConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbMacCloudConfig', None) is not None:
-                return self._properties.get('IsisSpbMacCloudConfig')
+            if self._properties.get("IsisSpbMacCloudConfig", None) is not None:
+                return self._properties.get("IsisSpbMacCloudConfig")
         return IsisSpbMacCloudConfig(self)
 
     @property
@@ -184,10 +205,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig_a91c5b3e28b2bee04ff08d2e22fad1e2 import IsisTrillUCastMacConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig_a91c5b3e28b2bee04ff08d2e22fad1e2 import (
+            IsisTrillUCastMacConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillUCastMacConfig', None) is not None:
-                return self._properties.get('IsisTrillUCastMacConfig')
+            if self._properties.get("IsisTrillUCastMacConfig", None) is not None:
+                return self._properties.get("IsisTrillUCastMacConfig")
         return IsisTrillUCastMacConfig(self)
 
     @property
@@ -201,10 +225,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -218,10 +245,13 @@ class MacPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import (
+            Vlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vlan', None) is not None:
-                return self._properties.get('Vlan')
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)
 
     @property
@@ -232,7 +262,7 @@ class MacPools(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -242,7 +272,7 @@ class MacPools(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableVlans(self):
@@ -253,7 +283,8 @@ class MacPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables VLANs for the sessions
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlans']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableVlans"]))
 
     @property
     def LastMacAddress(self):
@@ -263,7 +294,7 @@ class MacPools(Base):
         -------
         - list(str): Last Address of network addresses in the simulated MAC network range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastMacAddress"])
 
     @property
     def Mac(self):
@@ -274,7 +305,8 @@ class MacPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mac"]))
 
     @property
     def Name(self):
@@ -284,25 +316,27 @@ class MacPools(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfAddresses(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Number of MAC addresses in the simulated MAC range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAddresses"])
+
     @NumberOfAddresses.setter
     def NumberOfAddresses(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAddresses"], value)
 
     @property
     def NumberOfAddressesAsy(self):
@@ -313,7 +347,10 @@ class MacPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of MAC addresses in the simulated MAC range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfAddressesAsy']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfAddressesAsy"])
+        )
 
     @property
     def PrefixLength(self):
@@ -324,21 +361,23 @@ class MacPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def UseVlans(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Flag to determine whether VLANs are enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseVlans'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseVlans"])
+
     @UseVlans.setter
     def UseVlans(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseVlans'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseVlans"], value)
 
     @property
     def VlanCount(self):
@@ -348,11 +387,12 @@ class MacPools(Base):
         -------
         - number: Number of active VLANs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     def update(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
         # type: (str, int, bool, int) -> MacPools
@@ -405,7 +445,16 @@ class MacPools(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, LastMacAddress=None, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LastMacAddress=None,
+        Name=None,
+        NumberOfAddresses=None,
+        UseVlans=None,
+        VlanCount=None,
+    ):
         # type: (int, str, List[str], str, int, bool, int) -> MacPools
         """Finds and retrieves macPools resources from the server.
 
@@ -466,10 +515,12 @@ class MacPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -486,10 +537,12 @@ class MacPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -506,12 +559,21 @@ class MacPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, NumberOfAddressesAsy=None, PrefixLength=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        EnableVlans=None,
+        Mac=None,
+        NumberOfAddressesAsy=None,
+        PrefixLength=None,
+    ):
         """Base class infrastructure that gets a list of macPools device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

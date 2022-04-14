@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class OrganizationSpecificInfoTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'organizationSpecificInfoTlv'
+    _SDM_NAME = "organizationSpecificInfoTlv"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Oui': 'oui',
-        'Value': 'value',
+        "Enabled": "enabled",
+        "Oui": "oui",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OrganizationSpecificInfoTlv, self).__init__(parent, list_op)
@@ -52,13 +52,14 @@ class OrganizationSpecificInfoTlv(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Oui(self):
@@ -66,13 +67,14 @@ class OrganizationSpecificInfoTlv(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Oui'])
+        return self._get_attribute(self._SDM_ATT_MAP["Oui"])
+
     @Oui.setter
     def Oui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Oui"], value)
 
     @property
     def Value(self):
@@ -80,13 +82,14 @@ class OrganizationSpecificInfoTlv(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Enabled=None, Oui=None, Value=None):
         # type: (bool, str, str) -> OrganizationSpecificInfoTlv
@@ -94,9 +97,9 @@ class OrganizationSpecificInfoTlv(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - Oui (str): 
-        - Value (str): 
+        - Enabled (bool):
+        - Oui (str):
+        - Value (str):
 
         Raises
         ------
@@ -110,9 +113,9 @@ class OrganizationSpecificInfoTlv(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - Oui (str): 
-        - Value (str): 
+        - Enabled (bool):
+        - Oui (str):
+        - Value (str):
 
         Returns
         -------
@@ -144,9 +147,9 @@ class OrganizationSpecificInfoTlv(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - Oui (str): 
-        - Value (str): 
+        - Enabled (bool):
+        - Oui (str):
+        - Value (str):
 
         Returns
         -------

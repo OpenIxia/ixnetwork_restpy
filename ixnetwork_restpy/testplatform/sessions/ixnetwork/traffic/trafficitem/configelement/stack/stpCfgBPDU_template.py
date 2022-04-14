@@ -4,27 +4,27 @@ from ixnetwork_restpy.files import Files
 
 class StpCfgBPDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'stpCfgBPDU'
+    _SDM_NAME = "stpCfgBPDU"
     _SDM_ATT_MAP = {
-        'HeaderProtocolIdentifier': 'stpCfgBPDU.header.protocolIdentifier-1',
-        'HeaderProtocolVersionIdentifier': 'stpCfgBPDU.header.protocolVersionIdentifier-2',
-        'HeaderBpduType': 'stpCfgBPDU.header.bpduType-3',
-        'FlagsTopologyChangeAcknowledgement': 'stpCfgBPDU.header.flags.topologyChangeAcknowledgement-4',
-        'FlagsThBitnotUsed': 'stpCfgBPDU.header.flags.thBitnotUsed-5',
-        'FlagsThBitnotUsed': 'stpCfgBPDU.header.flags.thBitnotUsed-6',
-        'FlagsThBitnotUsed': 'stpCfgBPDU.header.flags.thBitnotUsed-7',
-        'FlagsThBitnotUsed': 'stpCfgBPDU.header.flags.thBitnotUsed-8',
-        'FlagsRdBitnotUsed': 'stpCfgBPDU.header.flags.rdBitnotUsed-9',
-        'FlagsNdBitnotUsed': 'stpCfgBPDU.header.flags.ndBitnotUsed-10',
-        'FlagsTopologyChange': 'stpCfgBPDU.header.flags.topologyChange-11',
-        'HeaderRootIdentifier': 'stpCfgBPDU.header.rootIdentifier-12',
-        'HeaderRootPathCost': 'stpCfgBPDU.header.rootPathCost-13',
-        'HeaderBridgeIdentifier': 'stpCfgBPDU.header.bridgeIdentifier-14',
-        'HeaderPortIdentifier': 'stpCfgBPDU.header.portIdentifier-15',
-        'HeaderMessageAge': 'stpCfgBPDU.header.messageAge-16',
-        'HeaderMaxAge': 'stpCfgBPDU.header.maxAge-17',
-        'HeaderHelloTime': 'stpCfgBPDU.header.helloTime-18',
-        'HeaderForwardDelay': 'stpCfgBPDU.header.forwardDelay-19',
+        "HeaderProtocolIdentifier": "stpCfgBPDU.header.protocolIdentifier-1",
+        "HeaderProtocolVersionIdentifier": "stpCfgBPDU.header.protocolVersionIdentifier-2",
+        "HeaderBpduType": "stpCfgBPDU.header.bpduType-3",
+        "FlagsTopologyChangeAcknowledgement": "stpCfgBPDU.header.flags.topologyChangeAcknowledgement-4",
+        "FlagsThBitnotUsed": "stpCfgBPDU.header.flags.thBitnotUsed-5",
+        "FlagsThBitnotUsed": "stpCfgBPDU.header.flags.thBitnotUsed-6",
+        "FlagsThBitnotUsed": "stpCfgBPDU.header.flags.thBitnotUsed-7",
+        "FlagsThBitnotUsed": "stpCfgBPDU.header.flags.thBitnotUsed-8",
+        "FlagsRdBitnotUsed": "stpCfgBPDU.header.flags.rdBitnotUsed-9",
+        "FlagsNdBitnotUsed": "stpCfgBPDU.header.flags.ndBitnotUsed-10",
+        "FlagsTopologyChange": "stpCfgBPDU.header.flags.topologyChange-11",
+        "HeaderRootIdentifier": "stpCfgBPDU.header.rootIdentifier-12",
+        "HeaderRootPathCost": "stpCfgBPDU.header.rootPathCost-13",
+        "HeaderBridgeIdentifier": "stpCfgBPDU.header.bridgeIdentifier-14",
+        "HeaderPortIdentifier": "stpCfgBPDU.header.portIdentifier-15",
+        "HeaderMessageAge": "stpCfgBPDU.header.messageAge-16",
+        "HeaderMaxAge": "stpCfgBPDU.header.maxAge-17",
+        "HeaderHelloTime": "stpCfgBPDU.header.helloTime-18",
+        "HeaderForwardDelay": "stpCfgBPDU.header.forwardDelay-19",
     }
 
     def __init__(self, parent, list_op=False):
@@ -38,7 +38,10 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolIdentifier"])
+        )
 
     @property
     def HeaderProtocolVersionIdentifier(self):
@@ -48,7 +51,11 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolVersionIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolVersionIdentifier"]),
+        )
 
     @property
     def HeaderBpduType(self):
@@ -58,7 +65,10 @@ class StpCfgBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBpduType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBpduType"])
+        )
 
     @property
     def FlagsTopologyChangeAcknowledgement(self):
@@ -69,7 +79,13 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsTopologyChangeAcknowledgement']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FlagsTopologyChangeAcknowledgement"]
+            ),
+        )
 
     @property
     def FlagsThBitnotUsed(self):
@@ -80,7 +96,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsThBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsThBitnotUsed"])
+        )
 
     @property
     def FlagsThBitnotUsed(self):
@@ -91,7 +110,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsThBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsThBitnotUsed"])
+        )
 
     @property
     def FlagsThBitnotUsed(self):
@@ -102,7 +124,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsThBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsThBitnotUsed"])
+        )
 
     @property
     def FlagsThBitnotUsed(self):
@@ -113,7 +138,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsThBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsThBitnotUsed"])
+        )
 
     @property
     def FlagsRdBitnotUsed(self):
@@ -124,7 +152,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsRdBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsRdBitnotUsed"])
+        )
 
     @property
     def FlagsNdBitnotUsed(self):
@@ -135,7 +166,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsNdBitnotUsed']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsNdBitnotUsed"])
+        )
 
     @property
     def FlagsTopologyChange(self):
@@ -146,7 +180,10 @@ class StpCfgBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsTopologyChange']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsTopologyChange"])
+        )
 
     @property
     def HeaderRootIdentifier(self):
@@ -156,7 +193,10 @@ class StpCfgBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRootIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRootIdentifier"])
+        )
 
     @property
     def HeaderRootPathCost(self):
@@ -166,7 +206,10 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRootPathCost']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRootPathCost"])
+        )
 
     @property
     def HeaderBridgeIdentifier(self):
@@ -176,7 +219,10 @@ class StpCfgBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBridgeIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBridgeIdentifier"])
+        )
 
     @property
     def HeaderPortIdentifier(self):
@@ -186,7 +232,10 @@ class StpCfgBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPortIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPortIdentifier"])
+        )
 
     @property
     def HeaderMessageAge(self):
@@ -196,7 +245,10 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageAge']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageAge"])
+        )
 
     @property
     def HeaderMaxAge(self):
@@ -206,7 +258,8 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMaxAge']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderMaxAge"]))
 
     @property
     def HeaderHelloTime(self):
@@ -216,7 +269,10 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHelloTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHelloTime"])
+        )
 
     @property
     def HeaderForwardDelay(self):
@@ -226,7 +282,10 @@ class StpCfgBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderForwardDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderForwardDelay"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

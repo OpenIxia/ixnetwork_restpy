@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class Pppox(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pppox'
+    _SDM_NAME = "pppox"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PerSessionStats': 'perSessionStats',
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PerSessionStats": "perSessionStats",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Pppox, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_e2f82bab2eb412e995a8afdd681550ad import Ancp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_e2f82bab2eb412e995a8afdd681550ad import (
+            Ancp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ancp', None) is not None:
-                return self._properties.get('Ancp')
+            if self._properties.get("Ancp", None) is not None:
+                return self._properties.get("Ancp")
         return Ancp(self)
 
     @property
@@ -74,10 +77,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcp2v6client_d724dd54cefdedaea85d6bd7673b49e3 import Dhcp2v6Client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcp2v6client_d724dd54cefdedaea85d6bd7673b49e3 import (
+            Dhcp2v6Client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp2v6Client', None) is not None:
-                return self._properties.get('Dhcp2v6Client')
+            if self._properties.get("Dhcp2v6Client", None) is not None:
+                return self._properties.get("Dhcp2v6Client")
         return Dhcp2v6Client(self)
 
     @property
@@ -91,10 +97,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpopppclientendpoint_1ab3a0ce17d84b001c866b1120706b8f import DhcpoPppClientEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpopppclientendpoint_1ab3a0ce17d84b001c866b1120706b8f import (
+            DhcpoPppClientEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpoPppClientEndpoint', None) is not None:
-                return self._properties.get('DhcpoPppClientEndpoint')
+            if self._properties.get("DhcpoPppClientEndpoint", None) is not None:
+                return self._properties.get("DhcpoPppClientEndpoint")
         return DhcpoPppClientEndpoint(self)
 
     @property
@@ -108,10 +117,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpopppserverendpoint_a4e17e1071a2084830e8218141d4f437 import DhcpoPppServerEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpopppserverendpoint_a4e17e1071a2084830e8218141d4f437 import (
+            DhcpoPppServerEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpoPppServerEndpoint', None) is not None:
-                return self._properties.get('DhcpoPppServerEndpoint')
+            if self._properties.get("DhcpoPppServerEndpoint", None) is not None:
+                return self._properties.get("DhcpoPppServerEndpoint")
         return DhcpoPppServerEndpoint(self)
 
     @property
@@ -125,10 +137,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6client_275a94601c31b08956667eac93dae3ec import Dhcpv6Client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6client_275a94601c31b08956667eac93dae3ec import (
+            Dhcpv6Client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6Client', None) is not None:
-                return self._properties.get('Dhcpv6Client')
+            if self._properties.get("Dhcpv6Client", None) is not None:
+                return self._properties.get("Dhcpv6Client")
         return Dhcpv6Client(self)
 
     @property
@@ -142,10 +157,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6server_c5e79809184f734d2356c0422c091f11 import Dhcpv6Server
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6server_c5e79809184f734d2356c0422c091f11 import (
+            Dhcpv6Server,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6Server', None) is not None:
-                return self._properties.get('Dhcpv6Server')
+            if self._properties.get("Dhcpv6Server", None) is not None:
+                return self._properties.get("Dhcpv6Server")
         return Dhcpv6Server(self)
 
     @property
@@ -159,10 +177,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_e6d32a2c012d28ca2f64a6b635939634 import IgmpMld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_e6d32a2c012d28ca2f64a6b635939634 import (
+            IgmpMld,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpMld', None) is not None:
-                return self._properties.get('IgmpMld')
+            if self._properties.get("IgmpMld", None) is not None:
+                return self._properties.get("IgmpMld")
         return IgmpMld(self)
 
     @property
@@ -176,10 +197,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_569f80d1fc2805ed609cb398c7122f93 import IgmpQuerier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_569f80d1fc2805ed609cb398c7122f93 import (
+            IgmpQuerier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpQuerier', None) is not None:
-                return self._properties.get('IgmpQuerier')
+            if self._properties.get("IgmpQuerier", None) is not None:
+                return self._properties.get("IgmpQuerier")
         return IgmpQuerier(self)
 
     @property
@@ -193,10 +217,13 @@ class Pppox(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_d7b13f141adb3a47eabb5371762a7a3a import Iptv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_d7b13f141adb3a47eabb5371762a7a3a import (
+            Iptv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Iptv', None) is not None:
-                return self._properties.get('Iptv')
+            if self._properties.get("Iptv", None) is not None:
+                return self._properties.get("Iptv")
         return Iptv(self)
 
     @property
@@ -207,11 +234,12 @@ class Pppox(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -221,7 +249,7 @@ class Pppox(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PerSessionStats(self):
@@ -229,9 +257,9 @@ class Pppox(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PerSessionStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["PerSessionStats"])
 
     def update(self, Name=None):
         # type: (str) -> Pppox
@@ -287,7 +315,7 @@ class Pppox(Base):
         ----
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
-        - PerSessionStats (list(str)): 
+        - PerSessionStats (list(str)):
 
         Returns
         -------
@@ -339,10 +367,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -361,10 +391,14 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -383,10 +417,14 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -405,10 +443,14 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def PppoxCancel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -425,10 +467,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxCancel', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxCancel", payload=payload, response_object=None)
 
     def PppoxClearStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -445,10 +489,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxClearStats', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxClearStats", payload=payload, response_object=None)
 
     def PppoxConfigure(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -465,10 +511,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxConfigure', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxConfigure", payload=payload, response_object=None)
 
     def PppoxDeconfigure(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -485,10 +533,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxDeconfigure', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxDeconfigure", payload=payload, response_object=None)
 
     def PppoxNegotiateTo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -514,10 +564,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxNegotiateTo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxNegotiateTo", payload=payload, response_object=None)
 
     def PppoxPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -541,10 +593,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxPause", payload=payload, response_object=None)
 
     def PppoxResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -568,10 +622,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxResume", payload=payload, response_object=None)
 
     def PppoxRetry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -595,10 +651,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxRetry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxRetry", payload=payload, response_object=None)
 
     def PppoxSendNdpRs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -624,10 +682,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxSendNdpRs', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxSendNdpRs", payload=payload, response_object=None)
 
     def PppoxStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -651,10 +711,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxStart", payload=payload, response_object=None)
 
     def PppoxStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -678,10 +740,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pppoxStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pppoxStop", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -705,10 +769,12 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -732,7 +798,9 @@ class Pppox(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,51 +33,50 @@ class Ospfv3AggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3AggregatedStatistics'
+    _SDM_NAME = "ospfv3AggregatedStatistics"
     _SDM_ATT_MAP = {
-        'AttemptStateCount': 'attemptStateCount',
-        'DbdRx': 'dbdRx',
-        'DbdTx': 'dbdTx',
-        'DownStateCount': 'downStateCount',
-        'ExchangeStateCount': 'exchangeStateCount',
-        'ExstartStateCount': 'exstartStateCount',
-        'ExternallsaRx': 'externallsaRx',
-        'ExternallsaTx': 'externallsaTx',
-        'FullNbrs': 'fullNbrs',
-        'FullStateCount': 'fullStateCount',
-        'GracelsaRx': 'gracelsaRx',
-        'HellosRx': 'hellosRx',
-        'HellosTx': 'hellosTx',
-        'InitStateCount': 'initStateCount',
-        'InterareaprefixlsaRx': 'interareaprefixlsaRx',
-        'InterareaprefixlsaTx': 'interareaprefixlsaTx',
-        'InterarearouterlsaRx': 'interarearouterlsaRx',
-        'InterarearouterlsaTx': 'interarearouterlsaTx',
-        'IntraareaprefixlsaRx': 'intraareaprefixlsaRx',
-        'IntraareaprefixlsaTx': 'intraareaprefixlsaTx',
-        'LinklsaRx': 'linklsaRx',
-        'LinklsaTx': 'linklsaTx',
-        'LinkstateAdvertisementRx': 'linkstateAdvertisementRx',
-        'LinkstateAdvertisementTx': 'linkstateAdvertisementTx',
-        'LoadingStateCount': 'loadingStateCount',
-        'LsAckRx': 'lsAckRx',
-        'LsAckTx': 'lsAckTx',
-        'LsRequestRx': 'lsRequestRx',
-        'LsRequestTx': 'lsRequestTx',
-        'LsUpdateRx': 'lsUpdateRx',
-        'LsUpdateTx': 'lsUpdateTx',
-        'NetworklsaRx': 'networklsaRx',
-        'NetworklsaTx': 'networklsaTx',
-        'PortName': 'portName',
-        'RetransmittedLSA': 'retransmittedLSA',
-        'RouterlsaRx': 'routerlsaRx',
-        'RouterlsaTx': 'routerlsaTx',
-        'SessConfigured': 'sessConfigured',
-        'SessionFlapCount': 'sessionFlapCount',
-        'TwowayStateCount': 'twowayStateCount',
+        "AttemptStateCount": "attemptStateCount",
+        "DbdRx": "dbdRx",
+        "DbdTx": "dbdTx",
+        "DownStateCount": "downStateCount",
+        "ExchangeStateCount": "exchangeStateCount",
+        "ExstartStateCount": "exstartStateCount",
+        "ExternallsaRx": "externallsaRx",
+        "ExternallsaTx": "externallsaTx",
+        "FullNbrs": "fullNbrs",
+        "FullStateCount": "fullStateCount",
+        "GracelsaRx": "gracelsaRx",
+        "HellosRx": "hellosRx",
+        "HellosTx": "hellosTx",
+        "InitStateCount": "initStateCount",
+        "InterareaprefixlsaRx": "interareaprefixlsaRx",
+        "InterareaprefixlsaTx": "interareaprefixlsaTx",
+        "InterarearouterlsaRx": "interarearouterlsaRx",
+        "InterarearouterlsaTx": "interarearouterlsaTx",
+        "IntraareaprefixlsaRx": "intraareaprefixlsaRx",
+        "IntraareaprefixlsaTx": "intraareaprefixlsaTx",
+        "LinklsaRx": "linklsaRx",
+        "LinklsaTx": "linklsaTx",
+        "LinkstateAdvertisementRx": "linkstateAdvertisementRx",
+        "LinkstateAdvertisementTx": "linkstateAdvertisementTx",
+        "LoadingStateCount": "loadingStateCount",
+        "LsAckRx": "lsAckRx",
+        "LsAckTx": "lsAckTx",
+        "LsRequestRx": "lsRequestRx",
+        "LsRequestTx": "lsRequestTx",
+        "LsUpdateRx": "lsUpdateRx",
+        "LsUpdateTx": "lsUpdateTx",
+        "NetworklsaRx": "networklsaRx",
+        "NetworklsaTx": "networklsaTx",
+        "PortName": "portName",
+        "RetransmittedLSA": "retransmittedLSA",
+        "RouterlsaRx": "routerlsaRx",
+        "RouterlsaTx": "routerlsaTx",
+        "SessConfigured": "sessConfigured",
+        "SessionFlapCount": "sessionFlapCount",
+        "TwowayStateCount": "twowayStateCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv3AggregatedStatistics, self).__init__(parent, list_op)
@@ -89,11 +89,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Attempt State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AttemptStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AttemptStateCount"])
+
     @AttemptStateCount.setter
     def AttemptStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AttemptStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AttemptStateCount"], value)
 
     @property
     def DbdRx(self):
@@ -103,11 +104,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: DBD Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbdRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbdRx"])
+
     @DbdRx.setter
     def DbdRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbdRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbdRx"], value)
 
     @property
     def DbdTx(self):
@@ -117,11 +119,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: DBD Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbdTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbdTx"])
+
     @DbdTx.setter
     def DbdTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbdTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbdTx"], value)
 
     @property
     def DownStateCount(self):
@@ -131,11 +134,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Down State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownStateCount"])
+
     @DownStateCount.setter
     def DownStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownStateCount"], value)
 
     @property
     def ExchangeStateCount(self):
@@ -145,11 +149,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Exchange State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExchangeStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExchangeStateCount"])
+
     @ExchangeStateCount.setter
     def ExchangeStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExchangeStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExchangeStateCount"], value)
 
     @property
     def ExstartStateCount(self):
@@ -159,11 +164,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: ExStart State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExstartStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExstartStateCount"])
+
     @ExstartStateCount.setter
     def ExstartStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExstartStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExstartStateCount"], value)
 
     @property
     def ExternallsaRx(self):
@@ -173,11 +179,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: ExternalLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternallsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternallsaRx"])
+
     @ExternallsaRx.setter
     def ExternallsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternallsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternallsaRx"], value)
 
     @property
     def ExternallsaTx(self):
@@ -187,11 +194,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: ExternalLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternallsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternallsaTx"])
+
     @ExternallsaTx.setter
     def ExternallsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternallsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternallsaTx"], value)
 
     @property
     def FullNbrs(self):
@@ -201,11 +209,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Full Nbrs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FullNbrs'])
+        return self._get_attribute(self._SDM_ATT_MAP["FullNbrs"])
+
     @FullNbrs.setter
     def FullNbrs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FullNbrs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FullNbrs"], value)
 
     @property
     def FullStateCount(self):
@@ -215,11 +224,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Full State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FullStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FullStateCount"])
+
     @FullStateCount.setter
     def FullStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FullStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FullStateCount"], value)
 
     @property
     def GracelsaRx(self):
@@ -229,11 +239,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: GraceLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GracelsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["GracelsaRx"])
+
     @GracelsaRx.setter
     def GracelsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GracelsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GracelsaRx"], value)
 
     @property
     def HellosRx(self):
@@ -243,11 +254,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Hellos Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosRx"])
+
     @HellosRx.setter
     def HellosRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosRx"], value)
 
     @property
     def HellosTx(self):
@@ -257,11 +269,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Hellos Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HellosTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["HellosTx"])
+
     @HellosTx.setter
     def HellosTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HellosTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HellosTx"], value)
 
     @property
     def InitStateCount(self):
@@ -271,11 +284,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Init State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitStateCount"])
+
     @InitStateCount.setter
     def InitStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitStateCount"], value)
 
     @property
     def InterareaprefixlsaRx(self):
@@ -285,11 +299,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: InterareaPrefixLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterareaprefixlsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterareaprefixlsaRx"])
+
     @InterareaprefixlsaRx.setter
     def InterareaprefixlsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterareaprefixlsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterareaprefixlsaRx"], value)
 
     @property
     def InterareaprefixlsaTx(self):
@@ -299,11 +314,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: InterareaPrefixLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterareaprefixlsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterareaprefixlsaTx"])
+
     @InterareaprefixlsaTx.setter
     def InterareaprefixlsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterareaprefixlsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterareaprefixlsaTx"], value)
 
     @property
     def InterarearouterlsaRx(self):
@@ -313,11 +329,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: InterareaRouterLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterarearouterlsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterarearouterlsaRx"])
+
     @InterarearouterlsaRx.setter
     def InterarearouterlsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterarearouterlsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterarearouterlsaRx"], value)
 
     @property
     def InterarearouterlsaTx(self):
@@ -327,11 +344,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: InterareaRouterLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterarearouterlsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterarearouterlsaTx"])
+
     @InterarearouterlsaTx.setter
     def InterarearouterlsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterarearouterlsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterarearouterlsaTx"], value)
 
     @property
     def IntraareaprefixlsaRx(self):
@@ -341,11 +359,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: IntraareaPrefixLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraareaprefixlsaRx"])
+
     @IntraareaprefixlsaRx.setter
     def IntraareaprefixlsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraareaprefixlsaRx"], value)
 
     @property
     def IntraareaprefixlsaTx(self):
@@ -355,11 +374,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: IntraareaPrefixLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraareaprefixlsaTx"])
+
     @IntraareaprefixlsaTx.setter
     def IntraareaprefixlsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraareaprefixlsaTx"], value)
 
     @property
     def LinklsaRx(self):
@@ -369,11 +389,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LinkLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinklsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinklsaRx"])
+
     @LinklsaRx.setter
     def LinklsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinklsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinklsaRx"], value)
 
     @property
     def LinklsaTx(self):
@@ -383,11 +404,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LinkLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinklsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinklsaTx"])
+
     @LinklsaTx.setter
     def LinklsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinklsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinklsaTx"], value)
 
     @property
     def LinkstateAdvertisementRx(self):
@@ -397,11 +419,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LinkState Advertisement Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkstateAdvertisementRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkstateAdvertisementRx"])
+
     @LinkstateAdvertisementRx.setter
     def LinkstateAdvertisementRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkstateAdvertisementRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkstateAdvertisementRx"], value)
 
     @property
     def LinkstateAdvertisementTx(self):
@@ -411,11 +434,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LinkState Advertisement Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkstateAdvertisementTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkstateAdvertisementTx"])
+
     @LinkstateAdvertisementTx.setter
     def LinkstateAdvertisementTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkstateAdvertisementTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkstateAdvertisementTx"], value)
 
     @property
     def LoadingStateCount(self):
@@ -425,11 +449,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Loading State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadingStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadingStateCount"])
+
     @LoadingStateCount.setter
     def LoadingStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadingStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadingStateCount"], value)
 
     @property
     def LsAckRx(self):
@@ -439,11 +464,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Ack Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsAckRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsAckRx"])
+
     @LsAckRx.setter
     def LsAckRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsAckRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsAckRx"], value)
 
     @property
     def LsAckTx(self):
@@ -453,11 +479,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Ack Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsAckTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsAckTx"])
+
     @LsAckTx.setter
     def LsAckTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsAckTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsAckTx"], value)
 
     @property
     def LsRequestRx(self):
@@ -467,11 +494,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsRequestRx"])
+
     @LsRequestRx.setter
     def LsRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsRequestRx"], value)
 
     @property
     def LsRequestTx(self):
@@ -481,11 +509,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsRequestTx"])
+
     @LsRequestTx.setter
     def LsRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsRequestTx"], value)
 
     @property
     def LsUpdateRx(self):
@@ -495,11 +524,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Update Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsUpdateRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsUpdateRx"])
+
     @LsUpdateRx.setter
     def LsUpdateRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsUpdateRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsUpdateRx"], value)
 
     @property
     def LsUpdateTx(self):
@@ -509,11 +539,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: LS Update Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsUpdateTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsUpdateTx"])
+
     @LsUpdateTx.setter
     def LsUpdateTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsUpdateTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsUpdateTx"], value)
 
     @property
     def NetworklsaRx(self):
@@ -523,11 +554,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: NetworkLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworklsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworklsaRx"])
+
     @NetworklsaRx.setter
     def NetworklsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworklsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworklsaRx"], value)
 
     @property
     def NetworklsaTx(self):
@@ -537,11 +569,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: NetworkLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworklsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworklsaTx"])
+
     @NetworklsaTx.setter
     def NetworklsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworklsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworklsaTx"], value)
 
     @property
     def PortName(self):
@@ -551,11 +584,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RetransmittedLSA(self):
@@ -565,11 +599,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Retransmitted LSA
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetransmittedLSA'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetransmittedLSA"])
+
     @RetransmittedLSA.setter
     def RetransmittedLSA(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RetransmittedLSA'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RetransmittedLSA"], value)
 
     @property
     def RouterlsaRx(self):
@@ -579,11 +614,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: RouterLSA Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterlsaRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterlsaRx"])
+
     @RouterlsaRx.setter
     def RouterlsaRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterlsaRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterlsaRx"], value)
 
     @property
     def RouterlsaTx(self):
@@ -593,11 +629,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: RouterLSA Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterlsaTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterlsaTx"])
+
     @RouterlsaTx.setter
     def RouterlsaTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterlsaTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterlsaTx"], value)
 
     @property
     def SessConfigured(self):
@@ -607,11 +644,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessConfigured"])
+
     @SessConfigured.setter
     def SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessConfigured"], value)
 
     @property
     def SessionFlapCount(self):
@@ -621,11 +659,12 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def TwowayStateCount(self):
@@ -635,13 +674,56 @@ class Ospfv3AggregatedStatistics(Base):
         -------
         - bool: TwoWay State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TwowayStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TwowayStateCount"])
+
     @TwowayStateCount.setter
     def TwowayStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TwowayStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TwowayStateCount"], value)
 
-    def update(self, AttemptStateCount=None, DbdRx=None, DbdTx=None, DownStateCount=None, ExchangeStateCount=None, ExstartStateCount=None, ExternallsaRx=None, ExternallsaTx=None, FullNbrs=None, FullStateCount=None, GracelsaRx=None, HellosRx=None, HellosTx=None, InitStateCount=None, InterareaprefixlsaRx=None, InterareaprefixlsaTx=None, InterarearouterlsaRx=None, InterarearouterlsaTx=None, IntraareaprefixlsaRx=None, IntraareaprefixlsaTx=None, LinklsaRx=None, LinklsaTx=None, LinkstateAdvertisementRx=None, LinkstateAdvertisementTx=None, LoadingStateCount=None, LsAckRx=None, LsAckTx=None, LsRequestRx=None, LsRequestTx=None, LsUpdateRx=None, LsUpdateTx=None, NetworklsaRx=None, NetworklsaTx=None, PortName=None, RetransmittedLSA=None, RouterlsaRx=None, RouterlsaTx=None, SessConfigured=None, SessionFlapCount=None, TwowayStateCount=None):
+    def update(
+        self,
+        AttemptStateCount=None,
+        DbdRx=None,
+        DbdTx=None,
+        DownStateCount=None,
+        ExchangeStateCount=None,
+        ExstartStateCount=None,
+        ExternallsaRx=None,
+        ExternallsaTx=None,
+        FullNbrs=None,
+        FullStateCount=None,
+        GracelsaRx=None,
+        HellosRx=None,
+        HellosTx=None,
+        InitStateCount=None,
+        InterareaprefixlsaRx=None,
+        InterareaprefixlsaTx=None,
+        InterarearouterlsaRx=None,
+        InterarearouterlsaTx=None,
+        IntraareaprefixlsaRx=None,
+        IntraareaprefixlsaTx=None,
+        LinklsaRx=None,
+        LinklsaTx=None,
+        LinkstateAdvertisementRx=None,
+        LinkstateAdvertisementTx=None,
+        LoadingStateCount=None,
+        LsAckRx=None,
+        LsAckTx=None,
+        LsRequestRx=None,
+        LsRequestTx=None,
+        LsUpdateRx=None,
+        LsUpdateTx=None,
+        NetworklsaRx=None,
+        NetworklsaTx=None,
+        PortName=None,
+        RetransmittedLSA=None,
+        RouterlsaRx=None,
+        RouterlsaTx=None,
+        SessConfigured=None,
+        SessionFlapCount=None,
+        TwowayStateCount=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Ospfv3AggregatedStatistics
         """Updates ospfv3AggregatedStatistics resource on the server.
 
@@ -694,7 +776,49 @@ class Ospfv3AggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AttemptStateCount=None, DbdRx=None, DbdTx=None, DownStateCount=None, ExchangeStateCount=None, ExstartStateCount=None, ExternallsaRx=None, ExternallsaTx=None, FullNbrs=None, FullStateCount=None, GracelsaRx=None, HellosRx=None, HellosTx=None, InitStateCount=None, InterareaprefixlsaRx=None, InterareaprefixlsaTx=None, InterarearouterlsaRx=None, InterarearouterlsaTx=None, IntraareaprefixlsaRx=None, IntraareaprefixlsaTx=None, LinklsaRx=None, LinklsaTx=None, LinkstateAdvertisementRx=None, LinkstateAdvertisementTx=None, LoadingStateCount=None, LsAckRx=None, LsAckTx=None, LsRequestRx=None, LsRequestTx=None, LsUpdateRx=None, LsUpdateTx=None, NetworklsaRx=None, NetworklsaTx=None, PortName=None, RetransmittedLSA=None, RouterlsaRx=None, RouterlsaTx=None, SessConfigured=None, SessionFlapCount=None, TwowayStateCount=None):
+    def find(
+        self,
+        AttemptStateCount=None,
+        DbdRx=None,
+        DbdTx=None,
+        DownStateCount=None,
+        ExchangeStateCount=None,
+        ExstartStateCount=None,
+        ExternallsaRx=None,
+        ExternallsaTx=None,
+        FullNbrs=None,
+        FullStateCount=None,
+        GracelsaRx=None,
+        HellosRx=None,
+        HellosTx=None,
+        InitStateCount=None,
+        InterareaprefixlsaRx=None,
+        InterareaprefixlsaTx=None,
+        InterarearouterlsaRx=None,
+        InterarearouterlsaTx=None,
+        IntraareaprefixlsaRx=None,
+        IntraareaprefixlsaTx=None,
+        LinklsaRx=None,
+        LinklsaTx=None,
+        LinkstateAdvertisementRx=None,
+        LinkstateAdvertisementTx=None,
+        LoadingStateCount=None,
+        LsAckRx=None,
+        LsAckTx=None,
+        LsRequestRx=None,
+        LsRequestTx=None,
+        LsUpdateRx=None,
+        LsUpdateTx=None,
+        NetworklsaRx=None,
+        NetworklsaTx=None,
+        PortName=None,
+        RetransmittedLSA=None,
+        RouterlsaRx=None,
+        RouterlsaTx=None,
+        SessConfigured=None,
+        SessionFlapCount=None,
+        TwowayStateCount=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Ospfv3AggregatedStatistics
         """Finds and retrieves ospfv3AggregatedStatistics resources from the server.
 

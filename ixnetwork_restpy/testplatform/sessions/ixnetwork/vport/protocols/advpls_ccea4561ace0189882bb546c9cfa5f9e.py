@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class AdVpls(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'adVpls'
+    _SDM_NAME = "adVpls"
     _SDM_ATT_MAP = {
-        'NeighborAddress': 'neighborAddress',
-        'NextHopAddress': 'nextHopAddress',
-        'RemotePeAddress': 'remotePeAddress',
-        'RemoteVplsId': 'remoteVplsId',
-        'RemoteVsiId': 'remoteVsiId',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'RouteTarget': 'routeTarget',
-        'SupportedLocally': 'supportedLocally',
+        "NeighborAddress": "neighborAddress",
+        "NextHopAddress": "nextHopAddress",
+        "RemotePeAddress": "remotePeAddress",
+        "RemoteVplsId": "remoteVplsId",
+        "RemoteVsiId": "remoteVsiId",
+        "RouteDistinguisher": "routeDistinguisher",
+        "RouteTarget": "routeTarget",
+        "SupportedLocally": "supportedLocally",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AdVpls, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) The descriptive identifier for the BGP neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborAddress"])
 
     @property
     def NextHopAddress(self):
@@ -68,7 +68,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) A 4-octet IP address which indicates the next hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopAddress"])
 
     @property
     def RemotePeAddress(self):
@@ -78,7 +78,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) The descriptive identifier for the remote PE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemotePeAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemotePeAddress"])
 
     @property
     def RemoteVplsId(self):
@@ -88,7 +88,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) The remote VPLS ID indicated by an IP or AS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteVplsId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteVplsId"])
 
     @property
     def RemoteVsiId(self):
@@ -98,7 +98,7 @@ class AdVpls(Base):
         -------
         - number: (Read Only) The remote VSI Id indicated by 4 bytes unsigned number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteVsiId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteVsiId"])
 
     @property
     def RouteDistinguisher(self):
@@ -108,7 +108,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) The route distinguisher indicated by the IP or AS number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisher'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteDistinguisher"])
 
     @property
     def RouteTarget(self):
@@ -118,7 +118,7 @@ class AdVpls(Base):
         -------
         - str: (Read Only) The route target indicated by the IP or AS number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteTarget"])
 
     @property
     def SupportedLocally(self):
@@ -128,10 +128,10 @@ class AdVpls(Base):
         -------
         - bool: (Read Only) The boolean value indicating whether it is supported locally.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedLocally'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedLocally"])
 
     def add(self):
-        """Adds a new adVpls resource on the json, only valid with config assistant
+        """Adds a new adVpls resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -143,7 +143,17 @@ class AdVpls(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, NeighborAddress=None, NextHopAddress=None, RemotePeAddress=None, RemoteVplsId=None, RemoteVsiId=None, RouteDistinguisher=None, RouteTarget=None, SupportedLocally=None):
+    def find(
+        self,
+        NeighborAddress=None,
+        NextHopAddress=None,
+        RemotePeAddress=None,
+        RemoteVplsId=None,
+        RemoteVsiId=None,
+        RouteDistinguisher=None,
+        RouteTarget=None,
+        SupportedLocally=None,
+    ):
         # type: (str, str, str, str, int, str, str, bool) -> AdVpls
         """Finds and retrieves adVpls resources from the server.
 

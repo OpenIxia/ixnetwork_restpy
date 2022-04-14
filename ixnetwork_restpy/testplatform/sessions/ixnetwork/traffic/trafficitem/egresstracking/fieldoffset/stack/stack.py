@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class Stack(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'stack'
+    _SDM_NAME = "stack"
     _SDM_ATT_MAP = {
-        'DisplayName': 'displayName',
-        'StackTypeId': 'stackTypeId',
-        'TemplateName': 'templateName',
+        "DisplayName": "displayName",
+        "StackTypeId": "stackTypeId",
+        "TemplateName": "templateName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Stack, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class Stack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.stack.field.field import Field
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.stack.field.field import (
+            Field,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Field', None) is not None:
-                return self._properties.get('Field')
+            if self._properties.get("Field", None) is not None:
+                return self._properties.get("Field")
         return Field(self)
 
     @property
@@ -70,7 +73,7 @@ class Stack(Base):
         -------
         - str: The display name of the stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def StackTypeId(self):
@@ -78,9 +81,9 @@ class Stack(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackTypeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackTypeId"])
 
     @property
     def TemplateName(self):
@@ -90,10 +93,10 @@ class Stack(Base):
         -------
         - str: Indiates the protocol template name that is added to a packet in a stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TemplateName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TemplateName"])
 
     def add(self):
-        """Adds a new stack resource on the json, only valid with config assistant
+        """Adds a new stack resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -116,7 +119,7 @@ class Stack(Base):
         Args
         ----
         - DisplayName (str): The display name of the stack.
-        - StackTypeId (str): 
+        - StackTypeId (str):
         - TemplateName (str): Indiates the protocol template name that is added to a packet in a stack.
 
         Returns
@@ -164,10 +167,12 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('append', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("append", payload=payload, response_object=None)
 
     def AppendProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -186,10 +191,12 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('appendProtocol', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("appendProtocol", payload=payload, response_object=None)
 
     def GetValidProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -207,10 +214,12 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getValidProtocols', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getValidProtocols", payload=payload, response_object=None)
 
     def Insert(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -229,10 +238,12 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('insert', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("insert", payload=payload, response_object=None)
 
     def InsertProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -251,10 +262,12 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('insertProtocol', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("insertProtocol", payload=payload, response_object=None)
 
     def Remove(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -271,7 +284,9 @@ class Stack(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('remove', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("remove", payload=payload, response_object=None)

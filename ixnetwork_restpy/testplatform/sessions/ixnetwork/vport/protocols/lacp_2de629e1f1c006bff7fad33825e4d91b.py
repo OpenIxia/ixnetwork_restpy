@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,15 @@ class Lacp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lacp'
+    _SDM_NAME = "lacp"
     _SDM_ATT_MAP = {
-        'EnablePreservePartnerInfo': 'enablePreservePartnerInfo',
-        'Enabled': 'enabled',
-        'IsLacpPortLearnedInfoRefreshed': 'isLacpPortLearnedInfoRefreshed',
-        'RunningState': 'runningState',
+        "EnablePreservePartnerInfo": "enablePreservePartnerInfo",
+        "Enabled": "enabled",
+        "IsLacpPortLearnedInfoRefreshed": "isLacpPortLearnedInfoRefreshed",
+        "RunningState": "runningState",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,10 +58,13 @@ class Lacp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_4e6b30ede278e0f1f44ceef59a7cc716 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_4e6b30ede278e0f1f44ceef59a7cc716 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -74,10 +78,13 @@ class Lacp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_05cc0903dd20fb640a82079159eed6bc import Link
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_05cc0903dd20fb640a82079159eed6bc import (
+            Link,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Link', None) is not None:
-                return self._properties.get('Link')
+            if self._properties.get("Link", None) is not None:
+                return self._properties.get("Link")
         return Link(self)
 
     @property
@@ -88,11 +95,12 @@ class Lacp(Base):
         -------
         - bool: If true, the fields of previous link are updatedw
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePreservePartnerInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePreservePartnerInfo"])
+
     @EnablePreservePartnerInfo.setter
     def EnablePreservePartnerInfo(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePreservePartnerInfo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePreservePartnerInfo"], value)
 
     @property
     def Enabled(self):
@@ -102,11 +110,12 @@ class Lacp(Base):
         -------
         - bool: If true, the Link Aggregation Control Protocol (LACP) is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IsLacpPortLearnedInfoRefreshed(self):
@@ -116,7 +125,7 @@ class Lacp(Base):
         -------
         - bool: (read only) If true, the learned port information is up to date.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLacpPortLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLacpPortLearnedInfoRefreshed"])
 
     @property
     def RunningState(self):
@@ -126,7 +135,7 @@ class Lacp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of LACP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     def update(self, EnablePreservePartnerInfo=None, Enabled=None):
         # type: (bool, bool) -> Lacp
@@ -143,7 +152,13 @@ class Lacp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnablePreservePartnerInfo=None, Enabled=None, IsLacpPortLearnedInfoRefreshed=None, RunningState=None):
+    def find(
+        self,
+        EnablePreservePartnerInfo=None,
+        Enabled=None,
+        IsLacpPortLearnedInfoRefreshed=None,
+        RunningState=None,
+    ):
         # type: (bool, bool, bool, str) -> Lacp
         """Finds and retrieves lacp resources from the server.
 
@@ -201,10 +216,14 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLacpPortLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLacpPortLearnedInfo", payload=payload, response_object=None
+        )
 
     def SendMarkerRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -221,10 +240,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMarkerRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendMarkerRequest", payload=payload, response_object=None)
 
     def SendUpdate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -241,10 +262,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendUpdate', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendUpdate", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -261,10 +284,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartPdu(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -281,10 +306,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startPdu', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startPdu", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -301,10 +328,12 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopPdu(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -321,7 +350,9 @@ class Lacp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPdu', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopPdu", payload=payload, response_object=None)

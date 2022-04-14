@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Gre(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'gre'
+    _SDM_NAME = "gre"
     _SDM_ATT_MAP = {
-        'Dest': 'dest',
-        'InKey': 'inKey',
-        'OutKey': 'outKey',
-        'Source': 'source',
-        'UseChecksum': 'useChecksum',
-        'UseKey': 'useKey',
-        'UseSequence': 'useSequence',
+        "Dest": "dest",
+        "InKey": "inKey",
+        "OutKey": "outKey",
+        "Source": "source",
+        "UseChecksum": "useChecksum",
+        "UseKey": "useKey",
+        "UseSequence": "useSequence",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Gre, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class Gre(Base):
         -------
         - str: Part of the GRE Delivery Header: The IP address of the Destination router at the remote end of the GRE tunnel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dest'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dest"])
+
     @Dest.setter
     def Dest(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dest"], value)
 
     @property
     def InKey(self):
@@ -70,11 +71,12 @@ class Gre(Base):
         -------
         - number: This is the user-assigned GRE header authentication key value that the receiving router will check for to validate GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["InKey"])
+
     @InKey.setter
     def InKey(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InKey"], value)
 
     @property
     def OutKey(self):
@@ -84,11 +86,12 @@ class Gre(Base):
         -------
         - number: This is the user-assigned GRE header authentication key value that will be included in the GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel). In most cases, the In Key and Out Key will be the same.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutKey"])
+
     @OutKey.setter
     def OutKey(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutKey"], value)
 
     @property
     def Source(self):
@@ -98,11 +101,12 @@ class Gre(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../ipv4 | /api/v1/sessions/1/ixnetwork/vport/.../ipv6): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Source"])
+
     @Source.setter
     def Source(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Source"], value)
 
     @property
     def UseChecksum(self):
@@ -112,11 +116,12 @@ class Gre(Base):
         -------
         - bool: Enables the use of the optional GRE checksum.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseChecksum'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseChecksum"])
+
     @UseChecksum.setter
     def UseChecksum(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseChecksum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseChecksum"], value)
 
     @property
     def UseKey(self):
@@ -126,11 +131,12 @@ class Gre(Base):
         -------
         - bool: Enables the use of the optional GRE header key field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseKey"])
+
     @UseKey.setter
     def UseKey(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseKey"], value)
 
     @property
     def UseSequence(self):
@@ -140,13 +146,23 @@ class Gre(Base):
         -------
         - bool: If more than one GRE tunnel will be used, this is the amount that will be added to create each additional authentication key value to be sent in the GRE packets (one key per GRE tunnel).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseSequence'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseSequence"])
+
     @UseSequence.setter
     def UseSequence(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseSequence'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseSequence"], value)
 
-    def update(self, Dest=None, InKey=None, OutKey=None, Source=None, UseChecksum=None, UseKey=None, UseSequence=None):
+    def update(
+        self,
+        Dest=None,
+        InKey=None,
+        OutKey=None,
+        Source=None,
+        UseChecksum=None,
+        UseKey=None,
+        UseSequence=None,
+    ):
         # type: (str, int, int, str, bool, bool, bool) -> Gre
         """Updates gre resource on the server.
 
@@ -166,7 +182,16 @@ class Gre(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Dest=None, InKey=None, OutKey=None, Source=None, UseChecksum=None, UseKey=None, UseSequence=None):
+    def find(
+        self,
+        Dest=None,
+        InKey=None,
+        OutKey=None,
+        Source=None,
+        UseChecksum=None,
+        UseKey=None,
+        UseSequence=None,
+    ):
         # type: (str, int, int, str, bool, bool, bool) -> Gre
         """Finds and retrieves gre resources from the server.
 

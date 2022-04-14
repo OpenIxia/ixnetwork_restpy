@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,33 +33,32 @@ class RsvpP2PEgressLsps(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpP2PEgressLsps'
+    _SDM_NAME = "rsvpP2PEgressLsps"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConstructRroFromEro': 'constructRroFromEro',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFixedLabelForReservations': 'enableFixedLabelForReservations',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'EndPointIpv6': 'endPointIpv6',
-        'ForwardLspSelfPing': 'forwardLspSelfPing',
-        'InitialLspSelfPingDropCount': 'initialLspSelfPingDropCount',
-        'IpTTLDecrementCount': 'ipTTLDecrementCount',
-        'LabelValue': 'labelValue',
-        'LocalIp': 'localIp',
-        'LspSelfPingIPDSCP': 'lspSelfPingIPDSCP',
-        'Name': 'name',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'ReflectRro': 'reflectRro',
-        'RefreshInterval': 'refreshInterval',
-        'ReservationStyle': 'reservationStyle',
-        'RetainLspSelfPingDSCP': 'retainLspSelfPingDSCP',
-        'SendReservationConfirmation': 'sendReservationConfirmation',
-        'State': 'state',
-        'TimeoutMultiplier': 'timeoutMultiplier',
+        "Active": "active",
+        "ConstructRroFromEro": "constructRroFromEro",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableFixedLabelForReservations": "enableFixedLabelForReservations",
+        "EnableReplyingLspPing": "enableReplyingLspPing",
+        "EndPointIpv6": "endPointIpv6",
+        "ForwardLspSelfPing": "forwardLspSelfPing",
+        "InitialLspSelfPingDropCount": "initialLspSelfPingDropCount",
+        "IpTTLDecrementCount": "ipTTLDecrementCount",
+        "LabelValue": "labelValue",
+        "LocalIp": "localIp",
+        "LspSelfPingIPDSCP": "lspSelfPingIPDSCP",
+        "Name": "name",
+        "NumberOfRroSubObjects": "numberOfRroSubObjects",
+        "ReflectRro": "reflectRro",
+        "RefreshInterval": "refreshInterval",
+        "ReservationStyle": "reservationStyle",
+        "RetainLspSelfPingDSCP": "retainLspSelfPingDSCP",
+        "SendReservationConfirmation": "sendReservationConfirmation",
+        "State": "state",
+        "TimeoutMultiplier": "timeoutMultiplier",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpP2PEgressLsps, self).__init__(parent, list_op)
@@ -74,10 +74,13 @@ class RsvpP2PEgressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist_77057ceebebb20e47d2ca898582fad61 import RsvpRROSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist_77057ceebebb20e47d2ca898582fad61 import (
+            RsvpRROSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpRROSubObjectsList', None) is not None:
-                return self._properties.get('RsvpRROSubObjectsList')
+            if self._properties.get("RsvpRROSubObjectsList", None) is not None:
+                return self._properties.get("RsvpRROSubObjectsList")
         return RsvpRROSubObjectsList(self)
 
     @property
@@ -91,10 +94,13 @@ class RsvpP2PEgressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -106,7 +112,8 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConstructRroFromEro(self):
@@ -117,7 +124,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Construct RRO from ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConstructRroFromEro']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConstructRroFromEro"])
+        )
 
     @property
     def Count(self):
@@ -127,7 +137,7 @@ class RsvpP2PEgressLsps(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -137,7 +147,7 @@ class RsvpP2PEgressLsps(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableFixedLabelForReservations(self):
@@ -148,7 +158,11 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Fixed Label For Reservations
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFixedLabelForReservations']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableFixedLabelForReservations"]),
+        )
 
     @property
     def EnableReplyingLspPing(self):
@@ -159,7 +173,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Replying To Lsp Ping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableReplyingLspPing"])
+        )
 
     @property
     def EndPointIpv6(self):
@@ -170,7 +187,8 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointIpv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EndPointIpv6"]))
 
     @property
     def ForwardLspSelfPing(self):
@@ -181,7 +199,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Forward LSP Self Ping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForwardLspSelfPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ForwardLspSelfPing"])
+        )
 
     @property
     def InitialLspSelfPingDropCount(self):
@@ -192,7 +213,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial LSP Self Ping Drop Count. Number of times Egress LSP will drop LSP Self Ping Message before forwarding it back.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialLspSelfPingDropCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialLspSelfPingDropCount"])
+        )
 
     @property
     def IpTTLDecrementCount(self):
@@ -203,7 +227,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP TTL Decrement Count. IP TTL limits the lifespan or lifetime of IP Packet in a network.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpTTLDecrementCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpTTLDecrementCount"])
+        )
 
     @property
     def LabelValue(self):
@@ -214,7 +241,8 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelValue"]))
 
     @property
     def LocalIp(self):
@@ -224,7 +252,7 @@ class RsvpP2PEgressLsps(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def LspSelfPingIPDSCP(self):
@@ -235,7 +263,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Self Ping IP DSCP. IP DSCP classifies the way an IP packet is routed in a network.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspSelfPingIPDSCP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspSelfPingIPDSCP"])
+        )
 
     @property
     def Name(self):
@@ -245,11 +276,12 @@ class RsvpP2PEgressLsps(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfRroSubObjects(self):
@@ -259,11 +291,12 @@ class RsvpP2PEgressLsps(Base):
         -------
         - number: Number Of RRO Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"])
+
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"], value)
 
     @property
     def ReflectRro(self):
@@ -274,7 +307,8 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reflect RRO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReflectRro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReflectRro"]))
 
     @property
     def RefreshInterval(self):
@@ -285,7 +319,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Refresh Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RefreshInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RefreshInterval"])
+        )
 
     @property
     def ReservationStyle(self):
@@ -296,7 +333,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reservation Style
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservationStyle']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservationStyle"])
+        )
 
     @property
     def RetainLspSelfPingDSCP(self):
@@ -307,7 +347,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Retain LSP Self Ping DSCP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RetainLspSelfPingDSCP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RetainLspSelfPingDSCP"])
+        )
 
     @property
     def SendReservationConfirmation(self):
@@ -318,7 +361,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send Reservation Confirmation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendReservationConfirmation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendReservationConfirmation"])
+        )
 
     @property
     def State(self):
@@ -328,7 +374,7 @@ class RsvpP2PEgressLsps(Base):
         -------
         - list(str[down | none | notStarted | up]): State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def TimeoutMultiplier(self):
@@ -339,7 +385,10 @@ class RsvpP2PEgressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout Multiplier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"])
+        )
 
     def update(self, Name=None, NumberOfRroSubObjects=None):
         # type: (str, int) -> RsvpP2PEgressLsps
@@ -359,7 +408,15 @@ class RsvpP2PEgressLsps(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None, NumberOfRroSubObjects=None, State=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalIp=None,
+        Name=None,
+        NumberOfRroSubObjects=None,
+        State=None,
+    ):
         # type: (int, str, List[str], str, int, List[str]) -> RsvpP2PEgressLsps
         """Finds and retrieves rsvpP2PEgressLsps resources from the server.
 
@@ -437,10 +494,12 @@ class RsvpP2PEgressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -475,12 +534,33 @@ class RsvpP2PEgressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ConstructRroFromEro=None, EnableFixedLabelForReservations=None, EnableReplyingLspPing=None, EndPointIpv6=None, ForwardLspSelfPing=None, InitialLspSelfPingDropCount=None, IpTTLDecrementCount=None, LabelValue=None, LspSelfPingIPDSCP=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, RetainLspSelfPingDSCP=None, SendReservationConfirmation=None, TimeoutMultiplier=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ConstructRroFromEro=None,
+        EnableFixedLabelForReservations=None,
+        EnableReplyingLspPing=None,
+        EndPointIpv6=None,
+        ForwardLspSelfPing=None,
+        InitialLspSelfPingDropCount=None,
+        IpTTLDecrementCount=None,
+        LabelValue=None,
+        LspSelfPingIPDSCP=None,
+        ReflectRro=None,
+        RefreshInterval=None,
+        ReservationStyle=None,
+        RetainLspSelfPingDSCP=None,
+        SendReservationConfirmation=None,
+        TimeoutMultiplier=None,
+    ):
         """Base class infrastructure that gets a list of rsvpP2PEgressLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

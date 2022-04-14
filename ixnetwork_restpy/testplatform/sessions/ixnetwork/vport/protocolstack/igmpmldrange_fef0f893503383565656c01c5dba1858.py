@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,22 @@ class IgmpMldRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpMldRange'
+    _SDM_NAME = "igmpMldRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'GeneralQueryResponseMode': 'generalQueryResponseMode',
-        'ImmediateResponse': 'immediateResponse',
-        'JoinLeaveMultiplier': 'joinLeaveMultiplier',
-        'MeshingMode': 'meshingMode',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ReportFrequency': 'reportFrequency',
-        'RouterAlert': 'routerAlert',
-        'SpecificQueryResponseMode': 'specificQueryResponseMode',
-        'UnsolicitedResponseMode': 'unsolicitedResponseMode',
-        'Version': 'version',
+        "Enabled": "enabled",
+        "GeneralQueryResponseMode": "generalQueryResponseMode",
+        "ImmediateResponse": "immediateResponse",
+        "JoinLeaveMultiplier": "joinLeaveMultiplier",
+        "MeshingMode": "meshingMode",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ReportFrequency": "reportFrequency",
+        "RouterAlert": "routerAlert",
+        "SpecificQueryResponseMode": "specificQueryResponseMode",
+        "UnsolicitedResponseMode": "unsolicitedResponseMode",
+        "Version": "version",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpMldRange, self).__init__(parent, list_op)
@@ -66,10 +66,13 @@ class IgmpMldRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.joinleavemulticastgrouprange_ba384616280e62293bca664c8a8008dc import JoinLeaveMulticastGroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.joinleavemulticastgrouprange_ba384616280e62293bca664c8a8008dc import (
+            JoinLeaveMulticastGroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('JoinLeaveMulticastGroupRange', None) is not None:
-                return self._properties.get('JoinLeaveMulticastGroupRange')
+            if self._properties.get("JoinLeaveMulticastGroupRange", None) is not None:
+                return self._properties.get("JoinLeaveMulticastGroupRange")
         return JoinLeaveMulticastGroupRange(self)
 
     @property
@@ -83,10 +86,13 @@ class IgmpMldRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.multicastgrouprange_5c1e85e51facad93700cc7227f370a8f import MulticastGroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.multicastgrouprange_5c1e85e51facad93700cc7227f370a8f import (
+            MulticastGroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MulticastGroupRange', None) is not None:
-                return self._properties.get('MulticastGroupRange')
+            if self._properties.get("MulticastGroupRange", None) is not None:
+                return self._properties.get("MulticastGroupRange")
         return MulticastGroupRange(self)
 
     @property
@@ -97,11 +103,12 @@ class IgmpMldRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GeneralQueryResponseMode(self):
@@ -111,11 +118,12 @@ class IgmpMldRange(Base):
         -------
         - bool: If selected, responds to General Query messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueryResponseMode"])
+
     @GeneralQueryResponseMode.setter
     def GeneralQueryResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueryResponseMode"], value)
 
     @property
     def ImmediateResponse(self):
@@ -125,11 +133,12 @@ class IgmpMldRange(Base):
         -------
         - bool: If selected, it will ignore the value specified in the Maximum Response Delay in the Membership Query message, assume that the Delay is always = 0 seconds and immediately respond to the Query by sending a Report.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImmediateResponse'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImmediateResponse"])
+
     @ImmediateResponse.setter
     def ImmediateResponse(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImmediateResponse'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImmediateResponse"], value)
 
     @property
     def JoinLeaveMultiplier(self):
@@ -139,11 +148,12 @@ class IgmpMldRange(Base):
         -------
         - number: The number of times a host sends every Join or Leave message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"])
+
     @JoinLeaveMultiplier.setter
     def JoinLeaveMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"], value)
 
     @property
     def MeshingMode(self):
@@ -153,11 +163,12 @@ class IgmpMldRange(Base):
         -------
         - str: Defines how the hosts in a range join the selected multicast group ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeshingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeshingMode"])
+
     @MeshingMode.setter
     def MeshingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeshingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeshingMode"], value)
 
     @property
     def Name(self):
@@ -167,11 +178,12 @@ class IgmpMldRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -181,7 +193,7 @@ class IgmpMldRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ReportFrequency(self):
@@ -191,11 +203,12 @@ class IgmpMldRange(Base):
         -------
         - number: When Send Unsolicited Response is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportFrequency"])
+
     @ReportFrequency.setter
     def ReportFrequency(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportFrequency"], value)
 
     @property
     def RouterAlert(self):
@@ -205,11 +218,12 @@ class IgmpMldRange(Base):
         -------
         - bool: If selected, sets the Send Router Alert bit in the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterAlert"])
+
     @RouterAlert.setter
     def RouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterAlert"], value)
 
     @property
     def SpecificQueryResponseMode(self):
@@ -219,11 +233,12 @@ class IgmpMldRange(Base):
         -------
         - bool: If selected, responds to Group-Specific Query messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpecificQueryResponseMode"])
+
     @SpecificQueryResponseMode.setter
     def SpecificQueryResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpecificQueryResponseMode"], value)
 
     @property
     def UnsolicitedResponseMode(self):
@@ -233,11 +248,12 @@ class IgmpMldRange(Base):
         -------
         - bool: If selected, causes the emulated IGMP host to automatically send full membership messages at regular intervals, without waiting for a query message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnsolicitedResponseMode"])
+
     @UnsolicitedResponseMode.setter
     def UnsolicitedResponseMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnsolicitedResponseMode"], value)
 
     @property
     def Version(self):
@@ -247,13 +263,27 @@ class IgmpMldRange(Base):
         -------
         - str: IGMP/MLD protocol version.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, JoinLeaveMultiplier=None, MeshingMode=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, UnsolicitedResponseMode=None, Version=None):
+    def update(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        JoinLeaveMultiplier=None,
+        MeshingMode=None,
+        Name=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, int, str, str, int, bool, bool, bool, str) -> IgmpMldRange
         """Updates igmpMldRange resource on the server.
 
@@ -277,7 +307,20 @@ class IgmpMldRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, JoinLeaveMultiplier=None, MeshingMode=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, UnsolicitedResponseMode=None, Version=None):
+    def add(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        JoinLeaveMultiplier=None,
+        MeshingMode=None,
+        Name=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, int, str, str, int, bool, bool, bool, str) -> IgmpMldRange
         """Adds a new igmpMldRange resource on the server and adds it to the container.
 
@@ -315,7 +358,21 @@ class IgmpMldRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, JoinLeaveMultiplier=None, MeshingMode=None, Name=None, ObjectId=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, UnsolicitedResponseMode=None, Version=None):
+    def find(
+        self,
+        Enabled=None,
+        GeneralQueryResponseMode=None,
+        ImmediateResponse=None,
+        JoinLeaveMultiplier=None,
+        MeshingMode=None,
+        Name=None,
+        ObjectId=None,
+        ReportFrequency=None,
+        RouterAlert=None,
+        SpecificQueryResponseMode=None,
+        UnsolicitedResponseMode=None,
+        Version=None,
+    ):
         # type: (bool, bool, bool, int, str, str, str, int, bool, bool, bool, str) -> IgmpMldRange
         """Finds and retrieves igmpMldRange resources from the server.
 
@@ -381,10 +438,12 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -403,10 +462,14 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -425,10 +488,14 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -447,10 +514,14 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def IgmpMldJoin(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -474,10 +545,12 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpMldJoin', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpMldJoin", payload=payload, response_object=None)
 
     def IgmpMldLeave(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -501,10 +574,12 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpMldLeave', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpMldLeave", payload=payload, response_object=None)
 
     def IgmpMldStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -528,10 +603,12 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpMldStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpMldStart", payload=payload, response_object=None)
 
     def IgmpMldStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -555,7 +632,9 @@ class IgmpMldRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpMldStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpMldStop", payload=payload, response_object=None)

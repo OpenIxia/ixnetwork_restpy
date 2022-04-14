@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,18 @@ class BgpCustomAfiSafiv4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpCustomAfiSafiv4'
+    _SDM_NAME = "bgpCustomAfiSafiv4"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AfiValue': 'afiValue',
-        'Count': 'count',
-        'DataValue': 'dataValue',
-        'DescriptiveName': 'descriptiveName',
-        'LengthOfData': 'lengthOfData',
-        'Name': 'name',
-        'SafiValue': 'safiValue',
+        "Active": "active",
+        "AfiValue": "afiValue",
+        "Count": "count",
+        "DataValue": "dataValue",
+        "DescriptiveName": "descriptiveName",
+        "LengthOfData": "lengthOfData",
+        "Name": "name",
+        "SafiValue": "safiValue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpCustomAfiSafiv4, self).__init__(parent, list_op)
@@ -58,7 +58,8 @@ class BgpCustomAfiSafiv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AfiValue(self):
@@ -69,7 +70,8 @@ class BgpCustomAfiSafiv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined AFI value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiValue"]))
 
     @property
     def Count(self):
@@ -79,7 +81,7 @@ class BgpCustomAfiSafiv4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DataValue(self):
@@ -90,7 +92,8 @@ class BgpCustomAfiSafiv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hex Dump to be used in NLRI field of MP_REACH_NLRI of update packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataValue"]))
 
     @property
     def DescriptiveName(self):
@@ -100,7 +103,7 @@ class BgpCustomAfiSafiv4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LengthOfData(self):
@@ -111,7 +114,8 @@ class BgpCustomAfiSafiv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Length (in Bytes) of NLRI corresponding to AFI,SAFI configured
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LengthOfData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LengthOfData"]))
 
     @property
     def Name(self):
@@ -121,11 +125,12 @@ class BgpCustomAfiSafiv4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SafiValue(self):
@@ -136,7 +141,8 @@ class BgpCustomAfiSafiv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User Defined SAFI value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SafiValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SafiValue"]))
 
     def update(self, Name=None):
         # type: (str) -> BgpCustomAfiSafiv4
@@ -197,7 +203,15 @@ class BgpCustomAfiSafiv4(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AfiValue=None, DataValue=None, LengthOfData=None, SafiValue=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AfiValue=None,
+        DataValue=None,
+        LengthOfData=None,
+        SafiValue=None,
+    ):
         """Base class infrastructure that gets a list of bgpCustomAfiSafiv4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

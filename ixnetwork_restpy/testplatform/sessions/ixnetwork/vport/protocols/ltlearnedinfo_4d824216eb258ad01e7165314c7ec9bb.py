@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class LtLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ltLearnedInfo'
+    _SDM_NAME = "ltLearnedInfo"
     _SDM_ATT_MAP = {
-        'CVlan': 'cVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'HopCount': 'hopCount',
-        'Hops': 'hops',
-        'MdLevel': 'mdLevel',
-        'ReplyStatus': 'replyStatus',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
-        'TransactionId': 'transactionId',
+        "CVlan": "cVlan",
+        "DstMacAddress": "dstMacAddress",
+        "HopCount": "hopCount",
+        "Hops": "hops",
+        "MdLevel": "mdLevel",
+        "ReplyStatus": "replyStatus",
+        "SVlan": "sVlan",
+        "SrcMacAddress": "srcMacAddress",
+        "TransactionId": "transactionId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LtLearnedInfo, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class LtLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_48a0b09aae21f8233100d05d7dae419e import LtLearnedHop
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_48a0b09aae21f8233100d05d7dae419e import (
+            LtLearnedHop,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LtLearnedHop', None) is not None:
-                return self._properties.get('LtLearnedHop')
+            if self._properties.get("LtLearnedHop", None) is not None:
+                return self._properties.get("LtLearnedHop")
         return LtLearnedHop(self)
 
     @property
@@ -76,7 +79,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) The stacked VLAN identifier for the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def DstMacAddress(self):
@@ -86,7 +89,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) The destination MAC address associated with the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def HopCount(self):
@@ -96,7 +99,7 @@ class LtLearnedInfo(Base):
         -------
         - number: (read only) The hop count for the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
 
     @property
     def Hops(self):
@@ -106,7 +109,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) The number of hops for the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hops'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hops"])
 
     @property
     def MdLevel(self):
@@ -116,7 +119,7 @@ class LtLearnedInfo(Base):
         -------
         - number: (read only) The MD level associated with the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def ReplyStatus(self):
@@ -126,7 +129,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) Indicates the status of the reply for the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyStatus"])
 
     @property
     def SVlan(self):
@@ -136,7 +139,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) The single VLAN identifier associated with the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SrcMacAddress(self):
@@ -146,7 +149,7 @@ class LtLearnedInfo(Base):
         -------
         - str: (read only) The source MAC address associated with the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     @property
     def TransactionId(self):
@@ -156,10 +159,10 @@ class LtLearnedInfo(Base):
         -------
         - number: (read only) The transaction identifier sent with the link trace message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransactionId"])
 
     def add(self):
-        """Adds a new ltLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new ltLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -171,7 +174,18 @@ class LtLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CVlan=None, DstMacAddress=None, HopCount=None, Hops=None, MdLevel=None, ReplyStatus=None, SVlan=None, SrcMacAddress=None, TransactionId=None):
+    def find(
+        self,
+        CVlan=None,
+        DstMacAddress=None,
+        HopCount=None,
+        Hops=None,
+        MdLevel=None,
+        ReplyStatus=None,
+        SVlan=None,
+        SrcMacAddress=None,
+        TransactionId=None,
+    ):
         # type: (str, str, int, str, int, str, str, str, int) -> LtLearnedInfo
         """Finds and retrieves ltLearnedInfo resources from the server.
 

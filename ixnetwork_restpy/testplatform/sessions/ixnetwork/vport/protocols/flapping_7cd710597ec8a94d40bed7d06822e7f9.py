@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Flapping(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flapping'
+    _SDM_NAME = "flapping"
     _SDM_ATT_MAP = {
-        'Delay': 'delay',
-        'DownTime': 'downTime',
-        'EnablePartialFlap': 'enablePartialFlap',
-        'Enabled': 'enabled',
-        'RoutesToFlapFrom': 'routesToFlapFrom',
-        'RoutesToFlapTo': 'routesToFlapTo',
-        'UpTime': 'upTime',
+        "Delay": "delay",
+        "DownTime": "downTime",
+        "EnablePartialFlap": "enablePartialFlap",
+        "Enabled": "enabled",
+        "RoutesToFlapFrom": "routesToFlapFrom",
+        "RoutesToFlapTo": "routesToFlapTo",
+        "UpTime": "upTime",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Flapping, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class Flapping(Base):
         -------
         - number: The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Delay'])
+        return self._get_attribute(self._SDM_ATT_MAP["Delay"])
+
     @Delay.setter
     def Delay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Delay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Delay"], value)
 
     @property
     def DownTime(self):
@@ -70,11 +71,12 @@ class Flapping(Base):
         -------
         - number: During flapping, the amount of time during which the routes in the route range are withdrawn/down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownTime"])
+
     @DownTime.setter
     def DownTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownTime"], value)
 
     @property
     def EnablePartialFlap(self):
@@ -84,11 +86,12 @@ class Flapping(Base):
         -------
         - bool: Enables partial flapping, based on the Flap From and To Route Index settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePartialFlap'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePartialFlap"])
+
     @EnablePartialFlap.setter
     def EnablePartialFlap(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePartialFlap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePartialFlap"], value)
 
     @property
     def Enabled(self):
@@ -98,11 +101,12 @@ class Flapping(Base):
         -------
         - bool: If true, enables route flapping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RoutesToFlapFrom(self):
@@ -112,11 +116,12 @@ class Flapping(Base):
         -------
         - number: The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesToFlapFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesToFlapFrom"])
+
     @RoutesToFlapFrom.setter
     def RoutesToFlapFrom(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesToFlapFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesToFlapFrom"], value)
 
     @property
     def RoutesToFlapTo(self):
@@ -126,11 +131,12 @@ class Flapping(Base):
         -------
         - number: The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesToFlapTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesToFlapTo"])
+
     @RoutesToFlapTo.setter
     def RoutesToFlapTo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesToFlapTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesToFlapTo"], value)
 
     @property
     def UpTime(self):
@@ -140,13 +146,23 @@ class Flapping(Base):
         -------
         - number: During flapping, the amount of time during which the routes in the route range are up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpTime"])
+
     @UpTime.setter
     def UpTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpTime"], value)
 
-    def update(self, Delay=None, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
+    def update(
+        self,
+        Delay=None,
+        DownTime=None,
+        EnablePartialFlap=None,
+        Enabled=None,
+        RoutesToFlapFrom=None,
+        RoutesToFlapTo=None,
+        UpTime=None,
+    ):
         # type: (int, int, bool, bool, int, int, int) -> Flapping
         """Updates flapping resource on the server.
 
@@ -166,7 +182,16 @@ class Flapping(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Delay=None, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
+    def find(
+        self,
+        Delay=None,
+        DownTime=None,
+        EnablePartialFlap=None,
+        Enabled=None,
+        RoutesToFlapFrom=None,
+        RoutesToFlapTo=None,
+        UpTime=None,
+    ):
         # type: (int, int, bool, bool, int, int, int) -> Flapping
         """Finds and retrieves flapping resources from the server.
 

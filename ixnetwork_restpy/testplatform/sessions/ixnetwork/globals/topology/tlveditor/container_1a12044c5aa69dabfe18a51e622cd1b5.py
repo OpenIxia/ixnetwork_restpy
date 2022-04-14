@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class Container(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'container'
+    _SDM_NAME = "container"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'IsEditable': 'isEditable',
-        'IsRepeatable': 'isRepeatable',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "Description": "description",
+        "IsEditable": "isEditable",
+        "IsRepeatable": "isRepeatable",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Container, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Container(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object_12e587bd6e412f6d3d8361017e8dcba9 import Object
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object_12e587bd6e412f6d3d8361017e8dcba9 import (
+            Object,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Object', None) is not None:
-                return self._properties.get('Object')
+            if self._properties.get("Object", None) is not None:
+                return self._properties.get("Object")
         return Object(self)
 
     @property
@@ -73,11 +76,12 @@ class Container(Base):
         -------
         - str: Description of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def IsEditable(self):
@@ -87,11 +91,12 @@ class Container(Base):
         -------
         - bool: Indicates whether this is editable or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsRepeatable(self):
@@ -101,11 +106,12 @@ class Container(Base):
         -------
         - bool: Flag indicating whether this is repeatable or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRepeatable"])
+
     @IsRepeatable.setter
     def IsRepeatable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRepeatable"], value)
 
     @property
     def IsRequired(self):
@@ -115,11 +121,12 @@ class Container(Base):
         -------
         - bool: Flag indicating whether this is required or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -129,13 +136,21 @@ class Container(Base):
         -------
         - str: Name of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def update(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> Container
         """Updates container resource on the server.
 
@@ -153,7 +168,14 @@ class Container(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def add(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> Container
         """Adds a new container resource on the server and adds it to the container.
 
@@ -185,7 +207,14 @@ class Container(Base):
         """
         self._delete()
 
-    def find(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def find(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> Container
         """Finds and retrieves container resources from the server.
 

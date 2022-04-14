@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class AmtRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'amtRange'
+    _SDM_NAME = "amtRange"
     _SDM_ATT_MAP = {
-        'AmtAnycastIp': 'amtAnycastIp',
-        'AmtAnycastIpIncrement': 'amtAnycastIpIncrement',
-        'AmtUdpSrcPort': 'amtUdpSrcPort',
-        'AmtUdpSrcPortIncrement': 'amtUdpSrcPortIncrement',
-        'AmtUnicastIp': 'amtUnicastIp',
-        'AmtUnicastIpIncrement': 'amtUnicastIpIncrement',
-        'DiscoveryRetries': 'discoveryRetries',
-        'DiscoveryTimeout': 'discoveryTimeout',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'OverrideQt': 'overrideQt',
-        'QueryTimerInterval': 'queryTimerInterval',
-        'RequestRetries': 'requestRetries',
-        'RequestTimeout': 'requestTimeout',
-        'SendTeardown': 'sendTeardown',
-        'UseRelayDiscovery': 'useRelayDiscovery',
+        "AmtAnycastIp": "amtAnycastIp",
+        "AmtAnycastIpIncrement": "amtAnycastIpIncrement",
+        "AmtUdpSrcPort": "amtUdpSrcPort",
+        "AmtUdpSrcPortIncrement": "amtUdpSrcPortIncrement",
+        "AmtUnicastIp": "amtUnicastIp",
+        "AmtUnicastIpIncrement": "amtUnicastIpIncrement",
+        "DiscoveryRetries": "discoveryRetries",
+        "DiscoveryTimeout": "discoveryTimeout",
+        "Enabled": "enabled",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "OverrideQt": "overrideQt",
+        "QueryTimerInterval": "queryTimerInterval",
+        "RequestRetries": "requestRetries",
+        "RequestTimeout": "requestTimeout",
+        "SendTeardown": "sendTeardown",
+        "UseRelayDiscovery": "useRelayDiscovery",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AmtRange, self).__init__(parent, list_op)
@@ -68,11 +68,12 @@ class AmtRange(Base):
         -------
         - str: The Anycast address to which the requests from AMT clients are be forwarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtAnycastIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtAnycastIp"])
+
     @AmtAnycastIp.setter
     def AmtAnycastIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtAnycastIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtAnycastIp"], value)
 
     @property
     def AmtAnycastIpIncrement(self):
@@ -82,11 +83,12 @@ class AmtRange(Base):
         -------
         - str: The Anycast address increment to which the requests from AMT clients are be forwarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtAnycastIpIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtAnycastIpIncrement"])
+
     @AmtAnycastIpIncrement.setter
     def AmtAnycastIpIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtAnycastIpIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtAnycastIpIncrement"], value)
 
     @property
     def AmtUdpSrcPort(self):
@@ -96,11 +98,12 @@ class AmtRange(Base):
         -------
         - number: AMT Gateway messages will be sent from this port number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtUdpSrcPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtUdpSrcPort"])
+
     @AmtUdpSrcPort.setter
     def AmtUdpSrcPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtUdpSrcPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtUdpSrcPort"], value)
 
     @property
     def AmtUdpSrcPortIncrement(self):
@@ -110,11 +113,12 @@ class AmtRange(Base):
         -------
         - number: Value to increment the udp source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtUdpSrcPortIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtUdpSrcPortIncrement"])
+
     @AmtUdpSrcPortIncrement.setter
     def AmtUdpSrcPortIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtUdpSrcPortIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtUdpSrcPortIncrement"], value)
 
     @property
     def AmtUnicastIp(self):
@@ -124,11 +128,12 @@ class AmtRange(Base):
         -------
         - str: The Relay Unicast Address to which the requests from AMT clients are be forwarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtUnicastIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtUnicastIp"])
+
     @AmtUnicastIp.setter
     def AmtUnicastIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtUnicastIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtUnicastIp"], value)
 
     @property
     def AmtUnicastIpIncrement(self):
@@ -138,11 +143,12 @@ class AmtRange(Base):
         -------
         - str: The Relay Unicast Address Increment to which the requests from AMT clients are be forwarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmtUnicastIpIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmtUnicastIpIncrement"])
+
     @AmtUnicastIpIncrement.setter
     def AmtUnicastIpIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmtUnicastIpIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmtUnicastIpIncrement"], value)
 
     @property
     def DiscoveryRetries(self):
@@ -152,11 +158,12 @@ class AmtRange(Base):
         -------
         - number: Number of AMT Discovery retry messages when there is no response from the AMT Relay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveryRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveryRetries"])
+
     @DiscoveryRetries.setter
     def DiscoveryRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscoveryRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscoveryRetries"], value)
 
     @property
     def DiscoveryTimeout(self):
@@ -166,11 +173,12 @@ class AmtRange(Base):
         -------
         - number: Number of seconds to wait for AMT Relay Advertisement messages when there is no response from the AMT Relay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveryTimeout"])
+
     @DiscoveryTimeout.setter
     def DiscoveryTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscoveryTimeout"], value)
 
     @property
     def Enabled(self):
@@ -180,11 +188,12 @@ class AmtRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -194,11 +203,12 @@ class AmtRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -208,7 +218,7 @@ class AmtRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideQt(self):
@@ -218,11 +228,12 @@ class AmtRange(Base):
         -------
         - bool: If not set, AMT will use the QQIC value from the IGMP Membership Query message, else it uses the Query Timer Interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideQt'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideQt"])
+
     @OverrideQt.setter
     def OverrideQt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideQt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideQt"], value)
 
     @property
     def QueryTimerInterval(self):
@@ -232,11 +243,12 @@ class AmtRange(Base):
         -------
         - number: The time between AMT Request messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueryTimerInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueryTimerInterval"])
+
     @QueryTimerInterval.setter
     def QueryTimerInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueryTimerInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueryTimerInterval"], value)
 
     @property
     def RequestRetries(self):
@@ -246,11 +258,12 @@ class AmtRange(Base):
         -------
         - number: Number of AMT Request retry messages when there is no response from the AMT Relay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestRetries"])
+
     @RequestRetries.setter
     def RequestRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestRetries"], value)
 
     @property
     def RequestTimeout(self):
@@ -260,11 +273,12 @@ class AmtRange(Base):
         -------
         - number: Number of seconds to wait for AMT Membership Query messages when there is no response from the AMT Relay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestTimeout"])
+
     @RequestTimeout.setter
     def RequestTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestTimeout"], value)
 
     @property
     def SendTeardown(self):
@@ -274,11 +288,12 @@ class AmtRange(Base):
         -------
         - bool: If set, AMT will send Teardown messages when protocol is stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendTeardown'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendTeardown"])
+
     @SendTeardown.setter
     def SendTeardown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendTeardown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendTeardown"], value)
 
     @property
     def UseRelayDiscovery(self):
@@ -288,13 +303,32 @@ class AmtRange(Base):
         -------
         - bool: If set, AMT will use Relay Discovery Mechanism.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseRelayDiscovery'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseRelayDiscovery"])
+
     @UseRelayDiscovery.setter
     def UseRelayDiscovery(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseRelayDiscovery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseRelayDiscovery"], value)
 
-    def update(self, AmtAnycastIp=None, AmtAnycastIpIncrement=None, AmtUdpSrcPort=None, AmtUdpSrcPortIncrement=None, AmtUnicastIp=None, AmtUnicastIpIncrement=None, DiscoveryRetries=None, DiscoveryTimeout=None, Enabled=None, Name=None, OverrideQt=None, QueryTimerInterval=None, RequestRetries=None, RequestTimeout=None, SendTeardown=None, UseRelayDiscovery=None):
+    def update(
+        self,
+        AmtAnycastIp=None,
+        AmtAnycastIpIncrement=None,
+        AmtUdpSrcPort=None,
+        AmtUdpSrcPortIncrement=None,
+        AmtUnicastIp=None,
+        AmtUnicastIpIncrement=None,
+        DiscoveryRetries=None,
+        DiscoveryTimeout=None,
+        Enabled=None,
+        Name=None,
+        OverrideQt=None,
+        QueryTimerInterval=None,
+        RequestRetries=None,
+        RequestTimeout=None,
+        SendTeardown=None,
+        UseRelayDiscovery=None,
+    ):
         # type: (str, str, int, int, str, str, int, int, bool, str, bool, int, int, int, bool, bool) -> AmtRange
         """Updates amtRange resource on the server.
 
@@ -323,7 +357,25 @@ class AmtRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AmtAnycastIp=None, AmtAnycastIpIncrement=None, AmtUdpSrcPort=None, AmtUdpSrcPortIncrement=None, AmtUnicastIp=None, AmtUnicastIpIncrement=None, DiscoveryRetries=None, DiscoveryTimeout=None, Enabled=None, Name=None, OverrideQt=None, QueryTimerInterval=None, RequestRetries=None, RequestTimeout=None, SendTeardown=None, UseRelayDiscovery=None):
+    def add(
+        self,
+        AmtAnycastIp=None,
+        AmtAnycastIpIncrement=None,
+        AmtUdpSrcPort=None,
+        AmtUdpSrcPortIncrement=None,
+        AmtUnicastIp=None,
+        AmtUnicastIpIncrement=None,
+        DiscoveryRetries=None,
+        DiscoveryTimeout=None,
+        Enabled=None,
+        Name=None,
+        OverrideQt=None,
+        QueryTimerInterval=None,
+        RequestRetries=None,
+        RequestTimeout=None,
+        SendTeardown=None,
+        UseRelayDiscovery=None,
+    ):
         # type: (str, str, int, int, str, str, int, int, bool, str, bool, int, int, int, bool, bool) -> AmtRange
         """Adds a new amtRange resource on the server and adds it to the container.
 
@@ -366,7 +418,26 @@ class AmtRange(Base):
         """
         self._delete()
 
-    def find(self, AmtAnycastIp=None, AmtAnycastIpIncrement=None, AmtUdpSrcPort=None, AmtUdpSrcPortIncrement=None, AmtUnicastIp=None, AmtUnicastIpIncrement=None, DiscoveryRetries=None, DiscoveryTimeout=None, Enabled=None, Name=None, ObjectId=None, OverrideQt=None, QueryTimerInterval=None, RequestRetries=None, RequestTimeout=None, SendTeardown=None, UseRelayDiscovery=None):
+    def find(
+        self,
+        AmtAnycastIp=None,
+        AmtAnycastIpIncrement=None,
+        AmtUdpSrcPort=None,
+        AmtUdpSrcPortIncrement=None,
+        AmtUnicastIp=None,
+        AmtUnicastIpIncrement=None,
+        DiscoveryRetries=None,
+        DiscoveryTimeout=None,
+        Enabled=None,
+        Name=None,
+        ObjectId=None,
+        OverrideQt=None,
+        QueryTimerInterval=None,
+        RequestRetries=None,
+        RequestTimeout=None,
+        SendTeardown=None,
+        UseRelayDiscovery=None,
+    ):
         # type: (str, str, int, int, str, str, int, int, bool, str, str, bool, int, int, int, bool, bool) -> AmtRange
         """Finds and retrieves amtRange resources from the server.
 
@@ -444,10 +515,12 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('amtStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("amtStart", payload=payload, response_object=None)
 
     def AmtStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -471,10 +544,12 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('amtStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("amtStop", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -493,10 +568,14 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -515,10 +594,14 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -537,10 +620,14 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -564,10 +651,12 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -591,7 +680,9 @@ class AmtRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

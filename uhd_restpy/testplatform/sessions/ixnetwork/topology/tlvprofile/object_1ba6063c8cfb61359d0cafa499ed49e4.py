@@ -141,7 +141,7 @@ class Object(Base):
 
     def add(self, Name=None):
         # type: (str) -> Object
-        """Adds a new object resource on the json, only valid with config assistant
+        """Adds a new object resource on the json, only valid with batch add utility
 
         Args
         ----

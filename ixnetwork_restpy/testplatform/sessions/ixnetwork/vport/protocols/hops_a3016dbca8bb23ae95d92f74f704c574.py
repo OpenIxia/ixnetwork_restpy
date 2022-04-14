@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Hops(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'hops'
+    _SDM_NAME = "hops"
     _SDM_ATT_MAP = {
-        'ReturnCode': 'returnCode',
-        'ReturnSubCode': 'returnSubCode',
-        'SrcIp': 'srcIp',
-        'Ttl': 'ttl',
+        "ReturnCode": "returnCode",
+        "ReturnSubCode": "returnSubCode",
+        "SrcIp": "srcIp",
+        "Ttl": "ttl",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Hops, self).__init__(parent, list_op)
@@ -54,7 +54,7 @@ class Hops(Base):
         -------
         - str: This signifies the return code to be specified in the trace route hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnCode"])
 
     @property
     def ReturnSubCode(self):
@@ -64,7 +64,7 @@ class Hops(Base):
         -------
         - number: This signifies the return sub-code to be specified in the trace route hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnSubCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnSubCode"])
 
     @property
     def SrcIp(self):
@@ -74,7 +74,7 @@ class Hops(Base):
         -------
         - str: This signifies the source IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcIp"])
 
     @property
     def Ttl(self):
@@ -84,10 +84,10 @@ class Hops(Base):
         -------
         - number: This signifies the MPLS time to live value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ttl'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ttl"])
 
     def add(self):
-        """Adds a new hops resource on the json, only valid with config assistant
+        """Adds a new hops resource on the json, only valid with batch add utility
 
         Returns
         -------

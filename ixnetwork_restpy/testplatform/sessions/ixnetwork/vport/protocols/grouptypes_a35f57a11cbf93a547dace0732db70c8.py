@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class GroupTypes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupTypes'
+    _SDM_NAME = "groupTypes"
     _SDM_ATT_MAP = {
-        'All': 'all',
-        'FastFailover': 'fastFailover',
-        'Indirect': 'indirect',
-        'Select': 'select',
+        "All": "all",
+        "FastFailover": "fastFailover",
+        "Indirect": "indirect",
+        "Select": "select",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupTypes, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class GroupTypes(Base):
         -------
         - bool: If selected, all buckets in the group are forwarded. This group is used for multicast or broadcast forwarding. The packet is effectively cloned for each bucket. One packet is processed for each bucket of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['All'])
+        return self._get_attribute(self._SDM_ATT_MAP["All"])
+
     @All.setter
     def All(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['All'], value)
+        self._set_attribute(self._SDM_ATT_MAP["All"], value)
 
     @property
     def FastFailover(self):
@@ -67,11 +68,12 @@ class GroupTypes(Base):
         -------
         - bool: If selected, the first active bucket is forwarded. Each action bucket is associated with a specific port and/or group that controls its liveness. The buckets are evaluated in the order defined by the group, and the first bucket which is associated with a live port/group is selected. This group type allows the switch to change forwarding without requiring a round trip to the controller. If no buckets are live, packets are dropped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastFailover'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastFailover"])
+
     @FastFailover.setter
     def FastFailover(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastFailover'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastFailover"], value)
 
     @property
     def Indirect(self):
@@ -81,11 +83,12 @@ class GroupTypes(Base):
         -------
         - bool: If selected, the one defined bucket in this group is forwarded. This group supports only a single bucket. It allows multiple flow entries or groups to point to a common group identifier, supporting faster, more efficient convergence. For instance, next hops for IP forwarding.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Indirect'])
+        return self._get_attribute(self._SDM_ATT_MAP["Indirect"])
+
     @Indirect.setter
     def Indirect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Indirect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Indirect"], value)
 
     @property
     def Select(self):
@@ -95,11 +98,12 @@ class GroupTypes(Base):
         -------
         - bool: If selected, a single bucket in the group is forwarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Select'])
+        return self._get_attribute(self._SDM_ATT_MAP["Select"])
+
     @Select.setter
     def Select(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Select'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Select"], value)
 
     def update(self, All=None, FastFailover=None, Indirect=None, Select=None):
         # type: (bool, bool, bool, bool) -> GroupTypes

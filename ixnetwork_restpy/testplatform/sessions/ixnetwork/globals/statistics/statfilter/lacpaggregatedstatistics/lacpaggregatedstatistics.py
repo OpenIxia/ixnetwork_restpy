@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class LacpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lacpAggregatedStatistics'
+    _SDM_NAME = "lacpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'LacpduMalformedRx': 'lacpduMalformedRx',
-        'LacpduRx': 'lacpduRx',
-        'LacpduTx': 'lacpduTx',
-        'LacpduTxRateViolationCount': 'lacpduTxRateViolationCount',
-        'LagIDSKPTLQ': 'lagIDSKPTLQ',
-        'LagMemberPortsUP': 'lagMemberPortsUP',
-        'LinkState': 'linkState',
-        'MarkerPDURx': 'markerPDURx',
-        'MarkerPDUTx': 'markerPDUTx',
-        'MarkerPDUTxRateViolationCount': 'markerPDUTxRateViolationCount',
-        'MarkerResponsePDURx': 'markerResponsePDURx',
-        'MarkerResponsePDUTx': 'markerResponsePDUTx',
-        'MarkerResponseTimeoutCount': 'markerResponseTimeoutCount',
-        'PortName': 'portName',
-        'SessionFlapCount': 'sessionFlapCount',
-        'TotalLAGMemberPorts': 'totalLAGMemberPorts',
+        "LacpduMalformedRx": "lacpduMalformedRx",
+        "LacpduRx": "lacpduRx",
+        "LacpduTx": "lacpduTx",
+        "LacpduTxRateViolationCount": "lacpduTxRateViolationCount",
+        "LagIDSKPTLQ": "lagIDSKPTLQ",
+        "LagMemberPortsUP": "lagMemberPortsUP",
+        "LinkState": "linkState",
+        "MarkerPDURx": "markerPDURx",
+        "MarkerPDUTx": "markerPDUTx",
+        "MarkerPDUTxRateViolationCount": "markerPDUTxRateViolationCount",
+        "MarkerResponsePDURx": "markerResponsePDURx",
+        "MarkerResponsePDUTx": "markerResponsePDUTx",
+        "MarkerResponseTimeoutCount": "markerResponseTimeoutCount",
+        "PortName": "portName",
+        "SessionFlapCount": "sessionFlapCount",
+        "TotalLAGMemberPorts": "totalLAGMemberPorts",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LacpAggregatedStatistics, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LACPDU Malformed Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpduMalformedRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpduMalformedRx"])
+
     @LacpduMalformedRx.setter
     def LacpduMalformedRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpduMalformedRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpduMalformedRx"], value)
 
     @property
     def LacpduRx(self):
@@ -79,11 +80,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LACPDU Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpduRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpduRx"])
+
     @LacpduRx.setter
     def LacpduRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpduRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpduRx"], value)
 
     @property
     def LacpduTx(self):
@@ -93,11 +95,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LACPDU Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpduTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpduTx"])
+
     @LacpduTx.setter
     def LacpduTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpduTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpduTx"], value)
 
     @property
     def LacpduTxRateViolationCount(self):
@@ -107,11 +110,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LACPDU Tx Rate Violation Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpduTxRateViolationCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpduTxRateViolationCount"])
+
     @LacpduTxRateViolationCount.setter
     def LacpduTxRateViolationCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpduTxRateViolationCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpduTxRateViolationCount"], value)
 
     @property
     def LagIDSKPTLQ(self):
@@ -121,11 +125,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LAG ID [(SKP): (TLQ)]
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LagIDSKPTLQ'])
+        return self._get_attribute(self._SDM_ATT_MAP["LagIDSKPTLQ"])
+
     @LagIDSKPTLQ.setter
     def LagIDSKPTLQ(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LagIDSKPTLQ'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LagIDSKPTLQ"], value)
 
     @property
     def LagMemberPortsUP(self):
@@ -135,11 +140,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: LAG Member Ports UP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LagMemberPortsUP'])
+        return self._get_attribute(self._SDM_ATT_MAP["LagMemberPortsUP"])
+
     @LagMemberPortsUP.setter
     def LagMemberPortsUP(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LagMemberPortsUP'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LagMemberPortsUP"], value)
 
     @property
     def LinkState(self):
@@ -149,11 +155,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Link State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkState'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkState"])
+
     @LinkState.setter
     def LinkState(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkState'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkState"], value)
 
     @property
     def MarkerPDURx(self):
@@ -163,11 +170,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker PDU Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerPDURx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerPDURx"])
+
     @MarkerPDURx.setter
     def MarkerPDURx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerPDURx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerPDURx"], value)
 
     @property
     def MarkerPDUTx(self):
@@ -177,11 +185,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker PDU Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerPDUTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerPDUTx"])
+
     @MarkerPDUTx.setter
     def MarkerPDUTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerPDUTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerPDUTx"], value)
 
     @property
     def MarkerPDUTxRateViolationCount(self):
@@ -191,11 +200,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker PDU Tx Rate Violation Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerPDUTxRateViolationCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerPDUTxRateViolationCount"])
+
     @MarkerPDUTxRateViolationCount.setter
     def MarkerPDUTxRateViolationCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerPDUTxRateViolationCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerPDUTxRateViolationCount"], value)
 
     @property
     def MarkerResponsePDURx(self):
@@ -205,11 +215,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker Response PDU Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerResponsePDURx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerResponsePDURx"])
+
     @MarkerResponsePDURx.setter
     def MarkerResponsePDURx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerResponsePDURx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerResponsePDURx"], value)
 
     @property
     def MarkerResponsePDUTx(self):
@@ -219,11 +230,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker Response PDU Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerResponsePDUTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerResponsePDUTx"])
+
     @MarkerResponsePDUTx.setter
     def MarkerResponsePDUTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerResponsePDUTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerResponsePDUTx"], value)
 
     @property
     def MarkerResponseTimeoutCount(self):
@@ -233,11 +245,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Marker Response Timeout Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerResponseTimeoutCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerResponseTimeoutCount"])
+
     @MarkerResponseTimeoutCount.setter
     def MarkerResponseTimeoutCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerResponseTimeoutCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerResponseTimeoutCount"], value)
 
     @property
     def PortName(self):
@@ -247,11 +260,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def SessionFlapCount(self):
@@ -261,11 +275,12 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def TotalLAGMemberPorts(self):
@@ -275,13 +290,32 @@ class LacpAggregatedStatistics(Base):
         -------
         - bool: Total LAG Member Ports
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalLAGMemberPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalLAGMemberPorts"])
+
     @TotalLAGMemberPorts.setter
     def TotalLAGMemberPorts(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TotalLAGMemberPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TotalLAGMemberPorts"], value)
 
-    def update(self, LacpduMalformedRx=None, LacpduRx=None, LacpduTx=None, LacpduTxRateViolationCount=None, LagIDSKPTLQ=None, LagMemberPortsUP=None, LinkState=None, MarkerPDURx=None, MarkerPDUTx=None, MarkerPDUTxRateViolationCount=None, MarkerResponsePDURx=None, MarkerResponsePDUTx=None, MarkerResponseTimeoutCount=None, PortName=None, SessionFlapCount=None, TotalLAGMemberPorts=None):
+    def update(
+        self,
+        LacpduMalformedRx=None,
+        LacpduRx=None,
+        LacpduTx=None,
+        LacpduTxRateViolationCount=None,
+        LagIDSKPTLQ=None,
+        LagMemberPortsUP=None,
+        LinkState=None,
+        MarkerPDURx=None,
+        MarkerPDUTx=None,
+        MarkerPDUTxRateViolationCount=None,
+        MarkerResponsePDURx=None,
+        MarkerResponsePDUTx=None,
+        MarkerResponseTimeoutCount=None,
+        PortName=None,
+        SessionFlapCount=None,
+        TotalLAGMemberPorts=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LacpAggregatedStatistics
         """Updates lacpAggregatedStatistics resource on the server.
 
@@ -310,7 +344,25 @@ class LacpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, LacpduMalformedRx=None, LacpduRx=None, LacpduTx=None, LacpduTxRateViolationCount=None, LagIDSKPTLQ=None, LagMemberPortsUP=None, LinkState=None, MarkerPDURx=None, MarkerPDUTx=None, MarkerPDUTxRateViolationCount=None, MarkerResponsePDURx=None, MarkerResponsePDUTx=None, MarkerResponseTimeoutCount=None, PortName=None, SessionFlapCount=None, TotalLAGMemberPorts=None):
+    def find(
+        self,
+        LacpduMalformedRx=None,
+        LacpduRx=None,
+        LacpduTx=None,
+        LacpduTxRateViolationCount=None,
+        LagIDSKPTLQ=None,
+        LagMemberPortsUP=None,
+        LinkState=None,
+        MarkerPDURx=None,
+        MarkerPDUTx=None,
+        MarkerPDUTxRateViolationCount=None,
+        MarkerResponsePDURx=None,
+        MarkerResponsePDUTx=None,
+        MarkerResponseTimeoutCount=None,
+        PortName=None,
+        SessionFlapCount=None,
+        TotalLAGMemberPorts=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LacpAggregatedStatistics
         """Finds and retrieves lacpAggregatedStatistics resources from the server.
 

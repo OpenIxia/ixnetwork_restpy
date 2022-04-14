@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Egress(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egress'
+    _SDM_NAME = "egress"
     _SDM_ATT_MAP = {
-        'CommitEgressPage': 'commitEgressPage',
-        'CurrentPage': 'currentPage',
-        'RowCount': 'rowCount',
-        'TotalPages': 'totalPages',
+        "CommitEgressPage": "commitEgressPage",
+        "CurrentPage": "currentPage",
+        "RowCount": "rowCount",
+        "TotalPages": "totalPages",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Egress, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class Egress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.flowcondition.flowcondition import FlowCondition
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.flowcondition.flowcondition import (
+            FlowCondition,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowCondition', None) is not None:
-                return self._properties.get('FlowCondition')
+            if self._properties.get("FlowCondition", None) is not None:
+                return self._properties.get("FlowCondition")
         return FlowCondition(self)
 
     @property
@@ -69,13 +72,14 @@ class Egress(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CommitEgressPage'])
+        return self._get_attribute(self._SDM_ATT_MAP["CommitEgressPage"])
+
     @CommitEgressPage.setter
     def CommitEgressPage(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CommitEgressPage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CommitEgressPage"], value)
 
     @property
     def CurrentPage(self):
@@ -83,13 +87,14 @@ class Egress(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentPage"])
+
     @CurrentPage.setter
     def CurrentPage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CurrentPage"], value)
 
     @property
     def RowCount(self):
@@ -97,9 +102,9 @@ class Egress(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowCount"])
 
     @property
     def TotalPages(self):
@@ -107,9 +112,9 @@ class Egress(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalPages"])
 
     def update(self, CommitEgressPage=None, CurrentPage=None):
         # type: (bool, int) -> Egress
@@ -117,8 +122,8 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool): 
-        - CurrentPage (number): 
+        - CommitEgressPage (bool):
+        - CurrentPage (number):
 
         Raises
         ------
@@ -128,12 +133,12 @@ class Egress(Base):
 
     def add(self, CommitEgressPage=None, CurrentPage=None):
         # type: (bool, int) -> Egress
-        """Adds a new egress resource on the json, only valid with config assistant
+        """Adds a new egress resource on the json, only valid with batch add utility
 
         Args
         ----
-        - CommitEgressPage (bool): 
-        - CurrentPage (number): 
+        - CommitEgressPage (bool):
+        - CurrentPage (number):
 
         Returns
         -------
@@ -145,7 +150,9 @@ class Egress(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
+    def find(
+        self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None
+    ):
         # type: (bool, int, int, int) -> Egress
         """Finds and retrieves egress resources from the server.
 
@@ -155,10 +162,10 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool): 
-        - CurrentPage (number): 
-        - RowCount (number): 
-        - TotalPages (number): 
+        - CommitEgressPage (bool):
+        - CurrentPage (number):
+        - RowCount (number):
+        - TotalPages (number):
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,20 @@ class MulticastLeafRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'multicastLeafRange'
+    _SDM_NAME = "multicastLeafRange"
     _SDM_ATT_MAP = {
-        'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
-        'Enabled': 'enabled',
-        'LabelValueStart': 'labelValueStart',
-        'LabelValueStep': 'labelValueStep',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'LspType': 'lspType',
-        'RootAddrCount': 'rootAddrCount',
-        'RootAddrStep': 'rootAddrStep',
-        'RootAddress': 'rootAddress',
+        "ContinuousIncrOpaqueValuesAcrossRoot": "continuousIncrOpaqueValuesAcrossRoot",
+        "Enabled": "enabled",
+        "LabelValueStart": "labelValueStart",
+        "LabelValueStep": "labelValueStep",
+        "LspCountPerRoot": "lspCountPerRoot",
+        "LspType": "lspType",
+        "RootAddrCount": "rootAddrCount",
+        "RootAddrStep": "rootAddrStep",
+        "RootAddress": "rootAddress",
     }
     _SDM_ENUM_MAP = {
-        'lspType': ['p2mp'],
+        "lspType": ["p2mp"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +65,13 @@ class MulticastLeafRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptrafficrange_592edfb5d660c2ef731fff853a50b1a6 import GroupTrafficRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptrafficrange_592edfb5d660c2ef731fff853a50b1a6 import (
+            GroupTrafficRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GroupTrafficRange', None) is not None:
-                return self._properties.get('GroupTrafficRange')
+            if self._properties.get("GroupTrafficRange", None) is not None:
+                return self._properties.get("GroupTrafficRange")
         return GroupTrafficRange(self)
 
     @property
@@ -81,10 +85,13 @@ class MulticastLeafRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_27bc1e55a7525caed38e30c9995224e2 import OpaqueValueElement
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_27bc1e55a7525caed38e30c9995224e2 import (
+            OpaqueValueElement,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpaqueValueElement', None) is not None:
-                return self._properties.get('OpaqueValueElement')
+            if self._properties.get("OpaqueValueElement", None) is not None:
+                return self._properties.get("OpaqueValueElement")
         return OpaqueValueElement(self)
 
     @property
@@ -95,11 +102,16 @@ class MulticastLeafRange(Base):
         -------
         - bool: It signifies the continuous increment of opaque values across root.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuousIncrOpaqueValuesAcrossRoot'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ContinuousIncrOpaqueValuesAcrossRoot"]
+        )
+
     @ContinuousIncrOpaqueValuesAcrossRoot.setter
     def ContinuousIncrOpaqueValuesAcrossRoot(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ContinuousIncrOpaqueValuesAcrossRoot'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["ContinuousIncrOpaqueValuesAcrossRoot"], value
+        )
 
     @property
     def Enabled(self):
@@ -109,11 +121,12 @@ class MulticastLeafRange(Base):
         -------
         - bool: If true, enables the protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LabelValueStart(self):
@@ -123,11 +136,12 @@ class MulticastLeafRange(Base):
         -------
         - number: The first label in the range of labels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelValueStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelValueStart"])
+
     @LabelValueStart.setter
     def LabelValueStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelValueStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelValueStart"], value)
 
     @property
     def LabelValueStep(self):
@@ -137,11 +151,12 @@ class MulticastLeafRange(Base):
         -------
         - number: The label value increment step for more than 1 range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelValueStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelValueStep"])
+
     @LabelValueStep.setter
     def LabelValueStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelValueStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelValueStep"], value)
 
     @property
     def LspCountPerRoot(self):
@@ -151,11 +166,12 @@ class MulticastLeafRange(Base):
         -------
         - number: This is to specify how many different LSPs are created per Root.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspCountPerRoot'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspCountPerRoot"])
+
     @LspCountPerRoot.setter
     def LspCountPerRoot(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspCountPerRoot'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspCountPerRoot"], value)
 
     @property
     def LspType(self):
@@ -165,7 +181,7 @@ class MulticastLeafRange(Base):
         -------
         - str(p2mp): The type of multicast LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspType"])
 
     @property
     def RootAddrCount(self):
@@ -175,11 +191,12 @@ class MulticastLeafRange(Base):
         -------
         - number: The root address count for this Multicast FEC range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootAddrCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootAddrCount"])
+
     @RootAddrCount.setter
     def RootAddrCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootAddrCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootAddrCount"], value)
 
     @property
     def RootAddrStep(self):
@@ -189,11 +206,12 @@ class MulticastLeafRange(Base):
         -------
         - str: The Root Address increment step. This is applicable only if Root Address Count is greater than 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootAddrStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootAddrStep"])
+
     @RootAddrStep.setter
     def RootAddrStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootAddrStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootAddrStep"], value)
 
     @property
     def RootAddress(self):
@@ -203,13 +221,24 @@ class MulticastLeafRange(Base):
         -------
         - str: The root address of the multicast LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootAddress"])
+
     @RootAddress.setter
     def RootAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootAddress"], value)
 
-    def update(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
+    def update(
+        self,
+        ContinuousIncrOpaqueValuesAcrossRoot=None,
+        Enabled=None,
+        LabelValueStart=None,
+        LabelValueStep=None,
+        LspCountPerRoot=None,
+        RootAddrCount=None,
+        RootAddrStep=None,
+        RootAddress=None,
+    ):
         # type: (bool, bool, int, int, int, int, str, str) -> MulticastLeafRange
         """Updates multicastLeafRange resource on the server.
 
@@ -230,7 +259,17 @@ class MulticastLeafRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
+    def add(
+        self,
+        ContinuousIncrOpaqueValuesAcrossRoot=None,
+        Enabled=None,
+        LabelValueStart=None,
+        LabelValueStep=None,
+        LspCountPerRoot=None,
+        RootAddrCount=None,
+        RootAddrStep=None,
+        RootAddress=None,
+    ):
         # type: (bool, bool, int, int, int, int, str, str) -> MulticastLeafRange
         """Adds a new multicastLeafRange resource on the server and adds it to the container.
 
@@ -265,7 +304,18 @@ class MulticastLeafRange(Base):
         """
         self._delete()
 
-    def find(self, ContinuousIncrOpaqueValuesAcrossRoot=None, Enabled=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, LspType=None, RootAddrCount=None, RootAddrStep=None, RootAddress=None):
+    def find(
+        self,
+        ContinuousIncrOpaqueValuesAcrossRoot=None,
+        Enabled=None,
+        LabelValueStart=None,
+        LabelValueStep=None,
+        LspCountPerRoot=None,
+        LspType=None,
+        RootAddrCount=None,
+        RootAddrStep=None,
+        RootAddress=None,
+    ):
         # type: (bool, bool, int, int, int, str, int, str, str) -> MulticastLeafRange
         """Finds and retrieves multicastLeafRange resources from the server.
 

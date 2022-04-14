@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,22 @@ class MplsTp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mplsTp'
+    _SDM_NAME = "mplsTp"
     _SDM_ATT_MAP = {
-        'ApsChannelType': 'apsChannelType',
-        'BfdCcChannelType': 'bfdCcChannelType',
-        'DelayManagementChannelType': 'delayManagementChannelType',
-        'EnableHighPerformanceMode': 'enableHighPerformanceMode',
-        'Enabled': 'enabled',
-        'FaultManagementChannelType': 'faultManagementChannelType',
-        'LossMeasurementChannelType': 'lossMeasurementChannelType',
-        'OnDemandCvChannelType': 'onDemandCvChannelType',
-        'PwStatusChannelType': 'pwStatusChannelType',
-        'RunningState': 'runningState',
-        'Y1731ChannelType': 'y1731ChannelType',
+        "ApsChannelType": "apsChannelType",
+        "BfdCcChannelType": "bfdCcChannelType",
+        "DelayManagementChannelType": "delayManagementChannelType",
+        "EnableHighPerformanceMode": "enableHighPerformanceMode",
+        "Enabled": "enabled",
+        "FaultManagementChannelType": "faultManagementChannelType",
+        "LossMeasurementChannelType": "lossMeasurementChannelType",
+        "OnDemandCvChannelType": "onDemandCvChannelType",
+        "PwStatusChannelType": "pwStatusChannelType",
+        "RunningState": "runningState",
+        "Y1731ChannelType": "y1731ChannelType",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,53 +65,59 @@ class MplsTp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_72a8c27ddd9762f7c4a0a41d1a263e83 import Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_72a8c27ddd9762f7c4a0a41d1a263e83 import (
+            Router,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Router', None) is not None:
-                return self._properties.get('Router')
+            if self._properties.get("Router", None) is not None:
+                return self._properties.get("Router")
         return Router(self)
 
     @property
     def ApsChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Automatic Protection Switching Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApsChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApsChannelType"])
+
     @ApsChannelType.setter
     def ApsChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApsChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApsChannelType"], value)
 
     @property
     def BfdCcChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the BFD Continuity Check Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdCcChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdCcChannelType"])
+
     @BfdCcChannelType.setter
     def BfdCcChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdCcChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdCcChannelType"], value)
 
     @property
     def DelayManagementChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Delay Measurement Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayManagementChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayManagementChannelType"])
+
     @DelayManagementChannelType.setter
     def DelayManagementChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayManagementChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayManagementChannelType"], value)
 
     @property
     def EnableHighPerformanceMode(self):
@@ -120,11 +127,12 @@ class MplsTp(Base):
         -------
         - bool: This signifies select the checkbox to enable high performance mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHighPerformanceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHighPerformanceMode"])
+
     @EnableHighPerformanceMode.setter
     def EnableHighPerformanceMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHighPerformanceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHighPerformanceMode"], value)
 
     @property
     def Enabled(self):
@@ -134,67 +142,72 @@ class MplsTp(Base):
         -------
         - bool: This signifies that the mplsTp protocol is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FaultManagementChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Fault Management Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FaultManagementChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FaultManagementChannelType"])
+
     @FaultManagementChannelType.setter
     def FaultManagementChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FaultManagementChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FaultManagementChannelType"], value)
 
     @property
     def LossMeasurementChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Loss Measurement Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LossMeasurementChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LossMeasurementChannelType"])
+
     @LossMeasurementChannelType.setter
     def LossMeasurementChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LossMeasurementChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LossMeasurementChannelType"], value)
 
     @property
     def OnDemandCvChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the On Demand Connectivity Verification Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OnDemandCvChannelType"])
+
     @OnDemandCvChannelType.setter
     def OnDemandCvChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OnDemandCvChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OnDemandCvChannelType"], value)
 
     @property
     def PwStatusChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Pseudowire Status Channel Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusChannelType"])
+
     @PwStatusChannelType.setter
     def PwStatusChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusChannelType"], value)
 
     @property
     def RunningState(self):
@@ -204,23 +217,36 @@ class MplsTp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): This signifies the running state of the protocol. Possible values include Started, Starting, Unknown, Stopping and Stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def Y1731ChannelType(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: This signifies the Y.1731 Channel Type in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Y1731ChannelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Y1731ChannelType"])
+
     @Y1731ChannelType.setter
     def Y1731ChannelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Y1731ChannelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Y1731ChannelType"], value)
 
-    def update(self, ApsChannelType=None, BfdCcChannelType=None, DelayManagementChannelType=None, EnableHighPerformanceMode=None, Enabled=None, FaultManagementChannelType=None, LossMeasurementChannelType=None, OnDemandCvChannelType=None, PwStatusChannelType=None, Y1731ChannelType=None):
+    def update(
+        self,
+        ApsChannelType=None,
+        BfdCcChannelType=None,
+        DelayManagementChannelType=None,
+        EnableHighPerformanceMode=None,
+        Enabled=None,
+        FaultManagementChannelType=None,
+        LossMeasurementChannelType=None,
+        OnDemandCvChannelType=None,
+        PwStatusChannelType=None,
+        Y1731ChannelType=None,
+    ):
         # type: (str, str, str, bool, bool, str, str, str, str, str) -> MplsTp
         """Updates mplsTp resource on the server.
 
@@ -243,7 +269,20 @@ class MplsTp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApsChannelType=None, BfdCcChannelType=None, DelayManagementChannelType=None, EnableHighPerformanceMode=None, Enabled=None, FaultManagementChannelType=None, LossMeasurementChannelType=None, OnDemandCvChannelType=None, PwStatusChannelType=None, RunningState=None, Y1731ChannelType=None):
+    def find(
+        self,
+        ApsChannelType=None,
+        BfdCcChannelType=None,
+        DelayManagementChannelType=None,
+        EnableHighPerformanceMode=None,
+        Enabled=None,
+        FaultManagementChannelType=None,
+        LossMeasurementChannelType=None,
+        OnDemandCvChannelType=None,
+        PwStatusChannelType=None,
+        RunningState=None,
+        Y1731ChannelType=None,
+    ):
         # type: (str, str, str, bool, bool, str, str, str, str, str, str) -> MplsTp
         """Finds and retrieves mplsTp resources from the server.
 
@@ -308,10 +347,12 @@ class MplsTp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -328,7 +369,9 @@ class MplsTp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,53 @@ class NestedCounter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'nestedCounter'
+    _SDM_NAME = "nestedCounter"
     _SDM_ATT_MAP = {
-        'AvailableWidths': 'availableWidths',
-        'BitOffset': 'bitOffset',
-        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
-        'InnerLoopLoopCount': 'innerLoopLoopCount',
-        'InnerLoopRepeatValue': 'innerLoopRepeatValue',
-        'OuterLoopIncrementBy': 'outerLoopIncrementBy',
-        'OuterLoopLoopCount': 'outerLoopLoopCount',
-        'StartValue': 'startValue',
-        'Width': 'width',
+        "AvailableWidths": "availableWidths",
+        "BitOffset": "bitOffset",
+        "InnerLoopIncrementBy": "innerLoopIncrementBy",
+        "InnerLoopLoopCount": "innerLoopLoopCount",
+        "InnerLoopRepeatValue": "innerLoopRepeatValue",
+        "OuterLoopIncrementBy": "outerLoopIncrementBy",
+        "OuterLoopLoopCount": "outerLoopLoopCount",
+        "StartValue": "startValue",
+        "Width": "width",
     }
     _SDM_ENUM_MAP = {
-        'width': ['1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '3', '30', '31', '32', '4', '5', '6', '7', '8', '9'],
+        "width": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "2",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "3",
+            "30",
+            "31",
+            "32",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,7 +94,7 @@ class NestedCounter(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableWidths"])
 
     @property
     def BitOffset(self):
@@ -70,11 +104,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BitOffset"])
+
     @BitOffset.setter
     def BitOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BitOffset"], value)
 
     @property
     def InnerLoopIncrementBy(self):
@@ -84,11 +119,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the Step Value by which the Inner Loop will be incremented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerLoopIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerLoopIncrementBy"])
+
     @InnerLoopIncrementBy.setter
     def InnerLoopIncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerLoopIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerLoopIncrementBy"], value)
 
     @property
     def InnerLoopLoopCount(self):
@@ -98,11 +134,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the no. of times the inner loop will occur.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerLoopLoopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerLoopLoopCount"])
+
     @InnerLoopLoopCount.setter
     def InnerLoopLoopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerLoopLoopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerLoopLoopCount"], value)
 
     @property
     def InnerLoopRepeatValue(self):
@@ -112,11 +149,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the number of times the UDF Value will be repeated in inner loop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerLoopRepeatValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerLoopRepeatValue"])
+
     @InnerLoopRepeatValue.setter
     def InnerLoopRepeatValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerLoopRepeatValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerLoopRepeatValue"], value)
 
     @property
     def OuterLoopIncrementBy(self):
@@ -126,11 +164,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the Step Value by which the outer loop will be incremented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OuterLoopIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["OuterLoopIncrementBy"])
+
     @OuterLoopIncrementBy.setter
     def OuterLoopIncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OuterLoopIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OuterLoopIncrementBy"], value)
 
     @property
     def OuterLoopLoopCount(self):
@@ -140,11 +179,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the number of times the outer loop will occur.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OuterLoopLoopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OuterLoopLoopCount"])
+
     @OuterLoopLoopCount.setter
     def OuterLoopLoopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OuterLoopLoopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OuterLoopLoopCount"], value)
 
     @property
     def StartValue(self):
@@ -154,11 +194,12 @@ class NestedCounter(Base):
         -------
         - number: Specifies the Start Value of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartValue"])
+
     @StartValue.setter
     def StartValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartValue"], value)
 
     @property
     def Width(self):
@@ -168,13 +209,24 @@ class NestedCounter(Base):
         -------
         - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Width'])
+        return self._get_attribute(self._SDM_ATT_MAP["Width"])
+
     @Width.setter
     def Width(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Width"], value)
 
-    def update(self, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
+    def update(
+        self,
+        BitOffset=None,
+        InnerLoopIncrementBy=None,
+        InnerLoopLoopCount=None,
+        InnerLoopRepeatValue=None,
+        OuterLoopIncrementBy=None,
+        OuterLoopLoopCount=None,
+        StartValue=None,
+        Width=None,
+    ):
         # type: (int, int, int, int, int, int, int, str) -> NestedCounter
         """Updates nestedCounter resource on the server.
 
@@ -195,9 +247,19 @@ class NestedCounter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
+    def add(
+        self,
+        BitOffset=None,
+        InnerLoopIncrementBy=None,
+        InnerLoopLoopCount=None,
+        InnerLoopRepeatValue=None,
+        OuterLoopIncrementBy=None,
+        OuterLoopLoopCount=None,
+        StartValue=None,
+        Width=None,
+    ):
         # type: (int, int, int, int, int, int, int, str) -> NestedCounter
-        """Adds a new nestedCounter resource on the json, only valid with config assistant
+        """Adds a new nestedCounter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -220,7 +282,18 @@ class NestedCounter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableWidths=None, BitOffset=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, InnerLoopRepeatValue=None, OuterLoopIncrementBy=None, OuterLoopLoopCount=None, StartValue=None, Width=None):
+    def find(
+        self,
+        AvailableWidths=None,
+        BitOffset=None,
+        InnerLoopIncrementBy=None,
+        InnerLoopLoopCount=None,
+        InnerLoopRepeatValue=None,
+        OuterLoopIncrementBy=None,
+        OuterLoopLoopCount=None,
+        StartValue=None,
+        Width=None,
+    ):
         # type: (List[str], int, int, int, int, int, int, int, str) -> NestedCounter
         """Finds and retrieves nestedCounter resources from the server.
 

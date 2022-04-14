@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class VlanIdInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vlanIdInfo'
+    _SDM_NAME = "vlanIdInfo"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FirstId': 'firstId',
-        'Increment': 'increment',
-        'IncrementStep': 'incrementStep',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Priority': 'priority',
-        'Tpid': 'tpid',
-        'UniqueCount': 'uniqueCount',
+        "Enabled": "enabled",
+        "FirstId": "firstId",
+        "Increment": "increment",
+        "IncrementStep": "incrementStep",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Priority": "priority",
+        "Tpid": "tpid",
+        "UniqueCount": "uniqueCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VlanIdInfo, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class VlanIdInfo(Base):
         -------
         - bool: Enable/Disable checkbox for this VLAN ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstId(self):
@@ -74,11 +75,12 @@ class VlanIdInfo(Base):
         -------
         - number: The first ID to be used for the VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstId"])
+
     @FirstId.setter
     def FirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstId"], value)
 
     @property
     def Increment(self):
@@ -88,11 +90,12 @@ class VlanIdInfo(Base):
         -------
         - number: Amount of increment per increment step for VLAN. E.g. increment step = 10 and increment = 2 means increment VLAN ID by 2 for every 10 IPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["Increment"])
+
     @Increment.setter
     def Increment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Increment"], value)
 
     @property
     def IncrementStep(self):
@@ -102,11 +105,12 @@ class VlanIdInfo(Base):
         -------
         - number: Frequency of VLAN ID increment. E.g., value of 10 means increment VLAN ID once for every 10 IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementStep"])
+
     @IncrementStep.setter
     def IncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementStep"], value)
 
     @property
     def Name(self):
@@ -116,11 +120,12 @@ class VlanIdInfo(Base):
         -------
         - str: Name of the VLAN Info
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -130,7 +135,7 @@ class VlanIdInfo(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Priority(self):
@@ -140,11 +145,12 @@ class VlanIdInfo(Base):
         -------
         - number: The 802.1Q priority to be used for the VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def Tpid(self):
@@ -154,11 +160,12 @@ class VlanIdInfo(Base):
         -------
         - str: The TPID value in the VLAN Tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tpid"])
+
     @Tpid.setter
     def Tpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tpid"], value)
 
     @property
     def UniqueCount(self):
@@ -168,13 +175,24 @@ class VlanIdInfo(Base):
         -------
         - number: Number of unique VLAN IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniqueCount"])
+
     @UniqueCount.setter
     def UniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UniqueCount"], value)
 
-    def update(self, Enabled=None, FirstId=None, Increment=None, IncrementStep=None, Name=None, Priority=None, Tpid=None, UniqueCount=None):
+    def update(
+        self,
+        Enabled=None,
+        FirstId=None,
+        Increment=None,
+        IncrementStep=None,
+        Name=None,
+        Priority=None,
+        Tpid=None,
+        UniqueCount=None,
+    ):
         # type: (bool, int, int, int, str, int, str, int) -> VlanIdInfo
         """Updates vlanIdInfo resource on the server.
 
@@ -195,7 +213,17 @@ class VlanIdInfo(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, FirstId=None, Increment=None, IncrementStep=None, Name=None, Priority=None, Tpid=None, UniqueCount=None):
+    def add(
+        self,
+        Enabled=None,
+        FirstId=None,
+        Increment=None,
+        IncrementStep=None,
+        Name=None,
+        Priority=None,
+        Tpid=None,
+        UniqueCount=None,
+    ):
         # type: (bool, int, int, int, str, int, str, int) -> VlanIdInfo
         """Adds a new vlanIdInfo resource on the server and adds it to the container.
 
@@ -230,7 +258,18 @@ class VlanIdInfo(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, FirstId=None, Increment=None, IncrementStep=None, Name=None, ObjectId=None, Priority=None, Tpid=None, UniqueCount=None):
+    def find(
+        self,
+        Enabled=None,
+        FirstId=None,
+        Increment=None,
+        IncrementStep=None,
+        Name=None,
+        ObjectId=None,
+        Priority=None,
+        Tpid=None,
+        UniqueCount=None,
+    ):
         # type: (bool, int, int, int, str, str, int, str, int) -> VlanIdInfo
         """Finds and retrieves vlanIdInfo resources from the server.
 
@@ -295,10 +334,14 @@ class VlanIdInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -317,10 +360,14 @@ class VlanIdInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -339,7 +386,11 @@ class VlanIdInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

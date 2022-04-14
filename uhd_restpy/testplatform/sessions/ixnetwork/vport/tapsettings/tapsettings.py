@@ -60,7 +60,7 @@ class TapSettings(Base):
         return Parameter(self)
 
     def add(self):
-        """Adds a new tapSettings resource on the json, only valid with config assistant
+        """Adds a new tapSettings resource on the json, only valid with batch add utility
 
         Returns
         -------

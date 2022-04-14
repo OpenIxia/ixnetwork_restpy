@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class Reorder(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'reorder'
+    _SDM_NAME = "reorder"
     _SDM_ATT_MAP = {
-        'ClusterSize': 'clusterSize',
-        'Enabled': 'enabled',
-        'PercentRate': 'percentRate',
-        'SkipCount': 'skipCount',
+        "ClusterSize": "clusterSize",
+        "Enabled": "enabled",
+        "PercentRate": "percentRate",
+        "SkipCount": "skipCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Reorder, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class Reorder(Base):
         -------
         - number: Number of packets to reorder on each occurrence.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClusterSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClusterSize"])
+
     @ClusterSize.setter
     def ClusterSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClusterSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClusterSize"], value)
 
     @property
     def Enabled(self):
@@ -67,11 +68,12 @@ class Reorder(Base):
         -------
         - bool: If true, periodically reorder received packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def PercentRate(self):
@@ -81,11 +83,12 @@ class Reorder(Base):
         -------
         - number: How often to reorder packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PercentRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PercentRate"])
+
     @PercentRate.setter
     def PercentRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PercentRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PercentRate"], value)
 
     @property
     def SkipCount(self):
@@ -95,11 +98,12 @@ class Reorder(Base):
         -------
         - number: How many packets to skip before sending the reordered packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipCount"])
+
     @SkipCount.setter
     def SkipCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipCount"], value)
 
     def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
         # type: (int, bool, int, int) -> Reorder

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class LabelBlock(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'labelBlock'
+    _SDM_NAME = "labelBlock"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'LabelBlockOffsetIncrementAcrossL2Site': 'labelBlockOffsetIncrementAcrossL2Site',
-        'LabelStartIncrementAcrossL2Site': 'labelStartIncrementAcrossL2Site',
-        'NumberOfLabels': 'numberOfLabels',
-        'Offset': 'offset',
-        'Start': 'start',
-        'TotalLabelCount': 'totalLabelCount',
+        "Enabled": "enabled",
+        "LabelBlockOffsetIncrementAcrossL2Site": "labelBlockOffsetIncrementAcrossL2Site",
+        "LabelStartIncrementAcrossL2Site": "labelStartIncrementAcrossL2Site",
+        "NumberOfLabels": "numberOfLabels",
+        "Offset": "offset",
+        "Start": "start",
+        "TotalLabelCount": "totalLabelCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LabelBlock, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class LabelBlock(Base):
         -------
         - bool: Enables or disables use of the L2 VPN label block.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LabelBlockOffsetIncrementAcrossL2Site(self):
@@ -72,11 +73,16 @@ class LabelBlock(Base):
         -------
         - number: Signifies the increment of label block offset across L2 site
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelBlockOffsetIncrementAcrossL2Site'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["LabelBlockOffsetIncrementAcrossL2Site"]
+        )
+
     @LabelBlockOffsetIncrementAcrossL2Site.setter
     def LabelBlockOffsetIncrementAcrossL2Site(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelBlockOffsetIncrementAcrossL2Site'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["LabelBlockOffsetIncrementAcrossL2Site"], value
+        )
 
     @property
     def LabelStartIncrementAcrossL2Site(self):
@@ -86,11 +92,12 @@ class LabelBlock(Base):
         -------
         - number: Starts the increment of label across L2 site
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelStartIncrementAcrossL2Site'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelStartIncrementAcrossL2Site"])
+
     @LabelStartIncrementAcrossL2Site.setter
     def LabelStartIncrementAcrossL2Site(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelStartIncrementAcrossL2Site'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelStartIncrementAcrossL2Site"], value)
 
     @property
     def NumberOfLabels(self):
@@ -100,11 +107,12 @@ class LabelBlock(Base):
         -------
         - number: The number of labels contained in the label block. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfLabels'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfLabels"])
+
     @NumberOfLabels.setter
     def NumberOfLabels(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfLabels'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfLabels"], value)
 
     @property
     def Offset(self):
@@ -114,11 +122,12 @@ class LabelBlock(Base):
         -------
         - number: The VPLS block offset value used to create a unique subset of the label values. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
+        return self._get_attribute(self._SDM_ATT_MAP["Offset"])
+
     @Offset.setter
     def Offset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Offset"], value)
 
     @property
     def Start(self):
@@ -128,11 +137,12 @@ class LabelBlock(Base):
         -------
         - number: The first label in the label block. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Start'])
+        return self._get_attribute(self._SDM_ATT_MAP["Start"])
+
     @Start.setter
     def Start(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Start'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Start"], value)
 
     @property
     def TotalLabelCount(self):
@@ -142,9 +152,17 @@ class LabelBlock(Base):
         -------
         - number: Signifies the total label count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalLabelCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalLabelCount"])
 
-    def update(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
+    def update(
+        self,
+        Enabled=None,
+        LabelBlockOffsetIncrementAcrossL2Site=None,
+        LabelStartIncrementAcrossL2Site=None,
+        NumberOfLabels=None,
+        Offset=None,
+        Start=None,
+    ):
         # type: (bool, int, int, int, int, int) -> LabelBlock
         """Updates labelBlock resource on the server.
 
@@ -163,7 +181,15 @@ class LabelBlock(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None):
+    def add(
+        self,
+        Enabled=None,
+        LabelBlockOffsetIncrementAcrossL2Site=None,
+        LabelStartIncrementAcrossL2Site=None,
+        NumberOfLabels=None,
+        Offset=None,
+        Start=None,
+    ):
         # type: (bool, int, int, int, int, int) -> LabelBlock
         """Adds a new labelBlock resource on the server and adds it to the container.
 
@@ -196,7 +222,16 @@ class LabelBlock(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, LabelBlockOffsetIncrementAcrossL2Site=None, LabelStartIncrementAcrossL2Site=None, NumberOfLabels=None, Offset=None, Start=None, TotalLabelCount=None):
+    def find(
+        self,
+        Enabled=None,
+        LabelBlockOffsetIncrementAcrossL2Site=None,
+        LabelStartIncrementAcrossL2Site=None,
+        NumberOfLabels=None,
+        Offset=None,
+        Start=None,
+        TotalLabelCount=None,
+    ):
         # type: (bool, int, int, int, int, int, int) -> LabelBlock
         """Finds and retrieves labelBlock resources from the server.
 

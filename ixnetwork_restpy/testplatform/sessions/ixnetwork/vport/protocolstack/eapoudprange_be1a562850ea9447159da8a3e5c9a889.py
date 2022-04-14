@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,22 @@ class EapoUdpRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eapoUdpRange'
+    _SDM_NAME = "eapoUdpRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'ExpectedSystemToken': 'expectedSystemToken',
-        'FastInnerMethod': 'fastInnerMethod',
-        'FastProvisionMode': 'fastProvisionMode',
-        'FastStatelessResume': 'fastStatelessResume',
-        'NacSequence': 'nacSequence',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Protocol': 'protocol',
-        'ResponseType': 'responseType',
-        'UserName': 'userName',
-        'UserPassword': 'userPassword',
+        "Enabled": "enabled",
+        "ExpectedSystemToken": "expectedSystemToken",
+        "FastInnerMethod": "fastInnerMethod",
+        "FastProvisionMode": "fastProvisionMode",
+        "FastStatelessResume": "fastStatelessResume",
+        "NacSequence": "nacSequence",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Protocol": "protocol",
+        "ResponseType": "responseType",
+        "UserName": "userName",
+        "UserPassword": "userPassword",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EapoUdpRange, self).__init__(parent, list_op)
@@ -63,11 +63,12 @@ class EapoUdpRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExpectedSystemToken(self):
@@ -77,11 +78,12 @@ class EapoUdpRange(Base):
         -------
         - str: Expected System Token.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpectedSystemToken"])
+
     @ExpectedSystemToken.setter
     def ExpectedSystemToken(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExpectedSystemToken"], value)
 
     @property
     def FastInnerMethod(self):
@@ -91,11 +93,12 @@ class EapoUdpRange(Base):
         -------
         - str: FAST Inner Method.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastInnerMethod'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastInnerMethod"])
+
     @FastInnerMethod.setter
     def FastInnerMethod(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastInnerMethod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastInnerMethod"], value)
 
     @property
     def FastProvisionMode(self):
@@ -105,11 +108,12 @@ class EapoUdpRange(Base):
         -------
         - str: FAST Provision Mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastProvisionMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastProvisionMode"])
+
     @FastProvisionMode.setter
     def FastProvisionMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastProvisionMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastProvisionMode"], value)
 
     @property
     def FastStatelessResume(self):
@@ -119,11 +123,12 @@ class EapoUdpRange(Base):
         -------
         - str: FAST Stateless Resume.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastStatelessResume'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastStatelessResume"])
+
     @FastStatelessResume.setter
     def FastStatelessResume(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastStatelessResume'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastStatelessResume"], value)
 
     @property
     def NacSequence(self):
@@ -133,11 +138,12 @@ class EapoUdpRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NacSequence'])
+        return self._get_attribute(self._SDM_ATT_MAP["NacSequence"])
+
     @NacSequence.setter
     def NacSequence(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NacSequence'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NacSequence"], value)
 
     @property
     def Name(self):
@@ -147,11 +153,12 @@ class EapoUdpRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -161,7 +168,7 @@ class EapoUdpRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Protocol(self):
@@ -171,11 +178,12 @@ class EapoUdpRange(Base):
         -------
         - str: Authentification Protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["Protocol"])
+
     @Protocol.setter
     def Protocol(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Protocol"], value)
 
     @property
     def ResponseType(self):
@@ -185,11 +193,12 @@ class EapoUdpRange(Base):
         -------
         - str: Messages types to responde.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponseType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponseType"])
+
     @ResponseType.setter
     def ResponseType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResponseType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResponseType"], value)
 
     @property
     def UserName(self):
@@ -199,11 +208,12 @@ class EapoUdpRange(Base):
         -------
         - str: The UserName used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserName'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserName"])
+
     @UserName.setter
     def UserName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserName"], value)
 
     @property
     def UserPassword(self):
@@ -213,13 +223,27 @@ class EapoUdpRange(Base):
         -------
         - str: The UserPassword used to authentificate the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPassword"])
+
     @UserPassword.setter
     def UserPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPassword"], value)
 
-    def update(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
+    def update(
+        self,
+        Enabled=None,
+        ExpectedSystemToken=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        NacSequence=None,
+        Name=None,
+        Protocol=None,
+        ResponseType=None,
+        UserName=None,
+        UserPassword=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str) -> EapoUdpRange
         """Updates eapoUdpRange resource on the server.
 
@@ -243,7 +267,20 @@ class EapoUdpRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
+    def add(
+        self,
+        Enabled=None,
+        ExpectedSystemToken=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        NacSequence=None,
+        Name=None,
+        Protocol=None,
+        ResponseType=None,
+        UserName=None,
+        UserPassword=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str) -> EapoUdpRange
         """Adds a new eapoUdpRange resource on the server and adds it to the container.
 
@@ -281,7 +318,21 @@ class EapoUdpRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, ExpectedSystemToken=None, FastInnerMethod=None, FastProvisionMode=None, FastStatelessResume=None, NacSequence=None, Name=None, ObjectId=None, Protocol=None, ResponseType=None, UserName=None, UserPassword=None):
+    def find(
+        self,
+        Enabled=None,
+        ExpectedSystemToken=None,
+        FastInnerMethod=None,
+        FastProvisionMode=None,
+        FastStatelessResume=None,
+        NacSequence=None,
+        Name=None,
+        ObjectId=None,
+        Protocol=None,
+        ResponseType=None,
+        UserName=None,
+        UserPassword=None,
+    ):
         # type: (bool, str, str, str, str, str, str, str, str, str, str, str) -> EapoUdpRange
         """Finds and retrieves eapoUdpRange resources from the server.
 
@@ -349,10 +400,14 @@ class EapoUdpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -371,10 +426,14 @@ class EapoUdpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -393,7 +452,11 @@ class EapoUdpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

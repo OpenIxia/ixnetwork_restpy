@@ -4,78 +4,78 @@ from ixnetwork_restpy.files import Files
 
 class Ecp(Base):
     __slots__ = ()
-    _SDM_NAME = 'ecp'
+    _SDM_NAME = "ecp"
     _SDM_ATT_MAP = {
-        'Ecp_packetEcpVersion': 'ecp.ecp_packet.ecpVersion-1',
-        'EcpReqEcpReqField': 'ecp.ecp_packet.evbOperation.ecpReq.ecpReqField-2',
-        'EcpAckEcpAckField': 'ecp.ecp_packet.evbOperation.ecpAck.ecpAckField-3',
-        'EcpVdpSubtypeEcpVdpSubtypeField': 'ecp.ecp_packet.evbSubtype.ecpVdpSubtype.ecpVdpSubtypeField-4',
-        'EcpCSPSubtypeEcpCSPSubtypeField': 'ecp.ecp_packet.evbSubtype.ecpCSPSubtype.ecpCSPSubtypeField-5',
-        'Ecp_packetEcpSequenceNo': 'ecp.ecp_packet.ecpSequenceNo-6',
-        'VsiMgrIDVsi_mgr_id_tlv_type': 'ecp.ecp_packet.vdpEntries.vsiMgrID.vsi_mgr_id_tlv_type-7',
-        'VsiMgrIDLength': 'ecp.ecp_packet.vdpEntries.vsiMgrID.length-8',
-        'VsiMgrIDVsi_mgr_id': 'ecp.ecp_packet.vdpEntries.vsiMgrID.vsi_mgr_id-9',
-        'VsiPreassocVsiPreassocField': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiPreassoc.vsiPreassocField-10',
-        'VsiPreassocRRVsiPreassocRRField': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiPreassocRR.vsiPreassocRRField-11',
-        'VsiAssocVsiAssocField': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiAssoc.vsiAssocField-12',
-        'VsiDeassocVsiDeassocField': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiDeassoc.vsiDeassocField-13',
-        'VdpEntryLength': 'ecp.ecp_packet.vdpEntries.vdpEntry.length-14',
-        'VsiErrorTypeVsiSuccess': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiSuccess-15',
-        'VsiErrorTypeVsiInvalidFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInvalidFormat-16',
-        'VsiErrorTypeVsiInsuffRes': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInsuffRes-17',
-        'VsiErrorTypeVsiNoMgr': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiNoMgr-18',
-        'VsiErrorTypeVsiFailure': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiFailure-19',
-        'VsiErrorTypeVsiInvalid': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInvalid-20',
-        'VsiStatusFlagsVsiMBit': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiMBit-21',
-        'VsiStatusFlagsVsiSBit': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiSBit-22',
-        'VsiStatusFlagsVsiReqAck': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiReqAck-23',
-        'VsiStatusFlagsVsiReservedBit': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiReservedBit-24',
-        'VdpEntryVsiTypeID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiTypeID-25',
-        'VdpEntryVsiTypeVersion': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiTypeVersion-26',
-        'VsiIDFormatIPv4VsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiIDFormat-27',
-        'VsiIDFormatIPv4VsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiID-28',
-        'VsiidVsiIDFormatIPv4VsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiIDFormat-29',
-        'VsiidVsiIDFormatIPv4VsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiID-30',
-        'VsiIDFormatIPv6VsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiIDFormat-31',
-        'VsiIDFormatIPv6VsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiID-32',
-        'VsiidVsiIDFormatIPv6VsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiIDFormat-33',
-        'VsiidVsiIDFormatIPv6VsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiID-34',
-        'VsiIDFormatMACVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiIDFormat-35',
-        'VsiIDFormatMACVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiID-36',
-        'VsiidVsiIDFormatMACVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiIDFormat-37',
-        'VsiidVsiIDFormatMACVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiID-38',
-        'VsiIDFormatLocalVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiIDFormat-39',
-        'VsiIDFormatLocalVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiID-40',
-        'VsiidVsiIDFormatLocalVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiIDFormat-41',
-        'VsiidVsiIDFormatLocalVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiID-42',
-        'VsiIDFormatUUIDVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiIDFormat-43',
-        'VsiIDFormatUUIDVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiID-44',
-        'VsiidVsiIDFormatUUIDVsiIDFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiIDFormat-45',
-        'VsiidVsiIDFormatUUIDVsiID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiID-46',
-        'VidFiltersVsiFilterFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.vsiFilterFormat-47',
-        'VidFiltersFiltersNo': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.filtersNo-48',
-        'EntriesPs': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.ps-49',
-        'EntriesPcp': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.pcp-50',
-        'EntriesVid': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.vid-51',
-        'MacvidFiltersVsiFilterFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.vsiFilterFormat-52',
-        'MacvidFiltersFiltersNo': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.filtersNo-53',
-        'EntriesMac': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.mac-54',
-        'MacvidfiltersEntriesPs': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.ps-55',
-        'MacvidfiltersEntriesPcp': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.pcp-56',
-        'MacvidfiltersEntriesVid': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.vid-57',
-        'GroupvidFiltersVsiFilterFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.vsiFilterFormat-58',
-        'GroupvidFiltersFiltersNo': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.filtersNo-59',
-        'EntriesGroupID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.groupID-60',
-        'GroupvidfiltersEntriesPs': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.ps-61',
-        'GroupvidfiltersEntriesPcp': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.pcp-62',
-        'GroupvidfiltersEntriesVid': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.vid-63',
-        'GroupmacvidFiltersVsiFilterFormat': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.vsiFilterFormat-64',
-        'GroupmacvidFiltersFiltersNo': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.filtersNo-65',
-        'GroupmacvidfiltersEntriesGroupID': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.groupID-66',
-        'GroupmacvidfiltersEntriesMac': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.mac-67',
-        'GroupmacvidfiltersEntriesPs': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.ps-68',
-        'GroupmacvidfiltersEntriesPcp': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.pcp-69',
-        'GroupmacvidfiltersEntriesVid': 'ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.vid-70',
+        "Ecp_packetEcpVersion": "ecp.ecp_packet.ecpVersion-1",
+        "EcpReqEcpReqField": "ecp.ecp_packet.evbOperation.ecpReq.ecpReqField-2",
+        "EcpAckEcpAckField": "ecp.ecp_packet.evbOperation.ecpAck.ecpAckField-3",
+        "EcpVdpSubtypeEcpVdpSubtypeField": "ecp.ecp_packet.evbSubtype.ecpVdpSubtype.ecpVdpSubtypeField-4",
+        "EcpCSPSubtypeEcpCSPSubtypeField": "ecp.ecp_packet.evbSubtype.ecpCSPSubtype.ecpCSPSubtypeField-5",
+        "Ecp_packetEcpSequenceNo": "ecp.ecp_packet.ecpSequenceNo-6",
+        "VsiMgrIDVsi_mgr_id_tlv_type": "ecp.ecp_packet.vdpEntries.vsiMgrID.vsi_mgr_id_tlv_type-7",
+        "VsiMgrIDLength": "ecp.ecp_packet.vdpEntries.vsiMgrID.length-8",
+        "VsiMgrIDVsi_mgr_id": "ecp.ecp_packet.vdpEntries.vsiMgrID.vsi_mgr_id-9",
+        "VsiPreassocVsiPreassocField": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiPreassoc.vsiPreassocField-10",
+        "VsiPreassocRRVsiPreassocRRField": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiPreassocRR.vsiPreassocRRField-11",
+        "VsiAssocVsiAssocField": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiAssoc.vsiAssocField-12",
+        "VsiDeassocVsiDeassocField": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiAssocType.vsiDeassoc.vsiDeassocField-13",
+        "VdpEntryLength": "ecp.ecp_packet.vdpEntries.vdpEntry.length-14",
+        "VsiErrorTypeVsiSuccess": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiSuccess-15",
+        "VsiErrorTypeVsiInvalidFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInvalidFormat-16",
+        "VsiErrorTypeVsiInsuffRes": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInsuffRes-17",
+        "VsiErrorTypeVsiNoMgr": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiNoMgr-18",
+        "VsiErrorTypeVsiFailure": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiFailure-19",
+        "VsiErrorTypeVsiInvalid": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiErrorType.vsiInvalid-20",
+        "VsiStatusFlagsVsiMBit": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiMBit-21",
+        "VsiStatusFlagsVsiSBit": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiSBit-22",
+        "VsiStatusFlagsVsiReqAck": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiReqAck-23",
+        "VsiStatusFlagsVsiReservedBit": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiStatusField.vsiStatusFlags.vsiReservedBit-24",
+        "VdpEntryVsiTypeID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiTypeID-25",
+        "VdpEntryVsiTypeVersion": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiTypeVersion-26",
+        "VsiIDFormatIPv4VsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiIDFormat-27",
+        "VsiIDFormatIPv4VsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiID-28",
+        "VsiidVsiIDFormatIPv4VsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiIDFormat-29",
+        "VsiidVsiIDFormatIPv4VsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv4.vsiID-30",
+        "VsiIDFormatIPv6VsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiIDFormat-31",
+        "VsiIDFormatIPv6VsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiID-32",
+        "VsiidVsiIDFormatIPv6VsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiIDFormat-33",
+        "VsiidVsiIDFormatIPv6VsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatIPv6.vsiID-34",
+        "VsiIDFormatMACVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiIDFormat-35",
+        "VsiIDFormatMACVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiID-36",
+        "VsiidVsiIDFormatMACVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiIDFormat-37",
+        "VsiidVsiIDFormatMACVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatMAC.vsiID-38",
+        "VsiIDFormatLocalVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiIDFormat-39",
+        "VsiIDFormatLocalVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiID-40",
+        "VsiidVsiIDFormatLocalVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiIDFormat-41",
+        "VsiidVsiIDFormatLocalVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatLocal.vsiID-42",
+        "VsiIDFormatUUIDVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiIDFormat-43",
+        "VsiIDFormatUUIDVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiID-44",
+        "VsiidVsiIDFormatUUIDVsiIDFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiIDFormat-45",
+        "VsiidVsiIDFormatUUIDVsiID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiID.vsiIDFormatUUID.vsiID-46",
+        "VidFiltersVsiFilterFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.vsiFilterFormat-47",
+        "VidFiltersFiltersNo": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.filtersNo-48",
+        "EntriesPs": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.ps-49",
+        "EntriesPcp": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.pcp-50",
+        "EntriesVid": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.vidFilters.entries.vid-51",
+        "MacvidFiltersVsiFilterFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.vsiFilterFormat-52",
+        "MacvidFiltersFiltersNo": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.filtersNo-53",
+        "EntriesMac": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.mac-54",
+        "MacvidfiltersEntriesPs": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.ps-55",
+        "MacvidfiltersEntriesPcp": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.pcp-56",
+        "MacvidfiltersEntriesVid": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.macvidFilters.entries.vid-57",
+        "GroupvidFiltersVsiFilterFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.vsiFilterFormat-58",
+        "GroupvidFiltersFiltersNo": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.filtersNo-59",
+        "EntriesGroupID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.groupID-60",
+        "GroupvidfiltersEntriesPs": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.ps-61",
+        "GroupvidfiltersEntriesPcp": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.pcp-62",
+        "GroupvidfiltersEntriesVid": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupvidFilters.entries.vid-63",
+        "GroupmacvidFiltersVsiFilterFormat": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.vsiFilterFormat-64",
+        "GroupmacvidFiltersFiltersNo": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.filtersNo-65",
+        "GroupmacvidfiltersEntriesGroupID": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.groupID-66",
+        "GroupmacvidfiltersEntriesMac": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.mac-67",
+        "GroupmacvidfiltersEntriesPs": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.ps-68",
+        "GroupmacvidfiltersEntriesPcp": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.pcp-69",
+        "GroupmacvidfiltersEntriesVid": "ecp.ecp_packet.vdpEntries.vdpEntry.vsiFilters.groupmacvidFilters.entries.vid-70",
     }
 
     def __init__(self, parent, list_op=False):
@@ -89,7 +89,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ecp_packetEcpVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ecp_packetEcpVersion"])
+        )
 
     @property
     def EcpReqEcpReqField(self):
@@ -99,7 +102,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcpReqEcpReqField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EcpReqEcpReqField"])
+        )
 
     @property
     def EcpAckEcpAckField(self):
@@ -109,7 +115,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcpAckEcpAckField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EcpAckEcpAckField"])
+        )
 
     @property
     def EcpVdpSubtypeEcpVdpSubtypeField(self):
@@ -119,7 +128,11 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcpVdpSubtypeEcpVdpSubtypeField']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EcpVdpSubtypeEcpVdpSubtypeField"]),
+        )
 
     @property
     def EcpCSPSubtypeEcpCSPSubtypeField(self):
@@ -129,7 +142,11 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcpCSPSubtypeEcpCSPSubtypeField']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EcpCSPSubtypeEcpCSPSubtypeField"]),
+        )
 
     @property
     def Ecp_packetEcpSequenceNo(self):
@@ -139,7 +156,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ecp_packetEcpSequenceNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ecp_packetEcpSequenceNo"])
+        )
 
     @property
     def VsiMgrIDVsi_mgr_id_tlv_type(self):
@@ -149,7 +169,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiMgrIDVsi_mgr_id_tlv_type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiMgrIDVsi_mgr_id_tlv_type"])
+        )
 
     @property
     def VsiMgrIDLength(self):
@@ -159,7 +182,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiMgrIDLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiMgrIDLength"])
+        )
 
     @property
     def VsiMgrIDVsi_mgr_id(self):
@@ -169,7 +195,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiMgrIDVsi_mgr_id']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiMgrIDVsi_mgr_id"])
+        )
 
     @property
     def VsiPreassocVsiPreassocField(self):
@@ -179,7 +208,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiPreassocVsiPreassocField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiPreassocVsiPreassocField"])
+        )
 
     @property
     def VsiPreassocRRVsiPreassocRRField(self):
@@ -189,7 +221,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiPreassocRRVsiPreassocRRField']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiPreassocRRVsiPreassocRRField"]),
+        )
 
     @property
     def VsiAssocVsiAssocField(self):
@@ -199,7 +235,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiAssocVsiAssocField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiAssocVsiAssocField"])
+        )
 
     @property
     def VsiDeassocVsiDeassocField(self):
@@ -209,7 +248,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiDeassocVsiDeassocField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiDeassocVsiDeassocField"])
+        )
 
     @property
     def VdpEntryLength(self):
@@ -219,7 +261,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VdpEntryLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VdpEntryLength"])
+        )
 
     @property
     def VsiErrorTypeVsiSuccess(self):
@@ -229,7 +274,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiSuccess']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiSuccess"])
+        )
 
     @property
     def VsiErrorTypeVsiInvalidFormat(self):
@@ -239,7 +287,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiInvalidFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiInvalidFormat"])
+        )
 
     @property
     def VsiErrorTypeVsiInsuffRes(self):
@@ -249,7 +300,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiInsuffRes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiInsuffRes"])
+        )
 
     @property
     def VsiErrorTypeVsiNoMgr(self):
@@ -259,7 +313,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiNoMgr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiNoMgr"])
+        )
 
     @property
     def VsiErrorTypeVsiFailure(self):
@@ -269,7 +326,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiFailure']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiFailure"])
+        )
 
     @property
     def VsiErrorTypeVsiInvalid(self):
@@ -279,7 +339,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiErrorTypeVsiInvalid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiErrorTypeVsiInvalid"])
+        )
 
     @property
     def VsiStatusFlagsVsiMBit(self):
@@ -289,7 +352,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiStatusFlagsVsiMBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiStatusFlagsVsiMBit"])
+        )
 
     @property
     def VsiStatusFlagsVsiSBit(self):
@@ -299,7 +365,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiStatusFlagsVsiSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiStatusFlagsVsiSBit"])
+        )
 
     @property
     def VsiStatusFlagsVsiReqAck(self):
@@ -309,7 +378,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiStatusFlagsVsiReqAck']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiStatusFlagsVsiReqAck"])
+        )
 
     @property
     def VsiStatusFlagsVsiReservedBit(self):
@@ -319,7 +391,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiStatusFlagsVsiReservedBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiStatusFlagsVsiReservedBit"])
+        )
 
     @property
     def VdpEntryVsiTypeID(self):
@@ -329,7 +404,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VdpEntryVsiTypeID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VdpEntryVsiTypeID"])
+        )
 
     @property
     def VdpEntryVsiTypeVersion(self):
@@ -339,7 +417,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VdpEntryVsiTypeVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VdpEntryVsiTypeVersion"])
+        )
 
     @property
     def VsiIDFormatIPv4VsiIDFormat(self):
@@ -349,7 +430,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatIPv4VsiIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatIPv4VsiIDFormat"])
+        )
 
     @property
     def VsiIDFormatIPv4VsiID(self):
@@ -359,7 +443,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatIPv4VsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatIPv4VsiID"])
+        )
 
     @property
     def VsiidVsiIDFormatIPv4VsiIDFormat(self):
@@ -369,7 +456,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatIPv4VsiIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatIPv4VsiIDFormat"]),
+        )
 
     @property
     def VsiidVsiIDFormatIPv4VsiID(self):
@@ -379,7 +470,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatIPv4VsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatIPv4VsiID"])
+        )
 
     @property
     def VsiIDFormatIPv6VsiIDFormat(self):
@@ -389,7 +483,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatIPv6VsiIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatIPv6VsiIDFormat"])
+        )
 
     @property
     def VsiIDFormatIPv6VsiID(self):
@@ -399,7 +496,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatIPv6VsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatIPv6VsiID"])
+        )
 
     @property
     def VsiidVsiIDFormatIPv6VsiIDFormat(self):
@@ -409,7 +509,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatIPv6VsiIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatIPv6VsiIDFormat"]),
+        )
 
     @property
     def VsiidVsiIDFormatIPv6VsiID(self):
@@ -419,7 +523,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatIPv6VsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatIPv6VsiID"])
+        )
 
     @property
     def VsiIDFormatMACVsiIDFormat(self):
@@ -429,7 +536,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatMACVsiIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatMACVsiIDFormat"])
+        )
 
     @property
     def VsiIDFormatMACVsiID(self):
@@ -439,7 +549,10 @@ class Ecp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatMACVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatMACVsiID"])
+        )
 
     @property
     def VsiidVsiIDFormatMACVsiIDFormat(self):
@@ -449,7 +562,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatMACVsiIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatMACVsiIDFormat"]),
+        )
 
     @property
     def VsiidVsiIDFormatMACVsiID(self):
@@ -459,7 +576,10 @@ class Ecp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatMACVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatMACVsiID"])
+        )
 
     @property
     def VsiIDFormatLocalVsiIDFormat(self):
@@ -469,7 +589,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatLocalVsiIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatLocalVsiIDFormat"])
+        )
 
     @property
     def VsiIDFormatLocalVsiID(self):
@@ -479,7 +602,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatLocalVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatLocalVsiID"])
+        )
 
     @property
     def VsiidVsiIDFormatLocalVsiIDFormat(self):
@@ -489,7 +615,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatLocalVsiIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatLocalVsiIDFormat"]),
+        )
 
     @property
     def VsiidVsiIDFormatLocalVsiID(self):
@@ -499,7 +629,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatLocalVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatLocalVsiID"])
+        )
 
     @property
     def VsiIDFormatUUIDVsiIDFormat(self):
@@ -509,7 +642,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatUUIDVsiIDFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatUUIDVsiIDFormat"])
+        )
 
     @property
     def VsiIDFormatUUIDVsiID(self):
@@ -519,7 +655,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiIDFormatUUIDVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiIDFormatUUIDVsiID"])
+        )
 
     @property
     def VsiidVsiIDFormatUUIDVsiIDFormat(self):
@@ -529,7 +668,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatUUIDVsiIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatUUIDVsiIDFormat"]),
+        )
 
     @property
     def VsiidVsiIDFormatUUIDVsiID(self):
@@ -539,7 +682,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VsiidVsiIDFormatUUIDVsiID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VsiidVsiIDFormatUUIDVsiID"])
+        )
 
     @property
     def VidFiltersVsiFilterFormat(self):
@@ -549,7 +695,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VidFiltersVsiFilterFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VidFiltersVsiFilterFormat"])
+        )
 
     @property
     def VidFiltersFiltersNo(self):
@@ -559,7 +708,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VidFiltersFiltersNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VidFiltersFiltersNo"])
+        )
 
     @property
     def EntriesPs(self):
@@ -569,7 +721,8 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntriesPs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EntriesPs"]))
 
     @property
     def EntriesPcp(self):
@@ -579,7 +732,8 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntriesPcp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EntriesPcp"]))
 
     @property
     def EntriesVid(self):
@@ -589,7 +743,8 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntriesVid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EntriesVid"]))
 
     @property
     def MacvidFiltersVsiFilterFormat(self):
@@ -599,7 +754,10 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacvidFiltersVsiFilterFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacvidFiltersVsiFilterFormat"])
+        )
 
     @property
     def MacvidFiltersFiltersNo(self):
@@ -609,7 +767,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacvidFiltersFiltersNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacvidFiltersFiltersNo"])
+        )
 
     @property
     def EntriesMac(self):
@@ -619,7 +780,8 @@ class Ecp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntriesMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EntriesMac"]))
 
     @property
     def MacvidfiltersEntriesPs(self):
@@ -629,7 +791,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacvidfiltersEntriesPs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacvidfiltersEntriesPs"])
+        )
 
     @property
     def MacvidfiltersEntriesPcp(self):
@@ -639,7 +804,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacvidfiltersEntriesPcp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacvidfiltersEntriesPcp"])
+        )
 
     @property
     def MacvidfiltersEntriesVid(self):
@@ -649,7 +817,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacvidfiltersEntriesVid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacvidfiltersEntriesVid"])
+        )
 
     @property
     def GroupvidFiltersVsiFilterFormat(self):
@@ -659,7 +830,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupvidFiltersVsiFilterFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["GroupvidFiltersVsiFilterFormat"]),
+        )
 
     @property
     def GroupvidFiltersFiltersNo(self):
@@ -669,7 +844,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupvidFiltersFiltersNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupvidFiltersFiltersNo"])
+        )
 
     @property
     def EntriesGroupID(self):
@@ -679,7 +857,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EntriesGroupID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EntriesGroupID"])
+        )
 
     @property
     def GroupvidfiltersEntriesPs(self):
@@ -689,7 +870,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupvidfiltersEntriesPs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupvidfiltersEntriesPs"])
+        )
 
     @property
     def GroupvidfiltersEntriesPcp(self):
@@ -699,7 +883,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupvidfiltersEntriesPcp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupvidfiltersEntriesPcp"])
+        )
 
     @property
     def GroupvidfiltersEntriesVid(self):
@@ -709,7 +896,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupvidfiltersEntriesVid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupvidfiltersEntriesVid"])
+        )
 
     @property
     def GroupmacvidFiltersVsiFilterFormat(self):
@@ -719,7 +909,11 @@ class Ecp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidFiltersVsiFilterFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["GroupmacvidFiltersVsiFilterFormat"]),
+        )
 
     @property
     def GroupmacvidFiltersFiltersNo(self):
@@ -729,7 +923,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidFiltersFiltersNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupmacvidFiltersFiltersNo"])
+        )
 
     @property
     def GroupmacvidfiltersEntriesGroupID(self):
@@ -739,7 +936,11 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidfiltersEntriesGroupID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["GroupmacvidfiltersEntriesGroupID"]),
+        )
 
     @property
     def GroupmacvidfiltersEntriesMac(self):
@@ -749,7 +950,10 @@ class Ecp(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidfiltersEntriesMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupmacvidfiltersEntriesMac"])
+        )
 
     @property
     def GroupmacvidfiltersEntriesPs(self):
@@ -759,7 +963,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidfiltersEntriesPs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupmacvidfiltersEntriesPs"])
+        )
 
     @property
     def GroupmacvidfiltersEntriesPcp(self):
@@ -769,7 +976,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidfiltersEntriesPcp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupmacvidfiltersEntriesPcp"])
+        )
 
     @property
     def GroupmacvidfiltersEntriesVid(self):
@@ -779,7 +989,10 @@ class Ecp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupmacvidfiltersEntriesVid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupmacvidfiltersEntriesVid"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

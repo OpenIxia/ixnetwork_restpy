@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,33 @@ class Datacenter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'datacenter'
+    _SDM_NAME = "datacenter"
     _SDM_ATT_MAP = {
-        'AdditionalFcoeStat1': 'additionalFcoeStat1',
-        'AdditionalFcoeStat2': 'additionalFcoeStat2',
-        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
+        "AdditionalFcoeStat1": "additionalFcoeStat1",
+        "AdditionalFcoeStat2": "additionalFcoeStat2",
+        "EnableDataCenterSharedStats": "enableDataCenterSharedStats",
     }
     _SDM_ENUM_MAP = {
-        'additionalFcoeStat1': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
-        'additionalFcoeStat2': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
+        "additionalFcoeStat1": [
+            "fcoeInvalidDelimiter",
+            "fcoeInvalidFrames",
+            "fcoeInvalidSize",
+            "fcoeNormalSizeBadFcCRC",
+            "fcoeNormalSizeGoodFcCRC",
+            "fcoeUndersizeBadFcCRC",
+            "fcoeUndersizeGoodFcCRC",
+            "fcoeValidFrames",
+        ],
+        "additionalFcoeStat2": [
+            "fcoeInvalidDelimiter",
+            "fcoeInvalidFrames",
+            "fcoeInvalidSize",
+            "fcoeNormalSizeBadFcCRC",
+            "fcoeNormalSizeGoodFcCRC",
+            "fcoeUndersizeBadFcCRC",
+            "fcoeUndersizeGoodFcCRC",
+            "fcoeValidFrames",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,11 +73,12 @@ class Datacenter(Base):
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Signifies additional FCOE stat 1
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat1"])
+
     @AdditionalFcoeStat1.setter
     def AdditionalFcoeStat1(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat1"], value)
 
     @property
     def AdditionalFcoeStat2(self):
@@ -68,11 +88,12 @@ class Datacenter(Base):
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Sets the additional FCoE shared stats.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat2"])
+
     @AdditionalFcoeStat2.setter
     def AdditionalFcoeStat2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat2"], value)
 
     @property
     def EnableDataCenterSharedStats(self):
@@ -82,13 +103,19 @@ class Datacenter(Base):
         -------
         - bool: If true, enables statistics for Data Center.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataCenterSharedStats"])
+
     @EnableDataCenterSharedStats.setter
     def EnableDataCenterSharedStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataCenterSharedStats"], value)
 
-    def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, EnableDataCenterSharedStats=None):
+    def update(
+        self,
+        AdditionalFcoeStat1=None,
+        AdditionalFcoeStat2=None,
+        EnableDataCenterSharedStats=None,
+    ):
         # type: (str, str, bool) -> Datacenter
         """Updates datacenter resource on the server.
 
@@ -104,7 +131,12 @@ class Datacenter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, EnableDataCenterSharedStats=None):
+    def find(
+        self,
+        AdditionalFcoeStat1=None,
+        AdditionalFcoeStat2=None,
+        EnableDataCenterSharedStats=None,
+    ):
         # type: (str, str, bool) -> Datacenter
         """Finds and retrieves datacenter resources from the server.
 

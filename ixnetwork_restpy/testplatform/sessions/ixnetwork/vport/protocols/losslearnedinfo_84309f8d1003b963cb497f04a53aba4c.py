@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class LossLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lossLearnedInfo'
+    _SDM_NAME = "lossLearnedInfo"
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'CVlan': 'cVlan',
-        'DestinationMacAddress': 'destinationMacAddress',
-        'FarEndLoss': 'farEndLoss',
-        'FarEndLossRatio': 'farEndLossRatio',
-        'LmrReceived': 'lmrReceived',
-        'MdLevel': 'mdLevel',
-        'NearEndLoss': 'nearEndLoss',
-        'NearEndLossRatio': 'nearEndLossRatio',
-        'SVlan': 'sVlan',
-        'SourceMacAddress': 'sourceMacAddress',
-        'SourceMepId': 'sourceMepId',
+        "BVlan": "bVlan",
+        "CVlan": "cVlan",
+        "DestinationMacAddress": "destinationMacAddress",
+        "FarEndLoss": "farEndLoss",
+        "FarEndLossRatio": "farEndLossRatio",
+        "LmrReceived": "lmrReceived",
+        "MdLevel": "mdLevel",
+        "NearEndLoss": "nearEndLoss",
+        "NearEndLossRatio": "nearEndLossRatio",
+        "SVlan": "sVlan",
+        "SourceMacAddress": "sourceMacAddress",
+        "SourceMepId": "sourceMepId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LossLearnedInfo, self).__init__(parent, list_op)
@@ -62,7 +62,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def CVlan(self):
@@ -72,7 +72,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def DestinationMacAddress(self):
@@ -82,7 +82,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationMacAddress"])
 
     @property
     def FarEndLoss(self):
@@ -92,7 +92,7 @@ class LossLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FarEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["FarEndLoss"])
 
     @property
     def FarEndLossRatio(self):
@@ -102,7 +102,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FarEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["FarEndLossRatio"])
 
     @property
     def LmrReceived(self):
@@ -112,7 +112,7 @@ class LossLearnedInfo(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmrReceived'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmrReceived"])
 
     @property
     def MdLevel(self):
@@ -122,7 +122,7 @@ class LossLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def NearEndLoss(self):
@@ -132,7 +132,7 @@ class LossLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NearEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["NearEndLoss"])
 
     @property
     def NearEndLossRatio(self):
@@ -142,7 +142,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NearEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["NearEndLossRatio"])
 
     @property
     def SVlan(self):
@@ -152,7 +152,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SourceMacAddress(self):
@@ -162,7 +162,7 @@ class LossLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMacAddress"])
 
     @property
     def SourceMepId(self):
@@ -172,10 +172,10 @@ class LossLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMepId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMepId"])
 
     def add(self):
-        """Adds a new lossLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new lossLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -187,7 +187,21 @@ class LossLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BVlan=None, CVlan=None, DestinationMacAddress=None, FarEndLoss=None, FarEndLossRatio=None, LmrReceived=None, MdLevel=None, NearEndLoss=None, NearEndLossRatio=None, SVlan=None, SourceMacAddress=None, SourceMepId=None):
+    def find(
+        self,
+        BVlan=None,
+        CVlan=None,
+        DestinationMacAddress=None,
+        FarEndLoss=None,
+        FarEndLossRatio=None,
+        LmrReceived=None,
+        MdLevel=None,
+        NearEndLoss=None,
+        NearEndLossRatio=None,
+        SVlan=None,
+        SourceMacAddress=None,
+        SourceMepId=None,
+    ):
         # type: (str, str, str, int, str, bool, int, int, str, str, str, int) -> LossLearnedInfo
         """Finds and retrieves lossLearnedInfo resources from the server.
 

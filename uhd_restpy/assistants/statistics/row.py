@@ -16,7 +16,7 @@ class Row(object):
         Args:
             view_name (str): The name of the statistics view
             column_headers (list(str)): A list of column headers
-            row_data (list(list)): 
+            row_data (list(list)):
         """
         self._sample_time = datetime.datetime.utcnow()
         self._view_name = view_name
@@ -51,6 +51,7 @@ class Row(object):
             if index in self._column_headers:
                 return self._row_data[self._index][self._column_headers.index(index)]
             import re
+
             regex = re.compile(index)
             for row_index in range(len(self._row_data)):
                 for cell in self._row_data[row_index]:
@@ -59,21 +60,28 @@ class Row(object):
                         return self
             raise IndexError
         if index >= len(self._row_data):
-            raise IndexError		
+            raise IndexError
         else:
             self._index = index
         return self
-    
+
     def __len__(self):
         return len(self._row_data)
 
     def __str__(self):
         if self._index == -1 or self._index >= len(self._row_data):
-            return 'No row data'
-        row = 'Row:%s  View:%s  Sampled:%s UTC\n' % (self._index, self._view_name, self._sample_time)
+            return "No row data"
+        row = "Row:%s  View:%s  Sampled:%s UTC\n" % (
+            self._index,
+            self._view_name,
+            self._sample_time,
+        )
         for column_index in range(len(self._column_headers)):
-            row += '\t%s: %s\n' % (self._column_headers[column_index], self._row_data[self._index][column_index])
-        return row 
+            row += "\t%s: %s\n" % (
+                self._column_headers[column_index],
+                self._row_data[self._index][column_index],
+            )
+        return row
 
     @property
     def Columns(self):
@@ -84,11 +92,8 @@ class Row(object):
     def RawData(self):
         """Returns (list(list(str))): list of rows, where each row is a list of cells"""
         return self._row_data
-    
+
     @property
     def SampleTime(self):
-        """Returns (str): utc datetime of when the sample was taken from the server
-        """
+        """Returns (str): utc datetime of when the sample was taken from the server"""
         return self._sample_time
-
-

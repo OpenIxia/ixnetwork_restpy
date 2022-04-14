@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class PtpNegBehaveList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ptpNegBehaveList'
+    _SDM_NAME = "ptpNegBehaveList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'MvActive': 'mvActive',
-        'MvDelay': 'mvDelay',
-        'MvFieldValue': 'mvFieldValue',
-        'MvFieldValue1': 'mvFieldValue1',
-        'MvMsgAction': 'mvMsgAction',
-        'MvPtpMsgField': 'mvPtpMsgField',
-        'MvPtpMsgField1': 'mvPtpMsgField1',
-        'Name': 'name',
-        'PtpMsgType': 'ptpMsgType',
-        'PtpValueDisPattern': 'ptpValueDisPattern',
-        'PtpValueDisPattern1': 'ptpValueDisPattern1',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "MvActive": "mvActive",
+        "MvDelay": "mvDelay",
+        "MvFieldValue": "mvFieldValue",
+        "MvFieldValue1": "mvFieldValue1",
+        "MvMsgAction": "mvMsgAction",
+        "MvPtpMsgField": "mvPtpMsgField",
+        "MvPtpMsgField1": "mvPtpMsgField1",
+        "Name": "name",
+        "PtpMsgType": "ptpMsgType",
+        "PtpValueDisPattern": "ptpValueDisPattern",
+        "PtpValueDisPattern1": "ptpValueDisPattern1",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PtpNegBehaveList, self).__init__(parent, list_op)
@@ -62,7 +62,7 @@ class PtpNegBehaveList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -72,7 +72,7 @@ class PtpNegBehaveList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def MvActive(self):
@@ -83,7 +83,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvActive']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvActive"]))
 
     @property
     def MvDelay(self):
@@ -94,7 +95,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Delay To Follow in this message (ns)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvDelay']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvDelay"]))
 
     @property
     def MvFieldValue(self):
@@ -105,7 +107,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvFieldValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvFieldValue"]))
 
     @property
     def MvFieldValue1(self):
@@ -116,7 +119,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvFieldValue1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvFieldValue1"]))
 
     @property
     def MvMsgAction(self):
@@ -127,7 +131,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Action On The Message Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvMsgAction']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvMsgAction"]))
 
     @property
     def MvPtpMsgField(self):
@@ -138,7 +143,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PTP Msg Field
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvPtpMsgField']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvPtpMsgField"]))
 
     @property
     def MvPtpMsgField1(self):
@@ -149,7 +155,10 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PTP Msg Field1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvPtpMsgField1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvPtpMsgField1"])
+        )
 
     @property
     def Name(self):
@@ -159,11 +168,12 @@ class PtpNegBehaveList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PtpMsgType(self):
@@ -174,7 +184,8 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Displays the current PTP Msg
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PtpMsgType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PtpMsgType"]))
 
     @property
     def PtpValueDisPattern(self):
@@ -185,7 +196,10 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Pattern For Value Field
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PtpValueDisPattern']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PtpValueDisPattern"])
+        )
 
     @property
     def PtpValueDisPattern1(self):
@@ -196,7 +210,10 @@ class PtpNegBehaveList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Pattern For Value Field
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PtpValueDisPattern1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PtpValueDisPattern1"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> PtpNegBehaveList
@@ -257,7 +274,20 @@ class PtpNegBehaveList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, MvActive=None, MvDelay=None, MvFieldValue=None, MvFieldValue1=None, MvMsgAction=None, MvPtpMsgField=None, MvPtpMsgField1=None, PtpMsgType=None, PtpValueDisPattern=None, PtpValueDisPattern1=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        MvActive=None,
+        MvDelay=None,
+        MvFieldValue=None,
+        MvFieldValue1=None,
+        MvMsgAction=None,
+        MvPtpMsgField=None,
+        MvPtpMsgField1=None,
+        PtpMsgType=None,
+        PtpValueDisPattern=None,
+        PtpValueDisPattern1=None,
+    ):
         """Base class infrastructure that gets a list of ptpNegBehaveList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

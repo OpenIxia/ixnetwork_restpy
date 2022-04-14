@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class SpbmNodeTopologyRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbmNodeTopologyRange'
+    _SDM_NAME = "spbmNodeTopologyRange"
     _SDM_ATT_MAP = {
-        'BridgePriority': 'bridgePriority',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootIdentifier': 'cistRootIdentifier',
-        'EnableVbit': 'enableVbit',
-        'Enabled': 'enabled',
-        'InterNodeLinkMetricIncrement': 'interNodeLinkMetricIncrement',
-        'InterNodeSpSourceIdIncrement': 'interNodeSpSourceIdIncrement',
-        'LinkMetric': 'linkMetric',
-        'NoOfPorts': 'noOfPorts',
-        'PortIdentifier': 'portIdentifier',
-        'SpSourceId': 'spSourceId',
+        "BridgePriority": "bridgePriority",
+        "CistExternalRootCost": "cistExternalRootCost",
+        "CistRootIdentifier": "cistRootIdentifier",
+        "EnableVbit": "enableVbit",
+        "Enabled": "enabled",
+        "InterNodeLinkMetricIncrement": "interNodeLinkMetricIncrement",
+        "InterNodeSpSourceIdIncrement": "interNodeSpSourceIdIncrement",
+        "LinkMetric": "linkMetric",
+        "NoOfPorts": "noOfPorts",
+        "PortIdentifier": "portIdentifier",
+        "SpSourceId": "spSourceId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbmNodeTopologyRange, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class SpbmNodeTopologyRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodebasevidrange_85f95f8cdb0a1237fbe8b8d83aa8f732 import SpbmNodeBaseVidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodebasevidrange_85f95f8cdb0a1237fbe8b8d83aa8f732 import (
+            SpbmNodeBaseVidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbmNodeBaseVidRange', None) is not None:
-                return self._properties.get('SpbmNodeBaseVidRange')
+            if self._properties.get("SpbmNodeBaseVidRange", None) is not None:
+                return self._properties.get("SpbmNodeBaseVidRange")
         return SpbmNodeBaseVidRange(self)
 
     @property
@@ -79,11 +82,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The value assigned as the priority of the bridge. The default value is 32768. The maximum value is 65535. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgePriority"])
+
     @BridgePriority.setter
     def BridgePriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgePriority"], value)
 
     @property
     def CistExternalRootCost(self):
@@ -93,11 +97,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The Common and Internal Spanning Tree calculated cost to reach the root bridge from the bridge where the command is entered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistExternalRootCost"])
+
     @CistExternalRootCost.setter
     def CistExternalRootCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistExternalRootCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistExternalRootCost"], value)
 
     @property
     def CistRootIdentifier(self):
@@ -107,11 +112,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - str: Bridge identifier of the CIST root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRootIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRootIdentifier"])
+
     @CistRootIdentifier.setter
     def CistRootIdentifier(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRootIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRootIdentifier"], value)
 
     @property
     def EnableVbit(self):
@@ -121,11 +127,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - bool: If true, activates the V bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVbit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVbit"])
+
     @EnableVbit.setter
     def EnableVbit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVbit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVbit"], value)
 
     @property
     def Enabled(self):
@@ -135,11 +142,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - bool: If true, the topology range will be part of the simulated network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterNodeLinkMetricIncrement(self):
@@ -149,11 +157,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The incremental value of the Inter Node link metric.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeLinkMetricIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeLinkMetricIncrement"])
+
     @InterNodeLinkMetricIncrement.setter
     def InterNodeLinkMetricIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeLinkMetricIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeLinkMetricIncrement"], value)
 
     @property
     def InterNodeSpSourceIdIncrement(self):
@@ -163,11 +172,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The inter node Shortest Path source identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeSpSourceIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeSpSourceIdIncrement"])
+
     @InterNodeSpSourceIdIncrement.setter
     def InterNodeSpSourceIdIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeSpSourceIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeSpSourceIdIncrement"], value)
 
     @property
     def LinkMetric(self):
@@ -177,11 +187,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
+
     @LinkMetric.setter
     def LinkMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMetric"], value)
 
     @property
     def NoOfPorts(self):
@@ -191,11 +202,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The number of configured ports for the protocol. The default value is 1. The maximum value is 255. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfPorts"])
+
     @NoOfPorts.setter
     def NoOfPorts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfPorts"], value)
 
     @property
     def PortIdentifier(self):
@@ -205,11 +217,12 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The identifier for the configured port. The default value is 1. The maximum value is 65535. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdentifier"])
+
     @PortIdentifier.setter
     def PortIdentifier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdentifier"], value)
 
     @property
     def SpSourceId(self):
@@ -219,13 +232,27 @@ class SpbmNodeTopologyRange(Base):
         -------
         - number: The Shortest Path source identifier. The default value is 0. The maximum value is 1048575. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpSourceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpSourceId"])
+
     @SpSourceId.setter
     def SpSourceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpSourceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpSourceId"], value)
 
-    def update(self, BridgePriority=None, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, Enabled=None, InterNodeLinkMetricIncrement=None, InterNodeSpSourceIdIncrement=None, LinkMetric=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def update(
+        self,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentifier=None,
+        EnableVbit=None,
+        Enabled=None,
+        InterNodeLinkMetricIncrement=None,
+        InterNodeSpSourceIdIncrement=None,
+        LinkMetric=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, int) -> SpbmNodeTopologyRange
         """Updates spbmNodeTopologyRange resource on the server.
 
@@ -249,7 +276,20 @@ class SpbmNodeTopologyRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BridgePriority=None, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, Enabled=None, InterNodeLinkMetricIncrement=None, InterNodeSpSourceIdIncrement=None, LinkMetric=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def add(
+        self,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentifier=None,
+        EnableVbit=None,
+        Enabled=None,
+        InterNodeLinkMetricIncrement=None,
+        InterNodeSpSourceIdIncrement=None,
+        LinkMetric=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, int) -> SpbmNodeTopologyRange
         """Adds a new spbmNodeTopologyRange resource on the server and adds it to the container.
 
@@ -287,7 +327,20 @@ class SpbmNodeTopologyRange(Base):
         """
         self._delete()
 
-    def find(self, BridgePriority=None, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, Enabled=None, InterNodeLinkMetricIncrement=None, InterNodeSpSourceIdIncrement=None, LinkMetric=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+    def find(
+        self,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootIdentifier=None,
+        EnableVbit=None,
+        Enabled=None,
+        InterNodeLinkMetricIncrement=None,
+        InterNodeSpSourceIdIncrement=None,
+        LinkMetric=None,
+        NoOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, int) -> SpbmNodeTopologyRange
         """Finds and retrieves spbmNodeTopologyRange resources from the server.
 

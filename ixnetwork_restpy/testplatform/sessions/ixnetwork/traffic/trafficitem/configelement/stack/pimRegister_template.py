@@ -4,15 +4,15 @@ from ixnetwork_restpy.files import Files
 
 class PimRegister(Base):
     __slots__ = ()
-    _SDM_NAME = 'pimRegister'
+    _SDM_NAME = "pimRegister"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'pimRegister.header.version-1',
-        'HeaderMessageType': 'pimRegister.header.messageType-2',
-        'HeaderReserved': 'pimRegister.header.reserved-3',
-        'HeaderChecksum': 'pimRegister.header.checksum-4',
-        'HeaderBorderBit': 'pimRegister.header.borderBit-5',
-        'HeaderNullRegisterBit': 'pimRegister.header.nullRegisterBit-6',
-        'HeaderReserved2': 'pimRegister.header.reserved2-7',
+        "HeaderVersion": "pimRegister.header.version-1",
+        "HeaderMessageType": "pimRegister.header.messageType-2",
+        "HeaderReserved": "pimRegister.header.reserved-3",
+        "HeaderChecksum": "pimRegister.header.checksum-4",
+        "HeaderBorderBit": "pimRegister.header.borderBit-5",
+        "HeaderNullRegisterBit": "pimRegister.header.nullRegisterBit-6",
+        "HeaderReserved2": "pimRegister.header.reserved2-7",
     }
 
     def __init__(self, parent, list_op=False):
@@ -26,7 +26,8 @@ class PimRegister(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderMessageType(self):
@@ -36,7 +37,10 @@ class PimRegister(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageType"])
+        )
 
     @property
     def HeaderReserved(self):
@@ -46,7 +50,10 @@ class PimRegister(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderChecksum(self):
@@ -56,7 +63,10 @@ class PimRegister(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderChecksum"])
+        )
 
     @property
     def HeaderBorderBit(self):
@@ -66,7 +76,10 @@ class PimRegister(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBorderBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBorderBit"])
+        )
 
     @property
     def HeaderNullRegisterBit(self):
@@ -76,7 +89,10 @@ class PimRegister(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNullRegisterBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderNullRegisterBit"])
+        )
 
     @property
     def HeaderReserved2(self):
@@ -86,7 +102,10 @@ class PimRegister(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved2"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

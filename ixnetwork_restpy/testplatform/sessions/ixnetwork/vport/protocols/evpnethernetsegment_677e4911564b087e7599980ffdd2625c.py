@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class EvpnEthernetSegment(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evpnEthernetSegment'
+    _SDM_NAME = "evpnEthernetSegment"
     _SDM_ATT_MAP = {
-        'Esi': 'esi',
-        'Neighbor': 'neighbor',
+        "Esi": "esi",
+        "Neighbor": "neighbor",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EvpnEthernetSegment, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class EvpnEthernetSegment(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_d61799d0d437af743c8f98d98c592b92 import OriginIpInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_d61799d0d437af743c8f98d98c592b92 import (
+            OriginIpInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OriginIpInfo', None) is not None:
-                return self._properties.get('OriginIpInfo')
+            if self._properties.get("OriginIpInfo", None) is not None:
+                return self._properties.get("OriginIpInfo")
         return OriginIpInfo(self)
 
     @property
@@ -69,7 +72,7 @@ class EvpnEthernetSegment(Base):
         -------
         - str: (Read Only) Learned Ethernet Segment Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Esi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Esi"])
 
     @property
     def Neighbor(self):
@@ -79,10 +82,10 @@ class EvpnEthernetSegment(Base):
         -------
         - str: (Read Only) Neighbor IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     def add(self):
-        """Adds a new evpnEthernetSegment resource on the json, only valid with config assistant
+        """Adds a new evpnEthernetSegment resource on the json, only valid with batch add utility
 
         Returns
         -------

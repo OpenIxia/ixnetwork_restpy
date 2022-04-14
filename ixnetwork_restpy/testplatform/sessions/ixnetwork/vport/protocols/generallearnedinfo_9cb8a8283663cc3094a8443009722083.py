@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,44 +34,43 @@ class GeneralLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'generalLearnedInfo'
+    _SDM_NAME = "generalLearnedInfo"
     _SDM_ATT_MAP = {
-        'AverageRtt': 'averageRtt',
-        'BfdSessionMyState': 'bfdSessionMyState',
-        'BfdSessionPeerState': 'bfdSessionPeerState',
-        'CcInUse': 'ccInUse',
-        'CvInUse': 'cvInUse',
-        'Fec': 'fec',
-        'IncomingLabelStack': 'incomingLabelStack',
-        'IncomingLspLabel': 'incomingLspLabel',
-        'IncomingPwLabel': 'incomingPwLabel',
-        'LspPingReachability': 'lspPingReachability',
-        'MaxRtt': 'maxRtt',
-        'MinRtt': 'minRtt',
-        'MyDiscriminator': 'myDiscriminator',
-        'MyIpAddress': 'myIpAddress',
-        'OutgoingLabelStack': 'outgoingLabelStack',
-        'OutgoingLspLabel': 'outgoingLspLabel',
-        'OutgoingPwLabel': 'outgoingPwLabel',
-        'PeerDiscriminator': 'peerDiscriminator',
-        'PeerIpAddress': 'peerIpAddress',
-        'PingAttempts': 'pingAttempts',
-        'PingFailures': 'pingFailures',
-        'PingReplyTx': 'pingReplyTx',
-        'PingRequestRx': 'pingRequestRx',
-        'PingSuccess': 'pingSuccess',
-        'ReceivedMinRxInterval': 'receivedMinRxInterval',
-        'ReceivedMultiplier': 'receivedMultiplier',
-        'ReceivedPeerFlags': 'receivedPeerFlags',
-        'ReceivedTxInterval': 'receivedTxInterval',
-        'ReturnCode': 'returnCode',
-        'ReturnSubcode': 'returnSubcode',
-        'SignalingProtocol': 'signalingProtocol',
-        'TunnelEndpointType': 'tunnelEndpointType',
-        'TunnelType': 'tunnelType',
+        "AverageRtt": "averageRtt",
+        "BfdSessionMyState": "bfdSessionMyState",
+        "BfdSessionPeerState": "bfdSessionPeerState",
+        "CcInUse": "ccInUse",
+        "CvInUse": "cvInUse",
+        "Fec": "fec",
+        "IncomingLabelStack": "incomingLabelStack",
+        "IncomingLspLabel": "incomingLspLabel",
+        "IncomingPwLabel": "incomingPwLabel",
+        "LspPingReachability": "lspPingReachability",
+        "MaxRtt": "maxRtt",
+        "MinRtt": "minRtt",
+        "MyDiscriminator": "myDiscriminator",
+        "MyIpAddress": "myIpAddress",
+        "OutgoingLabelStack": "outgoingLabelStack",
+        "OutgoingLspLabel": "outgoingLspLabel",
+        "OutgoingPwLabel": "outgoingPwLabel",
+        "PeerDiscriminator": "peerDiscriminator",
+        "PeerIpAddress": "peerIpAddress",
+        "PingAttempts": "pingAttempts",
+        "PingFailures": "pingFailures",
+        "PingReplyTx": "pingReplyTx",
+        "PingRequestRx": "pingRequestRx",
+        "PingSuccess": "pingSuccess",
+        "ReceivedMinRxInterval": "receivedMinRxInterval",
+        "ReceivedMultiplier": "receivedMultiplier",
+        "ReceivedPeerFlags": "receivedPeerFlags",
+        "ReceivedTxInterval": "receivedTxInterval",
+        "ReturnCode": "returnCode",
+        "ReturnSubcode": "returnSubcode",
+        "SignalingProtocol": "signalingProtocol",
+        "TunnelEndpointType": "tunnelEndpointType",
+        "TunnelType": "tunnelType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GeneralLearnedInfo, self).__init__(parent, list_op)
@@ -83,7 +83,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the average Round Trip Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageRtt"])
 
     @property
     def BfdSessionMyState(self):
@@ -93,7 +93,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the window provides read-only information about the state of BFD interface on the specified emulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdSessionMyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdSessionMyState"])
 
     @property
     def BfdSessionPeerState(self):
@@ -103,7 +103,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the state of the far side of the BFD session, either active or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdSessionPeerState'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdSessionPeerState"])
 
     @property
     def CcInUse(self):
@@ -113,7 +113,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the Continuity Check in use. The values are RA, PW-ACH, or TTL Exp.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcInUse'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcInUse"])
 
     @property
     def CvInUse(self):
@@ -123,7 +123,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the Connectivity Verification in use. The values are LSP Ping, BFD IP/UDP, or LSP Ping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvInUse'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvInUse"])
 
     @property
     def Fec(self):
@@ -133,7 +133,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the FEC component.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Fec'])
+        return self._get_attribute(self._SDM_ATT_MAP["Fec"])
 
     @property
     def IncomingLabelStack(self):
@@ -143,7 +143,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the BGP sends the assigned labels information to this MPLS OAM module which is used for validation of FEC stack received in an echo request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelStack"])
 
     @property
     def IncomingLspLabel(self):
@@ -153,7 +153,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the incoming LSP label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLspLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLspLabel"])
 
     @property
     def IncomingPwLabel(self):
@@ -163,7 +163,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the incoming PW label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingPwLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingPwLabel"])
 
     @property
     def LspPingReachability(self):
@@ -173,7 +173,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the specification of whether the queried LSP Ping could be reached or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspPingReachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspPingReachability"])
 
     @property
     def MaxRtt(self):
@@ -183,7 +183,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the specification of the maximum Round Trip Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRtt"])
 
     @property
     def MinRtt(self):
@@ -193,7 +193,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the specification of the minimum Round Trip Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRtt"])
 
     @property
     def MyDiscriminator(self):
@@ -203,7 +203,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the discriminator for the session on this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MyDiscriminator'])
+        return self._get_attribute(self._SDM_ATT_MAP["MyDiscriminator"])
 
     @property
     def MyIpAddress(self):
@@ -213,7 +213,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the IP address for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MyIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MyIpAddress"])
 
     @property
     def OutgoingLabelStack(self):
@@ -223,7 +223,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the BGP sends the assigned labels information to this MPLS OAM module which is used for validation of FEC outgoing Label stack that is received in an echo request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelStack"])
 
     @property
     def OutgoingLspLabel(self):
@@ -233,7 +233,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the outgoing LSP label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLspLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLspLabel"])
 
     @property
     def OutgoingPwLabel(self):
@@ -243,7 +243,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the outgoing PW label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingPwLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingPwLabel"])
 
     @property
     def PeerDiscriminator(self):
@@ -253,7 +253,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the discriminator for the far side of the session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerDiscriminator'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDiscriminator"])
 
     @property
     def PeerIpAddress(self):
@@ -263,7 +263,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the learnt IP address for the session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpAddress"])
 
     @property
     def PingAttempts(self):
@@ -273,7 +273,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the specification of the number of ping attempts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingAttempts'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingAttempts"])
 
     @property
     def PingFailures(self):
@@ -283,7 +283,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the specification of the number of ping failures.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingFailures'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingFailures"])
 
     @property
     def PingReplyTx(self):
@@ -293,7 +293,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the specification of the number of ping reply transmitted at regular intervals.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingReplyTx"])
 
     @property
     def PingRequestRx(self):
@@ -303,7 +303,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the specification of the number of ping request received at regular intervals.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingRequestRx"])
 
     @property
     def PingSuccess(self):
@@ -313,7 +313,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the specification of the rate of ping success.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingSuccess'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingSuccess"])
 
     @property
     def ReceivedMinRxInterval(self):
@@ -323,7 +323,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the minimum receive interval, in milliseconds, for the far side of the session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedMinRxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedMinRxInterval"])
 
     @property
     def ReceivedMultiplier(self):
@@ -333,7 +333,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the number of received negotiated transmit intervals when multiplied by this value, provides the detection time for the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedMultiplier"])
 
     @property
     def ReceivedPeerFlags(self):
@@ -343,7 +343,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the number of peer generated flags received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedPeerFlags'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedPeerFlags"])
 
     @property
     def ReceivedTxInterval(self):
@@ -353,7 +353,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the minimum transmit interval, in milliseconds, for the far side of the session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedTxInterval"])
 
     @property
     def ReturnCode(self):
@@ -363,7 +363,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the return code value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnCode"])
 
     @property
     def ReturnSubcode(self):
@@ -373,7 +373,7 @@ class GeneralLearnedInfo(Base):
         -------
         - number: This signifies the return subcode value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnSubcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnSubcode"])
 
     @property
     def SignalingProtocol(self):
@@ -383,7 +383,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the options for signaling protocol are BGP, LDP, RSVP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignalingProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignalingProtocol"])
 
     @property
     def TunnelEndpointType(self):
@@ -393,7 +393,7 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the tunnel endpoint type options include Ingress, Egress, Bi-directional.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelEndpointType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelEndpointType"])
 
     @property
     def TunnelType(self):
@@ -403,10 +403,10 @@ class GeneralLearnedInfo(Base):
         -------
         - str: This signifies the tunnel type options include LSP and PW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelType"])
 
     def add(self):
-        """Adds a new generalLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new generalLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -418,7 +418,42 @@ class GeneralLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AverageRtt=None, BfdSessionMyState=None, BfdSessionPeerState=None, CcInUse=None, CvInUse=None, Fec=None, IncomingLabelStack=None, IncomingLspLabel=None, IncomingPwLabel=None, LspPingReachability=None, MaxRtt=None, MinRtt=None, MyDiscriminator=None, MyIpAddress=None, OutgoingLabelStack=None, OutgoingLspLabel=None, OutgoingPwLabel=None, PeerDiscriminator=None, PeerIpAddress=None, PingAttempts=None, PingFailures=None, PingReplyTx=None, PingRequestRx=None, PingSuccess=None, ReceivedMinRxInterval=None, ReceivedMultiplier=None, ReceivedPeerFlags=None, ReceivedTxInterval=None, ReturnCode=None, ReturnSubcode=None, SignalingProtocol=None, TunnelEndpointType=None, TunnelType=None):
+    def find(
+        self,
+        AverageRtt=None,
+        BfdSessionMyState=None,
+        BfdSessionPeerState=None,
+        CcInUse=None,
+        CvInUse=None,
+        Fec=None,
+        IncomingLabelStack=None,
+        IncomingLspLabel=None,
+        IncomingPwLabel=None,
+        LspPingReachability=None,
+        MaxRtt=None,
+        MinRtt=None,
+        MyDiscriminator=None,
+        MyIpAddress=None,
+        OutgoingLabelStack=None,
+        OutgoingLspLabel=None,
+        OutgoingPwLabel=None,
+        PeerDiscriminator=None,
+        PeerIpAddress=None,
+        PingAttempts=None,
+        PingFailures=None,
+        PingReplyTx=None,
+        PingRequestRx=None,
+        PingSuccess=None,
+        ReceivedMinRxInterval=None,
+        ReceivedMultiplier=None,
+        ReceivedPeerFlags=None,
+        ReceivedTxInterval=None,
+        ReturnCode=None,
+        ReturnSubcode=None,
+        SignalingProtocol=None,
+        TunnelEndpointType=None,
+        TunnelType=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, int, str, int, int, int, int, int, int, int, str, int, str, int, str, str, str) -> GeneralLearnedInfo
         """Finds and retrieves generalLearnedInfo resources from the server.
 
@@ -506,7 +541,11 @@ class GeneralLearnedInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addRecordForTrigger', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addRecordForTrigger", payload=payload, response_object=None
+        )

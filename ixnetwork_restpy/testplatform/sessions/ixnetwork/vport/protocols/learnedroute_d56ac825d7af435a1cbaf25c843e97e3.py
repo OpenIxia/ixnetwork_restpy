@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class LearnedRoute(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedRoute'
+    _SDM_NAME = "learnedRoute"
     _SDM_ATT_MAP = {
-        'Destination': 'destination',
-        'Fd': 'fd',
-        'HopCount': 'hopCount',
-        'Neighbor': 'neighbor',
-        'NextHop': 'nextHop',
-        'Prefix': 'prefix',
-        'Rd': 'rd',
-        'Type': 'type',
+        "Destination": "destination",
+        "Fd": "fd",
+        "HopCount": "hopCount",
+        "Neighbor": "neighbor",
+        "NextHop": "nextHop",
+        "Prefix": "prefix",
+        "Rd": "rd",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedRoute, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class LearnedRoute(Base):
         -------
         - str: (Read-only) The destination network that was advertised in the learned route of IPv4/IPv6.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Destination"])
 
     @property
     def Fd(self):
@@ -68,7 +68,7 @@ class LearnedRoute(Base):
         -------
         - number: (Read-only) The feasible distance. The sum of the Reported Distance and the Link Cost of the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Fd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Fd"])
 
     @property
     def HopCount(self):
@@ -78,7 +78,7 @@ class LearnedRoute(Base):
         -------
         - number: (Read-only) The hop count of the route learned from the neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
 
     @property
     def Neighbor(self):
@@ -88,7 +88,7 @@ class LearnedRoute(Base):
         -------
         - str: (Read-only) The neighbor from which the route was learned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def NextHop(self):
@@ -98,7 +98,7 @@ class LearnedRoute(Base):
         -------
         - str: (Read-only) The next hop on the path to the destination contained in the learned route of IPv4/Ipv6.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     @property
     def Prefix(self):
@@ -108,7 +108,7 @@ class LearnedRoute(Base):
         -------
         - number: (Read-only) IP prefix length for the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Prefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["Prefix"])
 
     @property
     def Rd(self):
@@ -118,7 +118,7 @@ class LearnedRoute(Base):
         -------
         - number: (Read-only) The reported distance of the route advertised by the neighbor. It is calculated based on bandwidth, load, delay, and reliability.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rd"])
 
     @property
     def Type(self):
@@ -128,10 +128,10 @@ class LearnedRoute(Base):
         -------
         - number: (Read-only) Indicates whether it is an internal or external route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new learnedRoute resource on the json, only valid with config assistant
+        """Adds a new learnedRoute resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -143,7 +143,17 @@ class LearnedRoute(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Destination=None, Fd=None, HopCount=None, Neighbor=None, NextHop=None, Prefix=None, Rd=None, Type=None):
+    def find(
+        self,
+        Destination=None,
+        Fd=None,
+        HopCount=None,
+        Neighbor=None,
+        NextHop=None,
+        Prefix=None,
+        Rd=None,
+        Type=None,
+    ):
         # type: (str, int, int, str, str, int, int, int) -> LearnedRoute
         """Finds and retrieves learnedRoute resources from the server.
 

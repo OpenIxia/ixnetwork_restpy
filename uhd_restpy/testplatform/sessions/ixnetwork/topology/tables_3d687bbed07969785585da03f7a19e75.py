@@ -189,7 +189,7 @@ class Tables(Base):
 
     def add(self, Name=None, NumberOfFlowSet=None):
         # type: (str, int) -> Tables
-        """Adds a new tables resource on the json, only valid with config assistant
+        """Adds a new tables resource on the json, only valid with batch add utility
 
         Args
         ----

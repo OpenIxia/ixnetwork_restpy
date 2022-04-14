@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,31 @@ class OFSwitchLearnedInfoConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'oFSwitchLearnedInfoConfig'
+    _SDM_NAME = "oFSwitchLearnedInfoConfig"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FlowStatOutGroupMode': 'flowStatOutGroupMode',
-        'FlowStatOutGroupValue': 'flowStatOutGroupValue',
-        'FlowStatOutPortMode': 'flowStatOutPortMode',
-        'FlowStatOutPortValue': 'flowStatOutPortValue',
-        'FlowStatTableIdMode': 'flowStatTableIdMode',
-        'FlowStatTableIdValue': 'flowStatTableIdValue',
-        'Name': 'name',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FlowStatOutGroupMode": "flowStatOutGroupMode",
+        "FlowStatOutGroupValue": "flowStatOutGroupValue",
+        "FlowStatOutPortMode": "flowStatOutPortMode",
+        "FlowStatOutPortValue": "flowStatOutPortValue",
+        "FlowStatTableIdMode": "flowStatTableIdMode",
+        "FlowStatTableIdValue": "flowStatTableIdValue",
+        "Name": "name",
     }
     _SDM_ENUM_MAP = {
-        'flowStatOutGroupMode': ['oFPGALL', 'oFPGANY', 'outGroupCustom'],
-        'flowStatOutPortMode': ['oFPP_IN_PORT', 'oFPP_NORMAL', 'oFPP_FLOOD', 'oFPP_ALL', 'oFPP_CONTROLLER', 'oFPP_LOCAL', 'oFPP_ANY', 'outPortCustom'],
-        'flowStatTableIdMode': ['tableIdAllTables', 'tableIdCustom'],
+        "flowStatOutGroupMode": ["oFPGALL", "oFPGANY", "outGroupCustom"],
+        "flowStatOutPortMode": [
+            "oFPP_IN_PORT",
+            "oFPP_NORMAL",
+            "oFPP_FLOOD",
+            "oFPP_ALL",
+            "oFPP_CONTROLLER",
+            "oFPP_LOCAL",
+            "oFPP_ANY",
+            "outPortCustom",
+        ],
+        "flowStatTableIdMode": ["tableIdAllTables", "tableIdCustom"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,7 +71,7 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -71,7 +81,7 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FlowStatOutGroupMode(self):
@@ -81,11 +91,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - str(oFPGALL | oFPGANY | outGroupCustom): Specify the Output Group Type. The options are: 1) All Groups 2) Any Group 3) Custom/Manual
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroupMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatOutGroupMode"])
+
     @FlowStatOutGroupMode.setter
     def FlowStatOutGroupMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroupMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatOutGroupMode"], value)
 
     @property
     def FlowStatOutGroupValue(self):
@@ -95,11 +106,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - number: If Out Group is Custom/Manual, type the output group value in the box provided
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroupValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatOutGroupValue"])
+
     @FlowStatOutGroupValue.setter
     def FlowStatOutGroupValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroupValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatOutGroupValue"], value)
 
     @property
     def FlowStatOutPortMode(self):
@@ -109,11 +121,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | oFPP_ANY | outPortCustom): Specify the Output Port Type. The options are: 1) OFPP_IN_PORT 2) OFPP_NORMAL 3) OFPP_FLOOD 4) OFPP_ALL 5) OFPP_CONTROLLER 6) OFPP_LOCAL 7) OFPP_ANY 8) Custom/Manual
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatOutPortMode"])
+
     @FlowStatOutPortMode.setter
     def FlowStatOutPortMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatOutPortMode"], value)
 
     @property
     def FlowStatOutPortValue(self):
@@ -123,11 +136,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - number: If Out Port is Custom/Manual, type the output port value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatOutPortValue"])
+
     @FlowStatOutPortValue.setter
     def FlowStatOutPortValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatOutPortValue"], value)
 
     @property
     def FlowStatTableIdMode(self):
@@ -137,11 +151,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - str(tableIdAllTables | tableIdCustom): The identifier of the table. The options are: 1) All Tables 2) Custom/Manual.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatTableIdMode"])
+
     @FlowStatTableIdMode.setter
     def FlowStatTableIdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatTableIdMode"], value)
 
     @property
     def FlowStatTableIdValue(self):
@@ -151,11 +166,12 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - number: If Table ID is Custom/ Manual, type the Table ID Number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatTableIdValue"])
+
     @FlowStatTableIdValue.setter
     def FlowStatTableIdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatTableIdValue"], value)
 
     @property
     def Name(self):
@@ -165,13 +181,23 @@ class OFSwitchLearnedInfoConfig(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, FlowStatOutGroupMode=None, FlowStatOutGroupValue=None, FlowStatOutPortMode=None, FlowStatOutPortValue=None, FlowStatTableIdMode=None, FlowStatTableIdValue=None, Name=None):
+    def update(
+        self,
+        FlowStatOutGroupMode=None,
+        FlowStatOutGroupValue=None,
+        FlowStatOutPortMode=None,
+        FlowStatOutPortValue=None,
+        FlowStatTableIdMode=None,
+        FlowStatTableIdValue=None,
+        Name=None,
+    ):
         # type: (str, int, str, int, str, int, str) -> OFSwitchLearnedInfoConfig
         """Updates oFSwitchLearnedInfoConfig resource on the server.
 
@@ -191,7 +217,18 @@ class OFSwitchLearnedInfoConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, FlowStatOutGroupMode=None, FlowStatOutGroupValue=None, FlowStatOutPortMode=None, FlowStatOutPortValue=None, FlowStatTableIdMode=None, FlowStatTableIdValue=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        FlowStatOutGroupMode=None,
+        FlowStatOutGroupValue=None,
+        FlowStatOutPortMode=None,
+        FlowStatOutPortValue=None,
+        FlowStatTableIdMode=None,
+        FlowStatTableIdValue=None,
+        Name=None,
+    ):
         # type: (int, str, str, int, str, int, str, int, str) -> OFSwitchLearnedInfoConfig
         """Finds and retrieves oFSwitchLearnedInfoConfig resources from the server.
 

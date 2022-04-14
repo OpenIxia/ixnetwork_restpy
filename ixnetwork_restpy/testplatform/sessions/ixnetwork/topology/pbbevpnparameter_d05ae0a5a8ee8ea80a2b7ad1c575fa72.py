@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class PbbEVpnParameter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pbbEVpnParameter'
+    _SDM_NAME = "pbbEVpnParameter"
     _SDM_ATT_MAP = {
-        'BMac': 'bMac',
-        'Count': 'count',
-        'UsePbbEVpnParameters': 'usePbbEVpnParameters',
+        "BMac": "bMac",
+        "Count": "count",
+        "UsePbbEVpnParameters": "usePbbEVpnParameters",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PbbEVpnParameter, self).__init__(parent, list_op)
@@ -55,7 +55,8 @@ class PbbEVpnParameter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Broadcast MAC addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BMac"]))
 
     @property
     def Count(self):
@@ -65,7 +66,7 @@ class PbbEVpnParameter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def UsePbbEVpnParameters(self):
@@ -75,11 +76,12 @@ class PbbEVpnParameter(Base):
         -------
         - bool: Flag to determine whether optional PBB EVPN parameters are provided.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UsePbbEVpnParameters'])
+        return self._get_attribute(self._SDM_ATT_MAP["UsePbbEVpnParameters"])
+
     @UsePbbEVpnParameters.setter
     def UsePbbEVpnParameters(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UsePbbEVpnParameters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UsePbbEVpnParameters"], value)
 
     def update(self, UsePbbEVpnParameters=None):
         # type: (bool) -> PbbEVpnParameter

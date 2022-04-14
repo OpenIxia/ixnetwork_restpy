@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class VepaOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vepaOptions'
+    _SDM_NAME = "vepaOptions"
     _SDM_ATT_MAP = {
-        'EcpDestinationMac': 'ecpDestinationMac',
-        'EcpEthertype': 'ecpEthertype',
-        'LldpCdcpDestinationMac': 'lldpCdcpDestinationMac',
-        'LldpEvbDestinationMac': 'lldpEvbDestinationMac',
-        'MaxVdpCommands': 'maxVdpCommands',
-        'ObjectId': 'objectId',
-        'OverrideGlobalVsiRateControl': 'overrideGlobalVsiRateControl',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "EcpDestinationMac": "ecpDestinationMac",
+        "EcpEthertype": "ecpEthertype",
+        "LldpCdcpDestinationMac": "lldpCdcpDestinationMac",
+        "LldpEvbDestinationMac": "lldpEvbDestinationMac",
+        "MaxVdpCommands": "maxVdpCommands",
+        "ObjectId": "objectId",
+        "OverrideGlobalVsiRateControl": "overrideGlobalVsiRateControl",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VepaOptions, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class VepaOptions(Base):
         -------
         - str: Destination MAC address for ECP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EcpDestinationMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["EcpDestinationMac"])
+
     @EcpDestinationMac.setter
     def EcpDestinationMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EcpDestinationMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EcpDestinationMac"], value)
 
     @property
     def EcpEthertype(self):
@@ -74,11 +75,12 @@ class VepaOptions(Base):
         -------
         - str: 2 byte value used for encapsulating ethertype field in MAC header for ECP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EcpEthertype'])
+        return self._get_attribute(self._SDM_ATT_MAP["EcpEthertype"])
+
     @EcpEthertype.setter
     def EcpEthertype(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EcpEthertype'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EcpEthertype"], value)
 
     @property
     def LldpCdcpDestinationMac(self):
@@ -88,11 +90,12 @@ class VepaOptions(Base):
         -------
         - str: Destination MAC address for LLDP-CDCP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LldpCdcpDestinationMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["LldpCdcpDestinationMac"])
+
     @LldpCdcpDestinationMac.setter
     def LldpCdcpDestinationMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LldpCdcpDestinationMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LldpCdcpDestinationMac"], value)
 
     @property
     def LldpEvbDestinationMac(self):
@@ -102,11 +105,12 @@ class VepaOptions(Base):
         -------
         - str: Destination MAC address for LLDP-EVB packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LldpEvbDestinationMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["LldpEvbDestinationMac"])
+
     @LldpEvbDestinationMac.setter
     def LldpEvbDestinationMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LldpEvbDestinationMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LldpEvbDestinationMac"], value)
 
     @property
     def MaxVdpCommands(self):
@@ -116,11 +120,12 @@ class VepaOptions(Base):
         -------
         - number: Max Outstanding VDP Commands.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxVdpCommands'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxVdpCommands"])
+
     @MaxVdpCommands.setter
     def MaxVdpCommands(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxVdpCommands'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxVdpCommands"], value)
 
     @property
     def ObjectId(self):
@@ -130,7 +135,7 @@ class VepaOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalVsiRateControl(self):
@@ -140,11 +145,12 @@ class VepaOptions(Base):
         -------
         - bool: If true then all the VSI Rate settings defined at Session level will be overriden by VSI Rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalVsiRateControl'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalVsiRateControl"])
+
     @OverrideGlobalVsiRateControl.setter
     def OverrideGlobalVsiRateControl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalVsiRateControl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalVsiRateControl"], value)
 
     @property
     def SetupRate(self):
@@ -154,11 +160,12 @@ class VepaOptions(Base):
         -------
         - number: Setup rate is the number of VSIs to start in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -168,13 +175,24 @@ class VepaOptions(Base):
         -------
         - number: Teardown rate is the number of VSIs to stop in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
-    def update(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+    def update(
+        self,
+        EcpDestinationMac=None,
+        EcpEthertype=None,
+        LldpCdcpDestinationMac=None,
+        LldpEvbDestinationMac=None,
+        MaxVdpCommands=None,
+        OverrideGlobalVsiRateControl=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (str, str, str, str, int, bool, int, int) -> VepaOptions
         """Updates vepaOptions resource on the server.
 
@@ -195,7 +213,17 @@ class VepaOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+    def add(
+        self,
+        EcpDestinationMac=None,
+        EcpEthertype=None,
+        LldpCdcpDestinationMac=None,
+        LldpEvbDestinationMac=None,
+        MaxVdpCommands=None,
+        OverrideGlobalVsiRateControl=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (str, str, str, str, int, bool, int, int) -> VepaOptions
         """Adds a new vepaOptions resource on the server and adds it to the container.
 
@@ -230,7 +258,18 @@ class VepaOptions(Base):
         """
         self._delete()
 
-    def find(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, ObjectId=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self,
+        EcpDestinationMac=None,
+        EcpEthertype=None,
+        LldpCdcpDestinationMac=None,
+        LldpEvbDestinationMac=None,
+        MaxVdpCommands=None,
+        ObjectId=None,
+        OverrideGlobalVsiRateControl=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (str, str, str, str, int, str, bool, int, int) -> VepaOptions
         """Finds and retrieves vepaOptions resources from the server.
 
@@ -295,10 +334,14 @@ class VepaOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -317,10 +360,14 @@ class VepaOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -339,7 +386,11 @@ class VepaOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class EgtpS5S8PgwOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpS5S8PgwOptions'
+    _SDM_NAME = "egtpS5S8PgwOptions"
     _SDM_ATT_MAP = {
-        'DistributeUserPlaneIps': 'distributeUserPlaneIps',
-        'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
-        'EnableDynamicAllocation': 'enableDynamicAllocation',
-        'ObjectId': 'objectId',
-        'PcpuLogLevel': 'pcpuLogLevel',
-        'PublishStatistics': 'publishStatistics',
+        "DistributeUserPlaneIps": "distributeUserPlaneIps",
+        "EnableCreateBearerTFTHack": "enableCreateBearerTFTHack",
+        "EnableDynamicAllocation": "enableDynamicAllocation",
+        "ObjectId": "objectId",
+        "PcpuLogLevel": "pcpuLogLevel",
+        "PublishStatistics": "publishStatistics",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpS5S8PgwOptions, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - bool: Distribute L7 user plane IP addresses across all assigned Ixia ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistributeUserPlaneIps'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistributeUserPlaneIps"])
+
     @DistributeUserPlaneIps.setter
     def DistributeUserPlaneIps(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistributeUserPlaneIps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistributeUserPlaneIps"], value)
 
     @property
     def EnableCreateBearerTFTHack(self):
@@ -71,11 +72,12 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - bool: Send the first port received from the peer activity in the Create Bearer Request TFT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCreateBearerTFTHack'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCreateBearerTFTHack"])
+
     @EnableCreateBearerTFTHack.setter
     def EnableCreateBearerTFTHack(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCreateBearerTFTHack'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCreateBearerTFTHack"], value)
 
     @property
     def EnableDynamicAllocation(self):
@@ -85,11 +87,12 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - bool: Enable dynamic allocation of UEs and sessions on PGW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicAllocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDynamicAllocation"])
+
     @EnableDynamicAllocation.setter
     def EnableDynamicAllocation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDynamicAllocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDynamicAllocation"], value)
 
     @property
     def ObjectId(self):
@@ -99,7 +102,7 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PcpuLogLevel(self):
@@ -109,11 +112,12 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - str: PCPU log level
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpuLogLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpuLogLevel"])
+
     @PcpuLogLevel.setter
     def PcpuLogLevel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpuLogLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpuLogLevel"], value)
 
     @property
     def PublishStatistics(self):
@@ -123,13 +127,21 @@ class EgtpS5S8PgwOptions(Base):
         -------
         - bool: Publish statistics for SGW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PublishStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["PublishStatistics"])
+
     @PublishStatistics.setter
     def PublishStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PublishStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PublishStatistics"], value)
 
-    def update(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
+    def update(
+        self,
+        DistributeUserPlaneIps=None,
+        EnableCreateBearerTFTHack=None,
+        EnableDynamicAllocation=None,
+        PcpuLogLevel=None,
+        PublishStatistics=None,
+    ):
         # type: (bool, bool, bool, str, bool) -> EgtpS5S8PgwOptions
         """Updates egtpS5S8PgwOptions resource on the server.
 
@@ -147,7 +159,14 @@ class EgtpS5S8PgwOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
+    def add(
+        self,
+        DistributeUserPlaneIps=None,
+        EnableCreateBearerTFTHack=None,
+        EnableDynamicAllocation=None,
+        PcpuLogLevel=None,
+        PublishStatistics=None,
+    ):
         # type: (bool, bool, bool, str, bool) -> EgtpS5S8PgwOptions
         """Adds a new egtpS5S8PgwOptions resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class EgtpS5S8PgwOptions(Base):
         """
         self._delete()
 
-    def find(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, ObjectId=None, PcpuLogLevel=None, PublishStatistics=None):
+    def find(
+        self,
+        DistributeUserPlaneIps=None,
+        EnableCreateBearerTFTHack=None,
+        EnableDynamicAllocation=None,
+        ObjectId=None,
+        PcpuLogLevel=None,
+        PublishStatistics=None,
+    ):
         # type: (bool, bool, bool, str, str, bool) -> EgtpS5S8PgwOptions
         """Finds and retrieves egtpS5S8PgwOptions resources from the server.
 
@@ -241,10 +268,14 @@ class EgtpS5S8PgwOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -263,10 +294,14 @@ class EgtpS5S8PgwOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -285,7 +320,11 @@ class EgtpS5S8PgwOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

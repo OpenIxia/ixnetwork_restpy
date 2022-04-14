@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,14 @@ class LiveFlowsFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'liveFlowsFilter'
+    _SDM_NAME = "liveFlowsFilter"
     _SDM_ATT_MAP = {
-        'NumberOfResults': 'numberOfResults',
-        'SortByStatisticId': 'sortByStatisticId',
-        'SortingCondition': 'sortingCondition',
+        "NumberOfResults": "numberOfResults",
+        "SortByStatisticId": "sortByStatisticId",
+        "SortingCondition": "sortingCondition",
     }
     _SDM_ENUM_MAP = {
-        'sortingCondition': ['bestPerformers', 'worstPerformers'],
+        "sortingCondition": ["bestPerformers", "worstPerformers"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +56,12 @@ class LiveFlowsFilter(Base):
         -------
         - number: Number of traffic flows to be displayed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfResults"])
+
     @NumberOfResults.setter
     def NumberOfResults(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfResults"], value)
 
     @property
     def SortByStatisticId(self):
@@ -69,11 +71,12 @@ class LiveFlowsFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortByStatisticId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortByStatisticId"])
+
     @SortByStatisticId.setter
     def SortByStatisticId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortByStatisticId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortByStatisticId"], value)
 
     @property
     def SortingCondition(self):
@@ -83,13 +86,16 @@ class LiveFlowsFilter(Base):
         -------
         - str(bestPerformers | worstPerformers): Sets the display of the view according to best or worst performers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortingCondition'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortingCondition"])
+
     @SortingCondition.setter
     def SortingCondition(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortingCondition'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortingCondition"], value)
 
-    def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+    def update(
+        self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None
+    ):
         # type: (int, str, str) -> LiveFlowsFilter
         """Updates liveFlowsFilter resource on the server.
 

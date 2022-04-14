@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class IgmpQuerierRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpQuerierRange'
+    _SDM_NAME = "igmpQuerierRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'GeneralQueryInterval': 'generalQueryInterval',
-        'GeneralQueryResponseInterval': 'generalQueryResponseInterval',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'RobustnessVariable': 'robustnessVariable',
-        'RouterAlert': 'routerAlert',
-        'SpecificQueryResponseCount': 'specificQueryResponseCount',
-        'SpecificQueryResponseInterval': 'specificQueryResponseInterval',
-        'StartupQueryCount': 'startupQueryCount',
-        'Version': 'version',
+        "Enabled": "enabled",
+        "GeneralQueryInterval": "generalQueryInterval",
+        "GeneralQueryResponseInterval": "generalQueryResponseInterval",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "RobustnessVariable": "robustnessVariable",
+        "RouterAlert": "routerAlert",
+        "SpecificQueryResponseCount": "specificQueryResponseCount",
+        "SpecificQueryResponseInterval": "specificQueryResponseInterval",
+        "StartupQueryCount": "startupQueryCount",
+        "Version": "version",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpQuerierRange, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class IgmpQuerierRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GeneralQueryInterval(self):
@@ -76,11 +77,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: The amount of time in seconds between IGMP/MLD General Query messages sent by the querier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueryInterval"])
+
     @GeneralQueryInterval.setter
     def GeneralQueryInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueryInterval"], value)
 
     @property
     def GeneralQueryResponseInterval(self):
@@ -90,11 +92,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: Indicates the maximum amount of time in milliseconds that the IGMP/MLD querier waits to receive a response to a General Query message. The query response must be lesser than the query interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryResponseInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueryResponseInterval"])
+
     @GeneralQueryResponseInterval.setter
     def GeneralQueryResponseInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueryResponseInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueryResponseInterval"], value)
 
     @property
     def Name(self):
@@ -104,11 +107,12 @@ class IgmpQuerierRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -118,7 +122,7 @@ class IgmpQuerierRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def RobustnessVariable(self):
@@ -128,11 +132,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: Defines the subnet vulnerability to lost packets. IGMP/MLD can recover from robustness variable minus 1 lost IGMP/MLD packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable'])
+        return self._get_attribute(self._SDM_ATT_MAP["RobustnessVariable"])
+
     @RobustnessVariable.setter
     def RobustnessVariable(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RobustnessVariable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RobustnessVariable"], value)
 
     @property
     def RouterAlert(self):
@@ -142,11 +147,12 @@ class IgmpQuerierRange(Base):
         -------
         - bool: If selected, sets the Send Router Alert bit in the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterAlert"])
+
     @RouterAlert.setter
     def RouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterAlert"], value)
 
     @property
     def SpecificQueryResponseCount(self):
@@ -156,11 +162,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: Indicates the total number of Specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpecificQueryResponseCount"])
+
     @SpecificQueryResponseCount.setter
     def SpecificQueryResponseCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpecificQueryResponseCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpecificQueryResponseCount"], value)
 
     @property
     def SpecificQueryResponseInterval(self):
@@ -170,11 +177,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: Indicates the maximum amount of time in milliseconds that the IGMP/MLD Querier waits to receive a response to a Specific Query message. The query response must be lesser than the query interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpecificQueryResponseInterval"])
+
     @SpecificQueryResponseInterval.setter
     def SpecificQueryResponseInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpecificQueryResponseInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpecificQueryResponseInterval"], value)
 
     @property
     def StartupQueryCount(self):
@@ -184,11 +192,12 @@ class IgmpQuerierRange(Base):
         -------
         - number: The number of general query messages sent at startup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartupQueryCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartupQueryCount"])
+
     @StartupQueryCount.setter
     def StartupQueryCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartupQueryCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartupQueryCount"], value)
 
     @property
     def Version(self):
@@ -198,13 +207,26 @@ class IgmpQuerierRange(Base):
         -------
         - str: IGMP/MLD protocol version.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, Enabled=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, Name=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseCount=None, SpecificQueryResponseInterval=None, StartupQueryCount=None, Version=None):
+    def update(
+        self,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GeneralQueryResponseInterval=None,
+        Name=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SpecificQueryResponseCount=None,
+        SpecificQueryResponseInterval=None,
+        StartupQueryCount=None,
+        Version=None,
+    ):
         # type: (bool, int, int, str, int, bool, int, int, int, str) -> IgmpQuerierRange
         """Updates igmpQuerierRange resource on the server.
 
@@ -227,7 +249,19 @@ class IgmpQuerierRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, Name=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseCount=None, SpecificQueryResponseInterval=None, StartupQueryCount=None, Version=None):
+    def add(
+        self,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GeneralQueryResponseInterval=None,
+        Name=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SpecificQueryResponseCount=None,
+        SpecificQueryResponseInterval=None,
+        StartupQueryCount=None,
+        Version=None,
+    ):
         # type: (bool, int, int, str, int, bool, int, int, int, str) -> IgmpQuerierRange
         """Adds a new igmpQuerierRange resource on the server and adds it to the container.
 
@@ -264,7 +298,20 @@ class IgmpQuerierRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, Name=None, ObjectId=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseCount=None, SpecificQueryResponseInterval=None, StartupQueryCount=None, Version=None):
+    def find(
+        self,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GeneralQueryResponseInterval=None,
+        Name=None,
+        ObjectId=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SpecificQueryResponseCount=None,
+        SpecificQueryResponseInterval=None,
+        StartupQueryCount=None,
+        Version=None,
+    ):
         # type: (bool, int, int, str, str, int, bool, int, int, int, str) -> IgmpQuerierRange
         """Finds and retrieves igmpQuerierRange resources from the server.
 
@@ -331,10 +378,14 @@ class IgmpQuerierRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -353,10 +404,14 @@ class IgmpQuerierRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -375,7 +430,11 @@ class IgmpQuerierRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

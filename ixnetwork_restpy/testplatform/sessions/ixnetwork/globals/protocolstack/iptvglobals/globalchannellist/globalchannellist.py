@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class GlobalChannelList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'globalChannelList'
+    _SDM_NAME = "globalChannelList"
     _SDM_ATT_MAP = {
-        'FirstChannel': 'firstChannel',
-        'Increment': 'increment',
-        'InitialChannel': 'initialChannel',
-        'InitialIncrement': 'initialIncrement',
-        'LastChannel': 'lastChannel',
-        'MulticastGroup': 'multicastGroup',
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "FirstChannel": "firstChannel",
+        "Increment": "increment",
+        "InitialChannel": "initialChannel",
+        "InitialIncrement": "initialIncrement",
+        "LastChannel": "lastChannel",
+        "MulticastGroup": "multicastGroup",
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GlobalChannelList, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class GlobalChannelList(Base):
         -------
         - number: The first channel from the multicast group range included in the current list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstChannel"])
+
     @FirstChannel.setter
     def FirstChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstChannel"], value)
 
     @property
     def Increment(self):
@@ -73,11 +74,12 @@ class GlobalChannelList(Base):
         -------
         - number: The increment step between first and last channels describing available channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["Increment"])
+
     @Increment.setter
     def Increment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Increment"], value)
 
     @property
     def InitialChannel(self):
@@ -87,11 +89,12 @@ class GlobalChannelList(Base):
         -------
         - number: The first channel to be joined by the first host.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialChannel"])
+
     @InitialChannel.setter
     def InitialChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialChannel"], value)
 
     @property
     def InitialIncrement(self):
@@ -101,11 +104,12 @@ class GlobalChannelList(Base):
         -------
         - number: The increment step between consecutive hosts joining the channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialIncrement"])
+
     @InitialIncrement.setter
     def InitialIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialIncrement"], value)
 
     @property
     def LastChannel(self):
@@ -115,11 +119,12 @@ class GlobalChannelList(Base):
         -------
         - number: The last channel from the multicast group range included in the current list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastChannel"])
+
     @LastChannel.setter
     def LastChannel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LastChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LastChannel"], value)
 
     @property
     def MulticastGroup(self):
@@ -129,11 +134,12 @@ class GlobalChannelList(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): The associated multicast group range for defining the channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastGroup"])
+
     @MulticastGroup.setter
     def MulticastGroup(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastGroup"], value)
 
     @property
     def Name(self):
@@ -143,11 +149,12 @@ class GlobalChannelList(Base):
         -------
         - str: The name of the channel list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -157,9 +164,18 @@ class GlobalChannelList(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
-    def update(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None):
+    def update(
+        self,
+        FirstChannel=None,
+        Increment=None,
+        InitialChannel=None,
+        InitialIncrement=None,
+        LastChannel=None,
+        MulticastGroup=None,
+        Name=None,
+    ):
         # type: (int, int, int, int, int, str, str) -> GlobalChannelList
         """Updates globalChannelList resource on the server.
 
@@ -179,7 +195,16 @@ class GlobalChannelList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None):
+    def add(
+        self,
+        FirstChannel=None,
+        Increment=None,
+        InitialChannel=None,
+        InitialIncrement=None,
+        LastChannel=None,
+        MulticastGroup=None,
+        Name=None,
+    ):
         # type: (int, int, int, int, int, str, str) -> GlobalChannelList
         """Adds a new globalChannelList resource on the server and adds it to the container.
 
@@ -213,7 +238,17 @@ class GlobalChannelList(Base):
         """
         self._delete()
 
-    def find(self, FirstChannel=None, Increment=None, InitialChannel=None, InitialIncrement=None, LastChannel=None, MulticastGroup=None, Name=None, ObjectId=None):
+    def find(
+        self,
+        FirstChannel=None,
+        Increment=None,
+        InitialChannel=None,
+        InitialIncrement=None,
+        LastChannel=None,
+        MulticastGroup=None,
+        Name=None,
+        ObjectId=None,
+    ):
         # type: (int, int, int, int, int, str, str, str) -> GlobalChannelList
         """Finds and retrieves globalChannelList resources from the server.
 

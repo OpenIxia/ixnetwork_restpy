@@ -4,49 +4,49 @@ from ixnetwork_restpy.files import Files
 
 class LISPMapReply(Base):
     __slots__ = ()
-    _SDM_NAME = 'lISPMapReply'
+    _SDM_NAME = "lISPMapReply"
     _SDM_ATT_MAP = {
-        'HeaderType': 'lISPMapReply.header.type-1',
-        'HeaderP': 'lISPMapReply.header.p-2',
-        'HeaderE': 'lISPMapReply.header.E-3',
-        'HeaderReserved': 'lISPMapReply.header.reserved-4',
-        'HeaderRecordcount': 'lISPMapReply.header.recordcount-5',
-        'HeaderNonce': 'lISPMapReply.header.nonce-6',
-        'RecordTtl': 'lISPMapReply.header.eidrecord.record.ttl-7',
-        'RecordLoccnt': 'lISPMapReply.header.eidrecord.record.loccnt-8',
-        'RecordEIDmasklen': 'lISPMapReply.header.eidrecord.record.eIDmasklen-9',
-        'RecordACT': 'lISPMapReply.header.eidrecord.record.aCT-10',
-        'RecordA': 'lISPMapReply.header.eidrecord.record.a-11',
-        'RecordRecreserved': 'lISPMapReply.header.eidrecord.record.recreserved-12',
-        'RecordMapvernumber': 'lISPMapReply.header.eidrecord.record.mapvernumber-13',
-        'Ipv4eidEidipv4afi': 'lISPMapReply.header.eidrecord.record.eidafiprefix.ipv4eid.eidipv4afi-14',
-        'Ipv4eidEidprefix': 'lISPMapReply.header.eidrecord.record.eidafiprefix.ipv4eid.eidprefix-15',
-        'Ipv6eidEidipv6afi': 'lISPMapReply.header.eidrecord.record.eidafiprefix.ipv6eid.eidipv6afi-16',
-        'Ipv6eidEidprefix': 'lISPMapReply.header.eidrecord.record.eidafiprefix.ipv6eid.eidprefix-17',
-        'AfiAfi': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.afi-18',
-        'AfiRsvd1': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.rsvd1-19',
-        'AfiFlags': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.flags-20',
-        'AfiType': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.type-21',
-        'AfiRsvd2': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.rsvd2-22',
-        'AfiLength': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.length-23',
-        'AfiInstanceid': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.instanceid-24',
-        'EidafiprefixIpv4eidEidipv4afi': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv4eid.eidipv4afi-25',
-        'EidafiprefixIpv4eidEidprefix': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv4eid.eidprefix-26',
-        'EidafiprefixIpv6eidEidipv6afi': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv6eid.eidipv6afi-27',
-        'EidafiprefixIpv6eidEidprefix': 'lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv6eid.eidprefix-28',
-        'LocatorPriority': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.priority-29',
-        'LocatorWeight': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.weight-30',
-        'LocatorMpriority': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.mpriority-31',
-        'LocatorMweight': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.mweight-32',
-        'LocatorUnusedflags': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.unusedflags-33',
-        'LocatorL': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.l-34',
-        'LocatorLocp': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.locp-35',
-        'LocatorR': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.r-36',
-        'Ipv4locLocipv4afi': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv4loc.locipv4afi-37',
-        'Ipv4locLocprefix': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv4loc.locprefix-38',
-        'Ipv6locLocipv6afi': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv6loc.locipv6afi-39',
-        'Ipv6locLocprefix': 'lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv6loc.locprefix-40',
-        'HeaderMapping_Protocol_Data': 'lISPMapReply.header.Mapping_Protocol_Data-41',
+        "HeaderType": "lISPMapReply.header.type-1",
+        "HeaderP": "lISPMapReply.header.p-2",
+        "HeaderE": "lISPMapReply.header.E-3",
+        "HeaderReserved": "lISPMapReply.header.reserved-4",
+        "HeaderRecordcount": "lISPMapReply.header.recordcount-5",
+        "HeaderNonce": "lISPMapReply.header.nonce-6",
+        "RecordTtl": "lISPMapReply.header.eidrecord.record.ttl-7",
+        "RecordLoccnt": "lISPMapReply.header.eidrecord.record.loccnt-8",
+        "RecordEIDmasklen": "lISPMapReply.header.eidrecord.record.eIDmasklen-9",
+        "RecordACT": "lISPMapReply.header.eidrecord.record.aCT-10",
+        "RecordA": "lISPMapReply.header.eidrecord.record.a-11",
+        "RecordRecreserved": "lISPMapReply.header.eidrecord.record.recreserved-12",
+        "RecordMapvernumber": "lISPMapReply.header.eidrecord.record.mapvernumber-13",
+        "Ipv4eidEidipv4afi": "lISPMapReply.header.eidrecord.record.eidafiprefix.ipv4eid.eidipv4afi-14",
+        "Ipv4eidEidprefix": "lISPMapReply.header.eidrecord.record.eidafiprefix.ipv4eid.eidprefix-15",
+        "Ipv6eidEidipv6afi": "lISPMapReply.header.eidrecord.record.eidafiprefix.ipv6eid.eidipv6afi-16",
+        "Ipv6eidEidprefix": "lISPMapReply.header.eidrecord.record.eidafiprefix.ipv6eid.eidprefix-17",
+        "AfiAfi": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.afi-18",
+        "AfiRsvd1": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.rsvd1-19",
+        "AfiFlags": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.flags-20",
+        "AfiType": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.type-21",
+        "AfiRsvd2": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.rsvd2-22",
+        "AfiLength": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.length-23",
+        "AfiInstanceid": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.instanceid-24",
+        "EidafiprefixIpv4eidEidipv4afi": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv4eid.eidipv4afi-25",
+        "EidafiprefixIpv4eidEidprefix": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv4eid.eidprefix-26",
+        "EidafiprefixIpv6eidEidipv6afi": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv6eid.eidipv6afi-27",
+        "EidafiprefixIpv6eidEidprefix": "lISPMapReply.header.eidrecord.record.eidafiprefix.afi.eidafiprefix.ipv6eid.eidprefix-28",
+        "LocatorPriority": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.priority-29",
+        "LocatorWeight": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.weight-30",
+        "LocatorMpriority": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.mpriority-31",
+        "LocatorMweight": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.mweight-32",
+        "LocatorUnusedflags": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.unusedflags-33",
+        "LocatorL": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.l-34",
+        "LocatorLocp": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.locp-35",
+        "LocatorR": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.r-36",
+        "Ipv4locLocipv4afi": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv4loc.locipv4afi-37",
+        "Ipv4locLocprefix": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv4loc.locprefix-38",
+        "Ipv6locLocipv6afi": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv6loc.locipv6afi-39",
+        "Ipv6locLocprefix": "lISPMapReply.header.eidrecord.record.locatorrecords.locator.locafiprefix.ipv6loc.locprefix-40",
+        "HeaderMapping_Protocol_Data": "lISPMapReply.header.Mapping_Protocol_Data-41",
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,7 +60,8 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderP(self):
@@ -70,7 +71,8 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderP"]))
 
     @property
     def HeaderE(self):
@@ -80,7 +82,8 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderE']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderE"]))
 
     @property
     def HeaderReserved(self):
@@ -90,7 +93,10 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderRecordcount(self):
@@ -100,7 +106,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRecordcount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRecordcount"])
+        )
 
     @property
     def HeaderNonce(self):
@@ -110,7 +119,8 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNonce']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderNonce"]))
 
     @property
     def RecordTtl(self):
@@ -120,7 +130,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecordTtl"]))
 
     @property
     def RecordLoccnt(self):
@@ -130,7 +141,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordLoccnt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecordLoccnt"]))
 
     @property
     def RecordEIDmasklen(self):
@@ -140,7 +152,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordEIDmasklen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RecordEIDmasklen"])
+        )
 
     @property
     def RecordACT(self):
@@ -150,7 +165,8 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordACT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecordACT"]))
 
     @property
     def RecordA(self):
@@ -160,7 +176,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordA']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecordA"]))
 
     @property
     def RecordRecreserved(self):
@@ -170,7 +187,10 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordRecreserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RecordRecreserved"])
+        )
 
     @property
     def RecordMapvernumber(self):
@@ -180,7 +200,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordMapvernumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RecordMapvernumber"])
+        )
 
     @property
     def Ipv4eidEidipv4afi(self):
@@ -190,7 +213,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4eidEidipv4afi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4eidEidipv4afi"])
+        )
 
     @property
     def Ipv4eidEidprefix(self):
@@ -200,7 +226,10 @@ class LISPMapReply(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4eidEidprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4eidEidprefix"])
+        )
 
     @property
     def Ipv6eidEidipv6afi(self):
@@ -210,7 +239,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6eidEidipv6afi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6eidEidipv6afi"])
+        )
 
     @property
     def Ipv6eidEidprefix(self):
@@ -220,7 +252,10 @@ class LISPMapReply(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6eidEidprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6eidEidprefix"])
+        )
 
     @property
     def AfiAfi(self):
@@ -230,7 +265,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiAfi']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiAfi"]))
 
     @property
     def AfiRsvd1(self):
@@ -240,7 +276,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiRsvd1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiRsvd1"]))
 
     @property
     def AfiFlags(self):
@@ -250,7 +287,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiFlags"]))
 
     @property
     def AfiType(self):
@@ -260,7 +298,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiType"]))
 
     @property
     def AfiRsvd2(self):
@@ -270,7 +309,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiRsvd2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiRsvd2"]))
 
     @property
     def AfiLength(self):
@@ -280,7 +320,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiLength"]))
 
     @property
     def AfiInstanceid(self):
@@ -290,7 +331,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AfiInstanceid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AfiInstanceid"]))
 
     @property
     def EidafiprefixIpv4eidEidipv4afi(self):
@@ -300,7 +342,11 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EidafiprefixIpv4eidEidipv4afi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EidafiprefixIpv4eidEidipv4afi"]),
+        )
 
     @property
     def EidafiprefixIpv4eidEidprefix(self):
@@ -310,7 +356,10 @@ class LISPMapReply(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EidafiprefixIpv4eidEidprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EidafiprefixIpv4eidEidprefix"])
+        )
 
     @property
     def EidafiprefixIpv6eidEidipv6afi(self):
@@ -320,7 +369,11 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EidafiprefixIpv6eidEidipv6afi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EidafiprefixIpv6eidEidipv6afi"]),
+        )
 
     @property
     def EidafiprefixIpv6eidEidprefix(self):
@@ -330,7 +383,10 @@ class LISPMapReply(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EidafiprefixIpv6eidEidprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EidafiprefixIpv6eidEidprefix"])
+        )
 
     @property
     def LocatorPriority(self):
@@ -340,7 +396,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorPriority"])
+        )
 
     @property
     def LocatorWeight(self):
@@ -350,7 +409,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorWeight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorWeight"]))
 
     @property
     def LocatorMpriority(self):
@@ -360,7 +420,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorMpriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorMpriority"])
+        )
 
     @property
     def LocatorMweight(self):
@@ -370,7 +433,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorMweight']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorMweight"])
+        )
 
     @property
     def LocatorUnusedflags(self):
@@ -380,7 +446,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorUnusedflags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorUnusedflags"])
+        )
 
     @property
     def LocatorL(self):
@@ -390,7 +459,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorL"]))
 
     @property
     def LocatorLocp(self):
@@ -400,7 +470,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorLocp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorLocp"]))
 
     @property
     def LocatorR(self):
@@ -410,7 +481,8 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorR']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorR"]))
 
     @property
     def Ipv4locLocipv4afi(self):
@@ -420,7 +492,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4locLocipv4afi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4locLocipv4afi"])
+        )
 
     @property
     def Ipv4locLocprefix(self):
@@ -430,7 +505,10 @@ class LISPMapReply(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4locLocprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4locLocprefix"])
+        )
 
     @property
     def Ipv6locLocipv6afi(self):
@@ -440,7 +518,10 @@ class LISPMapReply(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6locLocipv6afi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6locLocipv6afi"])
+        )
 
     @property
     def Ipv6locLocprefix(self):
@@ -450,7 +531,10 @@ class LISPMapReply(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6locLocprefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6locLocprefix"])
+        )
 
     @property
     def HeaderMapping_Protocol_Data(self):
@@ -460,7 +544,10 @@ class LISPMapReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMapping_Protocol_Data']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMapping_Protocol_Data"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

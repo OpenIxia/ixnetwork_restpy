@@ -155,7 +155,7 @@ class BgpLsAsPathSegmentList(Base):
 
     def add(self, Name=None, NumberOfAsNumberInSegment=None):
         # type: (str, int) -> BgpLsAsPathSegmentList
-        """Adds a new bgpLsAsPathSegmentList resource on the json, only valid with config assistant
+        """Adds a new bgpLsAsPathSegmentList resource on the json, only valid with batch add utility
 
         Args
         ----

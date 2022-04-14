@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,34 +35,46 @@ class RouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeRange'
+    _SDM_NAME = "routeRange"
     _SDM_ATT_MAP = {
-        'Bandwidth': 'bandwidth',
-        'Delay': 'delay',
-        'DestCount': 'destCount',
-        'EnablePacking': 'enablePacking',
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'Flag': 'flag',
-        'HopCount': 'hopCount',
-        'Load': 'load',
-        'Mask': 'mask',
-        'Metric': 'metric',
-        'Mtu': 'mtu',
-        'NextHop': 'nextHop',
-        'NomberOfRoutes': 'nomberOfRoutes',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'OriginatingAs': 'originatingAs',
-        'ProtocolId': 'protocolId',
-        'Reliability': 'reliability',
-        'RouteTag': 'routeTag',
-        'Source': 'source',
-        'Type': 'type',
+        "Bandwidth": "bandwidth",
+        "Delay": "delay",
+        "DestCount": "destCount",
+        "EnablePacking": "enablePacking",
+        "Enabled": "enabled",
+        "FirstRoute": "firstRoute",
+        "Flag": "flag",
+        "HopCount": "hopCount",
+        "Load": "load",
+        "Mask": "mask",
+        "Metric": "metric",
+        "Mtu": "mtu",
+        "NextHop": "nextHop",
+        "NomberOfRoutes": "nomberOfRoutes",
+        "NumberOfRoutes": "numberOfRoutes",
+        "OriginatingAs": "originatingAs",
+        "ProtocolId": "protocolId",
+        "Reliability": "reliability",
+        "RouteTag": "routeTag",
+        "Source": "source",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'flag': ['externalRoute', 'candidateDefault'],
-        'protocolId': ['igrp', 'enhancedIgrp', 'static', 'rip', 'hello', 'ospf', 'isis', 'egp', 'bgp', 'idrp', 'connected'],
-        'type': ['external', 'internal'],
+        "flag": ["externalRoute", "candidateDefault"],
+        "protocolId": [
+            "igrp",
+            "enhancedIgrp",
+            "static",
+            "rip",
+            "hello",
+            "ospf",
+            "isis",
+            "egp",
+            "bgp",
+            "idrp",
+            "connected",
+        ],
+        "type": ["external", "internal"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -75,11 +88,12 @@ class RouteRange(Base):
         -------
         - number: The minimum amount of bandwidth available on this link, in Kbps. The valid range is 1 to 4294967295. (default = 10,000 Kbps)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["Bandwidth"])
+
     @Bandwidth.setter
     def Bandwidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Bandwidth"], value)
 
     @property
     def Delay(self):
@@ -89,11 +103,12 @@ class RouteRange(Base):
         -------
         - number: The total of delays on the path to the route/network, in microseconds. The valid range is 0 to 4294967295. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Delay'])
+        return self._get_attribute(self._SDM_ATT_MAP["Delay"])
+
     @Delay.setter
     def Delay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Delay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Delay"], value)
 
     @property
     def DestCount(self):
@@ -103,11 +118,12 @@ class RouteRange(Base):
         -------
         - number: (Available only if Packing is enabled.) If packing is enabled, it indicates the maximum number of destinations that can be packed into a single Internal/External TLV. A value of 0 means that maximum possible packing will be used, which depends on the MTU of the link. The valid range is 0 to 255. (default = 90)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestCount"])
+
     @DestCount.setter
     def DestCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestCount"], value)
 
     @property
     def EnablePacking(self):
@@ -117,11 +133,12 @@ class RouteRange(Base):
         -------
         - bool: Enables packing of multiple destinations into a single Internal/External TLV. If disabled, only one destination will be packed into a single Internal/External TLV. (default = enabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePacking"])
+
     @EnablePacking.setter
     def EnablePacking(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePacking"], value)
 
     @property
     def Enabled(self):
@@ -131,11 +148,12 @@ class RouteRange(Base):
         -------
         - bool: Enables the route range. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstRoute(self):
@@ -145,11 +163,12 @@ class RouteRange(Base):
         -------
         - str: The first route of the route range, in IPv4/IPv6 dotted decimal format. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstRoute"])
+
     @FirstRoute.setter
     def FirstRoute(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstRoute"], value)
 
     @property
     def Flag(self):
@@ -159,11 +178,12 @@ class RouteRange(Base):
         -------
         - str(externalRoute | candidateDefault): (Available only for External route ranges.) The origin of the advertised route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Flag'])
+        return self._get_attribute(self._SDM_ATT_MAP["Flag"])
+
     @Flag.setter
     def Flag(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Flag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Flag"], value)
 
     @property
     def HopCount(self):
@@ -173,11 +193,12 @@ class RouteRange(Base):
         -------
         - number: The number of hops on the way to the destination address. The valid range is 0 to 255. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
+
     @HopCount.setter
     def HopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HopCount"], value)
 
     @property
     def Load(self):
@@ -187,11 +208,12 @@ class RouteRange(Base):
         -------
         - number: The amount of load on the link. The valid range is 0 to 255. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Load'])
+        return self._get_attribute(self._SDM_ATT_MAP["Load"])
+
     @Load.setter
     def Load(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Load'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Load"], value)
 
     @property
     def Mask(self):
@@ -201,11 +223,12 @@ class RouteRange(Base):
         -------
         - number: The network mask width for the route range (in bits). The valid range is from 0 to 32 bits. (default = 24)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def Metric(self):
@@ -215,11 +238,12 @@ class RouteRange(Base):
         -------
         - number: (Available only for External route ranges.) The EIGRP vector metric for the cost of the path to this route/network. The valid range is 1 to 4294967295. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def Mtu(self):
@@ -229,11 +253,12 @@ class RouteRange(Base):
         -------
         - number: The Maximum Transmission Unit (MTU) allowed on this link, in bytes. The valid range is 0 to 16777215. (default = 1,500 bytes)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def NextHop(self):
@@ -243,25 +268,27 @@ class RouteRange(Base):
         -------
         - str: The immediate next hop IP address on the way to the destination address, in IPv4/IPv6 dotted decimal format. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
+
     @NextHop.setter
     def NextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHop"], value)
 
     @property
     def NomberOfRoutes(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NomberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NomberOfRoutes"])
+
     @NomberOfRoutes.setter
     def NomberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NomberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NomberOfRoutes"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -271,11 +298,12 @@ class RouteRange(Base):
         -------
         - number: The number of routes to be generated for this route range, based on the network address plus the network mask. The valid range is 1 to 16777215. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def OriginatingAs(self):
@@ -285,11 +313,12 @@ class RouteRange(Base):
         -------
         - number: (Available only for External route ranges.) The external AS where this route was originated. The valid range is 1 to 4294967295. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatingAs'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatingAs"])
+
     @OriginatingAs.setter
     def OriginatingAs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatingAs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatingAs"], value)
 
     @property
     def ProtocolId(self):
@@ -299,11 +328,12 @@ class RouteRange(Base):
         -------
         - str(igrp | enhancedIgrp | static | rip | hello | ospf | isis | egp | bgp | idrp | connected): (Available only for External route ranges.) The external protocol where the route was originated, if applicable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolId"])
+
     @ProtocolId.setter
     def ProtocolId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolId"], value)
 
     @property
     def Reliability(self):
@@ -313,11 +343,12 @@ class RouteRange(Base):
         -------
         - number: The reliability factor. The valid range is 0 to 255 (100% reliable). (default = 255)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reliability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reliability"])
+
     @Reliability.setter
     def Reliability(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Reliability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Reliability"], value)
 
     @property
     def RouteTag(self):
@@ -327,11 +358,12 @@ class RouteRange(Base):
         -------
         - number: (Available only for External route ranges.) An administrative tag applied to the route when it is redistributed between EIGRP and an external protocol, to prevent routing loops. Used as a route mapping filter. The valid range is 0 to 4294967295. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteTag"])
+
     @RouteTag.setter
     def RouteTag(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteTag"], value)
 
     @property
     def Source(self):
@@ -341,11 +373,12 @@ class RouteRange(Base):
         -------
         - str: (Available only for External route ranges.) The IPv4 address for the external source of the route information, in dotted decimal format. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Source"])
+
     @Source.setter
     def Source(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Source"], value)
 
     @property
     def Type(self):
@@ -355,13 +388,37 @@ class RouteRange(Base):
         -------
         - str(external | internal): The type of route range: internal or external to the AS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+    def update(
+        self,
+        Bandwidth=None,
+        Delay=None,
+        DestCount=None,
+        EnablePacking=None,
+        Enabled=None,
+        FirstRoute=None,
+        Flag=None,
+        HopCount=None,
+        Load=None,
+        Mask=None,
+        Metric=None,
+        Mtu=None,
+        NextHop=None,
+        NomberOfRoutes=None,
+        NumberOfRoutes=None,
+        OriginatingAs=None,
+        ProtocolId=None,
+        Reliability=None,
+        RouteTag=None,
+        Source=None,
+        Type=None,
+    ):
         # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Updates routeRange resource on the server.
 
@@ -395,7 +452,30 @@ class RouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+    def add(
+        self,
+        Bandwidth=None,
+        Delay=None,
+        DestCount=None,
+        EnablePacking=None,
+        Enabled=None,
+        FirstRoute=None,
+        Flag=None,
+        HopCount=None,
+        Load=None,
+        Mask=None,
+        Metric=None,
+        Mtu=None,
+        NextHop=None,
+        NomberOfRoutes=None,
+        NumberOfRoutes=None,
+        OriginatingAs=None,
+        ProtocolId=None,
+        Reliability=None,
+        RouteTag=None,
+        Source=None,
+        Type=None,
+    ):
         # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
@@ -443,7 +523,30 @@ class RouteRange(Base):
         """
         self._delete()
 
-    def find(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+    def find(
+        self,
+        Bandwidth=None,
+        Delay=None,
+        DestCount=None,
+        EnablePacking=None,
+        Enabled=None,
+        FirstRoute=None,
+        Flag=None,
+        HopCount=None,
+        Load=None,
+        Mask=None,
+        Metric=None,
+        Mtu=None,
+        NextHop=None,
+        NomberOfRoutes=None,
+        NumberOfRoutes=None,
+        OriginatingAs=None,
+        ProtocolId=None,
+        Reliability=None,
+        RouteTag=None,
+        Source=None,
+        Type=None,
+    ):
         # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 

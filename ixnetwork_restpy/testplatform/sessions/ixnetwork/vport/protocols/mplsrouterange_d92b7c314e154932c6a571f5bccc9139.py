@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,51 +35,58 @@ class MplsRouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mplsRouteRange'
+    _SDM_NAME = "mplsRouteRange"
     _SDM_ATT_MAP = {
-        'AdvertiseNextHopAsV4': 'advertiseNextHopAsV4',
-        'AggregatorAsNum': 'aggregatorAsNum',
-        'AggregatorIpAddress': 'aggregatorIpAddress',
-        'AsPathSetMode': 'asPathSetMode',
-        'EnableAggregator': 'enableAggregator',
-        'EnableAggregatorIdIncrementMode': 'enableAggregatorIdIncrementMode',
-        'EnableAsPath': 'enableAsPath',
-        'EnableAtomicAttribute': 'enableAtomicAttribute',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableGenerateUniqueRoutes': 'enableGenerateUniqueRoutes',
-        'EnableIncludeLoopback': 'enableIncludeLoopback',
-        'EnableIncludeMulticast': 'enableIncludeMulticast',
-        'EnableLocalPref': 'enableLocalPref',
-        'EnableMed': 'enableMed',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'EnableTraditionalNlriUpdate': 'enableTraditionalNlriUpdate',
-        'Enabled': 'enabled',
-        'EndOfRib': 'endOfRib',
-        'FromPacking': 'fromPacking',
-        'FromPrefix': 'fromPrefix',
-        'IpType': 'ipType',
-        'IterationStep': 'iterationStep',
-        'LocalPref': 'localPref',
-        'Med': 'med',
-        'NetworkAddress': 'networkAddress',
-        'NextHopIpAddress': 'nextHopIpAddress',
-        'NextHopMode': 'nextHopMode',
-        'NextHopSetMode': 'nextHopSetMode',
-        'NumRoutes': 'numRoutes',
-        'OriginProtocol': 'originProtocol',
-        'OriginatorId': 'originatorId',
-        'ThruPacking': 'thruPacking',
-        'ThruPrefix': 'thruPrefix',
+        "AdvertiseNextHopAsV4": "advertiseNextHopAsV4",
+        "AggregatorAsNum": "aggregatorAsNum",
+        "AggregatorIpAddress": "aggregatorIpAddress",
+        "AsPathSetMode": "asPathSetMode",
+        "EnableAggregator": "enableAggregator",
+        "EnableAggregatorIdIncrementMode": "enableAggregatorIdIncrementMode",
+        "EnableAsPath": "enableAsPath",
+        "EnableAtomicAttribute": "enableAtomicAttribute",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableGenerateUniqueRoutes": "enableGenerateUniqueRoutes",
+        "EnableIncludeLoopback": "enableIncludeLoopback",
+        "EnableIncludeMulticast": "enableIncludeMulticast",
+        "EnableLocalPref": "enableLocalPref",
+        "EnableMed": "enableMed",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "EnableTraditionalNlriUpdate": "enableTraditionalNlriUpdate",
+        "Enabled": "enabled",
+        "EndOfRib": "endOfRib",
+        "FromPacking": "fromPacking",
+        "FromPrefix": "fromPrefix",
+        "IpType": "ipType",
+        "IterationStep": "iterationStep",
+        "LocalPref": "localPref",
+        "Med": "med",
+        "NetworkAddress": "networkAddress",
+        "NextHopIpAddress": "nextHopIpAddress",
+        "NextHopMode": "nextHopMode",
+        "NextHopSetMode": "nextHopSetMode",
+        "NumRoutes": "numRoutes",
+        "OriginProtocol": "originProtocol",
+        "OriginatorId": "originatorId",
+        "ThruPacking": "thruPacking",
+        "ThruPrefix": "thruPrefix",
     }
     _SDM_ENUM_MAP = {
-        'asPathSetMode': ['noInclude', 'includeAsSeq', 'includeAsSet', 'includeAsSeqConf', 'includeAsSetConf', 'prependAs'],
-        'ipType': ['ipAny', 'ipv4', 'ipv6'],
-        'nextHopMode': ['fixed', 'nextHopIncrement', 'incrementPerPrefix'],
-        'nextHopSetMode': ['setManually', 'sameAsLocalIp'],
-        'originProtocol': ['igp', 'egp', 'incomplete'],
+        "asPathSetMode": [
+            "noInclude",
+            "includeAsSeq",
+            "includeAsSet",
+            "includeAsSeqConf",
+            "includeAsSetConf",
+            "prependAs",
+        ],
+        "ipType": ["ipAny", "ipv4", "ipv6"],
+        "nextHopMode": ["fixed", "nextHopIncrement", "incrementPerPrefix"],
+        "nextHopSetMode": ["setManually", "sameAsLocalIp"],
+        "originProtocol": ["igp", "egp", "incomplete"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -95,10 +103,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_768d9a7686c3f3831230ede95c06ead1 import AsSegment
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_768d9a7686c3f3831230ede95c06ead1 import (
+            AsSegment,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AsSegment', None) is not None:
-                return self._properties.get('AsSegment')
+            if self._properties.get("AsSegment", None) is not None:
+                return self._properties.get("AsSegment")
         return AsSegment(self)._select()
 
     @property
@@ -112,10 +123,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f5dfc012c0c1d2f27652ce60f19a838a import Cluster
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f5dfc012c0c1d2f27652ce60f19a838a import (
+            Cluster,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Cluster', None) is not None:
-                return self._properties.get('Cluster')
+            if self._properties.get("Cluster", None) is not None:
+                return self._properties.get("Cluster")
         return Cluster(self)._select()
 
     @property
@@ -129,10 +143,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_9b24d345545116b92eb59a916175c6d2 import Community
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_9b24d345545116b92eb59a916175c6d2 import (
+            Community,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Community', None) is not None:
-                return self._properties.get('Community')
+            if self._properties.get("Community", None) is not None:
+                return self._properties.get("Community")
         return Community(self)._select()
 
     @property
@@ -146,10 +163,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_d16b92453ed6944893c8ecdac946dce2 import ExtendedCommunity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_d16b92453ed6944893c8ecdac946dce2 import (
+            ExtendedCommunity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ExtendedCommunity', None) is not None:
-                return self._properties.get('ExtendedCommunity')
+            if self._properties.get("ExtendedCommunity", None) is not None:
+                return self._properties.get("ExtendedCommunity")
         return ExtendedCommunity(self)._select()
 
     @property
@@ -163,10 +183,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0ce469197ce32c0b81e485d606cd5b40 import Flapping
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0ce469197ce32c0b81e485d606cd5b40 import (
+            Flapping,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Flapping', None) is not None:
-                return self._properties.get('Flapping')
+            if self._properties.get("Flapping", None) is not None:
+                return self._properties.get("Flapping")
         return Flapping(self)._select()
 
     @property
@@ -180,10 +203,13 @@ class MplsRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_9c36d013d7e3f2df1ba135cca99d582a import LabelSpace
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_9c36d013d7e3f2df1ba135cca99d582a import (
+            LabelSpace,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LabelSpace', None) is not None:
-                return self._properties.get('LabelSpace')
+            if self._properties.get("LabelSpace", None) is not None:
+                return self._properties.get("LabelSpace")
         return LabelSpace(self)._select()
 
     @property
@@ -194,11 +220,12 @@ class MplsRouteRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseNextHopAsV4'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseNextHopAsV4"])
+
     @AdvertiseNextHopAsV4.setter
     def AdvertiseNextHopAsV4(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseNextHopAsV4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseNextHopAsV4"], value)
 
     @property
     def AggregatorAsNum(self):
@@ -208,11 +235,12 @@ class MplsRouteRange(Base):
         -------
         - number: If enabled, sets the AS associated with the aggregator router ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorAsNum'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorAsNum"])
+
     @AggregatorAsNum.setter
     def AggregatorAsNum(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorAsNum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorAsNum"], value)
 
     @property
     def AggregatorIpAddress(self):
@@ -222,11 +250,12 @@ class MplsRouteRange(Base):
         -------
         - str: If enabled, generates an aggregator attribute that indicates the router ID of the router that aggregated two or more routes into one.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorIpAddress"])
+
     @AggregatorIpAddress.setter
     def AggregatorIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorIpAddress"], value)
 
     @property
     def AsPathSetMode(self):
@@ -236,11 +265,12 @@ class MplsRouteRange(Base):
         -------
         - str(noInclude | includeAsSeq | includeAsSet | includeAsSeqConf | includeAsSetConf | prependAs): The mode to set the AsPath. Possible values include:+ noInclude+ includeAsSeq+ includeAsSet+ includeAsSeqConf+ includeAsSetConf+ prependAs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPathSetMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPathSetMode"])
+
     @AsPathSetMode.setter
     def AsPathSetMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsPathSetMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsPathSetMode"], value)
 
     @property
     def EnableAggregator(self):
@@ -250,11 +280,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If enabled, generates an aggregator attribute that indicates the router ID that aggregated two or more routes into one.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAggregator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAggregator"])
+
     @EnableAggregator.setter
     def EnableAggregator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAggregator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAggregator"], value)
 
     @property
     def EnableAggregatorIdIncrementMode(self):
@@ -264,11 +295,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, Causes the AS field to be incremented for each neighbor session generated for the range of neighbor addresses in the AGGREGATOR attribute. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorIdIncrementMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorIdIncrementMode"])
+
     @EnableAggregatorIdIncrementMode.setter
     def EnableAggregatorIdIncrementMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAggregatorIdIncrementMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAggregatorIdIncrementMode"], value)
 
     @property
     def EnableAsPath(self):
@@ -278,11 +310,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, Enables the generation of AS Path related items.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAsPath"])
+
     @EnableAsPath.setter
     def EnableAsPath(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAsPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAsPath"], value)
 
     @property
     def EnableAtomicAttribute(self):
@@ -292,11 +325,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If enabled, sets the attribute bit that indicates that the router has aggregated two or more prefixes together into one.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAttribute'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAttribute"])
+
     @EnableAtomicAttribute.setter
     def EnableAtomicAttribute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAtomicAttribute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAtomicAttribute"], value)
 
     @property
     def EnableCluster(self):
@@ -306,11 +340,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If enabled, generates a list of BGP clusters that a particular route has passed through.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCluster"])
+
     @EnableCluster.setter
     def EnableCluster(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCluster"], value)
 
     @property
     def EnableCommunity(self):
@@ -320,11 +355,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If enabled, indicates that a community attribute should be added to the BGP entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+
     @EnableCommunity.setter
     def EnableCommunity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCommunity"], value)
 
     @property
     def EnableGenerateUniqueRoutes(self):
@@ -334,11 +370,12 @@ class MplsRouteRange(Base):
         -------
         - bool: When true, each router generates a different IP address range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGenerateUniqueRoutes"])
+
     @EnableGenerateUniqueRoutes.setter
     def EnableGenerateUniqueRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGenerateUniqueRoutes"], value)
 
     @property
     def EnableIncludeLoopback(self):
@@ -348,11 +385,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, will include the loopback address (127.0.0.1) if it is in the generated network range. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeLoopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIncludeLoopback"])
+
     @EnableIncludeLoopback.setter
     def EnableIncludeLoopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIncludeLoopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIncludeLoopback"], value)
 
     @property
     def EnableIncludeMulticast(self):
@@ -362,11 +400,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, will include multicast addresses if they are in the generated network range. The SAFI used for multicast addresses is dictated by the setting of the enableProperSafi option. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeMulticast'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIncludeMulticast"])
+
     @EnableIncludeMulticast.setter
     def EnableIncludeMulticast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIncludeMulticast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIncludeMulticast"], value)
 
     @property
     def EnableLocalPref(self):
@@ -376,11 +415,12 @@ class MplsRouteRange(Base):
         -------
         - bool: Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLocalPref"])
+
     @EnableLocalPref.setter
     def EnableLocalPref(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLocalPref"], value)
 
     @property
     def EnableMed(self):
@@ -390,11 +430,12 @@ class MplsRouteRange(Base):
         -------
         - bool: Enables the generation of a MULTI EXIT DISCRIMINATOR attribute, based on the information in MED. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMed'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMed"])
+
     @EnableMed.setter
     def EnableMed(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMed"], value)
 
     @property
     def EnableNextHop(self):
@@ -404,11 +445,12 @@ class MplsRouteRange(Base):
         -------
         - bool: Enables the generation of a NEXT HOP attribute, based on information in nextHopIpAddress and nextHopMode (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"])
+
     @EnableNextHop.setter
     def EnableNextHop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextHop"], value)
 
     @property
     def EnableOrigin(self):
@@ -418,11 +460,12 @@ class MplsRouteRange(Base):
         -------
         - bool: Enables the generation of an ORIGIN attribute, based on information in originProtocol. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOrigin'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"])
+
     @EnableOrigin.setter
     def EnableOrigin(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOrigin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOrigin"], value)
 
     @property
     def EnableOriginatorId(self):
@@ -432,11 +475,12 @@ class MplsRouteRange(Base):
         -------
         - bool: Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+
     @EnableOriginatorId.setter
     def EnableOriginatorId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOriginatorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOriginatorId"], value)
 
     @property
     def EnableTraditionalNlriUpdate(self):
@@ -446,11 +490,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableTraditionalNlriUpdate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableTraditionalNlriUpdate"])
+
     @EnableTraditionalNlriUpdate.setter
     def EnableTraditionalNlriUpdate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableTraditionalNlriUpdate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableTraditionalNlriUpdate"], value)
 
     @property
     def Enabled(self):
@@ -460,11 +505,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, enables the MPLS route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EndOfRib(self):
@@ -474,11 +520,12 @@ class MplsRouteRange(Base):
         -------
         - bool: If true, enables end of rib
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EndOfRib'])
+        return self._get_attribute(self._SDM_ATT_MAP["EndOfRib"])
+
     @EndOfRib.setter
     def EndOfRib(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EndOfRib'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EndOfRib"], value)
 
     @property
     def FromPacking(self):
@@ -488,11 +535,12 @@ class MplsRouteRange(Base):
         -------
         - number: The minimum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FromPacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["FromPacking"])
+
     @FromPacking.setter
     def FromPacking(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FromPacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FromPacking"], value)
 
     @property
     def FromPrefix(self):
@@ -502,11 +550,12 @@ class MplsRouteRange(Base):
         -------
         - number: The first prefix length to generate based on the networkAddress and numRanges. (default = 24)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FromPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["FromPrefix"])
+
     @FromPrefix.setter
     def FromPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FromPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FromPrefix"], value)
 
     @property
     def IpType(self):
@@ -516,11 +565,12 @@ class MplsRouteRange(Base):
         -------
         - str(ipAny | ipv4 | ipv6): The Internet Protocol type for the addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def IterationStep(self):
@@ -530,11 +580,12 @@ class MplsRouteRange(Base):
         -------
         - number: During prefix generation, the increment between prefixes. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IterationStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IterationStep"])
+
     @IterationStep.setter
     def IterationStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IterationStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IterationStep"], value)
 
     @property
     def LocalPref(self):
@@ -544,11 +595,12 @@ class MplsRouteRange(Base):
         -------
         - number: The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPref"])
+
     @LocalPref.setter
     def LocalPref(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalPref"], value)
 
     @property
     def Med(self):
@@ -558,11 +610,12 @@ class MplsRouteRange(Base):
         -------
         - number: The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Med'])
+        return self._get_attribute(self._SDM_ATT_MAP["Med"])
+
     @Med.setter
     def Med(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Med'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Med"], value)
 
     @property
     def NetworkAddress(self):
@@ -572,11 +625,12 @@ class MplsRouteRange(Base):
         -------
         - str: The network address used for the generated prefixes, in either IPv4 or IPv6 format. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkAddress"])
+
     @NetworkAddress.setter
     def NetworkAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkAddress"], value)
 
     @property
     def NextHopIpAddress(self):
@@ -586,11 +640,12 @@ class MplsRouteRange(Base):
         -------
         - str: The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopIpAddress"])
+
     @NextHopIpAddress.setter
     def NextHopIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopIpAddress"], value)
 
     @property
     def NextHopMode(self):
@@ -600,11 +655,12 @@ class MplsRouteRange(Base):
         -------
         - str(fixed | nextHopIncrement | incrementPerPrefix): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopMode"])
+
     @NextHopMode.setter
     def NextHopMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopMode"], value)
 
     @property
     def NextHopSetMode(self):
@@ -614,11 +670,12 @@ class MplsRouteRange(Base):
         -------
         - str(setManually | sameAsLocalIp): Indicates now to set the next hop IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopSetMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopSetMode"])
+
     @NextHopSetMode.setter
     def NextHopSetMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopSetMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopSetMode"], value)
 
     @property
     def NumRoutes(self):
@@ -628,11 +685,12 @@ class MplsRouteRange(Base):
         -------
         - number: The number of prefixes (routes) to generate for this routeItem. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRoutes"])
+
     @NumRoutes.setter
     def NumRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRoutes"], value)
 
     @property
     def OriginProtocol(self):
@@ -642,11 +700,12 @@ class MplsRouteRange(Base):
         -------
         - str(igp | egp | incomplete): An indication of where the route entry originated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginProtocol"])
+
     @OriginProtocol.setter
     def OriginProtocol(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginProtocol"], value)
 
     @property
     def OriginatorId(self):
@@ -656,11 +715,12 @@ class MplsRouteRange(Base):
         -------
         - str: The ID for the router that originated the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatorId"])
+
     @OriginatorId.setter
     def OriginatorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatorId"], value)
 
     @property
     def ThruPacking(self):
@@ -670,11 +730,12 @@ class MplsRouteRange(Base):
         -------
         - number: The maximum number of routes to pack into an UPDATE message. Random numbers are chosen from the range fromPacking to toPacking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ThruPacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["ThruPacking"])
+
     @ThruPacking.setter
     def ThruPacking(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ThruPacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ThruPacking"], value)
 
     @property
     def ThruPrefix(self):
@@ -684,13 +745,52 @@ class MplsRouteRange(Base):
         -------
         - number: The last prefix length to generate based on the networkAddress and numRanges. (default = 24)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ThruPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["ThruPrefix"])
+
     @ThruPrefix.setter
     def ThruPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ThruPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ThruPrefix"], value)
 
-    def update(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, AsPathSetMode=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, ThruPacking=None, ThruPrefix=None):
+    def update(
+        self,
+        AdvertiseNextHopAsV4=None,
+        AggregatorAsNum=None,
+        AggregatorIpAddress=None,
+        AsPathSetMode=None,
+        EnableAggregator=None,
+        EnableAggregatorIdIncrementMode=None,
+        EnableAsPath=None,
+        EnableAtomicAttribute=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableIncludeLoopback=None,
+        EnableIncludeMulticast=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableTraditionalNlriUpdate=None,
+        Enabled=None,
+        EndOfRib=None,
+        FromPacking=None,
+        FromPrefix=None,
+        IpType=None,
+        IterationStep=None,
+        LocalPref=None,
+        Med=None,
+        NetworkAddress=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        NumRoutes=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        ThruPacking=None,
+        ThruPrefix=None,
+    ):
         # type: (bool, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, int, int, int, str, str, str, str, int, str, str, int, int) -> MplsRouteRange
         """Updates mplsRouteRange resource on the server.
 
@@ -739,7 +839,45 @@ class MplsRouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, AsPathSetMode=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, ThruPacking=None, ThruPrefix=None):
+    def add(
+        self,
+        AdvertiseNextHopAsV4=None,
+        AggregatorAsNum=None,
+        AggregatorIpAddress=None,
+        AsPathSetMode=None,
+        EnableAggregator=None,
+        EnableAggregatorIdIncrementMode=None,
+        EnableAsPath=None,
+        EnableAtomicAttribute=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableIncludeLoopback=None,
+        EnableIncludeMulticast=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableTraditionalNlriUpdate=None,
+        Enabled=None,
+        EndOfRib=None,
+        FromPacking=None,
+        FromPrefix=None,
+        IpType=None,
+        IterationStep=None,
+        LocalPref=None,
+        Med=None,
+        NetworkAddress=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        NumRoutes=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        ThruPacking=None,
+        ThruPrefix=None,
+    ):
         # type: (bool, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, int, int, int, str, str, str, str, int, str, str, int, int) -> MplsRouteRange
         """Adds a new mplsRouteRange resource on the server and adds it to the container.
 
@@ -802,7 +940,45 @@ class MplsRouteRange(Base):
         """
         self._delete()
 
-    def find(self, AdvertiseNextHopAsV4=None, AggregatorAsNum=None, AggregatorIpAddress=None, AsPathSetMode=None, EnableAggregator=None, EnableAggregatorIdIncrementMode=None, EnableAsPath=None, EnableAtomicAttribute=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableIncludeLoopback=None, EnableIncludeMulticast=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableTraditionalNlriUpdate=None, Enabled=None, EndOfRib=None, FromPacking=None, FromPrefix=None, IpType=None, IterationStep=None, LocalPref=None, Med=None, NetworkAddress=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, NumRoutes=None, OriginProtocol=None, OriginatorId=None, ThruPacking=None, ThruPrefix=None):
+    def find(
+        self,
+        AdvertiseNextHopAsV4=None,
+        AggregatorAsNum=None,
+        AggregatorIpAddress=None,
+        AsPathSetMode=None,
+        EnableAggregator=None,
+        EnableAggregatorIdIncrementMode=None,
+        EnableAsPath=None,
+        EnableAtomicAttribute=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableIncludeLoopback=None,
+        EnableIncludeMulticast=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableTraditionalNlriUpdate=None,
+        Enabled=None,
+        EndOfRib=None,
+        FromPacking=None,
+        FromPrefix=None,
+        IpType=None,
+        IterationStep=None,
+        LocalPref=None,
+        Med=None,
+        NetworkAddress=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        NumRoutes=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        ThruPacking=None,
+        ThruPrefix=None,
+    ):
         # type: (bool, int, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, int, int, int, str, str, str, str, int, str, str, int, int) -> MplsRouteRange
         """Finds and retrieves mplsRouteRange resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class ProtocolStack(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'protocolStack'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "protocolStack"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ProtocolStack, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.amtglobals.amtglobals import AmtGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.amtglobals.amtglobals import (
+            AmtGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AmtGlobals', None) is not None:
-                return self._properties.get('AmtGlobals')
+            if self._properties.get("AmtGlobals", None) is not None:
+                return self._properties.get("AmtGlobals")
         return AmtGlobals(self)
 
     @property
@@ -69,10 +71,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpglobals import AncpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpglobals import (
+            AncpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpGlobals', None) is not None:
-                return self._properties.get('AncpGlobals')
+            if self._properties.get("AncpGlobals", None) is not None:
+                return self._properties.get("AncpGlobals")
         return AncpGlobals(self)
 
     @property
@@ -86,10 +91,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dcbxglobals.dcbxglobals import DcbxGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dcbxglobals.dcbxglobals import (
+            DcbxGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DcbxGlobals', None) is not None:
-                return self._properties.get('DcbxGlobals')
+            if self._properties.get("DcbxGlobals", None) is not None:
+                return self._properties.get("DcbxGlobals")
         return DcbxGlobals(self)
 
     @property
@@ -103,10 +111,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpglobals import DhcpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpglobals import (
+            DhcpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpGlobals', None) is not None:
-                return self._properties.get('DhcpGlobals')
+            if self._properties.get("DhcpGlobals", None) is not None:
+                return self._properties.get("DhcpGlobals")
         return DhcpGlobals(self)
 
     @property
@@ -120,10 +131,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcphostsglobals.dhcphostsglobals import DhcpHostsGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcphostsglobals.dhcphostsglobals import (
+            DhcpHostsGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpHostsGlobals', None) is not None:
-                return self._properties.get('DhcpHostsGlobals')
+            if self._properties.get("DhcpHostsGlobals", None) is not None:
+                return self._properties.get("DhcpHostsGlobals")
         return DhcpHostsGlobals(self)
 
     @property
@@ -137,10 +151,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpserverglobals.dhcpserverglobals import DhcpServerGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpserverglobals.dhcpserverglobals import (
+            DhcpServerGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpServerGlobals', None) is not None:
-                return self._properties.get('DhcpServerGlobals')
+            if self._properties.get("DhcpServerGlobals", None) is not None:
+                return self._properties.get("DhcpServerGlobals")
         return DhcpServerGlobals(self)
 
     @property
@@ -154,10 +171,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6clientglobals.dhcpv6clientglobals import Dhcpv6ClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6clientglobals.dhcpv6clientglobals import (
+            Dhcpv6ClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6ClientGlobals', None) is not None:
-                return self._properties.get('Dhcpv6ClientGlobals')
+            if self._properties.get("Dhcpv6ClientGlobals", None) is not None:
+                return self._properties.get("Dhcpv6ClientGlobals")
         return Dhcpv6ClientGlobals(self)
 
     @property
@@ -171,10 +191,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdclientglobals import Dhcpv6PdClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdclientglobals import (
+            Dhcpv6PdClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6PdClientGlobals', None) is not None:
-                return self._properties.get('Dhcpv6PdClientGlobals')
+            if self._properties.get("Dhcpv6PdClientGlobals", None) is not None:
+                return self._properties.get("Dhcpv6PdClientGlobals")
         return Dhcpv6PdClientGlobals(self)
 
     @property
@@ -188,10 +211,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6serverglobals.dhcpv6serverglobals import Dhcpv6ServerGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6serverglobals.dhcpv6serverglobals import (
+            Dhcpv6ServerGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6ServerGlobals', None) is not None:
-                return self._properties.get('Dhcpv6ServerGlobals')
+            if self._properties.get("Dhcpv6ServerGlobals", None) is not None:
+                return self._properties.get("Dhcpv6ServerGlobals")
         return Dhcpv6ServerGlobals(self)
 
     @property
@@ -205,10 +231,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.dot1xglobals import Dot1xGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.dot1xglobals import (
+            Dot1xGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1xGlobals', None) is not None:
-                return self._properties.get('Dot1xGlobals')
+            if self._properties.get("Dot1xGlobals", None) is not None:
+                return self._properties.get("Dot1xGlobals")
         return Dot1xGlobals(self)
 
     @property
@@ -222,10 +251,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.eapoudpglobals import EapoUdpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.eapoudpglobals import (
+            EapoUdpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EapoUdpGlobals', None) is not None:
-                return self._properties.get('EapoUdpGlobals')
+            if self._properties.get("EapoUdpGlobals", None) is not None:
+                return self._properties.get("EapoUdpGlobals")
         return EapoUdpGlobals(self)
 
     @property
@@ -239,10 +271,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpclientglobals.egtpclientglobals import EgtpClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpclientglobals.egtpclientglobals import (
+            EgtpClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgtpClientGlobals', None) is not None:
-                return self._properties.get('EgtpClientGlobals')
+            if self._properties.get("EgtpClientGlobals", None) is not None:
+                return self._properties.get("EgtpClientGlobals")
         return EgtpClientGlobals(self)
 
     @property
@@ -256,10 +291,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpglobalsbase.egtpglobalsbase import EgtpGlobalsBase
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpglobalsbase.egtpglobalsbase import (
+            EgtpGlobalsBase,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgtpGlobalsBase', None) is not None:
-                return self._properties.get('EgtpGlobalsBase')
+            if self._properties.get("EgtpGlobalsBase", None) is not None:
+                return self._properties.get("EgtpGlobalsBase")
         return EgtpGlobalsBase(self)
 
     @property
@@ -273,10 +311,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8pgwglobals.egtps5s8pgwglobals import EgtpS5S8PgwGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8pgwglobals.egtps5s8pgwglobals import (
+            EgtpS5S8PgwGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgtpS5S8PgwGlobals', None) is not None:
-                return self._properties.get('EgtpS5S8PgwGlobals')
+            if self._properties.get("EgtpS5S8PgwGlobals", None) is not None:
+                return self._properties.get("EgtpS5S8PgwGlobals")
         return EgtpS5S8PgwGlobals(self)
 
     @property
@@ -290,10 +331,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.egtps5s8sgwglobals import EgtpS5S8SgwGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.egtps5s8sgwglobals import (
+            EgtpS5S8SgwGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgtpS5S8SgwGlobals', None) is not None:
-                return self._properties.get('EgtpS5S8SgwGlobals')
+            if self._properties.get("EgtpS5S8SgwGlobals", None) is not None:
+                return self._properties.get("EgtpS5S8SgwGlobals")
         return EgtpS5S8SgwGlobals(self)
 
     @property
@@ -307,10 +351,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpsgwglobals.egtpsgwglobals import EgtpSgwGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpsgwglobals.egtpsgwglobals import (
+            EgtpSgwGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgtpSgwGlobals', None) is not None:
-                return self._properties.get('EgtpSgwGlobals')
+            if self._properties.get("EgtpSgwGlobals", None) is not None:
+                return self._properties.get("EgtpSgwGlobals")
         return EgtpSgwGlobals(self)
 
     @property
@@ -324,10 +371,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcclientglobals.fcclientglobals import FcClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcclientglobals.fcclientglobals import (
+            FcClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcClientGlobals', None) is not None:
-                return self._properties.get('FcClientGlobals')
+            if self._properties.get("FcClientGlobals", None) is not None:
+                return self._properties.get("FcClientGlobals")
         return FcClientGlobals(self)
 
     @property
@@ -341,10 +391,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcfportglobals.fcfportglobals import FcFportGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcfportglobals.fcfportglobals import (
+            FcFportGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcFportGlobals', None) is not None:
-                return self._properties.get('FcFportGlobals')
+            if self._properties.get("FcFportGlobals", None) is not None:
+                return self._properties.get("FcFportGlobals")
         return FcFportGlobals(self)
 
     @property
@@ -358,10 +411,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientglobals import FcoeClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientglobals import (
+            FcoeClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeClientGlobals', None) is not None:
-                return self._properties.get('FcoeClientGlobals')
+            if self._properties.get("FcoeClientGlobals", None) is not None:
+                return self._properties.get("FcoeClientGlobals")
         return FcoeClientGlobals(self)
 
     @property
@@ -375,10 +431,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoefwdglobals.fcoefwdglobals import FcoeFwdGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoefwdglobals.fcoefwdglobals import (
+            FcoeFwdGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeFwdGlobals', None) is not None:
-                return self._properties.get('FcoeFwdGlobals')
+            if self._properties.get("FcoeFwdGlobals", None) is not None:
+                return self._properties.get("FcoeFwdGlobals")
         return FcoeFwdGlobals(self)
 
     @property
@@ -392,10 +451,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpglobals import IgmpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpglobals import (
+            IgmpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpGlobals', None) is not None:
-                return self._properties.get('IgmpGlobals')
+            if self._properties.get("IgmpGlobals", None) is not None:
+                return self._properties.get("IgmpGlobals")
         return IgmpGlobals(self)
 
     @property
@@ -409,10 +471,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ipglobals.ipglobals import IpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ipglobals.ipglobals import (
+            IpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IpGlobals', None) is not None:
-                return self._properties.get('IpGlobals')
+            if self._properties.get("IpGlobals", None) is not None:
+                return self._properties.get("IpGlobals")
         return IpGlobals(self)
 
     @property
@@ -426,10 +491,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvglobals import IptvGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvglobals import (
+            IptvGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IptvGlobals', None) is not None:
-                return self._properties.get('IptvGlobals')
+            if self._properties.get("IptvGlobals", None) is not None:
+                return self._properties.get("IptvGlobals")
         return IptvGlobals(self)
 
     @property
@@ -443,10 +511,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.l2tpglobals.l2tpglobals import L2tpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.l2tpglobals.l2tpglobals import (
+            L2tpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpGlobals', None) is not None:
-                return self._properties.get('L2tpGlobals')
+            if self._properties.get("L2tpGlobals", None) is not None:
+                return self._properties.get("L2tpGlobals")
         return L2tpGlobals(self)
 
     @property
@@ -460,10 +531,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.pppoxglobals.pppoxglobals import PppoxGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.pppoxglobals.pppoxglobals import (
+            PppoxGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppoxGlobals', None) is not None:
-                return self._properties.get('PppoxGlobals')
+            if self._properties.get("PppoxGlobals", None) is not None:
+                return self._properties.get("PppoxGlobals")
         return PppoxGlobals(self)
 
     @property
@@ -477,10 +551,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ptpglobals.ptpglobals import PtpGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ptpglobals.ptpglobals import (
+            PtpGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpGlobals', None) is not None:
-                return self._properties.get('PtpGlobals')
+            if self._properties.get("PtpGlobals", None) is not None:
+                return self._properties.get("PtpGlobals")
         return PtpGlobals(self)
 
     @property
@@ -494,10 +571,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.radiusglobals import RadiusGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.radiusglobals import (
+            RadiusGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RadiusGlobals', None) is not None:
-                return self._properties.get('RadiusGlobals')
+            if self._properties.get("RadiusGlobals", None) is not None:
+                return self._properties.get("RadiusGlobals")
         return RadiusGlobals(self)
 
     @property
@@ -511,10 +591,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.statichostsglobals.statichostsglobals import StaticHostsGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.statichostsglobals.statichostsglobals import (
+            StaticHostsGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StaticHostsGlobals', None) is not None:
-                return self._properties.get('StaticHostsGlobals')
+            if self._properties.get("StaticHostsGlobals", None) is not None:
+                return self._properties.get("StaticHostsGlobals")
         return StaticHostsGlobals(self)
 
     @property
@@ -528,10 +611,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.twampglobals.twampglobals import TwampGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.twampglobals.twampglobals import (
+            TwampGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TwampGlobals', None) is not None:
-                return self._properties.get('TwampGlobals')
+            if self._properties.get("TwampGlobals", None) is not None:
+                return self._properties.get("TwampGlobals")
         return TwampGlobals(self)
 
     @property
@@ -545,10 +631,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vepaglobals.vepaglobals import VepaGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vepaglobals.vepaglobals import (
+            VepaGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VepaGlobals', None) is not None:
-                return self._properties.get('VepaGlobals')
+            if self._properties.get("VepaGlobals", None) is not None:
+                return self._properties.get("VepaGlobals")
         return VepaGlobals(self)
 
     @property
@@ -562,10 +651,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicclientglobals import VicClientGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicclientglobals import (
+            VicClientGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicClientGlobals', None) is not None:
-                return self._properties.get('VicClientGlobals')
+            if self._properties.get("VicClientGlobals", None) is not None:
+                return self._properties.get("VicClientGlobals")
         return VicClientGlobals(self)
 
     @property
@@ -579,10 +671,13 @@ class ProtocolStack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.webauthglobals.webauthglobals import WebAuthGlobals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.webauthglobals.webauthglobals import (
+            WebAuthGlobals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WebAuthGlobals', None) is not None:
-                return self._properties.get('WebAuthGlobals')
+            if self._properties.get("WebAuthGlobals", None) is not None:
+                return self._properties.get("WebAuthGlobals")
         return WebAuthGlobals(self)
 
     def find(self):

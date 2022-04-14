@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,48 +35,62 @@ class ECpriRe(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eCpriRe'
+    _SDM_NAME = "eCpriRe"
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
-        'Active': 'active',
-        'Address': 'address',
-        'CompensationValue': 'compensationValue',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DelayMeasurementId': 'delayMeasurementId',
-        'DescriptiveName': 'descriptiveName',
-        'DummyBytesLength': 'dummyBytesLength',
-        'ElementId': 'elementId',
-        'Errors': 'errors',
-        'EventId': 'eventId',
-        'EventSequenceNumber': 'eventSequenceNumber',
-        'EventType': 'eventType',
-        'MessageType': 'messageType',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfFaultSubObjects': 'numberOfFaultSubObjects',
-        'ReadWriteType': 'readWriteType',
-        'RemoteResetId': 'remoteResetId',
-        'ReservedActionType': 'reservedActionType',
-        'ReservedEventType': 'reservedEventType',
-        'ReservedResetCode': 'reservedResetCode',
-        'ResetCodeOp': 'resetCodeOp',
-        'RmaAction': 'rmaAction',
-        'RmaDataLength': 'rmaDataLength',
-        'RtcDataLength': 'rtcDataLength',
-        'SequenceId': 'sequenceId',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StartingRmaId': 'startingRmaId',
-        'StartingRtcId': 'startingRtcId',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TimeStamp': 'timeStamp',
-        'VendorSpecificPayloadLength': 'vendorSpecificPayloadLength',
+        "ActionType": "actionType",
+        "Active": "active",
+        "Address": "address",
+        "CompensationValue": "compensationValue",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DelayMeasurementId": "delayMeasurementId",
+        "DescriptiveName": "descriptiveName",
+        "DummyBytesLength": "dummyBytesLength",
+        "ElementId": "elementId",
+        "Errors": "errors",
+        "EventId": "eventId",
+        "EventSequenceNumber": "eventSequenceNumber",
+        "EventType": "eventType",
+        "MessageType": "messageType",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberOfFaultSubObjects": "numberOfFaultSubObjects",
+        "ReadWriteType": "readWriteType",
+        "RemoteResetId": "remoteResetId",
+        "ReservedActionType": "reservedActionType",
+        "ReservedEventType": "reservedEventType",
+        "ReservedResetCode": "reservedResetCode",
+        "ResetCodeOp": "resetCodeOp",
+        "RmaAction": "rmaAction",
+        "RmaDataLength": "rmaDataLength",
+        "RtcDataLength": "rtcDataLength",
+        "SequenceId": "sequenceId",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StartingRmaId": "startingRmaId",
+        "StartingRtcId": "startingRtcId",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TimeStamp": "timeStamp",
+        "VendorSpecificPayloadLength": "vendorSpecificPayloadLength",
     }
     _SDM_ENUM_MAP = {
-        'messageType': ['realTimeControlData', 'remoteMemoryAccess', 'onewayDelayMeasurement', 'remoteReset', 'eventIndication'],
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "messageType": [
+            "realTimeControlData",
+            "remoteMemoryAccess",
+            "onewayDelayMeasurement",
+            "remoteReset",
+            "eventIndication",
+        ],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -92,10 +107,13 @@ class ECpriRe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -109,10 +127,13 @@ class ECpriRe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist_066a935ffc4b8b88998000da08d713eb import ECpriFaultSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist_066a935ffc4b8b88998000da08d713eb import (
+            ECpriFaultSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriFaultSubObjectsList', None) is not None:
-                return self._properties.get('ECpriFaultSubObjectsList')
+            if self._properties.get("ECpriFaultSubObjectsList", None) is not None:
+                return self._properties.get("ECpriFaultSubObjectsList")
         return ECpriFaultSubObjectsList(self)
 
     @property
@@ -124,7 +145,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Action Type value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActionType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActionType"]))
 
     @property
     def Active(self):
@@ -135,7 +157,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Address(self):
@@ -146,7 +169,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Address is a 48-bit value. Details such as whether the memory on the opposite node is organized in one or more memory banks or whether an address offset is signaled over the interface etc. are vendor specific. The Element ID could be used for identifying a specific memory hardware instance.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Address"]))
 
     @property
     def CompensationValue(self):
@@ -157,21 +181,25 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When Action Type is set to 0x00 (Request), 0x02 (Response) or 0x05 (Follow_Up) in the message, this field will contain the Compensation Value which is the compensation time measured in nanoseconds and multiplied by 2 to the power 16 and follows the format for the correctionField in the common message header specified in IEEE 1588-2008 Clause 13.3 [13]. When Action Type is set to 0x03 (Remote Request) or 0x04 (Remote Request with Follow_Up) the time information fields TimeStamp and Compensation Value are set to 0b in all bits. A Compensation Value of 0 (zero) is a valid value.Example: A Compensation Value of 183.5 ns is represented as 0000000000B78000 with base 16.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CompensationValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CompensationValue"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -181,7 +209,7 @@ class ECpriRe(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DelayMeasurementId(self):
@@ -192,7 +220,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Measurement ID is a 1-byte value used by the sender of the request when the response is received to distinguish between different measurements, i.e. the receiver of the request shall copy the ID from the request into the response message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DelayMeasurementId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DelayMeasurementId"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -202,7 +233,7 @@ class ECpriRe(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DummyBytesLength(self):
@@ -213,7 +244,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of dummy bytes included in the eCPRI-payload will be defined by the eCPRI payload size field in the eCPRI common header. Due to network characteristics, a small message might take shorter time through the network than a large one, with the dummy bytes the one-way delay estimation can be improved. The insertion of dummy bytes is only needed when the Action Type set to 0x00 (Request) or to 0x01(Request with Follow_Up).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DummyBytesLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DummyBytesLength"])
+        )
 
     @property
     def ElementId(self):
@@ -224,7 +258,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Element ID could be used for instance to point out a specific instance of a generic hardware function.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ElementId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ElementId"]))
 
     @property
     def Errors(self):
@@ -233,7 +268,7 @@ class ECpriRe(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EventId(self):
@@ -244,7 +279,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A 1-byte value set by the transmitter of an Event Indication or a Synchronization Request to enable identification of the acknowledge response.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EventId"]))
 
     @property
     def EventSequenceNumber(self):
@@ -255,7 +291,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Sequence Number is a 1-byte value that is incremented each time the transmitter sends the Event Indication with Event Type set to 0x00 (Fault(s) Indication). The receiver will use the sequence number to ensure that the correct status for a specific combination of {Element-ID; Fault-value} is used. Due to the nature of the packet based fronthaul network, packets might be delivered out of order and a sequence number is needed to handle this scenario. When a fault indication is not acknowledged the transmitter will re-transmit the fault, setting the sequence number to the same value used in the initial transmission.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EventSequenceNumber"])
+        )
 
     @property
     def EventType(self):
@@ -266,7 +305,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EventType"]))
 
     @property
     def MessageType(self):
@@ -276,11 +316,12 @@ class ECpriRe(Base):
         -------
         - str(realTimeControlData | remoteMemoryAccess | onewayDelayMeasurement | remoteReset | eventIndication): Message Type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessageType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessageType"])
+
     @MessageType.setter
     def MessageType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MessageType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MessageType"], value)
 
     @property
     def Multiplier(self):
@@ -290,11 +331,12 @@ class ECpriRe(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -304,11 +346,12 @@ class ECpriRe(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfFaultSubObjects(self):
@@ -318,11 +361,12 @@ class ECpriRe(Base):
         -------
         - number: Number Of Fault or Notify.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfFaultSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfFaultSubObjects"])
+
     @NumberOfFaultSubObjects.setter
     def NumberOfFaultSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfFaultSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfFaultSubObjects"], value)
 
     @property
     def ReadWriteType(self):
@@ -333,7 +377,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The field consist of two parts, a read or write indication and a request or response indication. The Response value 0010b (Failure) is used when the receiver of the request is unable to perform the read or write request due to invalid content in received parameters or other faults.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReadWriteType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReadWriteType"]))
 
     @property
     def RemoteResetId(self):
@@ -344,7 +389,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteResetId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteResetId"]))
 
     @property
     def ReservedActionType(self):
@@ -355,7 +401,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Action Type is a 1-byte value. Value 0x00 and 0x01 are used when an eCPRI node initiates a one-way delay measurement in direction from its own node to another node. Value 0x02 is used when an eCPRI node needs to know the one-way delay from another node to itself.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedActionType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedActionType"])
+        )
 
     @property
     def ReservedEventType(self):
@@ -366,7 +415,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved Event Type values from 0x06 to 0xFF are Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedEventType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedEventType"])
+        )
 
     @property
     def ReservedResetCode(self):
@@ -377,7 +429,10 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote reset request, 0x02 represents Remote reset response and value ranging from 0x03 to 0xFF are Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedResetCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReservedResetCode"])
+        )
 
     @property
     def ResetCodeOp(self):
@@ -388,7 +443,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResetCodeOp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ResetCodeOp"]))
 
     @property
     def RmaAction(self):
@@ -399,7 +455,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RMA Action Type is Request or Response or Failure.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RmaAction']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RmaAction"]))
 
     @property
     def RmaDataLength(self):
@@ -410,7 +467,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of bytes(0 to 255) to read or write from or to remote node.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RmaDataLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RmaDataLength"]))
 
     @property
     def RtcDataLength(self):
@@ -421,7 +479,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Size of RTC data that will be included in the eCPRI message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcDataLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RtcDataLength"]))
 
     @property
     def SequenceId(self):
@@ -432,7 +491,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SequenceId"]))
 
     @property
     def SessionStatus(self):
@@ -442,7 +502,7 @@ class ECpriRe(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -452,11 +512,12 @@ class ECpriRe(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StartingRmaId(self):
@@ -467,7 +528,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identifier of the request message used by the Initiator to match the corresponding response message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingRmaId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingRmaId"]))
 
     @property
     def StartingRtcId(self):
@@ -478,7 +540,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RTC ID of the eRE or eREC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingRtcId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingRtcId"]))
 
     @property
     def StateCounts(self):
@@ -487,7 +550,7 @@ class ECpriRe(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -497,7 +560,7 @@ class ECpriRe(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TimeStamp(self):
@@ -508,7 +571,8 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When Action Type is set to 0x00 (Request) in the message this field will contain the time stamp t1 and when Action Type is set to 0x02 (Response) the time stamp t2. When action type is set to 0x01(Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits, the corresponding time information values are sent in the Follow_Up message. When Action Type is set to 0x03 or 0x04 (Remote Request and Remote Request with Follow_Up) the time stamp information fields shall be set to 0b in all bits. When using the Follow_Up message (2-Step version) the Follow_Up message (Action Type set to 0x05) the time information values t1 and tCV1 will be set to the TimeStamp field. The time information values follow the format specified in IEEE 1588-2008 [13] Clause 5.3.3. The value consists of 2 parts, one seconds-part and one nanoseconds-part. The first 6 bytes are the seconds and the next 4 bytes are the nanoseconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeStamp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TimeStamp"]))
 
     @property
     def VendorSpecificPayloadLength(self):
@@ -519,9 +583,20 @@ class ECpriRe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vendor Specific Payload bytes are used to carry optional vendor-specific information. The vendor specific information can contain data items such as authentication parameters or any parameters to select a specific reset behavior. This specification does not detail any concrete reset behavior.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorSpecificPayloadLength']))
 
-    def update(self, ConnectedVia=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, StackedLayers=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorSpecificPayloadLength"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        MessageType=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfFaultSubObjects=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], str, int, str, int, List[str]) -> ECpriRe
         """Updates eCpriRe resource on the server.
 
@@ -543,7 +618,15 @@ class ECpriRe(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        MessageType=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfFaultSubObjects=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], str, int, str, int, List[str]) -> ECpriRe
         """Adds a new eCpriRe resource on the server and adds it to the container.
 
@@ -576,7 +659,21 @@ class ECpriRe(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, MessageType=None, Multiplier=None, Name=None, NumberOfFaultSubObjects=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        MessageType=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfFaultSubObjects=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves eCpriRe resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eCpriRe resources from the server.
@@ -653,10 +750,12 @@ class ECpriRe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -685,10 +784,12 @@ class ECpriRe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -717,10 +818,12 @@ class ECpriRe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -749,12 +852,41 @@ class ECpriRe(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ActionType=None, Active=None, Address=None, CompensationValue=None, DelayMeasurementId=None, DummyBytesLength=None, ElementId=None, EventId=None, EventSequenceNumber=None, EventType=None, ReadWriteType=None, RemoteResetId=None, ReservedActionType=None, ReservedEventType=None, ReservedResetCode=None, ResetCodeOp=None, RmaAction=None, RmaDataLength=None, RtcDataLength=None, SequenceId=None, StartingRmaId=None, StartingRtcId=None, TimeStamp=None, VendorSpecificPayloadLength=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActionType=None,
+        Active=None,
+        Address=None,
+        CompensationValue=None,
+        DelayMeasurementId=None,
+        DummyBytesLength=None,
+        ElementId=None,
+        EventId=None,
+        EventSequenceNumber=None,
+        EventType=None,
+        ReadWriteType=None,
+        RemoteResetId=None,
+        ReservedActionType=None,
+        ReservedEventType=None,
+        ReservedResetCode=None,
+        ResetCodeOp=None,
+        RmaAction=None,
+        RmaDataLength=None,
+        RtcDataLength=None,
+        SequenceId=None,
+        StartingRmaId=None,
+        StartingRtcId=None,
+        TimeStamp=None,
+        VendorSpecificPayloadLength=None,
+    ):
         """Base class infrastructure that gets a list of eCpriRe device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

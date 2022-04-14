@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class CuspUPBoardInfoList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cuspUPBoardInfoList'
+    _SDM_NAME = "cuspUPBoardInfoList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseBoardInfo': 'advertiseBoardInfo',
-        'BoardStatus': 'boardStatus',
-        'BoardType': 'boardType',
-        'ChassisNumber': 'chassisNumber',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfSlots': 'numberOfSlots',
+        "Active": "active",
+        "AdvertiseBoardInfo": "advertiseBoardInfo",
+        "BoardStatus": "boardStatus",
+        "BoardType": "boardType",
+        "ChassisNumber": "chassisNumber",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NumberOfSlots": "numberOfSlots",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CuspUPBoardInfoList, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class CuspUPBoardInfoList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupslotinfolist_c6cbdb43b7a4b861579b90c6eb645cdb import CuspUPSlotInfoList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspupslotinfolist_c6cbdb43b7a4b861579b90c6eb645cdb import (
+            CuspUPSlotInfoList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspUPSlotInfoList', None) is not None:
-                return self._properties.get('CuspUPSlotInfoList')
+            if self._properties.get("CuspUPSlotInfoList", None) is not None:
+                return self._properties.get("CuspUPSlotInfoList")
         return CuspUPSlotInfoList(self)._select()
 
     @property
@@ -76,7 +79,8 @@ class CuspUPBoardInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseBoardInfo(self):
@@ -87,7 +91,10 @@ class CuspUPBoardInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertises the Board Info if enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseBoardInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseBoardInfo"])
+        )
 
     @property
     def BoardStatus(self):
@@ -98,7 +105,8 @@ class CuspUPBoardInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The status of the board.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BoardStatus']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BoardStatus"]))
 
     @property
     def BoardType(self):
@@ -109,7 +117,8 @@ class CuspUPBoardInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the board.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BoardType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BoardType"]))
 
     @property
     def ChassisNumber(self):
@@ -120,7 +129,8 @@ class CuspUPBoardInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Frame number (set to 0 if there is no frame number).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ChassisNumber"]))
 
     @property
     def Count(self):
@@ -130,7 +140,7 @@ class CuspUPBoardInfoList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -140,7 +150,7 @@ class CuspUPBoardInfoList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -150,11 +160,12 @@ class CuspUPBoardInfoList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfSlots(self):
@@ -164,11 +175,12 @@ class CuspUPBoardInfoList(Base):
         -------
         - number: Number of slots present in the board. It is atleast 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlots'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSlots"])
+
     @NumberOfSlots.setter
     def NumberOfSlots(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSlots'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSlots"], value)
 
     def update(self, Name=None, NumberOfSlots=None):
         # type: (str, int) -> CuspUPBoardInfoList
@@ -231,7 +243,15 @@ class CuspUPBoardInfoList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseBoardInfo=None, BoardStatus=None, BoardType=None, ChassisNumber=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseBoardInfo=None,
+        BoardStatus=None,
+        BoardType=None,
+        ChassisNumber=None,
+    ):
         """Base class infrastructure that gets a list of cuspUPBoardInfoList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

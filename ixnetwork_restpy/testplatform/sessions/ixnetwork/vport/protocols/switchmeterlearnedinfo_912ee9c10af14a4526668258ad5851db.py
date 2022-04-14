@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class SwitchMeterLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchMeterLearnedInfo'
+    _SDM_NAME = "switchMeterLearnedInfo"
     _SDM_ATT_MAP = {
-        'BytesInInput': 'bytesInInput',
-        'DatapathId': 'datapathId',
-        'DatapathIdAsHex': 'datapathIdAsHex',
-        'DurationNSec': 'durationNSec',
-        'DurationSec': 'durationSec',
-        'FlowCount': 'flowCount',
-        'LocalIp': 'localIp',
-        'MeterConfigurationFlags': 'meterConfigurationFlags',
-        'MeterId': 'meterId',
-        'NumOfBands': 'numOfBands',
-        'PacketsInInput': 'packetsInInput',
+        "BytesInInput": "bytesInInput",
+        "DatapathId": "datapathId",
+        "DatapathIdAsHex": "datapathIdAsHex",
+        "DurationNSec": "durationNSec",
+        "DurationSec": "durationSec",
+        "FlowCount": "flowCount",
+        "LocalIp": "localIp",
+        "MeterConfigurationFlags": "meterConfigurationFlags",
+        "MeterId": "meterId",
+        "NumOfBands": "numOfBands",
+        "PacketsInInput": "packetsInInput",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchMeterLearnedInfo, self).__init__(parent, list_op)
@@ -64,10 +64,13 @@ class SwitchMeterLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_442d49cfc16498298dbe4a2d5ee71127 import SwitchMeterBandLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_442d49cfc16498298dbe4a2d5ee71127 import (
+            SwitchMeterBandLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchMeterBandLearnedInfo', None) is not None:
-                return self._properties.get('SwitchMeterBandLearnedInfo')
+            if self._properties.get("SwitchMeterBandLearnedInfo", None) is not None:
+                return self._properties.get("SwitchMeterBandLearnedInfo")
         return SwitchMeterBandLearnedInfo(self)
 
     @property
@@ -78,7 +81,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BytesInInput'])
+        return self._get_attribute(self._SDM_ATT_MAP["BytesInInput"])
 
     @property
     def DatapathId(self):
@@ -88,7 +91,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathId"])
 
     @property
     def DatapathIdAsHex(self):
@@ -98,7 +101,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathIdAsHex"])
 
     @property
     def DurationNSec(self):
@@ -108,7 +111,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationNSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationNSec"])
 
     @property
     def DurationSec(self):
@@ -118,7 +121,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationSec"])
 
     @property
     def FlowCount(self):
@@ -128,7 +131,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowCount"])
 
     @property
     def LocalIp(self):
@@ -138,7 +141,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MeterConfigurationFlags(self):
@@ -148,7 +151,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterConfigurationFlags'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterConfigurationFlags"])
 
     @property
     def MeterId(self):
@@ -158,7 +161,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def NumOfBands(self):
@@ -168,7 +171,7 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumOfBands'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumOfBands"])
 
     @property
     def PacketsInInput(self):
@@ -178,10 +181,10 @@ class SwitchMeterLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsInInput'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsInInput"])
 
     def add(self):
-        """Adds a new switchMeterLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchMeterLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -193,7 +196,20 @@ class SwitchMeterLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BytesInInput=None, DatapathId=None, DatapathIdAsHex=None, DurationNSec=None, DurationSec=None, FlowCount=None, LocalIp=None, MeterConfigurationFlags=None, MeterId=None, NumOfBands=None, PacketsInInput=None):
+    def find(
+        self,
+        BytesInInput=None,
+        DatapathId=None,
+        DatapathIdAsHex=None,
+        DurationNSec=None,
+        DurationSec=None,
+        FlowCount=None,
+        LocalIp=None,
+        MeterConfigurationFlags=None,
+        MeterId=None,
+        NumOfBands=None,
+        PacketsInInput=None,
+    ):
         # type: (int, str, str, int, int, int, str, str, int, int, int) -> SwitchMeterLearnedInfo
         """Finds and retrieves switchMeterLearnedInfo resources from the server.
 

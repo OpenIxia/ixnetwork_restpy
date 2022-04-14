@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'RouterId': 'routerId',
+        "Enabled": "enabled",
+        "RouterId": "routerId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Router, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_6b96df240e5af86cd1a96c65039c8c84 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_6b96df240e5af86cd1a96c65039c8c84 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -70,11 +73,12 @@ class Router(Base):
         -------
         - bool: If true, it enables or disables the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RouterId(self):
@@ -84,11 +88,12 @@ class Router(Base):
         -------
         - str: This signifies the ID of the simulated router, expressed as an IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     def update(self, Enabled=None, RouterId=None):
         # type: (bool, str) -> Router

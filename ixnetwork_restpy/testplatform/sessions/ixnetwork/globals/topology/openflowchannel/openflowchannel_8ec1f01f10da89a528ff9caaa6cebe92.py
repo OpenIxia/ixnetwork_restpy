@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class OpenFlowChannel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'openFlowChannel'
+    _SDM_NAME = "openFlowChannel"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'RowNames': 'rowNames',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "RowNames": "rowNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OpenFlowChannel, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5 import FlowAggrMatchTemplate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5 import (
+            FlowAggrMatchTemplate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowAggrMatchTemplate', None) is not None:
-                return self._properties.get('FlowAggrMatchTemplate')
+            if self._properties.get("FlowAggrMatchTemplate", None) is not None:
+                return self._properties.get("FlowAggrMatchTemplate")
         return FlowAggrMatchTemplate(self)._select()
 
     @property
@@ -73,10 +76,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b import FlowStatMatchTemplate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b import (
+            FlowStatMatchTemplate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowStatMatchTemplate', None) is not None:
-                return self._properties.get('FlowStatMatchTemplate')
+            if self._properties.get("FlowStatMatchTemplate", None) is not None:
+                return self._properties.get("FlowStatMatchTemplate")
         return FlowStatMatchTemplate(self)._select()
 
     @property
@@ -90,10 +96,13 @@ class OpenFlowChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd import PacketOutActionTemplate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd import (
+            PacketOutActionTemplate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PacketOutActionTemplate', None) is not None:
-                return self._properties.get('PacketOutActionTemplate')
+            if self._properties.get("PacketOutActionTemplate", None) is not None:
+                return self._properties.get("PacketOutActionTemplate")
         return PacketOutActionTemplate(self)._select()
 
     @property
@@ -104,7 +113,7 @@ class OpenFlowChannel(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -114,7 +123,7 @@ class OpenFlowChannel(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -124,11 +133,12 @@ class OpenFlowChannel(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RowNames(self):
@@ -138,7 +148,7 @@ class OpenFlowChannel(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     def update(self, Name=None):
         # type: (str) -> OpenFlowChannel

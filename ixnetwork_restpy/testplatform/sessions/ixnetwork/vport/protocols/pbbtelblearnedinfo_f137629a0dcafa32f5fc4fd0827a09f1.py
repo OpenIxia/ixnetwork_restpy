@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class PbbTeLbLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pbbTeLbLearnedInfo'
+    _SDM_NAME = "pbbTeLbLearnedInfo"
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'MdLevel': 'mdLevel',
-        'Reachability': 'reachability',
-        'Rtt': 'rtt',
-        'SrcMacAddress': 'srcMacAddress',
-        'TransactionId': 'transactionId',
+        "BVlan": "bVlan",
+        "DstMacAddress": "dstMacAddress",
+        "MdLevel": "mdLevel",
+        "Reachability": "reachability",
+        "Rtt": "rtt",
+        "SrcMacAddress": "srcMacAddress",
+        "TransactionId": "transactionId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PbbTeLbLearnedInfo, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - str: (read only) The VLAN identifier for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def DstMacAddress(self):
@@ -67,7 +67,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - str: (read only) The destination MAC address for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def MdLevel(self):
@@ -77,7 +77,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - number: (read only) The MD level for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def Reachability(self):
@@ -87,7 +87,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - bool: (read only) If true, the Ping message was received and responded to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def Rtt(self):
@@ -97,7 +97,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - number: (read only) The round trip time for the PBB-TE loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rtt"])
 
     @property
     def SrcMacAddress(self):
@@ -107,7 +107,7 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - str: (read only) The source MAC address for the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     @property
     def TransactionId(self):
@@ -117,10 +117,10 @@ class PbbTeLbLearnedInfo(Base):
         -------
         - number: (read only) The transaction identifier sent with the loopback message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransactionId"])
 
     def add(self):
-        """Adds a new pbbTeLbLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new pbbTeLbLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -132,7 +132,16 @@ class PbbTeLbLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BVlan=None, DstMacAddress=None, MdLevel=None, Reachability=None, Rtt=None, SrcMacAddress=None, TransactionId=None):
+    def find(
+        self,
+        BVlan=None,
+        DstMacAddress=None,
+        MdLevel=None,
+        Reachability=None,
+        Rtt=None,
+        SrcMacAddress=None,
+        TransactionId=None,
+    ):
         # type: (str, str, int, bool, int, str, int) -> PbbTeLbLearnedInfo
         """Finds and retrieves pbbTeLbLearnedInfo resources from the server.
 

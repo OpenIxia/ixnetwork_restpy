@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,35 @@ class Vlan(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vlan'
+    _SDM_NAME = "vlan"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InternalRootPathCost': 'internalRootPathCost',
-        'Mac': 'mac',
-        'PortPriority': 'portPriority',
-        'Priority': 'priority',
-        'UpdateRequired': 'updateRequired',
-        'VlanId': 'vlanId',
+        "Enabled": "enabled",
+        "InternalRootPathCost": "internalRootPathCost",
+        "Mac": "mac",
+        "PortPriority": "portPriority",
+        "Priority": "priority",
+        "UpdateRequired": "updateRequired",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'priority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        "priority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +80,13 @@ class Vlan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_91d909247e15cc11a36d2ce682a6cad8 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_91d909247e15cc11a36d2ce682a6cad8 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)._select()
 
     @property
@@ -79,10 +100,13 @@ class Vlan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_12063376c05c1de5b307a327a1cf75d8 import LearnedInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_12063376c05c1de5b307a327a1cf75d8 import (
+            LearnedInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInterface', None) is not None:
-                return self._properties.get('LearnedInterface')
+            if self._properties.get("LearnedInterface", None) is not None:
+                return self._properties.get("LearnedInterface")
         return LearnedInterface(self)
 
     @property
@@ -93,11 +117,12 @@ class Vlan(Base):
         -------
         - bool: Enables the use of this STP VLAN. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InternalRootPathCost(self):
@@ -107,11 +132,12 @@ class Vlan(Base):
         -------
         - number: Administrative path cost to the root bridge. The default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalRootPathCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalRootPathCost"])
+
     @InternalRootPathCost.setter
     def InternalRootPathCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalRootPathCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalRootPathCost"], value)
 
     @property
     def Mac(self):
@@ -121,11 +147,12 @@ class Vlan(Base):
         -------
         - str: The 6-byte MAC address of the port. (default = 00:00 :00:00:00:00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mac'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mac"])
+
     @Mac.setter
     def Mac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mac"], value)
 
     @property
     def PortPriority(self):
@@ -135,11 +162,12 @@ class Vlan(Base):
         -------
         - number: The root priority for this port. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortPriority"])
+
     @PortPriority.setter
     def PortPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortPriority"], value)
 
     @property
     def Priority(self):
@@ -149,11 +177,12 @@ class Vlan(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): The port priority for the emulated port on this PVST+ or RPVST+ bridge that is connected to the VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def UpdateRequired(self):
@@ -163,11 +192,12 @@ class Vlan(Base):
         -------
         - bool: If true, cause the VLAN to update.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateRequired"])
+
     @UpdateRequired.setter
     def UpdateRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateRequired"], value)
 
     @property
     def VlanId(self):
@@ -177,13 +207,23 @@ class Vlan(Base):
         -------
         - number: The identifier for this VLAN. The valid range is 2 to 4,094. (default = 2)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+    def update(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanId=None,
+    ):
         # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Updates vlan resource on the server.
 
@@ -203,7 +243,16 @@ class Vlan(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+    def add(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanId=None,
+    ):
         # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Adds a new vlan resource on the server and adds it to the container.
 
@@ -237,7 +286,16 @@ class Vlan(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+    def find(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanId=None,
+    ):
         # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Finds and retrieves vlan resources from the server.
 
@@ -299,10 +357,12 @@ class Vlan(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('topologyChange', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("topologyChange", payload=payload, response_object=None)
 
     def UpdateParameters(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -320,7 +380,9 @@ class Vlan(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateParameters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateParameters", payload=payload, response_object=None)

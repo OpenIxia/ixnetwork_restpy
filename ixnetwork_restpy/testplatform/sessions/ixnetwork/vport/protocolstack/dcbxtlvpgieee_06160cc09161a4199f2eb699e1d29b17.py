@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class DcbxTlvPgIeee(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxTlvPgIeee'
+    _SDM_NAME = "dcbxTlvPgIeee"
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
-        'PriorityGroupIdMap': 'priorityGroupIdMap',
-        'PriorityGroupPercentageMap': 'priorityGroupPercentageMap',
-        'TcsSupported': 'tcsSupported',
+        "ObjectId": "objectId",
+        "PriorityGroupIdMap": "priorityGroupIdMap",
+        "PriorityGroupPercentageMap": "priorityGroupPercentageMap",
+        "TcsSupported": "tcsSupported",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxTlvPgIeee, self).__init__(parent, list_op)
@@ -53,7 +53,7 @@ class DcbxTlvPgIeee(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PriorityGroupIdMap(self):
@@ -63,11 +63,12 @@ class DcbxTlvPgIeee(Base):
         -------
         - list(number): Priority group ID associated to each priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PriorityGroupIdMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["PriorityGroupIdMap"])
+
     @PriorityGroupIdMap.setter
     def PriorityGroupIdMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PriorityGroupIdMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PriorityGroupIdMap"], value)
 
     @property
     def PriorityGroupPercentageMap(self):
@@ -77,11 +78,12 @@ class DcbxTlvPgIeee(Base):
         -------
         - list(number): Percentage associated to each priority group id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PriorityGroupPercentageMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["PriorityGroupPercentageMap"])
+
     @PriorityGroupPercentageMap.setter
     def PriorityGroupPercentageMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PriorityGroupPercentageMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PriorityGroupPercentageMap"], value)
 
     @property
     def TcsSupported(self):
@@ -91,13 +93,19 @@ class DcbxTlvPgIeee(Base):
         -------
         - number: Number of traffic classes supported by device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcsSupported'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcsSupported"])
+
     @TcsSupported.setter
     def TcsSupported(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcsSupported'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcsSupported"], value)
 
-    def update(self, PriorityGroupIdMap=None, PriorityGroupPercentageMap=None, TcsSupported=None):
+    def update(
+        self,
+        PriorityGroupIdMap=None,
+        PriorityGroupPercentageMap=None,
+        TcsSupported=None,
+    ):
         # type: (List[int], List[int], int) -> DcbxTlvPgIeee
         """Updates dcbxTlvPgIeee resource on the server.
 
@@ -113,7 +121,13 @@ class DcbxTlvPgIeee(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ObjectId=None, PriorityGroupIdMap=None, PriorityGroupPercentageMap=None, TcsSupported=None):
+    def find(
+        self,
+        ObjectId=None,
+        PriorityGroupIdMap=None,
+        PriorityGroupPercentageMap=None,
+        TcsSupported=None,
+    ):
         # type: (str, List[int], List[int], int) -> DcbxTlvPgIeee
         """Finds and retrieves dcbxTlvPgIeee resources from the server.
 
@@ -173,10 +187,14 @@ class DcbxTlvPgIeee(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -195,10 +213,14 @@ class DcbxTlvPgIeee(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -217,7 +239,11 @@ class DcbxTlvPgIeee(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

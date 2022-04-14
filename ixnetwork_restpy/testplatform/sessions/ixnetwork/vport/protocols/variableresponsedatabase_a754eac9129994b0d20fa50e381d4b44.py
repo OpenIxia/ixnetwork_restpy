@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class VariableResponseDatabase(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'variableResponseDatabase'
+    _SDM_NAME = "variableResponseDatabase"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'VariableBranch': 'variableBranch',
-        'VariableIndication': 'variableIndication',
-        'VariableLeaf': 'variableLeaf',
-        'VariableValue': 'variableValue',
-        'VariableWidth': 'variableWidth',
+        "Enabled": "enabled",
+        "VariableBranch": "variableBranch",
+        "VariableIndication": "variableIndication",
+        "VariableLeaf": "variableLeaf",
+        "VariableValue": "variableValue",
+        "VariableWidth": "variableWidth",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VariableResponseDatabase, self).__init__(parent, list_op)
@@ -55,13 +55,14 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def VariableBranch(self):
@@ -69,13 +70,14 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableBranch'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableBranch"])
+
     @VariableBranch.setter
     def VariableBranch(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableBranch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableBranch"], value)
 
     @property
     def VariableIndication(self):
@@ -83,13 +85,14 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableIndication'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableIndication"])
+
     @VariableIndication.setter
     def VariableIndication(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableIndication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableIndication"], value)
 
     @property
     def VariableLeaf(self):
@@ -97,13 +100,14 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableLeaf'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableLeaf"])
+
     @VariableLeaf.setter
     def VariableLeaf(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableLeaf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableLeaf"], value)
 
     @property
     def VariableValue(self):
@@ -111,13 +115,14 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableValue"])
+
     @VariableValue.setter
     def VariableValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableValue"], value)
 
     @property
     def VariableWidth(self):
@@ -125,26 +130,35 @@ class VariableResponseDatabase(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableWidth"])
+
     @VariableWidth.setter
     def VariableWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableWidth"], value)
 
-    def update(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+    def update(
+        self,
+        Enabled=None,
+        VariableBranch=None,
+        VariableIndication=None,
+        VariableLeaf=None,
+        VariableValue=None,
+        VariableWidth=None,
+    ):
         # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Updates variableResponseDatabase resource on the server.
 
         Args
         ----
-        - Enabled (bool): 
-        - VariableBranch (number): 
-        - VariableIndication (bool): 
-        - VariableLeaf (number): 
-        - VariableValue (str): 
-        - VariableWidth (number): 
+        - Enabled (bool):
+        - VariableBranch (number):
+        - VariableIndication (bool):
+        - VariableLeaf (number):
+        - VariableValue (str):
+        - VariableWidth (number):
 
         Raises
         ------
@@ -152,18 +166,26 @@ class VariableResponseDatabase(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+    def add(
+        self,
+        Enabled=None,
+        VariableBranch=None,
+        VariableIndication=None,
+        VariableLeaf=None,
+        VariableValue=None,
+        VariableWidth=None,
+    ):
         # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Adds a new variableResponseDatabase resource on the server and adds it to the container.
 
         Args
         ----
-        - Enabled (bool): 
-        - VariableBranch (number): 
-        - VariableIndication (bool): 
-        - VariableLeaf (number): 
-        - VariableValue (str): 
-        - VariableWidth (number): 
+        - Enabled (bool):
+        - VariableBranch (number):
+        - VariableIndication (bool):
+        - VariableLeaf (number):
+        - VariableValue (str):
+        - VariableWidth (number):
 
         Returns
         -------
@@ -185,7 +207,15 @@ class VariableResponseDatabase(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+    def find(
+        self,
+        Enabled=None,
+        VariableBranch=None,
+        VariableIndication=None,
+        VariableLeaf=None,
+        VariableValue=None,
+        VariableWidth=None,
+    ):
         # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Finds and retrieves variableResponseDatabase resources from the server.
 
@@ -195,12 +225,12 @@ class VariableResponseDatabase(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - VariableBranch (number): 
-        - VariableIndication (bool): 
-        - VariableLeaf (number): 
-        - VariableValue (str): 
-        - VariableWidth (number): 
+        - Enabled (bool):
+        - VariableBranch (number):
+        - VariableIndication (bool):
+        - VariableLeaf (number):
+        - VariableValue (str):
+        - VariableWidth (number):
 
         Returns
         -------

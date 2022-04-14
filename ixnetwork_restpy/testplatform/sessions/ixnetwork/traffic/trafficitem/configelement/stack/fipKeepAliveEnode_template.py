@@ -4,23 +4,23 @@ from ixnetwork_restpy.files import Files
 
 class FipKeepAliveEnode(Base):
     __slots__ = ()
-    _SDM_NAME = 'fipKeepAliveEnode'
+    _SDM_NAME = "fipKeepAliveEnode"
     _SDM_ATT_MAP = {
-        'HeaderFipVersion': 'fipKeepAliveEnode.header.fipVersion-1',
-        'HeaderFipReserved': 'fipKeepAliveEnode.header.fipReserved-2',
-        'FipOperationCodeFipKeepaliveVirtualLink': 'fipKeepAliveEnode.header.fipOperation.fipOperationCode.fipKeepaliveVirtualLink-3',
-        'FipOperationFipOperationReserved1': 'fipKeepAliveEnode.header.fipOperation.fipOperationReserved1-4',
-        'FipSubcodeFipSubcode01h': 'fipKeepAliveEnode.header.fipOperation.fipSubcode.fipSubcode01h-5',
-        'FipOperationFipDescriptorListLength': 'fipKeepAliveEnode.header.fipOperation.fipDescriptorListLength-6',
-        'FipOperationFipFp': 'fipKeepAliveEnode.header.fipOperation.fipFp-7',
-        'FipOperationFipSp': 'fipKeepAliveEnode.header.fipOperation.fipSp-8',
-        'FipOperationFipReserved2': 'fipKeepAliveEnode.header.fipOperation.fipReserved2-9',
-        'FipOperationFipABit': 'fipKeepAliveEnode.header.fipOperation.fipABit-10',
-        'FipOperationFipSBit': 'fipKeepAliveEnode.header.fipOperation.fipSBit-11',
-        'FipOperationFipFBit': 'fipKeepAliveEnode.header.fipOperation.fipFBit-12',
-        'FipMacAddressDescriptorFipMacAddressDescriptorType': 'fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13',
-        'FipMacAddressDescriptorFipMacAddressDescriptorLength': 'fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14',
-        'FipMacAddressDescriptorFipMacAddressDescriptorValue': 'fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15',
+        "HeaderFipVersion": "fipKeepAliveEnode.header.fipVersion-1",
+        "HeaderFipReserved": "fipKeepAliveEnode.header.fipReserved-2",
+        "FipOperationCodeFipKeepaliveVirtualLink": "fipKeepAliveEnode.header.fipOperation.fipOperationCode.fipKeepaliveVirtualLink-3",
+        "FipOperationFipOperationReserved1": "fipKeepAliveEnode.header.fipOperation.fipOperationReserved1-4",
+        "FipSubcodeFipSubcode01h": "fipKeepAliveEnode.header.fipOperation.fipSubcode.fipSubcode01h-5",
+        "FipOperationFipDescriptorListLength": "fipKeepAliveEnode.header.fipOperation.fipDescriptorListLength-6",
+        "FipOperationFipFp": "fipKeepAliveEnode.header.fipOperation.fipFp-7",
+        "FipOperationFipSp": "fipKeepAliveEnode.header.fipOperation.fipSp-8",
+        "FipOperationFipReserved2": "fipKeepAliveEnode.header.fipOperation.fipReserved2-9",
+        "FipOperationFipABit": "fipKeepAliveEnode.header.fipOperation.fipABit-10",
+        "FipOperationFipSBit": "fipKeepAliveEnode.header.fipOperation.fipSBit-11",
+        "FipOperationFipFBit": "fipKeepAliveEnode.header.fipOperation.fipFBit-12",
+        "FipMacAddressDescriptorFipMacAddressDescriptorType": "fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13",
+        "FipMacAddressDescriptorFipMacAddressDescriptorLength": "fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14",
+        "FipMacAddressDescriptorFipMacAddressDescriptorValue": "fipKeepAliveEnode.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipVersion"])
+        )
 
     @property
     def HeaderFipReserved(self):
@@ -44,7 +47,10 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipReserved"])
+        )
 
     @property
     def FipOperationCodeFipKeepaliveVirtualLink(self):
@@ -54,7 +60,13 @@ class FipKeepAliveEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationCodeFipKeepaliveVirtualLink']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationCodeFipKeepaliveVirtualLink"]
+            ),
+        )
 
     @property
     def FipOperationFipOperationReserved1(self):
@@ -64,7 +76,11 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipOperationReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationFipOperationReserved1"]),
+        )
 
     @property
     def FipSubcodeFipSubcode01h(self):
@@ -74,7 +90,10 @@ class FipKeepAliveEnode(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipSubcodeFipSubcode01h']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipSubcodeFipSubcode01h"])
+        )
 
     @property
     def FipOperationFipDescriptorListLength(self):
@@ -84,7 +103,13 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipDescriptorListLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationFipDescriptorListLength"]
+            ),
+        )
 
     @property
     def FipOperationFipFp(self):
@@ -95,7 +120,10 @@ class FipKeepAliveEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFp"])
+        )
 
     @property
     def FipOperationFipSp(self):
@@ -106,7 +134,10 @@ class FipKeepAliveEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSp"])
+        )
 
     @property
     def FipOperationFipReserved2(self):
@@ -116,7 +147,10 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipReserved2"])
+        )
 
     @property
     def FipOperationFipABit(self):
@@ -127,7 +161,10 @@ class FipKeepAliveEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipABit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipABit"])
+        )
 
     @property
     def FipOperationFipSBit(self):
@@ -138,7 +175,10 @@ class FipKeepAliveEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSBit"])
+        )
 
     @property
     def FipOperationFipFBit(self):
@@ -149,7 +189,10 @@ class FipKeepAliveEnode(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFBit"])
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorType(self):
@@ -159,7 +202,13 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorType"]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorLength(self):
@@ -169,7 +218,15 @@ class FipKeepAliveEnode(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipMacAddressDescriptorFipMacAddressDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorValue(self):
@@ -179,7 +236,13 @@ class FipKeepAliveEnode(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorValue"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

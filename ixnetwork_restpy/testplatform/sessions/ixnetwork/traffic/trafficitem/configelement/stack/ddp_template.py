@@ -4,25 +4,25 @@ from ixnetwork_restpy.files import Files
 
 class Ddp(Base):
     __slots__ = ()
-    _SDM_NAME = 'ddp'
+    _SDM_NAME = "ddp"
     _SDM_ATT_MAP = {
-        'LongHeaderUnused': 'ddp.header.header.longHeader.unused-1',
-        'LongHeaderHopCount': 'ddp.header.header.longHeader.hopCount-2',
-        'LongHeaderLength': 'ddp.header.header.longHeader.length-3',
-        'ChecksumNoChecksum': 'ddp.header.header.longHeader.checksum.noChecksum-4',
-        'ChecksumDdpChecksum': 'ddp.header.header.longHeader.checksum.ddpChecksum-5',
-        'LongHeaderDstNetworkNo': 'ddp.header.header.longHeader.dstNetworkNo-6',
-        'LongHeaderSrcNetworkNo': 'ddp.header.header.longHeader.srcNetworkNo-7',
-        'LongHeaderDstNodeId': 'ddp.header.header.longHeader.dstNodeId-8',
-        'LongHeaderSrcNodeId': 'ddp.header.header.longHeader.srcNodeId-9',
-        'LongHeaderDstSocketNo': 'ddp.header.header.longHeader.dstSocketNo-10',
-        'LongHeaderSrcSocketNo': 'ddp.header.header.longHeader.srcSocketNo-11',
-        'LongHeaderProtocolType': 'ddp.header.header.longHeader.protocolType-12',
-        'ShortHeaderUnused': 'ddp.header.header.shortHeader.unused-13',
-        'ShortHeaderLength': 'ddp.header.header.shortHeader.length-14',
-        'ShortHeaderDstSocketNo': 'ddp.header.header.shortHeader.dstSocketNo-15',
-        'ShortHeaderSrcSocketNo': 'ddp.header.header.shortHeader.srcSocketNo-16',
-        'ShortHeaderProtocolType': 'ddp.header.header.shortHeader.protocolType-17',
+        "LongHeaderUnused": "ddp.header.header.longHeader.unused-1",
+        "LongHeaderHopCount": "ddp.header.header.longHeader.hopCount-2",
+        "LongHeaderLength": "ddp.header.header.longHeader.length-3",
+        "ChecksumNoChecksum": "ddp.header.header.longHeader.checksum.noChecksum-4",
+        "ChecksumDdpChecksum": "ddp.header.header.longHeader.checksum.ddpChecksum-5",
+        "LongHeaderDstNetworkNo": "ddp.header.header.longHeader.dstNetworkNo-6",
+        "LongHeaderSrcNetworkNo": "ddp.header.header.longHeader.srcNetworkNo-7",
+        "LongHeaderDstNodeId": "ddp.header.header.longHeader.dstNodeId-8",
+        "LongHeaderSrcNodeId": "ddp.header.header.longHeader.srcNodeId-9",
+        "LongHeaderDstSocketNo": "ddp.header.header.longHeader.dstSocketNo-10",
+        "LongHeaderSrcSocketNo": "ddp.header.header.longHeader.srcSocketNo-11",
+        "LongHeaderProtocolType": "ddp.header.header.longHeader.protocolType-12",
+        "ShortHeaderUnused": "ddp.header.header.shortHeader.unused-13",
+        "ShortHeaderLength": "ddp.header.header.shortHeader.length-14",
+        "ShortHeaderDstSocketNo": "ddp.header.header.shortHeader.dstSocketNo-15",
+        "ShortHeaderSrcSocketNo": "ddp.header.header.shortHeader.srcSocketNo-16",
+        "ShortHeaderProtocolType": "ddp.header.header.shortHeader.protocolType-17",
     }
 
     def __init__(self, parent, list_op=False):
@@ -36,7 +36,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderUnused']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderUnused"])
+        )
 
     @property
     def LongHeaderHopCount(self):
@@ -46,7 +49,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderHopCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderHopCount"])
+        )
 
     @property
     def LongHeaderLength(self):
@@ -56,7 +62,10 @@ class Ddp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderLength"])
+        )
 
     @property
     def ChecksumNoChecksum(self):
@@ -66,7 +75,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumNoChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumNoChecksum"])
+        )
 
     @property
     def ChecksumDdpChecksum(self):
@@ -76,7 +88,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumDdpChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumDdpChecksum"])
+        )
 
     @property
     def LongHeaderDstNetworkNo(self):
@@ -86,7 +101,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderDstNetworkNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderDstNetworkNo"])
+        )
 
     @property
     def LongHeaderSrcNetworkNo(self):
@@ -96,7 +114,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderSrcNetworkNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderSrcNetworkNo"])
+        )
 
     @property
     def LongHeaderDstNodeId(self):
@@ -106,7 +127,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderDstNodeId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderDstNodeId"])
+        )
 
     @property
     def LongHeaderSrcNodeId(self):
@@ -116,7 +140,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderSrcNodeId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderSrcNodeId"])
+        )
 
     @property
     def LongHeaderDstSocketNo(self):
@@ -127,7 +154,10 @@ class Ddp(Base):
         Available enum values: RTMP socket, 1, NIS socket, 2, Echoer socket, 4, ZIS socket, 6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderDstSocketNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderDstSocketNo"])
+        )
 
     @property
     def LongHeaderSrcSocketNo(self):
@@ -138,7 +168,10 @@ class Ddp(Base):
         Available enum values: RTMP socket, 1, NIS socket, 2, Echoer socket, 4, ZIS socket, 6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderSrcSocketNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderSrcSocketNo"])
+        )
 
     @property
     def LongHeaderProtocolType(self):
@@ -149,7 +182,10 @@ class Ddp(Base):
         Available enum values: RTMP response or data packet, 1, NBP packet, 2, ATP packet, 3, AEP packet, 4, RTMP request packet, 5, ZIP packet, 6, ADSP packet, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LongHeaderProtocolType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LongHeaderProtocolType"])
+        )
 
     @property
     def ShortHeaderUnused(self):
@@ -159,7 +195,10 @@ class Ddp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortHeaderUnused']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortHeaderUnused"])
+        )
 
     @property
     def ShortHeaderLength(self):
@@ -169,7 +208,10 @@ class Ddp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortHeaderLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortHeaderLength"])
+        )
 
     @property
     def ShortHeaderDstSocketNo(self):
@@ -180,7 +222,10 @@ class Ddp(Base):
         Available enum values: RTMP socket, 1, NIS socket, 2, Echoer socket, 4, ZIS socket, 6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortHeaderDstSocketNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortHeaderDstSocketNo"])
+        )
 
     @property
     def ShortHeaderSrcSocketNo(self):
@@ -191,7 +236,10 @@ class Ddp(Base):
         Available enum values: RTMP socket, 1, NIS socket, 2, Echoer socket, 4, ZIS socket, 6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortHeaderSrcSocketNo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortHeaderSrcSocketNo"])
+        )
 
     @property
     def ShortHeaderProtocolType(self):
@@ -202,7 +250,10 @@ class Ddp(Base):
         Available enum values: RTMP response or data packet, 1, NBP packet, 2, ATP packet, 3, AEP packet, 4, RTMP request packet, 5, ZIP packet, 6, ADSP packet, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortHeaderProtocolType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortHeaderProtocolType"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

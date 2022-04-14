@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,11 @@ class Prefix(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'prefix'
+    _SDM_NAME = "prefix"
     _SDM_ATT_MAP = {
-        'Prefix': 'prefix',
+        "Prefix": "prefix",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Prefix, self).__init__(parent, list_op)
@@ -49,10 +49,11 @@ class Prefix(Base):
         -------
         - list(dict(arg1:str,arg2:bool,arg3:number,arg4:number)): Controls the prefix attributes that are filtered on.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Prefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["Prefix"])
+
     @Prefix.setter
     def Prefix(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Prefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Prefix"], value)
 
     def update(self, Prefix=None):
         """Updates prefix resource on the server.

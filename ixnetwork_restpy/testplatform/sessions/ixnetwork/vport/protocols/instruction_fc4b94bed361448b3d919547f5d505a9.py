@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class Instruction(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'instruction'
+    _SDM_NAME = "instruction"
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ClearActions': 'clearActions',
-        'GoToTable': 'goToTable',
-        'Meter': 'meter',
-        'WriteActions': 'writeActions',
-        'WriteMetadata': 'writeMetadata',
+        "ApplyActions": "applyActions",
+        "ClearActions": "clearActions",
+        "GoToTable": "goToTable",
+        "Meter": "meter",
+        "WriteActions": "writeActions",
+        "WriteMetadata": "writeMetadata",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Instruction, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class Instruction(Base):
         -------
         - bool: Apply actions property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyActions"])
+
     @ApplyActions.setter
     def ApplyActions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplyActions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplyActions"], value)
 
     @property
     def ClearActions(self):
@@ -69,11 +70,12 @@ class Instruction(Base):
         -------
         - bool: If selected, Clear Actions instruction is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClearActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClearActions"])
+
     @ClearActions.setter
     def ClearActions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClearActions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClearActions"], value)
 
     @property
     def GoToTable(self):
@@ -83,11 +85,12 @@ class Instruction(Base):
         -------
         - bool: If selected, GoTo Table instruction is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GoToTable'])
+        return self._get_attribute(self._SDM_ATT_MAP["GoToTable"])
+
     @GoToTable.setter
     def GoToTable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GoToTable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GoToTable"], value)
 
     @property
     def Meter(self):
@@ -97,11 +100,12 @@ class Instruction(Base):
         -------
         - bool: If selected, Meter instruction is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Meter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Meter"])
+
     @Meter.setter
     def Meter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Meter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Meter"], value)
 
     @property
     def WriteActions(self):
@@ -111,11 +115,12 @@ class Instruction(Base):
         -------
         - bool: Write actions property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteActions"])
+
     @WriteActions.setter
     def WriteActions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteActions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteActions"], value)
 
     @property
     def WriteMetadata(self):
@@ -125,13 +130,22 @@ class Instruction(Base):
         -------
         - bool: If selected, Write Metadata instruction is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteMetadata'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteMetadata"])
+
     @WriteMetadata.setter
     def WriteMetadata(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WriteMetadata'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WriteMetadata"], value)
 
-    def update(self, ApplyActions=None, ClearActions=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+    def update(
+        self,
+        ApplyActions=None,
+        ClearActions=None,
+        GoToTable=None,
+        Meter=None,
+        WriteActions=None,
+        WriteMetadata=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool) -> Instruction
         """Updates instruction resource on the server.
 
@@ -150,7 +164,15 @@ class Instruction(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApplyActions=None, ClearActions=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+    def find(
+        self,
+        ApplyActions=None,
+        ClearActions=None,
+        GoToTable=None,
+        Meter=None,
+        WriteActions=None,
+        WriteMetadata=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool) -> Instruction
         """Finds and retrieves instruction resources from the server.
 

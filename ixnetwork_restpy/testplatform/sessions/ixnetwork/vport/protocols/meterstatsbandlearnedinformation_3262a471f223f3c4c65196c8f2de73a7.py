@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class MeterStatsBandLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'meterStatsBandLearnedInformation'
+    _SDM_NAME = "meterStatsBandLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'InBandByteCount': 'inBandByteCount',
-        'InBandPacketCount': 'inBandPacketCount',
-        'LocalIp': 'localIp',
-        'MeterId': 'meterId',
-        'RemoteIp': 'remoteIp',
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "InBandByteCount": "inBandByteCount",
+        "InBandPacketCount": "inBandPacketCount",
+        "LocalIp": "localIp",
+        "MeterId": "meterId",
+        "RemoteIp": "remoteIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MeterStatsBandLearnedInformation, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - number: The Data Path identifier of the OpenFlow controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -67,7 +67,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow controller in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def InBandByteCount(self):
@@ -77,7 +77,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - number: Specifies Byte Band Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InBandByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InBandByteCount"])
 
     @property
     def InBandPacketCount(self):
@@ -87,7 +87,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - number: Specifies Packet Band Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InBandPacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InBandPacketCount"])
 
     @property
     def LocalIp(self):
@@ -97,7 +97,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MeterId(self):
@@ -107,7 +107,7 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - number: Specifies Meter ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def RemoteIp(self):
@@ -117,10 +117,10 @@ class MeterStatsBandLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     def add(self):
-        """Adds a new meterStatsBandLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new meterStatsBandLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -132,7 +132,16 @@ class MeterStatsBandLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathId=None, DataPathIdAsHex=None, InBandByteCount=None, InBandPacketCount=None, LocalIp=None, MeterId=None, RemoteIp=None):
+    def find(
+        self,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        InBandByteCount=None,
+        InBandPacketCount=None,
+        LocalIp=None,
+        MeterId=None,
+        RemoteIp=None,
+    ):
         # type: (int, str, int, int, str, int, str) -> MeterStatsBandLearnedInformation
         """Finds and retrieves meterStatsBandLearnedInformation resources from the server.
 

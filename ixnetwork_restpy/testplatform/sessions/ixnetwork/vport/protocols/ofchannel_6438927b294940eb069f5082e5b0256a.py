@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,41 +35,41 @@ class OfChannel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ofChannel'
+    _SDM_NAME = "ofChannel"
     _SDM_ATT_MAP = {
-        'CalculateFlows': 'calculateFlows',
-        'CalculatePacketInReplyDelay': 'calculatePacketInReplyDelay',
-        'DataPathId': 'dataPathId',
-        'DataPathIdInHex': 'dataPathIdInHex',
-        'DatapathDescritpion': 'datapathDescritpion',
-        'Description': 'description',
-        'EnableCalculateFlowsPerSecondUsingBarrierReq': 'enableCalculateFlowsPerSecondUsingBarrierReq',
-        'EnableHelloElement': 'enableHelloElement',
-        'EnableStartupEmptyTableFeatureRequest': 'enableStartupEmptyTableFeatureRequest',
-        'Enabled': 'enabled',
-        'FlowTxBurstSize': 'flowTxBurstSize',
-        'HardwareDescription': 'hardwareDescription',
-        'InterFlowBurstGap': 'interFlowBurstGap',
-        'InterPacketInBurstGap': 'interPacketInBurstGap',
-        'LocalIp': 'localIp',
-        'ManufacturerDescription': 'manufacturerDescription',
-        'MaximumNumberOfFlowsProcessed': 'maximumNumberOfFlowsProcessed',
-        'MaximumPacketInBytes': 'maximumPacketInBytes',
-        'NumberOfBuffers': 'numberOfBuffers',
-        'PacketInReplyTimeout': 'packetInReplyTimeout',
-        'PacketInTxBurstSize': 'packetInTxBurstSize',
-        'RemoteIp': 'remoteIp',
-        'SerialNumber': 'serialNumber',
-        'SoftwareDescription': 'softwareDescription',
-        'StartUpGenerationId': 'startUpGenerationId',
-        'StartUpRoleRequest': 'startUpRoleRequest',
-        'StartupFeatureRequest': 'startupFeatureRequest',
-        'StoreFlows': 'storeFlows',
-        'UseDataPathIdAsChannelIdentifier': 'useDataPathIdAsChannelIdentifier',
-        'UseDatapathId': 'useDatapathId',
+        "CalculateFlows": "calculateFlows",
+        "CalculatePacketInReplyDelay": "calculatePacketInReplyDelay",
+        "DataPathId": "dataPathId",
+        "DataPathIdInHex": "dataPathIdInHex",
+        "DatapathDescritpion": "datapathDescritpion",
+        "Description": "description",
+        "EnableCalculateFlowsPerSecondUsingBarrierReq": "enableCalculateFlowsPerSecondUsingBarrierReq",
+        "EnableHelloElement": "enableHelloElement",
+        "EnableStartupEmptyTableFeatureRequest": "enableStartupEmptyTableFeatureRequest",
+        "Enabled": "enabled",
+        "FlowTxBurstSize": "flowTxBurstSize",
+        "HardwareDescription": "hardwareDescription",
+        "InterFlowBurstGap": "interFlowBurstGap",
+        "InterPacketInBurstGap": "interPacketInBurstGap",
+        "LocalIp": "localIp",
+        "ManufacturerDescription": "manufacturerDescription",
+        "MaximumNumberOfFlowsProcessed": "maximumNumberOfFlowsProcessed",
+        "MaximumPacketInBytes": "maximumPacketInBytes",
+        "NumberOfBuffers": "numberOfBuffers",
+        "PacketInReplyTimeout": "packetInReplyTimeout",
+        "PacketInTxBurstSize": "packetInTxBurstSize",
+        "RemoteIp": "remoteIp",
+        "SerialNumber": "serialNumber",
+        "SoftwareDescription": "softwareDescription",
+        "StartUpGenerationId": "startUpGenerationId",
+        "StartUpRoleRequest": "startUpRoleRequest",
+        "StartupFeatureRequest": "startupFeatureRequest",
+        "StoreFlows": "storeFlows",
+        "UseDataPathIdAsChannelIdentifier": "useDataPathIdAsChannelIdentifier",
+        "UseDatapathId": "useDatapathId",
     }
     _SDM_ENUM_MAP = {
-        'startUpRoleRequest': ['noRoleRequest', 'master', 'slave'],
+        "startUpRoleRequest": ["noRoleRequest", "master", "slave"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -85,10 +86,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_4b75c5667348309f05b3d70410a39ec1 import Capabilities
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_4b75c5667348309f05b3d70410a39ec1 import (
+            Capabilities,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Capabilities', None) is not None:
-                return self._properties.get('Capabilities')
+            if self._properties.get("Capabilities", None) is not None:
+                return self._properties.get("Capabilities")
         return Capabilities(self)._select()
 
     @property
@@ -102,10 +106,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_e52142cde8b9a3c55ea6a9f54cffce91 import ControllerTables
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_e52142cde8b9a3c55ea6a9f54cffce91 import (
+            ControllerTables,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ControllerTables', None) is not None:
-                return self._properties.get('ControllerTables')
+            if self._properties.get("ControllerTables", None) is not None:
+                return self._properties.get("ControllerTables")
         return ControllerTables(self)
 
     @property
@@ -119,10 +126,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_2fd5d93183298b6434d0d9d422fee83c import FlowRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_2fd5d93183298b6434d0d9d422fee83c import (
+            FlowRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowRange', None) is not None:
-                return self._properties.get('FlowRange')
+            if self._properties.get("FlowRange", None) is not None:
+                return self._properties.get("FlowRange")
         return FlowRange(self)
 
     @property
@@ -136,10 +146,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_015e3c040d5ab09e673838caf8d428ba import Group
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_015e3c040d5ab09e673838caf8d428ba import (
+            Group,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Group', None) is not None:
-                return self._properties.get('Group')
+            if self._properties.get("Group", None) is not None:
+                return self._properties.get("Group")
         return Group(self)
 
     @property
@@ -153,10 +166,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_780dfd5fbbd89bd8d623eff90a0b890a import Meter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_780dfd5fbbd89bd8d623eff90a0b890a import (
+            Meter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Meter', None) is not None:
-                return self._properties.get('Meter')
+            if self._properties.get("Meter", None) is not None:
+                return self._properties.get("Meter")
         return Meter(self)
 
     @property
@@ -170,10 +186,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_49d9bf4a7b46d52ee0b8746730058977 import SupportedActions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_49d9bf4a7b46d52ee0b8746730058977 import (
+            SupportedActions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SupportedActions', None) is not None:
-                return self._properties.get('SupportedActions')
+            if self._properties.get("SupportedActions", None) is not None:
+                return self._properties.get("SupportedActions")
         return SupportedActions(self)._select()
 
     @property
@@ -187,10 +206,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_4f3f94c6a30606d4f42d6b78bc4bcfa2 import SwitchPacketIn
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_4f3f94c6a30606d4f42d6b78bc4bcfa2 import (
+            SwitchPacketIn,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchPacketIn', None) is not None:
-                return self._properties.get('SwitchPacketIn')
+            if self._properties.get("SwitchPacketIn", None) is not None:
+                return self._properties.get("SwitchPacketIn")
         return SwitchPacketIn(self)
 
     @property
@@ -204,10 +226,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_f5a4eaa4efc61f5b2aadf4ad75b9320e import SwitchPorts
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_f5a4eaa4efc61f5b2aadf4ad75b9320e import (
+            SwitchPorts,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchPorts', None) is not None:
-                return self._properties.get('SwitchPorts')
+            if self._properties.get("SwitchPorts", None) is not None:
+                return self._properties.get("SwitchPorts")
         return SwitchPorts(self)
 
     @property
@@ -221,10 +246,13 @@ class OfChannel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_2252edadcb6f8fce8c08ff3edc0bd822 import SwitchTables
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_2252edadcb6f8fce8c08ff3edc0bd822 import (
+            SwitchTables,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchTables', None) is not None:
-                return self._properties.get('SwitchTables')
+            if self._properties.get("SwitchTables", None) is not None:
+                return self._properties.get("SwitchTables")
         return SwitchTables(self)
 
     @property
@@ -235,25 +263,27 @@ class OfChannel(Base):
         -------
         - bool: If true, calculates the rate at which flows are transmitted by the controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateFlows"])
+
     @CalculateFlows.setter
     def CalculateFlows(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateFlows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateFlows"], value)
 
     @property
     def CalculatePacketInReplyDelay(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, calculates delay between Packet-In sent from Switch and reply received from Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculatePacketInReplyDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculatePacketInReplyDelay"])
+
     @CalculatePacketInReplyDelay.setter
     def CalculatePacketInReplyDelay(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculatePacketInReplyDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculatePacketInReplyDelay"], value)
 
     @property
     def DataPathId(self):
@@ -263,11 +293,12 @@ class OfChannel(Base):
         -------
         - str: Indicates the Datapath ID of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
+
     @DataPathId.setter
     def DataPathId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPathId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPathId"], value)
 
     @property
     def DataPathIdInHex(self):
@@ -277,25 +308,27 @@ class OfChannel(Base):
         -------
         - str: Indicates the Datapath ID in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdInHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdInHex"])
+
     @DataPathIdInHex.setter
     def DataPathIdInHex(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPathIdInHex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPathIdInHex"], value)
 
     @property
     def DatapathDescritpion(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Indicates a description of the datapath.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathDescritpion'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathDescritpion"])
+
     @DatapathDescritpion.setter
     def DatapathDescritpion(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DatapathDescritpion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DatapathDescritpion"], value)
 
     @property
     def Description(self):
@@ -305,11 +338,12 @@ class OfChannel(Base):
         -------
         - str: A description of the OF Channel used to identify it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def EnableCalculateFlowsPerSecondUsingBarrierReq(self):
@@ -319,11 +353,16 @@ class OfChannel(Base):
         -------
         - bool: If true, enables flow rate Calculation using Barrier request message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCalculateFlowsPerSecondUsingBarrierReq'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableCalculateFlowsPerSecondUsingBarrierReq"]
+        )
+
     @EnableCalculateFlowsPerSecondUsingBarrierReq.setter
     def EnableCalculateFlowsPerSecondUsingBarrierReq(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCalculateFlowsPerSecondUsingBarrierReq'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableCalculateFlowsPerSecondUsingBarrierReq"], value
+        )
 
     @property
     def EnableHelloElement(self):
@@ -333,11 +372,12 @@ class OfChannel(Base):
         -------
         - bool: Enables Hello element for version negotiation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHelloElement'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHelloElement"])
+
     @EnableHelloElement.setter
     def EnableHelloElement(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHelloElement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHelloElement"], value)
 
     @property
     def EnableStartupEmptyTableFeatureRequest(self):
@@ -347,11 +387,16 @@ class OfChannel(Base):
         -------
         - bool: If true, the Table Feature Request is sent at start up. The default value is false
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStartupEmptyTableFeatureRequest'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableStartupEmptyTableFeatureRequest"]
+        )
+
     @EnableStartupEmptyTableFeatureRequest.setter
     def EnableStartupEmptyTableFeatureRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStartupEmptyTableFeatureRequest'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableStartupEmptyTableFeatureRequest"], value
+        )
 
     @property
     def Enabled(self):
@@ -361,11 +406,12 @@ class OfChannel(Base):
         -------
         - bool: If true, the OF Channel is used in the OpenFlow configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FlowTxBurstSize(self):
@@ -375,25 +421,27 @@ class OfChannel(Base):
         -------
         - number: Indicates the number of flows sent in a single burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowTxBurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowTxBurstSize"])
+
     @FlowTxBurstSize.setter
     def FlowTxBurstSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowTxBurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowTxBurstSize"], value)
 
     @property
     def HardwareDescription(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Indicates the hardware description of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HardwareDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["HardwareDescription"])
+
     @HardwareDescription.setter
     def HardwareDescription(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HardwareDescription'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HardwareDescription"], value)
 
     @property
     def InterFlowBurstGap(self):
@@ -403,25 +451,27 @@ class OfChannel(Base):
         -------
         - number: Indicates the duration, in milliseconds, to wait between successive flow bursts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterFlowBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterFlowBurstGap"])
+
     @InterFlowBurstGap.setter
     def InterFlowBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterFlowBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterFlowBurstGap"], value)
 
     @property
     def InterPacketInBurstGap(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the duration, in milliseconds, to wait between successive Packet-In bursts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterPacketInBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterPacketInBurstGap"])
+
     @InterPacketInBurstGap.setter
     def InterPacketInBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterPacketInBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterPacketInBurstGap"], value)
 
     @property
     def LocalIp(self):
@@ -431,21 +481,22 @@ class OfChannel(Base):
         -------
         - str: Indicates the local IP address of the interface. This field is auto-populated and cannot be changed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def ManufacturerDescription(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Indicates the description of the switch manufacturer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ManufacturerDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["ManufacturerDescription"])
+
     @ManufacturerDescription.setter
     def ManufacturerDescription(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ManufacturerDescription'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ManufacturerDescription"], value)
 
     @property
     def MaximumNumberOfFlowsProcessed(self):
@@ -455,67 +506,72 @@ class OfChannel(Base):
         -------
         - number: Indicates the maximum number of flows that the controller can advertise before backing off.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaximumNumberOfFlowsProcessed'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaximumNumberOfFlowsProcessed"])
+
     @MaximumNumberOfFlowsProcessed.setter
     def MaximumNumberOfFlowsProcessed(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaximumNumberOfFlowsProcessed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaximumNumberOfFlowsProcessed"], value)
 
     @property
     def MaximumPacketInBytes(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the maximum size of data in a Packet-In a message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaximumPacketInBytes'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaximumPacketInBytes"])
+
     @MaximumPacketInBytes.setter
     def MaximumPacketInBytes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaximumPacketInBytes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaximumPacketInBytes"], value)
 
     @property
     def NumberOfBuffers(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the maximum number of packets that can be stored in the buffered at a time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBuffers'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBuffers"])
+
     @NumberOfBuffers.setter
     def NumberOfBuffers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfBuffers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfBuffers"], value)
 
     @property
     def PacketInReplyTimeout(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the duration for which the Switch should wait for Packet-in-reply before freeing the buffer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInReplyTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInReplyTimeout"])
+
     @PacketInReplyTimeout.setter
     def PacketInReplyTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketInReplyTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketInReplyTimeout"], value)
 
     @property
     def PacketInTxBurstSize(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the number of packets in messages sent in a single burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInTxBurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInTxBurstSize"])
+
     @PacketInTxBurstSize.setter
     def PacketInTxBurstSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketInTxBurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketInTxBurstSize"], value)
 
     @property
     def RemoteIp(self):
@@ -525,39 +581,42 @@ class OfChannel(Base):
         -------
         - str: Indicates the IP address of the DUT at the other end of OF channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
+
     @RemoteIp.setter
     def RemoteIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteIp"], value)
 
     @property
     def SerialNumber(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Indicates the Serial Number of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SerialNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SerialNumber"])
+
     @SerialNumber.setter
     def SerialNumber(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SerialNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SerialNumber"], value)
 
     @property
     def SoftwareDescription(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Indicates the description of the software installed on the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SoftwareDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["SoftwareDescription"])
+
     @SoftwareDescription.setter
     def SoftwareDescription(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SoftwareDescription'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SoftwareDescription"], value)
 
     @property
     def StartUpGenerationId(self):
@@ -567,11 +626,12 @@ class OfChannel(Base):
         -------
         - str: A 64-bit sequence number field that identifies a given mastership view. A new incremented Generation ID is assigned each time the mastership view changes, for instance, when a new master is designated. On receiving a role change request, the switch compares the Generation ID in the message against the largest Generation ID seen so far. A message with a Generation ID smaller than a previously seen Generation ID is discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUpGenerationId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUpGenerationId"])
+
     @StartUpGenerationId.setter
     def StartUpGenerationId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUpGenerationId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUpGenerationId"], value)
 
     @property
     def StartUpRoleRequest(self):
@@ -581,11 +641,12 @@ class OfChannel(Base):
         -------
         - str(noRoleRequest | master | slave): If selected, the controller sends a Role Request message when connection is established to change its role as per the option selected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUpRoleRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUpRoleRequest"])
+
     @StartUpRoleRequest.setter
     def StartUpRoleRequest(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUpRoleRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUpRoleRequest"], value)
 
     @property
     def StartupFeatureRequest(self):
@@ -595,39 +656,46 @@ class OfChannel(Base):
         -------
         - bool: If true, a feature request is sent at startup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartupFeatureRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartupFeatureRequest"])
+
     @StartupFeatureRequest.setter
     def StartupFeatureRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartupFeatureRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartupFeatureRequest"], value)
 
     @property
     def StoreFlows(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, the switch will store the flows advertised by the controller in its tables.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StoreFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["StoreFlows"])
+
     @StoreFlows.setter
     def StoreFlows(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StoreFlows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StoreFlows"], value)
 
     @property
     def UseDataPathIdAsChannelIdentifier(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, the Datapath ID of the switch is used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseDataPathIdAsChannelIdentifier'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UseDataPathIdAsChannelIdentifier"]
+        )
+
     @UseDataPathIdAsChannelIdentifier.setter
     def UseDataPathIdAsChannelIdentifier(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseDataPathIdAsChannelIdentifier'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UseDataPathIdAsChannelIdentifier"], value
+        )
 
     @property
     def UseDatapathId(self):
@@ -637,13 +705,45 @@ class OfChannel(Base):
         -------
         - bool: Use datapath Id that is configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseDatapathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseDatapathId"])
+
     @UseDatapathId.setter
     def UseDatapathId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseDatapathId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseDatapathId"], value)
 
-    def update(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
+    def update(
+        self,
+        CalculateFlows=None,
+        CalculatePacketInReplyDelay=None,
+        DataPathId=None,
+        DataPathIdInHex=None,
+        DatapathDescritpion=None,
+        Description=None,
+        EnableCalculateFlowsPerSecondUsingBarrierReq=None,
+        EnableHelloElement=None,
+        EnableStartupEmptyTableFeatureRequest=None,
+        Enabled=None,
+        FlowTxBurstSize=None,
+        HardwareDescription=None,
+        InterFlowBurstGap=None,
+        InterPacketInBurstGap=None,
+        ManufacturerDescription=None,
+        MaximumNumberOfFlowsProcessed=None,
+        MaximumPacketInBytes=None,
+        NumberOfBuffers=None,
+        PacketInReplyTimeout=None,
+        PacketInTxBurstSize=None,
+        RemoteIp=None,
+        SerialNumber=None,
+        SoftwareDescription=None,
+        StartUpGenerationId=None,
+        StartUpRoleRequest=None,
+        StartupFeatureRequest=None,
+        StoreFlows=None,
+        UseDataPathIdAsChannelIdentifier=None,
+        UseDatapathId=None,
+    ):
         # type: (bool, bool, str, str, str, str, bool, bool, bool, bool, int, str, int, int, str, int, int, int, int, int, str, str, str, str, str, bool, bool, bool, bool) -> OfChannel
         """Updates ofChannel resource on the server.
 
@@ -685,7 +785,38 @@ class OfChannel(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
+    def add(
+        self,
+        CalculateFlows=None,
+        CalculatePacketInReplyDelay=None,
+        DataPathId=None,
+        DataPathIdInHex=None,
+        DatapathDescritpion=None,
+        Description=None,
+        EnableCalculateFlowsPerSecondUsingBarrierReq=None,
+        EnableHelloElement=None,
+        EnableStartupEmptyTableFeatureRequest=None,
+        Enabled=None,
+        FlowTxBurstSize=None,
+        HardwareDescription=None,
+        InterFlowBurstGap=None,
+        InterPacketInBurstGap=None,
+        ManufacturerDescription=None,
+        MaximumNumberOfFlowsProcessed=None,
+        MaximumPacketInBytes=None,
+        NumberOfBuffers=None,
+        PacketInReplyTimeout=None,
+        PacketInTxBurstSize=None,
+        RemoteIp=None,
+        SerialNumber=None,
+        SoftwareDescription=None,
+        StartUpGenerationId=None,
+        StartUpRoleRequest=None,
+        StartupFeatureRequest=None,
+        StoreFlows=None,
+        UseDataPathIdAsChannelIdentifier=None,
+        UseDatapathId=None,
+    ):
         # type: (bool, bool, str, str, str, str, bool, bool, bool, bool, int, str, int, int, str, int, int, int, int, int, str, str, str, str, str, bool, bool, bool, bool) -> OfChannel
         """Adds a new ofChannel resource on the server and adds it to the container.
 
@@ -741,7 +872,39 @@ class OfChannel(Base):
         """
         self._delete()
 
-    def find(self, CalculateFlows=None, CalculatePacketInReplyDelay=None, DataPathId=None, DataPathIdInHex=None, DatapathDescritpion=None, Description=None, EnableCalculateFlowsPerSecondUsingBarrierReq=None, EnableHelloElement=None, EnableStartupEmptyTableFeatureRequest=None, Enabled=None, FlowTxBurstSize=None, HardwareDescription=None, InterFlowBurstGap=None, InterPacketInBurstGap=None, LocalIp=None, ManufacturerDescription=None, MaximumNumberOfFlowsProcessed=None, MaximumPacketInBytes=None, NumberOfBuffers=None, PacketInReplyTimeout=None, PacketInTxBurstSize=None, RemoteIp=None, SerialNumber=None, SoftwareDescription=None, StartUpGenerationId=None, StartUpRoleRequest=None, StartupFeatureRequest=None, StoreFlows=None, UseDataPathIdAsChannelIdentifier=None, UseDatapathId=None):
+    def find(
+        self,
+        CalculateFlows=None,
+        CalculatePacketInReplyDelay=None,
+        DataPathId=None,
+        DataPathIdInHex=None,
+        DatapathDescritpion=None,
+        Description=None,
+        EnableCalculateFlowsPerSecondUsingBarrierReq=None,
+        EnableHelloElement=None,
+        EnableStartupEmptyTableFeatureRequest=None,
+        Enabled=None,
+        FlowTxBurstSize=None,
+        HardwareDescription=None,
+        InterFlowBurstGap=None,
+        InterPacketInBurstGap=None,
+        LocalIp=None,
+        ManufacturerDescription=None,
+        MaximumNumberOfFlowsProcessed=None,
+        MaximumPacketInBytes=None,
+        NumberOfBuffers=None,
+        PacketInReplyTimeout=None,
+        PacketInTxBurstSize=None,
+        RemoteIp=None,
+        SerialNumber=None,
+        SoftwareDescription=None,
+        StartUpGenerationId=None,
+        StartUpRoleRequest=None,
+        StartupFeatureRequest=None,
+        StoreFlows=None,
+        UseDataPathIdAsChannelIdentifier=None,
+        UseDatapathId=None,
+    ):
         # type: (bool, bool, str, str, str, str, bool, bool, bool, bool, int, str, int, int, str, str, int, int, int, int, int, str, str, str, str, str, bool, bool, bool, bool) -> OfChannel
         """Finds and retrieves ofChannel resources from the server.
 
@@ -826,7 +989,9 @@ class OfChannel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateRole', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateRole", payload=payload, response_object=None)

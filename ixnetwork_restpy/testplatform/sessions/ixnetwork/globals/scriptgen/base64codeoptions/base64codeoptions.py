@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class Base64CodeOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'base64CodeOptions'
+    _SDM_NAME = "base64CodeOptions"
     _SDM_ATT_MAP = {
-        'IncludeSampleCode': 'includeSampleCode',
-        'SampleObjectReferences': 'sampleObjectReferences',
+        "IncludeSampleCode": "includeSampleCode",
+        "SampleObjectReferences": "sampleObjectReferences",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Base64CodeOptions, self).__init__(parent, list_op)
@@ -51,11 +51,12 @@ class Base64CodeOptions(Base):
         -------
         - bool: Flag to include sample code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeSampleCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeSampleCode"])
+
     @IncludeSampleCode.setter
     def IncludeSampleCode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeSampleCode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeSampleCode"], value)
 
     @property
     def SampleObjectReferences(self):
@@ -65,11 +66,12 @@ class Base64CodeOptions(Base):
         -------
         - list(str[None]): A list of object references used to generate sample code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SampleObjectReferences'])
+        return self._get_attribute(self._SDM_ATT_MAP["SampleObjectReferences"])
+
     @SampleObjectReferences.setter
     def SampleObjectReferences(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SampleObjectReferences'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SampleObjectReferences"], value)
 
     def update(self, IncludeSampleCode=None, SampleObjectReferences=None):
         # type: (bool, List[str]) -> Base64CodeOptions

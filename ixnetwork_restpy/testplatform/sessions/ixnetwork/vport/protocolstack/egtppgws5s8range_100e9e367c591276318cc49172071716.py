@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class EgtpPgwS5S8Range(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpPgwS5S8Range'
+    _SDM_NAME = "egtpPgwS5S8Range"
     _SDM_ATT_MAP = {
-        'ChangeReportingMode': 'changeReportingMode',
-        'EnableEchoRequest': 'enableEchoRequest',
-        'Enabled': 'enabled',
-        'IpType': 'ipType',
-        'N3CreateBearerReq': 'n3CreateBearerReq',
-        'N3DeleteBearerReq': 'n3DeleteBearerReq',
-        'N3EchoReq': 'n3EchoReq',
-        'N3UpdateBearerReq': 'n3UpdateBearerReq',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'T3CreateBearerReq': 't3CreateBearerReq',
-        'T3DeleteBearerReq': 't3DeleteBearerReq',
-        'T3EchoReq': 't3EchoReq',
-        'T3UpdateBearerReq': 't3UpdateBearerReq',
-        'UseCpIp': 'useCpIp',
-        'UseUpIp': 'useUpIp',
+        "ChangeReportingMode": "changeReportingMode",
+        "EnableEchoRequest": "enableEchoRequest",
+        "Enabled": "enabled",
+        "IpType": "ipType",
+        "N3CreateBearerReq": "n3CreateBearerReq",
+        "N3DeleteBearerReq": "n3DeleteBearerReq",
+        "N3EchoReq": "n3EchoReq",
+        "N3UpdateBearerReq": "n3UpdateBearerReq",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "T3CreateBearerReq": "t3CreateBearerReq",
+        "T3DeleteBearerReq": "t3DeleteBearerReq",
+        "T3EchoReq": "t3EchoReq",
+        "T3UpdateBearerReq": "t3UpdateBearerReq",
+        "UseCpIp": "useCpIp",
+        "UseUpIp": "useUpIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpPgwS5S8Range, self).__init__(parent, list_op)
@@ -68,10 +68,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_1cca5f37fe8bb4e7f58f5ea17e2416aa import CpIpRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_1cca5f37fe8bb4e7f58f5ea17e2416aa import (
+            CpIpRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CpIpRangeS5S8', None) is not None:
-                return self._properties.get('CpIpRangeS5S8')
+            if self._properties.get("CpIpRangeS5S8", None) is not None:
+                return self._properties.get("CpIpRangeS5S8")
         return CpIpRangeS5S8(self)._select()
 
     @property
@@ -85,10 +88,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_bab5f80b76fc5e2c069a9e1cd0b98507 import CpMacRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_bab5f80b76fc5e2c069a9e1cd0b98507 import (
+            CpMacRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CpMacRangeS5S8', None) is not None:
-                return self._properties.get('CpMacRangeS5S8')
+            if self._properties.get("CpMacRangeS5S8", None) is not None:
+                return self._properties.get("CpMacRangeS5S8")
         return CpMacRangeS5S8(self)._select()
 
     @property
@@ -102,10 +108,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_3824655656788ae08e6b4e6a675820e8 import CpVlanRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_3824655656788ae08e6b4e6a675820e8 import (
+            CpVlanRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CpVlanRangeS5S8', None) is not None:
-                return self._properties.get('CpVlanRangeS5S8')
+            if self._properties.get("CpVlanRangeS5S8", None) is not None:
+                return self._properties.get("CpVlanRangeS5S8")
         return CpVlanRangeS5S8(self)._select()
 
     @property
@@ -119,10 +128,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_b2cf7425f0a637259bbba1a7f2683571 import UpIpRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_b2cf7425f0a637259bbba1a7f2683571 import (
+            UpIpRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UpIpRangeS5S8', None) is not None:
-                return self._properties.get('UpIpRangeS5S8')
+            if self._properties.get("UpIpRangeS5S8", None) is not None:
+                return self._properties.get("UpIpRangeS5S8")
         return UpIpRangeS5S8(self)._select()
 
     @property
@@ -136,10 +148,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_bc238c27470386abadf29c03c69f3399 import UpMacRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_bc238c27470386abadf29c03c69f3399 import (
+            UpMacRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UpMacRangeS5S8', None) is not None:
-                return self._properties.get('UpMacRangeS5S8')
+            if self._properties.get("UpMacRangeS5S8", None) is not None:
+                return self._properties.get("UpMacRangeS5S8")
         return UpMacRangeS5S8(self)._select()
 
     @property
@@ -153,10 +168,13 @@ class EgtpPgwS5S8Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_11ba4e008bde71d81bbb2f8a427eb346 import UpVlanRangeS5S8
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_11ba4e008bde71d81bbb2f8a427eb346 import (
+            UpVlanRangeS5S8,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UpVlanRangeS5S8', None) is not None:
-                return self._properties.get('UpVlanRangeS5S8')
+            if self._properties.get("UpVlanRangeS5S8", None) is not None:
+                return self._properties.get("UpVlanRangeS5S8")
         return UpVlanRangeS5S8(self)._select()
 
     @property
@@ -167,11 +185,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: OBSOLETE: Use changeReportingList instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChangeReportingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChangeReportingMode"])
+
     @ChangeReportingMode.setter
     def ChangeReportingMode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChangeReportingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChangeReportingMode"], value)
 
     @property
     def EnableEchoRequest(self):
@@ -181,11 +200,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - bool: Set to true to send echo request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableEchoRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableEchoRequest"])
+
     @EnableEchoRequest.setter
     def EnableEchoRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableEchoRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableEchoRequest"], value)
 
     @property
     def Enabled(self):
@@ -195,11 +215,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpType(self):
@@ -209,11 +230,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - str: The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def N3CreateBearerReq(self):
@@ -223,11 +245,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Number of retransmissions for Create Bearer request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['N3CreateBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["N3CreateBearerReq"])
+
     @N3CreateBearerReq.setter
     def N3CreateBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['N3CreateBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["N3CreateBearerReq"], value)
 
     @property
     def N3DeleteBearerReq(self):
@@ -237,11 +260,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Number of retransmissions for Delete Bearer request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['N3DeleteBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["N3DeleteBearerReq"])
+
     @N3DeleteBearerReq.setter
     def N3DeleteBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['N3DeleteBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["N3DeleteBearerReq"], value)
 
     @property
     def N3EchoReq(self):
@@ -251,11 +275,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Number of retransmissions for Echo request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['N3EchoReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["N3EchoReq"])
+
     @N3EchoReq.setter
     def N3EchoReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['N3EchoReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["N3EchoReq"], value)
 
     @property
     def N3UpdateBearerReq(self):
@@ -265,11 +290,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Number of retransmissions for Update Bearer request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['N3UpdateBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["N3UpdateBearerReq"])
+
     @N3UpdateBearerReq.setter
     def N3UpdateBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['N3UpdateBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["N3UpdateBearerReq"], value)
 
     @property
     def Name(self):
@@ -279,11 +305,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -293,7 +320,7 @@ class EgtpPgwS5S8Range(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def T3CreateBearerReq(self):
@@ -303,11 +330,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Response timeout for a Create Bearer request (seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['T3CreateBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["T3CreateBearerReq"])
+
     @T3CreateBearerReq.setter
     def T3CreateBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['T3CreateBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["T3CreateBearerReq"], value)
 
     @property
     def T3DeleteBearerReq(self):
@@ -317,11 +345,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Response timeout for a Delete Bearer request (seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['T3DeleteBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["T3DeleteBearerReq"])
+
     @T3DeleteBearerReq.setter
     def T3DeleteBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['T3DeleteBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["T3DeleteBearerReq"], value)
 
     @property
     def T3EchoReq(self):
@@ -331,11 +360,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Response timeout for a Echo request (seconds).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['T3EchoReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["T3EchoReq"])
+
     @T3EchoReq.setter
     def T3EchoReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['T3EchoReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["T3EchoReq"], value)
 
     @property
     def T3UpdateBearerReq(self):
@@ -345,11 +375,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - number: Response timeout for a Update Bearer request (seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['T3UpdateBearerReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["T3UpdateBearerReq"])
+
     @T3UpdateBearerReq.setter
     def T3UpdateBearerReq(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['T3UpdateBearerReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["T3UpdateBearerReq"], value)
 
     @property
     def UseCpIp(self):
@@ -359,11 +390,12 @@ class EgtpPgwS5S8Range(Base):
         -------
         - bool: Use Control Plane Load Balancer
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseCpIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseCpIp"])
+
     @UseCpIp.setter
     def UseCpIp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseCpIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseCpIp"], value)
 
     @property
     def UseUpIp(self):
@@ -373,13 +405,31 @@ class EgtpPgwS5S8Range(Base):
         -------
         - bool: Use User Plane Load Balancer
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseUpIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseUpIp"])
+
     @UseUpIp.setter
     def UseUpIp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseUpIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseUpIp"], value)
 
-    def update(self, ChangeReportingMode=None, EnableEchoRequest=None, Enabled=None, IpType=None, N3CreateBearerReq=None, N3DeleteBearerReq=None, N3EchoReq=None, N3UpdateBearerReq=None, Name=None, T3CreateBearerReq=None, T3DeleteBearerReq=None, T3EchoReq=None, T3UpdateBearerReq=None, UseCpIp=None, UseUpIp=None):
+    def update(
+        self,
+        ChangeReportingMode=None,
+        EnableEchoRequest=None,
+        Enabled=None,
+        IpType=None,
+        N3CreateBearerReq=None,
+        N3DeleteBearerReq=None,
+        N3EchoReq=None,
+        N3UpdateBearerReq=None,
+        Name=None,
+        T3CreateBearerReq=None,
+        T3DeleteBearerReq=None,
+        T3EchoReq=None,
+        T3UpdateBearerReq=None,
+        UseCpIp=None,
+        UseUpIp=None,
+    ):
         # type: (int, bool, bool, str, int, int, int, int, str, int, int, int, int, bool, bool) -> EgtpPgwS5S8Range
         """Updates egtpPgwS5S8Range resource on the server.
 
@@ -407,7 +457,25 @@ class EgtpPgwS5S8Range(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ChangeReportingMode=None, EnableEchoRequest=None, Enabled=None, IpType=None, N3CreateBearerReq=None, N3DeleteBearerReq=None, N3EchoReq=None, N3UpdateBearerReq=None, Name=None, ObjectId=None, T3CreateBearerReq=None, T3DeleteBearerReq=None, T3EchoReq=None, T3UpdateBearerReq=None, UseCpIp=None, UseUpIp=None):
+    def find(
+        self,
+        ChangeReportingMode=None,
+        EnableEchoRequest=None,
+        Enabled=None,
+        IpType=None,
+        N3CreateBearerReq=None,
+        N3DeleteBearerReq=None,
+        N3EchoReq=None,
+        N3UpdateBearerReq=None,
+        Name=None,
+        ObjectId=None,
+        T3CreateBearerReq=None,
+        T3DeleteBearerReq=None,
+        T3EchoReq=None,
+        T3UpdateBearerReq=None,
+        UseCpIp=None,
+        UseUpIp=None,
+    ):
         # type: (int, bool, bool, str, int, int, int, int, str, str, int, int, int, int, bool, bool) -> EgtpPgwS5S8Range
         """Finds and retrieves egtpPgwS5S8Range resources from the server.
 
@@ -479,10 +547,14 @@ class EgtpPgwS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -501,10 +573,14 @@ class EgtpPgwS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -523,7 +599,11 @@ class EgtpPgwS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

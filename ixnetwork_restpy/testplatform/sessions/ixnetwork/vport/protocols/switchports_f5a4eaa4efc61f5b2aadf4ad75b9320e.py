@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class SwitchPorts(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchPorts'
+    _SDM_NAME = "switchPorts"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'EthernetAddress': 'ethernetAddress',
-        'NumberOfPorts': 'numberOfPorts',
-        'PortName': 'portName',
-        'PortNumber': 'portNumber',
+        "Enabled": "enabled",
+        "EthernetAddress": "ethernetAddress",
+        "NumberOfPorts": "numberOfPorts",
+        "PortName": "portName",
+        "PortNumber": "portNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchPorts, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_cc9bc55beca4c93e502db79a52a9d8e1 import AdvertisedFeatures
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_cc9bc55beca4c93e502db79a52a9d8e1 import (
+            AdvertisedFeatures,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvertisedFeatures', None) is not None:
-                return self._properties.get('AdvertisedFeatures')
+            if self._properties.get("AdvertisedFeatures", None) is not None:
+                return self._properties.get("AdvertisedFeatures")
         return AdvertisedFeatures(self)._select()
 
     @property
@@ -76,10 +79,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_6e49c0b3f524c23bb670180305a48807 import Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_6e49c0b3f524c23bb670180305a48807 import (
+            Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Config', None) is not None:
-                return self._properties.get('Config')
+            if self._properties.get("Config", None) is not None:
+                return self._properties.get("Config")
         return Config(self)._select()
 
     @property
@@ -93,10 +99,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_42185161180e45e15d9936f9f341eb2d import CurrentFeatures
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_42185161180e45e15d9936f9f341eb2d import (
+            CurrentFeatures,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CurrentFeatures', None) is not None:
-                return self._properties.get('CurrentFeatures')
+            if self._properties.get("CurrentFeatures", None) is not None:
+                return self._properties.get("CurrentFeatures")
         return CurrentFeatures(self)._select()
 
     @property
@@ -110,10 +119,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_fb6d7682a9aed018ab02944d64968cc4 import PeerAdvertisedFeatures
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_fb6d7682a9aed018ab02944d64968cc4 import (
+            PeerAdvertisedFeatures,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PeerAdvertisedFeatures', None) is not None:
-                return self._properties.get('PeerAdvertisedFeatures')
+            if self._properties.get("PeerAdvertisedFeatures", None) is not None:
+                return self._properties.get("PeerAdvertisedFeatures")
         return PeerAdvertisedFeatures(self)._select()
 
     @property
@@ -127,10 +139,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_587063f3d328642794be16a898bab140 import State
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_587063f3d328642794be16a898bab140 import (
+            State,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('State', None) is not None:
-                return self._properties.get('State')
+            if self._properties.get("State", None) is not None:
+                return self._properties.get("State")
         return State(self)._select()
 
     @property
@@ -144,10 +159,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_12ce664a571508519b7508c8c6cc3e98 import SupportedFeatures
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_12ce664a571508519b7508c8c6cc3e98 import (
+            SupportedFeatures,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SupportedFeatures', None) is not None:
-                return self._properties.get('SupportedFeatures')
+            if self._properties.get("SupportedFeatures", None) is not None:
+                return self._properties.get("SupportedFeatures")
         return SupportedFeatures(self)._select()
 
     @property
@@ -161,10 +179,13 @@ class SwitchPorts(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_daba470e1df112e54556817cbc544b15 import SwitchPortQueues
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_daba470e1df112e54556817cbc544b15 import (
+            SwitchPortQueues,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchPortQueues', None) is not None:
-                return self._properties.get('SwitchPortQueues')
+            if self._properties.get("SwitchPortQueues", None) is not None:
+                return self._properties.get("SwitchPortQueues")
         return SwitchPortQueues(self)
 
     @property
@@ -175,11 +196,12 @@ class SwitchPorts(Base):
         -------
         - bool: If true, the ports in the selected port range are added to the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EthernetAddress(self):
@@ -189,11 +211,12 @@ class SwitchPorts(Base):
         -------
         - str: Indicates the hardware address of the ports in the port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetAddress"])
+
     @EthernetAddress.setter
     def EthernetAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetAddress"], value)
 
     @property
     def NumberOfPorts(self):
@@ -203,11 +226,12 @@ class SwitchPorts(Base):
         -------
         - number: Specifies the number of ports in a port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPorts"])
+
     @NumberOfPorts.setter
     def NumberOfPorts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfPorts"], value)
 
     @property
     def PortName(self):
@@ -217,11 +241,12 @@ class SwitchPorts(Base):
         -------
         - str: Indicates the name for the switch port interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def PortNumber(self):
@@ -231,13 +256,21 @@ class SwitchPorts(Base):
         -------
         - str: Indicates a value that the datapath associates with a physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
+
     @PortNumber.setter
     def PortNumber(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortNumber"], value)
 
-    def update(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
+    def update(
+        self,
+        Enabled=None,
+        EthernetAddress=None,
+        NumberOfPorts=None,
+        PortName=None,
+        PortNumber=None,
+    ):
         # type: (bool, str, int, str, str) -> SwitchPorts
         """Updates switchPorts resource on the server.
 
@@ -255,7 +288,14 @@ class SwitchPorts(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
+    def add(
+        self,
+        Enabled=None,
+        EthernetAddress=None,
+        NumberOfPorts=None,
+        PortName=None,
+        PortNumber=None,
+    ):
         # type: (bool, str, int, str, str) -> SwitchPorts
         """Adds a new switchPorts resource on the server and adds it to the container.
 
@@ -287,7 +327,14 @@ class SwitchPorts(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, EthernetAddress=None, NumberOfPorts=None, PortName=None, PortNumber=None):
+    def find(
+        self,
+        Enabled=None,
+        EthernetAddress=None,
+        NumberOfPorts=None,
+        PortName=None,
+        PortNumber=None,
+    ):
         # type: (bool, str, int, str, str) -> SwitchPorts
         """Finds and retrieves switchPorts resources from the server.
 
@@ -347,7 +394,11 @@ class SwitchPorts(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('simulatePortUpDown', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "simulatePortUpDown", payload=payload, response_object=None
+        )

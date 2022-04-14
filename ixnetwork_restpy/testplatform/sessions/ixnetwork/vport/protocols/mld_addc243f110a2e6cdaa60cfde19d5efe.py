@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,21 @@ class Mld(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mld'
+    _SDM_NAME = "mld"
     _SDM_ATT_MAP = {
-        'EnableDoneOnStop': 'enableDoneOnStop',
-        'EnableUnicastMode': 'enableUnicastMode',
-        'Enabled': 'enabled',
-        'Mldv2Report': 'mldv2Report',
-        'NumberOfGroups': 'numberOfGroups',
-        'NumberOfQueries': 'numberOfQueries',
-        'QueryTimePeriod': 'queryTimePeriod',
-        'RunningState': 'runningState',
-        'TimePeriod': 'timePeriod',
+        "EnableDoneOnStop": "enableDoneOnStop",
+        "EnableUnicastMode": "enableUnicastMode",
+        "Enabled": "enabled",
+        "Mldv2Report": "mldv2Report",
+        "NumberOfGroups": "numberOfGroups",
+        "NumberOfQueries": "numberOfQueries",
+        "QueryTimePeriod": "queryTimePeriod",
+        "RunningState": "runningState",
+        "TimePeriod": "timePeriod",
     }
     _SDM_ENUM_MAP = {
-        'mldv2Report': ['type143', 'type206'],
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "mldv2Report": ["type143", "type206"],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,10 +64,13 @@ class Mld(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_fa1da007d58124057dd278c45c2d38ab import Host
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_fa1da007d58124057dd278c45c2d38ab import (
+            Host,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Host', None) is not None:
-                return self._properties.get('Host')
+            if self._properties.get("Host", None) is not None:
+                return self._properties.get("Host")
         return Host(self)
 
     @property
@@ -80,10 +84,13 @@ class Mld(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_dac8ed773affc99eb47c41c6e99f71c1 import Querier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_dac8ed773affc99eb47c41c6e99f71c1 import (
+            Querier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Querier', None) is not None:
-                return self._properties.get('Querier')
+            if self._properties.get("Querier", None) is not None:
+                return self._properties.get("Querier")
         return Querier(self)
 
     @property
@@ -94,11 +101,12 @@ class Mld(Base):
         -------
         - bool: Controls the behavior of MLD messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDoneOnStop'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDoneOnStop"])
+
     @EnableDoneOnStop.setter
     def EnableDoneOnStop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDoneOnStop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDoneOnStop"], value)
 
     @property
     def EnableUnicastMode(self):
@@ -106,13 +114,14 @@ class Mld(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableUnicastMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableUnicastMode"])
+
     @EnableUnicastMode.setter
     def EnableUnicastMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableUnicastMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableUnicastMode"], value)
 
     @property
     def Enabled(self):
@@ -122,11 +131,12 @@ class Mld(Base):
         -------
         - bool: Enables or disables simulation of the router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Mldv2Report(self):
@@ -136,11 +146,12 @@ class Mld(Base):
         -------
         - str(type143 | type206): The version of the MLD report to be generated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mldv2Report'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mldv2Report"])
+
     @Mldv2Report.setter
     def Mldv2Report(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mldv2Report'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mldv2Report"], value)
 
     @property
     def NumberOfGroups(self):
@@ -150,11 +161,12 @@ class Mld(Base):
         -------
         - number: Provides a means of throttling the amount of MLD traffic generated by the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfGroups"])
+
     @NumberOfGroups.setter
     def NumberOfGroups(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfGroups"], value)
 
     @property
     def NumberOfQueries(self):
@@ -164,11 +176,12 @@ class Mld(Base):
         -------
         - number: Provides a means of throttling the amount of MLD queries generated by the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfQueries'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfQueries"])
+
     @NumberOfQueries.setter
     def NumberOfQueries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfQueries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfQueries"], value)
 
     @property
     def QueryTimePeriod(self):
@@ -178,11 +191,12 @@ class Mld(Base):
         -------
         - number: The time, in milliseconds, between queries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueryTimePeriod'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueryTimePeriod"])
+
     @QueryTimePeriod.setter
     def QueryTimePeriod(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueryTimePeriod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueryTimePeriod"], value)
 
     @property
     def RunningState(self):
@@ -192,7 +206,7 @@ class Mld(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the MLD server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def TimePeriod(self):
@@ -202,20 +216,31 @@ class Mld(Base):
         -------
         - number: Specify the length of each time period during which the specified number of MLD Groups will be advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimePeriod'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimePeriod"])
+
     @TimePeriod.setter
     def TimePeriod(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimePeriod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimePeriod"], value)
 
-    def update(self, EnableDoneOnStop=None, EnableUnicastMode=None, Enabled=None, Mldv2Report=None, NumberOfGroups=None, NumberOfQueries=None, QueryTimePeriod=None, TimePeriod=None):
+    def update(
+        self,
+        EnableDoneOnStop=None,
+        EnableUnicastMode=None,
+        Enabled=None,
+        Mldv2Report=None,
+        NumberOfGroups=None,
+        NumberOfQueries=None,
+        QueryTimePeriod=None,
+        TimePeriod=None,
+    ):
         # type: (bool, bool, bool, str, int, int, int, int) -> Mld
         """Updates mld resource on the server.
 
         Args
         ----
         - EnableDoneOnStop (bool): Controls the behavior of MLD messages.
-        - EnableUnicastMode (bool): 
+        - EnableUnicastMode (bool):
         - Enabled (bool): Enables or disables simulation of the router.
         - Mldv2Report (str(type143 | type206)): The version of the MLD report to be generated.
         - NumberOfGroups (number): Provides a means of throttling the amount of MLD traffic generated by the port.
@@ -229,7 +254,18 @@ class Mld(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableDoneOnStop=None, EnableUnicastMode=None, Enabled=None, Mldv2Report=None, NumberOfGroups=None, NumberOfQueries=None, QueryTimePeriod=None, RunningState=None, TimePeriod=None):
+    def find(
+        self,
+        EnableDoneOnStop=None,
+        EnableUnicastMode=None,
+        Enabled=None,
+        Mldv2Report=None,
+        NumberOfGroups=None,
+        NumberOfQueries=None,
+        QueryTimePeriod=None,
+        RunningState=None,
+        TimePeriod=None,
+    ):
         # type: (bool, bool, bool, str, int, int, int, str, int) -> Mld
         """Finds and retrieves mld resources from the server.
 
@@ -240,7 +276,7 @@ class Mld(Base):
         Args
         ----
         - EnableDoneOnStop (bool): Controls the behavior of MLD messages.
-        - EnableUnicastMode (bool): 
+        - EnableUnicastMode (bool):
         - Enabled (bool): Enables or disables simulation of the router.
         - Mldv2Report (str(type143 | type206)): The version of the MLD report to be generated.
         - NumberOfGroups (number): Provides a means of throttling the amount of MLD traffic generated by the port.
@@ -292,10 +328,12 @@ class Mld(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -312,7 +350,9 @@ class Mld(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

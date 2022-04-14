@@ -17,10 +17,13 @@ For more information on containers read the following:
 from ixnetwork_restpy import SessionAssistant
 
 
-session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
-    UserName='admin', Password='admin',
-    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
-    ClearConfig=True)
+session_assistant = SessionAssistant(
+    IpAddress="127.0.0.1",
+    UserName="admin",
+    Password="admin",
+    LogLevel=SessionAssistant.LOGLEVEL_INFO,
+    ClearConfig=True,
+)
 ixnetwork = session_assistant.Ixnetwork
 
 # create x number of vports
@@ -30,10 +33,10 @@ for i in range(vport_count):
 
 # get a container object with all instances
 vports = ixnetwork.Vport.find()
-assert(len(vports) == 3)
+assert len(vports) == 3
 
 # print the number of insances encapsulated in the container
-print('%s instances' % len(vports))
+print("%s instances" % len(vports))
 
 # print all instances in the container
 print(vports)
@@ -50,5 +53,3 @@ print(len(vport_list))
 
 # remove all encapsulated instances in a single method call
 vports.remove()
-
-

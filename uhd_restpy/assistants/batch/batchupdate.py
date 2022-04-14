@@ -4,6 +4,7 @@ import inspect
 from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
 from ixnetwork_restpy.timer import Timer
 
+
 class Batch(object):
     """Base batch functionality"""
 
@@ -116,7 +117,9 @@ class BatchAdd(Batch):
             response = self._send_recv("POST", url, batch["payload"])
             responses = len(response["links"])
             for i in range(responses):
-                batch["base"]._set_properties({"href": response["links"][responses - i - 1]["href"]})
+                batch["base"]._set_properties(
+                    {"href": response["links"][responses - i - 1]["href"]}
+                )
             batch["base"].refresh()
 
     def __enter__(self):
@@ -131,7 +134,9 @@ class BatchAdd(Batch):
         """
         start = time.time()
         self._process_batch_add()
-        self._ixnetwork.info("Batch commit of %s adds in %.3fs" % (self._total_adds, time.time() - start))
+        self._ixnetwork.info(
+            "Batch commit of %s adds in %.3fs" % (self._total_adds, time.time() - start)
+        )
         self._ixnetwork._connection._create = self._original_add
 
 

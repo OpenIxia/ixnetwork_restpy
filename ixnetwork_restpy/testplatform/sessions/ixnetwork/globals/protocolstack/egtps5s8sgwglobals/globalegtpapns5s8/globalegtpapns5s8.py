@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,39 +35,38 @@ class GlobalEgtpApnS5S8(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'globalEgtpApnS5S8'
+    _SDM_NAME = "globalEgtpApnS5S8"
     _SDM_ATT_MAP = {
-        'AddressPoolStartIPv4': 'addressPoolStartIPv4',
-        'AddressPoolStartIPv6': 'addressPoolStartIPv6',
-        'AmbrDL': 'ambrDL',
-        'AmbrUL': 'ambrUL',
-        'ArpPreemptionCapability': 'arpPreemptionCapability',
-        'ArpPreemptionVulnerability': 'arpPreemptionVulnerability',
-        'ArpPriorityLevel': 'arpPriorityLevel',
-        'EnableLifetime': 'enableLifetime',
-        'EnablePgwDistribution': 'enablePgwDistribution',
-        'EnableStaticIpAllocation': 'enableStaticIpAllocation',
-        'Enabled': 'enabled',
-        'IpType': 'ipType',
-        'Lifetime': 'lifetime',
-        'Mbrd': 'mbrd',
-        'Mbru': 'mbru',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PgwCount': 'pgwCount',
-        'PgwIp': 'pgwIp',
-        'PgwIpCount': 'pgwIpCount',
-        'Qci': 'qci',
-        'Restriction': 'restriction',
-        'SelectionMode': 'selectionMode',
-        'UpdateAmbrEnable': 'updateAmbrEnable',
-        'UpdateAmbrIncrement': 'updateAmbrIncrement',
-        'UpdateAmbrIterations': 'updateAmbrIterations',
-        'UpdateAmbrTimeout': 'updateAmbrTimeout',
-        'UseFullApn': 'useFullApn',
+        "AddressPoolStartIPv4": "addressPoolStartIPv4",
+        "AddressPoolStartIPv6": "addressPoolStartIPv6",
+        "AmbrDL": "ambrDL",
+        "AmbrUL": "ambrUL",
+        "ArpPreemptionCapability": "arpPreemptionCapability",
+        "ArpPreemptionVulnerability": "arpPreemptionVulnerability",
+        "ArpPriorityLevel": "arpPriorityLevel",
+        "EnableLifetime": "enableLifetime",
+        "EnablePgwDistribution": "enablePgwDistribution",
+        "EnableStaticIpAllocation": "enableStaticIpAllocation",
+        "Enabled": "enabled",
+        "IpType": "ipType",
+        "Lifetime": "lifetime",
+        "Mbrd": "mbrd",
+        "Mbru": "mbru",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PgwCount": "pgwCount",
+        "PgwIp": "pgwIp",
+        "PgwIpCount": "pgwIpCount",
+        "Qci": "qci",
+        "Restriction": "restriction",
+        "SelectionMode": "selectionMode",
+        "UpdateAmbrEnable": "updateAmbrEnable",
+        "UpdateAmbrIncrement": "updateAmbrIncrement",
+        "UpdateAmbrIterations": "updateAmbrIterations",
+        "UpdateAmbrTimeout": "updateAmbrTimeout",
+        "UseFullApn": "useFullApn",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GlobalEgtpApnS5S8, self).__init__(parent, list_op)
@@ -79,11 +79,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: Defines the base IPv4 address to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressPoolStartIPv4"])
+
     @AddressPoolStartIPv4.setter
     def AddressPoolStartIPv4(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressPoolStartIPv4"], value)
 
     @property
     def AddressPoolStartIPv6(self):
@@ -93,11 +94,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: Defines the base IPv6 address to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressPoolStartIPv6"])
+
     @AddressPoolStartIPv6.setter
     def AddressPoolStartIPv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressPoolStartIPv6"], value)
 
     @property
     def AmbrDL(self):
@@ -107,11 +109,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Aggregated Maximum Bit Rate for down-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmbrDL'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmbrDL"])
+
     @AmbrDL.setter
     def AmbrDL(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmbrDL'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmbrDL"], value)
 
     @property
     def AmbrUL(self):
@@ -121,11 +124,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Aggregated Maximum Bit Rate for up-link. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AmbrUL'])
+        return self._get_attribute(self._SDM_ATT_MAP["AmbrUL"])
+
     @AmbrUL.setter
     def AmbrUL(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AmbrUL'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AmbrUL"], value)
 
     @property
     def ArpPreemptionCapability(self):
@@ -135,11 +139,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: If true preemption capability is enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpPreemptionCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpPreemptionCapability"])
+
     @ArpPreemptionCapability.setter
     def ArpPreemptionCapability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpPreemptionCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpPreemptionCapability"], value)
 
     @property
     def ArpPreemptionVulnerability(self):
@@ -149,11 +154,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: If true preemption vulnerability is enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpPreemptionVulnerability'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpPreemptionVulnerability"])
+
     @ArpPreemptionVulnerability.setter
     def ArpPreemptionVulnerability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpPreemptionVulnerability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpPreemptionVulnerability"], value)
 
     @property
     def ArpPriorityLevel(self):
@@ -163,11 +169,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Priority Level 1=highest 15=lowest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpPriorityLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpPriorityLevel"])
+
     @ArpPriorityLevel.setter
     def ArpPriorityLevel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpPriorityLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpPriorityLevel"], value)
 
     @property
     def EnableLifetime(self):
@@ -177,11 +184,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: Enable UE PDN connection lifetime control. The UE will disconnect from specified APN after the specified time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLifetime'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLifetime"])
+
     @EnableLifetime.setter
     def EnableLifetime(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLifetime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLifetime"], value)
 
     @property
     def EnablePgwDistribution(self):
@@ -191,11 +199,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: Enable PGW Distribution of IPs on SGW
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePgwDistribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePgwDistribution"])
+
     @EnablePgwDistribution.setter
     def EnablePgwDistribution(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePgwDistribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePgwDistribution"], value)
 
     @property
     def EnableStaticIpAllocation(self):
@@ -205,11 +214,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: This enables the static ip allocation for the User Plane. The Create Session Request at initial attach in E-Utran shall have the PAA set to the values set here.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStaticIpAllocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStaticIpAllocation"])
+
     @EnableStaticIpAllocation.setter
     def EnableStaticIpAllocation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStaticIpAllocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStaticIpAllocation"], value)
 
     @property
     def Enabled(self):
@@ -219,11 +229,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpType(self):
@@ -233,11 +244,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: Defines the IP type to be used by the UE. IP type IPv4v6 is used for dual stack functionality.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Lifetime(self):
@@ -247,11 +259,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Amount of time (in seconds) to wait after PDN attach procedure completes before scheduling forced detach.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Lifetime'])
+        return self._get_attribute(self._SDM_ATT_MAP["Lifetime"])
+
     @Lifetime.setter
     def Lifetime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Lifetime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Lifetime"], value)
 
     @property
     def Mbrd(self):
@@ -261,11 +274,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mbrd"])
+
     @Mbrd.setter
     def Mbrd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mbrd"], value)
 
     @property
     def Mbru(self):
@@ -275,11 +289,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mbru"])
+
     @Mbru.setter
     def Mbru(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mbru"], value)
 
     @property
     def Name(self):
@@ -289,11 +304,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: APN name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -303,7 +319,7 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PgwCount(self):
@@ -313,11 +329,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Defines the number of PGW addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PgwCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PgwCount"])
+
     @PgwCount.setter
     def PgwCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PgwCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PgwCount"], value)
 
     @property
     def PgwIp(self):
@@ -327,11 +344,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - str: PGW IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PgwIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PgwIp"])
+
     @PgwIp.setter
     def PgwIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PgwIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PgwIp"], value)
 
     @property
     def PgwIpCount(self):
@@ -339,13 +357,14 @@ class GlobalEgtpApnS5S8(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PgwIpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PgwIpCount"])
+
     @PgwIpCount.setter
     def PgwIpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PgwIpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PgwIpCount"], value)
 
     @property
     def Qci(self):
@@ -355,11 +374,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: QoS Class Identifier
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Qci'])
+        return self._get_attribute(self._SDM_ATT_MAP["Qci"])
+
     @Qci.setter
     def Qci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Qci"], value)
 
     @property
     def Restriction(self):
@@ -369,11 +389,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Authorization to access another APN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Restriction'])
+        return self._get_attribute(self._SDM_ATT_MAP["Restriction"])
+
     @Restriction.setter
     def Restriction(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Restriction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Restriction"], value)
 
     @property
     def SelectionMode(self):
@@ -383,11 +404,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Indicates the origin of the APN in the message
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectionMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectionMode"])
+
     @SelectionMode.setter
     def SelectionMode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectionMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectionMode"], value)
 
     @property
     def UpdateAmbrEnable(self):
@@ -397,11 +419,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: Update APN-AMBR for this UE
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateAmbrEnable"])
+
     @UpdateAmbrEnable.setter
     def UpdateAmbrEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateAmbrEnable"], value)
 
     @property
     def UpdateAmbrIncrement(self):
@@ -411,11 +434,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateAmbrIncrement"])
+
     @UpdateAmbrIncrement.setter
     def UpdateAmbrIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateAmbrIncrement"], value)
 
     @property
     def UpdateAmbrIterations(self):
@@ -425,11 +449,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateAmbrIterations"])
+
     @UpdateAmbrIterations.setter
     def UpdateAmbrIterations(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateAmbrIterations"], value)
 
     @property
     def UpdateAmbrTimeout(self):
@@ -439,11 +464,12 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - number: Time to wait (in seconds) since the session was created until sending the update
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateAmbrTimeout"])
+
     @UpdateAmbrTimeout.setter
     def UpdateAmbrTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateAmbrTimeout"], value)
 
     @property
     def UseFullApn(self):
@@ -453,13 +479,43 @@ class GlobalEgtpApnS5S8(Base):
         -------
         - bool: Send the full APN in CreateSessionRequest by appending APN-OI to the APN name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseFullApn'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseFullApn"])
+
     @UseFullApn.setter
     def UseFullApn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseFullApn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseFullApn"], value)
 
-    def update(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+    def update(
+        self,
+        AddressPoolStartIPv4=None,
+        AddressPoolStartIPv6=None,
+        AmbrDL=None,
+        AmbrUL=None,
+        ArpPreemptionCapability=None,
+        ArpPreemptionVulnerability=None,
+        ArpPriorityLevel=None,
+        EnableLifetime=None,
+        EnablePgwDistribution=None,
+        EnableStaticIpAllocation=None,
+        Enabled=None,
+        IpType=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Name=None,
+        PgwCount=None,
+        PgwIp=None,
+        PgwIpCount=None,
+        Qci=None,
+        Restriction=None,
+        SelectionMode=None,
+        UpdateAmbrEnable=None,
+        UpdateAmbrIncrement=None,
+        UpdateAmbrIterations=None,
+        UpdateAmbrTimeout=None,
+        UseFullApn=None,
+    ):
         # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Updates globalEgtpApnS5S8 resource on the server.
 
@@ -483,7 +539,7 @@ class GlobalEgtpApnS5S8(Base):
         - Name (str): APN name
         - PgwCount (number): Defines the number of PGW addresses in the range.
         - PgwIp (str): PGW IP
-        - PgwIpCount (number): 
+        - PgwIpCount (number):
         - Qci (number): QoS Class Identifier
         - Restriction (number): Authorization to access another APN
         - SelectionMode (number): Indicates the origin of the APN in the message
@@ -499,7 +555,36 @@ class GlobalEgtpApnS5S8(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+    def add(
+        self,
+        AddressPoolStartIPv4=None,
+        AddressPoolStartIPv6=None,
+        AmbrDL=None,
+        AmbrUL=None,
+        ArpPreemptionCapability=None,
+        ArpPreemptionVulnerability=None,
+        ArpPriorityLevel=None,
+        EnableLifetime=None,
+        EnablePgwDistribution=None,
+        EnableStaticIpAllocation=None,
+        Enabled=None,
+        IpType=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Name=None,
+        PgwCount=None,
+        PgwIp=None,
+        PgwIpCount=None,
+        Qci=None,
+        Restriction=None,
+        SelectionMode=None,
+        UpdateAmbrEnable=None,
+        UpdateAmbrIncrement=None,
+        UpdateAmbrIterations=None,
+        UpdateAmbrTimeout=None,
+        UseFullApn=None,
+    ):
         # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Adds a new globalEgtpApnS5S8 resource on the server and adds it to the container.
 
@@ -523,7 +608,7 @@ class GlobalEgtpApnS5S8(Base):
         - Name (str): APN name
         - PgwCount (number): Defines the number of PGW addresses in the range.
         - PgwIp (str): PGW IP
-        - PgwIpCount (number): 
+        - PgwIpCount (number):
         - Qci (number): QoS Class Identifier
         - Restriction (number): Authorization to access another APN
         - SelectionMode (number): Indicates the origin of the APN in the message
@@ -553,7 +638,37 @@ class GlobalEgtpApnS5S8(Base):
         """
         self._delete()
 
-    def find(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, ObjectId=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+    def find(
+        self,
+        AddressPoolStartIPv4=None,
+        AddressPoolStartIPv6=None,
+        AmbrDL=None,
+        AmbrUL=None,
+        ArpPreemptionCapability=None,
+        ArpPreemptionVulnerability=None,
+        ArpPriorityLevel=None,
+        EnableLifetime=None,
+        EnablePgwDistribution=None,
+        EnableStaticIpAllocation=None,
+        Enabled=None,
+        IpType=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Name=None,
+        ObjectId=None,
+        PgwCount=None,
+        PgwIp=None,
+        PgwIpCount=None,
+        Qci=None,
+        Restriction=None,
+        SelectionMode=None,
+        UpdateAmbrEnable=None,
+        UpdateAmbrIncrement=None,
+        UpdateAmbrIterations=None,
+        UpdateAmbrTimeout=None,
+        UseFullApn=None,
+    ):
         # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Finds and retrieves globalEgtpApnS5S8 resources from the server.
 
@@ -582,7 +697,7 @@ class GlobalEgtpApnS5S8(Base):
         - ObjectId (str): Unique identifier for this object
         - PgwCount (number): Defines the number of PGW addresses in the range.
         - PgwIp (str): PGW IP
-        - PgwIpCount (number): 
+        - PgwIpCount (number):
         - Qci (number): QoS Class Identifier
         - Restriction (number): Authorization to access another APN
         - SelectionMode (number): Indicates the origin of the APN in the message

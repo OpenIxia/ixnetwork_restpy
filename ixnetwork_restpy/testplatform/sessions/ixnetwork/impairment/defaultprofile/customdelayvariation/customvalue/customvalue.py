@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class CustomValue(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customValue'
+    _SDM_NAME = "customValue"
     _SDM_ATT_MAP = {
-        'Percentage': 'percentage',
-        'Value': 'value',
+        "Percentage": "percentage",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomValue, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class CustomValue(Base):
         -------
         - number: How often this value occurs, as a percentage.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
+        return self._get_attribute(self._SDM_ATT_MAP["Percentage"])
+
     @Percentage.setter
     def Percentage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Percentage"], value)
 
     @property
     def Value(self):
@@ -67,11 +68,12 @@ class CustomValue(Base):
         -------
         - number: Delay value, in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Percentage=None, Value=None):
         # type: (int, int) -> CustomValue

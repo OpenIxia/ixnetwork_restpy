@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class LearnedIpv4P2mpLables(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedIpv4P2mpLables'
+    _SDM_NAME = "learnedIpv4P2mpLables"
     _SDM_ATT_MAP = {
-        'Label': 'label',
-        'LabelSpaceId': 'labelSpaceId',
-        'PeerIpAddress': 'peerIpAddress',
-        'RootAddress': 'rootAddress',
+        "Label": "label",
+        "LabelSpaceId": "labelSpaceId",
+        "PeerIpAddress": "peerIpAddress",
+        "RootAddress": "rootAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedIpv4P2mpLables, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class LearnedIpv4P2mpLables(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_bcb70021648725c2761a10020b6ef5cc import OpaqueValueElement
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_bcb70021648725c2761a10020b6ef5cc import (
+            OpaqueValueElement,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpaqueValueElement', None) is not None:
-                return self._properties.get('OpaqueValueElement')
+            if self._properties.get("OpaqueValueElement", None) is not None:
+                return self._properties.get("OpaqueValueElement")
         return OpaqueValueElement(self)
 
     @property
@@ -71,7 +74,7 @@ class LearnedIpv4P2mpLables(Base):
         -------
         - number: Indicates the label value added to the packet(s) by the upstream LDP peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def LabelSpaceId(self):
@@ -81,7 +84,7 @@ class LearnedIpv4P2mpLables(Base):
         -------
         - number: Part of the LSR Id. It forms the last 2 octets of the 6-octet LDP Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelSpaceId"])
 
     @property
     def PeerIpAddress(self):
@@ -91,7 +94,7 @@ class LearnedIpv4P2mpLables(Base):
         -------
         - str: The RID of the upstream LDP peer. Part of the LSR Id. It must be globally unique. It forms the first 4 octets of the 6-octet LDP Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIpAddress"])
 
     @property
     def RootAddress(self):
@@ -101,10 +104,10 @@ class LearnedIpv4P2mpLables(Base):
         -------
         - str: Root Address of IPv4 P2MP labels learned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootAddress"])
 
     def add(self):
-        """Adds a new learnedIpv4P2mpLables resource on the json, only valid with config assistant
+        """Adds a new learnedIpv4P2mpLables resource on the json, only valid with batch add utility
 
         Returns
         -------

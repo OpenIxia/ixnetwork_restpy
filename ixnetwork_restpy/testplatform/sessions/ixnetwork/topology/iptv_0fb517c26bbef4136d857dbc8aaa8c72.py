@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class Iptv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'iptv'
+    _SDM_NAME = "iptv"
     _SDM_ATT_MAP = {
-        'CombinedLeaveJoin': 'combinedLeaveJoin',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableGeneralQueryResponse': 'enableGeneralQueryResponse',
-        'EnableGroupSpecificQueryResponse': 'enableGroupSpecificQueryResponse',
-        'JoinLatencyThreshold': 'joinLatencyThreshold',
-        'LeaveLatencyThreshold': 'leaveLatencyThreshold',
-        'LogAllTimestamps': 'logAllTimestamps',
-        'LogFailureTimestamps': 'logFailureTimestamps',
-        'Name': 'name',
-        'NumChannelChangesBeforeView': 'numChannelChangesBeforeView',
-        'State': 'state',
-        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
-        'ViewDuration': 'viewDuration',
-        'ZapBehavior': 'zapBehavior',
-        'ZapDirection': 'zapDirection',
-        'ZapInterval': 'zapInterval',
-        'ZapIntervalType': 'zapIntervalType',
+        "CombinedLeaveJoin": "combinedLeaveJoin",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableGeneralQueryResponse": "enableGeneralQueryResponse",
+        "EnableGroupSpecificQueryResponse": "enableGroupSpecificQueryResponse",
+        "JoinLatencyThreshold": "joinLatencyThreshold",
+        "LeaveLatencyThreshold": "leaveLatencyThreshold",
+        "LogAllTimestamps": "logAllTimestamps",
+        "LogFailureTimestamps": "logFailureTimestamps",
+        "Name": "name",
+        "NumChannelChangesBeforeView": "numChannelChangesBeforeView",
+        "State": "state",
+        "StbLeaveJoinDelay": "stbLeaveJoinDelay",
+        "ViewDuration": "viewDuration",
+        "ZapBehavior": "zapBehavior",
+        "ZapDirection": "zapDirection",
+        "ZapInterval": "zapInterval",
+        "ZapIntervalType": "zapIntervalType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Iptv, self).__init__(parent, list_op)
@@ -68,7 +68,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Leave for current group and join for next group gets merged in a single multicast packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CombinedLeaveJoin']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CombinedLeaveJoin"])
+        )
 
     @property
     def Count(self):
@@ -78,7 +81,7 @@ class Iptv(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -88,7 +91,7 @@ class Iptv(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableGeneralQueryResponse(self):
@@ -99,7 +102,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, General Query Response is send.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGeneralQueryResponse']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableGeneralQueryResponse"])
+        )
 
     @property
     def EnableGroupSpecificQueryResponse(self):
@@ -110,7 +116,11 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Group Specific Response is sent
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGroupSpecificQueryResponse']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableGroupSpecificQueryResponse"]),
+        )
 
     @property
     def JoinLatencyThreshold(self):
@@ -121,7 +131,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum time that is allowed for a multicast stream to arrive for channel for which a Join has been sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JoinLatencyThreshold']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["JoinLatencyThreshold"])
+        )
 
     @property
     def LeaveLatencyThreshold(self):
@@ -132,7 +145,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum time allowed for a multicast stream to stop for a channel for which a Leave has been sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LeaveLatencyThreshold']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LeaveLatencyThreshold"])
+        )
 
     @property
     def LogAllTimestamps(self):
@@ -143,7 +159,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, all the captured timestamps for Join and Leave are saved to a log file.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogAllTimestamps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LogAllTimestamps"])
+        )
 
     @property
     def LogFailureTimestamps(self):
@@ -154,7 +173,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the timestamps for Join and Leave failures are saved to a log file.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogFailureTimestamps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LogFailureTimestamps"])
+        )
 
     @property
     def Name(self):
@@ -164,11 +186,12 @@ class Iptv(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumChannelChangesBeforeView(self):
@@ -179,7 +202,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of channels to change before stopping on a channel and watching it for View Duration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumChannelChangesBeforeView']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumChannelChangesBeforeView"])
+        )
 
     @property
     def State(self):
@@ -189,7 +215,7 @@ class Iptv(Base):
         -------
         - list(str[notStarted | started]): Indicates the state IPTV
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def StbLeaveJoinDelay(self):
@@ -200,7 +226,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StbLeaveJoinDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StbLeaveJoinDelay"])
+        )
 
     @property
     def ViewDuration(self):
@@ -211,7 +240,8 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the time in milliseconds to view the last channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ViewDuration']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ViewDuration"]))
 
     @property
     def ZapBehavior(self):
@@ -222,7 +252,8 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Zap Only to change channels without viewing the channel or Zap and View to change traffic and receive traffic for the last channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZapBehavior']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ZapBehavior"]))
 
     @property
     def ZapDirection(self):
@@ -233,7 +264,8 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the direction of changing channels.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZapDirection']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ZapDirection"]))
 
     @property
     def ZapInterval(self):
@@ -244,7 +276,8 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval in milliseconds between channel changes based on the selected type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZapInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ZapInterval"]))
 
     @property
     def ZapIntervalType(self):
@@ -255,7 +288,10 @@ class Iptv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the wait interval type before changing the channels.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZapIntervalType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ZapIntervalType"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> Iptv
@@ -334,10 +370,14 @@ class Iptv(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('importFailureTimestampFile', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "importFailureTimestampFile", payload=payload, response_object=None
+        )
 
     def StartIptv(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -372,10 +412,12 @@ class Iptv(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startIptv', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startIptv", payload=payload, response_object=None)
 
     def StopIptv(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -410,12 +452,31 @@ class Iptv(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopIptv', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopIptv", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, CombinedLeaveJoin=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        CombinedLeaveJoin=None,
+        EnableGeneralQueryResponse=None,
+        EnableGroupSpecificQueryResponse=None,
+        JoinLatencyThreshold=None,
+        LeaveLatencyThreshold=None,
+        LogAllTimestamps=None,
+        LogFailureTimestamps=None,
+        NumChannelChangesBeforeView=None,
+        StbLeaveJoinDelay=None,
+        ViewDuration=None,
+        ZapBehavior=None,
+        ZapDirection=None,
+        ZapInterval=None,
+        ZapIntervalType=None,
+    ):
         """Base class infrastructure that gets a list of iptv device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,53 +18,54 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class Ipv4MulticastVpn(Base):
-    """If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address
-family..
-    The Ipv4MulticastVpn class encapsulates a list of ipv4MulticastVpn resources that are managed by the system.
-    A list of resources can be retrieved from the server using the Ipv4MulticastVpn.find() method.
+    """If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address
+
+    family..
+        The Ipv4MulticastVpn class encapsulates a list of ipv4MulticastVpn resources that are managed by the system.
+        A list of resources can be retrieved from the server using the Ipv4MulticastVpn.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv4MulticastVpn'
+    _SDM_NAME = "ipv4MulticastVpn"
     _SDM_ATT_MAP = {
-        'AddressFamily': 'addressFamily',
-        'AddressLength': 'addressLength',
-        'CMcastRouteType': 'cMcastRouteType',
-        'GroupAddress': 'groupAddress',
-        'Neighbor': 'neighbor',
-        'OpaqueLength': 'opaqueLength',
-        'OriginatingRouter': 'originatingRouter',
-        'RootAddress': 'rootAddress',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'RouteKeyGroupAddress': 'routeKeyGroupAddress',
-        'RouteKeyOriginatingRouter': 'routeKeyOriginatingRouter',
-        'RouteKeyRouteDistinguisher': 'routeKeyRouteDistinguisher',
-        'RouteKeyRsvpP2mpExtendedTunnelId': 'routeKeyRsvpP2mpExtendedTunnelId',
-        'RouteKeyRsvpP2mpId': 'routeKeyRsvpP2mpId',
-        'RouteKeyRsvpP2mpTunnelId': 'routeKeyRsvpP2mpTunnelId',
-        'RouteKeySourceAddress': 'routeKeySourceAddress',
-        'RouteKeyTunnelType': 'routeKeyTunnelType',
-        'RouteKeyUpstreamLabel': 'routeKeyUpstreamLabel',
-        'RouteType': 'routeType',
-        'RsvpP2mpExtendedTunnelId': 'rsvpP2mpExtendedTunnelId',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpTunnelId': 'rsvpP2mpTunnelId',
-        'SourceAddress': 'sourceAddress',
-        'SourceAs': 'sourceAs',
-        'TunnelType': 'tunnelType',
-        'UpstreamLabel': 'upstreamLabel',
+        "AddressFamily": "addressFamily",
+        "AddressLength": "addressLength",
+        "CMcastRouteType": "cMcastRouteType",
+        "GroupAddress": "groupAddress",
+        "Neighbor": "neighbor",
+        "OpaqueLength": "opaqueLength",
+        "OriginatingRouter": "originatingRouter",
+        "RootAddress": "rootAddress",
+        "RouteDistinguisher": "routeDistinguisher",
+        "RouteKeyGroupAddress": "routeKeyGroupAddress",
+        "RouteKeyOriginatingRouter": "routeKeyOriginatingRouter",
+        "RouteKeyRouteDistinguisher": "routeKeyRouteDistinguisher",
+        "RouteKeyRsvpP2mpExtendedTunnelId": "routeKeyRsvpP2mpExtendedTunnelId",
+        "RouteKeyRsvpP2mpId": "routeKeyRsvpP2mpId",
+        "RouteKeyRsvpP2mpTunnelId": "routeKeyRsvpP2mpTunnelId",
+        "RouteKeySourceAddress": "routeKeySourceAddress",
+        "RouteKeyTunnelType": "routeKeyTunnelType",
+        "RouteKeyUpstreamLabel": "routeKeyUpstreamLabel",
+        "RouteType": "routeType",
+        "RsvpP2mpExtendedTunnelId": "rsvpP2mpExtendedTunnelId",
+        "RsvpP2mpId": "rsvpP2mpId",
+        "RsvpP2mpTunnelId": "rsvpP2mpTunnelId",
+        "SourceAddress": "sourceAddress",
+        "SourceAs": "sourceAs",
+        "TunnelType": "tunnelType",
+        "UpstreamLabel": "upstreamLabel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv4MulticastVpn, self).__init__(parent, list_op)
@@ -80,10 +81,13 @@ family..
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_d49e7d4c8b0df2f382492278f34bd590 import OpaqueValueElement
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_d49e7d4c8b0df2f382492278f34bd590 import (
+            OpaqueValueElement,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpaqueValueElement', None) is not None:
-                return self._properties.get('OpaqueValueElement')
+            if self._properties.get("OpaqueValueElement", None) is not None:
+                return self._properties.get("OpaqueValueElement")
         return OpaqueValueElement(self)
 
     @property
@@ -94,7 +98,7 @@ family..
         -------
         - number: (read only) The address family identifier value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressFamily'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressFamily"])
 
     @property
     def AddressLength(self):
@@ -104,7 +108,7 @@ family..
         -------
         - number: (read only) The length of the address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressLength"])
 
     @property
     def CMcastRouteType(self):
@@ -114,7 +118,7 @@ family..
         -------
         - str: The c-multicast route type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMcastRouteType'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMcastRouteType"])
 
     @property
     def GroupAddress(self):
@@ -124,7 +128,7 @@ family..
         -------
         - str: The IPv4 Multicast group address in the range of group addresses included in this Register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
 
     @property
     def Neighbor(self):
@@ -134,7 +138,7 @@ family..
         -------
         - str: The neighbor address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def OpaqueLength(self):
@@ -144,7 +148,7 @@ family..
         -------
         - number: (read only) Indicates the opaque length.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpaqueLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpaqueLength"])
 
     @property
     def OriginatingRouter(self):
@@ -154,7 +158,7 @@ family..
         -------
         - str: The originating router address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatingRouter'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatingRouter"])
 
     @property
     def RootAddress(self):
@@ -164,7 +168,7 @@ family..
         -------
         - str: (read only) Indicates the root address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootAddress"])
 
     @property
     def RouteDistinguisher(self):
@@ -174,7 +178,7 @@ family..
         -------
         - str: The route distinguisher for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisher'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteDistinguisher"])
 
     @property
     def RouteKeyGroupAddress(self):
@@ -184,7 +188,7 @@ family..
         -------
         - str: The key group address of the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyGroupAddress"])
 
     @property
     def RouteKeyOriginatingRouter(self):
@@ -194,7 +198,7 @@ family..
         -------
         - str: The key originating address of the router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyOriginatingRouter'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyOriginatingRouter"])
 
     @property
     def RouteKeyRouteDistinguisher(self):
@@ -204,7 +208,7 @@ family..
         -------
         - str: The key route distinguisher for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyRouteDistinguisher'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyRouteDistinguisher"])
 
     @property
     def RouteKeyRsvpP2mpExtendedTunnelId(self):
@@ -214,7 +218,9 @@ family..
         -------
         - str: The key rsvp p2mp extended tunnel id for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyRsvpP2mpExtendedTunnelId'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["RouteKeyRsvpP2mpExtendedTunnelId"]
+        )
 
     @property
     def RouteKeyRsvpP2mpId(self):
@@ -224,7 +230,7 @@ family..
         -------
         - number: The key rsvp p2mp id for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyRsvpP2mpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyRsvpP2mpId"])
 
     @property
     def RouteKeyRsvpP2mpTunnelId(self):
@@ -234,7 +240,7 @@ family..
         -------
         - number: The key rsvp p2mp tunnel id for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyRsvpP2mpTunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyRsvpP2mpTunnelId"])
 
     @property
     def RouteKeySourceAddress(self):
@@ -244,7 +250,7 @@ family..
         -------
         - str: The key source address for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeySourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeySourceAddress"])
 
     @property
     def RouteKeyTunnelType(self):
@@ -254,7 +260,7 @@ family..
         -------
         - str: The key tunnel type for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyTunnelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyTunnelType"])
 
     @property
     def RouteKeyUpstreamLabel(self):
@@ -264,7 +270,7 @@ family..
         -------
         - number: The key upstream label for the route, for use with IPv4 multicast VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteKeyUpstreamLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteKeyUpstreamLabel"])
 
     @property
     def RouteType(self):
@@ -274,7 +280,7 @@ family..
         -------
         - str: The route type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteType"])
 
     @property
     def RsvpP2mpExtendedTunnelId(self):
@@ -284,7 +290,7 @@ family..
         -------
         - str: The rsvp p2mp extended tunnel id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpExtendedTunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpExtendedTunnelId"])
 
     @property
     def RsvpP2mpId(self):
@@ -294,7 +300,7 @@ family..
         -------
         - number: The rsvp p2mp id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpId"])
 
     @property
     def RsvpP2mpTunnelId(self):
@@ -304,7 +310,7 @@ family..
         -------
         - number: The rsvp p2mp tunnel id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpTunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpTunnelId"])
 
     @property
     def SourceAddress(self):
@@ -314,7 +320,7 @@ family..
         -------
         - str: The source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddress"])
 
     @property
     def SourceAs(self):
@@ -324,7 +330,7 @@ family..
         -------
         - number: The source AS number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAs'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAs"])
 
     @property
     def TunnelType(self):
@@ -334,7 +340,7 @@ family..
         -------
         - str: The tunnel type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelType"])
 
     @property
     def UpstreamLabel(self):
@@ -344,10 +350,10 @@ family..
         -------
         - number: The upstream label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLabel"])
 
     def add(self):
-        """Adds a new ipv4MulticastVpn resource on the json, only valid with config assistant
+        """Adds a new ipv4MulticastVpn resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -359,7 +365,35 @@ family..
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AddressFamily=None, AddressLength=None, CMcastRouteType=None, GroupAddress=None, Neighbor=None, OpaqueLength=None, OriginatingRouter=None, RootAddress=None, RouteDistinguisher=None, RouteKeyGroupAddress=None, RouteKeyOriginatingRouter=None, RouteKeyRouteDistinguisher=None, RouteKeyRsvpP2mpExtendedTunnelId=None, RouteKeyRsvpP2mpId=None, RouteKeyRsvpP2mpTunnelId=None, RouteKeySourceAddress=None, RouteKeyTunnelType=None, RouteKeyUpstreamLabel=None, RouteType=None, RsvpP2mpExtendedTunnelId=None, RsvpP2mpId=None, RsvpP2mpTunnelId=None, SourceAddress=None, SourceAs=None, TunnelType=None, UpstreamLabel=None):
+    def find(
+        self,
+        AddressFamily=None,
+        AddressLength=None,
+        CMcastRouteType=None,
+        GroupAddress=None,
+        Neighbor=None,
+        OpaqueLength=None,
+        OriginatingRouter=None,
+        RootAddress=None,
+        RouteDistinguisher=None,
+        RouteKeyGroupAddress=None,
+        RouteKeyOriginatingRouter=None,
+        RouteKeyRouteDistinguisher=None,
+        RouteKeyRsvpP2mpExtendedTunnelId=None,
+        RouteKeyRsvpP2mpId=None,
+        RouteKeyRsvpP2mpTunnelId=None,
+        RouteKeySourceAddress=None,
+        RouteKeyTunnelType=None,
+        RouteKeyUpstreamLabel=None,
+        RouteType=None,
+        RsvpP2mpExtendedTunnelId=None,
+        RsvpP2mpId=None,
+        RsvpP2mpTunnelId=None,
+        SourceAddress=None,
+        SourceAs=None,
+        TunnelType=None,
+        UpstreamLabel=None,
+    ):
         # type: (int, int, str, str, str, int, str, str, str, str, str, str, str, int, int, str, str, int, str, str, int, int, str, int, str, int) -> Ipv4MulticastVpn
         """Finds and retrieves ipv4MulticastVpn resources from the server.
 

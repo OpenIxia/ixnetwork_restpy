@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,36 +34,35 @@ class CcmLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ccmLearnedInfo'
+    _SDM_NAME = "ccmLearnedInfo"
     _SDM_ATT_MAP = {
-        'AllRmepDead': 'allRmepDead',
-        'CVlan': 'cVlan',
-        'CciInterval': 'cciInterval',
-        'ErrCcmDefect': 'errCcmDefect',
-        'ErrCcmDefectCount': 'errCcmDefectCount',
-        'IfaceTlvDefectCount': 'ifaceTlvDefectCount',
-        'MdLevel': 'mdLevel',
-        'MdName': 'mdName',
-        'MdNameFormat': 'mdNameFormat',
-        'MepId': 'mepId',
-        'MepMacAddress': 'mepMacAddress',
-        'OutOfSequenceCcmCount': 'outOfSequenceCcmCount',
-        'PortTlvDefectCount': 'portTlvDefectCount',
-        'RdiRxCount': 'rdiRxCount',
-        'RdiRxState': 'rdiRxState',
-        'ReceivedAis': 'receivedAis',
-        'ReceivedIfaceTlvDefect': 'receivedIfaceTlvDefect',
-        'ReceivedPortTlvDefect': 'receivedPortTlvDefect',
-        'ReceivedRdi': 'receivedRdi',
-        'RemoteMepDefectCount': 'remoteMepDefectCount',
-        'RmepCcmDefect': 'rmepCcmDefect',
-        'SVlan': 'sVlan',
-        'ShortMaName': 'shortMaName',
-        'ShortMaNameFormat': 'shortMaNameFormat',
-        'SomeRmepDefect': 'someRmepDefect',
+        "AllRmepDead": "allRmepDead",
+        "CVlan": "cVlan",
+        "CciInterval": "cciInterval",
+        "ErrCcmDefect": "errCcmDefect",
+        "ErrCcmDefectCount": "errCcmDefectCount",
+        "IfaceTlvDefectCount": "ifaceTlvDefectCount",
+        "MdLevel": "mdLevel",
+        "MdName": "mdName",
+        "MdNameFormat": "mdNameFormat",
+        "MepId": "mepId",
+        "MepMacAddress": "mepMacAddress",
+        "OutOfSequenceCcmCount": "outOfSequenceCcmCount",
+        "PortTlvDefectCount": "portTlvDefectCount",
+        "RdiRxCount": "rdiRxCount",
+        "RdiRxState": "rdiRxState",
+        "ReceivedAis": "receivedAis",
+        "ReceivedIfaceTlvDefect": "receivedIfaceTlvDefect",
+        "ReceivedPortTlvDefect": "receivedPortTlvDefect",
+        "ReceivedRdi": "receivedRdi",
+        "RemoteMepDefectCount": "remoteMepDefectCount",
+        "RmepCcmDefect": "rmepCcmDefect",
+        "SVlan": "sVlan",
+        "ShortMaName": "shortMaName",
+        "ShortMaNameFormat": "shortMaNameFormat",
+        "SomeRmepDefect": "someRmepDefect",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CcmLearnedInfo, self).__init__(parent, list_op)
@@ -75,7 +75,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, indicates this MEP is receiving none of the remote MEPs' CCMs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllRmepDead'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllRmepDead"])
 
     @property
     def CVlan(self):
@@ -85,7 +85,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The stacked VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def CciInterval(self):
@@ -95,7 +95,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The Continuity Check interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CciInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["CciInterval"])
 
     @property
     def ErrCcmDefect(self):
@@ -105,7 +105,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, a CCM defect error has been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrCcmDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrCcmDefect"])
 
     @property
     def ErrCcmDefectCount(self):
@@ -115,7 +115,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: The total number of CCM defect error that has been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrCcmDefectCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrCcmDefectCount"])
 
     @property
     def IfaceTlvDefectCount(self):
@@ -125,7 +125,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: The total number of iface Tlv defect error that has been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IfaceTlvDefectCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IfaceTlvDefectCount"])
 
     @property
     def MdLevel(self):
@@ -135,7 +135,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The MD level for the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def MdName(self):
@@ -145,7 +145,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The MD name associated with the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdName'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdName"])
 
     @property
     def MdNameFormat(self):
@@ -155,7 +155,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The MD Name Format of the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdNameFormat"])
 
     @property
     def MepId(self):
@@ -165,7 +165,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The MEP identifier of the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepId"])
 
     @property
     def MepMacAddress(self):
@@ -175,7 +175,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The MEP MAC address of the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepMacAddress"])
 
     @property
     def OutOfSequenceCcmCount(self):
@@ -185,7 +185,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The number of Out of Sequence CCM messages received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutOfSequenceCcmCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutOfSequenceCcmCount"])
 
     @property
     def PortTlvDefectCount(self):
@@ -195,7 +195,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: The total number of Port Tlv defect error that has been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortTlvDefectCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortTlvDefectCount"])
 
     @property
     def RdiRxCount(self):
@@ -205,7 +205,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The rdi rx count.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdiRxCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdiRxCount"])
 
     @property
     def RdiRxState(self):
@@ -215,7 +215,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The rdi rx state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdiRxState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdiRxState"])
 
     @property
     def ReceivedAis(self):
@@ -225,7 +225,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, AIS messages have been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedAis'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedAis"])
 
     @property
     def ReceivedIfaceTlvDefect(self):
@@ -235,7 +235,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, interface TLV defect messages have been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedIfaceTlvDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedIfaceTlvDefect"])
 
     @property
     def ReceivedPortTlvDefect(self):
@@ -245,7 +245,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, port TLV defect messages have been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedPortTlvDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedPortTlvDefect"])
 
     @property
     def ReceivedRdi(self):
@@ -255,7 +255,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, RDI messages have been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedRdi'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedRdi"])
 
     @property
     def RemoteMepDefectCount(self):
@@ -265,7 +265,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: The total number of remote Mep defect error that has been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMepDefectCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMepDefectCount"])
 
     @property
     def RmepCcmDefect(self):
@@ -275,7 +275,7 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) If true, remote MEP CCM defect messages have been detected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RmepCcmDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["RmepCcmDefect"])
 
     @property
     def SVlan(self):
@@ -285,7 +285,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The single VLAN associated with the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def ShortMaName(self):
@@ -295,7 +295,7 @@ class CcmLearnedInfo(Base):
         -------
         - str: (read only) The Short MA Name associated with the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShortMaName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShortMaName"])
 
     @property
     def ShortMaNameFormat(self):
@@ -305,7 +305,7 @@ class CcmLearnedInfo(Base):
         -------
         - number: (read only) The Short MA Name format associated with the CCM message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShortMaNameFormat'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShortMaNameFormat"])
 
     @property
     def SomeRmepDefect(self):
@@ -315,10 +315,10 @@ class CcmLearnedInfo(Base):
         -------
         - bool: (read only) Indicates the aggregate state of the Remote MEP State Machines. If true, at least one of the Remote MEP State Machines is not receiving valid CCMs from its remote MEPs. If false, all Remote MEP State Machines are receiving valid CCMs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SomeRmepDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["SomeRmepDefect"])
 
     def add(self):
-        """Adds a new ccmLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new ccmLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -330,7 +330,34 @@ class CcmLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AllRmepDead=None, CVlan=None, CciInterval=None, ErrCcmDefect=None, ErrCcmDefectCount=None, IfaceTlvDefectCount=None, MdLevel=None, MdName=None, MdNameFormat=None, MepId=None, MepMacAddress=None, OutOfSequenceCcmCount=None, PortTlvDefectCount=None, RdiRxCount=None, RdiRxState=None, ReceivedAis=None, ReceivedIfaceTlvDefect=None, ReceivedPortTlvDefect=None, ReceivedRdi=None, RemoteMepDefectCount=None, RmepCcmDefect=None, SVlan=None, ShortMaName=None, ShortMaNameFormat=None, SomeRmepDefect=None):
+    def find(
+        self,
+        AllRmepDead=None,
+        CVlan=None,
+        CciInterval=None,
+        ErrCcmDefect=None,
+        ErrCcmDefectCount=None,
+        IfaceTlvDefectCount=None,
+        MdLevel=None,
+        MdName=None,
+        MdNameFormat=None,
+        MepId=None,
+        MepMacAddress=None,
+        OutOfSequenceCcmCount=None,
+        PortTlvDefectCount=None,
+        RdiRxCount=None,
+        RdiRxState=None,
+        ReceivedAis=None,
+        ReceivedIfaceTlvDefect=None,
+        ReceivedPortTlvDefect=None,
+        ReceivedRdi=None,
+        RemoteMepDefectCount=None,
+        RmepCcmDefect=None,
+        SVlan=None,
+        ShortMaName=None,
+        ShortMaNameFormat=None,
+        SomeRmepDefect=None,
+    ):
         # type: (bool, str, str, bool, int, int, int, str, int, int, str, int, int, int, str, bool, bool, bool, bool, int, bool, str, str, int, bool) -> CcmLearnedInfo
         """Finds and retrieves ccmLearnedInfo resources from the server.
 

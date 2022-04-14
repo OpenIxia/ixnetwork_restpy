@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class MldHost(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mldHost'
+    _SDM_NAME = "mldHost"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Enabled': 'enabled',
-        'InterStbStartDelay': 'interStbStartDelay',
-        'IntervalInMs': 'intervalInMs',
-        'Name': 'name',
-        'RatePerInterval': 'ratePerInterval',
-        'RowNames': 'rowNames',
-        'TrafficClass': 'trafficClass',
-        'UnicastMode': 'unicastMode',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Enabled": "enabled",
+        "InterStbStartDelay": "interStbStartDelay",
+        "IntervalInMs": "intervalInMs",
+        "Name": "name",
+        "RatePerInterval": "ratePerInterval",
+        "RowNames": "rowNames",
+        "TrafficClass": "trafficClass",
+        "UnicastMode": "unicastMode",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MldHost, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class MldHost(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -69,7 +69,7 @@ class MldHost(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Enabled(self):
@@ -80,7 +80,8 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enabled"]))
 
     @property
     def InterStbStartDelay(self):
@@ -91,7 +92,10 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds between Join messages from clients within the same range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterStbStartDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterStbStartDelay"])
+        )
 
     @property
     def IntervalInMs(self):
@@ -102,7 +106,8 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval used to calculate the rate for triggering an action (rate = count/interval)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntervalInMs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IntervalInMs"]))
 
     @property
     def Name(self):
@@ -112,11 +117,12 @@ class MldHost(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RatePerInterval(self):
@@ -127,7 +133,10 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Reports triggered per time interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RatePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RatePerInterval"])
+        )
 
     @property
     def RowNames(self):
@@ -137,7 +146,7 @@ class MldHost(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def TrafficClass(self):
@@ -148,7 +157,8 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the Traffic Class value in the IPv6 Header
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficClass']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TrafficClass"]))
 
     @property
     def UnicastMode(self):
@@ -159,7 +169,8 @@ class MldHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Unicast Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnicastMode"]))
 
     def update(self, Name=None):
         # type: (str) -> MldHost
@@ -221,7 +232,16 @@ class MldHost(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Enabled=None, InterStbStartDelay=None, IntervalInMs=None, RatePerInterval=None, TrafficClass=None, UnicastMode=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Enabled=None,
+        InterStbStartDelay=None,
+        IntervalInMs=None,
+        RatePerInterval=None,
+        TrafficClass=None,
+        UnicastMode=None,
+    ):
         """Base class infrastructure that gets a list of mldHost device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

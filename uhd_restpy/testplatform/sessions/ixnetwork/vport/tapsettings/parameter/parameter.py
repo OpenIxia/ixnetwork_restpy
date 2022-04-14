@@ -150,7 +150,7 @@ class Parameter(Base):
 
     def add(self, CurrentValue=None):
         # type: (str) -> Parameter
-        """Adds a new parameter resource on the json, only valid with config assistant
+        """Adds a new parameter resource on the json, only valid with batch add utility
 
         Args
         ----

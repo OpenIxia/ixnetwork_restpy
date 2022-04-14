@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class LearnedMdtInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedMdtInfo'
+    _SDM_NAME = "learnedMdtInfo"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'CeGroupAddress': 'ceGroupAddress',
-        'CeSourceAddress': 'ceSourceAddress',
-        'MdtGroupAddress': 'mdtGroupAddress',
-        'MdtSourceAddress': 'mdtSourceAddress',
+        "Age": "age",
+        "CeGroupAddress": "ceGroupAddress",
+        "CeSourceAddress": "ceSourceAddress",
+        "MdtGroupAddress": "mdtGroupAddress",
+        "MdtSourceAddress": "mdtSourceAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedMdtInfo, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class LearnedMdtInfo(Base):
         -------
         - number: The amount of time (in seconds) remaining before this TLV times out.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def CeGroupAddress(self):
@@ -65,7 +65,7 @@ class LearnedMdtInfo(Base):
         -------
         - str: The CE group address contained in this data MDT TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeGroupAddress"])
 
     @property
     def CeSourceAddress(self):
@@ -75,7 +75,7 @@ class LearnedMdtInfo(Base):
         -------
         - str: The CE source address contained in this data MDT TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeSourceAddress"])
 
     @property
     def MdtGroupAddress(self):
@@ -85,7 +85,7 @@ class LearnedMdtInfo(Base):
         -------
         - str: The MDT (PE) group address contained in this data MDT TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdtGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdtGroupAddress"])
 
     @property
     def MdtSourceAddress(self):
@@ -95,10 +95,10 @@ class LearnedMdtInfo(Base):
         -------
         - str: The MDT (PE) source address contained in this data MDT TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdtSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdtSourceAddress"])
 
     def add(self):
-        """Adds a new learnedMdtInfo resource on the json, only valid with config assistant
+        """Adds a new learnedMdtInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -110,7 +110,14 @@ class LearnedMdtInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, CeGroupAddress=None, CeSourceAddress=None, MdtGroupAddress=None, MdtSourceAddress=None):
+    def find(
+        self,
+        Age=None,
+        CeGroupAddress=None,
+        CeSourceAddress=None,
+        MdtGroupAddress=None,
+        MdtSourceAddress=None,
+    ):
         # type: (int, str, str, str, str) -> LearnedMdtInfo
         """Finds and retrieves learnedMdtInfo resources from the server.
 

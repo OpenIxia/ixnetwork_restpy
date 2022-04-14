@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,68 +35,76 @@ class UpGroupInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'upGroupInfo'
+    _SDM_NAME = "upGroupInfo"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AddrAllocAckError': 'addrAllocAckError',
-        'AddrAllocAckMsg': 'addrAllocAckMsg',
-        'AddrRelAckError': 'addrRelAckError',
-        'AddrRelAckMsg': 'addrRelAckMsg',
-        'AddrRenewAckError': 'addrRenewAckError',
-        'AddrRenewAckMsg': 'addrRenewAckMsg',
-        'BurstInterval': 'burstInterval',
-        'Capabilities': 'capabilities',
-        'ConfigureCuspChannel': 'configureCuspChannel',
-        'ConfigureVxlanChannel': 'configureVxlanChannel',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'CpVxlanIPv4Address': 'cpVxlanIPv4Address',
-        'CpVxlanIPv6Address': 'cpVxlanIPv6Address',
-        'DeadTimer': 'deadTimer',
-        'DescriptiveName': 'descriptiveName',
-        'EnableSyncRequest': 'enableSyncRequest',
-        'Errors': 'errors',
-        'EstablishmentTimer': 'establishmentTimer',
-        'HelloAckError': 'helloAckError',
-        'HelloAckMsg': 'helloAckMsg',
-        'HelloVendorID': 'helloVendorID',
-        'IPv4Address': 'iPv4Address',
-        'IPv6Address': 'iPv6Address',
-        'KaTimeoutCount': 'kaTimeoutCount',
-        'KeepaliveTimer': 'keepaliveTimer',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetconfCpIPv4Address': 'netconfCpIPv4Address',
-        'NumberOfAccessInterfaceConfigs': 'numberOfAccessInterfaceConfigs',
-        'NumberOfDhcpUsers': 'numberOfDhcpUsers',
-        'NumberOfIPv4AddressPools': 'numberOfIPv4AddressPools',
-        'NumberOfL2HqosConfig': 'numberOfL2HqosConfig',
-        'NumberOfL2tpUsers': 'numberOfL2tpUsers',
-        'NumberOfL3HqosConfig': 'numberOfL3HqosConfig',
-        'NumberOfL4HqosConfig': 'numberOfL4HqosConfig',
-        'NumberOfPppoeUsers': 'numberOfPppoeUsers',
-        'NumberOfStaticUsers': 'numberOfStaticUsers',
-        'PacketsPerBurst': 'packetsPerBurst',
-        'PeVid': 'peVid',
-        'PeVlanPriority': 'peVlanPriority',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SubVersion': 'subVersion',
-        'SyncReqError': 'syncReqError',
-        'SyncReqMsg': 'syncReqMsg',
-        'TxMode': 'txMode',
-        'Upcapabilities': 'upcapabilities',
-        'VendorID': 'vendorID',
-        'Version': 'version',
-        'Vni': 'vni',
-        'VxlanIPv4Address': 'vxlanIPv4Address',
-        'VxlanIPv6Address': 'vxlanIPv6Address',
+        "Active": "active",
+        "AddrAllocAckError": "addrAllocAckError",
+        "AddrAllocAckMsg": "addrAllocAckMsg",
+        "AddrRelAckError": "addrRelAckError",
+        "AddrRelAckMsg": "addrRelAckMsg",
+        "AddrRenewAckError": "addrRenewAckError",
+        "AddrRenewAckMsg": "addrRenewAckMsg",
+        "BurstInterval": "burstInterval",
+        "Capabilities": "capabilities",
+        "ConfigureCuspChannel": "configureCuspChannel",
+        "ConfigureVxlanChannel": "configureVxlanChannel",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "CpVxlanIPv4Address": "cpVxlanIPv4Address",
+        "CpVxlanIPv6Address": "cpVxlanIPv6Address",
+        "DeadTimer": "deadTimer",
+        "DescriptiveName": "descriptiveName",
+        "EnableSyncRequest": "enableSyncRequest",
+        "Errors": "errors",
+        "EstablishmentTimer": "establishmentTimer",
+        "HelloAckError": "helloAckError",
+        "HelloAckMsg": "helloAckMsg",
+        "HelloVendorID": "helloVendorID",
+        "IPv4Address": "iPv4Address",
+        "IPv6Address": "iPv6Address",
+        "KaTimeoutCount": "kaTimeoutCount",
+        "KeepaliveTimer": "keepaliveTimer",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NetconfCpIPv4Address": "netconfCpIPv4Address",
+        "NumberOfAccessInterfaceConfigs": "numberOfAccessInterfaceConfigs",
+        "NumberOfDhcpUsers": "numberOfDhcpUsers",
+        "NumberOfIPv4AddressPools": "numberOfIPv4AddressPools",
+        "NumberOfL2HqosConfig": "numberOfL2HqosConfig",
+        "NumberOfL2tpUsers": "numberOfL2tpUsers",
+        "NumberOfL3HqosConfig": "numberOfL3HqosConfig",
+        "NumberOfL4HqosConfig": "numberOfL4HqosConfig",
+        "NumberOfPppoeUsers": "numberOfPppoeUsers",
+        "NumberOfStaticUsers": "numberOfStaticUsers",
+        "PacketsPerBurst": "packetsPerBurst",
+        "PeVid": "peVid",
+        "PeVlanPriority": "peVlanPriority",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SubVersion": "subVersion",
+        "SyncReqError": "syncReqError",
+        "SyncReqMsg": "syncReqMsg",
+        "TxMode": "txMode",
+        "Upcapabilities": "upcapabilities",
+        "VendorID": "vendorID",
+        "Version": "version",
+        "Vni": "vni",
+        "VxlanIPv4Address": "vxlanIPv4Address",
+        "VxlanIPv6Address": "vxlanIPv6Address",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -112,10 +121,16 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcpaccessinterfaceconfiglist_f29584fdbf397b7eaaaf4b30da24c4f0 import CuspCPAccessInterfaceConfigList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcpaccessinterfaceconfiglist_f29584fdbf397b7eaaaf4b30da24c4f0 import (
+            CuspCPAccessInterfaceConfigList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspCPAccessInterfaceConfigList', None) is not None:
-                return self._properties.get('CuspCPAccessInterfaceConfigList')
+            if (
+                self._properties.get("CuspCPAccessInterfaceConfigList", None)
+                is not None
+            ):
+                return self._properties.get("CuspCPAccessInterfaceConfigList")
         return CuspCPAccessInterfaceConfigList(self)._select()
 
     @property
@@ -129,10 +144,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcpipv4addresspoollist_455d9f6528efb822a61db2ff9130065f import CuspCPIPv4AddressPoolList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcpipv4addresspoollist_455d9f6528efb822a61db2ff9130065f import (
+            CuspCPIPv4AddressPoolList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspCPIPv4AddressPoolList', None) is not None:
-                return self._properties.get('CuspCPIPv4AddressPoolList')
+            if self._properties.get("CuspCPIPv4AddressPoolList", None) is not None:
+                return self._properties.get("CuspCPIPv4AddressPoolList")
         return CuspCPIPv4AddressPoolList(self)._select()
 
     @property
@@ -146,10 +164,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpuserslist_c3a3d3b5bb7a4a92267fb9a903ea682c import DhcpUsersList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpuserslist_c3a3d3b5bb7a4a92267fb9a903ea682c import (
+            DhcpUsersList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpUsersList', None) is not None:
-                return self._properties.get('DhcpUsersList')
+            if self._properties.get("DhcpUsersList", None) is not None:
+                return self._properties.get("DhcpUsersList")
         return DhcpUsersList(self)._select()
 
     @property
@@ -163,10 +184,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l2hqosconfiglist_ad60832e8d7a25f523df493978d207eb import L2HqosConfigList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l2hqosconfiglist_ad60832e8d7a25f523df493978d207eb import (
+            L2HqosConfigList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2HqosConfigList', None) is not None:
-                return self._properties.get('L2HqosConfigList')
+            if self._properties.get("L2HqosConfigList", None) is not None:
+                return self._properties.get("L2HqosConfigList")
         return L2HqosConfigList(self)._select()
 
     @property
@@ -180,10 +204,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l2tpuserslist_ce8cd9708539a28d42c5e60e8ee06be6 import L2tpUsersList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l2tpuserslist_ce8cd9708539a28d42c5e60e8ee06be6 import (
+            L2tpUsersList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpUsersList', None) is not None:
-                return self._properties.get('L2tpUsersList')
+            if self._properties.get("L2tpUsersList", None) is not None:
+                return self._properties.get("L2tpUsersList")
         return L2tpUsersList(self)._select()
 
     @property
@@ -197,10 +224,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l3hqosconfiglist_e4b7d7588a02ced03144622ed1204c25 import L3HqosConfigList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l3hqosconfiglist_e4b7d7588a02ced03144622ed1204c25 import (
+            L3HqosConfigList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L3HqosConfigList', None) is not None:
-                return self._properties.get('L3HqosConfigList')
+            if self._properties.get("L3HqosConfigList", None) is not None:
+                return self._properties.get("L3HqosConfigList")
         return L3HqosConfigList(self)._select()
 
     @property
@@ -214,10 +244,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l4hqosconfiglist_2a6816a36136a04d56df7f1df9b0ea06 import L4HqosConfigList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.l4hqosconfiglist_2a6816a36136a04d56df7f1df9b0ea06 import (
+            L4HqosConfigList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L4HqosConfigList', None) is not None:
-                return self._properties.get('L4HqosConfigList')
+            if self._properties.get("L4HqosConfigList", None) is not None:
+                return self._properties.get("L4HqosConfigList")
         return L4HqosConfigList(self)._select()
 
     @property
@@ -231,10 +264,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -248,10 +284,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoeuserslist_403d5b77357bdd46c760bcc6e328f73b import PppoEUsersList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoeuserslist_403d5b77357bdd46c760bcc6e328f73b import (
+            PppoEUsersList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppoEUsersList', None) is not None:
-                return self._properties.get('PppoEUsersList')
+            if self._properties.get("PppoEUsersList", None) is not None:
+                return self._properties.get("PppoEUsersList")
         return PppoEUsersList(self)._select()
 
     @property
@@ -265,10 +304,13 @@ class UpGroupInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticuserslist_0a954635b5a06973caa3d52037ef1fb4 import StaticUsersList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticuserslist_0a954635b5a06973caa3d52037ef1fb4 import (
+            StaticUsersList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StaticUsersList', None) is not None:
-                return self._properties.get('StaticUsersList')
+            if self._properties.get("StaticUsersList", None) is not None:
+                return self._properties.get("StaticUsersList")
         return StaticUsersList(self)._select()
 
     @property
@@ -280,7 +322,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AddrAllocAckError(self):
@@ -291,7 +334,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Error code for Addr Alloc Ack Messge. CODE_SUCCESS - 0 CODE_FAIL - 1 CODE_TLV_UNKNOW - 2 CODE_TLV_LENGTH_ERR - 3 CODE_TLV_ATTR_FAIL - 4 CODE_POOL_MISS - 3001 CODE_POOL_FULL - 3002 Custom value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrAllocAckError']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddrAllocAckError"])
+        )
 
     @property
     def AddrAllocAckMsg(self):
@@ -302,7 +348,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Force error for Addr Alloc Ack Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrAllocAckMsg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddrAllocAckMsg"])
+        )
 
     @property
     def AddrRelAckError(self):
@@ -313,7 +362,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Error code for Addr Rel Ack Messge. CODE_SUCCESS - 0 CODE_FAIL - 1 CODE_TLV_UNKNOW - 2 CODE_TLV_LENGTH_ERR - 3 CODE_TLV_ATTR_FAIL - 4 CODE_POOL_MISS - 3001 CODE_POOL_FULL - 3002 CODE_SUBNET_MISSMATCH - 3003 CODE_SUBNET_CONFLICT - 3004 Custom value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrRelAckError']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddrRelAckError"])
+        )
 
     @property
     def AddrRelAckMsg(self):
@@ -324,7 +376,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Force error for Addr Rel Ack Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrRelAckMsg']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AddrRelAckMsg"]))
 
     @property
     def AddrRenewAckError(self):
@@ -335,7 +388,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Error code for Addr Renew Ack Messge. CODE_SUCCESS - 0 CODE_FAIL - 1 CODE_TLV_UNKNOW - 2 CODE_TLV_LENGTH_ERR - 3 CODE_TLV_ATTR_FAIL - 4 CODE_POOL_MISS - 3001 CODE_POOL_FULL - 3002 Custom value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrRenewAckError']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddrRenewAckError"])
+        )
 
     @property
     def AddrRenewAckMsg(self):
@@ -346,7 +402,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Force error for Addr Renew Ack Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddrRenewAckMsg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddrRenewAckMsg"])
+        )
 
     @property
     def BurstInterval(self):
@@ -357,7 +416,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Update Interval.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BurstInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BurstInterval"]))
 
     @property
     def Capabilities(self):
@@ -368,7 +428,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Negotiate whether the user table sends an ACK or not.0-The CP does not need to wait for a response.1-CP needs to wait for an answer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Capabilities']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Capabilities"]))
 
     @property
     def ConfigureCuspChannel(self):
@@ -379,7 +440,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure CUSP channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureCuspChannel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureCuspChannel"])
+        )
 
     @property
     def ConfigureVxlanChannel(self):
@@ -390,21 +454,25 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure VXLAN channel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureVxlanChannel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureVxlanChannel"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -414,7 +482,7 @@ class UpGroupInfo(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CpVxlanIPv4Address(self):
@@ -425,7 +493,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the CP VXLAN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CpVxlanIPv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CpVxlanIPv4Address"])
+        )
 
     @property
     def CpVxlanIPv6Address(self):
@@ -436,7 +507,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the CP VXLAN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CpVxlanIPv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CpVxlanIPv6Address"])
+        )
 
     @property
     def DeadTimer(self):
@@ -447,7 +521,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Expiry of this timer will close the CUSP session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeadTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DeadTimer"]))
 
     @property
     def DescriptiveName(self):
@@ -457,7 +532,7 @@ class UpGroupInfo(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableSyncRequest(self):
@@ -468,7 +543,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send synchronisation request.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSyncRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSyncRequest"])
+        )
 
     @property
     def Errors(self):
@@ -477,7 +555,7 @@ class UpGroupInfo(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EstablishmentTimer(self):
@@ -488,7 +566,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time to wait for the session to get established.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EstablishmentTimer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EstablishmentTimer"])
+        )
 
     @property
     def HelloAckError(self):
@@ -499,7 +580,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Error code for Hello Ack Messge. CODE_SUCCESS - 0 CODE_FAIL - 1 CODE_TLV_UNKNOW - 2 CODE_TLV_LENGTH_ERR - 3 CODE_TLV_ATTR_FAIL - 4 CODE_VERSION_MISSMATCH - 5 Custom value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloAckError']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloAckError"]))
 
     @property
     def HelloAckMsg(self):
@@ -510,7 +592,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Force error for Hello Ack Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloAckMsg']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloAckMsg"]))
 
     @property
     def HelloVendorID(self):
@@ -521,7 +604,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vendor ID to be carried in HELLO message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloVendorID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloVendorID"]))
 
     @property
     def IPv4Address(self):
@@ -532,7 +616,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the UP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv4Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IPv4Address"]))
 
     @property
     def IPv6Address(self):
@@ -543,7 +628,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UP IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv6Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IPv6Address"]))
 
     @property
     def KaTimeoutCount(self):
@@ -554,7 +640,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times KA timer would run before being stopped.0 means never timeout.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KaTimeoutCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KaTimeoutCount"])
+        )
 
     @property
     def KeepaliveTimer(self):
@@ -565,7 +654,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval at which keep alive messages are sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepaliveTimer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveTimer"])
+        )
 
     @property
     def Multiplier(self):
@@ -575,11 +667,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -589,11 +682,12 @@ class UpGroupInfo(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetconfCpIPv4Address(self):
@@ -604,7 +698,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the CP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetconfCpIPv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetconfCpIPv4Address"])
+        )
 
     @property
     def NumberOfAccessInterfaceConfigs(self):
@@ -614,11 +711,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of access interfaces to configure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfAccessInterfaceConfigs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAccessInterfaceConfigs"])
+
     @NumberOfAccessInterfaceConfigs.setter
     def NumberOfAccessInterfaceConfigs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfAccessInterfaceConfigs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAccessInterfaceConfigs"], value)
 
     @property
     def NumberOfDhcpUsers(self):
@@ -628,11 +726,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of DHCP Subscriber Groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfDhcpUsers'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfDhcpUsers"])
+
     @NumberOfDhcpUsers.setter
     def NumberOfDhcpUsers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfDhcpUsers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfDhcpUsers"], value)
 
     @property
     def NumberOfIPv4AddressPools(self):
@@ -642,11 +741,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of IPv4 Address Pools used for CGN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfIPv4AddressPools'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfIPv4AddressPools"])
+
     @NumberOfIPv4AddressPools.setter
     def NumberOfIPv4AddressPools(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfIPv4AddressPools'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfIPv4AddressPools"], value)
 
     @property
     def NumberOfL2HqosConfig(self):
@@ -656,11 +756,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of L2 HQoS Config
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfL2HqosConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfL2HqosConfig"])
+
     @NumberOfL2HqosConfig.setter
     def NumberOfL2HqosConfig(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfL2HqosConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfL2HqosConfig"], value)
 
     @property
     def NumberOfL2tpUsers(self):
@@ -670,11 +771,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of L2TP Subscriber Groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfL2tpUsers'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfL2tpUsers"])
+
     @NumberOfL2tpUsers.setter
     def NumberOfL2tpUsers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfL2tpUsers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfL2tpUsers"], value)
 
     @property
     def NumberOfL3HqosConfig(self):
@@ -684,11 +786,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of L3 HQoS Config
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfL3HqosConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfL3HqosConfig"])
+
     @NumberOfL3HqosConfig.setter
     def NumberOfL3HqosConfig(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfL3HqosConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfL3HqosConfig"], value)
 
     @property
     def NumberOfL4HqosConfig(self):
@@ -698,7 +801,7 @@ class UpGroupInfo(Base):
         -------
         - number: Number of L4 HQoS Config
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfL4HqosConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfL4HqosConfig"])
 
     @property
     def NumberOfPppoeUsers(self):
@@ -708,11 +811,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of PPPoE Subscriber Groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPppoeUsers'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPppoeUsers"])
+
     @NumberOfPppoeUsers.setter
     def NumberOfPppoeUsers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfPppoeUsers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfPppoeUsers"], value)
 
     @property
     def NumberOfStaticUsers(self):
@@ -722,11 +826,12 @@ class UpGroupInfo(Base):
         -------
         - number: Number of Static Subscribers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfStaticUsers'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfStaticUsers"])
+
     @NumberOfStaticUsers.setter
     def NumberOfStaticUsers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfStaticUsers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfStaticUsers"], value)
 
     @property
     def PacketsPerBurst(self):
@@ -737,7 +842,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Updates per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PacketsPerBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PacketsPerBurst"])
+        )
 
     @property
     def PeVid(self):
@@ -748,7 +856,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PE VLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeVid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeVid"]))
 
     @property
     def PeVlanPriority(self):
@@ -759,7 +868,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PE VLAN Priority.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeVlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeVlanPriority"])
+        )
 
     @property
     def SessionInfo(self):
@@ -769,7 +881,7 @@ class UpGroupInfo(Base):
         -------
         - list(str[deadTimerExpiredErr | helloTlvLengthErr | helloVersionMismatchErrTx | kaTlvLengthErr | none]): Logs additional information about the session state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -779,7 +891,7 @@ class UpGroupInfo(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -789,11 +901,12 @@ class UpGroupInfo(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -802,7 +915,7 @@ class UpGroupInfo(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -812,7 +925,7 @@ class UpGroupInfo(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SubVersion(self):
@@ -823,7 +936,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub version number.One version per bit, 0 reserved, starting from 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubVersion"]))
 
     @property
     def SyncReqError(self):
@@ -834,7 +948,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Error code for Syn Req Messge. CODE_SUCCESS - 0 CODE_FAIL - 1 CODE_TLV_UNKNOW - 2 CODE_TLV_LENGTH_ERR - 3 CODE_TLV_ATTR_FAIL - 4 CODE_SYNC_NOREADY - 2001 CODE_SYNC_UNSUPPORT - 2002 Custom value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SyncReqError']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SyncReqError"]))
 
     @property
     def SyncReqMsg(self):
@@ -845,7 +960,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Force error for Sync Req Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SyncReqMsg']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SyncReqMsg"]))
 
     @property
     def TxMode(self):
@@ -856,7 +972,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tx Mode of Update Message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TxMode"]))
 
     @property
     def Upcapabilities(self):
@@ -866,11 +983,12 @@ class UpGroupInfo(Base):
         -------
         - number: Up Capabilities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Upcapabilities'])
+        return self._get_attribute(self._SDM_ATT_MAP["Upcapabilities"])
+
     @Upcapabilities.setter
     def Upcapabilities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Upcapabilities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Upcapabilities"], value)
 
     @property
     def VendorID(self):
@@ -881,7 +999,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FactoryID,reuse the manufacturer definition in Radius.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VendorID"]))
 
     @property
     def Version(self):
@@ -892,7 +1011,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CUSP Protocol Version
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Vni(self):
@@ -903,7 +1023,8 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VXLAN ID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vni']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vni"]))
 
     @property
     def VxlanIPv4Address(self):
@@ -914,7 +1035,10 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the UP VXLAN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VxlanIPv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VxlanIPv4Address"])
+        )
 
     @property
     def VxlanIPv6Address(self):
@@ -925,9 +1049,27 @@ class UpGroupInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the UP VXLAN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VxlanIPv6Address']))
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfAccessInterfaceConfigs=None, NumberOfDhcpUsers=None, NumberOfIPv4AddressPools=None, NumberOfL2HqosConfig=None, NumberOfL2tpUsers=None, NumberOfL3HqosConfig=None, NumberOfPppoeUsers=None, NumberOfStaticUsers=None, StackedLayers=None, Upcapabilities=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VxlanIPv6Address"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfAccessInterfaceConfigs=None,
+        NumberOfDhcpUsers=None,
+        NumberOfIPv4AddressPools=None,
+        NumberOfL2HqosConfig=None,
+        NumberOfL2tpUsers=None,
+        NumberOfL3HqosConfig=None,
+        NumberOfPppoeUsers=None,
+        NumberOfStaticUsers=None,
+        StackedLayers=None,
+        Upcapabilities=None,
+    ):
         # type: (List[str], int, str, int, int, int, int, int, int, int, int, List[str], int) -> UpGroupInfo
         """Updates upGroupInfo resource on the server.
 
@@ -956,7 +1098,22 @@ class UpGroupInfo(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfAccessInterfaceConfigs=None, NumberOfDhcpUsers=None, NumberOfIPv4AddressPools=None, NumberOfL2HqosConfig=None, NumberOfL2tpUsers=None, NumberOfL3HqosConfig=None, NumberOfPppoeUsers=None, NumberOfStaticUsers=None, StackedLayers=None, Upcapabilities=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfAccessInterfaceConfigs=None,
+        NumberOfDhcpUsers=None,
+        NumberOfIPv4AddressPools=None,
+        NumberOfL2HqosConfig=None,
+        NumberOfL2tpUsers=None,
+        NumberOfL3HqosConfig=None,
+        NumberOfPppoeUsers=None,
+        NumberOfStaticUsers=None,
+        StackedLayers=None,
+        Upcapabilities=None,
+    ):
         # type: (List[str], int, str, int, int, int, int, int, int, int, int, List[str], int) -> UpGroupInfo
         """Adds a new upGroupInfo resource on the server and adds it to the container.
 
@@ -996,7 +1153,30 @@ class UpGroupInfo(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfAccessInterfaceConfigs=None, NumberOfDhcpUsers=None, NumberOfIPv4AddressPools=None, NumberOfL2HqosConfig=None, NumberOfL2tpUsers=None, NumberOfL3HqosConfig=None, NumberOfL4HqosConfig=None, NumberOfPppoeUsers=None, NumberOfStaticUsers=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, Upcapabilities=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfAccessInterfaceConfigs=None,
+        NumberOfDhcpUsers=None,
+        NumberOfIPv4AddressPools=None,
+        NumberOfL2HqosConfig=None,
+        NumberOfL2tpUsers=None,
+        NumberOfL3HqosConfig=None,
+        NumberOfL4HqosConfig=None,
+        NumberOfPppoeUsers=None,
+        NumberOfStaticUsers=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        Upcapabilities=None,
+    ):
         """Finds and retrieves upGroupInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve upGroupInfo resources from the server.
@@ -1082,10 +1262,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedAssignedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1120,10 +1302,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedAssignedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedAssignedInfo", payload=payload, response_object=None
+        )
 
     def GetCGNInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1158,10 +1344,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCGNInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getCGNInfo", payload=payload, response_object=None)
 
     def GetDHCPSubscriberInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1196,10 +1384,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getDHCPSubscriberInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getDHCPSubscriberInfo", payload=payload, response_object=None
+        )
 
     def GetL2TPSubscriberInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1234,10 +1426,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getL2TPSubscriberInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getL2TPSubscriberInfo", payload=payload, response_object=None
+        )
 
     def GetPPPSubscriberInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1266,10 +1462,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPPPSubscriberInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPPPSubscriberInfo", payload=payload, response_object=None
+        )
 
     def GetPppSubscriberInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1288,10 +1488,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPppSubscriberInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPppSubscriberInfo", payload=payload, response_object=None
+        )
 
     def GetStaticSubscriberInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1326,10 +1530,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getStaticSubscriberInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getStaticSubscriberInfo", payload=payload, response_object=None
+        )
 
     def GetUPResourceInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1364,10 +1572,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getUPResourceInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getUPResourceInfo", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1396,10 +1606,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendKeepAlive(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1418,10 +1630,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendKeepAlive', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendKeepAlive", payload=payload, response_object=None)
 
     def SendUpdateDeleteBursts(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1440,10 +1654,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendUpdateDeleteBursts', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendUpdateDeleteBursts", payload=payload, response_object=None
+        )
 
     def SendUpdateRequestBursts(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1462,10 +1680,14 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendUpdateRequestBursts', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendUpdateRequestBursts", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1494,10 +1716,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartKeepAlive(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1516,10 +1740,12 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startKeepAlive', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startKeepAlive", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1548,12 +1774,53 @@ class UpGroupInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AddrAllocAckError=None, AddrAllocAckMsg=None, AddrRelAckError=None, AddrRelAckMsg=None, AddrRenewAckError=None, AddrRenewAckMsg=None, BurstInterval=None, Capabilities=None, ConfigureCuspChannel=None, ConfigureVxlanChannel=None, CpVxlanIPv4Address=None, CpVxlanIPv6Address=None, DeadTimer=None, EnableSyncRequest=None, EstablishmentTimer=None, HelloAckError=None, HelloAckMsg=None, HelloVendorID=None, IPv4Address=None, IPv6Address=None, KaTimeoutCount=None, KeepaliveTimer=None, NetconfCpIPv4Address=None, PacketsPerBurst=None, PeVid=None, PeVlanPriority=None, SubVersion=None, SyncReqError=None, SyncReqMsg=None, TxMode=None, VendorID=None, Version=None, Vni=None, VxlanIPv4Address=None, VxlanIPv6Address=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AddrAllocAckError=None,
+        AddrAllocAckMsg=None,
+        AddrRelAckError=None,
+        AddrRelAckMsg=None,
+        AddrRenewAckError=None,
+        AddrRenewAckMsg=None,
+        BurstInterval=None,
+        Capabilities=None,
+        ConfigureCuspChannel=None,
+        ConfigureVxlanChannel=None,
+        CpVxlanIPv4Address=None,
+        CpVxlanIPv6Address=None,
+        DeadTimer=None,
+        EnableSyncRequest=None,
+        EstablishmentTimer=None,
+        HelloAckError=None,
+        HelloAckMsg=None,
+        HelloVendorID=None,
+        IPv4Address=None,
+        IPv6Address=None,
+        KaTimeoutCount=None,
+        KeepaliveTimer=None,
+        NetconfCpIPv4Address=None,
+        PacketsPerBurst=None,
+        PeVid=None,
+        PeVlanPriority=None,
+        SubVersion=None,
+        SyncReqError=None,
+        SyncReqMsg=None,
+        TxMode=None,
+        VendorID=None,
+        Version=None,
+        Vni=None,
+        VxlanIPv4Address=None,
+        VxlanIPv6Address=None,
+    ):
         """Base class infrastructure that gets a list of upGroupInfo device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

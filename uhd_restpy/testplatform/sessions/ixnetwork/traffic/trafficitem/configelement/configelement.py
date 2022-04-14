@@ -298,7 +298,7 @@ class ConfigElement(Base):
 
     def add(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
         # type: (str, str, bool, int, str) -> ConfigElement
-        """Adds a new configElement resource on the json, only valid with config assistant
+        """Adds a new configElement resource on the json, only valid with batch add utility
 
         Args
         ----

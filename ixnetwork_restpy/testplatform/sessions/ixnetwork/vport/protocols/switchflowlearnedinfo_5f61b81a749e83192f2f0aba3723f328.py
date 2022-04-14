@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,92 +34,91 @@ class SwitchFlowLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchFlowLearnedInfo'
+    _SDM_NAME = "switchFlowLearnedInfo"
     _SDM_ATT_MAP = {
-        'ActiveNanoSeconds': 'activeNanoSeconds',
-        'ActiveSeconds': 'activeSeconds',
-        'ArpDstHwAddress': 'arpDstHwAddress',
-        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
-        'ArpDstIpv4Address': 'arpDstIpv4Address',
-        'ArpDstIpv4AddressMask': 'arpDstIpv4AddressMask',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSrcHwAddress': 'arpSrcHwAddress',
-        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
-        'ArpSrcIpv4Address': 'arpSrcIpv4Address',
-        'ArpSrcIpv4AddressMask': 'arpSrcIpv4AddressMask',
-        'BytesCount': 'bytesCount',
-        'Cookie': 'cookie',
-        'CookieMask': 'cookieMask',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetDestinationMask': 'ethernetDestinationMask',
-        'EthernetSource': 'ethernetSource',
-        'EthernetSourceMask': 'ethernetSourceMask',
-        'EthernetType': 'ethernetType',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHashMask': 'experimenterHashMask',
-        'ExperimenterId': 'experimenterId',
-        'Flags': 'flags',
-        'HardTimeout': 'hardTimeout',
-        'Icmpv4Code': 'icmpv4Code',
-        'Icmpv4Type': 'icmpv4Type',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'IdleTimeout': 'idleTimeout',
-        'InPort': 'inPort',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6DestinationMask': 'ipv6DestinationMask',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6ExtHeaderMask': 'ipv6ExtHeaderMask',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6FlowLabelMask': 'ipv6FlowLabelMask',
-        'Ipv6NdDll': 'ipv6NdDll',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTarget': 'ipv6NdTarget',
-        'Ipv6Source': 'ipv6Source',
-        'Ipv6SourceMask': 'ipv6SourceMask',
-        'LocalIp': 'localIp',
-        'Metadata': 'metadata',
-        'MetadataMask': 'metadataMask',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NumberOfInstructions': 'numberOfInstructions',
-        'NumberofActions': 'numberofActions',
-        'OutGroup': 'outGroup',
-        'OutPort': 'outPort',
-        'PacketsCount': 'packetsCount',
-        'PbbIsid': 'pbbIsid',
-        'PbbIsidMask': 'pbbIsidMask',
-        'PhysicalInPort': 'physicalInPort',
-        'Priority': 'priority',
-        'RemoteIp': 'remoteIp',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TableId': 'tableId',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TransportDestination': 'transportDestination',
-        'TransportSource': 'transportSource',
-        'TunnelId': 'tunnelId',
-        'TunnelIdMask': 'tunnelIdMask',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanMask': 'vlanMask',
-        'VlanPriority': 'vlanPriority',
+        "ActiveNanoSeconds": "activeNanoSeconds",
+        "ActiveSeconds": "activeSeconds",
+        "ArpDstHwAddress": "arpDstHwAddress",
+        "ArpDstHwAddressMask": "arpDstHwAddressMask",
+        "ArpDstIpv4Address": "arpDstIpv4Address",
+        "ArpDstIpv4AddressMask": "arpDstIpv4AddressMask",
+        "ArpOpcode": "arpOpcode",
+        "ArpSrcHwAddress": "arpSrcHwAddress",
+        "ArpSrcHwAddressMask": "arpSrcHwAddressMask",
+        "ArpSrcIpv4Address": "arpSrcIpv4Address",
+        "ArpSrcIpv4AddressMask": "arpSrcIpv4AddressMask",
+        "BytesCount": "bytesCount",
+        "Cookie": "cookie",
+        "CookieMask": "cookieMask",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetDestinationMask": "ethernetDestinationMask",
+        "EthernetSource": "ethernetSource",
+        "EthernetSourceMask": "ethernetSourceMask",
+        "EthernetType": "ethernetType",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterHashMask": "experimenterHashMask",
+        "ExperimenterId": "experimenterId",
+        "Flags": "flags",
+        "HardTimeout": "hardTimeout",
+        "Icmpv4Code": "icmpv4Code",
+        "Icmpv4Type": "icmpv4Type",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "IdleTimeout": "idleTimeout",
+        "InPort": "inPort",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProtocol": "ipProtocol",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6DestinationMask": "ipv6DestinationMask",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6ExtHeaderMask": "ipv6ExtHeaderMask",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6FlowLabelMask": "ipv6FlowLabelMask",
+        "Ipv6NdDll": "ipv6NdDll",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTarget": "ipv6NdTarget",
+        "Ipv6Source": "ipv6Source",
+        "Ipv6SourceMask": "ipv6SourceMask",
+        "LocalIp": "localIp",
+        "Metadata": "metadata",
+        "MetadataMask": "metadataMask",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "NegotiatedVersion": "negotiatedVersion",
+        "NumberOfInstructions": "numberOfInstructions",
+        "NumberofActions": "numberofActions",
+        "OutGroup": "outGroup",
+        "OutPort": "outPort",
+        "PacketsCount": "packetsCount",
+        "PbbIsid": "pbbIsid",
+        "PbbIsidMask": "pbbIsidMask",
+        "PhysicalInPort": "physicalInPort",
+        "Priority": "priority",
+        "RemoteIp": "remoteIp",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TableId": "tableId",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TransportDestination": "transportDestination",
+        "TransportSource": "transportSource",
+        "TunnelId": "tunnelId",
+        "TunnelIdMask": "tunnelIdMask",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanMask": "vlanMask",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchFlowLearnedInfo, self).__init__(parent, list_op)
@@ -134,10 +134,13 @@ class SwitchFlowLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionlearnedinfo_9e46c41b8abd4718021189fe5e5af931 import SwitchActionLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionlearnedinfo_9e46c41b8abd4718021189fe5e5af931 import (
+            SwitchActionLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchActionLearnedInfo', None) is not None:
-                return self._properties.get('SwitchActionLearnedInfo')
+            if self._properties.get("SwitchActionLearnedInfo", None) is not None:
+                return self._properties.get("SwitchActionLearnedInfo")
         return SwitchActionLearnedInfo(self)
 
     @property
@@ -151,10 +154,16 @@ class SwitchFlowLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowinstructionlearnedinfo_18876b6839ad8af19f820bd250cf246f import SwitchFlowInstructionLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowinstructionlearnedinfo_18876b6839ad8af19f820bd250cf246f import (
+            SwitchFlowInstructionLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchFlowInstructionLearnedInfo', None) is not None:
-                return self._properties.get('SwitchFlowInstructionLearnedInfo')
+            if (
+                self._properties.get("SwitchFlowInstructionLearnedInfo", None)
+                is not None
+            ):
+                return self._properties.get("SwitchFlowInstructionLearnedInfo")
         return SwitchFlowInstructionLearnedInfo(self)
 
     @property
@@ -165,7 +174,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the duration (in ns) for which the flow entry is active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActiveNanoSeconds'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActiveNanoSeconds"])
 
     @property
     def ActiveSeconds(self):
@@ -175,7 +184,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the duration (in sec) for which the flow entry is active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActiveSeconds'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActiveSeconds"])
 
     @property
     def ArpDstHwAddress(self):
@@ -185,7 +194,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the target hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddress"])
 
     @property
     def ArpDstHwAddressMask(self):
@@ -195,7 +204,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of the target hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddressMask"])
 
     @property
     def ArpDstIpv4Address(self):
@@ -205,7 +214,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the target IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4Address"])
 
     @property
     def ArpDstIpv4AddressMask(self):
@@ -215,7 +224,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of the target IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4AddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4AddressMask"])
 
     @property
     def ArpOpcode(self):
@@ -225,7 +234,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ARP opcode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
 
     @property
     def ArpSrcHwAddress(self):
@@ -235,7 +244,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the source hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddress"])
 
     @property
     def ArpSrcHwAddressMask(self):
@@ -245,7 +254,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of the source hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddressMask"])
 
     @property
     def ArpSrcIpv4Address(self):
@@ -255,7 +264,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the source IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Address"])
 
     @property
     def ArpSrcIpv4AddressMask(self):
@@ -265,7 +274,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of the source IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4AddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4AddressMask"])
 
     @property
     def BytesCount(self):
@@ -275,7 +284,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the number of bytes in flow.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BytesCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["BytesCount"])
 
     @property
     def Cookie(self):
@@ -285,7 +294,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the opaque controller-issued identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cookie'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cookie"])
 
     @property
     def CookieMask(self):
@@ -295,7 +304,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask used to restrict the cookie bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CookieMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["CookieMask"])
 
     @property
     def DataPathId(self):
@@ -305,7 +314,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -315,7 +324,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the datapath ID, in hexadecimal format, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def EthernetDestination(self):
@@ -325,7 +334,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ethernet destination address of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
 
     @property
     def EthernetDestinationMask(self):
@@ -335,7 +344,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the Ethernet destination mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestinationMask"])
 
     @property
     def EthernetSource(self):
@@ -345,7 +354,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ethernet source address of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
 
     @property
     def EthernetSourceMask(self):
@@ -355,7 +364,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the Ethernet Source mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSourceMask"])
 
     @property
     def EthernetType(self):
@@ -365,7 +374,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the Ethernet type of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
 
     @property
     def ExperimenterData(self):
@@ -375,7 +384,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the data of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
 
     @property
     def ExperimenterDataLength(self):
@@ -385,7 +394,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the data length of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
 
     @property
     def ExperimenterField(self):
@@ -395,7 +404,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the field type for experimenter match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
 
     @property
     def ExperimenterHashMask(self):
@@ -405,7 +414,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - bool: This describes the experimenter hash mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHashMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterHashMask"])
 
     @property
     def ExperimenterId(self):
@@ -415,7 +424,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the unique identifier for the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
 
     @property
     def Flags(self):
@@ -425,7 +434,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the flags used for this configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Flags'])
+        return self._get_attribute(self._SDM_ATT_MAP["Flags"])
 
     @property
     def HardTimeout(self):
@@ -435,7 +444,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the duration (in sec) before expiration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HardTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["HardTimeout"])
 
     @property
     def Icmpv4Code(self):
@@ -445,7 +454,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ICMP code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Code"])
 
     @property
     def Icmpv4Type(self):
@@ -455,7 +464,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ICMP type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Type"])
 
     @property
     def Icmpv6Code(self):
@@ -465,7 +474,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ICMPv6 code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
 
     @property
     def Icmpv6Type(self):
@@ -475,7 +484,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ICMPv6 type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
 
     @property
     def IdleTimeout(self):
@@ -485,7 +494,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the duration (in sec) for which the switch is idle before expiration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IdleTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["IdleTimeout"])
 
     @property
     def InPort(self):
@@ -495,7 +504,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the input port of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPort"])
 
     @property
     def IpDscp(self):
@@ -505,7 +514,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IP ToS of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
 
     @property
     def IpEcn(self):
@@ -515,7 +524,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ECN bits of the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
 
     @property
     def IpProtocol(self):
@@ -525,7 +534,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IP Protocol type of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProtocol"])
 
     @property
     def Ipv4Destination(self):
@@ -535,7 +544,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IPv4 destination of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
 
     @property
     def Ipv4Source(self):
@@ -545,7 +554,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IPv4 source address of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
 
     @property
     def Ipv6Destination(self):
@@ -555,7 +564,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IPv6 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
 
     @property
     def Ipv6DestinationMask(self):
@@ -565,7 +574,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of IPv6 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6DestinationMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6DestinationMask"])
 
     @property
     def Ipv6ExtHeader(self):
@@ -575,7 +584,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: The IPv6 Extension Header pseudo-field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
 
     @property
     def Ipv6ExtHeaderMask(self):
@@ -585,7 +594,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the mask value of the IPv6 Extension Header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeaderMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeaderMask"])
 
     @property
     def Ipv6FlowLabel(self):
@@ -595,7 +604,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IPv6 Flow label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
 
     @property
     def Ipv6FlowLabelMask(self):
@@ -605,7 +614,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of IPv6 Flow label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabelMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabelMask"])
 
     @property
     def Ipv6NdDll(self):
@@ -615,7 +624,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: The target link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdDll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdDll"])
 
     @property
     def Ipv6NdSll(self):
@@ -625,7 +634,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the source link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
 
     @property
     def Ipv6NdTarget(self):
@@ -635,7 +644,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the target address in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"])
 
     @property
     def Ipv6Source(self):
@@ -645,7 +654,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IPv6 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
 
     @property
     def Ipv6SourceMask(self):
@@ -655,7 +664,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of IPv6 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6SourceMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6SourceMask"])
 
     @property
     def LocalIp(self):
@@ -665,7 +674,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the local IP address of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def Metadata(self):
@@ -675,7 +684,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the table metadata value used to pass information between tables.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metadata"])
 
     @property
     def MetadataMask(self):
@@ -685,7 +694,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the metadata bitmask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataMask"])
 
     @property
     def MplsBos(self):
@@ -695,7 +704,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the BoS bit in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
 
     @property
     def MplsLabel(self):
@@ -705,7 +714,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the LABEL in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
 
     @property
     def MplsTc(self):
@@ -715,7 +724,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the TC in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
 
     @property
     def NegotiatedVersion(self):
@@ -725,7 +734,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the OpenFlow version supported by this configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def NumberOfInstructions(self):
@@ -735,7 +744,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the number of instructions for this Flow range. The default value is 0. The minimum value is 0 and the maximum value is 10.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfInstructions'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfInstructions"])
 
     @property
     def NumberofActions(self):
@@ -745,7 +754,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the number of actions associated with the flow entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberofActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberofActions"])
 
     @property
     def OutGroup(self):
@@ -755,7 +764,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the out group value. It requires matching entries to include this as an output group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutGroup"])
 
     @property
     def OutPort(self):
@@ -765,7 +774,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the out port value. It requires matching entries to include this as an output port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPort"])
 
     @property
     def PacketsCount(self):
@@ -775,7 +784,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the number of packets in flow.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsCount"])
 
     @property
     def PbbIsid(self):
@@ -785,7 +794,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the I-SID in the first PBB service instance tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsid"])
 
     @property
     def PbbIsidMask(self):
@@ -795,7 +804,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the mask value of PBB I-SID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsidMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsidMask"])
 
     @property
     def PhysicalInPort(self):
@@ -805,7 +814,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the physical In port value for this flow range. It is the underlying physical port when packet is received on a logical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PhysicalInPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["PhysicalInPort"])
 
     @property
     def Priority(self):
@@ -815,7 +824,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the Priority of the flow entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
 
     @property
     def RemoteIp(self):
@@ -825,7 +834,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the IP address of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def SctpDestination(self):
@@ -835,7 +844,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the SCTP target port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
 
     @property
     def SctpSource(self):
@@ -845,7 +854,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the SCTP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
 
     @property
     def TableId(self):
@@ -855,7 +864,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the ID of the table in which the entry is stored.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
 
     @property
     def TcpDestination(self):
@@ -865,7 +874,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the TCP destination port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
 
     @property
     def TcpSource(self):
@@ -875,7 +884,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the TCP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
 
     @property
     def TransportDestination(self):
@@ -885,7 +894,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the transport destination port of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportDestination"])
 
     @property
     def TransportSource(self):
@@ -895,7 +904,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the transport source port of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportSource"])
 
     @property
     def TunnelId(self):
@@ -905,7 +914,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the unique identifier used for the Tunnel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
 
     @property
     def TunnelIdMask(self):
@@ -915,7 +924,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the Tunnel ID mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIdMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIdMask"])
 
     @property
     def UdpDestination(self):
@@ -925,7 +934,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the UDP destination port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
 
     @property
     def UdpSource(self):
@@ -935,7 +944,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the UDP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
 
     @property
     def VlanId(self):
@@ -945,7 +954,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the VLAN ID of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     @property
     def VlanMask(self):
@@ -955,7 +964,7 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - number: This describes the VLAN mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanMask"])
 
     @property
     def VlanPriority(self):
@@ -965,10 +974,10 @@ class SwitchFlowLearnedInfo(Base):
         -------
         - str: This describes the VLAN Priority of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
 
     def add(self):
-        """Adds a new switchFlowLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchFlowLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -980,7 +989,90 @@ class SwitchFlowLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActiveNanoSeconds=None, ActiveSeconds=None, ArpDstHwAddress=None, ArpDstHwAddressMask=None, ArpDstIpv4Address=None, ArpDstIpv4AddressMask=None, ArpOpcode=None, ArpSrcHwAddress=None, ArpSrcHwAddressMask=None, ArpSrcIpv4Address=None, ArpSrcIpv4AddressMask=None, BytesCount=None, Cookie=None, CookieMask=None, DataPathId=None, DataPathIdAsHex=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashMask=None, ExperimenterId=None, Flags=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, LocalIp=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NegotiatedVersion=None, NumberOfInstructions=None, NumberofActions=None, OutGroup=None, OutPort=None, PacketsCount=None, PbbIsid=None, PbbIsidMask=None, PhysicalInPort=None, Priority=None, RemoteIp=None, SctpDestination=None, SctpSource=None, TableId=None, TcpDestination=None, TcpSource=None, TransportDestination=None, TransportSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanMask=None, VlanPriority=None):
+    def find(
+        self,
+        ActiveNanoSeconds=None,
+        ActiveSeconds=None,
+        ArpDstHwAddress=None,
+        ArpDstHwAddressMask=None,
+        ArpDstIpv4Address=None,
+        ArpDstIpv4AddressMask=None,
+        ArpOpcode=None,
+        ArpSrcHwAddress=None,
+        ArpSrcHwAddressMask=None,
+        ArpSrcIpv4Address=None,
+        ArpSrcIpv4AddressMask=None,
+        BytesCount=None,
+        Cookie=None,
+        CookieMask=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        EthernetDestination=None,
+        EthernetDestinationMask=None,
+        EthernetSource=None,
+        EthernetSourceMask=None,
+        EthernetType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHashMask=None,
+        ExperimenterId=None,
+        Flags=None,
+        HardTimeout=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        IdleTimeout=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6DestinationMask=None,
+        Ipv6ExtHeader=None,
+        Ipv6ExtHeaderMask=None,
+        Ipv6FlowLabel=None,
+        Ipv6FlowLabelMask=None,
+        Ipv6NdDll=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6Source=None,
+        Ipv6SourceMask=None,
+        LocalIp=None,
+        Metadata=None,
+        MetadataMask=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        NegotiatedVersion=None,
+        NumberOfInstructions=None,
+        NumberofActions=None,
+        OutGroup=None,
+        OutPort=None,
+        PacketsCount=None,
+        PbbIsid=None,
+        PbbIsidMask=None,
+        PhysicalInPort=None,
+        Priority=None,
+        RemoteIp=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TableId=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TransportDestination=None,
+        TransportSource=None,
+        TunnelId=None,
+        TunnelIdMask=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanMask=None,
+        VlanPriority=None,
+    ):
         # type: (int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, bool, str, int, int, str, str, str, str, int, str, str, str, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str) -> SwitchFlowLearnedInfo
         """Finds and retrieves switchFlowLearnedInfo resources from the server.
 

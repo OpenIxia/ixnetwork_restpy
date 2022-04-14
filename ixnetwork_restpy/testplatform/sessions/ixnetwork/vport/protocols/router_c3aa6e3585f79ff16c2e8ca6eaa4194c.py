@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'DiscardLearnedLsa': 'discardLearnedLsa',
-        'Enabled': 'enabled',
-        'GenerateRouterLsa': 'generateRouterLsa',
-        'GracefulRestart': 'gracefulRestart',
-        'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
-        'LsaRefreshTime': 'lsaRefreshTime',
-        'LsaRetransmitTime': 'lsaRetransmitTime',
-        'MaxFloodLsUpdatesPerBurst': 'maxFloodLsUpdatesPerBurst',
-        'RebuildAdjForLsdbChange': 'rebuildAdjForLsdbChange',
-        'RouterId': 'routerId',
-        'StrictLsaChecking': 'strictLsaChecking',
-        'SupportForRfc3623': 'supportForRfc3623',
-        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
-        'SupportReasonSoftRestart': 'supportReasonSoftRestart',
-        'SupportReasonSwotchRedundantCntrlProcessor': 'supportReasonSwotchRedundantCntrlProcessor',
-        'SupportReasonUnknown': 'supportReasonUnknown',
-        'TrafficGroupId': 'trafficGroupId',
+        "DiscardLearnedLsa": "discardLearnedLsa",
+        "Enabled": "enabled",
+        "GenerateRouterLsa": "generateRouterLsa",
+        "GracefulRestart": "gracefulRestart",
+        "InterFloodLsUpdateBurstGap": "interFloodLsUpdateBurstGap",
+        "LsaRefreshTime": "lsaRefreshTime",
+        "LsaRetransmitTime": "lsaRetransmitTime",
+        "MaxFloodLsUpdatesPerBurst": "maxFloodLsUpdatesPerBurst",
+        "RebuildAdjForLsdbChange": "rebuildAdjForLsdbChange",
+        "RouterId": "routerId",
+        "StrictLsaChecking": "strictLsaChecking",
+        "SupportForRfc3623": "supportForRfc3623",
+        "SupportReasonSoftReloadUpgrade": "supportReasonSoftReloadUpgrade",
+        "SupportReasonSoftRestart": "supportReasonSoftRestart",
+        "SupportReasonSwotchRedundantCntrlProcessor": "supportReasonSwotchRedundantCntrlProcessor",
+        "SupportReasonUnknown": "supportReasonUnknown",
+        "TrafficGroupId": "trafficGroupId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Router, self).__init__(parent, list_op)
@@ -71,10 +71,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_f2537c41770d7cd7efb0c68f74fd5c11 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_f2537c41770d7cd7efb0c68f74fd5c11 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -88,10 +91,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_84415011c2bbe6c047aac3d95dac2d2c import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_84415011c2bbe6c047aac3d95dac2d2c import (
+            RouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteRange', None) is not None:
-                return self._properties.get('RouteRange')
+            if self._properties.get("RouteRange", None) is not None:
+                return self._properties.get("RouteRange")
         return RouteRange(self)
 
     @property
@@ -105,10 +111,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsagroup_37ff9af939d31ab1bc043ba579813594 import UserLsaGroup
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsagroup_37ff9af939d31ab1bc043ba579813594 import (
+            UserLsaGroup,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UserLsaGroup', None) is not None:
-                return self._properties.get('UserLsaGroup')
+            if self._properties.get("UserLsaGroup", None) is not None:
+                return self._properties.get("UserLsaGroup")
         return UserLsaGroup(self)
 
     @property
@@ -119,11 +128,12 @@ class Router(Base):
         -------
         - bool: When this option is true, this simulated OSPF router (RID) will not learn any LSAs from the neighbor. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedLsa"])
+
     @DiscardLearnedLsa.setter
     def DiscardLearnedLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardLearnedLsa"], value)
 
     @property
     def Enabled(self):
@@ -133,11 +143,12 @@ class Router(Base):
         -------
         - bool: Enables or disables the use of this emulated OSPF router in the emulated OSPF network. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GenerateRouterLsa(self):
@@ -147,11 +158,12 @@ class Router(Base):
         -------
         - bool: If enabled, the router will automatically generate a router LSA including all of the interfaces added with the ospfRouter addInterface command. This should be turned off if you are building OSPF topologies with ospfUserLsa commands. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GenerateRouterLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["GenerateRouterLsa"])
+
     @GenerateRouterLsa.setter
     def GenerateRouterLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GenerateRouterLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GenerateRouterLsa"], value)
 
     @property
     def GracefulRestart(self):
@@ -161,11 +173,12 @@ class Router(Base):
         -------
         - bool: Enables the graceful restart Helper Mode function, per the IETF drafts, for the emulated OSPF router. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GracefulRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["GracefulRestart"])
+
     @GracefulRestart.setter
     def GracefulRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GracefulRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GracefulRestart"], value)
 
     @property
     def InterFloodLsUpdateBurstGap(self):
@@ -175,11 +188,12 @@ class Router(Base):
         -------
         - number: The number of FloodlsUpdates sent between each Burst gap.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterFloodLsUpdateBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterFloodLsUpdateBurstGap"])
+
     @InterFloodLsUpdateBurstGap.setter
     def InterFloodLsUpdateBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterFloodLsUpdateBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterFloodLsUpdateBurstGap"], value)
 
     @property
     def LsaRefreshTime(self):
@@ -189,11 +203,12 @@ class Router(Base):
         -------
         - number: The time taken for LSA refresh.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaRefreshTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaRefreshTime"])
+
     @LsaRefreshTime.setter
     def LsaRefreshTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsaRefreshTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsaRefreshTime"], value)
 
     @property
     def LsaRetransmitTime(self):
@@ -203,11 +218,12 @@ class Router(Base):
         -------
         - number: The time taken to retransmit LSA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaRetransmitTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaRetransmitTime"])
+
     @LsaRetransmitTime.setter
     def LsaRetransmitTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsaRetransmitTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsaRetransmitTime"], value)
 
     @property
     def MaxFloodLsUpdatesPerBurst(self):
@@ -217,11 +233,12 @@ class Router(Base):
         -------
         - number: The maximum number of FloodLsUpdates sent for each Burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxFloodLsUpdatesPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxFloodLsUpdatesPerBurst"])
+
     @MaxFloodLsUpdatesPerBurst.setter
     def MaxFloodLsUpdatesPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxFloodLsUpdatesPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxFloodLsUpdatesPerBurst"], value)
 
     @property
     def RebuildAdjForLsdbChange(self):
@@ -231,11 +248,12 @@ class Router(Base):
         -------
         - bool: The enableGracefulRestart option must be true. If this option is true, Database Description (DBD) packets will have the R bit set - and the DBD packets will also have the LR (LSDB Resynchronization) bit set in the LLS Extended Options TLV. Out-of-Band Link State Database (OOB LSDB) resynchronization will be used instead of normal LSDB resynchronization, in order to preserve the OSPF adjacency with the neighbor router across OSPF Graceful Restart. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RebuildAdjForLsdbChange'])
+        return self._get_attribute(self._SDM_ATT_MAP["RebuildAdjForLsdbChange"])
+
     @RebuildAdjForLsdbChange.setter
     def RebuildAdjForLsdbChange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RebuildAdjForLsdbChange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RebuildAdjForLsdbChange"], value)
 
     @property
     def RouterId(self):
@@ -245,11 +263,12 @@ class Router(Base):
         -------
         - str: The router ID for this emulated OSPF router, in IPv4 format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def StrictLsaChecking(self):
@@ -259,11 +278,12 @@ class Router(Base):
         -------
         - bool: If enabled, the OSPFv2 Restart Helper will terminate Graceful Restart when there are changes to an LSA that would be flooded to, or retransmitted by, the restarting router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StrictLsaChecking'])
+        return self._get_attribute(self._SDM_ATT_MAP["StrictLsaChecking"])
+
     @StrictLsaChecking.setter
     def StrictLsaChecking(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StrictLsaChecking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StrictLsaChecking"], value)
 
     @property
     def SupportForRfc3623(self):
@@ -273,11 +293,12 @@ class Router(Base):
         -------
         - bool: Enables Graceful Restart Helper Mode per RFC 3623 on the emulated OSPF router. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportForRfc3623'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportForRfc3623"])
+
     @SupportForRfc3623.setter
     def SupportForRfc3623(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportForRfc3623'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportForRfc3623"], value)
 
     @property
     def SupportReasonSoftReloadUpgrade(self):
@@ -287,11 +308,12 @@ class Router(Base):
         -------
         - bool: If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a Software Reload or Upgrade on the restarting router. (Planned outage) The default is checked/enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportReasonSoftReloadUpgrade'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportReasonSoftReloadUpgrade"])
+
     @SupportReasonSoftReloadUpgrade.setter
     def SupportReasonSoftReloadUpgrade(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportReasonSoftReloadUpgrade'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportReasonSoftReloadUpgrade"], value)
 
     @property
     def SupportReasonSoftRestart(self):
@@ -301,11 +323,12 @@ class Router(Base):
         -------
         - bool: If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is an OSPFv2 software restart (on the restarting router). (Planned or unplanned outage) The default is checked/enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportReasonSoftRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportReasonSoftRestart"])
+
     @SupportReasonSoftRestart.setter
     def SupportReasonSoftRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportReasonSoftRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportReasonSoftRestart"], value)
 
     @property
     def SupportReasonSwotchRedundantCntrlProcessor(self):
@@ -315,11 +338,16 @@ class Router(Base):
         -------
         - bool: If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a unplanned switchover to a redundant control processor on the restarting router. (Unplanned outage)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportReasonSwotchRedundantCntrlProcessor'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["SupportReasonSwotchRedundantCntrlProcessor"]
+        )
+
     @SupportReasonSwotchRedundantCntrlProcessor.setter
     def SupportReasonSwotchRedundantCntrlProcessor(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportReasonSwotchRedundantCntrlProcessor'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["SupportReasonSwotchRedundantCntrlProcessor"], value
+        )
 
     @property
     def SupportReasonUnknown(self):
@@ -329,11 +357,12 @@ class Router(Base):
         -------
         - bool: If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is unknown and unplanned. (Unplanned outage) The default is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportReasonUnknown'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportReasonUnknown"])
+
     @SupportReasonUnknown.setter
     def SupportReasonUnknown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportReasonUnknown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportReasonUnknown"], value)
 
     @property
     def TrafficGroupId(self):
@@ -343,13 +372,33 @@ class Router(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, DiscardLearnedLsa=None, Enabled=None, GenerateRouterLsa=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxFloodLsUpdatesPerBurst=None, RebuildAdjForLsdbChange=None, RouterId=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwotchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TrafficGroupId=None):
+    def update(
+        self,
+        DiscardLearnedLsa=None,
+        Enabled=None,
+        GenerateRouterLsa=None,
+        GracefulRestart=None,
+        InterFloodLsUpdateBurstGap=None,
+        LsaRefreshTime=None,
+        LsaRetransmitTime=None,
+        MaxFloodLsUpdatesPerBurst=None,
+        RebuildAdjForLsdbChange=None,
+        RouterId=None,
+        StrictLsaChecking=None,
+        SupportForRfc3623=None,
+        SupportReasonSoftReloadUpgrade=None,
+        SupportReasonSoftRestart=None,
+        SupportReasonSwotchRedundantCntrlProcessor=None,
+        SupportReasonUnknown=None,
+        TrafficGroupId=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, int, int, bool, str, bool, bool, bool, bool, bool, bool, str) -> Router
         """Updates router resource on the server.
 
@@ -379,7 +428,26 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DiscardLearnedLsa=None, Enabled=None, GenerateRouterLsa=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxFloodLsUpdatesPerBurst=None, RebuildAdjForLsdbChange=None, RouterId=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwotchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TrafficGroupId=None):
+    def add(
+        self,
+        DiscardLearnedLsa=None,
+        Enabled=None,
+        GenerateRouterLsa=None,
+        GracefulRestart=None,
+        InterFloodLsUpdateBurstGap=None,
+        LsaRefreshTime=None,
+        LsaRetransmitTime=None,
+        MaxFloodLsUpdatesPerBurst=None,
+        RebuildAdjForLsdbChange=None,
+        RouterId=None,
+        StrictLsaChecking=None,
+        SupportForRfc3623=None,
+        SupportReasonSoftReloadUpgrade=None,
+        SupportReasonSoftRestart=None,
+        SupportReasonSwotchRedundantCntrlProcessor=None,
+        SupportReasonUnknown=None,
+        TrafficGroupId=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, int, int, bool, str, bool, bool, bool, bool, bool, bool, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
@@ -423,7 +491,26 @@ class Router(Base):
         """
         self._delete()
 
-    def find(self, DiscardLearnedLsa=None, Enabled=None, GenerateRouterLsa=None, GracefulRestart=None, InterFloodLsUpdateBurstGap=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxFloodLsUpdatesPerBurst=None, RebuildAdjForLsdbChange=None, RouterId=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwotchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TrafficGroupId=None):
+    def find(
+        self,
+        DiscardLearnedLsa=None,
+        Enabled=None,
+        GenerateRouterLsa=None,
+        GracefulRestart=None,
+        InterFloodLsUpdateBurstGap=None,
+        LsaRefreshTime=None,
+        LsaRetransmitTime=None,
+        MaxFloodLsUpdatesPerBurst=None,
+        RebuildAdjForLsdbChange=None,
+        RouterId=None,
+        StrictLsaChecking=None,
+        SupportForRfc3623=None,
+        SupportReasonSoftReloadUpgrade=None,
+        SupportReasonSoftRestart=None,
+        SupportReasonSwotchRedundantCntrlProcessor=None,
+        SupportReasonUnknown=None,
+        TrafficGroupId=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, int, int, bool, str, bool, bool, bool, bool, bool, bool, str) -> Router
         """Finds and retrieves router resources from the server.
 

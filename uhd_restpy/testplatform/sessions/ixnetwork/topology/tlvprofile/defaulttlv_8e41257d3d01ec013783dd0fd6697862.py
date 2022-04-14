@@ -164,7 +164,7 @@ class DefaultTlv(Base):
 
     def add(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
         # type: (str, List[str], bool, str) -> DefaultTlv
-        """Adds a new defaultTlv resource on the json, only valid with config assistant
+        """Adds a new defaultTlv resource on the json, only valid with batch add utility
 
         Args
         ----

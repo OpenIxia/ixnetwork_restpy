@@ -123,7 +123,7 @@ class Link(Base):
 
     def add(self, ForwardingInterruption=None):
         # type: (bool) -> Link
-        """Adds a new link resource on the json, only valid with config assistant
+        """Adds a new link resource on the json, only valid with batch add utility
 
         Args
         ----

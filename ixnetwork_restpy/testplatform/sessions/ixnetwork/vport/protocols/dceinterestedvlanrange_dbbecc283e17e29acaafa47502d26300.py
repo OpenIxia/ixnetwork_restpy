@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class DceInterestedVlanRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceInterestedVlanRange'
+    _SDM_NAME = "dceInterestedVlanRange"
     _SDM_ATT_MAP = {
-        'EnableIncludeInLsp': 'enableIncludeInLsp',
-        'EnableIncludeInMgroupPdu': 'enableIncludeInMgroupPdu',
-        'EnableM4Bit': 'enableM4Bit',
-        'EnableM6Bit': 'enableM6Bit',
-        'Enabled': 'enabled',
-        'Nickname': 'nickname',
-        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
-        'VlanCount': 'vlanCount',
-        'VlanIdStep': 'vlanIdStep',
+        "EnableIncludeInLsp": "enableIncludeInLsp",
+        "EnableIncludeInMgroupPdu": "enableIncludeInMgroupPdu",
+        "EnableM4Bit": "enableM4Bit",
+        "EnableM6Bit": "enableM6Bit",
+        "Enabled": "enabled",
+        "Nickname": "nickname",
+        "NoOfSpanningTreeRoots": "noOfSpanningTreeRoots",
+        "StartSpanningTreeRootBridgeId": "startSpanningTreeRootBridgeId",
+        "StartVlanId": "startVlanId",
+        "VlanCount": "vlanCount",
+        "VlanIdStep": "vlanIdStep",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DceInterestedVlanRange, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class DceInterestedVlanRange(Base):
         -------
         - bool: If true, enable a custom VLAN in the LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeInLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIncludeInLsp"])
+
     @EnableIncludeInLsp.setter
     def EnableIncludeInLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIncludeInLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIncludeInLsp"], value)
 
     @property
     def EnableIncludeInMgroupPdu(self):
@@ -76,11 +77,12 @@ class DceInterestedVlanRange(Base):
         -------
         - bool: If true, enable and include VLAN in Mgroup PDU
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeInMgroupPdu'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIncludeInMgroupPdu"])
+
     @EnableIncludeInMgroupPdu.setter
     def EnableIncludeInMgroupPdu(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIncludeInMgroupPdu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIncludeInMgroupPdu"], value)
 
     @property
     def EnableM4Bit(self):
@@ -90,11 +92,12 @@ class DceInterestedVlanRange(Base):
         -------
         - bool: If true, the M4 bit is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableM4Bit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableM4Bit"])
+
     @EnableM4Bit.setter
     def EnableM4Bit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableM4Bit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableM4Bit"], value)
 
     @property
     def EnableM6Bit(self):
@@ -104,11 +107,12 @@ class DceInterestedVlanRange(Base):
         -------
         - bool: If true, the M6 bit is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableM6Bit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableM6Bit"])
+
     @EnableM6Bit.setter
     def EnableM6Bit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableM6Bit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableM6Bit"], value)
 
     @property
     def Enabled(self):
@@ -118,11 +122,12 @@ class DceInterestedVlanRange(Base):
         -------
         - bool: Signifies if DCE Interested Vlan range is enabled or disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Nickname(self):
@@ -132,11 +137,12 @@ class DceInterestedVlanRange(Base):
         -------
         - number: The nickname of the VLAN range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Nickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["Nickname"])
+
     @Nickname.setter
     def Nickname(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Nickname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Nickname"], value)
 
     @property
     def NoOfSpanningTreeRoots(self):
@@ -146,11 +152,12 @@ class DceInterestedVlanRange(Base):
         -------
         - number: The number of spanning tree roots for the VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfSpanningTreeRoots'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfSpanningTreeRoots"])
+
     @NoOfSpanningTreeRoots.setter
     def NoOfSpanningTreeRoots(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfSpanningTreeRoots'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfSpanningTreeRoots"], value)
 
     @property
     def StartSpanningTreeRootBridgeId(self):
@@ -160,11 +167,12 @@ class DceInterestedVlanRange(Base):
         -------
         - str: If true, starts the spanning tree root Bridge Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSpanningTreeRootBridgeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSpanningTreeRootBridgeId"])
+
     @StartSpanningTreeRootBridgeId.setter
     def StartSpanningTreeRootBridgeId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSpanningTreeRootBridgeId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSpanningTreeRootBridgeId"], value)
 
     @property
     def StartVlanId(self):
@@ -174,11 +182,12 @@ class DceInterestedVlanRange(Base):
         -------
         - number: The VLAN Id of first VLAN. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartVlanId"])
+
     @StartVlanId.setter
     def StartVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartVlanId"], value)
 
     @property
     def VlanCount(self):
@@ -188,11 +197,12 @@ class DceInterestedVlanRange(Base):
         -------
         - number: The count of the VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanIdStep(self):
@@ -202,13 +212,27 @@ class DceInterestedVlanRange(Base):
         -------
         - number: It shows the increment step of the VLAN. the default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanIdStep"])
+
     @VlanIdStep.setter
     def VlanIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanIdStep"], value)
 
-    def update(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def update(
+        self,
+        EnableIncludeInLsp=None,
+        EnableIncludeInMgroupPdu=None,
+        EnableM4Bit=None,
+        EnableM6Bit=None,
+        Enabled=None,
+        Nickname=None,
+        NoOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, int, str, int, int, int) -> DceInterestedVlanRange
         """Updates dceInterestedVlanRange resource on the server.
 
@@ -232,7 +256,20 @@ class DceInterestedVlanRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def add(
+        self,
+        EnableIncludeInLsp=None,
+        EnableIncludeInMgroupPdu=None,
+        EnableM4Bit=None,
+        EnableM6Bit=None,
+        Enabled=None,
+        Nickname=None,
+        NoOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, int, str, int, int, int) -> DceInterestedVlanRange
         """Adds a new dceInterestedVlanRange resource on the server and adds it to the container.
 
@@ -270,7 +307,20 @@ class DceInterestedVlanRange(Base):
         """
         self._delete()
 
-    def find(self, EnableIncludeInLsp=None, EnableIncludeInMgroupPdu=None, EnableM4Bit=None, EnableM6Bit=None, Enabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def find(
+        self,
+        EnableIncludeInLsp=None,
+        EnableIncludeInMgroupPdu=None,
+        EnableM4Bit=None,
+        EnableM6Bit=None,
+        Enabled=None,
+        Nickname=None,
+        NoOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, int, str, int, int, int) -> DceInterestedVlanRange
         """Finds and retrieves dceInterestedVlanRange resources from the server.
 

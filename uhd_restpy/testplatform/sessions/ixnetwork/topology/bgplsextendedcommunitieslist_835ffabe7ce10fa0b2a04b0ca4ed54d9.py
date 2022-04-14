@@ -242,7 +242,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpLsExtendedCommunitiesList
-        """Adds a new bgpLsExtendedCommunitiesList resource on the json, only valid with config assistant
+        """Adds a new bgpLsExtendedCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----

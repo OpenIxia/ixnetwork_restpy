@@ -110,7 +110,7 @@ class IsisSRAlgorithmList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisSRAlgorithmList
-        """Adds a new isisSRAlgorithmList resource on the json, only valid with config assistant
+        """Adds a new isisSRAlgorithmList resource on the json, only valid with batch add utility
 
         Args
         ----

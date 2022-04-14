@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,80 +33,79 @@ class BgpFlowSpecRangesList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpFlowSpecRangesList'
+    _SDM_NAME = "bgpFlowSpecRangesList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'AsNumber2Bytes': 'asNumber2Bytes',
-        'AsNumber4Bytes': 'asNumber4Bytes',
-        'AsSetMode': 'asSetMode',
-        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
-        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestPortMatch': 'destPortMatch',
-        'DestPrefixLengthV4': 'destPrefixLengthV4',
-        'DestPrefixV4': 'destPrefixV4',
-        'DscpMatch': 'dscpMatch',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableDestPrefixV4': 'enableDestPrefixV4',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableLargeCommunities': 'enableLargeCommunities',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'EnableRedirect': 'enableRedirect',
-        'EnableSourcePrefixV4': 'enableSourcePrefixV4',
-        'EnableTrafficAction': 'enableTrafficAction',
-        'EnableTrafficMarketing': 'enableTrafficMarketing',
-        'EnableTrafficMarking': 'enableTrafficMarking',
-        'EnableTrafficRate': 'enableTrafficRate',
-        'FlowSpecName': 'flowSpecName',
-        'FragmentMatch': 'fragmentMatch',
-        'IcmpCodeMatch': 'icmpCodeMatch',
-        'IcmpTypeMatch': 'icmpTypeMatch',
-        'Ip': 'ip',
-        'IpPacketLenMatch': 'ipPacketLenMatch',
-        'IpProto': 'ipProto',
-        'IpV4': 'ipV4',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LocalPreference': 'localPreference',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'NoOfLargeCommunities': 'noOfLargeCommunities',
-        'NumberOfFlows': 'numberOfFlows',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
-        'PortMatch': 'portMatch',
-        'RedirectCBit': 'redirectCBit',
-        'RedirectExtCommunityType': 'redirectExtCommunityType',
-        'Redirectnexthop': 'redirectnexthop',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'SourcePortMatch': 'sourcePortMatch',
-        'SourcePrefixLengthV4': 'sourcePrefixLengthV4',
-        'SourcePrefixV4': 'sourcePrefixV4',
-        'TcpFlagsMatch': 'tcpFlagsMatch',
-        'TerminalAction': 'terminalAction',
-        'TrafficActionSample': 'trafficActionSample',
-        'TrafficDscp': 'trafficDscp',
-        'TrafficRate': 'trafficRate',
+        "Active": "active",
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "AsNumber2Bytes": "asNumber2Bytes",
+        "AsNumber4Bytes": "asNumber4Bytes",
+        "AsSetMode": "asSetMode",
+        "AssignedNumber2Bytes": "assignedNumber2Bytes",
+        "AssignedNumber4Bytes": "assignedNumber4Bytes",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DestPortMatch": "destPortMatch",
+        "DestPrefixLengthV4": "destPrefixLengthV4",
+        "DestPrefixV4": "destPrefixV4",
+        "DscpMatch": "dscpMatch",
+        "EnableAggregatorId": "enableAggregatorId",
+        "EnableAsPathSegments": "enableAsPathSegments",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableDestPrefixV4": "enableDestPrefixV4",
+        "EnableExtendedCommunity": "enableExtendedCommunity",
+        "EnableLargeCommunities": "enableLargeCommunities",
+        "EnableLocalPreference": "enableLocalPreference",
+        "EnableMultiExitDiscriminator": "enableMultiExitDiscriminator",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginatorId": "enableOriginatorId",
+        "EnableRedirect": "enableRedirect",
+        "EnableSourcePrefixV4": "enableSourcePrefixV4",
+        "EnableTrafficAction": "enableTrafficAction",
+        "EnableTrafficMarketing": "enableTrafficMarketing",
+        "EnableTrafficMarking": "enableTrafficMarking",
+        "EnableTrafficRate": "enableTrafficRate",
+        "FlowSpecName": "flowSpecName",
+        "FragmentMatch": "fragmentMatch",
+        "IcmpCodeMatch": "icmpCodeMatch",
+        "IcmpTypeMatch": "icmpTypeMatch",
+        "Ip": "ip",
+        "IpPacketLenMatch": "ipPacketLenMatch",
+        "IpProto": "ipProto",
+        "IpV4": "ipV4",
+        "Ipv4NextHop": "ipv4NextHop",
+        "Ipv6NextHop": "ipv6NextHop",
+        "LocalPreference": "localPreference",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Name": "name",
+        "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
+        "NoOfClusters": "noOfClusters",
+        "NoOfCommunities": "noOfCommunities",
+        "NoOfExtendedCommunity": "noOfExtendedCommunity",
+        "NoOfLargeCommunities": "noOfLargeCommunities",
+        "NumberOfFlows": "numberOfFlows",
+        "Origin": "origin",
+        "OriginatorId": "originatorId",
+        "OverridePeerAsSetMode": "overridePeerAsSetMode",
+        "PortMatch": "portMatch",
+        "RedirectCBit": "redirectCBit",
+        "RedirectExtCommunityType": "redirectExtCommunityType",
+        "Redirectnexthop": "redirectnexthop",
+        "SetNextHop": "setNextHop",
+        "SetNextHopIpType": "setNextHopIpType",
+        "SourcePortMatch": "sourcePortMatch",
+        "SourcePrefixLengthV4": "sourcePrefixLengthV4",
+        "SourcePrefixV4": "sourcePrefixV4",
+        "TcpFlagsMatch": "tcpFlagsMatch",
+        "TerminalAction": "terminalAction",
+        "TrafficActionSample": "trafficActionSample",
+        "TrafficDscp": "trafficDscp",
+        "TrafficRate": "trafficRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpFlowSpecRangesList, self).__init__(parent, list_op)
@@ -121,10 +121,13 @@ class BgpFlowSpecRangesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import (
+            BgpAsPathSegmentList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsPathSegmentList', None) is not None:
-                return self._properties.get('BgpAsPathSegmentList')
+            if self._properties.get("BgpAsPathSegmentList", None) is not None:
+                return self._properties.get("BgpAsPathSegmentList")
         return BgpAsPathSegmentList(self)
 
     @property
@@ -138,10 +141,13 @@ class BgpFlowSpecRangesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import (
+            BgpClusterIdList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpClusterIdList', None) is not None:
-                return self._properties.get('BgpClusterIdList')
+            if self._properties.get("BgpClusterIdList", None) is not None:
+                return self._properties.get("BgpClusterIdList")
         return BgpClusterIdList(self)
 
     @property
@@ -155,10 +161,13 @@ class BgpFlowSpecRangesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+            BgpCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpCommunitiesList', None) is not None:
-                return self._properties.get('BgpCommunitiesList')
+            if self._properties.get("BgpCommunitiesList", None) is not None:
+                return self._properties.get("BgpCommunitiesList")
         return BgpCommunitiesList(self)
 
     @property
@@ -172,10 +181,13 @@ class BgpFlowSpecRangesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+            BgpExtendedCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-                return self._properties.get('BgpExtendedCommunitiesList')
+            if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
+                return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
 
     @property
@@ -189,10 +201,13 @@ class BgpFlowSpecRangesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist_4e8b7e63fdd826da6c354669eb5e3ed0 import BgpLargeCommunitiesList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist_4e8b7e63fdd826da6c354669eb5e3ed0 import (
+            BgpLargeCommunitiesList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpLargeCommunitiesList', None) is not None:
-                return self._properties.get('BgpLargeCommunitiesList')
+            if self._properties.get("BgpLargeCommunitiesList", None) is not None:
+                return self._properties.get("BgpLargeCommunitiesList")
         return BgpLargeCommunitiesList(self)
 
     @property
@@ -204,7 +219,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AggregatorAs(self):
@@ -215,7 +231,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"]))
 
     @property
     def AggregatorId(self):
@@ -226,7 +243,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AggregatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
 
     @property
     def AsNumber2Bytes(self):
@@ -237,7 +255,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 2-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber2Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber2Bytes"])
+        )
 
     @property
     def AsNumber4Bytes(self):
@@ -248,7 +269,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 4-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber4Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber4Bytes"])
+        )
 
     @property
     def AsSetMode(self):
@@ -259,7 +283,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsSetMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsSetMode"]))
 
     @property
     def AssignedNumber2Bytes(self):
@@ -270,7 +295,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(2 Octets)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssignedNumber2Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssignedNumber2Bytes"])
+        )
 
     @property
     def AssignedNumber4Bytes(self):
@@ -281,7 +309,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(4 Octets)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssignedNumber4Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssignedNumber4Bytes"])
+        )
 
     @property
     def Count(self):
@@ -291,7 +322,7 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -301,7 +332,7 @@ class BgpFlowSpecRangesList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestPortMatch(self):
@@ -312,7 +343,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestPortMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestPortMatch"]))
 
     @property
     def DestPrefixLengthV4(self):
@@ -323,7 +355,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Length (bits) - Controlled by Enable Destination Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestPrefixLengthV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestPrefixLengthV4"])
+        )
 
     @property
     def DestPrefixV4(self):
@@ -334,7 +369,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix - Controlled by Enable Destination Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestPrefixV4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestPrefixV4"]))
 
     @property
     def DscpMatch(self):
@@ -345,7 +381,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 10, 10-20, <10, 10&20, 10|20-30&!25|>=50 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DscpMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DscpMatch"]))
 
     @property
     def EnableAggregatorId(self):
@@ -356,7 +393,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Aggregator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAggregatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAggregatorId"])
+        )
 
     @property
     def EnableAsPathSegments(self):
@@ -367,7 +407,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segments
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAsPathSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAsPathSegments"])
+        )
 
     @property
     def EnableAtomicAggregate(self):
@@ -378,7 +421,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Atomic Aggregate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+        )
 
     @property
     def EnableCluster(self):
@@ -389,7 +435,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Cluster
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCluster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCluster"]))
 
     @property
     def EnableCommunity(self):
@@ -400,7 +447,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+        )
 
     @property
     def EnableDestPrefixV4(self):
@@ -411,7 +461,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Click to Enable Destination Prefix and Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDestPrefixV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableDestPrefixV4"])
+        )
 
     @property
     def EnableExtendedCommunity(self):
@@ -422,7 +475,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Extended Community
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExtendedCommunity"])
+        )
 
     @property
     def EnableLargeCommunities(self):
@@ -433,7 +489,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Large Communities Attribute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLargeCommunities']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLargeCommunities"])
+        )
 
     @property
     def EnableLocalPreference(self):
@@ -444,7 +503,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLocalPreference"])
+        )
 
     @property
     def EnableMultiExitDiscriminator(self):
@@ -455,7 +517,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMultiExitDiscriminator"])
+        )
 
     @property
     def EnableNextHop(self):
@@ -466,7 +531,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"]))
 
     @property
     def EnableOrigin(self):
@@ -477,7 +543,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"]))
 
     @property
     def EnableOriginatorId(self):
@@ -488,7 +555,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableOriginatorId"])
+        )
 
     @property
     def EnableRedirect(self):
@@ -499,7 +569,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Redirect
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRedirect']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRedirect"])
+        )
 
     @property
     def EnableSourcePrefixV4(self):
@@ -510,7 +583,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Click to Enable Source Prefix and Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSourcePrefixV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSourcePrefixV4"])
+        )
 
     @property
     def EnableTrafficAction(self):
@@ -521,7 +597,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Action
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableTrafficAction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficAction"])
+        )
 
     @property
     def EnableTrafficMarketing(self):
@@ -532,7 +611,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Marketing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableTrafficMarketing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficMarketing"])
+        )
 
     @property
     def EnableTrafficMarking(self):
@@ -543,7 +625,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Marking
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableTrafficMarking']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficMarking"])
+        )
 
     @property
     def EnableTrafficRate(self):
@@ -554,7 +639,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Rate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableTrafficRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficRate"])
+        )
 
     @property
     def FlowSpecName(self):
@@ -565,7 +653,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flow Spec Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowSpecName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowSpecName"]))
 
     @property
     def FragmentMatch(self):
@@ -576,7 +665,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: lf,ff,isf,df join different matchcriteria using | or & join flags using | (bitwise or) Eg. (lf), (lf|ff|isf|df), (not)(lf|isf), (not|match)(df|ff)|(isf|lf) Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FragmentMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FragmentMatch"]))
 
     @property
     def IcmpCodeMatch(self):
@@ -587,7 +677,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IcmpCodeMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IcmpCodeMatch"]))
 
     @property
     def IcmpTypeMatch(self):
@@ -598,18 +689,20 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IcmpTypeMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IcmpTypeMatch"]))
 
     @property
     def Ip(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ip']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ip"]))
 
     @property
     def IpPacketLenMatch(self):
@@ -620,7 +713,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpPacketLenMatch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpPacketLenMatch"])
+        )
 
     @property
     def IpProto(self):
@@ -631,7 +727,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpProto']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpProto"]))
 
     @property
     def IpV4(self):
@@ -642,7 +739,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpV4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpV4"]))
 
     @property
     def Ipv4NextHop(self):
@@ -653,7 +751,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NextHop"]))
 
     @property
     def Ipv6NextHop(self):
@@ -664,7 +763,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
 
     @property
     def LocalPreference(self):
@@ -675,7 +775,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
+        )
 
     @property
     def MultiExitDiscriminator(self):
@@ -686,7 +789,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi Exit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
 
     @property
     def Name(self):
@@ -696,11 +802,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
@@ -710,11 +817,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number Of AS Path Segments Per Route Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"])
+
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfASPathSegmentsPerRouteRange"], value)
 
     @property
     def NoOfClusters(self):
@@ -724,11 +832,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number of Clusters
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfClusters"])
+
     @NoOfClusters.setter
     def NoOfClusters(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfClusters"], value)
 
     @property
     def NoOfCommunities(self):
@@ -738,11 +847,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number of Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCommunities"])
+
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
 
     @property
     def NoOfExtendedCommunity(self):
@@ -752,11 +862,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number of Extended Communities
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"])
+
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfExtendedCommunity"], value)
 
     @property
     def NoOfLargeCommunities(self):
@@ -766,11 +877,12 @@ class BgpFlowSpecRangesList(Base):
         -------
         - number: Number of Large Communities (Should be in the range 1-32)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfLargeCommunities"])
+
     @NoOfLargeCommunities.setter
     def NoOfLargeCommunities(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfLargeCommunities"], value)
 
     @property
     def NumberOfFlows(self):
@@ -781,7 +893,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Flows in a Flow Range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfFlows']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NumberOfFlows"]))
 
     @property
     def Origin(self):
@@ -792,7 +905,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Origin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Origin"]))
 
     @property
     def OriginatorId(self):
@@ -803,7 +917,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originator ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OriginatorId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OriginatorId"]))
 
     @property
     def OverridePeerAsSetMode(self):
@@ -814,7 +929,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override Peer AS# Set Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePeerAsSetMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePeerAsSetMode"])
+        )
 
     @property
     def PortMatch(self):
@@ -825,7 +943,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried This Field Matches Source OR Destination TCP/UDP Ports
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortMatch"]))
 
     @property
     def RedirectCBit(self):
@@ -836,7 +955,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RedirectCBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RedirectCBit"]))
 
     @property
     def RedirectExtCommunityType(self):
@@ -847,7 +967,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Extended Community Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RedirectExtCommunityType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectExtCommunityType"])
+        )
 
     @property
     def Redirectnexthop(self):
@@ -858,7 +981,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Redirectnexthop']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Redirectnexthop"])
+        )
 
     @property
     def SetNextHop(self):
@@ -869,7 +995,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetNextHop"]))
 
     @property
     def SetNextHopIpType(self):
@@ -880,7 +1007,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set Next Hop IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNextHopIpType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetNextHopIpType"])
+        )
 
     @property
     def SourcePortMatch(self):
@@ -891,7 +1021,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourcePortMatch']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourcePortMatch"])
+        )
 
     @property
     def SourcePrefixLengthV4(self):
@@ -902,7 +1035,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Prefix Length (bits) - Controlled by Enable Source Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourcePrefixLengthV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourcePrefixLengthV4"])
+        )
 
     @property
     def SourcePrefixV4(self):
@@ -913,7 +1049,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Prefix - Controlled by Enable Source Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourcePrefixV4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourcePrefixV4"])
+        )
 
     @property
     def TcpFlagsMatch(self):
@@ -924,7 +1063,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: ns,cwr,ece,urg,ack,psh,rst,syn,fin join different matchcriteria using | or & join flags using | (bitwise or) Eg. (cwr), (ece|urg|psh|syn), (not)(cwr|syn), (not|match)(ece|psh)|(psh|rst)&(not)(ns) Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TcpFlagsMatch']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TcpFlagsMatch"]))
 
     @property
     def TerminalAction(self):
@@ -935,7 +1075,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Terminal Action
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TerminalAction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TerminalAction"])
+        )
 
     @property
     def TrafficActionSample(self):
@@ -946,7 +1089,10 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sample
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficActionSample']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TrafficActionSample"])
+        )
 
     @property
     def TrafficDscp(self):
@@ -957,7 +1103,8 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): DSCP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficDscp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TrafficDscp"]))
 
     @property
     def TrafficRate(self):
@@ -968,9 +1115,18 @@ class BgpFlowSpecRangesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Rate (Bytes/s)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficRate']))
 
-    def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TrafficRate"]))
+
+    def update(
+        self,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NoOfLargeCommunities=None,
+    ):
         # type: (str, int, int, int, int, int) -> BgpFlowSpecRangesList
         """Updates bgpFlowSpecRangesList resource on the server.
 
@@ -992,7 +1148,17 @@ class BgpFlowSpecRangesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfASPathSegmentsPerRouteRange=None,
+        NoOfClusters=None,
+        NoOfCommunities=None,
+        NoOfExtendedCommunity=None,
+        NoOfLargeCommunities=None,
+    ):
         # type: (int, str, str, int, int, int, int, int) -> BgpFlowSpecRangesList
         """Finds and retrieves bgpFlowSpecRangesList resources from the server.
 
@@ -1039,7 +1205,71 @@ class BgpFlowSpecRangesList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AsSetMode=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, DestPortMatch=None, DestPrefixLengthV4=None, DestPrefixV4=None, DscpMatch=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableDestPrefixV4=None, EnableExtendedCommunity=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRedirect=None, EnableSourcePrefixV4=None, EnableTrafficAction=None, EnableTrafficMarketing=None, EnableTrafficMarking=None, EnableTrafficRate=None, FlowSpecName=None, FragmentMatch=None, IcmpCodeMatch=None, IcmpTypeMatch=None, Ip=None, IpPacketLenMatch=None, IpProto=None, IpV4=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, NumberOfFlows=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PortMatch=None, RedirectCBit=None, RedirectExtCommunityType=None, Redirectnexthop=None, SetNextHop=None, SetNextHopIpType=None, SourcePortMatch=None, SourcePrefixLengthV4=None, SourcePrefixV4=None, TcpFlagsMatch=None, TerminalAction=None, TrafficActionSample=None, TrafficDscp=None, TrafficRate=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AsNumber2Bytes=None,
+        AsNumber4Bytes=None,
+        AsSetMode=None,
+        AssignedNumber2Bytes=None,
+        AssignedNumber4Bytes=None,
+        DestPortMatch=None,
+        DestPrefixLengthV4=None,
+        DestPrefixV4=None,
+        DscpMatch=None,
+        EnableAggregatorId=None,
+        EnableAsPathSegments=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableDestPrefixV4=None,
+        EnableExtendedCommunity=None,
+        EnableLargeCommunities=None,
+        EnableLocalPreference=None,
+        EnableMultiExitDiscriminator=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginatorId=None,
+        EnableRedirect=None,
+        EnableSourcePrefixV4=None,
+        EnableTrafficAction=None,
+        EnableTrafficMarketing=None,
+        EnableTrafficMarking=None,
+        EnableTrafficRate=None,
+        FlowSpecName=None,
+        FragmentMatch=None,
+        IcmpCodeMatch=None,
+        IcmpTypeMatch=None,
+        Ip=None,
+        IpPacketLenMatch=None,
+        IpProto=None,
+        IpV4=None,
+        Ipv4NextHop=None,
+        Ipv6NextHop=None,
+        LocalPreference=None,
+        MultiExitDiscriminator=None,
+        NumberOfFlows=None,
+        Origin=None,
+        OriginatorId=None,
+        OverridePeerAsSetMode=None,
+        PortMatch=None,
+        RedirectCBit=None,
+        RedirectExtCommunityType=None,
+        Redirectnexthop=None,
+        SetNextHop=None,
+        SetNextHopIpType=None,
+        SourcePortMatch=None,
+        SourcePrefixLengthV4=None,
+        SourcePrefixV4=None,
+        TcpFlagsMatch=None,
+        TerminalAction=None,
+        TrafficActionSample=None,
+        TrafficDscp=None,
+        TrafficRate=None,
+    ):
         """Base class infrastructure that gets a list of bgpFlowSpecRangesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

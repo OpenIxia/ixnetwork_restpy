@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,34 +35,42 @@ class Ipv6sr(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6sr'
+    _SDM_NAME = "ipv6sr"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CleanupFlag': 'cleanupFlag',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'FirstSegment': 'firstSegment',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberSegments': 'numberSegments',
-        'OamFlag': 'oamFlag',
-        'OuterDestAddr': 'outerDestAddr',
-        'OuterSrcAddr': 'outerSrcAddr',
-        'ProtectedFlag': 'protectedFlag',
-        'SID0': 'sID0',
-        'SIDEnable0': 'sIDEnable0',
-        'SegmentsLeft': 'segmentsLeft',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TunnelDescription': 'tunnelDescription',
-        'UseAsIngress': 'useAsIngress',
+        "Active": "active",
+        "CleanupFlag": "cleanupFlag",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "FirstSegment": "firstSegment",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberSegments": "numberSegments",
+        "OamFlag": "oamFlag",
+        "OuterDestAddr": "outerDestAddr",
+        "OuterSrcAddr": "outerSrcAddr",
+        "ProtectedFlag": "protectedFlag",
+        "SID0": "sID0",
+        "SIDEnable0": "sIDEnable0",
+        "SegmentsLeft": "segmentsLeft",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TunnelDescription": "tunnelDescription",
+        "UseAsIngress": "useAsIngress",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -78,10 +87,13 @@ class Ipv6sr(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6segmentslist_b22beddfcd690829abbee2bde5eaa96d import IPv6SegmentsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6segmentslist_b22beddfcd690829abbee2bde5eaa96d import (
+            IPv6SegmentsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IPv6SegmentsList', None) is not None:
-                return self._properties.get('IPv6SegmentsList')
+            if self._properties.get("IPv6SegmentsList", None) is not None:
+                return self._properties.get("IPv6SegmentsList")
         return IPv6SegmentsList(self)
 
     @property
@@ -95,10 +107,13 @@ class Ipv6sr(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -110,7 +125,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def CleanupFlag(self):
@@ -121,21 +137,23 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set when the SRH has to be removed from the packet when the packet reaches the last segment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CleanupFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CleanupFlag"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -145,7 +163,7 @@ class Ipv6sr(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -155,7 +173,7 @@ class Ipv6sr(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -164,7 +182,7 @@ class Ipv6sr(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FirstSegment(self):
@@ -175,7 +193,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Count of enabled SID List -1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FirstSegment']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FirstSegment"]))
 
     @property
     def Multiplier(self):
@@ -185,11 +204,12 @@ class Ipv6sr(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -199,11 +219,12 @@ class Ipv6sr(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberSegments(self):
@@ -213,11 +234,12 @@ class Ipv6sr(Base):
         -------
         - number: Maximum available index of the Segments List in SRH header (0 Based Index)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberSegments'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberSegments"])
+
     @NumberSegments.setter
     def NumberSegments(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberSegments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberSegments"], value)
 
     @property
     def OamFlag(self):
@@ -228,7 +250,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates that this packet will be Operations And Management
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OamFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OamFlag"]))
 
     @property
     def OuterDestAddr(self):
@@ -239,7 +262,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controlled by Segments Left, index from enabled SID List
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OuterDestAddr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OuterDestAddr"]))
 
     @property
     def OuterSrcAddr(self):
@@ -250,7 +274,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Outer IPv6 Source Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OuterSrcAddr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OuterSrcAddr"]))
 
     @property
     def ProtectedFlag(self):
@@ -261,7 +286,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set when the packet has been rerouted through FRR mechanism by an SR endpoint node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectedFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtectedFlag"]))
 
     @property
     def SID0(self):
@@ -272,7 +298,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segment Item Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SID0']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SID0"]))
 
     @property
     def SIDEnable0(self):
@@ -283,7 +310,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable This Segment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SIDEnable0']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SIDEnable0"]))
 
     @property
     def SegmentsLeft(self):
@@ -294,7 +322,8 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segments Left (0 Based Index)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentsLeft']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SegmentsLeft"]))
 
     @property
     def SessionStatus(self):
@@ -304,7 +333,7 @@ class Ipv6sr(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -314,11 +343,12 @@ class Ipv6sr(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -327,7 +357,7 @@ class Ipv6sr(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -337,7 +367,7 @@ class Ipv6sr(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TunnelDescription(self):
@@ -348,7 +378,10 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tunnel Description
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TunnelDescription']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TunnelDescription"])
+        )
 
     @property
     def UseAsIngress(self):
@@ -359,9 +392,17 @@ class Ipv6sr(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use This Device As Ingress
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseAsIngress']))
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberSegments=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseAsIngress"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberSegments=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> Ipv6sr
         """Updates ipv6sr resource on the server.
 
@@ -382,7 +423,14 @@ class Ipv6sr(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberSegments=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberSegments=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> Ipv6sr
         """Adds a new ipv6sr resource on the server and adds it to the container.
 
@@ -414,7 +462,20 @@ class Ipv6sr(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberSegments=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberSegments=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ipv6sr resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6sr resources from the server.
@@ -490,10 +551,12 @@ class Ipv6sr(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -522,10 +585,12 @@ class Ipv6sr(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -554,10 +619,12 @@ class Ipv6sr(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -586,12 +653,29 @@ class Ipv6sr(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, CleanupFlag=None, FirstSegment=None, OamFlag=None, OuterDestAddr=None, OuterSrcAddr=None, ProtectedFlag=None, SID0=None, SIDEnable0=None, SegmentsLeft=None, TunnelDescription=None, UseAsIngress=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        CleanupFlag=None,
+        FirstSegment=None,
+        OamFlag=None,
+        OuterDestAddr=None,
+        OuterSrcAddr=None,
+        ProtectedFlag=None,
+        SID0=None,
+        SIDEnable0=None,
+        SegmentsLeft=None,
+        TunnelDescription=None,
+        UseAsIngress=None,
+    ):
         """Base class infrastructure that gets a list of ipv6sr device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

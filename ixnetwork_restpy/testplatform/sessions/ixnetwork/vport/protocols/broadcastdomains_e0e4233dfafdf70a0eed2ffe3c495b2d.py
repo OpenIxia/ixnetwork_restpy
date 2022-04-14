@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,17 @@ class BroadcastDomains(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'broadcastDomains'
+    _SDM_NAME = "broadcastDomains"
     _SDM_ATT_MAP = {
-        'AdRouteLabel': 'adRouteLabel',
-        'BVlanId': 'bVlanId',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpId': 'bVlanTpId',
-        'Enabled': 'enabled',
-        'EthernetTagId': 'ethernetTagId',
+        "AdRouteLabel": "adRouteLabel",
+        "BVlanId": "bVlanId",
+        "BVlanPriority": "bVlanPriority",
+        "BVlanTpId": "bVlanTpId",
+        "Enabled": "enabled",
+        "EthernetTagId": "ethernetTagId",
     }
     _SDM_ENUM_MAP = {
-        'bVlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
+        "bVlanTpId": ["0x8100", "0x9100", "0x9200", "0x88A8"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,10 +62,13 @@ class BroadcastDomains(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_8ee0ca3976d10bdf7e1defed5469922a import CMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_8ee0ca3976d10bdf7e1defed5469922a import (
+            CMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacRange', None) is not None:
-                return self._properties.get('CMacRange')
+            if self._properties.get("CMacRange", None) is not None:
+                return self._properties.get("CMacRange")
         return CMacRange(self)
 
     @property
@@ -75,11 +79,12 @@ class BroadcastDomains(Base):
         -------
         - number: Label value carried in AD route per Broadcast Domain. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdRouteLabel"])
+
     @AdRouteLabel.setter
     def AdRouteLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdRouteLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdRouteLabel"], value)
 
     @property
     def BVlanId(self):
@@ -89,11 +94,12 @@ class BroadcastDomains(Base):
         -------
         - number: B-VLAN Identifier used for PBB-EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanId"])
+
     @BVlanId.setter
     def BVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanId"], value)
 
     @property
     def BVlanPriority(self):
@@ -103,11 +109,12 @@ class BroadcastDomains(Base):
         -------
         - number: B-VLAN Priority used for PBB-EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanPriority"])
+
     @BVlanPriority.setter
     def BVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanPriority"], value)
 
     @property
     def BVlanTpId(self):
@@ -117,11 +124,12 @@ class BroadcastDomains(Base):
         -------
         - str(0x8100 | 0x9100 | 0x9200 | 0x88A8): B-VLAN TPID used for PBB-EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanTpId"])
+
     @BVlanTpId.setter
     def BVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanTpId"], value)
 
     @property
     def Enabled(self):
@@ -131,11 +139,12 @@ class BroadcastDomains(Base):
         -------
         - bool: If true then Broadcast Domain is used in EVPN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EthernetTagId(self):
@@ -145,13 +154,22 @@ class BroadcastDomains(Base):
         -------
         - number: Ethernet Tag Id of an EVI. This can be I-SID, VLAN. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetTagId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetTagId"])
+
     @EthernetTagId.setter
     def EthernetTagId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetTagId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetTagId"], value)
 
-    def update(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+    def update(
+        self,
+        AdRouteLabel=None,
+        BVlanId=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        Enabled=None,
+        EthernetTagId=None,
+    ):
         # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Updates broadcastDomains resource on the server.
 
@@ -170,7 +188,15 @@ class BroadcastDomains(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+    def add(
+        self,
+        AdRouteLabel=None,
+        BVlanId=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        Enabled=None,
+        EthernetTagId=None,
+    ):
         # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Adds a new broadcastDomains resource on the server and adds it to the container.
 
@@ -203,7 +229,15 @@ class BroadcastDomains(Base):
         """
         self._delete()
 
-    def find(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+    def find(
+        self,
+        AdRouteLabel=None,
+        BVlanId=None,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        Enabled=None,
+        EthernetTagId=None,
+    ):
         # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Finds and retrieves broadcastDomains resources from the server.
 
@@ -264,10 +298,12 @@ class BroadcastDomains(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertiseAliasing", payload=payload, response_object=None)
 
     def WithdrawAliasing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -285,7 +321,9 @@ class BroadcastDomains(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdrawAliasing", payload=payload, response_object=None)

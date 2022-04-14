@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,29 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'ActiveTime': 'activeTime',
-        'AsNumber': 'asNumber',
-        'DiscardLearnedRoutes': 'discardLearnedRoutes',
-        'EigrpAddressFamily': 'eigrpAddressFamily',
-        'EigrpMajorVersion': 'eigrpMajorVersion',
-        'EigrpMinorVersion': 'eigrpMinorVersion',
-        'EnablePiggyBack': 'enablePiggyBack',
-        'Enabled': 'enabled',
-        'IosMajorVersion': 'iosMajorVersion',
-        'IosMinorVersion': 'iosMinorVersion',
-        'IsRefreshComplete': 'isRefreshComplete',
-        'K1': 'k1',
-        'K2': 'k2',
-        'K3': 'k3',
-        'K4': 'k4',
-        'K5': 'k5',
-        'RouterId': 'routerId',
-        'TrafficGroupId': 'trafficGroupId',
+        "ActiveTime": "activeTime",
+        "AsNumber": "asNumber",
+        "DiscardLearnedRoutes": "discardLearnedRoutes",
+        "EigrpAddressFamily": "eigrpAddressFamily",
+        "EigrpMajorVersion": "eigrpMajorVersion",
+        "EigrpMinorVersion": "eigrpMinorVersion",
+        "EnablePiggyBack": "enablePiggyBack",
+        "Enabled": "enabled",
+        "IosMajorVersion": "iosMajorVersion",
+        "IosMinorVersion": "iosMinorVersion",
+        "IsRefreshComplete": "isRefreshComplete",
+        "K1": "k1",
+        "K2": "k2",
+        "K3": "k3",
+        "K4": "k4",
+        "K5": "k5",
+        "RouterId": "routerId",
+        "TrafficGroupId": "trafficGroupId",
     }
     _SDM_ENUM_MAP = {
-        'eigrpAddressFamily': ['ipv4', 'ipv6'],
+        "eigrpAddressFamily": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,10 +74,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_c3c911144789a78964958c3c7bd601dc import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_c3c911144789a78964958c3c7bd601dc import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -90,10 +94,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_d56ac825d7af435a1cbaf25c843e97e3 import LearnedRoute
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_d56ac825d7af435a1cbaf25c843e97e3 import (
+            LearnedRoute,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedRoute', None) is not None:
-                return self._properties.get('LearnedRoute')
+            if self._properties.get("LearnedRoute", None) is not None:
+                return self._properties.get("LearnedRoute")
         return LearnedRoute(self)
 
     @property
@@ -107,10 +114,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_de59685b76fa73e61393f9afda789105 import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_de59685b76fa73e61393f9afda789105 import (
+            RouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteRange', None) is not None:
-                return self._properties.get('RouteRange')
+            if self._properties.get("RouteRange", None) is not None:
+                return self._properties.get("RouteRange")
         return RouteRange(self)
 
     @property
@@ -121,11 +131,12 @@ class Router(Base):
         -------
         - number: It determines the maximum time (in minutes) for which a route learned from a neighbor will be active in the topology table, if the neighbor stops sending Hellos. The valid range is 1 to 4294967295. (default = 3 minutes)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActiveTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActiveTime"])
+
     @ActiveTime.setter
     def ActiveTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActiveTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActiveTime"], value)
 
     @property
     def AsNumber(self):
@@ -135,11 +146,12 @@ class Router(Base):
         -------
         - number: The identifier of the Autonomous System (AS) where this emulated EIGRP router is located. The valid range is 1 to 4294967295. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsNumber"])
+
     @AsNumber.setter
     def AsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsNumber"], value)
 
     @property
     def DiscardLearnedRoutes(self):
@@ -149,11 +161,12 @@ class Router(Base):
         -------
         - bool: If enabled, routes learned by emulated EIGRP Routers on this port will be discarded (not stored).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedRoutes"])
+
     @DiscardLearnedRoutes.setter
     def DiscardLearnedRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardLearnedRoutes"], value)
 
     @property
     def EigrpAddressFamily(self):
@@ -163,11 +176,12 @@ class Router(Base):
         -------
         - str(ipv4 | ipv6): It denotes IP address type, one of IPv4 or IPv6 (Default is IPv4)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpAddressFamily'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpAddressFamily"])
+
     @EigrpAddressFamily.setter
     def EigrpAddressFamily(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpAddressFamily'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpAddressFamily"], value)
 
     @property
     def EigrpMajorVersion(self):
@@ -177,11 +191,12 @@ class Router(Base):
         -------
         - number: The major version level of the EIGRP software. The valid range is 0 to 255. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpMajorVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpMajorVersion"])
+
     @EigrpMajorVersion.setter
     def EigrpMajorVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpMajorVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpMajorVersion"], value)
 
     @property
     def EigrpMinorVersion(self):
@@ -191,11 +206,12 @@ class Router(Base):
         -------
         - number: The minor version level of the EIGRP software. The valid range is 0 to 255. (default = 2).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EigrpMinorVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["EigrpMinorVersion"])
+
     @EigrpMinorVersion.setter
     def EigrpMinorVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EigrpMinorVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EigrpMinorVersion"], value)
 
     @property
     def EnablePiggyBack(self):
@@ -205,11 +221,12 @@ class Router(Base):
         -------
         - bool: If enabled, then EIGRP will piggyback an acknowledgement for the initial update with any unicast packet sent to the neighbor, instead of directly sending a separate acknowledgement packet to the neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePiggyBack'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePiggyBack"])
+
     @EnablePiggyBack.setter
     def EnablePiggyBack(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePiggyBack'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePiggyBack"], value)
 
     @property
     def Enabled(self):
@@ -219,11 +236,12 @@ class Router(Base):
         -------
         - bool: Enables the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IosMajorVersion(self):
@@ -233,11 +251,12 @@ class Router(Base):
         -------
         - number: The major version level of the referenced software. The valid range is 0 to 255. (default = 12)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IosMajorVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IosMajorVersion"])
+
     @IosMajorVersion.setter
     def IosMajorVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IosMajorVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IosMajorVersion"], value)
 
     @property
     def IosMinorVersion(self):
@@ -247,11 +266,12 @@ class Router(Base):
         -------
         - number: The major version level of the referenced software. The valid range is 0 to 255. (default = 3)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IosMinorVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IosMinorVersion"])
+
     @IosMinorVersion.setter
     def IosMinorVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IosMinorVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IosMinorVersion"], value)
 
     @property
     def IsRefreshComplete(self):
@@ -261,7 +281,7 @@ class Router(Base):
         -------
         - number: If true, the routes have been refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRefreshComplete'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRefreshComplete"])
 
     @property
     def K1(self):
@@ -271,11 +291,12 @@ class Router(Base):
         -------
         - number: Advanced parameter, only used in condition checking for establishing neighbor relationship. The valid range is 0 to 255. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['K1'])
+        return self._get_attribute(self._SDM_ATT_MAP["K1"])
+
     @K1.setter
     def K1(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['K1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["K1"], value)
 
     @property
     def K2(self):
@@ -285,11 +306,12 @@ class Router(Base):
         -------
         - number: Advanced parameter, only used in condition checking for establishing neighbor relationship. The valid range is 0 to 255. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['K2'])
+        return self._get_attribute(self._SDM_ATT_MAP["K2"])
+
     @K2.setter
     def K2(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['K2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["K2"], value)
 
     @property
     def K3(self):
@@ -299,11 +321,12 @@ class Router(Base):
         -------
         - number: Advanced parameter, only used in condition checking for establishing neighbor relationship. The valid range is 0 to 255. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['K3'])
+        return self._get_attribute(self._SDM_ATT_MAP["K3"])
+
     @K3.setter
     def K3(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['K3'], value)
+        self._set_attribute(self._SDM_ATT_MAP["K3"], value)
 
     @property
     def K4(self):
@@ -313,11 +336,12 @@ class Router(Base):
         -------
         - number: Advanced parameter, only used in condition checking for establishing neighbor relationship.The valid range is 0 to 255. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['K4'])
+        return self._get_attribute(self._SDM_ATT_MAP["K4"])
+
     @K4.setter
     def K4(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['K4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["K4"], value)
 
     @property
     def K5(self):
@@ -327,11 +351,12 @@ class Router(Base):
         -------
         - number: Advanced parameter, only used in condition checking for establishing neighbor relationship.The valid range is 0 to 255. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['K5'])
+        return self._get_attribute(self._SDM_ATT_MAP["K5"])
+
     @K5.setter
     def K5(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['K5'], value)
+        self._set_attribute(self._SDM_ATT_MAP["K5"], value)
 
     @property
     def RouterId(self):
@@ -341,11 +366,12 @@ class Router(Base):
         -------
         - str: This is an IP-formatted string. Its default value is dependent on card/port type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def TrafficGroupId(self):
@@ -355,13 +381,33 @@ class Router(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, ActiveTime=None, AsNumber=None, DiscardLearnedRoutes=None, EigrpAddressFamily=None, EigrpMajorVersion=None, EigrpMinorVersion=None, EnablePiggyBack=None, Enabled=None, IosMajorVersion=None, IosMinorVersion=None, K1=None, K2=None, K3=None, K4=None, K5=None, RouterId=None, TrafficGroupId=None):
+    def update(
+        self,
+        ActiveTime=None,
+        AsNumber=None,
+        DiscardLearnedRoutes=None,
+        EigrpAddressFamily=None,
+        EigrpMajorVersion=None,
+        EigrpMinorVersion=None,
+        EnablePiggyBack=None,
+        Enabled=None,
+        IosMajorVersion=None,
+        IosMinorVersion=None,
+        K1=None,
+        K2=None,
+        K3=None,
+        K4=None,
+        K5=None,
+        RouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, int, bool, str, int, int, bool, bool, int, int, int, int, int, int, int, str, str) -> Router
         """Updates router resource on the server.
 
@@ -391,7 +437,26 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ActiveTime=None, AsNumber=None, DiscardLearnedRoutes=None, EigrpAddressFamily=None, EigrpMajorVersion=None, EigrpMinorVersion=None, EnablePiggyBack=None, Enabled=None, IosMajorVersion=None, IosMinorVersion=None, K1=None, K2=None, K3=None, K4=None, K5=None, RouterId=None, TrafficGroupId=None):
+    def add(
+        self,
+        ActiveTime=None,
+        AsNumber=None,
+        DiscardLearnedRoutes=None,
+        EigrpAddressFamily=None,
+        EigrpMajorVersion=None,
+        EigrpMinorVersion=None,
+        EnablePiggyBack=None,
+        Enabled=None,
+        IosMajorVersion=None,
+        IosMinorVersion=None,
+        K1=None,
+        K2=None,
+        K3=None,
+        K4=None,
+        K5=None,
+        RouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, int, bool, str, int, int, bool, bool, int, int, int, int, int, int, int, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
@@ -435,7 +500,27 @@ class Router(Base):
         """
         self._delete()
 
-    def find(self, ActiveTime=None, AsNumber=None, DiscardLearnedRoutes=None, EigrpAddressFamily=None, EigrpMajorVersion=None, EigrpMinorVersion=None, EnablePiggyBack=None, Enabled=None, IosMajorVersion=None, IosMinorVersion=None, IsRefreshComplete=None, K1=None, K2=None, K3=None, K4=None, K5=None, RouterId=None, TrafficGroupId=None):
+    def find(
+        self,
+        ActiveTime=None,
+        AsNumber=None,
+        DiscardLearnedRoutes=None,
+        EigrpAddressFamily=None,
+        EigrpMajorVersion=None,
+        EigrpMinorVersion=None,
+        EnablePiggyBack=None,
+        Enabled=None,
+        IosMajorVersion=None,
+        IosMinorVersion=None,
+        IsRefreshComplete=None,
+        K1=None,
+        K2=None,
+        K3=None,
+        K4=None,
+        K5=None,
+        RouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (int, int, bool, str, int, int, bool, bool, int, int, int, int, int, int, int, int, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
@@ -508,7 +593,11 @@ class Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

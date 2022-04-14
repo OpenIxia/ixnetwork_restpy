@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class HTTP200OK(Base):
     __slots__ = ()
-    _SDM_NAME = 'HTTP_200_OK'
+    _SDM_NAME = "HTTP_200_OK"
     _SDM_ATT_MAP = {
-        'FieldHolder0REQUEST VERSION': 'HTTP_200_OK.header.fieldHolder0.REQUEST VERSION-1',
-        'FieldHolder0Space3': 'HTTP_200_OK.header.fieldHolder0.Space3-2',
-        'FieldHolder0STATUS CODE': 'HTTP_200_OK.header.fieldHolder0.STATUS CODE-3',
-        'FieldHolder0Space4': 'HTTP_200_OK.header.fieldHolder0.Space4-4',
-        'FieldHolder0Response Phrase': 'HTTP_200_OK.header.fieldHolder0.Response Phrase-5',
-        'FieldHolder0CRLF2RF': 'HTTP_200_OK.header.fieldHolder0.CRLF2RF-6',
-        'HeaderDate': 'HTTP_200_OK.header.Date-7',
-        'HeaderServer': 'HTTP_200_OK.header.Server-8',
-        'HeaderLast-Modified': 'HTTP_200_OK.header.Last-Modified-9',
-        'HeaderETag': 'HTTP_200_OK.header.ETag-10',
-        'HeaderAccept-Ranges': 'HTTP_200_OK.header.Accept-Ranges-11',
-        'HeaderContent-Length': 'HTTP_200_OK.header.Content-Length-12',
-        'HeaderKeep-Alive': 'HTTP_200_OK.header.Keep-Alive-13',
-        'HeaderConnection': 'HTTP_200_OK.header.Connection-14',
-        'HeaderContent-Type': 'HTTP_200_OK.header.Content-Type-15',
-        'HeaderCRLF': 'HTTP_200_OK.header.CRLF-16',
+        "FieldHolder0REQUEST VERSION": "HTTP_200_OK.header.fieldHolder0.REQUEST VERSION-1",
+        "FieldHolder0Space3": "HTTP_200_OK.header.fieldHolder0.Space3-2",
+        "FieldHolder0STATUS CODE": "HTTP_200_OK.header.fieldHolder0.STATUS CODE-3",
+        "FieldHolder0Space4": "HTTP_200_OK.header.fieldHolder0.Space4-4",
+        "FieldHolder0Response Phrase": "HTTP_200_OK.header.fieldHolder0.Response Phrase-5",
+        "FieldHolder0CRLF2RF": "HTTP_200_OK.header.fieldHolder0.CRLF2RF-6",
+        "HeaderDate": "HTTP_200_OK.header.Date-7",
+        "HeaderServer": "HTTP_200_OK.header.Server-8",
+        "HeaderLast-Modified": "HTTP_200_OK.header.Last-Modified-9",
+        "HeaderETag": "HTTP_200_OK.header.ETag-10",
+        "HeaderAccept-Ranges": "HTTP_200_OK.header.Accept-Ranges-11",
+        "HeaderContent-Length": "HTTP_200_OK.header.Content-Length-12",
+        "HeaderKeep-Alive": "HTTP_200_OK.header.Keep-Alive-13",
+        "HeaderConnection": "HTTP_200_OK.header.Connection-14",
+        "HeaderContent-Type": "HTTP_200_OK.header.Content-Type-15",
+        "HeaderCRLF": "HTTP_200_OK.header.CRLF-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0REQUEST VERSION']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0REQUEST VERSION"])
+        )
 
     @property
     def FieldHolder0Space3(self):
@@ -45,7 +48,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0Space3']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0Space3"])
+        )
 
     @property
     def FieldHolder0STATUSCODE(self):
@@ -55,7 +61,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0STATUS CODE']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0STATUS CODE"])
+        )
 
     @property
     def FieldHolder0Space4(self):
@@ -65,7 +74,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0Space4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0Space4"])
+        )
 
     @property
     def FieldHolder0ResponsePhrase(self):
@@ -75,7 +87,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0Response Phrase']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0Response Phrase"])
+        )
 
     @property
     def FieldHolder0CRLF2RF(self):
@@ -85,7 +100,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldHolder0CRLF2RF']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldHolder0CRLF2RF"])
+        )
 
     @property
     def HeaderDate(self):
@@ -95,7 +113,8 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDate"]))
 
     @property
     def HeaderServer(self):
@@ -105,7 +124,8 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderServer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderServer"]))
 
     @property
     def HeaderLastModified(self):
@@ -115,7 +135,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLast-Modified']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLast-Modified"])
+        )
 
     @property
     def HeaderETag(self):
@@ -125,7 +148,8 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderETag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderETag"]))
 
     @property
     def HeaderAcceptRanges(self):
@@ -135,7 +159,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Ranges']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Ranges"])
+        )
 
     @property
     def HeaderContentLength(self):
@@ -145,7 +172,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderContent-Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderContent-Length"])
+        )
 
     @property
     def HeaderKeepAlive(self):
@@ -155,7 +185,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderKeep-Alive']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderKeep-Alive"])
+        )
 
     @property
     def HeaderConnection(self):
@@ -165,7 +198,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderConnection"])
+        )
 
     @property
     def HeaderContentType(self):
@@ -175,7 +211,10 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderContent-Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderContent-Type"])
+        )
 
     @property
     def HeaderCRLF(self):
@@ -185,7 +224,8 @@ class HTTP200OK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCRLF"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

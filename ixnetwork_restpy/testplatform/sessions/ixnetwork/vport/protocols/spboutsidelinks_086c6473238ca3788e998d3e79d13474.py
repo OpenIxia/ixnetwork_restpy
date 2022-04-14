@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class SpbOutsideLinks(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbOutsideLinks'
+    _SDM_NAME = "spbOutsideLinks"
     _SDM_ATT_MAP = {
-        'ConnectionCol': 'connectionCol',
-        'ConnectionRow': 'connectionRow',
-        'LinkedRid': 'linkedRid',
+        "ConnectionCol": "connectionCol",
+        "ConnectionRow": "connectionRow",
+        "LinkedRid": "linkedRid",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbOutsideLinks, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class SpbOutsideLinks(Base):
         -------
         - number: Signifies the connection between the columns.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionCol'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionCol"])
+
     @ConnectionCol.setter
     def ConnectionCol(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectionCol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectionCol"], value)
 
     @property
     def ConnectionRow(self):
@@ -68,11 +69,12 @@ class SpbOutsideLinks(Base):
         -------
         - number: Signifies the connection between the rows.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionRow"])
+
     @ConnectionRow.setter
     def ConnectionRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectionRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectionRow"], value)
 
     @property
     def LinkedRid(self):
@@ -82,11 +84,12 @@ class SpbOutsideLinks(Base):
         -------
         - str: Signifies the link between R identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkedRid'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkedRid"])
+
     @LinkedRid.setter
     def LinkedRid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkedRid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkedRid"], value)
 
     def update(self, ConnectionCol=None, ConnectionRow=None, LinkedRid=None):
         # type: (int, int, str) -> SpbOutsideLinks

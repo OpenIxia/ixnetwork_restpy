@@ -4,21 +4,21 @@ from ixnetwork_restpy.files import Files
 
 class PfcPause(Base):
     __slots__ = ()
-    _SDM_NAME = 'pfcPause'
+    _SDM_NAME = "pfcPause"
     _SDM_ATT_MAP = {
-        'HeaderDstAddress': 'pfcPause.header.header.dstAddress-1',
-        'HeaderSrcAddress': 'pfcPause.header.header.srcAddress-2',
-        'HeaderEthertype': 'pfcPause.header.header.ethertype-3',
-        'MacControlControlOpcode': 'pfcPause.header.macControl.controlOpcode-4',
-        'MacControlPriorityEnableVector': 'pfcPause.header.macControl.priorityEnableVector-5',
-        'PauseQuantaPfcQueue0': 'pfcPause.header.macControl.pauseQuanta.pfcQueue0-6',
-        'PauseQuantaPfcQueue1': 'pfcPause.header.macControl.pauseQuanta.pfcQueue1-7',
-        'PauseQuantaPfcQueue2': 'pfcPause.header.macControl.pauseQuanta.pfcQueue2-8',
-        'PauseQuantaPfcQueue3': 'pfcPause.header.macControl.pauseQuanta.pfcQueue3-9',
-        'PauseQuantaPfcQueue4': 'pfcPause.header.macControl.pauseQuanta.pfcQueue4-10',
-        'PauseQuantaPfcQueue5': 'pfcPause.header.macControl.pauseQuanta.pfcQueue5-11',
-        'PauseQuantaPfcQueue6': 'pfcPause.header.macControl.pauseQuanta.pfcQueue6-12',
-        'PauseQuantaPfcQueue7': 'pfcPause.header.macControl.pauseQuanta.pfcQueue7-13',
+        "HeaderDstAddress": "pfcPause.header.header.dstAddress-1",
+        "HeaderSrcAddress": "pfcPause.header.header.srcAddress-2",
+        "HeaderEthertype": "pfcPause.header.header.ethertype-3",
+        "MacControlControlOpcode": "pfcPause.header.macControl.controlOpcode-4",
+        "MacControlPriorityEnableVector": "pfcPause.header.macControl.priorityEnableVector-5",
+        "PauseQuantaPfcQueue0": "pfcPause.header.macControl.pauseQuanta.pfcQueue0-6",
+        "PauseQuantaPfcQueue1": "pfcPause.header.macControl.pauseQuanta.pfcQueue1-7",
+        "PauseQuantaPfcQueue2": "pfcPause.header.macControl.pauseQuanta.pfcQueue2-8",
+        "PauseQuantaPfcQueue3": "pfcPause.header.macControl.pauseQuanta.pfcQueue3-9",
+        "PauseQuantaPfcQueue4": "pfcPause.header.macControl.pauseQuanta.pfcQueue4-10",
+        "PauseQuantaPfcQueue5": "pfcPause.header.macControl.pauseQuanta.pfcQueue5-11",
+        "PauseQuantaPfcQueue6": "pfcPause.header.macControl.pauseQuanta.pfcQueue6-12",
+        "PauseQuantaPfcQueue7": "pfcPause.header.macControl.pauseQuanta.pfcQueue7-13",
     }
 
     def __init__(self, parent, list_op=False):
@@ -32,7 +32,10 @@ class PfcPause(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstAddress"])
+        )
 
     @property
     def HeaderSrcAddress(self):
@@ -42,7 +45,10 @@ class PfcPause(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcAddress"])
+        )
 
     @property
     def HeaderEthertype(self):
@@ -52,7 +58,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderEthertype']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderEthertype"])
+        )
 
     @property
     def MacControlControlOpcode(self):
@@ -62,7 +71,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacControlControlOpcode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacControlControlOpcode"])
+        )
 
     @property
     def MacControlPriorityEnableVector(self):
@@ -72,7 +84,11 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacControlPriorityEnableVector']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MacControlPriorityEnableVector"]),
+        )
 
     @property
     def PauseQuantaPfcQueue0(self):
@@ -82,7 +98,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue0']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue0"])
+        )
 
     @property
     def PauseQuantaPfcQueue1(self):
@@ -92,7 +111,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue1"])
+        )
 
     @property
     def PauseQuantaPfcQueue2(self):
@@ -102,7 +124,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue2"])
+        )
 
     @property
     def PauseQuantaPfcQueue3(self):
@@ -112,7 +137,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue3']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue3"])
+        )
 
     @property
     def PauseQuantaPfcQueue4(self):
@@ -122,7 +150,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue4"])
+        )
 
     @property
     def PauseQuantaPfcQueue5(self):
@@ -132,7 +163,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue5']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue5"])
+        )
 
     @property
     def PauseQuantaPfcQueue6(self):
@@ -142,7 +176,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue6"])
+        )
 
     @property
     def PauseQuantaPfcQueue7(self):
@@ -152,7 +189,10 @@ class PfcPause(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PauseQuantaPfcQueue7']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PauseQuantaPfcQueue7"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

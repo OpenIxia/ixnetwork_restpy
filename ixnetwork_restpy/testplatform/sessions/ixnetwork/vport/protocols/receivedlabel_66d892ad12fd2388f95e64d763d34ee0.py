@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class ReceivedLabel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'receivedLabel'
+    _SDM_NAME = "receivedLabel"
     _SDM_ATT_MAP = {
-        'CurrentLspOrSubLspUpTime': 'currentLspOrSubLspUpTime',
-        'DestinationIp': 'destinationIp',
-        'Label': 'label',
-        'LeafIp': 'leafIp',
-        'LspId': 'lspId',
-        'LspOrSubLspSetupTime': 'lspOrSubLspSetupTime',
-        'ReservationState': 'reservationState',
-        'SourceIp': 'sourceIp',
-        'TunnelId': 'tunnelId',
-        'Type': 'type',
+        "CurrentLspOrSubLspUpTime": "currentLspOrSubLspUpTime",
+        "DestinationIp": "destinationIp",
+        "Label": "label",
+        "LeafIp": "leafIp",
+        "LspId": "lspId",
+        "LspOrSubLspSetupTime": "lspOrSubLspSetupTime",
+        "ReservationState": "reservationState",
+        "SourceIp": "sourceIp",
+        "TunnelId": "tunnelId",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ReceivedLabel, self).__init__(parent, list_op)
@@ -60,7 +60,7 @@ class ReceivedLabel(Base):
         -------
         - number: Indicates the re-optimization time per LSP/Sub LSP in port level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentLspOrSubLspUpTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentLspOrSubLspUpTime"])
 
     @property
     def DestinationIp(self):
@@ -70,7 +70,7 @@ class ReceivedLabel(Base):
         -------
         - str: The destination router's IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationIp"])
 
     @property
     def Label(self):
@@ -80,7 +80,7 @@ class ReceivedLabel(Base):
         -------
         - number: Label value received from the DUT for the LSP/Tunnel ID, in response to a Label Request from the Ixia-emulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def LeafIp(self):
@@ -90,7 +90,7 @@ class ReceivedLabel(Base):
         -------
         - str: IP of the leaf range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeafIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeafIp"])
 
     @property
     def LspId(self):
@@ -100,7 +100,7 @@ class ReceivedLabel(Base):
         -------
         - number: A unique LSP tunnel ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspId"])
 
     @property
     def LspOrSubLspSetupTime(self):
@@ -110,7 +110,7 @@ class ReceivedLabel(Base):
         -------
         - number: Indicates the set up time per LSP/Sub LSP in port level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspOrSubLspSetupTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspOrSubLspSetupTime"])
 
     @property
     def ReservationState(self):
@@ -120,7 +120,7 @@ class ReceivedLabel(Base):
         -------
         - str: The reservation state after there is a graceful restart. This is not applicable for Ingress and will be equal to None.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReservationState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReservationState"])
 
     @property
     def SourceIp(self):
@@ -130,7 +130,7 @@ class ReceivedLabel(Base):
         -------
         - str: The source router's IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceIp"])
 
     @property
     def TunnelId(self):
@@ -140,7 +140,7 @@ class ReceivedLabel(Base):
         -------
         - number: A unique tunnel ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
 
     @property
     def Type(self):
@@ -150,10 +150,10 @@ class ReceivedLabel(Base):
         -------
         - str: Tunnel type, one of P2P or P2MP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new receivedLabel resource on the json, only valid with config assistant
+        """Adds a new receivedLabel resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -165,7 +165,19 @@ class ReceivedLabel(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CurrentLspOrSubLspUpTime=None, DestinationIp=None, Label=None, LeafIp=None, LspId=None, LspOrSubLspSetupTime=None, ReservationState=None, SourceIp=None, TunnelId=None, Type=None):
+    def find(
+        self,
+        CurrentLspOrSubLspUpTime=None,
+        DestinationIp=None,
+        Label=None,
+        LeafIp=None,
+        LspId=None,
+        LspOrSubLspSetupTime=None,
+        ReservationState=None,
+        SourceIp=None,
+        TunnelId=None,
+        Type=None,
+    ):
         # type: (int, str, int, str, int, int, str, str, int, str) -> ReceivedLabel
         """Finds and retrieves receivedLabel resources from the server.
 

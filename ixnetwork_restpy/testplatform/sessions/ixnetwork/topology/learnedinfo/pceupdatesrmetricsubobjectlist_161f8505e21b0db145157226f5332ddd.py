@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class PceUpdateSrMetricSubObjectList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pceUpdateSrMetricSubObjectList'
+    _SDM_NAME = "pceUpdateSrMetricSubObjectList"
     _SDM_ATT_MAP = {
-        'ActiveThisMetric': 'activeThisMetric',
-        'BFlag': 'bFlag',
-        'MetricType': 'metricType',
-        'MetricValue': 'metricValue',
+        "ActiveThisMetric": "activeThisMetric",
+        "BFlag": "bFlag",
+        "MetricType": "metricType",
+        "MetricValue": "metricValue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PceUpdateSrMetricSubObjectList, self).__init__(parent, list_op)
@@ -55,7 +55,10 @@ class PceUpdateSrMetricSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies whether the corresponding metric object is active or not.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveThisMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActiveThisMetric"])
+        )
 
     @property
     def BFlag(self):
@@ -66,7 +69,8 @@ class PceUpdateSrMetricSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B (bound) flag MUST be set in the METRIC object, which specifies that the SID depth for the computed path MUST NOT exceed the metric-value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def MetricType(self):
@@ -77,7 +81,8 @@ class PceUpdateSrMetricSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a drop down which has 4 choices: IGP/ TE/ Hop count/ MSD.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricType"]))
 
     @property
     def MetricValue(self):
@@ -88,10 +93,11 @@ class PceUpdateSrMetricSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User can specify the metric value corresponding to the metric type selected.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricValue"]))
 
     def add(self):
-        """Adds a new pceUpdateSrMetricSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateSrMetricSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -138,7 +144,14 @@ class PceUpdateSrMetricSubObjectList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ActiveThisMetric=None, BFlag=None, MetricType=None, MetricValue=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActiveThisMetric=None,
+        BFlag=None,
+        MetricType=None,
+        MetricValue=None,
+    ):
         """Base class infrastructure that gets a list of pceUpdateSrMetricSubObjectList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,27 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'AdvertisingMode': 'advertisingMode',
-        'AtmVcDirection': 'atmVcDirection',
-        'Authentication': 'authentication',
-        'BfdOperationMode': 'bfdOperationMode',
-        'DiscoveryMode': 'discoveryMode',
-        'EnableAtmSession': 'enableAtmSession',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'Enabled': 'enabled',
-        'IsLdpLearnedInfoRefreshed': 'isLdpLearnedInfoRefreshed',
-        'LabelSpaceId': 'labelSpaceId',
-        'Md5Key': 'md5Key',
-        'ProtocolInterface': 'protocolInterface',
+        "AdvertisingMode": "advertisingMode",
+        "AtmVcDirection": "atmVcDirection",
+        "Authentication": "authentication",
+        "BfdOperationMode": "bfdOperationMode",
+        "DiscoveryMode": "discoveryMode",
+        "EnableAtmSession": "enableAtmSession",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "Enabled": "enabled",
+        "IsLdpLearnedInfoRefreshed": "isLdpLearnedInfoRefreshed",
+        "LabelSpaceId": "labelSpaceId",
+        "Md5Key": "md5Key",
+        "ProtocolInterface": "protocolInterface",
     }
     _SDM_ENUM_MAP = {
-        'advertisingMode': ['unsolicited', 'onDemand'],
-        'atmVcDirection': ['unidirectional', 'bidirectional'],
-        'authentication': ['null', 'md5'],
-        'bfdOperationMode': ['singleHop', 'multiHop'],
-        'discoveryMode': ['basic', 'extended', 'extendedMartini'],
+        "advertisingMode": ["unsolicited", "onDemand"],
+        "atmVcDirection": ["unidirectional", "bidirectional"],
+        "authentication": ["null", "md5"],
+        "bfdOperationMode": ["singleHop", "multiHop"],
+        "discoveryMode": ["basic", "extended", "extendedMartini"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +72,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atmlabelrange_ebe9434fea7d160a4f5a4fca69d81dcf import AtmLabelRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atmlabelrange_ebe9434fea7d160a4f5a4fca69d81dcf import (
+            AtmLabelRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AtmLabelRange', None) is not None:
-                return self._properties.get('AtmLabelRange')
+            if self._properties.get("AtmLabelRange", None) is not None:
+                return self._properties.get("AtmLabelRange")
         return AtmLabelRange(self)
 
     @property
@@ -88,10 +92,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df33d6e2936a15d8a0c3082383d4e700 import LearnedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df33d6e2936a15d8a0c3082383d4e700 import (
+            LearnedFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedFilter', None) is not None:
-                return self._properties.get('LearnedFilter')
+            if self._properties.get("LearnedFilter", None) is not None:
+                return self._properties.get("LearnedFilter")
         return LearnedFilter(self)._select()
 
     @property
@@ -105,10 +112,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4label_fd641bf6fc1fc77c6a919b5699bdcbe0 import LearnedIpv4Label
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4label_fd641bf6fc1fc77c6a919b5699bdcbe0 import (
+            LearnedIpv4Label,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedIpv4Label', None) is not None:
-                return self._properties.get('LearnedIpv4Label')
+            if self._properties.get("LearnedIpv4Label", None) is not None:
+                return self._properties.get("LearnedIpv4Label")
         return LearnedIpv4Label(self)
 
     @property
@@ -122,10 +132,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4p2mplables_7da643070755e8b965ca7f53c9a8250a import LearnedIpv4P2mpLables
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4p2mplables_7da643070755e8b965ca7f53c9a8250a import (
+            LearnedIpv4P2mpLables,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedIpv4P2mpLables', None) is not None:
-                return self._properties.get('LearnedIpv4P2mpLables')
+            if self._properties.get("LearnedIpv4P2mpLables", None) is not None:
+                return self._properties.get("LearnedIpv4P2mpLables")
         return LearnedIpv4P2mpLables(self)
 
     @property
@@ -139,10 +152,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmartinilabel_cc6a3b5bae90ffc430db92d0f71136a1 import LearnedMartiniLabel
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmartinilabel_cc6a3b5bae90ffc430db92d0f71136a1 import (
+            LearnedMartiniLabel,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedMartiniLabel', None) is not None:
-                return self._properties.get('LearnedMartiniLabel')
+            if self._properties.get("LearnedMartiniLabel", None) is not None:
+                return self._properties.get("LearnedMartiniLabel")
         return LearnedMartiniLabel(self)
 
     @property
@@ -156,10 +172,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.targetpeer_d7cc221539f0f14696e2588a1ed5bda7 import TargetPeer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.targetpeer_d7cc221539f0f14696e2588a1ed5bda7 import (
+            TargetPeer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TargetPeer', None) is not None:
-                return self._properties.get('TargetPeer')
+            if self._properties.get("TargetPeer", None) is not None:
+                return self._properties.get("TargetPeer")
         return TargetPeer(self)
 
     @property
@@ -170,11 +189,12 @@ class Interface(Base):
         -------
         - str(unsolicited | onDemand): The mode by which labels are advertised, either downstream unsolicited or downstream on demand.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertisingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertisingMode"])
+
     @AdvertisingMode.setter
     def AdvertisingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertisingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertisingMode"], value)
 
     @property
     def AtmVcDirection(self):
@@ -184,11 +204,12 @@ class Interface(Base):
         -------
         - str(unidirectional | bidirectional): Whether a virtual circuit (VC) may be used one way or both ways as an LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AtmVcDirection'])
+        return self._get_attribute(self._SDM_ATT_MAP["AtmVcDirection"])
+
     @AtmVcDirection.setter
     def AtmVcDirection(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AtmVcDirection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AtmVcDirection"], value)
 
     @property
     def Authentication(self):
@@ -198,11 +219,12 @@ class Interface(Base):
         -------
         - str(null | md5): The cryptographic authentication type used by the interface; one of: NULL (no authentication) or MD5. When MD5 is used, an md5Key must be configured by the user.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Authentication'])
+        return self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+
     @Authentication.setter
     def Authentication(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Authentication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Authentication"], value)
 
     @property
     def BfdOperationMode(self):
@@ -212,11 +234,12 @@ class Interface(Base):
         -------
         - str(singleHop | multiHop): Helps to set the BFD session in terms of hops, one of Single and Multi.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdOperationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdOperationMode"])
+
     @BfdOperationMode.setter
     def BfdOperationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdOperationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdOperationMode"], value)
 
     @property
     def DiscoveryMode(self):
@@ -226,11 +249,12 @@ class Interface(Base):
         -------
         - str(basic | extended | extendedMartini): The discovery mode used for the interface: basic, extended, or extended Martini.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveryMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveryMode"])
+
     @DiscoveryMode.setter
     def DiscoveryMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscoveryMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscoveryMode"], value)
 
     @property
     def EnableAtmSession(self):
@@ -240,11 +264,12 @@ class Interface(Base):
         -------
         - bool: Enables the establishment of ATM sessions.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAtmSession'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAtmSession"])
+
     @EnableAtmSession.setter
     def EnableAtmSession(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAtmSession'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAtmSession"], value)
 
     @property
     def EnableBfdRegistration(self):
@@ -254,11 +279,12 @@ class Interface(Base):
         -------
         - bool: If true, enables BFD registration with LDP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"], value)
 
     @property
     def Enabled(self):
@@ -268,11 +294,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of this interface for the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IsLdpLearnedInfoRefreshed(self):
@@ -282,7 +309,7 @@ class Interface(Base):
         -------
         - bool: When enabled, automatically refreshes the LDP learned info (from the DUT).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLdpLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLdpLearnedInfoRefreshed"])
 
     @property
     def LabelSpaceId(self):
@@ -292,11 +319,12 @@ class Interface(Base):
         -------
         - number: The LDP label space used by this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelSpaceId"])
+
     @LabelSpaceId.setter
     def LabelSpaceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelSpaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelSpaceId"], value)
 
     @property
     def Md5Key(self):
@@ -306,11 +334,12 @@ class Interface(Base):
         -------
         - str: Used with MD5 authentication. A user-defined string; maximum = 255 characters.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Md5Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Md5Key"])
+
     @Md5Key.setter
     def Md5Key(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Md5Key'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Md5Key"], value)
 
     @property
     def ProtocolInterface(self):
@@ -320,13 +349,27 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
-    def update(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+    def update(
+        self,
+        AdvertisingMode=None,
+        AtmVcDirection=None,
+        Authentication=None,
+        BfdOperationMode=None,
+        DiscoveryMode=None,
+        EnableAtmSession=None,
+        EnableBfdRegistration=None,
+        Enabled=None,
+        LabelSpaceId=None,
+        Md5Key=None,
+        ProtocolInterface=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, int, str, str) -> Interface
         """Updates interface resource on the server.
 
@@ -350,7 +393,20 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+    def add(
+        self,
+        AdvertisingMode=None,
+        AtmVcDirection=None,
+        Authentication=None,
+        BfdOperationMode=None,
+        DiscoveryMode=None,
+        EnableAtmSession=None,
+        EnableBfdRegistration=None,
+        Enabled=None,
+        LabelSpaceId=None,
+        Md5Key=None,
+        ProtocolInterface=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, int, str, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -388,7 +444,21 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, IsLdpLearnedInfoRefreshed=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+    def find(
+        self,
+        AdvertisingMode=None,
+        AtmVcDirection=None,
+        Authentication=None,
+        BfdOperationMode=None,
+        DiscoveryMode=None,
+        EnableAtmSession=None,
+        EnableBfdRegistration=None,
+        Enabled=None,
+        IsLdpLearnedInfoRefreshed=None,
+        LabelSpaceId=None,
+        Md5Key=None,
+        ProtocolInterface=None,
+    ):
         # type: (str, str, str, str, str, bool, bool, bool, bool, int, str, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
@@ -455,7 +525,11 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

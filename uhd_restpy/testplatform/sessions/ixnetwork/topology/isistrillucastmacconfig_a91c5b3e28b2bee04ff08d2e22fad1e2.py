@@ -172,7 +172,7 @@ class IsisTrillUCastMacConfig(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisTrillUCastMacConfig
-        """Adds a new isisTrillUCastMacConfig resource on the json, only valid with config assistant
+        """Adds a new isisTrillUCastMacConfig resource on the json, only valid with batch add utility
 
         Args
         ----

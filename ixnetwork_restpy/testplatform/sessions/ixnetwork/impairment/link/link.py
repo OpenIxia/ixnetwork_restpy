@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Link(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'link'
+    _SDM_NAME = "link"
     _SDM_ATT_MAP = {
-        'ForwardingInterruption': 'forwardingInterruption',
-        'Name': 'name',
-        'RxPortName': 'rxPortName',
-        'TxPortName': 'txPortName',
+        "ForwardingInterruption": "forwardingInterruption",
+        "Name": "name",
+        "RxPortName": "rxPortName",
+        "TxPortName": "txPortName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Link, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class Link(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.loslof.loslof import LosLof
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.loslof.loslof import (
+            LosLof,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LosLof', None) is not None:
-                return self._properties.get('LosLof')
+            if self._properties.get("LosLof", None) is not None:
+                return self._properties.get("LosLof")
         return LosLof(self)._select()
 
     @property
@@ -71,11 +74,12 @@ class Link(Base):
         -------
         - bool: Emulate a link fault. Drop all packets received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForwardingInterruption'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForwardingInterruption"])
+
     @ForwardingInterruption.setter
     def ForwardingInterruption(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForwardingInterruption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForwardingInterruption"], value)
 
     @property
     def Name(self):
@@ -85,7 +89,7 @@ class Link(Base):
         -------
         - str: The name of the link: receiving port -> transmitting port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def RxPortName(self):
@@ -95,7 +99,7 @@ class Link(Base):
         -------
         - str: The name of the receiving port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxPortName"])
 
     @property
     def TxPortName(self):
@@ -105,7 +109,7 @@ class Link(Base):
         -------
         - str: The name of the transmitting port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxPortName"])
 
     def update(self, ForwardingInterruption=None):
         # type: (bool) -> Link
@@ -123,7 +127,7 @@ class Link(Base):
 
     def add(self, ForwardingInterruption=None):
         # type: (bool) -> Link
-        """Adds a new link resource on the json, only valid with config assistant
+        """Adds a new link resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -139,7 +143,9 @@ class Link(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ForwardingInterruption=None, Name=None, RxPortName=None, TxPortName=None):
+    def find(
+        self, ForwardingInterruption=None, Name=None, RxPortName=None, TxPortName=None
+    ):
         # type: (bool, str, str, str) -> Link
         """Finds and retrieves link resources from the server.
 

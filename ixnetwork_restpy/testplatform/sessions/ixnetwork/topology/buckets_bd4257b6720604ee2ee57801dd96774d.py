@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class Buckets(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'buckets'
+    _SDM_NAME = "buckets"
     _SDM_ATT_MAP = {
-        'BucketDescription': 'bucketDescription',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GroupIndex': 'groupIndex',
-        'GroupName': 'groupName',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
-        'Weight': 'weight',
+        "BucketDescription": "bucketDescription",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "GroupIndex": "groupIndex",
+        "GroupName": "groupName",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "WatchGroup": "watchGroup",
+        "WatchPort": "watchPort",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Buckets, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class Buckets(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actionsprofile_c65384e18e20517e184ef23474b0b960 import ActionsProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actionsprofile_c65384e18e20517e184ef23474b0b960 import (
+            ActionsProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ActionsProfile', None) is not None:
-                return self._properties.get('ActionsProfile')
+            if self._properties.get("ActionsProfile", None) is not None:
+                return self._properties.get("ActionsProfile")
         return ActionsProfile(self)._select()
 
     @property
@@ -78,7 +81,10 @@ class Buckets(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A description for the bucket.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BucketDescription']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BucketDescription"])
+        )
 
     @property
     def Count(self):
@@ -88,7 +94,7 @@ class Buckets(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -98,7 +104,7 @@ class Buckets(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GroupIndex(self):
@@ -108,7 +114,7 @@ class Buckets(Base):
         -------
         - list(str): Group Index
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupIndex"])
 
     @property
     def GroupName(self):
@@ -118,7 +124,7 @@ class Buckets(Base):
         -------
         - str: Parent Group Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupName'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupName"])
 
     @property
     def Multiplier(self):
@@ -128,11 +134,12 @@ class Buckets(Base):
         -------
         - number: Number of instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -142,11 +149,12 @@ class Buckets(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def WatchGroup(self):
@@ -157,7 +165,8 @@ class Buckets(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A group whose state determines whether this bucket is live or not.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WatchGroup']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WatchGroup"]))
 
     @property
     def WatchPort(self):
@@ -168,7 +177,8 @@ class Buckets(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A Port whose state determines whether this bucket is live or not.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WatchPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WatchPort"]))
 
     @property
     def Weight(self):
@@ -179,7 +189,8 @@ class Buckets(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the weight of buckets. The permissible range is 0-65535.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Multiplier=None, Name=None):
         # type: (int, str) -> Buckets
@@ -201,7 +212,7 @@ class Buckets(Base):
 
     def add(self, Multiplier=None, Name=None):
         # type: (int, str) -> Buckets
-        """Adds a new buckets resource on the json, only valid with config assistant
+        """Adds a new buckets resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -218,7 +229,15 @@ class Buckets(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, GroupIndex=None, GroupName=None, Multiplier=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        GroupIndex=None,
+        GroupName=None,
+        Multiplier=None,
+        Name=None,
+    ):
         # type: (int, str, List[str], str, int, str) -> Buckets
         """Finds and retrieves buckets resources from the server.
 
@@ -263,7 +282,14 @@ class Buckets(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BucketDescription=None, WatchGroup=None, WatchPort=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BucketDescription=None,
+        WatchGroup=None,
+        WatchPort=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of buckets device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

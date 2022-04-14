@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class VarDescriptor(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'varDescriptor'
+    _SDM_NAME = "varDescriptor"
     _SDM_ATT_MAP = {
-        'VariableBranch': 'variableBranch',
-        'VariableLeaf': 'variableLeaf',
+        "VariableBranch": "variableBranch",
+        "VariableLeaf": "variableLeaf",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VarDescriptor, self).__init__(parent, list_op)
@@ -51,13 +51,14 @@ class VarDescriptor(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableBranch'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableBranch"])
+
     @VariableBranch.setter
     def VariableBranch(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableBranch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableBranch"], value)
 
     @property
     def VariableLeaf(self):
@@ -65,13 +66,14 @@ class VarDescriptor(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableLeaf'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableLeaf"])
+
     @VariableLeaf.setter
     def VariableLeaf(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VariableLeaf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VariableLeaf"], value)
 
     def update(self, VariableBranch=None, VariableLeaf=None):
         # type: (int, int) -> VarDescriptor
@@ -79,8 +81,8 @@ class VarDescriptor(Base):
 
         Args
         ----
-        - VariableBranch (number): 
-        - VariableLeaf (number): 
+        - VariableBranch (number):
+        - VariableLeaf (number):
 
         Raises
         ------
@@ -94,8 +96,8 @@ class VarDescriptor(Base):
 
         Args
         ----
-        - VariableBranch (number): 
-        - VariableLeaf (number): 
+        - VariableBranch (number):
+        - VariableLeaf (number):
 
         Returns
         -------
@@ -127,8 +129,8 @@ class VarDescriptor(Base):
 
         Args
         ----
-        - VariableBranch (number): 
-        - VariableLeaf (number): 
+        - VariableBranch (number):
+        - VariableLeaf (number):
 
         Returns
         -------

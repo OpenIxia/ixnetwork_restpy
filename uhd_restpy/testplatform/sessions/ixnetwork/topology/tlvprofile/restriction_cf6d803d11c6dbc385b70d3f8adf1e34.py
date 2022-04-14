@@ -89,7 +89,7 @@ class Restriction(Base):
 
     def add(self, Enum=None, SingleValue=None):
         # type: (str, bool) -> Restriction
-        """Adds a new restriction resource on the json, only valid with config assistant
+        """Adds a new restriction resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -122,7 +122,7 @@ class IPv6SegmentsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IPv6SegmentsList
-        """Adds a new IPv6SegmentsList resource on the json, only valid with config assistant
+        """Adds a new IPv6SegmentsList resource on the json, only valid with batch add utility
 
         Args
         ----

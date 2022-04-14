@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class StpTCNBPDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'stpTCNBPDU'
+    _SDM_NAME = "stpTCNBPDU"
     _SDM_ATT_MAP = {
-        'HeaderProtocolIdentifier': 'stpTCNBPDU.header.protocolIdentifier-1',
-        'HeaderProtocolVersionIdentifier': 'stpTCNBPDU.header.protocolVersionIdentifier-2',
-        'HeaderBpduType': 'stpTCNBPDU.header.bpduType-3',
+        "HeaderProtocolIdentifier": "stpTCNBPDU.header.protocolIdentifier-1",
+        "HeaderProtocolVersionIdentifier": "stpTCNBPDU.header.protocolVersionIdentifier-2",
+        "HeaderBpduType": "stpTCNBPDU.header.bpduType-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class StpTCNBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolIdentifier"])
+        )
 
     @property
     def HeaderProtocolVersionIdentifier(self):
@@ -32,7 +35,11 @@ class StpTCNBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolVersionIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolVersionIdentifier"]),
+        )
 
     @property
     def HeaderBpduType(self):
@@ -42,7 +49,10 @@ class StpTCNBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBpduType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBpduType"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

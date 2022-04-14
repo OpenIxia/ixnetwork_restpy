@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,55 +33,54 @@ class PreEstablishedSrLsps(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'preEstablishedSrLsps'
+    _SDM_NAME = "preEstablishedSrLsps"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActiveDataTrafficEndpoint': 'activeDataTrafficEndpoint',
-        'AssociationId': 'associationId',
-        'Bandwidth': 'bandwidth',
-        'BindingType': 'bindingType',
-        'Bos': 'bos',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestinationIpv4Address': 'destinationIpv4Address',
-        'ExcludeAny': 'excludeAny',
-        'HoldingPriority': 'holdingPriority',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeBandwidth': 'includeBandwidth',
-        'IncludeConfiguredERO': 'includeConfiguredERO',
-        'IncludeEro': 'includeEro',
-        'IncludeLsp': 'includeLsp',
-        'IncludeLspa': 'includeLspa',
-        'IncludeMetric': 'includeMetric',
-        'IncludePpag': 'includePpag',
-        'IncludeSrp': 'includeSrp',
-        'IncludeSymbolicPathNameTlv': 'includeSymbolicPathNameTlv',
-        'IncludeTEPathBindingTLV': 'includeTEPathBindingTLV',
-        'InitialDelegation': 'initialDelegation',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'LocalProtection': 'localProtection',
-        'LspDelegationState': 'lspDelegationState',
-        'MplsLabel': 'mplsLabel',
-        'Name': 'name',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'NumberOfMetricSubObject': 'numberOfMetricSubObject',
-        'OverridePlspId': 'overridePlspId',
-        'PlspId': 'plspId',
-        'ProtectionLspBit': 'protectionLspBit',
-        'ReDelegationTimerStatus': 'reDelegationTimerStatus',
-        'RedelegationTimeoutInterval': 'redelegationTimeoutInterval',
-        'SetupPriority': 'setupPriority',
-        'SrcEndPointIpv4': 'srcEndPointIpv4',
-        'SrcEndPointIpv6': 'srcEndPointIpv6',
-        'Srv6SID': 'srv6SID',
-        'StandbyLspBit': 'standbyLspBit',
-        'SymbolicPathName': 'symbolicPathName',
-        'Tc': 'tc',
-        'Ttl': 'ttl',
+        "Active": "active",
+        "ActiveDataTrafficEndpoint": "activeDataTrafficEndpoint",
+        "AssociationId": "associationId",
+        "Bandwidth": "bandwidth",
+        "BindingType": "bindingType",
+        "Bos": "bos",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DestinationIpv4Address": "destinationIpv4Address",
+        "ExcludeAny": "excludeAny",
+        "HoldingPriority": "holdingPriority",
+        "IncludeAll": "includeAll",
+        "IncludeAny": "includeAny",
+        "IncludeBandwidth": "includeBandwidth",
+        "IncludeConfiguredERO": "includeConfiguredERO",
+        "IncludeEro": "includeEro",
+        "IncludeLsp": "includeLsp",
+        "IncludeLspa": "includeLspa",
+        "IncludeMetric": "includeMetric",
+        "IncludePpag": "includePpag",
+        "IncludeSrp": "includeSrp",
+        "IncludeSymbolicPathNameTlv": "includeSymbolicPathNameTlv",
+        "IncludeTEPathBindingTLV": "includeTEPathBindingTLV",
+        "InitialDelegation": "initialDelegation",
+        "InsertIpv6ExplicitNull": "insertIpv6ExplicitNull",
+        "LocalProtection": "localProtection",
+        "LspDelegationState": "lspDelegationState",
+        "MplsLabel": "mplsLabel",
+        "Name": "name",
+        "NumberOfEroSubObjects": "numberOfEroSubObjects",
+        "NumberOfMetricSubObject": "numberOfMetricSubObject",
+        "OverridePlspId": "overridePlspId",
+        "PlspId": "plspId",
+        "ProtectionLspBit": "protectionLspBit",
+        "ReDelegationTimerStatus": "reDelegationTimerStatus",
+        "RedelegationTimeoutInterval": "redelegationTimeoutInterval",
+        "SetupPriority": "setupPriority",
+        "SrcEndPointIpv4": "srcEndPointIpv4",
+        "SrcEndPointIpv6": "srcEndPointIpv6",
+        "Srv6SID": "srv6SID",
+        "StandbyLspBit": "standbyLspBit",
+        "SymbolicPathName": "symbolicPathName",
+        "Tc": "tc",
+        "Ttl": "ttl",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PreEstablishedSrLsps, self).__init__(parent, list_op)
@@ -96,10 +96,13 @@ class PreEstablishedSrLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import (
+            PcepEroSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepEroSubObjectsList', None) is not None:
-                return self._properties.get('PcepEroSubObjectsList')
+            if self._properties.get("PcepEroSubObjectsList", None) is not None:
+                return self._properties.get("PcepEroSubObjectsList")
         return PcepEroSubObjectsList(self)
 
     @property
@@ -113,10 +116,13 @@ class PreEstablishedSrLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import (
+            PcepMetricSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepMetricSubObjectsList', None) is not None:
-                return self._properties.get('PcepMetricSubObjectsList')
+            if self._properties.get("PcepMetricSubObjectsList", None) is not None:
+                return self._properties.get("PcepMetricSubObjectsList")
         return PcepMetricSubObjectsList(self)
 
     @property
@@ -130,10 +136,13 @@ class PreEstablishedSrLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -145,7 +154,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActiveDataTrafficEndpoint(self):
@@ -156,7 +166,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies whether that specific Data Traffic Endpoint will generate data traffic
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveDataTrafficEndpoint']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActiveDataTrafficEndpoint"])
+        )
 
     @property
     def AssociationId(self):
@@ -167,7 +180,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Association ID of this LSP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssociationId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AssociationId"]))
 
     @property
     def Bandwidth(self):
@@ -178,7 +192,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bits/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bandwidth"]))
 
     @property
     def BindingType(self):
@@ -189,7 +204,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label. SRv6 SID Default value is 20bit MPLS Label.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BindingType"]))
 
     @property
     def Bos(self):
@@ -200,7 +216,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bos']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bos"]))
 
     @property
     def Count(self):
@@ -210,7 +227,7 @@ class PreEstablishedSrLsps(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -220,7 +237,7 @@ class PreEstablishedSrLsps(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestinationIpv4Address(self):
@@ -231,7 +248,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationIpv4Address"])
+        )
 
     @property
     def ExcludeAny(self):
@@ -242,7 +262,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a type of Resource Affinity Procedure that is used to validate a link. This control accepts a link only if the link carries all of the attributes in the set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAny"]))
 
     @property
     def HoldingPriority(self):
@@ -253,7 +274,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The priority of the LSP with respect to holding resources. The value 0 is the highest priority. Holding Priority is used in deciding whether this session can be preempted by another session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldingPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldingPriority"])
+        )
 
     @property
     def IncludeAll(self):
@@ -264,7 +288,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a type of Resource Affinity Procedure that is used to validate a link. This control excludes a link from consideration if the link carries any of the attributes in the set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAll']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAll"]))
 
     @property
     def IncludeAny(self):
@@ -275,7 +300,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a type of Resource Affinity Procedure that is used to validate a link. This control accepts a link if the link carries any of the attributes in the set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
 
     @property
     def IncludeBandwidth(self):
@@ -286,7 +312,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Bandwidth will be included in a PCInitiate message. All other attributes in sub-tab-Bandwidth would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeBandwidth"])
+        )
 
     @property
     def IncludeConfiguredERO(self):
@@ -297,7 +326,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, entire ERO will go out in packet even if there is Binding SID, which means no SR-ERO/SRv6-ERO validation will be done.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeConfiguredERO']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeConfiguredERO"])
+        )
 
     @property
     def IncludeEro(self):
@@ -308,7 +340,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies whether ERO is active or inactive. All subsequent attributes of the sub-tab-ERO would be editable only if this is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeEro"]))
 
     @property
     def IncludeLsp(self):
@@ -319,7 +352,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether LSP will be included in a PCInitiate message. All other attributes in sub-tab-LSP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeLsp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeLsp"]))
 
     @property
     def IncludeLspa(self):
@@ -330,7 +364,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether LSPA will be included in a PCInitiate message. All other attributes in sub-tab-LSPA would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeLspa']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeLspa"]))
 
     @property
     def IncludeMetric(self):
@@ -341,7 +376,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether the PCInitiate message will have the metric list that is configured. All subsequent attributes of the sub-tab-Metric would be editable only if this is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeMetric"]))
 
     @property
     def IncludePpag(self):
@@ -352,7 +388,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association will be included in a Sync PCReport message. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludePpag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludePpag"]))
 
     @property
     def IncludeSrp(self):
@@ -363,7 +400,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether SRP object will be included in a PCInitiate message. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSrp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeSrp"]))
 
     @property
     def IncludeSymbolicPathNameTlv(self):
@@ -374,7 +412,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if Symbolic-Path-Name TLV is to be included in PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSymbolicPathNameTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeSymbolicPathNameTlv"])
+        )
 
     @property
     def IncludeTEPathBindingTLV(self):
@@ -385,7 +426,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if TE-PATH-BINDING TLV is to be included in PCC Sync LSP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTEPathBindingTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTEPathBindingTLV"])
+        )
 
     @property
     def InitialDelegation(self):
@@ -396,7 +440,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Delegation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialDelegation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialDelegation"])
+        )
 
     @property
     def InsertIpv6ExplicitNull(self):
@@ -406,11 +453,12 @@ class PreEstablishedSrLsps(Base):
         -------
         - bool: Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'])
+        return self._get_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"])
+
     @InsertIpv6ExplicitNull.setter
     def InsertIpv6ExplicitNull(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"], value)
 
     @property
     def LocalProtection(self):
@@ -421,7 +469,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When set, this means that the path must include links protected with Fast Reroute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalProtection"])
+        )
 
     @property
     def LspDelegationState(self):
@@ -431,7 +482,7 @@ class PreEstablishedSrLsps(Base):
         -------
         - list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none]): LSP Delegation State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspDelegationState'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspDelegationState"])
 
     @property
     def MplsLabel(self):
@@ -442,7 +493,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MplsLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MplsLabel"]))
 
     @property
     def Name(self):
@@ -452,11 +504,12 @@ class PreEstablishedSrLsps(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfEroSubObjects(self):
@@ -466,11 +519,12 @@ class PreEstablishedSrLsps(Base):
         -------
         - number: Value that indicates the number of ERO Sub Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"])
+
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"], value)
 
     @property
     def NumberOfMetricSubObject(self):
@@ -480,11 +534,12 @@ class PreEstablishedSrLsps(Base):
         -------
         - number: Value that indicates the number of Metric Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObject"])
+
     @NumberOfMetricSubObject.setter
     def NumberOfMetricSubObject(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObject"], value)
 
     @property
     def OverridePlspId(self):
@@ -494,11 +549,12 @@ class PreEstablishedSrLsps(Base):
         -------
         - bool: Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverridePlspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverridePlspId"])
+
     @OverridePlspId.setter
     def OverridePlspId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverridePlspId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverridePlspId"], value)
 
     @property
     def PlspId(self):
@@ -509,7 +565,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier for the LSP. A PCC creates a unique PLSP-ID for each LSP that is constant for the lifetime of a PCEP session. The PCC will advertise the same PLSP-ID on all PCEP sessions it maintains at a given time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PlspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PlspId"]))
 
     @property
     def ProtectionLspBit(self):
@@ -520,7 +577,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Protection LSP Bit is On.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionLspBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtectionLspBit"])
+        )
 
     @property
     def ReDelegationTimerStatus(self):
@@ -530,7 +590,7 @@ class PreEstablishedSrLsps(Base):
         -------
         - list(str[expired | none | notStarted | running | stopped]): Re-Delegation Timer Status
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReDelegationTimerStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReDelegationTimerStatus"])
 
     @property
     def RedelegationTimeoutInterval(self):
@@ -541,7 +601,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RedelegationTimeoutInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedelegationTimeoutInterval"])
+        )
 
     @property
     def SetupPriority(self):
@@ -552,7 +615,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The priority of the LSP with respect to taking resources.The value 0 is the highest priority.The Setup Priority is used in deciding whether this session can preempt another session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetupPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetupPriority"]))
 
     @property
     def SrcEndPointIpv4(self):
@@ -563,7 +627,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv4 address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcEndPointIpv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcEndPointIpv4"])
+        )
 
     @property
     def SrcEndPointIpv6(self):
@@ -574,7 +641,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6 address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcEndPointIpv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcEndPointIpv6"])
+        )
 
     @property
     def Srv6SID(self):
@@ -585,7 +655,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID with a format of a 16 byte IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SID"]))
 
     @property
     def StandbyLspBit(self):
@@ -596,7 +667,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Standby LSP Bit is On.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StandbyLspBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StandbyLspBit"]))
 
     @property
     def SymbolicPathName(self):
@@ -607,7 +679,10 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Each LSP (path) must have a symbolic name that is unique in the PCC. It must remain constant throughout a path's lifetime, which may span across multiple consecutive PCEP sessions and/or PCC restarts.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SymbolicPathName"])
+        )
 
     @property
     def Tc(self):
@@ -618,7 +693,8 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tc"]))
 
     @property
     def Ttl(self):
@@ -629,9 +705,17 @@ class PreEstablishedSrLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
-    def update(self, InsertIpv6ExplicitNull=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, OverridePlspId=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ttl"]))
+
+    def update(
+        self,
+        InsertIpv6ExplicitNull=None,
+        Name=None,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObject=None,
+        OverridePlspId=None,
+    ):
         # type: (bool, str, int, int, bool) -> PreEstablishedSrLsps
         """Updates preEstablishedSrLsps resource on the server.
 
@@ -652,7 +736,18 @@ class PreEstablishedSrLsps(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, InsertIpv6ExplicitNull=None, LspDelegationState=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, OverridePlspId=None, ReDelegationTimerStatus=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        InsertIpv6ExplicitNull=None,
+        LspDelegationState=None,
+        Name=None,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObject=None,
+        OverridePlspId=None,
+        ReDelegationTimerStatus=None,
+    ):
         # type: (int, str, bool, List[str], str, int, int, bool, List[str]) -> PreEstablishedSrLsps
         """Finds and retrieves preEstablishedSrLsps resources from the server.
 
@@ -717,10 +812,12 @@ class PreEstablishedSrLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('delegate', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("delegate", payload=payload, response_object=None)
 
     def RevokeDelegation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -739,12 +836,52 @@ class PreEstablishedSrLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('revokeDelegation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("revokeDelegation", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndpoint=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, DestinationIpv4Address=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeConfiguredERO=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludePpag=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, InitialDelegation=None, LocalProtection=None, MplsLabel=None, PlspId=None, ProtectionLspBit=None, RedelegationTimeoutInterval=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, Srv6SID=None, StandbyLspBit=None, SymbolicPathName=None, Tc=None, Ttl=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ActiveDataTrafficEndpoint=None,
+        AssociationId=None,
+        Bandwidth=None,
+        BindingType=None,
+        Bos=None,
+        DestinationIpv4Address=None,
+        ExcludeAny=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IncludeBandwidth=None,
+        IncludeConfiguredERO=None,
+        IncludeEro=None,
+        IncludeLsp=None,
+        IncludeLspa=None,
+        IncludeMetric=None,
+        IncludePpag=None,
+        IncludeSrp=None,
+        IncludeSymbolicPathNameTlv=None,
+        IncludeTEPathBindingTLV=None,
+        InitialDelegation=None,
+        LocalProtection=None,
+        MplsLabel=None,
+        PlspId=None,
+        ProtectionLspBit=None,
+        RedelegationTimeoutInterval=None,
+        SetupPriority=None,
+        SrcEndPointIpv4=None,
+        SrcEndPointIpv6=None,
+        Srv6SID=None,
+        StandbyLspBit=None,
+        SymbolicPathName=None,
+        Tc=None,
+        Ttl=None,
+    ):
         """Base class infrastructure that gets a list of preEstablishedSrLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

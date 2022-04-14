@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,34 +35,42 @@ class Ancp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ancp'
+    _SDM_NAME = "ancp"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DynamicTopologyDiscovery': 'dynamicTopologyDiscovery',
-        'Errors': 'errors',
-        'KeepAliveRetries': 'keepAliveRetries',
-        'KeepAliveTimeout': 'keepAliveTimeout',
-        'LineConfiguration': 'lineConfiguration',
-        'MaxRedialAttempts': 'maxRedialAttempts',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NasIp': 'nasIp',
-        'NasServicePort': 'nasServicePort',
-        'PartitionId': 'partitionId',
-        'RemoteLoopback': 'remoteLoopback',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'Standard': 'standard',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TransactionalMulticast': 'transactionalMulticast',
-        'TriggerAccessLoopEvents': 'triggerAccessLoopEvents',
-        'UnlimitedRedial': 'unlimitedRedial',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DynamicTopologyDiscovery": "dynamicTopologyDiscovery",
+        "Errors": "errors",
+        "KeepAliveRetries": "keepAliveRetries",
+        "KeepAliveTimeout": "keepAliveTimeout",
+        "LineConfiguration": "lineConfiguration",
+        "MaxRedialAttempts": "maxRedialAttempts",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NasIp": "nasIp",
+        "NasServicePort": "nasServicePort",
+        "PartitionId": "partitionId",
+        "RemoteLoopback": "remoteLoopback",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "Standard": "standard",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TransactionalMulticast": "transactionalMulticast",
+        "TriggerAccessLoopEvents": "triggerAccessLoopEvents",
+        "UnlimitedRedial": "unlimitedRedial",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,16 +79,17 @@ class Ancp(Base):
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -89,7 +99,7 @@ class Ancp(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -99,7 +109,7 @@ class Ancp(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DynamicTopologyDiscovery(self):
@@ -110,7 +120,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable Dynamic Topology Discovery capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DynamicTopologyDiscovery']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DynamicTopologyDiscovery"])
+        )
 
     @property
     def Errors(self):
@@ -119,7 +132,7 @@ class Ancp(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def KeepAliveRetries(self):
@@ -130,7 +143,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times ANCP adjacency mechanism send ANCP keep-alive packets before closing the TCP connections
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepAliveRetries']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepAliveRetries"])
+        )
 
     @property
     def KeepAliveTimeout(self):
@@ -141,7 +157,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timer value in units of 100ms used in the adjacency protocol with the peer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepAliveTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepAliveTimeout"])
+        )
 
     @property
     def LineConfiguration(self):
@@ -152,7 +171,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable DSL Line Configuration capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LineConfiguration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LineConfiguration"])
+        )
 
     @property
     def MaxRedialAttempts(self):
@@ -163,7 +185,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of attempts to establish ANCP adjacency in case connection is lost
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRedialAttempts']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxRedialAttempts"])
+        )
 
     @property
     def Multiplier(self):
@@ -173,11 +198,12 @@ class Ancp(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -187,11 +213,12 @@ class Ancp(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NasIp(self):
@@ -202,7 +229,8 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ip address of BRAS listening for ANCP connections
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NasIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NasIp"]))
 
     @property
     def NasServicePort(self):
@@ -213,7 +241,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BRAS TCP port number used to listen for ANCP connections
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NasServicePort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NasServicePort"])
+        )
 
     @property
     def PartitionId(self):
@@ -224,7 +255,8 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Partition ID to be used in adjacency negotiation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartitionId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartitionId"]))
 
     @property
     def RemoteLoopback(self):
@@ -235,7 +267,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable DSL Remote Line Conectivity Testing Capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteLoopback']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteLoopback"])
+        )
 
     @property
     def SessionStatus(self):
@@ -245,7 +280,7 @@ class Ancp(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -255,11 +290,12 @@ class Ancp(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def Standard(self):
@@ -270,7 +306,8 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Define ANCP Standard to be used.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Standard']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Standard"]))
 
     @property
     def StateCounts(self):
@@ -279,7 +316,7 @@ class Ancp(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -289,7 +326,7 @@ class Ancp(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TransactionalMulticast(self):
@@ -300,7 +337,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable/Disable advertise Transactional Multicast capability
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransactionalMulticast']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransactionalMulticast"])
+        )
 
     @property
     def TriggerAccessLoopEvents(self):
@@ -311,7 +351,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable sending Port Up/ Port Down events when AN is Started / Stopped. Does not apply if flapping is enabled on the Access Loop
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TriggerAccessLoopEvents']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TriggerAccessLoopEvents"])
+        )
 
     @property
     def UnlimitedRedial(self):
@@ -322,7 +365,10 @@ class Ancp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Limit the Number of attempts to establish ANCP adjacency in case connection is lost
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnlimitedRedial']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnlimitedRedial"])
+        )
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Ancp
@@ -375,7 +421,19 @@ class Ancp(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ancp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancp resources from the server.
@@ -450,10 +508,12 @@ class Ancp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -482,10 +542,12 @@ class Ancp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendRstack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -514,10 +576,12 @@ class Ancp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRstack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRstack", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -546,10 +610,12 @@ class Ancp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -578,12 +644,30 @@ class Ancp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, DynamicTopologyDiscovery=None, KeepAliveRetries=None, KeepAliveTimeout=None, LineConfiguration=None, MaxRedialAttempts=None, NasIp=None, NasServicePort=None, PartitionId=None, RemoteLoopback=None, Standard=None, TransactionalMulticast=None, TriggerAccessLoopEvents=None, UnlimitedRedial=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        DynamicTopologyDiscovery=None,
+        KeepAliveRetries=None,
+        KeepAliveTimeout=None,
+        LineConfiguration=None,
+        MaxRedialAttempts=None,
+        NasIp=None,
+        NasServicePort=None,
+        PartitionId=None,
+        RemoteLoopback=None,
+        Standard=None,
+        TransactionalMulticast=None,
+        TriggerAccessLoopEvents=None,
+        UnlimitedRedial=None,
+    ):
         """Base class infrastructure that gets a list of ancp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

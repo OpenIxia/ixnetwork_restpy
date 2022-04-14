@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class LostFrames(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lostFrames'
+    _SDM_NAME = "lostFrames"
     _SDM_ATT_MAP = {
-        'Enable': 'enable',
-        'Name': 'name',
-        'Notes': 'notes',
-        'Operator': 'operator',
-        'Unit': 'unit',
-        'Value': 'value',
+        "Enable": "enable",
+        "Name": "name",
+        "Notes": "notes",
+        "Operator": "operator",
+        "Unit": "unit",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LostFrames, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class LostFrames(Base):
         -------
         - bool: Enable/Disable monitoring for the current statistic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enable'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enable"])
+
     @Enable.setter
     def Enable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enable"], value)
 
     @property
     def Name(self):
@@ -69,7 +70,7 @@ class LostFrames(Base):
         -------
         - str: The name of the statistic that is being monitored.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def Notes(self):
@@ -79,7 +80,7 @@ class LostFrames(Base):
         -------
         - str: Additional notes that explain what is being monitored for this statistic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Notes'])
+        return self._get_attribute(self._SDM_ATT_MAP["Notes"])
 
     @property
     def Operator(self):
@@ -89,7 +90,7 @@ class LostFrames(Base):
         -------
         - str: The operator that is being used to compare the actual value of the statistic with the configured threshold.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
+        return self._get_attribute(self._SDM_ATT_MAP["Operator"])
 
     @property
     def Unit(self):
@@ -99,7 +100,7 @@ class LostFrames(Base):
         -------
         - str: The measurement unit being used for this statistic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Unit'])
+        return self._get_attribute(self._SDM_ATT_MAP["Unit"])
 
     @property
     def Value(self):
@@ -109,11 +110,12 @@ class LostFrames(Base):
         -------
         - number: The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Enable=None, Value=None):
         # type: (bool, int) -> LostFrames
@@ -130,7 +132,9 @@ class LostFrames(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enable=None, Name=None, Notes=None, Operator=None, Unit=None, Value=None):
+    def find(
+        self, Enable=None, Name=None, Notes=None, Operator=None, Unit=None, Value=None
+    ):
         # type: (bool, str, str, str, str, int) -> LostFrames
         """Finds and retrieves lostFrames resources from the server.
 

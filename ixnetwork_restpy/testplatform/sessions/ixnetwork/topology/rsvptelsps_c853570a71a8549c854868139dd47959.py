@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,36 @@ class RsvpteLsps(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpteLsps'
+    _SDM_NAME = "rsvpteLsps"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableP2PEgress': 'enableP2PEgress',
-        'Errors': 'errors',
-        'ExpectedPceInitiatedLspsCount': 'expectedPceInitiatedLspsCount',
-        'IngressP2PLsps': 'ingressP2PLsps',
-        'LocalIp': 'localIp',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'P2mpEgressTunnelCount': 'p2mpEgressTunnelCount',
-        'P2mpIngressLspCount': 'p2mpIngressLspCount',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Active": "active",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableP2PEgress": "enableP2PEgress",
+        "Errors": "errors",
+        "ExpectedPceInitiatedLspsCount": "expectedPceInitiatedLspsCount",
+        "IngressP2PLsps": "ingressP2PLsps",
+        "LocalIp": "localIp",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "P2mpEgressTunnelCount": "p2mpEgressTunnelCount",
+        "P2mpIngressLspCount": "p2mpIngressLspCount",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,10 +81,13 @@ class RsvpteLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_9f054ab50236d49eeef8a9fbc0ba1127 import RsvpP2PEgressLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_9f054ab50236d49eeef8a9fbc0ba1127 import (
+            RsvpP2PEgressLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpP2PEgressLsps', None) is not None:
-                return self._properties.get('RsvpP2PEgressLsps')
+            if self._properties.get("RsvpP2PEgressLsps", None) is not None:
+                return self._properties.get("RsvpP2PEgressLsps")
         return RsvpP2PEgressLsps(self)._select()
 
     @property
@@ -89,10 +101,13 @@ class RsvpteLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_b3cad06292c51571163e9346869405a0 import RsvpP2PIngressLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_b3cad06292c51571163e9346869405a0 import (
+            RsvpP2PIngressLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpP2PIngressLsps', None) is not None:
-                return self._properties.get('RsvpP2PIngressLsps')
+            if self._properties.get("RsvpP2PIngressLsps", None) is not None:
+                return self._properties.get("RsvpP2PIngressLsps")
         return RsvpP2PIngressLsps(self)._select()
 
     @property
@@ -106,10 +121,13 @@ class RsvpteLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps_a7be6d237185c970a66235441605770c import RsvpP2mpEgressLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps_a7be6d237185c970a66235441605770c import (
+            RsvpP2mpEgressLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpP2mpEgressLsps', None) is not None:
-                return self._properties.get('RsvpP2mpEgressLsps')
+            if self._properties.get("RsvpP2mpEgressLsps", None) is not None:
+                return self._properties.get("RsvpP2mpEgressLsps")
         return RsvpP2mpEgressLsps(self)._select()
 
     @property
@@ -123,10 +141,13 @@ class RsvpteLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps_7b38fc09ccf52081a0ef372f9492b887 import RsvpP2mpIngressLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps_7b38fc09ccf52081a0ef372f9492b887 import (
+            RsvpP2mpIngressLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpP2mpIngressLsps', None) is not None:
-                return self._properties.get('RsvpP2mpIngressLsps')
+            if self._properties.get("RsvpP2mpIngressLsps", None) is not None:
+                return self._properties.get("RsvpP2mpIngressLsps")
         return RsvpP2mpIngressLsps(self)._select()
 
     @property
@@ -140,10 +161,13 @@ class RsvpteLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps_64b47067effbb8886f7ee1d4dd6e8560 import RsvpPcepExpectedInitiatedLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps_64b47067effbb8886f7ee1d4dd6e8560 import (
+            RsvpPcepExpectedInitiatedLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpPcepExpectedInitiatedLsps', None) is not None:
-                return self._properties.get('RsvpPcepExpectedInitiatedLsps')
+            if self._properties.get("RsvpPcepExpectedInitiatedLsps", None) is not None:
+                return self._properties.get("RsvpPcepExpectedInitiatedLsps")
         return RsvpPcepExpectedInitiatedLsps(self)._select()
 
     @property
@@ -155,21 +179,23 @@ class RsvpteLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -179,7 +205,7 @@ class RsvpteLsps(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -189,7 +215,7 @@ class RsvpteLsps(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableP2PEgress(self):
@@ -199,11 +225,12 @@ class RsvpteLsps(Base):
         -------
         - bool: Enable to configure P2P Egress LSPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableP2PEgress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableP2PEgress"])
+
     @EnableP2PEgress.setter
     def EnableP2PEgress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableP2PEgress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableP2PEgress"], value)
 
     @property
     def Errors(self):
@@ -212,7 +239,7 @@ class RsvpteLsps(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExpectedPceInitiatedLspsCount(self):
@@ -222,11 +249,12 @@ class RsvpteLsps(Base):
         -------
         - number: Number of Expected PCE Initiated RSVP-TE LSPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpectedPceInitiatedLspsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpectedPceInitiatedLspsCount"])
+
     @ExpectedPceInitiatedLspsCount.setter
     def ExpectedPceInitiatedLspsCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExpectedPceInitiatedLspsCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExpectedPceInitiatedLspsCount"], value)
 
     @property
     def IngressP2PLsps(self):
@@ -236,11 +264,12 @@ class RsvpteLsps(Base):
         -------
         - number: Number of P2P Ingress LSPs configured per IPv4 Loopback
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressP2PLsps'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressP2PLsps"])
+
     @IngressP2PLsps.setter
     def IngressP2PLsps(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IngressP2PLsps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IngressP2PLsps"], value)
 
     @property
     def LocalIp(self):
@@ -250,7 +279,7 @@ class RsvpteLsps(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def Multiplier(self):
@@ -260,11 +289,12 @@ class RsvpteLsps(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -274,11 +304,12 @@ class RsvpteLsps(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def P2mpEgressTunnelCount(self):
@@ -288,11 +319,12 @@ class RsvpteLsps(Base):
         -------
         - number: Number of P2MP Egress Tunnels configured per IPv4 Loopback
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpEgressTunnelCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpEgressTunnelCount"])
+
     @P2mpEgressTunnelCount.setter
     def P2mpEgressTunnelCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['P2mpEgressTunnelCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["P2mpEgressTunnelCount"], value)
 
     @property
     def P2mpIngressLspCount(self):
@@ -302,11 +334,12 @@ class RsvpteLsps(Base):
         -------
         - number: Number of P2MP Ingress LSPs configured per IPv4 Loopback
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpIngressLspCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpIngressLspCount"])
+
     @P2mpIngressLspCount.setter
     def P2mpIngressLspCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['P2mpIngressLspCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["P2mpIngressLspCount"], value)
 
     @property
     def SessionStatus(self):
@@ -316,7 +349,7 @@ class RsvpteLsps(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -326,11 +359,12 @@ class RsvpteLsps(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -339,7 +373,7 @@ class RsvpteLsps(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -349,9 +383,20 @@ class RsvpteLsps(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        EnableP2PEgress=None,
+        ExpectedPceInitiatedLspsCount=None,
+        IngressP2PLsps=None,
+        Multiplier=None,
+        Name=None,
+        P2mpEgressTunnelCount=None,
+        P2mpIngressLspCount=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, int, int, str, int, int, List[str]) -> RsvpteLsps
         """Updates rsvpteLsps resource on the server.
 
@@ -376,7 +421,18 @@ class RsvpteLsps(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        EnableP2PEgress=None,
+        ExpectedPceInitiatedLspsCount=None,
+        IngressP2PLsps=None,
+        Multiplier=None,
+        Name=None,
+        P2mpEgressTunnelCount=None,
+        P2mpIngressLspCount=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, int, int, str, int, int, List[str]) -> RsvpteLsps
         """Adds a new rsvpteLsps resource on the server and adds it to the container.
 
@@ -412,7 +468,25 @@ class RsvpteLsps(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableP2PEgress=None, Errors=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, LocalIp=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        EnableP2PEgress=None,
+        Errors=None,
+        ExpectedPceInitiatedLspsCount=None,
+        IngressP2PLsps=None,
+        LocalIp=None,
+        Multiplier=None,
+        Name=None,
+        P2mpEgressTunnelCount=None,
+        P2mpIngressLspCount=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves rsvpteLsps resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpteLsps resources from the server.
@@ -493,10 +567,12 @@ class RsvpteLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -525,10 +601,12 @@ class RsvpteLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -557,10 +635,12 @@ class RsvpteLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -589,10 +669,12 @@ class RsvpteLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None):
         """Base class infrastructure that gets a list of rsvpteLsps device ids encapsulated by this object.

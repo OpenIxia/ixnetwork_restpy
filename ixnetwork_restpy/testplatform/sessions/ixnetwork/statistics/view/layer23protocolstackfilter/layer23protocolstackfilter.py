@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class Layer23ProtocolStackFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23ProtocolStackFilter'
+    _SDM_NAME = "layer23ProtocolStackFilter"
     _SDM_ATT_MAP = {
-        'DrilldownType': 'drilldownType',
-        'NumberOfResults': 'numberOfResults',
-        'ProtocolStackFilterId': 'protocolStackFilterId',
-        'SortAscending': 'sortAscending',
-        'SortingStatistic': 'sortingStatistic',
+        "DrilldownType": "drilldownType",
+        "NumberOfResults": "numberOfResults",
+        "ProtocolStackFilterId": "protocolStackFilterId",
+        "SortAscending": "sortAscending",
+        "SortingStatistic": "sortingStatistic",
     }
     _SDM_ENUM_MAP = {
-        'drilldownType': ['perRange', 'perSession'],
+        "drilldownType": ["perRange", "perSession"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - str(perRange | perSession): Emulates perRange or perSession view based on the option seleted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DrilldownType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DrilldownType"])
+
     @DrilldownType.setter
     def DrilldownType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DrilldownType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DrilldownType"], value)
 
     @property
     def NumberOfResults(self):
@@ -71,11 +73,12 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - number: Number of traffic flows to be displayed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfResults"])
+
     @NumberOfResults.setter
     def NumberOfResults(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfResults"], value)
 
     @property
     def ProtocolStackFilterId(self):
@@ -85,11 +88,12 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolStackFilterId"])
+
     @ProtocolStackFilterId.setter
     def ProtocolStackFilterId(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolStackFilterId"], value)
 
     @property
     def SortAscending(self):
@@ -99,11 +103,12 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - bool: Sets the display order of the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortAscending'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortAscending"])
+
     @SortAscending.setter
     def SortAscending(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortAscending'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortAscending"], value)
 
     @property
     def SortingStatistic(self):
@@ -113,13 +118,21 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortingStatistic'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortingStatistic"])
+
     @SortingStatistic.setter
     def SortingStatistic(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortingStatistic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortingStatistic"], value)
 
-    def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+    def update(
+        self,
+        DrilldownType=None,
+        NumberOfResults=None,
+        ProtocolStackFilterId=None,
+        SortAscending=None,
+        SortingStatistic=None,
+    ):
         # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Updates layer23ProtocolStackFilter resource on the server.
 
@@ -137,7 +150,14 @@ class Layer23ProtocolStackFilter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+    def add(
+        self,
+        DrilldownType=None,
+        NumberOfResults=None,
+        ProtocolStackFilterId=None,
+        SortAscending=None,
+        SortingStatistic=None,
+    ):
         # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Adds a new layer23ProtocolStackFilter resource on the server and adds it to the container.
 
@@ -169,7 +189,14 @@ class Layer23ProtocolStackFilter(Base):
         """
         self._delete()
 
-    def find(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+    def find(
+        self,
+        DrilldownType=None,
+        NumberOfResults=None,
+        ProtocolStackFilterId=None,
+        SortAscending=None,
+        SortingStatistic=None,
+    ):
         # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Finds and retrieves layer23ProtocolStackFilter resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class MatchAction(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'matchAction'
+    _SDM_NAME = "matchAction"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Description': 'description',
-        'DisplayName': 'displayName',
-        'IsEditable': 'isEditable',
-        'IsEnabled': 'isEnabled',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "Count": "count",
+        "Description": "description",
+        "DisplayName": "displayName",
+        "IsEditable": "isEditable",
+        "IsEnabled": "isEnabled",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MatchAction, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class MatchAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.instructions_c6523447e39f8424f52417c8fe0de9ff import Instructions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.instructions_c6523447e39f8424f52417c8fe0de9ff import (
+            Instructions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Instructions', None) is not None:
-                return self._properties.get('Instructions')
+            if self._properties.get("Instructions", None) is not None:
+                return self._properties.get("Instructions")
         return Instructions(self)._select()
 
     @property
@@ -78,10 +81,13 @@ class MatchAction(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import MatchCriteria
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import (
+            MatchCriteria,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MatchCriteria', None) is not None:
-                return self._properties.get('MatchCriteria')
+            if self._properties.get("MatchCriteria", None) is not None:
+                return self._properties.get("MatchCriteria")
         return MatchCriteria(self)._select()
 
     @property
@@ -92,7 +98,7 @@ class MatchAction(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Description(self):
@@ -102,11 +108,12 @@ class MatchAction(Base):
         -------
         - str: Description of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DisplayName(self):
@@ -116,7 +123,7 @@ class MatchAction(Base):
         -------
         - str: Display name used by GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def IsEditable(self):
@@ -126,11 +133,12 @@ class MatchAction(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsEnabled(self):
@@ -140,11 +148,12 @@ class MatchAction(Base):
         -------
         - bool: Enables disables the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def IsRequired(self):
@@ -154,11 +163,12 @@ class MatchAction(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -168,13 +178,21 @@ class MatchAction(Base):
         -------
         - str: Name of packet field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+    def update(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> MatchAction
         """Updates matchAction resource on the server.
 
@@ -192,7 +210,14 @@ class MatchAction(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+    def add(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> MatchAction
         """Adds a new matchAction resource on the server and adds it to the container.
 
@@ -224,7 +249,16 @@ class MatchAction(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        Description=None,
+        DisplayName=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (int, str, str, bool, bool, bool, str) -> MatchAction
         """Finds and retrieves matchAction resources from the server.
 

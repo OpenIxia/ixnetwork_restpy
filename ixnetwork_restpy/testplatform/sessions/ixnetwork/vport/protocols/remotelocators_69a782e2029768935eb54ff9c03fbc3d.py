@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class RemoteLocators(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'remoteLocators'
+    _SDM_NAME = "remoteLocators"
     _SDM_ATT_MAP = {
-        'MPriority': 'mPriority',
-        'MWeight': 'mWeight',
-        'Priority': 'priority',
-        'RemoteLocator': 'remoteLocator',
-        'RemoteLocatorAfi': 'remoteLocatorAfi',
-        'RlocFlagL': 'rlocFlagL',
-        'RlocFlagP': 'rlocFlagP',
-        'RlocFlagR': 'rlocFlagR',
-        'Weight': 'weight',
+        "MPriority": "mPriority",
+        "MWeight": "mWeight",
+        "Priority": "priority",
+        "RemoteLocator": "remoteLocator",
+        "RemoteLocatorAfi": "remoteLocatorAfi",
+        "RlocFlagL": "rlocFlagL",
+        "RlocFlagP": "rlocFlagP",
+        "RlocFlagR": "rlocFlagR",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RemoteLocators, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class RemoteLocators(Base):
         -------
         - number: It gives details about the m priority (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["MPriority"])
 
     @property
     def MWeight(self):
@@ -69,7 +69,7 @@ class RemoteLocators(Base):
         -------
         - number: It gives details about the m weight (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MWeight'])
+        return self._get_attribute(self._SDM_ATT_MAP["MWeight"])
 
     @property
     def Priority(self):
@@ -79,7 +79,7 @@ class RemoteLocators(Base):
         -------
         - number: It gives details about the priority (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
 
     @property
     def RemoteLocator(self):
@@ -89,7 +89,7 @@ class RemoteLocators(Base):
         -------
         - str: It gives details about the remote locators (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteLocator'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteLocator"])
 
     @property
     def RemoteLocatorAfi(self):
@@ -99,7 +99,7 @@ class RemoteLocators(Base):
         -------
         - str: It gives details about the remote locators Afi (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteLocatorAfi'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteLocatorAfi"])
 
     @property
     def RlocFlagL(self):
@@ -109,7 +109,7 @@ class RemoteLocators(Base):
         -------
         - bool: It gives details about the rLoc Flag L (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocFlagL'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocFlagL"])
 
     @property
     def RlocFlagP(self):
@@ -119,7 +119,7 @@ class RemoteLocators(Base):
         -------
         - bool: It gives details about the rLoc FlagP (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocFlagP'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocFlagP"])
 
     @property
     def RlocFlagR(self):
@@ -129,7 +129,7 @@ class RemoteLocators(Base):
         -------
         - bool: If True, It gives details about the rLoc Flag R (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocFlagR'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocFlagR"])
 
     @property
     def Weight(self):
@@ -139,10 +139,10 @@ class RemoteLocators(Base):
         -------
         - number: It gives details about the weight (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
 
     def add(self):
-        """Adds a new remoteLocators resource on the json, only valid with config assistant
+        """Adds a new remoteLocators resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -154,7 +154,18 @@ class RemoteLocators(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, MPriority=None, MWeight=None, Priority=None, RemoteLocator=None, RemoteLocatorAfi=None, RlocFlagL=None, RlocFlagP=None, RlocFlagR=None, Weight=None):
+    def find(
+        self,
+        MPriority=None,
+        MWeight=None,
+        Priority=None,
+        RemoteLocator=None,
+        RemoteLocatorAfi=None,
+        RlocFlagL=None,
+        RlocFlagP=None,
+        RlocFlagR=None,
+        Weight=None,
+    ):
         # type: (int, int, int, str, str, bool, bool, bool, int) -> RemoteLocators
         """Finds and retrieves remoteLocators resources from the server.
 

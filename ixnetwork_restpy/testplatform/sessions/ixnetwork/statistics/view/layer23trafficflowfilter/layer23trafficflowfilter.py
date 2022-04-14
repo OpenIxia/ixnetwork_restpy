@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,21 @@ class Layer23TrafficFlowFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23TrafficFlowFilter'
+    _SDM_NAME = "layer23TrafficFlowFilter"
     _SDM_ATT_MAP = {
-        'AggregatedAcrossPorts': 'aggregatedAcrossPorts',
-        'EgressLatencyBinDisplayOption': 'egressLatencyBinDisplayOption',
-        'PortFilterIds': 'portFilterIds',
-        'TrafficItemFilterId': 'trafficItemFilterId',
-        'TrafficItemFilterIds': 'trafficItemFilterIds',
+        "AggregatedAcrossPorts": "aggregatedAcrossPorts",
+        "EgressLatencyBinDisplayOption": "egressLatencyBinDisplayOption",
+        "PortFilterIds": "portFilterIds",
+        "TrafficItemFilterId": "trafficItemFilterId",
+        "TrafficItemFilterIds": "trafficItemFilterIds",
     }
     _SDM_ENUM_MAP = {
-        'egressLatencyBinDisplayOption': ['none', 'showEgressFlatView', 'showEgressRows', 'showLatencyBinStats'],
+        "egressLatencyBinDisplayOption": [
+            "none",
+            "showEgressFlatView",
+            "showEgressRows",
+            "showLatencyBinStats",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +66,13 @@ class Layer23TrafficFlowFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilter.enumerationfilter import EnumerationFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilter.enumerationfilter import (
+            EnumerationFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EnumerationFilter', None) is not None:
-                return self._properties.get('EnumerationFilter')
+            if self._properties.get("EnumerationFilter", None) is not None:
+                return self._properties.get("EnumerationFilter")
         return EnumerationFilter(self)
 
     @property
@@ -77,10 +86,13 @@ class Layer23TrafficFlowFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trackingfilter.trackingfilter import TrackingFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trackingfilter.trackingfilter import (
+            TrackingFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrackingFilter', None) is not None:
-                return self._properties.get('TrackingFilter')
+            if self._properties.get("TrackingFilter", None) is not None:
+                return self._properties.get("TrackingFilter")
         return TrackingFilter(self)
 
     @property
@@ -91,11 +103,12 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - bool: If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatedAcrossPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatedAcrossPorts"])
+
     @AggregatedAcrossPorts.setter
     def AggregatedAcrossPorts(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatedAcrossPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatedAcrossPorts"], value)
 
     @property
     def EgressLatencyBinDisplayOption(self):
@@ -105,11 +118,12 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - str(none | showEgressFlatView | showEgressRows | showLatencyBinStats): Emulates Latency Bin SV or Egress Tracking SV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressLatencyBinDisplayOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressLatencyBinDisplayOption"])
+
     @EgressLatencyBinDisplayOption.setter
     def EgressLatencyBinDisplayOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressLatencyBinDisplayOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressLatencyBinDisplayOption"], value)
 
     @property
     def PortFilterIds(self):
@@ -119,25 +133,27 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
+
     @PortFilterIds.setter
     def PortFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortFilterIds"], value)
 
     @property
     def TrafficItemFilterId(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"])
+
     @TrafficItemFilterId.setter
     def TrafficItemFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"], value)
 
     @property
     def TrafficItemFilterIds(self):
@@ -147,13 +163,21 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
+
     @TrafficItemFilterIds.setter
     def TrafficItemFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"], value)
 
-    def update(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def update(
+        self,
+        AggregatedAcrossPorts=None,
+        EgressLatencyBinDisplayOption=None,
+        PortFilterIds=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (bool, str, List[str], str, List[str]) -> Layer23TrafficFlowFilter
         """Updates layer23TrafficFlowFilter resource on the server.
 
@@ -171,7 +195,14 @@ class Layer23TrafficFlowFilter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def add(
+        self,
+        AggregatedAcrossPorts=None,
+        EgressLatencyBinDisplayOption=None,
+        PortFilterIds=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (bool, str, List[str], str, List[str]) -> Layer23TrafficFlowFilter
         """Adds a new layer23TrafficFlowFilter resource on the server and adds it to the container.
 
@@ -203,7 +234,14 @@ class Layer23TrafficFlowFilter(Base):
         """
         self._delete()
 
-    def find(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def find(
+        self,
+        AggregatedAcrossPorts=None,
+        EgressLatencyBinDisplayOption=None,
+        PortFilterIds=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (bool, str, List[str], str, List[str]) -> Layer23TrafficFlowFilter
         """Finds and retrieves layer23TrafficFlowFilter resources from the server.
 

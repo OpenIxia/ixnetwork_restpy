@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'Enabled': 'enabled',
-        'Eui64Id': 'eui64Id',
-        'Mtu': 'mtu',
-        'Type': 'type',
+        "Description": "description",
+        "Enabled": "enabled",
+        "Eui64Id": "eui64Id",
+        "Mtu": "mtu",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['default', 'gre', 'routed'],
+        "type": ["default", "gre", "routed"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +61,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.atm.atm import Atm
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.atm.atm import (
+            Atm,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Atm', None) is not None:
-                return self._properties.get('Atm')
+            if self._properties.get("Atm", None) is not None:
+                return self._properties.get("Atm")
         return Atm(self)._select()
 
     @property
@@ -77,10 +81,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4discoveredinfo.dhcpv4discoveredinfo import DhcpV4DiscoveredInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4discoveredinfo.dhcpv4discoveredinfo import (
+            DhcpV4DiscoveredInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpV4DiscoveredInfo', None) is not None:
-                return self._properties.get('DhcpV4DiscoveredInfo')
+            if self._properties.get("DhcpV4DiscoveredInfo", None) is not None:
+                return self._properties.get("DhcpV4DiscoveredInfo")
         return DhcpV4DiscoveredInfo(self)._select()
 
     @property
@@ -94,10 +101,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4properties.dhcpv4properties import DhcpV4Properties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4properties.dhcpv4properties import (
+            DhcpV4Properties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpV4Properties', None) is not None:
-                return self._properties.get('DhcpV4Properties')
+            if self._properties.get("DhcpV4Properties", None) is not None:
+                return self._properties.get("DhcpV4Properties")
         return DhcpV4Properties(self)._select()
 
     @property
@@ -111,10 +121,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6discoveredinfo.dhcpv6discoveredinfo import DhcpV6DiscoveredInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6discoveredinfo.dhcpv6discoveredinfo import (
+            DhcpV6DiscoveredInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpV6DiscoveredInfo', None) is not None:
-                return self._properties.get('DhcpV6DiscoveredInfo')
+            if self._properties.get("DhcpV6DiscoveredInfo", None) is not None:
+                return self._properties.get("DhcpV6DiscoveredInfo")
         return DhcpV6DiscoveredInfo(self)._select()
 
     @property
@@ -128,10 +141,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6properties.dhcpv6properties import DhcpV6Properties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6properties.dhcpv6properties import (
+            DhcpV6Properties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpV6Properties', None) is not None:
-                return self._properties.get('DhcpV6Properties')
+            if self._properties.get("DhcpV6Properties", None) is not None:
+                return self._properties.get("DhcpV6Properties")
         return DhcpV6Properties(self)._select()
 
     @property
@@ -145,10 +161,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ethernet.ethernet import Ethernet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ethernet.ethernet import (
+            Ethernet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ethernet', None) is not None:
-                return self._properties.get('Ethernet')
+            if self._properties.get("Ethernet", None) is not None:
+                return self._properties.get("Ethernet")
         return Ethernet(self)._select()
 
     @property
@@ -162,10 +181,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.gre.gre import Gre
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.gre.gre import (
+            Gre,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Gre', None) is not None:
-                return self._properties.get('Gre')
+            if self._properties.get("Gre", None) is not None:
+                return self._properties.get("Gre")
         return Gre(self)._select()
 
     @property
@@ -179,10 +201,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv4.ipv4 import Ipv4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv4.ipv4 import (
+            Ipv4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4', None) is not None:
-                return self._properties.get('Ipv4')
+            if self._properties.get("Ipv4", None) is not None:
+                return self._properties.get("Ipv4")
         return Ipv4(self)
 
     @property
@@ -196,10 +221,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv6.ipv6 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv6.ipv6 import (
+            Ipv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6', None) is not None:
-                return self._properties.get('Ipv6')
+            if self._properties.get("Ipv6", None) is not None:
+                return self._properties.get("Ipv6")
         return Ipv6(self)
 
     @property
@@ -213,10 +241,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.unconnected.unconnected import Unconnected
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.unconnected.unconnected import (
+            Unconnected,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Unconnected', None) is not None:
-                return self._properties.get('Unconnected')
+            if self._properties.get("Unconnected", None) is not None:
+                return self._properties.get("Unconnected")
         return Unconnected(self)._select()
 
     @property
@@ -230,10 +261,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.vlan.vlan import Vlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.vlan.vlan import (
+            Vlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vlan', None) is not None:
-                return self._properties.get('Vlan')
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)._select()
 
     @property
@@ -244,11 +278,12 @@ class Interface(Base):
         -------
         - str: The identifier for the port including card and port numbers, and the port type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Enabled(self):
@@ -258,11 +293,12 @@ class Interface(Base):
         -------
         - bool: Enables the selected protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Eui64Id(self):
@@ -272,11 +308,12 @@ class Interface(Base):
         -------
         - str: This is the 64-bit IEEE Modified EUI ID value for the Interface Identifier portion of the IPv6 address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Eui64Id'])
+        return self._get_attribute(self._SDM_ATT_MAP["Eui64Id"])
+
     @Eui64Id.setter
     def Eui64Id(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Eui64Id'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Eui64Id"], value)
 
     @property
     def Mtu(self):
@@ -286,11 +323,12 @@ class Interface(Base):
         -------
         - number: The maximum transmission unit for the interfaces created with this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def Type(self):
@@ -300,11 +338,12 @@ class Interface(Base):
         -------
         - str(default | gre | routed): The identifier or 'tag' for this DHCP option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     def update(self, Description=None, Enabled=None, Eui64Id=None, Mtu=None, Type=None):
         # type: (str, bool, str, int, str) -> Interface
@@ -415,10 +454,12 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArp', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArp", payload=payload, response_object=None)
 
     def SendArpAndNS(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -435,10 +476,12 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArpAndNS', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpAndNS", payload=payload, response_object=None)
 
     def SendNs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -455,10 +498,12 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNs', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNs", payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -477,10 +522,12 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPing", payload=payload, response_object=None)
 
     def SendRs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -497,7 +544,9 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRs', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRs", payload=payload, response_object=None)

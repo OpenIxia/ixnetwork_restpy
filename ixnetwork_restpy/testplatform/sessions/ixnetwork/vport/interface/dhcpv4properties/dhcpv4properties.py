@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class DhcpV4Properties(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpV4Properties'
+    _SDM_NAME = "dhcpV4Properties"
     _SDM_ATT_MAP = {
-        'ClientId': 'clientId',
-        'Enabled': 'enabled',
-        'RenewTimer': 'renewTimer',
-        'RequestRate': 'requestRate',
-        'ServerId': 'serverId',
-        'Tlvs': 'tlvs',
-        'VendorId': 'vendorId',
+        "ClientId": "clientId",
+        "Enabled": "enabled",
+        "RenewTimer": "renewTimer",
+        "RequestRate": "requestRate",
+        "ServerId": "serverId",
+        "Tlvs": "tlvs",
+        "VendorId": "vendorId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DhcpV4Properties, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class DhcpV4Properties(Base):
         -------
         - str: The user may optionally assign an identifier for the Client. This value must be unique on the subnet where the DHCP Client is located.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientId"])
+
     @ClientId.setter
     def ClientId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientId"], value)
 
     @property
     def Enabled(self):
@@ -70,11 +71,12 @@ class DhcpV4Properties(Base):
         -------
         - bool: If enabled, DHCP negotiation will be started and an IPv4 address learned from the DHCP server will be assigned automatically to the protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RenewTimer(self):
@@ -84,11 +86,12 @@ class DhcpV4Properties(Base):
         -------
         - number: The renew timer value specified by the DHCPv4 server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RenewTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["RenewTimer"])
+
     @RenewTimer.setter
     def RenewTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RenewTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RenewTimer"], value)
 
     @property
     def RequestRate(self):
@@ -98,11 +101,12 @@ class DhcpV4Properties(Base):
         -------
         - number: (For rate control) The user-specified maximum number of Request messages that can be sent per second from the client to the DHCP server, requesting an IPv4 address. A value of zero (0) indicates that there will be no rate control, i.e., Requests will be sent as quickly as possible.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestRate"])
+
     @RequestRate.setter
     def RequestRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestRate"], value)
 
     @property
     def ServerId(self):
@@ -112,11 +116,12 @@ class DhcpV4Properties(Base):
         -------
         - str: This IPv4 address value is used to identify the DHCP Server and as a destination address from the client.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerId"])
+
     @ServerId.setter
     def ServerId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerId"], value)
 
     @property
     def Tlvs(self):
@@ -125,10 +130,11 @@ class DhcpV4Properties(Base):
         -------
         - list(dict(arg1:number,arg2:str)): The type length value for DHCP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tlvs"])
+
     @Tlvs.setter
     def Tlvs(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Tlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tlvs"], value)
 
     @property
     def VendorId(self):
@@ -138,13 +144,23 @@ class DhcpV4Properties(Base):
         -------
         - str: The optional, user-assigned Vendor ID (vendor class identifier).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorId"])
+
     @VendorId.setter
     def VendorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorId"], value)
 
-    def update(self, ClientId=None, Enabled=None, RenewTimer=None, RequestRate=None, ServerId=None, Tlvs=None, VendorId=None):
+    def update(
+        self,
+        ClientId=None,
+        Enabled=None,
+        RenewTimer=None,
+        RequestRate=None,
+        ServerId=None,
+        Tlvs=None,
+        VendorId=None,
+    ):
         """Updates dhcpV4Properties resource on the server.
 
         Args
@@ -163,7 +179,16 @@ class DhcpV4Properties(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ClientId=None, Enabled=None, RenewTimer=None, RequestRate=None, ServerId=None, Tlvs=None, VendorId=None):
+    def find(
+        self,
+        ClientId=None,
+        Enabled=None,
+        RenewTimer=None,
+        RequestRate=None,
+        ServerId=None,
+        Tlvs=None,
+        VendorId=None,
+    ):
         """Finds and retrieves dhcpV4Properties resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpV4Properties resources from the server.

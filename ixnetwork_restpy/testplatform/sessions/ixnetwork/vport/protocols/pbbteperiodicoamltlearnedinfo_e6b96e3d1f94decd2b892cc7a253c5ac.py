@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pbbTePeriodicOamLtLearnedInfo'
+    _SDM_NAME = "pbbTePeriodicOamLtLearnedInfo"
     _SDM_ATT_MAP = {
-        'AverageHopCount': 'averageHopCount',
-        'BVlan': 'bVlan',
-        'CompleteReplyCount': 'completeReplyCount',
-        'DstMacAddress': 'dstMacAddress',
-        'LtmSentCount': 'ltmSentCount',
-        'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
-        'PartialReplyCount': 'partialReplyCount',
-        'RecentHopCount': 'recentHopCount',
-        'RecentHops': 'recentHops',
-        'RecentReplyStatus': 'recentReplyStatus',
-        'SrcMacAddress': 'srcMacAddress',
+        "AverageHopCount": "averageHopCount",
+        "BVlan": "bVlan",
+        "CompleteReplyCount": "completeReplyCount",
+        "DstMacAddress": "dstMacAddress",
+        "LtmSentCount": "ltmSentCount",
+        "MdLevel": "mdLevel",
+        "NoReplyCount": "noReplyCount",
+        "PartialReplyCount": "partialReplyCount",
+        "RecentHopCount": "recentHopCount",
+        "RecentHops": "recentHops",
+        "RecentReplyStatus": "recentReplyStatus",
+        "SrcMacAddress": "srcMacAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PbbTePeriodicOamLtLearnedInfo, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_19e7e0d81477ac3abf65c44eff4f3a8a import LtLearnedHop
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_19e7e0d81477ac3abf65c44eff4f3a8a import (
+            LtLearnedHop,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LtLearnedHop', None) is not None:
-                return self._properties.get('LtLearnedHop')
+            if self._properties.get("LtLearnedHop", None) is not None:
+                return self._properties.get("LtLearnedHop")
         return LtLearnedHop(self)
 
     @property
@@ -79,7 +82,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned average hop count.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageHopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageHopCount"])
 
     @property
     def BVlan(self):
@@ -89,7 +92,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - str: (read only) The learned B-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def CompleteReplyCount(self):
@@ -99,7 +102,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned number of complete replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CompleteReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CompleteReplyCount"])
 
     @property
     def DstMacAddress(self):
@@ -109,7 +112,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - str: (read only) The learned destination MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def LtmSentCount(self):
@@ -119,7 +122,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned number of Link Trace messages sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LtmSentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LtmSentCount"])
 
     @property
     def MdLevel(self):
@@ -129,7 +132,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned MD level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def NoReplyCount(self):
@@ -139,7 +142,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned number of no replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReplyCount"])
 
     @property
     def PartialReplyCount(self):
@@ -149,7 +152,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned number of partial replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PartialReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PartialReplyCount"])
 
     @property
     def RecentHopCount(self):
@@ -159,7 +162,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - number: (read only) The learned recent hop count.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentHopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentHopCount"])
 
     @property
     def RecentHops(self):
@@ -169,7 +172,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - str: (read only) The learned recent hops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentHops'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentHops"])
 
     @property
     def RecentReplyStatus(self):
@@ -179,7 +182,7 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - str: (read only) The learned recent replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentReplyStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentReplyStatus"])
 
     @property
     def SrcMacAddress(self):
@@ -189,10 +192,10 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         -------
         - str: (read only) The learned source MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     def add(self):
-        """Adds a new pbbTePeriodicOamLtLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new pbbTePeriodicOamLtLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -204,7 +207,21 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AverageHopCount=None, BVlan=None, CompleteReplyCount=None, DstMacAddress=None, LtmSentCount=None, MdLevel=None, NoReplyCount=None, PartialReplyCount=None, RecentHopCount=None, RecentHops=None, RecentReplyStatus=None, SrcMacAddress=None):
+    def find(
+        self,
+        AverageHopCount=None,
+        BVlan=None,
+        CompleteReplyCount=None,
+        DstMacAddress=None,
+        LtmSentCount=None,
+        MdLevel=None,
+        NoReplyCount=None,
+        PartialReplyCount=None,
+        RecentHopCount=None,
+        RecentHops=None,
+        RecentReplyStatus=None,
+        SrcMacAddress=None,
+    ):
         # type: (int, str, int, str, int, int, int, int, int, str, str, str) -> PbbTePeriodicOamLtLearnedInfo
         """Finds and retrieves pbbTePeriodicOamLtLearnedInfo resources from the server.
 

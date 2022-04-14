@@ -145,7 +145,7 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stack.stack import Stack
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
         if len(self._object_properties) > 0:
             if self._properties.get('Stack', None) is not None:
                 return self._properties.get('Stack')
@@ -493,7 +493,7 @@ class HighLevelStream(Base):
 
     def add(self, Crc=None, DestinationMacMode=None, Enabled=None, Name=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, Suspend=None, TxPortId=None):
         # type: (str, str, bool, str, bool, int, str, List[str], bool, str) -> HighLevelStream
-        """Adds a new highLevelStream resource on the json, only valid with config assistant
+        """Adds a new highLevelStream resource on the json, only valid with batch add utility
 
         Args
         ----

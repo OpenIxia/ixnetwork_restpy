@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,28 @@ class Source(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'source'
+    _SDM_NAME = "source"
     _SDM_ATT_MAP = {
-        'DiscardSgJoinStates': 'discardSgJoinStates',
-        'Enabled': 'enabled',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'GroupMappingMode': 'groupMappingMode',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'MulticastDataLength': 'multicastDataLength',
-        'RegisterProbeTime': 'registerProbeTime',
-        'RpAddress': 'rpAddress',
-        'SendNullRegAtBegin': 'sendNullRegAtBegin',
-        'SourceAddress': 'sourceAddress',
-        'SourceCount': 'sourceCount',
-        'SuppressionTime': 'suppressionTime',
-        'SwitchOverInterval': 'switchOverInterval',
-        'TxIterationGap': 'txIterationGap',
-        'UdpDstPort': 'udpDstPort',
-        'UdpSrcPort': 'udpSrcPort',
+        "DiscardSgJoinStates": "discardSgJoinStates",
+        "Enabled": "enabled",
+        "GroupAddress": "groupAddress",
+        "GroupCount": "groupCount",
+        "GroupMappingMode": "groupMappingMode",
+        "GroupMaskWidth": "groupMaskWidth",
+        "MulticastDataLength": "multicastDataLength",
+        "RegisterProbeTime": "registerProbeTime",
+        "RpAddress": "rpAddress",
+        "SendNullRegAtBegin": "sendNullRegAtBegin",
+        "SourceAddress": "sourceAddress",
+        "SourceCount": "sourceCount",
+        "SuppressionTime": "suppressionTime",
+        "SwitchOverInterval": "switchOverInterval",
+        "TxIterationGap": "txIterationGap",
+        "UdpDstPort": "udpDstPort",
+        "UdpSrcPort": "udpSrcPort",
     }
     _SDM_ENUM_MAP = {
-        'groupMappingMode': ['fullyMeshed', 'oneToOne'],
+        "groupMappingMode": ["fullyMeshed", "oneToOne"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,10 +73,13 @@ class Source(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedsgstate_c1d817b3ff4555626a3e21c83fda8c45 import LearnedSgState
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedsgstate_c1d817b3ff4555626a3e21c83fda8c45 import (
+            LearnedSgState,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedSgState', None) is not None:
-                return self._properties.get('LearnedSgState')
+            if self._properties.get("LearnedSgState", None) is not None:
+                return self._properties.get("LearnedSgState")
         return LearnedSgState(self)
 
     @property
@@ -86,11 +90,12 @@ class Source(Base):
         -------
         - bool: If enabled, the learned join states sent by the RP (DUT) in response to this specific register message will be discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardSgJoinStates'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardSgJoinStates"])
+
     @DiscardSgJoinStates.setter
     def DiscardSgJoinStates(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardSgJoinStates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardSgJoinStates"], value)
 
     @property
     def Enabled(self):
@@ -100,11 +105,12 @@ class Source(Base):
         -------
         - bool: Enables this source entry for use in PIM-SM register messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupAddress(self):
@@ -114,11 +120,12 @@ class Source(Base):
         -------
         - str: The first IPv4 or IPv6 multicast group address in the range of group addresses included in this register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
+
     @GroupAddress.setter
     def GroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddress"], value)
 
     @property
     def GroupCount(self):
@@ -128,11 +135,12 @@ class Source(Base):
         -------
         - number: The number of group addresses to be included in this register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupCount"])
+
     @GroupCount.setter
     def GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupCount"], value)
 
     @property
     def GroupMappingMode(self):
@@ -142,11 +150,12 @@ class Source(Base):
         -------
         - str(fullyMeshed | oneToOne): Controls the mapping from sources to groups during advertisement.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMappingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMappingMode"])
+
     @GroupMappingMode.setter
     def GroupMappingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupMappingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupMappingMode"], value)
 
     @property
     def GroupMaskWidth(self):
@@ -156,11 +165,12 @@ class Source(Base):
         -------
         - number: The number of bits in the network mask used with the group address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMaskWidth"])
+
     @GroupMaskWidth.setter
     def GroupMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupMaskWidth"], value)
 
     @property
     def MulticastDataLength(self):
@@ -170,11 +180,12 @@ class Source(Base):
         -------
         - number: The length of the multicast data, in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastDataLength"])
+
     @MulticastDataLength.setter
     def MulticastDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastDataLength"], value)
 
     @property
     def RegisterProbeTime(self):
@@ -184,11 +195,12 @@ class Source(Base):
         -------
         - number: Part of the register-stop timer (RST (S,G). Used to control the time intervals for the transmission of null-register messages from the source's DR to the RP. Prior to expiration of the register suppression time of the RST, a null-register message is sent to probe the RP, as a reminder to the RP to send a new register-stop message and maintain the state. If the RP does not respond with a new register-stop message, the source's DR will start sending register-encapsulated data again. The default is 5 seconds.Note: This value must be less than half of the register suppression time value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegisterProbeTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegisterProbeTime"])
+
     @RegisterProbeTime.setter
     def RegisterProbeTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegisterProbeTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegisterProbeTime"], value)
 
     @property
     def RpAddress(self):
@@ -198,11 +210,12 @@ class Source(Base):
         -------
         - str: The IP address of the rendezvous point (RP) router - the root of the RPT (rendezvous point tree).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpAddress"])
+
     @RpAddress.setter
     def RpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpAddress"], value)
 
     @property
     def SendNullRegAtBegin(self):
@@ -212,11 +225,12 @@ class Source(Base):
         -------
         - bool: If checked, a null register packet will be sent by the Ixia-emulated designated router (DR)/source range to the RP to start the message exchange. (A null register packet contains no data.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendNullRegAtBegin'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendNullRegAtBegin"])
+
     @SendNullRegAtBegin.setter
     def SendNullRegAtBegin(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendNullRegAtBegin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendNullRegAtBegin"], value)
 
     @property
     def SourceAddress(self):
@@ -226,11 +240,12 @@ class Source(Base):
         -------
         - str: The first IPv4 or IPv6 source address to be included in this register message. (IPv4 Multicast addresses are not valid for sources.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddress"])
+
     @SourceAddress.setter
     def SourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAddress"], value)
 
     @property
     def SourceCount(self):
@@ -240,11 +255,12 @@ class Source(Base):
         -------
         - number: The number of source addresses to be included in the register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceCount"])
+
     @SourceCount.setter
     def SourceCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceCount"], value)
 
     @property
     def SuppressionTime(self):
@@ -254,11 +270,12 @@ class Source(Base):
         -------
         - number: Part of the register-stop timer (RST (S,G). The amount of time, following receipt of a register-stop message, that the DR will NOT send register-encapsulated data to the rendezvous point (RP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SuppressionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["SuppressionTime"])
+
     @SuppressionTime.setter
     def SuppressionTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SuppressionTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SuppressionTime"], value)
 
     @property
     def SwitchOverInterval(self):
@@ -268,11 +285,12 @@ class Source(Base):
         -------
         - number: The time interval (in seconds) allowed for the switch from using the RP tree to using a Source-specific tree - from (*,G) to (S,G). The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchOverInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchOverInterval"])
+
     @SwitchOverInterval.setter
     def SwitchOverInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchOverInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchOverInterval"], value)
 
     @property
     def TxIterationGap(self):
@@ -282,11 +300,12 @@ class Source(Base):
         -------
         - number: The gap between each iteration of the register range (in milliseconds) . The default is 60,000 ms (= 60 seconds). (Does not apply to NULL Registers, which contain no data.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxIterationGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxIterationGap"])
+
     @TxIterationGap.setter
     def TxIterationGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxIterationGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxIterationGap"], value)
 
     @property
     def UdpDstPort(self):
@@ -296,11 +315,12 @@ class Source(Base):
         -------
         - number: The number of UDP destination ports in the receiving multicast group.The default is 3000 UDP destination ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDstPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDstPort"])
+
     @UdpDstPort.setter
     def UdpDstPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpDstPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDstPort"], value)
 
     @property
     def UdpSrcPort(self):
@@ -310,13 +330,33 @@ class Source(Base):
         -------
         - number: The number of UDP source ports sending encapsulated UDP packets to multicast groups (via register messages to the RP). The default is 3000 UDP source ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSrcPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSrcPort"])
+
     @UdpSrcPort.setter
     def UdpSrcPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSrcPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSrcPort"], value)
 
-    def update(self, DiscardSgJoinStates=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SuppressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDstPort=None, UdpSrcPort=None):
+    def update(
+        self,
+        DiscardSgJoinStates=None,
+        Enabled=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        MulticastDataLength=None,
+        RegisterProbeTime=None,
+        RpAddress=None,
+        SendNullRegAtBegin=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SuppressionTime=None,
+        SwitchOverInterval=None,
+        TxIterationGap=None,
+        UdpDstPort=None,
+        UdpSrcPort=None,
+    ):
         # type: (bool, bool, str, int, str, int, int, int, str, bool, str, int, int, int, int, int, int) -> Source
         """Updates source resource on the server.
 
@@ -346,7 +386,26 @@ class Source(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DiscardSgJoinStates=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SuppressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDstPort=None, UdpSrcPort=None):
+    def add(
+        self,
+        DiscardSgJoinStates=None,
+        Enabled=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        MulticastDataLength=None,
+        RegisterProbeTime=None,
+        RpAddress=None,
+        SendNullRegAtBegin=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SuppressionTime=None,
+        SwitchOverInterval=None,
+        TxIterationGap=None,
+        UdpDstPort=None,
+        UdpSrcPort=None,
+    ):
         # type: (bool, bool, str, int, str, int, int, int, str, bool, str, int, int, int, int, int, int) -> Source
         """Adds a new source resource on the server and adds it to the container.
 
@@ -390,7 +449,26 @@ class Source(Base):
         """
         self._delete()
 
-    def find(self, DiscardSgJoinStates=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SuppressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDstPort=None, UdpSrcPort=None):
+    def find(
+        self,
+        DiscardSgJoinStates=None,
+        Enabled=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        MulticastDataLength=None,
+        RegisterProbeTime=None,
+        RpAddress=None,
+        SendNullRegAtBegin=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SuppressionTime=None,
+        SwitchOverInterval=None,
+        TxIterationGap=None,
+        UdpDstPort=None,
+        UdpSrcPort=None,
+    ):
         # type: (bool, bool, str, int, str, int, int, int, str, bool, str, int, int, int, int, int, int) -> Source
         """Finds and retrieves source resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class BgpEvpnSmetIgmp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEvpnSmetIgmp'
+    _SDM_NAME = "bgpEvpnSmetIgmp"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GroupAddressCountSMET': 'groupAddressCountSMET',
-        'GroupType': 'groupType',
-        'IgmpVersionV2SMET': 'igmpVersionV2SMET',
-        'IgmpVersionV3SMET': 'igmpVersionV3SMET',
-        'Mode': 'mode',
-        'Name': 'name',
-        'SourceAddressCountSMET': 'sourceAddressCountSMET',
-        'SourceGroupMappingSMET': 'sourceGroupMappingSMET',
-        'StartGroupAddressSMET': 'startGroupAddressSMET',
-        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "GroupAddressCountSMET": "groupAddressCountSMET",
+        "GroupType": "groupType",
+        "IgmpVersionV2SMET": "igmpVersionV2SMET",
+        "IgmpVersionV3SMET": "igmpVersionV3SMET",
+        "Mode": "mode",
+        "Name": "name",
+        "SourceAddressCountSMET": "sourceAddressCountSMET",
+        "SourceGroupMappingSMET": "sourceGroupMappingSMET",
+        "StartGroupAddressSMET": "startGroupAddressSMET",
+        "StartSourceAddressIpv4": "startSourceAddressIpv4",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpEvpnSmetIgmp, self).__init__(parent, list_op)
@@ -63,7 +63,8 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -73,7 +74,7 @@ class BgpEvpnSmetIgmp(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -83,7 +84,7 @@ class BgpEvpnSmetIgmp(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GroupAddressCountSMET(self):
@@ -94,7 +95,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddressCountSMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GroupAddressCountSMET"])
+        )
 
     @property
     def GroupType(self):
@@ -105,7 +109,8 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupType"]))
 
     @property
     def IgmpVersionV2SMET(self):
@@ -116,7 +121,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IGMP V2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgmpVersionV2SMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IgmpVersionV2SMET"])
+        )
 
     @property
     def IgmpVersionV3SMET(self):
@@ -127,7 +135,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IGMP V3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgmpVersionV3SMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IgmpVersionV3SMET"])
+        )
 
     @property
     def Mode(self):
@@ -138,7 +149,8 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mode"]))
 
     @property
     def Name(self):
@@ -148,11 +160,12 @@ class BgpEvpnSmetIgmp(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SourceAddressCountSMET(self):
@@ -163,7 +176,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddressCountSMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceAddressCountSMET"])
+        )
 
     @property
     def SourceGroupMappingSMET(self):
@@ -174,7 +190,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Group Mapping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceGroupMappingSMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceGroupMappingSMET"])
+        )
 
     @property
     def StartGroupAddressSMET(self):
@@ -185,7 +204,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Group Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressSMET']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartGroupAddressSMET"])
+        )
 
     @property
     def StartSourceAddressIpv4(self):
@@ -196,7 +218,10 @@ class BgpEvpnSmetIgmp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Source Address IPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSourceAddressIpv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartSourceAddressIpv4"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> BgpEvpnSmetIgmp
@@ -257,7 +282,20 @@ class BgpEvpnSmetIgmp(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, GroupAddressCountSMET=None, GroupType=None, IgmpVersionV2SMET=None, IgmpVersionV3SMET=None, Mode=None, SourceAddressCountSMET=None, SourceGroupMappingSMET=None, StartGroupAddressSMET=None, StartSourceAddressIpv4=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        GroupAddressCountSMET=None,
+        GroupType=None,
+        IgmpVersionV2SMET=None,
+        IgmpVersionV3SMET=None,
+        Mode=None,
+        SourceAddressCountSMET=None,
+        SourceGroupMappingSMET=None,
+        StartGroupAddressSMET=None,
+        StartSourceAddressIpv4=None,
+    ):
         """Base class infrastructure that gets a list of bgpEvpnSmetIgmp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

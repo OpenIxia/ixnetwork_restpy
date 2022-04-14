@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class GRIBINexthop(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'gRIBINexthop'
+    _SDM_NAME = "gRIBINexthop"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EncapsulationHeader': 'encapsulationHeader',
-        'GRIBIInterface': 'gRIBIInterface',
-        'GRIBISubInterface': 'gRIBISubInterface',
-        'Name': 'name',
-        'NetworkInstance': 'networkInstance',
-        'NextHopIp': 'nextHopIp',
-        'NextHopMac': 'nextHopMac',
-        'NexthopGroupId': 'nexthopGroupId',
-        'NhIndex': 'nhIndex',
-        'Weight': 'weight',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EncapsulationHeader": "encapsulationHeader",
+        "GRIBIInterface": "gRIBIInterface",
+        "GRIBISubInterface": "gRIBISubInterface",
+        "Name": "name",
+        "NetworkInstance": "networkInstance",
+        "NextHopIp": "nextHopIp",
+        "NextHopMac": "nextHopMac",
+        "NexthopGroupId": "nexthopGroupId",
+        "NhIndex": "nhIndex",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GRIBINexthop, self).__init__(parent, list_op)
@@ -63,7 +63,8 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -73,7 +74,7 @@ class GRIBINexthop(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -83,7 +84,7 @@ class GRIBINexthop(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EncapsulationHeader(self):
@@ -94,7 +95,10 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The local system performs an encapsulation of the packet by adding the specified header type, while forwarding a packet to the specified next-hop.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncapsulationHeader']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncapsulationHeader"])
+        )
 
     @property
     def GRIBIInterface(self):
@@ -105,7 +109,10 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reference to a base interface.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GRIBIInterface']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GRIBIInterface"])
+        )
 
     @property
     def GRIBISubInterface(self):
@@ -116,7 +123,10 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reference to a sub interface. This requires the base interface to be specified using the interface leaf in this container.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GRIBISubInterface']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GRIBISubInterface"])
+        )
 
     @property
     def Name(self):
@@ -126,11 +136,12 @@ class GRIBINexthop(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkInstance(self):
@@ -141,7 +152,10 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Network Instance where this next-hop belongs to.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkInstance']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkInstance"])
+        )
 
     @property
     def NextHopIp(self):
@@ -152,7 +166,8 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the next-hop system.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextHopIp"]))
 
     @property
     def NextHopMac(self):
@@ -163,7 +178,8 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The MAC address of the next-hop if resolved by the local network instance.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NextHopMac"]))
 
     @property
     def NexthopGroupId(self):
@@ -173,7 +189,7 @@ class GRIBINexthop(Base):
         -------
         - list(str): Next Hop Group Id to which this Next hop is associated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NexthopGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["NexthopGroupId"])
 
     @property
     def NhIndex(self):
@@ -184,7 +200,8 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A unique index identifying the next-hop entry for the AFT entry.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NhIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NhIndex"]))
 
     @property
     def Weight(self):
@@ -195,7 +212,8 @@ class GRIBINexthop(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The weight applied to the next-hop within the group. Traffic is balanced across the next-hops within the group in the proportion of weight/(sum of weights of the next-hops within the next-hop group).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None):
         # type: (str) -> GRIBINexthop
@@ -257,7 +275,19 @@ class GRIBINexthop(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, EncapsulationHeader=None, GRIBIInterface=None, GRIBISubInterface=None, NetworkInstance=None, NextHopIp=None, NextHopMac=None, NhIndex=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EncapsulationHeader=None,
+        GRIBIInterface=None,
+        GRIBISubInterface=None,
+        NetworkInstance=None,
+        NextHopIp=None,
+        NextHopMac=None,
+        NhIndex=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of gRIBINexthop device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

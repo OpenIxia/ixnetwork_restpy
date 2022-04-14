@@ -4,22 +4,22 @@ from ixnetwork_restpy.files import Files
 
 class Icmpv1(Base):
     __slots__ = ()
-    _SDM_NAME = 'icmpv1'
+    _SDM_NAME = "icmpv1"
     _SDM_ATT_MAP = {
-        'MessageMessageType': 'icmpv1.message.messageType-1',
-        'CodeOptionsDestUnreachableCodeOptions': 'icmpv1.message.codeOptions.destUnreachableCodeOptions-2',
-        'CodeOptionsSrcQuenchOption': 'icmpv1.message.codeOptions.srcQuenchOption-3',
-        'CodeOptionsInfoRequestOption': 'icmpv1.message.codeOptions.infoRequestOption-4',
-        'CodeOptionsInfoResponseOption': 'icmpv1.message.codeOptions.infoResponseOption-5',
-        'CodeOptionsTimeExceededOptions': 'icmpv1.message.codeOptions.timeExceededOptions-6',
-        'CodeOptionsRedirectMessageOptions': 'icmpv1.message.codeOptions.redirectMessageOptions-7',
-        'MessageIcmpChecksum': 'icmpv1.message.icmpChecksum-8',
-        'Next4BytesUnusedBitsInMsgType3': 'icmpv1.message.next4Bytes.unusedBitsInMsgType3-9',
-        'Next4BytesUnusedBitsInMsgType4': 'icmpv1.message.next4Bytes.unusedBitsInMsgType4-10',
-        'Next4BytesUnusedBitsInMsgType11': 'icmpv1.message.next4Bytes.unusedBitsInMsgType11-11',
-        'NextFieldsForParameterProblemPointer': 'icmpv1.message.next4Bytes.nextFieldsForParameterProblem.pointer-12',
-        'NextFieldsForParameterProblemUnused': 'icmpv1.message.next4Bytes.nextFieldsForParameterProblem.unused-13',
-        'Next4BytesGatewayInternetAddress': 'icmpv1.message.next4Bytes.gatewayInternetAddress-14',
+        "MessageMessageType": "icmpv1.message.messageType-1",
+        "CodeOptionsDestUnreachableCodeOptions": "icmpv1.message.codeOptions.destUnreachableCodeOptions-2",
+        "CodeOptionsSrcQuenchOption": "icmpv1.message.codeOptions.srcQuenchOption-3",
+        "CodeOptionsInfoRequestOption": "icmpv1.message.codeOptions.infoRequestOption-4",
+        "CodeOptionsInfoResponseOption": "icmpv1.message.codeOptions.infoResponseOption-5",
+        "CodeOptionsTimeExceededOptions": "icmpv1.message.codeOptions.timeExceededOptions-6",
+        "CodeOptionsRedirectMessageOptions": "icmpv1.message.codeOptions.redirectMessageOptions-7",
+        "MessageIcmpChecksum": "icmpv1.message.icmpChecksum-8",
+        "Next4BytesUnusedBitsInMsgType3": "icmpv1.message.next4Bytes.unusedBitsInMsgType3-9",
+        "Next4BytesUnusedBitsInMsgType4": "icmpv1.message.next4Bytes.unusedBitsInMsgType4-10",
+        "Next4BytesUnusedBitsInMsgType11": "icmpv1.message.next4Bytes.unusedBitsInMsgType11-11",
+        "NextFieldsForParameterProblemPointer": "icmpv1.message.next4Bytes.nextFieldsForParameterProblem.pointer-12",
+        "NextFieldsForParameterProblemUnused": "icmpv1.message.next4Bytes.nextFieldsForParameterProblem.unused-13",
+        "Next4BytesGatewayInternetAddress": "icmpv1.message.next4Bytes.gatewayInternetAddress-14",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class Icmpv1(Base):
         Available enum values: Dest. Unreachable, 3, Src. Quench, 4, Redirect Message, 5, Time Exceeded, 11, Parameter Problem, 12
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MessageMessageType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MessageMessageType"])
+        )
 
     @property
     def CodeOptionsDestUnreachableCodeOptions(self):
@@ -45,7 +48,13 @@ class Icmpv1(Base):
         Available enum values: Net unreachable, 0, Host unreachable, 1, Protocol unreachable, 2, Port unreachable, 3, Fragmentation needed and DF set, 4, Source route failed, 5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsDestUnreachableCodeOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CodeOptionsDestUnreachableCodeOptions"]
+            ),
+        )
 
     @property
     def CodeOptionsSrcQuenchOption(self):
@@ -55,7 +64,10 @@ class Icmpv1(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsSrcQuenchOption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CodeOptionsSrcQuenchOption"])
+        )
 
     @property
     def CodeOptionsInfoRequestOption(self):
@@ -65,7 +77,10 @@ class Icmpv1(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsInfoRequestOption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CodeOptionsInfoRequestOption"])
+        )
 
     @property
     def CodeOptionsInfoResponseOption(self):
@@ -75,7 +90,11 @@ class Icmpv1(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsInfoResponseOption']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CodeOptionsInfoResponseOption"]),
+        )
 
     @property
     def CodeOptionsTimeExceededOptions(self):
@@ -86,7 +105,11 @@ class Icmpv1(Base):
         Available enum values: TTL exceeded in transit, 0, Fragment reassembly time exceeded, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsTimeExceededOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CodeOptionsTimeExceededOptions"]),
+        )
 
     @property
     def CodeOptionsRedirectMessageOptions(self):
@@ -97,7 +120,11 @@ class Icmpv1(Base):
         Available enum values: Redirect datagrams for network, 0, Redirect datagrams for the Host, 1, Redirect datagrams for the TOS and network, 2, Redirect datagrams for the TOS and host, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CodeOptionsRedirectMessageOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CodeOptionsRedirectMessageOptions"]),
+        )
 
     @property
     def MessageIcmpChecksum(self):
@@ -107,7 +134,10 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MessageIcmpChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MessageIcmpChecksum"])
+        )
 
     @property
     def Next4BytesUnusedBitsInMsgType3(self):
@@ -117,7 +147,11 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Next4BytesUnusedBitsInMsgType3']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Next4BytesUnusedBitsInMsgType3"]),
+        )
 
     @property
     def Next4BytesUnusedBitsInMsgType4(self):
@@ -127,7 +161,11 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Next4BytesUnusedBitsInMsgType4']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Next4BytesUnusedBitsInMsgType4"]),
+        )
 
     @property
     def Next4BytesUnusedBitsInMsgType11(self):
@@ -137,7 +175,11 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Next4BytesUnusedBitsInMsgType11']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Next4BytesUnusedBitsInMsgType11"]),
+        )
 
     @property
     def NextFieldsForParameterProblemPointer(self):
@@ -147,7 +189,13 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextFieldsForParameterProblemPointer']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["NextFieldsForParameterProblemPointer"]
+            ),
+        )
 
     @property
     def NextFieldsForParameterProblemUnused(self):
@@ -157,7 +205,13 @@ class Icmpv1(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextFieldsForParameterProblemUnused']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["NextFieldsForParameterProblemUnused"]
+            ),
+        )
 
     @property
     def Next4BytesGatewayInternetAddress(self):
@@ -167,7 +221,11 @@ class Icmpv1(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Next4BytesGatewayInternetAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Next4BytesGatewayInternetAddress"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

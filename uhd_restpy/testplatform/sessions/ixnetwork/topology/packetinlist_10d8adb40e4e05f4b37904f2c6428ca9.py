@@ -181,7 +181,7 @@ class PacketInList(Base):
 
     def add(self, Name=None):
         # type: (str) -> PacketInList
-        """Adds a new packetInList resource on the json, only valid with config assistant
+        """Adds a new packetInList resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -4,47 +4,47 @@ from ixnetwork_restpy.files import Files
 
 class MstpBPDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'mstpBPDU'
+    _SDM_NAME = "mstpBPDU"
     _SDM_ATT_MAP = {
-        'HeaderProtocolIdentifier': 'mstpBPDU.header.protocolIdentifier-1',
-        'HeaderProtocolVersionIdentifier': 'mstpBPDU.header.protocolVersionIdentifier-2',
-        'HeaderBpduType': 'mstpBPDU.header.bpduType-3',
-        'CistFlagsTopologyChangeAcknowledgement': 'mstpBPDU.header.cistFlags.topologyChangeAcknowledgement-4',
-        'CistFlagsAgreement': 'mstpBPDU.header.cistFlags.agreement-5',
-        'CistFlagsForwarding': 'mstpBPDU.header.cistFlags.forwarding-6',
-        'CistFlagsLearning': 'mstpBPDU.header.cistFlags.learning-7',
-        'CistFlagsPortRole': 'mstpBPDU.header.cistFlags.portRole-8',
-        'CistFlagsProposal': 'mstpBPDU.header.cistFlags.proposal-9',
-        'CistFlagsTopologyChange': 'mstpBPDU.header.cistFlags.topologyChange-10',
-        'HeaderCistRootIdentifier': 'mstpBPDU.header.cistRootIdentifier-11',
-        'HeaderCistExternalPathCost': 'mstpBPDU.header.cistExternalPathCost-12',
-        'HeaderCistRegionalRootIdentifier': 'mstpBPDU.header.cistRegionalRootIdentifier-13',
-        'HeaderCistPortIdentifier': 'mstpBPDU.header.cistPortIdentifier-14',
-        'HeaderMessageAge': 'mstpBPDU.header.messageAge-15',
-        'HeaderMaxAgeinMsecs': 'mstpBPDU.header.maxAgeinMsecs-16',
-        'HeaderHelloTimeinMsecs': 'mstpBPDU.header.helloTimeinMsecs-17',
-        'HeaderForwardDelayinMsecs': 'mstpBPDU.header.forwardDelayinMsecs-18',
-        'HeaderVersion1Length': 'mstpBPDU.header.version1Length-19',
-        'HeaderVersion3LengthinOctets': 'mstpBPDU.header.version3LengthinOctets-20',
-        'MstiConfigurationIdentifierConfigurationIDFormat': 'mstpBPDU.header.mstiConfigurationIdentifier.configurationIDFormat-21',
-        'MstiConfigurationIdentifierConfigurationName': 'mstpBPDU.header.mstiConfigurationIdentifier.configurationName-22',
-        'MstiConfigurationIdentifierRevisionLevel': 'mstpBPDU.header.mstiConfigurationIdentifier.revisionLevel-23',
-        'MstiConfigurationIdentifierConfigurationDigest': 'mstpBPDU.header.mstiConfigurationIdentifier.configurationDigest-24',
-        'HeaderCistInternalRootPathCost': 'mstpBPDU.header.cistInternalRootPathCost-25',
-        'HeaderCistBridgeIdentifier': 'mstpBPDU.header.cistBridgeIdentifier-26',
-        'HeaderCistRemainingHops': 'mstpBPDU.header.cistRemainingHops-27',
-        'FlagsMaster': 'mstpBPDU.header.mstiConfigurationMessage.flags.master-28',
-        'FlagsAgreement': 'mstpBPDU.header.mstiConfigurationMessage.flags.agreement-29',
-        'FlagsForwarding': 'mstpBPDU.header.mstiConfigurationMessage.flags.forwarding-30',
-        'FlagsLearning': 'mstpBPDU.header.mstiConfigurationMessage.flags.learning-31',
-        'FlagsPortRole': 'mstpBPDU.header.mstiConfigurationMessage.flags.portRole-32',
-        'FlagsProposal': 'mstpBPDU.header.mstiConfigurationMessage.flags.proposal-33',
-        'FlagsTopologyChange': 'mstpBPDU.header.mstiConfigurationMessage.flags.topologyChange-34',
-        'MstiConfigurationMessageRegionalRootIdentifier': 'mstpBPDU.header.mstiConfigurationMessage.regionalRootIdentifier-35',
-        'MstiConfigurationMessageInternalRootPathCost': 'mstpBPDU.header.mstiConfigurationMessage.internalRootPathCost-36',
-        'MstiConfigurationMessageBridgePriority': 'mstpBPDU.header.mstiConfigurationMessage.bridgePriority-37',
-        'MstiConfigurationMessagePortPriority': 'mstpBPDU.header.mstiConfigurationMessage.portPriority-38',
-        'MstiConfigurationMessageRemainingHops': 'mstpBPDU.header.mstiConfigurationMessage.remainingHops-39',
+        "HeaderProtocolIdentifier": "mstpBPDU.header.protocolIdentifier-1",
+        "HeaderProtocolVersionIdentifier": "mstpBPDU.header.protocolVersionIdentifier-2",
+        "HeaderBpduType": "mstpBPDU.header.bpduType-3",
+        "CistFlagsTopologyChangeAcknowledgement": "mstpBPDU.header.cistFlags.topologyChangeAcknowledgement-4",
+        "CistFlagsAgreement": "mstpBPDU.header.cistFlags.agreement-5",
+        "CistFlagsForwarding": "mstpBPDU.header.cistFlags.forwarding-6",
+        "CistFlagsLearning": "mstpBPDU.header.cistFlags.learning-7",
+        "CistFlagsPortRole": "mstpBPDU.header.cistFlags.portRole-8",
+        "CistFlagsProposal": "mstpBPDU.header.cistFlags.proposal-9",
+        "CistFlagsTopologyChange": "mstpBPDU.header.cistFlags.topologyChange-10",
+        "HeaderCistRootIdentifier": "mstpBPDU.header.cistRootIdentifier-11",
+        "HeaderCistExternalPathCost": "mstpBPDU.header.cistExternalPathCost-12",
+        "HeaderCistRegionalRootIdentifier": "mstpBPDU.header.cistRegionalRootIdentifier-13",
+        "HeaderCistPortIdentifier": "mstpBPDU.header.cistPortIdentifier-14",
+        "HeaderMessageAge": "mstpBPDU.header.messageAge-15",
+        "HeaderMaxAgeinMsecs": "mstpBPDU.header.maxAgeinMsecs-16",
+        "HeaderHelloTimeinMsecs": "mstpBPDU.header.helloTimeinMsecs-17",
+        "HeaderForwardDelayinMsecs": "mstpBPDU.header.forwardDelayinMsecs-18",
+        "HeaderVersion1Length": "mstpBPDU.header.version1Length-19",
+        "HeaderVersion3LengthinOctets": "mstpBPDU.header.version3LengthinOctets-20",
+        "MstiConfigurationIdentifierConfigurationIDFormat": "mstpBPDU.header.mstiConfigurationIdentifier.configurationIDFormat-21",
+        "MstiConfigurationIdentifierConfigurationName": "mstpBPDU.header.mstiConfigurationIdentifier.configurationName-22",
+        "MstiConfigurationIdentifierRevisionLevel": "mstpBPDU.header.mstiConfigurationIdentifier.revisionLevel-23",
+        "MstiConfigurationIdentifierConfigurationDigest": "mstpBPDU.header.mstiConfigurationIdentifier.configurationDigest-24",
+        "HeaderCistInternalRootPathCost": "mstpBPDU.header.cistInternalRootPathCost-25",
+        "HeaderCistBridgeIdentifier": "mstpBPDU.header.cistBridgeIdentifier-26",
+        "HeaderCistRemainingHops": "mstpBPDU.header.cistRemainingHops-27",
+        "FlagsMaster": "mstpBPDU.header.mstiConfigurationMessage.flags.master-28",
+        "FlagsAgreement": "mstpBPDU.header.mstiConfigurationMessage.flags.agreement-29",
+        "FlagsForwarding": "mstpBPDU.header.mstiConfigurationMessage.flags.forwarding-30",
+        "FlagsLearning": "mstpBPDU.header.mstiConfigurationMessage.flags.learning-31",
+        "FlagsPortRole": "mstpBPDU.header.mstiConfigurationMessage.flags.portRole-32",
+        "FlagsProposal": "mstpBPDU.header.mstiConfigurationMessage.flags.proposal-33",
+        "FlagsTopologyChange": "mstpBPDU.header.mstiConfigurationMessage.flags.topologyChange-34",
+        "MstiConfigurationMessageRegionalRootIdentifier": "mstpBPDU.header.mstiConfigurationMessage.regionalRootIdentifier-35",
+        "MstiConfigurationMessageInternalRootPathCost": "mstpBPDU.header.mstiConfigurationMessage.internalRootPathCost-36",
+        "MstiConfigurationMessageBridgePriority": "mstpBPDU.header.mstiConfigurationMessage.bridgePriority-37",
+        "MstiConfigurationMessagePortPriority": "mstpBPDU.header.mstiConfigurationMessage.portPriority-38",
+        "MstiConfigurationMessageRemainingHops": "mstpBPDU.header.mstiConfigurationMessage.remainingHops-39",
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,7 +58,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolIdentifier"])
+        )
 
     @property
     def HeaderProtocolVersionIdentifier(self):
@@ -68,7 +71,11 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolVersionIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolVersionIdentifier"]),
+        )
 
     @property
     def HeaderBpduType(self):
@@ -78,7 +85,10 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBpduType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBpduType"])
+        )
 
     @property
     def CistFlagsTopologyChangeAcknowledgement(self):
@@ -89,7 +99,13 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsTopologyChangeAcknowledgement']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CistFlagsTopologyChangeAcknowledgement"]
+            ),
+        )
 
     @property
     def CistFlagsAgreement(self):
@@ -100,7 +116,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsAgreement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsAgreement"])
+        )
 
     @property
     def CistFlagsForwarding(self):
@@ -111,7 +130,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsForwarding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsForwarding"])
+        )
 
     @property
     def CistFlagsLearning(self):
@@ -122,7 +144,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsLearning']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsLearning"])
+        )
 
     @property
     def CistFlagsPortRole(self):
@@ -133,7 +158,10 @@ class MstpBPDU(Base):
         Available enum values: Master port, 0, Alternate/Backup, 1, Root, 2, Designated, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsPortRole']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsPortRole"])
+        )
 
     @property
     def CistFlagsProposal(self):
@@ -144,7 +172,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsProposal']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsProposal"])
+        )
 
     @property
     def CistFlagsTopologyChange(self):
@@ -155,7 +186,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistFlagsTopologyChange']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistFlagsTopologyChange"])
+        )
 
     @property
     def HeaderCistRootIdentifier(self):
@@ -165,7 +199,10 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistRootIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCistRootIdentifier"])
+        )
 
     @property
     def HeaderCistExternalPathCost(self):
@@ -175,7 +212,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistExternalPathCost']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCistExternalPathCost"])
+        )
 
     @property
     def HeaderCistRegionalRootIdentifier(self):
@@ -185,7 +225,11 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistRegionalRootIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderCistRegionalRootIdentifier"]),
+        )
 
     @property
     def HeaderCistPortIdentifier(self):
@@ -195,7 +239,10 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistPortIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCistPortIdentifier"])
+        )
 
     @property
     def HeaderMessageAge(self):
@@ -205,7 +252,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageAge']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageAge"])
+        )
 
     @property
     def HeaderMaxAgeinMsecs(self):
@@ -215,7 +265,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMaxAgeinMsecs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMaxAgeinMsecs"])
+        )
 
     @property
     def HeaderHelloTimeinMsecs(self):
@@ -225,7 +278,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHelloTimeinMsecs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHelloTimeinMsecs"])
+        )
 
     @property
     def HeaderForwardDelayinMsecs(self):
@@ -235,7 +291,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderForwardDelayinMsecs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderForwardDelayinMsecs"])
+        )
 
     @property
     def HeaderVersion1Length(self):
@@ -245,7 +304,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion1Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion1Length"])
+        )
 
     @property
     def HeaderVersion3LengthinOctets(self):
@@ -255,7 +317,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion3LengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion3LengthinOctets"])
+        )
 
     @property
     def MstiConfigurationIdentifierConfigurationIDFormat(self):
@@ -265,7 +330,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationIdentifierConfigurationIDFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationIdentifierConfigurationIDFormat"]
+            ),
+        )
 
     @property
     def MstiConfigurationIdentifierConfigurationName(self):
@@ -275,7 +346,13 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationIdentifierConfigurationName']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationIdentifierConfigurationName"]
+            ),
+        )
 
     @property
     def MstiConfigurationIdentifierRevisionLevel(self):
@@ -285,7 +362,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationIdentifierRevisionLevel']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationIdentifierRevisionLevel"]
+            ),
+        )
 
     @property
     def MstiConfigurationIdentifierConfigurationDigest(self):
@@ -295,7 +378,13 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationIdentifierConfigurationDigest']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationIdentifierConfigurationDigest"]
+            ),
+        )
 
     @property
     def HeaderCistInternalRootPathCost(self):
@@ -305,7 +394,11 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistInternalRootPathCost']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderCistInternalRootPathCost"]),
+        )
 
     @property
     def HeaderCistBridgeIdentifier(self):
@@ -315,7 +408,10 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistBridgeIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCistBridgeIdentifier"])
+        )
 
     @property
     def HeaderCistRemainingHops(self):
@@ -325,7 +421,10 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCistRemainingHops']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCistRemainingHops"])
+        )
 
     @property
     def FlagsMaster(self):
@@ -336,7 +435,8 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsMaster']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlagsMaster"]))
 
     @property
     def FlagsAgreement(self):
@@ -347,7 +447,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsAgreement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsAgreement"])
+        )
 
     @property
     def FlagsForwarding(self):
@@ -358,7 +461,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsForwarding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsForwarding"])
+        )
 
     @property
     def FlagsLearning(self):
@@ -369,7 +475,8 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsLearning']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlagsLearning"]))
 
     @property
     def FlagsPortRole(self):
@@ -380,7 +487,8 @@ class MstpBPDU(Base):
         Available enum values: Master port, 0, Alternate/Backup, 1, Root, 2, Designated, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsPortRole']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlagsPortRole"]))
 
     @property
     def FlagsProposal(self):
@@ -391,7 +499,8 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsProposal']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlagsProposal"]))
 
     @property
     def FlagsTopologyChange(self):
@@ -402,7 +511,10 @@ class MstpBPDU(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagsTopologyChange']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FlagsTopologyChange"])
+        )
 
     @property
     def MstiConfigurationMessageRegionalRootIdentifier(self):
@@ -412,7 +524,13 @@ class MstpBPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationMessageRegionalRootIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationMessageRegionalRootIdentifier"]
+            ),
+        )
 
     @property
     def MstiConfigurationMessageInternalRootPathCost(self):
@@ -422,7 +540,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationMessageInternalRootPathCost']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationMessageInternalRootPathCost"]
+            ),
+        )
 
     @property
     def MstiConfigurationMessageBridgePriority(self):
@@ -432,7 +556,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationMessageBridgePriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationMessageBridgePriority"]
+            ),
+        )
 
     @property
     def MstiConfigurationMessagePortPriority(self):
@@ -442,7 +572,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationMessagePortPriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationMessagePortPriority"]
+            ),
+        )
 
     @property
     def MstiConfigurationMessageRemainingHops(self):
@@ -452,7 +588,13 @@ class MstpBPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MstiConfigurationMessageRemainingHops']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MstiConfigurationMessageRemainingHops"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

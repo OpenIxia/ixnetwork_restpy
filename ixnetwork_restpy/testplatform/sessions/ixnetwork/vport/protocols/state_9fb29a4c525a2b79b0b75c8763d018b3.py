@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class State(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'state'
+    _SDM_NAME = "state"
     _SDM_ATT_MAP = {
-        'Blocked': 'blocked',
-        'LinkDown': 'linkDown',
-        'LiveForFastFailoverGroup': 'liveForFastFailoverGroup',
-        'StpBlock': 'stpBlock',
-        'StpForward': 'stpForward',
-        'StpLearn': 'stpLearn',
-        'StpListen': 'stpListen',
+        "Blocked": "blocked",
+        "LinkDown": "linkDown",
+        "LiveForFastFailoverGroup": "liveForFastFailoverGroup",
+        "StpBlock": "stpBlock",
+        "StpForward": "stpForward",
+        "StpLearn": "stpLearn",
+        "StpListen": "stpListen",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(State, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. A port is in the blocked state when a switch protocol outside of OpenFlow, such as 802.1D Spanning Tree, prevents the use of that port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Blocked'])
+        return self._get_attribute(self._SDM_ATT_MAP["Blocked"])
+
     @Blocked.setter
     def Blocked(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Blocked'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Blocked"], value)
 
     @property
     def LinkDown(self):
@@ -70,11 +71,12 @@ class State(Base):
         -------
         - bool: If true, there is no physical link present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkDown"])
+
     @LinkDown.setter
     def LinkDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkDown"], value)
 
     @property
     def LiveForFastFailoverGroup(self):
@@ -84,11 +86,12 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. The link is live for the Fast Failover Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LiveForFastFailoverGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["LiveForFastFailoverGroup"])
+
     @LiveForFastFailoverGroup.setter
     def LiveForFastFailoverGroup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LiveForFastFailoverGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LiveForFastFailoverGroup"], value)
 
     @property
     def StpBlock(self):
@@ -98,11 +101,12 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. The Switch Ports goes into a blocking state when a switch receives a BPDU on a port that indicates a better path to the root switch, and if a port is not a root port or a designated port.A port in the blocking state does not participate in frame forwarding and also discards frames received from the attached network segment. During blocking state, the port is only listening to and processing BPDUs on its interfaces. The switch port then changes from the blocking state to the listening state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBlock'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBlock"])
+
     @StpBlock.setter
     def StpBlock(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBlock'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBlock"], value)
 
     @property
     def StpForward(self):
@@ -112,11 +116,12 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. A port in the forwarding state forwards frames across the attached network segment. In a forwarding state, the port processes BPDUs, updates its MAC Address table with frames that it receives, and forwards user traffic through the port. Forwarding State is the normal state. Data and configuration messages are passed through the port, when it is in forwarding state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpForward'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpForward"])
+
     @StpForward.setter
     def StpForward(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpForward'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpForward"], value)
 
     @property
     def StpLearn(self):
@@ -126,11 +131,12 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. A port changes to learning state after listening state. During the learning state, the port is listening for and processing BPDUs. In the listening state, the port begins to process user frames and starts updating the MAC address table. But the user frames are not forwarded to the destination. The switch port then moves from the learning state to the forwarding state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpLearn'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpLearn"])
+
     @StpLearn.setter
     def StpLearn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpLearn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpLearn"], value)
 
     @property
     def StpListen(self):
@@ -140,13 +146,23 @@ class State(Base):
         -------
         - bool: If true, this state is available for this port. After blocking state, a root port or a designated port moves to a listening state. All other ports remains in a blocked state. During the listening state the port discards frames received from the attached network segment and it also discards frames switched from another port for forwarding. At this state, the port receives BPDUs from the network segment and directs them to the switch system module for processing. The switch port then moves from the listening state to the learning state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpListen'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpListen"])
+
     @StpListen.setter
     def StpListen(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpListen'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpListen"], value)
 
-    def update(self, Blocked=None, LinkDown=None, LiveForFastFailoverGroup=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+    def update(
+        self,
+        Blocked=None,
+        LinkDown=None,
+        LiveForFastFailoverGroup=None,
+        StpBlock=None,
+        StpForward=None,
+        StpLearn=None,
+        StpListen=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool) -> State
         """Updates state resource on the server.
 
@@ -166,7 +182,16 @@ class State(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Blocked=None, LinkDown=None, LiveForFastFailoverGroup=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+    def find(
+        self,
+        Blocked=None,
+        LinkDown=None,
+        LiveForFastFailoverGroup=None,
+        StpBlock=None,
+        StpForward=None,
+        StpLearn=None,
+        StpListen=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool) -> State
         """Finds and retrieves state resources from the server.
 

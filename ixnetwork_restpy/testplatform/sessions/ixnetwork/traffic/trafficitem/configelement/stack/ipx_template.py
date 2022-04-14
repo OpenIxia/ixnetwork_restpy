@@ -4,18 +4,18 @@ from ixnetwork_restpy.files import Files
 
 class Ipx(Base):
     __slots__ = ()
-    _SDM_NAME = 'ipx'
+    _SDM_NAME = "ipx"
     _SDM_ATT_MAP = {
-        'Checksum': 'ipx.header.checksum-1',
-        'Length': 'ipx.header.length-2',
-        'TransportControl': 'ipx.header.transportControl-3',
-        'Type': 'ipx.header.type-4',
-        'DstNetwork': 'ipx.header.dstNetwork-5',
-        'DstNode': 'ipx.header.dstNode-6',
-        'DstSocket': 'ipx.header.dstSocket-7',
-        'SrcNetwork': 'ipx.header.srcNetwork-8',
-        'SrcNode': 'ipx.header.srcNode-9',
-        'SrcSocket': 'ipx.header.srcSocket-10',
+        "Checksum": "ipx.header.checksum-1",
+        "Length": "ipx.header.length-2",
+        "TransportControl": "ipx.header.transportControl-3",
+        "Type": "ipx.header.type-4",
+        "DstNetwork": "ipx.header.dstNetwork-5",
+        "DstNode": "ipx.header.dstNode-6",
+        "DstSocket": "ipx.header.dstSocket-7",
+        "SrcNetwork": "ipx.header.srcNetwork-8",
+        "SrcNode": "ipx.header.srcNode-9",
+        "SrcSocket": "ipx.header.srcSocket-10",
     }
 
     def __init__(self, parent, list_op=False):
@@ -29,7 +29,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Checksum']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Checksum"]))
 
     @property
     def Length(self):
@@ -39,7 +40,8 @@ class Ipx(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Length']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Length"]))
 
     @property
     def TransportControl(self):
@@ -49,7 +51,10 @@ class Ipx(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransportControl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransportControl"])
+        )
 
     @property
     def Type(self):
@@ -60,7 +65,8 @@ class Ipx(Base):
         Available enum values: Hello or SAP, 0, Routing Information Protocol, 1, Echo Packet, 2, Error Packet, 3, PEP: Packet Exchange Protocol, 4, SPX: Sequenced Packet Exchange, 5, NCP: Netware Core Protocol, 17
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
     def DstNetwork(self):
@@ -70,7 +76,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstNetwork']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstNetwork"]))
 
     @property
     def DstNode(self):
@@ -80,7 +87,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstNode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstNode"]))
 
     @property
     def DstSocket(self):
@@ -90,7 +98,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstSocket']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstSocket"]))
 
     @property
     def SrcNetwork(self):
@@ -100,7 +109,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcNetwork']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcNetwork"]))
 
     @property
     def SrcNode(self):
@@ -110,7 +120,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcNode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcNode"]))
 
     @property
     def SrcSocket(self):
@@ -120,7 +131,8 @@ class Ipx(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcSocket']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcSocket"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

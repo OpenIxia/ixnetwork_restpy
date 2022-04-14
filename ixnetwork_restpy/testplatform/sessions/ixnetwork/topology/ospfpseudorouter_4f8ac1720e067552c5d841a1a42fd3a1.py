@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,43 +34,42 @@ class OspfPseudoRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfPseudoRouter'
+    _SDM_NAME = "ospfPseudoRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseFapm': 'advertiseFapm',
-        'AdvertiseRouterIdAsStubNetwork': 'advertiseRouterIdAsStubNetwork',
-        'Algorithm': 'algorithm',
-        'BBit': 'bBit',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DemandCircuit': 'demandCircuit',
-        'DescriptiveName': 'descriptiveName',
-        'EBit': 'eBit',
-        'EFlag': 'eFlag',
-        'EnableSegmentRouting': 'enableSegmentRouting',
-        'EnableSrlb': 'enableSrlb',
-        'ExtendedPrefixFlags': 'extendedPrefixFlags',
-        'ExternalAttribute': 'externalAttribute',
-        'ExternalCapability': 'externalCapability',
-        'FapmMetric': 'fapmMetric',
-        'LFlag': 'lFlag',
-        'MFlag': 'mFlag',
-        'MulticastCapability': 'multicastCapability',
-        'Name': 'name',
-        'NoOfAddiotnalAlgoSidCount': 'noOfAddiotnalAlgoSidCount',
-        'NpFlag': 'npFlag',
-        'NssaCapability': 'nssaCapability',
-        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
-        'SRAlgorithmCount': 'sRAlgorithmCount',
-        'SidIndexLabel': 'sidIndexLabel',
-        'SrgbRangeCount': 'srgbRangeCount',
-        'SrlbRangeCount': 'srlbRangeCount',
-        'TypeOfServiceRouting': 'typeOfServiceRouting',
-        'Unused': 'unused',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "AdvertiseFapm": "advertiseFapm",
+        "AdvertiseRouterIdAsStubNetwork": "advertiseRouterIdAsStubNetwork",
+        "Algorithm": "algorithm",
+        "BBit": "bBit",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DemandCircuit": "demandCircuit",
+        "DescriptiveName": "descriptiveName",
+        "EBit": "eBit",
+        "EFlag": "eFlag",
+        "EnableSegmentRouting": "enableSegmentRouting",
+        "EnableSrlb": "enableSrlb",
+        "ExtendedPrefixFlags": "extendedPrefixFlags",
+        "ExternalAttribute": "externalAttribute",
+        "ExternalCapability": "externalCapability",
+        "FapmMetric": "fapmMetric",
+        "LFlag": "lFlag",
+        "MFlag": "mFlag",
+        "MulticastCapability": "multicastCapability",
+        "Name": "name",
+        "NoOfAddiotnalAlgoSidCount": "noOfAddiotnalAlgoSidCount",
+        "NpFlag": "npFlag",
+        "NssaCapability": "nssaCapability",
+        "OpaqueLsaForwarded": "opaqueLsaForwarded",
+        "SRAlgorithmCount": "sRAlgorithmCount",
+        "SidIndexLabel": "sidIndexLabel",
+        "SrgbRangeCount": "srgbRangeCount",
+        "SrlbRangeCount": "srlbRangeCount",
+        "TypeOfServiceRouting": "typeOfServiceRouting",
+        "Unused": "unused",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfPseudoRouter, self).__init__(parent, list_op)
@@ -85,10 +85,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoprefixessid_3b1ec47376666bd4309a78f3999c54d1 import OspfPseudoPrefixesSid
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoprefixessid_3b1ec47376666bd4309a78f3999c54d1 import (
+            OspfPseudoPrefixesSid,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoPrefixesSid', None) is not None:
-                return self._properties.get('OspfPseudoPrefixesSid')
+            if self._properties.get("OspfPseudoPrefixesSid", None) is not None:
+                return self._properties.get("OspfPseudoPrefixesSid")
         return OspfPseudoPrefixesSid(self)._select()
 
     @property
@@ -102,10 +105,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks_529623b7b4a99bce259e7e9cc31d4740 import OspfPseudoRouterStubNetworks
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks_529623b7b4a99bce259e7e9cc31d4740 import (
+            OspfPseudoRouterStubNetworks,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoRouterStubNetworks', None) is not None:
-                return self._properties.get('OspfPseudoRouterStubNetworks')
+            if self._properties.get("OspfPseudoRouterStubNetworks", None) is not None:
+                return self._properties.get("OspfPseudoRouterStubNetworks")
         return OspfPseudoRouterStubNetworks(self)
 
     @property
@@ -119,10 +125,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes_412e064d08a94b4fcc40c44dd11c5318 import OspfPseudoRouterStubRoutes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes_412e064d08a94b4fcc40c44dd11c5318 import (
+            OspfPseudoRouterStubRoutes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoRouterStubRoutes', None) is not None:
-                return self._properties.get('OspfPseudoRouterStubRoutes')
+            if self._properties.get("OspfPseudoRouterStubRoutes", None) is not None:
+                return self._properties.get("OspfPseudoRouterStubRoutes")
         return OspfPseudoRouterStubRoutes(self)
 
     @property
@@ -136,10 +145,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes_5e51c97c0564d672f57ec5fd0f34b1cb import OspfPseudoRouterSummaryRoutes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes_5e51c97c0564d672f57ec5fd0f34b1cb import (
+            OspfPseudoRouterSummaryRoutes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoRouterSummaryRoutes', None) is not None:
-                return self._properties.get('OspfPseudoRouterSummaryRoutes')
+            if self._properties.get("OspfPseudoRouterSummaryRoutes", None) is not None:
+                return self._properties.get("OspfPseudoRouterSummaryRoutes")
         return OspfPseudoRouterSummaryRoutes(self)
 
     @property
@@ -153,10 +165,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes_8af6c2f32014611d60e64f734921e6df import OspfPseudoRouterType1ExtRoutes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes_8af6c2f32014611d60e64f734921e6df import (
+            OspfPseudoRouterType1ExtRoutes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoRouterType1ExtRoutes', None) is not None:
-                return self._properties.get('OspfPseudoRouterType1ExtRoutes')
+            if self._properties.get("OspfPseudoRouterType1ExtRoutes", None) is not None:
+                return self._properties.get("OspfPseudoRouterType1ExtRoutes")
         return OspfPseudoRouterType1ExtRoutes(self)
 
     @property
@@ -170,10 +185,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes_1eb6898acd2430328b24bfa765a4dc59 import OspfPseudoRouterType2ExtRoutes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes_1eb6898acd2430328b24bfa765a4dc59 import (
+            OspfPseudoRouterType2ExtRoutes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfPseudoRouterType2ExtRoutes', None) is not None:
-                return self._properties.get('OspfPseudoRouterType2ExtRoutes')
+            if self._properties.get("OspfPseudoRouterType2ExtRoutes", None) is not None:
+                return self._properties.get("OspfPseudoRouterType2ExtRoutes")
         return OspfPseudoRouterType2ExtRoutes(self)
 
     @property
@@ -187,10 +205,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import OspfSRAlgorithmList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import (
+            OspfSRAlgorithmList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRAlgorithmList', None) is not None:
-                return self._properties.get('OspfSRAlgorithmList')
+            if self._properties.get("OspfSRAlgorithmList", None) is not None:
+                return self._properties.get("OspfSRAlgorithmList")
         return OspfSRAlgorithmList(self)
 
     @property
@@ -204,10 +225,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import OspfSRGBRangeSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import (
+            OspfSRGBRangeSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
-                return self._properties.get('OspfSRGBRangeSubObjectsList')
+            if self._properties.get("OspfSRGBRangeSubObjectsList", None) is not None:
+                return self._properties.get("OspfSRGBRangeSubObjectsList")
         return OspfSRGBRangeSubObjectsList(self)
 
     @property
@@ -221,10 +245,13 @@ class OspfPseudoRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import OspfSRLBRangeSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import (
+            OspfSRLBRangeSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
-                return self._properties.get('OspfSRLBRangeSubObjectsList')
+            if self._properties.get("OspfSRLBRangeSubObjectsList", None) is not None:
+                return self._properties.get("OspfSRLBRangeSubObjectsList")
         return OspfSRLBRangeSubObjectsList(self)
 
     @property
@@ -236,7 +263,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/DeActivate OSPF Simulated Router
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseFapm(self):
@@ -247,7 +275,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise FAPM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseFapm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseFapm"]))
 
     @property
     def AdvertiseRouterIdAsStubNetwork(self):
@@ -258,7 +287,11 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise RouterId As Stub Network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseRouterIdAsStubNetwork']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AdvertiseRouterIdAsStubNetwork"]),
+        )
 
     @property
     def Algorithm(self):
@@ -269,7 +302,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm for the Node SID/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def BBit(self):
@@ -280,7 +314,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA B-Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BBit"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -291,7 +326,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -301,7 +339,7 @@ class OspfPseudoRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DemandCircuit(self):
@@ -312,7 +350,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5 : The DC-Bit should be set in all LSAs originated by Router implementing the Demand Circuit functionality.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DemandCircuit"]))
 
     @property
     def DescriptiveName(self):
@@ -322,7 +361,7 @@ class OspfPseudoRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EBit(self):
@@ -333,7 +372,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router-LSA E-Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EBit"]))
 
     @property
     def EFlag(self):
@@ -344,7 +384,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def EnableSegmentRouting(self):
@@ -354,11 +395,12 @@ class OspfPseudoRouter(Base):
         -------
         - bool: Enable Segment Routing
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSegmentRouting"])
+
     @EnableSegmentRouting.setter
     def EnableSegmentRouting(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSegmentRouting"], value)
 
     @property
     def EnableSrlb(self):
@@ -368,11 +410,12 @@ class OspfPseudoRouter(Base):
         -------
         - bool: Enable SRLB
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSrlb'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSrlb"])
+
     @EnableSrlb.setter
     def EnableSrlb(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSrlb'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSrlb"], value)
 
     @property
     def ExtendedPrefixFlags(self):
@@ -383,7 +426,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Extended prefix flags advertised along with Node Loopback Address in Extended Prefix TLV by OSPFv2 routers. This is a hex field. The default value is 0x40. 0x40 signifies Node flag (N flag) is set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedPrefixFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedPrefixFlags"])
+        )
 
     @property
     def ExternalAttribute(self):
@@ -394,7 +440,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4 : The EA-bit describes the router's willingness to receive and forward External-Attributes-LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalAttribute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalAttribute"])
+        )
 
     @property
     def ExternalCapability(self):
@@ -405,7 +454,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1 : The E-bit represents OSPF's ExternalRoutingCapability. This bit can be set in all LSAs associated with the backbone, non-stub areas and AS-external-LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalCapability"])
+        )
 
     @property
     def FapmMetric(self):
@@ -416,7 +468,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAPM Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FapmMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FapmMetric"]))
 
     @property
     def LFlag(self):
@@ -427,7 +480,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def MFlag(self):
@@ -438,7 +492,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def MulticastCapability(self):
@@ -449,7 +504,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2 : The MC-bit describes the multicast capability of the various pieces of the OSPF routing domain.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastCapability"])
+        )
 
     @property
     def Name(self):
@@ -459,11 +517,12 @@ class OspfPseudoRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfAddiotnalAlgoSidCount(self):
@@ -473,11 +532,12 @@ class OspfPseudoRouter(Base):
         -------
         - number: Additional Algo/SID Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfAddiotnalAlgoSidCount"])
+
     @NoOfAddiotnalAlgoSidCount.setter
     def NoOfAddiotnalAlgoSidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfAddiotnalAlgoSidCount"], value)
 
     @property
     def NpFlag(self):
@@ -488,7 +548,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def NssaCapability(self):
@@ -499,7 +560,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3 : The N/P-bit used only in the Type-7 LSA header. It flags the NSSA border router to translate the Type-7 LSA into a Type-5 LSA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NssaCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NssaCapability"])
+        )
 
     @property
     def OpaqueLsaForwarded(self):
@@ -510,7 +574,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6: The O-bit describes the router's willingness to receive and forward Opaque LSAs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueLsaForwarded']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OpaqueLsaForwarded"])
+        )
 
     @property
     def SRAlgorithmCount(self):
@@ -520,11 +587,12 @@ class OspfPseudoRouter(Base):
         -------
         - number: SR Algorithm Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SRAlgorithmCount"])
+
     @SRAlgorithmCount.setter
     def SRAlgorithmCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SRAlgorithmCount"], value)
 
     @property
     def SidIndexLabel(self):
@@ -535,7 +603,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def SrgbRangeCount(self):
@@ -545,11 +614,12 @@ class OspfPseudoRouter(Base):
         -------
         - number: SRGB Range Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrgbRangeCount"])
+
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrgbRangeCount"], value)
 
     @property
     def SrlbRangeCount(self):
@@ -559,11 +629,12 @@ class OspfPseudoRouter(Base):
         -------
         - number: SRLB Range Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrlbRangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrlbRangeCount"])
+
     @SrlbRangeCount.setter
     def SrlbRangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrlbRangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrlbRangeCount"], value)
 
     @property
     def TypeOfServiceRouting(self):
@@ -574,7 +645,10 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0 : The T-bit represents OSPF's TOS routing capability.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfServiceRouting']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TypeOfServiceRouting"])
+        )
 
     @property
     def Unused(self):
@@ -585,7 +659,8 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7 (Unused).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unused"]))
 
     @property
     def VFlag(self):
@@ -596,9 +671,19 @@ class OspfPseudoRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
-    def update(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, NoOfAddiotnalAlgoSidCount=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
+
+    def update(
+        self,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        SRAlgorithmCount=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+    ):
         # type: (bool, bool, str, int, int, int, int) -> OspfPseudoRouter
         """Updates ospfPseudoRouter resource on the server.
 
@@ -621,9 +706,18 @@ class OspfPseudoRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, NoOfAddiotnalAlgoSidCount=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+    def add(
+        self,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        SRAlgorithmCount=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+    ):
         # type: (bool, bool, str, int, int, int, int) -> OspfPseudoRouter
-        """Adds a new ospfPseudoRouter resource on the json, only valid with config assistant
+        """Adds a new ospfPseudoRouter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -645,7 +739,18 @@ class OspfPseudoRouter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, EnableSegmentRouting=None, EnableSrlb=None, Name=None, NoOfAddiotnalAlgoSidCount=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        EnableSegmentRouting=None,
+        EnableSrlb=None,
+        Name=None,
+        NoOfAddiotnalAlgoSidCount=None,
+        SRAlgorithmCount=None,
+        SrgbRangeCount=None,
+        SrlbRangeCount=None,
+    ):
         # type: (int, str, bool, bool, str, int, int, int, int) -> OspfPseudoRouter
         """Finds and retrieves ospfPseudoRouter resources from the server.
 
@@ -708,10 +813,12 @@ class OspfPseudoRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -740,10 +847,12 @@ class OspfPseudoRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -772,12 +881,40 @@ class OspfPseudoRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseFapm=None, AdvertiseRouterIdAsStubNetwork=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DemandCircuit=None, EBit=None, EFlag=None, ExtendedPrefixFlags=None, ExternalAttribute=None, ExternalCapability=None, FapmMetric=None, LFlag=None, MFlag=None, MulticastCapability=None, NpFlag=None, NssaCapability=None, OpaqueLsaForwarded=None, SidIndexLabel=None, TypeOfServiceRouting=None, Unused=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseFapm=None,
+        AdvertiseRouterIdAsStubNetwork=None,
+        Algorithm=None,
+        BBit=None,
+        ConfigureSIDIndexLabel=None,
+        DemandCircuit=None,
+        EBit=None,
+        EFlag=None,
+        ExtendedPrefixFlags=None,
+        ExternalAttribute=None,
+        ExternalCapability=None,
+        FapmMetric=None,
+        LFlag=None,
+        MFlag=None,
+        MulticastCapability=None,
+        NpFlag=None,
+        NssaCapability=None,
+        OpaqueLsaForwarded=None,
+        SidIndexLabel=None,
+        TypeOfServiceRouting=None,
+        Unused=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of ospfPseudoRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

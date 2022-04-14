@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,34 +34,33 @@ class SwitchGroupsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchGroupsList'
+    _SDM_NAME = "switchGroupsList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ApplyGroup': 'applyGroup',
-        'CopyTtlIn': 'copyTtlIn',
-        'CopyTtlOut': 'copyTtlOut',
-        'Count': 'count',
-        'DecrementMplsTtl': 'decrementMplsTtl',
-        'DecrementNetwork': 'decrementNetwork',
-        'DescriptiveName': 'descriptiveName',
-        'GroupType': 'groupType',
-        'MaxNumberOfGroups': 'maxNumberOfGroups',
-        'Name': 'name',
-        'Output': 'output',
-        'ParentSwitch': 'parentSwitch',
-        'PopMpls': 'popMpls',
-        'PopPbb': 'popPbb',
-        'PopVlan': 'popVlan',
-        'PushMpls': 'pushMpls',
-        'PushPbb': 'pushPbb',
-        'PushVlan': 'pushVlan',
-        'SetField': 'setField',
-        'SetMplsTtl': 'setMplsTtl',
-        'SetNetwork': 'setNetwork',
-        'SetQueue': 'setQueue',
+        "Active": "active",
+        "ApplyGroup": "applyGroup",
+        "CopyTtlIn": "copyTtlIn",
+        "CopyTtlOut": "copyTtlOut",
+        "Count": "count",
+        "DecrementMplsTtl": "decrementMplsTtl",
+        "DecrementNetwork": "decrementNetwork",
+        "DescriptiveName": "descriptiveName",
+        "GroupType": "groupType",
+        "MaxNumberOfGroups": "maxNumberOfGroups",
+        "Name": "name",
+        "Output": "output",
+        "ParentSwitch": "parentSwitch",
+        "PopMpls": "popMpls",
+        "PopPbb": "popPbb",
+        "PopVlan": "popVlan",
+        "PushMpls": "pushMpls",
+        "PushPbb": "pushPbb",
+        "PushVlan": "pushVlan",
+        "SetField": "setField",
+        "SetMplsTtl": "setMplsTtl",
+        "SetNetwork": "setNetwork",
+        "SetQueue": "setQueue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchGroupsList, self).__init__(parent, list_op)
@@ -74,7 +74,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Checked or Unchecked based on the Group Type selections in Groups tab under OF Switch tab-page.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ApplyGroup(self):
@@ -85,7 +86,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Apply Group.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplyGroup']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ApplyGroup"]))
 
     @property
     def CopyTtlIn(self):
@@ -96,7 +98,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Copy TTL inwards from outermost to next-to-outermost.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CopyTtlIn']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CopyTtlIn"]))
 
     @property
     def CopyTtlOut(self):
@@ -107,7 +110,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Copy TTL outwards from next-to-outermost to outermost.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CopyTtlOut']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CopyTtlOut"]))
 
     @property
     def Count(self):
@@ -117,7 +121,7 @@ class SwitchGroupsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DecrementMplsTtl(self):
@@ -128,7 +132,10 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Decrement MPLS TTL.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DecrementMplsTtl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DecrementMplsTtl"])
+        )
 
     @property
     def DecrementNetwork(self):
@@ -139,7 +146,10 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Decrement IP TTL.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DecrementNetwork']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DecrementNetwork"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -149,7 +159,7 @@ class SwitchGroupsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GroupType(self):
@@ -160,7 +170,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Can be of the following types per switch: 1)All: Execute all buckets in the group. 2)Select:Execute one bucket in the group. 3)Indirect:Execute the one defined bucket in this group. 4)Fast Failover:Execute the first live bucket.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupType"]))
 
     @property
     def MaxNumberOfGroups(self):
@@ -171,7 +182,10 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of groups for each group type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfGroups']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfGroups"])
+        )
 
     @property
     def Name(self):
@@ -181,11 +195,12 @@ class SwitchGroupsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Output(self):
@@ -196,7 +211,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Output to switch port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Output']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Output"]))
 
     @property
     def ParentSwitch(self):
@@ -206,7 +222,7 @@ class SwitchGroupsList(Base):
         -------
         - str: Parent Switch Name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ParentSwitch'])
+        return self._get_attribute(self._SDM_ATT_MAP["ParentSwitch"])
 
     @property
     def PopMpls(self):
@@ -217,7 +233,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Pop the outer MPLS tag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PopMpls']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PopMpls"]))
 
     @property
     def PopPbb(self):
@@ -228,7 +245,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Pop the outer PBB service tag (I-TAG).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PopPbb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PopPbb"]))
 
     @property
     def PopVlan(self):
@@ -239,7 +257,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Pop the outer VLAN tag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PopVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PopVlan"]))
 
     @property
     def PushMpls(self):
@@ -250,7 +269,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Push a new MPLS tag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PushMpls']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PushMpls"]))
 
     @property
     def PushPbb(self):
@@ -261,7 +281,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Push a new PBB service tag (I-TAG).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PushPbb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PushPbb"]))
 
     @property
     def PushVlan(self):
@@ -272,7 +293,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Push a new VLAN tag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PushVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PushVlan"]))
 
     @property
     def SetField(self):
@@ -283,7 +305,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Set a header field using OXM TLV format.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetField']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetField"]))
 
     @property
     def SetMplsTtl(self):
@@ -294,7 +317,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Set MPLS TTL.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetMplsTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetMplsTtl"]))
 
     @property
     def SetNetwork(self):
@@ -305,7 +329,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Set IP TTL.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetNetwork']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetNetwork"]))
 
     @property
     def SetQueue(self):
@@ -316,7 +341,8 @@ class SwitchGroupsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Group Action:Set queue id when outputting to a port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetQueue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetQueue"]))
 
     def update(self, Name=None):
         # type: (str) -> SwitchGroupsList
@@ -337,7 +363,7 @@ class SwitchGroupsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> SwitchGroupsList
-        """Adds a new switchGroupsList resource on the json, only valid with config assistant
+        """Adds a new switchGroupsList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -396,7 +422,29 @@ class SwitchGroupsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetwork=None, GroupType=None, MaxNumberOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetwork=None, SetQueue=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ApplyGroup=None,
+        CopyTtlIn=None,
+        CopyTtlOut=None,
+        DecrementMplsTtl=None,
+        DecrementNetwork=None,
+        GroupType=None,
+        MaxNumberOfGroups=None,
+        Output=None,
+        PopMpls=None,
+        PopPbb=None,
+        PopVlan=None,
+        PushMpls=None,
+        PushPbb=None,
+        PushVlan=None,
+        SetField=None,
+        SetMplsTtl=None,
+        SetNetwork=None,
+        SetQueue=None,
+    ):
         """Base class infrastructure that gets a list of switchGroupsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class Ipv4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv4'
+    _SDM_NAME = "ipv4"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GratarpTransmitCount': 'gratarpTransmitCount',
-        'GratarpTransmitInterval': 'gratarpTransmitInterval',
-        'Name': 'name',
-        'PermanentMacForGateway': 'permanentMacForGateway',
-        'RarpTransmitCount': 'rarpTransmitCount',
-        'RarpTransmitInterval': 'rarpTransmitInterval',
-        'ReSendArpOnLinkUp': 'reSendArpOnLinkUp',
-        'RowNames': 'rowNames',
-        'SuppressArpForDuplicateGateway': 'suppressArpForDuplicateGateway',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "GratarpTransmitCount": "gratarpTransmitCount",
+        "GratarpTransmitInterval": "gratarpTransmitInterval",
+        "Name": "name",
+        "PermanentMacForGateway": "permanentMacForGateway",
+        "RarpTransmitCount": "rarpTransmitCount",
+        "RarpTransmitInterval": "rarpTransmitInterval",
+        "ReSendArpOnLinkUp": "reSendArpOnLinkUp",
+        "RowNames": "rowNames",
+        "SuppressArpForDuplicateGateway": "suppressArpForDuplicateGateway",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv4, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate_fe6622efbe4e67c68598af1d6489b20c import ArpRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate_fe6622efbe4e67c68598af1d6489b20c import (
+            ArpRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ArpRate', None) is not None:
-                return self._properties.get('ArpRate')
+            if self._properties.get("ArpRate", None) is not None:
+                return self._properties.get("ArpRate")
         return ArpRate(self)._select()
 
     @property
@@ -80,10 +83,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -97,10 +103,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -111,7 +120,7 @@ class Ipv4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -121,7 +130,7 @@ class Ipv4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GratarpTransmitCount(self):
@@ -132,7 +141,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times GRATARP packet is sent per source IPv4 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GratarpTransmitCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GratarpTransmitCount"])
+        )
 
     @property
     def GratarpTransmitInterval(self):
@@ -143,7 +155,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval to calculate next GRATARP packet transmission for each source IPv4 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GratarpTransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GratarpTransmitInterval"])
+        )
 
     @property
     def Name(self):
@@ -153,11 +168,12 @@ class Ipv4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PermanentMacForGateway(self):
@@ -168,7 +184,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When enabled, adds permanent entries for Gateways with manual MAC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PermanentMacForGateway']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PermanentMacForGateway"])
+        )
 
     @property
     def RarpTransmitCount(self):
@@ -179,7 +198,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times RARP packet is sent per source IPv4 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RarpTransmitCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RarpTransmitCount"])
+        )
 
     @property
     def RarpTransmitInterval(self):
@@ -190,7 +212,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval to calculate next RARP packet transmission for each source IPv4 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RarpTransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RarpTransmitInterval"])
+        )
 
     @property
     def ReSendArpOnLinkUp(self):
@@ -201,7 +226,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Resends ARP after link up.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReSendArpOnLinkUp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReSendArpOnLinkUp"])
+        )
 
     @property
     def RowNames(self):
@@ -211,7 +239,7 @@ class Ipv4(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def SuppressArpForDuplicateGateway(self):
@@ -222,7 +250,11 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Optimizes the gateway MAC discovery by sending a single ARP request for each unique destination.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressArpForDuplicateGateway']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SuppressArpForDuplicateGateway"]),
+        )
 
     def update(self, Name=None):
         # type: (str) -> Ipv4
@@ -284,7 +316,17 @@ class Ipv4(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, GratarpTransmitCount=None, GratarpTransmitInterval=None, PermanentMacForGateway=None, RarpTransmitCount=None, RarpTransmitInterval=None, ReSendArpOnLinkUp=None, SuppressArpForDuplicateGateway=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        GratarpTransmitCount=None,
+        GratarpTransmitInterval=None,
+        PermanentMacForGateway=None,
+        RarpTransmitCount=None,
+        RarpTransmitInterval=None,
+        ReSendArpOnLinkUp=None,
+        SuppressArpForDuplicateGateway=None,
+    ):
         """Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

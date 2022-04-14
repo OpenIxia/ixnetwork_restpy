@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class DceMulticastMacRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceMulticastMacRange'
+    _SDM_NAME = "dceMulticastMacRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
-        'MulticastMacCount': 'multicastMacCount',
-        'MulticastMacStep': 'multicastMacStep',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastMac': 'startMulticastMac',
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'Topology': 'topology',
-        'UnicastSourcesPerMulticastMac': 'unicastSourcesPerMulticastMac',
-        'VlanId': 'vlanId',
+        "Enabled": "enabled",
+        "InterGroupUnicastMacIncrement": "interGroupUnicastMacIncrement",
+        "IntraGroupUnicastMacIncrement": "intraGroupUnicastMacIncrement",
+        "MulticastMacCount": "multicastMacCount",
+        "MulticastMacStep": "multicastMacStep",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastMac": "startMulticastMac",
+        "StartUnicastSourceMac": "startUnicastSourceMac",
+        "Topology": "topology",
+        "UnicastSourcesPerMulticastMac": "unicastSourcesPerMulticastMac",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fullyMeshed', 'oneToOne', 'manualMapping'],
+        "sourceGroupMapping": ["fullyMeshed", "oneToOne", "manualMapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class DceMulticastMacRange(Base):
         -------
         - bool: If true, enables the Multicast MAC Range for a particular DCE ISIS route range. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterGroupUnicastMacIncrement(self):
@@ -77,11 +79,12 @@ class DceMulticastMacRange(Base):
         -------
         - str: The MAC address format of the Unicast MAC between one or more node groups. (Default = 00 00 00 00 00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterGroupUnicastMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterGroupUnicastMacIncrement"])
+
     @InterGroupUnicastMacIncrement.setter
     def InterGroupUnicastMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterGroupUnicastMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterGroupUnicastMacIncrement"], value)
 
     @property
     def IntraGroupUnicastMacIncrement(self):
@@ -91,11 +94,12 @@ class DceMulticastMacRange(Base):
         -------
         - str: The MAC address format of the Unicast MAC within a node group. (Default = 00 00 00 00 01)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"])
+
     @IntraGroupUnicastMacIncrement.setter
     def IntraGroupUnicastMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"], value)
 
     @property
     def MulticastMacCount(self):
@@ -105,11 +109,12 @@ class DceMulticastMacRange(Base):
         -------
         - number: The number of Multicast MAC addresses. This option takes unsigned integer value ranging from 1 to UINT_MAX.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacCount"])
+
     @MulticastMacCount.setter
     def MulticastMacCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacCount"], value)
 
     @property
     def MulticastMacStep(self):
@@ -119,11 +124,12 @@ class DceMulticastMacRange(Base):
         -------
         - str: The incremental value of Multicast MAC address. (Default = 00 00 00 00 01)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacStep"])
+
     @MulticastMacStep.setter
     def MulticastMacStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacStep"], value)
 
     @property
     def SourceGroupMapping(self):
@@ -133,11 +139,12 @@ class DceMulticastMacRange(Base):
         -------
         - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastMac(self):
@@ -147,11 +154,12 @@ class DceMulticastMacRange(Base):
         -------
         - str: The MAC address format of the starting Multicast MAC. (Default = 0x01000000)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastMac"])
+
     @StartMulticastMac.setter
     def StartMulticastMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastMac"], value)
 
     @property
     def StartUnicastSourceMac(self):
@@ -161,11 +169,12 @@ class DceMulticastMacRange(Base):
         -------
         - str: The MAC address format of the starting Unicast Source MAC. (Default = 00 00 00 00 00 00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"])
+
     @StartUnicastSourceMac.setter
     def StartUnicastSourceMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"], value)
 
     @property
     def Topology(self):
@@ -175,11 +184,12 @@ class DceMulticastMacRange(Base):
         -------
         - number: The topology identifier to which the corresponding MAC belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topology'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topology"])
+
     @Topology.setter
     def Topology(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topology"], value)
 
     @property
     def UnicastSourcesPerMulticastMac(self):
@@ -189,11 +199,12 @@ class DceMulticastMacRange(Base):
         -------
         - number: The number of Unicast Source for each Multicast MAC address. This option takes unsigned integer value ranging from 0 to UINT_MAX.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastMac"])
+
     @UnicastSourcesPerMulticastMac.setter
     def UnicastSourcesPerMulticastMac(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastMac"], value)
 
     @property
     def VlanId(self):
@@ -203,13 +214,27 @@ class DceMulticastMacRange(Base):
         -------
         - number: The VLAN ID of the enabled Multicast MAC Range. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
+    def update(
+        self,
+        Enabled=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        Topology=None,
+        UnicastSourcesPerMulticastMac=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastMacRange
         """Updates dceMulticastMacRange resource on the server.
 
@@ -233,7 +258,20 @@ class DceMulticastMacRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
+    def add(
+        self,
+        Enabled=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        Topology=None,
+        UnicastSourcesPerMulticastMac=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastMacRange
         """Adds a new dceMulticastMacRange resource on the server and adds it to the container.
 
@@ -271,7 +309,20 @@ class DceMulticastMacRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastMacCount=None, MulticastMacStep=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, Topology=None, UnicastSourcesPerMulticastMac=None, VlanId=None):
+    def find(
+        self,
+        Enabled=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        Topology=None,
+        UnicastSourcesPerMulticastMac=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastMacRange
         """Finds and retrieves dceMulticastMacRange resources from the server.
 

@@ -4,56 +4,56 @@ from ixnetwork_restpy.files import Files
 
 class FipElpSwRjtFcf(Base):
     __slots__ = ()
-    _SDM_NAME = 'fipElpSwRjtFcf'
+    _SDM_NAME = "fipElpSwRjtFcf"
     _SDM_ATT_MAP = {
-        'HeaderFipVersion': 'fipElpSwRjtFcf.header.fipVersion-1',
-        'HeaderFipReserved': 'fipElpSwRjtFcf.header.fipReserved-2',
-        'FipOperationCodeFipVirtualLinkInstantiation': 'fipElpSwRjtFcf.header.fipOperation.fipOperationCode.fipVirtualLinkInstantiation-3',
-        'FipOperationFipOperationReserved1': 'fipElpSwRjtFcf.header.fipOperation.fipOperationReserved1-4',
-        'FipSubcodeFipSubcode02h': 'fipElpSwRjtFcf.header.fipOperation.fipSubcode.fipSubcode02h-5',
-        'FipOperationFipDescriptorListLength': 'fipElpSwRjtFcf.header.fipOperation.fipDescriptorListLength-6',
-        'FipOperationFipFp': 'fipElpSwRjtFcf.header.fipOperation.fipFp-7',
-        'FipOperationFipSp': 'fipElpSwRjtFcf.header.fipOperation.fipSp-8',
-        'FipOperationFipReserved2': 'fipElpSwRjtFcf.header.fipOperation.fipReserved2-9',
-        'FipOperationFipABit': 'fipElpSwRjtFcf.header.fipOperation.fipABit-10',
-        'FipOperationFipSBit': 'fipElpSwRjtFcf.header.fipOperation.fipSBit-11',
-        'FipOperationFipFBit': 'fipElpSwRjtFcf.header.fipOperation.fipFBit-12',
-        'FipElpDescriptorFipElpDescriptorType': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorType-13',
-        'FipElpDescriptorFipElpDescriptorLength': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorLength-14',
-        'FipElpDescriptorFipElpDescriptorReserved': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorReserved-15',
-        'FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelRCtl.fipElpDescriptorFibreChannelRCtlExchangeLinkParameters.fipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply-16',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelDId': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelDId-17',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelCsCtlPriority': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelCsCtlPriority-18',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelSId': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSId-19',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelType': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelType-20',
-        'FCtlExchangeContext': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.exchangeContext-21',
-        'FCtlSequenceContext': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.sequenceContext-22',
-        'FCtlFirstSequence': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.firstSequence-23',
-        'FCtlLastSequence': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.lastSequence-24',
-        'FCtlEndSequence': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.endSequence-25',
-        'FCtlEndConnection': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.endConnection-26',
-        'FCtlCsCtlPriority': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.csCtlPriority-27',
-        'FCtlSequenceInitiative': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.sequenceInitiative-28',
-        'FCtlFcXidReassigned': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcXidReassigned-29',
-        'FCtlFcInvalidateXid': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcInvalidateXid-30',
-        'FCtlAckForm': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.ackForm-31',
-        'FCtlFcDataCompression': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcDataCompression-32',
-        'FCtlFcDataEncryption': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcDataEncryption-33',
-        'FCtlRetransmittedSequence': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.retransmittedSequence-34',
-        'FCtlUnidirectionalTransmit': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.unidirectionalTransmit-35',
-        'FCtlContinueSeqCondition': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.continueSeqCondition-36',
-        'FCtlAbortSeqCondition': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.abortSeqCondition-37',
-        'FCtlRelativeOffsetPresent': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.relativeOffsetPresent-38',
-        'FCtlExchangeReassembly': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.exchangeReassembly-39',
-        'FCtlFillBytes': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fillBytes-40',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelSeqId': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSeqId-41',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelDfCtl': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelDfCtl-42',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelSeqCnt': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSeqCnt-43',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelOxId': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelOxId-44',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelRxId': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelRxId-45',
-        'FipElpFibreChannelFipElpDescriptorFibreChannelParameter': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelParameter-46',
-        'FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorFcElp.fipElpDescriptorFcElpRequestReply.fipElpDescriptorFcElpCommandCode.fipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject-47',
-        'FipElpDescriptorFcElpRequestReplyFipElpDescriptorFcElpSwRjtReasonCodes': 'fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorFcElp.fipElpDescriptorFcElpRequestReply.fipElpDescriptorFcElpSwRjtReasonCodes-48',
+        "HeaderFipVersion": "fipElpSwRjtFcf.header.fipVersion-1",
+        "HeaderFipReserved": "fipElpSwRjtFcf.header.fipReserved-2",
+        "FipOperationCodeFipVirtualLinkInstantiation": "fipElpSwRjtFcf.header.fipOperation.fipOperationCode.fipVirtualLinkInstantiation-3",
+        "FipOperationFipOperationReserved1": "fipElpSwRjtFcf.header.fipOperation.fipOperationReserved1-4",
+        "FipSubcodeFipSubcode02h": "fipElpSwRjtFcf.header.fipOperation.fipSubcode.fipSubcode02h-5",
+        "FipOperationFipDescriptorListLength": "fipElpSwRjtFcf.header.fipOperation.fipDescriptorListLength-6",
+        "FipOperationFipFp": "fipElpSwRjtFcf.header.fipOperation.fipFp-7",
+        "FipOperationFipSp": "fipElpSwRjtFcf.header.fipOperation.fipSp-8",
+        "FipOperationFipReserved2": "fipElpSwRjtFcf.header.fipOperation.fipReserved2-9",
+        "FipOperationFipABit": "fipElpSwRjtFcf.header.fipOperation.fipABit-10",
+        "FipOperationFipSBit": "fipElpSwRjtFcf.header.fipOperation.fipSBit-11",
+        "FipOperationFipFBit": "fipElpSwRjtFcf.header.fipOperation.fipFBit-12",
+        "FipElpDescriptorFipElpDescriptorType": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorType-13",
+        "FipElpDescriptorFipElpDescriptorLength": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorLength-14",
+        "FipElpDescriptorFipElpDescriptorReserved": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorReserved-15",
+        "FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelRCtl.fipElpDescriptorFibreChannelRCtlExchangeLinkParameters.fipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply-16",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelDId": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelDId-17",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelCsCtlPriority": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelCsCtlPriority-18",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelSId": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSId-19",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelType": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelType-20",
+        "FCtlExchangeContext": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.exchangeContext-21",
+        "FCtlSequenceContext": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.sequenceContext-22",
+        "FCtlFirstSequence": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.firstSequence-23",
+        "FCtlLastSequence": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.lastSequence-24",
+        "FCtlEndSequence": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.endSequence-25",
+        "FCtlEndConnection": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.endConnection-26",
+        "FCtlCsCtlPriority": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.csCtlPriority-27",
+        "FCtlSequenceInitiative": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.sequenceInitiative-28",
+        "FCtlFcXidReassigned": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcXidReassigned-29",
+        "FCtlFcInvalidateXid": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcInvalidateXid-30",
+        "FCtlAckForm": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.ackForm-31",
+        "FCtlFcDataCompression": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcDataCompression-32",
+        "FCtlFcDataEncryption": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fcDataEncryption-33",
+        "FCtlRetransmittedSequence": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.retransmittedSequence-34",
+        "FCtlUnidirectionalTransmit": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.unidirectionalTransmit-35",
+        "FCtlContinueSeqCondition": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.continueSeqCondition-36",
+        "FCtlAbortSeqCondition": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.abortSeqCondition-37",
+        "FCtlRelativeOffsetPresent": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.relativeOffsetPresent-38",
+        "FCtlExchangeReassembly": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.exchangeReassembly-39",
+        "FCtlFillBytes": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelFCtl.fCtl.fillBytes-40",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelSeqId": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSeqId-41",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelDfCtl": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelDfCtl-42",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelSeqCnt": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelSeqCnt-43",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelOxId": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelOxId-44",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelRxId": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelRxId-45",
+        "FipElpFibreChannelFipElpDescriptorFibreChannelParameter": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpFibreChannel.fipElpDescriptorFibreChannelParameter-46",
+        "FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorFcElp.fipElpDescriptorFcElpRequestReply.fipElpDescriptorFcElpCommandCode.fipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject-47",
+        "FipElpDescriptorFcElpRequestReplyFipElpDescriptorFcElpSwRjtReasonCodes": "fipElpSwRjtFcf.header.fipDescriptors.fipSelectFipDescriptor.fipElpDescriptor.fipElpDescriptorFcElp.fipElpDescriptorFcElpRequestReply.fipElpDescriptorFcElpSwRjtReasonCodes-48",
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,7 +67,10 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipVersion"])
+        )
 
     @property
     def HeaderFipReserved(self):
@@ -77,7 +80,10 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipReserved"])
+        )
 
     @property
     def FipOperationCodeFipVirtualLinkInstantiation(self):
@@ -87,7 +93,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationCodeFipVirtualLinkInstantiation']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationCodeFipVirtualLinkInstantiation"]
+            ),
+        )
 
     @property
     def FipOperationFipOperationReserved1(self):
@@ -97,7 +109,11 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipOperationReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationFipOperationReserved1"]),
+        )
 
     @property
     def FipSubcodeFipSubcode02h(self):
@@ -107,7 +123,10 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipSubcodeFipSubcode02h']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipSubcodeFipSubcode02h"])
+        )
 
     @property
     def FipOperationFipDescriptorListLength(self):
@@ -117,7 +136,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipDescriptorListLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationFipDescriptorListLength"]
+            ),
+        )
 
     @property
     def FipOperationFipFp(self):
@@ -128,7 +153,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFp"])
+        )
 
     @property
     def FipOperationFipSp(self):
@@ -139,7 +167,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSp"])
+        )
 
     @property
     def FipOperationFipReserved2(self):
@@ -149,7 +180,10 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipReserved2"])
+        )
 
     @property
     def FipOperationFipABit(self):
@@ -160,7 +194,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipABit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipABit"])
+        )
 
     @property
     def FipOperationFipSBit(self):
@@ -171,7 +208,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSBit"])
+        )
 
     @property
     def FipOperationFipFBit(self):
@@ -182,7 +222,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFBit"])
+        )
 
     @property
     def FipElpDescriptorFipElpDescriptorType(self):
@@ -192,7 +235,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFipElpDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpDescriptorFipElpDescriptorType"]
+            ),
+        )
 
     @property
     def FipElpDescriptorFipElpDescriptorLength(self):
@@ -202,7 +251,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFipElpDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpDescriptorFipElpDescriptorLength"]
+            ),
+        )
 
     @property
     def FipElpDescriptorFipElpDescriptorReserved(self):
@@ -212,10 +267,18 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFipElpDescriptorReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpDescriptorFipElpDescriptorReserved"]
+            ),
+        )
 
     @property
-    def FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply(self):
+    def FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply(
+        self,
+    ):
         """
         Display Name: Request/Reply
         Default Value: 3
@@ -223,7 +286,15 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Request, 2, Reply, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpDescriptorFibreChannelRCtlExchangeLinkParametersFipElpDescriptorFibreChannelRCtlExchangeLinkParametersRequestReply"
+                ]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelDId(self):
@@ -233,7 +304,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelDId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelDId"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelCsCtlPriority(self):
@@ -243,7 +320,15 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelCsCtlPriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpFibreChannelFipElpDescriptorFibreChannelCsCtlPriority"
+                ]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelSId(self):
@@ -253,7 +338,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelSId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelSId"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelType(self):
@@ -263,7 +354,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelType"]
+            ),
+        )
 
     @property
     def FCtlExchangeContext(self):
@@ -274,7 +371,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeContext"])
+        )
 
     @property
     def FCtlSequenceContext(self):
@@ -285,7 +385,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceContext"])
+        )
 
     @property
     def FCtlFirstSequence(self):
@@ -296,7 +399,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFirstSequence"])
+        )
 
     @property
     def FCtlLastSequence(self):
@@ -307,7 +413,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlLastSequence"])
+        )
 
     @property
     def FCtlEndSequence(self):
@@ -318,7 +427,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndSequence"])
+        )
 
     @property
     def FCtlEndConnection(self):
@@ -329,7 +441,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlEndConnection"])
+        )
 
     @property
     def FCtlCsCtlPriority(self):
@@ -340,7 +455,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: CS_CTL, 0, Priority, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlCsCtlPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlCsCtlPriority"])
+        )
 
     @property
     def FCtlSequenceInitiative(self):
@@ -351,7 +469,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlSequenceInitiative"])
+        )
 
     @property
     def FCtlFcXidReassigned(self):
@@ -362,7 +483,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcXidReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcXidReassigned"])
+        )
 
     @property
     def FCtlFcInvalidateXid(self):
@@ -373,7 +497,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcInvalidateXid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcInvalidateXid"])
+        )
 
     @property
     def FCtlAckForm(self):
@@ -384,7 +511,8 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAckForm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlAckForm"]))
 
     @property
     def FCtlFcDataCompression(self):
@@ -395,7 +523,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataCompression"])
+        )
 
     @property
     def FCtlFcDataEncryption(self):
@@ -406,7 +537,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlFcDataEncryption"])
+        )
 
     @property
     def FCtlRetransmittedSequence(self):
@@ -417,7 +551,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRetransmittedSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRetransmittedSequence"])
+        )
 
     @property
     def FCtlUnidirectionalTransmit(self):
@@ -428,7 +565,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlUnidirectionalTransmit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlUnidirectionalTransmit"])
+        )
 
     @property
     def FCtlContinueSeqCondition(self):
@@ -439,7 +579,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlContinueSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlContinueSeqCondition"])
+        )
 
     @property
     def FCtlAbortSeqCondition(self):
@@ -450,7 +593,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlAbortSeqCondition"])
+        )
 
     @property
     def FCtlRelativeOffsetPresent(self):
@@ -461,7 +607,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlRelativeOffsetPresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlRelativeOffsetPresent"])
+        )
 
     @property
     def FCtlExchangeReassembly(self):
@@ -472,7 +621,10 @@ class FipElpSwRjtFcf(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FCtlExchangeReassembly"])
+        )
 
     @property
     def FCtlFillBytes(self):
@@ -483,7 +635,8 @@ class FipElpSwRjtFcf(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCtlFillBytes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCtlFillBytes"]))
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelSeqId(self):
@@ -493,7 +646,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelSeqId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelSeqId"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelDfCtl(self):
@@ -503,7 +662,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelDfCtl']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelDfCtl"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelSeqCnt(self):
@@ -513,7 +678,15 @@ class FipElpSwRjtFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelSeqCnt']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpFibreChannelFipElpDescriptorFibreChannelSeqCnt"
+                ]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelOxId(self):
@@ -523,7 +696,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelOxId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelOxId"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelRxId(self):
@@ -533,7 +712,13 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelRxId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipElpFibreChannelFipElpDescriptorFibreChannelRxId"]
+            ),
+        )
 
     @property
     def FipElpFibreChannelFipElpDescriptorFibreChannelParameter(self):
@@ -543,17 +728,35 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpFibreChannelFipElpDescriptorFibreChannelParameter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpFibreChannelFipElpDescriptorFibreChannelParameter"
+                ]
+            ),
+        )
 
     @property
-    def FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject(self):
+    def FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject(
+        self,
+    ):
         """
         Display Name: ELP Reject
         Default Value: 0x01000000
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpDescriptorFcElpCommandCodeFipElpDescriptorFcElpCommandCodeExchangeLinkParametersReject"
+                ]
+            ),
+        )
 
     @property
     def FipElpDescriptorFcElpRequestReplyFipElpDescriptorFcElpSwRjtReasonCodes(self):
@@ -563,7 +766,15 @@ class FipElpSwRjtFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipElpDescriptorFcElpRequestReplyFipElpDescriptorFcElpSwRjtReasonCodes']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipElpDescriptorFcElpRequestReplyFipElpDescriptorFcElpSwRjtReasonCodes"
+                ]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

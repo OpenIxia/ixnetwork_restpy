@@ -239,7 +239,7 @@ class BgpEpePeerSetList(Base):
 
     def add(self, BBit=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
         # type: (bool, bool, str, bool, int, str, int, bool, int) -> BgpEpePeerSetList
-        """Adds a new bgpEpePeerSetList resource on the json, only valid with config assistant
+        """Adds a new bgpEpePeerSetList resource on the json, only valid with batch add utility
 
         Args
         ----

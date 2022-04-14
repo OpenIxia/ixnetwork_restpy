@@ -134,7 +134,7 @@ class MplsLabelList(Base):
 
     def add(self, Name=None):
         # type: (str) -> MplsLabelList
-        """Adds a new mplsLabelList resource on the json, only valid with config assistant
+        """Adds a new mplsLabelList resource on the json, only valid with batch add utility
 
         Args
         ----

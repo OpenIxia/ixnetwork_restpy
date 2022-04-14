@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,25 @@ class TrillMCastIpv6GroupList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trillMCastIpv6GroupList'
+    _SDM_NAME = "trillMCastIpv6GroupList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterGrpUcastAddrIncr': 'interGrpUcastAddrIncr',
-        'LocalSystemID': 'localSystemID',
-        'McastAddrCnt': 'mcastAddrCnt',
-        'McastAddrIncr': 'mcastAddrIncr',
-        'Name': 'name',
-        'SrcGrpMapping': 'srcGrpMapping',
-        'StartMcastAddr': 'startMcastAddr',
-        'StartUcastAddr': 'startUcastAddr',
-        'TopologyId': 'topologyId',
-        'UcastAddrIncr': 'ucastAddrIncr',
-        'UcastSrcCnt': 'ucastSrcCnt',
-        'VlanId': 'vlanId',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InterGrpUcastAddrIncr": "interGrpUcastAddrIncr",
+        "LocalSystemID": "localSystemID",
+        "McastAddrCnt": "mcastAddrCnt",
+        "McastAddrIncr": "mcastAddrIncr",
+        "Name": "name",
+        "SrcGrpMapping": "srcGrpMapping",
+        "StartMcastAddr": "startMcastAddr",
+        "StartUcastAddr": "startUcastAddr",
+        "TopologyId": "topologyId",
+        "UcastAddrIncr": "ucastAddrIncr",
+        "UcastSrcCnt": "ucastSrcCnt",
+        "VlanId": "vlanId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TrillMCastIpv6GroupList, self).__init__(parent, list_op)
@@ -65,7 +65,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -75,7 +76,7 @@ class TrillMCastIpv6GroupList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -85,7 +86,7 @@ class TrillMCastIpv6GroupList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InterGrpUcastAddrIncr(self):
@@ -96,7 +97,10 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter-Group Source Address Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterGrpUcastAddrIncr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterGrpUcastAddrIncr"])
+        )
 
     @property
     def LocalSystemID(self):
@@ -106,7 +110,7 @@ class TrillMCastIpv6GroupList(Base):
         -------
         - list(str): System ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalSystemID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalSystemID"])
 
     @property
     def McastAddrCnt(self):
@@ -117,7 +121,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastAddrCnt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McastAddrCnt"]))
 
     @property
     def McastAddrIncr(self):
@@ -128,7 +133,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastAddrIncr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McastAddrIncr"]))
 
     @property
     def Name(self):
@@ -138,11 +144,12 @@ class TrillMCastIpv6GroupList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SrcGrpMapping(self):
@@ -153,7 +160,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source-Group Mapping
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcGrpMapping']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcGrpMapping"]))
 
     @property
     def StartMcastAddr(self):
@@ -164,7 +172,10 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Multicast Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartMcastAddr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartMcastAddr"])
+        )
 
     @property
     def StartUcastAddr(self):
@@ -175,7 +186,10 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Source Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartUcastAddr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartUcastAddr"])
+        )
 
     @property
     def TopologyId(self):
@@ -186,7 +200,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology/Nickname
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     @property
     def UcastAddrIncr(self):
@@ -197,7 +212,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UcastAddrIncr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UcastAddrIncr"]))
 
     @property
     def UcastSrcCnt(self):
@@ -208,7 +224,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): # Sources per Multicast Group
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UcastSrcCnt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UcastSrcCnt"]))
 
     @property
     def VlanId(self):
@@ -219,7 +236,8 @@ class TrillMCastIpv6GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vlan Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanId"]))
 
     def update(self, Name=None):
         # type: (str) -> TrillMCastIpv6GroupList
@@ -281,7 +299,21 @@ class TrillMCastIpv6GroupList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, InterGrpUcastAddrIncr=None, McastAddrCnt=None, McastAddrIncr=None, SrcGrpMapping=None, StartMcastAddr=None, StartUcastAddr=None, TopologyId=None, UcastAddrIncr=None, UcastSrcCnt=None, VlanId=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        InterGrpUcastAddrIncr=None,
+        McastAddrCnt=None,
+        McastAddrIncr=None,
+        SrcGrpMapping=None,
+        StartMcastAddr=None,
+        StartUcastAddr=None,
+        TopologyId=None,
+        UcastAddrIncr=None,
+        UcastSrcCnt=None,
+        VlanId=None,
+    ):
         """Base class infrastructure that gets a list of trillMCastIpv6GroupList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

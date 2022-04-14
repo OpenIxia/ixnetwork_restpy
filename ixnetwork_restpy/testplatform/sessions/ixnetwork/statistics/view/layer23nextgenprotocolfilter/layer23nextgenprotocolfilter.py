@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,18 @@ class Layer23NextGenProtocolFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23NextGenProtocolFilter'
+    _SDM_NAME = "layer23NextGenProtocolFilter"
     _SDM_ATT_MAP = {
-        'AdvancedCVFilter': 'advancedCVFilter',
-        'AdvancedFilterName': 'advancedFilterName',
-        'AggregationType': 'aggregationType',
-        'AllAdvancedFilters': 'allAdvancedFilters',
-        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
-        'PortFilterIds': 'portFilterIds',
-        'ProtocolFilterIds': 'protocolFilterIds',
+        "AdvancedCVFilter": "advancedCVFilter",
+        "AdvancedFilterName": "advancedFilterName",
+        "AggregationType": "aggregationType",
+        "AllAdvancedFilters": "allAdvancedFilters",
+        "MatchingAdvancedFilters": "matchingAdvancedFilters",
+        "PortFilterIds": "portFilterIds",
+        "ProtocolFilterIds": "protocolFilterIds",
     }
     _SDM_ENUM_MAP = {
-        'aggregationType': ['perPort', 'perSession'],
+        "aggregationType": ["perPort", "perSession"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +63,13 @@ class Layer23NextGenProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import (
+            AdvancedFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvancedFilter', None) is not None:
-                return self._properties.get('AdvancedFilter')
+            if self._properties.get("AdvancedFilter", None) is not None:
+                return self._properties.get("AdvancedFilter")
         return AdvancedFilter(self)
 
     @property
@@ -79,10 +83,13 @@ class Layer23NextGenProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions import AvailableAdvancedFilterOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions import (
+            AvailableAdvancedFilterOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableAdvancedFilterOptions', None) is not None:
-                return self._properties.get('AvailableAdvancedFilterOptions')
+            if self._properties.get("AvailableAdvancedFilterOptions", None) is not None:
+                return self._properties.get("AvailableAdvancedFilterOptions")
         return AvailableAdvancedFilterOptions(self)
 
     @property
@@ -93,11 +100,12 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvancedCVFilter"])
+
     @AdvancedCVFilter.setter
     def AdvancedCVFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvancedCVFilter"], value)
 
     @property
     def AdvancedFilterName(self):
@@ -107,11 +115,12 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str: Selects an advanced filter from the ones available in the selected drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvancedFilterName"])
+
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvancedFilterName"], value)
 
     @property
     def AggregationType(self):
@@ -121,11 +130,12 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(perPort | perSession): Signifies the type of aggregation of next gen protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationType"])
+
     @AggregationType.setter
     def AggregationType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregationType"], value)
 
     @property
     def AllAdvancedFilters(self):
@@ -135,7 +145,7 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllAdvancedFilters"])
 
     @property
     def MatchingAdvancedFilters(self):
@@ -145,7 +155,7 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list that contains only the filters that can be applied on the current drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["MatchingAdvancedFilters"])
 
     @property
     def PortFilterIds(self):
@@ -155,11 +165,12 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Filters the port IDs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
+
     @PortFilterIds.setter
     def PortFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortFilterIds"], value)
 
     @property
     def ProtocolFilterIds(self):
@@ -169,13 +180,21 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Filters the protocol IDs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"])
+
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"], value)
 
-    def update(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
+    def update(
+        self,
+        AdvancedCVFilter=None,
+        AdvancedFilterName=None,
+        AggregationType=None,
+        PortFilterIds=None,
+        ProtocolFilterIds=None,
+    ):
         # type: (str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Updates layer23NextGenProtocolFilter resource on the server.
 
@@ -193,7 +212,14 @@ class Layer23NextGenProtocolFilter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
+    def add(
+        self,
+        AdvancedCVFilter=None,
+        AdvancedFilterName=None,
+        AggregationType=None,
+        PortFilterIds=None,
+        ProtocolFilterIds=None,
+    ):
         # type: (str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Adds a new layer23NextGenProtocolFilter resource on the server and adds it to the container.
 
@@ -225,7 +251,16 @@ class Layer23NextGenProtocolFilter(Base):
         """
         self._delete()
 
-    def find(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, AllAdvancedFilters=None, MatchingAdvancedFilters=None, PortFilterIds=None, ProtocolFilterIds=None):
+    def find(
+        self,
+        AdvancedCVFilter=None,
+        AdvancedFilterName=None,
+        AggregationType=None,
+        AllAdvancedFilters=None,
+        MatchingAdvancedFilters=None,
+        PortFilterIds=None,
+        ProtocolFilterIds=None,
+    ):
         # type: (str, str, str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Finds and retrieves layer23NextGenProtocolFilter resources from the server.
 
@@ -287,10 +322,12 @@ class Layer23NextGenProtocolFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addAdvancedFilter', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addAdvancedFilter", payload=payload, response_object=None)
 
     def RemoveAdvancedFilter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -308,10 +345,14 @@ class Layer23NextGenProtocolFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAdvancedFilter', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "removeAdvancedFilter", payload=payload, response_object=None
+        )
 
     def RemoveAllAdvancedFilters(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -328,7 +369,11 @@ class Layer23NextGenProtocolFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAllAdvancedFilters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "removeAllAdvancedFilters", payload=payload, response_object=None
+        )

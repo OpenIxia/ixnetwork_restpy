@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,31 @@ class Field(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'field'
+    _SDM_NAME = "field"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'Encoding': 'encoding',
-        'IsEditable': 'isEditable',
-        'IsEnabled': 'isEnabled',
-        'Name': 'name',
-        'Size': 'size',
-        'SizeType': 'sizeType',
-        'Value': 'value',
+        "Description": "description",
+        "Encoding": "encoding",
+        "IsEditable": "isEditable",
+        "IsEnabled": "isEnabled",
+        "Name": "name",
+        "Size": "size",
+        "SizeType": "sizeType",
+        "Value": "value",
     }
     _SDM_ENUM_MAP = {
-        'encoding': ['bool', 'decimal', 'fcid', 'float', 'hex', 'ipv4', 'ipv6', 'mac', 'string', 'varLenHex'],
-        'sizeType': ['bit', 'byte'],
+        "encoding": [
+            "bool",
+            "decimal",
+            "fcid",
+            "float",
+            "hex",
+            "ipv4",
+            "ipv6",
+            "mac",
+            "string",
+            "varLenHex",
+        ],
+        "sizeType": ["bit", "byte"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,10 +75,13 @@ class Field(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction_cf6d803d11c6dbc385b70d3f8adf1e34 import Restriction
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction_cf6d803d11c6dbc385b70d3f8adf1e34 import (
+            Restriction,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Restriction', None) is not None:
-                return self._properties.get('Restriction')
+            if self._properties.get("Restriction", None) is not None:
+                return self._properties.get("Restriction")
         return Restriction(self)
 
     @property
@@ -77,11 +92,12 @@ class Field(Base):
         -------
         - str: Description of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Encoding(self):
@@ -91,11 +107,12 @@ class Field(Base):
         -------
         - str(bool | decimal | fcid | float | hex | ipv4 | ipv6 | mac | string | varLenHex): Encoding of the tlv value, any change will result in the value being reset
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Encoding'])
+        return self._get_attribute(self._SDM_ATT_MAP["Encoding"])
+
     @Encoding.setter
     def Encoding(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Encoding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Encoding"], value)
 
     @property
     def IsEditable(self):
@@ -105,11 +122,12 @@ class Field(Base):
         -------
         - bool: Indicates whether this is editable or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsEnabled(self):
@@ -119,11 +137,12 @@ class Field(Base):
         -------
         - bool: Enables/disables this field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def Name(self):
@@ -133,11 +152,12 @@ class Field(Base):
         -------
         - str: Name of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Size(self):
@@ -147,11 +167,12 @@ class Field(Base):
         -------
         - number: Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Size'])
+        return self._get_attribute(self._SDM_ATT_MAP["Size"])
+
     @Size.setter
     def Size(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Size'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Size"], value)
 
     @property
     def SizeType(self):
@@ -161,11 +182,12 @@ class Field(Base):
         -------
         - str(bit | byte): Size type of the tlv value, any change will result in the value being reset
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SizeType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SizeType"])
+
     @SizeType.setter
     def SizeType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SizeType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SizeType"], value)
 
     @property
     def Value(self):
@@ -176,9 +198,19 @@ class Field(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value represented as a multivalue object
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
-    def update(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Value"]))
+
+    def update(
+        self,
+        Description=None,
+        Encoding=None,
+        IsEditable=None,
+        IsEnabled=None,
+        Name=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (str, str, bool, bool, str, int, str) -> Field
         """Updates field resource on the server.
 
@@ -201,9 +233,18 @@ class Field(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
+    def add(
+        self,
+        Description=None,
+        Encoding=None,
+        IsEditable=None,
+        IsEnabled=None,
+        Name=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (str, str, bool, bool, str, int, str) -> Field
-        """Adds a new field resource on the json, only valid with config assistant
+        """Adds a new field resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -225,7 +266,16 @@ class Field(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
+    def find(
+        self,
+        Description=None,
+        Encoding=None,
+        IsEditable=None,
+        IsEnabled=None,
+        Name=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (str, str, bool, bool, str, int, str) -> Field
         """Finds and retrieves field resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class CustomTopology(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopology'
+    _SDM_NAME = "customTopology"
     _SDM_ATT_MAP = {
-        'CapRouterId': 'capRouterId',
-        'EnableHostname': 'enableHostname',
-        'Enabled': 'enabled',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
-        'StartSysId': 'startSysId',
-        'SysIdInc': 'sysIdInc',
+        "CapRouterId": "capRouterId",
+        "EnableHostname": "enableHostname",
+        "Enabled": "enabled",
+        "HostNamePrefix": "hostNamePrefix",
+        "InterfaceMetric": "interfaceMetric",
+        "StartSysId": "startSysId",
+        "SysIdInc": "sysIdInc",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTopology, self).__init__(parent, list_op)
@@ -61,10 +61,16 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv4grouprange_9d19522687e570b2612a647ef6eec0f3 import CustomTopologyMulticastIpv4GroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv4grouprange_9d19522687e570b2612a647ef6eec0f3 import (
+            CustomTopologyMulticastIpv4GroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyMulticastIpv4GroupRange', None) is not None:
-                return self._properties.get('CustomTopologyMulticastIpv4GroupRange')
+            if (
+                self._properties.get("CustomTopologyMulticastIpv4GroupRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologyMulticastIpv4GroupRange")
         return CustomTopologyMulticastIpv4GroupRange(self)
 
     @property
@@ -78,10 +84,16 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv6grouprange_1084bcd8c4ba63b5afb4987b4a06e574 import CustomTopologyMulticastIpv6GroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv6grouprange_1084bcd8c4ba63b5afb4987b4a06e574 import (
+            CustomTopologyMulticastIpv6GroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyMulticastIpv6GroupRange', None) is not None:
-                return self._properties.get('CustomTopologyMulticastIpv6GroupRange')
+            if (
+                self._properties.get("CustomTopologyMulticastIpv6GroupRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologyMulticastIpv6GroupRange")
         return CustomTopologyMulticastIpv6GroupRange(self)
 
     @property
@@ -95,10 +107,16 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastmacrange_3e16b26e0a0e86e9899bec4037756f4b import CustomTopologyMulticastMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastmacrange_3e16b26e0a0e86e9899bec4037756f4b import (
+            CustomTopologyMulticastMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyMulticastMacRange', None) is not None:
-                return self._properties.get('CustomTopologyMulticastMacRange')
+            if (
+                self._properties.get("CustomTopologyMulticastMacRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologyMulticastMacRange")
         return CustomTopologyMulticastMacRange(self)
 
     @property
@@ -112,10 +130,13 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynode_0b9b312d608aa93cb26d0457892552b0 import CustomTopologyNode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynode_0b9b312d608aa93cb26d0457892552b0 import (
+            CustomTopologyNode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyNode', None) is not None:
-                return self._properties.get('CustomTopologyNode')
+            if self._properties.get("CustomTopologyNode", None) is not None:
+                return self._properties.get("CustomTopologyNode")
         return CustomTopologyNode(self)
 
     @property
@@ -129,10 +150,16 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynodetopologyrange_4d32635ad74f7f368c2bf92ae60c207c import CustomTopologyNodeTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynodetopologyrange_4d32635ad74f7f368c2bf92ae60c207c import (
+            CustomTopologyNodeTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyNodeTopologyRange', None) is not None:
-                return self._properties.get('CustomTopologyNodeTopologyRange')
+            if (
+                self._properties.get("CustomTopologyNodeTopologyRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologyNodeTopologyRange")
         return CustomTopologyNodeTopologyRange(self)
 
     @property
@@ -146,10 +173,13 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyrblinks_0932f6b9efaed07e8b33d7f83f8c0051 import CustomTopologyRbLinks
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyrblinks_0932f6b9efaed07e8b33d7f83f8c0051 import (
+            CustomTopologyRbLinks,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyRbLinks', None) is not None:
-                return self._properties.get('CustomTopologyRbLinks')
+            if self._properties.get("CustomTopologyRbLinks", None) is not None:
+                return self._properties.get("CustomTopologyRbLinks")
         return CustomTopologyRbLinks(self)
 
     @property
@@ -163,10 +193,16 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodetopologyrange_f8b5e7f7ba20491acaffdef257a0259c import CustomTopologySpbNodeTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodetopologyrange_f8b5e7f7ba20491acaffdef257a0259c import (
+            CustomTopologySpbNodeTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologySpbNodeTopologyRange', None) is not None:
-                return self._properties.get('CustomTopologySpbNodeTopologyRange')
+            if (
+                self._properties.get("CustomTopologySpbNodeTopologyRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologySpbNodeTopologyRange")
         return CustomTopologySpbNodeTopologyRange(self)
 
     @property
@@ -180,10 +216,13 @@ class CustomTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyunicastmacrange_45433238099b8e4640614c04f49605bb import CustomTopologyUnicastMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyunicastmacrange_45433238099b8e4640614c04f49605bb import (
+            CustomTopologyUnicastMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyUnicastMacRange', None) is not None:
-                return self._properties.get('CustomTopologyUnicastMacRange')
+            if self._properties.get("CustomTopologyUnicastMacRange", None) is not None:
+                return self._properties.get("CustomTopologyUnicastMacRange")
         return CustomTopologyUnicastMacRange(self)
 
     @property
@@ -194,11 +233,12 @@ class CustomTopology(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CapRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CapRouterId"])
+
     @CapRouterId.setter
     def CapRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CapRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CapRouterId"], value)
 
     @property
     def EnableHostname(self):
@@ -208,11 +248,12 @@ class CustomTopology(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHostname'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHostname"])
+
     @EnableHostname.setter
     def EnableHostname(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHostname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHostname"], value)
 
     @property
     def Enabled(self):
@@ -222,11 +263,12 @@ class CustomTopology(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HostNamePrefix(self):
@@ -236,11 +278,12 @@ class CustomTopology(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostNamePrefix"])
+
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostNamePrefix"], value)
 
     @property
     def InterfaceMetric(self):
@@ -250,11 +293,12 @@ class CustomTopology(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceMetric"], value)
 
     @property
     def StartSysId(self):
@@ -264,11 +308,12 @@ class CustomTopology(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSysId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSysId"])
+
     @StartSysId.setter
     def StartSysId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSysId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSysId"], value)
 
     @property
     def SysIdInc(self):
@@ -278,13 +323,23 @@ class CustomTopology(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SysIdInc'])
+        return self._get_attribute(self._SDM_ATT_MAP["SysIdInc"])
+
     @SysIdInc.setter
     def SysIdInc(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SysIdInc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SysIdInc"], value)
 
-    def update(self, CapRouterId=None, EnableHostname=None, Enabled=None, HostNamePrefix=None, InterfaceMetric=None, StartSysId=None, SysIdInc=None):
+    def update(
+        self,
+        CapRouterId=None,
+        EnableHostname=None,
+        Enabled=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        StartSysId=None,
+        SysIdInc=None,
+    ):
         # type: (str, bool, bool, str, int, str, str) -> CustomTopology
         """Updates customTopology resource on the server.
 
@@ -304,7 +359,16 @@ class CustomTopology(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CapRouterId=None, EnableHostname=None, Enabled=None, HostNamePrefix=None, InterfaceMetric=None, StartSysId=None, SysIdInc=None):
+    def add(
+        self,
+        CapRouterId=None,
+        EnableHostname=None,
+        Enabled=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        StartSysId=None,
+        SysIdInc=None,
+    ):
         # type: (str, bool, bool, str, int, str, str) -> CustomTopology
         """Adds a new customTopology resource on the server and adds it to the container.
 
@@ -338,7 +402,16 @@ class CustomTopology(Base):
         """
         self._delete()
 
-    def find(self, CapRouterId=None, EnableHostname=None, Enabled=None, HostNamePrefix=None, InterfaceMetric=None, StartSysId=None, SysIdInc=None):
+    def find(
+        self,
+        CapRouterId=None,
+        EnableHostname=None,
+        Enabled=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        StartSysId=None,
+        SysIdInc=None,
+    ):
         # type: (str, bool, bool, str, int, str, str) -> CustomTopology
         """Finds and retrieves customTopology resources from the server.
 

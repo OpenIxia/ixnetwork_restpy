@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,20 @@ class IgmpGroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpGroupRange'
+    _SDM_NAME = "igmpGroupRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'FilterMode': 'filterMode',
-        'Increment': 'increment',
-        'IpAddress': 'ipAddress',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'SourceCount': 'sourceCount',
-        'SourceIncrement': 'sourceIncrement',
-        'SourceIpAddress': 'sourceIpAddress',
-        'Type': 'type',
+        "Count": "count",
+        "FilterMode": "filterMode",
+        "Increment": "increment",
+        "IpAddress": "ipAddress",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "SourceCount": "sourceCount",
+        "SourceIncrement": "sourceIncrement",
+        "SourceIpAddress": "sourceIpAddress",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpGroupRange, self).__init__(parent, list_op)
@@ -61,11 +61,12 @@ class IgmpGroupRange(Base):
         -------
         - number: The count of multicast groups in a range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def FilterMode(self):
@@ -75,11 +76,12 @@ class IgmpGroupRange(Base):
         -------
         - str: Define the Group Record type included in the Report messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterMode"])
+
     @FilterMode.setter
     def FilterMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterMode"], value)
 
     @property
     def Increment(self):
@@ -89,11 +91,12 @@ class IgmpGroupRange(Base):
         -------
         - str: The value used to enumerate all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["Increment"])
+
     @Increment.setter
     def Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Increment"], value)
 
     @property
     def IpAddress(self):
@@ -103,11 +106,12 @@ class IgmpGroupRange(Base):
         -------
         - str: The IP address of the first multicast group in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def Name(self):
@@ -117,11 +121,12 @@ class IgmpGroupRange(Base):
         -------
         - str: -The name of the range containing multicast groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -131,7 +136,7 @@ class IgmpGroupRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SourceCount(self):
@@ -141,11 +146,12 @@ class IgmpGroupRange(Base):
         -------
         - number: The count of sources in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceCount"])
+
     @SourceCount.setter
     def SourceCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceCount"], value)
 
     @property
     def SourceIncrement(self):
@@ -155,11 +161,12 @@ class IgmpGroupRange(Base):
         -------
         - str: The value used to enumerate all the source addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceIncrement"])
+
     @SourceIncrement.setter
     def SourceIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceIncrement"], value)
 
     @property
     def SourceIpAddress(self):
@@ -169,11 +176,12 @@ class IgmpGroupRange(Base):
         -------
         - str: The starting IP address of a range of sources.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceIpAddress"])
+
     @SourceIpAddress.setter
     def SourceIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceIpAddress"], value)
 
     @property
     def Type(self):
@@ -183,13 +191,25 @@ class IgmpGroupRange(Base):
         -------
         - str: The type of the multicast group range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
+    def update(
+        self,
+        Count=None,
+        FilterMode=None,
+        Increment=None,
+        IpAddress=None,
+        Name=None,
+        SourceCount=None,
+        SourceIncrement=None,
+        SourceIpAddress=None,
+        Type=None,
+    ):
         # type: (int, str, str, str, str, int, str, str, str) -> IgmpGroupRange
         """Updates igmpGroupRange resource on the server.
 
@@ -211,7 +231,18 @@ class IgmpGroupRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
+    def add(
+        self,
+        Count=None,
+        FilterMode=None,
+        Increment=None,
+        IpAddress=None,
+        Name=None,
+        SourceCount=None,
+        SourceIncrement=None,
+        SourceIpAddress=None,
+        Type=None,
+    ):
         # type: (int, str, str, str, str, int, str, str, str) -> IgmpGroupRange
         """Adds a new igmpGroupRange resource on the server and adds it to the container.
 
@@ -247,7 +278,19 @@ class IgmpGroupRange(Base):
         """
         self._delete()
 
-    def find(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, ObjectId=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
+    def find(
+        self,
+        Count=None,
+        FilterMode=None,
+        Increment=None,
+        IpAddress=None,
+        Name=None,
+        ObjectId=None,
+        SourceCount=None,
+        SourceIncrement=None,
+        SourceIpAddress=None,
+        Type=None,
+    ):
         # type: (int, str, str, str, str, str, int, str, str, str) -> IgmpGroupRange
         """Finds and retrieves igmpGroupRange resources from the server.
 

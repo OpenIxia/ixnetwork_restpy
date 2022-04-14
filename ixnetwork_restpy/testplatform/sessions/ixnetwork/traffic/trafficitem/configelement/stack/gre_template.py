@@ -4,22 +4,22 @@ from ixnetwork_restpy.files import Files
 
 class Gre(Base):
     __slots__ = ()
-    _SDM_NAME = 'gre'
+    _SDM_NAME = "gre"
     _SDM_ATT_MAP = {
-        'ChecksumPresent': 'gre.header.checksumPresent-1',
-        'Reserved1': 'gre.header.reserved1-2',
-        'KeyPresent': 'gre.header.keyPresent-3',
-        'SequencePresent': 'gre.header.sequencePresent-4',
-        'Reserved2': 'gre.header.reserved2-5',
-        'Version': 'gre.header.version-6',
-        'Protocol': 'gre.header.protocol-7',
-        'WithChecksumChecksum': 'gre.header.checksumHolder.withChecksum.checksum-8',
-        'WithChecksumReserved': 'gre.header.checksumHolder.withChecksum.reserved-9',
-        'ChecksumHolderNoChecksum': 'gre.header.checksumHolder.noChecksum-10',
-        'KeyHolderKey': 'gre.header.keyHolder.key-11',
-        'KeyHolderNoKey': 'gre.header.keyHolder.noKey-12',
-        'SequenceHolderSequenceNum': 'gre.header.sequenceHolder.sequenceNum-13',
-        'SequenceHolderNoSequenceNum': 'gre.header.sequenceHolder.noSequenceNum-14',
+        "ChecksumPresent": "gre.header.checksumPresent-1",
+        "Reserved1": "gre.header.reserved1-2",
+        "KeyPresent": "gre.header.keyPresent-3",
+        "SequencePresent": "gre.header.sequencePresent-4",
+        "Reserved2": "gre.header.reserved2-5",
+        "Version": "gre.header.version-6",
+        "Protocol": "gre.header.protocol-7",
+        "WithChecksumChecksum": "gre.header.checksumHolder.withChecksum.checksum-8",
+        "WithChecksumReserved": "gre.header.checksumHolder.withChecksum.reserved-9",
+        "ChecksumHolderNoChecksum": "gre.header.checksumHolder.noChecksum-10",
+        "KeyHolderKey": "gre.header.keyHolder.key-11",
+        "KeyHolderNoKey": "gre.header.keyHolder.noKey-12",
+        "SequenceHolderSequenceNum": "gre.header.sequenceHolder.sequenceNum-13",
+        "SequenceHolderNoSequenceNum": "gre.header.sequenceHolder.noSequenceNum-14",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class Gre(Base):
         Available enum values: 0:No Checksum, 0, 1:Has Checksum, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumPresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumPresent"])
+        )
 
     @property
     def Reserved1(self):
@@ -44,7 +47,8 @@ class Gre(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved1"]))
 
     @property
     def KeyPresent(self):
@@ -55,7 +59,8 @@ class Gre(Base):
         Available enum values: 0:No Key field, 0, 1:Has Key field, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyPresent']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyPresent"]))
 
     @property
     def SequencePresent(self):
@@ -66,7 +71,10 @@ class Gre(Base):
         Available enum values: 0:No sequence number field, 0, 1:Has sequence number field, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequencePresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequencePresent"])
+        )
 
     @property
     def Reserved2(self):
@@ -76,7 +84,8 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved2"]))
 
     @property
     def Version(self):
@@ -86,7 +95,8 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Protocol(self):
@@ -96,7 +106,8 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Protocol']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Protocol"]))
 
     @property
     def WithChecksumChecksum(self):
@@ -106,7 +117,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WithChecksumChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WithChecksumChecksum"])
+        )
 
     @property
     def WithChecksumReserved(self):
@@ -116,7 +130,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WithChecksumReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WithChecksumReserved"])
+        )
 
     @property
     def ChecksumHolderNoChecksum(self):
@@ -126,7 +143,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumHolderNoChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumHolderNoChecksum"])
+        )
 
     @property
     def KeyHolderKey(self):
@@ -136,7 +156,8 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyHolderKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyHolderKey"]))
 
     @property
     def KeyHolderNoKey(self):
@@ -146,7 +167,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyHolderNoKey']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyHolderNoKey"])
+        )
 
     @property
     def SequenceHolderSequenceNum(self):
@@ -156,7 +180,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceHolderSequenceNum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceHolderSequenceNum"])
+        )
 
     @property
     def SequenceHolderNoSequenceNum(self):
@@ -166,7 +193,10 @@ class Gre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceHolderNoSequenceNum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceHolderNoSequenceNum"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -307,7 +307,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> IPv4PseudoNodeRoutes
-        """Adds a new IPv4PseudoNodeRoutes resource on the json, only valid with config assistant
+        """Adds a new IPv4PseudoNodeRoutes resource on the json, only valid with batch add utility
 
         Args
         ----

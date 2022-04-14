@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,54 +33,67 @@ class Capture(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'capture'
+    _SDM_NAME = "capture"
     _SDM_ATT_MAP = {
-        'AfterTriggerFilter': 'afterTriggerFilter',
-        'BeforeTriggerFilter': 'beforeTriggerFilter',
-        'CaptureMode': 'captureMode',
-        'ContinuousFilters': 'continuousFilters',
-        'ControlActiveCapture': 'controlActiveCapture',
-        'ControlBufferBehaviour': 'controlBufferBehaviour',
-        'ControlBufferSize': 'controlBufferSize',
-        'ControlCaptureFilter': 'controlCaptureFilter',
-        'ControlCaptureState': 'controlCaptureState',
-        'ControlCaptureTrigger': 'controlCaptureTrigger',
-        'ControlCapturedPacketCounter': 'controlCapturedPacketCounter',
-        'ControlCaptures': 'controlCaptures',
-        'ControlDecodeAsCurrentFilter': 'controlDecodeAsCurrentFilter',
-        'ControlInterfaceType': 'controlInterfaceType',
-        'ControlPacketCounter': 'controlPacketCounter',
-        'ControlSliceSize': 'controlSliceSize',
-        'DataActiveCapture': 'dataActiveCapture',
-        'DataCaptureState': 'dataCaptureState',
-        'DataCapturedPacketCounter': 'dataCapturedPacketCounter',
-        'DataCaptures': 'dataCaptures',
-        'DataDecodeAsCurrentFilter': 'dataDecodeAsCurrentFilter',
-        'DataPacketCounter': 'dataPacketCounter',
-        'DataReceiveTimestamp': 'dataReceiveTimestamp',
-        'DecodeAsLinkProtocols': 'decodeAsLinkProtocols',
-        'DecodeAsNetworkProtocols': 'decodeAsNetworkProtocols',
-        'DecodeAsTransportProtocols': 'decodeAsTransportProtocols',
-        'DisplayFiltersControlCapture': 'displayFiltersControlCapture',
-        'DisplayFiltersDataCapture': 'displayFiltersDataCapture',
-        'HardwareEnabled': 'hardwareEnabled',
-        'IsCaptureRunning': 'isCaptureRunning',
-        'IsControlCaptureRunning': 'isControlCaptureRunning',
-        'IsDataCaptureRunning': 'isDataCaptureRunning',
-        'SliceSize': 'sliceSize',
-        'SoftwareEnabled': 'softwareEnabled',
-        'TriggerPosition': 'triggerPosition',
+        "AfterTriggerFilter": "afterTriggerFilter",
+        "BeforeTriggerFilter": "beforeTriggerFilter",
+        "CaptureMode": "captureMode",
+        "ContinuousFilters": "continuousFilters",
+        "ControlActiveCapture": "controlActiveCapture",
+        "ControlBufferBehaviour": "controlBufferBehaviour",
+        "ControlBufferSize": "controlBufferSize",
+        "ControlCaptureFilter": "controlCaptureFilter",
+        "ControlCaptureState": "controlCaptureState",
+        "ControlCaptureTrigger": "controlCaptureTrigger",
+        "ControlCapturedPacketCounter": "controlCapturedPacketCounter",
+        "ControlCaptures": "controlCaptures",
+        "ControlDecodeAsCurrentFilter": "controlDecodeAsCurrentFilter",
+        "ControlInterfaceType": "controlInterfaceType",
+        "ControlPacketCounter": "controlPacketCounter",
+        "ControlSliceSize": "controlSliceSize",
+        "DataActiveCapture": "dataActiveCapture",
+        "DataCaptureState": "dataCaptureState",
+        "DataCapturedPacketCounter": "dataCapturedPacketCounter",
+        "DataCaptures": "dataCaptures",
+        "DataDecodeAsCurrentFilter": "dataDecodeAsCurrentFilter",
+        "DataPacketCounter": "dataPacketCounter",
+        "DataReceiveTimestamp": "dataReceiveTimestamp",
+        "DecodeAsLinkProtocols": "decodeAsLinkProtocols",
+        "DecodeAsNetworkProtocols": "decodeAsNetworkProtocols",
+        "DecodeAsTransportProtocols": "decodeAsTransportProtocols",
+        "DisplayFiltersControlCapture": "displayFiltersControlCapture",
+        "DisplayFiltersDataCapture": "displayFiltersDataCapture",
+        "HardwareEnabled": "hardwareEnabled",
+        "IsCaptureRunning": "isCaptureRunning",
+        "IsControlCaptureRunning": "isControlCaptureRunning",
+        "IsDataCaptureRunning": "isDataCaptureRunning",
+        "SliceSize": "sliceSize",
+        "SoftwareEnabled": "softwareEnabled",
+        "TriggerPosition": "triggerPosition",
     }
     _SDM_ENUM_MAP = {
-        'afterTriggerFilter': ['captureAfterTriggerAll', 'captureAfterTriggerConditionFilter', 'captureAfterTriggerFilter'],
-        'beforeTriggerFilter': ['captureBeforeTriggerAll', 'captureBeforeTriggerFilter', 'captureBeforeTriggerNone'],
-        'captureMode': ['captureContinuousMode', 'captureTriggerMode'],
-        'continuousFilters': ['captureContinuousAll', 'captureContinuousFilter'],
-        'controlBufferBehaviour': ['bufferAfterStopCircular', 'bufferAfterStopNonCircular', 'bufferLiveCircular', 'bufferLiveNonCircular'],
-        'controlCaptureState': ['notReady', 'ready'],
-        'controlInterfaceType': ['anyInterface', 'specificInterface'],
-        'dataCaptureState': ['notReady', 'ready'],
-        'dataReceiveTimestamp': ['chassisUtcTime', 'hwTimestamp'],
+        "afterTriggerFilter": [
+            "captureAfterTriggerAll",
+            "captureAfterTriggerConditionFilter",
+            "captureAfterTriggerFilter",
+        ],
+        "beforeTriggerFilter": [
+            "captureBeforeTriggerAll",
+            "captureBeforeTriggerFilter",
+            "captureBeforeTriggerNone",
+        ],
+        "captureMode": ["captureContinuousMode", "captureTriggerMode"],
+        "continuousFilters": ["captureContinuousAll", "captureContinuousFilter"],
+        "controlBufferBehaviour": [
+            "bufferAfterStopCircular",
+            "bufferAfterStopNonCircular",
+            "bufferLiveCircular",
+            "bufferLiveNonCircular",
+        ],
+        "controlCaptureState": ["notReady", "ready"],
+        "controlInterfaceType": ["anyInterface", "specificInterface"],
+        "dataCaptureState": ["notReady", "ready"],
+        "dataReceiveTimestamp": ["chassisUtcTime", "hwTimestamp"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -96,10 +110,13 @@ class Capture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.currentpacket import CurrentPacket
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.currentpacket import (
+            CurrentPacket,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CurrentPacket', None) is not None:
-                return self._properties.get('CurrentPacket')
+            if self._properties.get("CurrentPacket", None) is not None:
+                return self._properties.get("CurrentPacket")
         return CurrentPacket(self)._select()
 
     @property
@@ -113,10 +130,13 @@ class Capture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filter.filter import Filter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filter.filter import (
+            Filter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Filter', None) is not None:
-                return self._properties.get('Filter')
+            if self._properties.get("Filter", None) is not None:
+                return self._properties.get("Filter")
         return Filter(self)._select()
 
     @property
@@ -130,10 +150,13 @@ class Capture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filterpallette.filterpallette import FilterPallette
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filterpallette.filterpallette import (
+            FilterPallette,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FilterPallette', None) is not None:
-                return self._properties.get('FilterPallette')
+            if self._properties.get("FilterPallette", None) is not None:
+                return self._properties.get("FilterPallette")
         return FilterPallette(self)._select()
 
     @property
@@ -147,10 +170,13 @@ class Capture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.trigger.trigger import Trigger
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.trigger.trigger import (
+            Trigger,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Trigger', None) is not None:
-                return self._properties.get('Trigger')
+            if self._properties.get("Trigger", None) is not None:
+                return self._properties.get("Trigger")
         return Trigger(self)._select()
 
     @property
@@ -161,11 +187,12 @@ class Capture(Base):
         -------
         - str(captureAfterTriggerAll | captureAfterTriggerConditionFilter | captureAfterTriggerFilter): Controls the capture of data after triggering when operating in triggered mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AfterTriggerFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["AfterTriggerFilter"])
+
     @AfterTriggerFilter.setter
     def AfterTriggerFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AfterTriggerFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AfterTriggerFilter"], value)
 
     @property
     def BeforeTriggerFilter(self):
@@ -175,11 +202,12 @@ class Capture(Base):
         -------
         - str(captureBeforeTriggerAll | captureBeforeTriggerFilter | captureBeforeTriggerNone): Controls the capture of data prior to triggering when operating in triggered mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BeforeTriggerFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["BeforeTriggerFilter"])
+
     @BeforeTriggerFilter.setter
     def BeforeTriggerFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BeforeTriggerFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BeforeTriggerFilter"], value)
 
     @property
     def CaptureMode(self):
@@ -189,11 +217,12 @@ class Capture(Base):
         -------
         - str(captureContinuousMode | captureTriggerMode): Controls whether data capture is performed in a continuous or triggered mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CaptureMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["CaptureMode"])
+
     @CaptureMode.setter
     def CaptureMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CaptureMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CaptureMode"], value)
 
     @property
     def ContinuousFilters(self):
@@ -203,11 +232,12 @@ class Capture(Base):
         -------
         - str(captureContinuousAll | captureContinuousFilter): Controls the circular buffer behaviour: continuous capture of all received packets or continuous capture of received packets which match the filter conditions applied.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuousFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuousFilters"])
+
     @ContinuousFilters.setter
     def ContinuousFilters(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ContinuousFilters'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ContinuousFilters"], value)
 
     @property
     def ControlActiveCapture(self):
@@ -217,11 +247,12 @@ class Capture(Base):
         -------
         - str: The name of the active control capture (if any).The active control capture is the last one made on the port by default; but the user can change it using this attribute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlActiveCapture'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlActiveCapture"])
+
     @ControlActiveCapture.setter
     def ControlActiveCapture(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlActiveCapture'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlActiveCapture"], value)
 
     @property
     def ControlBufferBehaviour(self):
@@ -231,11 +262,12 @@ class Capture(Base):
         -------
         - str(bufferAfterStopCircular | bufferAfterStopNonCircular | bufferLiveCircular | bufferLiveNonCircular): Sets the control capture buffer behavior.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlBufferBehaviour'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlBufferBehaviour"])
+
     @ControlBufferBehaviour.setter
     def ControlBufferBehaviour(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlBufferBehaviour'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlBufferBehaviour"], value)
 
     @property
     def ControlBufferSize(self):
@@ -245,11 +277,12 @@ class Capture(Base):
         -------
         - number: Sets the size(%) of the ports memory used by the control capture.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlBufferSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlBufferSize"])
+
     @ControlBufferSize.setter
     def ControlBufferSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlBufferSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlBufferSize"], value)
 
     @property
     def ControlCaptureFilter(self):
@@ -259,11 +292,12 @@ class Capture(Base):
         -------
         - str: Controls the dividing line within the capture buffer between before trigger data and post trigger data.This control is only useful in triggered mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlCaptureFilter"])
+
     @ControlCaptureFilter.setter
     def ControlCaptureFilter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlCaptureFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlCaptureFilter"], value)
 
     @property
     def ControlCaptureState(self):
@@ -273,7 +307,7 @@ class Capture(Base):
         -------
         - str(notReady | ready): Current state of the control capture (if there are packets uploading in GUI or not).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlCaptureState"])
 
     @property
     def ControlCaptureTrigger(self):
@@ -283,11 +317,12 @@ class Capture(Base):
         -------
         - str: This is the control Trigger string.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureTrigger'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlCaptureTrigger"])
+
     @ControlCaptureTrigger.setter
     def ControlCaptureTrigger(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlCaptureTrigger'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlCaptureTrigger"], value)
 
     @property
     def ControlCapturedPacketCounter(self):
@@ -295,9 +330,9 @@ class Capture(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlCapturedPacketCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlCapturedPacketCounter"])
 
     @property
     def ControlCaptures(self):
@@ -307,7 +342,7 @@ class Capture(Base):
         -------
         - str: The list of control captures which are available for the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlCaptures'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlCaptures"])
 
     @property
     def ControlDecodeAsCurrentFilter(self):
@@ -317,7 +352,7 @@ class Capture(Base):
         -------
         - str: The control capture decode as filter used by last decode as operation (if any).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlDecodeAsCurrentFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlDecodeAsCurrentFilter"])
 
     @property
     def ControlInterfaceType(self):
@@ -327,11 +362,12 @@ class Capture(Base):
         -------
         - str(anyInterface | specificInterface): Enables control capture on the desired interfaces.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlInterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlInterfaceType"])
+
     @ControlInterfaceType.setter
     def ControlInterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlInterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlInterfaceType"], value)
 
     @property
     def ControlPacketCounter(self):
@@ -341,7 +377,7 @@ class Capture(Base):
         -------
         - number: Shows the number of control capture packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlPacketCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlPacketCounter"])
 
     @property
     def ControlSliceSize(self):
@@ -351,11 +387,12 @@ class Capture(Base):
         -------
         - number: Sets the size of the control capture slices.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlSliceSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlSliceSize"])
+
     @ControlSliceSize.setter
     def ControlSliceSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlSliceSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlSliceSize"], value)
 
     @property
     def DataActiveCapture(self):
@@ -365,11 +402,12 @@ class Capture(Base):
         -------
         - str: The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataActiveCapture'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataActiveCapture"])
+
     @DataActiveCapture.setter
     def DataActiveCapture(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataActiveCapture'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataActiveCapture"], value)
 
     @property
     def DataCaptureState(self):
@@ -379,7 +417,7 @@ class Capture(Base):
         -------
         - str(notReady | ready): Current state of the data capture; ready if all packets have been uploaded on client or notReady if packet uploading is in progress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataCaptureState'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataCaptureState"])
 
     @property
     def DataCapturedPacketCounter(self):
@@ -387,9 +425,9 @@ class Capture(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataCapturedPacketCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataCapturedPacketCounter"])
 
     @property
     def DataCaptures(self):
@@ -399,7 +437,7 @@ class Capture(Base):
         -------
         - str: The list of data captures which are available for the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataCaptures'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataCaptures"])
 
     @property
     def DataDecodeAsCurrentFilter(self):
@@ -409,7 +447,7 @@ class Capture(Base):
         -------
         - str: The data capture decode as filter used by last decode as operation (if any).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataDecodeAsCurrentFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataDecodeAsCurrentFilter"])
 
     @property
     def DataPacketCounter(self):
@@ -419,7 +457,7 @@ class Capture(Base):
         -------
         - number: Shows the number of data capture packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPacketCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPacketCounter"])
 
     @property
     def DataReceiveTimestamp(self):
@@ -429,11 +467,12 @@ class Capture(Base):
         -------
         - str(chassisUtcTime | hwTimestamp): Controls whether the data capture packets timestamp are using the chassis UTC time or the HW timestamp.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataReceiveTimestamp'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataReceiveTimestamp"])
+
     @DataReceiveTimestamp.setter
     def DataReceiveTimestamp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataReceiveTimestamp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataReceiveTimestamp"], value)
 
     @property
     def DecodeAsLinkProtocols(self):
@@ -443,7 +482,7 @@ class Capture(Base):
         -------
         - list(str): List with link protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DecodeAsLinkProtocols'])
+        return self._get_attribute(self._SDM_ATT_MAP["DecodeAsLinkProtocols"])
 
     @property
     def DecodeAsNetworkProtocols(self):
@@ -453,7 +492,7 @@ class Capture(Base):
         -------
         - list(str): List with network protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DecodeAsNetworkProtocols'])
+        return self._get_attribute(self._SDM_ATT_MAP["DecodeAsNetworkProtocols"])
 
     @property
     def DecodeAsTransportProtocols(self):
@@ -463,7 +502,7 @@ class Capture(Base):
         -------
         - list(str): List with transport protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DecodeAsTransportProtocols'])
+        return self._get_attribute(self._SDM_ATT_MAP["DecodeAsTransportProtocols"])
 
     @property
     def DisplayFiltersControlCapture(self):
@@ -473,11 +512,12 @@ class Capture(Base):
         -------
         - str: Displays the packet filter set inside the control capture that is used to filter the already captured packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayFiltersControlCapture'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayFiltersControlCapture"])
+
     @DisplayFiltersControlCapture.setter
     def DisplayFiltersControlCapture(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DisplayFiltersControlCapture'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DisplayFiltersControlCapture"], value)
 
     @property
     def DisplayFiltersDataCapture(self):
@@ -487,11 +527,12 @@ class Capture(Base):
         -------
         - str: Displays the packet filter set inside the data capture that is used to filter the already captured packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayFiltersDataCapture'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayFiltersDataCapture"])
+
     @DisplayFiltersDataCapture.setter
     def DisplayFiltersDataCapture(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DisplayFiltersDataCapture'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DisplayFiltersDataCapture"], value)
 
     @property
     def HardwareEnabled(self):
@@ -501,11 +542,12 @@ class Capture(Base):
         -------
         - bool: If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HardwareEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["HardwareEnabled"])
+
     @HardwareEnabled.setter
     def HardwareEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HardwareEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HardwareEnabled"], value)
 
     @property
     def IsCaptureRunning(self):
@@ -515,7 +557,7 @@ class Capture(Base):
         -------
         - bool: Indicates if the capture is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsCaptureRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsCaptureRunning"])
 
     @property
     def IsControlCaptureRunning(self):
@@ -525,7 +567,7 @@ class Capture(Base):
         -------
         - bool: Indicates if the control capture is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsControlCaptureRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsControlCaptureRunning"])
 
     @property
     def IsDataCaptureRunning(self):
@@ -535,7 +577,7 @@ class Capture(Base):
         -------
         - bool: Indicates if the data capture is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsDataCaptureRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsDataCaptureRunning"])
 
     @property
     def SliceSize(self):
@@ -545,11 +587,12 @@ class Capture(Base):
         -------
         - number: The size of the capture slice.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SliceSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["SliceSize"])
+
     @SliceSize.setter
     def SliceSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SliceSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SliceSize"], value)
 
     @property
     def SoftwareEnabled(self):
@@ -559,11 +602,12 @@ class Capture(Base):
         -------
         - bool: If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SoftwareEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["SoftwareEnabled"])
+
     @SoftwareEnabled.setter
     def SoftwareEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SoftwareEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SoftwareEnabled"], value)
 
     @property
     def TriggerPosition(self):
@@ -573,13 +617,35 @@ class Capture(Base):
         -------
         - number: Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggerPosition'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggerPosition"])
+
     @TriggerPosition.setter
     def TriggerPosition(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggerPosition'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggerPosition"], value)
 
-    def update(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureTrigger=None, ControlInterfaceType=None, ControlSliceSize=None, DataActiveCapture=None, DataReceiveTimestamp=None, DisplayFiltersControlCapture=None, DisplayFiltersDataCapture=None, HardwareEnabled=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+    def update(
+        self,
+        AfterTriggerFilter=None,
+        BeforeTriggerFilter=None,
+        CaptureMode=None,
+        ContinuousFilters=None,
+        ControlActiveCapture=None,
+        ControlBufferBehaviour=None,
+        ControlBufferSize=None,
+        ControlCaptureFilter=None,
+        ControlCaptureTrigger=None,
+        ControlInterfaceType=None,
+        ControlSliceSize=None,
+        DataActiveCapture=None,
+        DataReceiveTimestamp=None,
+        DisplayFiltersControlCapture=None,
+        DisplayFiltersDataCapture=None,
+        HardwareEnabled=None,
+        SliceSize=None,
+        SoftwareEnabled=None,
+        TriggerPosition=None,
+    ):
         # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, str, bool, int, bool, int) -> Capture
         """Updates capture resource on the server.
 
@@ -611,7 +677,44 @@ class Capture(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureState=None, ControlCaptureTrigger=None, ControlCapturedPacketCounter=None, ControlCaptures=None, ControlDecodeAsCurrentFilter=None, ControlInterfaceType=None, ControlPacketCounter=None, ControlSliceSize=None, DataActiveCapture=None, DataCaptureState=None, DataCapturedPacketCounter=None, DataCaptures=None, DataDecodeAsCurrentFilter=None, DataPacketCounter=None, DataReceiveTimestamp=None, DecodeAsLinkProtocols=None, DecodeAsNetworkProtocols=None, DecodeAsTransportProtocols=None, DisplayFiltersControlCapture=None, DisplayFiltersDataCapture=None, HardwareEnabled=None, IsCaptureRunning=None, IsControlCaptureRunning=None, IsDataCaptureRunning=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+    def find(
+        self,
+        AfterTriggerFilter=None,
+        BeforeTriggerFilter=None,
+        CaptureMode=None,
+        ContinuousFilters=None,
+        ControlActiveCapture=None,
+        ControlBufferBehaviour=None,
+        ControlBufferSize=None,
+        ControlCaptureFilter=None,
+        ControlCaptureState=None,
+        ControlCaptureTrigger=None,
+        ControlCapturedPacketCounter=None,
+        ControlCaptures=None,
+        ControlDecodeAsCurrentFilter=None,
+        ControlInterfaceType=None,
+        ControlPacketCounter=None,
+        ControlSliceSize=None,
+        DataActiveCapture=None,
+        DataCaptureState=None,
+        DataCapturedPacketCounter=None,
+        DataCaptures=None,
+        DataDecodeAsCurrentFilter=None,
+        DataPacketCounter=None,
+        DataReceiveTimestamp=None,
+        DecodeAsLinkProtocols=None,
+        DecodeAsNetworkProtocols=None,
+        DecodeAsTransportProtocols=None,
+        DisplayFiltersControlCapture=None,
+        DisplayFiltersDataCapture=None,
+        HardwareEnabled=None,
+        IsCaptureRunning=None,
+        IsControlCaptureRunning=None,
+        IsDataCaptureRunning=None,
+        SliceSize=None,
+        SoftwareEnabled=None,
+        TriggerPosition=None,
+    ):
         # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, int, bool, int) -> Capture
         """Finds and retrieves capture resources from the server.
 
@@ -631,7 +734,7 @@ class Capture(Base):
         - ControlCaptureFilter (str): Controls the dividing line within the capture buffer between before trigger data and post trigger data.This control is only useful in triggered mode.
         - ControlCaptureState (str(notReady | ready)): Current state of the control capture (if there are packets uploading in GUI or not).
         - ControlCaptureTrigger (str): This is the control Trigger string.
-        - ControlCapturedPacketCounter (number): 
+        - ControlCapturedPacketCounter (number):
         - ControlCaptures (str): The list of control captures which are available for the port.
         - ControlDecodeAsCurrentFilter (str): The control capture decode as filter used by last decode as operation (if any).
         - ControlInterfaceType (str(anyInterface | specificInterface)): Enables control capture on the desired interfaces.
@@ -639,7 +742,7 @@ class Capture(Base):
         - ControlSliceSize (number): Sets the size of the control capture slices.
         - DataActiveCapture (str): The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
         - DataCaptureState (str(notReady | ready)): Current state of the data capture; ready if all packets have been uploaded on client or notReady if packet uploading is in progress.
-        - DataCapturedPacketCounter (number): 
+        - DataCapturedPacketCounter (number):
         - DataCaptures (str): The list of data captures which are available for the port.
         - DataDecodeAsCurrentFilter (str): The data capture decode as filter used by last decode as operation (if any).
         - DataPacketCounter (number): Shows the number of data capture packets.
@@ -716,10 +819,12 @@ class Capture(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('decodeAsApply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("decodeAsApply", payload=payload, response_object=None)
 
     def DecodeAsClear(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -737,10 +842,12 @@ class Capture(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('decodeAsClear', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("decodeAsClear", payload=payload, response_object=None)
 
     def MergeCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -770,10 +877,12 @@ class Capture(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mergeCapture', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("mergeCapture", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -797,10 +906,12 @@ class Capture(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -824,7 +935,9 @@ class Capture(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

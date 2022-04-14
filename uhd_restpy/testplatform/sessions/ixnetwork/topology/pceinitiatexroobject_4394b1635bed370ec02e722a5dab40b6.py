@@ -254,7 +254,7 @@ class PceInitiateXROobject(Base):
 
     def add(self, Name=None):
         # type: (str) -> PceInitiateXROobject
-        """Adds a new pceInitiateXROobject resource on the json, only valid with config assistant
+        """Adds a new pceInitiateXROobject resource on the json, only valid with batch add utility
 
         Args
         ----

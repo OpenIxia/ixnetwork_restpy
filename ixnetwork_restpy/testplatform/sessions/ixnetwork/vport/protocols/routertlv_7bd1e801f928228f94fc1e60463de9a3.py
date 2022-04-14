@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class RouterTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routerTlv'
+    _SDM_NAME = "routerTlv"
     _SDM_ATT_MAP = {
-        'RouterAddress': 'routerAddress',
+        "RouterAddress": "routerAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RouterTlv, self).__init__(parent, list_op)
@@ -49,13 +49,14 @@ class RouterTlv(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterAddress"])
+
     @RouterAddress.setter
     def RouterAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterAddress"], value)
 
     def update(self, RouterAddress=None):
         # type: (str) -> RouterTlv
@@ -63,7 +64,7 @@ class RouterTlv(Base):
 
         Args
         ----
-        - RouterAddress (str): 
+        - RouterAddress (str):
 
         Raises
         ------
@@ -73,11 +74,11 @@ class RouterTlv(Base):
 
     def add(self, RouterAddress=None):
         # type: (str) -> RouterTlv
-        """Adds a new routerTlv resource on the json, only valid with config assistant
+        """Adds a new routerTlv resource on the json, only valid with batch add utility
 
         Args
         ----
-        - RouterAddress (str): 
+        - RouterAddress (str):
 
         Returns
         -------
@@ -99,7 +100,7 @@ class RouterTlv(Base):
 
         Args
         ----
-        - RouterAddress (str): 
+        - RouterAddress (str):
 
         Returns
         -------

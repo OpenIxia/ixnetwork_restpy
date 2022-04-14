@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class OfHostData(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ofHostData'
+    _SDM_NAME = "ofHostData"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfHostPorts': 'numberOfHostPorts',
-        'NumberOfHostsPerPort': 'numberOfHostsPerPort',
-        'ParentSwitchPortName': 'parentSwitchPortName',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NumberOfHostPorts": "numberOfHostPorts",
+        "NumberOfHostsPerPort": "numberOfHostsPerPort",
+        "ParentSwitchPortName": "parentSwitchPortName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OfHostData, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class OfHostData(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -67,7 +67,7 @@ class OfHostData(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -77,11 +77,12 @@ class OfHostData(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfHostPorts(self):
@@ -91,11 +92,12 @@ class OfHostData(Base):
         -------
         - number: number of Host Ports per OF Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostPorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfHostPorts"])
+
     @NumberOfHostPorts.setter
     def NumberOfHostPorts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfHostPorts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfHostPorts"], value)
 
     @property
     def NumberOfHostsPerPort(self):
@@ -105,11 +107,12 @@ class OfHostData(Base):
         -------
         - number: Number of Host Groups for each Host Port. Configure Number of Hosts Per Host Group using the Count field in Encapsulations Tab
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfHostsPerPort"])
+
     @NumberOfHostsPerPort.setter
     def NumberOfHostsPerPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfHostsPerPort"], value)
 
     @property
     def ParentSwitchPortName(self):
@@ -120,7 +123,10 @@ class OfHostData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Description of the parent Switch Port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ParentSwitchPortName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ParentSwitchPortName"])
+        )
 
     def update(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
         # type: (str, int, int) -> OfHostData
@@ -171,7 +177,14 @@ class OfHostData(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfHostPorts=None,
+        NumberOfHostsPerPort=None,
+    ):
         # type: (int, str, str, int, int) -> OfHostData
         """Finds and retrieves ofHostData resources from the server.
 
@@ -239,10 +252,14 @@ class OfHostData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPacketWithTraverseLI', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPacketWithTraverseLI", payload=payload, response_object=None
+        )
 
     def get_device_ids(self, PortNames=None, ParentSwitchPortName=None):
         """Base class infrastructure that gets a list of ofHostData device ids encapsulated by this object.

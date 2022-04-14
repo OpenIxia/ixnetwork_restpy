@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class Pattern(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pattern'
+    _SDM_NAME = "pattern"
     _SDM_ATT_MAP = {
-        'BitOffset': 'bitOffset',
-        'Enabled': 'enabled',
-        'Mask': 'mask',
-        'Name': 'name',
-        'Offset': 'offset',
-        'Value': 'value',
-        'Width': 'width',
+        "BitOffset": "bitOffset",
+        "Enabled": "enabled",
+        "Mask": "mask",
+        "Name": "name",
+        "Offset": "offset",
+        "Value": "value",
+        "Width": "width",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Pattern, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class Pattern(Base):
         -------
         - number: Bit offset within a byte. Starting point of the mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BitOffset"])
+
     @BitOffset.setter
     def BitOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BitOffset"], value)
 
     @property
     def Enabled(self):
@@ -72,11 +73,12 @@ class Pattern(Base):
         -------
         - bool: If true, match incoming packets against this pattern.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Mask(self):
@@ -86,11 +88,12 @@ class Pattern(Base):
         -------
         - str: Bitmask to match against. Same format as value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def Name(self):
@@ -100,11 +103,12 @@ class Pattern(Base):
         -------
         - str: Name of pattern.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Offset(self):
@@ -114,11 +118,12 @@ class Pattern(Base):
         -------
         - number: Byte offset from start of L2 frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
+        return self._get_attribute(self._SDM_ATT_MAP["Offset"])
+
     @Offset.setter
     def Offset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Offset"], value)
 
     @property
     def Value(self):
@@ -128,11 +133,12 @@ class Pattern(Base):
         -------
         - str: The field value to match. For MAC, IPv4, and IPv6 addresses, the value is a formatted address. For all other fields, the value is encoded as a string of hex bytes, most significant byte first, and most significant bit first within each byte. Each hex byte must be exactly two hex digits; A-F and a-f are both accepted. The hex bytes must be separated by a single white space. Example: 00 01 02 FF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     @property
     def Width(self):
@@ -142,13 +148,23 @@ class Pattern(Base):
         -------
         - number: Width of field, in bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Width'])
+        return self._get_attribute(self._SDM_ATT_MAP["Width"])
+
     @Width.setter
     def Width(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Width"], value)
 
-    def update(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+    def update(
+        self,
+        BitOffset=None,
+        Enabled=None,
+        Mask=None,
+        Name=None,
+        Offset=None,
+        Value=None,
+        Width=None,
+    ):
         # type: (int, bool, str, str, int, str, int) -> Pattern
         """Updates pattern resource on the server.
 
@@ -168,7 +184,16 @@ class Pattern(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+    def add(
+        self,
+        BitOffset=None,
+        Enabled=None,
+        Mask=None,
+        Name=None,
+        Offset=None,
+        Value=None,
+        Width=None,
+    ):
         # type: (int, bool, str, str, int, str, int) -> Pattern
         """Adds a new pattern resource on the server and adds it to the container.
 
@@ -202,7 +227,16 @@ class Pattern(Base):
         """
         self._delete()
 
-    def find(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+    def find(
+        self,
+        BitOffset=None,
+        Enabled=None,
+        Mask=None,
+        Name=None,
+        Offset=None,
+        Value=None,
+        Width=None,
+    ):
         # type: (int, bool, str, str, int, str, int) -> Pattern
         """Finds and retrieves pattern resources from the server.
 

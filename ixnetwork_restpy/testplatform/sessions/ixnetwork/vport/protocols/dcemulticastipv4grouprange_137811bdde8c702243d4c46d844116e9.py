@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class DceMulticastIpv4GroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceMulticastIpv4GroupRange'
+    _SDM_NAME = "dceMulticastIpv4GroupRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
-        'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
-        'MulticastIpv4Count': 'multicastIpv4Count',
-        'MulticastIpv4Step': 'multicastIpv4Step',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastIpv4': 'startMulticastIpv4',
-        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
-        'Topology': 'topology',
-        'UnicastSourcesPerMulticastIpv4': 'unicastSourcesPerMulticastIpv4',
-        'VlanId': 'vlanId',
+        "Enabled": "enabled",
+        "InterGroupUnicastIpv4Increment": "interGroupUnicastIpv4Increment",
+        "IntraGroupUnicastIpv4Increment": "intraGroupUnicastIpv4Increment",
+        "MulticastIpv4Count": "multicastIpv4Count",
+        "MulticastIpv4Step": "multicastIpv4Step",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastIpv4": "startMulticastIpv4",
+        "StartUnicastSourceIpv4": "startUnicastSourceIpv4",
+        "Topology": "topology",
+        "UnicastSourcesPerMulticastIpv4": "unicastSourcesPerMulticastIpv4",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fullyMeshed', 'oneToOne', 'manualMapping'],
+        "sourceGroupMapping": ["fullyMeshed", "oneToOne", "manualMapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - bool: If true, enables the Multicast IPv4 Group Range for a particular DCE ISIS route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterGroupUnicastIpv4Increment(self):
@@ -77,11 +79,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str: The IPv4 address format of the Unicast IPv4 between one or more node groups. (Default = 00 00 00 00 00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterGroupUnicastIpv4Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterGroupUnicastIpv4Increment"])
+
     @InterGroupUnicastIpv4Increment.setter
     def InterGroupUnicastIpv4Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterGroupUnicastIpv4Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterGroupUnicastIpv4Increment"], value)
 
     @property
     def IntraGroupUnicastIpv4Increment(self):
@@ -91,11 +94,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str: The IPv4 address format of the Unicast IPv4 within a node group. (default = 0.0.0.1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv4Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv4Increment"])
+
     @IntraGroupUnicastIpv4Increment.setter
     def IntraGroupUnicastIpv4Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv4Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv4Increment"], value)
 
     @property
     def MulticastIpv4Count(self):
@@ -105,11 +109,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - number: The number of Multicast IPv4 addresses. This field takes unsigned integer value ranging from 1 to UINT_MAX. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv4Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv4Count"])
+
     @MulticastIpv4Count.setter
     def MulticastIpv4Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv4Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv4Count"], value)
 
     @property
     def MulticastIpv4Step(self):
@@ -119,11 +124,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str: The incremental value of Multicast IPv4 address. (default = 0.0.0.1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv4Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv4Step"])
+
     @MulticastIpv4Step.setter
     def MulticastIpv4Step(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv4Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv4Step"], value)
 
     @property
     def SourceGroupMapping(self):
@@ -133,11 +139,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastIpv4(self):
@@ -147,11 +154,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str: The IP address format of the starting Multicast IPv4 address. (default = 224.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastIpv4"])
+
     @StartMulticastIpv4.setter
     def StartMulticastIpv4(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastIpv4"], value)
 
     @property
     def StartUnicastSourceIpv4(self):
@@ -161,11 +169,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - str: The IPv4 address format of the starting Unicast Source IPv4. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv4"])
+
     @StartUnicastSourceIpv4.setter
     def StartUnicastSourceIpv4(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv4"], value)
 
     @property
     def Topology(self):
@@ -175,11 +184,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - number: The topology identifier to which the corresponding IpV4 belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topology'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topology"])
+
     @Topology.setter
     def Topology(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topology"], value)
 
     @property
     def UnicastSourcesPerMulticastIpv4(self):
@@ -189,11 +199,12 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - number: The number of Unicast Source for each Multicast IPv4 address. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastIpv4"])
+
     @UnicastSourcesPerMulticastIpv4.setter
     def UnicastSourcesPerMulticastIpv4(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastIpv4"], value)
 
     @property
     def VlanId(self):
@@ -203,13 +214,27 @@ class DceMulticastIpv4GroupRange(Base):
         -------
         - number: The VLAN ID of the enabled Multicast IPv4 Group Range. (default =1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
+    def update(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv4Increment=None,
+        IntraGroupUnicastIpv4Increment=None,
+        MulticastIpv4Count=None,
+        MulticastIpv4Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv4=None,
+        StartUnicastSourceIpv4=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv4=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv4GroupRange
         """Updates dceMulticastIpv4GroupRange resource on the server.
 
@@ -233,7 +258,20 @@ class DceMulticastIpv4GroupRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
+    def add(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv4Increment=None,
+        IntraGroupUnicastIpv4Increment=None,
+        MulticastIpv4Count=None,
+        MulticastIpv4Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv4=None,
+        StartUnicastSourceIpv4=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv4=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv4GroupRange
         """Adds a new dceMulticastIpv4GroupRange resource on the server and adds it to the container.
 
@@ -271,7 +309,20 @@ class DceMulticastIpv4GroupRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InterGroupUnicastIpv4Increment=None, IntraGroupUnicastIpv4Increment=None, MulticastIpv4Count=None, MulticastIpv4Step=None, SourceGroupMapping=None, StartMulticastIpv4=None, StartUnicastSourceIpv4=None, Topology=None, UnicastSourcesPerMulticastIpv4=None, VlanId=None):
+    def find(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv4Increment=None,
+        IntraGroupUnicastIpv4Increment=None,
+        MulticastIpv4Count=None,
+        MulticastIpv4Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv4=None,
+        StartUnicastSourceIpv4=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv4=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv4GroupRange
         """Finds and retrieves dceMulticastIpv4GroupRange resources from the server.
 

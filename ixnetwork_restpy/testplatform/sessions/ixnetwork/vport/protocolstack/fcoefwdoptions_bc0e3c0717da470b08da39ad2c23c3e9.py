@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class FcoeFwdOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcoeFwdOptions'
+    _SDM_NAME = "fcoeFwdOptions"
     _SDM_ATT_MAP = {
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'UnsolDiscoveryTpid': 'unsolDiscoveryTpid',
+        "MaxPacketsPerSecond": "maxPacketsPerSecond",
+        "ObjectId": "objectId",
+        "OverrideGlobalRate": "overrideGlobalRate",
+        "UnsolDiscoveryTpid": "unsolDiscoveryTpid",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcoeFwdOptions, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class FcoeFwdOptions(Base):
         -------
         - number: The maximum number of PLOGI requests transmitted in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"])
+
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +70,7 @@ class FcoeFwdOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRate(self):
@@ -79,11 +80,12 @@ class FcoeFwdOptions(Base):
         -------
         - bool: Global rate settings are automatically distributed to all port groups. If one port group has this field enabled, the distributed rate settings will be overridden with the following values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"])
+
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRate"], value)
 
     @property
     def UnsolDiscoveryTpid(self):
@@ -93,13 +95,16 @@ class FcoeFwdOptions(Base):
         -------
         - str: Server VLAN TPIDs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnsolDiscoveryTpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnsolDiscoveryTpid"])
+
     @UnsolDiscoveryTpid.setter
     def UnsolDiscoveryTpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnsolDiscoveryTpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnsolDiscoveryTpid"], value)
 
-    def update(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+    def update(
+        self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None
+    ):
         # type: (int, bool, str) -> FcoeFwdOptions
         """Updates fcoeFwdOptions resource on the server.
 
@@ -115,7 +120,9 @@ class FcoeFwdOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+    def add(
+        self, MaxPacketsPerSecond=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None
+    ):
         # type: (int, bool, str) -> FcoeFwdOptions
         """Adds a new fcoeFwdOptions resource on the server and adds it to the container.
 
@@ -145,7 +152,13 @@ class FcoeFwdOptions(Base):
         """
         self._delete()
 
-    def find(self, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, UnsolDiscoveryTpid=None):
+    def find(
+        self,
+        MaxPacketsPerSecond=None,
+        ObjectId=None,
+        OverrideGlobalRate=None,
+        UnsolDiscoveryTpid=None,
+    ):
         # type: (int, str, bool, str) -> FcoeFwdOptions
         """Finds and retrieves fcoeFwdOptions resources from the server.
 
@@ -205,10 +218,14 @@ class FcoeFwdOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -227,10 +244,14 @@ class FcoeFwdOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -249,7 +270,11 @@ class FcoeFwdOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

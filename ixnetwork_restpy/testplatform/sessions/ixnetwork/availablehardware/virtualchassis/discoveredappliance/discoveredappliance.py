@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,15 @@ class DiscoveredAppliance(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'discoveredAppliance'
+    _SDM_NAME = "discoveredAppliance"
     _SDM_ATT_MAP = {
-        'ApplianceName': 'applianceName',
-        'ApplianceType': 'applianceType',
-        'InterfacesNumber': 'interfacesNumber',
-        'ManagementIp': 'managementIp',
+        "ApplianceName": "applianceName",
+        "ApplianceType": "applianceType",
+        "InterfacesNumber": "interfacesNumber",
+        "ManagementIp": "managementIp",
     }
     _SDM_ENUM_MAP = {
-        'applianceType': ['qemu', 'vCenter', 'vmware'],
+        "applianceType": ["qemu", "vCenter", "vmware"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,10 +59,13 @@ class DiscoveredAppliance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface import DiscoveredInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface import (
+            DiscoveredInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DiscoveredInterface', None) is not None:
-                return self._properties.get('DiscoveredInterface')
+            if self._properties.get("DiscoveredInterface", None) is not None:
+                return self._properties.get("DiscoveredInterface")
         return DiscoveredInterface(self)
 
     @property
@@ -72,7 +76,7 @@ class DiscoveredAppliance(Base):
         -------
         - str: Represents the appliance Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplianceName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplianceName"])
 
     @property
     def ApplianceType(self):
@@ -82,7 +86,7 @@ class DiscoveredAppliance(Base):
         -------
         - str(qemu | vCenter | vmware): Represents the appliance host type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplianceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplianceType"])
 
     @property
     def InterfacesNumber(self):
@@ -92,7 +96,7 @@ class DiscoveredAppliance(Base):
         -------
         - number: Represents the number of test interfaces
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfacesNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfacesNumber"])
 
     @property
     def ManagementIp(self):
@@ -102,10 +106,10 @@ class DiscoveredAppliance(Base):
         -------
         - str: Represents the management Ip
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ManagementIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ManagementIp"])
 
     def add(self):
-        """Adds a new discoveredAppliance resource on the json, only valid with config assistant
+        """Adds a new discoveredAppliance resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -117,7 +121,13 @@ class DiscoveredAppliance(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApplianceName=None, ApplianceType=None, InterfacesNumber=None, ManagementIp=None):
+    def find(
+        self,
+        ApplianceName=None,
+        ApplianceType=None,
+        InterfacesNumber=None,
+        ManagementIp=None,
+    ):
         # type: (str, str, int, str) -> DiscoveredAppliance
         """Finds and retrieves discoveredAppliance resources from the server.
 

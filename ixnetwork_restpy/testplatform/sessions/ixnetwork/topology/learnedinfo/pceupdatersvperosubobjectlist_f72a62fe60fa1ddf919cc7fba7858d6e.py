@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class PceUpdateRsvpEroSubObjectList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pceUpdateRsvpEroSubObjectList'
+    _SDM_NAME = "pceUpdateRsvpEroSubObjectList"
     _SDM_ATT_MAP = {
-        'ActiveThisEro': 'activeThisEro',
-        'AsNumber': 'asNumber',
-        'Ipv4Prefix': 'ipv4Prefix',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'LooseHop': 'looseHop',
-        'PrefixLength': 'prefixLength',
-        'SubObjectType': 'subObjectType',
+        "ActiveThisEro": "activeThisEro",
+        "AsNumber": "asNumber",
+        "Ipv4Prefix": "ipv4Prefix",
+        "Ipv6Prefix": "ipv6Prefix",
+        "LooseHop": "looseHop",
+        "PrefixLength": "prefixLength",
+        "SubObjectType": "subObjectType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PceUpdateRsvpEroSubObjectList, self).__init__(parent, list_op)
@@ -58,7 +58,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controls whether the ERO sub-object will be sent in the PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveThisEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveThisEro"]))
 
     @property
     def AsNumber(self):
@@ -69,7 +70,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
 
     @property
     def Ipv4Prefix(self):
@@ -80,7 +82,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Prefix is specified as an IPv4 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4Prefix"]))
 
     @property
     def Ipv6Prefix(self):
@@ -91,7 +94,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Prefix is specified as an IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Prefix"]))
 
     @property
     def LooseHop(self):
@@ -102,7 +106,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if user wants to represent a loose-hop sub object in the LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LooseHop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LooseHop"]))
 
     @property
     def PrefixLength(self):
@@ -113,7 +118,8 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def SubObjectType(self):
@@ -124,10 +130,11 @@ class PceUpdateRsvpEroSubObjectList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Using the Sub Object Type control user can configure which sub object needs to be included from the following options: Not Applicable IPv4 Prefix IPv6 Prefix AS Number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubObjectType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubObjectType"]))
 
     def add(self):
-        """Adds a new pceUpdateRsvpEroSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateRsvpEroSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -174,7 +181,17 @@ class PceUpdateRsvpEroSubObjectList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ActiveThisEro=None, AsNumber=None, Ipv4Prefix=None, Ipv6Prefix=None, LooseHop=None, PrefixLength=None, SubObjectType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActiveThisEro=None,
+        AsNumber=None,
+        Ipv4Prefix=None,
+        Ipv6Prefix=None,
+        LooseHop=None,
+        PrefixLength=None,
+        SubObjectType=None,
+    ):
         """Base class infrastructure that gets a list of pceUpdateRsvpEroSubObjectList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

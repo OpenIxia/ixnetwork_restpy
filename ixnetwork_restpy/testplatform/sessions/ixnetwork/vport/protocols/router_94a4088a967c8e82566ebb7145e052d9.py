@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,28 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
-        'EnableFilterFec': 'enableFilterFec',
-        'EnableGracefulRestart': 'enableGracefulRestart',
-        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
-        'EnableOverrideRbit': 'enableOverrideRbit',
-        'EnableP2mpCapabilty': 'enableP2mpCapabilty',
-        'EnablePduRateControl': 'enablePduRateControl',
-        'EnableVcFecs': 'enableVcFecs',
-        'EnableVcGroupMatch': 'enableVcGroupMatch',
-        'Enabled': 'enabled',
-        'InterPduGap': 'interPduGap',
-        'IsBgpAdVplsLearnedInfoRefreshed': 'isBgpAdVplsLearnedInfoRefreshed',
-        'ReconnectTime': 'reconnectTime',
-        'RecoveryTime': 'recoveryTime',
-        'RouterId': 'routerId',
-        'TrafficGroupId': 'trafficGroupId',
-        'TransportAddress': 'transportAddress',
-        'UseTransportAddress': 'useTransportAddress',
+        "EnableBfdMplsLearnedLsp": "enableBfdMplsLearnedLsp",
+        "EnableFilterFec": "enableFilterFec",
+        "EnableGracefulRestart": "enableGracefulRestart",
+        "EnableLspPingLearnedLsp": "enableLspPingLearnedLsp",
+        "EnableOverrideRbit": "enableOverrideRbit",
+        "EnableP2mpCapabilty": "enableP2mpCapabilty",
+        "EnablePduRateControl": "enablePduRateControl",
+        "EnableVcFecs": "enableVcFecs",
+        "EnableVcGroupMatch": "enableVcGroupMatch",
+        "Enabled": "enabled",
+        "InterPduGap": "interPduGap",
+        "IsBgpAdVplsLearnedInfoRefreshed": "isBgpAdVplsLearnedInfoRefreshed",
+        "ReconnectTime": "reconnectTime",
+        "RecoveryTime": "recoveryTime",
+        "RouterId": "routerId",
+        "TrafficGroupId": "trafficGroupId",
+        "TransportAddress": "transportAddress",
+        "UseTransportAddress": "useTransportAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Router, self).__init__(parent, list_op)
@@ -72,10 +72,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advfecrange_f00588596498857b75d5d898ca2e9a6f import AdvFecRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advfecrange_f00588596498857b75d5d898ca2e9a6f import (
+            AdvFecRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvFecRange', None) is not None:
-                return self._properties.get('AdvFecRange')
+            if self._properties.get("AdvFecRange", None) is not None:
+                return self._properties.get("AdvFecRange")
         return AdvFecRange(self)
 
     @property
@@ -89,10 +92,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.includeipfecrange_373b75680a1f0ec85775f1ba1a1428c8 import IncludeIpFecRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.includeipfecrange_373b75680a1f0ec85775f1ba1a1428c8 import (
+            IncludeIpFecRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IncludeIpFecRange', None) is not None:
-                return self._properties.get('IncludeIpFecRange')
+            if self._properties.get("IncludeIpFecRange", None) is not None:
+                return self._properties.get("IncludeIpFecRange")
         return IncludeIpFecRange(self)
 
     @property
@@ -106,10 +112,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_fe0b08fd21beb5f4d59f82e4c9b072a9 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_fe0b08fd21beb5f4d59f82e4c9b072a9 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -123,10 +132,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2interface_3d1eb8aa91ce49d1264d0d3e9350426f import L2Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2interface_3d1eb8aa91ce49d1264d0d3e9350426f import (
+            L2Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2Interface', None) is not None:
-                return self._properties.get('L2Interface')
+            if self._properties.get("L2Interface", None) is not None:
+                return self._properties.get("L2Interface")
         return L2Interface(self)
 
     @property
@@ -140,10 +152,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedbgpadvplslabels_d636c7428c14c72b574463ac879c4b82 import LearnedBgpAdVplsLabels
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedbgpadvplslabels_d636c7428c14c72b574463ac879c4b82 import (
+            LearnedBgpAdVplsLabels,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedBgpAdVplsLabels', None) is not None:
-                return self._properties.get('LearnedBgpAdVplsLabels')
+            if self._properties.get("LearnedBgpAdVplsLabels", None) is not None:
+                return self._properties.get("LearnedBgpAdVplsLabels")
         return LearnedBgpAdVplsLabels(self)
 
     @property
@@ -157,10 +172,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastleafrange_61982e4d7933d5db8e1c6734f344bc95 import MulticastLeafRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastleafrange_61982e4d7933d5db8e1c6734f344bc95 import (
+            MulticastLeafRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MulticastLeafRange', None) is not None:
-                return self._properties.get('MulticastLeafRange')
+            if self._properties.get("MulticastLeafRange", None) is not None:
+                return self._properties.get("MulticastLeafRange")
         return MulticastLeafRange(self)
 
     @property
@@ -174,10 +192,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastrootrange_2ba3e3319b567aec9e33e2c02f700b75 import MulticastRootRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastrootrange_2ba3e3319b567aec9e33e2c02f700b75 import (
+            MulticastRootRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MulticastRootRange', None) is not None:
-                return self._properties.get('MulticastRootRange')
+            if self._properties.get("MulticastRootRange", None) is not None:
+                return self._properties.get("MulticastRootRange")
         return MulticastRootRange(self)
 
     @property
@@ -191,10 +212,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.reqfecrange_c17e1dc9cea7640db4f5e99196ecfcff import ReqFecRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.reqfecrange_c17e1dc9cea7640db4f5e99196ecfcff import (
+            ReqFecRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ReqFecRange', None) is not None:
-                return self._properties.get('ReqFecRange')
+            if self._properties.get("ReqFecRange", None) is not None:
+                return self._properties.get("ReqFecRange")
         return ReqFecRange(self)
 
     @property
@@ -205,11 +229,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdMplsLearnedLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdMplsLearnedLsp"])
+
     @EnableBfdMplsLearnedLsp.setter
     def EnableBfdMplsLearnedLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdMplsLearnedLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdMplsLearnedLsp"], value)
 
     @property
     def EnableFilterFec(self):
@@ -219,11 +244,12 @@ class Router(Base):
         -------
         - bool: Enables Filter FEC, which allows the user to control which received FEC ranges will be stored in the state machine.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFilterFec'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFilterFec"])
+
     @EnableFilterFec.setter
     def EnableFilterFec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFilterFec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFilterFec"], value)
 
     @property
     def EnableGracefulRestart(self):
@@ -233,11 +259,12 @@ class Router(Base):
         -------
         - bool: If enabled, LDP Graceful Restart is enabled on this Ixia-emulated LDP Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGracefulRestart"])
+
     @EnableGracefulRestart.setter
     def EnableGracefulRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGracefulRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGracefulRestart"], value)
 
     @property
     def EnableLspPingLearnedLsp(self):
@@ -247,11 +274,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLspPingLearnedLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLspPingLearnedLsp"])
+
     @EnableLspPingLearnedLsp.setter
     def EnableLspPingLearnedLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLspPingLearnedLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLspPingLearnedLsp"], value)
 
     @property
     def EnableOverrideRbit(self):
@@ -261,11 +289,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOverrideRbit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOverrideRbit"])
+
     @EnableOverrideRbit.setter
     def EnableOverrideRbit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOverrideRbit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOverrideRbit"], value)
 
     @property
     def EnableP2mpCapabilty(self):
@@ -275,11 +304,12 @@ class Router(Base):
         -------
         - bool: If true, enables P2MP capability.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableP2mpCapabilty'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableP2mpCapabilty"])
+
     @EnableP2mpCapabilty.setter
     def EnableP2mpCapabilty(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableP2mpCapabilty'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableP2mpCapabilty"], value)
 
     @property
     def EnablePduRateControl(self):
@@ -289,11 +319,12 @@ class Router(Base):
         -------
         - bool: Enables the PDU Rate Control feature.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePduRateControl'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePduRateControl"])
+
     @EnablePduRateControl.setter
     def EnablePduRateControl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePduRateControl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePduRateControl"], value)
 
     @property
     def EnableVcFecs(self):
@@ -303,11 +334,12 @@ class Router(Base):
         -------
         - bool: Enables the use of Layer 2 Virtual Circuit FECs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVcFecs'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVcFecs"])
+
     @EnableVcFecs.setter
     def EnableVcFecs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVcFecs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVcFecs"], value)
 
     @property
     def EnableVcGroupMatch(self):
@@ -317,11 +349,12 @@ class Router(Base):
         -------
         - bool: If enabled, the VC Group ID must be matched in addition to the VC ID, VC Type, and Peer for the PseudoWire to be considered Up (Up status).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVcGroupMatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVcGroupMatch"])
+
     @EnableVcGroupMatch.setter
     def EnableVcGroupMatch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVcGroupMatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVcGroupMatch"], value)
 
     @property
     def Enabled(self):
@@ -331,11 +364,12 @@ class Router(Base):
         -------
         - bool: Enables or disables the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterPduGap(self):
@@ -345,11 +379,12 @@ class Router(Base):
         -------
         - number: The user-specified gap time between PDUs, in milliseconds (ms).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterPduGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterPduGap"])
+
     @InterPduGap.setter
     def InterPduGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterPduGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterPduGap"], value)
 
     @property
     def IsBgpAdVplsLearnedInfoRefreshed(self):
@@ -359,7 +394,7 @@ class Router(Base):
         -------
         - bool: Refreshes the AD VPLS Learned Info.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsBgpAdVplsLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsBgpAdVplsLearnedInfoRefreshed"])
 
     @property
     def ReconnectTime(self):
@@ -369,11 +404,12 @@ class Router(Base):
         -------
         - number: This Fault Tolerant (FT) Reconnect Timer value is advertised in the FT Session TLV in the Initialization message sent by a neighbor LSR. It is a request sent by an LSR to its neighbor(s) in the event that the receiving neighbor detects that the LDP session has failed, the receiver should maintain MPLS forwarding state and wait for the sender to perform a restart of the control plane and LDP protocol. If the value = 0, the sender is indicating that it will not preserve its MPLS forwarding state across the restart.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReconnectTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReconnectTime"])
+
     @ReconnectTime.setter
     def ReconnectTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReconnectTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReconnectTime"], value)
 
     @property
     def RecoveryTime(self):
@@ -383,11 +419,12 @@ class Router(Base):
         -------
         - number: The restarting LSR is advertising the amount of time that it will retain its MPLS forwarding state. This time period begins when it sends the restart Initialization message, with the FT session TLV, to the neighbor LSRs (to re-establish the LDP session). This timer allows the neighbors some time to resync the LSPs in an orderly manner. If the value = 0, it means that the restarting LSR was not able to preserve the MPLS forwarding state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecoveryTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecoveryTime"])
+
     @RecoveryTime.setter
     def RecoveryTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RecoveryTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RecoveryTime"], value)
 
     @property
     def RouterId(self):
@@ -397,11 +434,12 @@ class Router(Base):
         -------
         - str: The ID of the simulated router, expressed as an IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def TrafficGroupId(self):
@@ -411,11 +449,12 @@ class Router(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def TransportAddress(self):
@@ -425,11 +464,12 @@ class Router(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The string interface description for the transport address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportAddress"])
+
     @TransportAddress.setter
     def TransportAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportAddress"], value)
 
     @property
     def UseTransportAddress(self):
@@ -439,13 +479,33 @@ class Router(Base):
         -------
         - bool: The boolean value for the transport address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseTransportAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseTransportAddress"])
+
     @UseTransportAddress.setter
     def UseTransportAddress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseTransportAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseTransportAddress"], value)
 
-    def update(self, EnableBfdMplsLearnedLsp=None, EnableFilterFec=None, EnableGracefulRestart=None, EnableLspPingLearnedLsp=None, EnableOverrideRbit=None, EnableP2mpCapabilty=None, EnablePduRateControl=None, EnableVcFecs=None, EnableVcGroupMatch=None, Enabled=None, InterPduGap=None, ReconnectTime=None, RecoveryTime=None, RouterId=None, TrafficGroupId=None, TransportAddress=None, UseTransportAddress=None):
+    def update(
+        self,
+        EnableBfdMplsLearnedLsp=None,
+        EnableFilterFec=None,
+        EnableGracefulRestart=None,
+        EnableLspPingLearnedLsp=None,
+        EnableOverrideRbit=None,
+        EnableP2mpCapabilty=None,
+        EnablePduRateControl=None,
+        EnableVcFecs=None,
+        EnableVcGroupMatch=None,
+        Enabled=None,
+        InterPduGap=None,
+        ReconnectTime=None,
+        RecoveryTime=None,
+        RouterId=None,
+        TrafficGroupId=None,
+        TransportAddress=None,
+        UseTransportAddress=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str, str, bool) -> Router
         """Updates router resource on the server.
 
@@ -475,7 +535,26 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableBfdMplsLearnedLsp=None, EnableFilterFec=None, EnableGracefulRestart=None, EnableLspPingLearnedLsp=None, EnableOverrideRbit=None, EnableP2mpCapabilty=None, EnablePduRateControl=None, EnableVcFecs=None, EnableVcGroupMatch=None, Enabled=None, InterPduGap=None, ReconnectTime=None, RecoveryTime=None, RouterId=None, TrafficGroupId=None, TransportAddress=None, UseTransportAddress=None):
+    def add(
+        self,
+        EnableBfdMplsLearnedLsp=None,
+        EnableFilterFec=None,
+        EnableGracefulRestart=None,
+        EnableLspPingLearnedLsp=None,
+        EnableOverrideRbit=None,
+        EnableP2mpCapabilty=None,
+        EnablePduRateControl=None,
+        EnableVcFecs=None,
+        EnableVcGroupMatch=None,
+        Enabled=None,
+        InterPduGap=None,
+        ReconnectTime=None,
+        RecoveryTime=None,
+        RouterId=None,
+        TrafficGroupId=None,
+        TransportAddress=None,
+        UseTransportAddress=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str, str, bool) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
@@ -519,7 +598,27 @@ class Router(Base):
         """
         self._delete()
 
-    def find(self, EnableBfdMplsLearnedLsp=None, EnableFilterFec=None, EnableGracefulRestart=None, EnableLspPingLearnedLsp=None, EnableOverrideRbit=None, EnableP2mpCapabilty=None, EnablePduRateControl=None, EnableVcFecs=None, EnableVcGroupMatch=None, Enabled=None, InterPduGap=None, IsBgpAdVplsLearnedInfoRefreshed=None, ReconnectTime=None, RecoveryTime=None, RouterId=None, TrafficGroupId=None, TransportAddress=None, UseTransportAddress=None):
+    def find(
+        self,
+        EnableBfdMplsLearnedLsp=None,
+        EnableFilterFec=None,
+        EnableGracefulRestart=None,
+        EnableLspPingLearnedLsp=None,
+        EnableOverrideRbit=None,
+        EnableP2mpCapabilty=None,
+        EnablePduRateControl=None,
+        EnableVcFecs=None,
+        EnableVcGroupMatch=None,
+        Enabled=None,
+        InterPduGap=None,
+        IsBgpAdVplsLearnedInfoRefreshed=None,
+        ReconnectTime=None,
+        RecoveryTime=None,
+        RouterId=None,
+        TrafficGroupId=None,
+        TransportAddress=None,
+        UseTransportAddress=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, int, int, str, str, str, bool) -> Router
         """Finds and retrieves router resources from the server.
 
@@ -592,7 +691,11 @@ class Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshBgpAdVplsLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshBgpAdVplsLearnedInfo", payload=payload, response_object=None
+        )

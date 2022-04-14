@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class OpaqueElementInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'opaqueElementInfo'
+    _SDM_NAME = "opaqueElementInfo"
     _SDM_ATT_MAP = {
-        'Length': 'length',
-        'Type': 'type',
-        'Value': 'value',
+        "Length": "length",
+        "Type": "type",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OpaqueElementInfo, self).__init__(parent, list_op)
@@ -53,7 +53,7 @@ class OpaqueElementInfo(Base):
         -------
         - str: (Read Only) Length of the opaque element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Length'])
+        return self._get_attribute(self._SDM_ATT_MAP["Length"])
 
     @property
     def Type(self):
@@ -63,7 +63,7 @@ class OpaqueElementInfo(Base):
         -------
         - str: (Read Only) Type of the opaque element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     @property
     def Value(self):
@@ -73,10 +73,10 @@ class OpaqueElementInfo(Base):
         -------
         - str: (Read Only) Value of opaque element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
 
     def add(self):
-        """Adds a new opaqueElementInfo resource on the json, only valid with config assistant
+        """Adds a new opaqueElementInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class AppTypeRef(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'appTypeRef'
+    _SDM_NAME = "appTypeRef"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Value': 'value',
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AppTypeRef, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class AppTypeRef(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import (
+            NacApps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacApps', None) is not None:
-                return self._properties.get('NacApps')
+            if self._properties.get("NacApps", None) is not None:
+                return self._properties.get("NacApps")
         return NacApps(self)
 
     @property
@@ -69,11 +72,12 @@ class AppTypeRef(Base):
         -------
         - str: AppType Name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -83,7 +87,7 @@ class AppTypeRef(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Value(self):
@@ -93,11 +97,12 @@ class AppTypeRef(Base):
         -------
         - number: AppType ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Name=None, Value=None):
         # type: (str, int) -> AppTypeRef

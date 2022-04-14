@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,26 +34,25 @@ class OfChannelPortsSwitchLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ofChannelPortsSwitchLearnedInfo'
+    _SDM_NAME = "ofChannelPortsSwitchLearnedInfo"
     _SDM_ATT_MAP = {
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'Config': 'config',
-        'CurrentFeatures': 'currentFeatures',
-        'CurrentSpeed': 'currentSpeed',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'EthernetAddress': 'ethernetAddress',
-        'LocalIp': 'localIp',
-        'MaximumSpeed': 'maximumSpeed',
-        'Name': 'name',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
-        'PortNumber': 'portNumber',
-        'RemoteIp': 'remoteIp',
-        'State': 'state',
-        'SupportedFeatures': 'supportedFeatures',
+        "AdvertisedFeatures": "advertisedFeatures",
+        "Config": "config",
+        "CurrentFeatures": "currentFeatures",
+        "CurrentSpeed": "currentSpeed",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "EthernetAddress": "ethernetAddress",
+        "LocalIp": "localIp",
+        "MaximumSpeed": "maximumSpeed",
+        "Name": "name",
+        "PeerAdvertisedFeatures": "peerAdvertisedFeatures",
+        "PortNumber": "portNumber",
+        "RemoteIp": "remoteIp",
+        "State": "state",
+        "SupportedFeatures": "supportedFeatures",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OfChannelPortsSwitchLearnedInfo, self).__init__(parent, list_op)
@@ -65,7 +65,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the advertised features of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertisedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertisedFeatures"])
 
     @property
     def Config(self):
@@ -75,7 +75,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the current configuration of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Config'])
+        return self._get_attribute(self._SDM_ATT_MAP["Config"])
 
     @property
     def CurrentFeatures(self):
@@ -85,7 +85,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the current features of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentFeatures"])
 
     @property
     def CurrentSpeed(self):
@@ -95,7 +95,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - number: This describes the current speed of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentSpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentSpeed"])
 
     @property
     def DataPathId(self):
@@ -105,7 +105,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -115,7 +115,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the datapath ID, in hexadecimal format, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def EthernetAddress(self):
@@ -125,7 +125,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the hardware address of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetAddress"])
 
     @property
     def LocalIp(self):
@@ -135,7 +135,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the local IP of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MaximumSpeed(self):
@@ -145,7 +145,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - number: This describes the maximum speed of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaximumSpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaximumSpeed"])
 
     @property
     def Name(self):
@@ -155,7 +155,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the name of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def PeerAdvertisedFeatures(self):
@@ -165,7 +165,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the peer advertised features of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerAdvertisedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerAdvertisedFeatures"])
 
     @property
     def PortNumber(self):
@@ -175,7 +175,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - number: This describes the port number of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
 
     @property
     def RemoteIp(self):
@@ -185,7 +185,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the IP address of the remote end of the OF channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def State(self):
@@ -195,7 +195,7 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the current state of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def SupportedFeatures(self):
@@ -205,10 +205,10 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         -------
         - str: This describes the supported features of the physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedFeatures"])
 
     def add(self):
-        """Adds a new ofChannelPortsSwitchLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new ofChannelPortsSwitchLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -220,7 +220,24 @@ class OfChannelPortsSwitchLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, EthernetAddress=None, LocalIp=None, MaximumSpeed=None, Name=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, State=None, SupportedFeatures=None):
+    def find(
+        self,
+        AdvertisedFeatures=None,
+        Config=None,
+        CurrentFeatures=None,
+        CurrentSpeed=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        EthernetAddress=None,
+        LocalIp=None,
+        MaximumSpeed=None,
+        Name=None,
+        PeerAdvertisedFeatures=None,
+        PortNumber=None,
+        RemoteIp=None,
+        State=None,
+        SupportedFeatures=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, int, str, str, int, str, str, str) -> OfChannelPortsSwitchLearnedInfo
         """Finds and retrieves ofChannelPortsSwitchLearnedInfo resources from the server.
 

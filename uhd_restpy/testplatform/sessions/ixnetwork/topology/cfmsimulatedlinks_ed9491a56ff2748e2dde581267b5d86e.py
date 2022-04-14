@@ -110,7 +110,7 @@ class CfmSimulatedLinks(Base):
 
     def add(self, Name=None):
         # type: (str) -> CfmSimulatedLinks
-        """Adds a new cfmSimulatedLinks resource on the json, only valid with config assistant
+        """Adds a new cfmSimulatedLinks resource on the json, only valid with batch add utility
 
         Args
         ----

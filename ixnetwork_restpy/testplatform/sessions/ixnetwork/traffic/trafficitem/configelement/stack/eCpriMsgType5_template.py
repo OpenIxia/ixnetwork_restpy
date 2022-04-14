@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class ECpriMsgType5(Base):
     __slots__ = ()
-    _SDM_NAME = 'eCpriMsgType5'
+    _SDM_NAME = "eCpriMsgType5"
     _SDM_ATT_MAP = {
-        'HeaderMid': 'eCpriMsgType5.header.mid-1',
-        'HeaderAtype': 'eCpriMsgType5.header.atype-2',
-        'HeaderTimestamp': 'eCpriMsgType5.header.timestamp-3',
-        'HeaderCompvalue': 'eCpriMsgType5.header.compvalue-4',
-        'HeaderLength': 'eCpriMsgType5.header.header.length-5',
-        'HeaderData': 'eCpriMsgType5.header.header.data-6',
+        "HeaderMid": "eCpriMsgType5.header.mid-1",
+        "HeaderAtype": "eCpriMsgType5.header.atype-2",
+        "HeaderTimestamp": "eCpriMsgType5.header.timestamp-3",
+        "HeaderCompvalue": "eCpriMsgType5.header.compvalue-4",
+        "HeaderLength": "eCpriMsgType5.header.header.length-5",
+        "HeaderData": "eCpriMsgType5.header.header.data-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,8 @@ class ECpriMsgType5(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderMid"]))
 
     @property
     def HeaderAtype(self):
@@ -35,7 +36,8 @@ class ECpriMsgType5(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAtype']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderAtype"]))
 
     @property
     def HeaderTimestamp(self):
@@ -45,7 +47,10 @@ class ECpriMsgType5(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderTimestamp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderTimestamp"])
+        )
 
     @property
     def HeaderCompvalue(self):
@@ -55,7 +60,10 @@ class ECpriMsgType5(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCompvalue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCompvalue"])
+        )
 
     @property
     def HeaderLength(self):
@@ -65,7 +73,8 @@ class ECpriMsgType5(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderData(self):
@@ -75,7 +84,8 @@ class ECpriMsgType5(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderData"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

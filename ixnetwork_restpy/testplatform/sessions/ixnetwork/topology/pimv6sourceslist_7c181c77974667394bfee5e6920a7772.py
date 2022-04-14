@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,31 +33,30 @@ class PimV6SourcesList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pimV6SourcesList'
+    _SDM_NAME = "pimV6SourcesList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardSgJoinStates': 'discardSgJoinStates',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'LocalRouterId': 'localRouterId',
-        'MulticastDataLength': 'multicastDataLength',
-        'Name': 'name',
-        'RegisterProbeTime': 'registerProbeTime',
-        'RpAddress': 'rpAddress',
-        'SendNullRegAtBegin': 'sendNullRegAtBegin',
-        'SourceAddress': 'sourceAddress',
-        'SourceCount': 'sourceCount',
-        'Status': 'status',
-        'SupressionTime': 'supressionTime',
-        'SwitchOverInterval': 'switchOverInterval',
-        'TxIterationGap': 'txIterationGap',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DiscardSgJoinStates": "discardSgJoinStates",
+        "GroupAddress": "groupAddress",
+        "GroupCount": "groupCount",
+        "LocalRouterId": "localRouterId",
+        "MulticastDataLength": "multicastDataLength",
+        "Name": "name",
+        "RegisterProbeTime": "registerProbeTime",
+        "RpAddress": "rpAddress",
+        "SendNullRegAtBegin": "sendNullRegAtBegin",
+        "SourceAddress": "sourceAddress",
+        "SourceCount": "sourceCount",
+        "Status": "status",
+        "SupressionTime": "supressionTime",
+        "SwitchOverInterval": "switchOverInterval",
+        "TxIterationGap": "txIterationGap",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UdpSourcePort": "udpSourcePort",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PimV6SourcesList, self).__init__(parent, list_op)
@@ -72,10 +72,13 @@ class PimV6SourcesList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -87,7 +90,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -97,7 +101,7 @@ class PimV6SourcesList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -107,7 +111,7 @@ class PimV6SourcesList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardSgJoinStates(self):
@@ -118,7 +122,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the Learned Join States sent by the RP (DUT) in response to this specific Register Message will be discarded-and will not be displayed in the table of the Register Range window.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardSgJoinStates']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DiscardSgJoinStates"])
+        )
 
     @property
     def GroupAddress(self):
@@ -129,7 +136,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The first IPv6 multicast group address in the range of group addresses included in this Register message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupAddress"]))
 
     @property
     def GroupCount(self):
@@ -140,7 +148,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of group addresses to be included in this register message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupCount"]))
 
     @property
     def LocalRouterId(self):
@@ -150,7 +159,7 @@ class PimV6SourcesList(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
 
     @property
     def MulticastDataLength(self):
@@ -161,7 +170,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (in bytes) This field indicates the length of the UDP packet (the payload) within the IPv4 packet that is encapsulated in the PIM-SM Register Message sent from the DR to the DUT. The default is 64 bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastDataLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastDataLength"])
+        )
 
     @property
     def Name(self):
@@ -171,11 +183,12 @@ class PimV6SourcesList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RegisterProbeTime(self):
@@ -186,7 +199,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (In seconds) Part of the Register-Stop Timer (RST (S,G). Used to control the time intervals for the transmission of Null-Register messages from the Source's DR to the RP. Prior to expiration of the Register Suppression Time of the RST, a Null-Register message is sent to probe the RP, as a reminder to the RP to send a new Register-Stop message and maintain the state. If the RP does not respond with a new Register-Stop message, the Source's DR will start sending Register-encapsulated data again. The default is 5 seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegisterProbeTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegisterProbeTime"])
+        )
 
     @property
     def RpAddress(self):
@@ -197,7 +213,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the Rendezvous Point (RP) router-the root of the RPT (Rendezvous Point Tree).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RpAddress"]))
 
     @property
     def SendNullRegAtBegin(self):
@@ -208,7 +225,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, a Null Register packet will be sent by the Ixia-emulated Designated Router (DR)/Source Range to the RP to start the message exchange. (A Null Register packet contains no data.) Regardless of whether or not the box is selected-in addition-a Null Register packet will be sent to the RP every time (just before) the Register Stop timer is about to expire on the RP. This will trigger the RP to restart the timer so it will continue sending Register Stop packets to the Ixia-emulated DR/Source Range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendNullRegAtBegin']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendNullRegAtBegin"])
+        )
 
     @property
     def SourceAddress(self):
@@ -219,7 +239,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The first IPv6 source address to be included in this Register message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceAddress"]))
 
     @property
     def SourceCount(self):
@@ -230,7 +251,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of source addresses to be included in this register message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceCount"]))
 
     @property
     def Status(self):
@@ -240,7 +262,7 @@ class PimV6SourcesList(Base):
         -------
         - list(str[none | notStarted | started]): Status
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SupressionTime(self):
@@ -251,7 +273,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (In seconds) Part of the Register-Stop Timer (RST (S,G). The amount of time, following receipt of a Register-Stop message, that the DR will NOT send Register-encapsulated data to the Rendezvous Point (RP). The default is 60 seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupressionTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupressionTime"])
+        )
 
     @property
     def SwitchOverInterval(self):
@@ -262,7 +287,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The time interval (in seconds) allowed for the switch from using the RP tree to using a Source-specific tree - from (*, G) to (S,G). The default value is 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SwitchOverInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SwitchOverInterval"])
+        )
 
     @property
     def TxIterationGap(self):
@@ -273,7 +301,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (in milliseconds) The gap between each iteration of the Register Range. The default is 60,000 ms (= 60 seconds). (Does not apply to NULL Registers, which contain no data.)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxIterationGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TxIterationGap"])
+        )
 
     @property
     def UdpDestinationPort(self):
@@ -284,7 +315,10 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of UDP Destination Ports in the receiving Multicast Group. The default is 3000 UDP Destination Ports.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+        )
 
     @property
     def UdpSourcePort(self):
@@ -295,7 +329,8 @@ class PimV6SourcesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of UDP Source Ports sending encapsulated UDP packets to MultiCast Groups (through Register Messages to the RP). The default is 3000 UDP Source Ports.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UdpSourcePort"]))
 
     def update(self, Name=None):
         # type: (str) -> PimV6SourcesList
@@ -314,7 +349,14 @@ class PimV6SourcesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LocalRouterId=None, Name=None, Status=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalRouterId=None,
+        Name=None,
+        Status=None,
+    ):
         # type: (int, str, List[str], str, List[str]) -> PimV6SourcesList
         """Finds and retrieves pimV6SourcesList resources from the server.
 
@@ -391,10 +433,12 @@ class PimV6SourcesList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -429,12 +473,32 @@ class PimV6SourcesList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, DiscardSgJoinStates=None, GroupAddress=None, GroupCount=None, MulticastDataLength=None, RegisterProbeTime=None, RpAddress=None, SendNullRegAtBegin=None, SourceAddress=None, SourceCount=None, SupressionTime=None, SwitchOverInterval=None, TxIterationGap=None, UdpDestinationPort=None, UdpSourcePort=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        DiscardSgJoinStates=None,
+        GroupAddress=None,
+        GroupCount=None,
+        MulticastDataLength=None,
+        RegisterProbeTime=None,
+        RpAddress=None,
+        SendNullRegAtBegin=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SupressionTime=None,
+        SwitchOverInterval=None,
+        TxIterationGap=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+    ):
         """Base class infrastructure that gets a list of pimV6SourcesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

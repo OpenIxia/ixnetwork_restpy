@@ -319,7 +319,7 @@ class IPv6PseudoNodeRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> IPv6PseudoNodeRoutes
-        """Adds a new IPv6PseudoNodeRoutes resource on the json, only valid with config assistant
+        """Adds a new IPv6PseudoNodeRoutes resource on the json, only valid with batch add utility
 
         Args
         ----

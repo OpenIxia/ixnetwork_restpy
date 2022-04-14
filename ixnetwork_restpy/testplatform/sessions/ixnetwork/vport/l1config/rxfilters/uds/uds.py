@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,35 @@ class Uds(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'uds'
+    _SDM_NAME = "uds"
     _SDM_ATT_MAP = {
-        'CustomFrameSizeFrom': 'customFrameSizeFrom',
-        'CustomFrameSizeTo': 'customFrameSizeTo',
-        'DestinationAddressSelector': 'destinationAddressSelector',
-        'Error': 'error',
-        'FrameSizeType': 'frameSizeType',
-        'IsEnabled': 'isEnabled',
-        'PatternSelector': 'patternSelector',
-        'SourceAddressSelector': 'sourceAddressSelector',
+        "CustomFrameSizeFrom": "customFrameSizeFrom",
+        "CustomFrameSizeTo": "customFrameSizeTo",
+        "DestinationAddressSelector": "destinationAddressSelector",
+        "Error": "error",
+        "FrameSizeType": "frameSizeType",
+        "IsEnabled": "isEnabled",
+        "PatternSelector": "patternSelector",
+        "SourceAddressSelector": "sourceAddressSelector",
     }
     _SDM_ENUM_MAP = {
-        'destinationAddressSelector': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
-        'error': ['errAnyFrame', 'errBadCRC', 'errBadFrame', 'errGoodFrame'],
-        'frameSizeType': ['any', 'custom', 'jumbo', 'oversized', 'undersized'],
-        'patternSelector': ['anyPattern', 'notPattern1', 'notPattern2', 'pattern1', 'pattern2'],
-        'sourceAddressSelector': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
+        "destinationAddressSelector": [
+            "addr1",
+            "addr2",
+            "anyAddr",
+            "notAddr1",
+            "notAddr2",
+        ],
+        "error": ["errAnyFrame", "errBadCRC", "errBadFrame", "errGoodFrame"],
+        "frameSizeType": ["any", "custom", "jumbo", "oversized", "undersized"],
+        "patternSelector": [
+            "anyPattern",
+            "notPattern1",
+            "notPattern2",
+            "pattern1",
+            "pattern2",
+        ],
+        "sourceAddressSelector": ["addr1", "addr2", "anyAddr", "notAddr1", "notAddr2"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +76,12 @@ class Uds(Base):
         -------
         - number: Frame size customized from.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomFrameSizeFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomFrameSizeFrom"])
+
     @CustomFrameSizeFrom.setter
     def CustomFrameSizeFrom(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomFrameSizeFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomFrameSizeFrom"], value)
 
     @property
     def CustomFrameSizeTo(self):
@@ -77,11 +91,12 @@ class Uds(Base):
         -------
         - number: Customized frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomFrameSizeTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomFrameSizeTo"])
+
     @CustomFrameSizeTo.setter
     def CustomFrameSizeTo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomFrameSizeTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomFrameSizeTo"], value)
 
     @property
     def DestinationAddressSelector(self):
@@ -91,11 +106,12 @@ class Uds(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): Destination address selector.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationAddressSelector'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationAddressSelector"])
+
     @DestinationAddressSelector.setter
     def DestinationAddressSelector(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestinationAddressSelector'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestinationAddressSelector"], value)
 
     @property
     def Error(self):
@@ -105,11 +121,12 @@ class Uds(Base):
         -------
         - str(errAnyFrame | errBadCRC | errBadFrame | errGoodFrame): Indicates error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Error'])
+        return self._get_attribute(self._SDM_ATT_MAP["Error"])
+
     @Error.setter
     def Error(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Error'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Error"], value)
 
     @property
     def FrameSizeType(self):
@@ -119,11 +136,12 @@ class Uds(Base):
         -------
         - str(any | custom | jumbo | oversized | undersized): The type of frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeType"])
+
     @FrameSizeType.setter
     def FrameSizeType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeType"], value)
 
     @property
     def IsEnabled(self):
@@ -133,11 +151,12 @@ class Uds(Base):
         -------
         - bool: If true, UDS is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def PatternSelector(self):
@@ -147,11 +166,12 @@ class Uds(Base):
         -------
         - str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern2): Pattern selector.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PatternSelector'])
+        return self._get_attribute(self._SDM_ATT_MAP["PatternSelector"])
+
     @PatternSelector.setter
     def PatternSelector(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PatternSelector'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PatternSelector"], value)
 
     @property
     def SourceAddressSelector(self):
@@ -161,13 +181,24 @@ class Uds(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): Source address selector.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddressSelector'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddressSelector"])
+
     @SourceAddressSelector.setter
     def SourceAddressSelector(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAddressSelector'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAddressSelector"], value)
 
-    def update(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
+    def update(
+        self,
+        CustomFrameSizeFrom=None,
+        CustomFrameSizeTo=None,
+        DestinationAddressSelector=None,
+        Error=None,
+        FrameSizeType=None,
+        IsEnabled=None,
+        PatternSelector=None,
+        SourceAddressSelector=None,
+    ):
         # type: (int, int, str, str, str, bool, str, str) -> Uds
         """Updates uds resource on the server.
 
@@ -188,9 +219,19 @@ class Uds(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
+    def add(
+        self,
+        CustomFrameSizeFrom=None,
+        CustomFrameSizeTo=None,
+        DestinationAddressSelector=None,
+        Error=None,
+        FrameSizeType=None,
+        IsEnabled=None,
+        PatternSelector=None,
+        SourceAddressSelector=None,
+    ):
         # type: (int, int, str, str, str, bool, str, str) -> Uds
-        """Adds a new uds resource on the json, only valid with config assistant
+        """Adds a new uds resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -213,7 +254,17 @@ class Uds(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
+    def find(
+        self,
+        CustomFrameSizeFrom=None,
+        CustomFrameSizeTo=None,
+        DestinationAddressSelector=None,
+        Error=None,
+        FrameSizeType=None,
+        IsEnabled=None,
+        PatternSelector=None,
+        SourceAddressSelector=None,
+    ):
         # type: (int, int, str, str, str, bool, str, str) -> Uds
         """Finds and retrieves uds resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,19 @@ class Rsvp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvp'
+    _SDM_NAME = "rsvp"
     _SDM_ATT_MAP = {
-        'EnableBgpOverLsp': 'enableBgpOverLsp',
-        'EnableControlLspInitiationRate': 'enableControlLspInitiationRate',
-        'EnableShowTimeValue': 'enableShowTimeValue',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'Enabled': 'enabled',
-        'MaxLspInitiationsPerSec': 'maxLspInitiationsPerSec',
-        'RunningState': 'runningState',
-        'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
+        "EnableBgpOverLsp": "enableBgpOverLsp",
+        "EnableControlLspInitiationRate": "enableControlLspInitiationRate",
+        "EnableShowTimeValue": "enableShowTimeValue",
+        "EnableVpnLabelExchangeOverLsp": "enableVpnLabelExchangeOverLsp",
+        "Enabled": "enabled",
+        "MaxLspInitiationsPerSec": "maxLspInitiationsPerSec",
+        "RunningState": "runningState",
+        "UseTransportLabelsForMplsOam": "useTransportLabelsForMplsOam",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,25 +62,29 @@ class Rsvp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_62767236969162b40f4736b7bf4280eb import NeighborPair
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_62767236969162b40f4736b7bf4280eb import (
+            NeighborPair,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NeighborPair', None) is not None:
-                return self._properties.get('NeighborPair')
+            if self._properties.get("NeighborPair", None) is not None:
+                return self._properties.get("NeighborPair")
         return NeighborPair(self)
 
     @property
     def EnableBgpOverLsp(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Enables the ability to exchange labels over LSP for VPNs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBgpOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBgpOverLsp"])
+
     @EnableBgpOverLsp.setter
     def EnableBgpOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBgpOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBgpOverLsp"], value)
 
     @property
     def EnableControlLspInitiationRate(self):
@@ -89,11 +94,12 @@ class Rsvp(Base):
         -------
         - bool: Controls the LSP initiation rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableControlLspInitiationRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableControlLspInitiationRate"])
+
     @EnableControlLspInitiationRate.setter
     def EnableControlLspInitiationRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableControlLspInitiationRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableControlLspInitiationRate"], value)
 
     @property
     def EnableShowTimeValue(self):
@@ -103,11 +109,12 @@ class Rsvp(Base):
         -------
         - bool: If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableShowTimeValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableShowTimeValue"])
+
     @EnableShowTimeValue.setter
     def EnableShowTimeValue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableShowTimeValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableShowTimeValue"], value)
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
@@ -117,11 +124,12 @@ class Rsvp(Base):
         -------
         - bool: If true, enables VPN label exchange over LSP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"])
+
     @EnableVpnLabelExchangeOverLsp.setter
     def EnableVpnLabelExchangeOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"], value)
 
     @property
     def Enabled(self):
@@ -131,11 +139,12 @@ class Rsvp(Base):
         -------
         - bool: Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def MaxLspInitiationsPerSec(self):
@@ -145,11 +154,12 @@ class Rsvp(Base):
         -------
         - number: The maximum number of LSP Initiations sent per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLspInitiationsPerSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLspInitiationsPerSec"])
+
     @MaxLspInitiationsPerSec.setter
     def MaxLspInitiationsPerSec(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxLspInitiationsPerSec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxLspInitiationsPerSec"], value)
 
     @property
     def RunningState(self):
@@ -159,7 +169,7 @@ class Rsvp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the RSVP server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def UseTransportLabelsForMplsOam(self):
@@ -169,13 +179,23 @@ class Rsvp(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseTransportLabelsForMplsOam"])
+
     @UseTransportLabelsForMplsOam.setter
     def UseTransportLabelsForMplsOam(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseTransportLabelsForMplsOam"], value)
 
-    def update(self, EnableBgpOverLsp=None, EnableControlLspInitiationRate=None, EnableShowTimeValue=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, MaxLspInitiationsPerSec=None, UseTransportLabelsForMplsOam=None):
+    def update(
+        self,
+        EnableBgpOverLsp=None,
+        EnableControlLspInitiationRate=None,
+        EnableShowTimeValue=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        MaxLspInitiationsPerSec=None,
+        UseTransportLabelsForMplsOam=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, bool) -> Rsvp
         """Updates rsvp resource on the server.
 
@@ -195,7 +215,17 @@ class Rsvp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableBgpOverLsp=None, EnableControlLspInitiationRate=None, EnableShowTimeValue=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, MaxLspInitiationsPerSec=None, RunningState=None, UseTransportLabelsForMplsOam=None):
+    def find(
+        self,
+        EnableBgpOverLsp=None,
+        EnableControlLspInitiationRate=None,
+        EnableShowTimeValue=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        MaxLspInitiationsPerSec=None,
+        RunningState=None,
+        UseTransportLabelsForMplsOam=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, str, bool) -> Rsvp
         """Finds and retrieves rsvp resources from the server.
 
@@ -257,10 +287,12 @@ class Rsvp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -277,7 +309,9 @@ class Rsvp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

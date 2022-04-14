@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class PcepXROObjectsListTriggerParam(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pcepXROObjectsListTriggerParam'
+    _SDM_NAME = "pcepXROObjectsListTriggerParam"
     _SDM_ATT_MAP = {
-        'ActiveXRO': 'activeXRO',
-        'AsNumber': 'asNumber',
-        'Attribute': 'attribute',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterfaceId': 'interfaceId',
-        'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
-        'Name': 'name',
-        'PFlagXro': 'pFlagXro',
-        'PceId128': 'pceId128',
-        'PceId32': 'pceId32',
-        'PrefixLength': 'prefixLength',
-        'RouterId': 'routerId',
-        'SrlgId': 'srlgId',
-        'SubObjectType': 'subObjectType',
-        'XBit': 'xBit',
+        "ActiveXRO": "activeXRO",
+        "AsNumber": "asNumber",
+        "Attribute": "attribute",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InterfaceId": "interfaceId",
+        "Ipv4Address": "ipv4Address",
+        "Ipv6Address": "ipv6Address",
+        "Name": "name",
+        "PFlagXro": "pFlagXro",
+        "PceId128": "pceId128",
+        "PceId32": "pceId32",
+        "PrefixLength": "prefixLength",
+        "RouterId": "routerId",
+        "SrlgId": "srlgId",
+        "SubObjectType": "subObjectType",
+        "XBit": "xBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PcepXROObjectsListTriggerParam, self).__init__(parent, list_op)
@@ -69,7 +69,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Controls whether the XRO sub-object will be sent in the PCRequest message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveXRO']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveXRO"]))
 
     @property
     def AsNumber(self):
@@ -80,7 +81,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
 
     @property
     def Attribute(self):
@@ -91,7 +93,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates how the exclusion subobject is to be indicated
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Attribute']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Attribute"]))
 
     @property
     def Count(self):
@@ -101,7 +104,7 @@ class PcepXROObjectsListTriggerParam(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -111,7 +114,7 @@ class PcepXROObjectsListTriggerParam(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InterfaceId(self):
@@ -122,7 +125,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InterfaceId"]))
 
     @property
     def Ipv4Address(self):
@@ -133,7 +137,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4Address"]))
 
     @property
     def Ipv6Address(self):
@@ -144,7 +149,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"]))
 
     @property
     def Name(self):
@@ -154,11 +160,12 @@ class PcepXROObjectsListTriggerParam(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PFlagXro(self):
@@ -169,7 +176,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): XRO P Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlagXro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlagXro"]))
 
     @property
     def PceId128(self):
@@ -180,7 +188,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit PKS ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PceId128']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PceId128"]))
 
     @property
     def PceId32(self):
@@ -191,7 +200,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 32 bit PKS ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PceId32']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PceId32"]))
 
     @property
     def PrefixLength(self):
@@ -202,7 +212,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def RouterId(self):
@@ -213,7 +224,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouterId"]))
 
     @property
     def SrlgId(self):
@@ -224,7 +236,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRLG ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrlgId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrlgId"]))
 
     @property
     def SubObjectType(self):
@@ -235,7 +248,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Using the Sub Object Type control user can configure which sub object needs to be included from the following options: IPv4 Prefix IPv6 Prefix Unnumbered Interface ID AS Number. SRLG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubObjectType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubObjectType"]))
 
     @property
     def XBit(self):
@@ -246,7 +260,8 @@ class PcepXROObjectsListTriggerParam(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether the exclusion is mandatory or desired.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["XBit"]))
 
     def update(self, Name=None):
         # type: (str) -> PcepXROObjectsListTriggerParam
@@ -335,7 +350,24 @@ class PcepXROObjectsListTriggerParam(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ActiveXRO=None, AsNumber=None, Attribute=None, InterfaceId=None, Ipv4Address=None, Ipv6Address=None, PFlagXro=None, PceId128=None, PceId32=None, PrefixLength=None, RouterId=None, SrlgId=None, SubObjectType=None, XBit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActiveXRO=None,
+        AsNumber=None,
+        Attribute=None,
+        InterfaceId=None,
+        Ipv4Address=None,
+        Ipv6Address=None,
+        PFlagXro=None,
+        PceId128=None,
+        PceId32=None,
+        PrefixLength=None,
+        RouterId=None,
+        SrlgId=None,
+        SubObjectType=None,
+        XBit=None,
+    ):
         """Base class infrastructure that gets a list of pcepXROObjectsListTriggerParam device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

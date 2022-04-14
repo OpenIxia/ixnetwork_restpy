@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class AncpGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ancpGlobals'
+    _SDM_NAME = "ancpGlobals"
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
-        'PortDownRate': 'portDownRate',
-        'PortUpRate': 'portUpRate',
-        'ResyncRate': 'resyncRate',
+        "ObjectId": "objectId",
+        "PortDownRate": "portDownRate",
+        "PortUpRate": "portUpRate",
+        "ResyncRate": "resyncRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AncpGlobals, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class AncpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdslprofile import AncpDslProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdslprofile import (
+            AncpDslProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpDslProfile', None) is not None:
-                return self._properties.get('AncpDslProfile')
+            if self._properties.get("AncpDslProfile", None) is not None:
+                return self._properties.get("AncpDslProfile")
         return AncpDslProfile(self)
 
     @property
@@ -75,10 +78,13 @@ class AncpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresyncprofile import AncpDslResyncProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresyncprofile import (
+            AncpDslResyncProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpDslResyncProfile', None) is not None:
-                return self._properties.get('AncpDslResyncProfile')
+            if self._properties.get("AncpDslResyncProfile", None) is not None:
+                return self._properties.get("AncpDslResyncProfile")
         return AncpDslResyncProfile(self)
 
     @property
@@ -89,7 +95,7 @@ class AncpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PortDownRate(self):
@@ -99,11 +105,12 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Down event messages to send each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDownRate"])
+
     @PortDownRate.setter
     def PortDownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDownRate"], value)
 
     @property
     def PortUpRate(self):
@@ -113,11 +120,12 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Up event messages to send each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortUpRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortUpRate"])
+
     @PortUpRate.setter
     def PortUpRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortUpRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortUpRate"], value)
 
     @property
     def ResyncRate(self):
@@ -127,11 +135,12 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Up event messages to send each second, to simulate DSL Resync events.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResyncRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResyncRate"])
+
     @ResyncRate.setter
     def ResyncRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResyncRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResyncRate"], value)
 
     def update(self, PortDownRate=None, PortUpRate=None, ResyncRate=None):
         # type: (int, int, int) -> AncpGlobals

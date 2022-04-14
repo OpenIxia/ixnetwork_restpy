@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,24 @@ class EgtpClientGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpClientGlobals'
+    _SDM_NAME = "egtpClientGlobals"
     _SDM_ATT_MAP = {
-        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
-        'EnableGatewayArp': 'enableGatewayArp',
-        'EnablePartialNegotiation': 'enablePartialNegotiation',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
-        'MaxMbrUAndD': 'maxMbrUAndD',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'TsSpec': 'tsSpec',
-        'UseMaxRatesForDcp': 'useMaxRatesForDcp',
+        "EnableDynamicQosCtrl": "enableDynamicQosCtrl",
+        "EnableGatewayArp": "enableGatewayArp",
+        "EnablePartialNegotiation": "enablePartialNegotiation",
+        "GatewayArpRequestRate": "gatewayArpRequestRate",
+        "MaxMbrUAndD": "maxMbrUAndD",
+        "MaxOutstandingGatewayArpRequests": "maxOutstandingGatewayArpRequests",
+        "MaxOutstandingReleases": "maxOutstandingReleases",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "SendOneArpFromEachInterface": "sendOneArpFromEachInterface",
+        "SetupRateInitial": "setupRateInitial",
+        "TeardownRateInitial": "teardownRateInitial",
+        "TsSpec": "tsSpec",
+        "UseMaxRatesForDcp": "useMaxRatesForDcp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpClientGlobals, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class EgtpClientGlobals(Base):
         -------
         - bool: Enable Dynamic QoS Enforcement
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDynamicQosCtrl"])
+
     @EnableDynamicQosCtrl.setter
     def EnableDynamicQosCtrl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDynamicQosCtrl"], value)
 
     @property
     def EnableGatewayArp(self):
@@ -79,11 +80,12 @@ class EgtpClientGlobals(Base):
         -------
         - bool: When enabled, every IP address will ARP the specified gateway.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGatewayArp"])
+
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGatewayArp"], value)
 
     @property
     def EnablePartialNegotiation(self):
@@ -91,13 +93,14 @@ class EgtpClientGlobals(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePartialNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePartialNegotiation"])
+
     @EnablePartialNegotiation.setter
     def EnablePartialNegotiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePartialNegotiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePartialNegotiation"], value)
 
     @property
     def GatewayArpRequestRate(self):
@@ -107,11 +110,12 @@ class EgtpClientGlobals(Base):
         -------
         - number: Maximum ARP request rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayArpRequestRate"])
+
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayArpRequestRate"], value)
 
     @property
     def MaxMbrUAndD(self):
@@ -119,13 +123,14 @@ class EgtpClientGlobals(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxMbrUAndD"])
+
     @MaxMbrUAndD.setter
     def MaxMbrUAndD(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxMbrUAndD"], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
@@ -135,11 +140,16 @@ class EgtpClientGlobals(Base):
         -------
         - number: Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MaxOutstandingGatewayArpRequests"]
+        )
+
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MaxOutstandingGatewayArpRequests"], value
+        )
 
     @property
     def MaxOutstandingReleases(self):
@@ -147,13 +157,14 @@ class EgtpClientGlobals(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"])
+
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -161,13 +172,14 @@ class EgtpClientGlobals(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -177,7 +189,7 @@ class EgtpClientGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SendOneArpFromEachInterface(self):
@@ -187,11 +199,12 @@ class EgtpClientGlobals(Base):
         -------
         - bool: When set, each interface will send one ARP request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendOneArpFromEachInterface"])
+
     @SendOneArpFromEachInterface.setter
     def SendOneArpFromEachInterface(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendOneArpFromEachInterface"], value)
 
     @property
     def SetupRateInitial(self):
@@ -201,11 +214,12 @@ class EgtpClientGlobals(Base):
         -------
         - number: Initial setup rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateInitial"])
+
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateInitial"], value)
 
     @property
     def TeardownRateInitial(self):
@@ -215,11 +229,12 @@ class EgtpClientGlobals(Base):
         -------
         - number: Initial teardown rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateInitial"])
+
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateInitial"], value)
 
     @property
     def TsSpec(self):
@@ -227,13 +242,14 @@ class EgtpClientGlobals(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TsSpec'])
+        return self._get_attribute(self._SDM_ATT_MAP["TsSpec"])
+
     @TsSpec.setter
     def TsSpec(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TsSpec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TsSpec"], value)
 
     @property
     def UseMaxRatesForDcp(self):
@@ -243,13 +259,29 @@ class EgtpClientGlobals(Base):
         -------
         - bool: Use default rates (DCP mode)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseMaxRatesForDcp"])
+
     @UseMaxRatesForDcp.setter
     def UseMaxRatesForDcp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseMaxRatesForDcp"], value)
 
-    def update(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+    def update(
+        self,
+        EnableDynamicQosCtrl=None,
+        EnableGatewayArp=None,
+        EnablePartialNegotiation=None,
+        GatewayArpRequestRate=None,
+        MaxMbrUAndD=None,
+        MaxOutstandingGatewayArpRequests=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        SendOneArpFromEachInterface=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        TsSpec=None,
+        UseMaxRatesForDcp=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, int, bool, int, int, str, bool) -> EgtpClientGlobals
         """Updates egtpClientGlobals resource on the server.
 
@@ -257,16 +289,16 @@ class EgtpClientGlobals(Base):
         ----
         - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
         - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-        - EnablePartialNegotiation (bool): 
+        - EnablePartialNegotiation (bool):
         - GatewayArpRequestRate (number): Maximum ARP request rate
-        - MaxMbrUAndD (number): 
+        - MaxMbrUAndD (number):
         - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-        - MaxOutstandingReleases (number): 
-        - MaxOutstandingRequests (number): 
+        - MaxOutstandingReleases (number):
+        - MaxOutstandingRequests (number):
         - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
         - SetupRateInitial (number): Initial setup rate
         - TeardownRateInitial (number): Initial teardown rate
-        - TsSpec (str): 
+        - TsSpec (str):
         - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
         Raises
@@ -275,7 +307,22 @@ class EgtpClientGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+    def add(
+        self,
+        EnableDynamicQosCtrl=None,
+        EnableGatewayArp=None,
+        EnablePartialNegotiation=None,
+        GatewayArpRequestRate=None,
+        MaxMbrUAndD=None,
+        MaxOutstandingGatewayArpRequests=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        SendOneArpFromEachInterface=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        TsSpec=None,
+        UseMaxRatesForDcp=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, int, bool, int, int, str, bool) -> EgtpClientGlobals
         """Adds a new egtpClientGlobals resource on the server and adds it to the container.
 
@@ -283,16 +330,16 @@ class EgtpClientGlobals(Base):
         ----
         - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
         - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-        - EnablePartialNegotiation (bool): 
+        - EnablePartialNegotiation (bool):
         - GatewayArpRequestRate (number): Maximum ARP request rate
-        - MaxMbrUAndD (number): 
+        - MaxMbrUAndD (number):
         - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-        - MaxOutstandingReleases (number): 
-        - MaxOutstandingRequests (number): 
+        - MaxOutstandingReleases (number):
+        - MaxOutstandingRequests (number):
         - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
         - SetupRateInitial (number): Initial setup rate
         - TeardownRateInitial (number): Initial teardown rate
-        - TsSpec (str): 
+        - TsSpec (str):
         - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
         Returns
@@ -315,7 +362,23 @@ class EgtpClientGlobals(Base):
         """
         self._delete()
 
-    def find(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+    def find(
+        self,
+        EnableDynamicQosCtrl=None,
+        EnableGatewayArp=None,
+        EnablePartialNegotiation=None,
+        GatewayArpRequestRate=None,
+        MaxMbrUAndD=None,
+        MaxOutstandingGatewayArpRequests=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        SendOneArpFromEachInterface=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+        TsSpec=None,
+        UseMaxRatesForDcp=None,
+    ):
         # type: (bool, bool, bool, int, int, int, int, int, str, bool, int, int, str, bool) -> EgtpClientGlobals
         """Finds and retrieves egtpClientGlobals resources from the server.
 
@@ -327,17 +390,17 @@ class EgtpClientGlobals(Base):
         ----
         - EnableDynamicQosCtrl (bool): Enable Dynamic QoS Enforcement
         - EnableGatewayArp (bool): When enabled, every IP address will ARP the specified gateway.
-        - EnablePartialNegotiation (bool): 
+        - EnablePartialNegotiation (bool):
         - GatewayArpRequestRate (number): Maximum ARP request rate
-        - MaxMbrUAndD (number): 
+        - MaxMbrUAndD (number):
         - MaxOutstandingGatewayArpRequests (number): Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
-        - MaxOutstandingReleases (number): 
-        - MaxOutstandingRequests (number): 
+        - MaxOutstandingReleases (number):
+        - MaxOutstandingRequests (number):
         - ObjectId (str): Unique identifier for this object
         - SendOneArpFromEachInterface (bool): When set, each interface will send one ARP request.
         - SetupRateInitial (number): Initial setup rate
         - TeardownRateInitial (number): Initial teardown rate
-        - TsSpec (str): 
+        - TsSpec (str):
         - UseMaxRatesForDcp (bool): Use default rates (DCP mode)
 
         Returns

@@ -18,26 +18,26 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class FormulaCatalog(Base):
-    """This object holds the catalog information for the various statistical
-formula.
-    The FormulaCatalog class encapsulates a required formulaCatalog resource which will be retrieved from the server every time the property is accessed.
+    """This object holds the catalog information for the various statistical
+
+    formula.
+        The FormulaCatalog class encapsulates a required formulaCatalog resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'formulaCatalog'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "formulaCatalog"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FormulaCatalog, self).__init__(parent, list_op)
@@ -53,10 +53,13 @@ formula.
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import FormulaColumn
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import (
+            FormulaColumn,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FormulaColumn', None) is not None:
-                return self._properties.get('FormulaColumn')
+            if self._properties.get("FormulaColumn", None) is not None:
+                return self._properties.get("FormulaColumn")
         return FormulaColumn(self)
 
     def find(self):

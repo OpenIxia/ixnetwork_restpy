@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class Dhcpv6ServerGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6ServerGlobals'
+    _SDM_NAME = "dhcpv6ServerGlobals"
     _SDM_ATT_MAP = {
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'MaxLeaseTime': 'maxLeaseTime',
-        'ObjectId': 'objectId',
+        "DefaultLeaseTime": "defaultLeaseTime",
+        "MaxLeaseTime": "maxLeaseTime",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv6ServerGlobals, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - number: The Life Time length in seconds that will be assigned to a lease if the requesting DHCP Client does not specify a specific expiration time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"])
+
     @DefaultLeaseTime.setter
     def DefaultLeaseTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"], value)
 
     @property
     def MaxLeaseTime(self):
@@ -68,11 +69,12 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - number: The maximum Life Time length in seconds that will be assigned to a lease.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLeaseTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLeaseTime"])
+
     @MaxLeaseTime.setter
     def MaxLeaseTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxLeaseTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxLeaseTime"], value)
 
     @property
     def ObjectId(self):
@@ -82,7 +84,7 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, DefaultLeaseTime=None, MaxLeaseTime=None):
         # type: (int, int) -> Dhcpv6ServerGlobals

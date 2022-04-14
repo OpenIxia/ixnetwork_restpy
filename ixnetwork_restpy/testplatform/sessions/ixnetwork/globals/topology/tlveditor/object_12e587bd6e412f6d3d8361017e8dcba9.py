@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,12 +35,11 @@ class Object(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'object'
+    _SDM_NAME = "object"
     _SDM_ATT_MAP = {
-        'Name': 'name',
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Object, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class Object(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.container_1a12044c5aa69dabfe18a51e622cd1b5 import Container
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.container_1a12044c5aa69dabfe18a51e622cd1b5 import (
+            Container,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Container', None) is not None:
-                return self._properties.get('Container')
+            if self._properties.get("Container", None) is not None:
+                return self._properties.get("Container")
         return Container(self)
 
     @property
@@ -72,10 +75,13 @@ class Object(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.field_01f1f7f093248c40b24c4bf69cffe573 import Field
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.field_01f1f7f093248c40b24c4bf69cffe573 import (
+            Field,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Field', None) is not None:
-                return self._properties.get('Field')
+            if self._properties.get("Field", None) is not None:
+                return self._properties.get("Field")
         return Field(self)
 
     @property
@@ -89,10 +95,13 @@ class Object(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.subtlv_60e12b7ebaca7628a30e30506e5025bc import SubTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.subtlv_60e12b7ebaca7628a30e30506e5025bc import (
+            SubTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SubTlv', None) is not None:
-                return self._properties.get('SubTlv')
+            if self._properties.get("SubTlv", None) is not None:
+                return self._properties.get("SubTlv")
         return SubTlv(self)
 
     @property
@@ -103,11 +112,12 @@ class Object(Base):
         -------
         - str: The name of the object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> Object

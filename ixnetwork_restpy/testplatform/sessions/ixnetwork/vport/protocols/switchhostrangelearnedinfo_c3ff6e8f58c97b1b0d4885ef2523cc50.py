@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class SwitchHostRangeLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchHostRangeLearnedInfo'
+    _SDM_NAME = "switchHostRangeLearnedInfo"
     _SDM_ATT_MAP = {
-        'DestinationHostIpv4Address': 'destinationHostIpv4Address',
-        'DestinationHostMac': 'destinationHostMac',
-        'PacketType': 'packetType',
-        'Path': 'path',
-        'SourceHostIpv4Address': 'sourceHostIpv4Address',
-        'SourceHostMac': 'sourceHostMac',
-        'Status': 'status',
+        "DestinationHostIpv4Address": "destinationHostIpv4Address",
+        "DestinationHostMac": "destinationHostMac",
+        "PacketType": "packetType",
+        "Path": "path",
+        "SourceHostIpv4Address": "sourceHostIpv4Address",
+        "SourceHostMac": "sourceHostMac",
+        "Status": "status",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchHostRangeLearnedInfo, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class SwitchHostRangeLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_644eba5a33f6c4a8b40b153ae361c253 import SwitchHostRangeHopsLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_644eba5a33f6c4a8b40b153ae361c253 import (
+            SwitchHostRangeHopsLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchHostRangeHopsLearnedInfo', None) is not None:
-                return self._properties.get('SwitchHostRangeHopsLearnedInfo')
+            if self._properties.get("SwitchHostRangeHopsLearnedInfo", None) is not None:
+                return self._properties.get("SwitchHostRangeHopsLearnedInfo")
         return SwitchHostRangeHopsLearnedInfo(self)
 
     @property
@@ -74,7 +77,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationHostIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationHostIpv4Address"])
 
     @property
     def DestinationHostMac(self):
@@ -84,7 +87,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationHostMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationHostMac"])
 
     @property
     def PacketType(self):
@@ -94,7 +97,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketType"])
 
     @property
     def Path(self):
@@ -104,7 +107,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Path'])
+        return self._get_attribute(self._SDM_ATT_MAP["Path"])
 
     @property
     def SourceHostIpv4Address(self):
@@ -114,7 +117,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceHostIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceHostIpv4Address"])
 
     @property
     def SourceHostMac(self):
@@ -124,7 +127,7 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceHostMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceHostMac"])
 
     @property
     def Status(self):
@@ -134,10 +137,10 @@ class SwitchHostRangeLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def add(self):
-        """Adds a new switchHostRangeLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchHostRangeLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -149,7 +152,16 @@ class SwitchHostRangeLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DestinationHostIpv4Address=None, DestinationHostMac=None, PacketType=None, Path=None, SourceHostIpv4Address=None, SourceHostMac=None, Status=None):
+    def find(
+        self,
+        DestinationHostIpv4Address=None,
+        DestinationHostMac=None,
+        PacketType=None,
+        Path=None,
+        SourceHostIpv4Address=None,
+        SourceHostMac=None,
+        Status=None,
+    ):
         # type: (str, str, str, str, str, str, str) -> SwitchHostRangeLearnedInfo
         """Finds and retrieves switchHostRangeLearnedInfo resources from the server.
 

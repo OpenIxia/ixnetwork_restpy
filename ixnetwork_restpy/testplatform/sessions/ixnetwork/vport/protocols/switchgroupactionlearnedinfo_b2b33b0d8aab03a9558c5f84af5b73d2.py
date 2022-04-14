@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,59 +34,58 @@ class SwitchGroupActionLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchGroupActionLearnedInfo'
+    _SDM_NAME = "switchGroupActionLearnedInfo"
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
-        'ArpDestinationHwAddress': 'arpDestinationHwAddress',
-        'ArpDstIpv4Address': 'arpDstIpv4Address',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSourceHwAddress': 'arpSourceHwAddress',
-        'ArpSrcIpv4Address': 'arpSrcIpv4Address',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'Experimenter': 'experimenter',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDatalength': 'experimenterDatalength',
-        'GroupId': 'groupId',
-        'Icmpv4Code': 'icmpv4Code',
-        'Icmpv4Type': 'icmpv4Type',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProto': 'ipProto',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTarget': 'ipv6NdTarget',
-        'Ipv6NdTll': 'ipv6NdTll',
-        'Ipv6Source': 'ipv6Source',
-        'MaxByteLength': 'maxByteLength',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'MplsTtl': 'mplsTtl',
-        'NetworkTtl': 'networkTtl',
-        'OutputPort': 'outputPort',
-        'OutputPortType': 'outputPortType',
-        'PbbIsid': 'pbbIsid',
-        'QueueId': 'queueId',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TunnelId': 'tunnelId',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ActionType": "actionType",
+        "ArpDestinationHwAddress": "arpDestinationHwAddress",
+        "ArpDstIpv4Address": "arpDstIpv4Address",
+        "ArpOpcode": "arpOpcode",
+        "ArpSourceHwAddress": "arpSourceHwAddress",
+        "ArpSrcIpv4Address": "arpSrcIpv4Address",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "EthernetType": "ethernetType",
+        "Experimenter": "experimenter",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDatalength": "experimenterDatalength",
+        "GroupId": "groupId",
+        "Icmpv4Code": "icmpv4Code",
+        "Icmpv4Type": "icmpv4Type",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProto": "ipProto",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTarget": "ipv6NdTarget",
+        "Ipv6NdTll": "ipv6NdTll",
+        "Ipv6Source": "ipv6Source",
+        "MaxByteLength": "maxByteLength",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "MplsTtl": "mplsTtl",
+        "NetworkTtl": "networkTtl",
+        "OutputPort": "outputPort",
+        "OutputPortType": "outputPortType",
+        "PbbIsid": "pbbIsid",
+        "QueueId": "queueId",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TunnelId": "tunnelId",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchGroupActionLearnedInfo, self).__init__(parent, list_op)
@@ -98,7 +98,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionType"])
 
     @property
     def ArpDestinationHwAddress(self):
@@ -108,7 +108,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDestinationHwAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDestinationHwAddress"])
 
     @property
     def ArpDstIpv4Address(self):
@@ -118,7 +118,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4Address"])
 
     @property
     def ArpOpcode(self):
@@ -128,7 +128,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
 
     @property
     def ArpSourceHwAddress(self):
@@ -138,7 +138,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSourceHwAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSourceHwAddress"])
 
     @property
     def ArpSrcIpv4Address(self):
@@ -148,7 +148,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Address"])
 
     @property
     def EthernetDestination(self):
@@ -158,7 +158,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
 
     @property
     def EthernetSource(self):
@@ -168,7 +168,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
 
     @property
     def EthernetType(self):
@@ -178,7 +178,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
 
     @property
     def Experimenter(self):
@@ -188,7 +188,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
 
     @property
     def ExperimenterData(self):
@@ -198,7 +198,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
 
     @property
     def ExperimenterDatalength(self):
@@ -208,7 +208,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDatalength"])
 
     @property
     def GroupId(self):
@@ -218,7 +218,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def Icmpv4Code(self):
@@ -228,7 +228,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Code"])
 
     @property
     def Icmpv4Type(self):
@@ -238,7 +238,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Type"])
 
     @property
     def Icmpv6Code(self):
@@ -248,7 +248,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
 
     @property
     def Icmpv6Type(self):
@@ -258,7 +258,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
 
     @property
     def IpDscp(self):
@@ -268,7 +268,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
 
     @property
     def IpEcn(self):
@@ -278,7 +278,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
 
     @property
     def IpProto(self):
@@ -288,7 +288,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProto'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProto"])
 
     @property
     def Ipv4Destination(self):
@@ -298,7 +298,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
 
     @property
     def Ipv4Source(self):
@@ -308,7 +308,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
 
     @property
     def Ipv6Destination(self):
@@ -318,7 +318,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
 
     @property
     def Ipv6ExtHeader(self):
@@ -328,7 +328,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
 
     @property
     def Ipv6FlowLabel(self):
@@ -338,7 +338,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
 
     @property
     def Ipv6NdSll(self):
@@ -348,7 +348,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
 
     @property
     def Ipv6NdTarget(self):
@@ -358,7 +358,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"])
 
     @property
     def Ipv6NdTll(self):
@@ -368,7 +368,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTll"])
 
     @property
     def Ipv6Source(self):
@@ -378,7 +378,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
 
     @property
     def MaxByteLength(self):
@@ -388,7 +388,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxByteLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxByteLength"])
 
     @property
     def MplsBos(self):
@@ -398,7 +398,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
 
     @property
     def MplsLabel(self):
@@ -408,7 +408,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
 
     @property
     def MplsTc(self):
@@ -418,7 +418,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
 
     @property
     def MplsTtl(self):
@@ -428,7 +428,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTtl"])
 
     @property
     def NetworkTtl(self):
@@ -438,7 +438,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkTtl"])
 
     @property
     def OutputPort(self):
@@ -448,7 +448,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPort"])
 
     @property
     def OutputPortType(self):
@@ -458,7 +458,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPortType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPortType"])
 
     @property
     def PbbIsid(self):
@@ -468,7 +468,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsid"])
 
     @property
     def QueueId(self):
@@ -478,7 +478,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
 
     @property
     def SctpDestination(self):
@@ -488,7 +488,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
 
     @property
     def SctpSource(self):
@@ -498,7 +498,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
 
     @property
     def TcpDestination(self):
@@ -508,7 +508,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
 
     @property
     def TcpSource(self):
@@ -518,7 +518,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
 
     @property
     def TunnelId(self):
@@ -528,7 +528,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
 
     @property
     def UdpDestination(self):
@@ -538,7 +538,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
 
     @property
     def UdpSource(self):
@@ -548,7 +548,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
 
     @property
     def VlanId(self):
@@ -558,7 +558,7 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     @property
     def VlanPriority(self):
@@ -568,10 +568,10 @@ class SwitchGroupActionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
 
     def add(self):
-        """Adds a new switchGroupActionLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchGroupActionLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -583,7 +583,57 @@ class SwitchGroupActionLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActionType=None, ArpDestinationHwAddress=None, ArpDstIpv4Address=None, ArpOpcode=None, ArpSourceHwAddress=None, ArpSrcIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProto=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NetworkTtl=None, OutputPort=None, OutputPortType=None, PbbIsid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ActionType=None,
+        ArpDestinationHwAddress=None,
+        ArpDstIpv4Address=None,
+        ArpOpcode=None,
+        ArpSourceHwAddress=None,
+        ArpSrcIpv4Address=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDatalength=None,
+        GroupId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProto=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        MaxByteLength=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        MplsTtl=None,
+        NetworkTtl=None,
+        OutputPort=None,
+        OutputPortType=None,
+        PbbIsid=None,
+        QueueId=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, str, int, str, int, int, int, int, int, int, str, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, str, int, int, int, int) -> SwitchGroupActionLearnedInfo
         """Finds and retrieves switchGroupActionLearnedInfo resources from the server.
 

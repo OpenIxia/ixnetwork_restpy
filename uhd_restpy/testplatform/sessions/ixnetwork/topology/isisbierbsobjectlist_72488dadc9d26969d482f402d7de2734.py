@@ -134,7 +134,7 @@ class IsisBierBSObjectList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisBierBSObjectList
-        """Adds a new isisBierBSObjectList resource on the json, only valid with config assistant
+        """Adds a new isisBierBSObjectList resource on the json, only valid with batch add utility
 
         Args
         ----

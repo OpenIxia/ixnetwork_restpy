@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class IsisSpbMacCloudConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisSpbMacCloudConfig'
+    _SDM_NAME = "isisSpbMacCloudConfig"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Isid': 'isid',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Isid": "isid",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisSpbMacCloudConfig, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class IsisSpbMacCloudConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -76,10 +79,13 @@ class IsisSpbMacCloudConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -93,10 +99,13 @@ class IsisSpbMacCloudConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -108,7 +117,8 @@ class IsisSpbMacCloudConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -118,7 +128,7 @@ class IsisSpbMacCloudConfig(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -128,7 +138,7 @@ class IsisSpbMacCloudConfig(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Isid(self):
@@ -139,7 +149,8 @@ class IsisSpbMacCloudConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ISID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Isid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Isid"]))
 
     @property
     def Name(self):
@@ -149,11 +160,12 @@ class IsisSpbMacCloudConfig(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> IsisSpbMacCloudConfig
@@ -257,10 +269,12 @@ class IsisSpbMacCloudConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -289,10 +303,12 @@ class IsisSpbMacCloudConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -321,10 +337,12 @@ class IsisSpbMacCloudConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, Isid=None):
         """Base class infrastructure that gets a list of isisSpbMacCloudConfig device ids encapsulated by this object.

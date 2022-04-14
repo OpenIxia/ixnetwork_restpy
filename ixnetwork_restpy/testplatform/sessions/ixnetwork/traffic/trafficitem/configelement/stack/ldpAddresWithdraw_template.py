@@ -4,43 +4,43 @@ from ixnetwork_restpy.files import Files
 
 class LdpAddresWithdraw(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpAddresWithdraw'
+    _SDM_NAME = "ldpAddresWithdraw"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpAddressWithdraw.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpAddressWithdraw.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpAddressWithdraw.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpAddressWithdraw.header.labelSpace-4',
-        'HeaderUBit': 'ldpAddressWithdraw.header.uBit-5',
-        'HeaderType': 'ldpAddressWithdraw.header.type-6',
-        'HeaderLength': 'ldpAddressWithdraw.header.length-7',
-        'HeaderMessageID': 'ldpAddressWithdraw.header.messageID-8',
-        'FecTLVUBit': 'ldpAddressWithdraw.header.fecTLV.uBit-9',
-        'FecTLVFBit': 'ldpAddressWithdraw.header.fecTLV.fBit-10',
-        'FecTLVType': 'ldpAddressWithdraw.header.fecTLV.type-11',
-        'FecTLVLength': 'ldpAddressWithdraw.header.fecTLV.length-12',
-        'WildcardType': 'ldpAddressWithdraw.header.fecTLV.fecElement.wildcard.type-13',
-        'PrefixType': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.type-14',
-        'Ipv4PrefixAddressFamily': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15',
-        'Ipv4PrefixPrelen': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16',
-        'Ipv4PrefixPrefix': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17',
-        'Ipv6PrefixAddressFamily': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18',
-        'Ipv6PrefixPrelen': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19',
-        'Ipv6PrefixPrefix': 'ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20',
-        'HostAddressType': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.type-21',
-        'Ipv4HostAddressAddressFamily': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22',
-        'Ipv4HostAddressHostAddressLength': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23',
-        'Ipv4HostAddressHostAddress': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24',
-        'Ipv6HostAddressAddressFamily': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25',
-        'Ipv6HostAddressHostAddressLength': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26',
-        'Ipv6HostAddressHostAddress': 'ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27',
-        'AddressListTLVUBit': 'ldpAddressWithdraw.header.addressListTLV.uBit-28',
-        'AddressListTLVFBit': 'ldpAddressWithdraw.header.addressListTLV.fBit-29',
-        'AddressListTLVType': 'ldpAddressWithdraw.header.addressListTLV.type-30',
-        'AddressListTLVLength': 'ldpAddressWithdraw.header.addressListTLV.length-31',
-        'Ipv4AddressesAddressFamilyIPv4': 'ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv4Addresses.addressFamilyIPv4-32',
-        'Ipv4AddressesIpv4Address': 'ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv4Addresses.ipv4Address-33',
-        'Ipv6AddressesAddressFamilyIPv6': 'ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv6Addresses.addressFamilyIPv6-34',
-        'Ipv6AddressesIpv6Address': 'ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv6Addresses.ipv6Address-35',
+        "HeaderVersion": "ldpAddressWithdraw.header.version-1",
+        "HeaderPduLengthinOctets": "ldpAddressWithdraw.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpAddressWithdraw.header.lsrID-3",
+        "HeaderLabelSpace": "ldpAddressWithdraw.header.labelSpace-4",
+        "HeaderUBit": "ldpAddressWithdraw.header.uBit-5",
+        "HeaderType": "ldpAddressWithdraw.header.type-6",
+        "HeaderLength": "ldpAddressWithdraw.header.length-7",
+        "HeaderMessageID": "ldpAddressWithdraw.header.messageID-8",
+        "FecTLVUBit": "ldpAddressWithdraw.header.fecTLV.uBit-9",
+        "FecTLVFBit": "ldpAddressWithdraw.header.fecTLV.fBit-10",
+        "FecTLVType": "ldpAddressWithdraw.header.fecTLV.type-11",
+        "FecTLVLength": "ldpAddressWithdraw.header.fecTLV.length-12",
+        "WildcardType": "ldpAddressWithdraw.header.fecTLV.fecElement.wildcard.type-13",
+        "PrefixType": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.type-14",
+        "Ipv4PrefixAddressFamily": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15",
+        "Ipv4PrefixPrelen": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16",
+        "Ipv4PrefixPrefix": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17",
+        "Ipv6PrefixAddressFamily": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18",
+        "Ipv6PrefixPrelen": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19",
+        "Ipv6PrefixPrefix": "ldpAddressWithdraw.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20",
+        "HostAddressType": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.type-21",
+        "Ipv4HostAddressAddressFamily": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22",
+        "Ipv4HostAddressHostAddressLength": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23",
+        "Ipv4HostAddressHostAddress": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24",
+        "Ipv6HostAddressAddressFamily": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25",
+        "Ipv6HostAddressHostAddressLength": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26",
+        "Ipv6HostAddressHostAddress": "ldpAddressWithdraw.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27",
+        "AddressListTLVUBit": "ldpAddressWithdraw.header.addressListTLV.uBit-28",
+        "AddressListTLVFBit": "ldpAddressWithdraw.header.addressListTLV.fBit-29",
+        "AddressListTLVType": "ldpAddressWithdraw.header.addressListTLV.type-30",
+        "AddressListTLVLength": "ldpAddressWithdraw.header.addressListTLV.length-31",
+        "Ipv4AddressesAddressFamilyIPv4": "ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv4Addresses.addressFamilyIPv4-32",
+        "Ipv4AddressesIpv4Address": "ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv4Addresses.ipv4Address-33",
+        "Ipv6AddressesAddressFamilyIPv6": "ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv6Addresses.addressFamilyIPv6-34",
+        "Ipv6AddressesIpv6Address": "ldpAddressWithdraw.header.addressListTLV.addressFamily.ipv6Addresses.ipv6Address-35",
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,7 +54,8 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -64,7 +65,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -74,7 +78,8 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -84,7 +89,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -95,7 +103,8 @@ class LdpAddresWithdraw(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -105,7 +114,8 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -115,7 +125,8 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -125,7 +136,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     @property
     def FecTLVUBit(self):
@@ -136,7 +150,8 @@ class LdpAddresWithdraw(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVUBit"]))
 
     @property
     def FecTLVFBit(self):
@@ -147,7 +162,8 @@ class LdpAddresWithdraw(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVFBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVFBit"]))
 
     @property
     def FecTLVType(self):
@@ -157,7 +173,8 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVType"]))
 
     @property
     def FecTLVLength(self):
@@ -167,7 +184,8 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVLength"]))
 
     @property
     def WildcardType(self):
@@ -177,7 +195,8 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WildcardType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WildcardType"]))
 
     @property
     def PrefixType(self):
@@ -187,7 +206,8 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixType"]))
 
     @property
     def Ipv4PrefixAddressFamily(self):
@@ -197,7 +217,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixAddressFamily"])
+        )
 
     @property
     def Ipv4PrefixPrelen(self):
@@ -207,7 +230,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrelen"])
+        )
 
     @property
     def Ipv4PrefixPrefix(self):
@@ -217,7 +243,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrefix"])
+        )
 
     @property
     def Ipv6PrefixAddressFamily(self):
@@ -227,7 +256,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixAddressFamily"])
+        )
 
     @property
     def Ipv6PrefixPrelen(self):
@@ -237,7 +269,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrelen"])
+        )
 
     @property
     def Ipv6PrefixPrefix(self):
@@ -247,7 +282,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrefix"])
+        )
 
     @property
     def HostAddressType(self):
@@ -257,7 +295,10 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostAddressType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HostAddressType"])
+        )
 
     @property
     def Ipv4HostAddressAddressFamily(self):
@@ -267,7 +308,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv4HostAddressHostAddressLength(self):
@@ -277,7 +321,11 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv4HostAddressHostAddress(self):
@@ -287,7 +335,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddress"])
+        )
 
     @property
     def Ipv6HostAddressAddressFamily(self):
@@ -297,7 +348,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv6HostAddressHostAddressLength(self):
@@ -307,7 +361,11 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv6HostAddressHostAddress(self):
@@ -317,7 +375,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddress"])
+        )
 
     @property
     def AddressListTLVUBit(self):
@@ -328,7 +389,10 @@ class LdpAddresWithdraw(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressListTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressListTLVUBit"])
+        )
 
     @property
     def AddressListTLVFBit(self):
@@ -339,7 +403,10 @@ class LdpAddresWithdraw(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressListTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressListTLVFBit"])
+        )
 
     @property
     def AddressListTLVType(self):
@@ -349,7 +416,10 @@ class LdpAddresWithdraw(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressListTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressListTLVType"])
+        )
 
     @property
     def AddressListTLVLength(self):
@@ -359,7 +429,10 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressListTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressListTLVLength"])
+        )
 
     @property
     def Ipv4AddressesAddressFamilyIPv4(self):
@@ -369,7 +442,11 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4AddressesAddressFamilyIPv4']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4AddressesAddressFamilyIPv4"]),
+        )
 
     @property
     def Ipv4AddressesIpv4Address(self):
@@ -379,7 +456,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4AddressesIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4AddressesIpv4Address"])
+        )
 
     @property
     def Ipv6AddressesAddressFamilyIPv6(self):
@@ -389,7 +469,11 @@ class LdpAddresWithdraw(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressesAddressFamilyIPv6']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv6AddressesAddressFamilyIPv6"]),
+        )
 
     @property
     def Ipv6AddressesIpv6Address(self):
@@ -399,7 +483,10 @@ class LdpAddresWithdraw(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressesIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AddressesIpv6Address"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

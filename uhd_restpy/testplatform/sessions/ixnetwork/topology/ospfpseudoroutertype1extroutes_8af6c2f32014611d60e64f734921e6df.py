@@ -254,7 +254,7 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> OspfPseudoRouterType1ExtRoutes
-        """Adds a new ospfPseudoRouterType1ExtRoutes resource on the json, only valid with config assistant
+        """Adds a new ospfPseudoRouterType1ExtRoutes resource on the json, only valid with batch add utility
 
         Args
         ----

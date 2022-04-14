@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'AlgorithmType': 'algorithmType',
-        'Duration': 'duration',
-        'InitialStepIntegerValues': 'initialStepIntegerValues',
-        'LeaveSessionsUp': 'leaveSessionsUp',
-        'LoadRateList': 'loadRateList',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'MaxStepIntegerValues': 'maxStepIntegerValues',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'RequestRate': 'requestRate',
-        'StepStepIntegerValues': 'stepStepIntegerValues',
-        'Step_failedsession_enableAccLoss': 'step_failedsession_enableAccLoss',
-        'Step_failedsession_thresholdAccLoss': 'step_failedsession_thresholdAccLoss',
+        "AlgorithmType": "algorithmType",
+        "Duration": "duration",
+        "InitialStepIntegerValues": "initialStepIntegerValues",
+        "LeaveSessionsUp": "leaveSessionsUp",
+        "LoadRateList": "loadRateList",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "MaxStepIntegerValues": "maxStepIntegerValues",
+        "Numtrials": "numtrials",
+        "ProtocolItem": "protocolItem",
+        "RequestRate": "requestRate",
+        "StepStepIntegerValues": "stepStepIntegerValues",
+        "Step_failedsession_enableAccLoss": "step_failedsession_enableAccLoss",
+        "Step_failedsession_thresholdAccLoss": "step_failedsession_thresholdAccLoss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TestConfig, self).__init__(parent, list_op)
@@ -60,13 +60,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlgorithmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlgorithmType"])
+
     @AlgorithmType.setter
     def AlgorithmType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlgorithmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlgorithmType"], value)
 
     @property
     def Duration(self):
@@ -74,13 +75,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def InitialStepIntegerValues(self):
@@ -88,13 +90,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialStepIntegerValues"])
+
     @InitialStepIntegerValues.setter
     def InitialStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialStepIntegerValues"], value)
 
     @property
     def LeaveSessionsUp(self):
@@ -102,13 +105,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeaveSessionsUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeaveSessionsUp"])
+
     @LeaveSessionsUp.setter
     def LeaveSessionsUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LeaveSessionsUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LeaveSessionsUp"], value)
 
     @property
     def LoadRateList(self):
@@ -116,13 +120,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateList'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateList"])
+
     @LoadRateList.setter
     def LoadRateList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateList"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -130,13 +135,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def MaxStepIntegerValues(self):
@@ -144,13 +150,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxStepIntegerValues"])
+
     @MaxStepIntegerValues.setter
     def MaxStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxStepIntegerValues"], value)
 
     @property
     def Numtrials(self):
@@ -158,13 +165,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def ProtocolItem(self):
@@ -174,11 +182,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def RequestRate(self):
@@ -186,13 +195,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestRate"])
+
     @RequestRate.setter
     def RequestRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestRate"], value)
 
     @property
     def StepStepIntegerValues(self):
@@ -200,13 +210,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepStepIntegerValues"])
+
     @StepStepIntegerValues.setter
     def StepStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepStepIntegerValues"], value)
 
     @property
     def Step_failedsession_enableAccLoss(self):
@@ -214,13 +225,18 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step_failedsession_enableAccLoss'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["Step_failedsession_enableAccLoss"]
+        )
+
     @Step_failedsession_enableAccLoss.setter
     def Step_failedsession_enableAccLoss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step_failedsession_enableAccLoss'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["Step_failedsession_enableAccLoss"], value
+        )
 
     @property
     def Step_failedsession_thresholdAccLoss(self):
@@ -228,33 +244,53 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step_failedsession_thresholdAccLoss'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["Step_failedsession_thresholdAccLoss"]
+        )
+
     @Step_failedsession_thresholdAccLoss.setter
     def Step_failedsession_thresholdAccLoss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step_failedsession_thresholdAccLoss'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["Step_failedsession_thresholdAccLoss"], value
+        )
 
-    def update(self, AlgorithmType=None, Duration=None, InitialStepIntegerValues=None, LeaveSessionsUp=None, LoadRateList=None, MaxOutstandingRequests=None, MaxStepIntegerValues=None, Numtrials=None, ProtocolItem=None, RequestRate=None, StepStepIntegerValues=None, Step_failedsession_enableAccLoss=None, Step_failedsession_thresholdAccLoss=None):
+    def update(
+        self,
+        AlgorithmType=None,
+        Duration=None,
+        InitialStepIntegerValues=None,
+        LeaveSessionsUp=None,
+        LoadRateList=None,
+        MaxOutstandingRequests=None,
+        MaxStepIntegerValues=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        RequestRate=None,
+        StepStepIntegerValues=None,
+        Step_failedsession_enableAccLoss=None,
+        Step_failedsession_thresholdAccLoss=None,
+    ):
         # type: (str, int, int, bool, str, int, int, int, List[str], int, int, bool, int) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
         ----
-        - AlgorithmType (str): 
-        - Duration (number): 
-        - InitialStepIntegerValues (number): 
-        - LeaveSessionsUp (bool): 
-        - LoadRateList (str): 
-        - MaxOutstandingRequests (number): 
-        - MaxStepIntegerValues (number): 
-        - Numtrials (number): 
+        - AlgorithmType (str):
+        - Duration (number):
+        - InitialStepIntegerValues (number):
+        - LeaveSessionsUp (bool):
+        - LoadRateList (str):
+        - MaxOutstandingRequests (number):
+        - MaxStepIntegerValues (number):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - RequestRate (number): 
-        - StepStepIntegerValues (number): 
-        - Step_failedsession_enableAccLoss (bool): 
-        - Step_failedsession_thresholdAccLoss (number): 
+        - RequestRate (number):
+        - StepStepIntegerValues (number):
+        - Step_failedsession_enableAccLoss (bool):
+        - Step_failedsession_thresholdAccLoss (number):
 
         Raises
         ------
@@ -262,7 +298,22 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AlgorithmType=None, Duration=None, InitialStepIntegerValues=None, LeaveSessionsUp=None, LoadRateList=None, MaxOutstandingRequests=None, MaxStepIntegerValues=None, Numtrials=None, ProtocolItem=None, RequestRate=None, StepStepIntegerValues=None, Step_failedsession_enableAccLoss=None, Step_failedsession_thresholdAccLoss=None):
+    def find(
+        self,
+        AlgorithmType=None,
+        Duration=None,
+        InitialStepIntegerValues=None,
+        LeaveSessionsUp=None,
+        LoadRateList=None,
+        MaxOutstandingRequests=None,
+        MaxStepIntegerValues=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        RequestRate=None,
+        StepStepIntegerValues=None,
+        Step_failedsession_enableAccLoss=None,
+        Step_failedsession_thresholdAccLoss=None,
+    ):
         # type: (str, int, int, bool, str, int, int, int, List[str], int, int, bool, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -272,19 +323,19 @@ class TestConfig(Base):
 
         Args
         ----
-        - AlgorithmType (str): 
-        - Duration (number): 
-        - InitialStepIntegerValues (number): 
-        - LeaveSessionsUp (bool): 
-        - LoadRateList (str): 
-        - MaxOutstandingRequests (number): 
-        - MaxStepIntegerValues (number): 
-        - Numtrials (number): 
+        - AlgorithmType (str):
+        - Duration (number):
+        - InitialStepIntegerValues (number):
+        - LeaveSessionsUp (bool):
+        - LoadRateList (str):
+        - MaxOutstandingRequests (number):
+        - MaxStepIntegerValues (number):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - RequestRate (number): 
-        - StepStepIntegerValues (number): 
-        - Step_failedsession_enableAccLoss (bool): 
-        - Step_failedsession_thresholdAccLoss (number): 
+        - RequestRate (number):
+        - StepStepIntegerValues (number):
+        - Step_failedsession_enableAccLoss (bool):
+        - Step_failedsession_thresholdAccLoss (number):
 
         Returns
         -------
@@ -329,10 +380,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -347,10 +400,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -359,17 +414,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -386,10 +443,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -407,10 +468,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -436,10 +499,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -463,10 +528,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -483,10 +550,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -504,7 +573,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

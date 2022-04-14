@@ -4,13 +4,13 @@ from ixnetwork_restpy.files import Files
 
 class MmrpMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'mmrpMessage'
+    _SDM_NAME = "mmrpMessage"
     _SDM_ATT_MAP = {
-        'MmrpHeaderProtoVersion': 'mmrpMessage.header.mmrpHeader.protoVersion-1',
-        'MmrpServiceReqVectorAttributeType': 'mmrpMessage.header.attributeType.mmrpServiceReqVector.attributeType-2',
-        'MmrpServiceReqVectorAttributeLength': 'mmrpMessage.header.attributeType.mmrpServiceReqVector.attributeLength-3',
-        'MmrpMacVectorAttributeType': 'mmrpMessage.header.attributeType.mmrpMacVector.attributeType-4',
-        'MmrpMacVectorAttributeLength': 'mmrpMessage.header.attributeType.mmrpMacVector.attributeLength-5',
+        "MmrpHeaderProtoVersion": "mmrpMessage.header.mmrpHeader.protoVersion-1",
+        "MmrpServiceReqVectorAttributeType": "mmrpMessage.header.attributeType.mmrpServiceReqVector.attributeType-2",
+        "MmrpServiceReqVectorAttributeLength": "mmrpMessage.header.attributeType.mmrpServiceReqVector.attributeLength-3",
+        "MmrpMacVectorAttributeType": "mmrpMessage.header.attributeType.mmrpMacVector.attributeType-4",
+        "MmrpMacVectorAttributeLength": "mmrpMessage.header.attributeType.mmrpMacVector.attributeLength-5",
     }
 
     def __init__(self, parent, list_op=False):
@@ -24,7 +24,10 @@ class MmrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpHeaderProtoVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MmrpHeaderProtoVersion"])
+        )
 
     @property
     def MmrpServiceReqVectorAttributeType(self):
@@ -34,7 +37,11 @@ class MmrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpServiceReqVectorAttributeType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MmrpServiceReqVectorAttributeType"]),
+        )
 
     @property
     def MmrpServiceReqVectorAttributeLength(self):
@@ -44,7 +51,13 @@ class MmrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpServiceReqVectorAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MmrpServiceReqVectorAttributeLength"]
+            ),
+        )
 
     @property
     def MmrpMacVectorAttributeType(self):
@@ -54,7 +67,10 @@ class MmrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpMacVectorAttributeType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MmrpMacVectorAttributeType"])
+        )
 
     @property
     def MmrpMacVectorAttributeLength(self):
@@ -64,7 +80,10 @@ class MmrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpMacVectorAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MmrpMacVectorAttributeLength"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

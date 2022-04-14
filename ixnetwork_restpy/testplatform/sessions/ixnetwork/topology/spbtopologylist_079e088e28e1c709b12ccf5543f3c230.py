@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class SpbTopologyList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbTopologyList'
+    _SDM_NAME = "spbTopologyList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuxMcidConfName': 'auxMcidConfName',
-        'AuxMcidSignature': 'auxMcidSignature',
-        'BaseVidCount': 'baseVidCount',
-        'BridgePriority': 'bridgePriority',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootId': 'cistRootId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LinkMetric': 'linkMetric',
-        'McidConfName': 'mcidConfName',
-        'McidSignature': 'mcidSignature',
-        'Name': 'name',
-        'NumberOfPorts': 'numberOfPorts',
-        'PortIdentifier': 'portIdentifier',
-        'SpSourceId': 'spSourceId',
-        'TopologyId': 'topologyId',
-        'Vbit': 'vbit',
+        "Active": "active",
+        "AuxMcidConfName": "auxMcidConfName",
+        "AuxMcidSignature": "auxMcidSignature",
+        "BaseVidCount": "baseVidCount",
+        "BridgePriority": "bridgePriority",
+        "CistExternalRootCost": "cistExternalRootCost",
+        "CistRootId": "cistRootId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LinkMetric": "linkMetric",
+        "McidConfName": "mcidConfName",
+        "McidSignature": "mcidSignature",
+        "Name": "name",
+        "NumberOfPorts": "numberOfPorts",
+        "PortIdentifier": "portIdentifier",
+        "SpSourceId": "spSourceId",
+        "TopologyId": "topologyId",
+        "Vbit": "vbit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbTopologyList, self).__init__(parent, list_op)
@@ -70,10 +70,13 @@ class SpbTopologyList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_145d5b3b39acf879821ed1634b49f17f import BaseVidList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_145d5b3b39acf879821ed1634b49f17f import (
+            BaseVidList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BaseVidList', None) is not None:
-                return self._properties.get('BaseVidList')
+            if self._properties.get("BaseVidList", None) is not None:
+                return self._properties.get("BaseVidList")
         return BaseVidList(self)._select()
 
     @property
@@ -85,7 +88,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AuxMcidConfName(self):
@@ -96,7 +100,10 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aux MCID Config Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxMcidConfName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuxMcidConfName"])
+        )
 
     @property
     def AuxMcidSignature(self):
@@ -107,7 +114,10 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Aux MCID Signature
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxMcidSignature']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuxMcidSignature"])
+        )
 
     @property
     def BaseVidCount(self):
@@ -117,11 +127,12 @@ class SpbTopologyList(Base):
         -------
         - number: Base VID Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVidCount"])
+
     @BaseVidCount.setter
     def BaseVidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseVidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseVidCount"], value)
 
     @property
     def BridgePriority(self):
@@ -132,7 +143,10 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bridge Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BridgePriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BridgePriority"])
+        )
 
     @property
     def CistExternalRootCost(self):
@@ -143,7 +157,10 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CIST External Root Cost
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistExternalRootCost"])
+        )
 
     @property
     def CistRootId(self):
@@ -154,7 +171,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CIST Root Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistRootId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CistRootId"]))
 
     @property
     def Count(self):
@@ -164,7 +182,7 @@ class SpbTopologyList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -174,7 +192,7 @@ class SpbTopologyList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LinkMetric(self):
@@ -185,7 +203,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
 
     @property
     def McidConfName(self):
@@ -196,7 +215,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MCID Config Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McidConfName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McidConfName"]))
 
     @property
     def McidSignature(self):
@@ -207,7 +227,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MCID Signature
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McidSignature']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McidSignature"]))
 
     @property
     def Name(self):
@@ -217,11 +238,12 @@ class SpbTopologyList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfPorts(self):
@@ -232,7 +254,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Ports
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfPorts']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NumberOfPorts"]))
 
     @property
     def PortIdentifier(self):
@@ -243,7 +266,10 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Port Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortIdentifier"])
+        )
 
     @property
     def SpSourceId(self):
@@ -254,7 +280,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SP Source ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SpSourceId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SpSourceId"]))
 
     @property
     def TopologyId(self):
@@ -265,7 +292,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     @property
     def Vbit(self):
@@ -276,7 +304,8 @@ class SpbTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable V Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vbit"]))
 
     def update(self, BaseVidCount=None, Name=None):
         # type: (int, str) -> SpbTopologyList
@@ -339,7 +368,24 @@ class SpbTopologyList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AuxMcidConfName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootId=None, LinkMetric=None, McidConfName=None, McidSignature=None, NumberOfPorts=None, PortIdentifier=None, SpSourceId=None, TopologyId=None, Vbit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AuxMcidConfName=None,
+        AuxMcidSignature=None,
+        BridgePriority=None,
+        CistExternalRootCost=None,
+        CistRootId=None,
+        LinkMetric=None,
+        McidConfName=None,
+        McidSignature=None,
+        NumberOfPorts=None,
+        PortIdentifier=None,
+        SpSourceId=None,
+        TopologyId=None,
+        Vbit=None,
+    ):
         """Base class infrastructure that gets a list of spbTopologyList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

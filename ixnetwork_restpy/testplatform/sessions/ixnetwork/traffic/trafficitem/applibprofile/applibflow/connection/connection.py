@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class Connection(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'connection'
+    _SDM_NAME = "connection"
     _SDM_ATT_MAP = {
-        'ConnectionId': 'connectionId',
-        'ConnectionParams': 'connectionParams',
-        'IsTCP': 'isTCP',
+        "ConnectionId": "connectionId",
+        "ConnectionParams": "connectionParams",
+        "IsTCP": "isTCP",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Connection, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class Connection(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.parameter import Parameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.parameter import (
+            Parameter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Parameter', None) is not None:
-                return self._properties.get('Parameter')
+            if self._properties.get("Parameter", None) is not None:
+                return self._properties.get("Parameter")
         return Parameter(self)
 
     @property
@@ -70,7 +73,7 @@ class Connection(Base):
         -------
         - number: (Read only) Application library flow connection id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionId"])
 
     @property
     def ConnectionParams(self):
@@ -80,7 +83,7 @@ class Connection(Base):
         -------
         - list(str): (Read only) Names of parameter available on application flow connection.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionParams'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionParams"])
 
     @property
     def IsTCP(self):
@@ -90,10 +93,10 @@ class Connection(Base):
         -------
         - bool: (Read only) Application library flow connection type - true is the type is TCP, false if it's UDP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsTCP'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsTCP"])
 
     def add(self):
-        """Adds a new connection resource on the json, only valid with config assistant
+        """Adds a new connection resource on the json, only valid with batch add utility
 
         Returns
         -------

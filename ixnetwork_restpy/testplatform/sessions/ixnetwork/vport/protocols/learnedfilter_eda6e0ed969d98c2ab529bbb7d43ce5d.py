@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,38 +33,37 @@ class LearnedFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedFilter'
+    _SDM_NAME = "learnedFilter"
     _SDM_ATT_MAP = {
-        'AdvRouterId': 'advRouterId',
-        'AreaSummaryLsaCount': 'areaSummaryLsaCount',
-        'EnableAdvRouterId': 'enableAdvRouterId',
-        'EnableFilter': 'enableFilter',
-        'EnableLinkStateId': 'enableLinkStateId',
-        'ExcludeAdvRouterId': 'excludeAdvRouterId',
-        'ExcludeLinkStateId': 'excludeLinkStateId',
-        'ExternalLsaCount': 'externalLsaCount',
-        'ExternalSummaryLsaCount': 'externalSummaryLsaCount',
-        'IsComplete': 'isComplete',
-        'LinkStateId': 'linkStateId',
-        'NetworkLsaCount': 'networkLsaCount',
-        'NssaLsaCount': 'nssaLsaCount',
-        'OpaqueAreaScopeLsaCount': 'opaqueAreaScopeLsaCount',
-        'OpaqueAsScopeLsaCount': 'opaqueAsScopeLsaCount',
-        'OpaqueLocalScopeLsaCount': 'opaqueLocalScopeLsaCount',
-        'RouterLsaCount': 'routerLsaCount',
-        'ShowExternalAsLsa': 'showExternalAsLsa',
-        'ShowNetworkLsa': 'showNetworkLsa',
-        'ShowNssaLsa': 'showNssaLsa',
-        'ShowOpaqueAreaLsa': 'showOpaqueAreaLsa',
-        'ShowOpaqueDomainLsa': 'showOpaqueDomainLsa',
-        'ShowOpaqueLocalLsa': 'showOpaqueLocalLsa',
-        'ShowRouterLsa': 'showRouterLsa',
-        'ShowSummaryAsLsa': 'showSummaryAsLsa',
-        'ShowSummaryIpLsa': 'showSummaryIpLsa',
-        'TotalLsaCount': 'totalLsaCount',
+        "AdvRouterId": "advRouterId",
+        "AreaSummaryLsaCount": "areaSummaryLsaCount",
+        "EnableAdvRouterId": "enableAdvRouterId",
+        "EnableFilter": "enableFilter",
+        "EnableLinkStateId": "enableLinkStateId",
+        "ExcludeAdvRouterId": "excludeAdvRouterId",
+        "ExcludeLinkStateId": "excludeLinkStateId",
+        "ExternalLsaCount": "externalLsaCount",
+        "ExternalSummaryLsaCount": "externalSummaryLsaCount",
+        "IsComplete": "isComplete",
+        "LinkStateId": "linkStateId",
+        "NetworkLsaCount": "networkLsaCount",
+        "NssaLsaCount": "nssaLsaCount",
+        "OpaqueAreaScopeLsaCount": "opaqueAreaScopeLsaCount",
+        "OpaqueAsScopeLsaCount": "opaqueAsScopeLsaCount",
+        "OpaqueLocalScopeLsaCount": "opaqueLocalScopeLsaCount",
+        "RouterLsaCount": "routerLsaCount",
+        "ShowExternalAsLsa": "showExternalAsLsa",
+        "ShowNetworkLsa": "showNetworkLsa",
+        "ShowNssaLsa": "showNssaLsa",
+        "ShowOpaqueAreaLsa": "showOpaqueAreaLsa",
+        "ShowOpaqueDomainLsa": "showOpaqueDomainLsa",
+        "ShowOpaqueLocalLsa": "showOpaqueLocalLsa",
+        "ShowRouterLsa": "showRouterLsa",
+        "ShowSummaryAsLsa": "showSummaryAsLsa",
+        "ShowSummaryIpLsa": "showSummaryIpLsa",
+        "TotalLsaCount": "totalLsaCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedFilter, self).__init__(parent, list_op)
@@ -76,11 +76,12 @@ class LearnedFilter(Base):
         -------
         - str: Filter on the router ID of the router that is originating the LSA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvRouterId"])
+
     @AdvRouterId.setter
     def AdvRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvRouterId"], value)
 
     @property
     def AreaSummaryLsaCount(self):
@@ -90,7 +91,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of LSAs in the Summary Area.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaSummaryLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaSummaryLsaCount"])
 
     @property
     def EnableAdvRouterId(self):
@@ -100,11 +101,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true filter on the advertised router ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAdvRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAdvRouterId"])
+
     @EnableAdvRouterId.setter
     def EnableAdvRouterId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAdvRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAdvRouterId"], value)
 
     @property
     def EnableFilter(self):
@@ -114,11 +116,12 @@ class LearnedFilter(Base):
         -------
         - bool: Enables the use of the OSPF learned filter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFilter'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFilter"])
+
     @EnableFilter.setter
     def EnableFilter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFilter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFilter"], value)
 
     @property
     def EnableLinkStateId(self):
@@ -128,11 +131,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on the Link State ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLinkStateId"])
+
     @EnableLinkStateId.setter
     def EnableLinkStateId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLinkStateId"], value)
 
     @property
     def ExcludeAdvRouterId(self):
@@ -142,11 +146,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on no advertised router ID available.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExcludeAdvRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExcludeAdvRouterId"])
+
     @ExcludeAdvRouterId.setter
     def ExcludeAdvRouterId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExcludeAdvRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExcludeAdvRouterId"], value)
 
     @property
     def ExcludeLinkStateId(self):
@@ -156,11 +161,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on no Link State ID available.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExcludeLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExcludeLinkStateId"])
+
     @ExcludeLinkStateId.setter
     def ExcludeLinkStateId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExcludeLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExcludeLinkStateId"], value)
 
     @property
     def ExternalLsaCount(self):
@@ -170,7 +176,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of External LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalLsaCount"])
 
     @property
     def ExternalSummaryLsaCount(self):
@@ -180,7 +186,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of External Summary LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalSummaryLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalSummaryLsaCount"])
 
     @property
     def IsComplete(self):
@@ -190,7 +196,7 @@ class LearnedFilter(Base):
         -------
         - bool: If true, indicates the Filter operation has finished.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsComplete'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsComplete"])
 
     @property
     def LinkStateId(self):
@@ -200,11 +206,12 @@ class LearnedFilter(Base):
         -------
         - str: Filter on the Link State ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkStateId"])
+
     @LinkStateId.setter
     def LinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkStateId"], value)
 
     @property
     def NetworkLsaCount(self):
@@ -214,7 +221,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of Network LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkLsaCount"])
 
     @property
     def NssaLsaCount(self):
@@ -224,7 +231,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of NSSA LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NssaLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NssaLsaCount"])
 
     @property
     def OpaqueAreaScopeLsaCount(self):
@@ -234,7 +241,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of Opaque Area LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpaqueAreaScopeLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpaqueAreaScopeLsaCount"])
 
     @property
     def OpaqueAsScopeLsaCount(self):
@@ -244,7 +251,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of AS Scope LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpaqueAsScopeLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpaqueAsScopeLsaCount"])
 
     @property
     def OpaqueLocalScopeLsaCount(self):
@@ -254,7 +261,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of Local Scope LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpaqueLocalScopeLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpaqueLocalScopeLsaCount"])
 
     @property
     def RouterLsaCount(self):
@@ -264,7 +271,7 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the number of Router LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterLsaCount"])
 
     @property
     def ShowExternalAsLsa(self):
@@ -274,11 +281,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on the LSAs from routers with External routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowExternalAsLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowExternalAsLsa"])
+
     @ShowExternalAsLsa.setter
     def ShowExternalAsLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowExternalAsLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowExternalAsLsa"], value)
 
     @property
     def ShowNetworkLsa(self):
@@ -288,11 +296,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Network routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowNetworkLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowNetworkLsa"])
+
     @ShowNetworkLsa.setter
     def ShowNetworkLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowNetworkLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowNetworkLsa"], value)
 
     @property
     def ShowNssaLsa(self):
@@ -302,11 +311,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with NSSA routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowNssaLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowNssaLsa"])
+
     @ShowNssaLsa.setter
     def ShowNssaLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowNssaLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowNssaLsa"], value)
 
     @property
     def ShowOpaqueAreaLsa(self):
@@ -316,11 +326,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Opaque Area routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueAreaLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowOpaqueAreaLsa"])
+
     @ShowOpaqueAreaLsa.setter
     def ShowOpaqueAreaLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueAreaLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowOpaqueAreaLsa"], value)
 
     @property
     def ShowOpaqueDomainLsa(self):
@@ -330,11 +341,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Opaque Domain routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueDomainLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowOpaqueDomainLsa"])
+
     @ShowOpaqueDomainLsa.setter
     def ShowOpaqueDomainLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueDomainLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowOpaqueDomainLsa"], value)
 
     @property
     def ShowOpaqueLocalLsa(self):
@@ -344,11 +356,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Opaque Local routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueLocalLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowOpaqueLocalLsa"])
+
     @ShowOpaqueLocalLsa.setter
     def ShowOpaqueLocalLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueLocalLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowOpaqueLocalLsa"], value)
 
     @property
     def ShowRouterLsa(self):
@@ -358,11 +371,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with BR or DBR routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowRouterLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowRouterLsa"])
+
     @ShowRouterLsa.setter
     def ShowRouterLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowRouterLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowRouterLsa"], value)
 
     @property
     def ShowSummaryAsLsa(self):
@@ -372,11 +386,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Summary AS routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowSummaryAsLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowSummaryAsLsa"])
+
     @ShowSummaryAsLsa.setter
     def ShowSummaryAsLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowSummaryAsLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowSummaryAsLsa"], value)
 
     @property
     def ShowSummaryIpLsa(self):
@@ -386,11 +401,12 @@ class LearnedFilter(Base):
         -------
         - bool: If true, filter on LSAs from router with Summary IP routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowSummaryIpLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowSummaryIpLsa"])
+
     @ShowSummaryIpLsa.setter
     def ShowSummaryIpLsa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowSummaryIpLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowSummaryIpLsa"], value)
 
     @property
     def TotalLsaCount(self):
@@ -400,9 +416,27 @@ class LearnedFilter(Base):
         -------
         - number: Filter on the total number of LSAs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalLsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalLsaCount"])
 
-    def update(self, AdvRouterId=None, EnableAdvRouterId=None, EnableFilter=None, EnableLinkStateId=None, ExcludeAdvRouterId=None, ExcludeLinkStateId=None, LinkStateId=None, ShowExternalAsLsa=None, ShowNetworkLsa=None, ShowNssaLsa=None, ShowOpaqueAreaLsa=None, ShowOpaqueDomainLsa=None, ShowOpaqueLocalLsa=None, ShowRouterLsa=None, ShowSummaryAsLsa=None, ShowSummaryIpLsa=None):
+    def update(
+        self,
+        AdvRouterId=None,
+        EnableAdvRouterId=None,
+        EnableFilter=None,
+        EnableLinkStateId=None,
+        ExcludeAdvRouterId=None,
+        ExcludeLinkStateId=None,
+        LinkStateId=None,
+        ShowExternalAsLsa=None,
+        ShowNetworkLsa=None,
+        ShowNssaLsa=None,
+        ShowOpaqueAreaLsa=None,
+        ShowOpaqueDomainLsa=None,
+        ShowOpaqueLocalLsa=None,
+        ShowRouterLsa=None,
+        ShowSummaryAsLsa=None,
+        ShowSummaryIpLsa=None,
+    ):
         # type: (str, bool, bool, bool, bool, bool, str, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LearnedFilter
         """Updates learnedFilter resource on the server.
 
@@ -431,7 +465,36 @@ class LearnedFilter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdvRouterId=None, AreaSummaryLsaCount=None, EnableAdvRouterId=None, EnableFilter=None, EnableLinkStateId=None, ExcludeAdvRouterId=None, ExcludeLinkStateId=None, ExternalLsaCount=None, ExternalSummaryLsaCount=None, IsComplete=None, LinkStateId=None, NetworkLsaCount=None, NssaLsaCount=None, OpaqueAreaScopeLsaCount=None, OpaqueAsScopeLsaCount=None, OpaqueLocalScopeLsaCount=None, RouterLsaCount=None, ShowExternalAsLsa=None, ShowNetworkLsa=None, ShowNssaLsa=None, ShowOpaqueAreaLsa=None, ShowOpaqueDomainLsa=None, ShowOpaqueLocalLsa=None, ShowRouterLsa=None, ShowSummaryAsLsa=None, ShowSummaryIpLsa=None, TotalLsaCount=None):
+    def find(
+        self,
+        AdvRouterId=None,
+        AreaSummaryLsaCount=None,
+        EnableAdvRouterId=None,
+        EnableFilter=None,
+        EnableLinkStateId=None,
+        ExcludeAdvRouterId=None,
+        ExcludeLinkStateId=None,
+        ExternalLsaCount=None,
+        ExternalSummaryLsaCount=None,
+        IsComplete=None,
+        LinkStateId=None,
+        NetworkLsaCount=None,
+        NssaLsaCount=None,
+        OpaqueAreaScopeLsaCount=None,
+        OpaqueAsScopeLsaCount=None,
+        OpaqueLocalScopeLsaCount=None,
+        RouterLsaCount=None,
+        ShowExternalAsLsa=None,
+        ShowNetworkLsa=None,
+        ShowNssaLsa=None,
+        ShowOpaqueAreaLsa=None,
+        ShowOpaqueDomainLsa=None,
+        ShowOpaqueLocalLsa=None,
+        ShowRouterLsa=None,
+        ShowSummaryAsLsa=None,
+        ShowSummaryIpLsa=None,
+        TotalLsaCount=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, int, int, bool, str, int, int, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, int) -> LearnedFilter
         """Finds and retrieves learnedFilter resources from the server.
 

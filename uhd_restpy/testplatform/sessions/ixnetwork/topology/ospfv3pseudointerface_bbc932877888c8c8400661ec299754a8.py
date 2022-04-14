@@ -206,7 +206,7 @@ class Ospfv3PseudoInterface(Base):
 
     def add(self, Name=None):
         # type: (str) -> Ospfv3PseudoInterface
-        """Adds a new ospfv3PseudoInterface resource on the json, only valid with config assistant
+        """Adds a new ospfv3PseudoInterface resource on the json, only valid with batch add utility
 
         Args
         ----

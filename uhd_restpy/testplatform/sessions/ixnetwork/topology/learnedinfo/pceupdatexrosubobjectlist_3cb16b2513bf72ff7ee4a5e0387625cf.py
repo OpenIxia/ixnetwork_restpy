@@ -211,7 +211,7 @@ class PceUpdateXroSubObjectList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XBit']))
 
     def add(self):
-        """Adds a new pceUpdateXroSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateXroSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------

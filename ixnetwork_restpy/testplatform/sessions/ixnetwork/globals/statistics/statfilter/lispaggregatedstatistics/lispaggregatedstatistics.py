@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,42 +33,41 @@ class LispAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lispAggregatedStatistics'
+    _SDM_NAME = "lispAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'EidRefreshMapRequestRx': 'eidRefreshMapRequestRx',
-        'EidRefreshMapRequestTx': 'eidRefreshMapRequestTx',
-        'EidsRequestedCount': 'eidsRequestedCount',
-        'EidsResolvedCount': 'eidsResolvedCount',
-        'EncapMapRequestRx': 'encapMapRequestRx',
-        'EncapMapRequestTx': 'encapMapRequestTx',
-        'EtrConfigured': 'etrConfigured',
-        'EtrRunning': 'etrRunning',
-        'ItrConfigured': 'itrConfigured',
-        'ItrRunning': 'itrRunning',
-        'MapNotifyFormatErrorCount': 'mapNotifyFormatErrorCount',
-        'MapNotifyRx': 'mapNotifyRx',
-        'MapNotifyTx': 'mapNotifyTx',
-        'MapRegisterFormatErrorCount': 'mapRegisterFormatErrorCount',
-        'MapRegisterRx': 'mapRegisterRx',
-        'MapRegisterTx': 'mapRegisterTx',
-        'MapReplyFormatErrorCount': 'mapReplyFormatErrorCount',
-        'MapReplyRx': 'mapReplyRx',
-        'MapReplyTx': 'mapReplyTx',
-        'MapRequestFormatErrorCount': 'mapRequestFormatErrorCount',
-        'MsMRConfigured': 'msMRConfigured',
-        'MsMRRunning': 'msMRRunning',
-        'NegativeMapReplyRx': 'negativeMapReplyRx',
-        'NegativeMapReplyTx': 'negativeMapReplyTx',
-        'PortName': 'portName',
-        'RlocProbeMapReplyRx': 'rlocProbeMapReplyRx',
-        'RlocProbeMapReplyTx': 'rlocProbeMapReplyTx',
-        'RlocProbeMapRequestRx': 'rlocProbeMapRequestRx',
-        'RlocProbeMapRequestTx': 'rlocProbeMapRequestTx',
-        'XtrConfigured': 'xtrConfigured',
-        'XtrRunning': 'xtrRunning',
+        "EidRefreshMapRequestRx": "eidRefreshMapRequestRx",
+        "EidRefreshMapRequestTx": "eidRefreshMapRequestTx",
+        "EidsRequestedCount": "eidsRequestedCount",
+        "EidsResolvedCount": "eidsResolvedCount",
+        "EncapMapRequestRx": "encapMapRequestRx",
+        "EncapMapRequestTx": "encapMapRequestTx",
+        "EtrConfigured": "etrConfigured",
+        "EtrRunning": "etrRunning",
+        "ItrConfigured": "itrConfigured",
+        "ItrRunning": "itrRunning",
+        "MapNotifyFormatErrorCount": "mapNotifyFormatErrorCount",
+        "MapNotifyRx": "mapNotifyRx",
+        "MapNotifyTx": "mapNotifyTx",
+        "MapRegisterFormatErrorCount": "mapRegisterFormatErrorCount",
+        "MapRegisterRx": "mapRegisterRx",
+        "MapRegisterTx": "mapRegisterTx",
+        "MapReplyFormatErrorCount": "mapReplyFormatErrorCount",
+        "MapReplyRx": "mapReplyRx",
+        "MapReplyTx": "mapReplyTx",
+        "MapRequestFormatErrorCount": "mapRequestFormatErrorCount",
+        "MsMRConfigured": "msMRConfigured",
+        "MsMRRunning": "msMRRunning",
+        "NegativeMapReplyRx": "negativeMapReplyRx",
+        "NegativeMapReplyTx": "negativeMapReplyTx",
+        "PortName": "portName",
+        "RlocProbeMapReplyRx": "rlocProbeMapReplyRx",
+        "RlocProbeMapReplyTx": "rlocProbeMapReplyTx",
+        "RlocProbeMapRequestRx": "rlocProbeMapRequestRx",
+        "RlocProbeMapRequestTx": "rlocProbeMapRequestTx",
+        "XtrConfigured": "xtrConfigured",
+        "XtrRunning": "xtrRunning",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LispAggregatedStatistics, self).__init__(parent, list_op)
@@ -80,11 +80,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: EID Refresh Map Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidRefreshMapRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidRefreshMapRequestRx"])
+
     @EidRefreshMapRequestRx.setter
     def EidRefreshMapRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EidRefreshMapRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EidRefreshMapRequestRx"], value)
 
     @property
     def EidRefreshMapRequestTx(self):
@@ -94,11 +95,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: EID Refresh Map Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidRefreshMapRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidRefreshMapRequestTx"])
+
     @EidRefreshMapRequestTx.setter
     def EidRefreshMapRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EidRefreshMapRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EidRefreshMapRequestTx"], value)
 
     @property
     def EidsRequestedCount(self):
@@ -108,11 +110,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: EIDs Requested Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidsRequestedCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidsRequestedCount"])
+
     @EidsRequestedCount.setter
     def EidsRequestedCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EidsRequestedCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EidsRequestedCount"], value)
 
     @property
     def EidsResolvedCount(self):
@@ -122,11 +125,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: EIDs Resolved Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidsResolvedCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidsResolvedCount"])
+
     @EidsResolvedCount.setter
     def EidsResolvedCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EidsResolvedCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EidsResolvedCount"], value)
 
     @property
     def EncapMapRequestRx(self):
@@ -136,11 +140,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Encap Map Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EncapMapRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EncapMapRequestRx"])
+
     @EncapMapRequestRx.setter
     def EncapMapRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EncapMapRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EncapMapRequestRx"], value)
 
     @property
     def EncapMapRequestTx(self):
@@ -150,11 +155,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Encap Map Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EncapMapRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EncapMapRequestTx"])
+
     @EncapMapRequestTx.setter
     def EncapMapRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EncapMapRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EncapMapRequestTx"], value)
 
     @property
     def EtrConfigured(self):
@@ -164,11 +170,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: ETR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EtrConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["EtrConfigured"])
+
     @EtrConfigured.setter
     def EtrConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EtrConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EtrConfigured"], value)
 
     @property
     def EtrRunning(self):
@@ -178,11 +185,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: ETR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EtrRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["EtrRunning"])
+
     @EtrRunning.setter
     def EtrRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EtrRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EtrRunning"], value)
 
     @property
     def ItrConfigured(self):
@@ -192,11 +200,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: ITR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ItrConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["ItrConfigured"])
+
     @ItrConfigured.setter
     def ItrConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ItrConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ItrConfigured"], value)
 
     @property
     def ItrRunning(self):
@@ -206,11 +215,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: ITR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ItrRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["ItrRunning"])
+
     @ItrRunning.setter
     def ItrRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ItrRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ItrRunning"], value)
 
     @property
     def MapNotifyFormatErrorCount(self):
@@ -220,11 +230,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Notify Format Error Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapNotifyFormatErrorCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapNotifyFormatErrorCount"])
+
     @MapNotifyFormatErrorCount.setter
     def MapNotifyFormatErrorCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapNotifyFormatErrorCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapNotifyFormatErrorCount"], value)
 
     @property
     def MapNotifyRx(self):
@@ -234,11 +245,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Notify Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapNotifyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapNotifyRx"])
+
     @MapNotifyRx.setter
     def MapNotifyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapNotifyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapNotifyRx"], value)
 
     @property
     def MapNotifyTx(self):
@@ -248,11 +260,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Notify Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapNotifyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapNotifyTx"])
+
     @MapNotifyTx.setter
     def MapNotifyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapNotifyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapNotifyTx"], value)
 
     @property
     def MapRegisterFormatErrorCount(self):
@@ -262,11 +275,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Register Format Error Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapRegisterFormatErrorCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapRegisterFormatErrorCount"])
+
     @MapRegisterFormatErrorCount.setter
     def MapRegisterFormatErrorCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapRegisterFormatErrorCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapRegisterFormatErrorCount"], value)
 
     @property
     def MapRegisterRx(self):
@@ -276,11 +290,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Register Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapRegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapRegisterRx"])
+
     @MapRegisterRx.setter
     def MapRegisterRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapRegisterRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapRegisterRx"], value)
 
     @property
     def MapRegisterTx(self):
@@ -290,11 +305,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Register Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapRegisterTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapRegisterTx"])
+
     @MapRegisterTx.setter
     def MapRegisterTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapRegisterTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapRegisterTx"], value)
 
     @property
     def MapReplyFormatErrorCount(self):
@@ -304,11 +320,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Reply Format Error Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapReplyFormatErrorCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapReplyFormatErrorCount"])
+
     @MapReplyFormatErrorCount.setter
     def MapReplyFormatErrorCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapReplyFormatErrorCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapReplyFormatErrorCount"], value)
 
     @property
     def MapReplyRx(self):
@@ -318,11 +335,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Reply Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapReplyRx"])
+
     @MapReplyRx.setter
     def MapReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapReplyRx"], value)
 
     @property
     def MapReplyTx(self):
@@ -332,11 +350,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Reply Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapReplyTx"])
+
     @MapReplyTx.setter
     def MapReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapReplyTx"], value)
 
     @property
     def MapRequestFormatErrorCount(self):
@@ -346,11 +365,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Map Request Format Error Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapRequestFormatErrorCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapRequestFormatErrorCount"])
+
     @MapRequestFormatErrorCount.setter
     def MapRequestFormatErrorCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapRequestFormatErrorCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapRequestFormatErrorCount"], value)
 
     @property
     def MsMRConfigured(self):
@@ -360,11 +380,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: MS/MR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MsMRConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["MsMRConfigured"])
+
     @MsMRConfigured.setter
     def MsMRConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MsMRConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MsMRConfigured"], value)
 
     @property
     def MsMRRunning(self):
@@ -374,11 +395,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: MS/MR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MsMRRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["MsMRRunning"])
+
     @MsMRRunning.setter
     def MsMRRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MsMRRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MsMRRunning"], value)
 
     @property
     def NegativeMapReplyRx(self):
@@ -388,11 +410,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Negative Map Reply Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegativeMapReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegativeMapReplyRx"])
+
     @NegativeMapReplyRx.setter
     def NegativeMapReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NegativeMapReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NegativeMapReplyRx"], value)
 
     @property
     def NegativeMapReplyTx(self):
@@ -402,11 +425,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Negative Map Reply Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegativeMapReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegativeMapReplyTx"])
+
     @NegativeMapReplyTx.setter
     def NegativeMapReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NegativeMapReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NegativeMapReplyTx"], value)
 
     @property
     def PortName(self):
@@ -416,11 +440,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RlocProbeMapReplyRx(self):
@@ -430,11 +455,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: RLOC Probe Map Reply Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeMapReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeMapReplyRx"])
+
     @RlocProbeMapReplyRx.setter
     def RlocProbeMapReplyRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RlocProbeMapReplyRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RlocProbeMapReplyRx"], value)
 
     @property
     def RlocProbeMapReplyTx(self):
@@ -444,11 +470,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: RLOC Probe Map Reply Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeMapReplyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeMapReplyTx"])
+
     @RlocProbeMapReplyTx.setter
     def RlocProbeMapReplyTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RlocProbeMapReplyTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RlocProbeMapReplyTx"], value)
 
     @property
     def RlocProbeMapRequestRx(self):
@@ -458,11 +485,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: RLOC Probe Map Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeMapRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeMapRequestRx"])
+
     @RlocProbeMapRequestRx.setter
     def RlocProbeMapRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RlocProbeMapRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RlocProbeMapRequestRx"], value)
 
     @property
     def RlocProbeMapRequestTx(self):
@@ -472,11 +500,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: RLOC Probe Map Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeMapRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeMapRequestTx"])
+
     @RlocProbeMapRequestTx.setter
     def RlocProbeMapRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RlocProbeMapRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RlocProbeMapRequestTx"], value)
 
     @property
     def XtrConfigured(self):
@@ -486,11 +515,12 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: xTR Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['XtrConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["XtrConfigured"])
+
     @XtrConfigured.setter
     def XtrConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['XtrConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["XtrConfigured"], value)
 
     @property
     def XtrRunning(self):
@@ -500,13 +530,47 @@ class LispAggregatedStatistics(Base):
         -------
         - bool: xTR Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['XtrRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["XtrRunning"])
+
     @XtrRunning.setter
     def XtrRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['XtrRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["XtrRunning"], value)
 
-    def update(self, EidRefreshMapRequestRx=None, EidRefreshMapRequestTx=None, EidsRequestedCount=None, EidsResolvedCount=None, EncapMapRequestRx=None, EncapMapRequestTx=None, EtrConfigured=None, EtrRunning=None, ItrConfigured=None, ItrRunning=None, MapNotifyFormatErrorCount=None, MapNotifyRx=None, MapNotifyTx=None, MapRegisterFormatErrorCount=None, MapRegisterRx=None, MapRegisterTx=None, MapReplyFormatErrorCount=None, MapReplyRx=None, MapReplyTx=None, MapRequestFormatErrorCount=None, MsMRConfigured=None, MsMRRunning=None, NegativeMapReplyRx=None, NegativeMapReplyTx=None, PortName=None, RlocProbeMapReplyRx=None, RlocProbeMapReplyTx=None, RlocProbeMapRequestRx=None, RlocProbeMapRequestTx=None, XtrConfigured=None, XtrRunning=None):
+    def update(
+        self,
+        EidRefreshMapRequestRx=None,
+        EidRefreshMapRequestTx=None,
+        EidsRequestedCount=None,
+        EidsResolvedCount=None,
+        EncapMapRequestRx=None,
+        EncapMapRequestTx=None,
+        EtrConfigured=None,
+        EtrRunning=None,
+        ItrConfigured=None,
+        ItrRunning=None,
+        MapNotifyFormatErrorCount=None,
+        MapNotifyRx=None,
+        MapNotifyTx=None,
+        MapRegisterFormatErrorCount=None,
+        MapRegisterRx=None,
+        MapRegisterTx=None,
+        MapReplyFormatErrorCount=None,
+        MapReplyRx=None,
+        MapReplyTx=None,
+        MapRequestFormatErrorCount=None,
+        MsMRConfigured=None,
+        MsMRRunning=None,
+        NegativeMapReplyRx=None,
+        NegativeMapReplyTx=None,
+        PortName=None,
+        RlocProbeMapReplyRx=None,
+        RlocProbeMapReplyTx=None,
+        RlocProbeMapRequestRx=None,
+        RlocProbeMapRequestTx=None,
+        XtrConfigured=None,
+        XtrRunning=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LispAggregatedStatistics
         """Updates lispAggregatedStatistics resource on the server.
 
@@ -550,7 +614,40 @@ class LispAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EidRefreshMapRequestRx=None, EidRefreshMapRequestTx=None, EidsRequestedCount=None, EidsResolvedCount=None, EncapMapRequestRx=None, EncapMapRequestTx=None, EtrConfigured=None, EtrRunning=None, ItrConfigured=None, ItrRunning=None, MapNotifyFormatErrorCount=None, MapNotifyRx=None, MapNotifyTx=None, MapRegisterFormatErrorCount=None, MapRegisterRx=None, MapRegisterTx=None, MapReplyFormatErrorCount=None, MapReplyRx=None, MapReplyTx=None, MapRequestFormatErrorCount=None, MsMRConfigured=None, MsMRRunning=None, NegativeMapReplyRx=None, NegativeMapReplyTx=None, PortName=None, RlocProbeMapReplyRx=None, RlocProbeMapReplyTx=None, RlocProbeMapRequestRx=None, RlocProbeMapRequestTx=None, XtrConfigured=None, XtrRunning=None):
+    def find(
+        self,
+        EidRefreshMapRequestRx=None,
+        EidRefreshMapRequestTx=None,
+        EidsRequestedCount=None,
+        EidsResolvedCount=None,
+        EncapMapRequestRx=None,
+        EncapMapRequestTx=None,
+        EtrConfigured=None,
+        EtrRunning=None,
+        ItrConfigured=None,
+        ItrRunning=None,
+        MapNotifyFormatErrorCount=None,
+        MapNotifyRx=None,
+        MapNotifyTx=None,
+        MapRegisterFormatErrorCount=None,
+        MapRegisterRx=None,
+        MapRegisterTx=None,
+        MapReplyFormatErrorCount=None,
+        MapReplyRx=None,
+        MapReplyTx=None,
+        MapRequestFormatErrorCount=None,
+        MsMRConfigured=None,
+        MsMRRunning=None,
+        NegativeMapReplyRx=None,
+        NegativeMapReplyTx=None,
+        PortName=None,
+        RlocProbeMapReplyRx=None,
+        RlocProbeMapReplyTx=None,
+        RlocProbeMapRequestRx=None,
+        RlocProbeMapRequestTx=None,
+        XtrConfigured=None,
+        XtrRunning=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LispAggregatedStatistics
         """Finds and retrieves lispAggregatedStatistics resources from the server.
 

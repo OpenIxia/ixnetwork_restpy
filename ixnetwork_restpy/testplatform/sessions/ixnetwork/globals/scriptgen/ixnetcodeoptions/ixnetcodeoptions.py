@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class IxNetCodeOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ixNetCodeOptions'
+    _SDM_NAME = "ixNetCodeOptions"
     _SDM_ATT_MAP = {
-        'IncludeAvailableHardware': 'includeAvailableHardware',
-        'IncludeConnect': 'includeConnect',
-        'IncludeDefaultValues': 'includeDefaultValues',
-        'IncludeQuickTest': 'includeQuickTest',
-        'IncludeStatistic': 'includeStatistic',
-        'IncludeTAPSettings': 'includeTAPSettings',
-        'IncludeTestComposer': 'includeTestComposer',
-        'IncludeTraffic': 'includeTraffic',
-        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
-        'IncludeTrafficStack': 'includeTrafficStack',
+        "IncludeAvailableHardware": "includeAvailableHardware",
+        "IncludeConnect": "includeConnect",
+        "IncludeDefaultValues": "includeDefaultValues",
+        "IncludeQuickTest": "includeQuickTest",
+        "IncludeStatistic": "includeStatistic",
+        "IncludeTAPSettings": "includeTAPSettings",
+        "IncludeTestComposer": "includeTestComposer",
+        "IncludeTraffic": "includeTraffic",
+        "IncludeTrafficFlowGroup": "includeTrafficFlowGroup",
+        "IncludeTrafficStack": "includeTrafficStack",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IxNetCodeOptions, self).__init__(parent, list_op)
@@ -59,25 +59,27 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include available hardware nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeAvailableHardware"])
+
     @IncludeAvailableHardware.setter
     def IncludeAvailableHardware(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeAvailableHardware"], value)
 
     @property
     def IncludeConnect(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Flag to include the connect command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeConnect"])
+
     @IncludeConnect.setter
     def IncludeConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeConnect"], value)
 
     @property
     def IncludeDefaultValues(self):
@@ -87,11 +89,12 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include attributes that have values which are defaul
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeDefaultValues"])
+
     @IncludeDefaultValues.setter
     def IncludeDefaultValues(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeDefaultValues"], value)
 
     @property
     def IncludeQuickTest(self):
@@ -101,11 +104,12 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include quickTest nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeQuickTest'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeQuickTest"])
+
     @IncludeQuickTest.setter
     def IncludeQuickTest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeQuickTest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeQuickTest"], value)
 
     @property
     def IncludeStatistic(self):
@@ -115,11 +119,12 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include statistic view nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeStatistic'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeStatistic"])
+
     @IncludeStatistic.setter
     def IncludeStatistic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeStatistic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeStatistic"], value)
 
     @property
     def IncludeTAPSettings(self):
@@ -127,27 +132,29 @@ class IxNetCodeOptions(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTAPSettings"])
+
     @IncludeTAPSettings.setter
     def IncludeTAPSettings(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTAPSettings"], value)
 
     @property
     def IncludeTestComposer(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Flag to include test composer code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTestComposer'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTestComposer"])
+
     @IncludeTestComposer.setter
     def IncludeTestComposer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTestComposer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTestComposer"], value)
 
     @property
     def IncludeTraffic(self):
@@ -157,11 +164,12 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include traffic item nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTraffic"])
+
     @IncludeTraffic.setter
     def IncludeTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTraffic"], value)
 
     @property
     def IncludeTrafficFlowGroup(self):
@@ -171,11 +179,12 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include traffic item high level stream nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficFlowGroup"])
+
     @IncludeTrafficFlowGroup.setter
     def IncludeTrafficFlowGroup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficFlowGroup"], value)
 
     @property
     def IncludeTrafficStack(self):
@@ -185,13 +194,26 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include high level stream stack nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficStack"])
+
     @IncludeTrafficStack.setter
     def IncludeTrafficStack(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficStack"], value)
 
-    def update(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
+    def update(
+        self,
+        IncludeAvailableHardware=None,
+        IncludeConnect=None,
+        IncludeDefaultValues=None,
+        IncludeQuickTest=None,
+        IncludeStatistic=None,
+        IncludeTAPSettings=None,
+        IncludeTestComposer=None,
+        IncludeTraffic=None,
+        IncludeTrafficFlowGroup=None,
+        IncludeTrafficStack=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IxNetCodeOptions
         """Updates ixNetCodeOptions resource on the server.
 
@@ -202,7 +224,7 @@ class IxNetCodeOptions(Base):
         - IncludeDefaultValues (bool): Flag to include attributes that have values which are defaul
         - IncludeQuickTest (bool): Flag to include quickTest nodes
         - IncludeStatistic (bool): Flag to include statistic view nodes
-        - IncludeTAPSettings (bool): 
+        - IncludeTAPSettings (bool):
         - IncludeTestComposer (bool): Flag to include test composer code
         - IncludeTraffic (bool): Flag to include traffic item nodes
         - IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes
@@ -214,7 +236,19 @@ class IxNetCodeOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
+    def find(
+        self,
+        IncludeAvailableHardware=None,
+        IncludeConnect=None,
+        IncludeDefaultValues=None,
+        IncludeQuickTest=None,
+        IncludeStatistic=None,
+        IncludeTAPSettings=None,
+        IncludeTestComposer=None,
+        IncludeTraffic=None,
+        IncludeTrafficFlowGroup=None,
+        IncludeTrafficStack=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IxNetCodeOptions
         """Finds and retrieves ixNetCodeOptions resources from the server.
 
@@ -229,7 +263,7 @@ class IxNetCodeOptions(Base):
         - IncludeDefaultValues (bool): Flag to include attributes that have values which are defaul
         - IncludeQuickTest (bool): Flag to include quickTest nodes
         - IncludeStatistic (bool): Flag to include statistic view nodes
-        - IncludeTAPSettings (bool): 
+        - IncludeTAPSettings (bool):
         - IncludeTestComposer (bool): Flag to include test composer code
         - IncludeTraffic (bool): Flag to include traffic item nodes
         - IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes

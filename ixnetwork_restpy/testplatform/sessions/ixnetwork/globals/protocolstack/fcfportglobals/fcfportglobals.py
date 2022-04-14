@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class FcFportGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcFportGlobals'
+    _SDM_NAME = "fcFportGlobals"
     _SDM_ATT_MAP = {
-        'AcceptPartialConfig': 'acceptPartialConfig',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'MaxRetries': 'maxRetries',
-        'ObjectId': 'objectId',
-        'RetryInterval': 'retryInterval',
+        "AcceptPartialConfig": "acceptPartialConfig",
+        "MaxPacketsPerSecond": "maxPacketsPerSecond",
+        "MaxRetries": "maxRetries",
+        "ObjectId": "objectId",
+        "RetryInterval": "retryInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcFportGlobals, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class FcFportGlobals(Base):
         -------
         - bool: This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["AcceptPartialConfig"])
+
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AcceptPartialConfig"], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -70,11 +71,12 @@ class FcFportGlobals(Base):
         -------
         - number: The maximum number of requests transmitted in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"])
+
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPacketsPerSecond"], value)
 
     @property
     def MaxRetries(self):
@@ -84,11 +86,12 @@ class FcFportGlobals(Base):
         -------
         - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRetries"])
+
     @MaxRetries.setter
     def MaxRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRetries"], value)
 
     @property
     def ObjectId(self):
@@ -98,7 +101,7 @@ class FcFportGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def RetryInterval(self):
@@ -108,13 +111,20 @@ class FcFportGlobals(Base):
         -------
         - number: The number of seconds to wait for a response before sending a new request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetryInterval"])
+
     @RetryInterval.setter
     def RetryInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RetryInterval"], value)
 
-    def update(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
+    def update(
+        self,
+        AcceptPartialConfig=None,
+        MaxPacketsPerSecond=None,
+        MaxRetries=None,
+        RetryInterval=None,
+    ):
         # type: (bool, int, int, int) -> FcFportGlobals
         """Updates fcFportGlobals resource on the server.
 
@@ -131,7 +141,13 @@ class FcFportGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
+    def add(
+        self,
+        AcceptPartialConfig=None,
+        MaxPacketsPerSecond=None,
+        MaxRetries=None,
+        RetryInterval=None,
+    ):
         # type: (bool, int, int, int) -> FcFportGlobals
         """Adds a new fcFportGlobals resource on the server and adds it to the container.
 
@@ -162,7 +178,14 @@ class FcFportGlobals(Base):
         """
         self._delete()
 
-    def find(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, ObjectId=None, RetryInterval=None):
+    def find(
+        self,
+        AcceptPartialConfig=None,
+        MaxPacketsPerSecond=None,
+        MaxRetries=None,
+        ObjectId=None,
+        RetryInterval=None,
+    ):
         # type: (bool, int, int, str, int) -> FcFportGlobals
         """Finds and retrieves fcFportGlobals resources from the server.
 

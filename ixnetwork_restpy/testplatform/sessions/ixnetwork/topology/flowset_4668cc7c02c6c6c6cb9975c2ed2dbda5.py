@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,25 +34,24 @@ class FlowSet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flowSet'
+    _SDM_NAME = "flowSet"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Cookie': 'cookie',
-        'CookieMask': 'cookieMask',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FlowAdvertise': 'flowAdvertise',
-        'FlowFlags': 'flowFlags',
-        'FlowMatchType': 'flowMatchType',
-        'FlowSetId': 'flowSetId',
-        'HardTimeout': 'hardTimeout',
-        'IdleTimeout': 'idleTimeout',
-        'Name': 'name',
-        'NumberOfFlows': 'numberOfFlows',
-        'Priority': 'priority',
+        "Active": "active",
+        "Cookie": "cookie",
+        "CookieMask": "cookieMask",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FlowAdvertise": "flowAdvertise",
+        "FlowFlags": "flowFlags",
+        "FlowMatchType": "flowMatchType",
+        "FlowSetId": "flowSetId",
+        "HardTimeout": "hardTimeout",
+        "IdleTimeout": "idleTimeout",
+        "Name": "name",
+        "NumberOfFlows": "numberOfFlows",
+        "Priority": "priority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FlowSet, self).__init__(parent, list_op)
@@ -67,10 +67,13 @@ class FlowSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile_a1f78cfc247b918e0d8219ac19d05f87 import FlowProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile_a1f78cfc247b918e0d8219ac19d05f87 import (
+            FlowProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowProfile', None) is not None:
-                return self._properties.get('FlowProfile')
+            if self._properties.get("FlowProfile", None) is not None:
+                return self._properties.get("FlowProfile")
         return FlowProfile(self)._select()
 
     @property
@@ -82,7 +85,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Cookie(self):
@@ -93,7 +97,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Cookie of the flow entry that was looked up. This is the opaque controller-issued identifier.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Cookie']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Cookie"]))
 
     @property
     def CookieMask(self):
@@ -104,7 +109,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mask used to restrict the cookie bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CookieMask']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CookieMask"]))
 
     @property
     def Count(self):
@@ -114,7 +120,7 @@ class FlowSet(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -124,7 +130,7 @@ class FlowSet(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FlowAdvertise(self):
@@ -134,11 +140,12 @@ class FlowSet(Base):
         -------
         - bool: If selected, the flows are advertised by the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowAdvertise'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowAdvertise"])
+
     @FlowAdvertise.setter
     def FlowAdvertise(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowAdvertise"], value)
 
     @property
     def FlowFlags(self):
@@ -149,7 +156,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows to configure the Flow Flags. Options are: 1) Send Flow Removed 2) Check Overlap 3) Reset Counts 4) No Packet Count 5) No Byte Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowFlags"]))
 
     @property
     def FlowMatchType(self):
@@ -160,7 +168,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of match to be configured. Options include the following: 1) Strict 2) Loose
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowMatchType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowMatchType"]))
 
     @property
     def FlowSetId(self):
@@ -170,11 +179,12 @@ class FlowSet(Base):
         -------
         - str: Specify the controller Flow Set identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowSetId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowSetId"])
+
     @FlowSetId.setter
     def FlowSetId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowSetId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowSetId"], value)
 
     @property
     def HardTimeout(self):
@@ -185,7 +195,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The inactive time in seconds after which the Flow range will hard timeout and close.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HardTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HardTimeout"]))
 
     @property
     def IdleTimeout(self):
@@ -196,7 +207,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The inactive time in seconds after which the Flow range will timeout and become idle.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IdleTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IdleTimeout"]))
 
     @property
     def Name(self):
@@ -206,11 +218,12 @@ class FlowSet(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfFlows(self):
@@ -220,11 +233,12 @@ class FlowSet(Base):
         -------
         - number: The number of flows to be configured for the controller table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfFlows"])
+
     @NumberOfFlows.setter
     def NumberOfFlows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfFlows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfFlows"], value)
 
     @property
     def Priority(self):
@@ -235,7 +249,8 @@ class FlowSet(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The priority level for the Flow Range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     def update(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
         # type: (bool, str, str, int) -> FlowSet
@@ -259,7 +274,7 @@ class FlowSet(Base):
 
     def add(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
         # type: (bool, str, str, int) -> FlowSet
-        """Adds a new flowSet resource on the json, only valid with config assistant
+        """Adds a new flowSet resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -278,7 +293,15 @@ class FlowSet(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        FlowAdvertise=None,
+        FlowSetId=None,
+        Name=None,
+        NumberOfFlows=None,
+    ):
         # type: (int, str, bool, str, str, int) -> FlowSet
         """Finds and retrieves flowSet resources from the server.
 
@@ -323,7 +346,18 @@ class FlowSet(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Cookie=None, CookieMask=None, FlowFlags=None, FlowMatchType=None, HardTimeout=None, IdleTimeout=None, Priority=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Cookie=None,
+        CookieMask=None,
+        FlowFlags=None,
+        FlowMatchType=None,
+        HardTimeout=None,
+        IdleTimeout=None,
+        Priority=None,
+    ):
         """Base class infrastructure that gets a list of flowSet device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

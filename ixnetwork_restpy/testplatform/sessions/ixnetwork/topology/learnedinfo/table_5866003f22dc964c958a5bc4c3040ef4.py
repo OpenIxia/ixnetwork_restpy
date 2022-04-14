@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class Table(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'table'
+    _SDM_NAME = "table"
     _SDM_ATT_MAP = {
-        'Actions': 'actions',
-        'Columns': 'columns',
-        'RowCount': 'rowCount',
-        'Type': 'type',
-        'Values': 'values',
+        "Actions": "actions",
+        "Columns": "columns",
+        "RowCount": "rowCount",
+        "Type": "type",
+        "Values": "values",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Table, self).__init__(parent, list_op)
 
     @property
     def Col(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e.Col): An instance of the Col class
@@ -58,10 +58,13 @@ class Table(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import (
+            Col,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Col', None) is not None:
-                return self._properties.get('Col')
+            if self._properties.get("Col", None) is not None:
+                return self._properties.get("Col")
         return Col(self)
 
     @property
@@ -72,7 +75,7 @@ class Table(Base):
         -------
         - list(str): The list of actions allowed on the learned information table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Actions'])
+        return self._get_attribute(self._SDM_ATT_MAP["Actions"])
 
     @property
     def Columns(self):
@@ -82,7 +85,7 @@ class Table(Base):
         -------
         - list(str): The list of columns in the learned information table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Columns'])
+        return self._get_attribute(self._SDM_ATT_MAP["Columns"])
 
     @property
     def RowCount(self):
@@ -92,7 +95,7 @@ class Table(Base):
         -------
         - number: Number of rows in the learned information table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowCount"])
 
     @property
     def Type(self):
@@ -102,7 +105,7 @@ class Table(Base):
         -------
         - str: Description of the learned information type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     @property
     def Values(self):
@@ -111,10 +114,10 @@ class Table(Base):
         -------
         - list(list[str]): A list of rows of learned information values
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Values'])
+        return self._get_attribute(self._SDM_ATT_MAP["Values"])
 
     def add(self):
-        """Adds a new table resource on the json, only valid with config assistant
+        """Adds a new table resource on the json, only valid with batch add utility
 
         Returns
         -------

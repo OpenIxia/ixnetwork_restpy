@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,23 @@ class FlowCondition(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flowCondition'
+    _SDM_NAME = "flowCondition"
     _SDM_ATT_MAP = {
-        'Operator': 'operator',
-        'ShowFirstMatchingSet': 'showFirstMatchingSet',
-        'TrackingFilterId': 'trackingFilterId',
-        'Values': 'values',
+        "Operator": "operator",
+        "ShowFirstMatchingSet": "showFirstMatchingSet",
+        "TrackingFilterId": "trackingFilterId",
+        "Values": "values",
     }
     _SDM_ENUM_MAP = {
-        'operator': ['isBetween', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isSmaller'],
+        "operator": [
+            "isBetween",
+            "isDifferent",
+            "isEqual",
+            "isEqualOrGreater",
+            "isEqualOrSmaller",
+            "isGreater",
+            "isSmaller",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,13 +63,14 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller): 
+        - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
+        return self._get_attribute(self._SDM_ATT_MAP["Operator"])
+
     @Operator.setter
     def Operator(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Operator"], value)
 
     @property
     def ShowFirstMatchingSet(self):
@@ -68,13 +78,14 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowFirstMatchingSet"])
+
     @ShowFirstMatchingSet.setter
     def ShowFirstMatchingSet(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowFirstMatchingSet"], value)
 
     @property
     def TrackingFilterId(self):
@@ -82,13 +93,14 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): 
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
+
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackingFilterId"], value)
 
     @property
     def Values(self):
@@ -96,24 +108,31 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - list(number): 
+        - list(number):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Values'])
+        return self._get_attribute(self._SDM_ATT_MAP["Values"])
+
     @Values.setter
     def Values(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Values"], value)
 
-    def update(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+    def update(
+        self,
+        Operator=None,
+        ShowFirstMatchingSet=None,
+        TrackingFilterId=None,
+        Values=None,
+    ):
         # type: (str, bool, str, List[int]) -> FlowCondition
         """Updates flowCondition resource on the server.
 
         Args
         ----
-        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): 
-        - ShowFirstMatchingSet (bool): 
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): 
-        - Values (list(number)): 
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
+        - ShowFirstMatchingSet (bool):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - Values (list(number)):
 
         Raises
         ------
@@ -121,16 +140,22 @@ class FlowCondition(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+    def add(
+        self,
+        Operator=None,
+        ShowFirstMatchingSet=None,
+        TrackingFilterId=None,
+        Values=None,
+    ):
         # type: (str, bool, str, List[int]) -> FlowCondition
         """Adds a new flowCondition resource on the server and adds it to the container.
 
         Args
         ----
-        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): 
-        - ShowFirstMatchingSet (bool): 
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): 
-        - Values (list(number)): 
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
+        - ShowFirstMatchingSet (bool):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - Values (list(number)):
 
         Returns
         -------
@@ -152,7 +177,13 @@ class FlowCondition(Base):
         """
         self._delete()
 
-    def find(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+    def find(
+        self,
+        Operator=None,
+        ShowFirstMatchingSet=None,
+        TrackingFilterId=None,
+        Values=None,
+    ):
         # type: (str, bool, str, List[int]) -> FlowCondition
         """Finds and retrieves flowCondition resources from the server.
 
@@ -162,10 +193,10 @@ class FlowCondition(Base):
 
         Args
         ----
-        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): 
-        - ShowFirstMatchingSet (bool): 
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): 
-        - Values (list(number)): 
+        - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
+        - ShowFirstMatchingSet (bool):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - Values (list(number)):
 
         Returns
         -------

@@ -28,11 +28,12 @@ from ixnetwork_restpy.errors import NotFoundError
 
 
 class TestPlatform(Base):
-    """The TestPlatform class is the only class that can be instantiated directly.  
+    """The TestPlatform class is the only class that can be instantiated directly.
     The package is constructed in an hierarchical format so as a result child resources are accessed through class properties.
     Class properties will return an iterable child container of that class.
     If the class is system managed or user managed it will have a find() method which can be used to retrieve the resources from the server otherwise the one and only one resource will be retrieved from the server.
     """
+
     _SDM_NAME = None
     TRACE_NONE = Connection.TRACE_NONE
     TRACE_INFO = Connection.TRACE_INFO
@@ -41,21 +42,31 @@ class TestPlatform(Base):
     TRACE_REQUEST_RESPONSE = Connection.TRACE_REQUEST_RESPONSE
     TRACE_ALL = Connection.TRACE_ALL
 
-    def __init__(self, ip_address, rest_port=None, platform=None, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace=TRACE_NONE, script_watch=True):
-        """Establishes an initial connection to an IxNetwork test tool platform. 
+    def __init__(
+        self,
+        ip_address,
+        rest_port=None,
+        platform=None,
+        log_file_name=None,
+        ignore_env_proxy=False,
+        verify_cert=False,
+        trace=TRACE_NONE,
+        script_watch=True,
+    ):
+        """Establishes an initial connection to an IxNetwork test tool platform.
         Currently supported platforms are Linux API Server, Windows GUI and ConnectionManager.
 
         Args
         ----
         - ip_address (str): the ip address of the test tool platform that requests will be made to
-        - rest_port (number): the ip port of the test tool platform that the server is listening on. 
+        - rest_port (number): the ip port of the test tool platform that the server is listening on.
             Defaults are linux|connection_manager:443, windows:11009
         - platform (str[windows|linux|connection_manager]): DEPRECATED
             This is now determined by the Connection class.
         - log_file_name (str): the name of the log file that trace logging will be written to
             The default is write to the console
         - ignore_env_proxy (bool): if requests is returning a 504 error use this to bypass local environment proxy settings
-        - verify_cert (bool): enable this flag to verify the certificate 
+        - verify_cert (bool): enable this flag to verify the certificate
         - trace (str(none|info|warning|request|request_response|all)): set the tracing level of requests and responses.
         - script_watch (bool): disable this to not have REST API requests logged with the server script watch
 
@@ -64,21 +75,30 @@ class TestPlatform(Base):
         - obj(ixnetwork_restpy.errors.ConnectionError)
         """
         super(TestPlatform, self).__init__(None)
-        self._connection = Connection(ip_address, rest_port, platform, log_file_name, ignore_env_proxy, verify_cert, trace, script_watch)
-        self._uid = ''
+        self._connection = Connection(
+            ip_address,
+            rest_port,
+            platform,
+            log_file_name,
+            ignore_env_proxy,
+            verify_cert,
+            trace,
+            script_watch,
+        )
+        self._uid = ""
         self._set_default_href()
 
-    def _set_default_href(self, href='/api/v1'):
+    def _set_default_href(self, href="/api/v1"):
         properties = {
-            'href': href,
-            'apiKey': self._connection.x_api_key,
-            'username': self._uid,
-            'trace': self._connection.trace,
-            'platform': self._connection.platform,
-            'scheme': self._connection._scheme,
-            'hostname': self._connection.hostname,
-            'restPort': self._connection.rest_port,
-            'logFilename': self._connection.log_file_name
+            "href": href,
+            "apiKey": self._connection.x_api_key,
+            "username": self._uid,
+            "trace": self._connection.trace,
+            "platform": self._connection.platform,
+            "scheme": self._connection._scheme,
+            "hostname": self._connection.hostname,
+            "restPort": self._connection.rest_port,
+            "logFilename": self._connection.log_file_name,
         }
         self._set_properties(properties, clear=True)
 
@@ -95,9 +115,9 @@ class TestPlatform(Base):
         - UnauthorizedError: Access is unauthorized
         - ServerError: The server has encountered an uncategorized error condition
         """
-        self._set_default_href('/api/v1/auth/session')
-        response = self._execute(None, payload={'username': uid, 'password': pwd})
-        self.ApiKey = response['apiKey']
+        self._set_default_href("/api/v1/auth/session")
+        response = self._execute(None, payload={"username": uid, "password": pwd})
+        self.ApiKey = response["apiKey"]
         self._uid = uid
         self._set_default_href()
         return self.ApiKey
@@ -110,7 +130,8 @@ class TestPlatform(Base):
         -------
         - str(TestPlatform.TRACE_NONE | TestPlatform.TRACE_ALL | TestPlatform.TRACE_INFO | TestPlatform.TRACE_WARNING | TestPlatform.TRACE_REQUEST | TestPlatform.TRACE_REQUEST_RESPONSE): Enables tracing of the connection transport request and responses
         """
-        return self._get_attribute('trace')
+        return self._get_attribute("trace")
+
     @Trace.setter
     def Trace(self, trace):
         self._connection.trace = trace
@@ -122,7 +143,8 @@ class TestPlatform(Base):
         -------
         - bool: An X-Api-Key for authorizing transactions instead of using the authenticate method
         """
-        return self._get_attribute('apiKey')
+        return self._get_attribute("apiKey")
+
     @ApiKey.setter
     def ApiKey(self, value):
         self._connection.x_api_key = value
@@ -135,7 +157,7 @@ class TestPlatform(Base):
         -------
         - str: The username
         """
-        return self._get_attribute('username')
+        return self._get_attribute("username")
 
     @property
     def Platform(self):
@@ -145,7 +167,7 @@ class TestPlatform(Base):
         -------
         - str(windows | linux | connection_manager): The type of platform IxNetwork is deployed on
         """
-        return self._get_attribute('platform')
+        return self._get_attribute("platform")
 
     @property
     def Hostname(self):
@@ -155,7 +177,7 @@ class TestPlatform(Base):
         -------
         - str: The hostname of the server
         """
-        return self._get_attribute('hostname')
+        return self._get_attribute("hostname")
 
     @property
     def RestPort(self):
@@ -175,7 +197,7 @@ class TestPlatform(Base):
         -------
         - str: The type of scheme http or https
         """
-        return self._get_attribute('scheme')
+        return self._get_attribute("scheme")
 
     @property
     def LogFilename(self):
@@ -185,7 +207,7 @@ class TestPlatform(Base):
         -------
         - str: The name of the log file
         """
-        return self._get_attribute('logFilename')
+        return self._get_attribute("logFilename")
 
     @property
     def Sessions(self):
@@ -195,4 +217,5 @@ class TestPlatform(Base):
         - obj(ixnetwork_restpy.testplatform.sessions.sessions.Sessions): An instance of the Sessions class
         """
         from ixnetwork_restpy.testplatform.sessions.sessions import Sessions
+
         return Sessions(self)

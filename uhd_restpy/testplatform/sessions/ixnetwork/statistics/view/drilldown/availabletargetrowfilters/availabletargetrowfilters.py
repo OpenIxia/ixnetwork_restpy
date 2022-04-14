@@ -43,7 +43,7 @@ class AvailableTargetRowFilters(Base):
         super(AvailableTargetRowFilters, self).__init__(parent, list_op)
 
     def add(self):
-        """Adds a new availableTargetRowFilters resource on the json, only valid with config assistant
+        """Adds a new availableTargetRowFilters resource on the json, only valid with batch add utility
 
         Returns
         -------

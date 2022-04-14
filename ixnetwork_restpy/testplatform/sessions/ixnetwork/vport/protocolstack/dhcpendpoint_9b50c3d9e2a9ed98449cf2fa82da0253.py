@@ -18,16 +18,18 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class DhcpEndpoint(Base):
-    """Network stack element plugin that manages dynamic IPv4 and IPv6 addresses
+    """Network stack element plugin that manages dynamic IPv4 and IPv6 addresses
+
     as a list of address blocks or 'ranges'.
     The DhcpEndpoint class encapsulates a list of dhcpEndpoint resources that are managed by the user.
     A list of resources can be retrieved from the server using the DhcpEndpoint.find() method.
@@ -35,13 +37,12 @@ class DhcpEndpoint(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpEndpoint'
+    _SDM_NAME = "dhcpEndpoint"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DhcpEndpoint, self).__init__(parent, list_op)
@@ -57,10 +58,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ffe0db16c52d055dc6efc83e72136f96 import Ancp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ffe0db16c52d055dc6efc83e72136f96 import (
+            Ancp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ancp', None) is not None:
-                return self._properties.get('Ancp')
+            if self._properties.get("Ancp", None) is not None:
+                return self._properties.get("Ancp")
         return Ancp(self)
 
     @property
@@ -74,10 +78,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudp_06eb374994d95e50766a95bfc7a78b20 import EapoUdp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudp_06eb374994d95e50766a95bfc7a78b20 import (
+            EapoUdp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EapoUdp', None) is not None:
-                return self._properties.get('EapoUdp')
+            if self._properties.get("EapoUdp", None) is not None:
+                return self._properties.get("EapoUdp")
         return EapoUdp(self)
 
     @property
@@ -91,10 +98,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_475c8a73c53624a3bfec209db9fd7dac import IgmpMld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_475c8a73c53624a3bfec209db9fd7dac import (
+            IgmpMld,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpMld', None) is not None:
-                return self._properties.get('IgmpMld')
+            if self._properties.get("IgmpMld", None) is not None:
+                return self._properties.get("IgmpMld")
         return IgmpMld(self)
 
     @property
@@ -108,10 +118,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_b70d9a04d21c004c3cca73c3e563adab import Iptv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_b70d9a04d21c004c3cca73c3e563adab import (
+            Iptv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Iptv', None) is not None:
-                return self._properties.get('Iptv')
+            if self._properties.get("Iptv", None) is not None:
+                return self._properties.get("Iptv")
         return Iptv(self)
 
     @property
@@ -125,10 +138,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5cfd498c2fae57b1ff8c1e39981ef498 import Range
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5cfd498c2fae57b1ff8c1e39981ef498 import (
+            Range,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Range', None) is not None:
-                return self._properties.get('Range')
+            if self._properties.get("Range", None) is not None:
+                return self._properties.get("Range")
         return Range(self)
 
     @property
@@ -142,10 +158,13 @@ class DhcpEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauth_5f94f5902a4f09672e1ea8dd23a7efaa import WebAuth
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauth_5f94f5902a4f09672e1ea8dd23a7efaa import (
+            WebAuth,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WebAuth', None) is not None:
-                return self._properties.get('WebAuth')
+            if self._properties.get("WebAuth", None) is not None:
+                return self._properties.get("WebAuth")
         return WebAuth(self)
 
     @property
@@ -156,11 +175,12 @@ class DhcpEndpoint(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -170,7 +190,7 @@ class DhcpEndpoint(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, Name=None):
         # type: (str) -> DhcpEndpoint
@@ -277,10 +297,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -299,10 +321,14 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DhcpClientClearStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -319,10 +345,14 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientClearStats', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "dhcpClientClearStats", payload=payload, response_object=None
+        )
 
     def DhcpClientPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -339,10 +369,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientPause", payload=payload, response_object=None)
 
     def DhcpClientRebind(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -359,10 +391,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientRebind', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientRebind", payload=payload, response_object=None)
 
     def DhcpClientRenew(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -379,10 +413,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientRenew', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientRenew", payload=payload, response_object=None)
 
     def DhcpClientResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -399,10 +435,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientResume", payload=payload, response_object=None)
 
     def DhcpClientRetry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -419,10 +457,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientRetry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientRetry", payload=payload, response_object=None)
 
     def DhcpClientStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -446,10 +486,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientStart", payload=payload, response_object=None)
 
     def DhcpClientStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -473,10 +515,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dhcpClientStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dhcpClientStop", payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -495,10 +539,14 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -517,10 +565,14 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -544,10 +596,12 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -571,7 +625,9 @@ class DhcpEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

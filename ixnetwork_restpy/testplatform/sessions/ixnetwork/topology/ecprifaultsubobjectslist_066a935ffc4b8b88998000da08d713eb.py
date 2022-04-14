@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class ECpriFaultSubObjectsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eCpriFaultSubObjectsList'
+    _SDM_NAME = "eCpriFaultSubObjectsList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'ElementId': 'elementId',
-        'FaultNumber': 'faultNumber',
-        'FaultType': 'faultType',
-        'Name': 'name',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "ElementId": "elementId",
+        "FaultNumber": "faultNumber",
+        "FaultType": "faultType",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ECpriFaultSubObjectsList, self).__init__(parent, list_op)
@@ -56,7 +56,7 @@ class ECpriFaultSubObjectsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -66,7 +66,7 @@ class ECpriFaultSubObjectsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def ElementId(self):
@@ -77,7 +77,8 @@ class ECpriFaultSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Element ID Number ranging between 0x0000 to 0xFFFE is for vendor specific usage and 0xFFFF is for a fault or notification applicable for all Elements i.e. the node.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ElementId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ElementId"]))
 
     @property
     def FaultNumber(self):
@@ -88,7 +89,8 @@ class ECpriFaultSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Fault or Notify Numbers is a 12-bit number indicating a fault or notification divided between 2 bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaultNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FaultNumber"]))
 
     @property
     def FaultType(self):
@@ -99,7 +101,8 @@ class ECpriFaultSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): In every Raise or Cease value, first nibble in the same byte as the Fault or Notification Number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaultType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FaultType"]))
 
     @property
     def Name(self):
@@ -109,11 +112,12 @@ class ECpriFaultSubObjectsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> ECpriFaultSubObjectsList
@@ -134,7 +138,7 @@ class ECpriFaultSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> ECpriFaultSubObjectsList
-        """Adds a new eCpriFaultSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new eCpriFaultSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -192,7 +196,9 @@ class ECpriFaultSubObjectsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ElementId=None, FaultNumber=None, FaultType=None):
+    def get_device_ids(
+        self, PortNames=None, ElementId=None, FaultNumber=None, FaultType=None
+    ):
         """Base class infrastructure that gets a list of eCpriFaultSubObjectsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

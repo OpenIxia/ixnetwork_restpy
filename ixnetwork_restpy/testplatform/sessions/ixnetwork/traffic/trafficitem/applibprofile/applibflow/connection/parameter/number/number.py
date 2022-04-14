@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Number(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'number'
+    _SDM_NAME = "number"
     _SDM_ATT_MAP = {
-        'Default': 'default',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
-        'Value': 'value',
+        "Default": "default",
+        "MaxValue": "maxValue",
+        "MinValue": "minValue",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Number, self).__init__(parent, list_op)
@@ -54,7 +54,7 @@ class Number(Base):
         -------
         - number: (Read only) Parameter default value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Default'])
+        return self._get_attribute(self._SDM_ATT_MAP["Default"])
 
     @property
     def MaxValue(self):
@@ -64,7 +64,7 @@ class Number(Base):
         -------
         - number: (Read only) Maximum supported value for parameter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxValue"])
 
     @property
     def MinValue(self):
@@ -74,7 +74,7 @@ class Number(Base):
         -------
         - number: (Read only) Minimum supported value for parameter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinValue"])
 
     @property
     def Value(self):
@@ -84,11 +84,12 @@ class Number(Base):
         -------
         - number: Parameter integer value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Value=None):
         # type: (int) -> Number
@@ -106,7 +107,7 @@ class Number(Base):
 
     def add(self, Value=None):
         # type: (int) -> Number
-        """Adds a new number resource on the json, only valid with config assistant
+        """Adds a new number resource on the json, only valid with batch add utility
 
         Args
         ----

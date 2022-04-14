@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class Bgp8277SRSegmentIdList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'Bgp8277SRSegmentIdList'
+    _SDM_NAME = "Bgp8277SRSegmentIdList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IncrementMode': 'incrementMode',
-        'Name': 'name',
-        'SegmentId': 'segmentId',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "IncrementMode": "incrementMode",
+        "Name": "name",
+        "SegmentId": "segmentId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Bgp8277SRSegmentIdList, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class Bgp8277SRSegmentIdList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -65,7 +65,7 @@ class Bgp8277SRSegmentIdList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def IncrementMode(self):
@@ -76,7 +76,8 @@ class Bgp8277SRSegmentIdList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Either Fixed or Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncrementMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncrementMode"]))
 
     @property
     def Name(self):
@@ -86,11 +87,12 @@ class Bgp8277SRSegmentIdList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SegmentId(self):
@@ -101,7 +103,8 @@ class Bgp8277SRSegmentIdList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID or Segment ID, converts to label value by adding offset into SRGB Start Label Value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SegmentId"]))
 
     def update(self, Name=None):
         # type: (str) -> Bgp8277SRSegmentIdList
@@ -122,7 +125,7 @@ class Bgp8277SRSegmentIdList(Base):
 
     def add(self, Name=None):
         # type: (str) -> Bgp8277SRSegmentIdList
-        """Adds a new Bgp8277SRSegmentIdList resource on the json, only valid with config assistant
+        """Adds a new Bgp8277SRSegmentIdList resource on the json, only valid with batch add utility
 
         Args
         ----

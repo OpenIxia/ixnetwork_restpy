@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class PollingSettings(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pollingSettings'
+    _SDM_NAME = "pollingSettings"
     _SDM_ATT_MAP = {
-        'ForcePollValue': 'forcePollValue',
-        'MinimumRefreshIntervalForOnDemandViews': 'minimumRefreshIntervalForOnDemandViews',
-        'PollInterval': 'pollInterval',
+        "ForcePollValue": "forcePollValue",
+        "MinimumRefreshIntervalForOnDemandViews": "minimumRefreshIntervalForOnDemandViews",
+        "PollInterval": "pollInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PollingSettings, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class PollingSettings(Base):
         -------
         - bool: When set to True, it will force set the poll value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForcePollValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForcePollValue"])
+
     @ForcePollValue.setter
     def ForcePollValue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForcePollValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForcePollValue"], value)
 
     @property
     def MinimumRefreshIntervalForOnDemandViews(self):
@@ -66,11 +67,16 @@ class PollingSettings(Base):
         -------
         - number: Minimum Refresh Interval for Next Gen On-Demand Views
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinimumRefreshIntervalForOnDemandViews'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MinimumRefreshIntervalForOnDemandViews"]
+        )
+
     @MinimumRefreshIntervalForOnDemandViews.setter
     def MinimumRefreshIntervalForOnDemandViews(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinimumRefreshIntervalForOnDemandViews'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MinimumRefreshIntervalForOnDemandViews"], value
+        )
 
     @property
     def PollInterval(self):
@@ -80,13 +86,19 @@ class PollingSettings(Base):
         -------
         - number: The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds). Note: The above settings will only be applied by saving the configuration and restarting the application! (Exception: The NextGen views are not affected by this change.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
-    def update(self, ForcePollValue=None, MinimumRefreshIntervalForOnDemandViews=None, PollInterval=None):
+    def update(
+        self,
+        ForcePollValue=None,
+        MinimumRefreshIntervalForOnDemandViews=None,
+        PollInterval=None,
+    ):
         # type: (bool, int, int) -> PollingSettings
         """Updates pollingSettings resource on the server.
 
@@ -102,7 +114,12 @@ class PollingSettings(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ForcePollValue=None, MinimumRefreshIntervalForOnDemandViews=None, PollInterval=None):
+    def find(
+        self,
+        ForcePollValue=None,
+        MinimumRefreshIntervalForOnDemandViews=None,
+        PollInterval=None,
+    ):
         # type: (bool, int, int) -> PollingSettings
         """Finds and retrieves pollingSettings resources from the server.
 

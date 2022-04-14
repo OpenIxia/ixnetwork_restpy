@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class BgpLsAsPathSegmentList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpLsAsPathSegmentList'
+    _SDM_NAME = "bgpLsAsPathSegmentList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableASPathSegment': 'enableASPathSegment',
-        'Name': 'name',
-        'NumberOfAsNumberInSegment': 'numberOfAsNumberInSegment',
-        'SegmentType': 'segmentType',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableASPathSegment": "enableASPathSegment",
+        "Name": "name",
+        "NumberOfAsNumberInSegment": "numberOfAsNumberInSegment",
+        "SegmentType": "segmentType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpLsAsPathSegmentList, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class BgpLsAsPathSegmentList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist_1529f0c2f511c5c16621b75c6205cf08 import BgpAsNumberList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist_1529f0c2f511c5c16621b75c6205cf08 import (
+            BgpAsNumberList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpAsNumberList', None) is not None:
-                return self._properties.get('BgpAsNumberList')
+            if self._properties.get("BgpAsNumberList", None) is not None:
+                return self._properties.get("BgpAsNumberList")
         return BgpAsNumberList(self)
 
     @property
@@ -73,7 +76,7 @@ class BgpLsAsPathSegmentList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -83,7 +86,7 @@ class BgpLsAsPathSegmentList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableASPathSegment(self):
@@ -94,7 +97,10 @@ class BgpLsAsPathSegmentList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AS Path Segment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableASPathSegment']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableASPathSegment"])
+        )
 
     @property
     def Name(self):
@@ -104,11 +110,12 @@ class BgpLsAsPathSegmentList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfAsNumberInSegment(self):
@@ -118,11 +125,12 @@ class BgpLsAsPathSegmentList(Base):
         -------
         - number: Number of AS Number In Segment
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfAsNumberInSegment'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAsNumberInSegment"])
+
     @NumberOfAsNumberInSegment.setter
     def NumberOfAsNumberInSegment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfAsNumberInSegment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAsNumberInSegment"], value)
 
     @property
     def SegmentType(self):
@@ -133,7 +141,8 @@ class BgpLsAsPathSegmentList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SegmentType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SegmentType"]))
 
     def update(self, Name=None, NumberOfAsNumberInSegment=None):
         # type: (str, int) -> BgpLsAsPathSegmentList
@@ -155,7 +164,7 @@ class BgpLsAsPathSegmentList(Base):
 
     def add(self, Name=None, NumberOfAsNumberInSegment=None):
         # type: (str, int) -> BgpLsAsPathSegmentList
-        """Adds a new bgpLsAsPathSegmentList resource on the json, only valid with config assistant
+        """Adds a new bgpLsAsPathSegmentList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -172,7 +181,13 @@ class BgpLsAsPathSegmentList(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfAsNumberInSegment=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfAsNumberInSegment=None,
+    ):
         # type: (int, str, str, int) -> BgpLsAsPathSegmentList
         """Finds and retrieves bgpLsAsPathSegmentList resources from the server.
 
@@ -215,7 +230,9 @@ class BgpLsAsPathSegmentList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, EnableASPathSegment=None, SegmentType=None):
+    def get_device_ids(
+        self, PortNames=None, EnableASPathSegment=None, SegmentType=None
+    ):
         """Base class infrastructure that gets a list of bgpLsAsPathSegmentList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

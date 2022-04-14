@@ -84,7 +84,7 @@ class Statistic(Base):
 
     def add(self, Enabled=None):
         # type: (bool) -> Statistic
-        """Adds a new statistic resource on the json, only valid with config assistant
+        """Adds a new statistic resource on the json, only valid with batch add utility
 
         Args
         ----

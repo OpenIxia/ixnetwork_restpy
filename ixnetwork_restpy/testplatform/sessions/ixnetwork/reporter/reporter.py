@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,12 @@ class Reporter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'reporter'
+    _SDM_NAME = "reporter"
     _SDM_ATT_MAP = {
-        'State': 'state',
+        "State": "state",
     }
     _SDM_ENUM_MAP = {
-        'state': ['none', 'started', 'stopped'],
+        "state": ["none", "started", "stopped"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,10 +55,13 @@ class Reporter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.generate.generate import Generate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.generate.generate import (
+            Generate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Generate', None) is not None:
-                return self._properties.get('Generate')
+            if self._properties.get("Generate", None) is not None:
+                return self._properties.get("Generate")
         return Generate(self)._select()
 
     @property
@@ -71,10 +75,13 @@ class Reporter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.saveresults.saveresults import SaveResults
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.saveresults.saveresults import (
+            SaveResults,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SaveResults', None) is not None:
-                return self._properties.get('SaveResults')
+            if self._properties.get("SaveResults", None) is not None:
+                return self._properties.get("SaveResults")
         return SaveResults(self)._select()
 
     @property
@@ -88,10 +95,13 @@ class Reporter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.testparameters.testparameters import TestParameters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.testparameters.testparameters import (
+            TestParameters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TestParameters', None) is not None:
-                return self._properties.get('TestParameters')
+            if self._properties.get("TestParameters", None) is not None:
+                return self._properties.get("TestParameters")
         return TestParameters(self)._select()
 
     @property
@@ -102,7 +112,7 @@ class Reporter(Base):
         -------
         - str(none | started | stopped): The state of the current test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     def find(self, State=None):
         # type: (str) -> Reporter

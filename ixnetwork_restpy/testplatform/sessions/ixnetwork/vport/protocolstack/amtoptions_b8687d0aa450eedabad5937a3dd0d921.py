@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class AmtOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'amtOptions'
+    _SDM_NAME = "amtOptions"
     _SDM_ATT_MAP = {
-        'MaxOutstandingSessions': 'maxOutstandingSessions',
-        'ObjectId': 'objectId',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
-        'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
-        'TunnelOriginate': 'tunnelOriginate',
+        "MaxOutstandingSessions": "maxOutstandingSessions",
+        "ObjectId": "objectId",
+        "OverrideGlobalSetupRate": "overrideGlobalSetupRate",
+        "OverrideGlobalTeardownRate": "overrideGlobalTeardownRate",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
+        "TunnelOriginate": "tunnelOriginate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AmtOptions, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class AmtOptions(Base):
         -------
         - number: This is the point at which AMT Sessions will be restricted. AMT Discovery/Requests are sent at the configured speed until these are the number of AMT Sessions in progress, without receiving AMT messages; at which point new Discovery/Requests messages are sent only when other are completed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingSessions"])
+
     @MaxOutstandingSessions.setter
     def MaxOutstandingSessions(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingSessions"], value)
 
     @property
     def ObjectId(self):
@@ -72,7 +73,7 @@ class AmtOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalSetupRate(self):
@@ -82,11 +83,12 @@ class AmtOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"])
+
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"], value)
 
     @property
     def OverrideGlobalTeardownRate(self):
@@ -96,11 +98,12 @@ class AmtOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalTeardownRate"])
+
     @OverrideGlobalTeardownRate.setter
     def OverrideGlobalTeardownRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalTeardownRate"], value)
 
     @property
     def SetupRate(self):
@@ -110,11 +113,12 @@ class AmtOptions(Base):
         -------
         - number: Discovery Rate is the number of AMT Discovery/Request packets to send in each second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -124,11 +128,12 @@ class AmtOptions(Base):
         -------
         - number: Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
     @property
     def TunnelOriginate(self):
@@ -138,13 +143,22 @@ class AmtOptions(Base):
         -------
         - str: Tunnels can be originated from same IP per range (first IP from range) or from each IP per range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelOriginate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelOriginate"])
+
     @TunnelOriginate.setter
     def TunnelOriginate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelOriginate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelOriginate"], value)
 
-    def update(self, MaxOutstandingSessions=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+    def update(
+        self,
+        MaxOutstandingSessions=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+        TunnelOriginate=None,
+    ):
         # type: (int, bool, bool, int, int, str) -> AmtOptions
         """Updates amtOptions resource on the server.
 
@@ -163,7 +177,15 @@ class AmtOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, MaxOutstandingSessions=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+    def add(
+        self,
+        MaxOutstandingSessions=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+        TunnelOriginate=None,
+    ):
         # type: (int, bool, bool, int, int, str) -> AmtOptions
         """Adds a new amtOptions resource on the server and adds it to the container.
 
@@ -196,7 +218,16 @@ class AmtOptions(Base):
         """
         self._delete()
 
-    def find(self, MaxOutstandingSessions=None, ObjectId=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+    def find(
+        self,
+        MaxOutstandingSessions=None,
+        ObjectId=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRate=None,
+        TeardownRate=None,
+        TunnelOriginate=None,
+    ):
         # type: (int, str, bool, bool, int, int, str) -> AmtOptions
         """Finds and retrieves amtOptions resources from the server.
 
@@ -259,10 +290,14 @@ class AmtOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -281,10 +316,14 @@ class AmtOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -303,7 +342,11 @@ class AmtOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

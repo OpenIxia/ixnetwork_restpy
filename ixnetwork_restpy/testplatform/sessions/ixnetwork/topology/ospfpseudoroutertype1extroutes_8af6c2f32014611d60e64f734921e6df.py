@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class OspfPseudoRouterType1ExtRoutes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfPseudoRouterType1ExtRoutes'
+    _SDM_NAME = "ospfPseudoRouterType1ExtRoutes"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'LFlag': 'lFlag',
-        'MFlag': 'mFlag',
-        'Metric': 'metric',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
-        'PrefixLength': 'prefixLength',
-        'RangeSize': 'rangeSize',
-        'SidIndexLabel': 'sidIndexLabel',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EFlag": "eFlag",
+        "LFlag": "lFlag",
+        "MFlag": "mFlag",
+        "Metric": "metric",
+        "Name": "name",
+        "NetworkAddress": "networkAddress",
+        "NpFlag": "npFlag",
+        "PrefixLength": "prefixLength",
+        "RangeSize": "rangeSize",
+        "SidIndexLabel": "sidIndexLabel",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfPseudoRouterType1ExtRoutes, self).__init__(parent, list_op)
@@ -67,7 +67,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
@@ -78,7 +79,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -89,7 +91,10 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -99,7 +104,7 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -109,7 +114,7 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EFlag(self):
@@ -120,7 +125,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def LFlag(self):
@@ -131,7 +137,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def MFlag(self):
@@ -142,7 +149,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def Metric(self):
@@ -153,7 +161,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def Name(self):
@@ -163,11 +172,12 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkAddress(self):
@@ -178,7 +188,10 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Network addresses of the simulated IPv4 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkAddress"])
+        )
 
     @property
     def NpFlag(self):
@@ -189,7 +202,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def PrefixLength(self):
@@ -200,7 +214,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def RangeSize(self):
@@ -211,7 +226,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RangeSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RangeSize"]))
 
     @property
     def SidIndexLabel(self):
@@ -222,7 +238,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def VFlag(self):
@@ -233,7 +250,8 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     def update(self, Name=None):
         # type: (str) -> OspfPseudoRouterType1ExtRoutes
@@ -254,7 +272,7 @@ class OspfPseudoRouterType1ExtRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> OspfPseudoRouterType1ExtRoutes
-        """Adds a new ospfPseudoRouterType1ExtRoutes resource on the json, only valid with config assistant
+        """Adds a new ospfPseudoRouterType1ExtRoutes resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -327,10 +345,12 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Advertise(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -359,10 +379,12 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertise", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -379,10 +401,12 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -399,10 +423,12 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def Withdraw(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -431,12 +457,30 @@ class OspfPseudoRouterType1ExtRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdraw", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, LFlag=None, MFlag=None, Metric=None, NetworkAddress=None, NpFlag=None, PrefixLength=None, RangeSize=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Algorithm=None,
+        ConfigureSIDIndexLabel=None,
+        EFlag=None,
+        LFlag=None,
+        MFlag=None,
+        Metric=None,
+        NetworkAddress=None,
+        NpFlag=None,
+        PrefixLength=None,
+        RangeSize=None,
+        SidIndexLabel=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of ospfPseudoRouterType1ExtRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

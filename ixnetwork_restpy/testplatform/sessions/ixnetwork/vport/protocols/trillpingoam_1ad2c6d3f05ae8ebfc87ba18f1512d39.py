@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class TrillPingOam(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trillPingOam'
+    _SDM_NAME = "trillPingOam"
     _SDM_ATT_MAP = {
-        'AlertFlag': 'alertFlag',
-        'DestinationNickname': 'destinationNickname',
-        'EtherType': 'etherType',
-        'HopCount': 'hopCount',
-        'NativeFlag': 'nativeFlag',
-        'NoOfPingRequests': 'noOfPingRequests',
-        'SilentFlag': 'silentFlag',
-        'SourceNickname': 'sourceNickname',
-        'TimeOut': 'timeOut',
+        "AlertFlag": "alertFlag",
+        "DestinationNickname": "destinationNickname",
+        "EtherType": "etherType",
+        "HopCount": "hopCount",
+        "NativeFlag": "nativeFlag",
+        "NoOfPingRequests": "noOfPingRequests",
+        "SilentFlag": "silentFlag",
+        "SourceNickname": "sourceNickname",
+        "TimeOut": "timeOut",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TrillPingOam, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class TrillPingOam(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlertFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlertFlag"])
+
     @AlertFlag.setter
     def AlertFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlertFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlertFlag"], value)
 
     @property
     def DestinationNickname(self):
@@ -72,11 +73,12 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationNickname"])
+
     @DestinationNickname.setter
     def DestinationNickname(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestinationNickname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestinationNickname"], value)
 
     @property
     def EtherType(self):
@@ -86,11 +88,12 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EtherType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EtherType"])
+
     @EtherType.setter
     def EtherType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EtherType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EtherType"], value)
 
     @property
     def HopCount(self):
@@ -100,11 +103,12 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
+
     @HopCount.setter
     def HopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HopCount"], value)
 
     @property
     def NativeFlag(self):
@@ -114,11 +118,12 @@ class TrillPingOam(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NativeFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["NativeFlag"])
+
     @NativeFlag.setter
     def NativeFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NativeFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NativeFlag"], value)
 
     @property
     def NoOfPingRequests(self):
@@ -128,11 +133,12 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfPingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfPingRequests"])
+
     @NoOfPingRequests.setter
     def NoOfPingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfPingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfPingRequests"], value)
 
     @property
     def SilentFlag(self):
@@ -142,11 +148,12 @@ class TrillPingOam(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SilentFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["SilentFlag"])
+
     @SilentFlag.setter
     def SilentFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SilentFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SilentFlag"], value)
 
     @property
     def SourceNickname(self):
@@ -156,11 +163,12 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceNickname"])
+
     @SourceNickname.setter
     def SourceNickname(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceNickname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceNickname"], value)
 
     @property
     def TimeOut(self):
@@ -170,13 +178,25 @@ class TrillPingOam(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeOut'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeOut"])
+
     @TimeOut.setter
     def TimeOut(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeOut'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeOut"], value)
 
-    def update(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
+    def update(
+        self,
+        AlertFlag=None,
+        DestinationNickname=None,
+        EtherType=None,
+        HopCount=None,
+        NativeFlag=None,
+        NoOfPingRequests=None,
+        SilentFlag=None,
+        SourceNickname=None,
+        TimeOut=None,
+    ):
         # type: (bool, int, int, int, bool, int, bool, int, int) -> TrillPingOam
         """Updates trillPingOam resource on the server.
 
@@ -198,7 +218,18 @@ class TrillPingOam(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AlertFlag=None, DestinationNickname=None, EtherType=None, HopCount=None, NativeFlag=None, NoOfPingRequests=None, SilentFlag=None, SourceNickname=None, TimeOut=None):
+    def find(
+        self,
+        AlertFlag=None,
+        DestinationNickname=None,
+        EtherType=None,
+        HopCount=None,
+        NativeFlag=None,
+        NoOfPingRequests=None,
+        SilentFlag=None,
+        SourceNickname=None,
+        TimeOut=None,
+    ):
         # type: (bool, int, int, int, bool, int, bool, int, int) -> TrillPingOam
         """Finds and retrieves trillPingOam resources from the server.
 

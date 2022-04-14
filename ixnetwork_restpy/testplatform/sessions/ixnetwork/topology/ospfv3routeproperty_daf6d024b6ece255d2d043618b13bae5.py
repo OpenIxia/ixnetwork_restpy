@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class Ospfv3RouteProperty(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3RouteProperty'
+    _SDM_NAME = "ospfv3RouteProperty"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'AllowPropagate': 'allowPropagate',
-        'AutoSelectForwardingAddress': 'autoSelectForwardingAddress',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'ForwardingAddress': 'forwardingAddress',
-        'LFlag': 'lFlag',
-        'MFlag': 'mFlag',
-        'Metric': 'metric',
-        'Name': 'name',
-        'NpFlag': 'npFlag',
-        'RouteOrigin': 'routeOrigin',
-        'SidIndexLabel': 'sidIndexLabel',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "AllowPropagate": "allowPropagate",
+        "AutoSelectForwardingAddress": "autoSelectForwardingAddress",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EFlag": "eFlag",
+        "ForwardingAddress": "forwardingAddress",
+        "LFlag": "lFlag",
+        "MFlag": "mFlag",
+        "Metric": "metric",
+        "Name": "name",
+        "NpFlag": "npFlag",
+        "RouteOrigin": "routeOrigin",
+        "SidIndexLabel": "sidIndexLabel",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv3RouteProperty, self).__init__(parent, list_op)
@@ -71,10 +71,13 @@ class Ospfv3RouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -88,10 +91,13 @@ class Ospfv3RouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -105,10 +111,13 @@ class Ospfv3RouteProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -120,7 +129,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
@@ -131,7 +141,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def AllowPropagate(self):
@@ -142,7 +153,10 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allow Propagate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllowPropagate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AllowPropagate"])
+        )
 
     @property
     def AutoSelectForwardingAddress(self):
@@ -153,7 +167,10 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Select Forwarding Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoSelectForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoSelectForwardingAddress"])
+        )
 
     @property
     def ConfigureSIDIndexLabel(self):
@@ -164,7 +181,10 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Lets the corresponding router send Prefix SID. By default, it is selected
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -174,7 +194,7 @@ class Ospfv3RouteProperty(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -184,7 +204,7 @@ class Ospfv3RouteProperty(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EFlag(self):
@@ -195,7 +215,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): E Flag: Explicit-Null Flag: If set, any upstream neighbor of the Prefix-SID originator MUST replace the Prefix-SID with a Prefix-SID having an Explicit-NULL value (0 for IPv4 and 2 for IPv6) before forwarding the packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def ForwardingAddress(self):
@@ -206,7 +227,10 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Forwarding addresses of the Type-7 LSA
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ForwardingAddress"])
+        )
 
     @property
     def LFlag(self):
@@ -217,7 +241,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def MFlag(self):
@@ -228,7 +253,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M-Flag: Mapping Server Flag: If set, the SID was advertised by a Segment Routing Mapping Server
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def Metric(self):
@@ -239,7 +265,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def Name(self):
@@ -249,11 +276,12 @@ class Ospfv3RouteProperty(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NpFlag(self):
@@ -264,7 +292,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): NP Flag: No-PHP Flag: If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def RouteOrigin(self):
@@ -275,7 +304,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteOrigin"]))
 
     @property
     def SidIndexLabel(self):
@@ -286,7 +316,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label value associated with the IGP Prefix segment attached to the specific IPv6 prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def VFlag(self):
@@ -297,7 +328,8 @@ class Ospfv3RouteProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     def update(self, Name=None):
         # type: (str) -> Ospfv3RouteProperty
@@ -401,10 +433,12 @@ class Ospfv3RouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def AgeOutRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -443,10 +477,12 @@ class Ospfv3RouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ageOutRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ageOutRoutes", payload=payload, response_object=None)
 
     def ReadvertiseRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -481,10 +517,12 @@ class Ospfv3RouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("readvertiseRoutes", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -513,10 +551,12 @@ class Ospfv3RouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -545,12 +585,31 @@ class Ospfv3RouteProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, AllowPropagate=None, AutoSelectForwardingAddress=None, ConfigureSIDIndexLabel=None, EFlag=None, ForwardingAddress=None, LFlag=None, MFlag=None, Metric=None, NpFlag=None, RouteOrigin=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Algorithm=None,
+        AllowPropagate=None,
+        AutoSelectForwardingAddress=None,
+        ConfigureSIDIndexLabel=None,
+        EFlag=None,
+        ForwardingAddress=None,
+        LFlag=None,
+        MFlag=None,
+        Metric=None,
+        NpFlag=None,
+        RouteOrigin=None,
+        SidIndexLabel=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of ospfv3RouteProperty device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

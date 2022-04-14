@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class RepeatableContainer(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'repeatableContainer'
+    _SDM_NAME = "repeatableContainer"
     _SDM_ATT_MAP = {
-        'IsEnabled': 'isEnabled',
-        'Name': 'name',
+        "IsEnabled": "isEnabled",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RepeatableContainer, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class RepeatableContainer(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import (
+            Object,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Object', None) is not None:
-                return self._properties.get('Object')
+            if self._properties.get("Object", None) is not None:
+                return self._properties.get("Object")
         return Object(self)
 
     @property
@@ -69,11 +72,12 @@ class RepeatableContainer(Base):
         -------
         - bool: Enables/disables this field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def Name(self):
@@ -83,11 +87,12 @@ class RepeatableContainer(Base):
         -------
         - str: Name of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, IsEnabled=None, Name=None):
         # type: (bool, str) -> RepeatableContainer
@@ -106,7 +111,7 @@ class RepeatableContainer(Base):
 
     def add(self, IsEnabled=None, Name=None):
         # type: (bool, str) -> RepeatableContainer
-        """Adds a new repeatableContainer resource on the json, only valid with config assistant
+        """Adds a new repeatableContainer resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -180,7 +185,11 @@ class RepeatableContainer(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateObjectsCount', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "updateObjectsCount", payload=payload, response_object=None
+        )

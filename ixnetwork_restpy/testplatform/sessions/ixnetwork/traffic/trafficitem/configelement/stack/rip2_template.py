@@ -4,20 +4,20 @@ from ixnetwork_restpy.files import Files
 
 class Rip2(Base):
     __slots__ = ()
-    _SDM_NAME = 'rip2'
+    _SDM_NAME = "rip2"
     _SDM_ATT_MAP = {
-        'Command': 'rip2.header.rip2Header.command-1',
-        'Version': 'rip2.header.rip2Header.version-2',
-        'Unused': 'rip2.header.rip2Header.unused-3',
-        'AuthenticationEntryAddressFamilyIdentifier': 'rip2.header.authenticationEntry.addressFamilyIdentifier-4',
-        'AuthenticationEntryAuthenticationType': 'rip2.header.authenticationEntry.authenticationType-5',
-        'AuthenticationEntryAuthentication': 'rip2.header.authenticationEntry.authentication-6',
-        'RoutingTableEntryAddressFamilyIdentifier': 'rip2.header.routingTableEntry.addressFamilyIdentifier-7',
-        'RoutingTableEntryRouteTag': 'rip2.header.routingTableEntry.routeTag-8',
-        'RoutingTableEntryIpv4Address': 'rip2.header.routingTableEntry.ipv4Address-9',
-        'RoutingTableEntrySubnetMask': 'rip2.header.routingTableEntry.subnetMask-10',
-        'RoutingTableEntryNextHop': 'rip2.header.routingTableEntry.nextHop-11',
-        'RoutingTableEntryMetric': 'rip2.header.routingTableEntry.metric-12',
+        "Command": "rip2.header.rip2Header.command-1",
+        "Version": "rip2.header.rip2Header.version-2",
+        "Unused": "rip2.header.rip2Header.unused-3",
+        "AuthenticationEntryAddressFamilyIdentifier": "rip2.header.authenticationEntry.addressFamilyIdentifier-4",
+        "AuthenticationEntryAuthenticationType": "rip2.header.authenticationEntry.authenticationType-5",
+        "AuthenticationEntryAuthentication": "rip2.header.authenticationEntry.authentication-6",
+        "RoutingTableEntryAddressFamilyIdentifier": "rip2.header.routingTableEntry.addressFamilyIdentifier-7",
+        "RoutingTableEntryRouteTag": "rip2.header.routingTableEntry.routeTag-8",
+        "RoutingTableEntryIpv4Address": "rip2.header.routingTableEntry.ipv4Address-9",
+        "RoutingTableEntrySubnetMask": "rip2.header.routingTableEntry.subnetMask-10",
+        "RoutingTableEntryNextHop": "rip2.header.routingTableEntry.nextHop-11",
+        "RoutingTableEntryMetric": "rip2.header.routingTableEntry.metric-12",
     }
 
     def __init__(self, parent, list_op=False):
@@ -32,7 +32,8 @@ class Rip2(Base):
         Available enum values: Request, 1, Response, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Command']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Command"]))
 
     @property
     def Version(self):
@@ -42,7 +43,8 @@ class Rip2(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Unused(self):
@@ -52,7 +54,8 @@ class Rip2(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unused"]))
 
     @property
     def AuthenticationEntryAddressFamilyIdentifier(self):
@@ -62,7 +65,13 @@ class Rip2(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationEntryAddressFamilyIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationEntryAddressFamilyIdentifier"]
+            ),
+        )
 
     @property
     def AuthenticationEntryAuthenticationType(self):
@@ -72,7 +81,13 @@ class Rip2(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationEntryAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationEntryAuthenticationType"]
+            ),
+        )
 
     @property
     def AuthenticationEntryAuthentication(self):
@@ -82,7 +97,11 @@ class Rip2(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationEntryAuthentication']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticationEntryAuthentication"]),
+        )
 
     @property
     def RoutingTableEntryAddressFamilyIdentifier(self):
@@ -92,7 +111,13 @@ class Rip2(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntryAddressFamilyIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["RoutingTableEntryAddressFamilyIdentifier"]
+            ),
+        )
 
     @property
     def RoutingTableEntryRouteTag(self):
@@ -102,7 +127,10 @@ class Rip2(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntryRouteTag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RoutingTableEntryRouteTag"])
+        )
 
     @property
     def RoutingTableEntryIpv4Address(self):
@@ -112,7 +140,10 @@ class Rip2(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntryIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RoutingTableEntryIpv4Address"])
+        )
 
     @property
     def RoutingTableEntrySubnetMask(self):
@@ -122,7 +153,10 @@ class Rip2(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntrySubnetMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RoutingTableEntrySubnetMask"])
+        )
 
     @property
     def RoutingTableEntryNextHop(self):
@@ -132,7 +166,10 @@ class Rip2(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntryNextHop']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RoutingTableEntryNextHop"])
+        )
 
     @property
     def RoutingTableEntryMetric(self):
@@ -142,7 +179,10 @@ class Rip2(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingTableEntryMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RoutingTableEntryMetric"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

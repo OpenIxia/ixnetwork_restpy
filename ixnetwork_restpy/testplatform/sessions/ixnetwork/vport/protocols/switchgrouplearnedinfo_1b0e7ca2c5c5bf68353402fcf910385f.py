@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class SwitchGroupLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchGroupLearnedInfo'
+    _SDM_NAME = "switchGroupLearnedInfo"
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'DatapathId': 'datapathId',
-        'DatapathIdInHex': 'datapathIdInHex',
-        'Duration': 'duration',
-        'DurationInNs': 'durationInNs',
-        'GroupId': 'groupId',
-        'GroupType': 'groupType',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NumOfBuckets': 'numOfBuckets',
-        'PacketCount': 'packetCount',
-        'ReferenceCount': 'referenceCount',
+        "ByteCount": "byteCount",
+        "DatapathId": "datapathId",
+        "DatapathIdInHex": "datapathIdInHex",
+        "Duration": "duration",
+        "DurationInNs": "durationInNs",
+        "GroupId": "groupId",
+        "GroupType": "groupType",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "NumOfBuckets": "numOfBuckets",
+        "PacketCount": "packetCount",
+        "ReferenceCount": "referenceCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchGroupLearnedInfo, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class SwitchGroupLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_9a65c5052010d8a7d3ba2272e133999d import SwitchGroupBucketLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_9a65c5052010d8a7d3ba2272e133999d import (
+            SwitchGroupBucketLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchGroupBucketLearnedInfo', None) is not None:
-                return self._properties.get('SwitchGroupBucketLearnedInfo')
+            if self._properties.get("SwitchGroupBucketLearnedInfo", None) is not None:
+                return self._properties.get("SwitchGroupBucketLearnedInfo")
         return SwitchGroupBucketLearnedInfo(self)
 
     @property
@@ -79,7 +82,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteCount"])
 
     @property
     def DatapathId(self):
@@ -89,7 +92,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathId"])
 
     @property
     def DatapathIdInHex(self):
@@ -99,7 +102,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathIdInHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathIdInHex"])
 
     @property
     def Duration(self):
@@ -109,7 +112,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
 
     @property
     def DurationInNs(self):
@@ -119,7 +122,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationInNs'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationInNs"])
 
     @property
     def GroupId(self):
@@ -129,7 +132,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def GroupType(self):
@@ -139,7 +142,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupType'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupType"])
 
     @property
     def LocalIp(self):
@@ -149,7 +152,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -159,7 +162,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def NumOfBuckets(self):
@@ -169,7 +172,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumOfBuckets'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumOfBuckets"])
 
     @property
     def PacketCount(self):
@@ -179,7 +182,7 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCount"])
 
     @property
     def ReferenceCount(self):
@@ -189,10 +192,10 @@ class SwitchGroupLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReferenceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReferenceCount"])
 
     def add(self):
-        """Adds a new switchGroupLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchGroupLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -204,7 +207,21 @@ class SwitchGroupLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteCount=None, DatapathId=None, DatapathIdInHex=None, Duration=None, DurationInNs=None, GroupId=None, GroupType=None, LocalIp=None, NegotiatedVersion=None, NumOfBuckets=None, PacketCount=None, ReferenceCount=None):
+    def find(
+        self,
+        ByteCount=None,
+        DatapathId=None,
+        DatapathIdInHex=None,
+        Duration=None,
+        DurationInNs=None,
+        GroupId=None,
+        GroupType=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        NumOfBuckets=None,
+        PacketCount=None,
+        ReferenceCount=None,
+    ):
         # type: (int, str, str, int, int, int, str, str, str, int, int, int) -> SwitchGroupLearnedInfo
         """Finds and retrieves switchGroupLearnedInfo resources from the server.
 

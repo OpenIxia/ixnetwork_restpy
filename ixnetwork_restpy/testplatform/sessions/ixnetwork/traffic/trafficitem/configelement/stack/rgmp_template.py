@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class Rgmp(Base):
     __slots__ = ()
-    _SDM_NAME = 'rgmp'
+    _SDM_NAME = "rgmp"
     _SDM_ATT_MAP = {
-        'HeaderType': 'rgmp.header.type-1',
-        'HeaderReserved': 'rgmp.header.reserved-2',
-        'HeaderChecksum': 'rgmp.header.checksum-3',
-        'HeaderMulticastAddress': 'rgmp.header.multicastAddress-4',
+        "HeaderType": "rgmp.header.type-1",
+        "HeaderReserved": "rgmp.header.reserved-2",
+        "HeaderChecksum": "rgmp.header.checksum-3",
+        "HeaderMulticastAddress": "rgmp.header.multicastAddress-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -24,7 +24,8 @@ class Rgmp(Base):
         Available enum values: Leave a Group, 252, Join a Group, 253, Bye, 254, Hello, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderReserved(self):
@@ -34,7 +35,10 @@ class Rgmp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderChecksum(self):
@@ -44,7 +48,10 @@ class Rgmp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderChecksum"])
+        )
 
     @property
     def HeaderMulticastAddress(self):
@@ -54,7 +61,10 @@ class Rgmp(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMulticastAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMulticastAddress"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

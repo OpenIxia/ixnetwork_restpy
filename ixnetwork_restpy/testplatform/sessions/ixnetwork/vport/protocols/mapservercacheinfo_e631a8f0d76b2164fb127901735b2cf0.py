@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,30 +34,29 @@ class MapServerCacheInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mapServerCacheInfo'
+    _SDM_NAME = "mapServerCacheInfo"
     _SDM_ATT_MAP = {
-        'Action': 'action',
-        'EidPrefix': 'eidPrefix',
-        'EidPrefixAfi': 'eidPrefixAfi',
-        'EidPrefixLength': 'eidPrefixLength',
-        'EtrIp': 'etrIp',
-        'ExpiresAfter': 'expiresAfter',
-        'InstanceId': 'instanceId',
-        'Ipv4ErrorMapRegisterRx': 'ipv4ErrorMapRegisterRx',
-        'Ipv4MapNotifyTx': 'ipv4MapNotifyTx',
-        'Ipv4MapRegisterRx': 'ipv4MapRegisterRx',
-        'Ipv4MapRequestDropped': 'ipv4MapRequestDropped',
-        'Ipv6ErrorMapRegisterRx': 'ipv6ErrorMapRegisterRx',
-        'Ipv6MapNotifyTx': 'ipv6MapNotifyTx',
-        'Ipv6MapRegisterRx': 'ipv6MapRegisterRx',
-        'Ipv6MapRequestDropped': 'ipv6MapRequestDropped',
-        'Key': 'key',
-        'MapVersionNumber': 'mapVersionNumber',
-        'ProxyMapReply': 'proxyMapReply',
-        'WantMapNotify': 'wantMapNotify',
+        "Action": "action",
+        "EidPrefix": "eidPrefix",
+        "EidPrefixAfi": "eidPrefixAfi",
+        "EidPrefixLength": "eidPrefixLength",
+        "EtrIp": "etrIp",
+        "ExpiresAfter": "expiresAfter",
+        "InstanceId": "instanceId",
+        "Ipv4ErrorMapRegisterRx": "ipv4ErrorMapRegisterRx",
+        "Ipv4MapNotifyTx": "ipv4MapNotifyTx",
+        "Ipv4MapRegisterRx": "ipv4MapRegisterRx",
+        "Ipv4MapRequestDropped": "ipv4MapRequestDropped",
+        "Ipv6ErrorMapRegisterRx": "ipv6ErrorMapRegisterRx",
+        "Ipv6MapNotifyTx": "ipv6MapNotifyTx",
+        "Ipv6MapRegisterRx": "ipv6MapRegisterRx",
+        "Ipv6MapRequestDropped": "ipv6MapRequestDropped",
+        "Key": "key",
+        "MapVersionNumber": "mapVersionNumber",
+        "ProxyMapReply": "proxyMapReply",
+        "WantMapNotify": "wantMapNotify",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MapServerCacheInfo, self).__init__(parent, list_op)
@@ -72,10 +72,13 @@ class MapServerCacheInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_ace4921278a5aecb46922d99b858e10c import RemoteLocators
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_ace4921278a5aecb46922d99b858e10c import (
+            RemoteLocators,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteLocators', None) is not None:
-                return self._properties.get('RemoteLocators')
+            if self._properties.get("RemoteLocators", None) is not None:
+                return self._properties.get("RemoteLocators")
         return RemoteLocators(self)
 
     @property
@@ -86,7 +89,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the action (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Action'])
+        return self._get_attribute(self._SDM_ATT_MAP["Action"])
 
     @property
     def EidPrefix(self):
@@ -96,7 +99,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the eid prefix (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidPrefix"])
 
     @property
     def EidPrefixAfi(self):
@@ -106,7 +109,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the eid prefix Afi (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidPrefixAfi'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidPrefixAfi"])
 
     @property
     def EidPrefixLength(self):
@@ -116,7 +119,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the eid prefix Length (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EidPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["EidPrefixLength"])
 
     @property
     def EtrIp(self):
@@ -126,7 +129,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the etrlp (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EtrIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EtrIp"])
 
     @property
     def ExpiresAfter(self):
@@ -136,7 +139,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the expiration details (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpiresAfter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpiresAfter"])
 
     @property
     def InstanceId(self):
@@ -146,7 +149,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the instance id (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstanceId"])
 
     @property
     def Ipv4ErrorMapRegisterRx(self):
@@ -156,7 +159,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv4 Error Map register at receivers end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4ErrorMapRegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4ErrorMapRegisterRx"])
 
     @property
     def Ipv4MapNotifyTx(self):
@@ -166,7 +169,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv4 Map notify at transmitters end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapNotifyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4MapNotifyTx"])
 
     @property
     def Ipv4MapRegisterRx(self):
@@ -176,7 +179,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv4 Map register at receivers end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4MapRegisterRx"])
 
     @property
     def Ipv4MapRequestDropped(self):
@@ -186,7 +189,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv4 Map Request dropped (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRequestDropped'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4MapRequestDropped"])
 
     @property
     def Ipv6ErrorMapRegisterRx(self):
@@ -196,7 +199,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv6 Error Map register at receivers end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ErrorMapRegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ErrorMapRegisterRx"])
 
     @property
     def Ipv6MapNotifyTx(self):
@@ -206,7 +209,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv6 Map notify at transmitters end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapNotifyTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MapNotifyTx"])
 
     @property
     def Ipv6MapRegisterRx(self):
@@ -216,7 +219,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv6 Map register at receivers end (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRegisterRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MapRegisterRx"])
 
     @property
     def Ipv6MapRequestDropped(self):
@@ -226,7 +229,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details about the ipv6 Map Request dropped (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRequestDropped'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MapRequestDropped"])
 
     @property
     def Key(self):
@@ -236,7 +239,7 @@ class MapServerCacheInfo(Base):
         -------
         - str: It gives details about the key (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Key"])
 
     @property
     def MapVersionNumber(self):
@@ -246,7 +249,7 @@ class MapServerCacheInfo(Base):
         -------
         - number: It gives details map version number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapVersionNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapVersionNumber"])
 
     @property
     def ProxyMapReply(self):
@@ -256,7 +259,7 @@ class MapServerCacheInfo(Base):
         -------
         - bool: It gives details about the proxy map reply(Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProxyMapReply'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProxyMapReply"])
 
     @property
     def WantMapNotify(self):
@@ -266,10 +269,10 @@ class MapServerCacheInfo(Base):
         -------
         - bool: It gives details about the Map notify
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WantMapNotify'])
+        return self._get_attribute(self._SDM_ATT_MAP["WantMapNotify"])
 
     def add(self):
-        """Adds a new mapServerCacheInfo resource on the json, only valid with config assistant
+        """Adds a new mapServerCacheInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -281,7 +284,28 @@ class MapServerCacheInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Action=None, EidPrefix=None, EidPrefixAfi=None, EidPrefixLength=None, EtrIp=None, ExpiresAfter=None, InstanceId=None, Ipv4ErrorMapRegisterRx=None, Ipv4MapNotifyTx=None, Ipv4MapRegisterRx=None, Ipv4MapRequestDropped=None, Ipv6ErrorMapRegisterRx=None, Ipv6MapNotifyTx=None, Ipv6MapRegisterRx=None, Ipv6MapRequestDropped=None, Key=None, MapVersionNumber=None, ProxyMapReply=None, WantMapNotify=None):
+    def find(
+        self,
+        Action=None,
+        EidPrefix=None,
+        EidPrefixAfi=None,
+        EidPrefixLength=None,
+        EtrIp=None,
+        ExpiresAfter=None,
+        InstanceId=None,
+        Ipv4ErrorMapRegisterRx=None,
+        Ipv4MapNotifyTx=None,
+        Ipv4MapRegisterRx=None,
+        Ipv4MapRequestDropped=None,
+        Ipv6ErrorMapRegisterRx=None,
+        Ipv6MapNotifyTx=None,
+        Ipv6MapRegisterRx=None,
+        Ipv6MapRequestDropped=None,
+        Key=None,
+        MapVersionNumber=None,
+        ProxyMapReply=None,
+        WantMapNotify=None,
+    ):
         # type: (str, str, str, int, str, str, int, int, int, int, int, int, int, int, int, str, int, bool, bool) -> MapServerCacheInfo
         """Finds and retrieves mapServerCacheInfo resources from the server.
 

@@ -91,7 +91,7 @@ class PceUpdateSrv6MetricSubObjectList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricValue']))
 
     def add(self):
-        """Adds a new pceUpdateSrv6MetricSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateSrv6MetricSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------

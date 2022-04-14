@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,14 @@ class RxGateControlList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rxGateControlList'
+    _SDM_NAME = "rxGateControlList"
     _SDM_ATT_MAP = {
-        'BaseTimeOffset': 'baseTimeOffset',
-        'GateControlList': 'gateControlList',
-        'UnitOfTime': 'unitOfTime',
+        "BaseTimeOffset": "baseTimeOffset",
+        "GateControlList": "gateControlList",
+        "UnitOfTime": "unitOfTime",
     }
     _SDM_ENUM_MAP = {
-        'unitOfTime': ['MicroSecond', 'MilliSecond', 'NanoSecond'],
+        "unitOfTime": ["MicroSecond", "MilliSecond", "NanoSecond"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,11 +55,12 @@ class RxGateControlList(Base):
         -------
         - number: Gate control list is triggered at this offset from the cycle boundary.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseTimeOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseTimeOffset"])
+
     @BaseTimeOffset.setter
     def BaseTimeOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseTimeOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseTimeOffset"], value)
 
     @property
     def GateControlList(self):
@@ -67,10 +69,11 @@ class RxGateControlList(Base):
         -------
         - list(list[str]): Gate control list comprising of window duration and gate states.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GateControlList'])
+        return self._get_attribute(self._SDM_ATT_MAP["GateControlList"])
+
     @GateControlList.setter
     def GateControlList(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['GateControlList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GateControlList"], value)
 
     @property
     def UnitOfTime(self):
@@ -80,11 +83,12 @@ class RxGateControlList(Base):
         -------
         - str(MicroSecond | MilliSecond | NanoSecond): Unit of time for baseTimeOffset and window durations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnitOfTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnitOfTime"])
+
     @UnitOfTime.setter
     def UnitOfTime(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnitOfTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnitOfTime"], value)
 
     def update(self, BaseTimeOffset=None, GateControlList=None, UnitOfTime=None):
         """Updates rxGateControlList resource on the server.
@@ -102,7 +106,7 @@ class RxGateControlList(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BaseTimeOffset=None, GateControlList=None, UnitOfTime=None):
-        """Adds a new rxGateControlList resource on the json, only valid with config assistant
+        """Adds a new rxGateControlList resource on the json, only valid with batch add utility
 
         Args
         ----

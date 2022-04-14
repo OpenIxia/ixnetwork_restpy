@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class SummaryIp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'summaryIp'
+    _SDM_NAME = "summaryIp"
     _SDM_ATT_MAP = {
-        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
-        'Metric': 'metric',
-        'NetworkMask': 'networkMask',
-        'NumberOfLsa': 'numberOfLsa',
+        "IncrementLinkStateIdBy": "incrementLinkStateIdBy",
+        "Metric": "metric",
+        "NetworkMask": "networkMask",
+        "NumberOfLsa": "numberOfLsa",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SummaryIp, self).__init__(parent, list_op)
@@ -52,13 +52,14 @@ class SummaryIp(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementLinkStateIdBy"])
+
     @IncrementLinkStateIdBy.setter
     def IncrementLinkStateIdBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementLinkStateIdBy"], value)
 
     @property
     def Metric(self):
@@ -66,13 +67,14 @@ class SummaryIp(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NetworkMask(self):
@@ -80,13 +82,14 @@ class SummaryIp(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkMask"])
+
     @NetworkMask.setter
     def NetworkMask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkMask"], value)
 
     @property
     def NumberOfLsa(self):
@@ -94,24 +97,31 @@ class SummaryIp(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfLsa"])
+
     @NumberOfLsa.setter
     def NumberOfLsa(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfLsa"], value)
 
-    def update(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
+    def update(
+        self,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+    ):
         # type: (str, int, str, int) -> SummaryIp
         """Updates summaryIp resource on the server.
 
         Args
         ----
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
 
         Raises
         ------
@@ -119,16 +129,22 @@ class SummaryIp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
+    def add(
+        self,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+    ):
         # type: (str, int, str, int) -> SummaryIp
-        """Adds a new summaryIp resource on the json, only valid with config assistant
+        """Adds a new summaryIp resource on the json, only valid with batch add utility
 
         Args
         ----
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
 
         Returns
         -------
@@ -140,7 +156,13 @@ class SummaryIp(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None):
+    def find(
+        self,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+    ):
         # type: (str, int, str, int) -> SummaryIp
         """Finds and retrieves summaryIp resources from the server.
 
@@ -150,10 +172,10 @@ class SummaryIp(Base):
 
         Args
         ----
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
 
         Returns
         -------

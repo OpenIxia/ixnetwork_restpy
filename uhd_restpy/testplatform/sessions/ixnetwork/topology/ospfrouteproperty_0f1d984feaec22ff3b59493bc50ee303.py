@@ -477,7 +477,7 @@ class OspfRouteProperty(Base):
 
     def add(self, IncludeBIERInfo=None, Name=None):
         # type: (bool, str) -> OspfRouteProperty
-        """Adds a new ospfRouteProperty resource on the json, only valid with config assistant
+        """Adds a new ospfRouteProperty resource on the json, only valid with batch add utility
 
         Args
         ----

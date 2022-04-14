@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,34 +34,34 @@ class HighLevelStream(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'highLevelStream'
+    _SDM_NAME = "highLevelStream"
     _SDM_ATT_MAP = {
-        'AppliedFrameRate': 'appliedFrameRate',
-        'AppliedFrameSize': 'appliedFrameSize',
-        'AppliedPacketCount': 'appliedPacketCount',
-        'Crc': 'crc',
-        'CurrentPacketCount': 'currentPacketCount',
-        'DestinationMacMode': 'destinationMacMode',
-        'Distributions': 'distributions',
-        'Enabled': 'enabled',
-        'EncapsulationName': 'encapsulationName',
-        'EndpointSetId': 'endpointSetId',
-        'Name': 'name',
-        'OverSubscribed': 'overSubscribed',
-        'Pause': 'pause',
-        'PreambleCustomSize': 'preambleCustomSize',
-        'PreambleFrameSizeMode': 'preambleFrameSizeMode',
-        'RxPortIds': 'rxPortIds',
-        'RxPortNames': 'rxPortNames',
-        'State': 'state',
-        'Suspend': 'suspend',
-        'TxPortId': 'txPortId',
-        'TxPortName': 'txPortName',
+        "AppliedFrameRate": "appliedFrameRate",
+        "AppliedFrameSize": "appliedFrameSize",
+        "AppliedPacketCount": "appliedPacketCount",
+        "Crc": "crc",
+        "CurrentPacketCount": "currentPacketCount",
+        "DestinationMacMode": "destinationMacMode",
+        "Distributions": "distributions",
+        "Enabled": "enabled",
+        "EncapsulationName": "encapsulationName",
+        "EndpointSetId": "endpointSetId",
+        "Name": "name",
+        "OverSubscribed": "overSubscribed",
+        "Pause": "pause",
+        "PreambleCustomSize": "preambleCustomSize",
+        "PreambleFrameSizeMode": "preambleFrameSizeMode",
+        "RxPortIds": "rxPortIds",
+        "RxPortNames": "rxPortNames",
+        "State": "state",
+        "Suspend": "suspend",
+        "TxPortId": "txPortId",
+        "TxPortName": "txPortName",
     }
     _SDM_ENUM_MAP = {
-        'crc': ['badCrc', 'goodCrc'],
-        'destinationMacMode': ['arp', 'manual'],
-        'preambleFrameSizeMode': ['auto', 'custom'],
+        "crc": ["badCrc", "goodCrc"],
+        "destinationMacMode": ["arp", "manual"],
+        "preambleFrameSizeMode": ["auto", "custom"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -77,10 +78,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepayload.framepayload import FramePayload
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepayload.framepayload import (
+            FramePayload,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FramePayload', None) is not None:
-                return self._properties.get('FramePayload')
+            if self._properties.get("FramePayload", None) is not None:
+                return self._properties.get("FramePayload")
         return FramePayload(self)._select()
 
     @property
@@ -94,10 +98,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import FramePreemption
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import (
+            FramePreemption,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FramePreemption', None) is not None:
-                return self._properties.get('FramePreemption')
+            if self._properties.get("FramePreemption", None) is not None:
+                return self._properties.get("FramePreemption")
         return FramePreemption(self)
 
     @property
@@ -111,10 +118,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framerate.framerate import FrameRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framerate.framerate import (
+            FrameRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FrameRate', None) is not None:
-                return self._properties.get('FrameRate')
+            if self._properties.get("FrameRate", None) is not None:
+                return self._properties.get("FrameRate")
         return FrameRate(self)._select()
 
     @property
@@ -128,10 +138,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framesize.framesize import FrameSize
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framesize.framesize import (
+            FrameSize,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FrameSize', None) is not None:
-                return self._properties.get('FrameSize')
+            if self._properties.get("FrameSize", None) is not None:
+                return self._properties.get("FrameSize")
         return FrameSize(self)._select()
 
     @property
@@ -145,10 +158,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stack.stack import Stack
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import (
+            Stack,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Stack', None) is not None:
-                return self._properties.get('Stack')
+            if self._properties.get("Stack", None) is not None:
+                return self._properties.get("Stack")
         return Stack(self)
 
     @property
@@ -162,10 +178,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stacklink.stacklink import StackLink
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stacklink.stacklink import (
+            StackLink,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StackLink', None) is not None:
-                return self._properties.get('StackLink')
+            if self._properties.get("StackLink", None) is not None:
+                return self._properties.get("StackLink")
         return StackLink(self)
 
     @property
@@ -179,10 +198,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.tableudf import TableUdf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.tableudf import (
+            TableUdf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TableUdf', None) is not None:
-                return self._properties.get('TableUdf')
+            if self._properties.get("TableUdf", None) is not None:
+                return self._properties.get("TableUdf")
         return TableUdf(self)
 
     @property
@@ -196,10 +218,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.transmissioncontrol.transmissioncontrol import TransmissionControl
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.transmissioncontrol.transmissioncontrol import (
+            TransmissionControl,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TransmissionControl', None) is not None:
-                return self._properties.get('TransmissionControl')
+            if self._properties.get("TransmissionControl", None) is not None:
+                return self._properties.get("TransmissionControl")
         return TransmissionControl(self)._select()
 
     @property
@@ -213,10 +238,13 @@ class HighLevelStream(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.udf import Udf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.udf import (
+            Udf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Udf', None) is not None:
-                return self._properties.get('Udf')
+            if self._properties.get("Udf", None) is not None:
+                return self._properties.get("Udf")
         return Udf(self)
 
     @property
@@ -225,9 +253,9 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AppliedFrameRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["AppliedFrameRate"])
 
     @property
     def AppliedFrameSize(self):
@@ -237,7 +265,7 @@ class HighLevelStream(Base):
         -------
         - str: (Read only) Indicates the applied frame size of the high level stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AppliedFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["AppliedFrameSize"])
 
     @property
     def AppliedPacketCount(self):
@@ -247,7 +275,7 @@ class HighLevelStream(Base):
         -------
         - number: (Read only) Indicates the aplied packet count of the high level stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AppliedPacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AppliedPacketCount"])
 
     @property
     def Crc(self):
@@ -257,11 +285,12 @@ class HighLevelStream(Base):
         -------
         - str(badCrc | goodCrc): The Cyclic Redundancy Check frame of the configured high level stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Crc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Crc"])
+
     @Crc.setter
     def Crc(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Crc"], value)
 
     @property
     def CurrentPacketCount(self):
@@ -271,7 +300,7 @@ class HighLevelStream(Base):
         -------
         - number: (Read only) Denotes the number of packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentPacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentPacketCount"])
 
     @property
     def DestinationMacMode(self):
@@ -281,11 +310,12 @@ class HighLevelStream(Base):
         -------
         - str(arp | manual): The mode in which the Destination MAC Address is configured, either manual or ARP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationMacMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationMacMode"])
+
     @DestinationMacMode.setter
     def DestinationMacMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestinationMacMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestinationMacMode"], value)
 
     @property
     def Distributions(self):
@@ -294,7 +324,7 @@ class HighLevelStream(Base):
         -------
         - list(dict(arg1:str,arg2:str)): Denotes the distribution of the high level stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Distributions'])
+        return self._get_attribute(self._SDM_ATT_MAP["Distributions"])
 
     @property
     def Enabled(self):
@@ -302,13 +332,14 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EncapsulationName(self):
@@ -318,7 +349,7 @@ class HighLevelStream(Base):
         -------
         - str: Name of the configured encapsulation type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EncapsulationName'])
+        return self._get_attribute(self._SDM_ATT_MAP["EncapsulationName"])
 
     @property
     def EndpointSetId(self):
@@ -328,7 +359,7 @@ class HighLevelStream(Base):
         -------
         - number: The ID of the configured endpoint set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EndpointSetId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EndpointSetId"])
 
     @property
     def Name(self):
@@ -338,11 +369,12 @@ class HighLevelStream(Base):
         -------
         - str: An alphanumeric string that returns the name of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OverSubscribed(self):
@@ -352,7 +384,7 @@ class HighLevelStream(Base):
         -------
         - bool: If true, the rate is oversubscribed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverSubscribed'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverSubscribed"])
 
     @property
     def Pause(self):
@@ -362,11 +394,12 @@ class HighLevelStream(Base):
         -------
         - bool: If true then pause is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Pause'])
+        return self._get_attribute(self._SDM_ATT_MAP["Pause"])
+
     @Pause.setter
     def Pause(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Pause'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Pause"], value)
 
     @property
     def PreambleCustomSize(self):
@@ -376,11 +409,12 @@ class HighLevelStream(Base):
         -------
         - number: >Customizes the preamble size of the frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PreambleCustomSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PreambleCustomSize"])
+
     @PreambleCustomSize.setter
     def PreambleCustomSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PreambleCustomSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PreambleCustomSize"], value)
 
     @property
     def PreambleFrameSizeMode(self):
@@ -390,11 +424,12 @@ class HighLevelStream(Base):
         -------
         - str(auto | custom): The starting size of the frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PreambleFrameSizeMode"])
+
     @PreambleFrameSizeMode.setter
     def PreambleFrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PreambleFrameSizeMode"], value)
 
     @property
     def RxPortIds(self):
@@ -404,11 +439,12 @@ class HighLevelStream(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport]): A list of virtual ports that are the receiving ports
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxPortIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxPortIds"])
+
     @RxPortIds.setter
     def RxPortIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RxPortIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxPortIds"], value)
 
     @property
     def RxPortNames(self):
@@ -418,7 +454,7 @@ class HighLevelStream(Base):
         -------
         - list(str): A list of names from the receiving virtual ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxPortNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxPortNames"])
 
     @property
     def State(self):
@@ -428,7 +464,7 @@ class HighLevelStream(Base):
         -------
         - str: (Read only) Denotes the current state of the stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def Suspend(self):
@@ -438,11 +474,12 @@ class HighLevelStream(Base):
         -------
         - bool: Suspends all traffic on this high level stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Suspend'])
+        return self._get_attribute(self._SDM_ATT_MAP["Suspend"])
+
     @Suspend.setter
     def Suspend(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Suspend'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Suspend"], value)
 
     @property
     def TxPortId(self):
@@ -452,11 +489,12 @@ class HighLevelStream(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): The virtual port that is the transmitting port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxPortId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxPortId"])
+
     @TxPortId.setter
     def TxPortId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxPortId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxPortId"], value)
 
     @property
     def TxPortName(self):
@@ -466,9 +504,21 @@ class HighLevelStream(Base):
         -------
         - str: The name of the virtual port that is the transmitting port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxPortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxPortName"])
 
-    def update(self, Crc=None, DestinationMacMode=None, Enabled=None, Name=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, Suspend=None, TxPortId=None):
+    def update(
+        self,
+        Crc=None,
+        DestinationMacMode=None,
+        Enabled=None,
+        Name=None,
+        Pause=None,
+        PreambleCustomSize=None,
+        PreambleFrameSizeMode=None,
+        RxPortIds=None,
+        Suspend=None,
+        TxPortId=None,
+    ):
         # type: (str, str, bool, str, bool, int, str, List[str], bool, str) -> HighLevelStream
         """Updates highLevelStream resource on the server.
 
@@ -476,7 +526,7 @@ class HighLevelStream(Base):
         ----
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
-        - Enabled (bool): 
+        - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): >Customizes the preamble size of the frame.
@@ -491,15 +541,27 @@ class HighLevelStream(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Crc=None, DestinationMacMode=None, Enabled=None, Name=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, Suspend=None, TxPortId=None):
+    def add(
+        self,
+        Crc=None,
+        DestinationMacMode=None,
+        Enabled=None,
+        Name=None,
+        Pause=None,
+        PreambleCustomSize=None,
+        PreambleFrameSizeMode=None,
+        RxPortIds=None,
+        Suspend=None,
+        TxPortId=None,
+    ):
         # type: (str, str, bool, str, bool, int, str, List[str], bool, str) -> HighLevelStream
-        """Adds a new highLevelStream resource on the json, only valid with config assistant
+        """Adds a new highLevelStream resource on the json, only valid with batch add utility
 
         Args
         ----
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
-        - Enabled (bool): 
+        - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): >Customizes the preamble size of the frame.
@@ -518,7 +580,30 @@ class HighLevelStream(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AppliedFrameRate=None, AppliedFrameSize=None, AppliedPacketCount=None, Crc=None, CurrentPacketCount=None, DestinationMacMode=None, Distributions=None, Enabled=None, EncapsulationName=None, EndpointSetId=None, Name=None, OverSubscribed=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, RxPortNames=None, State=None, Suspend=None, TxPortId=None, TxPortName=None):
+    def find(
+        self,
+        AppliedFrameRate=None,
+        AppliedFrameSize=None,
+        AppliedPacketCount=None,
+        Crc=None,
+        CurrentPacketCount=None,
+        DestinationMacMode=None,
+        Distributions=None,
+        Enabled=None,
+        EncapsulationName=None,
+        EndpointSetId=None,
+        Name=None,
+        OverSubscribed=None,
+        Pause=None,
+        PreambleCustomSize=None,
+        PreambleFrameSizeMode=None,
+        RxPortIds=None,
+        RxPortNames=None,
+        State=None,
+        Suspend=None,
+        TxPortId=None,
+        TxPortName=None,
+    ):
         """Finds and retrieves highLevelStream resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve highLevelStream resources from the server.
@@ -527,14 +612,14 @@ class HighLevelStream(Base):
 
         Args
         ----
-        - AppliedFrameRate (str): 
+        - AppliedFrameRate (str):
         - AppliedFrameSize (str): (Read only) Indicates the applied frame size of the high level stream.
         - AppliedPacketCount (number): (Read only) Indicates the aplied packet count of the high level stream.
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - CurrentPacketCount (number): (Read only) Denotes the number of packets.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
         - Distributions (list(dict(arg1:str,arg2:str))): Denotes the distribution of the high level stream.
-        - Enabled (bool): 
+        - Enabled (bool):
         - EncapsulationName (str): Name of the configured encapsulation type.
         - EndpointSetId (number): The ID of the configured endpoint set.
         - Name (str): An alphanumeric string that returns the name of the field.
@@ -592,10 +677,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deleteQuickFlowGroups', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "deleteQuickFlowGroups", payload=payload, response_object=None
+        )
 
     def DuplicateQuickFlowGroups(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -613,10 +702,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('duplicateQuickFlowGroups', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "duplicateQuickFlowGroups", payload=payload, response_object=None
+        )
 
     def GetPacketViewInHex(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -635,10 +728,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPacketViewInHex', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPacketViewInHex", payload=payload, response_object=None
+        )
 
     def PauseStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -656,10 +753,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pauseStatelessTraffic", payload=payload, response_object=None
+        )
 
     def PreviewFlowPackets(self, *args, **kwargs):
         """Executes the previewFlowPackets operation on the server.
@@ -668,8 +769,8 @@ class HighLevelStream(Base):
 
         previewFlowPackets(Arg2=number, Arg3=number, async_operation=bool)object
         ------------------------------------------------------------------------
-        - Arg2 (number): 
-        - Arg3 (number): 
+        - Arg2 (number):
+        - Arg3 (number):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:number,arg2:number,arg3:list[str],arg4:list[list[str]]): No return value.
 
@@ -678,10 +779,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('previewFlowPackets', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "previewFlowPackets", payload=payload, response_object=None
+        )
 
     def StartStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -698,10 +803,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StartStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -718,10 +827,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
 
     def StopStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -738,10 +851,14 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StopStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -758,7 +875,11 @@ class HighLevelStream(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTrafficBlocking", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class IptvProfile(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'iptvProfile'
+    _SDM_NAME = "iptvProfile"
     _SDM_ATT_MAP = {
-        'ChangesBeforeView': 'changesBeforeView',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ViewDuration': 'viewDuration',
-        'ZapBehavior': 'zapBehavior',
-        'ZapDirection': 'zapDirection',
-        'ZapInterval': 'zapInterval',
-        'ZapIntervalType': 'zapIntervalType',
+        "ChangesBeforeView": "changesBeforeView",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ViewDuration": "viewDuration",
+        "ZapBehavior": "zapBehavior",
+        "ZapDirection": "zapDirection",
+        "ZapInterval": "zapInterval",
+        "ZapIntervalType": "zapIntervalType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IptvProfile, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class IptvProfile(Base):
         -------
         - number: Number of channels to change before stopping on a channel and watching it for View Duration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChangesBeforeView'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChangesBeforeView"])
+
     @ChangesBeforeView.setter
     def ChangesBeforeView(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChangesBeforeView'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChangesBeforeView"], value)
 
     @property
     def Name(self):
@@ -73,11 +74,12 @@ class IptvProfile(Base):
         -------
         - str: The name of the viewing profile.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -87,7 +89,7 @@ class IptvProfile(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ViewDuration(self):
@@ -97,11 +99,12 @@ class IptvProfile(Base):
         -------
         - number: Specifies the time in milliseconds to view the last channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ViewDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["ViewDuration"])
+
     @ViewDuration.setter
     def ViewDuration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ViewDuration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ViewDuration"], value)
 
     @property
     def ZapBehavior(self):
@@ -111,11 +114,12 @@ class IptvProfile(Base):
         -------
         - str: Use Zap Only to change channels without viewing the channel or Zap and View to change traffic and receive traffic for the last channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ZapBehavior'])
+        return self._get_attribute(self._SDM_ATT_MAP["ZapBehavior"])
+
     @ZapBehavior.setter
     def ZapBehavior(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ZapBehavior'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ZapBehavior"], value)
 
     @property
     def ZapDirection(self):
@@ -125,11 +129,12 @@ class IptvProfile(Base):
         -------
         - str: Specifies the direction of changing channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ZapDirection'])
+        return self._get_attribute(self._SDM_ATT_MAP["ZapDirection"])
+
     @ZapDirection.setter
     def ZapDirection(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ZapDirection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ZapDirection"], value)
 
     @property
     def ZapInterval(self):
@@ -139,11 +144,12 @@ class IptvProfile(Base):
         -------
         - number: Interval in milliseconds between channel changes based on the selected type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ZapInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ZapInterval"])
+
     @ZapInterval.setter
     def ZapInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ZapInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ZapInterval"], value)
 
     @property
     def ZapIntervalType(self):
@@ -153,13 +159,23 @@ class IptvProfile(Base):
         -------
         - str: Specifies the wait interval type before changing the channels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ZapIntervalType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ZapIntervalType"])
+
     @ZapIntervalType.setter
     def ZapIntervalType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ZapIntervalType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ZapIntervalType"], value)
 
-    def update(self, ChangesBeforeView=None, Name=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+    def update(
+        self,
+        ChangesBeforeView=None,
+        Name=None,
+        ViewDuration=None,
+        ZapBehavior=None,
+        ZapDirection=None,
+        ZapInterval=None,
+        ZapIntervalType=None,
+    ):
         # type: (int, str, int, str, str, int, str) -> IptvProfile
         """Updates iptvProfile resource on the server.
 
@@ -179,7 +195,16 @@ class IptvProfile(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ChangesBeforeView=None, Name=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+    def add(
+        self,
+        ChangesBeforeView=None,
+        Name=None,
+        ViewDuration=None,
+        ZapBehavior=None,
+        ZapDirection=None,
+        ZapInterval=None,
+        ZapIntervalType=None,
+    ):
         # type: (int, str, int, str, str, int, str) -> IptvProfile
         """Adds a new iptvProfile resource on the server and adds it to the container.
 
@@ -213,7 +238,17 @@ class IptvProfile(Base):
         """
         self._delete()
 
-    def find(self, ChangesBeforeView=None, Name=None, ObjectId=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+    def find(
+        self,
+        ChangesBeforeView=None,
+        Name=None,
+        ObjectId=None,
+        ViewDuration=None,
+        ZapBehavior=None,
+        ZapDirection=None,
+        ZapInterval=None,
+        ZapIntervalType=None,
+    ):
         # type: (int, str, str, int, str, str, int, str) -> IptvProfile
         """Finds and retrieves iptvProfile resources from the server.
 

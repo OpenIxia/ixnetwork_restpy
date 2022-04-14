@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,36 +34,35 @@ class PeriodicOamLmLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'periodicOamLmLearnedInfo'
+    _SDM_NAME = "periodicOamLmLearnedInfo"
     _SDM_ATT_MAP = {
-        'AvgFarEndLoss': 'avgFarEndLoss',
-        'AvgNearEndLoss': 'avgNearEndLoss',
-        'BVlan': 'bVlan',
-        'CVlan': 'cVlan',
-        'CcmReceivedCount': 'ccmReceivedCount',
-        'CcmSentCount': 'ccmSentCount',
-        'CurrentFarEndLoss': 'currentFarEndLoss',
-        'CurrentFarEndLossRatio': 'currentFarEndLossRatio',
-        'CurrentNearEndLoss': 'currentNearEndLoss',
-        'CurrentNearEndLossRatio': 'currentNearEndLossRatio',
-        'DestinationMacAddress': 'destinationMacAddress',
-        'LmmSentCount': 'lmmSentCount',
-        'MaxFarEndLoss': 'maxFarEndLoss',
-        'MaxFarEndLossRatio': 'maxFarEndLossRatio',
-        'MaxNearEndLoss': 'maxNearEndLoss',
-        'MaxNearEndLossRatio': 'maxNearEndLossRatio',
-        'MdLevel': 'mdLevel',
-        'MinFarEndLoss': 'minFarEndLoss',
-        'MinFarEndLossRatio': 'minFarEndLossRatio',
-        'MinNearEndLoss': 'minNearEndLoss',
-        'MinNearEndLossRatio': 'minNearEndLossRatio',
-        'NoReplyCount': 'noReplyCount',
-        'SVlan': 'sVlan',
-        'SourceMacAddress': 'sourceMacAddress',
-        'SourceMepId': 'sourceMepId',
+        "AvgFarEndLoss": "avgFarEndLoss",
+        "AvgNearEndLoss": "avgNearEndLoss",
+        "BVlan": "bVlan",
+        "CVlan": "cVlan",
+        "CcmReceivedCount": "ccmReceivedCount",
+        "CcmSentCount": "ccmSentCount",
+        "CurrentFarEndLoss": "currentFarEndLoss",
+        "CurrentFarEndLossRatio": "currentFarEndLossRatio",
+        "CurrentNearEndLoss": "currentNearEndLoss",
+        "CurrentNearEndLossRatio": "currentNearEndLossRatio",
+        "DestinationMacAddress": "destinationMacAddress",
+        "LmmSentCount": "lmmSentCount",
+        "MaxFarEndLoss": "maxFarEndLoss",
+        "MaxFarEndLossRatio": "maxFarEndLossRatio",
+        "MaxNearEndLoss": "maxNearEndLoss",
+        "MaxNearEndLossRatio": "maxNearEndLossRatio",
+        "MdLevel": "mdLevel",
+        "MinFarEndLoss": "minFarEndLoss",
+        "MinFarEndLossRatio": "minFarEndLossRatio",
+        "MinNearEndLoss": "minNearEndLoss",
+        "MinNearEndLossRatio": "minNearEndLossRatio",
+        "NoReplyCount": "noReplyCount",
+        "SVlan": "sVlan",
+        "SourceMacAddress": "sourceMacAddress",
+        "SourceMepId": "sourceMepId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PeriodicOamLmLearnedInfo, self).__init__(parent, list_op)
@@ -75,7 +75,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvgFarEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvgFarEndLoss"])
 
     @property
     def AvgNearEndLoss(self):
@@ -85,7 +85,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvgNearEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvgNearEndLoss"])
 
     @property
     def BVlan(self):
@@ -95,7 +95,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def CVlan(self):
@@ -105,7 +105,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def CcmReceivedCount(self):
@@ -115,7 +115,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcmReceivedCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcmReceivedCount"])
 
     @property
     def CcmSentCount(self):
@@ -125,7 +125,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcmSentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcmSentCount"])
 
     @property
     def CurrentFarEndLoss(self):
@@ -135,7 +135,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentFarEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentFarEndLoss"])
 
     @property
     def CurrentFarEndLossRatio(self):
@@ -145,7 +145,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentFarEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentFarEndLossRatio"])
 
     @property
     def CurrentNearEndLoss(self):
@@ -155,7 +155,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentNearEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentNearEndLoss"])
 
     @property
     def CurrentNearEndLossRatio(self):
@@ -165,7 +165,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentNearEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentNearEndLossRatio"])
 
     @property
     def DestinationMacAddress(self):
@@ -175,7 +175,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationMacAddress"])
 
     @property
     def LmmSentCount(self):
@@ -185,7 +185,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmmSentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmmSentCount"])
 
     @property
     def MaxFarEndLoss(self):
@@ -195,7 +195,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxFarEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxFarEndLoss"])
 
     @property
     def MaxFarEndLossRatio(self):
@@ -205,7 +205,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxFarEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxFarEndLossRatio"])
 
     @property
     def MaxNearEndLoss(self):
@@ -215,7 +215,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNearEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNearEndLoss"])
 
     @property
     def MaxNearEndLossRatio(self):
@@ -225,7 +225,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNearEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNearEndLossRatio"])
 
     @property
     def MdLevel(self):
@@ -235,7 +235,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def MinFarEndLoss(self):
@@ -245,7 +245,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinFarEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinFarEndLoss"])
 
     @property
     def MinFarEndLossRatio(self):
@@ -255,7 +255,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinFarEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinFarEndLossRatio"])
 
     @property
     def MinNearEndLoss(self):
@@ -265,7 +265,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinNearEndLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinNearEndLoss"])
 
     @property
     def MinNearEndLossRatio(self):
@@ -275,7 +275,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinNearEndLossRatio'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinNearEndLossRatio"])
 
     @property
     def NoReplyCount(self):
@@ -285,7 +285,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReplyCount"])
 
     @property
     def SVlan(self):
@@ -295,7 +295,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SourceMacAddress(self):
@@ -305,7 +305,7 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMacAddress"])
 
     @property
     def SourceMepId(self):
@@ -315,10 +315,10 @@ class PeriodicOamLmLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMepId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMepId"])
 
     def add(self):
-        """Adds a new periodicOamLmLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new periodicOamLmLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -330,7 +330,34 @@ class PeriodicOamLmLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvgFarEndLoss=None, AvgNearEndLoss=None, BVlan=None, CVlan=None, CcmReceivedCount=None, CcmSentCount=None, CurrentFarEndLoss=None, CurrentFarEndLossRatio=None, CurrentNearEndLoss=None, CurrentNearEndLossRatio=None, DestinationMacAddress=None, LmmSentCount=None, MaxFarEndLoss=None, MaxFarEndLossRatio=None, MaxNearEndLoss=None, MaxNearEndLossRatio=None, MdLevel=None, MinFarEndLoss=None, MinFarEndLossRatio=None, MinNearEndLoss=None, MinNearEndLossRatio=None, NoReplyCount=None, SVlan=None, SourceMacAddress=None, SourceMepId=None):
+    def find(
+        self,
+        AvgFarEndLoss=None,
+        AvgNearEndLoss=None,
+        BVlan=None,
+        CVlan=None,
+        CcmReceivedCount=None,
+        CcmSentCount=None,
+        CurrentFarEndLoss=None,
+        CurrentFarEndLossRatio=None,
+        CurrentNearEndLoss=None,
+        CurrentNearEndLossRatio=None,
+        DestinationMacAddress=None,
+        LmmSentCount=None,
+        MaxFarEndLoss=None,
+        MaxFarEndLossRatio=None,
+        MaxNearEndLoss=None,
+        MaxNearEndLossRatio=None,
+        MdLevel=None,
+        MinFarEndLoss=None,
+        MinFarEndLossRatio=None,
+        MinNearEndLoss=None,
+        MinNearEndLossRatio=None,
+        NoReplyCount=None,
+        SVlan=None,
+        SourceMacAddress=None,
+        SourceMepId=None,
+    ):
         # type: (str, str, str, str, int, int, int, str, int, str, str, int, int, str, int, str, int, int, str, int, str, int, str, str, int) -> PeriodicOamLmLearnedInfo
         """Finds and retrieves periodicOamLmLearnedInfo resources from the server.
 

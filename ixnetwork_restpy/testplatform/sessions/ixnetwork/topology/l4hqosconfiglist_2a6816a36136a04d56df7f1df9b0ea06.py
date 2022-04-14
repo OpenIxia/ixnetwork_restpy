@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,35 +33,34 @@ class L4HqosConfigList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l4HqosConfigList'
+    _SDM_NAME = "l4HqosConfigList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ipv4RuleDesc': 'ipv4RuleDesc',
-        'Ipv4RuleName': 'ipv4RuleName',
-        'Ipv6RuleDesc': 'ipv6RuleDesc',
-        'Ipv6RuleName': 'ipv6RuleName',
-        'L4HqosActionDesc': 'l4HqosActionDesc',
-        'L4HqosActionName': 'l4HqosActionName',
-        'L4HqosProfileName': 'l4HqosProfileName',
-        'L4HqosRuleActionPairName': 'l4HqosRuleActionPairName',
-        'L4HqosRuleName': 'l4HqosRuleName',
-        'Name': 'name',
-        'QosActionDesc': 'qosActionDesc',
-        'QosActionDescCar': 'qosActionDescCar',
-        'QosActionDescType': 'qosActionDescType',
-        'QosActionName': 'qosActionName',
-        'QosPolicyName': 'qosPolicyName',
-        'ServiceActionDesc': 'serviceActionDesc',
-        'ServiceActionDescType': 'serviceActionDescType',
-        'ServiceActionName': 'serviceActionName',
-        'ServicePolicyName': 'servicePolicyName',
-        'UserAclPolicyName': 'userAclPolicyName',
-        'UserPolicyGroupName': 'userPolicyGroupName',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Ipv4RuleDesc": "ipv4RuleDesc",
+        "Ipv4RuleName": "ipv4RuleName",
+        "Ipv6RuleDesc": "ipv6RuleDesc",
+        "Ipv6RuleName": "ipv6RuleName",
+        "L4HqosActionDesc": "l4HqosActionDesc",
+        "L4HqosActionName": "l4HqosActionName",
+        "L4HqosProfileName": "l4HqosProfileName",
+        "L4HqosRuleActionPairName": "l4HqosRuleActionPairName",
+        "L4HqosRuleName": "l4HqosRuleName",
+        "Name": "name",
+        "QosActionDesc": "qosActionDesc",
+        "QosActionDescCar": "qosActionDescCar",
+        "QosActionDescType": "qosActionDescType",
+        "QosActionName": "qosActionName",
+        "QosPolicyName": "qosPolicyName",
+        "ServiceActionDesc": "serviceActionDesc",
+        "ServiceActionDescType": "serviceActionDescType",
+        "ServiceActionName": "serviceActionName",
+        "ServicePolicyName": "servicePolicyName",
+        "UserAclPolicyName": "userAclPolicyName",
+        "UserPolicyGroupName": "userPolicyGroupName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L4HqosConfigList, self).__init__(parent, list_op)
@@ -74,7 +74,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -84,7 +85,7 @@ class L4HqosConfigList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -94,7 +95,7 @@ class L4HqosConfigList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Ipv4RuleDesc(self):
@@ -105,7 +106,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: action dir proto from src to dst example: permit in ip from assigned to any Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4RuleDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4RuleDesc"]))
 
     @property
     def Ipv4RuleName(self):
@@ -116,7 +118,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4RuleName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv4RuleName"]))
 
     @property
     def Ipv6RuleDesc(self):
@@ -127,7 +130,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: action dir proto from src to dst example: permit in ip from assigned to any Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6RuleDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6RuleDesc"]))
 
     @property
     def Ipv6RuleName(self):
@@ -138,7 +142,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6RuleName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6RuleName"]))
 
     @property
     def L4HqosActionDesc(self):
@@ -149,7 +154,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: queue <queue-id> { pir <pir-value> | pbs <pbs-value> | { pq | lpq | wfq weight <weight-value> } } * Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L4HqosActionDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L4HqosActionDesc"])
+        )
 
     @property
     def L4HqosActionName(self):
@@ -160,7 +168,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L4 HQoS Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L4HqosActionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L4HqosActionName"])
+        )
 
     @property
     def L4HqosProfileName(self):
@@ -171,7 +182,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L4 HQoS Profile Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L4HqosProfileName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L4HqosProfileName"])
+        )
 
     @property
     def L4HqosRuleActionPairName(self):
@@ -182,7 +196,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L4 HQoS Rule Action Pair Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L4HqosRuleActionPairName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L4HqosRuleActionPairName"])
+        )
 
     @property
     def L4HqosRuleName(self):
@@ -193,7 +210,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L4 HQoS Rule Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L4HqosRuleName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L4HqosRuleName"])
+        )
 
     @property
     def Name(self):
@@ -203,11 +223,12 @@ class L4HqosConfigList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def QosActionDesc(self):
@@ -218,7 +239,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): QoS Action Desc (1 octet)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QosActionDesc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QosActionDesc"]))
 
     @property
     def QosActionDescCar(self):
@@ -229,7 +251,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: cir <cir-val> cbs <cbs-val> pir <pir-val> <pbs-val> Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QosActionDescCar']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QosActionDescCar"])
+        )
 
     @property
     def QosActionDescType(self):
@@ -240,7 +265,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): QoS Action Description Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QosActionDescType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QosActionDescType"])
+        )
 
     @property
     def QosActionName(self):
@@ -251,7 +279,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): QoS Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QosActionName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QosActionName"]))
 
     @property
     def QosPolicyName(self):
@@ -262,7 +291,8 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): QoS Policy Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QosPolicyName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QosPolicyName"]))
 
     @property
     def ServiceActionDesc(self):
@@ -273,7 +303,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): format: redirect-ip: dst-ip X.X.X.X VPN-Name dst-ipv6 X:X:X:X VPN-Name redirect-nat: nat-instance-name UPF predefine action: 255 UP predefine action, specifying the name of the action that performs the predefined action on the UPF Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServiceActionDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServiceActionDesc"])
+        )
 
     @property
     def ServiceActionDescType(self):
@@ -284,7 +317,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Service Action Description Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServiceActionDescType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServiceActionDescType"])
+        )
 
     @property
     def ServiceActionName(self):
@@ -295,7 +331,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Service Action Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServiceActionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServiceActionName"])
+        )
 
     @property
     def ServicePolicyName(self):
@@ -306,7 +345,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Service Policy Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServicePolicyName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServicePolicyName"])
+        )
 
     @property
     def UserAclPolicyName(self):
@@ -317,7 +359,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User ACL Policy Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserAclPolicyName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserAclPolicyName"])
+        )
 
     @property
     def UserPolicyGroupName(self):
@@ -328,7 +373,10 @@ class L4HqosConfigList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User Policy Group Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserPolicyGroupName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserPolicyGroupName"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> L4HqosConfigList
@@ -389,7 +437,31 @@ class L4HqosConfigList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Ipv4RuleDesc=None, Ipv4RuleName=None, Ipv6RuleDesc=None, Ipv6RuleName=None, L4HqosActionDesc=None, L4HqosActionName=None, L4HqosProfileName=None, L4HqosRuleActionPairName=None, L4HqosRuleName=None, QosActionDesc=None, QosActionDescCar=None, QosActionDescType=None, QosActionName=None, QosPolicyName=None, ServiceActionDesc=None, ServiceActionDescType=None, ServiceActionName=None, ServicePolicyName=None, UserAclPolicyName=None, UserPolicyGroupName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Ipv4RuleDesc=None,
+        Ipv4RuleName=None,
+        Ipv6RuleDesc=None,
+        Ipv6RuleName=None,
+        L4HqosActionDesc=None,
+        L4HqosActionName=None,
+        L4HqosProfileName=None,
+        L4HqosRuleActionPairName=None,
+        L4HqosRuleName=None,
+        QosActionDesc=None,
+        QosActionDescCar=None,
+        QosActionDescType=None,
+        QosActionName=None,
+        QosPolicyName=None,
+        ServiceActionDesc=None,
+        ServiceActionDescType=None,
+        ServiceActionName=None,
+        ServicePolicyName=None,
+        UserAclPolicyName=None,
+        UserPolicyGroupName=None,
+    ):
         """Base class infrastructure that gets a list of l4HqosConfigList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

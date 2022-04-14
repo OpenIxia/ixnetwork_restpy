@@ -4,17 +4,17 @@ from ixnetwork_restpy.files import Files
 
 class EthernetRARP(Base):
     __slots__ = ()
-    _SDM_NAME = 'ethernetRARP'
+    _SDM_NAME = "ethernetRARP"
     _SDM_ATT_MAP = {
-        'HeaderHwType': 'ethernetRARP.header.hwType-1',
-        'HeaderProtocolType': 'ethernetRARP.header.protocolType-2',
-        'HeaderHwAddressLength': 'ethernetRARP.header.hwAddressLength-3',
-        'HeaderProtocolAddressLength': 'ethernetRARP.header.protocolAddressLength-4',
-        'HeaderOpCode': 'ethernetRARP.header.opCode-5',
-        'HeaderSrcHwAddr': 'ethernetRARP.header.srcHwAddr-6',
-        'HeaderSrcIp': 'ethernetRARP.header.srcIp-7',
-        'HeaderDstHwAddr': 'ethernetRARP.header.dstHwAddr-8',
-        'HeaderDstIp': 'ethernetRARP.header.dstIp-9',
+        "HeaderHwType": "ethernetRARP.header.hwType-1",
+        "HeaderProtocolType": "ethernetRARP.header.protocolType-2",
+        "HeaderHwAddressLength": "ethernetRARP.header.hwAddressLength-3",
+        "HeaderProtocolAddressLength": "ethernetRARP.header.protocolAddressLength-4",
+        "HeaderOpCode": "ethernetRARP.header.opCode-5",
+        "HeaderSrcHwAddr": "ethernetRARP.header.srcHwAddr-6",
+        "HeaderSrcIp": "ethernetRARP.header.srcIp-7",
+        "HeaderDstHwAddr": "ethernetRARP.header.dstHwAddr-8",
+        "HeaderDstIp": "ethernetRARP.header.dstIp-9",
     }
 
     def __init__(self, parent, list_op=False):
@@ -28,7 +28,8 @@ class EthernetRARP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHwType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderHwType"]))
 
     @property
     def HeaderProtocolType(self):
@@ -38,7 +39,10 @@ class EthernetRARP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolType"])
+        )
 
     @property
     def HeaderHwAddressLength(self):
@@ -48,7 +52,10 @@ class EthernetRARP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHwAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHwAddressLength"])
+        )
 
     @property
     def HeaderProtocolAddressLength(self):
@@ -58,7 +65,10 @@ class EthernetRARP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolAddressLength"])
+        )
 
     @property
     def HeaderOpCode(self):
@@ -69,7 +79,8 @@ class EthernetRARP(Base):
         Available enum values: 0x0003 Request Reverse, 3, 0x0004 Reply Reverse, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderOpCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderOpCode"]))
 
     @property
     def HeaderSrcHwAddr(self):
@@ -79,7 +90,10 @@ class EthernetRARP(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcHwAddr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcHwAddr"])
+        )
 
     @property
     def HeaderSrcIp(self):
@@ -89,7 +103,8 @@ class EthernetRARP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcIp"]))
 
     @property
     def HeaderDstHwAddr(self):
@@ -99,7 +114,10 @@ class EthernetRARP(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstHwAddr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstHwAddr"])
+        )
 
     @property
     def HeaderDstIp(self):
@@ -109,7 +127,8 @@ class EthernetRARP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstIp"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

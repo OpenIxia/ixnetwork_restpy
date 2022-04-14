@@ -4,10 +4,10 @@ from ixnetwork_restpy.files import Files
 
 class LISPEncapsulatedControlMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'lISPEncapsulatedControlMessage'
+    _SDM_NAME = "lISPEncapsulatedControlMessage"
     _SDM_ATT_MAP = {
-        'HeaderType': 'lISPEncapsulatedControlMessage.header.type-1',
-        'HeaderReserved': 'lISPEncapsulatedControlMessage.header.reserved-2',
+        "HeaderType": "lISPEncapsulatedControlMessage.header.type-1",
+        "HeaderReserved": "lISPEncapsulatedControlMessage.header.reserved-2",
     }
 
     def __init__(self, parent, list_op=False):
@@ -21,7 +21,8 @@ class LISPEncapsulatedControlMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderReserved(self):
@@ -31,7 +32,10 @@ class LISPEncapsulatedControlMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

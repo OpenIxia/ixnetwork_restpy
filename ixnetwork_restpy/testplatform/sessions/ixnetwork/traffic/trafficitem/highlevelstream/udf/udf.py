@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,24 @@ class Udf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'udf'
+    _SDM_NAME = "udf"
     _SDM_ATT_MAP = {
-        'ByteOffset': 'byteOffset',
-        'Chained': 'chained',
-        'ChainedFromUdf': 'chainedFromUdf',
-        'Enabled': 'enabled',
-        'Type': 'type',
+        "ByteOffset": "byteOffset",
+        "Chained": "chained",
+        "ChainedFromUdf": "chainedFromUdf",
+        "Enabled": "enabled",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'chainedFromUdf': ['none', 'udf1', 'udf2', 'udf3', 'udf4', 'udf5'],
-        'type': ['counter', 'ipv4', 'nestedCounter', 'random', 'rangeList', 'valueList'],
+        "chainedFromUdf": ["none", "udf1", "udf2", "udf3", "udf4", "udf5"],
+        "type": [
+            "counter",
+            "ipv4",
+            "nestedCounter",
+            "random",
+            "rangeList",
+            "valueList",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +68,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.counter.counter import Counter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.counter.counter import (
+            Counter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Counter', None) is not None:
-                return self._properties.get('Counter')
+            if self._properties.get("Counter", None) is not None:
+                return self._properties.get("Counter")
         return Counter(self)
 
     @property
@@ -77,10 +88,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.ipv4.ipv4 import Ipv4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.ipv4.ipv4 import (
+            Ipv4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4', None) is not None:
-                return self._properties.get('Ipv4')
+            if self._properties.get("Ipv4", None) is not None:
+                return self._properties.get("Ipv4")
         return Ipv4(self)
 
     @property
@@ -94,10 +108,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.nestedcounter.nestedcounter import NestedCounter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.nestedcounter.nestedcounter import (
+            NestedCounter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NestedCounter', None) is not None:
-                return self._properties.get('NestedCounter')
+            if self._properties.get("NestedCounter", None) is not None:
+                return self._properties.get("NestedCounter")
         return NestedCounter(self)
 
     @property
@@ -111,10 +128,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.random.random import Random
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.random.random import (
+            Random,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Random', None) is not None:
-                return self._properties.get('Random')
+            if self._properties.get("Random", None) is not None:
+                return self._properties.get("Random")
         return Random(self)
 
     @property
@@ -128,10 +148,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.rangelist.rangelist import RangeList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.rangelist.rangelist import (
+            RangeList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RangeList', None) is not None:
-                return self._properties.get('RangeList')
+            if self._properties.get("RangeList", None) is not None:
+                return self._properties.get("RangeList")
         return RangeList(self)
 
     @property
@@ -145,10 +168,13 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.valuelist.valuelist import ValueList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.valuelist.valuelist import (
+            ValueList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ValueList', None) is not None:
-                return self._properties.get('ValueList')
+            if self._properties.get("ValueList", None) is not None:
+                return self._properties.get("ValueList")
         return ValueList(self)
 
     @property
@@ -159,11 +185,12 @@ class Udf(Base):
         -------
         - number: The offset from the start of the frame in bytes. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteOffset"])
+
     @ByteOffset.setter
     def ByteOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ByteOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ByteOffset"], value)
 
     @property
     def Chained(self):
@@ -173,7 +200,7 @@ class Udf(Base):
         -------
         - bool: Sets the UDF chain.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Chained'])
+        return self._get_attribute(self._SDM_ATT_MAP["Chained"])
 
     @property
     def ChainedFromUdf(self):
@@ -183,11 +210,12 @@ class Udf(Base):
         -------
         - str(none | udf1 | udf2 | udf3 | udf4 | udf5): Allows to set what UDF the current UDF should chain from. If enabled, the UDF stays in its initial value until the UDF it is chained from reaches its terminating value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChainedFromUdf'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChainedFromUdf"])
+
     @ChainedFromUdf.setter
     def ChainedFromUdf(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChainedFromUdf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChainedFromUdf"], value)
 
     @property
     def Enabled(self):
@@ -197,11 +225,12 @@ class Udf(Base):
         -------
         - bool: If enabled, enables this User Defined Field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Type(self):
@@ -211,11 +240,12 @@ class Udf(Base):
         -------
         - str(counter | ipv4 | nestedCounter | random | rangeList | valueList): The counter types of this UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     def update(self, ByteOffset=None, ChainedFromUdf=None, Enabled=None, Type=None):
         # type: (int, str, bool, str) -> Udf
@@ -236,7 +266,7 @@ class Udf(Base):
 
     def add(self, ByteOffset=None, ChainedFromUdf=None, Enabled=None, Type=None):
         # type: (int, str, bool, str) -> Udf
-        """Adds a new udf resource on the json, only valid with config assistant
+        """Adds a new udf resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -255,7 +285,14 @@ class Udf(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteOffset=None, Chained=None, ChainedFromUdf=None, Enabled=None, Type=None):
+    def find(
+        self,
+        ByteOffset=None,
+        Chained=None,
+        ChainedFromUdf=None,
+        Enabled=None,
+        Type=None,
+    ):
         # type: (int, bool, str, bool, str) -> Udf
         """Finds and retrieves udf resources from the server.
 

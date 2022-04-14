@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,58 +35,119 @@ class Vport(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vport'
+    _SDM_NAME = "vport"
     _SDM_ATT_MAP = {
-        'ActualSpeed': 'actualSpeed',
-        'AdminMode': 'adminMode',
-        'AssignedTo': 'assignedTo',
-        'AssignedToDisplayName': 'assignedToDisplayName',
-        'CaptureSupported': 'captureSupported',
-        'ConnectedTo': 'connectedTo',
-        'ConnectionInfo': 'connectionInfo',
-        'ConnectionState': 'connectionState',
-        'ConnectionStatus': 'connectionStatus',
-        'ConnectionStatusDisplayName': 'connectionStatusDisplayName',
-        'DpdkPerformanceAcceleration': 'dpdkPerformanceAcceleration',
-        'InternalId': 'internalId',
-        'IsAvailable': 'isAvailable',
-        'IsConnected': 'isConnected',
-        'IsFramePreemptionSupported': 'isFramePreemptionSupported',
-        'IsMapped': 'isMapped',
-        'IsPullOnly': 'isPullOnly',
-        'IsVMPort': 'isVMPort',
-        'IxnChassisVersion': 'ixnChassisVersion',
-        'IxnClientVersion': 'ixnClientVersion',
-        'IxosChassisVersion': 'ixosChassisVersion',
-        'LastLinkStateChangeEventTimestamp': 'lastLinkStateChangeEventTimestamp',
-        'Licenses': 'licenses',
-        'Location': 'location',
-        'MacsecEnabled': 'macsecEnabled',
-        'Name': 'name',
-        'ResourceMode': 'resourceMode',
-        'RxMode': 'rxMode',
-        'State': 'state',
-        'StateDetail': 'stateDetail',
-        'TraceEnabled': 'traceEnabled',
-        'TraceLevel': 'traceLevel',
-        'TraceTag': 'traceTag',
-        'TransmitIgnoreLinkStatus': 'transmitIgnoreLinkStatus',
-        'TxGapControlMode': 'txGapControlMode',
-        'TxMode': 'txMode',
-        'Type': 'type',
-        'UseGlobalSettings': 'useGlobalSettings',
-        'ValidTxModes': 'validTxModes',
+        "ActualSpeed": "actualSpeed",
+        "AdminMode": "adminMode",
+        "AssignedTo": "assignedTo",
+        "AssignedToDisplayName": "assignedToDisplayName",
+        "CaptureSupported": "captureSupported",
+        "ConnectedTo": "connectedTo",
+        "ConnectionInfo": "connectionInfo",
+        "ConnectionState": "connectionState",
+        "ConnectionStatus": "connectionStatus",
+        "ConnectionStatusDisplayName": "connectionStatusDisplayName",
+        "DpdkPerformanceAcceleration": "dpdkPerformanceAcceleration",
+        "InternalId": "internalId",
+        "IsAvailable": "isAvailable",
+        "IsConnected": "isConnected",
+        "IsFramePreemptionSupported": "isFramePreemptionSupported",
+        "IsMapped": "isMapped",
+        "IsPullOnly": "isPullOnly",
+        "IsVMPort": "isVMPort",
+        "IxnChassisVersion": "ixnChassisVersion",
+        "IxnClientVersion": "ixnClientVersion",
+        "IxosChassisVersion": "ixosChassisVersion",
+        "LastLinkStateChangeEventTimestamp": "lastLinkStateChangeEventTimestamp",
+        "Licenses": "licenses",
+        "Location": "location",
+        "MacsecEnabled": "macsecEnabled",
+        "Name": "name",
+        "ResourceMode": "resourceMode",
+        "RxMode": "rxMode",
+        "State": "state",
+        "StateDetail": "stateDetail",
+        "TraceEnabled": "traceEnabled",
+        "TraceLevel": "traceLevel",
+        "TraceTag": "traceTag",
+        "TransmitIgnoreLinkStatus": "transmitIgnoreLinkStatus",
+        "TxGapControlMode": "txGapControlMode",
+        "TxMode": "txMode",
+        "Type": "type",
+        "UseGlobalSettings": "useGlobalSettings",
+        "ValidTxModes": "validTxModes",
     }
     _SDM_ENUM_MAP = {
-        'captureSupported': ['data', 'control', 'dataAndControl', 'none'],
-        'connectionState': ['assignedInUseByOther', 'assignedUnconnected', 'connectedLinkDown', 'connectedLinkUp', 'connecting', 'unassigned'],
-        'rxMode': ['capture', 'measure', 'captureAndMeasure', 'packetImpairment'],
-        'state': ['busy', 'down', 'unassigned', 'up', 'versionMismatch'],
-        'stateDetail': ['busy', 'cpuNotReady', 'idle', 'inActive', 'l1ConfigFailed', 'protocolsNotSupported', 'versionMismatched', 'waitingForCPUStatus'],
-        'traceLevel': ['kCritical', 'kDebug', 'kError', 'kInfo', 'kNote', 'kTrace', 'kWarning'],
-        'txGapControlMode': ['fixedMode', 'averageMode'],
-        'txMode': ['sequential', 'interleaved', 'sequentialCoarse', 'interleavedCoarse', 'packetImpairment'],
-        'type': ['ethernet', 'ethernetvm', 'ethernetFcoe', 'atm', 'pos', 'tenGigLan', 'tenGigLanFcoe', 'fortyGigLan', 'fortyGigLanFcoe', 'tenGigWan', 'tenGigWanFcoe', 'hundredGigLan', 'hundredGigLanFcoe', 'tenFortyHundredGigLan', 'tenFortyHundredGigLanFcoe', 'fc', 'ethernetImpairment', 'novusHundredGigLan', 'novusHundredGigLanFcoe', 'novusTenGigLan', 'novusTenGigLanFcoe', 'krakenFourHundredGigLan', 'krakenFourHundredGigLanFcoe', 'aresOneFourHundredGigLan', 'aresOneFourHundredGigLanFcoe', 'uhdOneHundredGigLan', 'novus5GTenTwentyFiveGigLan', 'novus5GTenTwentyFiveGigLanFcoe', 'starFourHundredGigLan', 'starFourHundredGigLanFcoe'],
+        "captureSupported": ["data", "control", "dataAndControl", "none"],
+        "connectionState": [
+            "assignedInUseByOther",
+            "assignedUnconnected",
+            "connectedLinkDown",
+            "connectedLinkUp",
+            "connecting",
+            "unassigned",
+        ],
+        "rxMode": ["capture", "measure", "captureAndMeasure", "packetImpairment"],
+        "state": ["busy", "down", "unassigned", "up", "versionMismatch"],
+        "stateDetail": [
+            "busy",
+            "cpuNotReady",
+            "idle",
+            "inActive",
+            "l1ConfigFailed",
+            "protocolsNotSupported",
+            "versionMismatched",
+            "waitingForCPUStatus",
+        ],
+        "traceLevel": [
+            "kCritical",
+            "kDebug",
+            "kError",
+            "kInfo",
+            "kNote",
+            "kTrace",
+            "kWarning",
+        ],
+        "txGapControlMode": ["fixedMode", "averageMode"],
+        "txMode": [
+            "sequential",
+            "interleaved",
+            "sequentialCoarse",
+            "interleavedCoarse",
+            "packetImpairment",
+        ],
+        "type": [
+            "ethernet",
+            "ethernetvm",
+            "ethernetFcoe",
+            "atm",
+            "pos",
+            "tenGigLan",
+            "tenGigLanFcoe",
+            "fortyGigLan",
+            "fortyGigLanFcoe",
+            "tenGigWan",
+            "tenGigWanFcoe",
+            "hundredGigLan",
+            "hundredGigLanFcoe",
+            "tenFortyHundredGigLan",
+            "tenFortyHundredGigLanFcoe",
+            "fc",
+            "ethernetImpairment",
+            "novusHundredGigLan",
+            "novusHundredGigLanFcoe",
+            "novusTenGigLan",
+            "novusTenGigLanFcoe",
+            "krakenFourHundredGigLan",
+            "krakenFourHundredGigLanFcoe",
+            "aresOneFourHundredGigLan",
+            "aresOneFourHundredGigLanFcoe",
+            "uhdOneHundredGigLan",
+            "novus5GTenTwentyFiveGigLan",
+            "novus5GTenTwentyFiveGigLanFcoe",
+            "starFourHundredGigLan",
+            "starFourHundredGigLanFcoe",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -102,10 +164,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture import Capture
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture import (
+            Capture,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Capture', None) is not None:
-                return self._properties.get('Capture')
+            if self._properties.get("Capture", None) is not None:
+                return self._properties.get("Capture")
         return Capture(self)._select()
 
     @property
@@ -119,10 +184,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor import DiscoveredNeighbor
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor import (
+            DiscoveredNeighbor,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DiscoveredNeighbor', None) is not None:
-                return self._properties.get('DiscoveredNeighbor')
+            if self._properties.get("DiscoveredNeighbor", None) is not None:
+                return self._properties.get("DiscoveredNeighbor")
         return DiscoveredNeighbor(self)
 
     @property
@@ -136,10 +204,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -153,10 +224,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress import InterfaceDiscoveredAddress
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress import (
+            InterfaceDiscoveredAddress,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InterfaceDiscoveredAddress', None) is not None:
-                return self._properties.get('InterfaceDiscoveredAddress')
+            if self._properties.get("InterfaceDiscoveredAddress", None) is not None:
+                return self._properties.get("InterfaceDiscoveredAddress")
         return InterfaceDiscoveredAddress(self)._select()
 
     @property
@@ -170,10 +244,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config import L1Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config import (
+            L1Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L1Config', None) is not None:
-                return self._properties.get('L1Config')
+            if self._properties.get("L1Config", None) is not None:
+                return self._properties.get("L1Config")
         return L1Config(self)._select()
 
     @property
@@ -187,10 +264,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack import ProtocolStack
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack import (
+            ProtocolStack,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ProtocolStack', None) is not None:
-                return self._properties.get('ProtocolStack')
+            if self._properties.get("ProtocolStack", None) is not None:
+                return self._properties.get("ProtocolStack")
         return ProtocolStack(self)._select()
 
     @property
@@ -204,10 +284,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols import Protocols
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols import (
+            Protocols,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Protocols', None) is not None:
-                return self._properties.get('Protocols')
+            if self._properties.get("Protocols", None) is not None:
+                return self._properties.get("Protocols")
         return Protocols(self)
 
     @property
@@ -221,10 +304,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters import RateControlParameters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters import (
+            RateControlParameters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RateControlParameters', None) is not None:
-                return self._properties.get('RateControlParameters')
+            if self._properties.get("RateControlParameters", None) is not None:
+                return self._properties.get("RateControlParameters")
         return RateControlParameters(self)._select()
 
     @property
@@ -238,10 +324,13 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings import TapSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings import (
+            TapSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TapSettings', None) is not None:
-                return self._properties.get('TapSettings')
+            if self._properties.get("TapSettings", None) is not None:
+                return self._properties.get("TapSettings")
         return TapSettings(self)
 
     @property
@@ -252,7 +341,7 @@ class Vport(Base):
         -------
         - number: The actual speed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActualSpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActualSpeed"])
 
     @property
     def AdminMode(self):
@@ -260,19 +349,19 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdminMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdminMode"])
 
     @property
     def AssignedTo(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: (Deprecated, Read Only) A new port is assigned with this option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssignedTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssignedTo"])
 
     @property
     def AssignedToDisplayName(self):
@@ -280,9 +369,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssignedToDisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssignedToDisplayName"])
 
     @property
     def CaptureSupported(self):
@@ -290,23 +379,24 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(data | control | dataAndControl | none): 
+        - str(data | control | dataAndControl | none):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CaptureSupported'])
+        return self._get_attribute(self._SDM_ATT_MAP["CaptureSupported"])
 
     @property
     def ConnectedTo(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedTo"])
+
     @ConnectedTo.setter
     def ConnectedTo(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedTo"], value)
 
     @property
     def ConnectionInfo(self):
@@ -316,7 +406,7 @@ class Vport(Base):
         -------
         - str: Detailed information about location of the physical port that is assigned to this port configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionInfo"])
 
     @property
     def ConnectionState(self):
@@ -326,7 +416,7 @@ class Vport(Base):
         -------
         - str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned): Consolidated state of the vport. This combines the connection state with link state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionState"])
 
     @property
     def ConnectionStatus(self):
@@ -336,7 +426,7 @@ class Vport(Base):
         -------
         - str: A string describing the status of the hardware connected to this vport
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionStatus"])
 
     @property
     def ConnectionStatusDisplayName(self):
@@ -344,9 +434,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionStatusDisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionStatusDisplayName"])
 
     @property
     def DpdkPerformanceAcceleration(self):
@@ -354,9 +444,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DpdkPerformanceAcceleration'])
+        return self._get_attribute(self._SDM_ATT_MAP["DpdkPerformanceAcceleration"])
 
     @property
     def InternalId(self):
@@ -366,7 +456,7 @@ class Vport(Base):
         -------
         - number: For internal use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalId"])
 
     @property
     def IsAvailable(self):
@@ -376,7 +466,7 @@ class Vport(Base):
         -------
         - bool: If true, this virtual port is available for assigning to a physical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsAvailable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsAvailable"])
 
     @property
     def IsConnected(self):
@@ -386,7 +476,7 @@ class Vport(Base):
         -------
         - bool: If true, indicates that the port is connected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsConnected'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsConnected"])
 
     @property
     def IsFramePreemptionSupported(self):
@@ -394,9 +484,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsFramePreemptionSupported'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsFramePreemptionSupported"])
 
     @property
     def IsMapped(self):
@@ -406,7 +496,7 @@ class Vport(Base):
         -------
         - bool: If true, this virtual port is mapped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMapped'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMapped"])
 
     @property
     def IsPullOnly(self):
@@ -416,11 +506,12 @@ class Vport(Base):
         -------
         - bool: (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsPullOnly'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsPullOnly"])
+
     @IsPullOnly.setter
     def IsPullOnly(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsPullOnly'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsPullOnly"], value)
 
     @property
     def IsVMPort(self):
@@ -430,7 +521,7 @@ class Vport(Base):
         -------
         - bool: If true the hardware connected to this vport is a virtual machine port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsVMPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsVMPort"])
 
     @property
     def IxnChassisVersion(self):
@@ -440,7 +531,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxnChassisVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxnChassisVersion"])
 
     @property
     def IxnClientVersion(self):
@@ -450,7 +541,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxnClientVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxnClientVersion"])
 
     @property
     def IxosChassisVersion(self):
@@ -460,7 +551,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxosChassisVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxosChassisVersion"])
 
     @property
     def LastLinkStateChangeEventTimestamp(self):
@@ -470,7 +561,9 @@ class Vport(Base):
         -------
         - str: A string describing the last link status change client timestamp for the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastLinkStateChangeEventTimestamp'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["LastLinkStateChangeEventTimestamp"]
+        )
 
     @property
     def Licenses(self):
@@ -480,7 +573,7 @@ class Vport(Base):
         -------
         - str: Number of licenses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Licenses'])
+        return self._get_attribute(self._SDM_ATT_MAP["Licenses"])
 
     @property
     def Location(self):
@@ -490,11 +583,12 @@ class Vport(Base):
         -------
         - str: The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Location'])
+        return self._get_attribute(self._SDM_ATT_MAP["Location"])
+
     @Location.setter
     def Location(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Location'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Location"], value)
 
     @property
     def MacsecEnabled(self):
@@ -502,9 +596,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacsecEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacsecEnabled"])
 
     @property
     def Name(self):
@@ -514,11 +608,12 @@ class Vport(Base):
         -------
         - str: The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ResourceMode(self):
@@ -526,9 +621,9 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResourceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResourceMode"])
 
     @property
     def RxMode(self):
@@ -538,31 +633,32 @@ class Vport(Base):
         -------
         - str(capture | measure | captureAndMeasure | packetImpairment): The receive mode of the virtual port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxMode"])
+
     @RxMode.setter
     def RxMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RxMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxMode"], value)
 
     @property
     def State(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(busy | down | unassigned | up | versionMismatch): The virtual port state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def StateDetail(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus): This attribute describes the state of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateDetail'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateDetail"])
 
     @property
     def TraceEnabled(self):
@@ -572,11 +668,12 @@ class Vport(Base):
         -------
         - bool: Enables/Disables rpf port trace for this port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TraceEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["TraceEnabled"])
+
     @TraceEnabled.setter
     def TraceEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TraceEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TraceEnabled"], value)
 
     @property
     def TraceLevel(self):
@@ -586,11 +683,12 @@ class Vport(Base):
         -------
         - str(kCritical | kDebug | kError | kInfo | kNote | kTrace | kWarning): PCPU Trace level
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TraceLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["TraceLevel"])
+
     @TraceLevel.setter
     def TraceLevel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TraceLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TraceLevel"], value)
 
     @property
     def TraceTag(self):
@@ -600,11 +698,12 @@ class Vport(Base):
         -------
         - str: PCPU Trace Tag
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TraceTag'])
+        return self._get_attribute(self._SDM_ATT_MAP["TraceTag"])
+
     @TraceTag.setter
     def TraceTag(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TraceTag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TraceTag"], value)
 
     @property
     def TransmitIgnoreLinkStatus(self):
@@ -614,11 +713,12 @@ class Vport(Base):
         -------
         - bool: If true, the port ingores the link status when transmitting data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitIgnoreLinkStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitIgnoreLinkStatus"])
+
     @TransmitIgnoreLinkStatus.setter
     def TransmitIgnoreLinkStatus(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitIgnoreLinkStatus'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitIgnoreLinkStatus"], value)
 
     @property
     def TxGapControlMode(self):
@@ -628,11 +728,12 @@ class Vport(Base):
         -------
         - str(fixedMode | averageMode): This object controls the Gap Control mode of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxGapControlMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxGapControlMode"])
+
     @TxGapControlMode.setter
     def TxGapControlMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxGapControlMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxGapControlMode"], value)
 
     @property
     def TxMode(self):
@@ -642,11 +743,12 @@ class Vport(Base):
         -------
         - str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment): The transmit mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxMode"])
+
     @TxMode.setter
     def TxMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxMode"], value)
 
     @property
     def Type(self):
@@ -656,11 +758,12 @@ class Vport(Base):
         -------
         - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe): The type of port selection.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def UseGlobalSettings(self):
@@ -670,11 +773,12 @@ class Vport(Base):
         -------
         - bool: Enables/Disables use of global settings instead of local settings on port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseGlobalSettings'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseGlobalSettings"])
+
     @UseGlobalSettings.setter
     def UseGlobalSettings(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseGlobalSettings'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseGlobalSettings"], value)
 
     @property
     def ValidTxModes(self):
@@ -682,11 +786,26 @@ class Vport(Base):
         """
         Returns
         -------
-        - list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse]): 
+        - list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse]):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ValidTxModes'])
+        return self._get_attribute(self._SDM_ATT_MAP["ValidTxModes"])
 
-    def update(self, ConnectedTo=None, IsPullOnly=None, Location=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
+    def update(
+        self,
+        ConnectedTo=None,
+        IsPullOnly=None,
+        Location=None,
+        Name=None,
+        RxMode=None,
+        TraceEnabled=None,
+        TraceLevel=None,
+        TraceTag=None,
+        TransmitIgnoreLinkStatus=None,
+        TxGapControlMode=None,
+        TxMode=None,
+        Type=None,
+        UseGlobalSettings=None,
+    ):
         # type: (str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
         """Updates vport resource on the server.
 
@@ -712,7 +831,22 @@ class Vport(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedTo=None, IsPullOnly=None, Location=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
+    def add(
+        self,
+        ConnectedTo=None,
+        IsPullOnly=None,
+        Location=None,
+        Name=None,
+        RxMode=None,
+        TraceEnabled=None,
+        TraceLevel=None,
+        TraceTag=None,
+        TransmitIgnoreLinkStatus=None,
+        TxGapControlMode=None,
+        TxMode=None,
+        Type=None,
+        UseGlobalSettings=None,
+    ):
         # type: (str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
         """Adds a new vport resource on the server and adds it to the container.
 
@@ -752,7 +886,48 @@ class Vport(Base):
         """
         self._delete()
 
-    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, LastLinkStateChangeEventTimestamp=None, Licenses=None, Location=None, MacsecEnabled=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
+    def find(
+        self,
+        ActualSpeed=None,
+        AdminMode=None,
+        AssignedTo=None,
+        AssignedToDisplayName=None,
+        CaptureSupported=None,
+        ConnectedTo=None,
+        ConnectionInfo=None,
+        ConnectionState=None,
+        ConnectionStatus=None,
+        ConnectionStatusDisplayName=None,
+        DpdkPerformanceAcceleration=None,
+        InternalId=None,
+        IsAvailable=None,
+        IsConnected=None,
+        IsFramePreemptionSupported=None,
+        IsMapped=None,
+        IsPullOnly=None,
+        IsVMPort=None,
+        IxnChassisVersion=None,
+        IxnClientVersion=None,
+        IxosChassisVersion=None,
+        LastLinkStateChangeEventTimestamp=None,
+        Licenses=None,
+        Location=None,
+        MacsecEnabled=None,
+        Name=None,
+        ResourceMode=None,
+        RxMode=None,
+        State=None,
+        StateDetail=None,
+        TraceEnabled=None,
+        TraceLevel=None,
+        TraceTag=None,
+        TransmitIgnoreLinkStatus=None,
+        TxGapControlMode=None,
+        TxMode=None,
+        Type=None,
+        UseGlobalSettings=None,
+        ValidTxModes=None,
+    ):
         # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
         """Finds and retrieves vport resources from the server.
 
@@ -763,20 +938,20 @@ class Vport(Base):
         Args
         ----
         - ActualSpeed (number): The actual speed.
-        - AdminMode (str): 
+        - AdminMode (str):
         - AssignedTo (str): (Deprecated, Read Only) A new port is assigned with this option.
-        - AssignedToDisplayName (str): 
-        - CaptureSupported (str(data | control | dataAndControl | none)): 
+        - AssignedToDisplayName (str):
+        - CaptureSupported (str(data | control | dataAndControl | none)):
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
-        - ConnectionStatusDisplayName (str): 
-        - DpdkPerformanceAcceleration (str): 
+        - ConnectionStatusDisplayName (str):
+        - DpdkPerformanceAcceleration (str):
         - InternalId (number): For internal use.
         - IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
         - IsConnected (bool): If true, indicates that the port is connected.
-        - IsFramePreemptionSupported (bool): 
+        - IsFramePreemptionSupported (bool):
         - IsMapped (bool): If true, this virtual port is mapped.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - IsVMPort (bool): If true the hardware connected to this vport is a virtual machine port
@@ -786,9 +961,9 @@ class Vport(Base):
         - LastLinkStateChangeEventTimestamp (str): A string describing the last link status change client timestamp for the port.
         - Licenses (str): Number of licenses.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
-        - MacsecEnabled (bool): 
+        - MacsecEnabled (bool):
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-        - ResourceMode (str): 
+        - ResourceMode (str):
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - State (str(busy | down | unassigned | up | versionMismatch)): The virtual port state.
         - StateDetail (str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus)): This attribute describes the state of the port.
@@ -800,7 +975,7 @@ class Vport(Base):
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
         - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
-        - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])): 
+        - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])):
 
         Returns
         -------
@@ -847,10 +1022,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addGclEntry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addGclEntry", payload=payload, response_object=None)
 
     def AddQuickFlowGroups(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -868,10 +1045,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addQuickFlowGroups', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addQuickFlowGroups", payload=payload, response_object=None
+        )
 
     def AssignPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -890,10 +1071,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('assignPorts', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("assignPorts", payload=payload, response_object=None)
 
     def ClearNeighborSolicitation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -918,10 +1101,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearNeighborSolicitation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearNeighborSolicitation", payload=payload, response_object=None
+        )
 
     def ClearNeighborTable(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -939,10 +1126,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearNeighborTable', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearNeighborTable", payload=payload, response_object=None
+        )
 
     def ClearPortTransmitDuration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -959,10 +1150,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPortTransmitDuration', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearPortTransmitDuration", payload=payload, response_object=None
+        )
 
     def ConnectPort(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -979,10 +1174,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('connectPort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("connectPort", payload=payload, response_object=None)
 
     def ConnectPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1006,10 +1203,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('connectPorts', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("connectPorts", payload=payload, response_object=None)
 
     def CopyTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1019,7 +1218,7 @@ class Vport(Base):
 
         copyTapSettings(Arg2=list, async_operation=bool)
         ------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1027,10 +1226,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('copyTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyTapSettings", payload=payload, response_object=None)
 
     def DeleteCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1047,10 +1248,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deleteCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "deleteCustomDefaults", payload=payload, response_object=None
+        )
 
     def EnableOAM(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1068,10 +1273,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableOAM', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("enableOAM", payload=payload, response_object=None)
 
     def GetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1088,10 +1295,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTapSettings", payload=payload, response_object=None)
 
     def IgmpJoin(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1117,10 +1326,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpJoin', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpJoin", payload=payload, response_object=None)
 
     def IgmpLeave(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1146,10 +1357,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpLeave', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpLeave", payload=payload, response_object=None)
 
     def Import(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1167,10 +1380,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('import', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("import", payload=payload, response_object=None)
 
     def LinkUpDn(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1188,10 +1403,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('linkUpDn', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("linkUpDn", payload=payload, response_object=None)
 
     def PauseStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1209,10 +1426,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pauseStatelessTraffic", payload=payload, response_object=None
+        )
 
     def PullPort(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1229,10 +1450,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pullPort', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pullPort", payload=payload, response_object=None)
 
     def RefreshUnresolvedNeighbors(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1250,10 +1473,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshUnresolvedNeighbors', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshUnresolvedNeighbors", payload=payload, response_object=None
+        )
 
     def ReleaseCapturePorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1270,10 +1497,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('releaseCapturePorts', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "releaseCapturePorts", payload=payload, response_object=None
+        )
 
     def ReleasePort(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1290,10 +1521,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('releasePort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("releasePort", payload=payload, response_object=None)
 
     def RemoveGclEntry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1311,10 +1544,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeGclEntry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("removeGclEntry", payload=payload, response_object=None)
 
     def ResetPortCpu(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1331,10 +1566,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resetPortCpu', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resetPortCpu", payload=payload, response_object=None)
 
     def ResetPortCpuAndFactoryDefault(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1351,10 +1588,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resetPortCpuAndFactoryDefault', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "resetPortCpuAndFactoryDefault", payload=payload, response_object=None
+        )
 
     def RestartPppNegotiation(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1371,10 +1612,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartPppNegotiation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "restartPppNegotiation", payload=payload, response_object=None
+        )
 
     def RestoreCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1391,10 +1636,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restoreCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "restoreCustomDefaults", payload=payload, response_object=None
+        )
 
     def RestoreDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1411,10 +1660,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restoreDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restoreDefaults", payload=payload, response_object=None)
 
     def SaveCustomDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1431,10 +1682,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveCustomDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "saveCustomDefaults", payload=payload, response_object=None
+        )
 
     def SendArp(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1460,10 +1715,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArp', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArp", payload=payload, response_object=None)
 
     def SendArpAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1480,10 +1737,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArpAll', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpAll", payload=payload, response_object=None)
 
     def SendNs(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1509,10 +1768,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNs', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNs", payload=payload, response_object=None)
 
     def SendNsAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1529,10 +1790,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNsAll', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNsAll", payload=payload, response_object=None)
 
     def SendRs(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1558,10 +1821,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRs', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRs", payload=payload, response_object=None)
 
     def SendRsAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1578,10 +1843,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRsAll', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRsAll", payload=payload, response_object=None)
 
     def SetFactoryDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1598,10 +1865,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setFactoryDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setFactoryDefaults", payload=payload, response_object=None
+        )
 
     def SetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1618,10 +1889,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setTapSettings", payload=payload, response_object=None)
 
     def StartStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1638,10 +1911,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StartStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1658,10 +1935,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
 
     def StopStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1678,10 +1959,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StopStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1698,10 +1983,14 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTrafficBlocking", payload=payload, response_object=None
+        )
 
     def SwitchMode(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1721,10 +2010,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('switchMode', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("switchMode", payload=payload, response_object=None)
 
     def UnassignPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1742,10 +2033,12 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('unassignPorts', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("unassignPorts", payload=payload, response_object=None)
 
     def UpdateGclEntry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1765,7 +2058,9 @@ class Vport(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateGclEntry', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateGclEntry", payload=payload, response_object=None)

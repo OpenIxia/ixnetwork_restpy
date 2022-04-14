@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class JoinLeaveMulticastGroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'joinLeaveMulticastGroupRange'
+    _SDM_NAME = "joinLeaveMulticastGroupRange"
     _SDM_ATT_MAP = {
-        'GroupRange': 'groupRange',
-        'ObjectId': 'objectId',
-        'SkipInTraffic': 'skipInTraffic',
+        "GroupRange": "groupRange",
+        "ObjectId": "objectId",
+        "SkipInTraffic": "skipInTraffic",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(JoinLeaveMulticastGroupRange, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class JoinLeaveMulticastGroupRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): Reference to the multicast group range from the global settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupRange"])
+
     @GroupRange.setter
     def GroupRange(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupRange"], value)
 
     @property
     def ObjectId(self):
@@ -68,7 +69,7 @@ class JoinLeaveMulticastGroupRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def SkipInTraffic(self):
@@ -78,11 +79,12 @@ class JoinLeaveMulticastGroupRange(Base):
         -------
         - bool: If true, the associated groupRange will not participate in traffic as endpoint
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipInTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipInTraffic"])
+
     @SkipInTraffic.setter
     def SkipInTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipInTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipInTraffic"], value)
 
     def update(self, GroupRange=None, SkipInTraffic=None):
         # type: (str, bool) -> JoinLeaveMulticastGroupRange
@@ -187,10 +189,14 @@ class JoinLeaveMulticastGroupRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -209,10 +215,14 @@ class JoinLeaveMulticastGroupRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -231,7 +241,11 @@ class JoinLeaveMulticastGroupRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

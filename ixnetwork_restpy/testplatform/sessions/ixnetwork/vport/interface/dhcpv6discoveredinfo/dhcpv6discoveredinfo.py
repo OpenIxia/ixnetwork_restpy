@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class DhcpV6DiscoveredInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpV6DiscoveredInfo'
+    _SDM_NAME = "dhcpV6DiscoveredInfo"
     _SDM_ATT_MAP = {
-        'IaRebindTime': 'iaRebindTime',
-        'IaRenewTime': 'iaRenewTime',
-        'Ipv6Address': 'ipv6Address',
-        'IsDhcpV6LearnedInfoRefreshed': 'isDhcpV6LearnedInfoRefreshed',
-        'ProtocolInterface': 'protocolInterface',
-        'Tlvs': 'tlvs',
+        "IaRebindTime": "iaRebindTime",
+        "IaRenewTime": "iaRenewTime",
+        "Ipv6Address": "ipv6Address",
+        "IsDhcpV6LearnedInfoRefreshed": "isDhcpV6LearnedInfoRefreshed",
+        "ProtocolInterface": "protocolInterface",
+        "Tlvs": "tlvs",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DhcpV6DiscoveredInfo, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - number: (Read Only) The rebind timer value (in seconds) specified by the DHCPv6 Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IaRebindTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["IaRebindTime"])
 
     @property
     def IaRenewTime(self):
@@ -65,7 +65,7 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - number: (Read Only) The renew timer value (in seconds) specified by the DHCPv6 Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IaRenewTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["IaRenewTime"])
 
     @property
     def Ipv6Address(self):
@@ -75,7 +75,7 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - list(str): (Read Only) A learned/allocated IPv6 address for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"])
 
     @property
     def IsDhcpV6LearnedInfoRefreshed(self):
@@ -85,7 +85,7 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - bool: (Read Only) When true, the DHCPv6 discovered information is refreshed automatically.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsDhcpV6LearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsDhcpV6LearnedInfoRefreshed"])
 
     @property
     def ProtocolInterface(self):
@@ -95,7 +95,7 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
     @property
     def Tlvs(self):
@@ -104,9 +104,17 @@ class DhcpV6DiscoveredInfo(Base):
         -------
         - list(dict(arg1:number,arg2:str)): (Read Only) The identifier or 'tag' for this DHCPv6 option. The DHCPv6 option value field may contain data for configuration parameter information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tlvs"])
 
-    def find(self, IaRebindTime=None, IaRenewTime=None, Ipv6Address=None, IsDhcpV6LearnedInfoRefreshed=None, ProtocolInterface=None, Tlvs=None):
+    def find(
+        self,
+        IaRebindTime=None,
+        IaRenewTime=None,
+        Ipv6Address=None,
+        IsDhcpV6LearnedInfoRefreshed=None,
+        ProtocolInterface=None,
+        Tlvs=None,
+    ):
         """Finds and retrieves dhcpV6DiscoveredInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpV6DiscoveredInfo resources from the server.

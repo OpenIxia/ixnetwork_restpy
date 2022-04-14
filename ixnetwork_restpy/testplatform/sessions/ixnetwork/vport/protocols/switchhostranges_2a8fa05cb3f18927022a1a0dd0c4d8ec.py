@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class SwitchHostRanges(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchHostRanges'
+    _SDM_NAME = "switchHostRanges"
     _SDM_ATT_MAP = {
-        'EnableStaticIp': 'enableStaticIp',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'HostMacAddress': 'hostMacAddress',
-        'HostStaticIpv4Address': 'hostStaticIpv4Address',
-        'HostVlanid': 'hostVlanid',
-        'NumberOfHostsPerPort': 'numberOfHostsPerPort',
+        "EnableStaticIp": "enableStaticIp",
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "HostMacAddress": "hostMacAddress",
+        "HostStaticIpv4Address": "hostStaticIpv4Address",
+        "HostVlanid": "hostVlanid",
+        "NumberOfHostsPerPort": "numberOfHostsPerPort",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchHostRanges, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class SwitchHostRanges(Base):
         -------
         - bool: If selected, Host Static IPv4 Address is available for change. It indicates if static IP will be configured in simulated Host.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStaticIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStaticIp"])
+
     @EnableStaticIp.setter
     def EnableStaticIp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStaticIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStaticIp"], value)
 
     @property
     def EnableVlan(self):
@@ -72,11 +73,12 @@ class SwitchHostRanges(Base):
         -------
         - bool: If selected, Host VLAN ID is available for change. It indicates if VLAN will be configured in Host.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -86,11 +88,12 @@ class SwitchHostRanges(Base):
         -------
         - bool: If selected, the Host Range gets configured in the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HostMacAddress(self):
@@ -100,11 +103,12 @@ class SwitchHostRanges(Base):
         -------
         - str: The MAC Address of the simulated Host. The composite column break-up appears in a split pane on the right.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostMacAddress"])
+
     @HostMacAddress.setter
     def HostMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostMacAddress"], value)
 
     @property
     def HostStaticIpv4Address(self):
@@ -114,11 +118,12 @@ class SwitchHostRanges(Base):
         -------
         - str: The static IPv4 Address of the Host. This is available only if Enable Static IP is selected. The composite column break-up appears in a split pane on the right.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostStaticIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostStaticIpv4Address"])
+
     @HostStaticIpv4Address.setter
     def HostStaticIpv4Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostStaticIpv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostStaticIpv4Address"], value)
 
     @property
     def HostVlanid(self):
@@ -128,11 +133,12 @@ class SwitchHostRanges(Base):
         -------
         - str: The VLAN ID of the Host. This is available only if Enable VLAN is selected. The composite column break-up appears in a split pane on the right.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostVlanid'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostVlanid"])
+
     @HostVlanid.setter
     def HostVlanid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostVlanid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostVlanid"], value)
 
     @property
     def NumberOfHostsPerPort(self):
@@ -142,13 +148,23 @@ class SwitchHostRanges(Base):
         -------
         - number: Specify the number of switches to be configured for every switch port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfHostsPerPort"])
+
     @NumberOfHostsPerPort.setter
     def NumberOfHostsPerPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfHostsPerPort"], value)
 
-    def update(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+    def update(
+        self,
+        EnableStaticIp=None,
+        EnableVlan=None,
+        Enabled=None,
+        HostMacAddress=None,
+        HostStaticIpv4Address=None,
+        HostVlanid=None,
+        NumberOfHostsPerPort=None,
+    ):
         # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Updates switchHostRanges resource on the server.
 
@@ -168,7 +184,16 @@ class SwitchHostRanges(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+    def add(
+        self,
+        EnableStaticIp=None,
+        EnableVlan=None,
+        Enabled=None,
+        HostMacAddress=None,
+        HostStaticIpv4Address=None,
+        HostVlanid=None,
+        NumberOfHostsPerPort=None,
+    ):
         # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Adds a new switchHostRanges resource on the server and adds it to the container.
 
@@ -202,7 +227,16 @@ class SwitchHostRanges(Base):
         """
         self._delete()
 
-    def find(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+    def find(
+        self,
+        EnableStaticIp=None,
+        EnableVlan=None,
+        Enabled=None,
+        HostMacAddress=None,
+        HostStaticIpv4Address=None,
+        HostVlanid=None,
+        NumberOfHostsPerPort=None,
+    ):
         # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Finds and retrieves switchHostRanges resources from the server.
 

@@ -144,7 +144,7 @@ class Statistic(Base):
 
     def add(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
         # type: (str, str, bool, int) -> Statistic
-        """Adds a new statistic resource on the json, only valid with config assistant
+        """Adds a new statistic resource on the json, only valid with batch add utility
 
         Args
         ----

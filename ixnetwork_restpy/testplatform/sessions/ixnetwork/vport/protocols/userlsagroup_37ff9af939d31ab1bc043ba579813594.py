@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class UserLsaGroup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'userLsaGroup'
+    _SDM_NAME = "userLsaGroup"
     _SDM_ATT_MAP = {
-        'AreaId': 'areaId',
-        'Description': 'description',
-        'Enabled': 'enabled',
+        "AreaId": "areaId",
+        "Description": "description",
+        "Enabled": "enabled",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(UserLsaGroup, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class UserLsaGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_6ef084d0dede50140d3cd2a284051b56 import UserLsa
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_6ef084d0dede50140d3cd2a284051b56 import (
+            UserLsa,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UserLsa', None) is not None:
-                return self._properties.get('UserLsa')
+            if self._properties.get("UserLsa", None) is not None:
+                return self._properties.get("UserLsa")
         return UserLsa(self)
 
     @property
@@ -71,11 +74,12 @@ class UserLsaGroup(Base):
         -------
         - number: The area ID for the LSA group. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaId"])
+
     @AreaId.setter
     def AreaId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaId"], value)
 
     @property
     def Description(self):
@@ -85,11 +89,12 @@ class UserLsaGroup(Base):
         -------
         - str: A commentary description for the user LSA group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Enabled(self):
@@ -99,11 +104,12 @@ class UserLsaGroup(Base):
         -------
         - bool: Enables the use of this router in the simulated OSPF network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     def update(self, AreaId=None, Description=None, Enabled=None):
         # type: (int, str, bool) -> UserLsaGroup

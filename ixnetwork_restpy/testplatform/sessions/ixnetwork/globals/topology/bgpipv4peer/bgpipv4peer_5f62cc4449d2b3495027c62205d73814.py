@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,72 +33,72 @@ class BgpIpv4Peer(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpIpv4Peer'
+    _SDM_NAME = "bgpIpv4Peer"
     _SDM_ATT_MAP = {
-        'BIERTunnelType': 'BIERTunnelType',
-        'LLGRCapabilityCode': 'LLGRCapabilityCode',
-        'BgpConfMemType': 'bgpConfMemType',
-        'BgpRouterId': 'bgpRouterId',
-        'BindingType': 'bindingType',
-        'ColorType': 'colorType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
-        'ENLPType': 'eNLPType',
-        'EVPNSIDType': 'eVPNSIDType',
-        'EnBGPFastFailoverOnLinkDown': 'enBGPFastFailoverOnLinkDown',
-        'EnLenthForPolicyNLRI': 'enLenthForPolicyNLRI',
-        'EnableAdVplsPrefixLength': 'enableAdVplsPrefixLength',
-        'GSRv6SIDEncodingSubTlvType': 'gSRv6SIDEncodingSubTlvType',
-        'IBgpTester4BytesAsNumber': 'iBgpTester4BytesAsNumber',
-        'IBgpTesterAsNumber': 'iBgpTesterAsNumber',
-        'InitiateEbgpActiveConnection': 'initiateEbgpActiveConnection',
-        'InitiateIbgpActiveConnection': 'initiateIbgpActiveConnection',
-        'Ipv4AddrIndexType': 'ipv4AddrIndexType',
-        'Ipv4LocRemoteAddrType': 'ipv4LocRemoteAddrType',
-        'Ipv4NodeAddrType': 'ipv4NodeAddrType',
-        'Ipv6AddrIndexType': 'ipv6AddrIndexType',
-        'Ipv6LocRemoteAddrType': 'ipv6LocRemoteAddrType',
-        'Ipv6NodeAddrType': 'ipv6NodeAddrType',
-        'Ipv6SIDType': 'ipv6SIDType',
-        'LenthForPolicyNLRI': 'lenthForPolicyNLRI',
-        'MldpP2mpFecType': 'mldpP2mpFecType',
-        'MplsSIDType': 'mplsSIDType',
-        'Name': 'name',
-        'PeerAdjSidType': 'peerAdjSidType',
-        'PeerNodeSidType': 'peerNodeSidType',
-        'PeerSetSidType': 'peerSetSidType',
-        'PolicyNameType': 'policyNameType',
-        'PolicyPathNameType': 'policyPathNameType',
-        'PolicyPriorityType': 'policyPriorityType',
-        'PolicySegmentSubTLVTypeB': 'policySegmentSubTLVTypeB',
-        'PolicySegmentSubTLVTypeI': 'policySegmentSubTLVTypeI',
-        'PolicySegmentSubTLVTypeJ': 'policySegmentSubTLVTypeJ',
-        'PolicySegmentSubTLVTypeK': 'policySegmentSubTLVTypeK',
-        'PreferenceType': 'preferenceType',
-        'PrefixSIDAttrType': 'prefixSIDAttrType',
-        'ProtoclIdType': 'protoclIdType',
-        'RemoteEndpointType': 'remoteEndpointType',
-        'RequestVpnLabelExchangeOverLsp': 'requestVpnLabelExchangeOverLsp',
-        'ReverseBindingType': 'reverseBindingType',
-        'RowNames': 'rowNames',
-        'SRv6BindingSIDType': 'sRv6BindingSIDType',
-        'SRv6VPNSIDTLVType': 'sRv6VPNSIDTLVType',
-        'SegmentListType': 'segmentListType',
-        'SessionRetryDelayTime': 'sessionRetryDelayTime',
-        'SrtePolicyAttrType': 'srtePolicyAttrType',
-        'SrtePolicySAFI': 'srtePolicySAFI',
-        'SrtePolicyType': 'srtePolicyType',
-        'Srv6DraftNum': 'srv6DraftNum',
-        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UseUnicastDestMacForBierTraffic': 'useUnicastDestMacForBierTraffic',
-        'VPNSIDType': 'vPNSIDType',
-        'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
-        'WeightType': 'weightType',
+        "BIERTunnelType": "BIERTunnelType",
+        "LLGRCapabilityCode": "LLGRCapabilityCode",
+        "BgpConfMemType": "bgpConfMemType",
+        "BgpRouterId": "bgpRouterId",
+        "BindingType": "bindingType",
+        "ColorType": "colorType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DisableReceivedUpdateValidation": "disableReceivedUpdateValidation",
+        "ENLPType": "eNLPType",
+        "EVPNSIDType": "eVPNSIDType",
+        "EnBGPFastFailoverOnLinkDown": "enBGPFastFailoverOnLinkDown",
+        "EnLenthForPolicyNLRI": "enLenthForPolicyNLRI",
+        "EnableAdVplsPrefixLength": "enableAdVplsPrefixLength",
+        "GSRv6SIDEncodingSubTlvType": "gSRv6SIDEncodingSubTlvType",
+        "IBgpTester4BytesAsNumber": "iBgpTester4BytesAsNumber",
+        "IBgpTesterAsNumber": "iBgpTesterAsNumber",
+        "InitiateEbgpActiveConnection": "initiateEbgpActiveConnection",
+        "InitiateIbgpActiveConnection": "initiateIbgpActiveConnection",
+        "Ipv4AddrIndexType": "ipv4AddrIndexType",
+        "Ipv4LocRemoteAddrType": "ipv4LocRemoteAddrType",
+        "Ipv4NodeAddrType": "ipv4NodeAddrType",
+        "Ipv6AddrIndexType": "ipv6AddrIndexType",
+        "Ipv6LocRemoteAddrType": "ipv6LocRemoteAddrType",
+        "Ipv6NodeAddrType": "ipv6NodeAddrType",
+        "Ipv6SIDType": "ipv6SIDType",
+        "LenthForPolicyNLRI": "lenthForPolicyNLRI",
+        "MldpP2mpFecType": "mldpP2mpFecType",
+        "MplsSIDType": "mplsSIDType",
+        "Name": "name",
+        "PeerAdjSidType": "peerAdjSidType",
+        "PeerNodeSidType": "peerNodeSidType",
+        "PeerSetSidType": "peerSetSidType",
+        "PolicyNameType": "policyNameType",
+        "PolicyPathNameType": "policyPathNameType",
+        "PolicyPriorityType": "policyPriorityType",
+        "PolicySegmentSubTLVTypeB": "policySegmentSubTLVTypeB",
+        "PolicySegmentSubTLVTypeI": "policySegmentSubTLVTypeI",
+        "PolicySegmentSubTLVTypeJ": "policySegmentSubTLVTypeJ",
+        "PolicySegmentSubTLVTypeK": "policySegmentSubTLVTypeK",
+        "PreferenceType": "preferenceType",
+        "PrefixSIDAttrType": "prefixSIDAttrType",
+        "ProtoclIdType": "protoclIdType",
+        "RemoteEndpointType": "remoteEndpointType",
+        "RequestVpnLabelExchangeOverLsp": "requestVpnLabelExchangeOverLsp",
+        "ReverseBindingType": "reverseBindingType",
+        "RowNames": "rowNames",
+        "SRv6BindingSIDType": "sRv6BindingSIDType",
+        "SRv6VPNSIDTLVType": "sRv6VPNSIDTLVType",
+        "SegmentListType": "segmentListType",
+        "SessionRetryDelayTime": "sessionRetryDelayTime",
+        "SrtePolicyAttrType": "srtePolicyAttrType",
+        "SrtePolicySAFI": "srtePolicySAFI",
+        "SrtePolicyType": "srtePolicyType",
+        "Srv6DraftNum": "srv6DraftNum",
+        "TriggerVplsPwInitiation": "triggerVplsPwInitiation",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UseUnicastDestMacForBierTraffic": "useUnicastDestMacForBierTraffic",
+        "VPNSIDType": "vPNSIDType",
+        "VrfRouteImportExtendedCommunitySubType": "vrfRouteImportExtendedCommunitySubType",
+        "WeightType": "weightType",
     }
     _SDM_ENUM_MAP = {
-        'srv6DraftNum': ['version04', 'version_ietf_01'],
+        "srv6DraftNum": ["version04", "version_ietf_01"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -114,10 +115,13 @@ class BgpIpv4Peer(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -131,10 +135,13 @@ class BgpIpv4Peer(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -148,10 +155,13 @@ class BgpIpv4Peer(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import (
+            TlvEditor,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvEditor', None) is not None:
-                return self._properties.get('TlvEditor')
+            if self._properties.get("TlvEditor", None) is not None:
+                return self._properties.get("TlvEditor")
         return TlvEditor(self)
 
     @property
@@ -163,7 +173,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BIER Tunnel Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BIERTunnelType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BIERTunnelType"])
+        )
 
     @property
     def LLGRCapabilityCode(self):
@@ -174,7 +187,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Long Live Graceful Restart Capability Code
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LLGRCapabilityCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LLGRCapabilityCode"])
+        )
 
     @property
     def BgpConfMemType(self):
@@ -185,7 +201,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Confederation Member Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BgpConfMemType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BgpConfMemType"])
+        )
 
     @property
     def BgpRouterId(self):
@@ -196,7 +215,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Router-ID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BgpRouterId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BgpRouterId"]))
 
     @property
     def BindingType(self):
@@ -207,7 +227,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Binding Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BindingType"]))
 
     @property
     def ColorType(self):
@@ -218,7 +239,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorType"]))
 
     @property
     def Count(self):
@@ -228,7 +250,7 @@ class BgpIpv4Peer(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -238,7 +260,7 @@ class BgpIpv4Peer(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DisableReceivedUpdateValidation(self):
@@ -249,7 +271,11 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Disable Received Update Validation (Enabled for High Performance)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DisableReceivedUpdateValidation']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["DisableReceivedUpdateValidation"]),
+        )
 
     @property
     def ENLPType(self):
@@ -260,7 +286,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL Label Policy Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ENLPType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ENLPType"]))
 
     @property
     def EVPNSIDType(self):
@@ -271,7 +298,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EVPN SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EVPNSIDType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EVPNSIDType"]))
 
     @property
     def EnBGPFastFailoverOnLinkDown(self):
@@ -282,7 +310,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable quick termination of the BGP connections instead of Hold Time Expiry when the physical link goes down of the connected port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnBGPFastFailoverOnLinkDown']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnBGPFastFailoverOnLinkDown"])
+        )
 
     @property
     def EnLenthForPolicyNLRI(self):
@@ -293,7 +324,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Length Field in SR TE Policy NLRI
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnLenthForPolicyNLRI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnLenthForPolicyNLRI"])
+        )
 
     @property
     def EnableAdVplsPrefixLength(self):
@@ -304,18 +338,24 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AD VPLS Prefix Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAdVplsPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAdVplsPrefixLength"])
+        )
 
     @property
     def GSRv6SIDEncodingSubTlvType(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): G-SRv6 SID encoding sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GSRv6SIDEncodingSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GSRv6SIDEncodingSubTlvType"])
+        )
 
     @property
     def IBgpTester4BytesAsNumber(self):
@@ -326,7 +366,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tester 4 Byte AS# for iBGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IBgpTester4BytesAsNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IBgpTester4BytesAsNumber"])
+        )
 
     @property
     def IBgpTesterAsNumber(self):
@@ -337,7 +380,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tester AS# for iBGP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IBgpTesterAsNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IBgpTesterAsNumber"])
+        )
 
     @property
     def InitiateEbgpActiveConnection(self):
@@ -348,7 +394,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initiate eBGP Active Connection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitiateEbgpActiveConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitiateEbgpActiveConnection"])
+        )
 
     @property
     def InitiateIbgpActiveConnection(self):
@@ -359,7 +408,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initiate iBGP Active Connection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitiateIbgpActiveConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitiateIbgpActiveConnection"])
+        )
 
     @property
     def Ipv4AddrIndexType(self):
@@ -370,7 +422,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address + Index Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4AddrIndexType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4AddrIndexType"])
+        )
 
     @property
     def Ipv4LocRemoteAddrType(self):
@@ -381,7 +436,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Local and Remote Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4LocRemoteAddrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4LocRemoteAddrType"])
+        )
 
     @property
     def Ipv4NodeAddrType(self):
@@ -392,7 +450,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Node Address Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NodeAddrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4NodeAddrType"])
+        )
 
     @property
     def Ipv6AddrIndexType(self):
@@ -403,7 +464,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address + Index Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AddrIndexType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AddrIndexType"])
+        )
 
     @property
     def Ipv6LocRemoteAddrType(self):
@@ -414,7 +478,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Local and Remote Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6LocRemoteAddrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6LocRemoteAddrType"])
+        )
 
     @property
     def Ipv6NodeAddrType(self):
@@ -425,7 +492,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Node Address Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NodeAddrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NodeAddrType"])
+        )
 
     @property
     def Ipv6SIDType(self):
@@ -436,7 +506,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6SIDType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6SIDType"]))
 
     @property
     def LenthForPolicyNLRI(self):
@@ -447,7 +518,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Length Unit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LenthForPolicyNLRI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LenthForPolicyNLRI"])
+        )
 
     @property
     def MldpP2mpFecType(self):
@@ -458,7 +532,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MLDP P2MP FEC Type (Hex)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MldpP2mpFecType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MldpP2mpFecType"])
+        )
 
     @property
     def MplsSIDType(self):
@@ -469,7 +546,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MPLS SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MplsSIDType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MplsSIDType"]))
 
     @property
     def Name(self):
@@ -479,11 +557,12 @@ class BgpIpv4Peer(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PeerAdjSidType(self):
@@ -494,7 +573,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peer-Adj-SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerAdjSidType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeerAdjSidType"])
+        )
 
     @property
     def PeerNodeSidType(self):
@@ -505,7 +587,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peer-Node-SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerNodeSidType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeerNodeSidType"])
+        )
 
     @property
     def PeerSetSidType(self):
@@ -516,7 +601,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peer-Set-SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerSetSidType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeerSetSidType"])
+        )
 
     @property
     def PolicyNameType(self):
@@ -527,7 +615,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Name Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyNameType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicyNameType"])
+        )
 
     @property
     def PolicyPathNameType(self):
@@ -538,7 +629,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Candidate Path Name Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyPathNameType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicyPathNameType"])
+        )
 
     @property
     def PolicyPriorityType(self):
@@ -549,7 +643,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Priority Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyPriorityType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicyPriorityType"])
+        )
 
     @property
     def PolicySegmentSubTLVTypeB(self):
@@ -560,7 +657,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Segment Sub TLV Type B
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicySegmentSubTLVTypeB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicySegmentSubTLVTypeB"])
+        )
 
     @property
     def PolicySegmentSubTLVTypeI(self):
@@ -571,7 +671,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Segment Sub TLV Type I
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicySegmentSubTLVTypeI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicySegmentSubTLVTypeI"])
+        )
 
     @property
     def PolicySegmentSubTLVTypeJ(self):
@@ -582,7 +685,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Segment Sub TLV Type J
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicySegmentSubTLVTypeJ']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicySegmentSubTLVTypeJ"])
+        )
 
     @property
     def PolicySegmentSubTLVTypeK(self):
@@ -593,7 +699,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Segment Sub TLV Type K
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicySegmentSubTLVTypeK']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicySegmentSubTLVTypeK"])
+        )
 
     @property
     def PreferenceType(self):
@@ -604,7 +713,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Preference Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PreferenceType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PreferenceType"])
+        )
 
     @property
     def PrefixSIDAttrType(self):
@@ -615,7 +727,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix SID Attr Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixSIDAttrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixSIDAttrType"])
+        )
 
     @property
     def ProtoclIdType(self):
@@ -626,7 +741,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Protocol-ID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtoclIdType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtoclIdType"]))
 
     @property
     def RemoteEndpointType(self):
@@ -637,7 +753,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote Endpoint Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteEndpointType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteEndpointType"])
+        )
 
     @property
     def RequestVpnLabelExchangeOverLsp(self):
@@ -648,7 +767,11 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Request VPN Label Exchange over LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestVpnLabelExchangeOverLsp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RequestVpnLabelExchangeOverLsp"]),
+        )
 
     @property
     def ReverseBindingType(self):
@@ -659,7 +782,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Binding and Reverse Binding Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseBindingType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseBindingType"])
+        )
 
     @property
     def RowNames(self):
@@ -669,7 +795,7 @@ class BgpIpv4Peer(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def SRv6BindingSIDType(self):
@@ -680,7 +806,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Binding Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SRv6BindingSIDType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SRv6BindingSIDType"])
+        )
 
     @property
     def SRv6VPNSIDTLVType(self):
@@ -691,7 +820,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6-VPN SID TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SRv6VPNSIDTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SRv6VPNSIDTLVType"])
+        )
 
     @property
     def SegmentListType(self):
@@ -702,7 +834,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segment List Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentListType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SegmentListType"])
+        )
 
     @property
     def SessionRetryDelayTime(self):
@@ -713,7 +848,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The time (in Secs) to wait before BGP Active Peer retries session establishment after a connection is closed gracefully. Permitted value range is 1-60 secs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SessionRetryDelayTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SessionRetryDelayTime"])
+        )
 
     @property
     def SrtePolicyAttrType(self):
@@ -724,7 +862,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tunnel Encaps Attribute Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtePolicyAttrType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrtePolicyAttrType"])
+        )
 
     @property
     def SrtePolicySAFI(self):
@@ -735,7 +876,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SR TE Policy SAFI
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtePolicySAFI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrtePolicySAFI"])
+        )
 
     @property
     def SrtePolicyType(self):
@@ -746,7 +890,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tunnel Type for SR Policy
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtePolicyType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrtePolicyType"])
+        )
 
     @property
     def Srv6DraftNum(self):
@@ -756,11 +903,12 @@ class BgpIpv4Peer(Base):
         -------
         - str(version04 | version_ietf_01): SRv6 VPN Draft Version Number to be used both for L3VPN and EVPN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6DraftNum'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6DraftNum"])
+
     @Srv6DraftNum.setter
     def Srv6DraftNum(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6DraftNum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6DraftNum"], value)
 
     @property
     def TriggerVplsPwInitiation(self):
@@ -771,7 +919,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Trigger VPLS PW Initiation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TriggerVplsPwInitiation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TriggerVplsPwInitiation"])
+        )
 
     @property
     def UdpDestinationPort(self):
@@ -782,7 +933,10 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Destination Port for VXLAN
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+        )
 
     @property
     def UseUnicastDestMacForBierTraffic(self):
@@ -793,7 +947,11 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Unicast Dst MAC for Traffic
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseUnicastDestMacForBierTraffic']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["UseUnicastDestMacForBierTraffic"]),
+        )
 
     @property
     def VPNSIDType(self):
@@ -804,7 +962,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L3VPN SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VPNSIDType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VPNSIDType"]))
 
     @property
     def VrfRouteImportExtendedCommunitySubType(self):
@@ -815,7 +974,13 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VRF Route Import Extended Community Sub Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VrfRouteImportExtendedCommunitySubType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["VrfRouteImportExtendedCommunitySubType"]
+            ),
+        )
 
     @property
     def WeightType(self):
@@ -826,7 +991,8 @@ class BgpIpv4Peer(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WeightType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WeightType"]))
 
     def update(self, Name=None, Srv6DraftNum=None):
         # type: (str, str) -> BgpIpv4Peer
@@ -846,7 +1012,14 @@ class BgpIpv4Peer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None, Srv6DraftNum=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        RowNames=None,
+        Srv6DraftNum=None,
+    ):
         # type: (int, str, str, List[str], str) -> BgpIpv4Peer
         """Finds and retrieves bgpIpv4Peer resources from the server.
 
@@ -890,7 +1063,66 @@ class BgpIpv4Peer(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERTunnelType=None, LLGRCapabilityCode=None, BgpConfMemType=None, BgpRouterId=None, BindingType=None, ColorType=None, DisableReceivedUpdateValidation=None, ENLPType=None, EVPNSIDType=None, EnBGPFastFailoverOnLinkDown=None, EnLenthForPolicyNLRI=None, EnableAdVplsPrefixLength=None, GSRv6SIDEncodingSubTlvType=None, IBgpTester4BytesAsNumber=None, IBgpTesterAsNumber=None, InitiateEbgpActiveConnection=None, InitiateIbgpActiveConnection=None, Ipv4AddrIndexType=None, Ipv4LocRemoteAddrType=None, Ipv4NodeAddrType=None, Ipv6AddrIndexType=None, Ipv6LocRemoteAddrType=None, Ipv6NodeAddrType=None, Ipv6SIDType=None, LenthForPolicyNLRI=None, MldpP2mpFecType=None, MplsSIDType=None, PeerAdjSidType=None, PeerNodeSidType=None, PeerSetSidType=None, PolicyNameType=None, PolicyPathNameType=None, PolicyPriorityType=None, PolicySegmentSubTLVTypeB=None, PolicySegmentSubTLVTypeI=None, PolicySegmentSubTLVTypeJ=None, PolicySegmentSubTLVTypeK=None, PreferenceType=None, PrefixSIDAttrType=None, ProtoclIdType=None, RemoteEndpointType=None, RequestVpnLabelExchangeOverLsp=None, ReverseBindingType=None, SRv6BindingSIDType=None, SRv6VPNSIDTLVType=None, SegmentListType=None, SessionRetryDelayTime=None, SrtePolicyAttrType=None, SrtePolicySAFI=None, SrtePolicyType=None, TriggerVplsPwInitiation=None, UdpDestinationPort=None, UseUnicastDestMacForBierTraffic=None, VPNSIDType=None, VrfRouteImportExtendedCommunitySubType=None, WeightType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BIERTunnelType=None,
+        LLGRCapabilityCode=None,
+        BgpConfMemType=None,
+        BgpRouterId=None,
+        BindingType=None,
+        ColorType=None,
+        DisableReceivedUpdateValidation=None,
+        ENLPType=None,
+        EVPNSIDType=None,
+        EnBGPFastFailoverOnLinkDown=None,
+        EnLenthForPolicyNLRI=None,
+        EnableAdVplsPrefixLength=None,
+        GSRv6SIDEncodingSubTlvType=None,
+        IBgpTester4BytesAsNumber=None,
+        IBgpTesterAsNumber=None,
+        InitiateEbgpActiveConnection=None,
+        InitiateIbgpActiveConnection=None,
+        Ipv4AddrIndexType=None,
+        Ipv4LocRemoteAddrType=None,
+        Ipv4NodeAddrType=None,
+        Ipv6AddrIndexType=None,
+        Ipv6LocRemoteAddrType=None,
+        Ipv6NodeAddrType=None,
+        Ipv6SIDType=None,
+        LenthForPolicyNLRI=None,
+        MldpP2mpFecType=None,
+        MplsSIDType=None,
+        PeerAdjSidType=None,
+        PeerNodeSidType=None,
+        PeerSetSidType=None,
+        PolicyNameType=None,
+        PolicyPathNameType=None,
+        PolicyPriorityType=None,
+        PolicySegmentSubTLVTypeB=None,
+        PolicySegmentSubTLVTypeI=None,
+        PolicySegmentSubTLVTypeJ=None,
+        PolicySegmentSubTLVTypeK=None,
+        PreferenceType=None,
+        PrefixSIDAttrType=None,
+        ProtoclIdType=None,
+        RemoteEndpointType=None,
+        RequestVpnLabelExchangeOverLsp=None,
+        ReverseBindingType=None,
+        SRv6BindingSIDType=None,
+        SRv6VPNSIDTLVType=None,
+        SegmentListType=None,
+        SessionRetryDelayTime=None,
+        SrtePolicyAttrType=None,
+        SrtePolicySAFI=None,
+        SrtePolicyType=None,
+        TriggerVplsPwInitiation=None,
+        UdpDestinationPort=None,
+        UseUnicastDestMacForBierTraffic=None,
+        VPNSIDType=None,
+        VrfRouteImportExtendedCommunitySubType=None,
+        WeightType=None,
+    ):
         """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

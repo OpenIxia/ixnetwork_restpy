@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,18 @@ class RangeTe(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rangeTe'
+    _SDM_NAME = "rangeTe"
     _SDM_ATT_MAP = {
-        'EnableRangeTe': 'enableRangeTe',
-        'TeAdmGroup': 'teAdmGroup',
-        'TeLinkMetric': 'teLinkMetric',
-        'TeMaxBandWidth': 'teMaxBandWidth',
-        'TeMaxReserveBandWidth': 'teMaxReserveBandWidth',
-        'TeRouterId': 'teRouterId',
-        'TeRouterIdIncrement': 'teRouterIdIncrement',
-        'TeUnreservedBandWidth': 'teUnreservedBandWidth',
+        "EnableRangeTe": "enableRangeTe",
+        "TeAdmGroup": "teAdmGroup",
+        "TeLinkMetric": "teLinkMetric",
+        "TeMaxBandWidth": "teMaxBandWidth",
+        "TeMaxReserveBandWidth": "teMaxReserveBandWidth",
+        "TeRouterId": "teRouterId",
+        "TeRouterIdIncrement": "teRouterIdIncrement",
+        "TeUnreservedBandWidth": "teUnreservedBandWidth",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RangeTe, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class RangeTe(Base):
         -------
         - bool: Enables the generation of Traffic Engineering data. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRangeTe'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRangeTe"])
+
     @EnableRangeTe.setter
     def EnableRangeTe(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRangeTe'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRangeTe"], value)
 
     @property
     def TeAdmGroup(self):
@@ -71,11 +72,12 @@ class RangeTe(Base):
         -------
         - str: For setting the Administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into Group numbers which range from 0 to 31 (integers).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeAdmGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeAdmGroup"])
+
     @TeAdmGroup.setter
     def TeAdmGroup(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeAdmGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeAdmGroup"], value)
 
     @property
     def TeLinkMetric(self):
@@ -85,11 +87,12 @@ class RangeTe(Base):
         -------
         - number: The metric associated with the interface that the TE data is advertised on.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeLinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeLinkMetric"])
+
     @TeLinkMetric.setter
     def TeLinkMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeLinkMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeLinkMetric"], value)
 
     @property
     def TeMaxBandWidth(self):
@@ -99,11 +102,12 @@ class RangeTe(Base):
         -------
         - str: For setting the maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeMaxBandWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeMaxBandWidth"])
+
     @TeMaxBandWidth.setter
     def TeMaxBandWidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeMaxBandWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeMaxBandWidth"], value)
 
     @property
     def TeMaxReserveBandWidth(self):
@@ -113,11 +117,12 @@ class RangeTe(Base):
         -------
         - str: For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeMaxReserveBandWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeMaxReserveBandWidth"])
+
     @TeMaxReserveBandWidth.setter
     def TeMaxReserveBandWidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeMaxReserveBandWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeMaxReserveBandWidth"], value)
 
     @property
     def TeRouterId(self):
@@ -127,11 +132,12 @@ class RangeTe(Base):
         -------
         - str: The 32-bit TE router ID assigned to the first emulated ISIS router in this network range used with the increment TE router ID value when more than one router is to be created.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeRouterId"])
+
     @TeRouterId.setter
     def TeRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeRouterId"], value)
 
     @property
     def TeRouterIdIncrement(self):
@@ -141,11 +147,12 @@ class RangeTe(Base):
         -------
         - str: The 32-bit increment value that will be added to the previous TE Router ID, for automatically creating additional TE Router IDs for the emulated routers in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeRouterIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeRouterIdIncrement"])
+
     @TeRouterIdIncrement.setter
     def TeRouterIdIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeRouterIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeRouterIdIncrement"], value)
 
     @property
     def TeUnreservedBandWidth(self):
@@ -155,13 +162,24 @@ class RangeTe(Base):
         -------
         - list(str): The traffic engineering unreserved bandwidth for each priority to be advertised. There are eight distinct options. (default = 0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeUnreservedBandWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeUnreservedBandWidth"])
+
     @TeUnreservedBandWidth.setter
     def TeUnreservedBandWidth(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeUnreservedBandWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeUnreservedBandWidth"], value)
 
-    def update(self, EnableRangeTe=None, TeAdmGroup=None, TeLinkMetric=None, TeMaxBandWidth=None, TeMaxReserveBandWidth=None, TeRouterId=None, TeRouterIdIncrement=None, TeUnreservedBandWidth=None):
+    def update(
+        self,
+        EnableRangeTe=None,
+        TeAdmGroup=None,
+        TeLinkMetric=None,
+        TeMaxBandWidth=None,
+        TeMaxReserveBandWidth=None,
+        TeRouterId=None,
+        TeRouterIdIncrement=None,
+        TeUnreservedBandWidth=None,
+    ):
         # type: (bool, str, int, str, str, str, str, List[str]) -> RangeTe
         """Updates rangeTe resource on the server.
 
@@ -182,7 +200,17 @@ class RangeTe(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableRangeTe=None, TeAdmGroup=None, TeLinkMetric=None, TeMaxBandWidth=None, TeMaxReserveBandWidth=None, TeRouterId=None, TeRouterIdIncrement=None, TeUnreservedBandWidth=None):
+    def find(
+        self,
+        EnableRangeTe=None,
+        TeAdmGroup=None,
+        TeLinkMetric=None,
+        TeMaxBandWidth=None,
+        TeMaxReserveBandWidth=None,
+        TeRouterId=None,
+        TeRouterIdIncrement=None,
+        TeUnreservedBandWidth=None,
+    ):
         # type: (bool, str, int, str, str, str, str, List[str]) -> RangeTe
         """Finds and retrieves rangeTe resources from the server.
 

@@ -4,62 +4,62 @@ from ixnetwork_restpy.files import Files
 
 class FCGFTID(Base):
     __slots__ = ()
-    _SDM_NAME = 'FCGFTID'
+    _SDM_NAME = "FCGFTID"
     _SDM_ATT_MAP = {
-        'FcHeaderSof': 'fCGFTID.header.fcHeader.sof-1',
-        'DeviceDataFramesDeviceDataInfo': 'fCGFTID.header.fcHeader.rCTL.deviceDataFrames.deviceDataInfo-2',
-        'RCTLReserved': 'fCGFTID.header.fcHeader.rCTL.reserved-3',
-        'ExtendedLinkServicesInfo': 'fCGFTID.header.fcHeader.rCTL.extendedLinkServices.info-4',
-        'Fc4LinkDataInfo': 'fCGFTID.header.fcHeader.rCTL.fc4LinkData.info-5',
-        'VideoDataInfo': 'fCGFTID.header.fcHeader.rCTL.videoData.info-6',
-        'ExtendedHeaderInfo': 'fCGFTID.header.fcHeader.rCTL.extendedHeader.info-7',
-        'BasicLinkServicesInfo': 'fCGFTID.header.fcHeader.rCTL.basicLinkServices.info-8',
-        'LinkControlFramesInfo': 'fCGFTID.header.fcHeader.rCTL.linkControlFrames.info-9',
-        'ExtendedRoutingInfo': 'fCGFTID.header.fcHeader.rCTL.extendedRouting.info-10',
-        'FcHeaderDstId': 'fCGFTID.header.fcHeader.dstId-11',
-        'FcHeaderCsCTLPriority': 'fCGFTID.header.fcHeader.csCTLPriority-12',
-        'FcHeaderSrcId': 'fCGFTID.header.fcHeader.srcId-13',
-        'FcHeaderType': 'fCGFTID.header.fcHeader.type-14',
-        'FCTLCustom': 'fCGFTID.header.fcHeader.fCTL.custom-15',
-        'BuildFCTLExchangeContext': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.exchangeContext-16',
-        'BuildFCTLSequenceContext': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.sequenceContext-17',
-        'BuildFCTLFirstSequence': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.firstSequence-18',
-        'BuildFCTLLastSequence': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.lastSequence-19',
-        'BuildFCTLEndSequence': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.endSequence-20',
-        'BuildFCTLEndConnection': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.endConnection-21',
-        'BuildFCTLCsCTLPriority': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.csCTLPriority-22',
-        'BuildFCTLSequenceInitiative': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.sequenceInitiative-23',
-        'BuildFCTLFcXIDReassigned': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.fcXIDReassigned-24',
-        'BuildFCTLFcInvalidateXID': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.fcInvalidateXID-25',
-        'BuildFCTLAckForm': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.ackForm-26',
-        'BuildFCTLFcDataCompression': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.fcDataCompression-27',
-        'BuildFCTLFcDataEncryption': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.fcDataEncryption-28',
-        'BuildFCTLRetransmittedSequence': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.retransmittedSequence-29',
-        'BuildFCTLUnidirectionalTransmit': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-30',
-        'BuildFCTLContinueSeqCondition': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.continueSeqCondition-31',
-        'BuildFCTLAbortSeqCondition': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.abortSeqCondition-32',
-        'BuildFCTLRelativeOffsetPresent': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-33',
-        'BuildFCTLExchangeReassembly': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.exchangeReassembly-34',
-        'BuildFCTLFillBytes': 'fCGFTID.header.fcHeader.fCTL.buildFCTL.fillBytes-35',
-        'FcHeaderSeqID': 'fCGFTID.header.fcHeader.seqID-36',
-        'FcHeaderDfCTL': 'fCGFTID.header.fcHeader.dfCTL-37',
-        'FcHeaderSeqCNT': 'fCGFTID.header.fcHeader.seqCNT-38',
-        'FcHeaderOxID': 'fCGFTID.header.fcHeader.oxID-39',
-        'FcHeaderRxID': 'fCGFTID.header.fcHeader.rxID-40',
-        'FcHeaderParameter': 'fCGFTID.header.fcHeader.parameter-41',
-        'FcCTRevision': 'fCGFTID.header.fcCT.revision-42',
-        'FcCTInId': 'fCGFTID.header.fcCT.inId-43',
-        'FcCTGsType': 'fCGFTID.header.fcCT.gsType-44',
-        'FcCTGsSubtype': 'fCGFTID.header.fcCT.gsSubtype-45',
-        'FcCTOptions': 'fCGFTID.header.fcCT.options-46',
-        'FcCTReserved': 'fCGFTID.header.fcCT.reserved-47',
-        'DNSOpcode': 'fCGFTID.header.dNS.opcode-48',
-        'DNSMaxsize': 'fCGFTID.header.dNS.maxsize-49',
-        'DNSReserved': 'fCGFTID.header.dNS.reserved-50',
-        'DNSPortId': 'fCGFTID.header.dNS.portId-51',
-        'FcCRCAutoCRC': 'fCGFTID.header.fcCRC.autoCRC-52',
-        'FcCRCGenerateBadCRC': 'fCGFTID.header.fcCRC.generateBadCRC-53',
-        'FcTrailerEof': 'fCGFTID.header.fcTrailer.eof-54',
+        "FcHeaderSof": "fCGFTID.header.fcHeader.sof-1",
+        "DeviceDataFramesDeviceDataInfo": "fCGFTID.header.fcHeader.rCTL.deviceDataFrames.deviceDataInfo-2",
+        "RCTLReserved": "fCGFTID.header.fcHeader.rCTL.reserved-3",
+        "ExtendedLinkServicesInfo": "fCGFTID.header.fcHeader.rCTL.extendedLinkServices.info-4",
+        "Fc4LinkDataInfo": "fCGFTID.header.fcHeader.rCTL.fc4LinkData.info-5",
+        "VideoDataInfo": "fCGFTID.header.fcHeader.rCTL.videoData.info-6",
+        "ExtendedHeaderInfo": "fCGFTID.header.fcHeader.rCTL.extendedHeader.info-7",
+        "BasicLinkServicesInfo": "fCGFTID.header.fcHeader.rCTL.basicLinkServices.info-8",
+        "LinkControlFramesInfo": "fCGFTID.header.fcHeader.rCTL.linkControlFrames.info-9",
+        "ExtendedRoutingInfo": "fCGFTID.header.fcHeader.rCTL.extendedRouting.info-10",
+        "FcHeaderDstId": "fCGFTID.header.fcHeader.dstId-11",
+        "FcHeaderCsCTLPriority": "fCGFTID.header.fcHeader.csCTLPriority-12",
+        "FcHeaderSrcId": "fCGFTID.header.fcHeader.srcId-13",
+        "FcHeaderType": "fCGFTID.header.fcHeader.type-14",
+        "FCTLCustom": "fCGFTID.header.fcHeader.fCTL.custom-15",
+        "BuildFCTLExchangeContext": "fCGFTID.header.fcHeader.fCTL.buildFCTL.exchangeContext-16",
+        "BuildFCTLSequenceContext": "fCGFTID.header.fcHeader.fCTL.buildFCTL.sequenceContext-17",
+        "BuildFCTLFirstSequence": "fCGFTID.header.fcHeader.fCTL.buildFCTL.firstSequence-18",
+        "BuildFCTLLastSequence": "fCGFTID.header.fcHeader.fCTL.buildFCTL.lastSequence-19",
+        "BuildFCTLEndSequence": "fCGFTID.header.fcHeader.fCTL.buildFCTL.endSequence-20",
+        "BuildFCTLEndConnection": "fCGFTID.header.fcHeader.fCTL.buildFCTL.endConnection-21",
+        "BuildFCTLCsCTLPriority": "fCGFTID.header.fcHeader.fCTL.buildFCTL.csCTLPriority-22",
+        "BuildFCTLSequenceInitiative": "fCGFTID.header.fcHeader.fCTL.buildFCTL.sequenceInitiative-23",
+        "BuildFCTLFcXIDReassigned": "fCGFTID.header.fcHeader.fCTL.buildFCTL.fcXIDReassigned-24",
+        "BuildFCTLFcInvalidateXID": "fCGFTID.header.fcHeader.fCTL.buildFCTL.fcInvalidateXID-25",
+        "BuildFCTLAckForm": "fCGFTID.header.fcHeader.fCTL.buildFCTL.ackForm-26",
+        "BuildFCTLFcDataCompression": "fCGFTID.header.fcHeader.fCTL.buildFCTL.fcDataCompression-27",
+        "BuildFCTLFcDataEncryption": "fCGFTID.header.fcHeader.fCTL.buildFCTL.fcDataEncryption-28",
+        "BuildFCTLRetransmittedSequence": "fCGFTID.header.fcHeader.fCTL.buildFCTL.retransmittedSequence-29",
+        "BuildFCTLUnidirectionalTransmit": "fCGFTID.header.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-30",
+        "BuildFCTLContinueSeqCondition": "fCGFTID.header.fcHeader.fCTL.buildFCTL.continueSeqCondition-31",
+        "BuildFCTLAbortSeqCondition": "fCGFTID.header.fcHeader.fCTL.buildFCTL.abortSeqCondition-32",
+        "BuildFCTLRelativeOffsetPresent": "fCGFTID.header.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-33",
+        "BuildFCTLExchangeReassembly": "fCGFTID.header.fcHeader.fCTL.buildFCTL.exchangeReassembly-34",
+        "BuildFCTLFillBytes": "fCGFTID.header.fcHeader.fCTL.buildFCTL.fillBytes-35",
+        "FcHeaderSeqID": "fCGFTID.header.fcHeader.seqID-36",
+        "FcHeaderDfCTL": "fCGFTID.header.fcHeader.dfCTL-37",
+        "FcHeaderSeqCNT": "fCGFTID.header.fcHeader.seqCNT-38",
+        "FcHeaderOxID": "fCGFTID.header.fcHeader.oxID-39",
+        "FcHeaderRxID": "fCGFTID.header.fcHeader.rxID-40",
+        "FcHeaderParameter": "fCGFTID.header.fcHeader.parameter-41",
+        "FcCTRevision": "fCGFTID.header.fcCT.revision-42",
+        "FcCTInId": "fCGFTID.header.fcCT.inId-43",
+        "FcCTGsType": "fCGFTID.header.fcCT.gsType-44",
+        "FcCTGsSubtype": "fCGFTID.header.fcCT.gsSubtype-45",
+        "FcCTOptions": "fCGFTID.header.fcCT.options-46",
+        "FcCTReserved": "fCGFTID.header.fcCT.reserved-47",
+        "DNSOpcode": "fCGFTID.header.dNS.opcode-48",
+        "DNSMaxsize": "fCGFTID.header.dNS.maxsize-49",
+        "DNSReserved": "fCGFTID.header.dNS.reserved-50",
+        "DNSPortId": "fCGFTID.header.dNS.portId-51",
+        "FcCRCAutoCRC": "fCGFTID.header.fcCRC.autoCRC-52",
+        "FcCRCGenerateBadCRC": "fCGFTID.header.fcCRC.generateBadCRC-53",
+        "FcTrailerEof": "fCGFTID.header.fcTrailer.eof-54",
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,7 +74,8 @@ class FCGFTID(Base):
         Available enum values: SOFf - Fabric, 3166001232, SOFi4 - Initiate Class 4, 3166001497, SOFi2 - Initiate Class 2, 3166000469, SOFi3 - Initiate Class 3, 3166000726, SOFn4 - Normal Class 4, 3165993273, SOFn2 - Normal Class 2, 3165992245, SOFn3 - Normal Class 3, 3165992502, SOFc4 - Connect Class 4, 3165985049, SOFn1 - Normal Class 1 or 6, 3165992759
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSof']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSof"]))
 
     @property
     def DeviceDataFramesDeviceDataInfo(self):
@@ -85,7 +86,11 @@ class FCGFTID(Base):
         Available enum values: Uncategorized Information, 0, Solicited Data, 1, Unsolicited Control, 2, Solicited Control, 3, Unsolicited Data, 4, Data Descriptor, 5, Unsolicited Command, 6, Command Status, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeviceDataFramesDeviceDataInfo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["DeviceDataFramesDeviceDataInfo"]),
+        )
 
     @property
     def RCTLReserved(self):
@@ -95,7 +100,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RCTLReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RCTLReserved"]))
 
     @property
     def ExtendedLinkServicesInfo(self):
@@ -106,7 +112,10 @@ class FCGFTID(Base):
         Available enum values: Solicited Data, 32, Request, 33, Reply, 34
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedLinkServicesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedLinkServicesInfo"])
+        )
 
     @property
     def Fc4LinkDataInfo(self):
@@ -117,7 +126,10 @@ class FCGFTID(Base):
         Available enum values: Uncategorized Information, 48, Solicited Data, 49, Unsolicited Control, 50, Solicited Control, 51, Unsolicited Data, 52, Data Descriptor, 53, Unsolicited Command, 54, Command Status, 55
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Fc4LinkDataInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Fc4LinkDataInfo"])
+        )
 
     @property
     def VideoDataInfo(self):
@@ -128,7 +140,8 @@ class FCGFTID(Base):
         Available enum values: Unsolicited Data, 68
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VideoDataInfo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VideoDataInfo"]))
 
     @property
     def ExtendedHeaderInfo(self):
@@ -139,7 +152,10 @@ class FCGFTID(Base):
         Available enum values: Virtual Fabric Tagging Header, 80, Inter Fabric Routing Header, 81, Encapsulation Header, 82
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedHeaderInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedHeaderInfo"])
+        )
 
     @property
     def BasicLinkServicesInfo(self):
@@ -150,7 +166,10 @@ class FCGFTID(Base):
         Available enum values: No Operation, 128, Abort Sequence, 129, Remove Connection, 130, Basic Accept, 132, Basic Reject, 133, Dedicated Connection Preempted, 134
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BasicLinkServicesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BasicLinkServicesInfo"])
+        )
 
     @property
     def LinkControlFramesInfo(self):
@@ -161,7 +180,10 @@ class FCGFTID(Base):
         Available enum values: Acknowledge_1, 128, Acknowledge_0, 129, Nx Port Reject, 130, Fabric Reject, 131, Nx Port Busy, 132, Fabric Busy to Data Frame, 133, Fabric Busy to Link Control Frame, 134, Link Credit Reset, 135, Notify, 136, End, 137
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkControlFramesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkControlFramesInfo"])
+        )
 
     @property
     def ExtendedRoutingInfo(self):
@@ -172,7 +194,10 @@ class FCGFTID(Base):
         Available enum values: Vendor Unique, 240
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedRoutingInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedRoutingInfo"])
+        )
 
     @property
     def FcHeaderDstId(self):
@@ -182,7 +207,8 @@ class FCGFTID(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDstId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDstId"]))
 
     @property
     def FcHeaderCsCTLPriority(self):
@@ -192,7 +218,10 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderCsCTLPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderCsCTLPriority"])
+        )
 
     @property
     def FcHeaderSrcId(self):
@@ -202,7 +231,8 @@ class FCGFTID(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSrcId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSrcId"]))
 
     @property
     def FcHeaderType(self):
@@ -212,7 +242,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderType"]))
 
     @property
     def FCTLCustom(self):
@@ -222,7 +253,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCTLCustom']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCTLCustom"]))
 
     @property
     def BuildFCTLExchangeContext(self):
@@ -233,7 +265,10 @@ class FCGFTID(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeContext"])
+        )
 
     @property
     def BuildFCTLSequenceContext(self):
@@ -244,7 +279,10 @@ class FCGFTID(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceContext"])
+        )
 
     @property
     def BuildFCTLFirstSequence(self):
@@ -255,7 +293,10 @@ class FCGFTID(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFirstSequence"])
+        )
 
     @property
     def BuildFCTLLastSequence(self):
@@ -266,7 +307,10 @@ class FCGFTID(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLLastSequence"])
+        )
 
     @property
     def BuildFCTLEndSequence(self):
@@ -277,7 +321,10 @@ class FCGFTID(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndSequence"])
+        )
 
     @property
     def BuildFCTLEndConnection(self):
@@ -288,7 +335,10 @@ class FCGFTID(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndConnection"])
+        )
 
     @property
     def BuildFCTLCsCTLPriority(self):
@@ -299,7 +349,10 @@ class FCGFTID(Base):
         Available enum values: CS_CTL, 0, Priority, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLCsCTLPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLCsCTLPriority"])
+        )
 
     @property
     def BuildFCTLSequenceInitiative(self):
@@ -310,7 +363,10 @@ class FCGFTID(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceInitiative"])
+        )
 
     @property
     def BuildFCTLFcXIDReassigned(self):
@@ -321,7 +377,10 @@ class FCGFTID(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcXIDReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcXIDReassigned"])
+        )
 
     @property
     def BuildFCTLFcInvalidateXID(self):
@@ -332,7 +391,10 @@ class FCGFTID(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcInvalidateXID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcInvalidateXID"])
+        )
 
     @property
     def BuildFCTLAckForm(self):
@@ -343,7 +405,10 @@ class FCGFTID(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAckForm']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAckForm"])
+        )
 
     @property
     def BuildFCTLFcDataCompression(self):
@@ -354,7 +419,10 @@ class FCGFTID(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataCompression"])
+        )
 
     @property
     def BuildFCTLFcDataEncryption(self):
@@ -365,7 +433,10 @@ class FCGFTID(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataEncryption"])
+        )
 
     @property
     def BuildFCTLRetransmittedSequence(self):
@@ -376,7 +447,11 @@ class FCGFTID(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRetransmittedSequence']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRetransmittedSequence"]),
+        )
 
     @property
     def BuildFCTLUnidirectionalTransmit(self):
@@ -387,7 +462,11 @@ class FCGFTID(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLUnidirectionalTransmit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLUnidirectionalTransmit"]),
+        )
 
     @property
     def BuildFCTLContinueSeqCondition(self):
@@ -398,7 +477,11 @@ class FCGFTID(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLContinueSeqCondition']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLContinueSeqCondition"]),
+        )
 
     @property
     def BuildFCTLAbortSeqCondition(self):
@@ -409,7 +492,10 @@ class FCGFTID(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAbortSeqCondition"])
+        )
 
     @property
     def BuildFCTLRelativeOffsetPresent(self):
@@ -420,7 +506,11 @@ class FCGFTID(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRelativeOffsetPresent']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRelativeOffsetPresent"]),
+        )
 
     @property
     def BuildFCTLExchangeReassembly(self):
@@ -431,7 +521,10 @@ class FCGFTID(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeReassembly"])
+        )
 
     @property
     def BuildFCTLFillBytes(self):
@@ -442,7 +535,10 @@ class FCGFTID(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFillBytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFillBytes"])
+        )
 
     @property
     def FcHeaderSeqID(self):
@@ -452,7 +548,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqID"]))
 
     @property
     def FcHeaderDfCTL(self):
@@ -462,7 +559,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderDfCTL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderDfCTL"]))
 
     @property
     def FcHeaderSeqCNT(self):
@@ -472,7 +570,10 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderSeqCNT']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderSeqCNT"])
+        )
 
     @property
     def FcHeaderOxID(self):
@@ -482,7 +583,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderOxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderOxID"]))
 
     @property
     def FcHeaderRxID(self):
@@ -492,7 +594,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderRxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderRxID"]))
 
     @property
     def FcHeaderParameter(self):
@@ -502,7 +605,10 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcHeaderParameter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcHeaderParameter"])
+        )
 
     @property
     def FcCTRevision(self):
@@ -512,7 +618,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTRevision']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTRevision"]))
 
     @property
     def FcCTInId(self):
@@ -522,7 +629,8 @@ class FCGFTID(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTInId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTInId"]))
 
     @property
     def FcCTGsType(self):
@@ -533,7 +641,8 @@ class FCGFTID(Base):
         Available enum values: Event Service, 244, Key Distribution Service, 247, Alias Service, 248, Management Service, 250, Time Service, 251, Directory Service, 252
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTGsType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTGsType"]))
 
     @property
     def FcCTGsSubtype(self):
@@ -544,7 +653,8 @@ class FCGFTID(Base):
         Available enum values: X.500 Server (Obsolete), 1, Name Server, 2, IP Address Server (Obsolete), 3, FC-4 specific Servers, 128
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTGsSubtype']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTGsSubtype"]))
 
     @property
     def FcCTOptions(self):
@@ -554,7 +664,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTOptions']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTOptions"]))
 
     @property
     def FcCTReserved(self):
@@ -564,7 +675,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCTReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCTReserved"]))
 
     @property
     def DNSOpcode(self):
@@ -575,7 +687,8 @@ class FCGFTID(Base):
         Available enum values: GA_NXT, 256, GID_A, 257, GPN_ID, 274, GNN_ID, 275, GCS_ID, 276, GFT_ID, 279, GSPN_ID, 280, GPT_ID, 282, GIPP_ID, 283, GFPN_ID, 284, GHA_ID, 285, GFD_ID, 286, GFF_ID, 287, GID_PN, 289, GIPP_PN, 299, GID_NN, 305, GPN_NN, 306, GIP_NN, 309, GIPA_NN, 310, GSNN_NN, 313, GNN_IP, 339, GIPA_IP, 342, GID_FT, 369, GPN_FT, 370, GNN_FT, 371, GNN_FF, 384, GPN_FF, 385, GPN_SDFCP, 386, GID_PT, 417, GID_IPP, 433, GPN_IPP, 434, GID_FPN, 449, GPPN_ID, 465, GID_FF, 497, GID_DP, 498, RPN_ID, 530, RNN_ID, 531, RCS_ID, 532, RFT_ID, 535, RSPN_ID, 536, RPT_ID, 538, RIPP_ID, 539, RHA_ID, 541, RFD_ID, 542, RFF_ID, 543, RIP_NN, 565, RIPA_NN, 566, RSNN_NN, 569, DA_ID, 768, SSB, 32761, SSE, 32762
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DNSOpcode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DNSOpcode"]))
 
     @property
     def DNSMaxsize(self):
@@ -585,7 +698,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DNSMaxsize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DNSMaxsize"]))
 
     @property
     def DNSReserved(self):
@@ -595,7 +709,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DNSReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DNSReserved"]))
 
     @property
     def DNSPortId(self):
@@ -605,7 +720,8 @@ class FCGFTID(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DNSPortId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DNSPortId"]))
 
     @property
     def FcCRCAutoCRC(self):
@@ -615,7 +731,8 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCRCAutoCRC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcCRCAutoCRC"]))
 
     @property
     def FcCRCGenerateBadCRC(self):
@@ -625,7 +742,10 @@ class FCGFTID(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcCRCGenerateBadCRC']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FcCRCGenerateBadCRC"])
+        )
 
     @property
     def FcTrailerEof(self):
@@ -636,7 +756,8 @@ class FCGFTID(Base):
         Available enum values: EOFn - Normal, 3166033365, EOFt - Terminate, 3166008693, EOFrt - Remove Terminate, 3166017945, EOFni - Normal Invalid, 3165312469, EOFrti - Remove Terminate Invalid, 3165297049, EOFa - Abort, 3166041589
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FcTrailerEof']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcTrailerEof"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

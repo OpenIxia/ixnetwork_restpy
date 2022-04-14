@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class LearnedRouteIpv6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedRouteIpv6'
+    _SDM_NAME = "learnedRouteIpv6"
     _SDM_ATT_MAP = {
-        'AsPath': 'asPath',
-        'BlockOffset': 'blockOffset',
-        'BlockSize': 'blockSize',
-        'ControlWordEnabled': 'controlWordEnabled',
-        'IpPrefix': 'ipPrefix',
-        'LabelBase': 'labelBase',
-        'LocalPreference': 'localPreference',
-        'MaxLabel': 'maxLabel',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Neighbor': 'neighbor',
-        'NextHop': 'nextHop',
-        'OriginType': 'originType',
-        'PrefixLength': 'prefixLength',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'SeqDeliveryEnabled': 'seqDeliveryEnabled',
-        'SiteId': 'siteId',
+        "AsPath": "asPath",
+        "BlockOffset": "blockOffset",
+        "BlockSize": "blockSize",
+        "ControlWordEnabled": "controlWordEnabled",
+        "IpPrefix": "ipPrefix",
+        "LabelBase": "labelBase",
+        "LocalPreference": "localPreference",
+        "MaxLabel": "maxLabel",
+        "MultiExitDiscriminator": "multiExitDiscriminator",
+        "Neighbor": "neighbor",
+        "NextHop": "nextHop",
+        "OriginType": "originType",
+        "PrefixLength": "prefixLength",
+        "RouteDistinguisher": "routeDistinguisher",
+        "SeqDeliveryEnabled": "seqDeliveryEnabled",
+        "SiteId": "siteId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedRouteIpv6, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPath"])
 
     @property
     def BlockOffset(self):
@@ -76,7 +76,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BlockOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BlockOffset"])
 
     @property
     def BlockSize(self):
@@ -86,7 +86,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BlockSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BlockSize"])
 
     @property
     def ControlWordEnabled(self):
@@ -96,7 +96,7 @@ class LearnedRouteIpv6(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlWordEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlWordEnabled"])
 
     @property
     def IpPrefix(self):
@@ -106,7 +106,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
 
     @property
     def LabelBase(self):
@@ -116,7 +116,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelBase'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelBase"])
 
     @property
     def LocalPreference(self):
@@ -126,7 +126,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPreference"])
 
     @property
     def MaxLabel(self):
@@ -136,7 +136,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLabel"])
 
     @property
     def MultiExitDiscriminator(self):
@@ -146,7 +146,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MultiExitDiscriminator'])
+        return self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
 
     @property
     def Neighbor(self):
@@ -156,7 +156,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def NextHop(self):
@@ -166,7 +166,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     @property
     def OriginType(self):
@@ -176,7 +176,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginType"])
 
     @property
     def PrefixLength(self):
@@ -186,7 +186,7 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
 
     @property
     def RouteDistinguisher(self):
@@ -196,7 +196,7 @@ class LearnedRouteIpv6(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisher'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteDistinguisher"])
 
     @property
     def SeqDeliveryEnabled(self):
@@ -206,7 +206,7 @@ class LearnedRouteIpv6(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SeqDeliveryEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["SeqDeliveryEnabled"])
 
     @property
     def SiteId(self):
@@ -216,10 +216,10 @@ class LearnedRouteIpv6(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SiteId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SiteId"])
 
     def add(self):
-        """Adds a new learnedRouteIpv6 resource on the json, only valid with config assistant
+        """Adds a new learnedRouteIpv6 resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class LearnedRouteIpv6(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AsPath=None, BlockOffset=None, BlockSize=None, ControlWordEnabled=None, IpPrefix=None, LabelBase=None, LocalPreference=None, MaxLabel=None, MultiExitDiscriminator=None, Neighbor=None, NextHop=None, OriginType=None, PrefixLength=None, RouteDistinguisher=None, SeqDeliveryEnabled=None, SiteId=None):
+    def find(
+        self,
+        AsPath=None,
+        BlockOffset=None,
+        BlockSize=None,
+        ControlWordEnabled=None,
+        IpPrefix=None,
+        LabelBase=None,
+        LocalPreference=None,
+        MaxLabel=None,
+        MultiExitDiscriminator=None,
+        Neighbor=None,
+        NextHop=None,
+        OriginType=None,
+        PrefixLength=None,
+        RouteDistinguisher=None,
+        SeqDeliveryEnabled=None,
+        SiteId=None,
+    ):
         # type: (str, int, int, bool, str, int, int, int, int, str, str, str, int, str, bool, int) -> LearnedRouteIpv6
         """Finds and retrieves learnedRouteIpv6 resources from the server.
 

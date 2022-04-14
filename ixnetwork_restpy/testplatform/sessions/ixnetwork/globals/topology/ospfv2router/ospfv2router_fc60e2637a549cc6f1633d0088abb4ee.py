@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,28 +34,27 @@ class Ospfv2Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv2Router'
+    _SDM_NAME = "ospfv2Router"
     _SDM_ATT_MAP = {
-        'AppSpecLinkAttrSubTlvType': 'appSpecLinkAttrSubTlvType',
-        'BierMplsEncapSubTlvType': 'bierMplsEncapSubTlvType',
-        'BierSubTlvType': 'bierSubTlvType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableDrBdr': 'enableDrBdr',
-        'FaEagSubTlvType': 'faEagSubTlvType',
-        'FadSubTlvType': 'fadSubTlvType',
-        'FadfSubTlvType': 'fadfSubTlvType',
-        'FaeSrlgSubTlvType': 'faeSrlgSubTlvType',
-        'FaiAllAgSubTlvType': 'faiAllAgSubTlvType',
-        'FaiAnyAgSubTlvType': 'faiAnyAgSubTlvType',
-        'FapmPrefixMetricSubTlvType': 'fapmPrefixMetricSubTlvType',
-        'FloodLsUpdatesPerInterval': 'floodLsUpdatesPerInterval',
-        'Name': 'name',
-        'RateControlInterval': 'rateControlInterval',
-        'RowNames': 'rowNames',
+        "AppSpecLinkAttrSubTlvType": "appSpecLinkAttrSubTlvType",
+        "BierMplsEncapSubTlvType": "bierMplsEncapSubTlvType",
+        "BierSubTlvType": "bierSubTlvType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableDrBdr": "enableDrBdr",
+        "FaEagSubTlvType": "faEagSubTlvType",
+        "FadSubTlvType": "fadSubTlvType",
+        "FadfSubTlvType": "fadfSubTlvType",
+        "FaeSrlgSubTlvType": "faeSrlgSubTlvType",
+        "FaiAllAgSubTlvType": "faiAllAgSubTlvType",
+        "FaiAnyAgSubTlvType": "faiAnyAgSubTlvType",
+        "FapmPrefixMetricSubTlvType": "fapmPrefixMetricSubTlvType",
+        "FloodLsUpdatesPerInterval": "floodLsUpdatesPerInterval",
+        "Name": "name",
+        "RateControlInterval": "rateControlInterval",
+        "RowNames": "rowNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv2Router, self).__init__(parent, list_op)
@@ -70,10 +70,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -87,10 +90,13 @@ class Ospfv2Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -102,7 +108,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): App Specific Link Attr Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AppSpecLinkAttrSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AppSpecLinkAttrSubTlvType"])
+        )
 
     @property
     def BierMplsEncapSubTlvType(self):
@@ -113,7 +122,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BIER MPLS Encapsulation Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BierMplsEncapSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BierMplsEncapSubTlvType"])
+        )
 
     @property
     def BierSubTlvType(self):
@@ -124,7 +136,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BIER Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BierSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BierSubTlvType"])
+        )
 
     @property
     def Count(self):
@@ -134,7 +149,7 @@ class Ospfv2Router(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -144,7 +159,7 @@ class Ospfv2Router(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableDrBdr(self):
@@ -155,7 +170,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable DR/BDR
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDrBdr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableDrBdr"]))
 
     @property
     def FaEagSubTlvType(self):
@@ -166,7 +182,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAEAG Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaEagSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FaEagSubTlvType"])
+        )
 
     @property
     def FadSubTlvType(self):
@@ -177,7 +196,8 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAD Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FadSubTlvType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FadSubTlvType"]))
 
     @property
     def FadfSubTlvType(self):
@@ -188,7 +208,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FADF Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FadfSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FadfSubTlvType"])
+        )
 
     @property
     def FaeSrlgSubTlvType(self):
@@ -199,7 +222,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAESRLG Sub-TLV type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaeSrlgSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FaeSrlgSubTlvType"])
+        )
 
     @property
     def FaiAllAgSubTlvType(self):
@@ -210,7 +236,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAIAllAG Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaiAllAgSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FaiAllAgSubTlvType"])
+        )
 
     @property
     def FaiAnyAgSubTlvType(self):
@@ -221,7 +250,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAIAnyAG Sub-TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FaiAnyAgSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FaiAnyAgSubTlvType"])
+        )
 
     @property
     def FapmPrefixMetricSubTlvType(self):
@@ -232,7 +264,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAPM Prefix Metric Sub-TLV type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FapmPrefixMetricSubTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FapmPrefixMetricSubTlvType"])
+        )
 
     @property
     def FloodLsUpdatesPerInterval(self):
@@ -243,7 +278,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flood Link State Updates per Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FloodLsUpdatesPerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FloodLsUpdatesPerInterval"])
+        )
 
     @property
     def Name(self):
@@ -253,11 +291,12 @@ class Ospfv2Router(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RateControlInterval(self):
@@ -268,7 +307,10 @@ class Ospfv2Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Rate Control Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RateControlInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RateControlInterval"])
+        )
 
     @property
     def RowNames(self):
@@ -278,7 +320,7 @@ class Ospfv2Router(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     def update(self, Name=None):
         # type: (str) -> Ospfv2Router
@@ -299,7 +341,7 @@ class Ospfv2Router(Base):
 
     def add(self, Name=None):
         # type: (str) -> Ospfv2Router
-        """Adds a new ospfv2Router resource on the json, only valid with config assistant
+        """Adds a new ospfv2Router resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -358,7 +400,23 @@ class Ospfv2Router(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AppSpecLinkAttrSubTlvType=None, BierMplsEncapSubTlvType=None, BierSubTlvType=None, EnableDrBdr=None, FaEagSubTlvType=None, FadSubTlvType=None, FadfSubTlvType=None, FaeSrlgSubTlvType=None, FaiAllAgSubTlvType=None, FaiAnyAgSubTlvType=None, FapmPrefixMetricSubTlvType=None, FloodLsUpdatesPerInterval=None, RateControlInterval=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AppSpecLinkAttrSubTlvType=None,
+        BierMplsEncapSubTlvType=None,
+        BierSubTlvType=None,
+        EnableDrBdr=None,
+        FaEagSubTlvType=None,
+        FadSubTlvType=None,
+        FadfSubTlvType=None,
+        FaeSrlgSubTlvType=None,
+        FaiAllAgSubTlvType=None,
+        FaiAnyAgSubTlvType=None,
+        FapmPrefixMetricSubTlvType=None,
+        FloodLsUpdatesPerInterval=None,
+        RateControlInterval=None,
+    ):
         """Base class infrastructure that gets a list of ospfv2Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -479,7 +479,7 @@ class IsisL3Router(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisL3Router
-        """Adds a new isisL3Router resource on the json, only valid with config assistant
+        """Adds a new isisL3Router resource on the json, only valid with batch add utility
 
         Args
         ----

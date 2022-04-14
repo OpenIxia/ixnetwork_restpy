@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class SourcePacketHeader(Base):
     __slots__ = ()
-    _SDM_NAME = 'sourcePacketHeader'
+    _SDM_NAME = "sourcePacketHeader"
     _SDM_ATT_MAP = {
-        'HeaderReserved': 'sourcePacketHeader.header.reserved-1',
-        'HeaderCycleCount': 'sourcePacketHeader.header.cycleCount-2',
-        'HeaderCycleOffset': 'sourcePacketHeader.header.cycleOffset-3',
-        'HeaderTSP': 'sourcePacketHeader.header.tSP-4',
+        "HeaderReserved": "sourcePacketHeader.header.reserved-1",
+        "HeaderCycleCount": "sourcePacketHeader.header.cycleCount-2",
+        "HeaderCycleOffset": "sourcePacketHeader.header.cycleOffset-3",
+        "HeaderTSP": "sourcePacketHeader.header.tSP-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class SourcePacketHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderCycleCount(self):
@@ -33,7 +36,10 @@ class SourcePacketHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCycleCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCycleCount"])
+        )
 
     @property
     def HeaderCycleOffset(self):
@@ -43,7 +49,10 @@ class SourcePacketHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCycleOffset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderCycleOffset"])
+        )
 
     @property
     def HeaderTSP(self):
@@ -53,7 +62,8 @@ class SourcePacketHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderTSP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderTSP"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

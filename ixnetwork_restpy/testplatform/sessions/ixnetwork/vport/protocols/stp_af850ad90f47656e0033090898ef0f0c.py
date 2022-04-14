@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,13 @@ class Stp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'stp'
+    _SDM_NAME = "stp"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'RunningState': 'runningState',
+        "Enabled": "enabled",
+        "RunningState": "runningState",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,10 +56,13 @@ class Stp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_f5eb213292554c87fbba0896618d8189 import Bridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_f5eb213292554c87fbba0896618d8189 import (
+            Bridge,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bridge', None) is not None:
-                return self._properties.get('Bridge')
+            if self._properties.get("Bridge", None) is not None:
+                return self._properties.get("Bridge")
         return Bridge(self)
 
     @property
@@ -72,10 +76,13 @@ class Stp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_7e56cbddd866444e811691cca31f325e import Lan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_7e56cbddd866444e811691cca31f325e import (
+            Lan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lan', None) is not None:
-                return self._properties.get('Lan')
+            if self._properties.get("Lan", None) is not None:
+                return self._properties.get("Lan")
         return Lan(self)
 
     @property
@@ -86,11 +93,12 @@ class Stp(Base):
         -------
         - bool: Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RunningState(self):
@@ -100,7 +108,7 @@ class Stp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the STP server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     def update(self, Enabled=None):
         # type: (bool) -> Stp
@@ -172,10 +180,12 @@ class Stp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -192,7 +202,9 @@ class Stp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

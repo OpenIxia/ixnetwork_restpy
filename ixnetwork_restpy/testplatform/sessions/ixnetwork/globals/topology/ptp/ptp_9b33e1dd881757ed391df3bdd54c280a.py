@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class Ptp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ptp'
+    _SDM_NAME = "ptp"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'HopLimit': 'hopLimit',
-        'Name': 'name',
-        'RowNames': 'rowNames',
-        'Timestamps': 'timestamps',
-        'Tos': 'tos',
-        'TrafficClass': 'trafficClass',
-        'Ttl': 'ttl',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "HopLimit": "hopLimit",
+        "Name": "name",
+        "RowNames": "rowNames",
+        "Timestamps": "timestamps",
+        "Tos": "tos",
+        "TrafficClass": "trafficClass",
+        "Ttl": "ttl",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ptp, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class Ptp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -78,10 +81,13 @@ class Ptp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -92,7 +98,7 @@ class Ptp(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -102,7 +108,7 @@ class Ptp(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def HopLimit(self):
@@ -113,7 +119,8 @@ class Ptp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hop Limit set for PTP packets over IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HopLimit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HopLimit"]))
 
     @property
     def Name(self):
@@ -123,11 +130,12 @@ class Ptp(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RowNames(self):
@@ -137,7 +145,7 @@ class Ptp(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def Timestamps(self):
@@ -148,7 +156,8 @@ class Ptp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use PTP UTC timestamps, PTC Local Clock timestamps or Traffic engine timestamps
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Timestamps']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Timestamps"]))
 
     @property
     def Tos(self):
@@ -159,7 +168,8 @@ class Ptp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TOS/DSCP set for PTP packets over IPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tos']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tos"]))
 
     @property
     def TrafficClass(self):
@@ -170,7 +180,8 @@ class Ptp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Class set for PTP packets over IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficClass']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TrafficClass"]))
 
     @property
     def Ttl(self):
@@ -181,7 +192,8 @@ class Ptp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TTL set for PTP packets over IPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ttl"]))
 
     def update(self, Name=None):
         # type: (str) -> Ptp
@@ -243,7 +255,15 @@ class Ptp(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, HopLimit=None, Timestamps=None, Tos=None, TrafficClass=None, Ttl=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        HopLimit=None,
+        Timestamps=None,
+        Tos=None,
+        TrafficClass=None,
+        Ttl=None,
+    ):
         """Base class infrastructure that gets a list of ptp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,20 @@ class RouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeRange'
+    _SDM_NAME = "routeRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'IsRedistributed': 'isRedistributed',
-        'MaskWidth': 'maskWidth',
-        'Metric': 'metric',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'RouteOrigin': 'routeOrigin',
-        'Step': 'step',
-        'Type': 'type',
+        "Enabled": "enabled",
+        "FirstRoute": "firstRoute",
+        "IsRedistributed": "isRedistributed",
+        "MaskWidth": "maskWidth",
+        "Metric": "metric",
+        "NumberOfRoutes": "numberOfRoutes",
+        "RouteOrigin": "routeOrigin",
+        "Step": "step",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['ipAny', 'ipv4', 'ipv6'],
+        "type": ["ipAny", "ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,11 +62,12 @@ class RouteRange(Base):
         -------
         - bool: Enables the use of this route range for the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstRoute(self):
@@ -75,11 +77,12 @@ class RouteRange(Base):
         -------
         - str: The first route of the route range, in IPv4 dotted decimal format. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstRoute"])
+
     @FirstRoute.setter
     def FirstRoute(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstRoute"], value)
 
     @property
     def IsRedistributed(self):
@@ -89,11 +92,12 @@ class RouteRange(Base):
         -------
         - bool: Sets the Up/Down (Redistribution) bit defined for TLVs 128 and 130 by RFC 2966. It is used for domain-wide advertisement of prefix information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRedistributed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRedistributed"])
+
     @IsRedistributed.setter
     def IsRedistributed(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRedistributed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRedistributed"], value)
 
     @property
     def MaskWidth(self):
@@ -103,11 +107,12 @@ class RouteRange(Base):
         -------
         - number: The network mask width for the route range (in bits). The valid range is from 0 to 32 bits. (default = 24)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     @property
     def Metric(self):
@@ -117,11 +122,12 @@ class RouteRange(Base):
         -------
         - number: The user-defined metric associated with this route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -131,11 +137,12 @@ class RouteRange(Base):
         -------
         - number: The number of routes to be generated for this route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def RouteOrigin(self):
@@ -145,11 +152,12 @@ class RouteRange(Base):
         -------
         - bool: The origin of the advertised route - internal or external to the ISIS area.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteOrigin'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteOrigin"])
+
     @RouteOrigin.setter
     def RouteOrigin(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteOrigin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteOrigin"], value)
 
     @property
     def Step(self):
@@ -157,9 +165,9 @@ class RouteRange(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
 
     @property
     def Type(self):
@@ -169,13 +177,24 @@ class RouteRange(Base):
         -------
         - str(ipAny | ipv4 | ipv6): The IP type of the route range for the ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, Enabled=None, FirstRoute=None, IsRedistributed=None, MaskWidth=None, Metric=None, NumberOfRoutes=None, RouteOrigin=None, Type=None):
+    def update(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        IsRedistributed=None,
+        MaskWidth=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        RouteOrigin=None,
+        Type=None,
+    ):
         # type: (bool, str, bool, int, int, int, bool, str) -> RouteRange
         """Updates routeRange resource on the server.
 
@@ -196,7 +215,17 @@ class RouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, FirstRoute=None, IsRedistributed=None, MaskWidth=None, Metric=None, NumberOfRoutes=None, RouteOrigin=None, Type=None):
+    def add(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        IsRedistributed=None,
+        MaskWidth=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        RouteOrigin=None,
+        Type=None,
+    ):
         # type: (bool, str, bool, int, int, int, bool, str) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
@@ -231,7 +260,18 @@ class RouteRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, FirstRoute=None, IsRedistributed=None, MaskWidth=None, Metric=None, NumberOfRoutes=None, RouteOrigin=None, Step=None, Type=None):
+    def find(
+        self,
+        Enabled=None,
+        FirstRoute=None,
+        IsRedistributed=None,
+        MaskWidth=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        RouteOrigin=None,
+        Step=None,
+        Type=None,
+    ):
         # type: (bool, str, bool, int, int, int, bool, int, str) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 
@@ -248,7 +288,7 @@ class RouteRange(Base):
         - Metric (number): The user-defined metric associated with this route range.
         - NumberOfRoutes (number): The number of routes to be generated for this route range.
         - RouteOrigin (bool): The origin of the advertised route - internal or external to the ISIS area.
-        - Step (number): 
+        - Step (number):
         - Type (str(ipAny | ipv4 | ipv6)): The IP type of the route range for the ISIS router.
 
         Returns

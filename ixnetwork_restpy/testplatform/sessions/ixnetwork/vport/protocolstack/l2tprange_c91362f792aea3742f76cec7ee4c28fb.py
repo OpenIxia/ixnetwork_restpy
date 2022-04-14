@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,105 +33,104 @@ class L2tpRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2tpRange'
+    _SDM_NAME = "l2tpRange"
     _SDM_ATT_MAP = {
-        'AuthOptions': 'authOptions',
-        'AuthRetries': 'authRetries',
-        'AuthTimeout': 'authTimeout',
-        'AuthType': 'authType',
-        'BaseLnsIp': 'baseLnsIp',
-        'BasicOptions': 'basicOptions',
-        'BearerCapability': 'bearerCapability',
-        'BearerType': 'bearerType',
-        'ChapName': 'chapName',
-        'ChapSecret': 'chapSecret',
-        'ClientBaseIid': 'clientBaseIid',
-        'ClientBaseIp': 'clientBaseIp',
-        'ClientDnsOptions': 'clientDnsOptions',
-        'ClientIidIncr': 'clientIidIncr',
-        'ClientIpIncr': 'clientIpIncr',
-        'ClientNetmask': 'clientNetmask',
-        'ClientNetmaskOptions': 'clientNetmaskOptions',
-        'ClientPrimaryDnsAddress': 'clientPrimaryDnsAddress',
-        'ClientSecondaryDnsAddress': 'clientSecondaryDnsAddress',
-        'ControlMsgsRetryCounter': 'controlMsgsRetryCounter',
-        'ControlPlaneOptions': 'controlPlaneOptions',
-        'DataPlaneOptions': 'dataPlaneOptions',
-        'DnsServerList': 'dnsServerList',
-        'DomainList': 'domainList',
-        'DomainToIpList': 'domainToIpList',
-        'EchoReqInterval': 'echoReqInterval',
-        'EnableControlChecksum': 'enableControlChecksum',
-        'EnableDataChecksum': 'enableDataChecksum',
-        'EnableDnsRa': 'enableDnsRa',
-        'EnableDomainGroups': 'enableDomainGroups',
-        'EnableEchoReq': 'enableEchoReq',
-        'EnableEchoRsp': 'enableEchoRsp',
-        'EnableHelloRequest': 'enableHelloRequest',
-        'EnableMru': 'enableMru',
-        'EnablePasswordCheck': 'enablePasswordCheck',
-        'EnableRedial': 'enableRedial',
-        'Enabled': 'enabled',
-        'FramingCapability': 'framingCapability',
-        'HelloRequestInterval': 'helloRequestInterval',
-        'IncrementBy': 'incrementBy',
-        'InitRetransmitInterval': 'initRetransmitInterval',
-        'IpIncrementOctet': 'ipIncrementOctet',
-        'Ipv6AddrPrefixLen': 'ipv6AddrPrefixLen',
-        'Ipv6PoolPrefix': 'ipv6PoolPrefix',
-        'Ipv6PoolPrefixLen': 'ipv6PoolPrefixLen',
-        'L2tpAuthOptions': 'l2tpAuthOptions',
-        'LacHostName': 'lacHostName',
-        'LacSecret': 'lacSecret',
-        'LacToLnsMapping': 'lacToLnsMapping',
-        'LcpOptions': 'lcpOptions',
-        'LcpRetries': 'lcpRetries',
-        'LcpTermRetries': 'lcpTermRetries',
-        'LcpTermTimeout': 'lcpTermTimeout',
-        'LcpTimeout': 'lcpTimeout',
-        'LnsHostName': 'lnsHostName',
-        'LnsIpList': 'lnsIpList',
-        'LnsIpNumber': 'lnsIpNumber',
-        'MaxRedialAttempts': 'maxRedialAttempts',
-        'MaxRetransmitInterval': 'maxRetransmitInterval',
-        'Mtu': 'mtu',
-        'Name': 'name',
-        'NcpRetries': 'ncpRetries',
-        'NcpTimeout': 'ncpTimeout',
-        'NcpType': 'ncpType',
-        'NoCallTimeout': 'noCallTimeout',
-        'NumSessions': 'numSessions',
-        'ObjectId': 'objectId',
-        'OffsetByte': 'offsetByte',
-        'OffsetLength': 'offsetLength',
-        'PapPassword': 'papPassword',
-        'PapUser': 'papUser',
-        'ReceiveWindowSize': 'receiveWindowSize',
-        'RedialInterval': 'redialInterval',
-        'ServerBaseIid': 'serverBaseIid',
-        'ServerBaseIp': 'serverBaseIp',
-        'ServerDnsOptions': 'serverDnsOptions',
-        'ServerIidIncr': 'serverIidIncr',
-        'ServerIpIncr': 'serverIpIncr',
-        'ServerNetmask': 'serverNetmask',
-        'ServerNetmaskOptions': 'serverNetmaskOptions',
-        'ServerPrimaryDnsAddress': 'serverPrimaryDnsAddress',
-        'ServerSecondaryDnsAddress': 'serverSecondaryDnsAddress',
-        'SessionAllocMethod': 'sessionAllocMethod',
-        'SessionsPerTunnel': 'sessionsPerTunnel',
-        'TunnelAuthentication': 'tunnelAuthentication',
-        'TunnelDestinationIp': 'tunnelDestinationIp',
-        'TunnelIncrementBy': 'tunnelIncrementBy',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
-        'UseHiddenAvps': 'useHiddenAvps',
-        'UseLengthBitInPayload': 'useLengthBitInPayload',
-        'UseMagic': 'useMagic',
-        'UseOffsetBitInPayload': 'useOffsetBitInPayload',
-        'UseSequenceNoInPayload': 'useSequenceNoInPayload',
+        "AuthOptions": "authOptions",
+        "AuthRetries": "authRetries",
+        "AuthTimeout": "authTimeout",
+        "AuthType": "authType",
+        "BaseLnsIp": "baseLnsIp",
+        "BasicOptions": "basicOptions",
+        "BearerCapability": "bearerCapability",
+        "BearerType": "bearerType",
+        "ChapName": "chapName",
+        "ChapSecret": "chapSecret",
+        "ClientBaseIid": "clientBaseIid",
+        "ClientBaseIp": "clientBaseIp",
+        "ClientDnsOptions": "clientDnsOptions",
+        "ClientIidIncr": "clientIidIncr",
+        "ClientIpIncr": "clientIpIncr",
+        "ClientNetmask": "clientNetmask",
+        "ClientNetmaskOptions": "clientNetmaskOptions",
+        "ClientPrimaryDnsAddress": "clientPrimaryDnsAddress",
+        "ClientSecondaryDnsAddress": "clientSecondaryDnsAddress",
+        "ControlMsgsRetryCounter": "controlMsgsRetryCounter",
+        "ControlPlaneOptions": "controlPlaneOptions",
+        "DataPlaneOptions": "dataPlaneOptions",
+        "DnsServerList": "dnsServerList",
+        "DomainList": "domainList",
+        "DomainToIpList": "domainToIpList",
+        "EchoReqInterval": "echoReqInterval",
+        "EnableControlChecksum": "enableControlChecksum",
+        "EnableDataChecksum": "enableDataChecksum",
+        "EnableDnsRa": "enableDnsRa",
+        "EnableDomainGroups": "enableDomainGroups",
+        "EnableEchoReq": "enableEchoReq",
+        "EnableEchoRsp": "enableEchoRsp",
+        "EnableHelloRequest": "enableHelloRequest",
+        "EnableMru": "enableMru",
+        "EnablePasswordCheck": "enablePasswordCheck",
+        "EnableRedial": "enableRedial",
+        "Enabled": "enabled",
+        "FramingCapability": "framingCapability",
+        "HelloRequestInterval": "helloRequestInterval",
+        "IncrementBy": "incrementBy",
+        "InitRetransmitInterval": "initRetransmitInterval",
+        "IpIncrementOctet": "ipIncrementOctet",
+        "Ipv6AddrPrefixLen": "ipv6AddrPrefixLen",
+        "Ipv6PoolPrefix": "ipv6PoolPrefix",
+        "Ipv6PoolPrefixLen": "ipv6PoolPrefixLen",
+        "L2tpAuthOptions": "l2tpAuthOptions",
+        "LacHostName": "lacHostName",
+        "LacSecret": "lacSecret",
+        "LacToLnsMapping": "lacToLnsMapping",
+        "LcpOptions": "lcpOptions",
+        "LcpRetries": "lcpRetries",
+        "LcpTermRetries": "lcpTermRetries",
+        "LcpTermTimeout": "lcpTermTimeout",
+        "LcpTimeout": "lcpTimeout",
+        "LnsHostName": "lnsHostName",
+        "LnsIpList": "lnsIpList",
+        "LnsIpNumber": "lnsIpNumber",
+        "MaxRedialAttempts": "maxRedialAttempts",
+        "MaxRetransmitInterval": "maxRetransmitInterval",
+        "Mtu": "mtu",
+        "Name": "name",
+        "NcpRetries": "ncpRetries",
+        "NcpTimeout": "ncpTimeout",
+        "NcpType": "ncpType",
+        "NoCallTimeout": "noCallTimeout",
+        "NumSessions": "numSessions",
+        "ObjectId": "objectId",
+        "OffsetByte": "offsetByte",
+        "OffsetLength": "offsetLength",
+        "PapPassword": "papPassword",
+        "PapUser": "papUser",
+        "ReceiveWindowSize": "receiveWindowSize",
+        "RedialInterval": "redialInterval",
+        "ServerBaseIid": "serverBaseIid",
+        "ServerBaseIp": "serverBaseIp",
+        "ServerDnsOptions": "serverDnsOptions",
+        "ServerIidIncr": "serverIidIncr",
+        "ServerIpIncr": "serverIpIncr",
+        "ServerNetmask": "serverNetmask",
+        "ServerNetmaskOptions": "serverNetmaskOptions",
+        "ServerPrimaryDnsAddress": "serverPrimaryDnsAddress",
+        "ServerSecondaryDnsAddress": "serverSecondaryDnsAddress",
+        "SessionAllocMethod": "sessionAllocMethod",
+        "SessionsPerTunnel": "sessionsPerTunnel",
+        "TunnelAuthentication": "tunnelAuthentication",
+        "TunnelDestinationIp": "tunnelDestinationIp",
+        "TunnelIncrementBy": "tunnelIncrementBy",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UdpSourcePort": "udpSourcePort",
+        "UseHiddenAvps": "useHiddenAvps",
+        "UseLengthBitInPayload": "useLengthBitInPayload",
+        "UseMagic": "useMagic",
+        "UseOffsetBitInPayload": "useOffsetBitInPayload",
+        "UseSequenceNoInPayload": "useSequenceNoInPayload",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(L2tpRange, self).__init__(parent, list_op)
@@ -146,10 +146,13 @@ class L2tpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_2079169b6b98a50105be828a81e9b293 import DomainGroup
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_2079169b6b98a50105be828a81e9b293 import (
+            DomainGroup,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DomainGroup', None) is not None:
-                return self._properties.get('DomainGroup')
+            if self._properties.get("DomainGroup", None) is not None:
+                return self._properties.get("DomainGroup")
         return DomainGroup(self)
 
     @property
@@ -163,10 +166,13 @@ class L2tpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_44ee3cad8f094c9c08a451357b924f78 import LnsIp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_44ee3cad8f094c9c08a451357b924f78 import (
+            LnsIp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LnsIp', None) is not None:
-                return self._properties.get('LnsIp')
+            if self._properties.get("LnsIp", None) is not None:
+                return self._properties.get("LnsIp")
         return LnsIp(self)
 
     @property
@@ -177,11 +183,12 @@ class L2tpRange(Base):
         -------
         - str: For GUI grouping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthOptions"])
+
     @AuthOptions.setter
     def AuthOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthOptions"], value)
 
     @property
     def AuthRetries(self):
@@ -191,11 +198,12 @@ class L2tpRange(Base):
         -------
         - number: Number of PPP authentication retries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthRetries"])
+
     @AuthRetries.setter
     def AuthRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthRetries"], value)
 
     @property
     def AuthTimeout(self):
@@ -205,11 +213,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for PPP authentication, in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthTimeout"])
+
     @AuthTimeout.setter
     def AuthTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthTimeout"], value)
 
     @property
     def AuthType(self):
@@ -219,11 +228,12 @@ class L2tpRange(Base):
         -------
         - str: Authentication type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthType"])
+
     @AuthType.setter
     def AuthType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthType"], value)
 
     @property
     def BaseLnsIp(self):
@@ -233,11 +243,12 @@ class L2tpRange(Base):
         -------
         - str: Defines the base address to be used by the L2TP tunnel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseLnsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseLnsIp"])
+
     @BaseLnsIp.setter
     def BaseLnsIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseLnsIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseLnsIp"], value)
 
     @property
     def BasicOptions(self):
@@ -245,13 +256,14 @@ class L2tpRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BasicOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["BasicOptions"])
+
     @BasicOptions.setter
     def BasicOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BasicOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BasicOptions"], value)
 
     @property
     def BearerCapability(self):
@@ -261,11 +273,12 @@ class L2tpRange(Base):
         -------
         - str: Bearer capability
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BearerCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["BearerCapability"])
+
     @BearerCapability.setter
     def BearerCapability(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BearerCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BearerCapability"], value)
 
     @property
     def BearerType(self):
@@ -275,11 +288,12 @@ class L2tpRange(Base):
         -------
         - str: Bearer Type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BearerType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BearerType"])
+
     @BearerType.setter
     def BearerType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BearerType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BearerType"], value)
 
     @property
     def ChapName(self):
@@ -289,11 +303,12 @@ class L2tpRange(Base):
         -------
         - str: User name when CHAP Authentication is being used
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChapName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChapName"])
+
     @ChapName.setter
     def ChapName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChapName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChapName"], value)
 
     @property
     def ChapSecret(self):
@@ -303,11 +318,12 @@ class L2tpRange(Base):
         -------
         - str: Secret when CHAP Authentication is being used
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChapSecret'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChapSecret"])
+
     @ChapSecret.setter
     def ChapSecret(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChapSecret'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChapSecret"], value)
 
     @property
     def ClientBaseIid(self):
@@ -317,11 +333,12 @@ class L2tpRange(Base):
         -------
         - str: Base for IPv6CP interface identifiers assigned to clients.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientBaseIid'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientBaseIid"])
+
     @ClientBaseIid.setter
     def ClientBaseIid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientBaseIid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientBaseIid"], value)
 
     @property
     def ClientBaseIp(self):
@@ -331,11 +348,12 @@ class L2tpRange(Base):
         -------
         - str: Base for IPv4 PPP client address creation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientBaseIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientBaseIp"])
+
     @ClientBaseIp.setter
     def ClientBaseIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientBaseIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientBaseIp"], value)
 
     @property
     def ClientDnsOptions(self):
@@ -345,11 +363,12 @@ class L2tpRange(Base):
         -------
         - str: Client DNS options
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientDnsOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientDnsOptions"])
+
     @ClientDnsOptions.setter
     def ClientDnsOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientDnsOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientDnsOptions"], value)
 
     @property
     def ClientIidIncr(self):
@@ -359,11 +378,12 @@ class L2tpRange(Base):
         -------
         - number: Increment for IPv6CP client interface identifiers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientIidIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientIidIncr"])
+
     @ClientIidIncr.setter
     def ClientIidIncr(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientIidIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientIidIncr"], value)
 
     @property
     def ClientIpIncr(self):
@@ -373,11 +393,12 @@ class L2tpRange(Base):
         -------
         - str: Incrementor for IPv4 PPP client address creation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientIpIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientIpIncr"])
+
     @ClientIpIncr.setter
     def ClientIpIncr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientIpIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientIpIncr"], value)
 
     @property
     def ClientNetmask(self):
@@ -387,11 +408,12 @@ class L2tpRange(Base):
         -------
         - str: Netmask that the client should request
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientNetmask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientNetmask"])
+
     @ClientNetmask.setter
     def ClientNetmask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientNetmask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientNetmask"], value)
 
     @property
     def ClientNetmaskOptions(self):
@@ -401,11 +423,12 @@ class L2tpRange(Base):
         -------
         - str: Client netmask options
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientNetmaskOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientNetmaskOptions"])
+
     @ClientNetmaskOptions.setter
     def ClientNetmaskOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientNetmaskOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientNetmaskOptions"], value)
 
     @property
     def ClientPrimaryDnsAddress(self):
@@ -415,11 +438,12 @@ class L2tpRange(Base):
         -------
         - str: Primary DNS server address requested by client
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientPrimaryDnsAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientPrimaryDnsAddress"])
+
     @ClientPrimaryDnsAddress.setter
     def ClientPrimaryDnsAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientPrimaryDnsAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientPrimaryDnsAddress"], value)
 
     @property
     def ClientSecondaryDnsAddress(self):
@@ -429,11 +453,12 @@ class L2tpRange(Base):
         -------
         - str: Secondary DNS server address requested by client
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientSecondaryDnsAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientSecondaryDnsAddress"])
+
     @ClientSecondaryDnsAddress.setter
     def ClientSecondaryDnsAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientSecondaryDnsAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientSecondaryDnsAddress"], value)
 
     @property
     def ControlMsgsRetryCounter(self):
@@ -443,11 +468,12 @@ class L2tpRange(Base):
         -------
         - number: Number of L2TP retries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlMsgsRetryCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlMsgsRetryCounter"])
+
     @ControlMsgsRetryCounter.setter
     def ControlMsgsRetryCounter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlMsgsRetryCounter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlMsgsRetryCounter"], value)
 
     @property
     def ControlPlaneOptions(self):
@@ -455,13 +481,14 @@ class L2tpRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlPlaneOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlPlaneOptions"])
+
     @ControlPlaneOptions.setter
     def ControlPlaneOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlPlaneOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlPlaneOptions"], value)
 
     @property
     def DataPlaneOptions(self):
@@ -469,13 +496,14 @@ class L2tpRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPlaneOptions"])
+
     @DataPlaneOptions.setter
     def DataPlaneOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPlaneOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPlaneOptions"], value)
 
     @property
     def DnsServerList(self):
@@ -485,11 +513,12 @@ class L2tpRange(Base):
         -------
         - str: DNS server list separacted by semicolon
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DnsServerList'])
+        return self._get_attribute(self._SDM_ATT_MAP["DnsServerList"])
+
     @DnsServerList.setter
     def DnsServerList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DnsServerList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DnsServerList"], value)
 
     @property
     def DomainList(self):
@@ -499,11 +528,12 @@ class L2tpRange(Base):
         -------
         - str: Configure domain group settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DomainList'])
+        return self._get_attribute(self._SDM_ATT_MAP["DomainList"])
+
     @DomainList.setter
     def DomainList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DomainList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DomainList"], value)
 
     @property
     def DomainToIpList(self):
@@ -513,11 +543,12 @@ class L2tpRange(Base):
         -------
         - str: Domain To LNS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DomainToIpList'])
+        return self._get_attribute(self._SDM_ATT_MAP["DomainToIpList"])
+
     @DomainToIpList.setter
     def DomainToIpList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DomainToIpList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DomainToIpList"], value)
 
     @property
     def EchoReqInterval(self):
@@ -527,11 +558,12 @@ class L2tpRange(Base):
         -------
         - number: Keep alive interval
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoReqInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoReqInterval"])
+
     @EchoReqInterval.setter
     def EchoReqInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoReqInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoReqInterval"], value)
 
     @property
     def EnableControlChecksum(self):
@@ -541,11 +573,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable/Disable UDP checksums on control plane packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableControlChecksum'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableControlChecksum"])
+
     @EnableControlChecksum.setter
     def EnableControlChecksum(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableControlChecksum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableControlChecksum"], value)
 
     @property
     def EnableDataChecksum(self):
@@ -555,11 +588,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable/Disable UDP checksums on data plane packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataChecksum'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataChecksum"])
+
     @EnableDataChecksum.setter
     def EnableDataChecksum(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataChecksum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataChecksum"], value)
 
     @property
     def EnableDnsRa(self):
@@ -569,11 +603,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable RDNSS routing advertisments
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDnsRa'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDnsRa"])
+
     @EnableDnsRa.setter
     def EnableDnsRa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDnsRa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDnsRa"], value)
 
     @property
     def EnableDomainGroups(self):
@@ -583,11 +618,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable domain groups
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDomainGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDomainGroups"])
+
     @EnableDomainGroups.setter
     def EnableDomainGroups(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDomainGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDomainGroups"], value)
 
     @property
     def EnableEchoReq(self):
@@ -597,11 +633,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable Echo requests
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableEchoReq'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableEchoReq"])
+
     @EnableEchoReq.setter
     def EnableEchoReq(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableEchoReq'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableEchoReq"], value)
 
     @property
     def EnableEchoRsp(self):
@@ -611,11 +648,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable Echo replies
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableEchoRsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableEchoRsp"])
+
     @EnableEchoRsp.setter
     def EnableEchoRsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableEchoRsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableEchoRsp"], value)
 
     @property
     def EnableHelloRequest(self):
@@ -625,11 +663,12 @@ class L2tpRange(Base):
         -------
         - bool: If enabled, L2TP hello request is performed
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHelloRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHelloRequest"])
+
     @EnableHelloRequest.setter
     def EnableHelloRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHelloRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHelloRequest"], value)
 
     @property
     def EnableMru(self):
@@ -639,11 +678,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable/Disable MRU negotiation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMru'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMru"])
+
     @EnableMru.setter
     def EnableMru(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMru"], value)
 
     @property
     def EnablePasswordCheck(self):
@@ -653,11 +693,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable authentication credential checking on the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePasswordCheck'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePasswordCheck"])
+
     @EnablePasswordCheck.setter
     def EnablePasswordCheck(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePasswordCheck'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePasswordCheck"], value)
 
     @property
     def EnableRedial(self):
@@ -667,11 +708,12 @@ class L2tpRange(Base):
         -------
         - bool: If enabled, L2TP redial is activated
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRedial'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRedial"])
+
     @EnableRedial.setter
     def EnableRedial(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRedial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRedial"], value)
 
     @property
     def Enabled(self):
@@ -681,11 +723,12 @@ class L2tpRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FramingCapability(self):
@@ -695,11 +738,12 @@ class L2tpRange(Base):
         -------
         - str: Designates sync or async framing
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramingCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramingCapability"])
+
     @FramingCapability.setter
     def FramingCapability(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramingCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramingCapability"], value)
 
     @property
     def HelloRequestInterval(self):
@@ -709,11 +753,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for L2TP hello request, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloRequestInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloRequestInterval"])
+
     @HelloRequestInterval.setter
     def HelloRequestInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloRequestInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloRequestInterval"], value)
 
     @property
     def IncrementBy(self):
@@ -723,11 +768,12 @@ class L2tpRange(Base):
         -------
         - number: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementBy"])
+
     @IncrementBy.setter
     def IncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementBy"], value)
 
     @property
     def InitRetransmitInterval(self):
@@ -737,11 +783,12 @@ class L2tpRange(Base):
         -------
         - number: Initial L2TP timeout
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitRetransmitInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitRetransmitInterval"])
+
     @InitRetransmitInterval.setter
     def InitRetransmitInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitRetransmitInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitRetransmitInterval"], value)
 
     @property
     def IpIncrementOctet(self):
@@ -751,11 +798,12 @@ class L2tpRange(Base):
         -------
         - number: IP increment octet
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpIncrementOctet'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpIncrementOctet"])
+
     @IpIncrementOctet.setter
     def IpIncrementOctet(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpIncrementOctet'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpIncrementOctet"], value)
 
     @property
     def Ipv6AddrPrefixLen(self):
@@ -765,11 +813,12 @@ class L2tpRange(Base):
         -------
         - number: IPv6 Address Prefix Length
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddrPrefixLen'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6AddrPrefixLen"])
+
     @Ipv6AddrPrefixLen.setter
     def Ipv6AddrPrefixLen(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6AddrPrefixLen'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6AddrPrefixLen"], value)
 
     @property
     def Ipv6PoolPrefix(self):
@@ -779,11 +828,12 @@ class L2tpRange(Base):
         -------
         - str: Pool prefix for the IPv6 IP pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6PoolPrefix"])
+
     @Ipv6PoolPrefix.setter
     def Ipv6PoolPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6PoolPrefix"], value)
 
     @property
     def Ipv6PoolPrefixLen(self):
@@ -793,11 +843,12 @@ class L2tpRange(Base):
         -------
         - number: IPv6 Pool Prefix Length
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefixLen'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6PoolPrefixLen"])
+
     @Ipv6PoolPrefixLen.setter
     def Ipv6PoolPrefixLen(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefixLen'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6PoolPrefixLen"], value)
 
     @property
     def L2tpAuthOptions(self):
@@ -805,13 +856,14 @@ class L2tpRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['L2tpAuthOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["L2tpAuthOptions"])
+
     @L2tpAuthOptions.setter
     def L2tpAuthOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['L2tpAuthOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["L2tpAuthOptions"], value)
 
     @property
     def LacHostName(self):
@@ -821,11 +873,12 @@ class L2tpRange(Base):
         -------
         - str: L2TP host name used during authentication on LAC, or authenticated against (on LNS).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacHostName"])
+
     @LacHostName.setter
     def LacHostName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacHostName"], value)
 
     @property
     def LacSecret(self):
@@ -835,11 +888,12 @@ class L2tpRange(Base):
         -------
         - str: L2TP secret used during authentication
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacSecret'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacSecret"])
+
     @LacSecret.setter
     def LacSecret(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacSecret'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacSecret"], value)
 
     @property
     def LacToLnsMapping(self):
@@ -849,11 +903,12 @@ class L2tpRange(Base):
         -------
         - str: LAC to LNS Mapping
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacToLnsMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacToLnsMapping"])
+
     @LacToLnsMapping.setter
     def LacToLnsMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacToLnsMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacToLnsMapping"], value)
 
     @property
     def LcpOptions(self):
@@ -863,11 +918,12 @@ class L2tpRange(Base):
         -------
         - str: For GUI grouping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LcpOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["LcpOptions"])
+
     @LcpOptions.setter
     def LcpOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LcpOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LcpOptions"], value)
 
     @property
     def LcpRetries(self):
@@ -877,11 +933,12 @@ class L2tpRange(Base):
         -------
         - number: Number of LCP retries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LcpRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["LcpRetries"])
+
     @LcpRetries.setter
     def LcpRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LcpRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LcpRetries"], value)
 
     @property
     def LcpTermRetries(self):
@@ -891,11 +948,12 @@ class L2tpRange(Base):
         -------
         - number: Number of LCP Termination Retries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LcpTermRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["LcpTermRetries"])
+
     @LcpTermRetries.setter
     def LcpTermRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LcpTermRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LcpTermRetries"], value)
 
     @property
     def LcpTermTimeout(self):
@@ -905,11 +963,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for LCP termination, in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LcpTermTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["LcpTermTimeout"])
+
     @LcpTermTimeout.setter
     def LcpTermTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LcpTermTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LcpTermTimeout"], value)
 
     @property
     def LcpTimeout(self):
@@ -919,11 +978,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for LCP phase, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LcpTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["LcpTimeout"])
+
     @LcpTimeout.setter
     def LcpTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LcpTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LcpTimeout"], value)
 
     @property
     def LnsHostName(self):
@@ -933,11 +993,12 @@ class L2tpRange(Base):
         -------
         - str: L2TP hostname sent by Ixia port when acting as LNS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LnsHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["LnsHostName"])
+
     @LnsHostName.setter
     def LnsHostName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LnsHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LnsHostName"], value)
 
     @property
     def LnsIpList(self):
@@ -947,11 +1008,12 @@ class L2tpRange(Base):
         -------
         - str: LNS IP Addresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LnsIpList'])
+        return self._get_attribute(self._SDM_ATT_MAP["LnsIpList"])
+
     @LnsIpList.setter
     def LnsIpList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LnsIpList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LnsIpList"], value)
 
     @property
     def LnsIpNumber(self):
@@ -961,11 +1023,12 @@ class L2tpRange(Base):
         -------
         - number: LNS IP number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LnsIpNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["LnsIpNumber"])
+
     @LnsIpNumber.setter
     def LnsIpNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LnsIpNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LnsIpNumber"], value)
 
     @property
     def MaxRedialAttempts(self):
@@ -975,11 +1038,12 @@ class L2tpRange(Base):
         -------
         - number: Max number of L2TP redial attempts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRedialAttempts'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRedialAttempts"])
+
     @MaxRedialAttempts.setter
     def MaxRedialAttempts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRedialAttempts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRedialAttempts"], value)
 
     @property
     def MaxRetransmitInterval(self):
@@ -989,11 +1053,12 @@ class L2tpRange(Base):
         -------
         - number: Max. L2TP timeout
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRetransmitInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRetransmitInterval"])
+
     @MaxRetransmitInterval.setter
     def MaxRetransmitInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRetransmitInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRetransmitInterval"], value)
 
     @property
     def Mtu(self):
@@ -1003,11 +1068,12 @@ class L2tpRange(Base):
         -------
         - number: Max Transmit Unit for PPP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def Name(self):
@@ -1017,11 +1083,12 @@ class L2tpRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NcpRetries(self):
@@ -1031,11 +1098,12 @@ class L2tpRange(Base):
         -------
         - number: Number of NCP retries
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NcpRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["NcpRetries"])
+
     @NcpRetries.setter
     def NcpRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NcpRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NcpRetries"], value)
 
     @property
     def NcpTimeout(self):
@@ -1045,11 +1113,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for NCP phase, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NcpTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["NcpTimeout"])
+
     @NcpTimeout.setter
     def NcpTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NcpTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NcpTimeout"], value)
 
     @property
     def NcpType(self):
@@ -1059,11 +1128,12 @@ class L2tpRange(Base):
         -------
         - str: IP type (IPv4/IPv6) for Network Control Protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NcpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NcpType"])
+
     @NcpType.setter
     def NcpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NcpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NcpType"], value)
 
     @property
     def NoCallTimeout(self):
@@ -1073,11 +1143,12 @@ class L2tpRange(Base):
         -------
         - number: Timeout for no call establishment, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoCallTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoCallTimeout"])
+
     @NoCallTimeout.setter
     def NoCallTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoCallTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoCallTimeout"], value)
 
     @property
     def NumSessions(self):
@@ -1087,11 +1158,12 @@ class L2tpRange(Base):
         -------
         - number: No. of sessions to setup
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumSessions"])
+
     @NumSessions.setter
     def NumSessions(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumSessions"], value)
 
     @property
     def ObjectId(self):
@@ -1101,7 +1173,7 @@ class L2tpRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OffsetByte(self):
@@ -1111,11 +1183,12 @@ class L2tpRange(Base):
         -------
         - number: L2TP offset byte
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OffsetByte'])
+        return self._get_attribute(self._SDM_ATT_MAP["OffsetByte"])
+
     @OffsetByte.setter
     def OffsetByte(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OffsetByte'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OffsetByte"], value)
 
     @property
     def OffsetLength(self):
@@ -1125,11 +1198,12 @@ class L2tpRange(Base):
         -------
         - number: L2TP offset length in bytes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OffsetLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["OffsetLength"])
+
     @OffsetLength.setter
     def OffsetLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OffsetLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OffsetLength"], value)
 
     @property
     def PapPassword(self):
@@ -1139,11 +1213,12 @@ class L2tpRange(Base):
         -------
         - str: Password when PAP Authentication is being used
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PapPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["PapPassword"])
+
     @PapPassword.setter
     def PapPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PapPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PapPassword"], value)
 
     @property
     def PapUser(self):
@@ -1153,11 +1228,12 @@ class L2tpRange(Base):
         -------
         - str: User name when PAP Authentication is being used
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PapUser'])
+        return self._get_attribute(self._SDM_ATT_MAP["PapUser"])
+
     @PapUser.setter
     def PapUser(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PapUser'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PapUser"], value)
 
     @property
     def ReceiveWindowSize(self):
@@ -1167,11 +1243,12 @@ class L2tpRange(Base):
         -------
         - number: L2TP Receive Window Size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceiveWindowSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveWindowSize"])
+
     @ReceiveWindowSize.setter
     def ReceiveWindowSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReceiveWindowSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReceiveWindowSize"], value)
 
     @property
     def RedialInterval(self):
@@ -1181,11 +1258,12 @@ class L2tpRange(Base):
         -------
         - number: L2TP redial timeout, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RedialInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RedialInterval"])
+
     @RedialInterval.setter
     def RedialInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RedialInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RedialInterval"], value)
 
     @property
     def ServerBaseIid(self):
@@ -1195,11 +1273,12 @@ class L2tpRange(Base):
         -------
         - str: Base for IPv6CP interface identifiers assigned to servers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerBaseIid'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerBaseIid"])
+
     @ServerBaseIid.setter
     def ServerBaseIid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerBaseIid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerBaseIid"], value)
 
     @property
     def ServerBaseIp(self):
@@ -1209,11 +1288,12 @@ class L2tpRange(Base):
         -------
         - str: Base for IPv4 PPP server address creation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerBaseIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerBaseIp"])
+
     @ServerBaseIp.setter
     def ServerBaseIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerBaseIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerBaseIp"], value)
 
     @property
     def ServerDnsOptions(self):
@@ -1223,11 +1303,12 @@ class L2tpRange(Base):
         -------
         - str: Server DNS options
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerDnsOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerDnsOptions"])
+
     @ServerDnsOptions.setter
     def ServerDnsOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerDnsOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerDnsOptions"], value)
 
     @property
     def ServerIidIncr(self):
@@ -1237,25 +1318,27 @@ class L2tpRange(Base):
         -------
         - number: Increment for IPv6CP server interface identifiers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerIidIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerIidIncr"])
+
     @ServerIidIncr.setter
     def ServerIidIncr(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerIidIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerIidIncr"], value)
 
     @property
     def ServerIpIncr(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerIpIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerIpIncr"])
+
     @ServerIpIncr.setter
     def ServerIpIncr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerIpIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerIpIncr"], value)
 
     @property
     def ServerNetmask(self):
@@ -1265,11 +1348,12 @@ class L2tpRange(Base):
         -------
         - str: Netmask that the server should supply to clients
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerNetmask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerNetmask"])
+
     @ServerNetmask.setter
     def ServerNetmask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerNetmask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerNetmask"], value)
 
     @property
     def ServerNetmaskOptions(self):
@@ -1279,11 +1363,12 @@ class L2tpRange(Base):
         -------
         - str: Server netmask options
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerNetmaskOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerNetmaskOptions"])
+
     @ServerNetmaskOptions.setter
     def ServerNetmaskOptions(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerNetmaskOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerNetmaskOptions"], value)
 
     @property
     def ServerPrimaryDnsAddress(self):
@@ -1293,11 +1378,12 @@ class L2tpRange(Base):
         -------
         - str: Primary DNS server address supplied by server
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerPrimaryDnsAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerPrimaryDnsAddress"])
+
     @ServerPrimaryDnsAddress.setter
     def ServerPrimaryDnsAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerPrimaryDnsAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerPrimaryDnsAddress"], value)
 
     @property
     def ServerSecondaryDnsAddress(self):
@@ -1307,11 +1393,12 @@ class L2tpRange(Base):
         -------
         - str: Secondary DNS server address supplied by server
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerSecondaryDnsAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerSecondaryDnsAddress"])
+
     @ServerSecondaryDnsAddress.setter
     def ServerSecondaryDnsAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerSecondaryDnsAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerSecondaryDnsAddress"], value)
 
     @property
     def SessionAllocMethod(self):
@@ -1319,13 +1406,14 @@ class L2tpRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionAllocMethod'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionAllocMethod"])
+
     @SessionAllocMethod.setter
     def SessionAllocMethod(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionAllocMethod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionAllocMethod"], value)
 
     @property
     def SessionsPerTunnel(self):
@@ -1335,11 +1423,12 @@ class L2tpRange(Base):
         -------
         - number: Number of sessions per L2TP tunnel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionsPerTunnel'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionsPerTunnel"])
+
     @SessionsPerTunnel.setter
     def SessionsPerTunnel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionsPerTunnel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionsPerTunnel"], value)
 
     @property
     def TunnelAuthentication(self):
@@ -1349,11 +1438,12 @@ class L2tpRange(Base):
         -------
         - str: Enable/Disable L2TP tunnel authentication
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelAuthentication'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelAuthentication"])
+
     @TunnelAuthentication.setter
     def TunnelAuthentication(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelAuthentication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelAuthentication"], value)
 
     @property
     def TunnelDestinationIp(self):
@@ -1363,11 +1453,12 @@ class L2tpRange(Base):
         -------
         - str: Defines the base address to be used for L2TP tunnel destination in the range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelDestinationIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelDestinationIp"])
+
     @TunnelDestinationIp.setter
     def TunnelDestinationIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelDestinationIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelDestinationIp"], value)
 
     @property
     def TunnelIncrementBy(self):
@@ -1377,11 +1468,12 @@ class L2tpRange(Base):
         -------
         - str: Defines the increment to be used between L2TP tunnels
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelIncrementBy"])
+
     @TunnelIncrementBy.setter
     def TunnelIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelIncrementBy"], value)
 
     @property
     def UdpDestinationPort(self):
@@ -1391,11 +1483,12 @@ class L2tpRange(Base):
         -------
         - number: UDP port to employ for tunneling destinations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+
     @UdpDestinationPort.setter
     def UdpDestinationPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestinationPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestinationPort"], value)
 
     @property
     def UdpSourcePort(self):
@@ -1405,11 +1498,12 @@ class L2tpRange(Base):
         -------
         - number: UDP port to employ for tunneling sources
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSourcePort"])
+
     @UdpSourcePort.setter
     def UdpSourcePort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSourcePort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSourcePort"], value)
 
     @property
     def UseHiddenAvps(self):
@@ -1419,11 +1513,12 @@ class L2tpRange(Base):
         -------
         - bool: Enable/Disable (A)ttribute (V)alue (P)air hiding
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseHiddenAvps'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseHiddenAvps"])
+
     @UseHiddenAvps.setter
     def UseHiddenAvps(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseHiddenAvps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseHiddenAvps"], value)
 
     @property
     def UseLengthBitInPayload(self):
@@ -1433,11 +1528,12 @@ class L2tpRange(Base):
         -------
         - bool: If enabled, length bit set in L2TP data packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseLengthBitInPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseLengthBitInPayload"])
+
     @UseLengthBitInPayload.setter
     def UseLengthBitInPayload(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseLengthBitInPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseLengthBitInPayload"], value)
 
     @property
     def UseMagic(self):
@@ -1447,11 +1543,12 @@ class L2tpRange(Base):
         -------
         - bool: use magic
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseMagic'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseMagic"])
+
     @UseMagic.setter
     def UseMagic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseMagic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseMagic"], value)
 
     @property
     def UseOffsetBitInPayload(self):
@@ -1461,11 +1558,12 @@ class L2tpRange(Base):
         -------
         - bool: If enabled, offset bit is enabled in L2TP data packets
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseOffsetBitInPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseOffsetBitInPayload"])
+
     @UseOffsetBitInPayload.setter
     def UseOffsetBitInPayload(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseOffsetBitInPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseOffsetBitInPayload"], value)
 
     @property
     def UseSequenceNoInPayload(self):
@@ -1475,13 +1573,109 @@ class L2tpRange(Base):
         -------
         - bool: If enabled, sequence bit is set in L2TP data packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseSequenceNoInPayload"])
+
     @UseSequenceNoInPayload.setter
     def UseSequenceNoInPayload(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseSequenceNoInPayload"], value)
 
-    def update(self, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, BaseLnsIp=None, BasicOptions=None, BearerCapability=None, BearerType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ControlMsgsRetryCounter=None, ControlPlaneOptions=None, DataPlaneOptions=None, DnsServerList=None, DomainList=None, DomainToIpList=None, EchoReqInterval=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHelloRequest=None, EnableMru=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, FramingCapability=None, HelloRequestInterval=None, IncrementBy=None, InitRetransmitInterval=None, IpIncrementOctet=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, L2tpAuthOptions=None, LacHostName=None, LacSecret=None, LacToLnsMapping=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, LnsHostName=None, LnsIpList=None, LnsIpNumber=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NoCallTimeout=None, NumSessions=None, OffsetByte=None, OffsetLength=None, PapPassword=None, PapUser=None, ReceiveWindowSize=None, RedialInterval=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, SessionAllocMethod=None, SessionsPerTunnel=None, TunnelAuthentication=None, TunnelDestinationIp=None, TunnelIncrementBy=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAvps=None, UseLengthBitInPayload=None, UseMagic=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
+    def update(
+        self,
+        AuthOptions=None,
+        AuthRetries=None,
+        AuthTimeout=None,
+        AuthType=None,
+        BaseLnsIp=None,
+        BasicOptions=None,
+        BearerCapability=None,
+        BearerType=None,
+        ChapName=None,
+        ChapSecret=None,
+        ClientBaseIid=None,
+        ClientBaseIp=None,
+        ClientDnsOptions=None,
+        ClientIidIncr=None,
+        ClientIpIncr=None,
+        ClientNetmask=None,
+        ClientNetmaskOptions=None,
+        ClientPrimaryDnsAddress=None,
+        ClientSecondaryDnsAddress=None,
+        ControlMsgsRetryCounter=None,
+        ControlPlaneOptions=None,
+        DataPlaneOptions=None,
+        DnsServerList=None,
+        DomainList=None,
+        DomainToIpList=None,
+        EchoReqInterval=None,
+        EnableControlChecksum=None,
+        EnableDataChecksum=None,
+        EnableDnsRa=None,
+        EnableDomainGroups=None,
+        EnableEchoReq=None,
+        EnableEchoRsp=None,
+        EnableHelloRequest=None,
+        EnableMru=None,
+        EnablePasswordCheck=None,
+        EnableRedial=None,
+        Enabled=None,
+        FramingCapability=None,
+        HelloRequestInterval=None,
+        IncrementBy=None,
+        InitRetransmitInterval=None,
+        IpIncrementOctet=None,
+        Ipv6AddrPrefixLen=None,
+        Ipv6PoolPrefix=None,
+        Ipv6PoolPrefixLen=None,
+        L2tpAuthOptions=None,
+        LacHostName=None,
+        LacSecret=None,
+        LacToLnsMapping=None,
+        LcpOptions=None,
+        LcpRetries=None,
+        LcpTermRetries=None,
+        LcpTermTimeout=None,
+        LcpTimeout=None,
+        LnsHostName=None,
+        LnsIpList=None,
+        LnsIpNumber=None,
+        MaxRedialAttempts=None,
+        MaxRetransmitInterval=None,
+        Mtu=None,
+        Name=None,
+        NcpRetries=None,
+        NcpTimeout=None,
+        NcpType=None,
+        NoCallTimeout=None,
+        NumSessions=None,
+        OffsetByte=None,
+        OffsetLength=None,
+        PapPassword=None,
+        PapUser=None,
+        ReceiveWindowSize=None,
+        RedialInterval=None,
+        ServerBaseIid=None,
+        ServerBaseIp=None,
+        ServerDnsOptions=None,
+        ServerIidIncr=None,
+        ServerIpIncr=None,
+        ServerNetmask=None,
+        ServerNetmaskOptions=None,
+        ServerPrimaryDnsAddress=None,
+        ServerSecondaryDnsAddress=None,
+        SessionAllocMethod=None,
+        SessionsPerTunnel=None,
+        TunnelAuthentication=None,
+        TunnelDestinationIp=None,
+        TunnelIncrementBy=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        UseHiddenAvps=None,
+        UseLengthBitInPayload=None,
+        UseMagic=None,
+        UseOffsetBitInPayload=None,
+        UseSequenceNoInPayload=None,
+    ):
         # type: (str, int, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, int, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, str, int, str, str, str, str, str, int, int, int, int, str, str, int, int, int, int, str, int, int, str, int, int, int, int, str, str, int, int, str, str, str, int, str, str, str, str, str, str, int, str, str, str, int, int, bool, bool, bool, bool, bool) -> L2tpRange
         """Updates l2tpRange resource on the server.
 
@@ -1492,7 +1686,7 @@ class L2tpRange(Base):
         - AuthTimeout (number): Timeout for PPP authentication, in seconds.
         - AuthType (str): Authentication type
         - BaseLnsIp (str): Defines the base address to be used by the L2TP tunnel
-        - BasicOptions (str): 
+        - BasicOptions (str):
         - BearerCapability (str): Bearer capability
         - BearerType (str): Bearer Type
         - ChapName (str): User name when CHAP Authentication is being used
@@ -1507,8 +1701,8 @@ class L2tpRange(Base):
         - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
         - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
         - ControlMsgsRetryCounter (number): Number of L2TP retries
-        - ControlPlaneOptions (str): 
-        - DataPlaneOptions (str): 
+        - ControlPlaneOptions (str):
+        - DataPlaneOptions (str):
         - DnsServerList (str): DNS server list separacted by semicolon
         - DomainList (str): Configure domain group settings
         - DomainToIpList (str): Domain To LNS
@@ -1532,7 +1726,7 @@ class L2tpRange(Base):
         - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
         - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
         - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
-        - L2tpAuthOptions (str): 
+        - L2tpAuthOptions (str):
         - LacHostName (str): L2TP host name used during authentication on LAC, or authenticated against (on LNS).
         - LacSecret (str): L2TP secret used during authentication
         - LacToLnsMapping (str): LAC to LNS Mapping
@@ -1568,7 +1762,7 @@ class L2tpRange(Base):
         - ServerNetmaskOptions (str): Server netmask options
         - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
         - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
-        - SessionAllocMethod (str): 
+        - SessionAllocMethod (str):
         - SessionsPerTunnel (number): Number of sessions per L2TP tunnel
         - TunnelAuthentication (str): Enable/Disable L2TP tunnel authentication
         - TunnelDestinationIp (str): Defines the base address to be used for L2TP tunnel destination in the range
@@ -1587,7 +1781,103 @@ class L2tpRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, BaseLnsIp=None, BasicOptions=None, BearerCapability=None, BearerType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ControlMsgsRetryCounter=None, ControlPlaneOptions=None, DataPlaneOptions=None, DnsServerList=None, DomainList=None, DomainToIpList=None, EchoReqInterval=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHelloRequest=None, EnableMru=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, FramingCapability=None, HelloRequestInterval=None, IncrementBy=None, InitRetransmitInterval=None, IpIncrementOctet=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, L2tpAuthOptions=None, LacHostName=None, LacSecret=None, LacToLnsMapping=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, LnsHostName=None, LnsIpList=None, LnsIpNumber=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NoCallTimeout=None, NumSessions=None, ObjectId=None, OffsetByte=None, OffsetLength=None, PapPassword=None, PapUser=None, ReceiveWindowSize=None, RedialInterval=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, SessionAllocMethod=None, SessionsPerTunnel=None, TunnelAuthentication=None, TunnelDestinationIp=None, TunnelIncrementBy=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAvps=None, UseLengthBitInPayload=None, UseMagic=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
+    def find(
+        self,
+        AuthOptions=None,
+        AuthRetries=None,
+        AuthTimeout=None,
+        AuthType=None,
+        BaseLnsIp=None,
+        BasicOptions=None,
+        BearerCapability=None,
+        BearerType=None,
+        ChapName=None,
+        ChapSecret=None,
+        ClientBaseIid=None,
+        ClientBaseIp=None,
+        ClientDnsOptions=None,
+        ClientIidIncr=None,
+        ClientIpIncr=None,
+        ClientNetmask=None,
+        ClientNetmaskOptions=None,
+        ClientPrimaryDnsAddress=None,
+        ClientSecondaryDnsAddress=None,
+        ControlMsgsRetryCounter=None,
+        ControlPlaneOptions=None,
+        DataPlaneOptions=None,
+        DnsServerList=None,
+        DomainList=None,
+        DomainToIpList=None,
+        EchoReqInterval=None,
+        EnableControlChecksum=None,
+        EnableDataChecksum=None,
+        EnableDnsRa=None,
+        EnableDomainGroups=None,
+        EnableEchoReq=None,
+        EnableEchoRsp=None,
+        EnableHelloRequest=None,
+        EnableMru=None,
+        EnablePasswordCheck=None,
+        EnableRedial=None,
+        Enabled=None,
+        FramingCapability=None,
+        HelloRequestInterval=None,
+        IncrementBy=None,
+        InitRetransmitInterval=None,
+        IpIncrementOctet=None,
+        Ipv6AddrPrefixLen=None,
+        Ipv6PoolPrefix=None,
+        Ipv6PoolPrefixLen=None,
+        L2tpAuthOptions=None,
+        LacHostName=None,
+        LacSecret=None,
+        LacToLnsMapping=None,
+        LcpOptions=None,
+        LcpRetries=None,
+        LcpTermRetries=None,
+        LcpTermTimeout=None,
+        LcpTimeout=None,
+        LnsHostName=None,
+        LnsIpList=None,
+        LnsIpNumber=None,
+        MaxRedialAttempts=None,
+        MaxRetransmitInterval=None,
+        Mtu=None,
+        Name=None,
+        NcpRetries=None,
+        NcpTimeout=None,
+        NcpType=None,
+        NoCallTimeout=None,
+        NumSessions=None,
+        ObjectId=None,
+        OffsetByte=None,
+        OffsetLength=None,
+        PapPassword=None,
+        PapUser=None,
+        ReceiveWindowSize=None,
+        RedialInterval=None,
+        ServerBaseIid=None,
+        ServerBaseIp=None,
+        ServerDnsOptions=None,
+        ServerIidIncr=None,
+        ServerIpIncr=None,
+        ServerNetmask=None,
+        ServerNetmaskOptions=None,
+        ServerPrimaryDnsAddress=None,
+        ServerSecondaryDnsAddress=None,
+        SessionAllocMethod=None,
+        SessionsPerTunnel=None,
+        TunnelAuthentication=None,
+        TunnelDestinationIp=None,
+        TunnelIncrementBy=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        UseHiddenAvps=None,
+        UseLengthBitInPayload=None,
+        UseMagic=None,
+        UseOffsetBitInPayload=None,
+        UseSequenceNoInPayload=None,
+    ):
         # type: (str, int, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, int, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, str, int, str, str, str, str, str, int, int, int, int, str, str, int, int, int, int, str, int, int, str, int, int, str, int, int, str, str, int, int, str, str, str, int, str, str, str, str, str, str, int, str, str, str, int, int, bool, bool, bool, bool, bool) -> L2tpRange
         """Finds and retrieves l2tpRange resources from the server.
 
@@ -1602,7 +1892,7 @@ class L2tpRange(Base):
         - AuthTimeout (number): Timeout for PPP authentication, in seconds.
         - AuthType (str): Authentication type
         - BaseLnsIp (str): Defines the base address to be used by the L2TP tunnel
-        - BasicOptions (str): 
+        - BasicOptions (str):
         - BearerCapability (str): Bearer capability
         - BearerType (str): Bearer Type
         - ChapName (str): User name when CHAP Authentication is being used
@@ -1617,8 +1907,8 @@ class L2tpRange(Base):
         - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
         - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
         - ControlMsgsRetryCounter (number): Number of L2TP retries
-        - ControlPlaneOptions (str): 
-        - DataPlaneOptions (str): 
+        - ControlPlaneOptions (str):
+        - DataPlaneOptions (str):
         - DnsServerList (str): DNS server list separacted by semicolon
         - DomainList (str): Configure domain group settings
         - DomainToIpList (str): Domain To LNS
@@ -1642,7 +1932,7 @@ class L2tpRange(Base):
         - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
         - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
         - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
-        - L2tpAuthOptions (str): 
+        - L2tpAuthOptions (str):
         - LacHostName (str): L2TP host name used during authentication on LAC, or authenticated against (on LNS).
         - LacSecret (str): L2TP secret used during authentication
         - LacToLnsMapping (str): LAC to LNS Mapping
@@ -1679,7 +1969,7 @@ class L2tpRange(Base):
         - ServerNetmaskOptions (str): Server netmask options
         - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
         - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
-        - SessionAllocMethod (str): 
+        - SessionAllocMethod (str):
         - SessionsPerTunnel (number): Number of sessions per L2TP tunnel
         - TunnelAuthentication (str): Enable/Disable L2TP tunnel authentication
         - TunnelDestinationIp (str): Defines the base address to be used for L2TP tunnel destination in the range
@@ -1737,10 +2027,14 @@ class L2tpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1759,10 +2053,14 @@ class L2tpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1781,7 +2079,11 @@ class L2tpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

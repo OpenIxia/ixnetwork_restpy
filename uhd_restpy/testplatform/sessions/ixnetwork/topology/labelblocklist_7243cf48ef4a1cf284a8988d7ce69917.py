@@ -146,7 +146,7 @@ class LabelBlockList(Base):
 
     def add(self, Name=None):
         # type: (str) -> LabelBlockList
-        """Adds a new labelBlockList resource on the json, only valid with config assistant
+        """Adds a new labelBlockList resource on the json, only valid with batch add utility
 
         Args
         ----

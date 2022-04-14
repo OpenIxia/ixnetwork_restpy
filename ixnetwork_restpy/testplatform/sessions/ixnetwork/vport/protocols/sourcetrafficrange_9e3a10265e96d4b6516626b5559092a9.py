@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,17 @@ class SourceTrafficRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'sourceTrafficRange'
+    _SDM_NAME = "sourceTrafficRange"
     _SDM_ATT_MAP = {
-        'AddrFamily': 'addrFamily',
-        'FilterOnGroupAddress': 'filterOnGroupAddress',
-        'GroupAddress': 'groupAddress',
-        'GrpCountPerLsp': 'grpCountPerLsp',
-        'SourceAddress': 'sourceAddress',
-        'SrcCountPerLsp': 'srcCountPerLsp',
+        "AddrFamily": "addrFamily",
+        "FilterOnGroupAddress": "filterOnGroupAddress",
+        "GroupAddress": "groupAddress",
+        "GrpCountPerLsp": "grpCountPerLsp",
+        "SourceAddress": "sourceAddress",
+        "SrcCountPerLsp": "srcCountPerLsp",
     }
     _SDM_ENUM_MAP = {
-        'addrFamily': ['ipv4', 'ipv6'],
+        "addrFamily": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,11 +59,12 @@ class SourceTrafficRange(Base):
         -------
         - str(ipv4 | ipv6): The address familyt value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddrFamily'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddrFamily"])
+
     @AddrFamily.setter
     def AddrFamily(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddrFamily'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddrFamily"], value)
 
     @property
     def FilterOnGroupAddress(self):
@@ -72,11 +74,12 @@ class SourceTrafficRange(Base):
         -------
         - bool: The available filters on group address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterOnGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterOnGroupAddress"])
+
     @FilterOnGroupAddress.setter
     def FilterOnGroupAddress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterOnGroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterOnGroupAddress"], value)
 
     @property
     def GroupAddress(self):
@@ -86,11 +89,12 @@ class SourceTrafficRange(Base):
         -------
         - str: The group address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
+
     @GroupAddress.setter
     def GroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddress"], value)
 
     @property
     def GrpCountPerLsp(self):
@@ -100,11 +104,12 @@ class SourceTrafficRange(Base):
         -------
         - number: The total group count per LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrpCountPerLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrpCountPerLsp"])
+
     @GrpCountPerLsp.setter
     def GrpCountPerLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrpCountPerLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrpCountPerLsp"], value)
 
     @property
     def SourceAddress(self):
@@ -114,11 +119,12 @@ class SourceTrafficRange(Base):
         -------
         - str: The source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddress"])
+
     @SourceAddress.setter
     def SourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAddress"], value)
 
     @property
     def SrcCountPerLsp(self):
@@ -128,13 +134,22 @@ class SourceTrafficRange(Base):
         -------
         - number: The total source count per LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcCountPerLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcCountPerLsp"])
+
     @SrcCountPerLsp.setter
     def SrcCountPerLsp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcCountPerLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcCountPerLsp"], value)
 
-    def update(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+    def update(
+        self,
+        AddrFamily=None,
+        FilterOnGroupAddress=None,
+        GroupAddress=None,
+        GrpCountPerLsp=None,
+        SourceAddress=None,
+        SrcCountPerLsp=None,
+    ):
         # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Updates sourceTrafficRange resource on the server.
 
@@ -153,7 +168,15 @@ class SourceTrafficRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+    def add(
+        self,
+        AddrFamily=None,
+        FilterOnGroupAddress=None,
+        GroupAddress=None,
+        GrpCountPerLsp=None,
+        SourceAddress=None,
+        SrcCountPerLsp=None,
+    ):
         # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Adds a new sourceTrafficRange resource on the server and adds it to the container.
 
@@ -186,7 +209,15 @@ class SourceTrafficRange(Base):
         """
         self._delete()
 
-    def find(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+    def find(
+        self,
+        AddrFamily=None,
+        FilterOnGroupAddress=None,
+        GroupAddress=None,
+        GrpCountPerLsp=None,
+        SourceAddress=None,
+        SrcCountPerLsp=None,
+    ):
         # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Finds and retrieves sourceTrafficRange resources from the server.
 

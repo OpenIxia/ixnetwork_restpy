@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,20 @@ class ListWatch(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'listWatch'
+    _SDM_NAME = "listWatch"
     _SDM_ATT_MAP = {
-        'AttributesToWatch': 'attributesToWatch',
-        'AverageExecutionTime': 'averageExecutionTime',
-        'IsDisabled': 'isDisabled',
-        'LastExecutionTime': 'lastExecutionTime',
-        'LastNotification': 'lastNotification',
-        'MaxExecutionTime': 'maxExecutionTime',
-        'ObjectIdToWatch': 'objectIdToWatch',
-        'PollInterval': 'pollInterval',
-        'Token': 'token',
-        'Topic': 'topic',
+        "AttributesToWatch": "attributesToWatch",
+        "AverageExecutionTime": "averageExecutionTime",
+        "IsDisabled": "isDisabled",
+        "LastExecutionTime": "lastExecutionTime",
+        "LastNotification": "lastNotification",
+        "MaxExecutionTime": "maxExecutionTime",
+        "ObjectIdToWatch": "objectIdToWatch",
+        "PollInterval": "pollInterval",
+        "Token": "token",
+        "Topic": "topic",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ListWatch, self).__init__(parent, list_op)
@@ -59,13 +59,14 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AttributesToWatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["AttributesToWatch"])
+
     @AttributesToWatch.setter
     def AttributesToWatch(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AttributesToWatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AttributesToWatch"], value)
 
     @property
     def AverageExecutionTime(self):
@@ -73,9 +74,9 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageExecutionTime"])
 
     @property
     def IsDisabled(self):
@@ -83,9 +84,9 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsDisabled"])
 
     @property
     def LastExecutionTime(self):
@@ -93,9 +94,9 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastExecutionTime"])
 
     @property
     def LastNotification(self):
@@ -103,9 +104,9 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastNotification"])
 
     @property
     def MaxExecutionTime(self):
@@ -115,11 +116,12 @@ class ListWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxExecutionTime"])
+
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxExecutionTime"], value)
 
     @property
     def ObjectIdToWatch(self):
@@ -127,13 +129,14 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - str(None): 
+        - str(None):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectIdToWatch"])
+
     @ObjectIdToWatch.setter
     def ObjectIdToWatch(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ObjectIdToWatch"], value)
 
     @property
     def PollInterval(self):
@@ -143,11 +146,12 @@ class ListWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
     @property
     def Token(self):
@@ -155,9 +159,9 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Token'])
+        return self._get_attribute(self._SDM_ATT_MAP["Token"])
 
     @property
     def Topic(self):
@@ -165,25 +169,33 @@ class ListWatch(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topic"])
+
     @Topic.setter
     def Topic(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topic"], value)
 
-    def update(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
+    def update(
+        self,
+        AttributesToWatch=None,
+        MaxExecutionTime=None,
+        ObjectIdToWatch=None,
+        PollInterval=None,
+        Topic=None,
+    ):
         # type: (List[str], int, str, int, str) -> ListWatch
         """Updates listWatch resource on the server.
 
         Args
         ----
-        - AttributesToWatch (list(str)): 
+        - AttributesToWatch (list(str)):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - ObjectIdToWatch (str(None)): 
+        - ObjectIdToWatch (str(None)):
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Topic (str): 
+        - Topic (str):
 
         Raises
         ------
@@ -191,17 +203,24 @@ class ListWatch(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
+    def add(
+        self,
+        AttributesToWatch=None,
+        MaxExecutionTime=None,
+        ObjectIdToWatch=None,
+        PollInterval=None,
+        Topic=None,
+    ):
         # type: (List[str], int, str, int, str) -> ListWatch
         """Adds a new listWatch resource on the server and adds it to the container.
 
         Args
         ----
-        - AttributesToWatch (list(str)): 
+        - AttributesToWatch (list(str)):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - ObjectIdToWatch (str(None)): 
+        - ObjectIdToWatch (str(None)):
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Topic (str): 
+        - Topic (str):
 
         Returns
         -------
@@ -223,7 +242,19 @@ class ListWatch(Base):
         """
         self._delete()
 
-    def find(self, AttributesToWatch=None, AverageExecutionTime=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Token=None, Topic=None):
+    def find(
+        self,
+        AttributesToWatch=None,
+        AverageExecutionTime=None,
+        IsDisabled=None,
+        LastExecutionTime=None,
+        LastNotification=None,
+        MaxExecutionTime=None,
+        ObjectIdToWatch=None,
+        PollInterval=None,
+        Token=None,
+        Topic=None,
+    ):
         # type: (List[str], int, bool, int, str, int, str, int, int, str) -> ListWatch
         """Finds and retrieves listWatch resources from the server.
 
@@ -233,16 +264,16 @@ class ListWatch(Base):
 
         Args
         ----
-        - AttributesToWatch (list(str)): 
-        - AverageExecutionTime (number): 
-        - IsDisabled (bool): 
-        - LastExecutionTime (number): 
-        - LastNotification (str): 
+        - AttributesToWatch (list(str)):
+        - AverageExecutionTime (number):
+        - IsDisabled (bool):
+        - LastExecutionTime (number):
+        - LastNotification (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - ObjectIdToWatch (str(None)): 
+        - ObjectIdToWatch (str(None)):
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Token (number): 
-        - Topic (str): 
+        - Token (number):
+        - Topic (str):
 
         Returns
         -------

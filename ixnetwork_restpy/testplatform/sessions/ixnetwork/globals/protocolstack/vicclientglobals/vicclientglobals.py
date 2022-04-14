@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class VicClientGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vicClientGlobals'
+    _SDM_NAME = "vicClientGlobals"
     _SDM_ATT_MAP = {
-        'DcbxTimeout': 'dcbxTimeout',
-        'LongMsgTimeout': 'longMsgTimeout',
-        'MaxErrorRetry': 'maxErrorRetry',
-        'MaxMsgSize': 'maxMsgSize',
-        'MaxPduCredit': 'maxPduCredit',
-        'MaxTimeoutRetry': 'maxTimeoutRetry',
-        'ObjectId': 'objectId',
-        'RegularMsgTimeout': 'regularMsgTimeout',
-        'VifSetTimeout': 'vifSetTimeout',
+        "DcbxTimeout": "dcbxTimeout",
+        "LongMsgTimeout": "longMsgTimeout",
+        "MaxErrorRetry": "maxErrorRetry",
+        "MaxMsgSize": "maxMsgSize",
+        "MaxPduCredit": "maxPduCredit",
+        "MaxTimeoutRetry": "maxTimeoutRetry",
+        "ObjectId": "objectId",
+        "RegularMsgTimeout": "regularMsgTimeout",
+        "VifSetTimeout": "vifSetTimeout",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VicClientGlobals, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class VicClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptionset import VicOptionSet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptionset import (
+            VicOptionSet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicOptionSet', None) is not None:
-                return self._properties.get('VicOptionSet')
+            if self._properties.get("VicOptionSet", None) is not None:
+                return self._properties.get("VicOptionSet")
         return VicOptionSet(self)
 
     @property
@@ -77,11 +80,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of seconds to wait for DCBX to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DcbxTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["DcbxTimeout"])
+
     @DcbxTimeout.setter
     def DcbxTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DcbxTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DcbxTimeout"], value)
 
     @property
     def LongMsgTimeout(self):
@@ -91,11 +95,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of seconds to wait for a response if ERR-IN-PROGRESS was received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LongMsgTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["LongMsgTimeout"])
+
     @LongMsgTimeout.setter
     def LongMsgTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LongMsgTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LongMsgTimeout"], value)
 
     @property
     def MaxErrorRetry(self):
@@ -105,11 +110,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of attempts for each request in case of response error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxErrorRetry'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxErrorRetry"])
+
     @MaxErrorRetry.setter
     def MaxErrorRetry(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxErrorRetry'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxErrorRetry"], value)
 
     @property
     def MaxMsgSize(self):
@@ -119,11 +125,12 @@ class VicClientGlobals(Base):
         -------
         - number: The maximum message size in bytes that can be received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxMsgSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxMsgSize"])
+
     @MaxMsgSize.setter
     def MaxMsgSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxMsgSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxMsgSize"], value)
 
     @property
     def MaxPduCredit(self):
@@ -133,11 +140,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of PDUs that can be received without being acknowledged.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxPduCredit'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxPduCredit"])
+
     @MaxPduCredit.setter
     def MaxPduCredit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxPduCredit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxPduCredit"], value)
 
     @property
     def MaxTimeoutRetry(self):
@@ -147,11 +155,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of attempts for each request in case of response timeout.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxTimeoutRetry'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxTimeoutRetry"])
+
     @MaxTimeoutRetry.setter
     def MaxTimeoutRetry(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxTimeoutRetry'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxTimeoutRetry"], value)
 
     @property
     def ObjectId(self):
@@ -161,7 +170,7 @@ class VicClientGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def RegularMsgTimeout(self):
@@ -171,11 +180,12 @@ class VicClientGlobals(Base):
         -------
         - number: The number of seconds to wait for a response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegularMsgTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegularMsgTimeout"])
+
     @RegularMsgTimeout.setter
     def RegularMsgTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RegularMsgTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RegularMsgTimeout"], value)
 
     @property
     def VifSetTimeout(self):
@@ -185,13 +195,24 @@ class VicClientGlobals(Base):
         -------
         - number: The number of seconds to wait a VIF_SET message needed to enable the VIF device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VifSetTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["VifSetTimeout"])
+
     @VifSetTimeout.setter
     def VifSetTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VifSetTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VifSetTimeout"], value)
 
-    def update(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, RegularMsgTimeout=None, VifSetTimeout=None):
+    def update(
+        self,
+        DcbxTimeout=None,
+        LongMsgTimeout=None,
+        MaxErrorRetry=None,
+        MaxMsgSize=None,
+        MaxPduCredit=None,
+        MaxTimeoutRetry=None,
+        RegularMsgTimeout=None,
+        VifSetTimeout=None,
+    ):
         # type: (int, int, int, int, int, int, int, int) -> VicClientGlobals
         """Updates vicClientGlobals resource on the server.
 
@@ -212,7 +233,17 @@ class VicClientGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, RegularMsgTimeout=None, VifSetTimeout=None):
+    def add(
+        self,
+        DcbxTimeout=None,
+        LongMsgTimeout=None,
+        MaxErrorRetry=None,
+        MaxMsgSize=None,
+        MaxPduCredit=None,
+        MaxTimeoutRetry=None,
+        RegularMsgTimeout=None,
+        VifSetTimeout=None,
+    ):
         # type: (int, int, int, int, int, int, int, int) -> VicClientGlobals
         """Adds a new vicClientGlobals resource on the server and adds it to the container.
 
@@ -247,7 +278,18 @@ class VicClientGlobals(Base):
         """
         self._delete()
 
-    def find(self, DcbxTimeout=None, LongMsgTimeout=None, MaxErrorRetry=None, MaxMsgSize=None, MaxPduCredit=None, MaxTimeoutRetry=None, ObjectId=None, RegularMsgTimeout=None, VifSetTimeout=None):
+    def find(
+        self,
+        DcbxTimeout=None,
+        LongMsgTimeout=None,
+        MaxErrorRetry=None,
+        MaxMsgSize=None,
+        MaxPduCredit=None,
+        MaxTimeoutRetry=None,
+        ObjectId=None,
+        RegularMsgTimeout=None,
+        VifSetTimeout=None,
+    ):
         # type: (int, int, int, int, int, int, str, int, int) -> VicClientGlobals
         """Finds and retrieves vicClientGlobals resources from the server.
 

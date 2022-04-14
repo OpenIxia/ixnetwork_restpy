@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,39 +33,38 @@ class EgtpSgwRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpSgwRange'
+    _SDM_NAME = "egtpSgwRange"
     _SDM_ATT_MAP = {
-        'Apn': 'apn',
-        'ApnAmbrd': 'apnAmbrd',
-        'ApnAmbru': 'apnAmbru',
-        'DbMbrd': 'dbMbrd',
-        'DbMbru': 'dbMbru',
-        'DbPci': 'dbPci',
-        'DbPl': 'dbPl',
-        'DbPvi': 'dbPvi',
-        'DbQci': 'dbQci',
-        'DefaultBearerLifetimeTimer': 'defaultBearerLifetimeTimer',
-        'EnableDefaultBearerLifetime': 'enableDefaultBearerLifetime',
-        'EnableNidbCreationDelay': 'enableNidbCreationDelay',
-        'Enabled': 'enabled',
-        'Ims_apn': 'ims_apn',
-        'Imsi': 'imsi',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'NidbCreationDelay': 'nidbCreationDelay',
-        'ObjectId': 'objectId',
-        'PoolSize': 'poolSize',
-        'PoolStartIp': 'poolStartIp',
-        'PoolStartIpv4': 'poolStartIpv4',
-        'PoolStartIpv6': 'poolStartIpv6',
-        'TotalCount': 'totalCount',
-        'UserPlaneIpAddress': 'userPlaneIpAddress',
-        'UserPlaneIpCount': 'userPlaneIpCount',
-        'UserPlaneIpv4Address': 'userPlaneIpv4Address',
-        'UserPlaneIpv6Address': 'userPlaneIpv6Address',
+        "Apn": "apn",
+        "ApnAmbrd": "apnAmbrd",
+        "ApnAmbru": "apnAmbru",
+        "DbMbrd": "dbMbrd",
+        "DbMbru": "dbMbru",
+        "DbPci": "dbPci",
+        "DbPl": "dbPl",
+        "DbPvi": "dbPvi",
+        "DbQci": "dbQci",
+        "DefaultBearerLifetimeTimer": "defaultBearerLifetimeTimer",
+        "EnableDefaultBearerLifetime": "enableDefaultBearerLifetime",
+        "EnableNidbCreationDelay": "enableNidbCreationDelay",
+        "Enabled": "enabled",
+        "Ims_apn": "ims_apn",
+        "Imsi": "imsi",
+        "IpType": "ipType",
+        "Name": "name",
+        "NidbCreationDelay": "nidbCreationDelay",
+        "ObjectId": "objectId",
+        "PoolSize": "poolSize",
+        "PoolStartIp": "poolStartIp",
+        "PoolStartIpv4": "poolStartIpv4",
+        "PoolStartIpv6": "poolStartIpv6",
+        "TotalCount": "totalCount",
+        "UserPlaneIpAddress": "userPlaneIpAddress",
+        "UserPlaneIpCount": "userPlaneIpCount",
+        "UserPlaneIpv4Address": "userPlaneIpv4Address",
+        "UserPlaneIpv6Address": "userPlaneIpv6Address",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpSgwRange, self).__init__(parent, list_op)
@@ -80,10 +80,13 @@ class EgtpSgwRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_f9a0d0ce2b62efc55ec60bc7a6a96c56 import DedicatedBearer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_f9a0d0ce2b62efc55ec60bc7a6a96c56 import (
+            DedicatedBearer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DedicatedBearer', None) is not None:
-                return self._properties.get('DedicatedBearer')
+            if self._properties.get("DedicatedBearer", None) is not None:
+                return self._properties.get("DedicatedBearer")
         return DedicatedBearer(self)
 
     @property
@@ -97,10 +100,13 @@ class EgtpSgwRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_b0da1e27ea5ae3e015eae8ae4d510cb3 import TrafficProfileProxiesSgw
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_b0da1e27ea5ae3e015eae8ae4d510cb3 import (
+            TrafficProfileProxiesSgw,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrafficProfileProxiesSgw', None) is not None:
-                return self._properties.get('TrafficProfileProxiesSgw')
+            if self._properties.get("TrafficProfileProxiesSgw", None) is not None:
+                return self._properties.get("TrafficProfileProxiesSgw")
         return TrafficProfileProxiesSgw(self)
 
     @property
@@ -111,11 +117,12 @@ class EgtpSgwRange(Base):
         -------
         - str: Access Point Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Apn'])
+        return self._get_attribute(self._SDM_ATT_MAP["Apn"])
+
     @Apn.setter
     def Apn(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Apn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Apn"], value)
 
     @property
     def ApnAmbrd(self):
@@ -125,11 +132,12 @@ class EgtpSgwRange(Base):
         -------
         - number: APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApnAmbrd'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApnAmbrd"])
+
     @ApnAmbrd.setter
     def ApnAmbrd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApnAmbrd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApnAmbrd"], value)
 
     @property
     def ApnAmbru(self):
@@ -139,11 +147,12 @@ class EgtpSgwRange(Base):
         -------
         - number: APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApnAmbru'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApnAmbru"])
+
     @ApnAmbru.setter
     def ApnAmbru(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApnAmbru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApnAmbru"], value)
 
     @property
     def DbMbrd(self):
@@ -153,11 +162,12 @@ class EgtpSgwRange(Base):
         -------
         - number: Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbMbrd'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbMbrd"])
+
     @DbMbrd.setter
     def DbMbrd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbMbrd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbMbrd"], value)
 
     @property
     def DbMbru(self):
@@ -167,11 +177,12 @@ class EgtpSgwRange(Base):
         -------
         - number: Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbMbru'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbMbru"])
+
     @DbMbru.setter
     def DbMbru(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbMbru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbMbru"], value)
 
     @property
     def DbPci(self):
@@ -181,11 +192,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: ARP Preemption Capability
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbPci'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbPci"])
+
     @DbPci.setter
     def DbPci(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbPci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbPci"], value)
 
     @property
     def DbPl(self):
@@ -195,11 +207,12 @@ class EgtpSgwRange(Base):
         -------
         - number: ARP Priority Level
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbPl'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbPl"])
+
     @DbPl.setter
     def DbPl(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbPl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbPl"], value)
 
     @property
     def DbPvi(self):
@@ -209,11 +222,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: ARP Preemption Vulnerability
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbPvi'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbPvi"])
+
     @DbPvi.setter
     def DbPvi(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbPvi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbPvi"], value)
 
     @property
     def DbQci(self):
@@ -223,11 +237,12 @@ class EgtpSgwRange(Base):
         -------
         - number: QoS Class Identifier
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DbQci'])
+        return self._get_attribute(self._SDM_ATT_MAP["DbQci"])
+
     @DbQci.setter
     def DbQci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DbQci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DbQci"], value)
 
     @property
     def DefaultBearerLifetimeTimer(self):
@@ -237,11 +252,12 @@ class EgtpSgwRange(Base):
         -------
         - number: The time, in seconds, after which the default bearer is deleted
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultBearerLifetimeTimer"])
+
     @DefaultBearerLifetimeTimer.setter
     def DefaultBearerLifetimeTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefaultBearerLifetimeTimer"], value)
 
     @property
     def EnableDefaultBearerLifetime(self):
@@ -251,11 +267,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDefaultBearerLifetime"])
+
     @EnableDefaultBearerLifetime.setter
     def EnableDefaultBearerLifetime(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDefaultBearerLifetime"], value)
 
     @property
     def EnableNidbCreationDelay(self):
@@ -265,11 +282,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: Delay Network Initiated Dedicated Bearer(NIDB) Creation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNidbCreationDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNidbCreationDelay"])
+
     @EnableNidbCreationDelay.setter
     def EnableNidbCreationDelay(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNidbCreationDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNidbCreationDelay"], value)
 
     @property
     def Enabled(self):
@@ -279,11 +297,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Ims_apn(self):
@@ -293,11 +312,12 @@ class EgtpSgwRange(Base):
         -------
         - bool: IMS APN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ims_apn'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ims_apn"])
+
     @Ims_apn.setter
     def Ims_apn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ims_apn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ims_apn"], value)
 
     @property
     def Imsi(self):
@@ -307,11 +327,12 @@ class EgtpSgwRange(Base):
         -------
         - str: The first International Mobile Subscriber Identifier that will be accepted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Imsi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Imsi"])
+
     @Imsi.setter
     def Imsi(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Imsi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Imsi"], value)
 
     @property
     def IpType(self):
@@ -321,11 +342,12 @@ class EgtpSgwRange(Base):
         -------
         - str: The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Name(self):
@@ -335,11 +357,12 @@ class EgtpSgwRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NidbCreationDelay(self):
@@ -349,11 +372,12 @@ class EgtpSgwRange(Base):
         -------
         - number: Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NidbCreationDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["NidbCreationDelay"])
+
     @NidbCreationDelay.setter
     def NidbCreationDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NidbCreationDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NidbCreationDelay"], value)
 
     @property
     def ObjectId(self):
@@ -363,7 +387,7 @@ class EgtpSgwRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PoolSize(self):
@@ -373,11 +397,12 @@ class EgtpSgwRange(Base):
         -------
         - number: The number of UEs that will be accepted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PoolSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PoolSize"])
+
     @PoolSize.setter
     def PoolSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PoolSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PoolSize"], value)
 
     @property
     def PoolStartIp(self):
@@ -387,11 +412,12 @@ class EgtpSgwRange(Base):
         -------
         - str: Obsolete - use poolStartIPv4 or poolStartIPv6
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PoolStartIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PoolStartIp"])
+
     @PoolStartIp.setter
     def PoolStartIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PoolStartIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PoolStartIp"], value)
 
     @property
     def PoolStartIpv4(self):
@@ -401,11 +427,12 @@ class EgtpSgwRange(Base):
         -------
         - str: The first IPv4 address to be assigned to an UE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PoolStartIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["PoolStartIpv4"])
+
     @PoolStartIpv4.setter
     def PoolStartIpv4(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PoolStartIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PoolStartIpv4"], value)
 
     @property
     def PoolStartIpv6(self):
@@ -415,11 +442,12 @@ class EgtpSgwRange(Base):
         -------
         - str: The first IPv6 address to be assigned to an UE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PoolStartIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["PoolStartIpv6"])
+
     @PoolStartIpv6.setter
     def PoolStartIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PoolStartIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PoolStartIpv6"], value)
 
     @property
     def TotalCount(self):
@@ -429,11 +457,12 @@ class EgtpSgwRange(Base):
         -------
         - number: Layer 7 Server Count On All Ports
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalCount"])
+
     @TotalCount.setter
     def TotalCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TotalCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TotalCount"], value)
 
     @property
     def UserPlaneIpAddress(self):
@@ -443,11 +472,12 @@ class EgtpSgwRange(Base):
         -------
         - str: Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPlaneIpAddress"])
+
     @UserPlaneIpAddress.setter
     def UserPlaneIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPlaneIpAddress"], value)
 
     @property
     def UserPlaneIpCount(self):
@@ -457,11 +487,12 @@ class EgtpSgwRange(Base):
         -------
         - number: Layer 7 Server Count Per Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPlaneIpCount"])
+
     @UserPlaneIpCount.setter
     def UserPlaneIpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPlaneIpCount"], value)
 
     @property
     def UserPlaneIpv4Address(self):
@@ -471,11 +502,12 @@ class EgtpSgwRange(Base):
         -------
         - str: The first IPv4 address to be used by the L4-7 server activies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPlaneIpv4Address"])
+
     @UserPlaneIpv4Address.setter
     def UserPlaneIpv4Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPlaneIpv4Address"], value)
 
     @property
     def UserPlaneIpv6Address(self):
@@ -485,13 +517,43 @@ class EgtpSgwRange(Base):
         -------
         - str: The first IPv6 address to be used by the L4-7 server activies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpv6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPlaneIpv6Address"])
+
     @UserPlaneIpv6Address.setter
     def UserPlaneIpv6Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpv6Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPlaneIpv6Address"], value)
 
-    def update(self, Apn=None, ApnAmbrd=None, ApnAmbru=None, DbMbrd=None, DbMbru=None, DbPci=None, DbPl=None, DbPvi=None, DbQci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNidbCreationDelay=None, Enabled=None, Ims_apn=None, Imsi=None, IpType=None, Name=None, NidbCreationDelay=None, PoolSize=None, PoolStartIp=None, PoolStartIpv4=None, PoolStartIpv6=None, TotalCount=None, UserPlaneIpAddress=None, UserPlaneIpCount=None, UserPlaneIpv4Address=None, UserPlaneIpv6Address=None):
+    def update(
+        self,
+        Apn=None,
+        ApnAmbrd=None,
+        ApnAmbru=None,
+        DbMbrd=None,
+        DbMbru=None,
+        DbPci=None,
+        DbPl=None,
+        DbPvi=None,
+        DbQci=None,
+        DefaultBearerLifetimeTimer=None,
+        EnableDefaultBearerLifetime=None,
+        EnableNidbCreationDelay=None,
+        Enabled=None,
+        Ims_apn=None,
+        Imsi=None,
+        IpType=None,
+        Name=None,
+        NidbCreationDelay=None,
+        PoolSize=None,
+        PoolStartIp=None,
+        PoolStartIpv4=None,
+        PoolStartIpv6=None,
+        TotalCount=None,
+        UserPlaneIpAddress=None,
+        UserPlaneIpCount=None,
+        UserPlaneIpv4Address=None,
+        UserPlaneIpv6Address=None,
+    ):
         # type: (str, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, bool, str, str, str, int, int, str, str, str, int, str, int, str, str) -> EgtpSgwRange
         """Updates egtpSgwRange resource on the server.
 
@@ -531,7 +593,37 @@ class EgtpSgwRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Apn=None, ApnAmbrd=None, ApnAmbru=None, DbMbrd=None, DbMbru=None, DbPci=None, DbPl=None, DbPvi=None, DbQci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNidbCreationDelay=None, Enabled=None, Ims_apn=None, Imsi=None, IpType=None, Name=None, NidbCreationDelay=None, ObjectId=None, PoolSize=None, PoolStartIp=None, PoolStartIpv4=None, PoolStartIpv6=None, TotalCount=None, UserPlaneIpAddress=None, UserPlaneIpCount=None, UserPlaneIpv4Address=None, UserPlaneIpv6Address=None):
+    def find(
+        self,
+        Apn=None,
+        ApnAmbrd=None,
+        ApnAmbru=None,
+        DbMbrd=None,
+        DbMbru=None,
+        DbPci=None,
+        DbPl=None,
+        DbPvi=None,
+        DbQci=None,
+        DefaultBearerLifetimeTimer=None,
+        EnableDefaultBearerLifetime=None,
+        EnableNidbCreationDelay=None,
+        Enabled=None,
+        Ims_apn=None,
+        Imsi=None,
+        IpType=None,
+        Name=None,
+        NidbCreationDelay=None,
+        ObjectId=None,
+        PoolSize=None,
+        PoolStartIp=None,
+        PoolStartIpv4=None,
+        PoolStartIpv6=None,
+        TotalCount=None,
+        UserPlaneIpAddress=None,
+        UserPlaneIpCount=None,
+        UserPlaneIpv4Address=None,
+        UserPlaneIpv6Address=None,
+    ):
         # type: (str, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, bool, str, str, str, int, str, int, str, str, str, int, str, int, str, str) -> EgtpSgwRange
         """Finds and retrieves egtpSgwRange resources from the server.
 
@@ -615,10 +707,14 @@ class EgtpSgwRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -637,10 +733,14 @@ class EgtpSgwRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -659,7 +759,11 @@ class EgtpSgwRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

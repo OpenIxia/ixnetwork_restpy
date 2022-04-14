@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,18 @@ class PassCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'passCriteria'
+    _SDM_NAME = "passCriteria"
     _SDM_ATT_MAP = {
-        'EnableJoinFailuresPassFail': 'enableJoinFailuresPassFail',
-        'EnableJoinLatencyPassFail': 'enableJoinLatencyPassFail',
-        'EnableLeaveFailuresPassFail': 'enableLeaveFailuresPassFail',
-        'EnableLeaveLatencyPassFail': 'enableLeaveLatencyPassFail',
-        'PassFailJoinLatencyAgg': 'passFailJoinLatencyAgg',
-        'PassFailLeaveLatencyAgg': 'passFailLeaveLatencyAgg',
+        "EnableJoinFailuresPassFail": "enableJoinFailuresPassFail",
+        "EnableJoinLatencyPassFail": "enableJoinLatencyPassFail",
+        "EnableLeaveFailuresPassFail": "enableLeaveFailuresPassFail",
+        "EnableLeaveLatencyPassFail": "enableLeaveLatencyPassFail",
+        "PassFailJoinLatencyAgg": "passFailJoinLatencyAgg",
+        "PassFailLeaveLatencyAgg": "passFailLeaveLatencyAgg",
     }
     _SDM_ENUM_MAP = {
-        'passFailJoinLatencyAgg': ['average', 'maximum', 'minimum'],
-        'passFailLeaveLatencyAgg': ['average', 'maximum', 'minimum'],
+        "passFailJoinLatencyAgg": ["average", "maximum", "minimum"],
+        "passFailLeaveLatencyAgg": ["average", "maximum", "minimum"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, allows to show how many Join actions were marked as Failed or Passed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableJoinFailuresPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableJoinFailuresPassFail"])
+
     @EnableJoinFailuresPassFail.setter
     def EnableJoinFailuresPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableJoinFailuresPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableJoinFailuresPassFail"], value)
 
     @property
     def EnableJoinLatencyPassFail(self):
@@ -71,11 +73,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, allows to show the amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableJoinLatencyPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableJoinLatencyPassFail"])
+
     @EnableJoinLatencyPassFail.setter
     def EnableJoinLatencyPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableJoinLatencyPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableJoinLatencyPassFail"], value)
 
     @property
     def EnableLeaveFailuresPassFail(self):
@@ -85,11 +88,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, allows to show how many Leave actions were marked as Failed or Passed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLeaveFailuresPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLeaveFailuresPassFail"])
+
     @EnableLeaveFailuresPassFail.setter
     def EnableLeaveFailuresPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLeaveFailuresPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLeaveFailuresPassFail"], value)
 
     @property
     def EnableLeaveLatencyPassFail(self):
@@ -99,11 +103,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, allows to The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLeaveLatencyPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLeaveLatencyPassFail"])
+
     @EnableLeaveLatencyPassFail.setter
     def EnableLeaveLatencyPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLeaveLatencyPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLeaveLatencyPassFail"], value)
 
     @property
     def PassFailJoinLatencyAgg(self):
@@ -113,11 +118,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum | minimum): If true, allows to join pass and failure latency aggregate results.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailJoinLatencyAgg'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailJoinLatencyAgg"])
+
     @PassFailJoinLatencyAgg.setter
     def PassFailJoinLatencyAgg(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailJoinLatencyAgg'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailJoinLatencyAgg"], value)
 
     @property
     def PassFailLeaveLatencyAgg(self):
@@ -127,13 +133,22 @@ class PassCriteria(Base):
         -------
         - str(average | maximum | minimum): The pass fail leave latency aggregate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailLeaveLatencyAgg'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailLeaveLatencyAgg"])
+
     @PassFailLeaveLatencyAgg.setter
     def PassFailLeaveLatencyAgg(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailLeaveLatencyAgg'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailLeaveLatencyAgg"], value)
 
-    def update(self, EnableJoinFailuresPassFail=None, EnableJoinLatencyPassFail=None, EnableLeaveFailuresPassFail=None, EnableLeaveLatencyPassFail=None, PassFailJoinLatencyAgg=None, PassFailLeaveLatencyAgg=None):
+    def update(
+        self,
+        EnableJoinFailuresPassFail=None,
+        EnableJoinLatencyPassFail=None,
+        EnableLeaveFailuresPassFail=None,
+        EnableLeaveLatencyPassFail=None,
+        PassFailJoinLatencyAgg=None,
+        PassFailLeaveLatencyAgg=None,
+    ):
         # type: (bool, bool, bool, bool, str, str) -> PassCriteria
         """Updates passCriteria resource on the server.
 
@@ -152,7 +167,15 @@ class PassCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableJoinFailuresPassFail=None, EnableJoinLatencyPassFail=None, EnableLeaveFailuresPassFail=None, EnableLeaveLatencyPassFail=None, PassFailJoinLatencyAgg=None, PassFailLeaveLatencyAgg=None):
+    def find(
+        self,
+        EnableJoinFailuresPassFail=None,
+        EnableJoinLatencyPassFail=None,
+        EnableLeaveFailuresPassFail=None,
+        EnableLeaveLatencyPassFail=None,
+        PassFailJoinLatencyAgg=None,
+        PassFailLeaveLatencyAgg=None,
+    ):
         # type: (bool, bool, bool, bool, str, str) -> PassCriteria
         """Finds and retrieves passCriteria resources from the server.
 
@@ -212,10 +235,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -230,10 +255,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -242,17 +269,19 @@ class PassCriteria(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -269,10 +298,14 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -290,10 +323,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -319,10 +354,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -346,10 +383,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -366,10 +405,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -387,7 +428,9 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

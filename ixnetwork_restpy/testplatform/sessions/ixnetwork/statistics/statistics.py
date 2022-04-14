@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,45 @@ class Statistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statistics'
+    _SDM_NAME = "statistics"
     _SDM_ATT_MAP = {
-        'AdditionalFcoeStat1': 'additionalFcoeStat1',
-        'AdditionalFcoeStat2': 'additionalFcoeStat2',
-        'CsvFilePath': 'csvFilePath',
-        'CsvLogPollIntervalMultiplier': 'csvLogPollIntervalMultiplier',
-        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
-        'EnableAutoDataStore': 'enableAutoDataStore',
-        'EnableCsvLogging': 'enableCsvLogging',
-        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
-        'GuardrailEnabled': 'guardrailEnabled',
-        'MaxNumberOfStatsPerCustomGraph': 'maxNumberOfStatsPerCustomGraph',
-        'PollInterval': 'pollInterval',
-        'TimeSynchronization': 'timeSynchronization',
-        'TimestampPrecision': 'timestampPrecision',
-        'UgsTcpPort': 'ugsTcpPort',
+        "AdditionalFcoeStat1": "additionalFcoeStat1",
+        "AdditionalFcoeStat2": "additionalFcoeStat2",
+        "CsvFilePath": "csvFilePath",
+        "CsvLogPollIntervalMultiplier": "csvLogPollIntervalMultiplier",
+        "DataStorePollingIntervalMultiplier": "dataStorePollingIntervalMultiplier",
+        "EnableAutoDataStore": "enableAutoDataStore",
+        "EnableCsvLogging": "enableCsvLogging",
+        "EnableDataCenterSharedStats": "enableDataCenterSharedStats",
+        "GuardrailEnabled": "guardrailEnabled",
+        "MaxNumberOfStatsPerCustomGraph": "maxNumberOfStatsPerCustomGraph",
+        "PollInterval": "pollInterval",
+        "TimeSynchronization": "timeSynchronization",
+        "TimestampPrecision": "timestampPrecision",
+        "UgsTcpPort": "ugsTcpPort",
     }
     _SDM_ENUM_MAP = {
-        'additionalFcoeStat1': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
-        'additionalFcoeStat2': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
-        'timeSynchronization': ['syncTimeToSystemClock', 'syncTimeToTestStart'],
+        "additionalFcoeStat1": [
+            "fcoeInvalidDelimiter",
+            "fcoeInvalidFrames",
+            "fcoeInvalidSize",
+            "fcoeNormalSizeBadFcCRC",
+            "fcoeNormalSizeGoodFcCRC",
+            "fcoeUndersizeBadFcCRC",
+            "fcoeUndersizeGoodFcCRC",
+            "fcoeValidFrames",
+        ],
+        "additionalFcoeStat2": [
+            "fcoeInvalidDelimiter",
+            "fcoeInvalidFrames",
+            "fcoeInvalidSize",
+            "fcoeNormalSizeBadFcCRC",
+            "fcoeNormalSizeGoodFcCRC",
+            "fcoeUndersizeBadFcCRC",
+            "fcoeUndersizeGoodFcCRC",
+            "fcoeValidFrames",
+        ],
+        "timeSynchronization": ["syncTimeToSystemClock", "syncTimeToTestStart"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,7 +79,7 @@ class Statistics(Base):
 
     @property
     def AutoRefresh(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh.AutoRefresh): An instance of the AutoRefresh class
@@ -69,10 +88,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import AutoRefresh
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import (
+            AutoRefresh,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AutoRefresh', None) is not None:
-                return self._properties.get('AutoRefresh')
+            if self._properties.get("AutoRefresh", None) is not None:
+                return self._properties.get("AutoRefresh")
         return AutoRefresh(self)._select()
 
     @property
@@ -86,15 +108,18 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import CsvSnapshot
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import (
+            CsvSnapshot,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CsvSnapshot', None) is not None:
-                return self._properties.get('CsvSnapshot')
+            if self._properties.get("CsvSnapshot", None) is not None:
+                return self._properties.get("CsvSnapshot")
         return CsvSnapshot(self)._select()
 
     @property
     def Ixreporter(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter.Ixreporter): An instance of the Ixreporter class
@@ -103,10 +128,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import Ixreporter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import (
+            Ixreporter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ixreporter', None) is not None:
-                return self._properties.get('Ixreporter')
+            if self._properties.get("Ixreporter", None) is not None:
+                return self._properties.get("Ixreporter")
         return Ixreporter(self)._select()
 
     @property
@@ -120,10 +148,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import MeasurementMode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import (
+            MeasurementMode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MeasurementMode', None) is not None:
-                return self._properties.get('MeasurementMode')
+            if self._properties.get("MeasurementMode", None) is not None:
+                return self._properties.get("MeasurementMode")
         return MeasurementMode(self)._select()
 
     @property
@@ -137,10 +168,13 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import RawData
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import (
+            RawData,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RawData', None) is not None:
-                return self._properties.get('RawData')
+            if self._properties.get("RawData", None) is not None:
+                return self._properties.get("RawData")
         return RawData(self)._select()
 
     @property
@@ -154,193 +188,213 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view import View
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view import (
+            View,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('View', None) is not None:
-                return self._properties.get('View')
+            if self._properties.get("View", None) is not None:
+                return self._properties.get("View")
         return View(self)
 
     @property
     def AdditionalFcoeStat1(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Signifies additional FCOE stat 1
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat1"])
+
     @AdditionalFcoeStat1.setter
     def AdditionalFcoeStat1(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat1"], value)
 
     @property
     def AdditionalFcoeStat2(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Sets the additional FCoE shared stats.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat2"])
+
     @AdditionalFcoeStat2.setter
     def AdditionalFcoeStat2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat2"], value)
 
     @property
     def CsvFilePath(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Sets the CSV file path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvFilePath'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvFilePath"])
+
     @CsvFilePath.setter
     def CsvFilePath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvFilePath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvFilePath"], value)
 
     @property
     def CsvLogPollIntervalMultiplier(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Used to specify the time interval between log polling events.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLogPollIntervalMultiplier"])
+
     @CsvLogPollIntervalMultiplier.setter
     def CsvLogPollIntervalMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvLogPollIntervalMultiplier"], value)
 
     @property
     def DataStorePollingIntervalMultiplier(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DataStorePollingIntervalMultiplier"]
+        )
+
     @DataStorePollingIntervalMultiplier.setter
     def DataStorePollingIntervalMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DataStorePollingIntervalMultiplier"], value
+        )
 
     @property
     def EnableAutoDataStore(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAutoDataStore"])
+
     @EnableAutoDataStore.setter
     def EnableAutoDataStore(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAutoDataStore"], value)
 
     @property
     def EnableCsvLogging(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCsvLogging'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCsvLogging"])
+
     @EnableCsvLogging.setter
     def EnableCsvLogging(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCsvLogging'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCsvLogging"], value)
 
     @property
     def EnableDataCenterSharedStats(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, enables statistics for Data Center.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataCenterSharedStats"])
+
     @EnableDataCenterSharedStats.setter
     def EnableDataCenterSharedStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataCenterSharedStats"], value)
 
     @property
     def GuardrailEnabled(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GuardrailEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["GuardrailEnabled"])
+
     @GuardrailEnabled.setter
     def GuardrailEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GuardrailEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GuardrailEnabled"], value)
 
     @property
     def MaxNumberOfStatsPerCustomGraph(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfStatsPerCustomGraph"])
+
     @MaxNumberOfStatsPerCustomGraph.setter
     def MaxNumberOfStatsPerCustomGraph(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxNumberOfStatsPerCustomGraph"], value)
 
     @property
     def PollInterval(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
     @property
     def TimeSynchronization(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(syncTimeToSystemClock | syncTimeToTestStart): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeSynchronization'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeSynchronization"])
+
     @TimeSynchronization.setter
     def TimeSynchronization(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeSynchronization'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeSynchronization"], value)
 
     @property
     def TimestampPrecision(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimestampPrecision'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimestampPrecision"])
+
     @TimestampPrecision.setter
     def TimestampPrecision(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimestampPrecision'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimestampPrecision"], value)
 
     @property
     def UgsTcpPort(self):
@@ -350,9 +404,24 @@ class Statistics(Base):
         -------
         - number: Used to specify the UGS TCP port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UgsTcpPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["UgsTcpPort"])
 
-    def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None):
+    def update(
+        self,
+        AdditionalFcoeStat1=None,
+        AdditionalFcoeStat2=None,
+        CsvFilePath=None,
+        CsvLogPollIntervalMultiplier=None,
+        DataStorePollingIntervalMultiplier=None,
+        EnableAutoDataStore=None,
+        EnableCsvLogging=None,
+        EnableDataCenterSharedStats=None,
+        GuardrailEnabled=None,
+        MaxNumberOfStatsPerCustomGraph=None,
+        PollInterval=None,
+        TimeSynchronization=None,
+        TimestampPrecision=None,
+    ):
         # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int) -> Statistics
         """Updates statistics resource on the server.
 
@@ -378,7 +447,23 @@ class Statistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None, UgsTcpPort=None):
+    def find(
+        self,
+        AdditionalFcoeStat1=None,
+        AdditionalFcoeStat2=None,
+        CsvFilePath=None,
+        CsvLogPollIntervalMultiplier=None,
+        DataStorePollingIntervalMultiplier=None,
+        EnableAutoDataStore=None,
+        EnableCsvLogging=None,
+        EnableDataCenterSharedStats=None,
+        GuardrailEnabled=None,
+        MaxNumberOfStatsPerCustomGraph=None,
+        PollInterval=None,
+        TimeSynchronization=None,
+        TimestampPrecision=None,
+        UgsTcpPort=None,
+    ):
         # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int, int) -> Statistics
         """Finds and retrieves statistics resources from the server.
 
@@ -447,10 +532,14 @@ class Statistics(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('checkViewTreeGroupExists', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "checkViewTreeGroupExists", payload=payload, response_object=None
+        )
 
     def DockStatViewer(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -467,10 +556,12 @@ class Statistics(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dockStatViewer', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("dockStatViewer", payload=payload, response_object=None)
 
     def GetPGIDList(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -490,10 +581,12 @@ class Statistics(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPGIDList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getPGIDList", payload=payload, response_object=None)
 
     def GetStatsFooters(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -514,7 +607,9 @@ class Statistics(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getStatsFooters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getStatsFooters", payload=payload, response_object=None)

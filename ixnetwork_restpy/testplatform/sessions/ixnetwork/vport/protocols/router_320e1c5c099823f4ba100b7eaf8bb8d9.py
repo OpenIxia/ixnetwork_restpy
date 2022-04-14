@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,72 +35,77 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'AreaAddressList': 'areaAddressList',
-        'AreaAuthType': 'areaAuthType',
-        'AreaReceivedPasswordList': 'areaReceivedPasswordList',
-        'AreaTransmitPassword': 'areaTransmitPassword',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'DeviceId': 'deviceId',
-        'DevicePriority': 'devicePriority',
-        'DomainAuthType': 'domainAuthType',
-        'DomainReceivedPasswordList': 'domainReceivedPasswordList',
-        'DomainTransmitPassword': 'domainTransmitPassword',
-        'EnableAttached': 'enableAttached',
-        'EnableAutoLoopback': 'enableAutoLoopback',
-        'EnableDiscardLearnedLsps': 'enableDiscardLearnedLsps',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHitlessRestart': 'enableHitlessRestart',
-        'EnableHostName': 'enableHostName',
-        'EnableIgnoreMtPortCapability': 'enableIgnoreMtPortCapability',
-        'EnableIgnoreRecvMd5': 'enableIgnoreRecvMd5',
-        'EnableMtIpv6': 'enableMtIpv6',
-        'EnableMtuProbe': 'enableMtuProbe',
-        'EnableMultiTopology': 'enableMultiTopology',
-        'EnableOverloaded': 'enableOverloaded',
-        'EnablePartitionRepair': 'enablePartitionRepair',
-        'EnableTrillOam': 'enableTrillOam',
-        'EnableWideMetric': 'enableWideMetric',
-        'Enabled': 'enabled',
-        'FTagValue': 'fTagValue',
-        'FilterIpv4MulticastTlvs': 'filterIpv4MulticastTlvs',
-        'FilterIpv6MulticastTlvs': 'filterIpv6MulticastTlvs',
-        'FilterLearnedIpv4Prefixes': 'filterLearnedIpv4Prefixes',
-        'FilterLearnedIpv6Prefixes': 'filterLearnedIpv6Prefixes',
-        'FilterLearnedRbridges': 'filterLearnedRbridges',
-        'FilterLearnedSpbRbridges': 'filterLearnedSpbRbridges',
-        'FilterLearnedTrillMacUnicast': 'filterLearnedTrillMacUnicast',
-        'FilterMacMulticastTlvs': 'filterMacMulticastTlvs',
-        'HostName': 'hostName',
-        'InterLspMgroupPduBurstGap': 'interLspMgroupPduBurstGap',
-        'LspLifeTime': 'lspLifeTime',
-        'LspMaxSize': 'lspMaxSize',
-        'LspMgroupPduMinTransmissionInterval': 'lspMgroupPduMinTransmissionInterval',
-        'LspRefreshRate': 'lspRefreshRate',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLspMgroupPdusPerBurst': 'maxLspMgroupPdusPerBurst',
-        'NumberOfMtuProbes': 'numberOfMtuProbes',
-        'NumberOfMultiDestinationTrees': 'numberOfMultiDestinationTrees',
-        'OriginatingLspBufSize': 'originatingLspBufSize',
-        'PsnpInterval': 'psnpInterval',
-        'RestartMode': 'restartMode',
-        'RestartTime': 'restartTime',
-        'RestartVersion': 'restartVersion',
-        'StartFtagValue': 'startFtagValue',
-        'SwitchId': 'switchId',
-        'SwitchIdPriority': 'switchIdPriority',
-        'SystemId': 'systemId',
-        'TeEnable': 'teEnable',
-        'TeRouterId': 'teRouterId',
-        'TrafficGroupId': 'trafficGroupId',
+        "AreaAddressList": "areaAddressList",
+        "AreaAuthType": "areaAuthType",
+        "AreaReceivedPasswordList": "areaReceivedPasswordList",
+        "AreaTransmitPassword": "areaTransmitPassword",
+        "BroadcastRootPriority": "broadcastRootPriority",
+        "CapabilityRouterId": "capabilityRouterId",
+        "DeviceId": "deviceId",
+        "DevicePriority": "devicePriority",
+        "DomainAuthType": "domainAuthType",
+        "DomainReceivedPasswordList": "domainReceivedPasswordList",
+        "DomainTransmitPassword": "domainTransmitPassword",
+        "EnableAttached": "enableAttached",
+        "EnableAutoLoopback": "enableAutoLoopback",
+        "EnableDiscardLearnedLsps": "enableDiscardLearnedLsps",
+        "EnableHelloPadding": "enableHelloPadding",
+        "EnableHitlessRestart": "enableHitlessRestart",
+        "EnableHostName": "enableHostName",
+        "EnableIgnoreMtPortCapability": "enableIgnoreMtPortCapability",
+        "EnableIgnoreRecvMd5": "enableIgnoreRecvMd5",
+        "EnableMtIpv6": "enableMtIpv6",
+        "EnableMtuProbe": "enableMtuProbe",
+        "EnableMultiTopology": "enableMultiTopology",
+        "EnableOverloaded": "enableOverloaded",
+        "EnablePartitionRepair": "enablePartitionRepair",
+        "EnableTrillOam": "enableTrillOam",
+        "EnableWideMetric": "enableWideMetric",
+        "Enabled": "enabled",
+        "FTagValue": "fTagValue",
+        "FilterIpv4MulticastTlvs": "filterIpv4MulticastTlvs",
+        "FilterIpv6MulticastTlvs": "filterIpv6MulticastTlvs",
+        "FilterLearnedIpv4Prefixes": "filterLearnedIpv4Prefixes",
+        "FilterLearnedIpv6Prefixes": "filterLearnedIpv6Prefixes",
+        "FilterLearnedRbridges": "filterLearnedRbridges",
+        "FilterLearnedSpbRbridges": "filterLearnedSpbRbridges",
+        "FilterLearnedTrillMacUnicast": "filterLearnedTrillMacUnicast",
+        "FilterMacMulticastTlvs": "filterMacMulticastTlvs",
+        "HostName": "hostName",
+        "InterLspMgroupPduBurstGap": "interLspMgroupPduBurstGap",
+        "LspLifeTime": "lspLifeTime",
+        "LspMaxSize": "lspMaxSize",
+        "LspMgroupPduMinTransmissionInterval": "lspMgroupPduMinTransmissionInterval",
+        "LspRefreshRate": "lspRefreshRate",
+        "MaxAreaAddresses": "maxAreaAddresses",
+        "MaxLspMgroupPdusPerBurst": "maxLspMgroupPdusPerBurst",
+        "NumberOfMtuProbes": "numberOfMtuProbes",
+        "NumberOfMultiDestinationTrees": "numberOfMultiDestinationTrees",
+        "OriginatingLspBufSize": "originatingLspBufSize",
+        "PsnpInterval": "psnpInterval",
+        "RestartMode": "restartMode",
+        "RestartTime": "restartTime",
+        "RestartVersion": "restartVersion",
+        "StartFtagValue": "startFtagValue",
+        "SwitchId": "switchId",
+        "SwitchIdPriority": "switchIdPriority",
+        "SystemId": "systemId",
+        "TeEnable": "teEnable",
+        "TeRouterId": "teRouterId",
+        "TrafficGroupId": "trafficGroupId",
     }
     _SDM_ENUM_MAP = {
-        'areaAuthType': ['none', 'password', 'md5'],
-        'domainAuthType': ['none', 'password', 'md5'],
-        'restartMode': ['normalRouter', 'restartingRouter', 'startingRouter', 'helperRouter'],
-        'restartVersion': ['version3', 'version4'],
+        "areaAuthType": ["none", "password", "md5"],
+        "domainAuthType": ["none", "password", "md5"],
+        "restartMode": [
+            "normalRouter",
+            "restartingRouter",
+            "startingRouter",
+            "helperRouter",
+        ],
+        "restartVersion": ["version3", "version4"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -116,10 +122,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_9b3af0590ed159139a0d6ee63aafb653 import CustomTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_9b3af0590ed159139a0d6ee63aafb653 import (
+            CustomTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTlv', None) is not None:
-                return self._properties.get('CustomTlv')
+            if self._properties.get("CustomTlv", None) is not None:
+                return self._properties.get("CustomTlv")
         return CustomTlv(self)
 
     @property
@@ -133,10 +142,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_95c201c50eb168382a558d283f2bec6c import CustomTopology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_95c201c50eb168382a558d283f2bec6c import (
+            CustomTopology,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopology', None) is not None:
-                return self._properties.get('CustomTopology')
+            if self._properties.get("CustomTopology", None) is not None:
+                return self._properties.get("CustomTopology")
         return CustomTopology(self)
 
     @property
@@ -150,10 +162,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_137811bdde8c702243d4c46d844116e9 import DceMulticastIpv4GroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_137811bdde8c702243d4c46d844116e9 import (
+            DceMulticastIpv4GroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMulticastIpv4GroupRange', None) is not None:
-                return self._properties.get('DceMulticastIpv4GroupRange')
+            if self._properties.get("DceMulticastIpv4GroupRange", None) is not None:
+                return self._properties.get("DceMulticastIpv4GroupRange")
         return DceMulticastIpv4GroupRange(self)
 
     @property
@@ -167,10 +182,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_ff34b9b498a42af784ac1d9e6870d89b import DceMulticastIpv6GroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_ff34b9b498a42af784ac1d9e6870d89b import (
+            DceMulticastIpv6GroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMulticastIpv6GroupRange', None) is not None:
-                return self._properties.get('DceMulticastIpv6GroupRange')
+            if self._properties.get("DceMulticastIpv6GroupRange", None) is not None:
+                return self._properties.get("DceMulticastIpv6GroupRange")
         return DceMulticastIpv6GroupRange(self)
 
     @property
@@ -184,10 +202,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_cc6bbd6d9c9c0e88f6e630afd3a84823 import DceMulticastMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_cc6bbd6d9c9c0e88f6e630afd3a84823 import (
+            DceMulticastMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMulticastMacRange', None) is not None:
-                return self._properties.get('DceMulticastMacRange')
+            if self._properties.get("DceMulticastMacRange", None) is not None:
+                return self._properties.get("DceMulticastMacRange")
         return DceMulticastMacRange(self)
 
     @property
@@ -201,10 +222,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_de592cf3e2529092f28b2f14e5282a24 import DceNetworkRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_de592cf3e2529092f28b2f14e5282a24 import (
+            DceNetworkRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNetworkRange', None) is not None:
-                return self._properties.get('DceNetworkRange')
+            if self._properties.get("DceNetworkRange", None) is not None:
+                return self._properties.get("DceNetworkRange")
         return DceNetworkRange(self)
 
     @property
@@ -218,10 +242,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e13ee59af806de98161bf79b499b2a3b import DceTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e13ee59af806de98161bf79b499b2a3b import (
+            DceTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceTopologyRange', None) is not None:
-                return self._properties.get('DceTopologyRange')
+            if self._properties.get("DceTopologyRange", None) is not None:
+                return self._properties.get("DceTopologyRange")
         return DceTopologyRange(self)
 
     @property
@@ -235,10 +262,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_54e892c04a4d57ef720d90ef82e8d6e6 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_54e892c04a4d57ef720d90ef82e8d6e6 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -252,10 +282,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd import LearnedInformation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd import (
+            LearnedInformation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInformation', None) is not None:
-                return self._properties.get('LearnedInformation')
+            if self._properties.get("LearnedInformation", None) is not None:
+                return self._properties.get("LearnedInformation")
         return LearnedInformation(self)._select()
 
     @property
@@ -269,10 +302,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_13f65c2451ab57b34c6f824d4665d3ea import NetworkRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_13f65c2451ab57b34c6f824d4665d3ea import (
+            NetworkRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NetworkRange', None) is not None:
-                return self._properties.get('NetworkRange')
+            if self._properties.get("NetworkRange", None) is not None:
+                return self._properties.get("NetworkRange")
         return NetworkRange(self)
 
     @property
@@ -286,10 +322,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_f356b867b4b5aaa0b94fb4b00d34a328 import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_f356b867b4b5aaa0b94fb4b00d34a328 import (
+            RouteRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteRange', None) is not None:
-                return self._properties.get('RouteRange')
+            if self._properties.get("RouteRange", None) is not None:
+                return self._properties.get("RouteRange")
         return RouteRange(self)
 
     @property
@@ -303,10 +342,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_d4c634041e8e33458ec27f522c953b2a import SpbNetworkRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_d4c634041e8e33458ec27f522c953b2a import (
+            SpbNetworkRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbNetworkRange', None) is not None:
-                return self._properties.get('SpbNetworkRange')
+            if self._properties.get("SpbNetworkRange", None) is not None:
+                return self._properties.get("SpbNetworkRange")
         return SpbNetworkRange(self)
 
     @property
@@ -320,10 +362,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_922b3eacc2d72dd7a24481d9cb1ee831 import SpbTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_922b3eacc2d72dd7a24481d9cb1ee831 import (
+            SpbTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbTopologyRange', None) is not None:
-                return self._properties.get('SpbTopologyRange')
+            if self._properties.get("SpbTopologyRange", None) is not None:
+                return self._properties.get("SpbTopologyRange")
         return SpbTopologyRange(self)
 
     @property
@@ -337,10 +382,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_1ad2c6d3f05ae8ebfc87ba18f1512d39 import TrillPingOam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_1ad2c6d3f05ae8ebfc87ba18f1512d39 import (
+            TrillPingOam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillPingOam', None) is not None:
-                return self._properties.get('TrillPingOam')
+            if self._properties.get("TrillPingOam", None) is not None:
+                return self._properties.get("TrillPingOam")
         return TrillPingOam(self)._select()
 
     @property
@@ -354,10 +402,13 @@ class Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_1a357144d008fb5372e816e033477ead import TrillUnicastMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_1a357144d008fb5372e816e033477ead import (
+            TrillUnicastMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillUnicastMacRange', None) is not None:
-                return self._properties.get('TrillUnicastMacRange')
+            if self._properties.get("TrillUnicastMacRange", None) is not None:
+                return self._properties.get("TrillUnicastMacRange")
         return TrillUnicastMacRange(self)
 
     @property
@@ -368,11 +419,12 @@ class Router(Base):
         -------
         - list(str): The list of area addresses to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaAddressList'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaAddressList"])
+
     @AreaAddressList.setter
     def AreaAddressList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaAddressList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaAddressList"], value)
 
     @property
     def AreaAuthType(self):
@@ -382,11 +434,12 @@ class Router(Base):
         -------
         - str(none | password | md5): Sets up authentication for Level 1 LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaAuthType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaAuthType"])
+
     @AreaAuthType.setter
     def AreaAuthType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaAuthType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaAuthType"], value)
 
     @property
     def AreaReceivedPasswordList(self):
@@ -396,11 +449,12 @@ class Router(Base):
         -------
         - list(str): If areaAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaReceivedPasswordList'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaReceivedPasswordList"])
+
     @AreaReceivedPasswordList.setter
     def AreaReceivedPasswordList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaReceivedPasswordList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaReceivedPasswordList"], value)
 
     @property
     def AreaTransmitPassword(self):
@@ -410,25 +464,27 @@ class Router(Base):
         -------
         - str: If areaAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaTransmitPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaTransmitPassword"])
+
     @AreaTransmitPassword.setter
     def AreaTransmitPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaTransmitPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaTransmitPassword"], value)
 
     @property
     def BroadcastRootPriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The value of the Broadcast Root Priority of a particular DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BroadcastRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BroadcastRootPriority"])
+
     @BroadcastRootPriority.setter
     def BroadcastRootPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BroadcastRootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BroadcastRootPriority"], value)
 
     @property
     def CapabilityRouterId(self):
@@ -438,39 +494,42 @@ class Router(Base):
         -------
         - str: The IPv4 address format of the Capability Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CapabilityRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CapabilityRouterId"])
+
     @CapabilityRouterId.setter
     def CapabilityRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CapabilityRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CapabilityRouterId"], value)
 
     @property
     def DeviceId(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: This is a deprecated attribute in DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeviceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeviceId"])
+
     @DeviceId.setter
     def DeviceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeviceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeviceId"], value)
 
     @property
     def DevicePriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: This is a deprecated attribute in DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DevicePriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["DevicePriority"])
+
     @DevicePriority.setter
     def DevicePriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DevicePriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DevicePriority"], value)
 
     @property
     def DomainAuthType(self):
@@ -480,11 +539,12 @@ class Router(Base):
         -------
         - str(none | password | md5): Sets up authentication for Level 2 LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DomainAuthType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DomainAuthType"])
+
     @DomainAuthType.setter
     def DomainAuthType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DomainAuthType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DomainAuthType"], value)
 
     @property
     def DomainReceivedPasswordList(self):
@@ -494,11 +554,12 @@ class Router(Base):
         -------
         - list(str): If domainAuthType is isisAuthTypePassword, then this is a list of passwords that the router will accept on received LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DomainReceivedPasswordList'])
+        return self._get_attribute(self._SDM_ATT_MAP["DomainReceivedPasswordList"])
+
     @DomainReceivedPasswordList.setter
     def DomainReceivedPasswordList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DomainReceivedPasswordList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DomainReceivedPasswordList"], value)
 
     @property
     def DomainTransmitPassword(self):
@@ -508,11 +569,12 @@ class Router(Base):
         -------
         - str: If domainAuthType is isisAuthTypePassword, then this is the password (or MD5Key) that will be sent with transmitted LSPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DomainTransmitPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["DomainTransmitPassword"])
+
     @DomainTransmitPassword.setter
     def DomainTransmitPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DomainTransmitPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DomainTransmitPassword"], value)
 
     @property
     def EnableAttached(self):
@@ -522,11 +584,12 @@ class Router(Base):
         -------
         - bool: Indicates that the Attached Flag is set. It indicates that this ISIS router can use L2 routing to reach other areas.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAttached'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAttached"])
+
     @EnableAttached.setter
     def EnableAttached(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAttached'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAttached"], value)
 
     @property
     def EnableAutoLoopback(self):
@@ -536,11 +599,12 @@ class Router(Base):
         -------
         - bool: If enabled, loopback addresses are allowed in the generated routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoLoopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAutoLoopback"])
+
     @EnableAutoLoopback.setter
     def EnableAutoLoopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAutoLoopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAutoLoopback"], value)
 
     @property
     def EnableDiscardLearnedLsps(self):
@@ -550,11 +614,12 @@ class Router(Base):
         -------
         - bool: If enabled, LSPs learned from this router's interfaces will be discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardLearnedLsps'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDiscardLearnedLsps"])
+
     @EnableDiscardLearnedLsps.setter
     def EnableDiscardLearnedLsps(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDiscardLearnedLsps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDiscardLearnedLsps"], value)
 
     @property
     def EnableHelloPadding(self):
@@ -564,11 +629,12 @@ class Router(Base):
         -------
         - bool: If true, enables padding of hello messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHelloPadding'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHelloPadding"])
+
     @EnableHelloPadding.setter
     def EnableHelloPadding(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHelloPadding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHelloPadding"], value)
 
     @property
     def EnableHitlessRestart(self):
@@ -578,11 +644,12 @@ class Router(Base):
         -------
         - bool: Hitless Restart is enabled for this emulated ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHitlessRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHitlessRestart"])
+
     @EnableHitlessRestart.setter
     def EnableHitlessRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHitlessRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHitlessRestart"], value)
 
     @property
     def EnableHostName(self):
@@ -592,11 +659,12 @@ class Router(Base):
         -------
         - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+
     @EnableHostName.setter
     def EnableHostName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHostName"], value)
 
     @property
     def EnableIgnoreMtPortCapability(self):
@@ -606,11 +674,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreMtPortCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIgnoreMtPortCapability"])
+
     @EnableIgnoreMtPortCapability.setter
     def EnableIgnoreMtPortCapability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIgnoreMtPortCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIgnoreMtPortCapability"], value)
 
     @property
     def EnableIgnoreRecvMd5(self):
@@ -620,11 +689,12 @@ class Router(Base):
         -------
         - bool: MD5 authentication will be disabled for incoming/received packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreRecvMd5'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIgnoreRecvMd5"])
+
     @EnableIgnoreRecvMd5.setter
     def EnableIgnoreRecvMd5(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIgnoreRecvMd5'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIgnoreRecvMd5"], value)
 
     @property
     def EnableMtIpv6(self):
@@ -634,11 +704,12 @@ class Router(Base):
         -------
         - bool: If checked in L3, emulation type traffic group ID at router level is grayed out and unassigned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMtIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMtIpv6"])
+
     @EnableMtIpv6.setter
     def EnableMtIpv6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMtIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMtIpv6"], value)
 
     @property
     def EnableMtuProbe(self):
@@ -648,11 +719,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMtuProbe'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMtuProbe"])
+
     @EnableMtuProbe.setter
     def EnableMtuProbe(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMtuProbe'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMtuProbe"], value)
 
     @property
     def EnableMultiTopology(self):
@@ -662,11 +734,12 @@ class Router(Base):
         -------
         - bool: Enables more than one topology (distribution tree) corresponding to the given R bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMultiTopology'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMultiTopology"])
+
     @EnableMultiTopology.setter
     def EnableMultiTopology(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMultiTopology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMultiTopology"], value)
 
     @property
     def EnableOverloaded(self):
@@ -676,11 +749,12 @@ class Router(Base):
         -------
         - bool: If enabled, the LSP Database Overload Bit is set. It indicates that the LSP database on this router is overloaded and that there is not enough memory to store a received LSP. This router enters the Waiting State and floods an LSP (with LSP number = 0) with the overload bit set, so other routers will not forward ISIS packets to it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOverloaded'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOverloaded"])
+
     @EnableOverloaded.setter
     def EnableOverloaded(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOverloaded'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOverloaded"], value)
 
     @property
     def EnablePartitionRepair(self):
@@ -690,11 +764,12 @@ class Router(Base):
         -------
         - bool: Enables the optional partition repair option specified in ISO/IEC 10589 and RFC 1195 for Level 1 areas.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePartitionRepair'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePartitionRepair"])
+
     @EnablePartitionRepair.setter
     def EnablePartitionRepair(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePartitionRepair'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePartitionRepair"], value)
 
     @property
     def EnableTrillOam(self):
@@ -704,11 +779,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableTrillOam'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableTrillOam"])
+
     @EnableTrillOam.setter
     def EnableTrillOam(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableTrillOam'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableTrillOam"], value)
 
     @property
     def EnableWideMetric(self):
@@ -718,11 +794,12 @@ class Router(Base):
         -------
         - bool: Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, wide metrics will be enabled automatically. The wide metrics may be used without enabling TE, however.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWideMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWideMetric"])
+
     @EnableWideMetric.setter
     def EnableWideMetric(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWideMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWideMetric"], value)
 
     @property
     def Enabled(self):
@@ -732,25 +809,27 @@ class Router(Base):
         -------
         - bool: Enables or disables the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FTagValue(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: This is a deprecated attribute in DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FTagValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["FTagValue"])
+
     @FTagValue.setter
     def FTagValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FTagValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FTagValue"], value)
 
     @property
     def FilterIpv4MulticastTlvs(self):
@@ -760,11 +839,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves IPv4 Multicast learned information in the DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterIpv4MulticastTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterIpv4MulticastTlvs"])
+
     @FilterIpv4MulticastTlvs.setter
     def FilterIpv4MulticastTlvs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterIpv4MulticastTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterIpv4MulticastTlvs"], value)
 
     @property
     def FilterIpv6MulticastTlvs(self):
@@ -774,11 +854,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves IPv6 Multicast learned information in the DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterIpv6MulticastTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterIpv6MulticastTlvs"])
+
     @FilterIpv6MulticastTlvs.setter
     def FilterIpv6MulticastTlvs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterIpv6MulticastTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterIpv6MulticastTlvs"], value)
 
     @property
     def FilterLearnedIpv4Prefixes(self):
@@ -788,11 +869,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves IPv4 Unicast learned information in the ISIS L3 Routing mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedIpv4Prefixes'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterLearnedIpv4Prefixes"])
+
     @FilterLearnedIpv4Prefixes.setter
     def FilterLearnedIpv4Prefixes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterLearnedIpv4Prefixes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterLearnedIpv4Prefixes"], value)
 
     @property
     def FilterLearnedIpv6Prefixes(self):
@@ -802,11 +884,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves IPv6 Unicast learned information in the ISIS L3 Routing mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedIpv6Prefixes'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterLearnedIpv6Prefixes"])
+
     @FilterLearnedIpv6Prefixes.setter
     def FilterLearnedIpv6Prefixes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterLearnedIpv6Prefixes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterLearnedIpv6Prefixes"], value)
 
     @property
     def FilterLearnedRbridges(self):
@@ -816,11 +899,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves RBridges learned information in the DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedRbridges'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterLearnedRbridges"])
+
     @FilterLearnedRbridges.setter
     def FilterLearnedRbridges(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterLearnedRbridges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterLearnedRbridges"], value)
 
     @property
     def FilterLearnedSpbRbridges(self):
@@ -830,11 +914,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedSpbRbridges'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterLearnedSpbRbridges"])
+
     @FilterLearnedSpbRbridges.setter
     def FilterLearnedSpbRbridges(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterLearnedSpbRbridges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterLearnedSpbRbridges"], value)
 
     @property
     def FilterLearnedTrillMacUnicast(self):
@@ -844,11 +929,12 @@ class Router(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedTrillMacUnicast'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterLearnedTrillMacUnicast"])
+
     @FilterLearnedTrillMacUnicast.setter
     def FilterLearnedTrillMacUnicast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterLearnedTrillMacUnicast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterLearnedTrillMacUnicast"], value)
 
     @property
     def FilterMacMulticastTlvs(self):
@@ -858,11 +944,12 @@ class Router(Base):
         -------
         - bool: If true, retrieves MAC Multicast learned information in the DCE ISIS mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FilterMacMulticastTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["FilterMacMulticastTlvs"])
+
     @FilterMacMulticastTlvs.setter
     def FilterMacMulticastTlvs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FilterMacMulticastTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FilterMacMulticastTlvs"], value)
 
     @property
     def HostName(self):
@@ -872,11 +959,12 @@ class Router(Base):
         -------
         - str: Allows to add a host name to this router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
+
     @HostName.setter
     def HostName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostName"], value)
 
     @property
     def InterLspMgroupPduBurstGap(self):
@@ -886,11 +974,12 @@ class Router(Base):
         -------
         - number: Indicates the gap between each LSP MGROUP-PDUs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterLspMgroupPduBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterLspMgroupPduBurstGap"])
+
     @InterLspMgroupPduBurstGap.setter
     def InterLspMgroupPduBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterLspMgroupPduBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterLspMgroupPduBurstGap"], value)
 
     @property
     def LspLifeTime(self):
@@ -900,11 +989,12 @@ class Router(Base):
         -------
         - number: (in sec) The MaxAge for retaining a learned LSP on this router. The default value is 1,200 sec.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspLifeTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspLifeTime"])
+
     @LspLifeTime.setter
     def LspLifeTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspLifeTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspLifeTime"], value)
 
     @property
     def LspMaxSize(self):
@@ -914,11 +1004,12 @@ class Router(Base):
         -------
         - number: (in bytes) The maximum allowable length of an ISIS LSP message. The default is 1,492 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspMaxSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspMaxSize"])
+
     @LspMaxSize.setter
     def LspMaxSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspMaxSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspMaxSize"], value)
 
     @property
     def LspMgroupPduMinTransmissionInterval(self):
@@ -928,11 +1019,16 @@ class Router(Base):
         -------
         - number: Indicates the minimum wait time for each LSP MGROUP-PDU transmission.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspMgroupPduMinTransmissionInterval'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["LspMgroupPduMinTransmissionInterval"]
+        )
+
     @LspMgroupPduMinTransmissionInterval.setter
     def LspMgroupPduMinTransmissionInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspMgroupPduMinTransmissionInterval'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["LspMgroupPduMinTransmissionInterval"], value
+        )
 
     @property
     def LspRefreshRate(self):
@@ -942,11 +1038,12 @@ class Router(Base):
         -------
         - number: (in sec) The rate at which LSPs are resent. The default value is 900 sec.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspRefreshRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspRefreshRate"])
+
     @LspRefreshRate.setter
     def LspRefreshRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspRefreshRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspRefreshRate"], value)
 
     @property
     def MaxAreaAddresses(self):
@@ -956,11 +1053,12 @@ class Router(Base):
         -------
         - number: The number of area addresses permitted for this IS area.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxAreaAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxAreaAddresses"])
+
     @MaxAreaAddresses.setter
     def MaxAreaAddresses(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxAreaAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxAreaAddresses"], value)
 
     @property
     def MaxLspMgroupPdusPerBurst(self):
@@ -970,11 +1068,12 @@ class Router(Base):
         -------
         - number: Indicates the maximum number of LSP MGROUP-PDUs for each burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLspMgroupPdusPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLspMgroupPdusPerBurst"])
+
     @MaxLspMgroupPdusPerBurst.setter
     def MaxLspMgroupPdusPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxLspMgroupPdusPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxLspMgroupPdusPerBurst"], value)
 
     @property
     def NumberOfMtuProbes(self):
@@ -984,25 +1083,27 @@ class Router(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMtuProbes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMtuProbes"])
+
     @NumberOfMtuProbes.setter
     def NumberOfMtuProbes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMtuProbes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMtuProbes"], value)
 
     @property
     def NumberOfMultiDestinationTrees(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The number of Multi-Destination Trees for the emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMultiDestinationTrees"])
+
     @NumberOfMultiDestinationTrees.setter
     def NumberOfMultiDestinationTrees(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMultiDestinationTrees"], value)
 
     @property
     def OriginatingLspBufSize(self):
@@ -1012,11 +1113,12 @@ class Router(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatingLspBufSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatingLspBufSize"])
+
     @OriginatingLspBufSize.setter
     def OriginatingLspBufSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatingLspBufSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatingLspBufSize"], value)
 
     @property
     def PsnpInterval(self):
@@ -1026,11 +1128,12 @@ class Router(Base):
         -------
         - number: The PSPN Interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PsnpInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PsnpInterval"])
+
     @PsnpInterval.setter
     def PsnpInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PsnpInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PsnpInterval"], value)
 
     @property
     def RestartMode(self):
@@ -1040,11 +1143,12 @@ class Router(Base):
         -------
         - str(normalRouter | restartingRouter | startingRouter | helperRouter): If enableHitlessRestart is true, this indicates the mode in which this router is to operate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RestartMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RestartMode"])
+
     @RestartMode.setter
     def RestartMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RestartMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RestartMode"], value)
 
     @property
     def RestartTime(self):
@@ -1054,11 +1158,12 @@ class Router(Base):
         -------
         - number: Enter the restart time in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RestartTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RestartTime"])
+
     @RestartTime.setter
     def RestartTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RestartTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RestartTime"], value)
 
     @property
     def RestartVersion(self):
@@ -1068,53 +1173,57 @@ class Router(Base):
         -------
         - str(version3 | version4): If enableHitlessRestart is true, this indicates the version of the draft-ietf-isis-restart-nn document that the router should conform to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RestartVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["RestartVersion"])
+
     @RestartVersion.setter
     def RestartVersion(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RestartVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RestartVersion"], value)
 
     @property
     def StartFtagValue(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The starting FTAG value of the emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartFtagValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartFtagValue"])
+
     @StartFtagValue.setter
     def StartFtagValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartFtagValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartFtagValue"], value)
 
     @property
     def SwitchId(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The Switch ID of the emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchId"])
+
     @SwitchId.setter
     def SwitchId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchId"], value)
 
     @property
     def SwitchIdPriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The Switch ID priority of the emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchIdPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchIdPriority"])
+
     @SwitchIdPriority.setter
     def SwitchIdPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchIdPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchIdPriority"], value)
 
     @property
     def SystemId(self):
@@ -1124,11 +1233,12 @@ class Router(Base):
         -------
         - str: The neighbor's system ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SystemId"])
+
     @SystemId.setter
     def SystemId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SystemId"], value)
 
     @property
     def TeEnable(self):
@@ -1138,11 +1248,12 @@ class Router(Base):
         -------
         - bool: Enables traffic engineering (TE) on this emulated ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeEnable"])
+
     @TeEnable.setter
     def TeEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeEnable"], value)
 
     @property
     def TeRouterId(self):
@@ -1152,11 +1263,12 @@ class Router(Base):
         -------
         - str: The ID of the simulated router, expressed as an IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeRouterId"])
+
     @TeRouterId.setter
     def TeRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeRouterId"], value)
 
     @property
     def TrafficGroupId(self):
@@ -1166,13 +1278,74 @@ class Router(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+    def update(
+        self,
+        AreaAddressList=None,
+        AreaAuthType=None,
+        AreaReceivedPasswordList=None,
+        AreaTransmitPassword=None,
+        BroadcastRootPriority=None,
+        CapabilityRouterId=None,
+        DeviceId=None,
+        DevicePriority=None,
+        DomainAuthType=None,
+        DomainReceivedPasswordList=None,
+        DomainTransmitPassword=None,
+        EnableAttached=None,
+        EnableAutoLoopback=None,
+        EnableDiscardLearnedLsps=None,
+        EnableHelloPadding=None,
+        EnableHitlessRestart=None,
+        EnableHostName=None,
+        EnableIgnoreMtPortCapability=None,
+        EnableIgnoreRecvMd5=None,
+        EnableMtIpv6=None,
+        EnableMtuProbe=None,
+        EnableMultiTopology=None,
+        EnableOverloaded=None,
+        EnablePartitionRepair=None,
+        EnableTrillOam=None,
+        EnableWideMetric=None,
+        Enabled=None,
+        FTagValue=None,
+        FilterIpv4MulticastTlvs=None,
+        FilterIpv6MulticastTlvs=None,
+        FilterLearnedIpv4Prefixes=None,
+        FilterLearnedIpv6Prefixes=None,
+        FilterLearnedRbridges=None,
+        FilterLearnedSpbRbridges=None,
+        FilterLearnedTrillMacUnicast=None,
+        FilterMacMulticastTlvs=None,
+        HostName=None,
+        InterLspMgroupPduBurstGap=None,
+        LspLifeTime=None,
+        LspMaxSize=None,
+        LspMgroupPduMinTransmissionInterval=None,
+        LspRefreshRate=None,
+        MaxAreaAddresses=None,
+        MaxLspMgroupPdusPerBurst=None,
+        NumberOfMtuProbes=None,
+        NumberOfMultiDestinationTrees=None,
+        OriginatingLspBufSize=None,
+        PsnpInterval=None,
+        RestartMode=None,
+        RestartTime=None,
+        RestartVersion=None,
+        StartFtagValue=None,
+        SwitchId=None,
+        SwitchIdPriority=None,
+        SystemId=None,
+        TeEnable=None,
+        TeRouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Updates router resource on the server.
 
@@ -1243,7 +1416,67 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+    def add(
+        self,
+        AreaAddressList=None,
+        AreaAuthType=None,
+        AreaReceivedPasswordList=None,
+        AreaTransmitPassword=None,
+        BroadcastRootPriority=None,
+        CapabilityRouterId=None,
+        DeviceId=None,
+        DevicePriority=None,
+        DomainAuthType=None,
+        DomainReceivedPasswordList=None,
+        DomainTransmitPassword=None,
+        EnableAttached=None,
+        EnableAutoLoopback=None,
+        EnableDiscardLearnedLsps=None,
+        EnableHelloPadding=None,
+        EnableHitlessRestart=None,
+        EnableHostName=None,
+        EnableIgnoreMtPortCapability=None,
+        EnableIgnoreRecvMd5=None,
+        EnableMtIpv6=None,
+        EnableMtuProbe=None,
+        EnableMultiTopology=None,
+        EnableOverloaded=None,
+        EnablePartitionRepair=None,
+        EnableTrillOam=None,
+        EnableWideMetric=None,
+        Enabled=None,
+        FTagValue=None,
+        FilterIpv4MulticastTlvs=None,
+        FilterIpv6MulticastTlvs=None,
+        FilterLearnedIpv4Prefixes=None,
+        FilterLearnedIpv6Prefixes=None,
+        FilterLearnedRbridges=None,
+        FilterLearnedSpbRbridges=None,
+        FilterLearnedTrillMacUnicast=None,
+        FilterMacMulticastTlvs=None,
+        HostName=None,
+        InterLspMgroupPduBurstGap=None,
+        LspLifeTime=None,
+        LspMaxSize=None,
+        LspMgroupPduMinTransmissionInterval=None,
+        LspRefreshRate=None,
+        MaxAreaAddresses=None,
+        MaxLspMgroupPdusPerBurst=None,
+        NumberOfMtuProbes=None,
+        NumberOfMultiDestinationTrees=None,
+        OriginatingLspBufSize=None,
+        PsnpInterval=None,
+        RestartMode=None,
+        RestartTime=None,
+        RestartVersion=None,
+        StartFtagValue=None,
+        SwitchId=None,
+        SwitchIdPriority=None,
+        SystemId=None,
+        TeEnable=None,
+        TeRouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
@@ -1328,7 +1561,67 @@ class Router(Base):
         """
         self._delete()
 
-    def find(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+    def find(
+        self,
+        AreaAddressList=None,
+        AreaAuthType=None,
+        AreaReceivedPasswordList=None,
+        AreaTransmitPassword=None,
+        BroadcastRootPriority=None,
+        CapabilityRouterId=None,
+        DeviceId=None,
+        DevicePriority=None,
+        DomainAuthType=None,
+        DomainReceivedPasswordList=None,
+        DomainTransmitPassword=None,
+        EnableAttached=None,
+        EnableAutoLoopback=None,
+        EnableDiscardLearnedLsps=None,
+        EnableHelloPadding=None,
+        EnableHitlessRestart=None,
+        EnableHostName=None,
+        EnableIgnoreMtPortCapability=None,
+        EnableIgnoreRecvMd5=None,
+        EnableMtIpv6=None,
+        EnableMtuProbe=None,
+        EnableMultiTopology=None,
+        EnableOverloaded=None,
+        EnablePartitionRepair=None,
+        EnableTrillOam=None,
+        EnableWideMetric=None,
+        Enabled=None,
+        FTagValue=None,
+        FilterIpv4MulticastTlvs=None,
+        FilterIpv6MulticastTlvs=None,
+        FilterLearnedIpv4Prefixes=None,
+        FilterLearnedIpv6Prefixes=None,
+        FilterLearnedRbridges=None,
+        FilterLearnedSpbRbridges=None,
+        FilterLearnedTrillMacUnicast=None,
+        FilterMacMulticastTlvs=None,
+        HostName=None,
+        InterLspMgroupPduBurstGap=None,
+        LspLifeTime=None,
+        LspMaxSize=None,
+        LspMgroupPduMinTransmissionInterval=None,
+        LspRefreshRate=None,
+        MaxAreaAddresses=None,
+        MaxLspMgroupPdusPerBurst=None,
+        NumberOfMtuProbes=None,
+        NumberOfMultiDestinationTrees=None,
+        OriginatingLspBufSize=None,
+        PsnpInterval=None,
+        RestartMode=None,
+        RestartTime=None,
+        RestartVersion=None,
+        StartFtagValue=None,
+        SwitchId=None,
+        SwitchIdPriority=None,
+        SystemId=None,
+        TeEnable=None,
+        TeRouterId=None,
+        TrafficGroupId=None,
+    ):
         # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
@@ -1441,10 +1734,14 @@ class Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInformation", payload=payload, response_object=None
+        )
 
     def SendTrillOamPing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1462,7 +1759,9 @@ class Router(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTrillOamPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendTrillOamPing", payload=payload, response_object=None)

@@ -14,10 +14,8 @@ try:
         SessionAssistant,
     )
     from ixnetwork_restpy.assistants.watch.watchassistant import WatchAssistant
-    from ixnetwork_restpy.assistants.config.configassistant import (
-        ConfigAssistant,
-    )
     from ixnetwork_restpy.assistants.batch.batchupdate import BatchUpdate
     from ixnetwork_restpy.assistants.batch.batchfind import BatchFind
+    from ixnetwork_restpy.assistants.batch.batchadd import BatchAdd
 except:
     pass

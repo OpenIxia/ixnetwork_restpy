@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,30 +35,50 @@ class View(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'view'
+    _SDM_NAME = "view"
     _SDM_ATT_MAP = {
-        'AutoRefresh': 'autoRefresh',
-        'AutoUpdate': 'autoUpdate',
-        'AvailableStatsSelectorColumns': 'availableStatsSelectorColumns',
-        'Caption': 'caption',
-        'CsvFileName': 'csvFileName',
-        'EnableCsvLogging': 'enableCsvLogging',
-        'Enabled': 'enabled',
-        'EnabledStatsSelectorColumns': 'enabledStatsSelectorColumns',
-        'OnDemandRefreshView': 'onDemandRefreshView',
-        'PageTimeout': 'pageTimeout',
-        'ReadOnly': 'readOnly',
-        'StatsSelectorManager': 'statsSelectorManager',
-        'TimeSeries': 'timeSeries',
-        'TreeViewNodeName': 'treeViewNodeName',
-        'Type': 'type',
-        'TypeDescription': 'typeDescription',
-        'ViewCategory': 'viewCategory',
-        'Visible': 'visible',
+        "AutoRefresh": "autoRefresh",
+        "AutoUpdate": "autoUpdate",
+        "AvailableStatsSelectorColumns": "availableStatsSelectorColumns",
+        "Caption": "caption",
+        "CsvFileName": "csvFileName",
+        "EnableCsvLogging": "enableCsvLogging",
+        "Enabled": "enabled",
+        "EnabledStatsSelectorColumns": "enabledStatsSelectorColumns",
+        "OnDemandRefreshView": "onDemandRefreshView",
+        "PageTimeout": "pageTimeout",
+        "ReadOnly": "readOnly",
+        "StatsSelectorManager": "statsSelectorManager",
+        "TimeSeries": "timeSeries",
+        "TreeViewNodeName": "treeViewNodeName",
+        "Type": "type",
+        "TypeDescription": "typeDescription",
+        "ViewCategory": "viewCategory",
+        "Visible": "visible",
     }
     _SDM_ENUM_MAP = {
-        'type': ['layer23NextGenProtocol', 'layer23ProtocolAuthAccess', 'layer23ProtocolPort', 'layer23ProtocolRouting', 'layer23ProtocolStack', 'layer23TrafficFlow', 'layer23TrafficFlowDetective', 'layer23TrafficItem', 'layer23TrafficPort', 'layer47AppLibraryTraffic', 'sVReadOnly'],
-        'viewCategory': ['ClassicProtocol', 'L23Traffic', 'L47Traffic', 'Mixed', 'NextGenProtocol', 'PerSession', 'Unknown'],
+        "type": [
+            "layer23NextGenProtocol",
+            "layer23ProtocolAuthAccess",
+            "layer23ProtocolPort",
+            "layer23ProtocolRouting",
+            "layer23ProtocolStack",
+            "layer23TrafficFlow",
+            "layer23TrafficFlowDetective",
+            "layer23TrafficItem",
+            "layer23TrafficPort",
+            "layer47AppLibraryTraffic",
+            "sVReadOnly",
+        ],
+        "viewCategory": [
+            "ClassicProtocol",
+            "L23Traffic",
+            "L47Traffic",
+            "Mixed",
+            "NextGenProtocol",
+            "PerSession",
+            "Unknown",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,10 +95,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.advancedcvfilters.advancedcvfilters import AdvancedCVFilters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.advancedcvfilters.advancedcvfilters import (
+            AdvancedCVFilters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvancedCVFilters', None) is not None:
-                return self._properties.get('AdvancedCVFilters')
+            if self._properties.get("AdvancedCVFilters", None) is not None:
+                return self._properties.get("AdvancedCVFilters")
         return AdvancedCVFilters(self)
 
     @property
@@ -91,10 +115,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableadvancedfilters.availableadvancedfilters import AvailableAdvancedFilters
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableadvancedfilters.availableadvancedfilters import (
+            AvailableAdvancedFilters,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableAdvancedFilters', None) is not None:
-                return self._properties.get('AvailableAdvancedFilters')
+            if self._properties.get("AvailableAdvancedFilters", None) is not None:
+                return self._properties.get("AvailableAdvancedFilters")
         return AvailableAdvancedFilters(self)
 
     @property
@@ -108,10 +135,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableportfilter.availableportfilter import AvailablePortFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableportfilter.availableportfilter import (
+            AvailablePortFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailablePortFilter', None) is not None:
-                return self._properties.get('AvailablePortFilter')
+            if self._properties.get("AvailablePortFilter", None) is not None:
+                return self._properties.get("AvailablePortFilter")
         return AvailablePortFilter(self)
 
     @property
@@ -125,10 +155,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolfilter.availableprotocolfilter import AvailableProtocolFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolfilter.availableprotocolfilter import (
+            AvailableProtocolFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableProtocolFilter', None) is not None:
-                return self._properties.get('AvailableProtocolFilter')
+            if self._properties.get("AvailableProtocolFilter", None) is not None:
+                return self._properties.get("AvailableProtocolFilter")
         return AvailableProtocolFilter(self)
 
     @property
@@ -142,10 +175,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolstackfilter.availableprotocolstackfilter import AvailableProtocolStackFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolstackfilter.availableprotocolstackfilter import (
+            AvailableProtocolStackFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableProtocolStackFilter', None) is not None:
-                return self._properties.get('AvailableProtocolStackFilter')
+            if self._properties.get("AvailableProtocolStackFilter", None) is not None:
+                return self._properties.get("AvailableProtocolStackFilter")
         return AvailableProtocolStackFilter(self)
 
     @property
@@ -159,10 +195,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availablestatisticfilter.availablestatisticfilter import AvailableStatisticFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availablestatisticfilter.availablestatisticfilter import (
+            AvailableStatisticFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableStatisticFilter', None) is not None:
-                return self._properties.get('AvailableStatisticFilter')
+            if self._properties.get("AvailableStatisticFilter", None) is not None:
+                return self._properties.get("AvailableStatisticFilter")
         return AvailableStatisticFilter(self)
 
     @property
@@ -176,10 +215,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrackingfilter.availabletrackingfilter import AvailableTrackingFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrackingfilter.availabletrackingfilter import (
+            AvailableTrackingFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableTrackingFilter', None) is not None:
-                return self._properties.get('AvailableTrackingFilter')
+            if self._properties.get("AvailableTrackingFilter", None) is not None:
+                return self._properties.get("AvailableTrackingFilter")
         return AvailableTrackingFilter(self)
 
     @property
@@ -193,10 +235,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrafficitemfilter.availabletrafficitemfilter import AvailableTrafficItemFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrafficitemfilter.availabletrafficitemfilter import (
+            AvailableTrafficItemFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableTrafficItemFilter', None) is not None:
-                return self._properties.get('AvailableTrafficItemFilter')
+            if self._properties.get("AvailableTrafficItemFilter", None) is not None:
+                return self._properties.get("AvailableTrafficItemFilter")
         return AvailableTrafficItemFilter(self)
 
     @property
@@ -210,10 +255,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.data import Data
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.data import (
+            Data,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Data', None) is not None:
-                return self._properties.get('Data')
+            if self._properties.get("Data", None) is not None:
+                return self._properties.get("Data")
         return Data(self)._select()
 
     @property
@@ -227,10 +275,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.drilldown import DrillDown
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.drilldown import (
+            DrillDown,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DrillDown', None) is not None:
-                return self._properties.get('DrillDown')
+            if self._properties.get("DrillDown", None) is not None:
+                return self._properties.get("DrillDown")
         return DrillDown(self)
 
     @property
@@ -244,10 +295,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacatalog import FormulaCatalog
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacatalog import (
+            FormulaCatalog,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FormulaCatalog', None) is not None:
-                return self._properties.get('FormulaCatalog')
+            if self._properties.get("FormulaCatalog", None) is not None:
+                return self._properties.get("FormulaCatalog")
         return FormulaCatalog(self)._select()
 
     @property
@@ -261,10 +315,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.innerglobalstats.innerglobalstats import InnerGlobalStats
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.innerglobalstats.innerglobalstats import (
+            InnerGlobalStats,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InnerGlobalStats', None) is not None:
-                return self._properties.get('InnerGlobalStats')
+            if self._properties.get("InnerGlobalStats", None) is not None:
+                return self._properties.get("InnerGlobalStats")
         return InnerGlobalStats(self)._select()
 
     @property
@@ -278,10 +335,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.layer23nextgenprotocolfilter import Layer23NextGenProtocolFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.layer23nextgenprotocolfilter import (
+            Layer23NextGenProtocolFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23NextGenProtocolFilter', None) is not None:
-                return self._properties.get('Layer23NextGenProtocolFilter')
+            if self._properties.get("Layer23NextGenProtocolFilter", None) is not None:
+                return self._properties.get("Layer23NextGenProtocolFilter")
         return Layer23NextGenProtocolFilter(self)
 
     @property
@@ -295,10 +355,16 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.layer23protocolauthaccessfilter import Layer23ProtocolAuthAccessFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.layer23protocolauthaccessfilter import (
+            Layer23ProtocolAuthAccessFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23ProtocolAuthAccessFilter', None) is not None:
-                return self._properties.get('Layer23ProtocolAuthAccessFilter')
+            if (
+                self._properties.get("Layer23ProtocolAuthAccessFilter", None)
+                is not None
+            ):
+                return self._properties.get("Layer23ProtocolAuthAccessFilter")
         return Layer23ProtocolAuthAccessFilter(self)
 
     @property
@@ -312,10 +378,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolportfilter.layer23protocolportfilter import Layer23ProtocolPortFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolportfilter.layer23protocolportfilter import (
+            Layer23ProtocolPortFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23ProtocolPortFilter', None) is not None:
-                return self._properties.get('Layer23ProtocolPortFilter')
+            if self._properties.get("Layer23ProtocolPortFilter", None) is not None:
+                return self._properties.get("Layer23ProtocolPortFilter")
         return Layer23ProtocolPortFilter(self)
 
     @property
@@ -329,10 +398,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolroutingfilter.layer23protocolroutingfilter import Layer23ProtocolRoutingFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolroutingfilter.layer23protocolroutingfilter import (
+            Layer23ProtocolRoutingFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23ProtocolRoutingFilter', None) is not None:
-                return self._properties.get('Layer23ProtocolRoutingFilter')
+            if self._properties.get("Layer23ProtocolRoutingFilter", None) is not None:
+                return self._properties.get("Layer23ProtocolRoutingFilter")
         return Layer23ProtocolRoutingFilter(self)
 
     @property
@@ -346,10 +418,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolstackfilter.layer23protocolstackfilter import Layer23ProtocolStackFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolstackfilter.layer23protocolstackfilter import (
+            Layer23ProtocolStackFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23ProtocolStackFilter', None) is not None:
-                return self._properties.get('Layer23ProtocolStackFilter')
+            if self._properties.get("Layer23ProtocolStackFilter", None) is not None:
+                return self._properties.get("Layer23ProtocolStackFilter")
         return Layer23ProtocolStackFilter(self)
 
     @property
@@ -363,10 +438,16 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.layer23trafficflowdetectivefilter import Layer23TrafficFlowDetectiveFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.layer23trafficflowdetectivefilter import (
+            Layer23TrafficFlowDetectiveFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23TrafficFlowDetectiveFilter', None) is not None:
-                return self._properties.get('Layer23TrafficFlowDetectiveFilter')
+            if (
+                self._properties.get("Layer23TrafficFlowDetectiveFilter", None)
+                is not None
+            ):
+                return self._properties.get("Layer23TrafficFlowDetectiveFilter")
         return Layer23TrafficFlowDetectiveFilter(self)
 
     @property
@@ -380,10 +461,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.layer23trafficflowfilter import Layer23TrafficFlowFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.layer23trafficflowfilter import (
+            Layer23TrafficFlowFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23TrafficFlowFilter', None) is not None:
-                return self._properties.get('Layer23TrafficFlowFilter')
+            if self._properties.get("Layer23TrafficFlowFilter", None) is not None:
+                return self._properties.get("Layer23TrafficFlowFilter")
         return Layer23TrafficFlowFilter(self)
 
     @property
@@ -397,10 +481,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficitemfilter.layer23trafficitemfilter import Layer23TrafficItemFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficitemfilter.layer23trafficitemfilter import (
+            Layer23TrafficItemFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23TrafficItemFilter', None) is not None:
-                return self._properties.get('Layer23TrafficItemFilter')
+            if self._properties.get("Layer23TrafficItemFilter", None) is not None:
+                return self._properties.get("Layer23TrafficItemFilter")
         return Layer23TrafficItemFilter(self)
 
     @property
@@ -414,10 +501,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficportfilter.layer23trafficportfilter import Layer23TrafficPortFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficportfilter.layer23trafficportfilter import (
+            Layer23TrafficPortFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer23TrafficPortFilter', None) is not None:
-                return self._properties.get('Layer23TrafficPortFilter')
+            if self._properties.get("Layer23TrafficPortFilter", None) is not None:
+                return self._properties.get("Layer23TrafficPortFilter")
         return Layer23TrafficPortFilter(self)
 
     @property
@@ -431,15 +521,18 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.layer47applibrarytrafficfilter import Layer47AppLibraryTrafficFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.layer47applibrarytrafficfilter import (
+            Layer47AppLibraryTrafficFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Layer47AppLibraryTrafficFilter', None) is not None:
-                return self._properties.get('Layer47AppLibraryTrafficFilter')
+            if self._properties.get("Layer47AppLibraryTrafficFilter", None) is not None:
+                return self._properties.get("Layer47AppLibraryTrafficFilter")
         return Layer47AppLibraryTrafficFilter(self)
 
     @property
     def Page(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.page.Page): An instance of the Page class
@@ -448,10 +541,13 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.page import Page
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.page import (
+            Page,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Page', None) is not None:
-                return self._properties.get('Page')
+            if self._properties.get("Page", None) is not None:
+                return self._properties.get("Page")
         return Page(self)._select()
 
     @property
@@ -465,25 +561,29 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.statistic.statistic import Statistic
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.statistic.statistic import (
+            Statistic,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Statistic', None) is not None:
-                return self._properties.get('Statistic')
+            if self._properties.get("Statistic", None) is not None:
+                return self._properties.get("Statistic")
         return Statistic(self)
 
     @property
     def AutoRefresh(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, automatically refreshes the statistics values. Default = true
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoRefresh'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoRefresh"])
+
     @AutoRefresh.setter
     def AutoRefresh(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoRefresh'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoRefresh"], value)
 
     @property
     def AutoUpdate(self):
@@ -493,11 +593,12 @@ class View(Base):
         -------
         - bool: If true, automatically refreshes the statistics values. Default = true
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoUpdate'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoUpdate"])
+
     @AutoUpdate.setter
     def AutoUpdate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoUpdate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoUpdate"], value)
 
     @property
     def AvailableStatsSelectorColumns(self):
@@ -507,7 +608,7 @@ class View(Base):
         -------
         - list(str): Columns available to be added from Stat Selector Manager
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableStatsSelectorColumns'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableStatsSelectorColumns"])
 
     @property
     def Caption(self):
@@ -517,11 +618,12 @@ class View(Base):
         -------
         - str: This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
+        return self._get_attribute(self._SDM_ATT_MAP["Caption"])
+
     @Caption.setter
     def Caption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Caption"], value)
 
     @property
     def CsvFileName(self):
@@ -531,11 +633,12 @@ class View(Base):
         -------
         - str: Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvFileName'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvFileName"])
+
     @CsvFileName.setter
     def CsvFileName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvFileName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvFileName"], value)
 
     @property
     def EnableCsvLogging(self):
@@ -545,11 +648,12 @@ class View(Base):
         -------
         - bool: If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCsvLogging'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCsvLogging"])
+
     @EnableCsvLogging.setter
     def EnableCsvLogging(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCsvLogging'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCsvLogging"], value)
 
     @property
     def Enabled(self):
@@ -559,11 +663,12 @@ class View(Base):
         -------
         - bool: If true, enables the view that is created from the tcl script.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EnabledStatsSelectorColumns(self):
@@ -573,11 +678,12 @@ class View(Base):
         -------
         - list(str): Columns added from Stat Selector Manager
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnabledStatsSelectorColumns'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnabledStatsSelectorColumns"])
+
     @EnabledStatsSelectorColumns.setter
     def EnabledStatsSelectorColumns(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnabledStatsSelectorColumns'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnabledStatsSelectorColumns"], value)
 
     @property
     def OnDemandRefreshView(self):
@@ -585,9 +691,9 @@ class View(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OnDemandRefreshView'])
+        return self._get_attribute(self._SDM_ATT_MAP["OnDemandRefreshView"])
 
     @property
     def PageTimeout(self):
@@ -597,11 +703,12 @@ class View(Base):
         -------
         - number: The statistics view page is timed out based on the time specified. default = 25,000 ms
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PageTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["PageTimeout"])
+
     @PageTimeout.setter
     def PageTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PageTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PageTimeout"], value)
 
     @property
     def ReadOnly(self):
@@ -611,7 +718,7 @@ class View(Base):
         -------
         - bool: The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReadOnly'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReadOnly"])
 
     @property
     def StatsSelectorManager(self):
@@ -621,7 +728,7 @@ class View(Base):
         -------
         - bool: Flag that denotes whether Stats Selector Manager is enabled for this view or not
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StatsSelectorManager'])
+        return self._get_attribute(self._SDM_ATT_MAP["StatsSelectorManager"])
 
     @property
     def TimeSeries(self):
@@ -631,11 +738,12 @@ class View(Base):
         -------
         - bool: If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeSeries'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeSeries"])
+
     @TimeSeries.setter
     def TimeSeries(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeSeries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeSeries"], value)
 
     @property
     def TreeViewNodeName(self):
@@ -645,11 +753,12 @@ class View(Base):
         -------
         - str: Displays the name of the tree view node.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TreeViewNodeName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TreeViewNodeName"])
+
     @TreeViewNodeName.setter
     def TreeViewNodeName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TreeViewNodeName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TreeViewNodeName"], value)
 
     @property
     def Type(self):
@@ -659,11 +768,12 @@ class View(Base):
         -------
         - str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly): The type of view the user wants to create from tcl.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def TypeDescription(self):
@@ -673,7 +783,7 @@ class View(Base):
         -------
         - str: If true, desribes the type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeDescription"])
 
     @property
     def ViewCategory(self):
@@ -683,7 +793,7 @@ class View(Base):
         -------
         - str(ClassicProtocol | L23Traffic | L47Traffic | Mixed | NextGenProtocol | PerSession | Unknown): Returns the category of the view based on the type of statistics displayed by the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ViewCategory'])
+        return self._get_attribute(self._SDM_ATT_MAP["ViewCategory"])
 
     @property
     def Visible(self):
@@ -693,13 +803,28 @@ class View(Base):
         -------
         - bool: If true, displays the custom created tcl SVs in the SV tree under TCL Views node.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Visible'])
+        return self._get_attribute(self._SDM_ATT_MAP["Visible"])
+
     @Visible.setter
     def Visible(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Visible'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Visible"], value)
 
-    def update(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
+    def update(
+        self,
+        AutoRefresh=None,
+        AutoUpdate=None,
+        Caption=None,
+        CsvFileName=None,
+        EnableCsvLogging=None,
+        Enabled=None,
+        EnabledStatsSelectorColumns=None,
+        PageTimeout=None,
+        TimeSeries=None,
+        TreeViewNodeName=None,
+        Type=None,
+        Visible=None,
+    ):
         # type: (bool, bool, str, str, bool, bool, List[str], int, bool, str, str, bool) -> View
         """Updates view resource on the server.
 
@@ -724,7 +849,21 @@ class View(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
+    def add(
+        self,
+        AutoRefresh=None,
+        AutoUpdate=None,
+        Caption=None,
+        CsvFileName=None,
+        EnableCsvLogging=None,
+        Enabled=None,
+        EnabledStatsSelectorColumns=None,
+        PageTimeout=None,
+        TimeSeries=None,
+        TreeViewNodeName=None,
+        Type=None,
+        Visible=None,
+    ):
         # type: (bool, bool, str, str, bool, bool, List[str], int, bool, str, str, bool) -> View
         """Adds a new view resource on the server and adds it to the container.
 
@@ -763,7 +902,27 @@ class View(Base):
         """
         self._delete()
 
-    def find(self, AutoRefresh=None, AutoUpdate=None, AvailableStatsSelectorColumns=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, OnDemandRefreshView=None, PageTimeout=None, ReadOnly=None, StatsSelectorManager=None, TimeSeries=None, TreeViewNodeName=None, Type=None, TypeDescription=None, ViewCategory=None, Visible=None):
+    def find(
+        self,
+        AutoRefresh=None,
+        AutoUpdate=None,
+        AvailableStatsSelectorColumns=None,
+        Caption=None,
+        CsvFileName=None,
+        EnableCsvLogging=None,
+        Enabled=None,
+        EnabledStatsSelectorColumns=None,
+        OnDemandRefreshView=None,
+        PageTimeout=None,
+        ReadOnly=None,
+        StatsSelectorManager=None,
+        TimeSeries=None,
+        TreeViewNodeName=None,
+        Type=None,
+        TypeDescription=None,
+        ViewCategory=None,
+        Visible=None,
+    ):
         # type: (bool, bool, List[str], str, str, bool, bool, List[str], bool, int, bool, bool, bool, str, str, str, str, bool) -> View
         """Finds and retrieves view resources from the server.
 
@@ -781,7 +940,7 @@ class View(Base):
         - EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         - Enabled (bool): If true, enables the view that is created from the tcl script.
         - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
-        - OnDemandRefreshView (bool): 
+        - OnDemandRefreshView (bool):
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - ReadOnly (bool): The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
         - StatsSelectorManager (bool): Flag that denotes whether Stats Selector Manager is enabled for this view or not
@@ -826,20 +985,24 @@ class View(Base):
 
         doDrillDownByOption(Arg2=number, Arg3=string, async_operation=bool)href
         -----------------------------------------------------------------------
-        - Arg2 (number): 
-        - Arg3 (str): 
+        - Arg2 (number):
+        - Arg3 (str):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None): 
+        - Returns str(None):
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('doDrillDownByOption', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "doDrillDownByOption", payload=payload, response_object=None
+        )
 
     def ExportData(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -858,10 +1021,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('exportData', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("exportData", payload=payload, response_object=None)
 
     def GetAvailableDrillDownOptions(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -869,19 +1034,23 @@ class View(Base):
 
         getAvailableDrillDownOptions(Arg2=number, async_operation=bool)list
         -------------------------------------------------------------------
-        - Arg2 (number): 
+        - Arg2 (number):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): 
+        - Returns list(str):
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAvailableDrillDownOptions', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableDrillDownOptions", payload=payload, response_object=None
+        )
 
     def GetColumnValues(self, *args, **kwargs):
         """Executes the getColumnValues operation on the server.
@@ -899,10 +1068,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getColumnValues', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getColumnValues", payload=payload, response_object=None)
 
     def GetResultsPath(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -920,10 +1091,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getResultsPath', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getResultsPath", payload=payload, response_object=None)
 
     def GetRowValues(self, *args, **kwargs):
         """Executes the getRowValues operation on the server.
@@ -941,10 +1114,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getRowValues', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getRowValues", payload=payload, response_object=None)
 
     def GetValue(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -964,10 +1139,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getValue', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getValue", payload=payload, response_object=None)
 
     def Refresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -984,10 +1161,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refresh', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("refresh", payload=payload, response_object=None)
 
     def RestoreToDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1004,10 +1183,12 @@ class View(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restoreToDefaults', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restoreToDefaults", payload=payload, response_object=None)
 
     def SetEgressViewMode(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -1015,16 +1196,18 @@ class View(Base):
 
         setEgressViewMode(Arg2=enum, async_operation=bool)number
         --------------------------------------------------------
-        - Arg2 (str(kAll | kNotDefined | kRowsWithNoPackets | kRowsWithPackets)): 
+        - Arg2 (str(kAll | kNotDefined | kRowsWithNoPackets | kRowsWithPackets)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns number: 
+        - Returns number:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setEgressViewMode', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setEgressViewMode", payload=payload, response_object=None)

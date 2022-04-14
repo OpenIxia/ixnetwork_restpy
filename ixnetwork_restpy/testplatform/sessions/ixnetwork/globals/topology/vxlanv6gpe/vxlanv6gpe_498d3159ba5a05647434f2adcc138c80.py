@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Vxlanv6gpe(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vxlanv6gpe'
+    _SDM_NAME = "vxlanv6gpe"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InnerFrameMinimumSize': 'innerFrameMinimumSize',
-        'Name': 'name',
-        'OuterIpDestMode': 'outerIpDestMode',
-        'RowNames': 'rowNames',
-        'Udp_dest': 'udp_dest',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InnerFrameMinimumSize": "innerFrameMinimumSize",
+        "Name": "name",
+        "OuterIpDestMode": "outerIpDestMode",
+        "RowNames": "rowNames",
+        "Udp_dest": "udp_dest",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Vxlanv6gpe, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Vxlanv6gpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -76,10 +79,13 @@ class Vxlanv6gpe(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -90,7 +96,7 @@ class Vxlanv6gpe(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -100,7 +106,7 @@ class Vxlanv6gpe(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InnerFrameMinimumSize(self):
@@ -111,7 +117,10 @@ class Vxlanv6gpe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Pad inner frame with 0 in order to have inner frame of minumum specified size.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InnerFrameMinimumSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InnerFrameMinimumSize"])
+        )
 
     @property
     def Name(self):
@@ -121,11 +130,12 @@ class Vxlanv6gpe(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OuterIpDestMode(self):
@@ -136,7 +146,10 @@ class Vxlanv6gpe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates what is the outer destination IP in the generated fpga traffic
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OuterIpDestMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OuterIpDestMode"])
+        )
 
     @property
     def RowNames(self):
@@ -146,7 +159,7 @@ class Vxlanv6gpe(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def Udp_dest(self):
@@ -157,7 +170,8 @@ class Vxlanv6gpe(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Destination Port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Udp_dest']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Udp_dest"]))
 
     def update(self, Name=None):
         # type: (str) -> Vxlanv6gpe
@@ -219,7 +233,13 @@ class Vxlanv6gpe(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, InnerFrameMinimumSize=None, OuterIpDestMode=None, Udp_dest=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        InnerFrameMinimumSize=None,
+        OuterIpDestMode=None,
+        Udp_dest=None,
+    ):
         """Base class infrastructure that gets a list of vxlanv6gpe device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

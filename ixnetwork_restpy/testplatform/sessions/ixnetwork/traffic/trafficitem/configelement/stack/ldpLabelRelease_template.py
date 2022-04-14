@@ -4,78 +4,78 @@ from ixnetwork_restpy.files import Files
 
 class LdpLabelRelease(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpLabelRelease'
+    _SDM_NAME = "ldpLabelRelease"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpLabelRelease.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpLabelRelease.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpLabelRelease.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpLabelRelease.header.labelSpace-4',
-        'HeaderUBit': 'ldpLabelRelease.header.uBit-5',
-        'HeaderType': 'ldpLabelRelease.header.type-6',
-        'HeaderLength': 'ldpLabelRelease.header.length-7',
-        'HeaderMessageID': 'ldpLabelRelease.header.messageID-8',
-        'FecTLVUBit': 'ldpLabelRelease.header.fecTLV.uBit-9',
-        'FecTLVFBit': 'ldpLabelRelease.header.fecTLV.fBit-10',
-        'FecTLVType': 'ldpLabelRelease.header.fecTLV.type-11',
-        'FecTLVLength': 'ldpLabelRelease.header.fecTLV.length-12',
-        'WildcardType': 'ldpLabelRelease.header.fecTLV.fecElement.wildcard.type-13',
-        'PrefixType': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.type-14',
-        'Ipv4PrefixAddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15',
-        'Ipv4PrefixPrelen': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16',
-        'Ipv4PrefixPrefix': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17',
-        'Ipv6PrefixAddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18',
-        'Ipv6PrefixPrelen': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19',
-        'Ipv6PrefixPrefix': 'ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20',
-        'HostAddressType': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.type-21',
-        'Ipv4HostAddressAddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22',
-        'Ipv4HostAddressHostAddressLength': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23',
-        'Ipv4HostAddressHostAddress': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24',
-        'Ipv6HostAddressAddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25',
-        'Ipv6HostAddressHostAddressLength': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26',
-        'Ipv6HostAddressHostAddress': 'ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27',
-        'TclP2mpTclType': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclType-28',
-        'TclIpv4P2mpAddressTclP2mpAddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclP2mpAddressFamily-29',
-        'TclIpv4P2mpAddressTclP2mpAddressLength': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclP2mpAddressLength-30',
-        'TclIpv4P2mpAddressTclRootAddress': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclRootAddress-31',
-        'TclIpv6P2mpAddressTclP2mpIpv6AddressFamily': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclP2mpIpv6AddressFamily-32',
-        'TclIpv6P2mpAddressTclP2mpIpv6AddressLength': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclP2mpIpv6AddressLength-33',
-        'TclIpv6P2mpAddressTclIpv6RootAddress': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclIpv6RootAddress-34',
-        'TclP2mpTclOpaqueLength': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueLength-35',
-        'TclGenericLSPIdentifierTLVTclType': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclType-36',
-        'TclGenericLSPIdentifierTLVTclLength': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclLength-37',
-        'TclGenericLSPIdentifierTLVTclValue': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclValue-38',
-        'TclEditTLVTclType': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclType-39',
-        'TclEditTLVTclLength': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclLength-40',
-        'TclEditTLVTclValue': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclValue-41',
-        'TclP2mpTypedWcardTclTypeTypedWcard': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeTypedWcard-42',
-        'TclP2mpTypedWcardTclTypeWcard': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeWcard-43',
-        'TclP2mpTypedWcardTclTypeLen': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeLen-44',
-        'TclP2mpTypedWcardTclTypeAfi': 'ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeAfi-45',
-        'GenericLabelTLVUBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.uBit-46',
-        'GenericLabelTLVFBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.fBit-47',
-        'GenericLabelTLVType': 'ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.type-48',
-        'GenericLabelTLVLength': 'ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.length-49',
-        'GenericLabelTLVLabel': 'ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.label-50',
-        'AtmLabelTLVUBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.uBit-51',
-        'AtmLabelTLVFBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.fBit-52',
-        'AtmLabelTLVType': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.type-53',
-        'AtmLabelTLVLength': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.length-54',
-        'AtmLabelTLVReserved': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.reserved-55',
-        'AtmLabelTLVVBits': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vBits-56',
-        'AtmLabelTLVVpi': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vpi-57',
-        'AtmLabelTLVVci': 'ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vci-58',
-        'FrameRelayLabelTLVUBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.uBit-59',
-        'FrameRelayLabelTLVFBit': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.fBit-60',
-        'FrameRelayLabelTLVType': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.type-61',
-        'FrameRelayLabelTLVLength': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.length-62',
-        'FrameRelayLabelTLVReserved': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.reserved-63',
-        'FrameRelayLabelTLVDlciLength': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.dlciLength-64',
-        'FrameRelayLabelTLVDlci': 'ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.dlci-65',
-        'VendorPrivateUBit': 'ldpLabelRelease.header.optionalParameter.vendorPrivate.uBit-66',
-        'VendorPrivateType': 'ldpLabelRelease.header.optionalParameter.vendorPrivate.type-67',
-        'VendorPrivateLength': 'ldpLabelRelease.header.optionalParameter.vendorPrivate.length-68',
-        'VendorPrivateMessageID': 'ldpLabelRelease.header.optionalParameter.vendorPrivate.messageID-69',
-        'VendorPrivateVendorID': 'ldpLabelRelease.header.optionalParameter.vendorPrivate.vendorID-70',
+        "HeaderVersion": "ldpLabelRelease.header.version-1",
+        "HeaderPduLengthinOctets": "ldpLabelRelease.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpLabelRelease.header.lsrID-3",
+        "HeaderLabelSpace": "ldpLabelRelease.header.labelSpace-4",
+        "HeaderUBit": "ldpLabelRelease.header.uBit-5",
+        "HeaderType": "ldpLabelRelease.header.type-6",
+        "HeaderLength": "ldpLabelRelease.header.length-7",
+        "HeaderMessageID": "ldpLabelRelease.header.messageID-8",
+        "FecTLVUBit": "ldpLabelRelease.header.fecTLV.uBit-9",
+        "FecTLVFBit": "ldpLabelRelease.header.fecTLV.fBit-10",
+        "FecTLVType": "ldpLabelRelease.header.fecTLV.type-11",
+        "FecTLVLength": "ldpLabelRelease.header.fecTLV.length-12",
+        "WildcardType": "ldpLabelRelease.header.fecTLV.fecElement.wildcard.type-13",
+        "PrefixType": "ldpLabelRelease.header.fecTLV.fecElement.prefix.type-14",
+        "Ipv4PrefixAddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15",
+        "Ipv4PrefixPrelen": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16",
+        "Ipv4PrefixPrefix": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17",
+        "Ipv6PrefixAddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18",
+        "Ipv6PrefixPrelen": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19",
+        "Ipv6PrefixPrefix": "ldpLabelRelease.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20",
+        "HostAddressType": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.type-21",
+        "Ipv4HostAddressAddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22",
+        "Ipv4HostAddressHostAddressLength": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23",
+        "Ipv4HostAddressHostAddress": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24",
+        "Ipv6HostAddressAddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25",
+        "Ipv6HostAddressHostAddressLength": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26",
+        "Ipv6HostAddressHostAddress": "ldpLabelRelease.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27",
+        "TclP2mpTclType": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclType-28",
+        "TclIpv4P2mpAddressTclP2mpAddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclP2mpAddressFamily-29",
+        "TclIpv4P2mpAddressTclP2mpAddressLength": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclP2mpAddressLength-30",
+        "TclIpv4P2mpAddressTclRootAddress": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv4P2mpAddress.tclRootAddress-31",
+        "TclIpv6P2mpAddressTclP2mpIpv6AddressFamily": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclP2mpIpv6AddressFamily-32",
+        "TclIpv6P2mpAddressTclP2mpIpv6AddressLength": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclP2mpIpv6AddressLength-33",
+        "TclIpv6P2mpAddressTclIpv6RootAddress": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclAddressFamily.tclIpv6P2mpAddress.tclIpv6RootAddress-34",
+        "TclP2mpTclOpaqueLength": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueLength-35",
+        "TclGenericLSPIdentifierTLVTclType": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclType-36",
+        "TclGenericLSPIdentifierTLVTclLength": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclLength-37",
+        "TclGenericLSPIdentifierTLVTclValue": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclGenericLSPIdentifierTLV.tclValue-38",
+        "TclEditTLVTclType": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclType-39",
+        "TclEditTLVTclLength": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclLength-40",
+        "TclEditTLVTclValue": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mp.tclOpaqueTlvs.selectTLVType.tclEditTLV.tclValue-41",
+        "TclP2mpTypedWcardTclTypeTypedWcard": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeTypedWcard-42",
+        "TclP2mpTypedWcardTclTypeWcard": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeWcard-43",
+        "TclP2mpTypedWcardTclTypeLen": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeLen-44",
+        "TclP2mpTypedWcardTclTypeAfi": "ldpLabelRelease.header.fecTLV.fecElement.tclP2mpTypedWcard.tclTypeAfi-45",
+        "GenericLabelTLVUBit": "ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.uBit-46",
+        "GenericLabelTLVFBit": "ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.fBit-47",
+        "GenericLabelTLVType": "ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.type-48",
+        "GenericLabelTLVLength": "ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.length-49",
+        "GenericLabelTLVLabel": "ldpLabelRelease.header.optionalParameter.labelTLV.genericLabelTLV.label-50",
+        "AtmLabelTLVUBit": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.uBit-51",
+        "AtmLabelTLVFBit": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.fBit-52",
+        "AtmLabelTLVType": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.type-53",
+        "AtmLabelTLVLength": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.length-54",
+        "AtmLabelTLVReserved": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.reserved-55",
+        "AtmLabelTLVVBits": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vBits-56",
+        "AtmLabelTLVVpi": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vpi-57",
+        "AtmLabelTLVVci": "ldpLabelRelease.header.optionalParameter.labelTLV.atmLabelTLV.vci-58",
+        "FrameRelayLabelTLVUBit": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.uBit-59",
+        "FrameRelayLabelTLVFBit": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.fBit-60",
+        "FrameRelayLabelTLVType": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.type-61",
+        "FrameRelayLabelTLVLength": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.length-62",
+        "FrameRelayLabelTLVReserved": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.reserved-63",
+        "FrameRelayLabelTLVDlciLength": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.dlciLength-64",
+        "FrameRelayLabelTLVDlci": "ldpLabelRelease.header.optionalParameter.labelTLV.frameRelayLabelTLV.dlci-65",
+        "VendorPrivateUBit": "ldpLabelRelease.header.optionalParameter.vendorPrivate.uBit-66",
+        "VendorPrivateType": "ldpLabelRelease.header.optionalParameter.vendorPrivate.type-67",
+        "VendorPrivateLength": "ldpLabelRelease.header.optionalParameter.vendorPrivate.length-68",
+        "VendorPrivateMessageID": "ldpLabelRelease.header.optionalParameter.vendorPrivate.messageID-69",
+        "VendorPrivateVendorID": "ldpLabelRelease.header.optionalParameter.vendorPrivate.vendorID-70",
     }
 
     def __init__(self, parent, list_op=False):
@@ -89,7 +89,8 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -99,7 +100,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -109,7 +113,8 @@ class LdpLabelRelease(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -119,7 +124,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -130,7 +138,8 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -140,7 +149,8 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -150,7 +160,8 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -160,7 +171,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     @property
     def FecTLVUBit(self):
@@ -171,7 +185,8 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVUBit"]))
 
     @property
     def FecTLVFBit(self):
@@ -182,7 +197,8 @@ class LdpLabelRelease(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVFBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVFBit"]))
 
     @property
     def FecTLVType(self):
@@ -192,7 +208,8 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVType"]))
 
     @property
     def FecTLVLength(self):
@@ -202,7 +219,8 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVLength"]))
 
     @property
     def WildcardType(self):
@@ -212,7 +230,8 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WildcardType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WildcardType"]))
 
     @property
     def PrefixType(self):
@@ -222,7 +241,8 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixType"]))
 
     @property
     def Ipv4PrefixAddressFamily(self):
@@ -232,7 +252,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixAddressFamily"])
+        )
 
     @property
     def Ipv4PrefixPrelen(self):
@@ -242,7 +265,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrelen"])
+        )
 
     @property
     def Ipv4PrefixPrefix(self):
@@ -252,7 +278,10 @@ class LdpLabelRelease(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrefix"])
+        )
 
     @property
     def Ipv6PrefixAddressFamily(self):
@@ -262,7 +291,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixAddressFamily"])
+        )
 
     @property
     def Ipv6PrefixPrelen(self):
@@ -272,7 +304,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrelen"])
+        )
 
     @property
     def Ipv6PrefixPrefix(self):
@@ -282,7 +317,10 @@ class LdpLabelRelease(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrefix"])
+        )
 
     @property
     def HostAddressType(self):
@@ -292,7 +330,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostAddressType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HostAddressType"])
+        )
 
     @property
     def Ipv4HostAddressAddressFamily(self):
@@ -302,7 +343,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv4HostAddressHostAddressLength(self):
@@ -312,7 +356,11 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv4HostAddressHostAddress(self):
@@ -322,7 +370,10 @@ class LdpLabelRelease(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddress"])
+        )
 
     @property
     def Ipv6HostAddressAddressFamily(self):
@@ -332,7 +383,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv6HostAddressHostAddressLength(self):
@@ -342,7 +396,11 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv6HostAddressHostAddress(self):
@@ -352,7 +410,10 @@ class LdpLabelRelease(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddress"])
+        )
 
     @property
     def TclP2mpTclType(self):
@@ -362,7 +423,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTclType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclP2mpTclType"])
+        )
 
     @property
     def TclIpv4P2mpAddressTclP2mpAddressFamily(self):
@@ -372,7 +436,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv4P2mpAddressTclP2mpAddressFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclIpv4P2mpAddressTclP2mpAddressFamily"]
+            ),
+        )
 
     @property
     def TclIpv4P2mpAddressTclP2mpAddressLength(self):
@@ -382,7 +452,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv4P2mpAddressTclP2mpAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclIpv4P2mpAddressTclP2mpAddressLength"]
+            ),
+        )
 
     @property
     def TclIpv4P2mpAddressTclRootAddress(self):
@@ -392,7 +468,11 @@ class LdpLabelRelease(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv4P2mpAddressTclRootAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["TclIpv4P2mpAddressTclRootAddress"]),
+        )
 
     @property
     def TclIpv6P2mpAddressTclP2mpIpv6AddressFamily(self):
@@ -402,7 +482,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv6P2mpAddressTclP2mpIpv6AddressFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclIpv6P2mpAddressTclP2mpIpv6AddressFamily"]
+            ),
+        )
 
     @property
     def TclIpv6P2mpAddressTclP2mpIpv6AddressLength(self):
@@ -412,7 +498,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv6P2mpAddressTclP2mpIpv6AddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclIpv6P2mpAddressTclP2mpIpv6AddressLength"]
+            ),
+        )
 
     @property
     def TclIpv6P2mpAddressTclIpv6RootAddress(self):
@@ -422,7 +514,13 @@ class LdpLabelRelease(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclIpv6P2mpAddressTclIpv6RootAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclIpv6P2mpAddressTclIpv6RootAddress"]
+            ),
+        )
 
     @property
     def TclP2mpTclOpaqueLength(self):
@@ -432,7 +530,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTclOpaqueLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclP2mpTclOpaqueLength"])
+        )
 
     @property
     def TclGenericLSPIdentifierTLVTclType(self):
@@ -442,7 +543,11 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclGenericLSPIdentifierTLVTclType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["TclGenericLSPIdentifierTLVTclType"]),
+        )
 
     @property
     def TclGenericLSPIdentifierTLVTclLength(self):
@@ -452,7 +557,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclGenericLSPIdentifierTLVTclLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclGenericLSPIdentifierTLVTclLength"]
+            ),
+        )
 
     @property
     def TclGenericLSPIdentifierTLVTclValue(self):
@@ -462,7 +573,13 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclGenericLSPIdentifierTLVTclValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclGenericLSPIdentifierTLVTclValue"]
+            ),
+        )
 
     @property
     def TclEditTLVTclType(self):
@@ -472,7 +589,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclEditTLVTclType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclEditTLVTclType"])
+        )
 
     @property
     def TclEditTLVTclLength(self):
@@ -482,7 +602,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclEditTLVTclLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclEditTLVTclLength"])
+        )
 
     @property
     def TclEditTLVTclValue(self):
@@ -492,7 +615,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclEditTLVTclValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclEditTLVTclValue"])
+        )
 
     @property
     def TclP2mpTypedWcardTclTypeTypedWcard(self):
@@ -502,7 +628,13 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTypedWcardTclTypeTypedWcard']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["TclP2mpTypedWcardTclTypeTypedWcard"]
+            ),
+        )
 
     @property
     def TclP2mpTypedWcardTclTypeWcard(self):
@@ -512,7 +644,11 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTypedWcardTclTypeWcard']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["TclP2mpTypedWcardTclTypeWcard"]),
+        )
 
     @property
     def TclP2mpTypedWcardTclTypeLen(self):
@@ -522,7 +658,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTypedWcardTclTypeLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclP2mpTypedWcardTclTypeLen"])
+        )
 
     @property
     def TclP2mpTypedWcardTclTypeAfi(self):
@@ -532,7 +671,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TclP2mpTypedWcardTclTypeAfi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TclP2mpTypedWcardTclTypeAfi"])
+        )
 
     @property
     def GenericLabelTLVUBit(self):
@@ -543,7 +685,10 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenericLabelTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenericLabelTLVUBit"])
+        )
 
     @property
     def GenericLabelTLVFBit(self):
@@ -554,7 +699,10 @@ class LdpLabelRelease(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenericLabelTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenericLabelTLVFBit"])
+        )
 
     @property
     def GenericLabelTLVType(self):
@@ -564,7 +712,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenericLabelTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenericLabelTLVType"])
+        )
 
     @property
     def GenericLabelTLVLength(self):
@@ -574,7 +725,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenericLabelTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenericLabelTLVLength"])
+        )
 
     @property
     def GenericLabelTLVLabel(self):
@@ -584,7 +738,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenericLabelTLVLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GenericLabelTLVLabel"])
+        )
 
     @property
     def AtmLabelTLVUBit(self):
@@ -595,7 +752,10 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVUBit"])
+        )
 
     @property
     def AtmLabelTLVFBit(self):
@@ -606,7 +766,10 @@ class LdpLabelRelease(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVFBit"])
+        )
 
     @property
     def AtmLabelTLVType(self):
@@ -616,7 +779,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVType"])
+        )
 
     @property
     def AtmLabelTLVLength(self):
@@ -626,7 +792,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVLength"])
+        )
 
     @property
     def AtmLabelTLVReserved(self):
@@ -636,7 +805,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVReserved"])
+        )
 
     @property
     def AtmLabelTLVVBits(self):
@@ -647,7 +819,10 @@ class LdpLabelRelease(Base):
         Available enum values: VPI and VCI significant, 0, Only VPI significant, 1, Only VCI significant, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVVBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVVBits"])
+        )
 
     @property
     def AtmLabelTLVVpi(self):
@@ -657,7 +832,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVVpi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVVpi"])
+        )
 
     @property
     def AtmLabelTLVVci(self):
@@ -667,7 +845,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelTLVVci']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmLabelTLVVci"])
+        )
 
     @property
     def FrameRelayLabelTLVUBit(self):
@@ -678,7 +859,10 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVUBit"])
+        )
 
     @property
     def FrameRelayLabelTLVFBit(self):
@@ -689,7 +873,10 @@ class LdpLabelRelease(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVFBit"])
+        )
 
     @property
     def FrameRelayLabelTLVType(self):
@@ -699,7 +886,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVType"])
+        )
 
     @property
     def FrameRelayLabelTLVLength(self):
@@ -709,7 +899,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVLength"])
+        )
 
     @property
     def FrameRelayLabelTLVReserved(self):
@@ -719,7 +912,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVReserved"])
+        )
 
     @property
     def FrameRelayLabelTLVDlciLength(self):
@@ -730,7 +926,10 @@ class LdpLabelRelease(Base):
         Available enum values: 10 bits, 0, 23 bits, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVDlciLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVDlciLength"])
+        )
 
     @property
     def FrameRelayLabelTLVDlci(self):
@@ -740,7 +939,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelTLVDlci']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FrameRelayLabelTLVDlci"])
+        )
 
     @property
     def VendorPrivateUBit(self):
@@ -751,7 +953,10 @@ class LdpLabelRelease(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorPrivateUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorPrivateUBit"])
+        )
 
     @property
     def VendorPrivateType(self):
@@ -761,7 +966,10 @@ class LdpLabelRelease(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorPrivateType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorPrivateType"])
+        )
 
     @property
     def VendorPrivateLength(self):
@@ -771,7 +979,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorPrivateLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorPrivateLength"])
+        )
 
     @property
     def VendorPrivateMessageID(self):
@@ -781,7 +992,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorPrivateMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorPrivateMessageID"])
+        )
 
     @property
     def VendorPrivateVendorID(self):
@@ -791,7 +1005,10 @@ class LdpLabelRelease(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VendorPrivateVendorID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VendorPrivateVendorID"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class RsvpEroSubObjectsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpEroSubObjectsList'
+    _SDM_NAME = "rsvpEroSubObjectsList"
     _SDM_ATT_MAP = {
-        'AsNumber': 'asNumber',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ip': 'ip',
-        'LeafIp': 'leafIp',
-        'LocalIp': 'localIp',
-        'LooseFlag': 'looseFlag',
-        'Name': 'name',
-        'P2mpIdAsIp': 'p2mpIdAsIp',
-        'P2mpIdAsNum': 'p2mpIdAsNum',
-        'PrefixLength': 'prefixLength',
-        'Type': 'type',
+        "AsNumber": "asNumber",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Ip": "ip",
+        "LeafIp": "leafIp",
+        "LocalIp": "localIp",
+        "LooseFlag": "looseFlag",
+        "Name": "name",
+        "P2mpIdAsIp": "p2mpIdAsIp",
+        "P2mpIdAsNum": "p2mpIdAsNum",
+        "PrefixLength": "prefixLength",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpEroSubObjectsList, self).__init__(parent, list_op)
@@ -63,7 +63,8 @@ class RsvpEroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
 
     @property
     def Count(self):
@@ -73,7 +74,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -83,7 +84,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Ip(self):
@@ -94,7 +95,8 @@ class RsvpEroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ip']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ip"]))
 
     @property
     def LeafIp(self):
@@ -104,7 +106,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - list(str): Leaf IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeafIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeafIp"])
 
     @property
     def LocalIp(self):
@@ -114,7 +116,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def LooseFlag(self):
@@ -125,7 +127,8 @@ class RsvpEroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Loose Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LooseFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LooseFlag"]))
 
     @property
     def Name(self):
@@ -135,11 +138,12 @@ class RsvpEroSubObjectsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def P2mpIdAsIp(self):
@@ -149,7 +153,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - list(str): P2MP ID As IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpIdAsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpIdAsIp"])
 
     @property
     def P2mpIdAsNum(self):
@@ -159,7 +163,7 @@ class RsvpEroSubObjectsList(Base):
         -------
         - list(str): P2MP ID displayed in Integer format
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpIdAsNum'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpIdAsNum"])
 
     @property
     def PrefixLength(self):
@@ -170,7 +174,8 @@ class RsvpEroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def Type(self):
@@ -181,7 +186,8 @@ class RsvpEroSubObjectsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type: IP or AS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     def update(self, Name=None):
         # type: (str) -> RsvpEroSubObjectsList
@@ -202,7 +208,7 @@ class RsvpEroSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> RsvpEroSubObjectsList
-        """Adds a new rsvpEroSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new rsvpEroSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -218,7 +224,16 @@ class RsvpEroSubObjectsList(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LeafIp=None, LocalIp=None, Name=None, P2mpIdAsIp=None, P2mpIdAsNum=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LeafIp=None,
+        LocalIp=None,
+        Name=None,
+        P2mpIdAsIp=None,
+        P2mpIdAsNum=None,
+    ):
         # type: (int, str, List[str], List[str], str, List[str], List[str]) -> RsvpEroSubObjectsList
         """Finds and retrieves rsvpEroSubObjectsList resources from the server.
 
@@ -264,7 +279,15 @@ class RsvpEroSubObjectsList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AsNumber=None, Ip=None, LooseFlag=None, PrefixLength=None, Type=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AsNumber=None,
+        Ip=None,
+        LooseFlag=None,
+        PrefixLength=None,
+        Type=None,
+    ):
         """Base class infrastructure that gets a list of rsvpEroSubObjectsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

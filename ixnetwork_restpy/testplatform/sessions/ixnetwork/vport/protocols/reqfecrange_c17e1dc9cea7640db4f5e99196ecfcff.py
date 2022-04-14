@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class ReqFecRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'reqFecRange'
+    _SDM_NAME = "reqFecRange"
     _SDM_ATT_MAP = {
-        'EnableHopCount': 'enableHopCount',
-        'EnableStateTimer': 'enableStateTimer',
-        'Enabled': 'enabled',
-        'FirstNetwork': 'firstNetwork',
-        'HopCount': 'hopCount',
-        'MaskWidth': 'maskWidth',
-        'NextHopPeer': 'nextHopPeer',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'StaleReqTime': 'staleReqTime',
+        "EnableHopCount": "enableHopCount",
+        "EnableStateTimer": "enableStateTimer",
+        "Enabled": "enabled",
+        "FirstNetwork": "firstNetwork",
+        "HopCount": "hopCount",
+        "MaskWidth": "maskWidth",
+        "NextHopPeer": "nextHopPeer",
+        "NumberOfRoutes": "numberOfRoutes",
+        "StaleReqTime": "staleReqTime",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ReqFecRange, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class ReqFecRange(Base):
         -------
         - bool: Enables the hops along the path of the LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHopCount"])
+
     @EnableHopCount.setter
     def EnableHopCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHopCount"], value)
 
     @property
     def EnableStateTimer(self):
@@ -74,11 +75,12 @@ class ReqFecRange(Base):
         -------
         - bool: Enable the Stale Request Timer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStateTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStateTimer"])
+
     @EnableStateTimer.setter
     def EnableStateTimer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStateTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStateTimer"], value)
 
     @property
     def Enabled(self):
@@ -88,11 +90,12 @@ class ReqFecRange(Base):
         -------
         - bool: Enables the use of this request FEC range for the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstNetwork(self):
@@ -102,11 +105,12 @@ class ReqFecRange(Base):
         -------
         - str: The first FEC network address in the range (in IP address format).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstNetwork'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstNetwork"])
+
     @FirstNetwork.setter
     def FirstNetwork(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstNetwork'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstNetwork"], value)
 
     @property
     def HopCount(self):
@@ -116,11 +120,12 @@ class ReqFecRange(Base):
         -------
         - number: The number of hops along the path of the LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
+
     @HopCount.setter
     def HopCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HopCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HopCount"], value)
 
     @property
     def MaskWidth(self):
@@ -130,11 +135,12 @@ class ReqFecRange(Base):
         -------
         - number: The number of bits in the FEC mask applied to the FEC network address. The masked bits in the first network address form the FEC address prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     @property
     def NextHopPeer(self):
@@ -144,11 +150,12 @@ class ReqFecRange(Base):
         -------
         - str: The IPv4 address of the LDP Peer that is the next hop router on this path. (0.0.0.0 indicates that requests will be sent to all of this router's peers that are in Downstream on Demand mode.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopPeer'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopPeer"])
+
     @NextHopPeer.setter
     def NextHopPeer(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopPeer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopPeer"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -158,11 +165,12 @@ class ReqFecRange(Base):
         -------
         - number: The number of routes configured for this LDP requesting FEC range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def StaleReqTime(self):
@@ -172,13 +180,25 @@ class ReqFecRange(Base):
         -------
         - number: The Stale Request Time value. Value range is 1 to 65.535 seconds. (default = 300)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaleReqTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaleReqTime"])
+
     @StaleReqTime.setter
     def StaleReqTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaleReqTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaleReqTime"], value)
 
-    def update(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
+    def update(
+        self,
+        EnableHopCount=None,
+        EnableStateTimer=None,
+        Enabled=None,
+        FirstNetwork=None,
+        HopCount=None,
+        MaskWidth=None,
+        NextHopPeer=None,
+        NumberOfRoutes=None,
+        StaleReqTime=None,
+    ):
         # type: (bool, bool, bool, str, int, int, str, int, int) -> ReqFecRange
         """Updates reqFecRange resource on the server.
 
@@ -200,7 +220,18 @@ class ReqFecRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
+    def add(
+        self,
+        EnableHopCount=None,
+        EnableStateTimer=None,
+        Enabled=None,
+        FirstNetwork=None,
+        HopCount=None,
+        MaskWidth=None,
+        NextHopPeer=None,
+        NumberOfRoutes=None,
+        StaleReqTime=None,
+    ):
         # type: (bool, bool, bool, str, int, int, str, int, int) -> ReqFecRange
         """Adds a new reqFecRange resource on the server and adds it to the container.
 
@@ -236,7 +267,18 @@ class ReqFecRange(Base):
         """
         self._delete()
 
-    def find(self, EnableHopCount=None, EnableStateTimer=None, Enabled=None, FirstNetwork=None, HopCount=None, MaskWidth=None, NextHopPeer=None, NumberOfRoutes=None, StaleReqTime=None):
+    def find(
+        self,
+        EnableHopCount=None,
+        EnableStateTimer=None,
+        Enabled=None,
+        FirstNetwork=None,
+        HopCount=None,
+        MaskWidth=None,
+        NextHopPeer=None,
+        NumberOfRoutes=None,
+        StaleReqTime=None,
+    ):
         # type: (bool, bool, bool, str, int, int, str, int, int) -> ReqFecRange
         """Finds and retrieves reqFecRange resources from the server.
 

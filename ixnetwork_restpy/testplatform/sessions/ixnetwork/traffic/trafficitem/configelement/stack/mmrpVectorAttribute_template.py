@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class MmrpVectorAttribute(Base):
     __slots__ = ()
-    _SDM_NAME = 'mmrpVectorAttribute'
+    _SDM_NAME = "mmrpVectorAttribute"
     _SDM_ATT_MAP = {
-        'VectorHeaderLeaveAllEvent': 'mmrpVectorAttribute.header.vectorHeader.leaveAllEvent-1',
-        'VectorHeaderNoOfValues': 'mmrpVectorAttribute.header.vectorHeader.noOfValues-2',
-        'MmrpServiceRequiremenVectorFirstValueFirstValue': 'mmrpVectorAttribute.header.selectFirstValueType.mmrpServiceRequiremenVectorFirstValue.firstValue-3',
-        'MmrpMacVectorFirstValueFirstValue': 'mmrpVectorAttribute.header.selectFirstValueType.mmrpMacVectorFirstValue.firstValue-4',
+        "VectorHeaderLeaveAllEvent": "mmrpVectorAttribute.header.vectorHeader.leaveAllEvent-1",
+        "VectorHeaderNoOfValues": "mmrpVectorAttribute.header.vectorHeader.noOfValues-2",
+        "MmrpServiceRequiremenVectorFirstValueFirstValue": "mmrpVectorAttribute.header.selectFirstValueType.mmrpServiceRequiremenVectorFirstValue.firstValue-3",
+        "MmrpMacVectorFirstValueFirstValue": "mmrpVectorAttribute.header.selectFirstValueType.mmrpMacVectorFirstValue.firstValue-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class MmrpVectorAttribute(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VectorHeaderLeaveAllEvent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VectorHeaderLeaveAllEvent"])
+        )
 
     @property
     def VectorHeaderNoOfValues(self):
@@ -33,7 +36,10 @@ class MmrpVectorAttribute(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VectorHeaderNoOfValues']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VectorHeaderNoOfValues"])
+        )
 
     @property
     def MmrpServiceRequiremenVectorFirstValueFirstValue(self):
@@ -43,17 +49,27 @@ class MmrpVectorAttribute(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpServiceRequiremenVectorFirstValueFirstValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MmrpServiceRequiremenVectorFirstValueFirstValue"]
+            ),
+        )
 
     @property
     def MmrpMacVectorFirstValueFirstValue(self):
         """
         Display Name: First Value
-        Default Value: 0x91E0F000FE00 
+        Default Value: 0x91E0F000FE00
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MmrpMacVectorFirstValueFirstValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MmrpMacVectorFirstValueFirstValue"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

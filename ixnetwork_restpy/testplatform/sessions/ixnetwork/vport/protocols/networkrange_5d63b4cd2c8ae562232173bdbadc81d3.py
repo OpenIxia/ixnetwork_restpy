@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,26 +35,26 @@ class NetworkRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'networkRange'
+    _SDM_NAME = "networkRange"
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
-        'EBit': 'eBit',
-        'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
-        'EntryAddress': 'entryAddress',
-        'EntryColumn': 'entryColumn',
-        'EntryMaskLength': 'entryMaskLength',
-        'EntryRow': 'entryRow',
-        'IncrementByRid': 'incrementByRid',
-        'LinkMetric': 'linkMetric',
-        'LinkType': 'linkType',
-        'NumCols': 'numCols',
-        'NumRows': 'numRows',
-        'PrefixAddress': 'prefixAddress',
-        'PrefixMask': 'prefixMask',
-        'Rid': 'rid',
+        "BBit": "bBit",
+        "EBit": "eBit",
+        "EnableAdvertiseNetworkRange": "enableAdvertiseNetworkRange",
+        "EntryAddress": "entryAddress",
+        "EntryColumn": "entryColumn",
+        "EntryMaskLength": "entryMaskLength",
+        "EntryRow": "entryRow",
+        "IncrementByRid": "incrementByRid",
+        "LinkMetric": "linkMetric",
+        "LinkType": "linkType",
+        "NumCols": "numCols",
+        "NumRows": "numRows",
+        "PrefixAddress": "prefixAddress",
+        "PrefixMask": "prefixMask",
+        "Rid": "rid",
     }
     _SDM_ENUM_MAP = {
-        'linkType': ['broadcast', 'pointToPoint'],
+        "linkType": ["broadcast", "pointToPoint"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,11 +68,12 @@ class NetworkRange(Base):
         -------
         - bool: If enabled, the router LSAs will indicate that the router is acting as a Border Router (area border router/ABR). Disabled by default.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BBit"])
+
     @BBit.setter
     def BBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BBit"], value)
 
     @property
     def EBit(self):
@@ -81,11 +83,12 @@ class NetworkRange(Base):
         -------
         - bool: If enabled, the router LSAs will indicate that the router is acting as an AS Boundary Router (Autonomous System Boundary Router/ASBR). Disabled by default.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def EnableAdvertiseNetworkRange(self):
@@ -95,11 +98,12 @@ class NetworkRange(Base):
         -------
         - bool: Enables the OSPFv3 network range grid and allows it to be advertised by the emulated OSPFv3 router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAdvertiseNetworkRange"])
+
     @EnableAdvertiseNetworkRange.setter
     def EnableAdvertiseNetworkRange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAdvertiseNetworkRange"], value)
 
     @property
     def EntryAddress(self):
@@ -109,11 +113,12 @@ class NetworkRange(Base):
         -------
         - str: The IPv6 address of the simulated OSPFv3 router that is the entry point into the network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryAddress"])
+
     @EntryAddress.setter
     def EntryAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryAddress"], value)
 
     @property
     def EntryColumn(self):
@@ -123,11 +128,12 @@ class NetworkRange(Base):
         -------
         - number: The column where the entry point simulated OSPFv3 router is located in the network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryColumn'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryColumn"])
+
     @EntryColumn.setter
     def EntryColumn(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryColumn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryColumn"], value)
 
     @property
     def EntryMaskLength(self):
@@ -137,11 +143,12 @@ class NetworkRange(Base):
         -------
         - number: (integer, range = 1 to 128) The length of the mask used with the IPv6 address of the entry point simulated OSPFv3 router in the grid. The default is 64.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryMaskLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryMaskLength"])
+
     @EntryMaskLength.setter
     def EntryMaskLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryMaskLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryMaskLength"], value)
 
     @property
     def EntryRow(self):
@@ -151,11 +158,12 @@ class NetworkRange(Base):
         -------
         - number: The row where the entry point simulated OSPFv3 router is located in the network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryRow"])
+
     @EntryRow.setter
     def EntryRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryRow"], value)
 
     @property
     def IncrementByRid(self):
@@ -165,11 +173,12 @@ class NetworkRange(Base):
         -------
         - str: The increment step to be added to the RID for each additional simulated OSPFv3 router in the grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementByRid'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementByRid"])
+
     @IncrementByRid.setter
     def IncrementByRid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementByRid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementByRid"], value)
 
     @property
     def LinkMetric(self):
@@ -179,11 +188,12 @@ class NetworkRange(Base):
         -------
         - number: The metric for the link connecting the grid with the emulated OSPFv3 router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
+
     @LinkMetric.setter
     def LinkMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMetric"], value)
 
     @property
     def LinkType(self):
@@ -193,11 +203,12 @@ class NetworkRange(Base):
         -------
         - str(broadcast | pointToPoint): Sets the link type of the network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkType"])
+
     @LinkType.setter
     def LinkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkType"], value)
 
     @property
     def NumCols(self):
@@ -207,11 +218,12 @@ class NetworkRange(Base):
         -------
         - number: The number of columns in this network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumCols'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumCols"])
+
     @NumCols.setter
     def NumCols(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumCols'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumCols"], value)
 
     @property
     def NumRows(self):
@@ -221,11 +233,12 @@ class NetworkRange(Base):
         -------
         - number: The number of rows in this network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRows"])
+
     @NumRows.setter
     def NumRows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRows"], value)
 
     @property
     def PrefixAddress(self):
@@ -235,11 +248,12 @@ class NetworkRange(Base):
         -------
         - str: The IPv6 prefix address for the first subnet in the grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixAddress"])
+
     @PrefixAddress.setter
     def PrefixAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixAddress"], value)
 
     @property
     def PrefixMask(self):
@@ -249,11 +263,12 @@ class NetworkRange(Base):
         -------
         - number: (integer, range = 1 to 128) The length of the mask used with the IPv6 addresses of the subnets in the grid. The default is 64.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixMask"])
+
     @PrefixMask.setter
     def PrefixMask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixMask"], value)
 
     @property
     def Rid(self):
@@ -263,13 +278,31 @@ class NetworkRange(Base):
         -------
         - str: The identifier for the first simulated OSPFv3 router in the grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rid"])
+
     @Rid.setter
     def Rid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rid"], value)
 
-    def update(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+    def update(
+        self,
+        BBit=None,
+        EBit=None,
+        EnableAdvertiseNetworkRange=None,
+        EntryAddress=None,
+        EntryColumn=None,
+        EntryMaskLength=None,
+        EntryRow=None,
+        IncrementByRid=None,
+        LinkMetric=None,
+        LinkType=None,
+        NumCols=None,
+        NumRows=None,
+        PrefixAddress=None,
+        PrefixMask=None,
+        Rid=None,
+    ):
         # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Updates networkRange resource on the server.
 
@@ -297,7 +330,24 @@ class NetworkRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+    def add(
+        self,
+        BBit=None,
+        EBit=None,
+        EnableAdvertiseNetworkRange=None,
+        EntryAddress=None,
+        EntryColumn=None,
+        EntryMaskLength=None,
+        EntryRow=None,
+        IncrementByRid=None,
+        LinkMetric=None,
+        LinkType=None,
+        NumCols=None,
+        NumRows=None,
+        PrefixAddress=None,
+        PrefixMask=None,
+        Rid=None,
+    ):
         # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Adds a new networkRange resource on the server and adds it to the container.
 
@@ -339,7 +389,24 @@ class NetworkRange(Base):
         """
         self._delete()
 
-    def find(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+    def find(
+        self,
+        BBit=None,
+        EBit=None,
+        EnableAdvertiseNetworkRange=None,
+        EntryAddress=None,
+        EntryColumn=None,
+        EntryMaskLength=None,
+        EntryRow=None,
+        IncrementByRid=None,
+        LinkMetric=None,
+        LinkType=None,
+        NumCols=None,
+        NumRows=None,
+        PrefixAddress=None,
+        PrefixMask=None,
+        Rid=None,
+    ):
         # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Finds and retrieves networkRange resources from the server.
 

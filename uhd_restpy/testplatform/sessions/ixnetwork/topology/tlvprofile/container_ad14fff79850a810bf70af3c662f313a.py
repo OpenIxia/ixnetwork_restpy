@@ -106,7 +106,7 @@ class Container(Base):
 
     def add(self, IsEnabled=None, Name=None):
         # type: (bool, str) -> Container
-        """Adds a new container resource on the json, only valid with config assistant
+        """Adds a new container resource on the json, only valid with batch add utility
 
         Args
         ----

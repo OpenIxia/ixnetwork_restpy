@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class SimInterface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'simInterface'
+    _SDM_NAME = "simInterface"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FromNodeIndex': 'fromNodeIndex',
-        'Name': 'name',
-        'ToNetworkTopology': 'toNetworkTopology',
-        'ToNodeIndex': 'toNodeIndex',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FromNodeIndex": "fromNodeIndex",
+        "Name": "name",
+        "ToNetworkTopology": "toNetworkTopology",
+        "ToNodeIndex": "toNodeIndex",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SimInterface, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class SimInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d import IsisL3PseudoInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d import (
+            IsisL3PseudoInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3PseudoInterface', None) is not None:
-                return self._properties.get('IsisL3PseudoInterface')
+            if self._properties.get("IsisL3PseudoInterface", None) is not None:
+                return self._properties.get("IsisL3PseudoInterface")
         return IsisL3PseudoInterface(self)
 
     @property
@@ -76,10 +79,13 @@ class SimInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudointerface_c1f1f37e55c1225f223c72b348d63875 import IsisPseudoInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudointerface_c1f1f37e55c1225f223c72b348d63875 import (
+            IsisPseudoInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisPseudoInterface', None) is not None:
-                return self._properties.get('IsisPseudoInterface')
+            if self._properties.get("IsisPseudoInterface", None) is not None:
+                return self._properties.get("IsisPseudoInterface")
         return IsisPseudoInterface(self)
 
     @property
@@ -93,10 +99,13 @@ class SimInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceethernetconfig_1d251364611e333123819f3a7098b591 import SimInterfaceEthernetConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceethernetconfig_1d251364611e333123819f3a7098b591 import (
+            SimInterfaceEthernetConfig,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SimInterfaceEthernetConfig', None) is not None:
-                return self._properties.get('SimInterfaceEthernetConfig')
+            if self._properties.get("SimInterfaceEthernetConfig", None) is not None:
+                return self._properties.get("SimInterfaceEthernetConfig")
         return SimInterfaceEthernetConfig(self)
 
     @property
@@ -110,10 +119,13 @@ class SimInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv4config_e6c1aa40e073d14efc69d40d8efd0f6b import SimInterfaceIPv4Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv4config_e6c1aa40e073d14efc69d40d8efd0f6b import (
+            SimInterfaceIPv4Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SimInterfaceIPv4Config', None) is not None:
-                return self._properties.get('SimInterfaceIPv4Config')
+            if self._properties.get("SimInterfaceIPv4Config", None) is not None:
+                return self._properties.get("SimInterfaceIPv4Config")
         return SimInterfaceIPv4Config(self)
 
     @property
@@ -127,10 +139,13 @@ class SimInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv6config_189f3bfbc365f2b105e35cd8b9d542d6 import SimInterfaceIPv6Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv6config_189f3bfbc365f2b105e35cd8b9d542d6 import (
+            SimInterfaceIPv6Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SimInterfaceIPv6Config', None) is not None:
-                return self._properties.get('SimInterfaceIPv6Config')
+            if self._properties.get("SimInterfaceIPv6Config", None) is not None:
+                return self._properties.get("SimInterfaceIPv6Config")
         return SimInterfaceIPv6Config(self)
 
     @property
@@ -141,7 +156,7 @@ class SimInterface(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -151,7 +166,7 @@ class SimInterface(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FromNodeIndex(self):
@@ -162,7 +177,8 @@ class SimInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): From Node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FromNodeIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FromNodeIndex"]))
 
     @property
     def Name(self):
@@ -172,11 +188,12 @@ class SimInterface(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ToNetworkTopology(self):
@@ -187,7 +204,10 @@ class SimInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Network Topology this link is pointing to
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToNetworkTopology']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ToNetworkTopology"])
+        )
 
     @property
     def ToNodeIndex(self):
@@ -198,7 +218,8 @@ class SimInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): To Node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToNodeIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ToNodeIndex"]))
 
     def update(self, Name=None):
         # type: (str) -> SimInterface
@@ -219,7 +240,7 @@ class SimInterface(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimInterface
-        """Adds a new simInterface resource on the json, only valid with config assistant
+        """Adds a new simInterface resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -292,10 +313,12 @@ class SimInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -312,10 +335,12 @@ class SimInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -332,12 +357,20 @@ class SimInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        FromNodeIndex=None,
+        ToNetworkTopology=None,
+        ToNodeIndex=None,
+    ):
         """Base class infrastructure that gets a list of simInterface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,21 @@ class TrillOamPing(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trillOamPing'
+    _SDM_NAME = "trillOamPing"
     _SDM_ATT_MAP = {
-        'DestinationNickname': 'destinationNickname',
-        'IncomingPort': 'incomingPort',
-        'NextHop': 'nextHop',
-        'OutgoingPort': 'outgoingPort',
-        'OutgoingPortMtu': 'outgoingPortMtu',
-        'PreviousHop': 'previousHop',
-        'ResponseTime': 'responseTime',
-        'SequenceNumber': 'sequenceNumber',
-        'SourceNickname': 'sourceNickname',
-        'Status': 'status',
+        "DestinationNickname": "destinationNickname",
+        "IncomingPort": "incomingPort",
+        "NextHop": "nextHop",
+        "OutgoingPort": "outgoingPort",
+        "OutgoingPortMtu": "outgoingPortMtu",
+        "PreviousHop": "previousHop",
+        "ResponseTime": "responseTime",
+        "SequenceNumber": "sequenceNumber",
+        "SourceNickname": "sourceNickname",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['Failure', 'Success'],
+        "status": ["Failure", "Success"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,7 +62,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestinationNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestinationNickname"])
 
     @property
     def IncomingPort(self):
@@ -71,7 +72,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingPort"])
 
     @property
     def NextHop(self):
@@ -81,7 +82,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     @property
     def OutgoingPort(self):
@@ -91,7 +92,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingPort"])
 
     @property
     def OutgoingPortMtu(self):
@@ -101,7 +102,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingPortMtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingPortMtu"])
 
     @property
     def PreviousHop(self):
@@ -111,7 +112,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PreviousHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["PreviousHop"])
 
     @property
     def ResponseTime(self):
@@ -121,7 +122,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponseTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponseTime"])
 
     @property
     def SequenceNumber(self):
@@ -131,7 +132,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def SourceNickname(self):
@@ -141,7 +142,7 @@ class TrillOamPing(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceNickname"])
 
     @property
     def Status(self):
@@ -151,10 +152,10 @@ class TrillOamPing(Base):
         -------
         - str(Failure | Success): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def add(self):
-        """Adds a new trillOamPing resource on the json, only valid with config assistant
+        """Adds a new trillOamPing resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -166,7 +167,19 @@ class TrillOamPing(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DestinationNickname=None, IncomingPort=None, NextHop=None, OutgoingPort=None, OutgoingPortMtu=None, PreviousHop=None, ResponseTime=None, SequenceNumber=None, SourceNickname=None, Status=None):
+    def find(
+        self,
+        DestinationNickname=None,
+        IncomingPort=None,
+        NextHop=None,
+        OutgoingPort=None,
+        OutgoingPortMtu=None,
+        PreviousHop=None,
+        ResponseTime=None,
+        SequenceNumber=None,
+        SourceNickname=None,
+        Status=None,
+    ):
         # type: (int, int, int, int, int, int, int, int, int, str) -> TrillOamPing
         """Finds and retrieves trillOamPing resources from the server.
 

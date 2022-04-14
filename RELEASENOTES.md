@@ -1,5 +1,16 @@
 # Release Notes
-
+### Apr 2022
+* 1.1.5
+  * support ixnetwork version 9.20.2199.45 (9.20 patch-1)
+  * introduction of batch operations (improves performance)
+    * Batch Find - helps users to find multiples nodes in a single rest call
+      * samples - batch_find.py
+    * Batch Update - helps users to update multiple restpy objects in a single rest call
+      * samples - batch_update.py, load_config_with_batch_update.py
+    * Batch Add - adds a whole configuration in single rest call
+      * samples - batch_add.py, traffic_with_batch_add.py
+  * includes Timeline class
+  * logging module now has thread ids
 ### Feb 2022
 * 1.1.4
   * support uhd version 1.4.1

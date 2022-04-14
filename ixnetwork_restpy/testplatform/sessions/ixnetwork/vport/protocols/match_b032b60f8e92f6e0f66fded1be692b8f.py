@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,15 @@ class Match(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'match'
+    _SDM_NAME = "match"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHasMask': 'experimenterHasMask',
-        'ExperimenterId': 'experimenterId',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterHasMask": "experimenterHasMask",
+        "ExperimenterId": "experimenterId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Match, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class Match(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_8229e0c9507c32da61a580ce166621e7 import MatchFields
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_8229e0c9507c32da61a580ce166621e7 import (
+            MatchFields,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MatchFields', None) is not None:
-                return self._properties.get('MatchFields')
+            if self._properties.get("MatchFields", None) is not None:
+                return self._properties.get("MatchFields")
         return MatchFields(self)._select()
 
     @property
@@ -71,11 +74,12 @@ class Match(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -85,11 +89,12 @@ class Match(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterField(self):
@@ -99,11 +104,12 @@ class Match(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def ExperimenterHasMask(self):
@@ -113,11 +119,12 @@ class Match(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterHasMask"])
+
     @ExperimenterHasMask.setter
     def ExperimenterHasMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterHasMask"], value)
 
     @property
     def ExperimenterId(self):
@@ -127,13 +134,21 @@ class Match(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
-    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+    def update(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHasMask=None,
+        ExperimenterId=None,
+    ):
         # type: (str, int, int, bool, int) -> Match
         """Updates match resource on the server.
 
@@ -151,7 +166,14 @@ class Match(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHasMask=None,
+        ExperimenterId=None,
+    ):
         # type: (str, int, int, bool, int) -> Match
         """Finds and retrieves match resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,25 +34,24 @@ class PingLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pingLearnedInfo'
+    _SDM_NAME = "pingLearnedInfo"
     _SDM_ATT_MAP = {
-        'ErrorTlvType': 'errorTlvType',
-        'IncomingLabelOuterInner': 'incomingLabelOuterInner',
-        'InterfaceLabelStackTlvInterface': 'interfaceLabelStackTlvInterface',
-        'InterfaceLabelStackTlvIpAddress': 'interfaceLabelStackTlvIpAddress',
-        'InterfaceLabelStackTlvLabels': 'interfaceLabelStackTlvLabels',
-        'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
-        'Reachability': 'reachability',
-        'ReturnCode': 'returnCode',
-        'ReturnSubcode': 'returnSubcode',
-        'ReversePathVerificationCode': 'reversePathVerificationCode',
-        'Rtt': 'rtt',
-        'SenderHandle': 'senderHandle',
-        'SequenceNumber': 'sequenceNumber',
-        'Type': 'type',
+        "ErrorTlvType": "errorTlvType",
+        "IncomingLabelOuterInner": "incomingLabelOuterInner",
+        "InterfaceLabelStackTlvInterface": "interfaceLabelStackTlvInterface",
+        "InterfaceLabelStackTlvIpAddress": "interfaceLabelStackTlvIpAddress",
+        "InterfaceLabelStackTlvLabels": "interfaceLabelStackTlvLabels",
+        "OutgoingLabelOuterInner": "outgoingLabelOuterInner",
+        "Reachability": "reachability",
+        "ReturnCode": "returnCode",
+        "ReturnSubcode": "returnSubcode",
+        "ReversePathVerificationCode": "reversePathVerificationCode",
+        "Rtt": "rtt",
+        "SenderHandle": "senderHandle",
+        "SequenceNumber": "sequenceNumber",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PingLearnedInfo, self).__init__(parent, list_op)
@@ -64,7 +64,7 @@ class PingLearnedInfo(Base):
         -------
         - number: This signifies Error TLV if it is received in lsp ping echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorTlvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorTlvType"])
 
     @property
     def IncomingLabelOuterInner(self):
@@ -74,7 +74,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the incoming label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelOuterInner"])
 
     @property
     def InterfaceLabelStackTlvInterface(self):
@@ -84,7 +84,7 @@ class PingLearnedInfo(Base):
         -------
         - number: This Signifies the inclusion of the Interface Id within Interface and Label Stack TLV in received lsp ping echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceLabelStackTlvInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceLabelStackTlvInterface"])
 
     @property
     def InterfaceLabelStackTlvIpAddress(self):
@@ -94,7 +94,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This Signifies the inclusion of the IP Address within Interface and Label Stack TLV in received lsp ping echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceLabelStackTlvIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceLabelStackTlvIpAddress"])
 
     @property
     def InterfaceLabelStackTlvLabels(self):
@@ -104,7 +104,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the label stack in Interface and Label Stack TLV received in lsp ping echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceLabelStackTlvLabels'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceLabelStackTlvLabels"])
 
     @property
     def OutgoingLabelOuterInner(self):
@@ -114,7 +114,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the Outgoing Label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelOuterInner"])
 
     @property
     def Reachability(self):
@@ -124,7 +124,7 @@ class PingLearnedInfo(Base):
         -------
         - bool: This specifies whether the queried MEP could be reached or not, Yes or No.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def ReturnCode(self):
@@ -134,7 +134,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the value of the return code in the Echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnCode"])
 
     @property
     def ReturnSubcode(self):
@@ -144,7 +144,7 @@ class PingLearnedInfo(Base):
         -------
         - number: This signifies the value of the return sub-code in the Echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReturnSubcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReturnSubcode"])
 
     @property
     def ReversePathVerificationCode(self):
@@ -154,7 +154,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This Signifies the reverse path verification code received in the lsp ping echo reply message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReversePathVerificationCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReversePathVerificationCode"])
 
     @property
     def Rtt(self):
@@ -164,7 +164,7 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the Round Trip Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rtt"])
 
     @property
     def SenderHandle(self):
@@ -174,7 +174,7 @@ class PingLearnedInfo(Base):
         -------
         - number: This signifies the sender handle information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SenderHandle'])
+        return self._get_attribute(self._SDM_ATT_MAP["SenderHandle"])
 
     @property
     def SequenceNumber(self):
@@ -184,7 +184,7 @@ class PingLearnedInfo(Base):
         -------
         - number: This signifies the sequence number for the ping learned information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def Type(self):
@@ -194,10 +194,10 @@ class PingLearnedInfo(Base):
         -------
         - str: This signifies the type of the learned info.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new pingLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new pingLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -209,7 +209,23 @@ class PingLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ErrorTlvType=None, IncomingLabelOuterInner=None, InterfaceLabelStackTlvInterface=None, InterfaceLabelStackTlvIpAddress=None, InterfaceLabelStackTlvLabels=None, OutgoingLabelOuterInner=None, Reachability=None, ReturnCode=None, ReturnSubcode=None, ReversePathVerificationCode=None, Rtt=None, SenderHandle=None, SequenceNumber=None, Type=None):
+    def find(
+        self,
+        ErrorTlvType=None,
+        IncomingLabelOuterInner=None,
+        InterfaceLabelStackTlvInterface=None,
+        InterfaceLabelStackTlvIpAddress=None,
+        InterfaceLabelStackTlvLabels=None,
+        OutgoingLabelOuterInner=None,
+        Reachability=None,
+        ReturnCode=None,
+        ReturnSubcode=None,
+        ReversePathVerificationCode=None,
+        Rtt=None,
+        SenderHandle=None,
+        SequenceNumber=None,
+        Type=None,
+    ):
         # type: (int, str, int, str, str, str, bool, str, int, str, str, int, int, str) -> PingLearnedInfo
         """Finds and retrieves pingLearnedInfo resources from the server.
 

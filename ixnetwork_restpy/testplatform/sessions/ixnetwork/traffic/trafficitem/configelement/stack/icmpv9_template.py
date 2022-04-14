@@ -4,34 +4,34 @@ from ixnetwork_restpy.files import Files
 
 class Icmpv9(Base):
     __slots__ = ()
-    _SDM_NAME = 'icmpv9'
+    _SDM_NAME = "icmpv9"
     _SDM_ATT_MAP = {
-        'Icmp9Type': 'icmpv9.icmp9.type-1',
-        'Icmp9Code': 'icmpv9.icmp9.code-2',
-        'Icmp9Checksum': 'icmpv9.icmp9.checksum-3',
-        'Icmp9NumAddr': 'icmpv9.icmp9.numAddr-4',
-        'Icmp9EntrySize': 'icmpv9.icmp9.entrySize-5',
-        'Icmp9Lifetime': 'icmpv9.icmp9.lifetime-6',
-        'AddressEntriesAddress': 'icmpv9.icmp9.addressEntries.address-7',
-        'AddressEntriesPreference': 'icmpv9.icmp9.addressEntries.preference-8',
-        'OptionPad1': 'icmpv9.icmp9.tlv.option.pad1-9',
-        'MobilityAgentExtensionType': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.type-10',
-        'MobilityAgentExtensionLength': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.length-11',
-        'MobilityAgentExtensionSequence': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.sequence-12',
-        'MobilityAgentExtensionLifetime': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.lifetime-13',
-        'MobilityAgentExtensionRBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.rBit-14',
-        'MobilityAgentExtensionBBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.bBit-15',
-        'MobilityAgentExtensionHBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.hBit-16',
-        'MobilityAgentExtensionFBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.fBit-17',
-        'MobilityAgentExtensionMBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.mBit-18',
-        'MobilityAgentExtensionGBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.gBit-19',
-        'OptionMobilityAgentExtensionRBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.rBit-20',
-        'MobilityAgentExtensionTBit': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.tBit-21',
-        'MobilityAgentExtensionReserved': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.reserved-22',
-        'CareOfAddressEntriesAddress': 'icmpv9.icmp9.tlv.option.mobilityAgentExtension.careOfAddressEntries.address-23',
-        'PrefixLengthsType': 'icmpv9.icmp9.tlv.option.prefixLengths.type-24',
-        'PrefixLengthsLength': 'icmpv9.icmp9.tlv.option.prefixLengths.length-25',
-        'PrefixLengthsPrefixLength': 'icmpv9.icmp9.tlv.option.prefixLengths.prefixLength-26',
+        "Icmp9Type": "icmpv9.icmp9.type-1",
+        "Icmp9Code": "icmpv9.icmp9.code-2",
+        "Icmp9Checksum": "icmpv9.icmp9.checksum-3",
+        "Icmp9NumAddr": "icmpv9.icmp9.numAddr-4",
+        "Icmp9EntrySize": "icmpv9.icmp9.entrySize-5",
+        "Icmp9Lifetime": "icmpv9.icmp9.lifetime-6",
+        "AddressEntriesAddress": "icmpv9.icmp9.addressEntries.address-7",
+        "AddressEntriesPreference": "icmpv9.icmp9.addressEntries.preference-8",
+        "OptionPad1": "icmpv9.icmp9.tlv.option.pad1-9",
+        "MobilityAgentExtensionType": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.type-10",
+        "MobilityAgentExtensionLength": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.length-11",
+        "MobilityAgentExtensionSequence": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.sequence-12",
+        "MobilityAgentExtensionLifetime": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.lifetime-13",
+        "MobilityAgentExtensionRBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.rBit-14",
+        "MobilityAgentExtensionBBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.bBit-15",
+        "MobilityAgentExtensionHBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.hBit-16",
+        "MobilityAgentExtensionFBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.fBit-17",
+        "MobilityAgentExtensionMBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.mBit-18",
+        "MobilityAgentExtensionGBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.gBit-19",
+        "OptionMobilityAgentExtensionRBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.rBit-20",
+        "MobilityAgentExtensionTBit": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.tBit-21",
+        "MobilityAgentExtensionReserved": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.reserved-22",
+        "CareOfAddressEntriesAddress": "icmpv9.icmp9.tlv.option.mobilityAgentExtension.careOfAddressEntries.address-23",
+        "PrefixLengthsType": "icmpv9.icmp9.tlv.option.prefixLengths.type-24",
+        "PrefixLengthsLength": "icmpv9.icmp9.tlv.option.prefixLengths.length-25",
+        "PrefixLengthsPrefixLength": "icmpv9.icmp9.tlv.option.prefixLengths.prefixLength-26",
     }
 
     def __init__(self, parent, list_op=False):
@@ -45,7 +45,8 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Icmp9Type"]))
 
     @property
     def Icmp9Code(self):
@@ -56,7 +57,8 @@ class Icmpv9(Base):
         Available enum values: Handles common traffic, 0, Handles no common traffic, 16
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9Code']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Icmp9Code"]))
 
     @property
     def Icmp9Checksum(self):
@@ -66,7 +68,8 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9Checksum']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Icmp9Checksum"]))
 
     @property
     def Icmp9NumAddr(self):
@@ -76,7 +79,8 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9NumAddr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Icmp9NumAddr"]))
 
     @property
     def Icmp9EntrySize(self):
@@ -86,7 +90,10 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9EntrySize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Icmp9EntrySize"])
+        )
 
     @property
     def Icmp9Lifetime(self):
@@ -96,7 +103,8 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Icmp9Lifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Icmp9Lifetime"]))
 
     @property
     def AddressEntriesAddress(self):
@@ -106,7 +114,10 @@ class Icmpv9(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressEntriesAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressEntriesAddress"])
+        )
 
     @property
     def AddressEntriesPreference(self):
@@ -116,7 +127,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressEntriesPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressEntriesPreference"])
+        )
 
     @property
     def OptionPad1(self):
@@ -126,7 +140,8 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionPad1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OptionPad1"]))
 
     @property
     def MobilityAgentExtensionType(self):
@@ -136,7 +151,10 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionType"])
+        )
 
     @property
     def MobilityAgentExtensionLength(self):
@@ -146,7 +164,10 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionLength"])
+        )
 
     @property
     def MobilityAgentExtensionSequence(self):
@@ -156,7 +177,11 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionSequence']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionSequence"]),
+        )
 
     @property
     def MobilityAgentExtensionLifetime(self):
@@ -166,7 +191,11 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionLifetime']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionLifetime"]),
+        )
 
     @property
     def MobilityAgentExtensionRBit(self):
@@ -176,7 +205,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionRBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionRBit"])
+        )
 
     @property
     def MobilityAgentExtensionBBit(self):
@@ -186,7 +218,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionBBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionBBit"])
+        )
 
     @property
     def MobilityAgentExtensionHBit(self):
@@ -196,7 +231,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionHBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionHBit"])
+        )
 
     @property
     def MobilityAgentExtensionFBit(self):
@@ -206,7 +244,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionFBit"])
+        )
 
     @property
     def MobilityAgentExtensionMBit(self):
@@ -216,7 +257,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionMBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionMBit"])
+        )
 
     @property
     def MobilityAgentExtensionGBit(self):
@@ -226,7 +270,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionGBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionGBit"])
+        )
 
     @property
     def OptionMobilityAgentExtensionRBit(self):
@@ -236,7 +283,11 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobilityAgentExtensionRBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OptionMobilityAgentExtensionRBit"]),
+        )
 
     @property
     def MobilityAgentExtensionTBit(self):
@@ -246,7 +297,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionTBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionTBit"])
+        )
 
     @property
     def MobilityAgentExtensionReserved(self):
@@ -256,7 +310,11 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobilityAgentExtensionReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobilityAgentExtensionReserved"]),
+        )
 
     @property
     def CareOfAddressEntriesAddress(self):
@@ -266,7 +324,10 @@ class Icmpv9(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CareOfAddressEntriesAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CareOfAddressEntriesAddress"])
+        )
 
     @property
     def PrefixLengthsType(self):
@@ -276,7 +337,10 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLengthsType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixLengthsType"])
+        )
 
     @property
     def PrefixLengthsLength(self):
@@ -286,7 +350,10 @@ class Icmpv9(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLengthsLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixLengthsLength"])
+        )
 
     @property
     def PrefixLengthsPrefixLength(self):
@@ -296,7 +363,10 @@ class Icmpv9(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLengthsPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixLengthsPrefixLength"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

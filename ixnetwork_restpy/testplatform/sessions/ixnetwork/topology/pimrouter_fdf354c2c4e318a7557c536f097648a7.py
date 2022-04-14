@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,31 @@ class PimRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pimRouter'
+    _SDM_NAME = "pimRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DrPriority': 'drPriority',
-        'Errors': 'errors',
-        'JoinPruneHoldTime': 'joinPruneHoldTime',
-        'JoinPruneInterval': 'joinPruneInterval',
-        'LocalRouterId': 'localRouterId',
-        'Name': 'name',
-        'SessionStatus': 'sessionStatus',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DrPriority": "drPriority",
+        "Errors": "errors",
+        "JoinPruneHoldTime": "joinPruneHoldTime",
+        "JoinPruneInterval": "joinPruneInterval",
+        "LocalRouterId": "localRouterId",
+        "Name": "name",
+        "SessionStatus": "sessionStatus",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -65,7 +74,8 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -75,7 +85,7 @@ class PimRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -85,7 +95,7 @@ class PimRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DrPriority(self):
@@ -96,7 +106,8 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Designated Router (DR) priority assigned to this emulated PIM-SM router. This value is used in the election of the DR, and is included in the Hello Messages. The larger the DR value, the higher the priority. The default is 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DrPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DrPriority"]))
 
     @property
     def Errors(self):
@@ -105,7 +116,7 @@ class PimRouter(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def JoinPruneHoldTime(self):
@@ -116,7 +127,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (in seconds) The period during which a router receiving a Join/Prune message must keep the Join/State alive. The default is 3 times the Join/Prune Interval (= 180 seconds).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JoinPruneHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["JoinPruneHoldTime"])
+        )
 
     @property
     def JoinPruneInterval(self):
@@ -127,7 +141,10 @@ class PimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (in seconds) The Join/Prune interval specifies the length of time between transmissions of Join/Prune messages. The default is 60 seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JoinPruneInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["JoinPruneInterval"])
+        )
 
     @property
     def LocalRouterId(self):
@@ -137,7 +154,7 @@ class PimRouter(Base):
         -------
         - list(str): The PIM-SM Router ID value, in IPv4 format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
 
     @property
     def Name(self):
@@ -147,11 +164,12 @@ class PimRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SessionStatus(self):
@@ -161,7 +179,7 @@ class PimRouter(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StateCounts(self):
@@ -170,7 +188,7 @@ class PimRouter(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -180,7 +198,7 @@ class PimRouter(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def update(self, Name=None):
         # type: (str) -> PimRouter
@@ -227,7 +245,17 @@ class PimRouter(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, Errors=None, LocalRouterId=None, Name=None, SessionStatus=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        LocalRouterId=None,
+        Name=None,
+        SessionStatus=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves pimRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimRouter resources from the server.
@@ -300,10 +328,12 @@ class PimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -332,10 +362,12 @@ class PimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -364,10 +396,12 @@ class PimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -396,12 +430,21 @@ class PimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, DrPriority=None, JoinPruneHoldTime=None, JoinPruneInterval=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        DrPriority=None,
+        JoinPruneHoldTime=None,
+        JoinPruneInterval=None,
+    ):
         """Base class infrastructure that gets a list of pimRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

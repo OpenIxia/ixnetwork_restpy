@@ -259,7 +259,7 @@ class FlowSet(Base):
 
     def add(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
         # type: (bool, str, str, int) -> FlowSet
-        """Adds a new flowSet resource on the json, only valid with config assistant
+        """Adds a new flowSet resource on the json, only valid with batch add utility
 
         Args
         ----

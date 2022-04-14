@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class NetTopologyGrid(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyGrid'
+    _SDM_NAME = "netTopologyGrid"
     _SDM_ATT_MAP = {
-        'Columns': 'columns',
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LinkMultiplier': 'linkMultiplier',
-        'Rows': 'rows',
+        "Columns": "columns",
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LinkMultiplier": "linkMultiplier",
+        "Rows": "rows",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyGrid, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class NetTopologyGrid(Base):
         -------
         - number: number of columns
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Columns'])
+        return self._get_attribute(self._SDM_ATT_MAP["Columns"])
+
     @Columns.setter
     def Columns(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Columns'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Columns"], value)
 
     @property
     def IncludeEntryPoint(self):
@@ -69,11 +70,12 @@ class NetTopologyGrid(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LinkMultiplier(self):
@@ -83,11 +85,12 @@ class NetTopologyGrid(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     @property
     def Rows(self):
@@ -97,13 +100,16 @@ class NetTopologyGrid(Base):
         -------
         - number: number of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rows'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rows"])
+
     @Rows.setter
     def Rows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rows"], value)
 
-    def update(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+    def update(
+        self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None
+    ):
         # type: (int, bool, int, int) -> NetTopologyGrid
         """Updates netTopologyGrid resource on the server.
 
@@ -151,7 +157,9 @@ class NetTopologyGrid(Base):
         """
         self._delete()
 
-    def find(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+    def find(
+        self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None
+    ):
         # type: (int, bool, int, int) -> NetTopologyGrid
         """Finds and retrieves netTopologyGrid resources from the server.
 

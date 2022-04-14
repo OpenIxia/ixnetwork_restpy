@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class TraceRouteLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'traceRouteLearnedInfo'
+    _SDM_NAME = "traceRouteLearnedInfo"
     _SDM_ATT_MAP = {
-        'IncomingLabelOuterInner': 'incomingLabelOuterInner',
-        'NumberOfReplyingHops': 'numberOfReplyingHops',
-        'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
-        'Reachability': 'reachability',
-        'SenderHandle': 'senderHandle',
-        'Type': 'type',
+        "IncomingLabelOuterInner": "incomingLabelOuterInner",
+        "NumberOfReplyingHops": "numberOfReplyingHops",
+        "OutgoingLabelOuterInner": "outgoingLabelOuterInner",
+        "Reachability": "reachability",
+        "SenderHandle": "senderHandle",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TraceRouteLearnedInfo, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class TraceRouteLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_db4316dd77cab088f2212f004300bf3c import Hops
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_db4316dd77cab088f2212f004300bf3c import (
+            Hops,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Hops', None) is not None:
-                return self._properties.get('Hops')
+            if self._properties.get("Hops", None) is not None:
+                return self._properties.get("Hops")
         return Hops(self)
 
     @property
@@ -73,7 +76,7 @@ class TraceRouteLearnedInfo(Base):
         -------
         - str: This signifies the incoming label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelOuterInner"])
 
     @property
     def NumberOfReplyingHops(self):
@@ -83,7 +86,7 @@ class TraceRouteLearnedInfo(Base):
         -------
         - number: This signifies the total number of replying hops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfReplyingHops'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfReplyingHops"])
 
     @property
     def OutgoingLabelOuterInner(self):
@@ -93,7 +96,7 @@ class TraceRouteLearnedInfo(Base):
         -------
         - str: This signifies the Outgoing Label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelOuterInner"])
 
     @property
     def Reachability(self):
@@ -103,7 +106,7 @@ class TraceRouteLearnedInfo(Base):
         -------
         - str: This specifies whether the queried MEP could be reached or not, Failure or, Partial or, Complete.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reachability"])
 
     @property
     def SenderHandle(self):
@@ -113,7 +116,7 @@ class TraceRouteLearnedInfo(Base):
         -------
         - number: This signifies the sender handle details.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SenderHandle'])
+        return self._get_attribute(self._SDM_ATT_MAP["SenderHandle"])
 
     @property
     def Type(self):
@@ -123,10 +126,10 @@ class TraceRouteLearnedInfo(Base):
         -------
         - str: This signifies the type of path over which the traceroute is carried over, can be LSP, PW or Nested PW and LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new traceRouteLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new traceRouteLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -138,7 +141,15 @@ class TraceRouteLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, IncomingLabelOuterInner=None, NumberOfReplyingHops=None, OutgoingLabelOuterInner=None, Reachability=None, SenderHandle=None, Type=None):
+    def find(
+        self,
+        IncomingLabelOuterInner=None,
+        NumberOfReplyingHops=None,
+        OutgoingLabelOuterInner=None,
+        Reachability=None,
+        SenderHandle=None,
+        Type=None,
+    ):
         # type: (str, int, str, str, int, str) -> TraceRouteLearnedInfo
         """Finds and retrieves traceRouteLearnedInfo resources from the server.
 

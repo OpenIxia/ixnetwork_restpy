@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class DceTopologyRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceTopologyRange'
+    _SDM_NAME = "dceTopologyRange"
     _SDM_ATT_MAP = {
-        'EnableFtag': 'enableFtag',
-        'Enabled': 'enabled',
-        'NicknameList': 'nicknameList',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'StartFtagValue': 'startFtagValue',
-        'TopologyCount': 'topologyCount',
-        'TopologyId': 'topologyId',
-        'TopologyIdStep': 'topologyIdStep',
+        "EnableFtag": "enableFtag",
+        "Enabled": "enabled",
+        "NicknameList": "nicknameList",
+        "NoOfTreesToCompute": "noOfTreesToCompute",
+        "StartFtagValue": "startFtagValue",
+        "TopologyCount": "topologyCount",
+        "TopologyId": "topologyId",
+        "TopologyIdStep": "topologyIdStep",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DceTopologyRange, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class DceTopologyRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceinterestedvlanrange_dbbecc283e17e29acaafa47502d26300 import DceInterestedVlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceinterestedvlanrange_dbbecc283e17e29acaafa47502d26300 import (
+            DceInterestedVlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceInterestedVlanRange', None) is not None:
-                return self._properties.get('DceInterestedVlanRange')
+            if self._properties.get("DceInterestedVlanRange", None) is not None:
+                return self._properties.get("DceInterestedVlanRange")
         return DceInterestedVlanRange(self)
 
     @property
@@ -76,11 +79,12 @@ class DceTopologyRange(Base):
         -------
         - bool: If true, the F tag is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFtag'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFtag"])
+
     @EnableFtag.setter
     def EnableFtag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFtag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFtag"], value)
 
     @property
     def Enabled(self):
@@ -90,11 +94,12 @@ class DceTopologyRange(Base):
         -------
         - bool: Signifies if DCE Topology is enabled or disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def NicknameList(self):
@@ -103,10 +108,11 @@ class DceTopologyRange(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:number)): The list of nicknames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NicknameList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NicknameList"])
+
     @NicknameList.setter
     def NicknameList(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['NicknameList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NicknameList"], value)
 
     @property
     def NoOfTreesToCompute(self):
@@ -116,11 +122,12 @@ class DceTopologyRange(Base):
         -------
         - number: The number of trees to compute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfTreesToCompute"])
+
     @NoOfTreesToCompute.setter
     def NoOfTreesToCompute(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfTreesToCompute"], value)
 
     @property
     def StartFtagValue(self):
@@ -130,11 +137,12 @@ class DceTopologyRange(Base):
         -------
         - number: If true, the Ftag value is started.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartFtagValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartFtagValue"])
+
     @StartFtagValue.setter
     def StartFtagValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartFtagValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartFtagValue"], value)
 
     @property
     def TopologyCount(self):
@@ -144,11 +152,12 @@ class DceTopologyRange(Base):
         -------
         - number: The count of the topology.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopologyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyCount"])
+
     @TopologyCount.setter
     def TopologyCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopologyCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopologyCount"], value)
 
     @property
     def TopologyId(self):
@@ -158,11 +167,12 @@ class DceTopologyRange(Base):
         -------
         - number: The unique identification number of the topology range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopologyId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyId"])
+
     @TopologyId.setter
     def TopologyId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopologyId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopologyId"], value)
 
     @property
     def TopologyIdStep(self):
@@ -172,13 +182,24 @@ class DceTopologyRange(Base):
         -------
         - number: It shows the Increment Step of the ID of DCE Topology Range. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopologyIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyIdStep"])
+
     @TopologyIdStep.setter
     def TopologyIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopologyIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopologyIdStep"], value)
 
-    def update(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):
+    def update(
+        self,
+        EnableFtag=None,
+        Enabled=None,
+        NicknameList=None,
+        NoOfTreesToCompute=None,
+        StartFtagValue=None,
+        TopologyCount=None,
+        TopologyId=None,
+        TopologyIdStep=None,
+    ):
         """Updates dceTopologyRange resource on the server.
 
         Args
@@ -198,7 +219,17 @@ class DceTopologyRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):
+    def add(
+        self,
+        EnableFtag=None,
+        Enabled=None,
+        NicknameList=None,
+        NoOfTreesToCompute=None,
+        StartFtagValue=None,
+        TopologyCount=None,
+        TopologyId=None,
+        TopologyIdStep=None,
+    ):
         """Adds a new dceTopologyRange resource on the server and adds it to the container.
 
         Args
@@ -232,7 +263,17 @@ class DceTopologyRange(Base):
         """
         self._delete()
 
-    def find(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):
+    def find(
+        self,
+        EnableFtag=None,
+        Enabled=None,
+        NicknameList=None,
+        NoOfTreesToCompute=None,
+        StartFtagValue=None,
+        TopologyCount=None,
+        TopologyId=None,
+        TopologyIdStep=None,
+    ):
         """Finds and retrieves dceTopologyRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceTopologyRange resources from the server.

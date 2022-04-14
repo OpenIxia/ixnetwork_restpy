@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,40 +33,47 @@ class CmacRouteAttributes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cmacRouteAttributes'
+    _SDM_NAME = "cmacRouteAttributes"
     _SDM_ATT_MAP = {
-        'AggregatorAs': 'aggregatorAs',
-        'AggregatorId': 'aggregatorId',
-        'AsPath': 'asPath',
-        'AsSetMode': 'asSetMode',
-        'Cluster': 'cluster',
-        'Community': 'community',
-        'EnableAggregator': 'enableAggregator',
-        'EnableAsPath': 'enableAsPath',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableLocalPref': 'enableLocalPref',
-        'EnableMultiExit': 'enableMultiExit',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginator': 'enableOriginator',
-        'ExtendedCommunity': 'extendedCommunity',
-        'LocalPref': 'localPref',
-        'MultiExit': 'multiExit',
-        'NextHop': 'nextHop',
-        'NextHopIpType': 'nextHopIpType',
-        'NextHopMode': 'nextHopMode',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'SetNextHop': 'setNextHop',
+        "AggregatorAs": "aggregatorAs",
+        "AggregatorId": "aggregatorId",
+        "AsPath": "asPath",
+        "AsSetMode": "asSetMode",
+        "Cluster": "cluster",
+        "Community": "community",
+        "EnableAggregator": "enableAggregator",
+        "EnableAsPath": "enableAsPath",
+        "EnableAtomicAggregate": "enableAtomicAggregate",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableLocalPref": "enableLocalPref",
+        "EnableMultiExit": "enableMultiExit",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginator": "enableOriginator",
+        "ExtendedCommunity": "extendedCommunity",
+        "LocalPref": "localPref",
+        "MultiExit": "multiExit",
+        "NextHop": "nextHop",
+        "NextHopIpType": "nextHopIpType",
+        "NextHopMode": "nextHopMode",
+        "Origin": "origin",
+        "OriginatorId": "originatorId",
+        "SetNextHop": "setNextHop",
     }
     _SDM_ENUM_MAP = {
-        'asSetMode': ['includeAsSeq', 'includeAsSeqConf', 'includeAsSet', 'includeAsSetConf', 'noInclude', 'prependAs'],
-        'nextHopIpType': ['ipv4', 'ipv6'],
-        'nextHopMode': ['fixed', 'incrementPerPeer'],
-        'origin': ['igp', 'egp', 'incomplete'],
-        'setNextHop': ['manually', 'sameAsLocalIp'],
+        "asSetMode": [
+            "includeAsSeq",
+            "includeAsSeqConf",
+            "includeAsSet",
+            "includeAsSetConf",
+            "noInclude",
+            "prependAs",
+        ],
+        "nextHopIpType": ["ipv4", "ipv6"],
+        "nextHopMode": ["fixed", "incrementPerPeer"],
+        "origin": ["igp", "egp", "incomplete"],
+        "setNextHop": ["manually", "sameAsLocalIp"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -79,11 +87,12 @@ class CmacRouteAttributes(Base):
         -------
         - number: The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorAs'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorAs"])
+
     @AggregatorAs.setter
     def AggregatorAs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorAs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorAs"], value)
 
     @property
     def AggregatorId(self):
@@ -93,11 +102,12 @@ class CmacRouteAttributes(Base):
         -------
         - str: The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorId"])
+
     @AggregatorId.setter
     def AggregatorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorId"], value)
 
     @property
     def AsPath(self):
@@ -106,10 +116,11 @@ class CmacRouteAttributes(Base):
         -------
         - list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number])): Indicates the local IP address of the BGP router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPath"])
+
     @AsPath.setter
     def AsPath(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['AsPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsPath"], value)
 
     @property
     def AsSetMode(self):
@@ -119,11 +130,12 @@ class CmacRouteAttributes(Base):
         -------
         - str(includeAsSeq | includeAsSeqConf | includeAsSet | includeAsSetConf | noInclude | prependAs): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsSetMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsSetMode"])
+
     @AsSetMode.setter
     def AsSetMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsSetMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsSetMode"], value)
 
     @property
     def Cluster(self):
@@ -133,11 +145,12 @@ class CmacRouteAttributes(Base):
         -------
         - list(number): The list of BGP clusters that a particular route has passed through
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cluster'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cluster"])
+
     @Cluster.setter
     def Cluster(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cluster'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cluster"], value)
 
     @property
     def Community(self):
@@ -147,11 +160,12 @@ class CmacRouteAttributes(Base):
         -------
         - list(number): The BGP Community attribute to be added to the BGP entry
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Community'])
+        return self._get_attribute(self._SDM_ATT_MAP["Community"])
+
     @Community.setter
     def Community(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Community'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Community"], value)
 
     @property
     def EnableAggregator(self):
@@ -161,11 +175,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAggregator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAggregator"])
+
     @EnableAggregator.setter
     def EnableAggregator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAggregator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAggregator"], value)
 
     @property
     def EnableAsPath(self):
@@ -175,11 +190,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Indicates the local IP address of the BGP router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAsPath"])
+
     @EnableAsPath.setter
     def EnableAsPath(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAsPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAsPath"], value)
 
     @property
     def EnableAtomicAggregate(self):
@@ -189,11 +205,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"])
+
     @EnableAtomicAggregate.setter
     def EnableAtomicAggregate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAtomicAggregate"], value)
 
     @property
     def EnableCluster(self):
@@ -203,11 +220,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCluster"])
+
     @EnableCluster.setter
     def EnableCluster(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCluster"], value)
 
     @property
     def EnableCommunity(self):
@@ -217,11 +235,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of a COMMUNITY attribute list. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+
     @EnableCommunity.setter
     def EnableCommunity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCommunity"], value)
 
     @property
     def EnableLocalPref(self):
@@ -231,11 +250,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLocalPref"])
+
     @EnableLocalPref.setter
     def EnableLocalPref(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLocalPref"], value)
 
     @property
     def EnableMultiExit(self):
@@ -245,11 +265,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMultiExit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMultiExit"])
+
     @EnableMultiExit.setter
     def EnableMultiExit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMultiExit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMultiExit"], value)
 
     @property
     def EnableNextHop(self):
@@ -259,11 +280,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of a NEXT HOP attribute. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"])
+
     @EnableNextHop.setter
     def EnableNextHop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextHop"], value)
 
     @property
     def EnableOrigin(self):
@@ -273,11 +295,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of an ORIGIN attribute. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOrigin'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"])
+
     @EnableOrigin.setter
     def EnableOrigin(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOrigin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOrigin"], value)
 
     @property
     def EnableOriginator(self):
@@ -287,11 +310,12 @@ class CmacRouteAttributes(Base):
         -------
         - bool: Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOriginator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOriginator"])
+
     @EnableOriginator.setter
     def EnableOriginator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOriginator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOriginator"], value)
 
     @property
     def ExtendedCommunity(self):
@@ -300,10 +324,11 @@ class CmacRouteAttributes(Base):
         -------
         - list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | ip | fourOctetAs | opaque | administratorAsTwoOctetLinkBw],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str)): This object is used to construct an extended community attribute for a route item
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtendedCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExtendedCommunity"])
+
     @ExtendedCommunity.setter
     def ExtendedCommunity(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExtendedCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExtendedCommunity"], value)
 
     @property
     def LocalPref(self):
@@ -313,11 +338,12 @@ class CmacRouteAttributes(Base):
         -------
         - number: The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPref"])
+
     @LocalPref.setter
     def LocalPref(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalPref"], value)
 
     @property
     def MultiExit(self):
@@ -327,11 +353,12 @@ class CmacRouteAttributes(Base):
         -------
         - number: The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MultiExit'])
+        return self._get_attribute(self._SDM_ATT_MAP["MultiExit"])
+
     @MultiExit.setter
     def MultiExit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MultiExit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MultiExit"], value)
 
     @property
     def NextHop(self):
@@ -341,11 +368,12 @@ class CmacRouteAttributes(Base):
         -------
         - str: The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
+
     @NextHop.setter
     def NextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHop"], value)
 
     @property
     def NextHopIpType(self):
@@ -355,11 +383,12 @@ class CmacRouteAttributes(Base):
         -------
         - str(ipv4 | ipv6): IP type of Next Hop. Default is IPv4.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopIpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopIpType"])
+
     @NextHopIpType.setter
     def NextHopIpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopIpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopIpType"], value)
 
     @property
     def NextHopMode(self):
@@ -369,11 +398,12 @@ class CmacRouteAttributes(Base):
         -------
         - str(fixed | incrementPerPeer): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopMode"])
+
     @NextHopMode.setter
     def NextHopMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopMode"], value)
 
     @property
     def Origin(self):
@@ -383,11 +413,12 @@ class CmacRouteAttributes(Base):
         -------
         - str(igp | egp | incomplete): An indication of where the route entry originated
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Origin'])
+        return self._get_attribute(self._SDM_ATT_MAP["Origin"])
+
     @Origin.setter
     def Origin(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Origin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Origin"], value)
 
     @property
     def OriginatorId(self):
@@ -397,11 +428,12 @@ class CmacRouteAttributes(Base):
         -------
         - str: The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatorId"])
+
     @OriginatorId.setter
     def OriginatorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatorId"], value)
 
     @property
     def SetNextHop(self):
@@ -411,13 +443,41 @@ class CmacRouteAttributes(Base):
         -------
         - str(manually | sameAsLocalIp): Indicates now to set the next hop IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetNextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetNextHop"])
+
     @SetNextHop.setter
     def SetNextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetNextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetNextHop"], value)
 
-    def update(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
+    def update(
+        self,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AsPath=None,
+        AsSetMode=None,
+        Cluster=None,
+        Community=None,
+        EnableAggregator=None,
+        EnableAsPath=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableLocalPref=None,
+        EnableMultiExit=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginator=None,
+        ExtendedCommunity=None,
+        LocalPref=None,
+        MultiExit=None,
+        NextHop=None,
+        NextHopIpType=None,
+        NextHopMode=None,
+        Origin=None,
+        OriginatorId=None,
+        SetNextHop=None,
+    ):
         """Updates cmacRouteAttributes resource on the server.
 
         Args
@@ -454,7 +514,34 @@ class CmacRouteAttributes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
+    def find(
+        self,
+        AggregatorAs=None,
+        AggregatorId=None,
+        AsPath=None,
+        AsSetMode=None,
+        Cluster=None,
+        Community=None,
+        EnableAggregator=None,
+        EnableAsPath=None,
+        EnableAtomicAggregate=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableLocalPref=None,
+        EnableMultiExit=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginator=None,
+        ExtendedCommunity=None,
+        LocalPref=None,
+        MultiExit=None,
+        NextHop=None,
+        NextHopIpType=None,
+        NextHopMode=None,
+        Origin=None,
+        OriginatorId=None,
+        SetNextHop=None,
+    ):
         """Finds and retrieves cmacRouteAttributes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cmacRouteAttributes resources from the server.

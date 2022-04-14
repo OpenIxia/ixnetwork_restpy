@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class Multicast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'multicast'
+    _SDM_NAME = "multicast"
     _SDM_ATT_MAP = {
-        'EnableMulticast': 'enableMulticast',
-        'EnableMulticastCluster': 'enableMulticastCluster',
-        'GroupAddress': 'groupAddress',
+        "EnableMulticast": "enableMulticast",
+        "EnableMulticastCluster": "enableMulticastCluster",
+        "GroupAddress": "groupAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Multicast, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class Multicast(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_8dcd05006226c29e0542a45bb95b4f8f import Cluster
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_8dcd05006226c29e0542a45bb95b4f8f import (
+            Cluster,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Cluster', None) is not None:
-                return self._properties.get('Cluster')
+            if self._properties.get("Cluster", None) is not None:
+                return self._properties.get("Cluster")
         return Cluster(self)._select()
 
     @property
@@ -72,10 +75,13 @@ class Multicast(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_2c6f642c4d203efc1987442fcc10ae18 import RouteDistinguisher
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_2c6f642c4d203efc1987442fcc10ae18 import (
+            RouteDistinguisher,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RouteDistinguisher', None) is not None:
-                return self._properties.get('RouteDistinguisher')
+            if self._properties.get("RouteDistinguisher", None) is not None:
+                return self._properties.get("RouteDistinguisher")
         return RouteDistinguisher(self)._select()
 
     @property
@@ -86,11 +92,12 @@ class Multicast(Base):
         -------
         - bool: Enables the use of Multicast VRFs (MVRFs). (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMulticast'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMulticast"])
+
     @EnableMulticast.setter
     def EnableMulticast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMulticast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMulticast"], value)
 
     @property
     def EnableMulticastCluster(self):
@@ -100,11 +107,12 @@ class Multicast(Base):
         -------
         - bool: If true, enables the use of BGP route reflection clusters for multicast VPN route distribution. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMulticastCluster'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMulticastCluster"])
+
     @EnableMulticastCluster.setter
     def EnableMulticastCluster(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMulticastCluster'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMulticastCluster"], value)
 
     @property
     def GroupAddress(self):
@@ -114,13 +122,16 @@ class Multicast(Base):
         -------
         - str: The IP address for the Multicast Group. The default value is the default MDT group address, used as the Multicast Group address used as the destination for the MVPN tunnel. (default = 239.1.1.1
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
+
     @GroupAddress.setter
     def GroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddress"], value)
 
-    def update(self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None):
+    def update(
+        self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None
+    ):
         # type: (bool, bool, str) -> Multicast
         """Updates multicast resource on the server.
 
@@ -136,7 +147,9 @@ class Multicast(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None):
+    def find(
+        self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None
+    ):
         # type: (bool, bool, str) -> Multicast
         """Finds and retrieves multicast resources from the server.
 

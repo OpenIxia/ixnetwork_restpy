@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,76 @@ class Card(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'card'
+    _SDM_NAME = "card"
     _SDM_ATT_MAP = {
-        'AggregationMode': 'aggregationMode',
-        'AggregationSupported': 'aggregationSupported',
-        'AvailableModes': 'availableModes',
-        'CardId': 'cardId',
-        'Description': 'description',
-        'PortNamingScheme': 'portNamingScheme',
+        "AggregationMode": "aggregationMode",
+        "AggregationSupported": "aggregationSupported",
+        "AvailableModes": "availableModes",
+        "CardId": "cardId",
+        "Description": "description",
+        "PortNamingScheme": "portNamingScheme",
     }
     _SDM_ENUM_MAP = {
-        'aggregationMode': ['notSupported', 'mixed', 'normal', 'tenGigAggregation', 'fortyGigAggregation', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut', 'novus5GOneByTenGigNonFanOut', 'novus5GOneByTwentyFiveGigNonFanOut', 'novus5GOneByFiftyGigNonFanOut', 'novus5GOneByHundredGigNonFanOut', 'starTwoByFourHundredGigNonFannedOutPAM4', 'starFourByTwoHundredGigFannedOutPAM4', 'starEightByHundredGigFannedOutPAM4', 'starFourByHundredGigFannedOutNRZ', 'starSixteenByFiftyGigFannedOutPAM4', 'starEightByFiftyGigFannedOutNRZ', 'starFourByFortyGigFannedOutNRZ', 'starSixteenByTwentyFiveGigFannedOutNRZ', 'starSixteenByTenGigFannedOutNRZ', 'novusHundredGigNonFanOutHighStream', 'novusFourByTwentyFiveGigNonFanOutHighStream', 'novusTwoByFiftyGigNonFanOutHighStream', 'novusOneByFortyGigNonFanOutHighStream', 'novusFourByTenGigNonFanOutHighStream'],
-        'portNamingScheme': ['v1', 'v2'],
+        "aggregationMode": [
+            "notSupported",
+            "mixed",
+            "normal",
+            "tenGigAggregation",
+            "fortyGigAggregation",
+            "singleMode",
+            "dualMode",
+            "hundredGigNonFanOut",
+            "fortyGigFanOut",
+            "threeByTenGigFanOut",
+            "eightByTenGigFanOut",
+            "fourByTwentyFiveGigNonFanOut",
+            "twoByTwentyFiveGigNonFanOut",
+            "oneByFiftyGigNonFanOut",
+            "fortyGigNonFanOut",
+            "oneByTenGigFanOut",
+            "fourByTenGigFanOut",
+            "incompatibleMode",
+            "hundredGigCapturePlayback",
+            "fortyGigCapturePlayback",
+            "novusHundredGigNonFanOut",
+            "novusFourByTwentyFiveGigNonFanOut",
+            "novusTwoByFiftyGigNonFanOut",
+            "novusOneByFortyGigNonFanOut",
+            "novusFourByTenGigNonFanOut",
+            "krakenOneByFourHundredGigNonFanOut",
+            "krakenOneByTwoHundredGigNonFanOut",
+            "krakenTwoByOneHundredGigFanOut",
+            "krakenFourByFiftyGigFanOut",
+            "aresOneOneByFourHundredGigNonFanOut",
+            "aresOneTwoByTwoHundredGigFanOut",
+            "aresOneFourByOneHundredGigFanOut",
+            "aresOneFourByOneHundredGigMacSecFanOut",
+            "aresOneEightByFiftyGigFanOut",
+            "uhdOneHundredEightByHundredGigNonFanOut",
+            "uhdOneHundredEightByFortyGigNonFanOut",
+            "uhdOneHundredSixteenByFiftyGigFanOut",
+            "uhdOneHundredThirtyTwoByTwentyFiveGigFanOut",
+            "uhdOneHundredThirtyTwoByTenGigFanOut",
+            "novus5GOneByTenGigNonFanOut",
+            "novus5GOneByTwentyFiveGigNonFanOut",
+            "novus5GOneByFiftyGigNonFanOut",
+            "novus5GOneByHundredGigNonFanOut",
+            "starTwoByFourHundredGigNonFannedOutPAM4",
+            "starFourByTwoHundredGigFannedOutPAM4",
+            "starEightByHundredGigFannedOutPAM4",
+            "starFourByHundredGigFannedOutNRZ",
+            "starSixteenByFiftyGigFannedOutPAM4",
+            "starEightByFiftyGigFannedOutNRZ",
+            "starFourByFortyGigFannedOutNRZ",
+            "starSixteenByTwentyFiveGigFannedOutNRZ",
+            "starSixteenByTenGigFannedOutNRZ",
+            "novusHundredGigNonFanOutHighStream",
+            "novusFourByTwentyFiveGigNonFanOutHighStream",
+            "novusTwoByFiftyGigNonFanOutHighStream",
+            "novusOneByFortyGigNonFanOutHighStream",
+            "novusFourByTenGigNonFanOutHighStream",
+        ],
+        "portNamingScheme": ["v1", "v2"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,10 +120,13 @@ class Card(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation import Aggregation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation import (
+            Aggregation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Aggregation', None) is not None:
-                return self._properties.get('Aggregation')
+            if self._properties.get("Aggregation", None) is not None:
+                return self._properties.get("Aggregation")
         return Aggregation(self)
 
     @property
@@ -78,10 +140,13 @@ class Card(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port import Port
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port import (
+            Port,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Port', None) is not None:
-                return self._properties.get('Port')
+            if self._properties.get("Port", None) is not None:
+                return self._properties.get("Port")
         return Port(self)
 
     @property
@@ -92,11 +157,12 @@ class Card(Base):
         -------
         - str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream): Gets or sets the aggregation mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationMode"])
+
     @AggregationMode.setter
     def AggregationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregationMode"], value)
 
     @property
     def AggregationSupported(self):
@@ -106,7 +172,7 @@ class Card(Base):
         -------
         - bool: (read only) If true, indicates that the card is operating in resource group mode and not in normal mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationSupported'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationSupported"])
 
     @property
     def AvailableModes(self):
@@ -116,7 +182,7 @@ class Card(Base):
         -------
         - list(str[notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream]): Gets the supported port resource group modes on the card.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableModes'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableModes"])
 
     @property
     def CardId(self):
@@ -126,7 +192,7 @@ class Card(Base):
         -------
         - number: Identifier for the card on the chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CardId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CardId"])
 
     @property
     def Description(self):
@@ -136,7 +202,7 @@ class Card(Base):
         -------
         - str: Description of the card.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def PortNamingScheme(self):
@@ -144,9 +210,9 @@ class Card(Base):
         """
         Returns
         -------
-        - str(v1 | v2): 
+        - str(v1 | v2):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNamingScheme'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNamingScheme"])
 
     def update(self, AggregationMode=None):
         # type: (str) -> Card
@@ -164,7 +230,7 @@ class Card(Base):
 
     def add(self, AggregationMode=None):
         # type: (str) -> Card
-        """Adds a new card resource on the json, only valid with config assistant
+        """Adds a new card resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -180,7 +246,15 @@ class Card(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AggregationMode=None, AggregationSupported=None, AvailableModes=None, CardId=None, Description=None, PortNamingScheme=None):
+    def find(
+        self,
+        AggregationMode=None,
+        AggregationSupported=None,
+        AvailableModes=None,
+        CardId=None,
+        Description=None,
+        PortNamingScheme=None,
+    ):
         # type: (str, bool, List[str], int, str, str) -> Card
         """Finds and retrieves card resources from the server.
 
@@ -195,7 +269,7 @@ class Card(Base):
         - AvailableModes (list(str[notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream])): Gets the supported port resource group modes on the card.
         - CardId (number): Identifier for the card on the chassis.
         - Description (str): Description of the card.
-        - PortNamingScheme (str(v1 | v2)): 
+        - PortNamingScheme (str(v1 | v2)):
 
         Returns
         -------
@@ -240,7 +314,9 @@ class Card(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("refreshInfo", payload=payload, response_object=None)

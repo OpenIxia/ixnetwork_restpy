@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class FormulaColumn(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'formulaColumn'
+    _SDM_NAME = "formulaColumn"
     _SDM_ATT_MAP = {
-        'Caption': 'caption',
-        'Formula': 'formula',
+        "Caption": "caption",
+        "Formula": "formula",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FormulaColumn, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class FormulaColumn(Base):
         -------
         - str: The name of the formula.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
+        return self._get_attribute(self._SDM_ATT_MAP["Caption"])
+
     @Caption.setter
     def Caption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Caption"], value)
 
     @property
     def Formula(self):
@@ -67,11 +68,12 @@ class FormulaColumn(Base):
         -------
         - str: The formula that is filtered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Formula'])
+        return self._get_attribute(self._SDM_ATT_MAP["Formula"])
+
     @Formula.setter
     def Formula(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Formula'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Formula"], value)
 
     def update(self, Caption=None, Formula=None):
         # type: (str, str) -> FormulaColumn

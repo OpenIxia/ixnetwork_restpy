@@ -1862,7 +1862,7 @@ class IsisL3Router(Base):
 
     def add(self, EnableBIER=None, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, NoOfBIERSubDomains=None, NoOfSRTunnels=None, NumberOfMappingIPV4Ranges=None, NumberOfMappingIPV6Ranges=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
         # type: (bool, bool, int, int, int, str, int, int, int, int, int, int, int) -> IsisL3Router
-        """Adds a new isisL3Router resource on the json, only valid with config assistant
+        """Adds a new isisL3Router resource on the json, only valid with batch add utility
 
         Args
         ----

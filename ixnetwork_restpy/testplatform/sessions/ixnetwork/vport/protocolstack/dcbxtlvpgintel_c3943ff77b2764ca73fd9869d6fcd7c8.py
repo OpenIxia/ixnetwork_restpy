@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class DcbxTlvPgIntel(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxTlvPgIntel'
+    _SDM_NAME = "dcbxTlvPgIntel"
     _SDM_ATT_MAP = {
-        'BwGroupPercentageMap': 'bwGroupPercentageMap',
-        'ObjectId': 'objectId',
+        "BwGroupPercentageMap": "bwGroupPercentageMap",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxTlvPgIntel, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class DcbxTlvPgIntel(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxbandwidthatt_cad3437aaadac972672f666f54aba6c1 import DcbxBandwidthAtt
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxbandwidthatt_cad3437aaadac972672f666f54aba6c1 import (
+            DcbxBandwidthAtt,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DcbxBandwidthAtt', None) is not None:
-                return self._properties.get('DcbxBandwidthAtt')
+            if self._properties.get("DcbxBandwidthAtt", None) is not None:
+                return self._properties.get("DcbxBandwidthAtt")
         return DcbxBandwidthAtt(self)
 
     @property
@@ -68,11 +71,12 @@ class DcbxTlvPgIntel(Base):
         -------
         - list(number): Percentage associated to each bandwidth group id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BwGroupPercentageMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["BwGroupPercentageMap"])
+
     @BwGroupPercentageMap.setter
     def BwGroupPercentageMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BwGroupPercentageMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BwGroupPercentageMap"], value)
 
     @property
     def ObjectId(self):
@@ -82,7 +86,7 @@ class DcbxTlvPgIntel(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, BwGroupPercentageMap=None):
         # type: (List[int]) -> DcbxTlvPgIntel
@@ -156,10 +160,14 @@ class DcbxTlvPgIntel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -178,10 +186,14 @@ class DcbxTlvPgIntel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -200,7 +212,11 @@ class DcbxTlvPgIntel(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

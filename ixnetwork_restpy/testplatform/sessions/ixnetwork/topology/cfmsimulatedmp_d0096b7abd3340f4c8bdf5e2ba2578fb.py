@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,132 +34,131 @@ class CfmSimulatedMp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmSimulatedMp'
+    _SDM_NAME = "cfmSimulatedMp"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AisEnableUnicastMac': 'aisEnableUnicastMac',
-        'AisInterval': 'aisInterval',
-        'AisMode': 'aisMode',
-        'AisPriority': 'aisPriority',
-        'AisUnicastMac': 'aisUnicastMac',
-        'AutoDmTimeout': 'autoDmTimeout',
-        'AutoDmTimer': 'autoDmTimer',
-        'AutoLbIteration': 'autoLbIteration',
-        'AutoLbTimeoutInSec': 'autoLbTimeoutInSec',
-        'AutoLbTimerInSec': 'autoLbTimerInSec',
-        'AutoLmIteration': 'autoLmIteration',
-        'AutoLmTimeout': 'autoLmTimeout',
-        'AutoLmTimer': 'autoLmTimer',
-        'AutoLtIteration': 'autoLtIteration',
-        'AutoLtTimeoutInSec': 'autoLtTimeoutInSec',
-        'AutoLtTimerInSec': 'autoLtTimerInSec',
-        'AutoLtTtl': 'autoLtTtl',
-        'AutodmIteration': 'autodmIteration',
-        'CVlanId': 'cVlanId',
-        'CVlanPriority': 'cVlanPriority',
-        'CVlanTpid': 'cVlanTpid',
-        'CciInterval': 'cciInterval',
-        'CcmLmmTxFcf': 'ccmLmmTxFcf',
-        'CcmLmmTxFcfStepPer100mSec': 'ccmLmmTxFcfStepPer100mSec',
-        'CcmPriority': 'ccmPriority',
-        'CcmRxFcb': 'ccmRxFcb',
-        'CcmRxFcbStepPer100mSec': 'ccmRxFcbStepPer100mSec',
-        'ChassisId': 'chassisId',
-        'ChassisIdLength': 'chassisIdLength',
-        'ChassisIdSubType': 'chassisIdSubType',
-        'Count': 'count',
-        'DataTlvLength': 'dataTlvLength',
-        'DataTlvValue': 'dataTlvValue',
-        'DescriptiveName': 'descriptiveName',
-        'DmAllRemoteMeps': 'dmAllRemoteMeps',
-        'DmDestinationMacAddress': 'dmDestinationMacAddress',
-        'DmMethod': 'dmMethod',
-        'DmPriority': 'dmPriority',
-        'Enable1slRx': 'enable1slRx',
-        'EnableAisRx': 'enableAisRx',
-        'EnableAutoDm': 'enableAutoDm',
-        'EnableAutoLb': 'enableAutoLb',
-        'EnableAutoLm': 'enableAutoLm',
-        'EnableAutoLt': 'enableAutoLt',
-        'EnableDataTlv': 'enableDataTlv',
-        'EnableInterfaceStatusTlv': 'enableInterfaceStatusTlv',
-        'EnableLckRx': 'enableLckRx',
-        'EnableLmCounterUpdate': 'enableLmCounterUpdate',
-        'EnableOrganizationSpecificTlv': 'enableOrganizationSpecificTlv',
-        'EnablePortStatusTlv': 'enablePortStatusTlv',
-        'EnableSenderIdTlv': 'enableSenderIdTlv',
-        'EnableSlmRx': 'enableSlmRx',
-        'EnableTstRx': 'enableTstRx',
-        'EnableVlan': 'enableVlan',
-        'InterRemoteMepRxIncrementStep': 'interRemoteMepRxIncrementStep',
-        'InterRemoteMepTxIncrementStep': 'interRemoteMepTxIncrementStep',
-        'LbAllRemoteMeps': 'lbAllRemoteMeps',
-        'LbDestinationMacAddress': 'lbDestinationMacAddress',
-        'LbmPriority': 'lbmPriority',
-        'LckEnableUnicastMac': 'lckEnableUnicastMac',
-        'LckInterval': 'lckInterval',
-        'LckMode': 'lckMode',
-        'LckPriority': 'lckPriority',
-        'LckSupportAisGeneration': 'lckSupportAisGeneration',
-        'LckUnicastMac': 'lckUnicastMac',
-        'LmAllRemoteMeps': 'lmAllRemoteMeps',
-        'LmDestinationMacAddress': 'lmDestinationMacAddress',
-        'LmMethodType': 'lmMethodType',
-        'LmmPriority': 'lmmPriority',
-        'LmrPriority': 'lmrPriority',
-        'LmrRxFcf': 'lmrRxFcf',
-        'LmrRxFcfStepPer100mSec': 'lmrRxFcfStepPer100mSec',
-        'LmrTxFcb': 'lmrTxFcb',
-        'LmrTxFcbStepPer100mSec': 'lmrTxFcbStepPer100mSec',
-        'LtAllRemoteMeps': 'ltAllRemoteMeps',
-        'LtDestinationMacAddress': 'ltDestinationMacAddress',
-        'LtmPriority': 'ltmPriority',
-        'ManagementAddress': 'managementAddress',
-        'ManagementAddressDomain': 'managementAddressDomain',
-        'ManagementAddressDomainLength': 'managementAddressDomainLength',
-        'ManagementAddressLength': 'managementAddressLength',
-        'MdMegLevel': 'mdMegLevel',
-        'MdName': 'mdName',
-        'MdNameFormat': 'mdNameFormat',
-        'MegId': 'megId',
-        'MegIdFormat': 'megIdFormat',
-        'MepId': 'mepId',
-        'MpType': 'mpType',
-        'Name': 'name',
-        'NumberOfCustomTLVs': 'numberOfCustomTLVs',
-        'NumberOfSlm': 'numberOfSlm',
-        'OrganizationSpecificTlvLength': 'organizationSpecificTlvLength',
-        'OrganizationSpecificTlvValue': 'organizationSpecificTlvValue',
-        'OverrideVlanPriority': 'overrideVlanPriority',
-        'Rdi': 'rdi',
-        'SVlanId': 'sVlanId',
-        'SVlanPriority': 'sVlanPriority',
-        'SVlanTpid': 'sVlanTpid',
-        'ShortMaName': 'shortMaName',
-        'ShortMaNameFormat': 'shortMaNameFormat',
-        'SlmInitialTxfcb': 'slmInitialTxfcb',
-        'SlmSimulatedLossInRxPath': 'slmSimulatedLossInRxPath',
-        'SlmTxfcbStep': 'slmTxfcbStep',
-        'TstEnableUnicastMac': 'tstEnableUnicastMac',
-        'TstIncrementPacketLength': 'tstIncrementPacketLength',
-        'TstInitialPatternValue': 'tstInitialPatternValue',
-        'TstInterval': 'tstInterval',
-        'TstMode': 'tstMode',
-        'TstOverwriteSequenceNumber': 'tstOverwriteSequenceNumber',
-        'TstPacketLength': 'tstPacketLength',
-        'TstPacketLengthStep': 'tstPacketLengthStep',
-        'TstPatternType': 'tstPatternType',
-        'TstPriority': 'tstPriority',
-        'TstSequenceNumber': 'tstSequenceNumber',
-        'TstTestType': 'tstTestType',
-        'TstUnicastMac': 'tstUnicastMac',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
-        'VlanStacking': 'vlanStacking',
-        'VlanTpid': 'vlanTpid',
+        "Active": "active",
+        "AisEnableUnicastMac": "aisEnableUnicastMac",
+        "AisInterval": "aisInterval",
+        "AisMode": "aisMode",
+        "AisPriority": "aisPriority",
+        "AisUnicastMac": "aisUnicastMac",
+        "AutoDmTimeout": "autoDmTimeout",
+        "AutoDmTimer": "autoDmTimer",
+        "AutoLbIteration": "autoLbIteration",
+        "AutoLbTimeoutInSec": "autoLbTimeoutInSec",
+        "AutoLbTimerInSec": "autoLbTimerInSec",
+        "AutoLmIteration": "autoLmIteration",
+        "AutoLmTimeout": "autoLmTimeout",
+        "AutoLmTimer": "autoLmTimer",
+        "AutoLtIteration": "autoLtIteration",
+        "AutoLtTimeoutInSec": "autoLtTimeoutInSec",
+        "AutoLtTimerInSec": "autoLtTimerInSec",
+        "AutoLtTtl": "autoLtTtl",
+        "AutodmIteration": "autodmIteration",
+        "CVlanId": "cVlanId",
+        "CVlanPriority": "cVlanPriority",
+        "CVlanTpid": "cVlanTpid",
+        "CciInterval": "cciInterval",
+        "CcmLmmTxFcf": "ccmLmmTxFcf",
+        "CcmLmmTxFcfStepPer100mSec": "ccmLmmTxFcfStepPer100mSec",
+        "CcmPriority": "ccmPriority",
+        "CcmRxFcb": "ccmRxFcb",
+        "CcmRxFcbStepPer100mSec": "ccmRxFcbStepPer100mSec",
+        "ChassisId": "chassisId",
+        "ChassisIdLength": "chassisIdLength",
+        "ChassisIdSubType": "chassisIdSubType",
+        "Count": "count",
+        "DataTlvLength": "dataTlvLength",
+        "DataTlvValue": "dataTlvValue",
+        "DescriptiveName": "descriptiveName",
+        "DmAllRemoteMeps": "dmAllRemoteMeps",
+        "DmDestinationMacAddress": "dmDestinationMacAddress",
+        "DmMethod": "dmMethod",
+        "DmPriority": "dmPriority",
+        "Enable1slRx": "enable1slRx",
+        "EnableAisRx": "enableAisRx",
+        "EnableAutoDm": "enableAutoDm",
+        "EnableAutoLb": "enableAutoLb",
+        "EnableAutoLm": "enableAutoLm",
+        "EnableAutoLt": "enableAutoLt",
+        "EnableDataTlv": "enableDataTlv",
+        "EnableInterfaceStatusTlv": "enableInterfaceStatusTlv",
+        "EnableLckRx": "enableLckRx",
+        "EnableLmCounterUpdate": "enableLmCounterUpdate",
+        "EnableOrganizationSpecificTlv": "enableOrganizationSpecificTlv",
+        "EnablePortStatusTlv": "enablePortStatusTlv",
+        "EnableSenderIdTlv": "enableSenderIdTlv",
+        "EnableSlmRx": "enableSlmRx",
+        "EnableTstRx": "enableTstRx",
+        "EnableVlan": "enableVlan",
+        "InterRemoteMepRxIncrementStep": "interRemoteMepRxIncrementStep",
+        "InterRemoteMepTxIncrementStep": "interRemoteMepTxIncrementStep",
+        "LbAllRemoteMeps": "lbAllRemoteMeps",
+        "LbDestinationMacAddress": "lbDestinationMacAddress",
+        "LbmPriority": "lbmPriority",
+        "LckEnableUnicastMac": "lckEnableUnicastMac",
+        "LckInterval": "lckInterval",
+        "LckMode": "lckMode",
+        "LckPriority": "lckPriority",
+        "LckSupportAisGeneration": "lckSupportAisGeneration",
+        "LckUnicastMac": "lckUnicastMac",
+        "LmAllRemoteMeps": "lmAllRemoteMeps",
+        "LmDestinationMacAddress": "lmDestinationMacAddress",
+        "LmMethodType": "lmMethodType",
+        "LmmPriority": "lmmPriority",
+        "LmrPriority": "lmrPriority",
+        "LmrRxFcf": "lmrRxFcf",
+        "LmrRxFcfStepPer100mSec": "lmrRxFcfStepPer100mSec",
+        "LmrTxFcb": "lmrTxFcb",
+        "LmrTxFcbStepPer100mSec": "lmrTxFcbStepPer100mSec",
+        "LtAllRemoteMeps": "ltAllRemoteMeps",
+        "LtDestinationMacAddress": "ltDestinationMacAddress",
+        "LtmPriority": "ltmPriority",
+        "ManagementAddress": "managementAddress",
+        "ManagementAddressDomain": "managementAddressDomain",
+        "ManagementAddressDomainLength": "managementAddressDomainLength",
+        "ManagementAddressLength": "managementAddressLength",
+        "MdMegLevel": "mdMegLevel",
+        "MdName": "mdName",
+        "MdNameFormat": "mdNameFormat",
+        "MegId": "megId",
+        "MegIdFormat": "megIdFormat",
+        "MepId": "mepId",
+        "MpType": "mpType",
+        "Name": "name",
+        "NumberOfCustomTLVs": "numberOfCustomTLVs",
+        "NumberOfSlm": "numberOfSlm",
+        "OrganizationSpecificTlvLength": "organizationSpecificTlvLength",
+        "OrganizationSpecificTlvValue": "organizationSpecificTlvValue",
+        "OverrideVlanPriority": "overrideVlanPriority",
+        "Rdi": "rdi",
+        "SVlanId": "sVlanId",
+        "SVlanPriority": "sVlanPriority",
+        "SVlanTpid": "sVlanTpid",
+        "ShortMaName": "shortMaName",
+        "ShortMaNameFormat": "shortMaNameFormat",
+        "SlmInitialTxfcb": "slmInitialTxfcb",
+        "SlmSimulatedLossInRxPath": "slmSimulatedLossInRxPath",
+        "SlmTxfcbStep": "slmTxfcbStep",
+        "TstEnableUnicastMac": "tstEnableUnicastMac",
+        "TstIncrementPacketLength": "tstIncrementPacketLength",
+        "TstInitialPatternValue": "tstInitialPatternValue",
+        "TstInterval": "tstInterval",
+        "TstMode": "tstMode",
+        "TstOverwriteSequenceNumber": "tstOverwriteSequenceNumber",
+        "TstPacketLength": "tstPacketLength",
+        "TstPacketLengthStep": "tstPacketLengthStep",
+        "TstPatternType": "tstPatternType",
+        "TstPriority": "tstPriority",
+        "TstSequenceNumber": "tstSequenceNumber",
+        "TstTestType": "tstTestType",
+        "TstUnicastMac": "tstUnicastMac",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
+        "VlanStacking": "vlanStacking",
+        "VlanTpid": "vlanTpid",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CfmSimulatedMp, self).__init__(parent, list_op)
@@ -174,10 +174,13 @@ class CfmSimulatedMp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import (
+            CfmCustomTLVList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmCustomTLVList', None) is not None:
-                return self._properties.get('CfmCustomTLVList')
+            if self._properties.get("CfmCustomTLVList", None) is not None:
+                return self._properties.get("CfmCustomTLVList")
         return CfmCustomTLVList(self)
 
     @property
@@ -191,10 +194,13 @@ class CfmSimulatedMp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import CfmSlm
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import (
+            CfmSlm,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmSlm', None) is not None:
-                return self._properties.get('CfmSlm')
+            if self._properties.get("CfmSlm", None) is not None:
+                return self._properties.get("CfmSlm")
         return CfmSlm(self)._select()
 
     @property
@@ -208,10 +214,13 @@ class CfmSimulatedMp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.startccmsimulatedmpparams_4c311ea185eeaa4106e3c4181a4ec347 import StartCcmSimulatedMpParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.startccmsimulatedmpparams_4c311ea185eeaa4106e3c4181a4ec347 import (
+            StartCcmSimulatedMpParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartCcmSimulatedMpParams', None) is not None:
-                return self._properties.get('StartCcmSimulatedMpParams')
+            if self._properties.get("StartCcmSimulatedMpParams", None) is not None:
+                return self._properties.get("StartCcmSimulatedMpParams")
         return StartCcmSimulatedMpParams(self)._select()
 
     @property
@@ -225,10 +234,13 @@ class CfmSimulatedMp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopccmsimulatedmpparams_93b05cff27480ec5b14accd9b8a754a7 import StopCcmSimulatedMpParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopccmsimulatedmpparams_93b05cff27480ec5b14accd9b8a754a7 import (
+            StopCcmSimulatedMpParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopCcmSimulatedMpParams', None) is not None:
-                return self._properties.get('StopCcmSimulatedMpParams')
+            if self._properties.get("StopCcmSimulatedMpParams", None) is not None:
+                return self._properties.get("StopCcmSimulatedMpParams")
         return StopCcmSimulatedMpParams(self)._select()
 
     @property
@@ -240,7 +252,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AisEnableUnicastMac(self):
@@ -251,7 +264,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable AIS in unicast mode to the specified MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AisEnableUnicastMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AisEnableUnicastMac"])
+        )
 
     @property
     def AisInterval(self):
@@ -262,7 +278,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval between two AIS PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AisInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AisInterval"]))
 
     @property
     def AisMode(self):
@@ -273,7 +290,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies Alarm Indication Signal Mode. Can be trigged from LCK only if set to Auto Mode. Manually Start or Stop otherwise.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AisMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AisMode"]))
 
     @property
     def AisPriority(self):
@@ -284,7 +302,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for AIS PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AisPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AisPriority"]))
 
     @property
     def AisUnicastMac(self):
@@ -295,7 +314,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AisUnicastMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AisUnicastMac"]))
 
     @property
     def AutoDmTimeout(self):
@@ -306,7 +326,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout value (in sec) of waiting for DMR of respective DMM.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoDmTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoDmTimeout"]))
 
     @property
     def AutoDmTimer(self):
@@ -317,7 +338,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval (in sec) between two DMM PDUs to be sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoDmTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoDmTimer"]))
 
     @property
     def AutoLbIteration(self):
@@ -328,7 +350,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of LBM PDUs to be sent. 0 for infinite timer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLbIteration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLbIteration"])
+        )
 
     @property
     def AutoLbTimeoutInSec(self):
@@ -339,7 +364,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout value (in sec) of waiting for LBR of respective LBM.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLbTimeoutInSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLbTimeoutInSec"])
+        )
 
     @property
     def AutoLbTimerInSec(self):
@@ -350,7 +378,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval (in sec) between two LBM PDUs to be sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLbTimerInSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLbTimerInSec"])
+        )
 
     @property
     def AutoLmIteration(self):
@@ -361,7 +392,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of LMM PDUs to be sent. 0 for infinite timer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLmIteration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLmIteration"])
+        )
 
     @property
     def AutoLmTimeout(self):
@@ -372,7 +406,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout value (in msec) of waiting for LMR of respective LMM. Must be multiple of 100.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLmTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoLmTimeout"]))
 
     @property
     def AutoLmTimer(self):
@@ -383,7 +418,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval (in msec) between two LMM PDUs to be sent. Must be multiples of 100.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLmTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoLmTimer"]))
 
     @property
     def AutoLtIteration(self):
@@ -394,7 +430,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of LTM PDUs to be sent. 0 for infinite timer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLtIteration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLtIteration"])
+        )
 
     @property
     def AutoLtTimeoutInSec(self):
@@ -405,7 +444,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout value (in sec) of waiting for LTR of respective LTM.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLtTimeoutInSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLtTimeoutInSec"])
+        )
 
     @property
     def AutoLtTimerInSec(self):
@@ -416,7 +458,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval (in sec) between two LTM PDUs to be sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLtTimerInSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoLtTimerInSec"])
+        )
 
     @property
     def AutoLtTtl(self):
@@ -427,7 +472,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TTL for LBM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoLtTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AutoLtTtl"]))
 
     @property
     def AutodmIteration(self):
@@ -438,7 +484,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of DMM PDUs to be sent. 0 for infinite timer.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutodmIteration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutodmIteration"])
+        )
 
     @property
     def CVlanId(self):
@@ -449,7 +498,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CVlanId"]))
 
     @property
     def CVlanPriority(self):
@@ -460,7 +510,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CVlanPriority"]))
 
     @property
     def CVlanTpid(self):
@@ -471,7 +522,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CVlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CVlanTpid"]))
 
     @property
     def CciInterval(self):
@@ -482,7 +534,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval between two CCM PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CciInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CciInterval"]))
 
     @property
     def CcmLmmTxFcf(self):
@@ -493,7 +546,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TxFCf value in CCM (dual mode) or LMM (single mode) PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmLmmTxFcf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcmLmmTxFcf"]))
 
     @property
     def CcmLmmTxFcfStepPer100mSec(self):
@@ -504,7 +558,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TxFCf step value per 100ms in CCM (dual mode) or LMM (single mode) PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmLmmTxFcfStepPer100mSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CcmLmmTxFcfStepPer100mSec"])
+        )
 
     @property
     def CcmPriority(self):
@@ -515,7 +572,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for CCM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcmPriority"]))
 
     @property
     def CcmRxFcb(self):
@@ -526,7 +584,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RxFCb value in CCM (dual mode) PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmRxFcb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcmRxFcb"]))
 
     @property
     def CcmRxFcbStepPer100mSec(self):
@@ -537,7 +596,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RxFCb step value per 100ms in CCM (dual mode) PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcmRxFcbStepPer100mSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CcmRxFcbStepPer100mSec"])
+        )
 
     @property
     def ChassisId(self):
@@ -548,7 +610,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Chassis ID for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ChassisId"]))
 
     @property
     def ChassisIdLength(self):
@@ -559,7 +622,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Chassis ID Length for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIdLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChassisIdLength"])
+        )
 
     @property
     def ChassisIdSubType(self):
@@ -570,7 +636,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Chassis ID SubType for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChassisIdSubType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChassisIdSubType"])
+        )
 
     @property
     def Count(self):
@@ -580,7 +649,7 @@ class CfmSimulatedMp(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DataTlvLength(self):
@@ -591,7 +660,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Data TLV Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataTlvLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataTlvLength"]))
 
     @property
     def DataTlvValue(self):
@@ -602,7 +672,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Data TLV Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataTlvValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataTlvValue"]))
 
     @property
     def DescriptiveName(self):
@@ -612,7 +683,7 @@ class CfmSimulatedMp(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DmAllRemoteMeps(self):
@@ -623,7 +694,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DMM to be sent for all remote MEPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmAllRemoteMeps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmAllRemoteMeps"])
+        )
 
     @property
     def DmDestinationMacAddress(self):
@@ -634,7 +708,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmDestinationMacAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DmDestinationMacAddress"])
+        )
 
     @property
     def DmMethod(self):
@@ -645,7 +722,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies One Way or Two Way Delay Measurement Method.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmMethod']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DmMethod"]))
 
     @property
     def DmPriority(self):
@@ -656,7 +734,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for DMM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DmPriority"]))
 
     @property
     def Enable1slRx(self):
@@ -667,7 +746,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable 1SL Rx
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable1slRx']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enable1slRx"]))
 
     @property
     def EnableAisRx(self):
@@ -678,7 +758,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables AIS PDUs to be processed in this MEP upon receiving at port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAisRx']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAisRx"]))
 
     @property
     def EnableAutoDm(self):
@@ -689,7 +770,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Periodic Delay Measurement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAutoDm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAutoDm"]))
 
     @property
     def EnableAutoLb(self):
@@ -700,7 +782,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Periodic Loopback.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAutoLb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAutoLb"]))
 
     @property
     def EnableAutoLm(self):
@@ -711,7 +794,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Periodic Loss Measurement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAutoLm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAutoLm"]))
 
     @property
     def EnableAutoLt(self):
@@ -722,7 +806,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Periodic Link Trace.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAutoLt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAutoLt"]))
 
     @property
     def EnableDataTlv(self):
@@ -733,7 +818,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Data TLV for all applicable PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDataTlv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableDataTlv"]))
 
     @property
     def EnableInterfaceStatusTlv(self):
@@ -744,7 +830,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Interface Status TLV for all applicable PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableInterfaceStatusTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableInterfaceStatusTlv"])
+        )
 
     @property
     def EnableLckRx(self):
@@ -755,7 +844,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables LCK PDUs to be processed in this MEP upon receiving at port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLckRx']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableLckRx"]))
 
     @property
     def EnableLmCounterUpdate(self):
@@ -766,7 +856,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable updating the counter value for subsequent PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLmCounterUpdate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLmCounterUpdate"])
+        )
 
     @property
     def EnableOrganizationSpecificTlv(self):
@@ -777,7 +870,11 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Organization Specific TLV for all applicable PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOrganizationSpecificTlv']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableOrganizationSpecificTlv"]),
+        )
 
     @property
     def EnablePortStatusTlv(self):
@@ -788,7 +885,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Port Status TLV for all applicable PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePortStatusTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePortStatusTlv"])
+        )
 
     @property
     def EnableSenderIdTlv(self):
@@ -799,7 +899,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sender ID TLV for all applicable PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSenderIdTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSenderIdTlv"])
+        )
 
     @property
     def EnableSlmRx(self):
@@ -810,7 +913,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable SLM Rx
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSlmRx']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSlmRx"]))
 
     @property
     def EnableTstRx(self):
@@ -821,7 +925,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables TST PDUs to be processed in this MEP upon receiving at port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableTstRx']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableTstRx"]))
 
     @property
     def EnableVlan(self):
@@ -832,7 +937,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable VLAN for this MP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableVlan"]))
 
     @property
     def InterRemoteMepRxIncrementStep(self):
@@ -843,7 +949,11 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Remote MEP Rx Increment Step.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterRemoteMepRxIncrementStep']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InterRemoteMepRxIncrementStep"]),
+        )
 
     @property
     def InterRemoteMepTxIncrementStep(self):
@@ -854,7 +964,11 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter Remote MEP Tx Increment Step.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterRemoteMepTxIncrementStep']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InterRemoteMepTxIncrementStep"]),
+        )
 
     @property
     def LbAllRemoteMeps(self):
@@ -865,7 +979,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables LBM to be sent for all remote MEPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbAllRemoteMeps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LbAllRemoteMeps"])
+        )
 
     @property
     def LbDestinationMacAddress(self):
@@ -876,7 +993,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbDestinationMacAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LbDestinationMacAddress"])
+        )
 
     @property
     def LbmPriority(self):
@@ -887,7 +1007,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for LBM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LbmPriority"]))
 
     @property
     def LckEnableUnicastMac(self):
@@ -898,7 +1019,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable LCK in unicast mode to the specified MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckEnableUnicastMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LckEnableUnicastMac"])
+        )
 
     @property
     def LckInterval(self):
@@ -909,7 +1033,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval between two LCK PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LckInterval"]))
 
     @property
     def LckMode(self):
@@ -920,7 +1045,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies LCK Mode. Can be trigged from TST only if set to Auto Mode. Manually Start or Stop otherwise.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LckMode"]))
 
     @property
     def LckPriority(self):
@@ -931,7 +1057,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for LCK PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LckPriority"]))
 
     @property
     def LckSupportAisGeneration(self):
@@ -942,7 +1069,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable or disable AIS PDU generation. Needs AIS mode to be set to Auto.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckSupportAisGeneration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LckSupportAisGeneration"])
+        )
 
     @property
     def LckUnicastMac(self):
@@ -953,7 +1083,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC Address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LckUnicastMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LckUnicastMac"]))
 
     @property
     def LmAllRemoteMeps(self):
@@ -964,7 +1095,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables LMM to be sent for all remote MEPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmAllRemoteMeps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmAllRemoteMeps"])
+        )
 
     @property
     def LmDestinationMacAddress(self):
@@ -975,7 +1109,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmDestinationMacAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmDestinationMacAddress"])
+        )
 
     @property
     def LmMethodType(self):
@@ -986,7 +1123,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Loss Measurement Method - One Way or Two Way. For Two way, CCM PDUs are used. LMM & LMR otherwise.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmMethodType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmMethodType"]))
 
     @property
     def LmmPriority(self):
@@ -997,7 +1135,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for LMM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmmPriority"]))
 
     @property
     def LmrPriority(self):
@@ -1008,7 +1147,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for LMR PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrPriority"]))
 
     @property
     def LmrRxFcf(self):
@@ -1019,7 +1159,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RxFCf value of LMR PDU (Single Mode).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrRxFcf']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrRxFcf"]))
 
     @property
     def LmrRxFcfStepPer100mSec(self):
@@ -1030,7 +1171,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RxFCf step value per 100ms of LMR PDU (Single Mode).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrRxFcfStepPer100mSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmrRxFcfStepPer100mSec"])
+        )
 
     @property
     def LmrTxFcb(self):
@@ -1041,7 +1185,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TxFCb value in LMR PDU (Single mode) i.e. TxFCf of CCM or LMM.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrTxFcb']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LmrTxFcb"]))
 
     @property
     def LmrTxFcbStepPer100mSec(self):
@@ -1052,7 +1197,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TxFCb step value per 100ms in LMR PDU (Single mode).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LmrTxFcbStepPer100mSec']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LmrTxFcbStepPer100mSec"])
+        )
 
     @property
     def LtAllRemoteMeps(self):
@@ -1063,7 +1211,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables LTM to be sent for all remote MEPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtAllRemoteMeps']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtAllRemoteMeps"])
+        )
 
     @property
     def LtDestinationMacAddress(self):
@@ -1074,7 +1225,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtDestinationMacAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LtDestinationMacAddress"])
+        )
 
     @property
     def LtmPriority(self):
@@ -1085,7 +1239,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for LTM PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LtmPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LtmPriority"]))
 
     @property
     def ManagementAddress(self):
@@ -1096,7 +1251,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Management Address for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ManagementAddress"])
+        )
 
     @property
     def ManagementAddressDomain(self):
@@ -1107,7 +1265,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Management Address Domain for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomain']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ManagementAddressDomain"])
+        )
 
     @property
     def ManagementAddressDomainLength(self):
@@ -1118,7 +1279,11 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Management Address Domain Length for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ManagementAddressDomainLength"]),
+        )
 
     @property
     def ManagementAddressLength(self):
@@ -1129,7 +1294,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Management Address Length for Sender ID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagementAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ManagementAddressLength"])
+        )
 
     @property
     def MdMegLevel(self):
@@ -1140,7 +1308,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD/MEG Level in which this MP belongs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdMegLevel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdMegLevel"]))
 
     @property
     def MdName(self):
@@ -1151,7 +1320,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD Name for the selected MD Level. For MD Name Format MAC + Int, Please Use MAC-Int eg. 11:22:33:44:55:66-1. For Others, Use Any String.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdName"]))
 
     @property
     def MdNameFormat(self):
@@ -1162,7 +1332,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Format for Maintenance Domain Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MdNameFormat']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MdNameFormat"]))
 
     @property
     def MegId(self):
@@ -1173,7 +1344,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MEG ID (Y.1731 Mode).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MegId"]))
 
     @property
     def MegIdFormat(self):
@@ -1184,7 +1356,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Format for MEG ID (Y.1731 Mode). Non-ICC formats are supported only if 'Allow CFM MAID Formats' is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MegIdFormat']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MegIdFormat"]))
 
     @property
     def MepId(self):
@@ -1195,7 +1368,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MP Identifier. Must be unique in one MA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MepId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MepId"]))
 
     @property
     def MpType(self):
@@ -1206,7 +1380,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select MP type MIP or MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MpType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MpType"]))
 
     @property
     def Name(self):
@@ -1216,11 +1391,12 @@ class CfmSimulatedMp(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfCustomTLVs(self):
@@ -1230,11 +1406,12 @@ class CfmSimulatedMp(Base):
         -------
         - number: Number of Custom TLVs for PDUs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfCustomTLVs"])
+
     @NumberOfCustomTLVs.setter
     def NumberOfCustomTLVs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfCustomTLVs"], value)
 
     @property
     def NumberOfSlm(self):
@@ -1244,11 +1421,12 @@ class CfmSimulatedMp(Base):
         -------
         - number: Number of SLM tests
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlm'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSlm"])
+
     @NumberOfSlm.setter
     def NumberOfSlm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSlm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSlm"], value)
 
     @property
     def OrganizationSpecificTlvLength(self):
@@ -1259,7 +1437,11 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Organization Specific TLV Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTlvLength"]),
+        )
 
     @property
     def OrganizationSpecificTlvValue(self):
@@ -1270,7 +1452,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Organization Specific TLV Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OrganizationSpecificTlvValue"])
+        )
 
     @property
     def OverrideVlanPriority(self):
@@ -1281,7 +1466,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Override VLAN Priority value for PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverrideVlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverrideVlanPriority"])
+        )
 
     @property
     def Rdi(self):
@@ -1292,7 +1480,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote Defect Indication. Auto Update - RDI On if there is a defect in remote MEP. On or Off - Turn on or off RDI intentionally.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rdi']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Rdi"]))
 
     @property
     def SVlanId(self):
@@ -1303,7 +1492,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SVlanId"]))
 
     @property
     def SVlanPriority(self):
@@ -1314,7 +1504,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SVlanPriority"]))
 
     @property
     def SVlanTpid(self):
@@ -1325,7 +1516,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SVlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SVlanTpid"]))
 
     @property
     def ShortMaName(self):
@@ -1336,7 +1528,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Short Maintenance Association Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortMaName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ShortMaName"]))
 
     @property
     def ShortMaNameFormat(self):
@@ -1347,7 +1540,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Format for Maintenance Association Name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortMaNameFormat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShortMaNameFormat"])
+        )
 
     @property
     def SlmInitialTxfcb(self):
@@ -1358,7 +1554,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial TxFCb
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmInitialTxfcb']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmInitialTxfcb"])
+        )
 
     @property
     def SlmSimulatedLossInRxPath(self):
@@ -1369,7 +1568,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Percentage of Simulated Loss (in Rx Path)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmSimulatedLossInRxPath']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SlmSimulatedLossInRxPath"])
+        )
 
     @property
     def SlmTxfcbStep(self):
@@ -1380,7 +1582,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TxFCb Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmTxfcbStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SlmTxfcbStep"]))
 
     @property
     def TstEnableUnicastMac(self):
@@ -1391,7 +1594,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable TST in unicast mode to the specified MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstEnableUnicastMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstEnableUnicastMac"])
+        )
 
     @property
     def TstIncrementPacketLength(self):
@@ -1402,7 +1608,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Increment Packet Length for subsequent TST PDUs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstIncrementPacketLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstIncrementPacketLength"])
+        )
 
     @property
     def TstInitialPatternValue(self):
@@ -1413,7 +1622,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Pattern Value of Test.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstInitialPatternValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstInitialPatternValue"])
+        )
 
     @property
     def TstInterval(self):
@@ -1424,7 +1636,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval between two TST PDUs (in ms).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TstInterval"]))
 
     @property
     def TstMode(self):
@@ -1435,7 +1648,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TST Mode On or Off.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TstMode"]))
 
     @property
     def TstOverwriteSequenceNumber(self):
@@ -1446,7 +1660,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Overwrite Sequence Number using specified value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstOverwriteSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstOverwriteSequenceNumber"])
+        )
 
     @property
     def TstPacketLength(self):
@@ -1457,7 +1674,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Packet Length of TST PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPacketLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstPacketLength"])
+        )
 
     @property
     def TstPacketLengthStep(self):
@@ -1468,7 +1688,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Increment for Packet Length Step.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPacketLengthStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstPacketLengthStep"])
+        )
 
     @property
     def TstPatternType(self):
@@ -1479,7 +1702,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Pattern Type of Test.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPatternType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstPatternType"])
+        )
 
     @property
     def TstPriority(self):
@@ -1490,7 +1716,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority for TST PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TstPriority"]))
 
     @property
     def TstSequenceNumber(self):
@@ -1501,7 +1728,10 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sequence Number of TST PDU. Effective only if overridden.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TstSequenceNumber"])
+        )
 
     @property
     def TstTestType(self):
@@ -1512,7 +1742,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Test Type In or Out Service.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstTestType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TstTestType"]))
 
     @property
     def TstUnicastMac(self):
@@ -1523,7 +1754,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The MAC address of the remote MEP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TstUnicastMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TstUnicastMac"]))
 
     @property
     def VlanId(self):
@@ -1534,7 +1766,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanId"]))
 
     @property
     def VlanPriority(self):
@@ -1545,7 +1778,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanPriority"]))
 
     @property
     def VlanStacking(self):
@@ -1556,7 +1790,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Single or Stacked VLAN Selection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanStacking']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanStacking"]))
 
     @property
     def VlanTpid(self):
@@ -1567,7 +1802,8 @@ class CfmSimulatedMp(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanTpid"]))
 
     def update(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
         # type: (str, int, int) -> CfmSimulatedMp
@@ -1590,7 +1826,7 @@ class CfmSimulatedMp(Base):
 
     def add(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
         # type: (str, int, int) -> CfmSimulatedMp
-        """Adds a new cfmSimulatedMp resource on the json, only valid with config assistant
+        """Adds a new cfmSimulatedMp resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -1608,7 +1844,14 @@ class CfmSimulatedMp(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfCustomTLVs=None,
+        NumberOfSlm=None,
+    ):
         # type: (int, str, str, int, int) -> CfmSimulatedMp
         """Finds and retrieves cfmSimulatedMp resources from the server.
 
@@ -1667,10 +1910,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ActivateMpSimulated(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1699,10 +1944,14 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('activateMpSimulated', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "activateMpSimulated", payload=payload, response_object=None
+        )
 
     def DeactivateMpSimulated(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1731,10 +1980,14 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deactivateMpSimulated', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "deactivateMpSimulated", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1751,10 +2004,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartCcmSimulated(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1783,10 +2038,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmSimulated', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startCcmSimulated", payload=payload, response_object=None)
 
     def StartCcmSimulatedMp(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1805,10 +2062,14 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmSimulatedMp', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startCcmSimulatedMp", payload=payload, response_object=None
+        )
 
     def StartSlm(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1837,10 +2098,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSlm', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startSlm", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1857,10 +2120,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopCcmSimulated(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1889,10 +2154,12 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmSimulated', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopCcmSimulated", payload=payload, response_object=None)
 
     def StopCcmSimulatedMp(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1911,10 +2178,14 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmSimulatedMp', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopCcmSimulatedMp", payload=payload, response_object=None
+        )
 
     def StopSlm(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1943,12 +2214,133 @@ class CfmSimulatedMp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSlm', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopSlm", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeoutInSec=None, AutoLbTimerInSec=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeoutInSec=None, AutoLtTimerInSec=None, AutoLtTtl=None, AutodmIteration=None, CVlanId=None, CVlanPriority=None, CVlanTpid=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStepPer100mSec=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStepPer100mSec=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmAllRemoteMeps=None, DmDestinationMacAddress=None, DmMethod=None, DmPriority=None, Enable1slRx=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableDataTlv=None, EnableInterfaceStatusTlv=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableOrganizationSpecificTlv=None, EnablePortStatusTlv=None, EnableSenderIdTlv=None, EnableSlmRx=None, EnableTstRx=None, EnableVlan=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbAllRemoteMeps=None, LbDestinationMacAddress=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethodType=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStepPer100mSec=None, LmrTxFcb=None, LmrTxFcbStepPer100mSec=None, LtAllRemoteMeps=None, LtDestinationMacAddress=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdMegLevel=None, MdName=None, MdNameFormat=None, MegId=None, MegIdFormat=None, MepId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, SVlanId=None, SVlanPriority=None, SVlanTpid=None, ShortMaName=None, ShortMaNameFormat=None, SlmInitialTxfcb=None, SlmSimulatedLossInRxPath=None, SlmTxfcbStep=None, TstEnableUnicastMac=None, TstIncrementPacketLength=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPacketLengthStep=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, VlanId=None, VlanPriority=None, VlanStacking=None, VlanTpid=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AisEnableUnicastMac=None,
+        AisInterval=None,
+        AisMode=None,
+        AisPriority=None,
+        AisUnicastMac=None,
+        AutoDmTimeout=None,
+        AutoDmTimer=None,
+        AutoLbIteration=None,
+        AutoLbTimeoutInSec=None,
+        AutoLbTimerInSec=None,
+        AutoLmIteration=None,
+        AutoLmTimeout=None,
+        AutoLmTimer=None,
+        AutoLtIteration=None,
+        AutoLtTimeoutInSec=None,
+        AutoLtTimerInSec=None,
+        AutoLtTtl=None,
+        AutodmIteration=None,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpid=None,
+        CciInterval=None,
+        CcmLmmTxFcf=None,
+        CcmLmmTxFcfStepPer100mSec=None,
+        CcmPriority=None,
+        CcmRxFcb=None,
+        CcmRxFcbStepPer100mSec=None,
+        ChassisId=None,
+        ChassisIdLength=None,
+        ChassisIdSubType=None,
+        DataTlvLength=None,
+        DataTlvValue=None,
+        DmAllRemoteMeps=None,
+        DmDestinationMacAddress=None,
+        DmMethod=None,
+        DmPriority=None,
+        Enable1slRx=None,
+        EnableAisRx=None,
+        EnableAutoDm=None,
+        EnableAutoLb=None,
+        EnableAutoLm=None,
+        EnableAutoLt=None,
+        EnableDataTlv=None,
+        EnableInterfaceStatusTlv=None,
+        EnableLckRx=None,
+        EnableLmCounterUpdate=None,
+        EnableOrganizationSpecificTlv=None,
+        EnablePortStatusTlv=None,
+        EnableSenderIdTlv=None,
+        EnableSlmRx=None,
+        EnableTstRx=None,
+        EnableVlan=None,
+        InterRemoteMepRxIncrementStep=None,
+        InterRemoteMepTxIncrementStep=None,
+        LbAllRemoteMeps=None,
+        LbDestinationMacAddress=None,
+        LbmPriority=None,
+        LckEnableUnicastMac=None,
+        LckInterval=None,
+        LckMode=None,
+        LckPriority=None,
+        LckSupportAisGeneration=None,
+        LckUnicastMac=None,
+        LmAllRemoteMeps=None,
+        LmDestinationMacAddress=None,
+        LmMethodType=None,
+        LmmPriority=None,
+        LmrPriority=None,
+        LmrRxFcf=None,
+        LmrRxFcfStepPer100mSec=None,
+        LmrTxFcb=None,
+        LmrTxFcbStepPer100mSec=None,
+        LtAllRemoteMeps=None,
+        LtDestinationMacAddress=None,
+        LtmPriority=None,
+        ManagementAddress=None,
+        ManagementAddressDomain=None,
+        ManagementAddressDomainLength=None,
+        ManagementAddressLength=None,
+        MdMegLevel=None,
+        MdName=None,
+        MdNameFormat=None,
+        MegId=None,
+        MegIdFormat=None,
+        MepId=None,
+        MpType=None,
+        OrganizationSpecificTlvLength=None,
+        OrganizationSpecificTlvValue=None,
+        OverrideVlanPriority=None,
+        Rdi=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpid=None,
+        ShortMaName=None,
+        ShortMaNameFormat=None,
+        SlmInitialTxfcb=None,
+        SlmSimulatedLossInRxPath=None,
+        SlmTxfcbStep=None,
+        TstEnableUnicastMac=None,
+        TstIncrementPacketLength=None,
+        TstInitialPatternValue=None,
+        TstInterval=None,
+        TstMode=None,
+        TstOverwriteSequenceNumber=None,
+        TstPacketLength=None,
+        TstPacketLengthStep=None,
+        TstPatternType=None,
+        TstPriority=None,
+        TstSequenceNumber=None,
+        TstTestType=None,
+        TstUnicastMac=None,
+        VlanId=None,
+        VlanPriority=None,
+        VlanStacking=None,
+        VlanTpid=None,
+    ):
         """Base class infrastructure that gets a list of cfmSimulatedMp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

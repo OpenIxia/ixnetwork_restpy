@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,45 +33,75 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'BinaryLoadUnit': 'binaryLoadUnit',
-        'BinaryResolution': 'binaryResolution',
-        'CalculateLatency': 'calculateLatency',
-        'CustomFramesizeValue': 'customFramesizeValue',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DelayBeforeStartTransmit': 'delayBeforeStartTransmit',
-        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'EnableTrafficValidation': 'enableTrafficValidation',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'InitialBinaryLoadIntegerValues': 'initialBinaryLoadIntegerValues',
-        'InitialStepIntegerValues': 'initialStepIntegerValues',
-        'LatencyType': 'latencyType',
-        'LoadRateValue': 'loadRateValue',
-        'LoadType': 'loadType',
-        'MaxBinaryLoadIntegerValue': 'maxBinaryLoadIntegerValue',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MaxStepIntegerValues': 'maxStepIntegerValues',
-        'MinAddressTableSize': 'minAddressTableSize',
-        'MinBinaryLoadIntegerValues': 'minBinaryLoadIntegerValues',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'Numtrials': 'numtrials',
-        'PacketsPerFlow': 'packetsPerFlow',
-        'ProtocolItem': 'protocolItem',
-        'RangeCount': 'rangeCount',
-        'StepLoadUnit': 'stepLoadUnit',
-        'StepStepIntegerValues': 'stepStepIntegerValues',
-        'WaitAffterFlowAdd': 'waitAffterFlowAdd',
+        "BinaryLoadUnit": "binaryLoadUnit",
+        "BinaryResolution": "binaryResolution",
+        "CalculateLatency": "calculateLatency",
+        "CustomFramesizeValue": "customFramesizeValue",
+        "CustomLoadUnit": "customLoadUnit",
+        "DelayBeforeStartTransmit": "delayBeforeStartTransmit",
+        "DeleteFlowsAtStartup": "deleteFlowsAtStartup",
+        "EnableMinFrameSize": "enableMinFrameSize",
+        "EnableTrafficValidation": "enableTrafficValidation",
+        "FrameSizeMode": "frameSizeMode",
+        "Gap": "gap",
+        "InitialBinaryLoadIntegerValues": "initialBinaryLoadIntegerValues",
+        "InitialStepIntegerValues": "initialStepIntegerValues",
+        "LatencyType": "latencyType",
+        "LoadRateValue": "loadRateValue",
+        "LoadType": "loadType",
+        "MaxBinaryLoadIntegerValue": "maxBinaryLoadIntegerValue",
+        "MaxRandomFrameSize": "maxRandomFrameSize",
+        "MaxStepIntegerValues": "maxStepIntegerValues",
+        "MinAddressTableSize": "minAddressTableSize",
+        "MinBinaryLoadIntegerValues": "minBinaryLoadIntegerValues",
+        "MinRandomFrameSize": "minRandomFrameSize",
+        "Numtrials": "numtrials",
+        "PacketsPerFlow": "packetsPerFlow",
+        "ProtocolItem": "protocolItem",
+        "RangeCount": "rangeCount",
+        "StepLoadUnit": "stepLoadUnit",
+        "StepStepIntegerValues": "stepStepIntegerValues",
+        "WaitAffterFlowAdd": "waitAffterFlowAdd",
     }
     _SDM_ENUM_MAP = {
-        'binaryLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'customLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'frameSizeMode': ['increment', 'random'],
-        'latencyType': ['cutThrough', 'forwardingDelay', 'mef', 'storeForward'],
-        'loadType': ['binary', 'step'],
-        'stepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+        "binaryLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "customLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "frameSizeMode": ["increment", "random"],
+        "latencyType": ["cutThrough", "forwardingDelay", "mef", "storeForward"],
+        "loadType": ["binary", "step"],
+        "stepLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -84,11 +115,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): The load unit value in binary. Possible values include:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"])
+
     @BinaryLoadUnit.setter
     def BinaryLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"], value)
 
     @property
     def BinaryResolution(self):
@@ -98,11 +130,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryResolution'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryResolution"])
+
     @BinaryResolution.setter
     def BinaryResolution(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryResolution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryResolution"], value)
 
     @property
     def CalculateLatency(self):
@@ -112,11 +145,12 @@ class TestConfig(Base):
         -------
         - bool: If true, calculates the latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateLatency"])
+
     @CalculateLatency.setter
     def CalculateLatency(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateLatency"], value)
 
     @property
     def CustomFramesizeValue(self):
@@ -126,11 +160,12 @@ class TestConfig(Base):
         -------
         - number: Sets the custom framesize value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomFramesizeValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomFramesizeValue"])
+
     @CustomFramesizeValue.setter
     def CustomFramesizeValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomFramesizeValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomFramesizeValue"], value)
 
     @property
     def CustomLoadUnit(self):
@@ -140,11 +175,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the custom load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomLoadUnit"])
+
     @CustomLoadUnit.setter
     def CustomLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomLoadUnit"], value)
 
     @property
     def DelayBeforeStartTransmit(self):
@@ -154,11 +190,12 @@ class TestConfig(Base):
         -------
         - number: If true, a delay is introduced before transmission is started.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayBeforeStartTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayBeforeStartTransmit"])
+
     @DelayBeforeStartTransmit.setter
     def DelayBeforeStartTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayBeforeStartTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayBeforeStartTransmit"], value)
 
     @property
     def DeleteFlowsAtStartup(self):
@@ -168,11 +205,12 @@ class TestConfig(Base):
         -------
         - bool: If true, the test will delete the flowgroups at startup
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeleteFlowsAtStartup'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeleteFlowsAtStartup"])
+
     @DeleteFlowsAtStartup.setter
     def DeleteFlowsAtStartup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeleteFlowsAtStartup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeleteFlowsAtStartup"], value)
 
     @property
     def EnableMinFrameSize(self):
@@ -182,11 +220,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables minimum frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"])
+
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"], value)
 
     @property
     def EnableTrafficValidation(self):
@@ -196,11 +235,12 @@ class TestConfig(Base):
         -------
         - bool: If true, traffic validation is performed. It provides a high level view of the errors detected in each traffic item and flow group. With the help of this option you can easily identify the various categories of errors detected in each traffic item and flow group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableTrafficValidation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableTrafficValidation"])
+
     @EnableTrafficValidation.setter
     def EnableTrafficValidation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableTrafficValidation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableTrafficValidation"], value)
 
     @property
     def FrameSizeMode(self):
@@ -210,11 +250,12 @@ class TestConfig(Base):
         -------
         - str(increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def Gap(self):
@@ -224,11 +265,12 @@ class TestConfig(Base):
         -------
         - number: The gap in transmission of frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def InitialBinaryLoadIntegerValues(self):
@@ -238,11 +280,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the initial binary load integer values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialBinaryLoadIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialBinaryLoadIntegerValues"])
+
     @InitialBinaryLoadIntegerValues.setter
     def InitialBinaryLoadIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialBinaryLoadIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialBinaryLoadIntegerValues"], value)
 
     @property
     def InitialStepIntegerValues(self):
@@ -252,11 +295,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the initial step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialStepIntegerValues"])
+
     @InitialStepIntegerValues.setter
     def InitialStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialStepIntegerValues"], value)
 
     @property
     def LatencyType(self):
@@ -266,11 +310,12 @@ class TestConfig(Base):
         -------
         - str(cutThrough | forwardingDelay | mef | storeForward): Indicate the type of latency that needs to be measured. Can be Cut-Through, Store-Forward and so on.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyType"])
+
     @LatencyType.setter
     def LatencyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyType"], value)
 
     @property
     def LoadRateValue(self):
@@ -280,11 +325,12 @@ class TestConfig(Base):
         -------
         - number: The value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateValue"])
+
     @LoadRateValue.setter
     def LoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateValue"], value)
 
     @property
     def LoadType(self):
@@ -294,11 +340,12 @@ class TestConfig(Base):
         -------
         - str(binary | step): Indicates the load type. Can be any of the following:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def MaxBinaryLoadIntegerValue(self):
@@ -308,11 +355,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the maximum load integer values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxBinaryLoadIntegerValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxBinaryLoadIntegerValue"])
+
     @MaxBinaryLoadIntegerValue.setter
     def MaxBinaryLoadIntegerValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxBinaryLoadIntegerValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxBinaryLoadIntegerValue"], value)
 
     @property
     def MaxRandomFrameSize(self):
@@ -322,11 +370,12 @@ class TestConfig(Base):
         -------
         - number: The maximum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"])
+
     @MaxRandomFrameSize.setter
     def MaxRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"], value)
 
     @property
     def MaxStepIntegerValues(self):
@@ -336,11 +385,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the maximum step value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxStepIntegerValues"])
+
     @MaxStepIntegerValues.setter
     def MaxStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxStepIntegerValues"], value)
 
     @property
     def MinAddressTableSize(self):
@@ -350,11 +400,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the minimum size of the address table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinAddressTableSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinAddressTableSize"])
+
     @MinAddressTableSize.setter
     def MinAddressTableSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinAddressTableSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinAddressTableSize"], value)
 
     @property
     def MinBinaryLoadIntegerValues(self):
@@ -364,11 +415,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the minimum binary load integer values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinBinaryLoadIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinBinaryLoadIntegerValues"])
+
     @MinBinaryLoadIntegerValues.setter
     def MinBinaryLoadIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinBinaryLoadIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinBinaryLoadIntegerValues"], value)
 
     @property
     def MinRandomFrameSize(self):
@@ -378,11 +430,12 @@ class TestConfig(Base):
         -------
         - number: The minimum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"])
+
     @MinRandomFrameSize.setter
     def MinRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"], value)
 
     @property
     def Numtrials(self):
@@ -392,11 +445,12 @@ class TestConfig(Base):
         -------
         - number: Number of trials that can be run
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def PacketsPerFlow(self):
@@ -406,11 +460,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the number of packets per flow.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsPerFlow'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsPerFlow"])
+
     @PacketsPerFlow.setter
     def PacketsPerFlow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketsPerFlow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketsPerFlow"], value)
 
     @property
     def ProtocolItem(self):
@@ -420,11 +475,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def RangeCount(self):
@@ -434,11 +490,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the range count.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RangeCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RangeCount"])
+
     @RangeCount.setter
     def RangeCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RangeCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RangeCount"], value)
 
     @property
     def StepLoadUnit(self):
@@ -448,11 +505,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the step rate of the load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepLoadUnit"])
+
     @StepLoadUnit.setter
     def StepLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepLoadUnit"], value)
 
     @property
     def StepStepIntegerValues(self):
@@ -462,11 +520,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the step integer value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepStepIntegerValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepStepIntegerValues"])
+
     @StepStepIntegerValues.setter
     def StepStepIntegerValues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepStepIntegerValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepStepIntegerValues"], value)
 
     @property
     def WaitAffterFlowAdd(self):
@@ -476,13 +535,45 @@ class TestConfig(Base):
         -------
         - number: If true, the traffic is paused after flowdetection is added.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitAffterFlowAdd'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitAffterFlowAdd"])
+
     @WaitAffterFlowAdd.setter
     def WaitAffterFlowAdd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitAffterFlowAdd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitAffterFlowAdd"], value)
 
-    def update(self, BinaryLoadUnit=None, BinaryResolution=None, CalculateLatency=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayBeforeStartTransmit=None, DeleteFlowsAtStartup=None, EnableMinFrameSize=None, EnableTrafficValidation=None, FrameSizeMode=None, Gap=None, InitialBinaryLoadIntegerValues=None, InitialStepIntegerValues=None, LatencyType=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadIntegerValue=None, MaxRandomFrameSize=None, MaxStepIntegerValues=None, MinAddressTableSize=None, MinBinaryLoadIntegerValues=None, MinRandomFrameSize=None, Numtrials=None, PacketsPerFlow=None, ProtocolItem=None, RangeCount=None, StepLoadUnit=None, StepStepIntegerValues=None, WaitAffterFlowAdd=None):
+    def update(
+        self,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        CalculateLatency=None,
+        CustomFramesizeValue=None,
+        CustomLoadUnit=None,
+        DelayBeforeStartTransmit=None,
+        DeleteFlowsAtStartup=None,
+        EnableMinFrameSize=None,
+        EnableTrafficValidation=None,
+        FrameSizeMode=None,
+        Gap=None,
+        InitialBinaryLoadIntegerValues=None,
+        InitialStepIntegerValues=None,
+        LatencyType=None,
+        LoadRateValue=None,
+        LoadType=None,
+        MaxBinaryLoadIntegerValue=None,
+        MaxRandomFrameSize=None,
+        MaxStepIntegerValues=None,
+        MinAddressTableSize=None,
+        MinBinaryLoadIntegerValues=None,
+        MinRandomFrameSize=None,
+        Numtrials=None,
+        PacketsPerFlow=None,
+        ProtocolItem=None,
+        RangeCount=None,
+        StepLoadUnit=None,
+        StepStepIntegerValues=None,
+        WaitAffterFlowAdd=None,
+    ):
         # type: (str, int, bool, int, str, int, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, int, int, int, int, List[str], int, str, int, int) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -524,7 +615,38 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BinaryLoadUnit=None, BinaryResolution=None, CalculateLatency=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayBeforeStartTransmit=None, DeleteFlowsAtStartup=None, EnableMinFrameSize=None, EnableTrafficValidation=None, FrameSizeMode=None, Gap=None, InitialBinaryLoadIntegerValues=None, InitialStepIntegerValues=None, LatencyType=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadIntegerValue=None, MaxRandomFrameSize=None, MaxStepIntegerValues=None, MinAddressTableSize=None, MinBinaryLoadIntegerValues=None, MinRandomFrameSize=None, Numtrials=None, PacketsPerFlow=None, ProtocolItem=None, RangeCount=None, StepLoadUnit=None, StepStepIntegerValues=None, WaitAffterFlowAdd=None):
+    def find(
+        self,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        CalculateLatency=None,
+        CustomFramesizeValue=None,
+        CustomLoadUnit=None,
+        DelayBeforeStartTransmit=None,
+        DeleteFlowsAtStartup=None,
+        EnableMinFrameSize=None,
+        EnableTrafficValidation=None,
+        FrameSizeMode=None,
+        Gap=None,
+        InitialBinaryLoadIntegerValues=None,
+        InitialStepIntegerValues=None,
+        LatencyType=None,
+        LoadRateValue=None,
+        LoadType=None,
+        MaxBinaryLoadIntegerValue=None,
+        MaxRandomFrameSize=None,
+        MaxStepIntegerValues=None,
+        MinAddressTableSize=None,
+        MinBinaryLoadIntegerValues=None,
+        MinRandomFrameSize=None,
+        Numtrials=None,
+        PacketsPerFlow=None,
+        ProtocolItem=None,
+        RangeCount=None,
+        StepLoadUnit=None,
+        StepStepIntegerValues=None,
+        WaitAffterFlowAdd=None,
+    ):
         # type: (str, int, bool, int, str, int, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, int, int, int, int, List[str], int, str, int, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -607,10 +729,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -625,10 +749,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -637,17 +763,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -664,10 +792,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -685,10 +817,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -714,10 +848,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -741,10 +877,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -761,10 +899,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -782,7 +922,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

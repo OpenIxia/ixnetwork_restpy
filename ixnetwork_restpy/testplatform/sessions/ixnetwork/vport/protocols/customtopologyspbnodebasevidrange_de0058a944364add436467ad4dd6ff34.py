@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,34 @@ class CustomTopologySpbNodeBaseVidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologySpbNodeBaseVidRange'
+    _SDM_NAME = "customTopologySpbNodeBaseVidRange"
     _SDM_ATT_MAP = {
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpId': 'bVlanTpId',
-        'BaseVid': 'baseVid',
-        'EctAlgorithm': 'ectAlgorithm',
-        'UseFlag': 'useFlag',
+        "BVlanPriority": "bVlanPriority",
+        "BVlanTpId": "bVlanTpId",
+        "BaseVid": "baseVid",
+        "EctAlgorithm": "ectAlgorithm",
+        "UseFlag": "useFlag",
     }
     _SDM_ENUM_MAP = {
-        'bVlanTpId': ['33024', '37120', '37376', '34987'],
-        'ectAlgorithm': ['00-80-C2-01', '00-80-C2-02', '00-80-C2-03', '00-80-C2-04', '00-80-C2-05', '00-80-C2-06', '00-80-C2-07', '00-80-C2-08', '00-80-C2-09', '00-80-C2-0A', '00-80-C2-0B', '00-80-C2-0C', '00-80-C2-0D', '00-80-C2-0E', '00-80-C2-0F', '00-80-C2-10'],
+        "bVlanTpId": ["33024", "37120", "37376", "34987"],
+        "ectAlgorithm": [
+            "00-80-C2-01",
+            "00-80-C2-02",
+            "00-80-C2-03",
+            "00-80-C2-04",
+            "00-80-C2-05",
+            "00-80-C2-06",
+            "00-80-C2-07",
+            "00-80-C2-08",
+            "00-80-C2-09",
+            "00-80-C2-0A",
+            "00-80-C2-0B",
+            "00-80-C2-0C",
+            "00-80-C2-0D",
+            "00-80-C2-0E",
+            "00-80-C2-0F",
+            "00-80-C2-10",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,10 +79,13 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodeisidrange_38d1e356fa5f70b530ee017ce7bba58d import CustomTopologySpbNodeIsidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodeisidrange_38d1e356fa5f70b530ee017ce7bba58d import (
+            CustomTopologySpbNodeIsidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologySpbNodeIsidRange', None) is not None:
-                return self._properties.get('CustomTopologySpbNodeIsidRange')
+            if self._properties.get("CustomTopologySpbNodeIsidRange", None) is not None:
+                return self._properties.get("CustomTopologySpbNodeIsidRange")
         return CustomTopologySpbNodeIsidRange(self)
 
     @property
@@ -75,11 +96,12 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanPriority"])
+
     @BVlanPriority.setter
     def BVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanPriority"], value)
 
     @property
     def BVlanTpId(self):
@@ -89,11 +111,12 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         -------
         - str(33024 | 37120 | 37376 | 34987): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanTpId"])
+
     @BVlanTpId.setter
     def BVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanTpId"], value)
 
     @property
     def BaseVid(self):
@@ -103,11 +126,12 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVid'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVid"])
+
     @BaseVid.setter
     def BaseVid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseVid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseVid"], value)
 
     @property
     def EctAlgorithm(self):
@@ -117,11 +141,12 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         -------
         - str(00-80-C2-01 | 00-80-C2-02 | 00-80-C2-03 | 00-80-C2-04 | 00-80-C2-05 | 00-80-C2-06 | 00-80-C2-07 | 00-80-C2-08 | 00-80-C2-09 | 00-80-C2-0A | 00-80-C2-0B | 00-80-C2-0C | 00-80-C2-0D | 00-80-C2-0E | 00-80-C2-0F | 00-80-C2-10): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["EctAlgorithm"])
+
     @EctAlgorithm.setter
     def EctAlgorithm(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EctAlgorithm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EctAlgorithm"], value)
 
     @property
     def UseFlag(self):
@@ -131,13 +156,21 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseFlag"])
+
     @UseFlag.setter
     def UseFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseFlag"], value)
 
-    def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def update(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, str, int, str, bool) -> CustomTopologySpbNodeBaseVidRange
         """Updates customTopologySpbNodeBaseVidRange resource on the server.
 
@@ -155,7 +188,14 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def add(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, str, int, str, bool) -> CustomTopologySpbNodeBaseVidRange
         """Adds a new customTopologySpbNodeBaseVidRange resource on the server and adds it to the container.
 
@@ -187,7 +227,14 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         """
         self._delete()
 
-    def find(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def find(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, str, int, str, bool) -> CustomTopologySpbNodeBaseVidRange
         """Finds and retrieves customTopologySpbNodeBaseVidRange resources from the server.
 

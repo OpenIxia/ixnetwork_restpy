@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,23 @@ class PassCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'passCriteria'
+    _SDM_NAME = "passCriteria"
     _SDM_ATT_MAP = {
-        'EnableFrameLossPassFail': 'enableFrameLossPassFail',
-        'LossThresholdMode': 'lossThresholdMode',
-        'LossThresholdValue': 'lossThresholdValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
-        'PassFailFrequency': 'passFailFrequency',
-        'PassFailMeasureUnit': 'passFailMeasureUnit',
+        "EnableFrameLossPassFail": "enableFrameLossPassFail",
+        "LossThresholdMode": "lossThresholdMode",
+        "LossThresholdValue": "lossThresholdValue",
+        "PassCriteriaLoadRateMode": "passCriteriaLoadRateMode",
+        "PassCriteriaLoadRateScale": "passCriteriaLoadRateScale",
+        "PassCriteriaLoadRateValue": "passCriteriaLoadRateValue",
+        "PassFailFrequency": "passFailFrequency",
+        "PassFailMeasureUnit": "passFailMeasureUnit",
     }
     _SDM_ENUM_MAP = {
-        'lossThresholdMode': ['average', 'maximum'],
-        'passCriteriaLoadRateMode': ['average', 'minimum'],
-        'passCriteriaLoadRateScale': ['fps', 'gbps', 'kbps', 'mbps', 'percent'],
-        'passFailFrequency': ['framesizes', 'trials'],
-        'passFailMeasureUnit': ['fps'],
+        "lossThresholdMode": ["average", "maximum"],
+        "passCriteriaLoadRateMode": ["average", "minimum"],
+        "passCriteriaLoadRateScale": ["fps", "gbps", "kbps", "mbps", "percent"],
+        "passFailFrequency": ["framesizes", "trials"],
+        "passFailMeasureUnit": ["fps"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,11 +63,12 @@ class PassCriteria(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFrameLossPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFrameLossPassFail"])
+
     @EnableFrameLossPassFail.setter
     def EnableFrameLossPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFrameLossPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFrameLossPassFail"], value)
 
     @property
     def LossThresholdMode(self):
@@ -76,11 +78,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LossThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LossThresholdMode"])
+
     @LossThresholdMode.setter
     def LossThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LossThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LossThresholdMode"], value)
 
     @property
     def LossThresholdValue(self):
@@ -90,11 +93,12 @@ class PassCriteria(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LossThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LossThresholdValue"])
+
     @LossThresholdValue.setter
     def LossThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LossThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LossThresholdValue"], value)
 
     @property
     def PassCriteriaLoadRateMode(self):
@@ -104,11 +108,12 @@ class PassCriteria(Base):
         -------
         - str(average | minimum): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateMode"])
+
     @PassCriteriaLoadRateMode.setter
     def PassCriteriaLoadRateMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateMode"], value)
 
     @property
     def PassCriteriaLoadRateScale(self):
@@ -118,11 +123,12 @@ class PassCriteria(Base):
         -------
         - str(fps | gbps | kbps | mbps | percent): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateScale"])
+
     @PassCriteriaLoadRateScale.setter
     def PassCriteriaLoadRateScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateScale"], value)
 
     @property
     def PassCriteriaLoadRateValue(self):
@@ -132,11 +138,12 @@ class PassCriteria(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateValue"])
+
     @PassCriteriaLoadRateValue.setter
     def PassCriteriaLoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassCriteriaLoadRateValue"], value)
 
     @property
     def PassFailFrequency(self):
@@ -146,11 +153,12 @@ class PassCriteria(Base):
         -------
         - str(framesizes | trials): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailFrequency"])
+
     @PassFailFrequency.setter
     def PassFailFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailFrequency"], value)
 
     @property
     def PassFailMeasureUnit(self):
@@ -160,13 +168,24 @@ class PassCriteria(Base):
         -------
         - str(fps): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PassFailMeasureUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["PassFailMeasureUnit"])
+
     @PassFailMeasureUnit.setter
     def PassFailMeasureUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PassFailMeasureUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PassFailMeasureUnit"], value)
 
-    def update(self, EnableFrameLossPassFail=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, PassFailMeasureUnit=None):
+    def update(
+        self,
+        EnableFrameLossPassFail=None,
+        LossThresholdMode=None,
+        LossThresholdValue=None,
+        PassCriteriaLoadRateMode=None,
+        PassCriteriaLoadRateScale=None,
+        PassCriteriaLoadRateValue=None,
+        PassFailFrequency=None,
+        PassFailMeasureUnit=None,
+    ):
         # type: (bool, str, int, str, str, int, str, str) -> PassCriteria
         """Updates passCriteria resource on the server.
 
@@ -187,7 +206,17 @@ class PassCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableFrameLossPassFail=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, PassFailMeasureUnit=None):
+    def find(
+        self,
+        EnableFrameLossPassFail=None,
+        LossThresholdMode=None,
+        LossThresholdValue=None,
+        PassCriteriaLoadRateMode=None,
+        PassCriteriaLoadRateScale=None,
+        PassCriteriaLoadRateValue=None,
+        PassFailFrequency=None,
+        PassFailMeasureUnit=None,
+    ):
         # type: (bool, str, int, str, str, int, str, str) -> PassCriteria
         """Finds and retrieves passCriteria resources from the server.
 
@@ -249,10 +278,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -267,10 +298,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -279,17 +312,19 @@ class PassCriteria(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -306,10 +341,14 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -327,10 +366,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -356,10 +397,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -383,10 +426,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -403,10 +448,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -424,7 +471,9 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

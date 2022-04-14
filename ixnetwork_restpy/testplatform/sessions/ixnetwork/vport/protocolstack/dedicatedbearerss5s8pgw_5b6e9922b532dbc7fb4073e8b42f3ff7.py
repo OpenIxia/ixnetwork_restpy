@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,32 +35,31 @@ class DedicatedBearersS5S8Pgw(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dedicatedBearersS5S8Pgw'
+    _SDM_NAME = "dedicatedBearersS5S8Pgw"
     _SDM_ATT_MAP = {
-        'ApnAmbrUpdateValue': 'apnAmbrUpdateValue',
-        'Arp': 'arp',
-        'Custom_tft': 'custom_tft',
-        'EnableLifetime': 'enableLifetime',
-        'Enabled': 'enabled',
-        'Gbrd': 'gbrd',
-        'Gbru': 'gbru',
-        'Lifetime': 'lifetime',
-        'Mbrd': 'mbrd',
-        'Mbru': 'mbru',
-        'Mode': 'mode',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PreemptionCapability': 'preemptionCapability',
-        'PreemptionVulnerability': 'preemptionVulnerability',
-        'PriorityLevel': 'priorityLevel',
-        'Qci': 'qci',
-        'QosLabel': 'qosLabel',
-        'QosUpdateValue': 'qosUpdateValue',
-        'Tft': 'tft',
-        'TimeoutAction': 'timeoutAction',
+        "ApnAmbrUpdateValue": "apnAmbrUpdateValue",
+        "Arp": "arp",
+        "Custom_tft": "custom_tft",
+        "EnableLifetime": "enableLifetime",
+        "Enabled": "enabled",
+        "Gbrd": "gbrd",
+        "Gbru": "gbru",
+        "Lifetime": "lifetime",
+        "Mbrd": "mbrd",
+        "Mbru": "mbru",
+        "Mode": "mode",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PreemptionCapability": "preemptionCapability",
+        "PreemptionVulnerability": "preemptionVulnerability",
+        "PriorityLevel": "priorityLevel",
+        "Qci": "qci",
+        "QosLabel": "qosLabel",
+        "QosUpdateValue": "qosUpdateValue",
+        "Tft": "tft",
+        "TimeoutAction": "timeoutAction",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DedicatedBearersS5S8Pgw, self).__init__(parent, list_op)
@@ -72,11 +72,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: APN_AMBR update value (in %).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApnAmbrUpdateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApnAmbrUpdateValue"])
+
     @ApnAmbrUpdateValue.setter
     def ApnAmbrUpdateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApnAmbrUpdateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApnAmbrUpdateValue"], value)
 
     @property
     def Arp(self):
@@ -86,11 +87,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Arp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Arp"])
+
     @Arp.setter
     def Arp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Arp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Arp"], value)
 
     @property
     def Custom_tft(self):
@@ -98,13 +100,14 @@ class DedicatedBearersS5S8Pgw(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Custom_tft'])
+        return self._get_attribute(self._SDM_ATT_MAP["Custom_tft"])
+
     @Custom_tft.setter
     def Custom_tft(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Custom_tft'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Custom_tft"], value)
 
     @property
     def EnableLifetime(self):
@@ -114,11 +117,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - bool: Enable bearer lifetime control
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLifetime'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLifetime"])
+
     @EnableLifetime.setter
     def EnableLifetime(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLifetime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLifetime"], value)
 
     @property
     def Enabled(self):
@@ -128,11 +132,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Gbrd(self):
@@ -142,11 +147,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gbrd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gbrd"])
+
     @Gbrd.setter
     def Gbrd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gbrd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gbrd"], value)
 
     @property
     def Gbru(self):
@@ -156,11 +162,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Guaranteed bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gbru'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gbru"])
+
     @Gbru.setter
     def Gbru(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gbru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gbru"], value)
 
     @property
     def Lifetime(self):
@@ -170,11 +177,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Bearer lifetime (seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Lifetime'])
+        return self._get_attribute(self._SDM_ATT_MAP["Lifetime"])
+
     @Lifetime.setter
     def Lifetime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Lifetime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Lifetime"], value)
 
     @property
     def Mbrd(self):
@@ -184,11 +192,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Maximum bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mbrd"])
+
     @Mbrd.setter
     def Mbrd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mbrd"], value)
 
     @property
     def Mbru(self):
@@ -198,11 +207,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Maximum bitrate for uplink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mbru"])
+
     @Mbru.setter
     def Mbru(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mbru"], value)
 
     @property
     def Mode(self):
@@ -212,11 +222,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: A dedicated bearer can be requested by the UE (UE requested) or created by the core network without a previous request (Network initiared). If the UE requested mode is selected the dedicated bearer will be activated only if the UE requests it using the UE requested bearer resource modification procedure
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def Name(self):
@@ -226,11 +237,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -240,7 +252,7 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PreemptionCapability(self):
@@ -250,11 +262,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - bool: If true preemption capability is enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PreemptionCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["PreemptionCapability"])
+
     @PreemptionCapability.setter
     def PreemptionCapability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PreemptionCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PreemptionCapability"], value)
 
     @property
     def PreemptionVulnerability(self):
@@ -264,11 +277,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - bool: If true preemption vulnerability is enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PreemptionVulnerability'])
+        return self._get_attribute(self._SDM_ATT_MAP["PreemptionVulnerability"])
+
     @PreemptionVulnerability.setter
     def PreemptionVulnerability(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PreemptionVulnerability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PreemptionVulnerability"], value)
 
     @property
     def PriorityLevel(self):
@@ -278,11 +292,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: Priority Level 1=highest 15=lowest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PriorityLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PriorityLevel"])
+
     @PriorityLevel.setter
     def PriorityLevel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PriorityLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PriorityLevel"], value)
 
     @property
     def Qci(self):
@@ -292,11 +307,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: QoS Class Identifier
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Qci'])
+        return self._get_attribute(self._SDM_ATT_MAP["Qci"])
+
     @Qci.setter
     def Qci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Qci"], value)
 
     @property
     def QosLabel(self):
@@ -306,11 +322,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: Quality of Service characteristics requested by the SGSN for the primary PDP contexts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QosLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["QosLabel"])
+
     @QosLabel.setter
     def QosLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QosLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QosLabel"], value)
 
     @property
     def QosUpdateValue(self):
@@ -320,11 +337,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - number: QoS update value (in %).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QosUpdateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["QosUpdateValue"])
+
     @QosUpdateValue.setter
     def QosUpdateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QosUpdateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QosUpdateValue"], value)
 
     @property
     def Tft(self):
@@ -334,11 +352,12 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: Traffic Flow Template
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tft'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tft"])
+
     @Tft.setter
     def Tft(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tft'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tft"], value)
 
     @property
     def TimeoutAction(self):
@@ -348,13 +367,36 @@ class DedicatedBearersS5S8Pgw(Base):
         -------
         - str: Action to be execute when a bearer lifetime expires
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeoutAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeoutAction"])
+
     @TimeoutAction.setter
     def TimeoutAction(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeoutAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeoutAction"], value)
 
-    def update(self, ApnAmbrUpdateValue=None, Arp=None, Custom_tft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+    def update(
+        self,
+        ApnAmbrUpdateValue=None,
+        Arp=None,
+        Custom_tft=None,
+        EnableLifetime=None,
+        Enabled=None,
+        Gbrd=None,
+        Gbru=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Mode=None,
+        Name=None,
+        PreemptionCapability=None,
+        PreemptionVulnerability=None,
+        PriorityLevel=None,
+        Qci=None,
+        QosLabel=None,
+        QosUpdateValue=None,
+        Tft=None,
+        TimeoutAction=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearersS5S8Pgw
         """Updates dedicatedBearersS5S8Pgw resource on the server.
 
@@ -362,7 +404,7 @@ class DedicatedBearersS5S8Pgw(Base):
         ----
         - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
         - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-        - Custom_tft (str): 
+        - Custom_tft (str):
         - EnableLifetime (bool): Enable bearer lifetime control
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
@@ -387,7 +429,29 @@ class DedicatedBearersS5S8Pgw(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ApnAmbrUpdateValue=None, Arp=None, Custom_tft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+    def add(
+        self,
+        ApnAmbrUpdateValue=None,
+        Arp=None,
+        Custom_tft=None,
+        EnableLifetime=None,
+        Enabled=None,
+        Gbrd=None,
+        Gbru=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Mode=None,
+        Name=None,
+        PreemptionCapability=None,
+        PreemptionVulnerability=None,
+        PriorityLevel=None,
+        Qci=None,
+        QosLabel=None,
+        QosUpdateValue=None,
+        Tft=None,
+        TimeoutAction=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearersS5S8Pgw
         """Adds a new dedicatedBearersS5S8Pgw resource on the server and adds it to the container.
 
@@ -395,7 +459,7 @@ class DedicatedBearersS5S8Pgw(Base):
         ----
         - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
         - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-        - Custom_tft (str): 
+        - Custom_tft (str):
         - EnableLifetime (bool): Enable bearer lifetime control
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
@@ -434,7 +498,30 @@ class DedicatedBearersS5S8Pgw(Base):
         """
         self._delete()
 
-    def find(self, ApnAmbrUpdateValue=None, Arp=None, Custom_tft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, ObjectId=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+    def find(
+        self,
+        ApnAmbrUpdateValue=None,
+        Arp=None,
+        Custom_tft=None,
+        EnableLifetime=None,
+        Enabled=None,
+        Gbrd=None,
+        Gbru=None,
+        Lifetime=None,
+        Mbrd=None,
+        Mbru=None,
+        Mode=None,
+        Name=None,
+        ObjectId=None,
+        PreemptionCapability=None,
+        PreemptionVulnerability=None,
+        PriorityLevel=None,
+        Qci=None,
+        QosLabel=None,
+        QosUpdateValue=None,
+        Tft=None,
+        TimeoutAction=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearersS5S8Pgw
         """Finds and retrieves dedicatedBearersS5S8Pgw resources from the server.
 
@@ -446,7 +533,7 @@ class DedicatedBearersS5S8Pgw(Base):
         ----
         - ApnAmbrUpdateValue (number): APN_AMBR update value (in %).
         - Arp (number): OBSOLETE - Please use preemptionCapability, preemptionVulnerability and priorityLevel.
-        - Custom_tft (str): 
+        - Custom_tft (str):
         - EnableLifetime (bool): Enable bearer lifetime control
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Gbrd (number): Guaranteed bitrate for downlink. Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
@@ -511,10 +598,14 @@ class DedicatedBearersS5S8Pgw(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -533,10 +624,14 @@ class DedicatedBearersS5S8Pgw(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -555,7 +650,11 @@ class DedicatedBearersS5S8Pgw(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -207,7 +207,7 @@ class Meters(Base):
 
     def add(self, Multiplier=None, Name=None, NumberOfBands=None):
         # type: (int, str, int) -> Meters
-        """Adds a new meters resource on the json, only valid with config assistant
+        """Adds a new meters resource on the json, only valid with batch add utility
 
         Args
         ----

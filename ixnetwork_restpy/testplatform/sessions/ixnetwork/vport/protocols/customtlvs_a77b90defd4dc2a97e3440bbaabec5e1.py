@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class CustomTlvs(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTlvs'
+    _SDM_NAME = "customTlvs"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IncludeInCcm': 'includeInCcm',
-        'IncludeInLbm': 'includeInLbm',
-        'IncludeInLbr': 'includeInLbr',
-        'IncludeInLmm': 'includeInLmm',
-        'IncludeInLmr': 'includeInLmr',
-        'IncludeInLtm': 'includeInLtm',
-        'IncludeInLtr': 'includeInLtr',
-        'Length': 'length',
-        'Type': 'type',
-        'Value': 'value',
+        "Enabled": "enabled",
+        "IncludeInCcm": "includeInCcm",
+        "IncludeInLbm": "includeInLbm",
+        "IncludeInLbr": "includeInLbr",
+        "IncludeInLmm": "includeInLmm",
+        "IncludeInLmr": "includeInLmr",
+        "IncludeInLtm": "includeInLtm",
+        "IncludeInLtr": "includeInLtr",
+        "Length": "length",
+        "Type": "type",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTlvs, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, the custom TLV is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IncludeInCcm(self):
@@ -76,11 +77,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, a custom TLV is included in the bridge CCM messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInCcm'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInCcm"])
+
     @IncludeInCcm.setter
     def IncludeInCcm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInCcm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInCcm"], value)
 
     @property
     def IncludeInLbm(self):
@@ -90,11 +92,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, a custom TLV is included in the bridge loopback messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLbm'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLbm"])
+
     @IncludeInLbm.setter
     def IncludeInLbm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLbm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLbm"], value)
 
     @property
     def IncludeInLbr(self):
@@ -104,11 +107,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, a custom TLV is included in the bridge loopback responses messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLbr'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLbr"])
+
     @IncludeInLbr.setter
     def IncludeInLbr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLbr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLbr"], value)
 
     @property
     def IncludeInLmm(self):
@@ -118,11 +122,12 @@ class CustomTlvs(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLmm'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLmm"])
+
     @IncludeInLmm.setter
     def IncludeInLmm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLmm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLmm"], value)
 
     @property
     def IncludeInLmr(self):
@@ -132,11 +137,12 @@ class CustomTlvs(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLmr'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLmr"])
+
     @IncludeInLmr.setter
     def IncludeInLmr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLmr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLmr"], value)
 
     @property
     def IncludeInLtm(self):
@@ -146,11 +152,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, a custom TLV is included in the bridge link trace messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLtm'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLtm"])
+
     @IncludeInLtm.setter
     def IncludeInLtm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLtm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLtm"], value)
 
     @property
     def IncludeInLtr(self):
@@ -160,11 +167,12 @@ class CustomTlvs(Base):
         -------
         - bool: If true, a custom TLV is included in the bridge link trace response messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLtr'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLtr"])
+
     @IncludeInLtr.setter
     def IncludeInLtr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLtr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLtr"], value)
 
     @property
     def Length(self):
@@ -174,11 +182,12 @@ class CustomTlvs(Base):
         -------
         - number: Enter the data for the TLV length field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Length'])
+        return self._get_attribute(self._SDM_ATT_MAP["Length"])
+
     @Length.setter
     def Length(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Length'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Length"], value)
 
     @property
     def Type(self):
@@ -188,11 +197,12 @@ class CustomTlvs(Base):
         -------
         - number: Enter the data for the TLV type field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def Value(self):
@@ -202,13 +212,27 @@ class CustomTlvs(Base):
         -------
         - str: Enter the data for the TLV value field. This data is in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
-    def update(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+    def update(
+        self,
+        Enabled=None,
+        IncludeInCcm=None,
+        IncludeInLbm=None,
+        IncludeInLbr=None,
+        IncludeInLmm=None,
+        IncludeInLmr=None,
+        IncludeInLtm=None,
+        IncludeInLtr=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Updates customTlvs resource on the server.
 
@@ -232,7 +256,20 @@ class CustomTlvs(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+    def add(
+        self,
+        Enabled=None,
+        IncludeInCcm=None,
+        IncludeInLbm=None,
+        IncludeInLbr=None,
+        IncludeInLmm=None,
+        IncludeInLmr=None,
+        IncludeInLtm=None,
+        IncludeInLtr=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Adds a new customTlvs resource on the server and adds it to the container.
 
@@ -270,7 +307,20 @@ class CustomTlvs(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+    def find(
+        self,
+        Enabled=None,
+        IncludeInCcm=None,
+        IncludeInLbm=None,
+        IncludeInLbr=None,
+        IncludeInLmm=None,
+        IncludeInLmr=None,
+        IncludeInLtm=None,
+        IncludeInLtr=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Finds and retrieves customTlvs resources from the server.
 

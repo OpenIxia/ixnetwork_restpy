@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class OriginIpInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'originIpInfo'
+    _SDM_NAME = "originIpInfo"
     _SDM_ATT_MAP = {
-        'OriginIp': 'originIp',
+        "OriginIp": "originIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OriginIpInfo, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class OriginIpInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_5d0e7b1db6cf0b7daa15e78fa449470c import RdInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_5d0e7b1db6cf0b7daa15e78fa449470c import (
+            RdInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RdInfo', None) is not None:
-                return self._properties.get('RdInfo')
+            if self._properties.get("RdInfo", None) is not None:
+                return self._properties.get("RdInfo")
         return RdInfo(self)
 
     @property
@@ -68,10 +71,10 @@ class OriginIpInfo(Base):
         -------
         - str: (Read Only) Origin IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginIp"])
 
     def add(self):
-        """Adds a new originIpInfo resource on the json, only valid with config assistant
+        """Adds a new originIpInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

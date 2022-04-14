@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,15 @@ class UniStatus(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'uniStatus'
+    _SDM_NAME = "uniStatus"
     _SDM_ATT_MAP = {
-        'CeVlanIdEvcMapType': 'ceVlanIdEvcMapType',
-        'Enabled': 'enabled',
-        'UniIdentifier': 'uniIdentifier',
-        'UniIdentifierLength': 'uniIdentifierLength',
+        "CeVlanIdEvcMapType": "ceVlanIdEvcMapType",
+        "Enabled": "enabled",
+        "UniIdentifier": "uniIdentifier",
+        "UniIdentifierLength": "uniIdentifierLength",
     }
     _SDM_ENUM_MAP = {
-        'ceVlanIdEvcMapType': ['allToOneBundling', 'noBundling', 'bundling'],
+        "ceVlanIdEvcMapType": ["allToOneBundling", "noBundling", "bundling"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,10 +60,13 @@ class UniStatus(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_2186baa3e35d08e24139c4a9eabaaaca import BwProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_2186baa3e35d08e24139c4a9eabaaaca import (
+            BwProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BwProfile', None) is not None:
-                return self._properties.get('BwProfile')
+            if self._properties.get("BwProfile", None) is not None:
+                return self._properties.get("BwProfile")
         return BwProfile(self)
 
     @property
@@ -73,11 +77,12 @@ class UniStatus(Base):
         -------
         - str(allToOneBundling | noBundling | bundling): Possible values include:allToOneBundling 1, noBundling 2, bundling 3
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeVlanIdEvcMapType'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeVlanIdEvcMapType"])
+
     @CeVlanIdEvcMapType.setter
     def CeVlanIdEvcMapType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeVlanIdEvcMapType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeVlanIdEvcMapType"], value)
 
     @property
     def Enabled(self):
@@ -87,11 +92,12 @@ class UniStatus(Base):
         -------
         - bool: If enabled, it shows the UNI status. Not more than one UNI Status can be enabled per UNI-N per port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def UniIdentifier(self):
@@ -101,11 +107,12 @@ class UniStatus(Base):
         -------
         - str: It signifies the content of the UNI identifier. The length is determined by UNI Identifier Length field. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniIdentifier"])
+
     @UniIdentifier.setter
     def UniIdentifier(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UniIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UniIdentifier"], value)
 
     @property
     def UniIdentifierLength(self):
@@ -115,13 +122,20 @@ class UniStatus(Base):
         -------
         - number: It is a 1 octet field. It indicates the length of UNI Identifier content. Default is 1. Min is 1 and Max is 64.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniIdentifierLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniIdentifierLength"])
+
     @UniIdentifierLength.setter
     def UniIdentifierLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UniIdentifierLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UniIdentifierLength"], value)
 
-    def update(self, CeVlanIdEvcMapType=None, Enabled=None, UniIdentifier=None, UniIdentifierLength=None):
+    def update(
+        self,
+        CeVlanIdEvcMapType=None,
+        Enabled=None,
+        UniIdentifier=None,
+        UniIdentifierLength=None,
+    ):
         # type: (str, bool, str, int) -> UniStatus
         """Updates uniStatus resource on the server.
 
@@ -138,7 +152,13 @@ class UniStatus(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CeVlanIdEvcMapType=None, Enabled=None, UniIdentifier=None, UniIdentifierLength=None):
+    def add(
+        self,
+        CeVlanIdEvcMapType=None,
+        Enabled=None,
+        UniIdentifier=None,
+        UniIdentifierLength=None,
+    ):
         # type: (str, bool, str, int) -> UniStatus
         """Adds a new uniStatus resource on the server and adds it to the container.
 
@@ -169,7 +189,13 @@ class UniStatus(Base):
         """
         self._delete()
 
-    def find(self, CeVlanIdEvcMapType=None, Enabled=None, UniIdentifier=None, UniIdentifierLength=None):
+    def find(
+        self,
+        CeVlanIdEvcMapType=None,
+        Enabled=None,
+        UniIdentifier=None,
+        UniIdentifierLength=None,
+    ):
         # type: (str, bool, str, int) -> UniStatus
         """Finds and retrieves uniStatus resources from the server.
 

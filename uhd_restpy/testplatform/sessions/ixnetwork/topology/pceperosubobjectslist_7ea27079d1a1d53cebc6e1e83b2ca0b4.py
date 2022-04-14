@@ -434,7 +434,7 @@ class PcepEroSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> PcepEroSubObjectsList
-        """Adds a new pcepEroSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new pcepEroSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

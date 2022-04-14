@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class DceMulticastIpv6GroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceMulticastIpv6GroupRange'
+    _SDM_NAME = "dceMulticastIpv6GroupRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterGroupUnicastIpv6Increment': 'interGroupUnicastIpv6Increment',
-        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
-        'MulticastIpv6Count': 'multicastIpv6Count',
-        'MulticastIpv6Step': 'multicastIpv6Step',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastIpv6': 'startMulticastIpv6',
-        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
-        'Topology': 'topology',
-        'UnicastSourcesPerMulticastIpv6': 'unicastSourcesPerMulticastIpv6',
-        'VlanId': 'vlanId',
+        "Enabled": "enabled",
+        "InterGroupUnicastIpv6Increment": "interGroupUnicastIpv6Increment",
+        "IntraGroupUnicastIpv6Increment": "intraGroupUnicastIpv6Increment",
+        "MulticastIpv6Count": "multicastIpv6Count",
+        "MulticastIpv6Step": "multicastIpv6Step",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastIpv6": "startMulticastIpv6",
+        "StartUnicastSourceIpv6": "startUnicastSourceIpv6",
+        "Topology": "topology",
+        "UnicastSourcesPerMulticastIpv6": "unicastSourcesPerMulticastIpv6",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fullyMeshed', 'oneToOne', 'manualMapping'],
+        "sourceGroupMapping": ["fullyMeshed", "oneToOne", "manualMapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - bool: If true, enables the Multicast IPv6 Group Range for a particular DCE ISIS route range. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterGroupUnicastIpv6Increment(self):
@@ -77,11 +79,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str: The IPv6 address format of the Unicast IPv6 between one or more node groups. (default = 0:0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterGroupUnicastIpv6Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterGroupUnicastIpv6Increment"])
+
     @InterGroupUnicastIpv6Increment.setter
     def InterGroupUnicastIpv6Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterGroupUnicastIpv6Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterGroupUnicastIpv6Increment"], value)
 
     @property
     def IntraGroupUnicastIpv6Increment(self):
@@ -91,11 +94,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str: The IPv6 address format of the Unicast IPv6 within a node group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv6Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv6Increment"])
+
     @IntraGroupUnicastIpv6Increment.setter
     def IntraGroupUnicastIpv6Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv6Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv6Increment"], value)
 
     @property
     def MulticastIpv6Count(self):
@@ -105,11 +109,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - number: The number of Multicast IPv6 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv6Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv6Count"])
+
     @MulticastIpv6Count.setter
     def MulticastIpv6Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv6Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv6Count"], value)
 
     @property
     def MulticastIpv6Step(self):
@@ -119,11 +124,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str: The incremental value of Multicast IPv6 address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv6Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv6Step"])
+
     @MulticastIpv6Step.setter
     def MulticastIpv6Step(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv6Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv6Step"], value)
 
     @property
     def SourceGroupMapping(self):
@@ -133,11 +139,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastIpv6(self):
@@ -147,11 +154,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str: The IP address format of the starting Multicast IPv6 address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastIpv6"])
+
     @StartMulticastIpv6.setter
     def StartMulticastIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastIpv6"], value)
 
     @property
     def StartUnicastSourceIpv6(self):
@@ -161,11 +169,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - str: The IPv6 address format of the starting Unicast Source IPv6.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv6"])
+
     @StartUnicastSourceIpv6.setter
     def StartUnicastSourceIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv6"], value)
 
     @property
     def Topology(self):
@@ -175,11 +184,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - number: The topology identifier to which the corresponding IPv6 belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Topology'])
+        return self._get_attribute(self._SDM_ATT_MAP["Topology"])
+
     @Topology.setter
     def Topology(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Topology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Topology"], value)
 
     @property
     def UnicastSourcesPerMulticastIpv6(self):
@@ -189,11 +199,12 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - number: The number of Unicast Source for each Multicast IPv6 address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastIpv6"])
+
     @UnicastSourcesPerMulticastIpv6.setter
     def UnicastSourcesPerMulticastIpv6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastSourcesPerMulticastIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastSourcesPerMulticastIpv6"], value)
 
     @property
     def VlanId(self):
@@ -203,13 +214,27 @@ class DceMulticastIpv6GroupRange(Base):
         -------
         - number: The VLAN ID of the enabled Multicast IPv6 Group Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, Enabled=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastIpv6Count=None, MulticastIpv6Step=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, Topology=None, UnicastSourcesPerMulticastIpv6=None, VlanId=None):
+    def update(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv6=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv6GroupRange
         """Updates dceMulticastIpv6GroupRange resource on the server.
 
@@ -233,7 +258,20 @@ class DceMulticastIpv6GroupRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastIpv6Count=None, MulticastIpv6Step=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, Topology=None, UnicastSourcesPerMulticastIpv6=None, VlanId=None):
+    def add(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv6=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv6GroupRange
         """Adds a new dceMulticastIpv6GroupRange resource on the server and adds it to the container.
 
@@ -271,7 +309,20 @@ class DceMulticastIpv6GroupRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InterGroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastIpv6Count=None, MulticastIpv6Step=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, Topology=None, UnicastSourcesPerMulticastIpv6=None, VlanId=None):
+    def find(
+        self,
+        Enabled=None,
+        InterGroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        Topology=None,
+        UnicastSourcesPerMulticastIpv6=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, int, str, str, str, str, int, int, int) -> DceMulticastIpv6GroupRange
         """Finds and retrieves dceMulticastIpv6GroupRange resources from the server.
 

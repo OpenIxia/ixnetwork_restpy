@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class TrillMacUnicast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trillMacUnicast'
+    _SDM_NAME = "trillMacUnicast"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'HostName': 'hostName',
-        'LspId': 'lspId',
-        'SequenceNumber': 'sequenceNumber',
-        'UnicastMacAddress': 'unicastMacAddress',
-        'VlanId': 'vlanId',
+        "Age": "age",
+        "HostName": "hostName",
+        "LspId": "lspId",
+        "SequenceNumber": "sequenceNumber",
+        "UnicastMacAddress": "unicastMacAddress",
+        "VlanId": "vlanId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TrillMacUnicast, self).__init__(parent, list_op)
@@ -56,7 +56,7 @@ class TrillMacUnicast(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def HostName(self):
@@ -66,7 +66,7 @@ class TrillMacUnicast(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def LspId(self):
@@ -76,7 +76,7 @@ class TrillMacUnicast(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspId"])
 
     @property
     def SequenceNumber(self):
@@ -86,7 +86,7 @@ class TrillMacUnicast(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def UnicastMacAddress(self):
@@ -96,7 +96,7 @@ class TrillMacUnicast(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastMacAddress"])
 
     @property
     def VlanId(self):
@@ -106,10 +106,10 @@ class TrillMacUnicast(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     def add(self):
-        """Adds a new trillMacUnicast resource on the json, only valid with config assistant
+        """Adds a new trillMacUnicast resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -121,7 +121,15 @@ class TrillMacUnicast(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, HostName=None, LspId=None, SequenceNumber=None, UnicastMacAddress=None, VlanId=None):
+    def find(
+        self,
+        Age=None,
+        HostName=None,
+        LspId=None,
+        SequenceNumber=None,
+        UnicastMacAddress=None,
+        VlanId=None,
+    ):
         # type: (int, str, str, int, str, int) -> TrillMacUnicast
         """Finds and retrieves trillMacUnicast resources from the server.
 

@@ -236,7 +236,7 @@ class Udf(Base):
 
     def add(self, ByteOffset=None, ChainedFromUdf=None, Enabled=None, Type=None):
         # type: (int, str, bool, str) -> Udf
-        """Adds a new udf resource on the json, only valid with config assistant
+        """Adds a new udf resource on the json, only valid with batch add utility
 
         Args
         ----

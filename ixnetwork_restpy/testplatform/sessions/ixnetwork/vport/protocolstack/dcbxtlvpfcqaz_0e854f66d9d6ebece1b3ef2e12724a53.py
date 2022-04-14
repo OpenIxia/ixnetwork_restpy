@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,15 @@ class DcbxTlvPfcQaz(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxTlvPfcQaz'
+    _SDM_NAME = "dcbxTlvPfcQaz"
     _SDM_ATT_MAP = {
-        'Mbc': 'mbc',
-        'ObjectId': 'objectId',
-        'PfcCapability': 'pfcCapability',
-        'PfcEnableVector': 'pfcEnableVector',
-        'Willing': 'willing',
+        "Mbc": "mbc",
+        "ObjectId": "objectId",
+        "PfcCapability": "pfcCapability",
+        "PfcEnableVector": "pfcEnableVector",
+        "Willing": "willing",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxTlvPfcQaz, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class DcbxTlvPfcQaz(Base):
         -------
         - bool: MACsec Bypass Capability Bit. Indicates whether the station is capable of bypassing MACsec when MACsec is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mbc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mbc"])
+
     @Mbc.setter
     def Mbc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mbc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mbc"], value)
 
     @property
     def ObjectId(self):
@@ -68,7 +69,7 @@ class DcbxTlvPfcQaz(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PfcCapability(self):
@@ -78,11 +79,12 @@ class DcbxTlvPfcQaz(Base):
         -------
         - number: How many traffic classes may simultaneously support PFC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcCapability'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcCapability"])
+
     @PfcCapability.setter
     def PfcCapability(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcCapability'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcCapability"], value)
 
     @property
     def PfcEnableVector(self):
@@ -92,11 +94,12 @@ class DcbxTlvPfcQaz(Base):
         -------
         - list(number): enable/disable PFC for each priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PfcEnableVector'])
+        return self._get_attribute(self._SDM_ATT_MAP["PfcEnableVector"])
+
     @PfcEnableVector.setter
     def PfcEnableVector(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PfcEnableVector'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PfcEnableVector"], value)
 
     @property
     def Willing(self):
@@ -106,11 +109,12 @@ class DcbxTlvPfcQaz(Base):
         -------
         - bool: Indicates whether this feature accepts its configuration from remote peers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Willing'])
+        return self._get_attribute(self._SDM_ATT_MAP["Willing"])
+
     @Willing.setter
     def Willing(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Willing'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Willing"], value)
 
     def update(self, Mbc=None, PfcCapability=None, PfcEnableVector=None, Willing=None):
         # type: (bool, int, List[int], bool) -> DcbxTlvPfcQaz
@@ -129,7 +133,14 @@ class DcbxTlvPfcQaz(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Mbc=None, ObjectId=None, PfcCapability=None, PfcEnableVector=None, Willing=None):
+    def find(
+        self,
+        Mbc=None,
+        ObjectId=None,
+        PfcCapability=None,
+        PfcEnableVector=None,
+        Willing=None,
+    ):
         # type: (bool, str, int, List[int], bool) -> DcbxTlvPfcQaz
         """Finds and retrieves dcbxTlvPfcQaz resources from the server.
 
@@ -190,10 +201,14 @@ class DcbxTlvPfcQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -212,10 +227,14 @@ class DcbxTlvPfcQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -234,7 +253,11 @@ class DcbxTlvPfcQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

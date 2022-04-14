@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class OfChannelSessionPeersLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ofChannelSessionPeersLearnedInformation'
+    _SDM_NAME = "ofChannelSessionPeersLearnedInformation"
     _SDM_ATT_MAP = {
-        'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
-        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
-        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
-        'LocalPortNumber': 'localPortNumber',
-        'MasterFlowRemovedMask': 'masterFlowRemovedMask',
-        'MasterPacketInMask': 'masterPacketInMask',
-        'MasterPortStatusMask': 'masterPortStatusMask',
-        'PacketInTxRate': 'packetInTxRate',
-        'PacketOutRxRate': 'packetOutRxRate',
-        'RemoteIp': 'remoteIp',
-        'RemotePortNumber': 'remotePortNumber',
-        'ReplyState': 'replyState',
-        'Role': 'role',
-        'SlaveFlowRemovedMask': 'slaveFlowRemovedMask',
-        'SlavePacketInMask': 'slavePacketInMask',
-        'SlavePortStatusMask': 'slavePortStatusMask',
+        "AveragePacketInReplyDelay": "averagePacketInReplyDelay",
+        "ConfiguredPacketInReplyCount": "configuredPacketInReplyCount",
+        "ConfiguredPacketInSentCount": "configuredPacketInSentCount",
+        "LocalPortNumber": "localPortNumber",
+        "MasterFlowRemovedMask": "masterFlowRemovedMask",
+        "MasterPacketInMask": "masterPacketInMask",
+        "MasterPortStatusMask": "masterPortStatusMask",
+        "PacketInTxRate": "packetInTxRate",
+        "PacketOutRxRate": "packetOutRxRate",
+        "RemoteIp": "remoteIp",
+        "RemotePortNumber": "remotePortNumber",
+        "ReplyState": "replyState",
+        "Role": "role",
+        "SlaveFlowRemovedMask": "slaveFlowRemovedMask",
+        "SlavePacketInMask": "slavePacketInMask",
+        "SlavePortStatusMask": "slavePortStatusMask",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OfChannelSessionPeersLearnedInformation, self).__init__(parent, list_op)
@@ -69,10 +69,16 @@ class OfChannelSessionPeersLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_f79c51c709a70b2062dfab3a58ebde80 import SwitchAuxiliaryConnectionLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_f79c51c709a70b2062dfab3a58ebde80 import (
+            SwitchAuxiliaryConnectionLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchAuxiliaryConnectionLearnedInfo', None) is not None:
-                return self._properties.get('SwitchAuxiliaryConnectionLearnedInfo')
+            if (
+                self._properties.get("SwitchAuxiliaryConnectionLearnedInfo", None)
+                is not None
+            ):
+                return self._properties.get("SwitchAuxiliaryConnectionLearnedInfo")
         return SwitchAuxiliaryConnectionLearnedInfo(self)
 
     @property
@@ -83,7 +89,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AveragePacketInReplyDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["AveragePacketInReplyDelay"])
 
     @property
     def ConfiguredPacketInReplyCount(self):
@@ -93,7 +99,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfiguredPacketInReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfiguredPacketInReplyCount"])
 
     @property
     def ConfiguredPacketInSentCount(self):
@@ -103,7 +109,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfiguredPacketInSentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfiguredPacketInSentCount"])
 
     @property
     def LocalPortNumber(self):
@@ -113,7 +119,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPortNumber"])
 
     @property
     def MasterFlowRemovedMask(self):
@@ -123,7 +129,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterFlowRemovedMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterFlowRemovedMask"])
 
     @property
     def MasterPacketInMask(self):
@@ -133,7 +139,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterPacketInMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterPacketInMask"])
 
     @property
     def MasterPortStatusMask(self):
@@ -143,7 +149,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterPortStatusMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterPortStatusMask"])
 
     @property
     def PacketInTxRate(self):
@@ -153,7 +159,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: Per second transmission rate of PacketIn messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInTxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInTxRate"])
 
     @property
     def PacketOutRxRate(self):
@@ -163,7 +169,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: Per second reception rate of PacketOut messages from the time of protocol start. This is calculated only if Calculate PacketOut Rx Rate is enabled for the switch otherwise it is always 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketOutRxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketOutRxRate"])
 
     @property
     def RemoteIp(self):
@@ -173,7 +179,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def RemotePortNumber(self):
@@ -183,7 +189,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemotePortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemotePortNumber"])
 
     @property
     def ReplyState(self):
@@ -193,7 +199,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def Role(self):
@@ -203,7 +209,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Role'])
+        return self._get_attribute(self._SDM_ATT_MAP["Role"])
 
     @property
     def SlaveFlowRemovedMask(self):
@@ -213,7 +219,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlaveFlowRemovedMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlaveFlowRemovedMask"])
 
     @property
     def SlavePacketInMask(self):
@@ -223,7 +229,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlavePacketInMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlavePacketInMask"])
 
     @property
     def SlavePortStatusMask(self):
@@ -233,10 +239,10 @@ class OfChannelSessionPeersLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SlavePortStatusMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["SlavePortStatusMask"])
 
     def add(self):
-        """Adds a new ofChannelSessionPeersLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new ofChannelSessionPeersLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -248,7 +254,25 @@ class OfChannelSessionPeersLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, LocalPortNumber=None, MasterFlowRemovedMask=None, MasterPacketInMask=None, MasterPortStatusMask=None, PacketInTxRate=None, PacketOutRxRate=None, RemoteIp=None, RemotePortNumber=None, ReplyState=None, Role=None, SlaveFlowRemovedMask=None, SlavePacketInMask=None, SlavePortStatusMask=None):
+    def find(
+        self,
+        AveragePacketInReplyDelay=None,
+        ConfiguredPacketInReplyCount=None,
+        ConfiguredPacketInSentCount=None,
+        LocalPortNumber=None,
+        MasterFlowRemovedMask=None,
+        MasterPacketInMask=None,
+        MasterPortStatusMask=None,
+        PacketInTxRate=None,
+        PacketOutRxRate=None,
+        RemoteIp=None,
+        RemotePortNumber=None,
+        ReplyState=None,
+        Role=None,
+        SlaveFlowRemovedMask=None,
+        SlavePacketInMask=None,
+        SlavePortStatusMask=None,
+    ):
         # type: (str, str, str, int, int, int, int, int, int, str, int, str, str, int, int, int) -> OfChannelSessionPeersLearnedInformation
         """Finds and retrieves ofChannelSessionPeersLearnedInformation resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class SwitchPortQueues(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchPortQueues'
+    _SDM_NAME = "switchPortQueues"
     _SDM_ATT_MAP = {
-        'MaxRate': 'maxRate',
-        'MinRate': 'minRate',
-        'NumberOfQueues': 'numberOfQueues',
-        'QueueId': 'queueId',
+        "MaxRate": "maxRate",
+        "MinRate": "minRate",
+        "NumberOfQueues": "numberOfQueues",
+        "QueueId": "queueId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchPortQueues, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class SwitchPortQueues(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_a755ca2d7ba5959c2e5e1aa284875864 import QueueProperty
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_a755ca2d7ba5959c2e5e1aa284875864 import (
+            QueueProperty,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('QueueProperty', None) is not None:
-                return self._properties.get('QueueProperty')
+            if self._properties.get("QueueProperty", None) is not None:
+                return self._properties.get("QueueProperty")
         return QueueProperty(self)._select()
 
     @property
@@ -72,11 +75,12 @@ class SwitchPortQueues(Base):
         -------
         - str: Specify the maximum data rate guaranteed. The default value is 1. This field is available only when the Queue Property is Maximum data rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRate"])
+
     @MaxRate.setter
     def MaxRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRate"], value)
 
     @property
     def MinRate(self):
@@ -86,11 +90,12 @@ class SwitchPortQueues(Base):
         -------
         - str: Specify the minimum data rate guaranteed. The default value is 1. This field is available only when the Queue Property is Minimum data rate Guaranteed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRate"])
+
     @MinRate.setter
     def MinRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRate"], value)
 
     @property
     def NumberOfQueues(self):
@@ -100,11 +105,12 @@ class SwitchPortQueues(Base):
         -------
         - number: Specify the number of port queues to be configured. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfQueues'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfQueues"])
+
     @NumberOfQueues.setter
     def NumberOfQueues(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfQueues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfQueues"], value)
 
     @property
     def QueueId(self):
@@ -114,11 +120,12 @@ class SwitchPortQueues(Base):
         -------
         - str: Specify the queue identifier for the packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
+
     @QueueId.setter
     def QueueId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueId"], value)
 
     def update(self, MaxRate=None, MinRate=None, NumberOfQueues=None, QueueId=None):
         # type: (str, str, int, str) -> SwitchPortQueues

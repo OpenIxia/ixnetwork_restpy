@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,30 +33,39 @@ class Pos(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pos'
+    _SDM_NAME = "pos"
     _SDM_ATT_MAP = {
-        'AvailableSpeeds': 'availableSpeeds',
-        'C2Expected': 'c2Expected',
-        'C2Tx': 'c2Tx',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'CrcSize': 'crcSize',
-        'DataScrambling': 'dataScrambling',
-        'EnablePPM': 'enablePPM',
-        'InterfaceType': 'interfaceType',
-        'Loopback': 'loopback',
-        'PayloadType': 'payloadType',
-        'Ppm': 'ppm',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'TrafficMapType': 'trafficMapType',
-        'TransmitClocking': 'transmitClocking',
+        "AvailableSpeeds": "availableSpeeds",
+        "C2Expected": "c2Expected",
+        "C2Tx": "c2Tx",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "CrcSize": "crcSize",
+        "DataScrambling": "dataScrambling",
+        "EnablePPM": "enablePPM",
+        "InterfaceType": "interfaceType",
+        "Loopback": "loopback",
+        "PayloadType": "payloadType",
+        "Ppm": "ppm",
+        "SelectedSpeeds": "selectedSpeeds",
+        "TrafficMapType": "trafficMapType",
+        "TransmitClocking": "transmitClocking",
     }
     _SDM_ENUM_MAP = {
-        'crcSize': ['crc32', 'crc16'],
-        'interfaceType': ['oc3', 'oc12', 'oc48', 'oc192', 'stm1', 'stm4', 'stm16', 'stm64'],
-        'payloadType': ['ciscoFrameRelay', 'ciscoHdlc', 'frameRelay', 'ppp'],
-        'trafficMapType': ['dcc', 'spe'],
-        'transmitClocking': ['internal', 'external', 'recovered'],
+        "crcSize": ["crc32", "crc16"],
+        "interfaceType": [
+            "oc3",
+            "oc12",
+            "oc48",
+            "oc192",
+            "stm1",
+            "stm4",
+            "stm16",
+            "stm64",
+        ],
+        "payloadType": ["ciscoFrameRelay", "ciscoHdlc", "frameRelay", "ppp"],
+        "trafficMapType": ["dcc", "spe"],
+        "transmitClocking": ["internal", "external", "recovered"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,10 +82,13 @@ class Pos(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import Dcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import (
+            Dcc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dcc', None) is not None:
-                return self._properties.get('Dcc')
+            if self._properties.get("Dcc", None) is not None:
+                return self._properties.get("Dcc")
         return Dcc(self)._select()
 
     @property
@@ -89,10 +102,13 @@ class Pos(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import Ppp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import (
+            Ppp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ppp', None) is not None:
-                return self._properties.get('Ppp')
+            if self._properties.get("Ppp", None) is not None:
+                return self._properties.get("Ppp")
         return Ppp(self)._select()
 
     @property
@@ -103,7 +119,7 @@ class Pos(Base):
         -------
         - list(str[]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def C2Expected(self):
@@ -113,11 +129,12 @@ class Pos(Base):
         -------
         - number: C2 Byte
         """
-        return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
+        return self._get_attribute(self._SDM_ATT_MAP["C2Expected"])
+
     @C2Expected.setter
     def C2Expected(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
+        self._set_attribute(self._SDM_ATT_MAP["C2Expected"], value)
 
     @property
     def C2Tx(self):
@@ -127,11 +144,12 @@ class Pos(Base):
         -------
         - number: C2 Byte
         """
-        return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
+        return self._get_attribute(self._SDM_ATT_MAP["C2Tx"])
+
     @C2Tx.setter
     def C2Tx(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["C2Tx"], value)
 
     @property
     def CanModifySpeed(self):
@@ -141,7 +159,7 @@ class Pos(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -151,7 +169,7 @@ class Pos(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def CrcSize(self):
@@ -161,11 +179,12 @@ class Pos(Base):
         -------
         - str(crc32 | crc16): The type of cyclic redundancy check (CRC) to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["CrcSize"])
+
     @CrcSize.setter
     def CrcSize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CrcSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CrcSize"], value)
 
     @property
     def DataScrambling(self):
@@ -175,11 +194,12 @@ class Pos(Base):
         -------
         - bool: Data scrambling is enabled on this POS port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataScrambling'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataScrambling"])
+
     @DataScrambling.setter
     def DataScrambling(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataScrambling'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataScrambling"], value)
 
     @property
     def EnablePPM(self):
@@ -189,11 +209,12 @@ class Pos(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePPM"])
+
     @EnablePPM.setter
     def EnablePPM(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePPM"], value)
 
     @property
     def InterfaceType(self):
@@ -203,11 +224,12 @@ class Pos(Base):
         -------
         - str(oc3 | oc12 | oc48 | oc192 | stm1 | stm4 | stm16 | stm64): The POS interface type for the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Loopback(self):
@@ -217,11 +239,12 @@ class Pos(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["Loopback"])
+
     @Loopback.setter
     def Loopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Loopback"], value)
 
     @property
     def PayloadType(self):
@@ -231,11 +254,12 @@ class Pos(Base):
         -------
         - str(ciscoFrameRelay | ciscoHdlc | frameRelay | ppp): The POS payload type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PayloadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PayloadType"])
+
     @PayloadType.setter
     def PayloadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PayloadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PayloadType"], value)
 
     @property
     def Ppm(self):
@@ -245,11 +269,12 @@ class Pos(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ppm"])
+
     @Ppm.setter
     def Ppm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ppm"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -259,11 +284,12 @@ class Pos(Base):
         -------
         - list(str[]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     @property
     def TrafficMapType(self):
@@ -273,11 +299,12 @@ class Pos(Base):
         -------
         - str(dcc | spe): The POS traffic map type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficMapType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficMapType"])
+
     @TrafficMapType.setter
     def TrafficMapType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficMapType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficMapType"], value)
 
     @property
     def TransmitClocking(self):
@@ -287,13 +314,28 @@ class Pos(Base):
         -------
         - str(internal | external | recovered): The POS transmit clocking type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitClocking"])
+
     @TransmitClocking.setter
     def TransmitClocking(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitClocking"], value)
 
-    def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, SelectedSpeeds=None, TrafficMapType=None, TransmitClocking=None):
+    def update(
+        self,
+        C2Expected=None,
+        C2Tx=None,
+        CrcSize=None,
+        DataScrambling=None,
+        EnablePPM=None,
+        InterfaceType=None,
+        Loopback=None,
+        PayloadType=None,
+        Ppm=None,
+        SelectedSpeeds=None,
+        TrafficMapType=None,
+        TransmitClocking=None,
+    ):
         # type: (int, int, str, bool, bool, str, bool, str, int, List[str], str, str) -> Pos
         """Updates pos resource on the server.
 
@@ -318,7 +360,24 @@ class Pos(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableSpeeds=None, C2Expected=None, C2Tx=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, SelectedSpeeds=None, TrafficMapType=None, TransmitClocking=None):
+    def find(
+        self,
+        AvailableSpeeds=None,
+        C2Expected=None,
+        C2Tx=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        CrcSize=None,
+        DataScrambling=None,
+        EnablePPM=None,
+        InterfaceType=None,
+        Loopback=None,
+        PayloadType=None,
+        Ppm=None,
+        SelectedSpeeds=None,
+        TrafficMapType=None,
+        TransmitClocking=None,
+    ):
         # type: (List[str], int, int, bool, bool, str, bool, bool, str, bool, str, int, List[str], str, str) -> Pos
         """Finds and retrieves pos resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,92 +33,134 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'CalculateJitter': 'calculateJitter',
-        'CalculateLatency': 'calculateLatency',
-        'DelayAfterTransmit': 'delayAfterTransmit',
-        'DownstreamGrain': 'downstreamGrain',
-        'DownstreamImixAdd': 'downstreamImixAdd',
-        'DownstreamImixData': 'downstreamImixData',
-        'DownstreamImixDataQoS': 'downstreamImixDataQoS',
-        'DownstreamImixDelete': 'downstreamImixDelete',
-        'DownstreamImixDistribution': 'downstreamImixDistribution',
-        'DownstreamImixEnabled': 'downstreamImixEnabled',
-        'DownstreamImixTemplates': 'downstreamImixTemplates',
-        'DownstreamInitialStepLoadRate': 'downstreamInitialStepLoadRate',
-        'DownstreamLoadType': 'downstreamLoadType',
-        'DownstreamStepLoadUnit': 'downstreamStepLoadUnit',
-        'DownstreamStepStepLoadRate': 'downstreamStepStepLoadRate',
-        'DownstreamStepTolerance': 'downstreamStepTolerance',
-        'Duration': 'duration',
-        'EnableDataIntegrity': 'enableDataIntegrity',
-        'EnableLayer1Rate': 'enableLayer1Rate',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'ForceRegenerate': 'forceRegenerate',
-        'FramesPerBurstGap': 'framesPerBurstGap',
-        'Gap': 'gap',
-        'GenerateTrackingOptionAggregationFiles': 'generateTrackingOptionAggregationFiles',
-        'GranularityLabel': 'granularityLabel',
-        'ImixTrafficType': 'imixTrafficType',
-        'InitialRateLabel': 'initialRateLabel',
-        'LatencyBins': 'latencyBins',
-        'LatencyBinsEnabled': 'latencyBinsEnabled',
-        'LatencyType': 'latencyType',
-        'LoadType': 'loadType',
-        'LoadUnitLabel': 'loadUnitLabel',
-        'MapType': 'mapType',
-        'NumFrames': 'numFrames',
-        'Numtrials': 'numtrials',
-        'PortDelayEnabled': 'portDelayEnabled',
-        'PortDelayUnit': 'portDelayUnit',
-        'PortDelayValue': 'portDelayValue',
-        'ProtocolItem': 'protocolItem',
-        'ReportSequenceError': 'reportSequenceError',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'Runmode': 'runmode',
-        'StaggeredStart': 'staggeredStart',
-        'SupportedTrafficTypes': 'supportedTrafficTypes',
-        'TestType': 'testType',
-        'TestTypeTemp': 'testTypeTemp',
-        'TestTypeTemp2': 'testTypeTemp2',
-        'TrafficType': 'trafficType',
-        'TxDelay': 'txDelay',
-        'UpstreamGrain': 'upstreamGrain',
-        'UpstreamImixAdd': 'upstreamImixAdd',
-        'UpstreamImixData': 'upstreamImixData',
-        'UpstreamImixDataQoS': 'upstreamImixDataQoS',
-        'UpstreamImixDelete': 'upstreamImixDelete',
-        'UpstreamImixDistribution': 'upstreamImixDistribution',
-        'UpstreamImixEnabled': 'upstreamImixEnabled',
-        'UpstreamImixTemplates': 'upstreamImixTemplates',
-        'UpstreamInitialStepLoadRate': 'upstreamInitialStepLoadRate',
-        'UpstreamLoadType': 'upstreamLoadType',
-        'UpstreamStepLoadUnit': 'upstreamStepLoadUnit',
-        'UpstreamStepStepLoadRate': 'upstreamStepStepLoadRate',
-        'UpstreamStepTolerance': 'upstreamStepTolerance',
+        "BurstSize": "burstSize",
+        "CalculateJitter": "calculateJitter",
+        "CalculateLatency": "calculateLatency",
+        "DelayAfterTransmit": "delayAfterTransmit",
+        "DownstreamGrain": "downstreamGrain",
+        "DownstreamImixAdd": "downstreamImixAdd",
+        "DownstreamImixData": "downstreamImixData",
+        "DownstreamImixDataQoS": "downstreamImixDataQoS",
+        "DownstreamImixDelete": "downstreamImixDelete",
+        "DownstreamImixDistribution": "downstreamImixDistribution",
+        "DownstreamImixEnabled": "downstreamImixEnabled",
+        "DownstreamImixTemplates": "downstreamImixTemplates",
+        "DownstreamInitialStepLoadRate": "downstreamInitialStepLoadRate",
+        "DownstreamLoadType": "downstreamLoadType",
+        "DownstreamStepLoadUnit": "downstreamStepLoadUnit",
+        "DownstreamStepStepLoadRate": "downstreamStepStepLoadRate",
+        "DownstreamStepTolerance": "downstreamStepTolerance",
+        "Duration": "duration",
+        "EnableDataIntegrity": "enableDataIntegrity",
+        "EnableLayer1Rate": "enableLayer1Rate",
+        "EnableMinFrameSize": "enableMinFrameSize",
+        "ForceRegenerate": "forceRegenerate",
+        "FramesPerBurstGap": "framesPerBurstGap",
+        "Gap": "gap",
+        "GenerateTrackingOptionAggregationFiles": "generateTrackingOptionAggregationFiles",
+        "GranularityLabel": "granularityLabel",
+        "ImixTrafficType": "imixTrafficType",
+        "InitialRateLabel": "initialRateLabel",
+        "LatencyBins": "latencyBins",
+        "LatencyBinsEnabled": "latencyBinsEnabled",
+        "LatencyType": "latencyType",
+        "LoadType": "loadType",
+        "LoadUnitLabel": "loadUnitLabel",
+        "MapType": "mapType",
+        "NumFrames": "numFrames",
+        "Numtrials": "numtrials",
+        "PortDelayEnabled": "portDelayEnabled",
+        "PortDelayUnit": "portDelayUnit",
+        "PortDelayValue": "portDelayValue",
+        "ProtocolItem": "protocolItem",
+        "ReportSequenceError": "reportSequenceError",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "Runmode": "runmode",
+        "StaggeredStart": "staggeredStart",
+        "SupportedTrafficTypes": "supportedTrafficTypes",
+        "TestType": "testType",
+        "TestTypeTemp": "testTypeTemp",
+        "TestTypeTemp2": "testTypeTemp2",
+        "TrafficType": "trafficType",
+        "TxDelay": "txDelay",
+        "UpstreamGrain": "upstreamGrain",
+        "UpstreamImixAdd": "upstreamImixAdd",
+        "UpstreamImixData": "upstreamImixData",
+        "UpstreamImixDataQoS": "upstreamImixDataQoS",
+        "UpstreamImixDelete": "upstreamImixDelete",
+        "UpstreamImixDistribution": "upstreamImixDistribution",
+        "UpstreamImixEnabled": "upstreamImixEnabled",
+        "UpstreamImixTemplates": "upstreamImixTemplates",
+        "UpstreamInitialStepLoadRate": "upstreamInitialStepLoadRate",
+        "UpstreamLoadType": "upstreamLoadType",
+        "UpstreamStepLoadUnit": "upstreamStepLoadUnit",
+        "UpstreamStepStepLoadRate": "upstreamStepStepLoadRate",
+        "UpstreamStepTolerance": "upstreamStepTolerance",
     }
     _SDM_ENUM_MAP = {
-        'downstreamGrain': ['coarse', 'fine'],
-        'downstreamImixDistribution': ['bwpercentage', 'weight'],
-        'downstreamImixTemplates': ['cisco', 'imix', 'ipsec', 'ipv6', 'none', 'quadmodal', 'standard', 'tcp', 'tolly', 'trimodal'],
-        'downstreamLoadType': ['step'],
-        'downstreamStepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'latencyType': ['cutThrough', 'storeForward'],
-        'loadType': ['step'],
-        'portDelayUnit': ['bytes', 'nanoseconds'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
-        'runmode': ['duration', 'noframes'],
-        'testType': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
-        'testTypeTemp': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
-        'testTypeTemp2': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
-        'trafficType': ['burstyLoading', 'constantLoading'],
-        'upstreamGrain': ['coarse', 'fine'],
-        'upstreamImixDistribution': ['bwpercentage', 'weight'],
-        'upstreamImixTemplates': ['cisco', 'imix', 'ipsec', 'ipv6', 'none', 'quadmodal', 'standard', 'tcp', 'tolly', 'trimodal'],
-        'upstreamLoadType': ['step'],
-        'upstreamStepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+        "downstreamGrain": ["coarse", "fine"],
+        "downstreamImixDistribution": ["bwpercentage", "weight"],
+        "downstreamImixTemplates": [
+            "cisco",
+            "imix",
+            "ipsec",
+            "ipv6",
+            "none",
+            "quadmodal",
+            "standard",
+            "tcp",
+            "tolly",
+            "trimodal",
+        ],
+        "downstreamLoadType": ["step"],
+        "downstreamStepLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "latencyType": ["cutThrough", "storeForward"],
+        "loadType": ["step"],
+        "portDelayUnit": ["bytes", "nanoseconds"],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
+        "runmode": ["duration", "noframes"],
+        "testType": ["downstreamOnly", "upstreamDownstream", "upstreamOnly"],
+        "testTypeTemp": ["downstreamOnly", "upstreamDownstream", "upstreamOnly"],
+        "testTypeTemp2": ["downstreamOnly", "upstreamDownstream", "upstreamOnly"],
+        "trafficType": ["burstyLoading", "constantLoading"],
+        "upstreamGrain": ["coarse", "fine"],
+        "upstreamImixDistribution": ["bwpercentage", "weight"],
+        "upstreamImixTemplates": [
+            "cisco",
+            "imix",
+            "ipsec",
+            "ipv6",
+            "none",
+            "quadmodal",
+            "standard",
+            "tcp",
+            "tolly",
+            "trimodal",
+        ],
+        "upstreamLoadType": ["step"],
+        "upstreamStepLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -131,11 +174,12 @@ class TestConfig(Base):
         -------
         - number: The number of packets to send in a burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
+
     @BurstSize.setter
     def BurstSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstSize"], value)
 
     @property
     def CalculateJitter(self):
@@ -145,11 +189,12 @@ class TestConfig(Base):
         -------
         - bool: If true, calculates jitter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateJitter'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateJitter"])
+
     @CalculateJitter.setter
     def CalculateJitter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateJitter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateJitter"], value)
 
     @property
     def CalculateLatency(self):
@@ -159,11 +204,12 @@ class TestConfig(Base):
         -------
         - bool: If true, calibrates the latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateLatency"])
+
     @CalculateLatency.setter
     def CalculateLatency(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateLatency"], value)
 
     @property
     def DelayAfterTransmit(self):
@@ -173,11 +219,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the amount of delay after every transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"])
+
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"], value)
 
     @property
     def DownstreamGrain(self):
@@ -187,11 +234,12 @@ class TestConfig(Base):
         -------
         - str(coarse | fine): The type downstream grain.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamGrain'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamGrain"])
+
     @DownstreamGrain.setter
     def DownstreamGrain(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamGrain'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamGrain"], value)
 
     @property
     def DownstreamImixAdd(self):
@@ -201,11 +249,12 @@ class TestConfig(Base):
         -------
         - str: Adds the IMIX for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixAdd'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixAdd"])
+
     @DownstreamImixAdd.setter
     def DownstreamImixAdd(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixAdd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixAdd"], value)
 
     @property
     def DownstreamImixData(self):
@@ -215,11 +264,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the downstream IMIX data
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixData'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixData"])
+
     @DownstreamImixData.setter
     def DownstreamImixData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixData"], value)
 
     @property
     def DownstreamImixDataQoS(self):
@@ -229,11 +279,12 @@ class TestConfig(Base):
         -------
         - bool: Signifies the quality of service for downstream IMIX data
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDataQoS'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixDataQoS"])
+
     @DownstreamImixDataQoS.setter
     def DownstreamImixDataQoS(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDataQoS'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixDataQoS"], value)
 
     @property
     def DownstreamImixDelete(self):
@@ -243,11 +294,12 @@ class TestConfig(Base):
         -------
         - str: Deletes the downstream IMIX value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDelete'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixDelete"])
+
     @DownstreamImixDelete.setter
     def DownstreamImixDelete(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDelete'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixDelete"], value)
 
     @property
     def DownstreamImixDistribution(self):
@@ -257,11 +309,12 @@ class TestConfig(Base):
         -------
         - str(bwpercentage | weight): It gives details about the down stream Imix distribution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDistribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixDistribution"])
+
     @DownstreamImixDistribution.setter
     def DownstreamImixDistribution(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDistribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixDistribution"], value)
 
     @property
     def DownstreamImixEnabled(self):
@@ -271,11 +324,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables downstream IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixEnabled"])
+
     @DownstreamImixEnabled.setter
     def DownstreamImixEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixEnabled"], value)
 
     @property
     def DownstreamImixTemplates(self):
@@ -285,11 +339,12 @@ class TestConfig(Base):
         -------
         - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Signifies the downstream IMIX templates.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixTemplates'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamImixTemplates"])
+
     @DownstreamImixTemplates.setter
     def DownstreamImixTemplates(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamImixTemplates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamImixTemplates"], value)
 
     @property
     def DownstreamInitialStepLoadRate(self):
@@ -299,11 +354,12 @@ class TestConfig(Base):
         -------
         - number: Signifies downstream initial step load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamInitialStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamInitialStepLoadRate"])
+
     @DownstreamInitialStepLoadRate.setter
     def DownstreamInitialStepLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamInitialStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamInitialStepLoadRate"], value)
 
     @property
     def DownstreamLoadType(self):
@@ -313,11 +369,12 @@ class TestConfig(Base):
         -------
         - str(step): Signifies downstream load type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamLoadType"])
+
     @DownstreamLoadType.setter
     def DownstreamLoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamLoadType"], value)
 
     @property
     def DownstreamStepLoadUnit(self):
@@ -327,11 +384,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies downstream step load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamStepLoadUnit"])
+
     @DownstreamStepLoadUnit.setter
     def DownstreamStepLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamStepLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamStepLoadUnit"], value)
 
     @property
     def DownstreamStepStepLoadRate(self):
@@ -341,11 +399,12 @@ class TestConfig(Base):
         -------
         - str: Signifies downstream step load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamStepStepLoadRate"])
+
     @DownstreamStepStepLoadRate.setter
     def DownstreamStepStepLoadRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamStepStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamStepStepLoadRate"], value)
 
     @property
     def DownstreamStepTolerance(self):
@@ -355,11 +414,12 @@ class TestConfig(Base):
         -------
         - number: Signifies downstream step tolerance
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamStepTolerance"])
+
     @DownstreamStepTolerance.setter
     def DownstreamStepTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamStepTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamStepTolerance"], value)
 
     @property
     def Duration(self):
@@ -369,11 +429,12 @@ class TestConfig(Base):
         -------
         - number: The duration of the test in hours, minutes, or seconds, which is used to calculate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableDataIntegrity(self):
@@ -383,11 +444,12 @@ class TestConfig(Base):
         -------
         - bool: Allows to do a data integrity check.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"])
+
     @EnableDataIntegrity.setter
     def EnableDataIntegrity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"], value)
 
     @property
     def EnableLayer1Rate(self):
@@ -397,11 +459,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"])
+
     @EnableLayer1Rate.setter
     def EnableLayer1Rate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"], value)
 
     @property
     def EnableMinFrameSize(self):
@@ -411,11 +474,12 @@ class TestConfig(Base):
         -------
         - bool: If true, allows to set minimum frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"])
+
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"], value)
 
     @property
     def ForceRegenerate(self):
@@ -425,11 +489,12 @@ class TestConfig(Base):
         -------
         - bool: Initiates a forced regeneration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceRegenerate'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceRegenerate"])
+
     @ForceRegenerate.setter
     def ForceRegenerate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceRegenerate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceRegenerate"], value)
 
     @property
     def FramesPerBurstGap(self):
@@ -439,11 +504,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the per burst gap.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramesPerBurstGap"])
+
     @FramesPerBurstGap.setter
     def FramesPerBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramesPerBurstGap"], value)
 
     @property
     def Gap(self):
@@ -453,11 +519,12 @@ class TestConfig(Base):
         -------
         - number: The inter burst gap.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
@@ -467,11 +534,16 @@ class TestConfig(Base):
         -------
         - bool: Generates tracking option on aggregation files.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"]
+        )
+
     @GenerateTrackingOptionAggregationFiles.setter
     def GenerateTrackingOptionAggregationFiles(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"], value
+        )
 
     @property
     def GranularityLabel(self):
@@ -481,11 +553,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the granulity label
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GranularityLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["GranularityLabel"])
+
     @GranularityLabel.setter
     def GranularityLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GranularityLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GranularityLabel"], value)
 
     @property
     def ImixTrafficType(self):
@@ -495,11 +568,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the traffic type for IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImixTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImixTrafficType"])
+
     @ImixTrafficType.setter
     def ImixTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImixTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImixTrafficType"], value)
 
     @property
     def InitialRateLabel(self):
@@ -509,25 +583,27 @@ class TestConfig(Base):
         -------
         - str: Signifies the initial rate label
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialRateLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialRateLabel"])
+
     @InitialRateLabel.setter
     def InitialRateLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialRateLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialRateLabel"], value)
 
     @property
     def LatencyBins(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Sets the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBins'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBins"])
+
     @LatencyBins.setter
     def LatencyBins(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBins'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBins"], value)
 
     @property
     def LatencyBinsEnabled(self):
@@ -537,11 +613,12 @@ class TestConfig(Base):
         -------
         - bool: Enables the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"])
+
     @LatencyBinsEnabled.setter
     def LatencyBinsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"], value)
 
     @property
     def LatencyType(self):
@@ -551,11 +628,12 @@ class TestConfig(Base):
         -------
         - str(cutThrough | storeForward): The latency type, either Cut Through or Store and Forward.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyType"])
+
     @LatencyType.setter
     def LatencyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyType"], value)
 
     @property
     def LoadType(self):
@@ -565,11 +643,12 @@ class TestConfig(Base):
         -------
         - str(step): The latency type, either Cut Through or Store and Forward.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def LoadUnitLabel(self):
@@ -579,11 +658,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the load unit label
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadUnitLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadUnitLabel"])
+
     @LoadUnitLabel.setter
     def LoadUnitLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadUnitLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadUnitLabel"], value)
 
     @property
     def MapType(self):
@@ -593,11 +673,12 @@ class TestConfig(Base):
         -------
         - str: The map type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapType"])
+
     @MapType.setter
     def MapType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapType"], value)
 
     @property
     def NumFrames(self):
@@ -607,11 +688,12 @@ class TestConfig(Base):
         -------
         - number: Number of frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumFrames'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumFrames"])
+
     @NumFrames.setter
     def NumFrames(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumFrames'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumFrames"], value)
 
     @property
     def Numtrials(self):
@@ -621,11 +703,12 @@ class TestConfig(Base):
         -------
         - number: Number of trials.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def PortDelayEnabled(self):
@@ -635,11 +718,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayEnabled"])
+
     @PortDelayEnabled.setter
     def PortDelayEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayEnabled"], value)
 
     @property
     def PortDelayUnit(self):
@@ -649,11 +733,12 @@ class TestConfig(Base):
         -------
         - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayUnit"])
+
     @PortDelayUnit.setter
     def PortDelayUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayUnit"], value)
 
     @property
     def PortDelayValue(self):
@@ -663,11 +748,12 @@ class TestConfig(Base):
         -------
         - number: Sets the port delay value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayValue"])
+
     @PortDelayValue.setter
     def PortDelayValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayValue"], value)
 
     @property
     def ProtocolItem(self):
@@ -677,11 +763,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def ReportSequenceError(self):
@@ -691,11 +778,12 @@ class TestConfig(Base):
         -------
         - bool: Specifies to include the types of sequence errors in the results, such as Small.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportSequenceError'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportSequenceError"])
+
     @ReportSequenceError.setter
     def ReportSequenceError(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportSequenceError'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportSequenceError"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -705,11 +793,12 @@ class TestConfig(Base):
         -------
         - str(gbps | gBps | kbps | kBps | mbps | mBps): The throughput rate unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def Runmode(self):
@@ -719,11 +808,12 @@ class TestConfig(Base):
         -------
         - str(duration | noframes): The running mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Runmode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Runmode"])
+
     @Runmode.setter
     def Runmode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Runmode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Runmode"], value)
 
     @property
     def StaggeredStart(self):
@@ -733,11 +823,12 @@ class TestConfig(Base):
         -------
         - bool: Enable a staggered start to traffic transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaggeredStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaggeredStart"])
+
     @StaggeredStart.setter
     def StaggeredStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaggeredStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaggeredStart"], value)
 
     @property
     def SupportedTrafficTypes(self):
@@ -747,11 +838,12 @@ class TestConfig(Base):
         -------
         - str: The supported traffic types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedTrafficTypes"])
+
     @SupportedTrafficTypes.setter
     def SupportedTrafficTypes(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportedTrafficTypes"], value)
 
     @property
     def TestType(self):
@@ -761,11 +853,12 @@ class TestConfig(Base):
         -------
         - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies the test type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestType"])
+
     @TestType.setter
     def TestType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestType"], value)
 
     @property
     def TestTypeTemp(self):
@@ -775,11 +868,12 @@ class TestConfig(Base):
         -------
         - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies the temporary test type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTypeTemp'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTypeTemp"])
+
     @TestTypeTemp.setter
     def TestTypeTemp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTypeTemp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTypeTemp"], value)
 
     @property
     def TestTypeTemp2(self):
@@ -789,11 +883,12 @@ class TestConfig(Base):
         -------
         - str(downstreamOnly | upstreamDownstream | upstreamOnly): Signifies the second termorary version of test type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTypeTemp2'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTypeTemp2"])
+
     @TestTypeTemp2.setter
     def TestTypeTemp2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTypeTemp2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTypeTemp2"], value)
 
     @property
     def TrafficType(self):
@@ -803,11 +898,12 @@ class TestConfig(Base):
         -------
         - str(burstyLoading | constantLoading): The type of traffic to be transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
+
     @TrafficType.setter
     def TrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficType"], value)
 
     @property
     def TxDelay(self):
@@ -817,11 +913,12 @@ class TestConfig(Base):
         -------
         - number: The delay in transmission.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
     @property
     def UpstreamGrain(self):
@@ -831,11 +928,12 @@ class TestConfig(Base):
         -------
         - str(coarse | fine): The upstream traffic grain type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamGrain'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamGrain"])
+
     @UpstreamGrain.setter
     def UpstreamGrain(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamGrain'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamGrain"], value)
 
     @property
     def UpstreamImixAdd(self):
@@ -845,11 +943,12 @@ class TestConfig(Base):
         -------
         - str: Adds IMIX upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixAdd'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixAdd"])
+
     @UpstreamImixAdd.setter
     def UpstreamImixAdd(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixAdd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixAdd"], value)
 
     @property
     def UpstreamImixData(self):
@@ -859,11 +958,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the data of upstream IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixData'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixData"])
+
     @UpstreamImixData.setter
     def UpstreamImixData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixData"], value)
 
     @property
     def UpstreamImixDataQoS(self):
@@ -873,11 +973,12 @@ class TestConfig(Base):
         -------
         - bool: Signifies the quality of service for upstream IMIX data
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDataQoS'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixDataQoS"])
+
     @UpstreamImixDataQoS.setter
     def UpstreamImixDataQoS(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDataQoS'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixDataQoS"], value)
 
     @property
     def UpstreamImixDelete(self):
@@ -887,11 +988,12 @@ class TestConfig(Base):
         -------
         - str: Deletes upstream IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDelete'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixDelete"])
+
     @UpstreamImixDelete.setter
     def UpstreamImixDelete(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDelete'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixDelete"], value)
 
     @property
     def UpstreamImixDistribution(self):
@@ -901,11 +1003,12 @@ class TestConfig(Base):
         -------
         - str(bwpercentage | weight): Signifies the distribution of upstream IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDistribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixDistribution"])
+
     @UpstreamImixDistribution.setter
     def UpstreamImixDistribution(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDistribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixDistribution"], value)
 
     @property
     def UpstreamImixEnabled(self):
@@ -915,11 +1018,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables upstream IMIX
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixEnabled"])
+
     @UpstreamImixEnabled.setter
     def UpstreamImixEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixEnabled"], value)
 
     @property
     def UpstreamImixTemplates(self):
@@ -929,11 +1033,12 @@ class TestConfig(Base):
         -------
         - str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal): Signifies the upstream IMIX templates.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixTemplates'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamImixTemplates"])
+
     @UpstreamImixTemplates.setter
     def UpstreamImixTemplates(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamImixTemplates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamImixTemplates"], value)
 
     @property
     def UpstreamInitialStepLoadRate(self):
@@ -943,11 +1048,12 @@ class TestConfig(Base):
         -------
         - number: Signifies upstream initial step load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamInitialStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamInitialStepLoadRate"])
+
     @UpstreamInitialStepLoadRate.setter
     def UpstreamInitialStepLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamInitialStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamInitialStepLoadRate"], value)
 
     @property
     def UpstreamLoadType(self):
@@ -957,11 +1063,12 @@ class TestConfig(Base):
         -------
         - str(step): Signifies upstream load type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLoadType"])
+
     @UpstreamLoadType.setter
     def UpstreamLoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamLoadType"], value)
 
     @property
     def UpstreamStepLoadUnit(self):
@@ -971,11 +1078,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies upstream step load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamStepLoadUnit"])
+
     @UpstreamStepLoadUnit.setter
     def UpstreamStepLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamStepLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamStepLoadUnit"], value)
 
     @property
     def UpstreamStepStepLoadRate(self):
@@ -985,11 +1093,12 @@ class TestConfig(Base):
         -------
         - str: Signifies the upstream step load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamStepStepLoadRate"])
+
     @UpstreamStepStepLoadRate.setter
     def UpstreamStepStepLoadRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamStepStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamStepStepLoadRate"], value)
 
     @property
     def UpstreamStepTolerance(self):
@@ -999,13 +1108,79 @@ class TestConfig(Base):
         -------
         - number: Signifies upstream step tolerance value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamStepTolerance"])
+
     @UpstreamStepTolerance.setter
     def UpstreamStepTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamStepTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamStepTolerance"], value)
 
-    def update(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamGrain=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GranularityLabel=None, ImixTrafficType=None, InitialRateLabel=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, LoadUnitLabel=None, MapType=None, NumFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Runmode=None, StaggeredStart=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, TrafficType=None, TxDelay=None, UpstreamGrain=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None):
+    def update(
+        self,
+        BurstSize=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        DelayAfterTransmit=None,
+        DownstreamGrain=None,
+        DownstreamImixAdd=None,
+        DownstreamImixData=None,
+        DownstreamImixDataQoS=None,
+        DownstreamImixDelete=None,
+        DownstreamImixDistribution=None,
+        DownstreamImixEnabled=None,
+        DownstreamImixTemplates=None,
+        DownstreamInitialStepLoadRate=None,
+        DownstreamLoadType=None,
+        DownstreamStepLoadUnit=None,
+        DownstreamStepStepLoadRate=None,
+        DownstreamStepTolerance=None,
+        Duration=None,
+        EnableDataIntegrity=None,
+        EnableLayer1Rate=None,
+        EnableMinFrameSize=None,
+        ForceRegenerate=None,
+        FramesPerBurstGap=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        GranularityLabel=None,
+        ImixTrafficType=None,
+        InitialRateLabel=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LoadType=None,
+        LoadUnitLabel=None,
+        MapType=None,
+        NumFrames=None,
+        Numtrials=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Runmode=None,
+        StaggeredStart=None,
+        SupportedTrafficTypes=None,
+        TestType=None,
+        TestTypeTemp=None,
+        TestTypeTemp2=None,
+        TrafficType=None,
+        TxDelay=None,
+        UpstreamGrain=None,
+        UpstreamImixAdd=None,
+        UpstreamImixData=None,
+        UpstreamImixDataQoS=None,
+        UpstreamImixDelete=None,
+        UpstreamImixDistribution=None,
+        UpstreamImixEnabled=None,
+        UpstreamImixTemplates=None,
+        UpstreamInitialStepLoadRate=None,
+        UpstreamLoadType=None,
+        UpstreamStepLoadUnit=None,
+        UpstreamStepStepLoadRate=None,
+        UpstreamStepTolerance=None,
+    ):
         # type: (int, bool, bool, int, str, str, str, bool, str, str, bool, str, int, str, str, str, int, int, bool, bool, bool, bool, int, int, bool, str, str, str, str, bool, str, str, str, str, int, int, bool, str, int, List[str], bool, str, str, bool, str, str, str, str, str, int, str, str, str, bool, str, str, bool, str, int, str, str, str, int) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -1081,7 +1256,72 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamGrain=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GranularityLabel=None, ImixTrafficType=None, InitialRateLabel=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, LoadUnitLabel=None, MapType=None, NumFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Runmode=None, StaggeredStart=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, TrafficType=None, TxDelay=None, UpstreamGrain=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None):
+    def find(
+        self,
+        BurstSize=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        DelayAfterTransmit=None,
+        DownstreamGrain=None,
+        DownstreamImixAdd=None,
+        DownstreamImixData=None,
+        DownstreamImixDataQoS=None,
+        DownstreamImixDelete=None,
+        DownstreamImixDistribution=None,
+        DownstreamImixEnabled=None,
+        DownstreamImixTemplates=None,
+        DownstreamInitialStepLoadRate=None,
+        DownstreamLoadType=None,
+        DownstreamStepLoadUnit=None,
+        DownstreamStepStepLoadRate=None,
+        DownstreamStepTolerance=None,
+        Duration=None,
+        EnableDataIntegrity=None,
+        EnableLayer1Rate=None,
+        EnableMinFrameSize=None,
+        ForceRegenerate=None,
+        FramesPerBurstGap=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        GranularityLabel=None,
+        ImixTrafficType=None,
+        InitialRateLabel=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LoadType=None,
+        LoadUnitLabel=None,
+        MapType=None,
+        NumFrames=None,
+        Numtrials=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Runmode=None,
+        StaggeredStart=None,
+        SupportedTrafficTypes=None,
+        TestType=None,
+        TestTypeTemp=None,
+        TestTypeTemp2=None,
+        TrafficType=None,
+        TxDelay=None,
+        UpstreamGrain=None,
+        UpstreamImixAdd=None,
+        UpstreamImixData=None,
+        UpstreamImixDataQoS=None,
+        UpstreamImixDelete=None,
+        UpstreamImixDistribution=None,
+        UpstreamImixEnabled=None,
+        UpstreamImixTemplates=None,
+        UpstreamInitialStepLoadRate=None,
+        UpstreamLoadType=None,
+        UpstreamStepLoadUnit=None,
+        UpstreamStepStepLoadRate=None,
+        UpstreamStepTolerance=None,
+    ):
         # type: (int, bool, bool, int, str, str, str, bool, str, str, bool, str, int, str, str, str, int, int, bool, bool, bool, bool, int, int, bool, str, str, str, str, bool, str, str, str, str, int, int, bool, str, int, List[str], bool, str, str, bool, str, str, str, str, str, int, str, str, str, bool, str, str, bool, str, int, str, str, str, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -1198,10 +1438,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1216,10 +1458,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1228,17 +1472,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1255,10 +1501,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1276,10 +1526,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1305,10 +1557,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1332,10 +1586,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1352,10 +1608,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1373,7 +1631,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

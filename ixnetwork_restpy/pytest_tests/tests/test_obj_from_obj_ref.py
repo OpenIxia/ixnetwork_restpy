@@ -3,4 +3,4 @@ def test_can_get_object_from_ref(ixnetwork):
     vport = ixnetwork.Vport.add()
 
     hardware_port = sessions.GetObjectFromHref(vport.ConnectedTo)
-    assert(hardware_port is None)
+    assert hardware_port is None

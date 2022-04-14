@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class Ospfv3Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3Router'
+    _SDM_NAME = "ospfv3Router"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableDrBdr': 'enableDrBdr',
-        'Name': 'name',
-        'RowNames': 'rowNames',
-        'Srv6CapabilityTlvType': 'srv6CapabilityTlvType',
-        'Srv6EndxSubTlvType': 'srv6EndxSubTlvType',
-        'Srv6LanEndxSubTlvType': 'srv6LanEndxSubTlvType',
-        'Srv6LocatorLSAFuncCode': 'srv6LocatorLSAFuncCode',
-        'Srv6SidStructureSubTlvType': 'srv6SidStructureSubTlvType',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableDrBdr": "enableDrBdr",
+        "Name": "name",
+        "RowNames": "rowNames",
+        "Srv6CapabilityTlvType": "srv6CapabilityTlvType",
+        "Srv6EndxSubTlvType": "srv6EndxSubTlvType",
+        "Srv6LanEndxSubTlvType": "srv6LanEndxSubTlvType",
+        "Srv6LocatorLSAFuncCode": "srv6LocatorLSAFuncCode",
+        "Srv6SidStructureSubTlvType": "srv6SidStructureSubTlvType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv3Router, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class Ospfv3Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -79,10 +82,13 @@ class Ospfv3Router(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -93,7 +99,7 @@ class Ospfv3Router(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -103,7 +109,7 @@ class Ospfv3Router(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableDrBdr(self):
@@ -114,7 +120,8 @@ class Ospfv3Router(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable DR/BDR
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDrBdr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableDrBdr"]))
 
     @property
     def Name(self):
@@ -124,11 +131,12 @@ class Ospfv3Router(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RowNames(self):
@@ -138,7 +146,7 @@ class Ospfv3Router(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def Srv6CapabilityTlvType(self):
@@ -148,11 +156,12 @@ class Ospfv3Router(Base):
         -------
         - number: This specifies the type of SRv6 Capabilities TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6CapabilityTlvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6CapabilityTlvType"])
+
     @Srv6CapabilityTlvType.setter
     def Srv6CapabilityTlvType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6CapabilityTlvType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6CapabilityTlvType"], value)
 
     @property
     def Srv6EndxSubTlvType(self):
@@ -162,11 +171,12 @@ class Ospfv3Router(Base):
         -------
         - number: This specifies the type of SRv6 End.X SID Sub-TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6EndxSubTlvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6EndxSubTlvType"])
+
     @Srv6EndxSubTlvType.setter
     def Srv6EndxSubTlvType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6EndxSubTlvType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6EndxSubTlvType"], value)
 
     @property
     def Srv6LanEndxSubTlvType(self):
@@ -176,11 +186,12 @@ class Ospfv3Router(Base):
         -------
         - number: This specifies the type Of SRv6 LAN End.X SID Sub-TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6LanEndxSubTlvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6LanEndxSubTlvType"])
+
     @Srv6LanEndxSubTlvType.setter
     def Srv6LanEndxSubTlvType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6LanEndxSubTlvType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6LanEndxSubTlvType"], value)
 
     @property
     def Srv6LocatorLSAFuncCode(self):
@@ -190,11 +201,12 @@ class Ospfv3Router(Base):
         -------
         - number: This specifies the Function Code of Locator LSA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6LocatorLSAFuncCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6LocatorLSAFuncCode"])
+
     @Srv6LocatorLSAFuncCode.setter
     def Srv6LocatorLSAFuncCode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6LocatorLSAFuncCode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6LocatorLSAFuncCode"], value)
 
     @property
     def Srv6SidStructureSubTlvType(self):
@@ -204,13 +216,22 @@ class Ospfv3Router(Base):
         -------
         - number: This specifies the Sub-TLV type of SID Structure Sub-TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Srv6SidStructureSubTlvType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6SidStructureSubTlvType"])
+
     @Srv6SidStructureSubTlvType.setter
     def Srv6SidStructureSubTlvType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Srv6SidStructureSubTlvType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Srv6SidStructureSubTlvType"], value)
 
-    def update(self, Name=None, Srv6CapabilityTlvType=None, Srv6EndxSubTlvType=None, Srv6LanEndxSubTlvType=None, Srv6LocatorLSAFuncCode=None, Srv6SidStructureSubTlvType=None):
+    def update(
+        self,
+        Name=None,
+        Srv6CapabilityTlvType=None,
+        Srv6EndxSubTlvType=None,
+        Srv6LanEndxSubTlvType=None,
+        Srv6LocatorLSAFuncCode=None,
+        Srv6SidStructureSubTlvType=None,
+    ):
         # type: (str, int, int, int, int, int) -> Ospfv3Router
         """Updates ospfv3Router resource on the server.
 
@@ -232,7 +253,18 @@ class Ospfv3Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None, Srv6CapabilityTlvType=None, Srv6EndxSubTlvType=None, Srv6LanEndxSubTlvType=None, Srv6LocatorLSAFuncCode=None, Srv6SidStructureSubTlvType=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        RowNames=None,
+        Srv6CapabilityTlvType=None,
+        Srv6EndxSubTlvType=None,
+        Srv6LanEndxSubTlvType=None,
+        Srv6LocatorLSAFuncCode=None,
+        Srv6SidStructureSubTlvType=None,
+    ):
         # type: (int, str, str, List[str], int, int, int, int, int) -> Ospfv3Router
         """Finds and retrieves ospfv3Router resources from the server.
 

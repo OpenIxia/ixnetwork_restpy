@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class LlcPPP(Base):
     __slots__ = ()
-    _SDM_NAME = 'llcPPP'
+    _SDM_NAME = "llcPPP"
     _SDM_ATT_MAP = {
-        'LlcPPPHheaderLlcHeader': 'llcPPP.llcPPPHheader.llcHeader-1',
-        'LlcPPPHheaderNlpid': 'llcPPP.llcPPPHheader.nlpid-2',
-        'LlcPPPHheaderPid': 'llcPPP.llcPPPHheader.pid-3',
+        "LlcPPPHheaderLlcHeader": "llcPPP.llcPPPHheader.llcHeader-1",
+        "LlcPPPHheaderNlpid": "llcPPP.llcPPPHheader.nlpid-2",
+        "LlcPPPHheaderPid": "llcPPP.llcPPPHheader.pid-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class LlcPPP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LlcPPPHheaderLlcHeader']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LlcPPPHheaderLlcHeader"])
+        )
 
     @property
     def LlcPPPHheaderNlpid(self):
@@ -32,7 +35,10 @@ class LlcPPP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LlcPPPHheaderNlpid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LlcPPPHheaderNlpid"])
+        )
 
     @property
     def LlcPPPHheaderPid(self):
@@ -42,7 +48,10 @@ class LlcPPP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LlcPPPHheaderPid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LlcPPPHheaderPid"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

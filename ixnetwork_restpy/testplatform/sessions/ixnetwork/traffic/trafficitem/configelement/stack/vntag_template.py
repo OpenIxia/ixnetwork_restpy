@@ -4,16 +4,16 @@ from ixnetwork_restpy.files import Files
 
 class Vntag(Base):
     __slots__ = ()
-    _SDM_NAME = 'vntag'
+    _SDM_NAME = "vntag"
     _SDM_ATT_MAP = {
-        'VntagDirection': 'vntag.header.vntagHeader.vntagDirection-1',
-        'VntagPointer': 'vntag.header.vntagHeader.vntagPointer-2',
-        'VntagDstVif': 'vntag.header.vntagHeader.vntagDstVif-3',
-        'VntagLooped': 'vntag.header.vntagHeader.vntagLooped-4',
-        'Default': 'vntag.header.vntagHeader.-5',
-        'VntagVersion': 'vntag.header.vntagHeader.vntagVersion-6',
-        'VntagSrcVif': 'vntag.header.vntagHeader.vntagSrcVif-7',
-        'ProtocolID': 'vntag.header.protocolID-8',
+        "VntagDirection": "vntag.header.vntagHeader.vntagDirection-1",
+        "VntagPointer": "vntag.header.vntagHeader.vntagPointer-2",
+        "VntagDstVif": "vntag.header.vntagHeader.vntagDstVif-3",
+        "VntagLooped": "vntag.header.vntagHeader.vntagLooped-4",
+        "Default": "vntag.header.vntagHeader.-5",
+        "VntagVersion": "vntag.header.vntagHeader.vntagVersion-6",
+        "VntagSrcVif": "vntag.header.vntagHeader.vntagSrcVif-7",
+        "ProtocolID": "vntag.header.protocolID-8",
     }
 
     def __init__(self, parent, list_op=False):
@@ -27,7 +27,10 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagDirection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VntagDirection"])
+        )
 
     @property
     def VntagPointer(self):
@@ -37,7 +40,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagPointer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VntagPointer"]))
 
     @property
     def VntagDstVif(self):
@@ -47,7 +51,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagDstVif']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VntagDstVif"]))
 
     @property
     def VntagLooped(self):
@@ -57,7 +62,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagLooped']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VntagLooped"]))
 
     @property
     def Default(self):
@@ -67,7 +73,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Default']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Default"]))
 
     @property
     def VntagVersion(self):
@@ -77,7 +84,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VntagVersion"]))
 
     @property
     def VntagSrcVif(self):
@@ -87,7 +95,8 @@ class Vntag(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VntagSrcVif']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VntagSrcVif"]))
 
     @property
     def ProtocolID(self):
@@ -97,7 +106,8 @@ class Vntag(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtocolID"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

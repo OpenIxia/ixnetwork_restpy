@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class EthernetImpairment(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernetImpairment'
+    _SDM_NAME = "ethernetImpairment"
     _SDM_ATT_MAP = {
-        'AvailableSpeeds': 'availableSpeeds',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'EnablePPM': 'enablePPM',
-        'Ppm': 'ppm',
-        'SelectedSpeeds': 'selectedSpeeds',
+        "AvailableSpeeds": "availableSpeeds",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "EnablePPM": "enablePPM",
+        "Ppm": "ppm",
+        "SelectedSpeeds": "selectedSpeeds",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EthernetImpairment, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class EthernetImpairment(Base):
         -------
         - list(str[]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def CanModifySpeed(self):
@@ -65,7 +65,7 @@ class EthernetImpairment(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -75,7 +75,7 @@ class EthernetImpairment(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def EnablePPM(self):
@@ -85,11 +85,12 @@ class EthernetImpairment(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePPM"])
+
     @EnablePPM.setter
     def EnablePPM(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePPM"], value)
 
     @property
     def Ppm(self):
@@ -99,11 +100,12 @@ class EthernetImpairment(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ppm"])
+
     @Ppm.setter
     def Ppm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ppm"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -113,11 +115,12 @@ class EthernetImpairment(Base):
         -------
         - list(str[]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     def update(self, EnablePPM=None, Ppm=None, SelectedSpeeds=None):
         # type: (bool, int, List[str]) -> EthernetImpairment
@@ -135,7 +138,15 @@ class EthernetImpairment(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnablePPM=None, Ppm=None, SelectedSpeeds=None):
+    def find(
+        self,
+        AvailableSpeeds=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        EnablePPM=None,
+        Ppm=None,
+        SelectedSpeeds=None,
+    ):
         # type: (List[str], bool, bool, bool, int, List[str]) -> EthernetImpairment
         """Finds and retrieves ethernetImpairment resources from the server.
 

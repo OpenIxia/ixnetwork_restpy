@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class Connector(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'connector'
+    _SDM_NAME = "connector"
     _SDM_ATT_MAP = {
-        'ConnectedTo': 'connectedTo',
-        'Count': 'count',
-        'PropagateMultiplier': 'propagateMultiplier',
+        "ConnectedTo": "connectedTo",
+        "Count": "count",
+        "PropagateMultiplier": "propagateMultiplier",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Connector, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class Connector(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Scenario element this connector is connecting to
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedTo"])
+
     @ConnectedTo.setter
     def ConnectedTo(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedTo"], value)
 
     @property
     def Count(self):
@@ -68,7 +69,7 @@ class Connector(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def PropagateMultiplier(self):
@@ -78,7 +79,7 @@ class Connector(Base):
         -------
         - bool: The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PropagateMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["PropagateMultiplier"])
 
     def update(self, ConnectedTo=None):
         # type: (str) -> Connector

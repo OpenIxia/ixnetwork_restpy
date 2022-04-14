@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,22 @@ class Scriptgen(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'scriptgen'
+    _SDM_NAME = "scriptgen"
     _SDM_ATT_MAP = {
-        'ConnectHostname': 'connectHostname',
-        'ConnectPort': 'connectPort',
-        'ConnectVersion': 'connectVersion',
-        'IncludeConnect': 'includeConnect',
-        'IncludeTestComposer': 'includeTestComposer',
-        'Language': 'language',
-        'LinePerAttribute': 'linePerAttribute',
-        'OverwriteScriptFilename': 'overwriteScriptFilename',
-        'ScriptFilename': 'scriptFilename',
-        'SerializationType': 'serializationType',
+        "ConnectHostname": "connectHostname",
+        "ConnectPort": "connectPort",
+        "ConnectVersion": "connectVersion",
+        "IncludeConnect": "includeConnect",
+        "IncludeTestComposer": "includeTestComposer",
+        "Language": "language",
+        "LinePerAttribute": "linePerAttribute",
+        "OverwriteScriptFilename": "overwriteScriptFilename",
+        "ScriptFilename": "scriptFilename",
+        "SerializationType": "serializationType",
     }
     _SDM_ENUM_MAP = {
-        'language': ['perl', 'python', 'ruby', 'tcl'],
-        'serializationType': ['base64', 'ixNet'],
+        "language": ["perl", "python", "ruby", "tcl"],
+        "serializationType": ["base64", "ixNet"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +65,13 @@ class Scriptgen(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import Base64CodeOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import (
+            Base64CodeOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Base64CodeOptions', None) is not None:
-                return self._properties.get('Base64CodeOptions')
+            if self._properties.get("Base64CodeOptions", None) is not None:
+                return self._properties.get("Base64CodeOptions")
         return Base64CodeOptions(self)._select()
 
     @property
@@ -81,10 +85,13 @@ class Scriptgen(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import IxNetCodeOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import (
+            IxNetCodeOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IxNetCodeOptions', None) is not None:
-                return self._properties.get('IxNetCodeOptions')
+            if self._properties.get("IxNetCodeOptions", None) is not None:
+                return self._properties.get("IxNetCodeOptions")
         return IxNetCodeOptions(self)._select()
 
     @property
@@ -95,11 +102,12 @@ class Scriptgen(Base):
         -------
         - str: The hostname to be used in the connect command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectHostname'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectHostname"])
+
     @ConnectHostname.setter
     def ConnectHostname(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectHostname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectHostname"], value)
 
     @property
     def ConnectPort(self):
@@ -109,11 +117,12 @@ class Scriptgen(Base):
         -------
         - number: The port number to be used in the connect command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectPort"])
+
     @ConnectPort.setter
     def ConnectPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectPort"], value)
 
     @property
     def ConnectVersion(self):
@@ -123,11 +132,12 @@ class Scriptgen(Base):
         -------
         - str: The version number to be used in the connect command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectVersion"])
+
     @ConnectVersion.setter
     def ConnectVersion(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectVersion"], value)
 
     @property
     def IncludeConnect(self):
@@ -137,11 +147,12 @@ class Scriptgen(Base):
         -------
         - bool: Flag to include the connect command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeConnect"])
+
     @IncludeConnect.setter
     def IncludeConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeConnect"], value)
 
     @property
     def IncludeTestComposer(self):
@@ -151,11 +162,12 @@ class Scriptgen(Base):
         -------
         - bool: Flag to include test composer code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTestComposer'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTestComposer"])
+
     @IncludeTestComposer.setter
     def IncludeTestComposer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTestComposer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTestComposer"], value)
 
     @property
     def Language(self):
@@ -165,11 +177,12 @@ class Scriptgen(Base):
         -------
         - str(perl | python | ruby | tcl): Select the target scriptgen language
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Language'])
+        return self._get_attribute(self._SDM_ATT_MAP["Language"])
+
     @Language.setter
     def Language(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Language'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Language"], value)
 
     @property
     def LinePerAttribute(self):
@@ -179,11 +192,12 @@ class Scriptgen(Base):
         -------
         - bool: If true the scriptgen output will show each attribute on a separate line
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinePerAttribute'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinePerAttribute"])
+
     @LinePerAttribute.setter
     def LinePerAttribute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinePerAttribute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinePerAttribute"], value)
 
     @property
     def OverwriteScriptFilename(self):
@@ -193,11 +207,12 @@ class Scriptgen(Base):
         -------
         - bool: If true the file indicated by the script filename will be overwritten
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverwriteScriptFilename'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverwriteScriptFilename"])
+
     @OverwriteScriptFilename.setter
     def OverwriteScriptFilename(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverwriteScriptFilename'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverwriteScriptFilename"], value)
 
     @property
     def ScriptFilename(self):
@@ -207,11 +222,12 @@ class Scriptgen(Base):
         -------
         - str: The name of the target scriptgen file
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScriptFilename'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScriptFilename"])
+
     @ScriptFilename.setter
     def ScriptFilename(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ScriptFilename'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScriptFilename"], value)
 
     @property
     def SerializationType(self):
@@ -221,13 +237,26 @@ class Scriptgen(Base):
         -------
         - str(base64 | ixNet): The scriptgen serialization type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SerializationType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SerializationType"])
+
     @SerializationType.setter
     def SerializationType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SerializationType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SerializationType"], value)
 
-    def update(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
+    def update(
+        self,
+        ConnectHostname=None,
+        ConnectPort=None,
+        ConnectVersion=None,
+        IncludeConnect=None,
+        IncludeTestComposer=None,
+        Language=None,
+        LinePerAttribute=None,
+        OverwriteScriptFilename=None,
+        ScriptFilename=None,
+        SerializationType=None,
+    ):
         # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
         """Updates scriptgen resource on the server.
 
@@ -250,7 +279,19 @@ class Scriptgen(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
+    def find(
+        self,
+        ConnectHostname=None,
+        ConnectPort=None,
+        ConnectVersion=None,
+        IncludeConnect=None,
+        IncludeTestComposer=None,
+        Language=None,
+        LinePerAttribute=None,
+        OverwriteScriptFilename=None,
+        ScriptFilename=None,
+        SerializationType=None,
+    ):
         # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
         """Finds and retrieves scriptgen resources from the server.
 
@@ -321,7 +362,9 @@ class Scriptgen(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generate', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generate", payload=payload, response_object=None)

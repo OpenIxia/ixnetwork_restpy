@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class NetTopologyCustom(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyCustom'
+    _SDM_NAME = "netTopologyCustom"
     _SDM_ATT_MAP = {
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LinkMultiplier': 'linkMultiplier',
-        'NumberOfNodes': 'numberOfNodes',
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LinkMultiplier": "linkMultiplier",
+        "NumberOfNodes": "numberOfNodes",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyCustom, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class NetTopologyCustom(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable_208cab015f6cc01eff274874a65e7fec import LinkTable
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable_208cab015f6cc01eff274874a65e7fec import (
+            LinkTable,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LinkTable', None) is not None:
-                return self._properties.get('LinkTable')
+            if self._properties.get("LinkTable", None) is not None:
+                return self._properties.get("LinkTable")
         return LinkTable(self)._select()
 
     @property
@@ -71,11 +74,12 @@ class NetTopologyCustom(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LinkMultiplier(self):
@@ -85,11 +89,12 @@ class NetTopologyCustom(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     @property
     def NumberOfNodes(self):
@@ -99,7 +104,7 @@ class NetTopologyCustom(Base):
         -------
         - number: Number Of Nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfNodes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfNodes"])
 
     def update(self, IncludeEntryPoint=None, LinkMultiplier=None):
         # type: (bool, int) -> NetTopologyCustom

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,17 @@ class DynamicFrameSize(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dynamicFrameSize'
+    _SDM_NAME = "dynamicFrameSize"
     _SDM_ATT_MAP = {
-        'FixedSize': 'fixedSize',
-        'HighLevelStreamName': 'highLevelStreamName',
-        'RandomMax': 'randomMax',
-        'RandomMin': 'randomMin',
-        'TrafficItemName': 'trafficItemName',
-        'Type': 'type',
+        "FixedSize": "fixedSize",
+        "HighLevelStreamName": "highLevelStreamName",
+        "RandomMax": "randomMax",
+        "RandomMin": "randomMin",
+        "TrafficItemName": "trafficItemName",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['fixed', 'random'],
+        "type": ["fixed", "random"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets all frames to a specified constant size. The default is 64 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FixedSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FixedSize"])
+
     @FixedSize.setter
     def FixedSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FixedSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FixedSize"], value)
 
     @property
     def HighLevelStreamName(self):
@@ -71,7 +73,7 @@ class DynamicFrameSize(Base):
         -------
         - str: The name of the high level stream
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HighLevelStreamName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HighLevelStreamName"])
 
     @property
     def RandomMax(self):
@@ -81,11 +83,12 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RandomMax'])
+        return self._get_attribute(self._SDM_ATT_MAP["RandomMax"])
+
     @RandomMax.setter
     def RandomMax(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RandomMax'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RandomMax"], value)
 
     @property
     def RandomMin(self):
@@ -95,11 +98,12 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RandomMin'])
+        return self._get_attribute(self._SDM_ATT_MAP["RandomMin"])
+
     @RandomMin.setter
     def RandomMin(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RandomMin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RandomMin"], value)
 
     @property
     def TrafficItemName(self):
@@ -109,7 +113,7 @@ class DynamicFrameSize(Base):
         -------
         - str: The name of the parent traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemName"])
 
     @property
     def Type(self):
@@ -119,11 +123,12 @@ class DynamicFrameSize(Base):
         -------
         - str(fixed | random): Sets the frame size to either fixed or random lengths in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
         # type: (int, int, int, str) -> DynamicFrameSize
@@ -144,7 +149,7 @@ class DynamicFrameSize(Base):
 
     def add(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
         # type: (int, int, int, str) -> DynamicFrameSize
-        """Adds a new dynamicFrameSize resource on the json, only valid with config assistant
+        """Adds a new dynamicFrameSize resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -163,7 +168,15 @@ class DynamicFrameSize(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
+    def find(
+        self,
+        FixedSize=None,
+        HighLevelStreamName=None,
+        RandomMax=None,
+        RandomMin=None,
+        TrafficItemName=None,
+        Type=None,
+    ):
         # type: (int, str, int, int, str, str) -> DynamicFrameSize
         """Finds and retrieves dynamicFrameSize resources from the server.
 

@@ -77,7 +77,7 @@ class TlvProfile(Base):
         return Tlv(self)
 
     def add(self):
-        """Adds a new tlvProfile resource on the json, only valid with config assistant
+        """Adds a new tlvProfile resource on the json, only valid with batch add utility
 
         Returns
         -------

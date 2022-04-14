@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class EthernetEndpoint(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernetEndpoint'
+    _SDM_NAME = "ethernetEndpoint"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EthernetEndpoint, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class EthernetEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1x_a0eb680f1419e7d7914095cc230eb3d2 import Dot1x
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1x_a0eb680f1419e7d7914095cc230eb3d2 import (
+            Dot1x,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1x', None) is not None:
-                return self._properties.get('Dot1x')
+            if self._properties.get("Dot1x", None) is not None:
+                return self._properties.get("Dot1x")
         return Dot1x(self)
 
     @property
@@ -73,10 +76,13 @@ class EthernetEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmc_fc0fc61d7125690618a8802cad58c919 import Esmc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmc_fc0fc61d7125690618a8802cad58c919 import (
+            Esmc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Esmc', None) is not None:
-                return self._properties.get('Esmc')
+            if self._properties.get("Esmc", None) is not None:
+                return self._properties.get("Esmc")
         return Esmc(self)
 
     @property
@@ -90,10 +96,13 @@ class EthernetEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_2576d7bea351074f3285f32fdc11eac6 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_2576d7bea351074f3285f32fdc11eac6 import (
+            Ptp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ptp', None) is not None:
-                return self._properties.get('Ptp')
+            if self._properties.get("Ptp", None) is not None:
+                return self._properties.get("Ptp")
         return Ptp(self)
 
     @property
@@ -107,10 +116,13 @@ class EthernetEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_092d943b2a13c1e5470555b58a77a0f1 import Range
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_092d943b2a13c1e5470555b58a77a0f1 import (
+            Range,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Range', None) is not None:
-                return self._properties.get('Range')
+            if self._properties.get("Range", None) is not None:
+                return self._properties.get("Range")
         return Range(self)
 
     @property
@@ -124,10 +136,13 @@ class EthernetEndpoint(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclient_1ddec8114010f720bea6df8b3eedafd8 import VicClient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclient_1ddec8114010f720bea6df8b3eedafd8 import (
+            VicClient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicClient', None) is not None:
-                return self._properties.get('VicClient')
+            if self._properties.get("VicClient", None) is not None:
+                return self._properties.get("VicClient")
         return VicClient(self)
 
     @property
@@ -138,11 +153,12 @@ class EthernetEndpoint(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -152,7 +168,7 @@ class EthernetEndpoint(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, Name=None):
         # type: (str) -> EthernetEndpoint
@@ -259,10 +275,12 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -281,10 +299,14 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -303,10 +325,14 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -325,10 +351,14 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -352,10 +382,12 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -379,7 +411,9 @@ class EthernetEndpoint(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

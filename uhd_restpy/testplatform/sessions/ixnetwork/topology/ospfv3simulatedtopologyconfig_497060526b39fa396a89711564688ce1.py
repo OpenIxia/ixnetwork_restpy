@@ -110,7 +110,7 @@ class Ospfv3SimulatedTopologyConfig(Base):
 
     def add(self, Name=None):
         # type: (str) -> Ospfv3SimulatedTopologyConfig
-        """Adds a new ospfv3SimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new ospfv3SimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----

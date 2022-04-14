@@ -4,23 +4,23 @@ from ixnetwork_restpy.files import Files
 
 class TDSResponse(Base):
     __slots__ = ()
-    _SDM_NAME = 'TDS_Response'
+    _SDM_NAME = "TDS_Response"
     _SDM_ATT_MAP = {
-        'HeaderType': 'TDS_Response.header.Type-1',
-        'HeaderStatus': 'TDS_Response.header.Status-2',
-        'HeaderLength': 'TDS_Response.header.Length-3',
-        'HeaderChannel': 'TDS_Response.header.Channel-4',
-        'HeaderPacket number': 'TDS_Response.header.Packet number-5',
-        'HeaderWindow': 'TDS_Response.header.Window-6',
-        'Token 0xff Done in Proc0xff': 'TDS_Response.header.Token 0xff Done in Proc.0xff-7',
-        'Token 0xff Done in ProcStatus flags': 'TDS_Response.header.Token 0xff Done in Proc.Status flags-8',
-        'Token 0xff Done in ProcOperation': 'TDS_Response.header.Token 0xff Done in Proc.Operation-9',
-        'Token 0xff Done in ProcRow count': 'TDS_Response.header.Token 0xff Done in Proc.Row count-10',
-        'Token 0x00 Unknown Token Type0x00': 'TDS_Response.header.Token 0x00 Unknown Token Type.0x00-11',
-        'Token 0x00 Unknown Token TypeLength': 'TDS_Response.header.Token 0x00 Unknown Token Type.Length-12',
-        'Token 0x00 Unknown Token Type 20x00': 'TDS_Response.header.Token 0x00 Unknown Token Type 2.0x00-13',
-        'Token 0x00 Unknown Token Type 2Length': 'TDS_Response.header.Token 0x00 Unknown Token Type 2.Length-14',
-        'Token 0x00 Unknown Token Type 2Unknown': 'TDS_Response.header.Token 0x00 Unknown Token Type 2.Unknown-15',
+        "HeaderType": "TDS_Response.header.Type-1",
+        "HeaderStatus": "TDS_Response.header.Status-2",
+        "HeaderLength": "TDS_Response.header.Length-3",
+        "HeaderChannel": "TDS_Response.header.Channel-4",
+        "HeaderPacket number": "TDS_Response.header.Packet number-5",
+        "HeaderWindow": "TDS_Response.header.Window-6",
+        "Token 0xff Done in Proc0xff": "TDS_Response.header.Token 0xff Done in Proc.0xff-7",
+        "Token 0xff Done in ProcStatus flags": "TDS_Response.header.Token 0xff Done in Proc.Status flags-8",
+        "Token 0xff Done in ProcOperation": "TDS_Response.header.Token 0xff Done in Proc.Operation-9",
+        "Token 0xff Done in ProcRow count": "TDS_Response.header.Token 0xff Done in Proc.Row count-10",
+        "Token 0x00 Unknown Token Type0x00": "TDS_Response.header.Token 0x00 Unknown Token Type.0x00-11",
+        "Token 0x00 Unknown Token TypeLength": "TDS_Response.header.Token 0x00 Unknown Token Type.Length-12",
+        "Token 0x00 Unknown Token Type 20x00": "TDS_Response.header.Token 0x00 Unknown Token Type 2.0x00-13",
+        "Token 0x00 Unknown Token Type 2Length": "TDS_Response.header.Token 0x00 Unknown Token Type 2.Length-14",
+        "Token 0x00 Unknown Token Type 2Unknown": "TDS_Response.header.Token 0x00 Unknown Token Type 2.Unknown-15",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,8 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderStatus(self):
@@ -44,7 +45,8 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderStatus']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderStatus"]))
 
     @property
     def HeaderLength(self):
@@ -54,7 +56,8 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderChannel(self):
@@ -64,7 +67,8 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChannel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderChannel"]))
 
     @property
     def HeaderPacketnumber(self):
@@ -74,7 +78,10 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPacket number']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPacket number"])
+        )
 
     @property
     def HeaderWindow(self):
@@ -84,7 +91,8 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderWindow']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderWindow"]))
 
     @property
     def Token0xffDoneinProc0xff(self):
@@ -94,7 +102,10 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0xff Done in Proc0xff']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Token 0xff Done in Proc0xff"])
+        )
 
     @property
     def Token0xffDoneinProcStatusflags(self):
@@ -104,7 +115,13 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0xff Done in ProcStatus flags']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Token 0xff Done in ProcStatus flags"]
+            ),
+        )
 
     @property
     def Token0xffDoneinProcOperation(self):
@@ -114,7 +131,11 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0xff Done in ProcOperation']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Token 0xff Done in ProcOperation"]),
+        )
 
     @property
     def Token0xffDoneinProcRowcount(self):
@@ -124,7 +145,11 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0xff Done in ProcRow count']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Token 0xff Done in ProcRow count"]),
+        )
 
     @property
     def Token0x00UnknownTokenType0x00(self):
@@ -134,7 +159,11 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0x00 Unknown Token Type0x00']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Token 0x00 Unknown Token Type0x00"]),
+        )
 
     @property
     def Token0x00UnknownTokenTypeLength(self):
@@ -144,7 +173,13 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0x00 Unknown Token TypeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Token 0x00 Unknown Token TypeLength"]
+            ),
+        )
 
     @property
     def Token0x00UnknownTokenType20x00(self):
@@ -154,7 +189,13 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0x00 Unknown Token Type 20x00']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Token 0x00 Unknown Token Type 20x00"]
+            ),
+        )
 
     @property
     def Token0x00UnknownTokenType2Length(self):
@@ -164,7 +205,13 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0x00 Unknown Token Type 2Length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Token 0x00 Unknown Token Type 2Length"]
+            ),
+        )
 
     @property
     def Token0x00UnknownTokenType2Unknown(self):
@@ -174,7 +221,13 @@ class TDSResponse(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Token 0x00 Unknown Token Type 2Unknown']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Token 0x00 Unknown Token Type 2Unknown"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

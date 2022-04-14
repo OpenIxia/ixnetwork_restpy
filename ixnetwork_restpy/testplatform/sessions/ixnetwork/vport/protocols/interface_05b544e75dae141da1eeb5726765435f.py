@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,28 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'Area': 'area',
-        'DeadInterval': 'deadInterval',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFastHello': 'enableFastHello',
-        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
-        'Enabled': 'enabled',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'InstanceId': 'instanceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'InterfaceTypes': 'interfaceTypes',
-        'Interfaces': 'interfaces',
-        'LinkMetric': 'linkMetric',
-        'Priority': 'priority',
-        'ProtocolInterface': 'protocolInterface',
-        'RouterOptions': 'routerOptions',
+        "Area": "area",
+        "DeadInterval": "deadInterval",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableFastHello": "enableFastHello",
+        "EnableIgnoreDbDescMtu": "enableIgnoreDbDescMtu",
+        "Enabled": "enabled",
+        "HelloInterval": "helloInterval",
+        "HelloMultiplier": "helloMultiplier",
+        "InstanceId": "instanceId",
+        "InterfaceIndex": "interfaceIndex",
+        "InterfaceType": "interfaceType",
+        "InterfaceTypes": "interfaceTypes",
+        "Interfaces": "interfaces",
+        "LinkMetric": "linkMetric",
+        "Priority": "priority",
+        "ProtocolInterface": "protocolInterface",
+        "RouterOptions": "routerOptions",
     }
     _SDM_ENUM_MAP = {
-        'interfaceType': ['pointToPoint', 'broadcast'],
+        "interfaceType": ["pointToPoint", "broadcast"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -69,11 +70,12 @@ class Interface(Base):
         -------
         - number: The OSPFv3 area as a 32-bit number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Area'])
+        return self._get_attribute(self._SDM_ATT_MAP["Area"])
+
     @Area.setter
     def Area(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Area'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Area"], value)
 
     @property
     def DeadInterval(self):
@@ -83,11 +85,12 @@ class Interface(Base):
         -------
         - number: The number of seconds before declaring a silent router as being down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeadInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeadInterval"])
+
     @DeadInterval.setter
     def DeadInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeadInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeadInterval"], value)
 
     @property
     def EnableBfdRegistration(self):
@@ -97,11 +100,12 @@ class Interface(Base):
         -------
         - bool: Enables the BFD registration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"], value)
 
     @property
     def EnableFastHello(self):
@@ -111,11 +115,12 @@ class Interface(Base):
         -------
         - bool: Enables Fast Hello option for OSPF Router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFastHello'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFastHello"])
+
     @EnableFastHello.setter
     def EnableFastHello(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFastHello'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFastHello"], value)
 
     @property
     def EnableIgnoreDbDescMtu(self):
@@ -125,11 +130,12 @@ class Interface(Base):
         -------
         - bool: If true, enables the ability for the router to ignore the database described MTU.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreDbDescMtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIgnoreDbDescMtu"])
+
     @EnableIgnoreDbDescMtu.setter
     def EnableIgnoreDbDescMtu(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIgnoreDbDescMtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIgnoreDbDescMtu"], value)
 
     @property
     def Enabled(self):
@@ -139,11 +145,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of the simulated interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HelloInterval(self):
@@ -153,11 +160,12 @@ class Interface(Base):
         -------
         - number: The number of seconds between Hello packets sent by a router. The Ixia state machine sends Hello packets at this interval for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloInterval"])
+
     @HelloInterval.setter
     def HelloInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloInterval"], value)
 
     @property
     def HelloMultiplier(self):
@@ -167,11 +175,12 @@ class Interface(Base):
         -------
         - number: Indicates the number of Hello Packets transmitted per second
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloMultiplier"])
+
     @HelloMultiplier.setter
     def HelloMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloMultiplier"], value)
 
     @property
     def InstanceId(self):
@@ -181,11 +190,12 @@ class Interface(Base):
         -------
         - number: Has local link significance only. It allows multiple instances of the OSPFv3 protocol to be run simultaneously over the same link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstanceId"])
+
     @InstanceId.setter
     def InstanceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstanceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstanceId"], value)
 
     @property
     def InterfaceIndex(self):
@@ -195,11 +205,12 @@ class Interface(Base):
         -------
         - number: The assigned protocol interface ID for this OSPFv3 interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIndex"])
+
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIndex"], value)
 
     @property
     def InterfaceType(self):
@@ -209,11 +220,12 @@ class Interface(Base):
         -------
         - str(pointToPoint | broadcast): Indicates the type of network for the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def InterfaceTypes(self):
@@ -223,11 +235,12 @@ class Interface(Base):
         -------
         - str: The type of interface to be selected for this OSPFv3 interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceTypes"])
+
     @InterfaceTypes.setter
     def InterfaceTypes(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceTypes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceTypes"], value)
 
     @property
     def Interfaces(self):
@@ -237,11 +250,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def LinkMetric(self):
@@ -251,11 +265,12 @@ class Interface(Base):
         -------
         - number: The metric for the link connecting the grid with the emulated OSPFv3 router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
+
     @LinkMetric.setter
     def LinkMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMetric"], value)
 
     @property
     def Priority(self):
@@ -265,25 +280,27 @@ class Interface(Base):
         -------
         - number: Indicates the OSPF interface priority
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def ProtocolInterface(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This is the name of this emulated OSPFv3 interface on this emulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def RouterOptions(self):
@@ -293,13 +310,33 @@ class Interface(Base):
         -------
         - number: Options related to the interface. Multiple options may be or'd together. (default = 0x13).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterOptions"])
+
     @RouterOptions.setter
     def RouterOptions(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterOptions"], value)
 
-    def update(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
+    def update(
+        self,
+        Area=None,
+        DeadInterval=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        EnableIgnoreDbDescMtu=None,
+        Enabled=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InstanceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        InterfaceTypes=None,
+        Interfaces=None,
+        LinkMetric=None,
+        Priority=None,
+        ProtocolInterface=None,
+        RouterOptions=None,
+    ):
         # type: (int, int, bool, bool, bool, bool, int, int, int, int, str, str, str, int, int, str, int) -> Interface
         """Updates interface resource on the server.
 
@@ -329,7 +366,26 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
+    def add(
+        self,
+        Area=None,
+        DeadInterval=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        EnableIgnoreDbDescMtu=None,
+        Enabled=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InstanceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        InterfaceTypes=None,
+        Interfaces=None,
+        LinkMetric=None,
+        Priority=None,
+        ProtocolInterface=None,
+        RouterOptions=None,
+    ):
         # type: (int, int, bool, bool, bool, bool, int, int, int, int, str, str, str, int, int, str, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -373,7 +429,26 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, Area=None, DeadInterval=None, EnableBfdRegistration=None, EnableFastHello=None, EnableIgnoreDbDescMtu=None, Enabled=None, HelloInterval=None, HelloMultiplier=None, InstanceId=None, InterfaceIndex=None, InterfaceType=None, InterfaceTypes=None, Interfaces=None, LinkMetric=None, Priority=None, ProtocolInterface=None, RouterOptions=None):
+    def find(
+        self,
+        Area=None,
+        DeadInterval=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        EnableIgnoreDbDescMtu=None,
+        Enabled=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InstanceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        InterfaceTypes=None,
+        Interfaces=None,
+        LinkMetric=None,
+        Priority=None,
+        ProtocolInterface=None,
+        RouterOptions=None,
+    ):
         # type: (int, int, bool, bool, bool, bool, int, int, int, int, str, str, str, int, int, str, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
@@ -445,7 +520,11 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )

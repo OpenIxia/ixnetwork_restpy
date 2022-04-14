@@ -4,19 +4,19 @@ from ixnetwork_restpy.files import Files
 
 class Ripng(Base):
     __slots__ = ()
-    _SDM_NAME = 'ripng'
+    _SDM_NAME = "ripng"
     _SDM_ATT_MAP = {
-        'Command': 'ripng.header.ripngHeader.command-1',
-        'Version': 'ripng.header.ripngHeader.version-2',
-        'MustBeZero': 'ripng.header.ripngHeader.mustBeZero-3',
-        'RteIpv6Prefix': 'ripng.header.routeTableEntries.routingTableEntryType.rte.ipv6Prefix-4',
-        'RteRouteTag': 'ripng.header.routeTableEntries.routingTableEntryType.rte.routeTag-5',
-        'RtePrefixLength': 'ripng.header.routeTableEntries.routingTableEntryType.rte.prefixLength-6',
-        'RteMetric': 'ripng.header.routeTableEntries.routingTableEntryType.rte.metric-7',
-        'NextHopRTEIpv6NexthopPrefix': 'ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.ipv6NexthopPrefix-8',
-        'NextHopRTEMustBeZero': 'ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.mustBeZero-9',
-        'RoutingtableentrytypeNextHopRTEMustBeZero': 'ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.mustBeZero-10',
-        'NextHopRTEUnused': 'ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.unused-11',
+        "Command": "ripng.header.ripngHeader.command-1",
+        "Version": "ripng.header.ripngHeader.version-2",
+        "MustBeZero": "ripng.header.ripngHeader.mustBeZero-3",
+        "RteIpv6Prefix": "ripng.header.routeTableEntries.routingTableEntryType.rte.ipv6Prefix-4",
+        "RteRouteTag": "ripng.header.routeTableEntries.routingTableEntryType.rte.routeTag-5",
+        "RtePrefixLength": "ripng.header.routeTableEntries.routingTableEntryType.rte.prefixLength-6",
+        "RteMetric": "ripng.header.routeTableEntries.routingTableEntryType.rte.metric-7",
+        "NextHopRTEIpv6NexthopPrefix": "ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.ipv6NexthopPrefix-8",
+        "NextHopRTEMustBeZero": "ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.mustBeZero-9",
+        "RoutingtableentrytypeNextHopRTEMustBeZero": "ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.mustBeZero-10",
+        "NextHopRTEUnused": "ripng.header.routeTableEntries.routingTableEntryType.nextHopRTE.unused-11",
     }
 
     def __init__(self, parent, list_op=False):
@@ -31,7 +31,8 @@ class Ripng(Base):
         Available enum values: Request, 1, Response, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Command']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Command"]))
 
     @property
     def Version(self):
@@ -41,7 +42,8 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def MustBeZero(self):
@@ -51,7 +53,8 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MustBeZero']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MustBeZero"]))
 
     @property
     def RteIpv6Prefix(self):
@@ -61,7 +64,8 @@ class Ripng(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RteIpv6Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RteIpv6Prefix"]))
 
     @property
     def RteRouteTag(self):
@@ -71,7 +75,8 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RteRouteTag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RteRouteTag"]))
 
     @property
     def RtePrefixLength(self):
@@ -81,7 +86,10 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtePrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtePrefixLength"])
+        )
 
     @property
     def RteMetric(self):
@@ -91,7 +99,8 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RteMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RteMetric"]))
 
     @property
     def NextHopRTEIpv6NexthopPrefix(self):
@@ -101,7 +110,10 @@ class Ripng(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopRTEIpv6NexthopPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopRTEIpv6NexthopPrefix"])
+        )
 
     @property
     def NextHopRTEMustBeZero(self):
@@ -111,7 +123,10 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopRTEMustBeZero']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopRTEMustBeZero"])
+        )
 
     @property
     def RoutingtableentrytypeNextHopRTEMustBeZero(self):
@@ -121,7 +136,13 @@ class Ripng(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RoutingtableentrytypeNextHopRTEMustBeZero']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["RoutingtableentrytypeNextHopRTEMustBeZero"]
+            ),
+        )
 
     @property
     def NextHopRTEUnused(self):
@@ -131,7 +152,10 @@ class Ripng(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextHopRTEUnused']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextHopRTEUnused"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

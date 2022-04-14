@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,54 +33,85 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'CustomLoadUnit': 'customLoadUnit',
-        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'Duration': 'duration',
-        'EnableBFD': 'enableBFD',
-        'EnableTolerance': 'enableTolerance',
-        'FixedFrameSize': 'fixedFrameSize',
-        'ForceContinuosTraffic': 'forceContinuosTraffic',
-        'FrameSizeMode': 'frameSizeMode',
-        'Framesize': 'framesize',
-        'HoldDownTimer': 'holdDownTimer',
-        'IpRatioMode': 'ipRatioMode',
-        'Ipv4rate': 'ipv4rate',
-        'Ipv6rate': 'ipv6rate',
-        'LoadRateValue': 'loadRateValue',
-        'LoadType': 'loadType',
-        'NetworkGroupRoutesType': 'networkGroupRoutesType',
-        'NetworkGroupSizeListIpv4': 'networkGroupSizeListIpv4',
-        'NetworkGroupSizeListIpv6': 'networkGroupSizeListIpv6',
-        'NetworkGroupSizeModeIpv4': 'networkGroupSizeModeIpv4',
-        'NetworkGroupSizeModeIpv6': 'networkGroupSizeModeIpv6',
-        'NumberOfIterations': 'numberOfIterations',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'ReportConvergenceUnit': 'reportConvergenceUnit',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'RoutesDistribution': 'routesDistribution',
-        'TestTrafficType': 'testTrafficType',
-        'Threshold': 'threshold',
-        'Tolerance': 'tolerance',
-        'TrafficType': 'trafficType',
-        'WaitAfterThresholdReached': 'waitAfterThresholdReached',
-        'WaitBeforeAdvertise': 'waitBeforeAdvertise',
+        "CustomLoadUnit": "customLoadUnit",
+        "DataPlaneJitterWindow": "dataPlaneJitterWindow",
+        "Duration": "duration",
+        "EnableBFD": "enableBFD",
+        "EnableTolerance": "enableTolerance",
+        "FixedFrameSize": "fixedFrameSize",
+        "ForceContinuosTraffic": "forceContinuosTraffic",
+        "FrameSizeMode": "frameSizeMode",
+        "Framesize": "framesize",
+        "HoldDownTimer": "holdDownTimer",
+        "IpRatioMode": "ipRatioMode",
+        "Ipv4rate": "ipv4rate",
+        "Ipv6rate": "ipv6rate",
+        "LoadRateValue": "loadRateValue",
+        "LoadType": "loadType",
+        "NetworkGroupRoutesType": "networkGroupRoutesType",
+        "NetworkGroupSizeListIpv4": "networkGroupSizeListIpv4",
+        "NetworkGroupSizeListIpv6": "networkGroupSizeListIpv6",
+        "NetworkGroupSizeModeIpv4": "networkGroupSizeModeIpv4",
+        "NetworkGroupSizeModeIpv6": "networkGroupSizeModeIpv6",
+        "NumberOfIterations": "numberOfIterations",
+        "Numtrials": "numtrials",
+        "ProtocolItem": "protocolItem",
+        "ReportConvergenceUnit": "reportConvergenceUnit",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "RoutesDistribution": "routesDistribution",
+        "TestTrafficType": "testTrafficType",
+        "Threshold": "threshold",
+        "Tolerance": "tolerance",
+        "TrafficType": "trafficType",
+        "WaitAfterThresholdReached": "waitAfterThresholdReached",
+        "WaitBeforeAdvertise": "waitBeforeAdvertise",
     }
     _SDM_ENUM_MAP = {
-        'customLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'dataPlaneJitterWindow': ['k_10485760', 'k_1310720', 'k_167772160', 'k_20971520', 'k_2621440', 'k_335544320', 'k_41943040', 'k_5242880', 'k_671088640', 'k_83886080'],
-        'frameSizeMode': ['fixed'],
-        'ipRatioMode': ['custom', 'fixed', 'increment', 'random'],
-        'loadType': ['binary', 'combo', 'custom', 'fixed', 'increment', 'quickSearch', 'random', 'step', 'unchanged'],
-        'networkGroupRoutesType': ['ipv4', 'ipv4/ipv6', 'ipv6'],
-        'networkGroupSizeModeIpv4': ['custom'],
-        'networkGroupSizeModeIpv6': ['custom'],
-        'reportConvergenceUnit': ['ms', 's', 'us'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
-        'routesDistribution': ['distributedAcrossPorts', 'equalCostOnEachPort'],
-        'trafficType': ['burstyLoading', 'constantLoading'],
+        "customLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "dataPlaneJitterWindow": [
+            "k_10485760",
+            "k_1310720",
+            "k_167772160",
+            "k_20971520",
+            "k_2621440",
+            "k_335544320",
+            "k_41943040",
+            "k_5242880",
+            "k_671088640",
+            "k_83886080",
+        ],
+        "frameSizeMode": ["fixed"],
+        "ipRatioMode": ["custom", "fixed", "increment", "random"],
+        "loadType": [
+            "binary",
+            "combo",
+            "custom",
+            "fixed",
+            "increment",
+            "quickSearch",
+            "random",
+            "step",
+            "unchanged",
+        ],
+        "networkGroupRoutesType": ["ipv4", "ipv4/ipv6", "ipv6"],
+        "networkGroupSizeModeIpv4": ["custom"],
+        "networkGroupSizeModeIpv6": ["custom"],
+        "reportConvergenceUnit": ["ms", "s", "us"],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
+        "routesDistribution": ["distributedAcrossPorts", "equalCostOnEachPort"],
+        "trafficType": ["burstyLoading", "constantLoading"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -91,13 +123,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): 
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomLoadUnit"])
+
     @CustomLoadUnit.setter
     def CustomLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomLoadUnit"], value)
 
     @property
     def DataPlaneJitterWindow(self):
@@ -105,13 +138,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080): 
+        - str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPlaneJitterWindow"])
+
     @DataPlaneJitterWindow.setter
     def DataPlaneJitterWindow(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPlaneJitterWindow"], value)
 
     @property
     def Duration(self):
@@ -119,13 +153,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableBFD(self):
@@ -133,13 +168,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBFD'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBFD"])
+
     @EnableBFD.setter
     def EnableBFD(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBFD'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBFD"], value)
 
     @property
     def EnableTolerance(self):
@@ -147,13 +183,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableTolerance"])
+
     @EnableTolerance.setter
     def EnableTolerance(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableTolerance"], value)
 
     @property
     def FixedFrameSize(self):
@@ -161,13 +198,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FixedFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FixedFrameSize"])
+
     @FixedFrameSize.setter
     def FixedFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FixedFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FixedFrameSize"], value)
 
     @property
     def ForceContinuosTraffic(self):
@@ -175,13 +213,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"])
+
     @ForceContinuosTraffic.setter
     def ForceContinuosTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"], value)
 
     @property
     def FrameSizeMode(self):
@@ -189,13 +228,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(fixed): 
+        - str(fixed):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def Framesize(self):
@@ -203,13 +243,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Framesize'])
+        return self._get_attribute(self._SDM_ATT_MAP["Framesize"])
+
     @Framesize.setter
     def Framesize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Framesize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Framesize"], value)
 
     @property
     def HoldDownTimer(self):
@@ -217,13 +258,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HoldDownTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["HoldDownTimer"])
+
     @HoldDownTimer.setter
     def HoldDownTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HoldDownTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HoldDownTimer"], value)
 
     @property
     def IpRatioMode(self):
@@ -231,13 +273,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(custom | fixed | increment | random): 
+        - str(custom | fixed | increment | random):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpRatioMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpRatioMode"])
+
     @IpRatioMode.setter
     def IpRatioMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpRatioMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpRatioMode"], value)
 
     @property
     def Ipv4rate(self):
@@ -245,13 +288,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4rate"])
+
     @Ipv4rate.setter
     def Ipv4rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4rate"], value)
 
     @property
     def Ipv6rate(self):
@@ -259,13 +303,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6rate"])
+
     @Ipv6rate.setter
     def Ipv6rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6rate"], value)
 
     @property
     def LoadRateValue(self):
@@ -273,13 +318,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateValue"])
+
     @LoadRateValue.setter
     def LoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateValue"], value)
 
     @property
     def LoadType(self):
@@ -287,13 +333,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): 
+        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def NetworkGroupRoutesType(self):
@@ -301,13 +348,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(ipv4 | ipv4/ipv6 | ipv6): 
+        - str(ipv4 | ipv4/ipv6 | ipv6):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkGroupRoutesType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkGroupRoutesType"])
+
     @NetworkGroupRoutesType.setter
     def NetworkGroupRoutesType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkGroupRoutesType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkGroupRoutesType"], value)
 
     @property
     def NetworkGroupSizeListIpv4(self):
@@ -315,13 +363,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkGroupSizeListIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkGroupSizeListIpv4"])
+
     @NetworkGroupSizeListIpv4.setter
     def NetworkGroupSizeListIpv4(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkGroupSizeListIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkGroupSizeListIpv4"], value)
 
     @property
     def NetworkGroupSizeListIpv6(self):
@@ -329,13 +378,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkGroupSizeListIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkGroupSizeListIpv6"])
+
     @NetworkGroupSizeListIpv6.setter
     def NetworkGroupSizeListIpv6(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkGroupSizeListIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkGroupSizeListIpv6"], value)
 
     @property
     def NetworkGroupSizeModeIpv4(self):
@@ -343,13 +393,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(custom): 
+        - str(custom):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkGroupSizeModeIpv4'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkGroupSizeModeIpv4"])
+
     @NetworkGroupSizeModeIpv4.setter
     def NetworkGroupSizeModeIpv4(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkGroupSizeModeIpv4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkGroupSizeModeIpv4"], value)
 
     @property
     def NetworkGroupSizeModeIpv6(self):
@@ -357,13 +408,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(custom): 
+        - str(custom):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkGroupSizeModeIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkGroupSizeModeIpv6"])
+
     @NetworkGroupSizeModeIpv6.setter
     def NetworkGroupSizeModeIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkGroupSizeModeIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkGroupSizeModeIpv6"], value)
 
     @property
     def NumberOfIterations(self):
@@ -371,13 +423,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfIterations"])
+
     @NumberOfIterations.setter
     def NumberOfIterations(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfIterations"], value)
 
     @property
     def Numtrials(self):
@@ -385,13 +438,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def ProtocolItem(self):
@@ -401,11 +455,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def ReportConvergenceUnit(self):
@@ -413,13 +468,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(ms | s | us): 
+        - str(ms | s | us):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportConvergenceUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportConvergenceUnit"])
+
     @ReportConvergenceUnit.setter
     def ReportConvergenceUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportConvergenceUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportConvergenceUnit"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -427,13 +483,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(gbps | gBps | kbps | kBps | mbps | mBps): 
+        - str(gbps | gBps | kbps | kBps | mbps | mBps):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def RoutesDistribution(self):
@@ -441,13 +498,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(distributedAcrossPorts | equalCostOnEachPort): 
+        - str(distributedAcrossPorts | equalCostOnEachPort):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesDistribution'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesDistribution"])
+
     @RoutesDistribution.setter
     def RoutesDistribution(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesDistribution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesDistribution"], value)
 
     @property
     def TestTrafficType(self):
@@ -455,13 +513,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
     @property
     def Threshold(self):
@@ -469,13 +528,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Threshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["Threshold"])
+
     @Threshold.setter
     def Threshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Threshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Threshold"], value)
 
     @property
     def Tolerance(self):
@@ -483,13 +543,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tolerance"])
+
     @Tolerance.setter
     def Tolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tolerance"], value)
 
     @property
     def TrafficType(self):
@@ -497,13 +558,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(burstyLoading | constantLoading): 
+        - str(burstyLoading | constantLoading):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
+
     @TrafficType.setter
     def TrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficType"], value)
 
     @property
     def WaitAfterThresholdReached(self):
@@ -511,13 +573,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitAfterThresholdReached'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitAfterThresholdReached"])
+
     @WaitAfterThresholdReached.setter
     def WaitAfterThresholdReached(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitAfterThresholdReached'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitAfterThresholdReached"], value)
 
     @property
     def WaitBeforeAdvertise(self):
@@ -525,52 +588,87 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeAdvertise'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitBeforeAdvertise"])
+
     @WaitBeforeAdvertise.setter
     def WaitBeforeAdvertise(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitBeforeAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitBeforeAdvertise"], value)
 
-    def update(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
+    def update(
+        self,
+        CustomLoadUnit=None,
+        DataPlaneJitterWindow=None,
+        Duration=None,
+        EnableBFD=None,
+        EnableTolerance=None,
+        FixedFrameSize=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Framesize=None,
+        HoldDownTimer=None,
+        IpRatioMode=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        LoadRateValue=None,
+        LoadType=None,
+        NetworkGroupRoutesType=None,
+        NetworkGroupSizeListIpv4=None,
+        NetworkGroupSizeListIpv6=None,
+        NetworkGroupSizeModeIpv4=None,
+        NetworkGroupSizeModeIpv6=None,
+        NumberOfIterations=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportConvergenceUnit=None,
+        ReportTputRateUnit=None,
+        RoutesDistribution=None,
+        TestTrafficType=None,
+        Threshold=None,
+        Tolerance=None,
+        TrafficType=None,
+        WaitAfterThresholdReached=None,
+        WaitBeforeAdvertise=None,
+    ):
         # type: (str, str, int, bool, bool, int, bool, str, str, int, str, int, int, int, str, str, List[str], List[str], str, str, int, int, List[str], str, str, str, str, int, int, str, int, int) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
         ----
-        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
-        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)): 
-        - Duration (number): 
-        - EnableBFD (bool): 
-        - EnableTolerance (bool): 
-        - FixedFrameSize (number): 
-        - ForceContinuosTraffic (bool): 
-        - FrameSizeMode (str(fixed)): 
-        - Framesize (str): 
-        - HoldDownTimer (number): 
-        - IpRatioMode (str(custom | fixed | increment | random)): 
-        - Ipv4rate (number): 
-        - Ipv6rate (number): 
-        - LoadRateValue (number): 
-        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
-        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)): 
-        - NetworkGroupSizeListIpv4 (list(str)): 
-        - NetworkGroupSizeListIpv6 (list(str)): 
-        - NetworkGroupSizeModeIpv4 (str(custom)): 
-        - NetworkGroupSizeModeIpv6 (str(custom)): 
-        - NumberOfIterations (number): 
-        - Numtrials (number): 
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)):
+        - Duration (number):
+        - EnableBFD (bool):
+        - EnableTolerance (bool):
+        - FixedFrameSize (number):
+        - ForceContinuosTraffic (bool):
+        - FrameSizeMode (str(fixed)):
+        - Framesize (str):
+        - HoldDownTimer (number):
+        - IpRatioMode (str(custom | fixed | increment | random)):
+        - Ipv4rate (number):
+        - Ipv6rate (number):
+        - LoadRateValue (number):
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
+        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)):
+        - NetworkGroupSizeListIpv4 (list(str)):
+        - NetworkGroupSizeListIpv6 (list(str)):
+        - NetworkGroupSizeModeIpv4 (str(custom)):
+        - NetworkGroupSizeModeIpv6 (str(custom)):
+        - NumberOfIterations (number):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - ReportConvergenceUnit (str(ms | s | us)): 
-        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
-        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)): 
-        - TestTrafficType (str): 
-        - Threshold (number): 
-        - Tolerance (number): 
-        - TrafficType (str(burstyLoading | constantLoading)): 
-        - WaitAfterThresholdReached (number): 
-        - WaitBeforeAdvertise (number): 
+        - ReportConvergenceUnit (str(ms | s | us)):
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
+        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)):
+        - TestTrafficType (str):
+        - Threshold (number):
+        - Tolerance (number):
+        - TrafficType (str(burstyLoading | constantLoading)):
+        - WaitAfterThresholdReached (number):
+        - WaitBeforeAdvertise (number):
 
         Raises
         ------
@@ -578,7 +676,41 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
+    def find(
+        self,
+        CustomLoadUnit=None,
+        DataPlaneJitterWindow=None,
+        Duration=None,
+        EnableBFD=None,
+        EnableTolerance=None,
+        FixedFrameSize=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Framesize=None,
+        HoldDownTimer=None,
+        IpRatioMode=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        LoadRateValue=None,
+        LoadType=None,
+        NetworkGroupRoutesType=None,
+        NetworkGroupSizeListIpv4=None,
+        NetworkGroupSizeListIpv6=None,
+        NetworkGroupSizeModeIpv4=None,
+        NetworkGroupSizeModeIpv6=None,
+        NumberOfIterations=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportConvergenceUnit=None,
+        ReportTputRateUnit=None,
+        RoutesDistribution=None,
+        TestTrafficType=None,
+        Threshold=None,
+        Tolerance=None,
+        TrafficType=None,
+        WaitAfterThresholdReached=None,
+        WaitBeforeAdvertise=None,
+    ):
         # type: (str, str, int, bool, bool, int, bool, str, str, int, str, int, int, int, str, str, List[str], List[str], str, str, int, int, List[str], str, str, str, str, int, int, str, int, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -588,38 +720,38 @@ class TestConfig(Base):
 
         Args
         ----
-        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
-        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)): 
-        - Duration (number): 
-        - EnableBFD (bool): 
-        - EnableTolerance (bool): 
-        - FixedFrameSize (number): 
-        - ForceContinuosTraffic (bool): 
-        - FrameSizeMode (str(fixed)): 
-        - Framesize (str): 
-        - HoldDownTimer (number): 
-        - IpRatioMode (str(custom | fixed | increment | random)): 
-        - Ipv4rate (number): 
-        - Ipv6rate (number): 
-        - LoadRateValue (number): 
-        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
-        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)): 
-        - NetworkGroupSizeListIpv4 (list(str)): 
-        - NetworkGroupSizeListIpv6 (list(str)): 
-        - NetworkGroupSizeModeIpv4 (str(custom)): 
-        - NetworkGroupSizeModeIpv6 (str(custom)): 
-        - NumberOfIterations (number): 
-        - Numtrials (number): 
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)):
+        - Duration (number):
+        - EnableBFD (bool):
+        - EnableTolerance (bool):
+        - FixedFrameSize (number):
+        - ForceContinuosTraffic (bool):
+        - FrameSizeMode (str(fixed)):
+        - Framesize (str):
+        - HoldDownTimer (number):
+        - IpRatioMode (str(custom | fixed | increment | random)):
+        - Ipv4rate (number):
+        - Ipv6rate (number):
+        - LoadRateValue (number):
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
+        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)):
+        - NetworkGroupSizeListIpv4 (list(str)):
+        - NetworkGroupSizeListIpv6 (list(str)):
+        - NetworkGroupSizeModeIpv4 (str(custom)):
+        - NetworkGroupSizeModeIpv6 (str(custom)):
+        - NumberOfIterations (number):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - ReportConvergenceUnit (str(ms | s | us)): 
-        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
-        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)): 
-        - TestTrafficType (str): 
-        - Threshold (number): 
-        - Tolerance (number): 
-        - TrafficType (str(burstyLoading | constantLoading)): 
-        - WaitAfterThresholdReached (number): 
-        - WaitBeforeAdvertise (number): 
+        - ReportConvergenceUnit (str(ms | s | us)):
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
+        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)):
+        - TestTrafficType (str):
+        - Threshold (number):
+        - Tolerance (number):
+        - TrafficType (str(burstyLoading | constantLoading)):
+        - WaitAfterThresholdReached (number):
+        - WaitBeforeAdvertise (number):
 
         Returns
         -------
@@ -664,10 +796,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -682,10 +816,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -694,17 +830,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -721,10 +859,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -742,10 +884,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -771,10 +915,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -798,10 +944,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -818,10 +966,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -839,7 +989,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

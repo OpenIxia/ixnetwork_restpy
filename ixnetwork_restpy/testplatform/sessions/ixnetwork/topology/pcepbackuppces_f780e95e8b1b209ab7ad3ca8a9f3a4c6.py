@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class PcepBackupPCEs(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pcepBackupPCEs'
+    _SDM_NAME = "pcepBackupPCEs"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BackupPceRole': 'backupPceRole',
-        'BackupPceSessionState': 'backupPceSessionState',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'PceIpv4Address': 'pceIpv4Address',
+        "Active": "active",
+        "BackupPceRole": "backupPceRole",
+        "BackupPceSessionState": "backupPceSessionState",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "PceIpv4Address": "pceIpv4Address",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PcepBackupPCEs, self).__init__(parent, list_op)
@@ -57,7 +57,8 @@ class PcepBackupPCEs(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BackupPceRole(self):
@@ -67,7 +68,7 @@ class PcepBackupPCEs(Base):
         -------
         - list(str[backup | primary]): Logs additional information about the Backup PCE Role
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackupPceRole'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackupPceRole"])
 
     @property
     def BackupPceSessionState(self):
@@ -77,7 +78,7 @@ class PcepBackupPCEs(Base):
         -------
         - list(str[down | notStarted | topped | up]): Logs additional information about the Session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackupPceSessionState'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackupPceSessionState"])
 
     @property
     def Count(self):
@@ -87,7 +88,7 @@ class PcepBackupPCEs(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -97,7 +98,7 @@ class PcepBackupPCEs(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -107,11 +108,12 @@ class PcepBackupPCEs(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PceIpv4Address(self):
@@ -122,7 +124,10 @@ class PcepBackupPCEs(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the backup PCE. This column is greyed out in case of PCCv6.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PceIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PceIpv4Address"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> PcepBackupPCEs
@@ -141,7 +146,14 @@ class PcepBackupPCEs(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BackupPceRole=None, BackupPceSessionState=None, Count=None, DescriptiveName=None, Name=None):
+    def find(
+        self,
+        BackupPceRole=None,
+        BackupPceSessionState=None,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+    ):
         # type: (List[str], List[str], int, str, str) -> PcepBackupPCEs
         """Finds and retrieves pcepBackupPCEs resources from the server.
 
@@ -212,10 +224,12 @@ class PcepBackupPCEs(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('backupPceStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("backupPceStart", payload=payload, response_object=None)
 
     def BackupPceStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -244,10 +258,12 @@ class PcepBackupPCEs(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('backupPceStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("backupPceStop", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -266,10 +282,12 @@ class PcepBackupPCEs(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -288,10 +306,12 @@ class PcepBackupPCEs(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, PceIpv4Address=None):
         """Base class infrastructure that gets a list of pcepBackupPCEs device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,60 +33,61 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchFlowMatchCriteria131TriggerAttributes'
+    _SDM_NAME = "switchFlowMatchCriteria131TriggerAttributes"
     _SDM_ATT_MAP = {
-        'ArpDstHwAddr': 'arpDstHwAddr',
-        'ArpDstIpv4Addr': 'arpDstIpv4Addr',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSrcHwAddr': 'arpSrcHwAddr',
-        'ArpSrcIpv4Addr': 'arpSrcIpv4Addr',
-        'Cookie': 'cookie',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHashmask': 'experimenterHashmask',
-        'ExperimenterId': 'experimenterId',
-        'Icmpv4Code': 'icmpv4Code',
-        'Icmpv4Type': 'icmpv4Type',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'InPort': 'inPort',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NdDll': 'ipv6NdDll',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTarget': 'ipv6NdTarget',
-        'Ipv6Source': 'ipv6Source',
-        'MetaData': 'metaData',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'PbbIsid': 'pbbIsid',
-        'PhysicalInPort': 'physicalInPort',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TunnelId': 'tunnelId',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ArpDstHwAddr": "arpDstHwAddr",
+        "ArpDstIpv4Addr": "arpDstIpv4Addr",
+        "ArpOpcode": "arpOpcode",
+        "ArpSrcHwAddr": "arpSrcHwAddr",
+        "ArpSrcIpv4Addr": "arpSrcIpv4Addr",
+        "Cookie": "cookie",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "EthernetType": "ethernetType",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterHashmask": "experimenterHashmask",
+        "ExperimenterId": "experimenterId",
+        "Icmpv4Code": "icmpv4Code",
+        "Icmpv4Type": "icmpv4Type",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "InPort": "inPort",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProtocol": "ipProtocol",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6NdDll": "ipv6NdDll",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTarget": "ipv6NdTarget",
+        "Ipv6Source": "ipv6Source",
+        "MetaData": "metaData",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "PbbIsid": "pbbIsid",
+        "PhysicalInPort": "physicalInPort",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TunnelId": "tunnelId",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(SwitchFlowMatchCriteria131TriggerAttributes, self).__init__(parent, list_op)
+        super(SwitchFlowMatchCriteria131TriggerAttributes, self).__init__(
+            parent, list_op
+        )
 
     @property
     def ArpDstHwAddr(self):
@@ -94,10 +96,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the target hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"])
+
     @ArpDstHwAddr.setter
     def ArpDstHwAddr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"], value)
 
     @property
     def ArpDstIpv4Addr(self):
@@ -106,10 +109,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the target IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"])
+
     @ArpDstIpv4Addr.setter
     def ArpDstIpv4Addr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"], value)
 
     @property
     def ArpOpcode(self):
@@ -118,10 +122,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ARP opcode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
+
     @ArpOpcode.setter
     def ArpOpcode(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpOpcode"], value)
 
     @property
     def ArpSrcHwAddr(self):
@@ -130,10 +135,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the source hardware address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"])
+
     @ArpSrcHwAddr.setter
     def ArpSrcHwAddr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"], value)
 
     @property
     def ArpSrcIpv4Addr(self):
@@ -142,10 +148,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the source IPv4 address in the ARP payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"])
+
     @ArpSrcIpv4Addr.setter
     def ArpSrcIpv4Addr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"], value)
 
     @property
     def Cookie(self):
@@ -154,10 +161,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the Cookie of the flow entry that was looked up. This is the opaque controller-issued identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cookie'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cookie"])
+
     @Cookie.setter
     def Cookie(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Cookie'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cookie"], value)
 
     @property
     def EthernetDestination(self):
@@ -166,10 +174,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the destination address of the Ethernet port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
+
     @EthernetDestination.setter
     def EthernetDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestination"], value)
 
     @property
     def EthernetSource(self):
@@ -178,10 +187,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the source address of the Ethernet port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
+
     @EthernetSource.setter
     def EthernetSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSource"], value)
 
     @property
     def EthernetType(self):
@@ -190,10 +200,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the Ethernet type of the flow match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
+
     @EthernetType.setter
     def EthernetType(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetType"], value)
 
     @property
     def ExperimenterData(self):
@@ -202,10 +213,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the data of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -214,10 +226,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:number,arg2:str): This describes the data length of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterField(self):
@@ -226,10 +239,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:number,arg2:str): This describes the field type for experimenter match.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def ExperimenterHashmask(self):
@@ -238,10 +252,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:bool,arg2:str): This describes the experimenter hash mask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHashmask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterHashmask"])
+
     @ExperimenterHashmask.setter
     def ExperimenterHashmask(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterHashmask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterHashmask"], value)
 
     @property
     def ExperimenterId(self):
@@ -250,10 +265,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the unique identifier for the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
     @property
     def Icmpv4Code(self):
@@ -262,10 +278,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ICMP code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Code"])
+
     @Icmpv4Code.setter
     def Icmpv4Code(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Code"], value)
 
     @property
     def Icmpv4Type(self):
@@ -274,10 +291,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ICMP type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Type"])
+
     @Icmpv4Type.setter
     def Icmpv4Type(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Type"], value)
 
     @property
     def Icmpv6Code(self):
@@ -286,10 +304,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ICMPv6 code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
+
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Code"], value)
 
     @property
     def Icmpv6Type(self):
@@ -298,10 +317,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ICMPv6 type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
+
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Type"], value)
 
     @property
     def InPort(self):
@@ -310,10 +330,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the input port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPort"])
+
     @InPort.setter
     def InPort(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InPort"], value)
 
     @property
     def IpDscp(self):
@@ -322,10 +343,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IP DSCP value for advertising.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def IpEcn(self):
@@ -334,10 +356,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the ECN bits of the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
+
     @IpEcn.setter
     def IpEcn(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpEcn"], value)
 
     @property
     def IpProtocol(self):
@@ -346,10 +369,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IP Protocol used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProtocol"])
+
     @IpProtocol.setter
     def IpProtocol(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpProtocol"], value)
 
     @property
     def Ipv4Destination(self):
@@ -358,10 +382,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv4 Destination address for the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -370,10 +395,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv4 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def Ipv6Destination(self):
@@ -382,10 +408,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv6 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
+
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Destination"], value)
 
     @property
     def Ipv6ExtHeader(self):
@@ -394,10 +421,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv6 Extension Header pseudo-field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
+
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -406,10 +434,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv6 Flow label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def Ipv6NdDll(self):
@@ -418,10 +447,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the target link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdDll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdDll"])
+
     @Ipv6NdDll.setter
     def Ipv6NdDll(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdDll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdDll"], value)
 
     @property
     def Ipv6NdSll(self):
@@ -430,10 +460,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the source link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
+
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdSll"], value)
 
     @property
     def Ipv6NdTarget(self):
@@ -442,10 +473,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the target address in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"])
+
     @Ipv6NdTarget.setter
     def Ipv6NdTarget(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"], value)
 
     @property
     def Ipv6Source(self):
@@ -454,10 +486,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the IPv6 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
+
     @Ipv6Source.setter
     def Ipv6Source(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Source"], value)
 
     @property
     def MetaData(self):
@@ -466,10 +499,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the table metadata value used to pass information between tables.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetaData'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetaData"])
+
     @MetaData.setter
     def MetaData(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MetaData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetaData"], value)
 
     @property
     def MplsBos(self):
@@ -478,10 +512,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the BoS bit in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
+
     @MplsBos.setter
     def MplsBos(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsBos"], value)
 
     @property
     def MplsLabel(self):
@@ -490,10 +525,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the LABEL in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
+
     @MplsLabel.setter
     def MplsLabel(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabel"], value)
 
     @property
     def MplsTc(self):
@@ -502,10 +538,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the TC in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
+
     @MplsTc.setter
     def MplsTc(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTc"], value)
 
     @property
     def PbbIsid(self):
@@ -514,10 +551,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the I-SID in the first PBB service instance tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsid"])
+
     @PbbIsid.setter
     def PbbIsid(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PbbIsid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PbbIsid"], value)
 
     @property
     def PhysicalInPort(self):
@@ -526,10 +564,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the physical In port value for this flow range. It is the underlying physical port when packet is received on a logical port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PhysicalInPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["PhysicalInPort"])
+
     @PhysicalInPort.setter
     def PhysicalInPort(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PhysicalInPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PhysicalInPort"], value)
 
     @property
     def SctpDestination(self):
@@ -538,10 +577,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the SCTP target port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
+
     @SctpDestination.setter
     def SctpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpDestination"], value)
 
     @property
     def SctpSource(self):
@@ -550,10 +590,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the SCTP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
+
     @SctpSource.setter
     def SctpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpSource"], value)
 
     @property
     def TcpDestination(self):
@@ -562,10 +603,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the TCP destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
+
     @TcpDestination.setter
     def TcpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpDestination"], value)
 
     @property
     def TcpSource(self):
@@ -574,10 +616,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the TCP source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
+
     @TcpSource.setter
     def TcpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpSource"], value)
 
     @property
     def TunnelId(self):
@@ -586,10 +629,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the unique identifier used for the Tunnel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
+
     @TunnelId.setter
     def TunnelId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelId"], value)
 
     @property
     def UdpDestination(self):
@@ -598,10 +642,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the UDP destination port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
+
     @UdpDestination.setter
     def UdpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestination"], value)
 
     @property
     def UdpSource(self):
@@ -610,10 +655,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the UDP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
+
     @UdpSource.setter
     def UdpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSource"], value)
 
     @property
     def VlanId(self):
@@ -622,10 +668,11 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the unique VLAN Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -634,12 +681,61 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): This describes the User Priority for this VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        Cookie=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHashmask=None,
+        ExperimenterId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdDll=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6Source=None,
+        MetaData=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbIsid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         """Updates switchFlowMatchCriteria131TriggerAttributes resource on the server.
 
         Args
@@ -697,7 +793,55 @@ class SwitchFlowMatchCriteria131TriggerAttributes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        Cookie=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHashmask=None,
+        ExperimenterId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdDll=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6Source=None,
+        MetaData=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbIsid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         """Finds and retrieves switchFlowMatchCriteria131TriggerAttributes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchFlowMatchCriteria131TriggerAttributes resources from the server.

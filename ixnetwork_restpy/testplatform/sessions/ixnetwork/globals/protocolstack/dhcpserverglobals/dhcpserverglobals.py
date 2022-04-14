@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class DhcpServerGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpServerGlobals'
+    _SDM_NAME = "dhcpServerGlobals"
     _SDM_ATT_MAP = {
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'MaxLeaseTime': 'maxLeaseTime',
-        'ObjectId': 'objectId',
-        'PingCheck': 'pingCheck',
-        'PingTimeout': 'pingTimeout',
-        'SharedNetwork': 'sharedNetwork',
+        "DefaultLeaseTime": "defaultLeaseTime",
+        "MaxLeaseTime": "maxLeaseTime",
+        "ObjectId": "objectId",
+        "PingCheck": "pingCheck",
+        "PingTimeout": "pingTimeout",
+        "SharedNetwork": "sharedNetwork",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DhcpServerGlobals, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class DhcpServerGlobals(Base):
         -------
         - number: The Life Time length in seconds that will be assigned to a leaseif the requesting DHCP Client does not specify a specific expiration time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"])
+
     @DefaultLeaseTime.setter
     def DefaultLeaseTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"], value)
 
     @property
     def MaxLeaseTime(self):
@@ -71,11 +72,12 @@ class DhcpServerGlobals(Base):
         -------
         - number: The maximum Life Time length in seconds that will be assigned to a lease.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLeaseTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLeaseTime"])
+
     @MaxLeaseTime.setter
     def MaxLeaseTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxLeaseTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxLeaseTime"], value)
 
     @property
     def ObjectId(self):
@@ -85,7 +87,7 @@ class DhcpServerGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PingCheck(self):
@@ -95,11 +97,12 @@ class DhcpServerGlobals(Base):
         -------
         - bool: When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingCheck'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingCheck"])
+
     @PingCheck.setter
     def PingCheck(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingCheck'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingCheck"], value)
 
     @property
     def PingTimeout(self):
@@ -109,11 +112,12 @@ class DhcpServerGlobals(Base):
         -------
         - number: The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingTimeout"])
+
     @PingTimeout.setter
     def PingTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingTimeout"], value)
 
     @property
     def SharedNetwork(self):
@@ -123,13 +127,21 @@ class DhcpServerGlobals(Base):
         -------
         - bool: When enabled, the DHCP leases are collected into a common pool and assignedto clients as needed. Consider this option when the number of address poolsis large and the interface on which the lease is issued is not important.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SharedNetwork'])
+        return self._get_attribute(self._SDM_ATT_MAP["SharedNetwork"])
+
     @SharedNetwork.setter
     def SharedNetwork(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SharedNetwork'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SharedNetwork"], value)
 
-    def update(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+    def update(
+        self,
+        DefaultLeaseTime=None,
+        MaxLeaseTime=None,
+        PingCheck=None,
+        PingTimeout=None,
+        SharedNetwork=None,
+    ):
         # type: (int, int, bool, int, bool) -> DhcpServerGlobals
         """Updates dhcpServerGlobals resource on the server.
 
@@ -147,7 +159,14 @@ class DhcpServerGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+    def add(
+        self,
+        DefaultLeaseTime=None,
+        MaxLeaseTime=None,
+        PingCheck=None,
+        PingTimeout=None,
+        SharedNetwork=None,
+    ):
         # type: (int, int, bool, int, bool) -> DhcpServerGlobals
         """Adds a new dhcpServerGlobals resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class DhcpServerGlobals(Base):
         """
         self._delete()
 
-    def find(self, DefaultLeaseTime=None, MaxLeaseTime=None, ObjectId=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+    def find(
+        self,
+        DefaultLeaseTime=None,
+        MaxLeaseTime=None,
+        ObjectId=None,
+        PingCheck=None,
+        PingTimeout=None,
+        SharedNetwork=None,
+    ):
         # type: (int, int, str, bool, int, bool) -> DhcpServerGlobals
         """Finds and retrieves dhcpServerGlobals resources from the server.
 

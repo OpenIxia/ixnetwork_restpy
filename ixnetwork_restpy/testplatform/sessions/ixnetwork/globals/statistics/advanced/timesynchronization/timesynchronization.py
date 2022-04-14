@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,15 @@ class TimeSynchronization(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'timeSynchronization'
+    _SDM_NAME = "timeSynchronization"
     _SDM_ATT_MAP = {
-        'TimeSynchronization': 'timeSynchronization',
+        "TimeSynchronization": "timeSynchronization",
     }
     _SDM_ENUM_MAP = {
-        'timeSynchronization': ['synchronizeTimeToSystemClock', 'synchronizeTimeToTestStart'],
+        "timeSynchronization": [
+            "synchronizeTimeToSystemClock",
+            "synchronizeTimeToTestStart",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,11 +55,12 @@ class TimeSynchronization(Base):
         -------
         - str(synchronizeTimeToSystemClock | synchronizeTimeToTestStart): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts.The time synchronization behavior can be changed only before the test starts and does not apply during test run.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeSynchronization'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeSynchronization"])
+
     @TimeSynchronization.setter
     def TimeSynchronization(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeSynchronization'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeSynchronization"], value)
 
     def update(self, TimeSynchronization=None):
         # type: (str) -> TimeSynchronization

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,22 @@ class IsisL3ipv6NodeRouteList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisL3ipv6NodeRouteList'
+    _SDM_NAME = "isisL3ipv6NodeRouteList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FirstIpv6Route': 'firstIpv6Route',
-        'MaskWidth': 'maskWidth',
-        'Metric': 'metric',
-        'Name': 'name',
-        'NoOfRoutes': 'noOfRoutes',
-        'NodeStep': 'nodeStep',
-        'Redistribution': 'redistribution',
-        'RouteOrigin': 'routeOrigin',
-        'RouteStep': 'routeStep',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FirstIpv6Route": "firstIpv6Route",
+        "MaskWidth": "maskWidth",
+        "Metric": "metric",
+        "Name": "name",
+        "NoOfRoutes": "noOfRoutes",
+        "NodeStep": "nodeStep",
+        "Redistribution": "redistribution",
+        "RouteOrigin": "routeOrigin",
+        "RouteStep": "routeStep",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisL3ipv6NodeRouteList, self).__init__(parent, list_op)
@@ -62,7 +62,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -72,7 +73,7 @@ class IsisL3ipv6NodeRouteList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -82,7 +83,7 @@ class IsisL3ipv6NodeRouteList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FirstIpv6Route(self):
@@ -93,7 +94,10 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): First IPv6 Route
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FirstIpv6Route']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FirstIpv6Route"])
+        )
 
     @property
     def MaskWidth(self):
@@ -104,7 +108,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mask Width for IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaskWidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaskWidth"]))
 
     @property
     def Metric(self):
@@ -115,7 +120,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def Name(self):
@@ -125,11 +131,12 @@ class IsisL3ipv6NodeRouteList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfRoutes(self):
@@ -140,7 +147,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Routes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoOfRoutes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NoOfRoutes"]))
 
     @property
     def NodeStep(self):
@@ -151,7 +159,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Node Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NodeStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NodeStep"]))
 
     @property
     def Redistribution(self):
@@ -162,7 +171,10 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Redistribution']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Redistribution"])
+        )
 
     @property
     def RouteOrigin(self):
@@ -173,7 +185,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteOrigin"]))
 
     @property
     def RouteStep(self):
@@ -184,7 +197,8 @@ class IsisL3ipv6NodeRouteList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RouteStep
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteStep"]))
 
     def update(self, Name=None):
         # type: (str) -> IsisL3ipv6NodeRouteList
@@ -245,7 +259,19 @@ class IsisL3ipv6NodeRouteList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, FirstIpv6Route=None, MaskWidth=None, Metric=None, NoOfRoutes=None, NodeStep=None, Redistribution=None, RouteOrigin=None, RouteStep=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        FirstIpv6Route=None,
+        MaskWidth=None,
+        Metric=None,
+        NoOfRoutes=None,
+        NodeStep=None,
+        Redistribution=None,
+        RouteOrigin=None,
+        RouteStep=None,
+    ):
         """Base class infrastructure that gets a list of isisL3ipv6NodeRouteList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

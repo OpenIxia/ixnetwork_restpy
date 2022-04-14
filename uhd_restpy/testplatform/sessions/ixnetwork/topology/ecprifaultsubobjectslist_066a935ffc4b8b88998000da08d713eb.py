@@ -134,7 +134,7 @@ class ECpriFaultSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> ECpriFaultSubObjectsList
-        """Adds a new eCpriFaultSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new eCpriFaultSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

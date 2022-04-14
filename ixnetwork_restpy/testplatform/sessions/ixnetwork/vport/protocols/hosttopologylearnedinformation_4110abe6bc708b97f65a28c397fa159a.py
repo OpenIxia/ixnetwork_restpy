@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class HostTopologyLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'hostTopologyLearnedInformation'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "hostTopologyLearnedInformation"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(HostTopologyLearnedInformation, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class HostTopologyLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_c3ff6e8f58c97b1b0d4885ef2523cc50 import SwitchHostRangeLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_c3ff6e8f58c97b1b0d4885ef2523cc50 import (
+            SwitchHostRangeLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchHostRangeLearnedInfo', None) is not None:
-                return self._properties.get('SwitchHostRangeLearnedInfo')
+            if self._properties.get("SwitchHostRangeLearnedInfo", None) is not None:
+                return self._properties.get("SwitchHostRangeLearnedInfo")
         return SwitchHostRangeLearnedInfo(self)
 
     @property
@@ -69,10 +71,20 @@ class HostTopologyLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_970cca4f196b63ea57bce8499441fe35 import SwitchHostRangeLearnedInfoTriggerAttributes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_970cca4f196b63ea57bce8499441fe35 import (
+            SwitchHostRangeLearnedInfoTriggerAttributes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchHostRangeLearnedInfoTriggerAttributes', None) is not None:
-                return self._properties.get('SwitchHostRangeLearnedInfoTriggerAttributes')
+            if (
+                self._properties.get(
+                    "SwitchHostRangeLearnedInfoTriggerAttributes", None
+                )
+                is not None
+            ):
+                return self._properties.get(
+                    "SwitchHostRangeLearnedInfoTriggerAttributes"
+                )
         return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
 
     def find(self):
@@ -126,7 +138,11 @@ class HostTopologyLearnedInformation(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshHostRangeLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshHostRangeLearnedInformation", payload=payload, response_object=None
+        )

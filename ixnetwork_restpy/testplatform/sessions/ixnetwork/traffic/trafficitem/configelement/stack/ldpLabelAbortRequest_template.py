@@ -4,40 +4,40 @@ from ixnetwork_restpy.files import Files
 
 class LdpLabelAbortRequest(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpLabelAbortRequest'
+    _SDM_NAME = "ldpLabelAbortRequest"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpLabelAbortRequest.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpLabelAbortRequest.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpLabelAbortRequest.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpLabelAbortRequest.header.labelSpace-4',
-        'HeaderUBit': 'ldpLabelAbortRequest.header.uBit-5',
-        'HeaderType': 'ldpLabelAbortRequest.header.type-6',
-        'HeaderLength': 'ldpLabelAbortRequest.header.length-7',
-        'HeaderMessageID': 'ldpLabelAbortRequest.header.messageID-8',
-        'FecTLVUBit': 'ldpLabelAbortRequest.header.fecTLV.uBit-9',
-        'FecTLVFBit': 'ldpLabelAbortRequest.header.fecTLV.fBit-10',
-        'FecTLVType': 'ldpLabelAbortRequest.header.fecTLV.type-11',
-        'FecTLVLength': 'ldpLabelAbortRequest.header.fecTLV.length-12',
-        'WildcardType': 'ldpLabelAbortRequest.header.fecTLV.fecElement.wildcard.type-13',
-        'PrefixType': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.type-14',
-        'Ipv4PrefixAddressFamily': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15',
-        'Ipv4PrefixPrelen': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16',
-        'Ipv4PrefixPrefix': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17',
-        'Ipv6PrefixAddressFamily': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18',
-        'Ipv6PrefixPrelen': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19',
-        'Ipv6PrefixPrefix': 'ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20',
-        'HostAddressType': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.type-21',
-        'Ipv4HostAddressAddressFamily': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22',
-        'Ipv4HostAddressHostAddressLength': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23',
-        'Ipv4HostAddressHostAddress': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24',
-        'Ipv6HostAddressAddressFamily': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25',
-        'Ipv6HostAddressHostAddressLength': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26',
-        'Ipv6HostAddressHostAddress': 'ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27',
-        'LabelRequestMessageIDTLVUBit': 'ldpLabelAbortRequest.header.labelRequestMessageIDTLV.uBit-28',
-        'LabelRequestMessageIDTLVFBit': 'ldpLabelAbortRequest.header.labelRequestMessageIDTLV.fBit-29',
-        'LabelRequestMessageIDTLVType': 'ldpLabelAbortRequest.header.labelRequestMessageIDTLV.type-30',
-        'LabelRequestMessageIDTLVLength': 'ldpLabelAbortRequest.header.labelRequestMessageIDTLV.length-31',
-        'LabelRequestMessageIDTLVMessageID': 'ldpLabelAbortRequest.header.labelRequestMessageIDTLV.messageID-32',
+        "HeaderVersion": "ldpLabelAbortRequest.header.version-1",
+        "HeaderPduLengthinOctets": "ldpLabelAbortRequest.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpLabelAbortRequest.header.lsrID-3",
+        "HeaderLabelSpace": "ldpLabelAbortRequest.header.labelSpace-4",
+        "HeaderUBit": "ldpLabelAbortRequest.header.uBit-5",
+        "HeaderType": "ldpLabelAbortRequest.header.type-6",
+        "HeaderLength": "ldpLabelAbortRequest.header.length-7",
+        "HeaderMessageID": "ldpLabelAbortRequest.header.messageID-8",
+        "FecTLVUBit": "ldpLabelAbortRequest.header.fecTLV.uBit-9",
+        "FecTLVFBit": "ldpLabelAbortRequest.header.fecTLV.fBit-10",
+        "FecTLVType": "ldpLabelAbortRequest.header.fecTLV.type-11",
+        "FecTLVLength": "ldpLabelAbortRequest.header.fecTLV.length-12",
+        "WildcardType": "ldpLabelAbortRequest.header.fecTLV.fecElement.wildcard.type-13",
+        "PrefixType": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.type-14",
+        "Ipv4PrefixAddressFamily": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.addressFamily-15",
+        "Ipv4PrefixPrelen": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prelen-16",
+        "Ipv4PrefixPrefix": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv4Prefix.prefix-17",
+        "Ipv6PrefixAddressFamily": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.addressFamily-18",
+        "Ipv6PrefixPrelen": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prelen-19",
+        "Ipv6PrefixPrefix": "ldpLabelAbortRequest.header.fecTLV.fecElement.prefix.addressFamily.ipv6Prefix.prefix-20",
+        "HostAddressType": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.type-21",
+        "Ipv4HostAddressAddressFamily": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.addressFamily-22",
+        "Ipv4HostAddressHostAddressLength": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddressLength-23",
+        "Ipv4HostAddressHostAddress": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv4HostAddress.hostAddress-24",
+        "Ipv6HostAddressAddressFamily": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.addressFamily-25",
+        "Ipv6HostAddressHostAddressLength": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddressLength-26",
+        "Ipv6HostAddressHostAddress": "ldpLabelAbortRequest.header.fecTLV.fecElement.hostAddress.addressFamily.ipv6HostAddress.hostAddress-27",
+        "LabelRequestMessageIDTLVUBit": "ldpLabelAbortRequest.header.labelRequestMessageIDTLV.uBit-28",
+        "LabelRequestMessageIDTLVFBit": "ldpLabelAbortRequest.header.labelRequestMessageIDTLV.fBit-29",
+        "LabelRequestMessageIDTLVType": "ldpLabelAbortRequest.header.labelRequestMessageIDTLV.type-30",
+        "LabelRequestMessageIDTLVLength": "ldpLabelAbortRequest.header.labelRequestMessageIDTLV.length-31",
+        "LabelRequestMessageIDTLVMessageID": "ldpLabelAbortRequest.header.labelRequestMessageIDTLV.messageID-32",
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,7 +51,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -61,7 +62,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -71,7 +75,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -81,7 +86,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -92,7 +100,8 @@ class LdpLabelAbortRequest(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -102,7 +111,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -112,7 +122,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -122,7 +133,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     @property
     def FecTLVUBit(self):
@@ -133,7 +147,8 @@ class LdpLabelAbortRequest(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVUBit"]))
 
     @property
     def FecTLVFBit(self):
@@ -144,7 +159,8 @@ class LdpLabelAbortRequest(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVFBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVFBit"]))
 
     @property
     def FecTLVType(self):
@@ -154,7 +170,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVType"]))
 
     @property
     def FecTLVLength(self):
@@ -164,7 +181,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FecTLVLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FecTLVLength"]))
 
     @property
     def WildcardType(self):
@@ -174,7 +192,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WildcardType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WildcardType"]))
 
     @property
     def PrefixType(self):
@@ -184,7 +203,8 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixType"]))
 
     @property
     def Ipv4PrefixAddressFamily(self):
@@ -194,7 +214,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixAddressFamily"])
+        )
 
     @property
     def Ipv4PrefixPrelen(self):
@@ -204,7 +227,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrelen"])
+        )
 
     @property
     def Ipv4PrefixPrefix(self):
@@ -214,7 +240,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4PrefixPrefix"])
+        )
 
     @property
     def Ipv6PrefixAddressFamily(self):
@@ -224,7 +253,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixAddressFamily"])
+        )
 
     @property
     def Ipv6PrefixPrelen(self):
@@ -234,7 +266,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrelen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrelen"])
+        )
 
     @property
     def Ipv6PrefixPrefix(self):
@@ -244,7 +279,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PrefixPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PrefixPrefix"])
+        )
 
     @property
     def HostAddressType(self):
@@ -254,7 +292,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostAddressType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HostAddressType"])
+        )
 
     @property
     def Ipv4HostAddressAddressFamily(self):
@@ -264,7 +305,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv4HostAddressHostAddressLength(self):
@@ -274,7 +318,11 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv4HostAddressHostAddress(self):
@@ -284,7 +332,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4HostAddressHostAddress"])
+        )
 
     @property
     def Ipv6HostAddressAddressFamily(self):
@@ -294,7 +345,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressAddressFamily']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressAddressFamily"])
+        )
 
     @property
     def Ipv6HostAddressHostAddressLength(self):
@@ -304,7 +358,11 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddressLength"]),
+        )
 
     @property
     def Ipv6HostAddressHostAddress(self):
@@ -314,7 +372,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6HostAddressHostAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6HostAddressHostAddress"])
+        )
 
     @property
     def LabelRequestMessageIDTLVUBit(self):
@@ -325,7 +386,10 @@ class LdpLabelAbortRequest(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRequestMessageIDTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelRequestMessageIDTLVUBit"])
+        )
 
     @property
     def LabelRequestMessageIDTLVFBit(self):
@@ -336,7 +400,10 @@ class LdpLabelAbortRequest(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRequestMessageIDTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelRequestMessageIDTLVFBit"])
+        )
 
     @property
     def LabelRequestMessageIDTLVType(self):
@@ -346,7 +413,10 @@ class LdpLabelAbortRequest(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRequestMessageIDTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelRequestMessageIDTLVType"])
+        )
 
     @property
     def LabelRequestMessageIDTLVLength(self):
@@ -356,7 +426,11 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRequestMessageIDTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LabelRequestMessageIDTLVLength"]),
+        )
 
     @property
     def LabelRequestMessageIDTLVMessageID(self):
@@ -366,7 +440,11 @@ class LdpLabelAbortRequest(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRequestMessageIDTLVMessageID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LabelRequestMessageIDTLVMessageID"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

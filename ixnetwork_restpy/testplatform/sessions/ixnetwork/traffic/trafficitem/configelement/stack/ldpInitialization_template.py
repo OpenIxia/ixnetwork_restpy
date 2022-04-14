@@ -4,62 +4,62 @@ from ixnetwork_restpy.files import Files
 
 class LdpInitialization(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpInitialization'
+    _SDM_NAME = "ldpInitialization"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpInitialization.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpInitialization.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpInitialization.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpInitialization.header.labelSpace-4',
-        'HeaderUBit': 'ldpInitialization.header.uBit-5',
-        'HeaderType': 'ldpInitialization.header.type-6',
-        'HeaderLength': 'ldpInitialization.header.length-7',
-        'HeaderMessageID': 'ldpInitialization.header.messageID-8',
-        'CommonSessionParametersTLVUBit': 'ldpInitialization.header.commonSessionParametersTLV.uBit-9',
-        'CommonSessionParametersTLVFBit': 'ldpInitialization.header.commonSessionParametersTLV.fBit-10',
-        'CommonSessionParametersTLVType': 'ldpInitialization.header.commonSessionParametersTLV.type-11',
-        'CommonSessionParametersTLVLength': 'ldpInitialization.header.commonSessionParametersTLV.length-12',
-        'CommonSessionParametersTLVVersion': 'ldpInitialization.header.commonSessionParametersTLV.version-13',
-        'CommonSessionParametersTLVKeepaliveTime': 'ldpInitialization.header.commonSessionParametersTLV.keepaliveTime-14',
-        'CommonSessionParametersTLVABit': 'ldpInitialization.header.commonSessionParametersTLV.aBit-15',
-        'CommonSessionParametersTLVDBit': 'ldpInitialization.header.commonSessionParametersTLV.dBit-16',
-        'CommonSessionParametersTLVReserved': 'ldpInitialization.header.commonSessionParametersTLV.reserved-17',
-        'CommonSessionParametersTLVPathVectorLimit': 'ldpInitialization.header.commonSessionParametersTLV.pathVectorLimit-18',
-        'CommonSessionParametersTLVMaxPDULength': 'ldpInitialization.header.commonSessionParametersTLV.maxPDULength-19',
-        'CommonSessionParametersTLVLsrID': 'ldpInitialization.header.commonSessionParametersTLV.lsrID-20',
-        'CommonSessionParametersTLVLabelSpace': 'ldpInitialization.header.commonSessionParametersTLV.labelSpace-21',
-        'AtmSessionParametersTLVUBit': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.uBit-22',
-        'AtmSessionParametersTLVFBit': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.fBit-23',
-        'AtmSessionParametersTLVType': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.type-24',
-        'AtmSessionParametersTLVLength': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.length-25',
-        'AtmSessionParametersTLVAtmMergeCapabilities': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmMergeCapabilities-26',
-        'AtmSessionParametersTLVNumberOfLabelRangeComponents': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.numberOfLabelRangeComponents-27',
-        'AtmSessionParametersTLVDBit': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.dBit-28',
-        'AtmSessionParametersTLVReserved': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.reserved-29',
-        'AtmLabelRangeComponentReserved': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.reserved-30',
-        'AtmLabelRangeComponentMinimumVPI': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.minimumVPI-31',
-        'AtmLabelRangeComponentMinimumVCI': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.minimumVCI-32',
-        'AtmsessionparameterstlvAtmLabelRangeComponentReserved': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.reserved-33',
-        'AtmLabelRangeComponentMaximumVPI': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.maximumVPI-34',
-        'AtmLabelRangeComponentMaximumVCI': 'ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.maximumVCI-35',
-        'FrameRelaySessionParametersTLVUBit': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.uBit-36',
-        'FrameRelaySessionParametersTLVFBit': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.fBit-37',
-        'FrameRelaySessionParametersTLVType': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.type-38',
-        'FrameRelaySessionParametersTLVLength': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.length-39',
-        'FrameRelaySessionParametersTLVFrameRelayMergeCapabilities': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayMergeCapabilities-40',
-        'FrameRelaySessionParametersTLVNumberOfLabelRangeComponents': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.numberOfLabelRangeComponents-41',
-        'FrameRelaySessionParametersTLVDBit': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.dBit-42',
-        'FrameRelaySessionParametersTLVReserved': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.reserved-43',
-        'FrameRelayLabelRangeComponentReserved': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.reserved-44',
-        'FrameRelayLabelRangeComponentDlciLength': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.dlciLength-45',
-        'FrameRelayLabelRangeComponentMinimumDLCI': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.minimumDLCI-46',
-        'FramerelaysessionparameterstlvFrameRelayLabelRangeComponentReserved': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.reserved-47',
-        'FrameRelayLabelRangeComponentMaximumDLCI': 'ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.maximumDLCI-48',
-        'P2mpCapabilityParametersTLVUBit': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.uBit-49',
-        'P2mpCapabilityParametersTLVFBit': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.fBit-50',
-        'P2mpCapabilityParametersTLVTclP2mpCapabilityParameter': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameter-51',
-        'P2mpCapabilityParametersTLVTclP2mpCapabilityParameterLength': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameterLength-52',
-        'P2mpCapabilityParametersTLVSBit': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.sBit-53',
-        'P2mpCapabilityParametersTLVTclP2mpCapabilityParameterReserved': 'ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameterReserved-54',
+        "HeaderVersion": "ldpInitialization.header.version-1",
+        "HeaderPduLengthinOctets": "ldpInitialization.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpInitialization.header.lsrID-3",
+        "HeaderLabelSpace": "ldpInitialization.header.labelSpace-4",
+        "HeaderUBit": "ldpInitialization.header.uBit-5",
+        "HeaderType": "ldpInitialization.header.type-6",
+        "HeaderLength": "ldpInitialization.header.length-7",
+        "HeaderMessageID": "ldpInitialization.header.messageID-8",
+        "CommonSessionParametersTLVUBit": "ldpInitialization.header.commonSessionParametersTLV.uBit-9",
+        "CommonSessionParametersTLVFBit": "ldpInitialization.header.commonSessionParametersTLV.fBit-10",
+        "CommonSessionParametersTLVType": "ldpInitialization.header.commonSessionParametersTLV.type-11",
+        "CommonSessionParametersTLVLength": "ldpInitialization.header.commonSessionParametersTLV.length-12",
+        "CommonSessionParametersTLVVersion": "ldpInitialization.header.commonSessionParametersTLV.version-13",
+        "CommonSessionParametersTLVKeepaliveTime": "ldpInitialization.header.commonSessionParametersTLV.keepaliveTime-14",
+        "CommonSessionParametersTLVABit": "ldpInitialization.header.commonSessionParametersTLV.aBit-15",
+        "CommonSessionParametersTLVDBit": "ldpInitialization.header.commonSessionParametersTLV.dBit-16",
+        "CommonSessionParametersTLVReserved": "ldpInitialization.header.commonSessionParametersTLV.reserved-17",
+        "CommonSessionParametersTLVPathVectorLimit": "ldpInitialization.header.commonSessionParametersTLV.pathVectorLimit-18",
+        "CommonSessionParametersTLVMaxPDULength": "ldpInitialization.header.commonSessionParametersTLV.maxPDULength-19",
+        "CommonSessionParametersTLVLsrID": "ldpInitialization.header.commonSessionParametersTLV.lsrID-20",
+        "CommonSessionParametersTLVLabelSpace": "ldpInitialization.header.commonSessionParametersTLV.labelSpace-21",
+        "AtmSessionParametersTLVUBit": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.uBit-22",
+        "AtmSessionParametersTLVFBit": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.fBit-23",
+        "AtmSessionParametersTLVType": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.type-24",
+        "AtmSessionParametersTLVLength": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.length-25",
+        "AtmSessionParametersTLVAtmMergeCapabilities": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmMergeCapabilities-26",
+        "AtmSessionParametersTLVNumberOfLabelRangeComponents": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.numberOfLabelRangeComponents-27",
+        "AtmSessionParametersTLVDBit": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.dBit-28",
+        "AtmSessionParametersTLVReserved": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.reserved-29",
+        "AtmLabelRangeComponentReserved": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.reserved-30",
+        "AtmLabelRangeComponentMinimumVPI": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.minimumVPI-31",
+        "AtmLabelRangeComponentMinimumVCI": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.minimumVCI-32",
+        "AtmsessionparameterstlvAtmLabelRangeComponentReserved": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.reserved-33",
+        "AtmLabelRangeComponentMaximumVPI": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.maximumVPI-34",
+        "AtmLabelRangeComponentMaximumVCI": "ldpInitialization.header.optionalParameter.atmSessionParametersTLV.atmLabelRangeComponent.maximumVCI-35",
+        "FrameRelaySessionParametersTLVUBit": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.uBit-36",
+        "FrameRelaySessionParametersTLVFBit": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.fBit-37",
+        "FrameRelaySessionParametersTLVType": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.type-38",
+        "FrameRelaySessionParametersTLVLength": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.length-39",
+        "FrameRelaySessionParametersTLVFrameRelayMergeCapabilities": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayMergeCapabilities-40",
+        "FrameRelaySessionParametersTLVNumberOfLabelRangeComponents": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.numberOfLabelRangeComponents-41",
+        "FrameRelaySessionParametersTLVDBit": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.dBit-42",
+        "FrameRelaySessionParametersTLVReserved": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.reserved-43",
+        "FrameRelayLabelRangeComponentReserved": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.reserved-44",
+        "FrameRelayLabelRangeComponentDlciLength": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.dlciLength-45",
+        "FrameRelayLabelRangeComponentMinimumDLCI": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.minimumDLCI-46",
+        "FramerelaysessionparameterstlvFrameRelayLabelRangeComponentReserved": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.reserved-47",
+        "FrameRelayLabelRangeComponentMaximumDLCI": "ldpInitialization.header.optionalParameter.frameRelaySessionParametersTLV.frameRelayLabelRangeComponent.maximumDLCI-48",
+        "P2mpCapabilityParametersTLVUBit": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.uBit-49",
+        "P2mpCapabilityParametersTLVFBit": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.fBit-50",
+        "P2mpCapabilityParametersTLVTclP2mpCapabilityParameter": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameter-51",
+        "P2mpCapabilityParametersTLVTclP2mpCapabilityParameterLength": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameterLength-52",
+        "P2mpCapabilityParametersTLVSBit": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.sBit-53",
+        "P2mpCapabilityParametersTLVTclP2mpCapabilityParameterReserved": "ldpInitialization.header.optionalParameter.p2mpCapabilityParametersTLV.tclP2mpCapabilityParameterReserved-54",
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,7 +73,8 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -83,7 +84,10 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -93,7 +97,8 @@ class LdpInitialization(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -103,7 +108,10 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -114,7 +122,8 @@ class LdpInitialization(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -124,7 +133,8 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -134,7 +144,8 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -144,7 +155,10 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     @property
     def CommonSessionParametersTLVUBit(self):
@@ -155,7 +169,11 @@ class LdpInitialization(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVUBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVUBit"]),
+        )
 
     @property
     def CommonSessionParametersTLVFBit(self):
@@ -166,7 +184,11 @@ class LdpInitialization(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVFBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVFBit"]),
+        )
 
     @property
     def CommonSessionParametersTLVType(self):
@@ -176,7 +198,11 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVType"]),
+        )
 
     @property
     def CommonSessionParametersTLVLength(self):
@@ -186,7 +212,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVLength"]),
+        )
 
     @property
     def CommonSessionParametersTLVVersion(self):
@@ -196,7 +226,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVVersion"]),
+        )
 
     @property
     def CommonSessionParametersTLVKeepaliveTime(self):
@@ -206,7 +240,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVKeepaliveTime']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonSessionParametersTLVKeepaliveTime"]
+            ),
+        )
 
     @property
     def CommonSessionParametersTLVABit(self):
@@ -217,7 +257,11 @@ class LdpInitialization(Base):
         Available enum values: Downstream unsolicited, 0, Downstream on demand, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVABit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVABit"]),
+        )
 
     @property
     def CommonSessionParametersTLVDBit(self):
@@ -228,7 +272,11 @@ class LdpInitialization(Base):
         Available enum values: Loop detection disabled, 0, Loop detection enabled, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVDBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVDBit"]),
+        )
 
     @property
     def CommonSessionParametersTLVReserved(self):
@@ -238,7 +286,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonSessionParametersTLVReserved"]
+            ),
+        )
 
     @property
     def CommonSessionParametersTLVPathVectorLimit(self):
@@ -248,7 +302,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVPathVectorLimit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonSessionParametersTLVPathVectorLimit"]
+            ),
+        )
 
     @property
     def CommonSessionParametersTLVMaxPDULength(self):
@@ -258,7 +318,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVMaxPDULength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonSessionParametersTLVMaxPDULength"]
+            ),
+        )
 
     @property
     def CommonSessionParametersTLVLsrID(self):
@@ -268,7 +334,11 @@ class LdpInitialization(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVLsrID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonSessionParametersTLVLsrID"]),
+        )
 
     @property
     def CommonSessionParametersTLVLabelSpace(self):
@@ -278,7 +348,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonSessionParametersTLVLabelSpace']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonSessionParametersTLVLabelSpace"]
+            ),
+        )
 
     @property
     def AtmSessionParametersTLVUBit(self):
@@ -289,7 +365,10 @@ class LdpInitialization(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVUBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVUBit"])
+        )
 
     @property
     def AtmSessionParametersTLVFBit(self):
@@ -300,7 +379,10 @@ class LdpInitialization(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVFBit"])
+        )
 
     @property
     def AtmSessionParametersTLVType(self):
@@ -310,7 +392,10 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVType"])
+        )
 
     @property
     def AtmSessionParametersTLVLength(self):
@@ -320,7 +405,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVLength"]),
+        )
 
     @property
     def AtmSessionParametersTLVAtmMergeCapabilities(self):
@@ -331,7 +420,13 @@ class LdpInitialization(Base):
         Available enum values: Merge not supported, 0, VP merge supported, 1, VC merge supported, 2, VP and VC merge supported, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVAtmMergeCapabilities']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AtmSessionParametersTLVAtmMergeCapabilities"]
+            ),
+        )
 
     @property
     def AtmSessionParametersTLVNumberOfLabelRangeComponents(self):
@@ -341,7 +436,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVNumberOfLabelRangeComponents']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AtmSessionParametersTLVNumberOfLabelRangeComponents"]
+            ),
+        )
 
     @property
     def AtmSessionParametersTLVDBit(self):
@@ -352,7 +453,10 @@ class LdpInitialization(Base):
         Available enum values: Bidirectional VC capability, 0, Unidirectional VC capability, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVDBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVDBit"])
+        )
 
     @property
     def AtmSessionParametersTLVReserved(self):
@@ -362,7 +466,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmSessionParametersTLVReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmSessionParametersTLVReserved"]),
+        )
 
     @property
     def AtmLabelRangeComponentReserved(self):
@@ -372,7 +480,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelRangeComponentReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmLabelRangeComponentReserved"]),
+        )
 
     @property
     def AtmLabelRangeComponentMinimumVPI(self):
@@ -382,7 +494,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelRangeComponentMinimumVPI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmLabelRangeComponentMinimumVPI"]),
+        )
 
     @property
     def AtmLabelRangeComponentMinimumVCI(self):
@@ -392,7 +508,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelRangeComponentMinimumVCI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmLabelRangeComponentMinimumVCI"]),
+        )
 
     @property
     def AtmsessionparameterstlvAtmLabelRangeComponentReserved(self):
@@ -402,7 +522,15 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmsessionparameterstlvAtmLabelRangeComponentReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "AtmsessionparameterstlvAtmLabelRangeComponentReserved"
+                ]
+            ),
+        )
 
     @property
     def AtmLabelRangeComponentMaximumVPI(self):
@@ -412,7 +540,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelRangeComponentMaximumVPI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmLabelRangeComponentMaximumVPI"]),
+        )
 
     @property
     def AtmLabelRangeComponentMaximumVCI(self):
@@ -422,7 +554,11 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AtmLabelRangeComponentMaximumVCI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AtmLabelRangeComponentMaximumVCI"]),
+        )
 
     @property
     def FrameRelaySessionParametersTLVUBit(self):
@@ -433,7 +569,13 @@ class LdpInitialization(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVUBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVUBit"]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVFBit(self):
@@ -444,7 +586,13 @@ class LdpInitialization(Base):
         Available enum values: Do not forward, 0, Forward, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVFBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVFBit"]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVType(self):
@@ -454,7 +602,13 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVType"]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVLength(self):
@@ -464,7 +618,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVLength"]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVFrameRelayMergeCapabilities(self):
@@ -475,7 +635,15 @@ class LdpInitialization(Base):
         Available enum values: Merge not supported, 0, Merge supported, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVFrameRelayMergeCapabilities']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FrameRelaySessionParametersTLVFrameRelayMergeCapabilities"
+                ]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVNumberOfLabelRangeComponents(self):
@@ -485,7 +653,15 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVNumberOfLabelRangeComponents']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FrameRelaySessionParametersTLVNumberOfLabelRangeComponents"
+                ]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVDBit(self):
@@ -496,7 +672,13 @@ class LdpInitialization(Base):
         Available enum values: Bidirectional VC capability, 0, Unidirectional VC capability, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVDBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVDBit"]
+            ),
+        )
 
     @property
     def FrameRelaySessionParametersTLVReserved(self):
@@ -506,7 +688,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelaySessionParametersTLVReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelaySessionParametersTLVReserved"]
+            ),
+        )
 
     @property
     def FrameRelayLabelRangeComponentReserved(self):
@@ -516,7 +704,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelRangeComponentReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelayLabelRangeComponentReserved"]
+            ),
+        )
 
     @property
     def FrameRelayLabelRangeComponentDlciLength(self):
@@ -527,7 +721,13 @@ class LdpInitialization(Base):
         Available enum values: 10 bits, 0, 23 bits, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelRangeComponentDlciLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelayLabelRangeComponentDlciLength"]
+            ),
+        )
 
     @property
     def FrameRelayLabelRangeComponentMinimumDLCI(self):
@@ -537,7 +737,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelRangeComponentMinimumDLCI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelayLabelRangeComponentMinimumDLCI"]
+            ),
+        )
 
     @property
     def FramerelaysessionparameterstlvFrameRelayLabelRangeComponentReserved(self):
@@ -547,7 +753,15 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FramerelaysessionparameterstlvFrameRelayLabelRangeComponentReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FramerelaysessionparameterstlvFrameRelayLabelRangeComponentReserved"
+                ]
+            ),
+        )
 
     @property
     def FrameRelayLabelRangeComponentMaximumDLCI(self):
@@ -557,7 +771,13 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FrameRelayLabelRangeComponentMaximumDLCI']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FrameRelayLabelRangeComponentMaximumDLCI"]
+            ),
+        )
 
     @property
     def P2mpCapabilityParametersTLVUBit(self):
@@ -567,7 +787,11 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVUBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["P2mpCapabilityParametersTLVUBit"]),
+        )
 
     @property
     def P2mpCapabilityParametersTLVFBit(self):
@@ -577,7 +801,11 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVFBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["P2mpCapabilityParametersTLVFBit"]),
+        )
 
     @property
     def P2mpCapabilityParametersTLVTclP2mpCapabilityParameter(self):
@@ -587,7 +815,15 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVTclP2mpCapabilityParameter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "P2mpCapabilityParametersTLVTclP2mpCapabilityParameter"
+                ]
+            ),
+        )
 
     @property
     def P2mpCapabilityParametersTLVTclP2mpCapabilityParameterLength(self):
@@ -597,7 +833,15 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVTclP2mpCapabilityParameterLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "P2mpCapabilityParametersTLVTclP2mpCapabilityParameterLength"
+                ]
+            ),
+        )
 
     @property
     def P2mpCapabilityParametersTLVSBit(self):
@@ -607,7 +851,11 @@ class LdpInitialization(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVSBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["P2mpCapabilityParametersTLVSBit"]),
+        )
 
     @property
     def P2mpCapabilityParametersTLVTclP2mpCapabilityParameterReserved(self):
@@ -617,7 +865,15 @@ class LdpInitialization(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParametersTLVTclP2mpCapabilityParameterReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "P2mpCapabilityParametersTLVTclP2mpCapabilityParameterReserved"
+                ]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

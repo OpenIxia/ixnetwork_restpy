@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class SubTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'subTlv'
+    _SDM_NAME = "subTlv"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'EnablePerSession': 'enablePerSession',
-        'IsEnabled': 'isEnabled',
-        'Name': 'name',
+        "Description": "description",
+        "EnablePerSession": "enablePerSession",
+        "IsEnabled": "isEnabled",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SubTlv, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class SubTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import (
+            Value,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Value', None) is not None:
-                return self._properties.get('Value')
+            if self._properties.get("Value", None) is not None:
+                return self._properties.get("Value")
         return Value(self)._select()
 
     @property
@@ -71,11 +74,12 @@ class SubTlv(Base):
         -------
         - str: Description of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def EnablePerSession(self):
@@ -86,7 +90,10 @@ class SubTlv(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable TLV per session
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePerSession']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePerSession"])
+        )
 
     @property
     def IsEnabled(self):
@@ -96,11 +103,12 @@ class SubTlv(Base):
         -------
         - bool: Enables/disables this tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def Name(self):
@@ -110,11 +118,12 @@ class SubTlv(Base):
         -------
         - str: Name of the tlv
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Description=None, IsEnabled=None, Name=None):
         # type: (str, bool, str) -> SubTlv
@@ -137,7 +146,7 @@ class SubTlv(Base):
 
     def add(self, Description=None, IsEnabled=None, Name=None):
         # type: (str, bool, str) -> SubTlv
-        """Adds a new subTlv resource on the json, only valid with config assistant
+        """Adds a new subTlv resource on the json, only valid with batch add utility
 
         Args
         ----

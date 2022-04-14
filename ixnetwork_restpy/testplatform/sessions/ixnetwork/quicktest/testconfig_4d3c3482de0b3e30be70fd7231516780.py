@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,42 +33,52 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'CpDpConvergenceFactorScale': 'cpDpConvergenceFactorScale',
-        'CpDpConvergenceTime': 'cpDpConvergenceTime',
-        'CustomFramesizeValue': 'customFramesizeValue',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DelayAfterFailover': 'delayAfterFailover',
-        'DelayBeforeFailover': 'delayBeforeFailover',
-        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
-        'DpDpConvergenceFactorScale': 'dpDpConvergenceFactorScale',
-        'DpDpConvergenceTime': 'dpDpConvergenceTime',
-        'EnableCpDpPassFail': 'enableCpDpPassFail',
-        'EnableDpDpPassFail': 'enableDpDpPassFail',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'FailureMode': 'failureMode',
-        'FailureType': 'failureType',
-        'ForceContinuosTraffic': 'forceContinuosTraffic',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'LoadRateValue': 'loadRateValue',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'ReportConvergenceUnit': 'reportConvergenceUnit',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'SecondaryRxPort': 'secondaryRxPort',
-        'TestTrafficType': 'testTrafficType',
+        "CpDpConvergenceFactorScale": "cpDpConvergenceFactorScale",
+        "CpDpConvergenceTime": "cpDpConvergenceTime",
+        "CustomFramesizeValue": "customFramesizeValue",
+        "CustomLoadUnit": "customLoadUnit",
+        "DelayAfterFailover": "delayAfterFailover",
+        "DelayBeforeFailover": "delayBeforeFailover",
+        "DeleteFlowsAtStartup": "deleteFlowsAtStartup",
+        "DpDpConvergenceFactorScale": "dpDpConvergenceFactorScale",
+        "DpDpConvergenceTime": "dpDpConvergenceTime",
+        "EnableCpDpPassFail": "enableCpDpPassFail",
+        "EnableDpDpPassFail": "enableDpDpPassFail",
+        "EnableMinFrameSize": "enableMinFrameSize",
+        "FailureMode": "failureMode",
+        "FailureType": "failureType",
+        "ForceContinuosTraffic": "forceContinuosTraffic",
+        "FrameSizeMode": "frameSizeMode",
+        "Gap": "gap",
+        "LoadRateValue": "loadRateValue",
+        "MaxRandomFrameSize": "maxRandomFrameSize",
+        "MinRandomFrameSize": "minRandomFrameSize",
+        "Numtrials": "numtrials",
+        "ProtocolItem": "protocolItem",
+        "ReportConvergenceUnit": "reportConvergenceUnit",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "SecondaryRxPort": "secondaryRxPort",
+        "TestTrafficType": "testTrafficType",
     }
     _SDM_ENUM_MAP = {
-        'customLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'failureMode': ['delPrimaryFlow', 'modifyRxPort'],
-        'failureType': ['proactive'],
-        'frameSizeMode': ['increment', 'random'],
-        'reportConvergenceUnit': ['ms', 'ns', 'us'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
+        "customLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "failureMode": ["delPrimaryFlow", "modifyRxPort"],
+        "failureType": ["proactive"],
+        "frameSizeMode": ["increment", "random"],
+        "reportConvergenceUnit": ["ms", "ns", "us"],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -81,11 +92,12 @@ class TestConfig(Base):
         -------
         - str: Indicates the convergence factor scale.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CpDpConvergenceFactorScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["CpDpConvergenceFactorScale"])
+
     @CpDpConvergenceFactorScale.setter
     def CpDpConvergenceFactorScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CpDpConvergenceFactorScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CpDpConvergenceFactorScale"], value)
 
     @property
     def CpDpConvergenceTime(self):
@@ -95,11 +107,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the convergence time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CpDpConvergenceTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["CpDpConvergenceTime"])
+
     @CpDpConvergenceTime.setter
     def CpDpConvergenceTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CpDpConvergenceTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CpDpConvergenceTime"], value)
 
     @property
     def CustomFramesizeValue(self):
@@ -109,11 +122,12 @@ class TestConfig(Base):
         -------
         - number: Sets the custom frame size value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomFramesizeValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomFramesizeValue"])
+
     @CustomFramesizeValue.setter
     def CustomFramesizeValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomFramesizeValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomFramesizeValue"], value)
 
     @property
     def CustomLoadUnit(self):
@@ -123,11 +137,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the custom load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomLoadUnit"])
+
     @CustomLoadUnit.setter
     def CustomLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomLoadUnit"], value)
 
     @property
     def DelayAfterFailover(self):
@@ -137,11 +152,12 @@ class TestConfig(Base):
         -------
         - number: Sets the delay after failover.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayAfterFailover'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayAfterFailover"])
+
     @DelayAfterFailover.setter
     def DelayAfterFailover(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayAfterFailover'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayAfterFailover"], value)
 
     @property
     def DelayBeforeFailover(self):
@@ -151,11 +167,12 @@ class TestConfig(Base):
         -------
         - number: Sets the delay before failover.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayBeforeFailover'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayBeforeFailover"])
+
     @DelayBeforeFailover.setter
     def DelayBeforeFailover(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayBeforeFailover'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayBeforeFailover"], value)
 
     @property
     def DeleteFlowsAtStartup(self):
@@ -165,11 +182,12 @@ class TestConfig(Base):
         -------
         - bool: If true, the test will delete the flowgroups at startup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeleteFlowsAtStartup'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeleteFlowsAtStartup"])
+
     @DeleteFlowsAtStartup.setter
     def DeleteFlowsAtStartup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeleteFlowsAtStartup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeleteFlowsAtStartup"], value)
 
     @property
     def DpDpConvergenceFactorScale(self):
@@ -179,11 +197,12 @@ class TestConfig(Base):
         -------
         - str: Indicates the convergence factor scale.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DpDpConvergenceFactorScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["DpDpConvergenceFactorScale"])
+
     @DpDpConvergenceFactorScale.setter
     def DpDpConvergenceFactorScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DpDpConvergenceFactorScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DpDpConvergenceFactorScale"], value)
 
     @property
     def DpDpConvergenceTime(self):
@@ -193,11 +212,12 @@ class TestConfig(Base):
         -------
         - number: Indicates the convergence time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DpDpConvergenceTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["DpDpConvergenceTime"])
+
     @DpDpConvergenceTime.setter
     def DpDpConvergenceTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DpDpConvergenceTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DpDpConvergenceTime"], value)
 
     @property
     def EnableCpDpPassFail(self):
@@ -207,11 +227,12 @@ class TestConfig(Base):
         -------
         - bool: Enables the CP DP pass fail.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCpDpPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCpDpPassFail"])
+
     @EnableCpDpPassFail.setter
     def EnableCpDpPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCpDpPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCpDpPassFail"], value)
 
     @property
     def EnableDpDpPassFail(self):
@@ -221,11 +242,12 @@ class TestConfig(Base):
         -------
         - bool: Enables the DP DP pass fail
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDpDpPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDpDpPassFail"])
+
     @EnableDpDpPassFail.setter
     def EnableDpDpPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDpDpPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDpDpPassFail"], value)
 
     @property
     def EnableMinFrameSize(self):
@@ -235,11 +257,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables minimum frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"])
+
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"], value)
 
     @property
     def FailureMode(self):
@@ -249,11 +272,12 @@ class TestConfig(Base):
         -------
         - str(delPrimaryFlow | modifyRxPort): Sets the failure mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FailureMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FailureMode"])
+
     @FailureMode.setter
     def FailureMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FailureMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FailureMode"], value)
 
     @property
     def FailureType(self):
@@ -263,11 +287,12 @@ class TestConfig(Base):
         -------
         - str(proactive): Sets the type of failure.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FailureType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FailureType"])
+
     @FailureType.setter
     def FailureType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FailureType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FailureType"], value)
 
     @property
     def ForceContinuosTraffic(self):
@@ -277,11 +302,12 @@ class TestConfig(Base):
         -------
         - bool: Forces continuous traffic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"])
+
     @ForceContinuosTraffic.setter
     def ForceContinuosTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"], value)
 
     @property
     def FrameSizeMode(self):
@@ -291,11 +317,12 @@ class TestConfig(Base):
         -------
         - str(increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def Gap(self):
@@ -305,11 +332,12 @@ class TestConfig(Base):
         -------
         - number: The gap in transmission of frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def LoadRateValue(self):
@@ -319,11 +347,12 @@ class TestConfig(Base):
         -------
         - number: The value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateValue"])
+
     @LoadRateValue.setter
     def LoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateValue"], value)
 
     @property
     def MaxRandomFrameSize(self):
@@ -333,11 +362,12 @@ class TestConfig(Base):
         -------
         - number: The maximum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"])
+
     @MaxRandomFrameSize.setter
     def MaxRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"], value)
 
     @property
     def MinRandomFrameSize(self):
@@ -347,11 +377,12 @@ class TestConfig(Base):
         -------
         - number: The minimum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"])
+
     @MinRandomFrameSize.setter
     def MinRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"], value)
 
     @property
     def Numtrials(self):
@@ -361,11 +392,12 @@ class TestConfig(Base):
         -------
         - number: The integer value that states the number of trials permitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def ProtocolItem(self):
@@ -375,11 +407,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def ReportConvergenceUnit(self):
@@ -389,11 +422,12 @@ class TestConfig(Base):
         -------
         - str(ms | ns | us): The unit in which convergence will be reported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportConvergenceUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportConvergenceUnit"])
+
     @ReportConvergenceUnit.setter
     def ReportConvergenceUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportConvergenceUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportConvergenceUnit"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -403,11 +437,12 @@ class TestConfig(Base):
         -------
         - str(gbps | gBps | kbps | kBps | mbps | mBps): The unit of rate for throughput.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def SecondaryRxPort(self):
@@ -417,11 +452,12 @@ class TestConfig(Base):
         -------
         - number: Sets the secondary receiving Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SecondaryRxPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["SecondaryRxPort"])
+
     @SecondaryRxPort.setter
     def SecondaryRxPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SecondaryRxPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SecondaryRxPort"], value)
 
     @property
     def TestTrafficType(self):
@@ -431,13 +467,42 @@ class TestConfig(Base):
         -------
         - str: It signifies the test traffic type value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
-    def update(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayAfterFailover=None, DelayBeforeFailover=None, DeleteFlowsAtStartup=None, DpDpConvergenceFactorScale=None, DpDpConvergenceTime=None, EnableCpDpPassFail=None, EnableDpDpPassFail=None, EnableMinFrameSize=None, FailureMode=None, FailureType=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, LoadRateValue=None, MaxRandomFrameSize=None, MinRandomFrameSize=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, SecondaryRxPort=None, TestTrafficType=None):
+    def update(
+        self,
+        CpDpConvergenceFactorScale=None,
+        CpDpConvergenceTime=None,
+        CustomFramesizeValue=None,
+        CustomLoadUnit=None,
+        DelayAfterFailover=None,
+        DelayBeforeFailover=None,
+        DeleteFlowsAtStartup=None,
+        DpDpConvergenceFactorScale=None,
+        DpDpConvergenceTime=None,
+        EnableCpDpPassFail=None,
+        EnableDpDpPassFail=None,
+        EnableMinFrameSize=None,
+        FailureMode=None,
+        FailureType=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Gap=None,
+        LoadRateValue=None,
+        MaxRandomFrameSize=None,
+        MinRandomFrameSize=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportConvergenceUnit=None,
+        ReportTputRateUnit=None,
+        SecondaryRxPort=None,
+        TestTrafficType=None,
+    ):
         # type: (str, int, int, str, int, int, bool, str, int, bool, bool, bool, str, str, bool, str, int, int, int, int, int, List[str], str, str, int, str) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -476,7 +541,35 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayAfterFailover=None, DelayBeforeFailover=None, DeleteFlowsAtStartup=None, DpDpConvergenceFactorScale=None, DpDpConvergenceTime=None, EnableCpDpPassFail=None, EnableDpDpPassFail=None, EnableMinFrameSize=None, FailureMode=None, FailureType=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, LoadRateValue=None, MaxRandomFrameSize=None, MinRandomFrameSize=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, SecondaryRxPort=None, TestTrafficType=None):
+    def find(
+        self,
+        CpDpConvergenceFactorScale=None,
+        CpDpConvergenceTime=None,
+        CustomFramesizeValue=None,
+        CustomLoadUnit=None,
+        DelayAfterFailover=None,
+        DelayBeforeFailover=None,
+        DeleteFlowsAtStartup=None,
+        DpDpConvergenceFactorScale=None,
+        DpDpConvergenceTime=None,
+        EnableCpDpPassFail=None,
+        EnableDpDpPassFail=None,
+        EnableMinFrameSize=None,
+        FailureMode=None,
+        FailureType=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Gap=None,
+        LoadRateValue=None,
+        MaxRandomFrameSize=None,
+        MinRandomFrameSize=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportConvergenceUnit=None,
+        ReportTputRateUnit=None,
+        SecondaryRxPort=None,
+        TestTrafficType=None,
+    ):
         # type: (str, int, int, str, int, int, bool, str, int, bool, bool, bool, str, str, bool, str, int, int, int, int, int, List[str], str, str, int, str) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -556,10 +649,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -574,10 +669,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -586,17 +683,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -613,10 +712,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -634,10 +737,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -663,10 +768,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -690,10 +797,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -710,10 +819,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -731,7 +842,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

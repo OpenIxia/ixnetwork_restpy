@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class LinkFeature(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'linkFeature'
+    _SDM_NAME = "linkFeature"
     _SDM_ATT_MAP = {
-        'OfppfAutoNegotiation': 'ofppfAutoNegotiation',
-        'OfppfPause': 'ofppfPause',
-        'OfppfPauseAsym': 'ofppfPauseAsym',
+        "OfppfAutoNegotiation": "ofppfAutoNegotiation",
+        "OfppfPause": "ofppfPause",
+        "OfppfPauseAsym": "ofppfPauseAsym",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LinkFeature, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class LinkFeature(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfppfAutoNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfppfAutoNegotiation"])
+
     @OfppfAutoNegotiation.setter
     def OfppfAutoNegotiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfppfAutoNegotiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfppfAutoNegotiation"], value)
 
     @property
     def OfppfPause(self):
@@ -66,11 +67,12 @@ class LinkFeature(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfppfPause'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfppfPause"])
+
     @OfppfPause.setter
     def OfppfPause(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfppfPause'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfppfPause"], value)
 
     @property
     def OfppfPauseAsym(self):
@@ -80,11 +82,12 @@ class LinkFeature(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OfppfPauseAsym'])
+        return self._get_attribute(self._SDM_ATT_MAP["OfppfPauseAsym"])
+
     @OfppfPauseAsym.setter
     def OfppfPauseAsym(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OfppfPauseAsym'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OfppfPauseAsym"], value)
 
     def update(self, OfppfAutoNegotiation=None, OfppfPause=None, OfppfPauseAsym=None):
         # type: (bool, bool, bool) -> LinkFeature

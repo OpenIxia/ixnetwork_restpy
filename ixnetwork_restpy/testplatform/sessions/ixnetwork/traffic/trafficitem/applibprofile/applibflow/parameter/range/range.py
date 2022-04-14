@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Range(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'range'
+    _SDM_NAME = "range"
     _SDM_ATT_MAP = {
-        'From': 'from',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
-        'To': 'to',
+        "From": "from",
+        "MaxValue": "maxValue",
+        "MinValue": "minValue",
+        "To": "to",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Range, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class Range(Base):
         -------
         - number: Start range value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['From'])
+        return self._get_attribute(self._SDM_ATT_MAP["From"])
+
     @From.setter
     def From(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['From'], value)
+        self._set_attribute(self._SDM_ATT_MAP["From"], value)
 
     @property
     def MaxValue(self):
@@ -68,7 +69,7 @@ class Range(Base):
         -------
         - number: (Read only) Maximum supported value for parameter range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxValue"])
 
     @property
     def MinValue(self):
@@ -78,7 +79,7 @@ class Range(Base):
         -------
         - number: (Read only) Minimum supported value for parameter range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinValue"])
 
     @property
     def To(self):
@@ -88,11 +89,12 @@ class Range(Base):
         -------
         - number: End range value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['To'])
+        return self._get_attribute(self._SDM_ATT_MAP["To"])
+
     @To.setter
     def To(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['To'], value)
+        self._set_attribute(self._SDM_ATT_MAP["To"], value)
 
     def update(self, From=None, To=None):
         # type: (int, int) -> Range
@@ -111,7 +113,7 @@ class Range(Base):
 
     def add(self, From=None, To=None):
         # type: (int, int) -> Range
-        """Adds a new range resource on the json, only valid with config assistant
+        """Adds a new range resource on the json, only valid with batch add utility
 
         Args
         ----

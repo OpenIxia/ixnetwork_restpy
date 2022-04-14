@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class Ipv6Prefixes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv6Prefixes'
+    _SDM_NAME = "ipv6Prefixes"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'HostName': 'hostName',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'LearnedVia': 'learnedVia',
-        'LspId': 'lspId',
-        'Metric': 'metric',
-        'SequenceNumber': 'sequenceNumber',
+        "Age": "age",
+        "HostName": "hostName",
+        "Ipv6Prefix": "ipv6Prefix",
+        "LearnedVia": "learnedVia",
+        "LspId": "lspId",
+        "Metric": "metric",
+        "SequenceNumber": "sequenceNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ipv6Prefixes, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class Ipv6Prefixes(Base):
         -------
         - number: The time since last refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def HostName(self):
@@ -67,7 +67,7 @@ class Ipv6Prefixes(Base):
         -------
         - str: The host name as retrieved from the related packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def Ipv6Prefix(self):
@@ -77,7 +77,7 @@ class Ipv6Prefixes(Base):
         -------
         - str: Mask width of IPv6 Prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Prefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Prefix"])
 
     @property
     def LearnedVia(self):
@@ -87,7 +87,7 @@ class Ipv6Prefixes(Base):
         -------
         - str: Learned via L1 Adjacency/L2 Adjacency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnedVia"])
 
     @property
     def LspId(self):
@@ -97,7 +97,7 @@ class Ipv6Prefixes(Base):
         -------
         - str: The LSP number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspId"])
 
     @property
     def Metric(self):
@@ -107,7 +107,7 @@ class Ipv6Prefixes(Base):
         -------
         - number: The route metric.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
 
     @property
     def SequenceNumber(self):
@@ -117,10 +117,10 @@ class Ipv6Prefixes(Base):
         -------
         - number: Sequence number of the LSP containing the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     def add(self):
-        """Adds a new ipv6Prefixes resource on the json, only valid with config assistant
+        """Adds a new ipv6Prefixes resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -132,7 +132,16 @@ class Ipv6Prefixes(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, HostName=None, Ipv6Prefix=None, LearnedVia=None, LspId=None, Metric=None, SequenceNumber=None):
+    def find(
+        self,
+        Age=None,
+        HostName=None,
+        Ipv6Prefix=None,
+        LearnedVia=None,
+        LspId=None,
+        Metric=None,
+        SequenceNumber=None,
+    ):
         # type: (int, str, str, str, str, int, int) -> Ipv6Prefixes
         """Finds and retrieves ipv6Prefixes resources from the server.
 

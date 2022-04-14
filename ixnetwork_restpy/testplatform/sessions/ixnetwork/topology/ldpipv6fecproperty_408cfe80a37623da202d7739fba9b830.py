@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class LdpIpv6FECProperty(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldpIpv6FECProperty'
+    _SDM_NAME = "ldpIpv6FECProperty"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnablePacking': 'enablePacking',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'LabelIncrementMode': 'labelIncrementMode',
-        'LabelValue': 'labelValue',
-        'LocalRouterID': 'localRouterID',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnablePacking": "enablePacking",
+        "EnableReplyingLspPing": "enableReplyingLspPing",
+        "LabelIncrementMode": "labelIncrementMode",
+        "LabelValue": "labelValue",
+        "LocalRouterID": "localRouterID",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LdpIpv6FECProperty, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class LdpIpv6FECProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -79,10 +82,13 @@ class LdpIpv6FECProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -96,10 +102,13 @@ class LdpIpv6FECProperty(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -111,7 +120,8 @@ class LdpIpv6FECProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -121,7 +131,7 @@ class LdpIpv6FECProperty(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -131,7 +141,7 @@ class LdpIpv6FECProperty(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnablePacking(self):
@@ -142,7 +152,8 @@ class LdpIpv6FECProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, FEC ranges are aggregated within a single LDP PDU to conserve bandwidth and processing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePacking']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnablePacking"]))
 
     @property
     def EnableReplyingLspPing(self):
@@ -153,7 +164,10 @@ class LdpIpv6FECProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LSP Ping reply is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableReplyingLspPing"])
+        )
 
     @property
     def LabelIncrementMode(self):
@@ -164,7 +178,10 @@ class LdpIpv6FECProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Increment Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelIncrementMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelIncrementMode"])
+        )
 
     @property
     def LabelValue(self):
@@ -175,7 +192,8 @@ class LdpIpv6FECProperty(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The first label in the range of labels
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelValue"]))
 
     @property
     def LocalRouterID(self):
@@ -185,7 +203,7 @@ class LdpIpv6FECProperty(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def Name(self):
@@ -195,11 +213,12 @@ class LdpIpv6FECProperty(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> LdpIpv6FECProperty
@@ -220,7 +239,7 @@ class LdpIpv6FECProperty(Base):
 
     def add(self, Name=None):
         # type: (str) -> LdpIpv6FECProperty
-        """Adds a new ldpIpv6FECProperty resource on the json, only valid with config assistant
+        """Adds a new ldpIpv6FECProperty resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -294,10 +313,12 @@ class LdpIpv6FECProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -326,10 +347,12 @@ class LdpIpv6FECProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -358,12 +381,22 @@ class LdpIpv6FECProperty(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnablePacking=None, EnableReplyingLspPing=None, LabelIncrementMode=None, LabelValue=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnablePacking=None,
+        EnableReplyingLspPing=None,
+        LabelIncrementMode=None,
+        LabelValue=None,
+    ):
         """Base class infrastructure that gets a list of ldpIpv6FECProperty device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class Dhcpv4client(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv4client'
+    _SDM_NAME = "dhcpv4client"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp4ArpGw': 'dhcp4ArpGw',
-        'Dhcp4ClientPort': 'dhcp4ClientPort',
-        'Dhcp4MaxDiscoverTimeout': 'dhcp4MaxDiscoverTimeout',
-        'Dhcp4NumRetry': 'dhcp4NumRetry',
-        'Dhcp4ResponseTimeout': 'dhcp4ResponseTimeout',
-        'Dhcp4ResponseTimeoutFactor': 'dhcp4ResponseTimeoutFactor',
-        'Dhcp4ServerPort': 'dhcp4ServerPort',
-        'Name': 'name',
-        'RenewOnLinkUp': 'renewOnLinkUp',
-        'RowNames': 'rowNames',
-        'SkipReleaseOnStop': 'skipReleaseOnStop',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Dhcp4ArpGw": "dhcp4ArpGw",
+        "Dhcp4ClientPort": "dhcp4ClientPort",
+        "Dhcp4MaxDiscoverTimeout": "dhcp4MaxDiscoverTimeout",
+        "Dhcp4NumRetry": "dhcp4NumRetry",
+        "Dhcp4ResponseTimeout": "dhcp4ResponseTimeout",
+        "Dhcp4ResponseTimeoutFactor": "dhcp4ResponseTimeoutFactor",
+        "Dhcp4ServerPort": "dhcp4ServerPort",
+        "Name": "name",
+        "RenewOnLinkUp": "renewOnLinkUp",
+        "RowNames": "rowNames",
+        "SkipReleaseOnStop": "skipReleaseOnStop",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv4client, self).__init__(parent, list_op)
@@ -65,10 +65,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import (
+            SessionLifetime,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SessionLifetime', None) is not None:
-                return self._properties.get('SessionLifetime')
+            if self._properties.get("SessionLifetime", None) is not None:
+                return self._properties.get("SessionLifetime")
         return SessionLifetime(self)._select()
 
     @property
@@ -82,10 +85,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -99,10 +105,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -116,10 +125,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import (
+            TlvEditor,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvEditor', None) is not None:
-                return self._properties.get('TlvEditor')
+            if self._properties.get("TlvEditor", None) is not None:
+                return self._properties.get("TlvEditor")
         return TlvEditor(self)
 
     @property
@@ -130,7 +142,7 @@ class Dhcpv4client(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -140,7 +152,7 @@ class Dhcpv4client(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Dhcp4ArpGw(self):
@@ -151,7 +163,8 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP clients ARP to find their Gateway MAC Addresses.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ArpGw']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ArpGw"]))
 
     @property
     def Dhcp4ClientPort(self):
@@ -162,7 +175,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port that the client listens on for DHCP and BOOTP responses.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ClientPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ClientPort"])
+        )
 
     @property
     def Dhcp4MaxDiscoverTimeout(self):
@@ -173,7 +189,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The max value, in seconds, that the discover timeout can reach though Discover Timeout Factor.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4MaxDiscoverTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4MaxDiscoverTimeout"])
+        )
 
     @property
     def Dhcp4NumRetry(self):
@@ -184,7 +203,8 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times that the client will retransmit a request for which it has not received a response. When the maximum number of retransmitions is reached, the port will increment the failure counter (DHCPSetupFail).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4NumRetry']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4NumRetry"]))
 
     @property
     def Dhcp4ResponseTimeout(self):
@@ -195,7 +215,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The initial time, in seconds, that the subnet waits to receive a response from a DHCP server.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ResponseTimeout"])
+        )
 
     @property
     def Dhcp4ResponseTimeoutFactor(self):
@@ -206,7 +229,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The factor by which the timeout will be multiplied each time the response timeout has been reached.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeoutFactor']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ResponseTimeoutFactor"])
+        )
 
     @property
     def Dhcp4ServerPort(self):
@@ -217,7 +243,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port that the client addresses server requests to.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ServerPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ServerPort"])
+        )
 
     @property
     def Name(self):
@@ -227,11 +256,12 @@ class Dhcpv4client(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RenewOnLinkUp(self):
@@ -242,7 +272,8 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicate to renew the active DHCP sessions after link status goes down and up.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RenewOnLinkUp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RenewOnLinkUp"]))
 
     @property
     def RowNames(self):
@@ -252,7 +283,7 @@ class Dhcpv4client(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def SkipReleaseOnStop(self):
@@ -263,7 +294,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the client does not send a DHCPRELEASE packet when the Stop command is given.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SkipReleaseOnStop"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> Dhcpv4client
@@ -325,7 +359,19 @@ class Dhcpv4client(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Dhcp4ArpGw=None, Dhcp4ClientPort=None, Dhcp4MaxDiscoverTimeout=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Dhcp4ArpGw=None,
+        Dhcp4ClientPort=None,
+        Dhcp4MaxDiscoverTimeout=None,
+        Dhcp4NumRetry=None,
+        Dhcp4ResponseTimeout=None,
+        Dhcp4ResponseTimeoutFactor=None,
+        Dhcp4ServerPort=None,
+        RenewOnLinkUp=None,
+        SkipReleaseOnStop=None,
+    ):
         """Base class infrastructure that gets a list of dhcpv4client device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

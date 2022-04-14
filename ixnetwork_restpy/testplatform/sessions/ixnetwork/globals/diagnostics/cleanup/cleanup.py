@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,25 +33,24 @@ class Cleanup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cleanup'
+    _SDM_NAME = "cleanup"
     _SDM_ATT_MAP = {
-        'ChassisDaysOld': 'chassisDaysOld',
-        'CleanupChassis': 'cleanupChassis',
-        'CleanupClient': 'cleanupClient',
-        'ClientDaysOld': 'clientDaysOld',
-        'ProfileAes': 'profileAes',
-        'ProfileAllprofiles': 'profileAllprofiles',
-        'ProfileAnalyzer': 'profileAnalyzer',
-        'ProfileHlapi': 'profileHlapi',
-        'ProfileImpairment': 'profileImpairment',
-        'ProfileIxloadlite': 'profileIxloadlite',
-        'ProfileMiddleware': 'profileMiddleware',
-        'ProfileQuicktests': 'profileQuicktests',
-        'ProfileStackmanager': 'profileStackmanager',
-        'ProfileStatviewerreporter': 'profileStatviewerreporter',
+        "ChassisDaysOld": "chassisDaysOld",
+        "CleanupChassis": "cleanupChassis",
+        "CleanupClient": "cleanupClient",
+        "ClientDaysOld": "clientDaysOld",
+        "ProfileAes": "profileAes",
+        "ProfileAllprofiles": "profileAllprofiles",
+        "ProfileAnalyzer": "profileAnalyzer",
+        "ProfileHlapi": "profileHlapi",
+        "ProfileImpairment": "profileImpairment",
+        "ProfileIxloadlite": "profileIxloadlite",
+        "ProfileMiddleware": "profileMiddleware",
+        "ProfileQuicktests": "profileQuicktests",
+        "ProfileStackmanager": "profileStackmanager",
+        "ProfileStatviewerreporter": "profileStatviewerreporter",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Cleanup, self).__init__(parent, list_op)
@@ -61,13 +61,14 @@ class Cleanup(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisDaysOld'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisDaysOld"])
+
     @ChassisDaysOld.setter
     def ChassisDaysOld(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChassisDaysOld'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChassisDaysOld"], value)
 
     @property
     def CleanupChassis(self):
@@ -75,13 +76,14 @@ class Cleanup(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CleanupChassis'])
+        return self._get_attribute(self._SDM_ATT_MAP["CleanupChassis"])
+
     @CleanupChassis.setter
     def CleanupChassis(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CleanupChassis'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CleanupChassis"], value)
 
     @property
     def CleanupClient(self):
@@ -89,13 +91,14 @@ class Cleanup(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CleanupClient'])
+        return self._get_attribute(self._SDM_ATT_MAP["CleanupClient"])
+
     @CleanupClient.setter
     def CleanupClient(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CleanupClient'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CleanupClient"], value)
 
     @property
     def ClientDaysOld(self):
@@ -103,13 +106,14 @@ class Cleanup(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientDaysOld'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientDaysOld"])
+
     @ClientDaysOld.setter
     def ClientDaysOld(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientDaysOld'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientDaysOld"], value)
 
     @property
     def ProfileAes(self):
@@ -119,11 +123,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup AES logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileAes'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileAes"])
+
     @ProfileAes.setter
     def ProfileAes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileAes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileAes"], value)
 
     @property
     def ProfileAllprofiles(self):
@@ -133,11 +138,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup All-Profiles logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileAllprofiles'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileAllprofiles"])
+
     @ProfileAllprofiles.setter
     def ProfileAllprofiles(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileAllprofiles'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileAllprofiles"], value)
 
     @property
     def ProfileAnalyzer(self):
@@ -147,11 +153,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup Analyzer logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileAnalyzer'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileAnalyzer"])
+
     @ProfileAnalyzer.setter
     def ProfileAnalyzer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileAnalyzer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileAnalyzer"], value)
 
     @property
     def ProfileHlapi(self):
@@ -161,11 +168,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup HLAPI logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileHlapi'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileHlapi"])
+
     @ProfileHlapi.setter
     def ProfileHlapi(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileHlapi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileHlapi"], value)
 
     @property
     def ProfileImpairment(self):
@@ -175,11 +183,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup Impairment logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileImpairment'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileImpairment"])
+
     @ProfileImpairment.setter
     def ProfileImpairment(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileImpairment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileImpairment"], value)
 
     @property
     def ProfileIxloadlite(self):
@@ -189,11 +198,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup IxLoad Lite logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileIxloadlite'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileIxloadlite"])
+
     @ProfileIxloadlite.setter
     def ProfileIxloadlite(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileIxloadlite'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileIxloadlite"], value)
 
     @property
     def ProfileMiddleware(self):
@@ -203,11 +213,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup MiddleWare logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileMiddleware'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileMiddleware"])
+
     @ProfileMiddleware.setter
     def ProfileMiddleware(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileMiddleware'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileMiddleware"], value)
 
     @property
     def ProfileQuicktests(self):
@@ -217,11 +228,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup QuickTests logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileQuicktests'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileQuicktests"])
+
     @ProfileQuicktests.setter
     def ProfileQuicktests(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileQuicktests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileQuicktests"], value)
 
     @property
     def ProfileStackmanager(self):
@@ -231,11 +243,12 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup StackManager logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileStackmanager'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileStackmanager"])
+
     @ProfileStackmanager.setter
     def ProfileStackmanager(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileStackmanager'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileStackmanager"], value)
 
     @property
     def ProfileStatviewerreporter(self):
@@ -245,22 +258,39 @@ class Cleanup(Base):
         -------
         - bool: Set this flag to cleanup StatViewer-Reporter logs/artifacts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProfileStatviewerreporter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProfileStatviewerreporter"])
+
     @ProfileStatviewerreporter.setter
     def ProfileStatviewerreporter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProfileStatviewerreporter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProfileStatviewerreporter"], value)
 
-    def update(self, ChassisDaysOld=None, CleanupChassis=None, CleanupClient=None, ClientDaysOld=None, ProfileAes=None, ProfileAllprofiles=None, ProfileAnalyzer=None, ProfileHlapi=None, ProfileImpairment=None, ProfileIxloadlite=None, ProfileMiddleware=None, ProfileQuicktests=None, ProfileStackmanager=None, ProfileStatviewerreporter=None):
+    def update(
+        self,
+        ChassisDaysOld=None,
+        CleanupChassis=None,
+        CleanupClient=None,
+        ClientDaysOld=None,
+        ProfileAes=None,
+        ProfileAllprofiles=None,
+        ProfileAnalyzer=None,
+        ProfileHlapi=None,
+        ProfileImpairment=None,
+        ProfileIxloadlite=None,
+        ProfileMiddleware=None,
+        ProfileQuicktests=None,
+        ProfileStackmanager=None,
+        ProfileStatviewerreporter=None,
+    ):
         # type: (int, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Cleanup
         """Updates cleanup resource on the server.
 
         Args
         ----
-        - ChassisDaysOld (number): 
-        - CleanupChassis (bool): 
-        - CleanupClient (bool): 
-        - ClientDaysOld (number): 
+        - ChassisDaysOld (number):
+        - CleanupChassis (bool):
+        - CleanupClient (bool):
+        - ClientDaysOld (number):
         - ProfileAes (bool): Set this flag to cleanup AES logs/artifacts
         - ProfileAllprofiles (bool): Set this flag to cleanup All-Profiles logs/artifacts
         - ProfileAnalyzer (bool): Set this flag to cleanup Analyzer logs/artifacts
@@ -278,7 +308,23 @@ class Cleanup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ChassisDaysOld=None, CleanupChassis=None, CleanupClient=None, ClientDaysOld=None, ProfileAes=None, ProfileAllprofiles=None, ProfileAnalyzer=None, ProfileHlapi=None, ProfileImpairment=None, ProfileIxloadlite=None, ProfileMiddleware=None, ProfileQuicktests=None, ProfileStackmanager=None, ProfileStatviewerreporter=None):
+    def find(
+        self,
+        ChassisDaysOld=None,
+        CleanupChassis=None,
+        CleanupClient=None,
+        ClientDaysOld=None,
+        ProfileAes=None,
+        ProfileAllprofiles=None,
+        ProfileAnalyzer=None,
+        ProfileHlapi=None,
+        ProfileImpairment=None,
+        ProfileIxloadlite=None,
+        ProfileMiddleware=None,
+        ProfileQuicktests=None,
+        ProfileStackmanager=None,
+        ProfileStatviewerreporter=None,
+    ):
         # type: (int, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Cleanup
         """Finds and retrieves cleanup resources from the server.
 
@@ -288,10 +334,10 @@ class Cleanup(Base):
 
         Args
         ----
-        - ChassisDaysOld (number): 
-        - CleanupChassis (bool): 
-        - CleanupClient (bool): 
-        - ClientDaysOld (number): 
+        - ChassisDaysOld (number):
+        - CleanupChassis (bool):
+        - CleanupClient (bool):
+        - ClientDaysOld (number):
         - ProfileAes (bool): Set this flag to cleanup AES logs/artifacts
         - ProfileAllprofiles (bool): Set this flag to cleanup All-Profiles logs/artifacts
         - ProfileAnalyzer (bool): Set this flag to cleanup Analyzer logs/artifacts
@@ -344,7 +390,9 @@ class Cleanup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('cleanupLogs', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("cleanupLogs", payload=payload, response_object=None)

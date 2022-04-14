@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class DmLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dmLearnedInfo'
+    _SDM_NAME = "dmLearnedInfo"
     _SDM_ATT_MAP = {
-        'AverageLooseRtt': 'averageLooseRtt',
-        'AverageLooseRttVariation': 'averageLooseRttVariation',
-        'AverageStrictRtt': 'averageStrictRtt',
-        'AverageStrictRttVariation': 'averageStrictRttVariation',
-        'DmQueriesSent': 'dmQueriesSent',
-        'DmResponsesReceived': 'dmResponsesReceived',
-        'IncomingLabelOuterInner': 'incomingLabelOuterInner',
-        'MaxLooseRtt': 'maxLooseRtt',
-        'MaxStrictRtt': 'maxStrictRtt',
-        'MinLooseRtt': 'minLooseRtt',
-        'MinStrictRtt': 'minStrictRtt',
-        'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
-        'Type': 'type',
+        "AverageLooseRtt": "averageLooseRtt",
+        "AverageLooseRttVariation": "averageLooseRttVariation",
+        "AverageStrictRtt": "averageStrictRtt",
+        "AverageStrictRttVariation": "averageStrictRttVariation",
+        "DmQueriesSent": "dmQueriesSent",
+        "DmResponsesReceived": "dmResponsesReceived",
+        "IncomingLabelOuterInner": "incomingLabelOuterInner",
+        "MaxLooseRtt": "maxLooseRtt",
+        "MaxStrictRtt": "maxStrictRtt",
+        "MinLooseRtt": "minLooseRtt",
+        "MinStrictRtt": "minStrictRtt",
+        "OutgoingLabelOuterInner": "outgoingLabelOuterInner",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DmLearnedInfo, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the average loose RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageLooseRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageLooseRtt"])
 
     @property
     def AverageLooseRttVariation(self):
@@ -73,7 +73,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the average loose RTT variation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageLooseRttVariation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageLooseRttVariation"])
 
     @property
     def AverageStrictRtt(self):
@@ -83,7 +83,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the average strict RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageStrictRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageStrictRtt"])
 
     @property
     def AverageStrictRttVariation(self):
@@ -93,7 +93,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the average strict RTT variation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageStrictRttVariation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageStrictRttVariation"])
 
     @property
     def DmQueriesSent(self):
@@ -103,7 +103,7 @@ class DmLearnedInfo(Base):
         -------
         - number: This signifies the number of DM queries sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmQueriesSent'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmQueriesSent"])
 
     @property
     def DmResponsesReceived(self):
@@ -113,7 +113,7 @@ class DmLearnedInfo(Base):
         -------
         - number: This signifies the total number of DM responses received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmResponsesReceived'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmResponsesReceived"])
 
     @property
     def IncomingLabelOuterInner(self):
@@ -123,7 +123,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the incoming label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncomingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncomingLabelOuterInner"])
 
     @property
     def MaxLooseRtt(self):
@@ -133,7 +133,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the maximum loose RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxLooseRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxLooseRtt"])
 
     @property
     def MaxStrictRtt(self):
@@ -143,7 +143,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the maximum strict RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxStrictRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxStrictRtt"])
 
     @property
     def MinLooseRtt(self):
@@ -153,7 +153,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the minimum loose RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinLooseRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinLooseRtt"])
 
     @property
     def MinStrictRtt(self):
@@ -163,7 +163,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the minimum strict RTT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinStrictRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinStrictRtt"])
 
     @property
     def OutgoingLabelOuterInner(self):
@@ -173,7 +173,7 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the Outgoing Label information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutgoingLabelOuterInner'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutgoingLabelOuterInner"])
 
     @property
     def Type(self):
@@ -183,10 +183,10 @@ class DmLearnedInfo(Base):
         -------
         - str: This signifies the type of the learned information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
     def add(self):
-        """Adds a new dmLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new dmLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +198,22 @@ class DmLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AverageLooseRtt=None, AverageLooseRttVariation=None, AverageStrictRtt=None, AverageStrictRttVariation=None, DmQueriesSent=None, DmResponsesReceived=None, IncomingLabelOuterInner=None, MaxLooseRtt=None, MaxStrictRtt=None, MinLooseRtt=None, MinStrictRtt=None, OutgoingLabelOuterInner=None, Type=None):
+    def find(
+        self,
+        AverageLooseRtt=None,
+        AverageLooseRttVariation=None,
+        AverageStrictRtt=None,
+        AverageStrictRttVariation=None,
+        DmQueriesSent=None,
+        DmResponsesReceived=None,
+        IncomingLabelOuterInner=None,
+        MaxLooseRtt=None,
+        MaxStrictRtt=None,
+        MinLooseRtt=None,
+        MinStrictRtt=None,
+        OutgoingLabelOuterInner=None,
+        Type=None,
+    ):
         # type: (str, str, str, str, int, int, str, str, str, str, str, str, str) -> DmLearnedInfo
         """Finds and retrieves dmLearnedInfo resources from the server.
 

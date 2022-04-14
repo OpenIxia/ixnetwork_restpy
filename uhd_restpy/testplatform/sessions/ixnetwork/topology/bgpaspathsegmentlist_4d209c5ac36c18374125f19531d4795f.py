@@ -155,7 +155,7 @@ class BgpAsPathSegmentList(Base):
 
     def add(self, Name=None, NumberOfAsNumberInSegment=None):
         # type: (str, int) -> BgpAsPathSegmentList
-        """Adds a new bgpAsPathSegmentList resource on the json, only valid with config assistant
+        """Adds a new bgpAsPathSegmentList resource on the json, only valid with batch add utility
 
         Args
         ----

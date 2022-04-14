@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,25 +34,24 @@ class EidToRlocMapCacheInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eidToRlocMapCacheInfo'
+    _SDM_NAME = "eidToRlocMapCacheInfo"
     _SDM_ATT_MAP = {
-        'Action': 'action',
-        'ExpiresAfter': 'expiresAfter',
-        'InstanceId': 'instanceId',
-        'MapReplyRx': 'mapReplyRx',
-        'MapRequestTx': 'mapRequestTx',
-        'MapVersionNumber': 'mapVersionNumber',
-        'NegativeMapReplyRx': 'negativeMapReplyRx',
-        'RemoteEidMappingStatus': 'remoteEidMappingStatus',
-        'RemoteEidPrefix': 'remoteEidPrefix',
-        'RemoteEidPrefixAfi': 'remoteEidPrefixAfi',
-        'RemoteEidPrefixLength': 'remoteEidPrefixLength',
-        'ResponderIp': 'responderIp',
-        'RlocProbeReplyRx': 'rlocProbeReplyRx',
-        'RlocProbeRequestTx': 'rlocProbeRequestTx',
+        "Action": "action",
+        "ExpiresAfter": "expiresAfter",
+        "InstanceId": "instanceId",
+        "MapReplyRx": "mapReplyRx",
+        "MapRequestTx": "mapRequestTx",
+        "MapVersionNumber": "mapVersionNumber",
+        "NegativeMapReplyRx": "negativeMapReplyRx",
+        "RemoteEidMappingStatus": "remoteEidMappingStatus",
+        "RemoteEidPrefix": "remoteEidPrefix",
+        "RemoteEidPrefixAfi": "remoteEidPrefixAfi",
+        "RemoteEidPrefixLength": "remoteEidPrefixLength",
+        "ResponderIp": "responderIp",
+        "RlocProbeReplyRx": "rlocProbeReplyRx",
+        "RlocProbeRequestTx": "rlocProbeRequestTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EidToRlocMapCacheInfo, self).__init__(parent, list_op)
@@ -67,10 +67,13 @@ class EidToRlocMapCacheInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_69a782e2029768935eb54ff9c03fbc3d import RemoteLocators
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_69a782e2029768935eb54ff9c03fbc3d import (
+            RemoteLocators,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteLocators', None) is not None:
-                return self._properties.get('RemoteLocators')
+            if self._properties.get("RemoteLocators", None) is not None:
+                return self._properties.get("RemoteLocators")
         return RemoteLocators(self)
 
     @property
@@ -81,7 +84,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the action (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Action'])
+        return self._get_attribute(self._SDM_ATT_MAP["Action"])
 
     @property
     def ExpiresAfter(self):
@@ -91,7 +94,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the expiration (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpiresAfter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpiresAfter"])
 
     @property
     def InstanceId(self):
@@ -101,7 +104,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the instance id (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstanceId"])
 
     @property
     def MapReplyRx(self):
@@ -111,7 +114,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the Map reply at the receivers end (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapReplyRx"])
 
     @property
     def MapRequestTx(self):
@@ -121,7 +124,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the Map request at the transmitters end (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapRequestTx"])
 
     @property
     def MapVersionNumber(self):
@@ -131,7 +134,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about map version number(Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapVersionNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapVersionNumber"])
 
     @property
     def NegativeMapReplyRx(self):
@@ -141,7 +144,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the Map reply at the receivers end in negation (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegativeMapReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegativeMapReplyRx"])
 
     @property
     def RemoteEidMappingStatus(self):
@@ -151,7 +154,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the remote Eid mapping status (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteEidMappingStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteEidMappingStatus"])
 
     @property
     def RemoteEidPrefix(self):
@@ -161,7 +164,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the remote Eid Prefix (Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteEidPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteEidPrefix"])
 
     @property
     def RemoteEidPrefixAfi(self):
@@ -171,7 +174,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the remote Eid Prefix Afi(Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteEidPrefixAfi'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteEidPrefixAfi"])
 
     @property
     def RemoteEidPrefixLength(self):
@@ -181,7 +184,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the remote Eid Prefix Length(Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteEidPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteEidPrefixLength"])
 
     @property
     def ResponderIp(self):
@@ -191,7 +194,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - str: It gives details about the responder Ip (Read-Only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponderIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponderIp"])
 
     @property
     def RlocProbeReplyRx(self):
@@ -201,7 +204,7 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the rloc Probe Reply at receivers end(Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeReplyRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeReplyRx"])
 
     @property
     def RlocProbeRequestTx(self):
@@ -211,10 +214,10 @@ class EidToRlocMapCacheInfo(Base):
         -------
         - number: It gives details about the rloc Probe Reply at transmitters end(Read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RlocProbeRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RlocProbeRequestTx"])
 
     def add(self):
-        """Adds a new eidToRlocMapCacheInfo resource on the json, only valid with config assistant
+        """Adds a new eidToRlocMapCacheInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -226,7 +229,23 @@ class EidToRlocMapCacheInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Action=None, ExpiresAfter=None, InstanceId=None, MapReplyRx=None, MapRequestTx=None, MapVersionNumber=None, NegativeMapReplyRx=None, RemoteEidMappingStatus=None, RemoteEidPrefix=None, RemoteEidPrefixAfi=None, RemoteEidPrefixLength=None, ResponderIp=None, RlocProbeReplyRx=None, RlocProbeRequestTx=None):
+    def find(
+        self,
+        Action=None,
+        ExpiresAfter=None,
+        InstanceId=None,
+        MapReplyRx=None,
+        MapRequestTx=None,
+        MapVersionNumber=None,
+        NegativeMapReplyRx=None,
+        RemoteEidMappingStatus=None,
+        RemoteEidPrefix=None,
+        RemoteEidPrefixAfi=None,
+        RemoteEidPrefixLength=None,
+        ResponderIp=None,
+        RlocProbeReplyRx=None,
+        RlocProbeRequestTx=None,
+    ):
         # type: (str, str, int, int, int, int, int, str, str, str, int, str, int, int) -> EidToRlocMapCacheInfo
         """Finds and retrieves eidToRlocMapCacheInfo resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class LatencyBin(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'latencyBin'
+    _SDM_NAME = "latencyBin"
     _SDM_ATT_MAP = {
-        'BinLimits': 'binLimits',
-        'Enabled': 'enabled',
-        'NumberOfBins': 'numberOfBins',
+        "BinLimits": "binLimits",
+        "Enabled": "enabled",
+        "NumberOfBins": "numberOfBins",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LatencyBin, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class LatencyBin(Base):
         -------
         - list(number): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinLimits'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinLimits"])
+
     @BinLimits.setter
     def BinLimits(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinLimits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinLimits"], value)
 
     @property
     def Enabled(self):
@@ -66,11 +67,12 @@ class LatencyBin(Base):
         -------
         - bool: If true, Latency Bin Tracking is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def NumberOfBins(self):
@@ -80,11 +82,12 @@ class LatencyBin(Base):
         -------
         - number: Specifies the number of Time Bins for Latency Bin Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBins'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBins"])
+
     @NumberOfBins.setter
     def NumberOfBins(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfBins'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfBins"], value)
 
     def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
         # type: (List[int], bool, int) -> LatencyBin

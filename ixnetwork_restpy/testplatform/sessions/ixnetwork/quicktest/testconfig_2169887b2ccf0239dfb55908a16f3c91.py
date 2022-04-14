@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,101 +33,131 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'ApplyMode': 'applyMode',
-        'AssignGroupType': 'assignGroupType',
-        'BidirectionalOptionEnabled': 'bidirectionalOptionEnabled',
-        'BurdenFrameSize': 'burdenFrameSize',
-        'BurdenProtocolItems': 'burdenProtocolItems',
-        'CountRandomFrameSize': 'countRandomFrameSize',
-        'DelayAfterTransmit': 'delayAfterTransmit',
-        'DelayBetweenIterations': 'delayBetweenIterations',
-        'DelayMode': 'delayMode',
-        'Duration': 'duration',
-        'EnableExtraJoinFrames': 'enableExtraJoinFrames',
-        'EnableLeaveGroup': 'enableLeaveGroup',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'EnableMulticastLearning': 'enableMulticastLearning',
-        'EnableMulticastQuerier': 'enableMulticastQuerier',
-        'EnableRouterAlert': 'enableRouterAlert',
-        'ExtraFramesFirstGroupAddress': 'extraFramesFirstGroupAddress',
-        'ExtraFramesFirstGroupAddressIPv6': 'extraFramesFirstGroupAddressIPv6',
-        'ExtraFramesTotalGroupAddresses': 'extraFramesTotalGroupAddresses',
-        'FloodedFramesEnabled': 'floodedFramesEnabled',
-        'ForceRegenerate': 'forceRegenerate',
-        'FrameSizeMode': 'frameSizeMode',
-        'FramesizeList': 'framesizeList',
-        'GroupCapacityGreaterThan': 'groupCapacityGreaterThan',
-        'GroupDistributionType': 'groupDistributionType',
-        'IgmpV1Timeout': 'igmpV1Timeout',
-        'IgmpVersion': 'igmpVersion',
-        'Igmpv3MessageType': 'igmpv3MessageType',
-        'Igmpv3SourceAddrList': 'igmpv3SourceAddrList',
-        'IncrAddresses': 'incrAddresses',
-        'IncrStep': 'incrStep',
-        'IncrementBurdenLoadUnit': 'incrementBurdenLoadUnit',
-        'IncrementLoadUnit': 'incrementLoadUnit',
-        'InitialBurdenIncrementLoadRate': 'initialBurdenIncrementLoadRate',
-        'InitialRate': 'initialRate',
-        'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
-        'IsIPv6': 'isIPv6',
-        'IsMulticastAutomaticFrameData': 'isMulticastAutomaticFrameData',
-        'JoinDelayRefUnit': 'joinDelayRefUnit',
-        'JoinDelayRefValue': 'joinDelayRefValue',
-        'JoinLeaveAlgorithm': 'joinLeaveAlgorithm',
-        'JoinLeaveFramesPerGroup': 'joinLeaveFramesPerGroup',
-        'JoinLeaveMode': 'joinLeaveMode',
-        'JoinLeaveMultiplier': 'joinLeaveMultiplier',
-        'JoinLeaveRate': 'joinLeaveRate',
-        'JoinLeaveWaitTime': 'joinLeaveWaitTime',
-        'LeaveDelayRefUnit': 'leaveDelayRefUnit',
-        'LeaveDelayRefValue': 'leaveDelayRefValue',
-        'LoadInitialRate': 'loadInitialRate',
-        'LoadType': 'loadType',
-        'MapType': 'mapType',
-        'MaxIncrementFrameSize': 'maxIncrementFrameSize',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MaxRate': 'maxRate',
-        'MinIncrementFrameSize': 'minIncrementFrameSize',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'MldVersion': 'mldVersion',
-        'Mldv2MessageType': 'mldv2MessageType',
-        'Mldv2SourceAddrList': 'mldv2SourceAddrList',
-        'NumAddresses': 'numAddresses',
-        'NumIterations': 'numIterations',
-        'NumberOfExtraJoins': 'numberOfExtraJoins',
-        'Numtrials': 'numtrials',
-        'OffsetTime': 'offsetTime',
-        'PercentMaxRate': 'percentMaxRate',
-        'ProtocolItem': 'protocolItem',
-        'Rfc2889ordering': 'rfc2889ordering',
-        'StaggeredStart': 'staggeredStart',
-        'StepBurdenIncrementLoadRate': 'stepBurdenIncrementLoadRate',
-        'StepIncrementFrameSize': 'stepIncrementFrameSize',
-        'SupportedTrafficTypes': 'supportedTrafficTypes',
-        'TestTrafficType': 'testTrafficType',
-        'TrafficBeforeJoinLeave': 'trafficBeforeJoinLeave',
-        'TxDelay': 'txDelay',
-        'Use3376mode': 'use3376mode',
-        'UseMulticast': 'useMulticast',
+        "ApplyMode": "applyMode",
+        "AssignGroupType": "assignGroupType",
+        "BidirectionalOptionEnabled": "bidirectionalOptionEnabled",
+        "BurdenFrameSize": "burdenFrameSize",
+        "BurdenProtocolItems": "burdenProtocolItems",
+        "CountRandomFrameSize": "countRandomFrameSize",
+        "DelayAfterTransmit": "delayAfterTransmit",
+        "DelayBetweenIterations": "delayBetweenIterations",
+        "DelayMode": "delayMode",
+        "Duration": "duration",
+        "EnableExtraJoinFrames": "enableExtraJoinFrames",
+        "EnableLeaveGroup": "enableLeaveGroup",
+        "EnableMinFrameSize": "enableMinFrameSize",
+        "EnableMulticastLearning": "enableMulticastLearning",
+        "EnableMulticastQuerier": "enableMulticastQuerier",
+        "EnableRouterAlert": "enableRouterAlert",
+        "ExtraFramesFirstGroupAddress": "extraFramesFirstGroupAddress",
+        "ExtraFramesFirstGroupAddressIPv6": "extraFramesFirstGroupAddressIPv6",
+        "ExtraFramesTotalGroupAddresses": "extraFramesTotalGroupAddresses",
+        "FloodedFramesEnabled": "floodedFramesEnabled",
+        "ForceRegenerate": "forceRegenerate",
+        "FrameSizeMode": "frameSizeMode",
+        "FramesizeList": "framesizeList",
+        "GroupCapacityGreaterThan": "groupCapacityGreaterThan",
+        "GroupDistributionType": "groupDistributionType",
+        "IgmpV1Timeout": "igmpV1Timeout",
+        "IgmpVersion": "igmpVersion",
+        "Igmpv3MessageType": "igmpv3MessageType",
+        "Igmpv3SourceAddrList": "igmpv3SourceAddrList",
+        "IncrAddresses": "incrAddresses",
+        "IncrStep": "incrStep",
+        "IncrementBurdenLoadUnit": "incrementBurdenLoadUnit",
+        "IncrementLoadUnit": "incrementLoadUnit",
+        "InitialBurdenIncrementLoadRate": "initialBurdenIncrementLoadRate",
+        "InitialRate": "initialRate",
+        "Ipv4Address": "ipv4Address",
+        "Ipv6Address": "ipv6Address",
+        "IsIPv6": "isIPv6",
+        "IsMulticastAutomaticFrameData": "isMulticastAutomaticFrameData",
+        "JoinDelayRefUnit": "joinDelayRefUnit",
+        "JoinDelayRefValue": "joinDelayRefValue",
+        "JoinLeaveAlgorithm": "joinLeaveAlgorithm",
+        "JoinLeaveFramesPerGroup": "joinLeaveFramesPerGroup",
+        "JoinLeaveMode": "joinLeaveMode",
+        "JoinLeaveMultiplier": "joinLeaveMultiplier",
+        "JoinLeaveRate": "joinLeaveRate",
+        "JoinLeaveWaitTime": "joinLeaveWaitTime",
+        "LeaveDelayRefUnit": "leaveDelayRefUnit",
+        "LeaveDelayRefValue": "leaveDelayRefValue",
+        "LoadInitialRate": "loadInitialRate",
+        "LoadType": "loadType",
+        "MapType": "mapType",
+        "MaxIncrementFrameSize": "maxIncrementFrameSize",
+        "MaxRandomFrameSize": "maxRandomFrameSize",
+        "MaxRate": "maxRate",
+        "MinIncrementFrameSize": "minIncrementFrameSize",
+        "MinRandomFrameSize": "minRandomFrameSize",
+        "MldVersion": "mldVersion",
+        "Mldv2MessageType": "mldv2MessageType",
+        "Mldv2SourceAddrList": "mldv2SourceAddrList",
+        "NumAddresses": "numAddresses",
+        "NumIterations": "numIterations",
+        "NumberOfExtraJoins": "numberOfExtraJoins",
+        "Numtrials": "numtrials",
+        "OffsetTime": "offsetTime",
+        "PercentMaxRate": "percentMaxRate",
+        "ProtocolItem": "protocolItem",
+        "Rfc2889ordering": "rfc2889ordering",
+        "StaggeredStart": "staggeredStart",
+        "StepBurdenIncrementLoadRate": "stepBurdenIncrementLoadRate",
+        "StepIncrementFrameSize": "stepIncrementFrameSize",
+        "SupportedTrafficTypes": "supportedTrafficTypes",
+        "TestTrafficType": "testTrafficType",
+        "TrafficBeforeJoinLeave": "trafficBeforeJoinLeave",
+        "TxDelay": "txDelay",
+        "Use3376mode": "use3376mode",
+        "UseMulticast": "useMulticast",
     }
     _SDM_ENUM_MAP = {
-        'assignGroupType': ['accumulated', 'distributed'],
-        'delayMode': ['average', 'max'],
-        'frameSizeMode': ['custom', 'increment', 'random'],
-        'groupDistributionType': ['acrossHosts', 'acrossPorts'],
-        'igmpv3MessageType': ['exclude', 'include'],
-        'incrementBurdenLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'incrementLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'joinDelayRefUnit': ['ms', 'ns', 'us'],
-        'joinLeaveAlgorithm': ['joinExisting', 'joinNew'],
-        'joinLeaveMode': ['join'],
-        'leaveDelayRefUnit': ['ms', 'ns', 'us'],
-        'loadType': ['binary', 'combo', 'custom', 'fixed', 'increment', 'quickSearch', 'random', 'step', 'unchanged'],
-        'mldv2MessageType': ['exclude', 'include'],
-        'rfc2889ordering': ['val2889Ordering'],
+        "assignGroupType": ["accumulated", "distributed"],
+        "delayMode": ["average", "max"],
+        "frameSizeMode": ["custom", "increment", "random"],
+        "groupDistributionType": ["acrossHosts", "acrossPorts"],
+        "igmpv3MessageType": ["exclude", "include"],
+        "incrementBurdenLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "incrementLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "joinDelayRefUnit": ["ms", "ns", "us"],
+        "joinLeaveAlgorithm": ["joinExisting", "joinNew"],
+        "joinLeaveMode": ["join"],
+        "leaveDelayRefUnit": ["ms", "ns", "us"],
+        "loadType": [
+            "binary",
+            "combo",
+            "custom",
+            "fixed",
+            "increment",
+            "quickSearch",
+            "random",
+            "step",
+            "unchanged",
+        ],
+        "mldv2MessageType": ["exclude", "include"],
+        "rfc2889ordering": ["val2889Ordering"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -140,11 +171,12 @@ class TestConfig(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyMode"])
+
     @ApplyMode.setter
     def ApplyMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ApplyMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ApplyMode"], value)
 
     @property
     def AssignGroupType(self):
@@ -154,11 +186,12 @@ class TestConfig(Base):
         -------
         - str(accumulated | distributed): It gives details about the assigned group types
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssignGroupType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssignGroupType"])
+
     @AssignGroupType.setter
     def AssignGroupType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AssignGroupType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AssignGroupType"], value)
 
     @property
     def BidirectionalOptionEnabled(self):
@@ -168,11 +201,12 @@ class TestConfig(Base):
         -------
         - bool: It the bi directional option enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BidirectionalOptionEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["BidirectionalOptionEnabled"])
+
     @BidirectionalOptionEnabled.setter
     def BidirectionalOptionEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BidirectionalOptionEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BidirectionalOptionEnabled"], value)
 
     @property
     def BurdenFrameSize(self):
@@ -182,11 +216,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the burden frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurdenFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurdenFrameSize"])
+
     @BurdenFrameSize.setter
     def BurdenFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurdenFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurdenFrameSize"], value)
 
     @property
     def BurdenProtocolItems(self):
@@ -196,11 +231,12 @@ class TestConfig(Base):
         -------
         - list(str): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurdenProtocolItems'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurdenProtocolItems"])
+
     @BurdenProtocolItems.setter
     def BurdenProtocolItems(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurdenProtocolItems'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurdenProtocolItems"], value)
 
     @property
     def CountRandomFrameSize(self):
@@ -210,11 +246,12 @@ class TestConfig(Base):
         -------
         - number: It gives a count of the random frame sizes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["CountRandomFrameSize"])
+
     @CountRandomFrameSize.setter
     def CountRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CountRandomFrameSize"], value)
 
     @property
     def DelayAfterTransmit(self):
@@ -224,11 +261,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the delay after the transmission
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"])
+
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"], value)
 
     @property
     def DelayBetweenIterations(self):
@@ -238,11 +276,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the delay between the Iterations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayBetweenIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayBetweenIterations"])
+
     @DelayBetweenIterations.setter
     def DelayBetweenIterations(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayBetweenIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayBetweenIterations"], value)
 
     @property
     def DelayMode(self):
@@ -252,11 +291,12 @@ class TestConfig(Base):
         -------
         - str(average | max): It gives details about the delay mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayMode"])
+
     @DelayMode.setter
     def DelayMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayMode"], value)
 
     @property
     def Duration(self):
@@ -266,11 +306,12 @@ class TestConfig(Base):
         -------
         - number: The duration till of the test run
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableExtraJoinFrames(self):
@@ -280,11 +321,12 @@ class TestConfig(Base):
         -------
         - bool: If true, It enables the extra join frames
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExtraJoinFrames'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExtraJoinFrames"])
+
     @EnableExtraJoinFrames.setter
     def EnableExtraJoinFrames(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExtraJoinFrames'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExtraJoinFrames"], value)
 
     @property
     def EnableLeaveGroup(self):
@@ -294,11 +336,12 @@ class TestConfig(Base):
         -------
         - bool: If True, it enables the leave group
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLeaveGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLeaveGroup"])
+
     @EnableLeaveGroup.setter
     def EnableLeaveGroup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLeaveGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLeaveGroup"], value)
 
     @property
     def EnableMinFrameSize(self):
@@ -308,11 +351,12 @@ class TestConfig(Base):
         -------
         - bool: If true, it enables the minimum frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"])
+
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"], value)
 
     @property
     def EnableMulticastLearning(self):
@@ -322,11 +366,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMulticastLearning'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMulticastLearning"])
+
     @EnableMulticastLearning.setter
     def EnableMulticastLearning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMulticastLearning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMulticastLearning"], value)
 
     @property
     def EnableMulticastQuerier(self):
@@ -336,11 +381,12 @@ class TestConfig(Base):
         -------
         - bool: Enable Multicast Querier Settings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMulticastQuerier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMulticastQuerier"])
+
     @EnableMulticastQuerier.setter
     def EnableMulticastQuerier(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMulticastQuerier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMulticastQuerier"], value)
 
     @property
     def EnableRouterAlert(self):
@@ -350,11 +396,12 @@ class TestConfig(Base):
         -------
         - bool: If true, It enables the router alert
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRouterAlert"])
+
     @EnableRouterAlert.setter
     def EnableRouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRouterAlert"], value)
 
     @property
     def ExtraFramesFirstGroupAddress(self):
@@ -364,11 +411,12 @@ class TestConfig(Base):
         -------
         - str: It gives details about the extra First frame group address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtraFramesFirstGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExtraFramesFirstGroupAddress"])
+
     @ExtraFramesFirstGroupAddress.setter
     def ExtraFramesFirstGroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExtraFramesFirstGroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExtraFramesFirstGroupAddress"], value)
 
     @property
     def ExtraFramesFirstGroupAddressIPv6(self):
@@ -378,11 +426,16 @@ class TestConfig(Base):
         -------
         - str: It gives details about the extra First frame group address in IP version 6 version
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtraFramesFirstGroupAddressIPv6'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ExtraFramesFirstGroupAddressIPv6"]
+        )
+
     @ExtraFramesFirstGroupAddressIPv6.setter
     def ExtraFramesFirstGroupAddressIPv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExtraFramesFirstGroupAddressIPv6'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["ExtraFramesFirstGroupAddressIPv6"], value
+        )
 
     @property
     def ExtraFramesTotalGroupAddresses(self):
@@ -392,11 +445,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the extra frame total group address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtraFramesTotalGroupAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExtraFramesTotalGroupAddresses"])
+
     @ExtraFramesTotalGroupAddresses.setter
     def ExtraFramesTotalGroupAddresses(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExtraFramesTotalGroupAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExtraFramesTotalGroupAddresses"], value)
 
     @property
     def FloodedFramesEnabled(self):
@@ -406,11 +460,12 @@ class TestConfig(Base):
         -------
         - bool: If true, it enables the flooded frames statistics
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FloodedFramesEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["FloodedFramesEnabled"])
+
     @FloodedFramesEnabled.setter
     def FloodedFramesEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FloodedFramesEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FloodedFramesEnabled"], value)
 
     @property
     def ForceRegenerate(self):
@@ -420,11 +475,12 @@ class TestConfig(Base):
         -------
         - bool: It makes the test to force regenerate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceRegenerate'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceRegenerate"])
+
     @ForceRegenerate.setter
     def ForceRegenerate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceRegenerate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceRegenerate"], value)
 
     @property
     def FrameSizeMode(self):
@@ -434,11 +490,12 @@ class TestConfig(Base):
         -------
         - str(custom | increment | random): It provides details about the frame size mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def FramesizeList(self):
@@ -448,11 +505,12 @@ class TestConfig(Base):
         -------
         - list(str): It provides details about the list of frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramesizeList'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramesizeList"])
+
     @FramesizeList.setter
     def FramesizeList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramesizeList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramesizeList"], value)
 
     @property
     def GroupCapacityGreaterThan(self):
@@ -462,11 +520,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the protocols which are greater than group capacity
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupCapacityGreaterThan'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupCapacityGreaterThan"])
+
     @GroupCapacityGreaterThan.setter
     def GroupCapacityGreaterThan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupCapacityGreaterThan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupCapacityGreaterThan"], value)
 
     @property
     def GroupDistributionType(self):
@@ -476,11 +535,12 @@ class TestConfig(Base):
         -------
         - str(acrossHosts | acrossPorts): It gives details about the distribution group types
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDistributionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDistributionType"])
+
     @GroupDistributionType.setter
     def GroupDistributionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDistributionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDistributionType"], value)
 
     @property
     def IgmpV1Timeout(self):
@@ -490,11 +550,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the igmp v1 timeout
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpV1Timeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpV1Timeout"])
+
     @IgmpV1Timeout.setter
     def IgmpV1Timeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpV1Timeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpV1Timeout"], value)
 
     @property
     def IgmpVersion(self):
@@ -504,11 +565,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the version of the igmp
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgmpVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgmpVersion"])
+
     @IgmpVersion.setter
     def IgmpVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgmpVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgmpVersion"], value)
 
     @property
     def Igmpv3MessageType(self):
@@ -518,11 +580,12 @@ class TestConfig(Base):
         -------
         - str(exclude | include): It gives details about the igmpv3 message type in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Igmpv3MessageType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Igmpv3MessageType"])
+
     @Igmpv3MessageType.setter
     def Igmpv3MessageType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Igmpv3MessageType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Igmpv3MessageType"], value)
 
     @property
     def Igmpv3SourceAddrList(self):
@@ -532,11 +595,12 @@ class TestConfig(Base):
         -------
         - str: It gives details about the igmpv3 source address list in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Igmpv3SourceAddrList'])
+        return self._get_attribute(self._SDM_ATT_MAP["Igmpv3SourceAddrList"])
+
     @Igmpv3SourceAddrList.setter
     def Igmpv3SourceAddrList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Igmpv3SourceAddrList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Igmpv3SourceAddrList"], value)
 
     @property
     def IncrAddresses(self):
@@ -546,11 +610,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the Incrementing addresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrAddresses"])
+
     @IncrAddresses.setter
     def IncrAddresses(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrAddresses"], value)
 
     @property
     def IncrStep(self):
@@ -560,11 +625,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the incremental step test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrStep"])
+
     @IncrStep.setter
     def IncrStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrStep"], value)
 
     @property
     def IncrementBurdenLoadUnit(self):
@@ -574,11 +640,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): It gives details about the incremental burden load unit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementBurdenLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementBurdenLoadUnit"])
+
     @IncrementBurdenLoadUnit.setter
     def IncrementBurdenLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementBurdenLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementBurdenLoadUnit"], value)
 
     @property
     def IncrementLoadUnit(self):
@@ -588,11 +655,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): It gives details about the increment load unit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementLoadUnit"])
+
     @IncrementLoadUnit.setter
     def IncrementLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementLoadUnit"], value)
 
     @property
     def InitialBurdenIncrementLoadRate(self):
@@ -602,11 +670,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the initial burden incremental load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialBurdenIncrementLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialBurdenIncrementLoadRate"])
+
     @InitialBurdenIncrementLoadRate.setter
     def InitialBurdenIncrementLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialBurdenIncrementLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialBurdenIncrementLoadRate"], value)
 
     @property
     def InitialRate(self):
@@ -616,11 +685,12 @@ class TestConfig(Base):
         -------
         - str: It provides details of the initial rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialRate"])
+
     @InitialRate.setter
     def InitialRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialRate"], value)
 
     @property
     def Ipv4Address(self):
@@ -630,11 +700,12 @@ class TestConfig(Base):
         -------
         - str: It provides IP version 4 address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Address"])
+
     @Ipv4Address.setter
     def Ipv4Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Address"], value)
 
     @property
     def Ipv6Address(self):
@@ -644,11 +715,12 @@ class TestConfig(Base):
         -------
         - str: It provides IP version 6 address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"])
+
     @Ipv6Address.setter
     def Ipv6Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Address"], value)
 
     @property
     def IsIPv6(self):
@@ -658,11 +730,12 @@ class TestConfig(Base):
         -------
         - str: It provides with the confirmation whether ipv6 address is in use
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsIPv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsIPv6"])
+
     @IsIPv6.setter
     def IsIPv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsIPv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsIPv6"], value)
 
     @property
     def IsMulticastAutomaticFrameData(self):
@@ -672,11 +745,12 @@ class TestConfig(Base):
         -------
         - str: It provides details multicast automatic frame data is in use or not?
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMulticastAutomaticFrameData'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMulticastAutomaticFrameData"])
+
     @IsMulticastAutomaticFrameData.setter
     def IsMulticastAutomaticFrameData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsMulticastAutomaticFrameData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsMulticastAutomaticFrameData"], value)
 
     @property
     def JoinDelayRefUnit(self):
@@ -686,11 +760,12 @@ class TestConfig(Base):
         -------
         - str(ms | ns | us): It gives details about the Join delay in Reference unit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinDelayRefUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinDelayRefUnit"])
+
     @JoinDelayRefUnit.setter
     def JoinDelayRefUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinDelayRefUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinDelayRefUnit"], value)
 
     @property
     def JoinDelayRefValue(self):
@@ -700,11 +775,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the Join delay in Reference value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinDelayRefValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinDelayRefValue"])
+
     @JoinDelayRefValue.setter
     def JoinDelayRefValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinDelayRefValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinDelayRefValue"], value)
 
     @property
     def JoinLeaveAlgorithm(self):
@@ -714,11 +790,12 @@ class TestConfig(Base):
         -------
         - str(joinExisting | joinNew): It gives details about the join leave algorithm in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveAlgorithm"])
+
     @JoinLeaveAlgorithm.setter
     def JoinLeaveAlgorithm(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveAlgorithm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveAlgorithm"], value)
 
     @property
     def JoinLeaveFramesPerGroup(self):
@@ -728,11 +805,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the Join leave frames per group
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveFramesPerGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveFramesPerGroup"])
+
     @JoinLeaveFramesPerGroup.setter
     def JoinLeaveFramesPerGroup(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveFramesPerGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveFramesPerGroup"], value)
 
     @property
     def JoinLeaveMode(self):
@@ -742,11 +820,12 @@ class TestConfig(Base):
         -------
         - str(join): It gives details about the join leave mode
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveMode"])
+
     @JoinLeaveMode.setter
     def JoinLeaveMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveMode"], value)
 
     @property
     def JoinLeaveMultiplier(self):
@@ -756,11 +835,12 @@ class TestConfig(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"])
+
     @JoinLeaveMultiplier.setter
     def JoinLeaveMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"], value)
 
     @property
     def JoinLeaveRate(self):
@@ -770,11 +850,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the join leave rate of the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveRate"])
+
     @JoinLeaveRate.setter
     def JoinLeaveRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveRate"], value)
 
     @property
     def JoinLeaveWaitTime(self):
@@ -784,11 +865,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the join leave rate of the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveWaitTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveWaitTime"])
+
     @JoinLeaveWaitTime.setter
     def JoinLeaveWaitTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveWaitTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveWaitTime"], value)
 
     @property
     def LeaveDelayRefUnit(self):
@@ -798,11 +880,12 @@ class TestConfig(Base):
         -------
         - str(ms | ns | us): It gives details about the leave delay reference unit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeaveDelayRefUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeaveDelayRefUnit"])
+
     @LeaveDelayRefUnit.setter
     def LeaveDelayRefUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LeaveDelayRefUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LeaveDelayRefUnit"], value)
 
     @property
     def LeaveDelayRefValue(self):
@@ -812,11 +895,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the leave delay reference value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeaveDelayRefValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeaveDelayRefValue"])
+
     @LeaveDelayRefValue.setter
     def LeaveDelayRefValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LeaveDelayRefValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LeaveDelayRefValue"], value)
 
     @property
     def LoadInitialRate(self):
@@ -826,11 +910,12 @@ class TestConfig(Base):
         -------
         - number: It loads the initial rate in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadInitialRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadInitialRate"])
+
     @LoadInitialRate.setter
     def LoadInitialRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadInitialRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadInitialRate"], value)
 
     @property
     def LoadType(self):
@@ -840,11 +925,12 @@ class TestConfig(Base):
         -------
         - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): It gives details about the load type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def MapType(self):
@@ -854,11 +940,12 @@ class TestConfig(Base):
         -------
         - str: The mapping type of the test configuration is displayed here
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapType"])
+
     @MapType.setter
     def MapType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapType"], value)
 
     @property
     def MaxIncrementFrameSize(self):
@@ -868,11 +955,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the maximum increment in frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxIncrementFrameSize"])
+
     @MaxIncrementFrameSize.setter
     def MaxIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxIncrementFrameSize"], value)
 
     @property
     def MaxRandomFrameSize(self):
@@ -882,11 +970,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the maximum random frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"])
+
     @MaxRandomFrameSize.setter
     def MaxRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"], value)
 
     @property
     def MaxRate(self):
@@ -896,11 +985,12 @@ class TestConfig(Base):
         -------
         - number: It gives the maximum rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRate"])
+
     @MaxRate.setter
     def MaxRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRate"], value)
 
     @property
     def MinIncrementFrameSize(self):
@@ -910,11 +1000,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the minimum increment in frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinIncrementFrameSize"])
+
     @MinIncrementFrameSize.setter
     def MinIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinIncrementFrameSize"], value)
 
     @property
     def MinRandomFrameSize(self):
@@ -924,11 +1015,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the minimum random frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"])
+
     @MinRandomFrameSize.setter
     def MinRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"], value)
 
     @property
     def MldVersion(self):
@@ -938,11 +1030,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the mld version
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldVersion"])
+
     @MldVersion.setter
     def MldVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldVersion"], value)
 
     @property
     def Mldv2MessageType(self):
@@ -952,11 +1045,12 @@ class TestConfig(Base):
         -------
         - str(exclude | include): It gives details about the mldv2 message type in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mldv2MessageType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mldv2MessageType"])
+
     @Mldv2MessageType.setter
     def Mldv2MessageType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mldv2MessageType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mldv2MessageType"], value)
 
     @property
     def Mldv2SourceAddrList(self):
@@ -966,11 +1060,12 @@ class TestConfig(Base):
         -------
         - str: It gives details about the mldv2 source address list in the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mldv2SourceAddrList'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mldv2SourceAddrList"])
+
     @Mldv2SourceAddrList.setter
     def Mldv2SourceAddrList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mldv2SourceAddrList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mldv2SourceAddrList"], value)
 
     @property
     def NumAddresses(self):
@@ -980,11 +1075,12 @@ class TestConfig(Base):
         -------
         - number: It provides with the number addresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumAddresses"])
+
     @NumAddresses.setter
     def NumAddresses(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumAddresses"], value)
 
     @property
     def NumIterations(self):
@@ -994,11 +1090,12 @@ class TestConfig(Base):
         -------
         - number: It provides with the number of iterations
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumIterations"])
+
     @NumIterations.setter
     def NumIterations(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumIterations"], value)
 
     @property
     def NumberOfExtraJoins(self):
@@ -1008,11 +1105,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the number of extra joins
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfExtraJoins'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfExtraJoins"])
+
     @NumberOfExtraJoins.setter
     def NumberOfExtraJoins(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfExtraJoins'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfExtraJoins"], value)
 
     @property
     def Numtrials(self):
@@ -1022,11 +1120,12 @@ class TestConfig(Base):
         -------
         - number: It provides with the number trials
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def OffsetTime(self):
@@ -1036,11 +1135,12 @@ class TestConfig(Base):
         -------
         - number: It provides details about the off set time
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OffsetTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["OffsetTime"])
+
     @OffsetTime.setter
     def OffsetTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OffsetTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OffsetTime"], value)
 
     @property
     def PercentMaxRate(self):
@@ -1050,11 +1150,12 @@ class TestConfig(Base):
         -------
         - number: It provides with the percentage of the maximum rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PercentMaxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PercentMaxRate"])
+
     @PercentMaxRate.setter
     def PercentMaxRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PercentMaxRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PercentMaxRate"], value)
 
     @property
     def ProtocolItem(self):
@@ -1064,11 +1165,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def Rfc2889ordering(self):
@@ -1078,11 +1180,12 @@ class TestConfig(Base):
         -------
         - str(val2889Ordering): The rfc 2889 ordering in the the test configuration is shown here
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rfc2889ordering'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rfc2889ordering"])
+
     @Rfc2889ordering.setter
     def Rfc2889ordering(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rfc2889ordering'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rfc2889ordering"], value)
 
     @property
     def StaggeredStart(self):
@@ -1092,11 +1195,12 @@ class TestConfig(Base):
         -------
         - bool: It gives a staggered start to the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaggeredStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaggeredStart"])
+
     @StaggeredStart.setter
     def StaggeredStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaggeredStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaggeredStart"], value)
 
     @property
     def StepBurdenIncrementLoadRate(self):
@@ -1106,11 +1210,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the step burden incremental load rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepBurdenIncrementLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepBurdenIncrementLoadRate"])
+
     @StepBurdenIncrementLoadRate.setter
     def StepBurdenIncrementLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepBurdenIncrementLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepBurdenIncrementLoadRate"], value)
 
     @property
     def StepIncrementFrameSize(self):
@@ -1120,11 +1225,12 @@ class TestConfig(Base):
         -------
         - number: It gives details about the step increment in frame size
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepIncrementFrameSize"])
+
     @StepIncrementFrameSize.setter
     def StepIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepIncrementFrameSize"], value)
 
     @property
     def SupportedTrafficTypes(self):
@@ -1134,11 +1240,12 @@ class TestConfig(Base):
         -------
         - str: All the supported test types are displayed of the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedTrafficTypes"])
+
     @SupportedTrafficTypes.setter
     def SupportedTrafficTypes(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportedTrafficTypes"], value)
 
     @property
     def TestTrafficType(self):
@@ -1148,11 +1255,12 @@ class TestConfig(Base):
         -------
         - str: It signifies the test traffic type value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
     @property
     def TrafficBeforeJoinLeave(self):
@@ -1162,11 +1270,12 @@ class TestConfig(Base):
         -------
         - bool: It gives details about the traffic reported before the Join Leave
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficBeforeJoinLeave'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficBeforeJoinLeave"])
+
     @TrafficBeforeJoinLeave.setter
     def TrafficBeforeJoinLeave(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficBeforeJoinLeave'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficBeforeJoinLeave"], value)
 
     @property
     def TxDelay(self):
@@ -1176,11 +1285,12 @@ class TestConfig(Base):
         -------
         - number: It provides with the information of the delay the transmitter causes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
     @property
     def Use3376mode(self):
@@ -1188,13 +1298,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Use3376mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Use3376mode"])
+
     @Use3376mode.setter
     def Use3376mode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Use3376mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Use3376mode"], value)
 
     @property
     def UseMulticast(self):
@@ -1204,13 +1315,93 @@ class TestConfig(Base):
         -------
         - bool: It uses Multicast for the test configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseMulticast'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseMulticast"])
+
     @UseMulticast.setter
     def UseMulticast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseMulticast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseMulticast"], value)
 
-    def update(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurdenFrameSize=None, BurdenProtocolItems=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DelayBetweenIterations=None, DelayMode=None, Duration=None, EnableExtraJoinFrames=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastLearning=None, EnableMulticastQuerier=None, EnableRouterAlert=None, ExtraFramesFirstGroupAddress=None, ExtraFramesFirstGroupAddressIPv6=None, ExtraFramesTotalGroupAddresses=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrStep=None, IncrementBurdenLoadUnit=None, IncrementLoadUnit=None, InitialBurdenIncrementLoadRate=None, InitialRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinDelayRefUnit=None, JoinDelayRefValue=None, JoinLeaveAlgorithm=None, JoinLeaveFramesPerGroup=None, JoinLeaveMode=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LeaveDelayRefUnit=None, LeaveDelayRefValue=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MaxRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, Mldv2MessageType=None, Mldv2SourceAddrList=None, NumAddresses=None, NumIterations=None, NumberOfExtraJoins=None, Numtrials=None, OffsetTime=None, PercentMaxRate=None, ProtocolItem=None, Rfc2889ordering=None, StaggeredStart=None, StepBurdenIncrementLoadRate=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TestTrafficType=None, TrafficBeforeJoinLeave=None, TxDelay=None, Use3376mode=None, UseMulticast=None):
+    def update(
+        self,
+        ApplyMode=None,
+        AssignGroupType=None,
+        BidirectionalOptionEnabled=None,
+        BurdenFrameSize=None,
+        BurdenProtocolItems=None,
+        CountRandomFrameSize=None,
+        DelayAfterTransmit=None,
+        DelayBetweenIterations=None,
+        DelayMode=None,
+        Duration=None,
+        EnableExtraJoinFrames=None,
+        EnableLeaveGroup=None,
+        EnableMinFrameSize=None,
+        EnableMulticastLearning=None,
+        EnableMulticastQuerier=None,
+        EnableRouterAlert=None,
+        ExtraFramesFirstGroupAddress=None,
+        ExtraFramesFirstGroupAddressIPv6=None,
+        ExtraFramesTotalGroupAddresses=None,
+        FloodedFramesEnabled=None,
+        ForceRegenerate=None,
+        FrameSizeMode=None,
+        FramesizeList=None,
+        GroupCapacityGreaterThan=None,
+        GroupDistributionType=None,
+        IgmpV1Timeout=None,
+        IgmpVersion=None,
+        Igmpv3MessageType=None,
+        Igmpv3SourceAddrList=None,
+        IncrAddresses=None,
+        IncrStep=None,
+        IncrementBurdenLoadUnit=None,
+        IncrementLoadUnit=None,
+        InitialBurdenIncrementLoadRate=None,
+        InitialRate=None,
+        Ipv4Address=None,
+        Ipv6Address=None,
+        IsIPv6=None,
+        IsMulticastAutomaticFrameData=None,
+        JoinDelayRefUnit=None,
+        JoinDelayRefValue=None,
+        JoinLeaveAlgorithm=None,
+        JoinLeaveFramesPerGroup=None,
+        JoinLeaveMode=None,
+        JoinLeaveMultiplier=None,
+        JoinLeaveRate=None,
+        JoinLeaveWaitTime=None,
+        LeaveDelayRefUnit=None,
+        LeaveDelayRefValue=None,
+        LoadInitialRate=None,
+        LoadType=None,
+        MapType=None,
+        MaxIncrementFrameSize=None,
+        MaxRandomFrameSize=None,
+        MaxRate=None,
+        MinIncrementFrameSize=None,
+        MinRandomFrameSize=None,
+        MldVersion=None,
+        Mldv2MessageType=None,
+        Mldv2SourceAddrList=None,
+        NumAddresses=None,
+        NumIterations=None,
+        NumberOfExtraJoins=None,
+        Numtrials=None,
+        OffsetTime=None,
+        PercentMaxRate=None,
+        ProtocolItem=None,
+        Rfc2889ordering=None,
+        StaggeredStart=None,
+        StepBurdenIncrementLoadRate=None,
+        StepIncrementFrameSize=None,
+        SupportedTrafficTypes=None,
+        TestTrafficType=None,
+        TrafficBeforeJoinLeave=None,
+        TxDelay=None,
+        Use3376mode=None,
+        UseMulticast=None,
+    ):
         # type: (str, str, bool, int, List[str], int, int, int, str, int, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, str, List[str], int, str, int, int, str, str, int, int, str, str, int, str, str, str, str, str, str, int, str, int, str, int, int, int, str, int, int, str, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, List[str], str, bool, int, int, str, str, bool, int, bool, bool) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -1291,7 +1482,7 @@ class TestConfig(Base):
         - TestTrafficType (str): It signifies the test traffic type value.
         - TrafficBeforeJoinLeave (bool): It gives details about the traffic reported before the Join Leave
         - TxDelay (number): It provides with the information of the delay the transmitter causes
-        - Use3376mode (bool): 
+        - Use3376mode (bool):
         - UseMulticast (bool): It uses Multicast for the test configuration
 
         Raises
@@ -1300,7 +1491,86 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BurdenFrameSize=None, BurdenProtocolItems=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DelayBetweenIterations=None, DelayMode=None, Duration=None, EnableExtraJoinFrames=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastLearning=None, EnableMulticastQuerier=None, EnableRouterAlert=None, ExtraFramesFirstGroupAddress=None, ExtraFramesFirstGroupAddressIPv6=None, ExtraFramesTotalGroupAddresses=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrStep=None, IncrementBurdenLoadUnit=None, IncrementLoadUnit=None, InitialBurdenIncrementLoadRate=None, InitialRate=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinDelayRefUnit=None, JoinDelayRefValue=None, JoinLeaveAlgorithm=None, JoinLeaveFramesPerGroup=None, JoinLeaveMode=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LeaveDelayRefUnit=None, LeaveDelayRefValue=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MaxRate=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, Mldv2MessageType=None, Mldv2SourceAddrList=None, NumAddresses=None, NumIterations=None, NumberOfExtraJoins=None, Numtrials=None, OffsetTime=None, PercentMaxRate=None, ProtocolItem=None, Rfc2889ordering=None, StaggeredStart=None, StepBurdenIncrementLoadRate=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TestTrafficType=None, TrafficBeforeJoinLeave=None, TxDelay=None, Use3376mode=None, UseMulticast=None):
+    def find(
+        self,
+        ApplyMode=None,
+        AssignGroupType=None,
+        BidirectionalOptionEnabled=None,
+        BurdenFrameSize=None,
+        BurdenProtocolItems=None,
+        CountRandomFrameSize=None,
+        DelayAfterTransmit=None,
+        DelayBetweenIterations=None,
+        DelayMode=None,
+        Duration=None,
+        EnableExtraJoinFrames=None,
+        EnableLeaveGroup=None,
+        EnableMinFrameSize=None,
+        EnableMulticastLearning=None,
+        EnableMulticastQuerier=None,
+        EnableRouterAlert=None,
+        ExtraFramesFirstGroupAddress=None,
+        ExtraFramesFirstGroupAddressIPv6=None,
+        ExtraFramesTotalGroupAddresses=None,
+        FloodedFramesEnabled=None,
+        ForceRegenerate=None,
+        FrameSizeMode=None,
+        FramesizeList=None,
+        GroupCapacityGreaterThan=None,
+        GroupDistributionType=None,
+        IgmpV1Timeout=None,
+        IgmpVersion=None,
+        Igmpv3MessageType=None,
+        Igmpv3SourceAddrList=None,
+        IncrAddresses=None,
+        IncrStep=None,
+        IncrementBurdenLoadUnit=None,
+        IncrementLoadUnit=None,
+        InitialBurdenIncrementLoadRate=None,
+        InitialRate=None,
+        Ipv4Address=None,
+        Ipv6Address=None,
+        IsIPv6=None,
+        IsMulticastAutomaticFrameData=None,
+        JoinDelayRefUnit=None,
+        JoinDelayRefValue=None,
+        JoinLeaveAlgorithm=None,
+        JoinLeaveFramesPerGroup=None,
+        JoinLeaveMode=None,
+        JoinLeaveMultiplier=None,
+        JoinLeaveRate=None,
+        JoinLeaveWaitTime=None,
+        LeaveDelayRefUnit=None,
+        LeaveDelayRefValue=None,
+        LoadInitialRate=None,
+        LoadType=None,
+        MapType=None,
+        MaxIncrementFrameSize=None,
+        MaxRandomFrameSize=None,
+        MaxRate=None,
+        MinIncrementFrameSize=None,
+        MinRandomFrameSize=None,
+        MldVersion=None,
+        Mldv2MessageType=None,
+        Mldv2SourceAddrList=None,
+        NumAddresses=None,
+        NumIterations=None,
+        NumberOfExtraJoins=None,
+        Numtrials=None,
+        OffsetTime=None,
+        PercentMaxRate=None,
+        ProtocolItem=None,
+        Rfc2889ordering=None,
+        StaggeredStart=None,
+        StepBurdenIncrementLoadRate=None,
+        StepIncrementFrameSize=None,
+        SupportedTrafficTypes=None,
+        TestTrafficType=None,
+        TrafficBeforeJoinLeave=None,
+        TxDelay=None,
+        Use3376mode=None,
+        UseMulticast=None,
+    ):
         # type: (str, str, bool, int, List[str], int, int, int, str, int, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, str, List[str], int, str, int, int, str, str, int, int, str, str, int, str, str, str, str, str, str, int, str, int, str, int, int, int, str, int, int, str, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, List[str], str, bool, int, int, str, str, bool, int, bool, bool) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -1385,7 +1655,7 @@ class TestConfig(Base):
         - TestTrafficType (str): It signifies the test traffic type value.
         - TrafficBeforeJoinLeave (bool): It gives details about the traffic reported before the Join Leave
         - TxDelay (number): It provides with the information of the delay the transmitter causes
-        - Use3376mode (bool): 
+        - Use3376mode (bool):
         - UseMulticast (bool): It uses Multicast for the test configuration
 
         Returns
@@ -1431,10 +1701,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1449,10 +1721,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1461,17 +1735,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1488,10 +1764,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1509,10 +1789,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1538,10 +1820,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1565,10 +1849,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1585,10 +1871,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1606,7 +1894,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

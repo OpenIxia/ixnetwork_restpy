@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class External(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'external'
+    _SDM_NAME = "external"
     _SDM_ATT_MAP = {
-        'EBit': 'eBit',
-        'ForwardingAddress': 'forwardingAddress',
-        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
-        'Metric': 'metric',
-        'NetworkMask': 'networkMask',
-        'NumberOfLsa': 'numberOfLsa',
-        'RouteTag': 'routeTag',
+        "EBit": "eBit",
+        "ForwardingAddress": "forwardingAddress",
+        "IncrementLinkStateIdBy": "incrementLinkStateIdBy",
+        "Metric": "metric",
+        "NetworkMask": "networkMask",
+        "NumberOfLsa": "numberOfLsa",
+        "RouteTag": "routeTag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(External, self).__init__(parent, list_op)
@@ -55,13 +55,14 @@ class External(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def ForwardingAddress(self):
@@ -69,13 +70,14 @@ class External(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForwardingAddress"])
+
     @ForwardingAddress.setter
     def ForwardingAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForwardingAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForwardingAddress"], value)
 
     @property
     def IncrementLinkStateIdBy(self):
@@ -83,13 +85,14 @@ class External(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementLinkStateIdBy"])
+
     @IncrementLinkStateIdBy.setter
     def IncrementLinkStateIdBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementLinkStateIdBy"], value)
 
     @property
     def Metric(self):
@@ -97,13 +100,14 @@ class External(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NetworkMask(self):
@@ -111,13 +115,14 @@ class External(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkMask"])
+
     @NetworkMask.setter
     def NetworkMask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkMask"], value)
 
     @property
     def NumberOfLsa(self):
@@ -125,13 +130,14 @@ class External(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfLsa'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfLsa"])
+
     @NumberOfLsa.setter
     def NumberOfLsa(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfLsa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfLsa"], value)
 
     @property
     def RouteTag(self):
@@ -139,27 +145,37 @@ class External(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteTag"])
+
     @RouteTag.setter
     def RouteTag(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteTag"], value)
 
-    def update(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+    def update(
+        self,
+        EBit=None,
+        ForwardingAddress=None,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+        RouteTag=None,
+    ):
         # type: (bool, str, str, int, str, int, str) -> External
         """Updates external resource on the server.
 
         Args
         ----
-        - EBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
-        - RouteTag (str): 
+        - EBit (bool):
+        - ForwardingAddress (str):
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
+        - RouteTag (str):
 
         Raises
         ------
@@ -167,19 +183,28 @@ class External(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+    def add(
+        self,
+        EBit=None,
+        ForwardingAddress=None,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+        RouteTag=None,
+    ):
         # type: (bool, str, str, int, str, int, str) -> External
-        """Adds a new external resource on the json, only valid with config assistant
+        """Adds a new external resource on the json, only valid with batch add utility
 
         Args
         ----
-        - EBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
-        - RouteTag (str): 
+        - EBit (bool):
+        - ForwardingAddress (str):
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
+        - RouteTag (str):
 
         Returns
         -------
@@ -191,7 +216,16 @@ class External(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+    def find(
+        self,
+        EBit=None,
+        ForwardingAddress=None,
+        IncrementLinkStateIdBy=None,
+        Metric=None,
+        NetworkMask=None,
+        NumberOfLsa=None,
+        RouteTag=None,
+    ):
         # type: (bool, str, str, int, str, int, str) -> External
         """Finds and retrieves external resources from the server.
 
@@ -201,13 +235,13 @@ class External(Base):
 
         Args
         ----
-        - EBit (bool): 
-        - ForwardingAddress (str): 
-        - IncrementLinkStateIdBy (str): 
-        - Metric (number): 
-        - NetworkMask (str): 
-        - NumberOfLsa (number): 
-        - RouteTag (str): 
+        - EBit (bool):
+        - ForwardingAddress (str):
+        - IncrementLinkStateIdBy (str):
+        - Metric (number):
+        - NetworkMask (str):
+        - NumberOfLsa (number):
+        - RouteTag (str):
 
         Returns
         -------

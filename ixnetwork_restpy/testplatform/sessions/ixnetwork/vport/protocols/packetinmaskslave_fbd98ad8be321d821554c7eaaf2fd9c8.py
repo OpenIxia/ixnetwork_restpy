@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class PacketInMaskSlave(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'packetInMaskSlave'
+    _SDM_NAME = "packetInMaskSlave"
     _SDM_ATT_MAP = {
-        'Action': 'action',
-        'InvalidTtl': 'invalidTtl',
-        'NoMatch': 'noMatch',
+        "Action": "action",
+        "InvalidTtl": "invalidTtl",
+        "NoMatch": "noMatch",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PacketInMaskSlave, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class PacketInMaskSlave(Base):
         -------
         - bool: Action explicitly output to controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Action'])
+        return self._get_attribute(self._SDM_ATT_MAP["Action"])
+
     @Action.setter
     def Action(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Action'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Action"], value)
 
     @property
     def InvalidTtl(self):
@@ -66,11 +67,12 @@ class PacketInMaskSlave(Base):
         -------
         - bool: This indicates that a packet with an invalid IP TTL or MPLS TTL was rejected by the OpenFlow pipeline and passed to the controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidTtl"])
+
     @InvalidTtl.setter
     def InvalidTtl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidTtl"], value)
 
     @property
     def NoMatch(self):
@@ -80,11 +82,12 @@ class PacketInMaskSlave(Base):
         -------
         - bool: This indicates that a packet with no matching flow (table-miss flow entry) is passed to the controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoMatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoMatch"])
+
     @NoMatch.setter
     def NoMatch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoMatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoMatch"], value)
 
     def update(self, Action=None, InvalidTtl=None, NoMatch=None):
         # type: (bool, bool, bool) -> PacketInMaskSlave

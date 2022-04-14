@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,36 +33,35 @@ class IsisFlexAlgorithmList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisFlexAlgorithmList'
+    _SDM_NAME = "isisFlexAlgorithmList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvTwiceExcludeAg': 'advTwiceExcludeAg',
-        'AdvTwiceIncludeAllAg': 'advTwiceIncludeAllAg',
-        'AdvTwiceIncludeAnyAg': 'advTwiceIncludeAnyAg',
-        'CalcType': 'calcType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DontAdvInSrAlgo': 'dontAdvInSrAlgo',
-        'EnableExcludeAg': 'enableExcludeAg',
-        'EnableFadfTlv': 'enableFadfTlv',
-        'EnableIncludeAllAg': 'enableIncludeAllAg',
-        'EnableIncludeAnyAg': 'enableIncludeAnyAg',
-        'ExcludeAgExtAg': 'excludeAgExtAg',
-        'ExcludeAgExtAgLen': 'excludeAgExtAgLen',
-        'FadfLen': 'fadfLen',
-        'FlexAlgo': 'flexAlgo',
-        'IncludeAllAgExtAg': 'includeAllAgExtAg',
-        'IncludeAllAgExtAgLen': 'includeAllAgExtAgLen',
-        'IncludeAnyAgExtAg': 'includeAnyAgExtAg',
-        'IncludeAnyAgExtAgLen': 'includeAnyAgExtAgLen',
-        'MFlag': 'mFlag',
-        'MetricType': 'metricType',
-        'Name': 'name',
-        'Priority': 'priority',
-        'ReservedBits': 'reservedBits',
+        "Active": "active",
+        "AdvTwiceExcludeAg": "advTwiceExcludeAg",
+        "AdvTwiceIncludeAllAg": "advTwiceIncludeAllAg",
+        "AdvTwiceIncludeAnyAg": "advTwiceIncludeAnyAg",
+        "CalcType": "calcType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DontAdvInSrAlgo": "dontAdvInSrAlgo",
+        "EnableExcludeAg": "enableExcludeAg",
+        "EnableFadfTlv": "enableFadfTlv",
+        "EnableIncludeAllAg": "enableIncludeAllAg",
+        "EnableIncludeAnyAg": "enableIncludeAnyAg",
+        "ExcludeAgExtAg": "excludeAgExtAg",
+        "ExcludeAgExtAgLen": "excludeAgExtAgLen",
+        "FadfLen": "fadfLen",
+        "FlexAlgo": "flexAlgo",
+        "IncludeAllAgExtAg": "includeAllAgExtAg",
+        "IncludeAllAgExtAgLen": "includeAllAgExtAgLen",
+        "IncludeAnyAgExtAg": "includeAnyAgExtAg",
+        "IncludeAnyAgExtAgLen": "includeAnyAgExtAgLen",
+        "MFlag": "mFlag",
+        "MetricType": "metricType",
+        "Name": "name",
+        "Priority": "priority",
+        "ReservedBits": "reservedBits",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisFlexAlgorithmList, self).__init__(parent, list_op)
@@ -75,7 +75,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvTwiceExcludeAg(self):
@@ -86,7 +87,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Twice Exclude AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvTwiceExcludeAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvTwiceExcludeAg"])
+        )
 
     @property
     def AdvTwiceIncludeAllAg(self):
@@ -97,7 +101,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Twice Include-All AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvTwiceIncludeAllAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvTwiceIncludeAllAg"])
+        )
 
     @property
     def AdvTwiceIncludeAnyAg(self):
@@ -108,7 +115,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Twice Include-Any AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvTwiceIncludeAnyAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvTwiceIncludeAnyAg"])
+        )
 
     @property
     def CalcType(self):
@@ -119,7 +129,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Calc Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CalcType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CalcType"]))
 
     @property
     def Count(self):
@@ -129,7 +140,7 @@ class IsisFlexAlgorithmList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -139,7 +150,7 @@ class IsisFlexAlgorithmList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DontAdvInSrAlgo(self):
@@ -150,7 +161,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Don't Adv. in SR Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DontAdvInSrAlgo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DontAdvInSrAlgo"])
+        )
 
     @property
     def EnableExcludeAg(self):
@@ -161,7 +175,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, Flexible Algorithm Exclude Admin Group Sub-Sub TLV will be advertised with FAD sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExcludeAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableExcludeAg"])
+        )
 
     @property
     def EnableFadfTlv(self):
@@ -172,7 +189,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled then following attributes will get enabled and ISIS Flexible Algorithm Definition Flags Sub-TLV or FADF sub-sub-TLV will be advertised with FAD Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFadfTlv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableFadfTlv"]))
 
     @property
     def EnableIncludeAllAg(self):
@@ -183,7 +201,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, Flexible Algorithm Include-All Admin Group Sub-Sub TLV will be advertised with FAD sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIncludeAllAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIncludeAllAg"])
+        )
 
     @property
     def EnableIncludeAnyAg(self):
@@ -194,7 +215,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, Flexible Algorithm Include-Any Admin Group Sub-Sub TLV will be advertised with FAD sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIncludeAnyAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIncludeAnyAg"])
+        )
 
     @property
     def ExcludeAgExtAg(self):
@@ -205,7 +229,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Admin Group
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAgExtAg"])
+        )
 
     @property
     def ExcludeAgExtAgLen(self):
@@ -216,7 +243,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAgExtAgLen"])
+        )
 
     @property
     def FadfLen(self):
@@ -227,7 +257,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FADF AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FadfLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FadfLen"]))
 
     @property
     def FlexAlgo(self):
@@ -238,7 +269,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flex Algo
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlexAlgo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlexAlgo"]))
 
     @property
     def IncludeAllAgExtAg(self):
@@ -249,7 +281,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Include-All AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAllAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAllAgExtAg"])
+        )
 
     @property
     def IncludeAllAgExtAgLen(self):
@@ -260,7 +295,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAllAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAllAgExtAgLen"])
+        )
 
     @property
     def IncludeAnyAgExtAg(self):
@@ -271,7 +309,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext Include-Any AG
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAnyAgExtAg']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAnyAgExtAg"])
+        )
 
     @property
     def IncludeAnyAgExtAgLen(self):
@@ -282,7 +323,10 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ext AG Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAnyAgExtAgLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAnyAgExtAgLen"])
+        )
 
     @property
     def MFlag(self):
@@ -293,7 +337,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M-Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def MetricType(self):
@@ -304,7 +349,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricType"]))
 
     @property
     def Name(self):
@@ -314,11 +360,12 @@ class IsisFlexAlgorithmList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Priority(self):
@@ -329,7 +376,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     @property
     def ReservedBits(self):
@@ -340,7 +388,8 @@ class IsisFlexAlgorithmList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReservedBits"]))
 
     def update(self, Name=None):
         # type: (str) -> IsisFlexAlgorithmList
@@ -401,7 +450,32 @@ class IsisFlexAlgorithmList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvTwiceExcludeAg=None, AdvTwiceIncludeAllAg=None, AdvTwiceIncludeAnyAg=None, CalcType=None, DontAdvInSrAlgo=None, EnableExcludeAg=None, EnableFadfTlv=None, EnableIncludeAllAg=None, EnableIncludeAnyAg=None, ExcludeAgExtAg=None, ExcludeAgExtAgLen=None, FadfLen=None, FlexAlgo=None, IncludeAllAgExtAg=None, IncludeAllAgExtAgLen=None, IncludeAnyAgExtAg=None, IncludeAnyAgExtAgLen=None, MFlag=None, MetricType=None, Priority=None, ReservedBits=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvTwiceExcludeAg=None,
+        AdvTwiceIncludeAllAg=None,
+        AdvTwiceIncludeAnyAg=None,
+        CalcType=None,
+        DontAdvInSrAlgo=None,
+        EnableExcludeAg=None,
+        EnableFadfTlv=None,
+        EnableIncludeAllAg=None,
+        EnableIncludeAnyAg=None,
+        ExcludeAgExtAg=None,
+        ExcludeAgExtAgLen=None,
+        FadfLen=None,
+        FlexAlgo=None,
+        IncludeAllAgExtAg=None,
+        IncludeAllAgExtAgLen=None,
+        IncludeAnyAgExtAg=None,
+        IncludeAnyAgExtAgLen=None,
+        MFlag=None,
+        MetricType=None,
+        Priority=None,
+        ReservedBits=None,
+    ):
         """Base class infrastructure that gets a list of isisFlexAlgorithmList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Egress(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egress'
+    _SDM_NAME = "egress"
     _SDM_ATT_MAP = {
-        'AvailableEncapsulations': 'availableEncapsulations',
-        'AvailableOffsets': 'availableOffsets',
-        'CustomOffsetBits': 'customOffsetBits',
-        'CustomWidthBits': 'customWidthBits',
-        'Enabled': 'enabled',
-        'Encapsulation': 'encapsulation',
-        'Offset': 'offset',
+        "AvailableEncapsulations": "availableEncapsulations",
+        "AvailableOffsets": "availableOffsets",
+        "CustomOffsetBits": "customOffsetBits",
+        "CustomWidthBits": "customWidthBits",
+        "Enabled": "enabled",
+        "Encapsulation": "encapsulation",
+        "Offset": "offset",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Egress, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Egress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import (
+            FieldOffset,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FieldOffset', None) is not None:
-                return self._properties.get('FieldOffset')
+            if self._properties.get("FieldOffset", None) is not None:
+                return self._properties.get("FieldOffset")
         return FieldOffset(self)._select()
 
     @property
@@ -73,7 +76,7 @@ class Egress(Base):
         -------
         - list(str): Specifies the available Encapsulations for Egress Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableEncapsulations'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableEncapsulations"])
 
     @property
     def AvailableOffsets(self):
@@ -83,7 +86,7 @@ class Egress(Base):
         -------
         - list(str): Specifies the available Offsets for Egress Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableOffsets'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableOffsets"])
 
     @property
     def CustomOffsetBits(self):
@@ -93,11 +96,12 @@ class Egress(Base):
         -------
         - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomOffsetBits"])
+
     @CustomOffsetBits.setter
     def CustomOffsetBits(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomOffsetBits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomOffsetBits"], value)
 
     @property
     def CustomWidthBits(self):
@@ -107,11 +111,12 @@ class Egress(Base):
         -------
         - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomWidthBits"])
+
     @CustomWidthBits.setter
     def CustomWidthBits(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomWidthBits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomWidthBits"], value)
 
     @property
     def Enabled(self):
@@ -121,11 +126,12 @@ class Egress(Base):
         -------
         - bool: If true, egress tracking is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Encapsulation(self):
@@ -135,11 +141,12 @@ class Egress(Base):
         -------
         - str: Specifies the Encapsulation for Egress Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
+        return self._get_attribute(self._SDM_ATT_MAP["Encapsulation"])
+
     @Encapsulation.setter
     def Encapsulation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Encapsulation"], value)
 
     @property
     def Offset(self):
@@ -149,13 +156,21 @@ class Egress(Base):
         -------
         - str: Specifies the Offset for Egress Tracking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
+        return self._get_attribute(self._SDM_ATT_MAP["Offset"])
+
     @Offset.setter
     def Offset(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Offset"], value)
 
-    def update(self, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
+    def update(
+        self,
+        CustomOffsetBits=None,
+        CustomWidthBits=None,
+        Enabled=None,
+        Encapsulation=None,
+        Offset=None,
+    ):
         # type: (int, int, bool, str, str) -> Egress
         """Updates egress resource on the server.
 
@@ -173,7 +188,16 @@ class Egress(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableEncapsulations=None, AvailableOffsets=None, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
+    def find(
+        self,
+        AvailableEncapsulations=None,
+        AvailableOffsets=None,
+        CustomOffsetBits=None,
+        CustomWidthBits=None,
+        Enabled=None,
+        Encapsulation=None,
+        Offset=None,
+    ):
         # type: (List[str], List[str], int, int, bool, str, str) -> Egress
         """Finds and retrieves egress resources from the server.
 

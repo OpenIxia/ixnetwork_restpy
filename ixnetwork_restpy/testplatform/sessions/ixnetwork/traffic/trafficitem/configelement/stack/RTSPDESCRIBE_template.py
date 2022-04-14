@@ -4,22 +4,22 @@ from ixnetwork_restpy.files import Files
 
 class RTSPDESCRIBE(Base):
     __slots__ = ()
-    _SDM_NAME = 'RTSP_DESCRIBE'
+    _SDM_NAME = "RTSP_DESCRIBE"
     _SDM_ATT_MAP = {
-        'REQUESTREQUEST METHOD': 'RTSP_DESCRIBE.header.REQUEST.REQUEST METHOD-1',
-        'REQUESTSP': 'RTSP_DESCRIBE.header.REQUEST.SP-2',
-        'REQUESTREQUEST URI': 'RTSP_DESCRIBE.header.REQUEST.REQUEST URI-3',
-        'REQUESTSpace1': 'RTSP_DESCRIBE.header.REQUEST.Space1-4',
-        'REQUESTField1': 'RTSP_DESCRIBE.header.REQUEST.field1-5',
-        'REQUESTCRLF': 'RTSP_DESCRIBE.header.REQUEST.CRLF-6',
-        'HeaderUser-Agent': 'RTSP_DESCRIBE.header.User-Agent-7',
-        'HeaderAccept': 'RTSP_DESCRIBE.header.Accept-8',
-        'HeaderAccept-Charset': 'RTSP_DESCRIBE.header.Accept-Charset-9',
-        'HeaderX-Accept-Authentication': 'RTSP_DESCRIBE.header.X-Accept-Authentication-10',
-        'HeaderAccept-Language': 'RTSP_DESCRIBE.header.Accept-Language-11',
-        'HeaderCSeq': 'RTSP_DESCRIBE.header.CSeq-12',
-        'HeaderSupported': 'RTSP_DESCRIBE.header.Supported-13',
-        'HeaderCRLF': 'RTSP_DESCRIBE.header.CRLF-14',
+        "REQUESTREQUEST METHOD": "RTSP_DESCRIBE.header.REQUEST.REQUEST METHOD-1",
+        "REQUESTSP": "RTSP_DESCRIBE.header.REQUEST.SP-2",
+        "REQUESTREQUEST URI": "RTSP_DESCRIBE.header.REQUEST.REQUEST URI-3",
+        "REQUESTSpace1": "RTSP_DESCRIBE.header.REQUEST.Space1-4",
+        "REQUESTField1": "RTSP_DESCRIBE.header.REQUEST.field1-5",
+        "REQUESTCRLF": "RTSP_DESCRIBE.header.REQUEST.CRLF-6",
+        "HeaderUser-Agent": "RTSP_DESCRIBE.header.User-Agent-7",
+        "HeaderAccept": "RTSP_DESCRIBE.header.Accept-8",
+        "HeaderAccept-Charset": "RTSP_DESCRIBE.header.Accept-Charset-9",
+        "HeaderX-Accept-Authentication": "RTSP_DESCRIBE.header.X-Accept-Authentication-10",
+        "HeaderAccept-Language": "RTSP_DESCRIBE.header.Accept-Language-11",
+        "HeaderCSeq": "RTSP_DESCRIBE.header.CSeq-12",
+        "HeaderSupported": "RTSP_DESCRIBE.header.Supported-13",
+        "HeaderCRLF": "RTSP_DESCRIBE.header.CRLF-14",
     }
 
     def __init__(self, parent, list_op=False):
@@ -33,7 +33,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTREQUEST METHOD']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["REQUESTREQUEST METHOD"])
+        )
 
     @property
     def REQUESTSP(self):
@@ -43,7 +46,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTSP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["REQUESTSP"]))
 
     @property
     def REQUESTREQUESTURI(self):
@@ -53,7 +57,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTREQUEST URI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["REQUESTREQUEST URI"])
+        )
 
     @property
     def REQUESTSpace1(self):
@@ -63,7 +70,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTSpace1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["REQUESTSpace1"]))
 
     @property
     def REQUESTField1(self):
@@ -73,7 +81,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTField1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["REQUESTField1"]))
 
     @property
     def REQUESTCRLF(self):
@@ -83,7 +92,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['REQUESTCRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["REQUESTCRLF"]))
 
     @property
     def HeaderUserAgent(self):
@@ -93,7 +103,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUser-Agent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderUser-Agent"])
+        )
 
     @property
     def HeaderAccept(self):
@@ -103,7 +116,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept"]))
 
     @property
     def HeaderAcceptCharset(self):
@@ -113,7 +127,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Charset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Charset"])
+        )
 
     @property
     def HeaderXAcceptAuthentication(self):
@@ -123,7 +140,11 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderX-Accept-Authentication']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderX-Accept-Authentication"]),
+        )
 
     @property
     def HeaderAcceptLanguage(self):
@@ -133,7 +154,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAccept-Language']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAccept-Language"])
+        )
 
     @property
     def HeaderCSeq(self):
@@ -143,7 +167,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCSeq']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCSeq"]))
 
     @property
     def HeaderSupported(self):
@@ -153,7 +178,10 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSupported']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSupported"])
+        )
 
     @property
     def HeaderCRLF(self):
@@ -163,7 +191,8 @@ class RTSPDESCRIBE(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCRLF"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

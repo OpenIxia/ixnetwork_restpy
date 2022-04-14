@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class AvailableStatisticFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'availableStatisticFilter'
+    _SDM_NAME = "availableStatisticFilter"
     _SDM_ATT_MAP = {
-        'Caption': 'caption',
+        "Caption": "caption",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AvailableStatisticFilter, self).__init__(parent, list_op)
@@ -51,10 +51,10 @@ class AvailableStatisticFilter(Base):
         -------
         - str: Name of the statistic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
+        return self._get_attribute(self._SDM_ATT_MAP["Caption"])
 
     def add(self):
-        """Adds a new availableStatisticFilter resource on the json, only valid with config assistant
+        """Adds a new availableStatisticFilter resource on the json, only valid with batch add utility
 
         Returns
         -------

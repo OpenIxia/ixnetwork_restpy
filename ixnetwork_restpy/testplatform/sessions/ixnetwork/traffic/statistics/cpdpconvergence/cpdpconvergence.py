@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,28 @@ class CpdpConvergence(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cpdpConvergence'
+    _SDM_NAME = "cpdpConvergence"
     _SDM_ATT_MAP = {
-        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'DataPlaneThreshold': 'dataPlaneThreshold',
-        'EnableControlPlaneEvents': 'enableControlPlaneEvents',
-        'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
-        'Enabled': 'enabled',
+        "DataPlaneJitterWindow": "dataPlaneJitterWindow",
+        "DataPlaneThreshold": "dataPlaneThreshold",
+        "EnableControlPlaneEvents": "enableControlPlaneEvents",
+        "EnableDataPlaneEventsRateMonitor": "enableDataPlaneEventsRateMonitor",
+        "Enabled": "enabled",
     }
     _SDM_ENUM_MAP = {
-        'dataPlaneJitterWindow': ['0', '10485760', '1310720', '167772160', '20971520', '2621440', '335544320', '41943040', '5242880', '671088640', '83886080'],
+        "dataPlaneJitterWindow": [
+            "0",
+            "10485760",
+            "1310720",
+            "167772160",
+            "20971520",
+            "2621440",
+            "335544320",
+            "41943040",
+            "5242880",
+            "671088640",
+            "83886080",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +68,12 @@ class CpdpConvergence(Base):
         -------
         - str(0 | 10485760 | 1310720 | 167772160 | 20971520 | 2621440 | 335544320 | 41943040 | 5242880 | 671088640 | 83886080): Indicates the number of packets received during a time interval. This is used for calculating the rate on the recieve side.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPlaneJitterWindow"])
+
     @DataPlaneJitterWindow.setter
     def DataPlaneJitterWindow(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPlaneJitterWindow"], value)
 
     @property
     def DataPlaneThreshold(self):
@@ -69,11 +83,12 @@ class CpdpConvergence(Base):
         -------
         - number: The data loss threshold percentage for CP/DP events at the prompt.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPlaneThreshold"])
+
     @DataPlaneThreshold.setter
     def DataPlaneThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataPlaneThreshold"], value)
 
     @property
     def EnableControlPlaneEvents(self):
@@ -83,11 +98,12 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches control plane event statistics of event name, event start timestamp, and event end timestamp.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableControlPlaneEvents"])
+
     @EnableControlPlaneEvents.setter
     def EnableControlPlaneEvents(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableControlPlaneEvents"], value)
 
     @property
     def EnableDataPlaneEventsRateMonitor(self):
@@ -97,11 +113,16 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches data plane event rate statistics of DP above Threshold Timestamp, DP below Threshold Timestamp, Ramp Up Convergence, Ramp Down Convergence, CP/DP Convergence, and DP/DP Convergence.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableDataPlaneEventsRateMonitor"]
+        )
+
     @EnableDataPlaneEventsRateMonitor.setter
     def EnableDataPlaneEventsRateMonitor(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableDataPlaneEventsRateMonitor"], value
+        )
 
     @property
     def Enabled(self):
@@ -111,13 +132,21 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches control plane/data plane statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
-    def update(self, DataPlaneJitterWindow=None, DataPlaneThreshold=None, EnableControlPlaneEvents=None, EnableDataPlaneEventsRateMonitor=None, Enabled=None):
+    def update(
+        self,
+        DataPlaneJitterWindow=None,
+        DataPlaneThreshold=None,
+        EnableControlPlaneEvents=None,
+        EnableDataPlaneEventsRateMonitor=None,
+        Enabled=None,
+    ):
         # type: (str, int, bool, bool, bool) -> CpdpConvergence
         """Updates cpdpConvergence resource on the server.
 
@@ -135,7 +164,14 @@ class CpdpConvergence(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPlaneJitterWindow=None, DataPlaneThreshold=None, EnableControlPlaneEvents=None, EnableDataPlaneEventsRateMonitor=None, Enabled=None):
+    def find(
+        self,
+        DataPlaneJitterWindow=None,
+        DataPlaneThreshold=None,
+        EnableControlPlaneEvents=None,
+        EnableDataPlaneEventsRateMonitor=None,
+        Enabled=None,
+    ):
         # type: (str, int, bool, bool, bool) -> CpdpConvergence
         """Finds and retrieves cpdpConvergence resources from the server.
 

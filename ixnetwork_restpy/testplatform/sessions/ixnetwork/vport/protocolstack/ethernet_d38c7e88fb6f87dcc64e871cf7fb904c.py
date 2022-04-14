@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class Ethernet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ethernet'
+    _SDM_NAME = "ethernet"
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ethernet, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxendpoint_dee40c23795c99236356679505ae3c70 import DcbxEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxendpoint_dee40c23795c99236356679505ae3c70 import (
+            DcbxEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DcbxEndpoint', None) is not None:
-                return self._properties.get('DcbxEndpoint')
+            if self._properties.get("DcbxEndpoint", None) is not None:
+                return self._properties.get("DcbxEndpoint")
         return DcbxEndpoint(self)
 
     @property
@@ -73,10 +76,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpendpoint_d83734cfeb988490446d1c9ad6c4af09 import DhcpEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpendpoint_d83734cfeb988490446d1c9ad6c4af09 import (
+            DhcpEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpEndpoint', None) is not None:
-                return self._properties.get('DhcpEndpoint')
+            if self._properties.get("DhcpEndpoint", None) is not None:
+                return self._properties.get("DhcpEndpoint")
         return DhcpEndpoint(self)
 
     @property
@@ -90,10 +96,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpserverendpoint_9d22862f79a4153c07540ad31eb9bdd2 import DhcpServerEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpserverendpoint_9d22862f79a4153c07540ad31eb9bdd2 import (
+            DhcpServerEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpServerEndpoint', None) is not None:
-                return self._properties.get('DhcpServerEndpoint')
+            if self._properties.get("DhcpServerEndpoint", None) is not None:
+                return self._properties.get("DhcpServerEndpoint")
         return DhcpServerEndpoint(self)
 
     @property
@@ -107,10 +116,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1x_0773104da18a9d910b7d354c8ff01841 import Dot1x
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1x_0773104da18a9d910b7d354c8ff01841 import (
+            Dot1x,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1x', None) is not None:
-                return self._properties.get('Dot1x')
+            if self._properties.get("Dot1x", None) is not None:
+                return self._properties.get("Dot1x")
         return Dot1x(self)
 
     @property
@@ -124,10 +136,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.emulatedrouter_535b506637a7fbb8359e629957d71cba import EmulatedRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.emulatedrouter_535b506637a7fbb8359e629957d71cba import (
+            EmulatedRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EmulatedRouter', None) is not None:
-                return self._properties.get('EmulatedRouter')
+            if self._properties.get("EmulatedRouter", None) is not None:
+                return self._properties.get("EmulatedRouter")
         return EmulatedRouter(self)
 
     @property
@@ -141,10 +156,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.emulatedrouterendpoint_88df8cdf84e98f0da406a58b7c2e745a import EmulatedRouterEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.emulatedrouterendpoint_88df8cdf84e98f0da406a58b7c2e745a import (
+            EmulatedRouterEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EmulatedRouterEndpoint', None) is not None:
-                return self._properties.get('EmulatedRouterEndpoint')
+            if self._properties.get("EmulatedRouterEndpoint", None) is not None:
+                return self._properties.get("EmulatedRouterEndpoint")
         return EmulatedRouterEndpoint(self)
 
     @property
@@ -158,10 +176,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmc_12f07ab551c9d5be97aca8d210eb2b01 import Esmc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmc_12f07ab551c9d5be97aca8d210eb2b01 import (
+            Esmc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Esmc', None) is not None:
-                return self._properties.get('Esmc')
+            if self._properties.get("Esmc", None) is not None:
+                return self._properties.get("Esmc")
         return Esmc(self)
 
     @property
@@ -175,10 +196,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientendpoint_9255cba3c6a958f51058e288c4d5d575 import FcoeClientEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientendpoint_9255cba3c6a958f51058e288c4d5d575 import (
+            FcoeClientEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeClientEndpoint', None) is not None:
-                return self._properties.get('FcoeClientEndpoint')
+            if self._properties.get("FcoeClientEndpoint", None) is not None:
+                return self._properties.get("FcoeClientEndpoint")
         return FcoeClientEndpoint(self)
 
     @property
@@ -192,10 +216,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdendpoint_572db692c1afc7eaf3ffbc2d091b2388 import FcoeFwdEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdendpoint_572db692c1afc7eaf3ffbc2d091b2388 import (
+            FcoeFwdEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeFwdEndpoint', None) is not None:
-                return self._properties.get('FcoeFwdEndpoint')
+            if self._properties.get("FcoeFwdEndpoint", None) is not None:
+                return self._properties.get("FcoeFwdEndpoint")
         return FcoeFwdEndpoint(self)
 
     @property
@@ -209,10 +236,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ip_153ba6fd5d9d534faada435c67e33673 import Ip
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ip_153ba6fd5d9d534faada435c67e33673 import (
+            Ip,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ip', None) is not None:
-                return self._properties.get('Ip')
+            if self._properties.get("Ip", None) is not None:
+                return self._properties.get("Ip")
         return Ip(self)
 
     @property
@@ -226,10 +256,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ipendpoint_4c21073b5655bdd8f2c6cf4b0418152b import IpEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ipendpoint_4c21073b5655bdd8f2c6cf4b0418152b import (
+            IpEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IpEndpoint', None) is not None:
-                return self._properties.get('IpEndpoint')
+            if self._properties.get("IpEndpoint", None) is not None:
+                return self._properties.get("IpEndpoint")
         return IpEndpoint(self)
 
     @property
@@ -243,10 +276,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppox_0181595883003546b9a20e9fe7b0d13f import Pppox
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppox_0181595883003546b9a20e9fe7b0d13f import (
+            Pppox,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pppox', None) is not None:
-                return self._properties.get('Pppox')
+            if self._properties.get("Pppox", None) is not None:
+                return self._properties.get("Pppox")
         return Pppox(self)
 
     @property
@@ -260,10 +296,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxendpoint_894fab4afae2dd31b0f787867fd3aba9 import PppoxEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxendpoint_894fab4afae2dd31b0f787867fd3aba9 import (
+            PppoxEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppoxEndpoint', None) is not None:
-                return self._properties.get('PppoxEndpoint')
+            if self._properties.get("PppoxEndpoint", None) is not None:
+                return self._properties.get("PppoxEndpoint")
         return PppoxEndpoint(self)
 
     @property
@@ -277,10 +316,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_3935bcbb649543554d6a54c1144fd9e0 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_3935bcbb649543554d6a54c1144fd9e0 import (
+            Ptp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ptp', None) is not None:
-                return self._properties.get('Ptp')
+            if self._properties.get("Ptp", None) is not None:
+                return self._properties.get("Ptp")
         return Ptp(self)
 
     @property
@@ -294,10 +336,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaendpoint_27164b31df54a9faa69c1190fe14c0ed import VepaEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaendpoint_27164b31df54a9faa69c1190fe14c0ed import (
+            VepaEndpoint,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VepaEndpoint', None) is not None:
-                return self._properties.get('VepaEndpoint')
+            if self._properties.get("VepaEndpoint", None) is not None:
+                return self._properties.get("VepaEndpoint")
         return VepaEndpoint(self)
 
     @property
@@ -311,10 +356,13 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclient_13b03ed53cd3f214fd0e3dca89b2ee9d import VicClient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclient_13b03ed53cd3f214fd0e3dca89b2ee9d import (
+            VicClient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicClient', None) is not None:
-                return self._properties.get('VicClient')
+            if self._properties.get("VicClient", None) is not None:
+                return self._properties.get("VicClient")
         return VicClient(self)
 
     @property
@@ -325,11 +373,12 @@ class Ethernet(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -339,7 +388,7 @@ class Ethernet(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, Name=None):
         # type: (str) -> Ethernet
@@ -446,10 +495,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -468,10 +519,14 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -490,10 +545,14 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -512,10 +571,14 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -539,10 +602,12 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -566,7 +631,9 @@ class Ethernet(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class SwitchActionLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchActionLearnedInfo'
+    _SDM_NAME = "switchActionLearnedInfo"
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'MaxByteLength': 'maxByteLength',
-        'OutputPort': 'outputPort',
-        'QueueId': 'queueId',
-        'TransportDestination': 'transportDestination',
-        'TransportSource': 'transportSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ActionType": "actionType",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "IpDscp": "ipDscp",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "MaxByteLength": "maxByteLength",
+        "OutputPort": "outputPort",
+        "QueueId": "queueId",
+        "TransportDestination": "transportDestination",
+        "TransportSource": "transportSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchActionLearnedInfo, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes the action associated with the flow entry
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionType"])
 
     @property
     def EthernetDestination(self):
@@ -73,7 +73,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes Ethernet destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
 
     @property
     def EthernetSource(self):
@@ -83,7 +83,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes Ethernet source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
 
     @property
     def IpDscp(self):
@@ -93,7 +93,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes the IP DSCP value for advertising.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
 
     @property
     def Ipv4Destination(self):
@@ -103,7 +103,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes the IPv4 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
 
     @property
     def Ipv4Source(self):
@@ -113,7 +113,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - str: This describes the IPv4 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
 
     @property
     def MaxByteLength(self):
@@ -123,7 +123,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the maximum amount of data from a packet that should be sent when the port is OFPP_CONTROLLER.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxByteLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxByteLength"])
 
     @property
     def OutputPort(self):
@@ -133,7 +133,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the output port through which the packet should be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPort"])
 
     @property
     def QueueId(self):
@@ -143,7 +143,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the queue of the port in which the packet should be enqueued.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
 
     @property
     def TransportDestination(self):
@@ -153,7 +153,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the transport destination address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportDestination"])
 
     @property
     def TransportSource(self):
@@ -163,7 +163,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the transport source address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportSource"])
 
     @property
     def VlanId(self):
@@ -173,7 +173,7 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the Value of the VLAN ID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     @property
     def VlanPriority(self):
@@ -183,10 +183,10 @@ class SwitchActionLearnedInfo(Base):
         -------
         - number: This describes the VLAN priority
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
 
     def add(self):
-        """Adds a new switchActionLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchActionLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +198,22 @@ class SwitchActionLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActionType=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ActionType=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        MaxByteLength=None,
+        OutputPort=None,
+        QueueId=None,
+        TransportDestination=None,
+        TransportSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, str, str, str, int, int, int, int, int, int, int) -> SwitchActionLearnedInfo
         """Finds and retrieves switchActionLearnedInfo resources from the server.
 

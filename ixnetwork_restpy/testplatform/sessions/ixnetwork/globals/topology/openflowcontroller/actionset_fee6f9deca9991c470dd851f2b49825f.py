@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class ActionSet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'actionSet'
+    _SDM_NAME = "actionSet"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Description': 'description',
-        'IsEditable': 'isEditable',
-        'IsRepeatable': 'isRepeatable',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
+        "Count": "count",
+        "Description": "description",
+        "IsEditable": "isEditable",
+        "IsRepeatable": "isRepeatable",
+        "IsRequired": "isRequired",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ActionSet, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class ActionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action_fca3673b74732220701dbad581b63119 import Action
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action_fca3673b74732220701dbad581b63119 import (
+            Action,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Action', None) is not None:
-                return self._properties.get('Action')
+            if self._properties.get("Action", None) is not None:
+                return self._properties.get("Action")
         return Action(self)
 
     @property
@@ -74,7 +77,7 @@ class ActionSet(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Description(self):
@@ -84,11 +87,12 @@ class ActionSet(Base):
         -------
         - str: Description of the TLV prototype.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def IsEditable(self):
@@ -98,11 +102,12 @@ class ActionSet(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsRepeatable(self):
@@ -112,11 +117,12 @@ class ActionSet(Base):
         -------
         - bool: Information if the field can be multiplied in the tlv definition.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRepeatable"])
+
     @IsRepeatable.setter
     def IsRepeatable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRepeatable"], value)
 
     @property
     def IsRequired(self):
@@ -126,11 +132,12 @@ class ActionSet(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -140,13 +147,21 @@ class ActionSet(Base):
         -------
         - str: Name of the TLV field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def update(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> ActionSet
         """Updates actionSet resource on the server.
 
@@ -164,7 +179,14 @@ class ActionSet(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def add(
+        self,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (str, bool, bool, bool, str) -> ActionSet
         """Adds a new actionSet resource on the server and adds it to the container.
 
@@ -196,7 +218,15 @@ class ActionSet(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        Description=None,
+        IsEditable=None,
+        IsRepeatable=None,
+        IsRequired=None,
+        Name=None,
+    ):
         # type: (int, str, bool, bool, bool, str) -> ActionSet
         """Finds and retrieves actionSet resources from the server.
 

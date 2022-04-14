@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class Vlan(Base):
     __slots__ = ()
-    _SDM_NAME = 'vlan'
+    _SDM_NAME = "vlan"
     _SDM_ATT_MAP = {
-        'VlanTagVlanUserPriority': 'vlan.header.vlanTag.vlanUserPriority-1',
-        'VlanTagCfi': 'vlan.header.vlanTag.cfi-2',
-        'VlanTagVlanID': 'vlan.header.vlanTag.vlanID-3',
-        'ProtocolID': 'vlan.header.protocolID-4',
+        "VlanTagVlanUserPriority": "vlan.header.vlanTag.vlanUserPriority-1",
+        "VlanTagCfi": "vlan.header.vlanTag.cfi-2",
+        "VlanTagVlanID": "vlan.header.vlanTag.vlanID-3",
+        "ProtocolID": "vlan.header.protocolID-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class Vlan(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTagVlanUserPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanTagVlanUserPriority"])
+        )
 
     @property
     def VlanTagCfi(self):
@@ -33,7 +36,8 @@ class Vlan(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTagCfi']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanTagCfi"]))
 
     @property
     def VlanTagVlanID(self):
@@ -43,7 +47,8 @@ class Vlan(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTagVlanID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanTagVlanID"]))
 
     @property
     def ProtocolID(self):
@@ -53,7 +58,8 @@ class Vlan(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtocolID"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

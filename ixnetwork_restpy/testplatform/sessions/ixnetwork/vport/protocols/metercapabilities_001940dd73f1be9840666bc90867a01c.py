@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class MeterCapabilities(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'meterCapabilities'
+    _SDM_NAME = "meterCapabilities"
     _SDM_ATT_MAP = {
-        'CollectStatistics': 'collectStatistics',
-        'DoBurstSize': 'doBurstSize',
-        'KiloBitPerSecond': 'kiloBitPerSecond',
-        'PacketPerSecond': 'packetPerSecond',
+        "CollectStatistics": "collectStatistics",
+        "DoBurstSize": "doBurstSize",
+        "KiloBitPerSecond": "kiloBitPerSecond",
+        "PacketPerSecond": "packetPerSecond",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MeterCapabilities, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class MeterCapabilities(Base):
         -------
         - bool: The capability to collect statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CollectStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["CollectStatistics"])
+
     @CollectStatistics.setter
     def CollectStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CollectStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CollectStatistics"], value)
 
     @property
     def DoBurstSize(self):
@@ -67,11 +68,12 @@ class MeterCapabilities(Base):
         -------
         - bool: The size of burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DoBurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["DoBurstSize"])
+
     @DoBurstSize.setter
     def DoBurstSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DoBurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DoBurstSize"], value)
 
     @property
     def KiloBitPerSecond(self):
@@ -81,11 +83,12 @@ class MeterCapabilities(Base):
         -------
         - bool: Rate value in kilo-bit per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KiloBitPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["KiloBitPerSecond"])
+
     @KiloBitPerSecond.setter
     def KiloBitPerSecond(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KiloBitPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KiloBitPerSecond"], value)
 
     @property
     def PacketPerSecond(self):
@@ -95,13 +98,20 @@ class MeterCapabilities(Base):
         -------
         - bool: Rate value in packet per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketPerSecond"])
+
     @PacketPerSecond.setter
     def PacketPerSecond(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketPerSecond"], value)
 
-    def update(self, CollectStatistics=None, DoBurstSize=None, KiloBitPerSecond=None, PacketPerSecond=None):
+    def update(
+        self,
+        CollectStatistics=None,
+        DoBurstSize=None,
+        KiloBitPerSecond=None,
+        PacketPerSecond=None,
+    ):
         # type: (bool, bool, bool, bool) -> MeterCapabilities
         """Updates meterCapabilities resource on the server.
 
@@ -118,7 +128,13 @@ class MeterCapabilities(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CollectStatistics=None, DoBurstSize=None, KiloBitPerSecond=None, PacketPerSecond=None):
+    def find(
+        self,
+        CollectStatistics=None,
+        DoBurstSize=None,
+        KiloBitPerSecond=None,
+        PacketPerSecond=None,
+    ):
         # type: (bool, bool, bool, bool) -> MeterCapabilities
         """Finds and retrieves meterCapabilities resources from the server.
 

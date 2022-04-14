@@ -4,19 +4,19 @@ from ixnetwork_restpy.files import Files
 
 class RTSPReply(Base):
     __slots__ = ()
-    _SDM_NAME = 'RTSP_Reply'
+    _SDM_NAME = "RTSP_Reply"
     _SDM_ATT_MAP = {
-        'RESPONSEField0': 'RTSP_Reply.header.RESPONSE.field0-1',
-        'RESPONSESP': 'RTSP_Reply.header.RESPONSE.SP-2',
-        'RESPONSERTSP STATUS CODE': 'RTSP_Reply.header.RESPONSE.RTSP STATUS CODE-3',
-        'RESPONSESP1': 'RTSP_Reply.header.RESPONSE.SP1-4',
-        'RESPONSEREASON-PHRASE': 'RTSP_Reply.header.RESPONSE.REASON-PHRASE-5',
-        'RESPONSECRLF': 'RTSP_Reply.header.RESPONSE.CRLF-6',
-        'HeaderDATE': 'RTSP_Reply.header.DATE-7',
-        'HeaderCSeq': 'RTSP_Reply.header.CSeq-8',
-        'HeaderServer': 'RTSP_Reply.header.Server-9',
-        'HeaderSupported': 'RTSP_Reply.header.Supported-10',
-        'HeaderCRLFX': 'RTSP_Reply.header.CRLFX-11',
+        "RESPONSEField0": "RTSP_Reply.header.RESPONSE.field0-1",
+        "RESPONSESP": "RTSP_Reply.header.RESPONSE.SP-2",
+        "RESPONSERTSP STATUS CODE": "RTSP_Reply.header.RESPONSE.RTSP STATUS CODE-3",
+        "RESPONSESP1": "RTSP_Reply.header.RESPONSE.SP1-4",
+        "RESPONSEREASON-PHRASE": "RTSP_Reply.header.RESPONSE.REASON-PHRASE-5",
+        "RESPONSECRLF": "RTSP_Reply.header.RESPONSE.CRLF-6",
+        "HeaderDATE": "RTSP_Reply.header.DATE-7",
+        "HeaderCSeq": "RTSP_Reply.header.CSeq-8",
+        "HeaderServer": "RTSP_Reply.header.Server-9",
+        "HeaderSupported": "RTSP_Reply.header.Supported-10",
+        "HeaderCRLFX": "RTSP_Reply.header.CRLFX-11",
     }
 
     def __init__(self, parent, list_op=False):
@@ -30,7 +30,10 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSEField0']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSEField0"])
+        )
 
     @property
     def RESPONSESP(self):
@@ -40,7 +43,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSESP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RESPONSESP"]))
 
     @property
     def RESPONSERTSPSTATUSCODE(self):
@@ -50,7 +54,10 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSERTSP STATUS CODE']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSERTSP STATUS CODE"])
+        )
 
     @property
     def RESPONSESP1(self):
@@ -60,7 +67,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSESP1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RESPONSESP1"]))
 
     @property
     def RESPONSEREASONPHRASE(self):
@@ -70,7 +78,10 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSEREASON-PHRASE']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSEREASON-PHRASE"])
+        )
 
     @property
     def RESPONSECRLF(self):
@@ -80,7 +91,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSECRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RESPONSECRLF"]))
 
     @property
     def HeaderDATE(self):
@@ -90,7 +102,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDATE']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDATE"]))
 
     @property
     def HeaderCSeq(self):
@@ -100,7 +113,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCSeq']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCSeq"]))
 
     @property
     def HeaderServer(self):
@@ -110,7 +124,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderServer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderServer"]))
 
     @property
     def HeaderSupported(self):
@@ -120,7 +135,10 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSupported']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSupported"])
+        )
 
     @property
     def HeaderCRLFX(self):
@@ -130,7 +148,8 @@ class RTSPReply(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCRLFX']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCRLFX"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

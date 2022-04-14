@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class SMTPMAILFROM(Base):
     __slots__ = ()
-    _SDM_NAME = 'SMTP_MAIL_FROM'
+    _SDM_NAME = "SMTP_MAIL_FROM"
     _SDM_ATT_MAP = {
-        'Request_MAIL_FROMField0': 'SMTP_MAIL_FROM.Request_MAIL_FROM.field0-1',
-        'Request_MAIL_FROMSpace10': 'SMTP_MAIL_FROM.Request_MAIL_FROM.Space10-2',
-        'Request_MAIL_FROMRequest_FROM': 'SMTP_MAIL_FROM.Request_MAIL_FROM.Request_FROM-3',
-        'Request_MAIL_FROMCRLF__': 'SMTP_MAIL_FROM.Request_MAIL_FROM.CRLF__-4',
+        "Request_MAIL_FROMField0": "SMTP_MAIL_FROM.Request_MAIL_FROM.field0-1",
+        "Request_MAIL_FROMSpace10": "SMTP_MAIL_FROM.Request_MAIL_FROM.Space10-2",
+        "Request_MAIL_FROMRequest_FROM": "SMTP_MAIL_FROM.Request_MAIL_FROM.Request_FROM-3",
+        "Request_MAIL_FROMCRLF__": "SMTP_MAIL_FROM.Request_MAIL_FROM.CRLF__-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class SMTPMAILFROM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Request_MAIL_FROMField0']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Request_MAIL_FROMField0"])
+        )
 
     @property
     def Request_MAIL_FROMSpace10(self):
@@ -33,7 +36,10 @@ class SMTPMAILFROM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Request_MAIL_FROMSpace10']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Request_MAIL_FROMSpace10"])
+        )
 
     @property
     def Request_MAIL_FROMRequest_FROM(self):
@@ -43,7 +49,11 @@ class SMTPMAILFROM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Request_MAIL_FROMRequest_FROM']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Request_MAIL_FROMRequest_FROM"]),
+        )
 
     @property
     def Request_MAIL_FROMCRLF__(self):
@@ -53,7 +63,10 @@ class SMTPMAILFROM(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Request_MAIL_FROMCRLF__']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Request_MAIL_FROMCRLF__"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

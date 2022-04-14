@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class NetTopologyMesh(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyMesh'
+    _SDM_NAME = "netTopologyMesh"
     _SDM_ATT_MAP = {
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LinkMultiplier': 'linkMultiplier',
-        'Nodes': 'nodes',
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LinkMultiplier": "linkMultiplier",
+        "Nodes": "nodes",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyMesh, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class NetTopologyMesh(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LinkMultiplier(self):
@@ -68,11 +69,12 @@ class NetTopologyMesh(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     @property
     def Nodes(self):
@@ -82,11 +84,12 @@ class NetTopologyMesh(Base):
         -------
         - number: number of nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Nodes'])
+        return self._get_attribute(self._SDM_ATT_MAP["Nodes"])
+
     @Nodes.setter
     def Nodes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Nodes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Nodes"], value)
 
     def update(self, IncludeEntryPoint=None, LinkMultiplier=None, Nodes=None):
         # type: (bool, int, int) -> NetTopologyMesh

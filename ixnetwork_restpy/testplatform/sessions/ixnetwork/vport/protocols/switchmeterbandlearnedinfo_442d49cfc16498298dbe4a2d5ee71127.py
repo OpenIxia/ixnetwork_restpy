@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class SwitchMeterBandLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchMeterBandLearnedInfo'
+    _SDM_NAME = "switchMeterBandLearnedInfo"
     _SDM_ATT_MAP = {
-        'BandRate': 'bandRate',
-        'BandType': 'bandType',
-        'BurstSize': 'burstSize',
-        'ByteCount': 'byteCount',
-        'DatapathId': 'datapathId',
-        'DatapathIdAsHex': 'datapathIdAsHex',
-        'DropPrecedenceLevel': 'dropPrecedenceLevel',
-        'LocalIp': 'localIp',
-        'MeterId': 'meterId',
-        'PacketCount': 'packetCount',
+        "BandRate": "bandRate",
+        "BandType": "bandType",
+        "BurstSize": "burstSize",
+        "ByteCount": "byteCount",
+        "DatapathId": "datapathId",
+        "DatapathIdAsHex": "datapathIdAsHex",
+        "DropPrecedenceLevel": "dropPrecedenceLevel",
+        "LocalIp": "localIp",
+        "MeterId": "meterId",
+        "PacketCount": "packetCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchMeterBandLearnedInfo, self).__init__(parent, list_op)
@@ -60,7 +60,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BandRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["BandRate"])
 
     @property
     def BandType(self):
@@ -70,7 +70,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BandType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BandType"])
 
     @property
     def BurstSize(self):
@@ -80,7 +80,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
 
     @property
     def ByteCount(self):
@@ -90,7 +90,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteCount"])
 
     @property
     def DatapathId(self):
@@ -100,7 +100,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathId"])
 
     @property
     def DatapathIdAsHex(self):
@@ -110,7 +110,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathIdAsHex"])
 
     @property
     def DropPrecedenceLevel(self):
@@ -120,7 +120,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DropPrecedenceLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["DropPrecedenceLevel"])
 
     @property
     def LocalIp(self):
@@ -130,7 +130,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MeterId(self):
@@ -140,7 +140,7 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def PacketCount(self):
@@ -150,10 +150,10 @@ class SwitchMeterBandLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCount"])
 
     def add(self):
-        """Adds a new switchMeterBandLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchMeterBandLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -165,7 +165,19 @@ class SwitchMeterBandLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BandRate=None, BandType=None, BurstSize=None, ByteCount=None, DatapathId=None, DatapathIdAsHex=None, DropPrecedenceLevel=None, LocalIp=None, MeterId=None, PacketCount=None):
+    def find(
+        self,
+        BandRate=None,
+        BandType=None,
+        BurstSize=None,
+        ByteCount=None,
+        DatapathId=None,
+        DatapathIdAsHex=None,
+        DropPrecedenceLevel=None,
+        LocalIp=None,
+        MeterId=None,
+        PacketCount=None,
+    ):
         # type: (int, str, int, int, str, str, int, str, int, int) -> SwitchMeterBandLearnedInfo
         """Finds and retrieves switchMeterBandLearnedInfo resources from the server.
 

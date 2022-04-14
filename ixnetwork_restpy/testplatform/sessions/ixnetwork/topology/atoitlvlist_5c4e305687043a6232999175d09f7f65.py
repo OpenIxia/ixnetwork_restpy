@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class AtoiTLVList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atoiTLVList'
+    _SDM_NAME = "atoiTLVList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'CurrentOffset': 'currentOffset',
-        'DescriptiveName': 'descriptiveName',
-        'DisplayName': 'displayName',
-        'JumpSeconds': 'jumpSeconds',
-        'KeyField': 'keyField',
-        'MvActive': 'mvActive',
-        'Name': 'name',
-        'TimeOfNextJump': 'timeOfNextJump',
+        "Count": "count",
+        "CurrentOffset": "currentOffset",
+        "DescriptiveName": "descriptiveName",
+        "DisplayName": "displayName",
+        "JumpSeconds": "jumpSeconds",
+        "KeyField": "keyField",
+        "MvActive": "mvActive",
+        "Name": "name",
+        "TimeOfNextJump": "timeOfNextJump",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AtoiTLVList, self).__init__(parent, list_op)
@@ -58,7 +58,7 @@ class AtoiTLVList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CurrentOffset(self):
@@ -69,7 +69,8 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 'Current Offset' shall be the current offset of the local time, in seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CurrentOffset']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CurrentOffset"]))
 
     @property
     def DescriptiveName(self):
@@ -79,7 +80,7 @@ class AtoiTLVList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DisplayName(self):
@@ -90,7 +91,8 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 'Display Name' shall be the text name of the alternate timescale.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DisplayName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DisplayName"]))
 
     @property
     def JumpSeconds(self):
@@ -101,7 +103,8 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 'Jump Seconds' shall be 0 when the local time does not use Daylight Saving Time (DST), else shall be Nx900 with N, an integer greater or less than 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JumpSeconds']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["JumpSeconds"]))
 
     @property
     def KeyField(self):
@@ -112,7 +115,8 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): keyField shall be >0 when the offset is valid, else 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyField']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyField"]))
 
     @property
     def MvActive(self):
@@ -123,7 +127,8 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvActive']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvActive"]))
 
     @property
     def Name(self):
@@ -133,11 +138,12 @@ class AtoiTLVList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def TimeOfNextJump(self):
@@ -148,7 +154,10 @@ class AtoiTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When not zero, 'Time Of Next Jump' shall be the second portion of the PTP time at the next DST event, OR the next leap second.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeOfNextJump']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TimeOfNextJump"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> AtoiTLVList
@@ -209,7 +218,16 @@ class AtoiTLVList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, CurrentOffset=None, DisplayName=None, JumpSeconds=None, KeyField=None, MvActive=None, TimeOfNextJump=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        CurrentOffset=None,
+        DisplayName=None,
+        JumpSeconds=None,
+        KeyField=None,
+        MvActive=None,
+        TimeOfNextJump=None,
+    ):
         """Base class infrastructure that gets a list of atoiTLVList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

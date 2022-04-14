@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class ECpriRecRadioChannelsOrUsers(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eCpriRecRadioChannelsOrUsers'
+    _SDM_NAME = "eCpriRecRadioChannelsOrUsers"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ChannelId': 'channelId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'MessageType': 'messageType',
-        'Name': 'name',
-        'SequenceId': 'sequenceId',
-        'UserDataLength': 'userDataLength',
+        "Active": "active",
+        "ChannelId": "channelId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "MessageType": "messageType",
+        "Name": "name",
+        "SequenceId": "sequenceId",
+        "UserDataLength": "userDataLength",
     }
     _SDM_ENUM_MAP = {
-        'messageType': ['iQData', 'bitSequence', 'genericDataTransfer'],
+        "messageType": ["iQData", "bitSequence", "genericDataTransfer"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,10 +64,13 @@ class ECpriRecRadioChannelsOrUsers(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import (
+            CMacProperties,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacProperties', None) is not None:
-                return self._properties.get('CMacProperties')
+            if self._properties.get("CMacProperties", None) is not None:
+                return self._properties.get("CMacProperties")
         return CMacProperties(self)
 
     @property
@@ -80,10 +84,13 @@ class ECpriRecRadioChannelsOrUsers(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -97,10 +104,13 @@ class ECpriRecRadioChannelsOrUsers(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import (
+            EvpnIPv4PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv4PrefixRange')
+            if self._properties.get("EvpnIPv4PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv4PrefixRange")
         return EvpnIPv4PrefixRange(self)
 
     @property
@@ -114,10 +124,13 @@ class ECpriRecRadioChannelsOrUsers(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import (
+            EvpnIPv6PrefixRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-                return self._properties.get('EvpnIPv6PrefixRange')
+            if self._properties.get("EvpnIPv6PrefixRange", None) is not None:
+                return self._properties.get("EvpnIPv6PrefixRange")
         return EvpnIPv6PrefixRange(self)
 
     @property
@@ -129,7 +142,8 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ChannelId(self):
@@ -140,7 +154,8 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification of a Channel or User.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChannelId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ChannelId"]))
 
     @property
     def Count(self):
@@ -150,7 +165,7 @@ class ECpriRecRadioChannelsOrUsers(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -160,7 +175,7 @@ class ECpriRecRadioChannelsOrUsers(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def MessageType(self):
@@ -170,11 +185,12 @@ class ECpriRecRadioChannelsOrUsers(Base):
         -------
         - str(iQData | bitSequence | genericDataTransfer): Message Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessageType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessageType"])
+
     @MessageType.setter
     def MessageType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MessageType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MessageType"], value)
 
     @property
     def Name(self):
@@ -184,11 +200,12 @@ class ECpriRecRadioChannelsOrUsers(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SequenceId(self):
@@ -199,7 +216,8 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier of each message in a series of IQ Data Transfer messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SequenceId"]))
 
     @property
     def UserDataLength(self):
@@ -210,7 +228,10 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number bytes(0 to 255) to be included as bit sequence of user data.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDataLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDataLength"])
+        )
 
     def update(self, MessageType=None, Name=None):
         # type: (str, str) -> ECpriRecRadioChannelsOrUsers
@@ -317,10 +338,12 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -349,10 +372,12 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -381,12 +406,21 @@ class ECpriRecRadioChannelsOrUsers(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ChannelId=None, SequenceId=None, UserDataLength=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ChannelId=None,
+        SequenceId=None,
+        UserDataLength=None,
+    ):
         """Base class infrastructure that gets a list of eCpriRecRadioChannelsOrUsers device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,46 +34,45 @@ class IPv6PseudoNodeRoutes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'IPv6PseudoNodeRoutes'
+    _SDM_NAME = "IPv6PseudoNodeRoutes"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableBit4': 'enableBit4',
-        'EnableBit5': 'enableBit5',
-        'EnableBit6': 'enableBit6',
-        'EnableBit7': 'enableBit7',
-        'EnableBit8': 'enableBit8',
-        'EnableNFlag': 'enableNFlag',
-        'EnableRFlag': 'enableRFlag',
-        'EnableXFlag': 'enableXFlag',
-        'IPv6SourceRouterID': 'iPv6SourceRouterID',
-        'IncludePrefixAttrFlags': 'includePrefixAttrFlags',
-        'IncludeSourceRouterID': 'includeSourceRouterID',
-        'Ipv4SourceRouterID': 'ipv4SourceRouterID',
-        'Ipv6EFlag': 'ipv6EFlag',
-        'Ipv6LFlag': 'ipv6LFlag',
-        'Ipv6Metric': 'ipv6Metric',
-        'Ipv6NFlag': 'ipv6NFlag',
-        'Ipv6PFlag': 'ipv6PFlag',
-        'Ipv6RFlag': 'ipv6RFlag',
-        'Ipv6Redistribution': 'ipv6Redistribution',
-        'Ipv6RouteOrigin': 'ipv6RouteOrigin',
-        'Ipv6Srh': 'ipv6Srh',
-        'Ipv6VFlag': 'ipv6VFlag',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NoOfMtIds': 'noOfMtIds',
-        'NoOfSidPerNodeRoutes': 'noOfSidPerNodeRoutes',
-        'OverWriteRoutersMt': 'overWriteRoutersMt',
-        'Prefix': 'prefix',
-        'RangeSize': 'rangeSize',
-        'SIDIndexLabel': 'sIDIndexLabel',
+        "Active": "active",
+        "Algorithm": "algorithm",
+        "ConfigureSIDIndexLabel": "configureSIDIndexLabel",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableBit4": "enableBit4",
+        "EnableBit5": "enableBit5",
+        "EnableBit6": "enableBit6",
+        "EnableBit7": "enableBit7",
+        "EnableBit8": "enableBit8",
+        "EnableNFlag": "enableNFlag",
+        "EnableRFlag": "enableRFlag",
+        "EnableXFlag": "enableXFlag",
+        "IPv6SourceRouterID": "iPv6SourceRouterID",
+        "IncludePrefixAttrFlags": "includePrefixAttrFlags",
+        "IncludeSourceRouterID": "includeSourceRouterID",
+        "Ipv4SourceRouterID": "ipv4SourceRouterID",
+        "Ipv6EFlag": "ipv6EFlag",
+        "Ipv6LFlag": "ipv6LFlag",
+        "Ipv6Metric": "ipv6Metric",
+        "Ipv6NFlag": "ipv6NFlag",
+        "Ipv6PFlag": "ipv6PFlag",
+        "Ipv6RFlag": "ipv6RFlag",
+        "Ipv6Redistribution": "ipv6Redistribution",
+        "Ipv6RouteOrigin": "ipv6RouteOrigin",
+        "Ipv6Srh": "ipv6Srh",
+        "Ipv6VFlag": "ipv6VFlag",
+        "Name": "name",
+        "NetworkAddress": "networkAddress",
+        "NoOfMtIds": "noOfMtIds",
+        "NoOfSidPerNodeRoutes": "noOfSidPerNodeRoutes",
+        "OverWriteRoutersMt": "overWriteRoutersMt",
+        "Prefix": "prefix",
+        "RangeSize": "rangeSize",
+        "SIDIndexLabel": "sIDIndexLabel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IPv6PseudoNodeRoutes, self).__init__(parent, list_op)
@@ -88,10 +88,13 @@ class IPv6PseudoNodeRoutes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_2a10c4ed3c307b62d44ec1ae4467199f import IsisL3PseudoRouteMtIdIPv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_2a10c4ed3c307b62d44ec1ae4467199f import (
+            IsisL3PseudoRouteMtIdIPv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3PseudoRouteMtIdIPv6', None) is not None:
-                return self._properties.get('IsisL3PseudoRouteMtIdIPv6')
+            if self._properties.get("IsisL3PseudoRouteMtIdIPv6", None) is not None:
+                return self._properties.get("IsisL3PseudoRouteMtIdIPv6")
         return IsisL3PseudoRouteMtIdIPv6(self)._select()
 
     @property
@@ -105,10 +108,13 @@ class IPv6PseudoNodeRoutes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pseudoroutessid_623bc67162f81219eae7debb23b5fa39 import PseudoRoutesSid
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pseudoroutessid_623bc67162f81219eae7debb23b5fa39 import (
+            PseudoRoutesSid,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PseudoRoutesSid', None) is not None:
-                return self._properties.get('PseudoRoutesSid')
+            if self._properties.get("PseudoRoutesSid", None) is not None:
+                return self._properties.get("PseudoRoutesSid")
         return PseudoRoutesSid(self)._select()
 
     @property
@@ -122,10 +128,13 @@ class IPv6PseudoNodeRoutes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -137,29 +146,34 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Algorithm(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def ConfigureSIDIndexLabel(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSIDIndexLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSIDIndexLabel"])
+        )
 
     @property
     def Count(self):
@@ -169,7 +183,7 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -179,7 +193,7 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableBit4(self):
@@ -190,7 +204,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing the flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit4"]))
 
     @property
     def EnableBit5(self):
@@ -201,7 +216,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing the flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit5"]))
 
     @property
     def EnableBit6(self):
@@ -212,7 +228,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing the flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit6"]))
 
     @property
     def EnableBit7(self):
@@ -223,7 +240,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing the flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit7"]))
 
     @property
     def EnableBit8(self):
@@ -234,7 +252,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing the flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit8"]))
 
     @property
     def EnableNFlag(self):
@@ -245,7 +264,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNFlag"]))
 
     @property
     def EnableRFlag(self):
@@ -256,7 +276,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRFlag"]))
 
     @property
     def EnableXFlag(self):
@@ -267,7 +288,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableXFlag"]))
 
     @property
     def IPv6SourceRouterID(self):
@@ -278,7 +300,10 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv6 source router id.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv6SourceRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IPv6SourceRouterID"])
+        )
 
     @property
     def IncludePrefixAttrFlags(self):
@@ -289,7 +314,10 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select this check box to include the prefix attribute flags.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludePrefixAttrFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludePrefixAttrFlags"])
+        )
 
     @property
     def IncludeSourceRouterID(self):
@@ -300,7 +328,10 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This drop box is provided to select ipv4 or ipv6 source id or none of them.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSourceRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeSourceRouterID"])
+        )
 
     @property
     def Ipv4SourceRouterID(self):
@@ -311,29 +342,34 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv4 source router id.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceRouterID"])
+        )
 
     @property
     def Ipv6EFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6EFlag"]))
 
     @property
     def Ipv6LFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6LFlag"]))
 
     @property
     def Ipv6Metric(self):
@@ -344,40 +380,44 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Metric"]))
 
     @property
     def Ipv6NFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nodal prefix flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6NFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NFlag"]))
 
     @property
     def Ipv6PFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6PFlag"]))
 
     @property
     def Ipv6RFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6RFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6RFlag"]))
 
     @property
     def Ipv6Redistribution(self):
@@ -388,7 +428,10 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Redistribution']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Redistribution"])
+        )
 
     @property
     def Ipv6RouteOrigin(self):
@@ -399,29 +442,34 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6RouteOrigin']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6RouteOrigin"])
+        )
 
     @property
     def Ipv6Srh(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise IPv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Srh']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Srh"]))
 
     @property
     def Ipv6VFlag(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6VFlag"]))
 
     @property
     def Name(self):
@@ -431,11 +479,12 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkAddress(self):
@@ -446,7 +495,10 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefixes of the simulated IPv6 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkAddress"])
+        )
 
     @property
     def NoOfMtIds(self):
@@ -456,11 +508,12 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - number: Number of MTIDs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfMtIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfMtIds"])
+
     @NoOfMtIds.setter
     def NoOfMtIds(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfMtIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfMtIds"], value)
 
     @property
     def NoOfSidPerNodeRoutes(self):
@@ -470,11 +523,12 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - number: Number of SID per node routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfSidPerNodeRoutes"])
+
     @NoOfSidPerNodeRoutes.setter
     def NoOfSidPerNodeRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfSidPerNodeRoutes"], value)
 
     @property
     def OverWriteRoutersMt(self):
@@ -484,11 +538,12 @@ class IPv6PseudoNodeRoutes(Base):
         -------
         - bool: If false, routers MT IDs which is union of all interfaces MTIDs would be used. If true, configured MT IDs in route range would be used
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverWriteRoutersMt'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverWriteRoutersMt"])
+
     @OverWriteRoutersMt.setter
     def OverWriteRoutersMt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverWriteRoutersMt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverWriteRoutersMt"], value)
 
     @property
     def Prefix(self):
@@ -499,7 +554,8 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Prefix"]))
 
     @property
     def RangeSize(self):
@@ -510,20 +566,28 @@ class IPv6PseudoNodeRoutes(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Range Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RangeSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RangeSize"]))
 
     @property
     def SIDIndexLabel(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SIDIndexLabel']))
 
-    def update(self, Name=None, NoOfMtIds=None, NoOfSidPerNodeRoutes=None, OverWriteRoutersMt=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SIDIndexLabel"]))
+
+    def update(
+        self,
+        Name=None,
+        NoOfMtIds=None,
+        NoOfSidPerNodeRoutes=None,
+        OverWriteRoutersMt=None,
+    ):
         # type: (str, int, int, bool) -> IPv6PseudoNodeRoutes
         """Updates IPv6PseudoNodeRoutes resource on the server.
 
@@ -543,9 +607,15 @@ class IPv6PseudoNodeRoutes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Name=None, NoOfMtIds=None, NoOfSidPerNodeRoutes=None, OverWriteRoutersMt=None):
+    def add(
+        self,
+        Name=None,
+        NoOfMtIds=None,
+        NoOfSidPerNodeRoutes=None,
+        OverWriteRoutersMt=None,
+    ):
         # type: (str, int, int, bool) -> IPv6PseudoNodeRoutes
-        """Adds a new IPv6PseudoNodeRoutes resource on the json, only valid with config assistant
+        """Adds a new IPv6PseudoNodeRoutes resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -564,7 +634,15 @@ class IPv6PseudoNodeRoutes(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfMtIds=None, NoOfSidPerNodeRoutes=None, OverWriteRoutersMt=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfMtIds=None,
+        NoOfSidPerNodeRoutes=None,
+        OverWriteRoutersMt=None,
+    ):
         # type: (int, str, str, int, int, bool) -> IPv6PseudoNodeRoutes
         """Finds and retrieves IPv6PseudoNodeRoutes resources from the server.
 
@@ -624,10 +702,12 @@ class IPv6PseudoNodeRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -644,10 +724,12 @@ class IPv6PseudoNodeRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -664,12 +746,46 @@ class IPv6PseudoNodeRoutes(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableNFlag=None, EnableRFlag=None, EnableXFlag=None, IPv6SourceRouterID=None, IncludePrefixAttrFlags=None, IncludeSourceRouterID=None, Ipv4SourceRouterID=None, Ipv6EFlag=None, Ipv6LFlag=None, Ipv6Metric=None, Ipv6NFlag=None, Ipv6PFlag=None, Ipv6RFlag=None, Ipv6Redistribution=None, Ipv6RouteOrigin=None, Ipv6Srh=None, Ipv6VFlag=None, NetworkAddress=None, Prefix=None, RangeSize=None, SIDIndexLabel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Algorithm=None,
+        ConfigureSIDIndexLabel=None,
+        EnableBit4=None,
+        EnableBit5=None,
+        EnableBit6=None,
+        EnableBit7=None,
+        EnableBit8=None,
+        EnableNFlag=None,
+        EnableRFlag=None,
+        EnableXFlag=None,
+        IPv6SourceRouterID=None,
+        IncludePrefixAttrFlags=None,
+        IncludeSourceRouterID=None,
+        Ipv4SourceRouterID=None,
+        Ipv6EFlag=None,
+        Ipv6LFlag=None,
+        Ipv6Metric=None,
+        Ipv6NFlag=None,
+        Ipv6PFlag=None,
+        Ipv6RFlag=None,
+        Ipv6Redistribution=None,
+        Ipv6RouteOrigin=None,
+        Ipv6Srh=None,
+        Ipv6VFlag=None,
+        NetworkAddress=None,
+        Prefix=None,
+        RangeSize=None,
+        SIDIndexLabel=None,
+    ):
         """Base class infrastructure that gets a list of IPv6PseudoNodeRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

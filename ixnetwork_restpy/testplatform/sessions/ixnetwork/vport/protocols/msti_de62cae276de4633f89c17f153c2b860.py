@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,57 @@ class Msti(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'msti'
+    _SDM_NAME = "msti"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InternalRootPathCost': 'internalRootPathCost',
-        'Mac': 'mac',
-        'MstiHops': 'mstiHops',
-        'MstiId': 'mstiId',
-        'MstiName': 'mstiName',
-        'PortPriority': 'portPriority',
-        'Priority': 'priority',
-        'UpdateRequired': 'updateRequired',
-        'VlanStart': 'vlanStart',
-        'VlanStop': 'vlanStop',
+        "Enabled": "enabled",
+        "InternalRootPathCost": "internalRootPathCost",
+        "Mac": "mac",
+        "MstiHops": "mstiHops",
+        "MstiId": "mstiId",
+        "MstiName": "mstiName",
+        "PortPriority": "portPriority",
+        "Priority": "priority",
+        "UpdateRequired": "updateRequired",
+        "VlanStart": "vlanStart",
+        "VlanStop": "vlanStop",
     }
     _SDM_ENUM_MAP = {
-        'portPriority': ['0', '16', '32', '48', '64', '80', '96', '112', '128', '144', '160', '176', '192', '208', '224', '240'],
-        'priority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        "portPriority": [
+            "0",
+            "16",
+            "32",
+            "48",
+            "64",
+            "80",
+            "96",
+            "112",
+            "128",
+            "144",
+            "160",
+            "176",
+            "192",
+            "208",
+            "224",
+            "240",
+        ],
+        "priority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,10 +102,13 @@ class Msti(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_273e29468afb43ab6030d9ae638525ff import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_273e29468afb43ab6030d9ae638525ff import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)._select()
 
     @property
@@ -84,10 +122,13 @@ class Msti(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_6425a34ec2fefebf89af1ee19da2cb62 import LearnedInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_6425a34ec2fefebf89af1ee19da2cb62 import (
+            LearnedInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInterface', None) is not None:
-                return self._properties.get('LearnedInterface')
+            if self._properties.get("LearnedInterface", None) is not None:
+                return self._properties.get("LearnedInterface")
         return LearnedInterface(self)
 
     @property
@@ -98,11 +139,12 @@ class Msti(Base):
         -------
         - bool: Enables the use of this MSTP MSTI. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InternalRootPathCost(self):
@@ -112,11 +154,12 @@ class Msti(Base):
         -------
         - number: The MSTI Internal Root Path Cost. A 4-byte unsigned integer. (default is 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalRootPathCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalRootPathCost"])
+
     @InternalRootPathCost.setter
     def InternalRootPathCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalRootPathCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalRootPathCost"], value)
 
     @property
     def Mac(self):
@@ -126,11 +169,12 @@ class Msti(Base):
         -------
         - str: The 6-byte MAC address for the MSTI root. This is part of the MSTI regional root identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mac'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mac"])
+
     @Mac.setter
     def Mac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mac"], value)
 
     @property
     def MstiHops(self):
@@ -140,11 +184,12 @@ class Msti(Base):
         -------
         - number: The number of MSTI hops remaining. An unsigned integer. The valid range is 1 to 255. (default = 20)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstiHops'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstiHops"])
+
     @MstiHops.setter
     def MstiHops(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstiHops'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstiHops"], value)
 
     @property
     def MstiId(self):
@@ -154,11 +199,12 @@ class Msti(Base):
         -------
         - number: The identifier for this MST Instance (MSTI). The valid range is 1 to 4,094. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstiId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstiId"])
+
     @MstiId.setter
     def MstiId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstiId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstiId"], value)
 
     @property
     def MstiName(self):
@@ -168,11 +214,12 @@ class Msti(Base):
         -------
         - str: The name of the MSTI which is configured from the list of MSTIs. Format: MSTI ID-n. (Editable by the user.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstiName'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstiName"])
+
     @MstiName.setter
     def MstiName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstiName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstiName"], value)
 
     @property
     def PortPriority(self):
@@ -182,11 +229,12 @@ class Msti(Base):
         -------
         - str(0 | 16 | 32 | 48 | 64 | 80 | 96 | 112 | 128 | 144 | 160 | 176 | 192 | 208 | 224 | 240): The MSTI Port Priority. This is part of the MSTI Regional Root Identifier. An unsigned integer; a multiple of 16. The valid range is 0 to 240. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortPriority"])
+
     @PortPriority.setter
     def PortPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortPriority"], value)
 
     @property
     def Priority(self):
@@ -196,11 +244,12 @@ class Msti(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): The MSTI Root Priority. This is part of the MSTI Regional Root Identifier. Since MAC address reduction is used, only multiples of 4096 are used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def UpdateRequired(self):
@@ -210,11 +259,12 @@ class Msti(Base):
         -------
         - bool: If true, causes the MSTI to update.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateRequired"])
+
     @UpdateRequired.setter
     def UpdateRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateRequired"], value)
 
     @property
     def VlanStart(self):
@@ -224,11 +274,12 @@ class Msti(Base):
         -------
         - number: The ID for the first VLAN in the VLAN range to which the MSTI is mapped. An unsigned integer. Valid range: 1 to 4094.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanStart"])
+
     @VlanStart.setter
     def VlanStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanStart"], value)
 
     @property
     def VlanStop(self):
@@ -238,13 +289,27 @@ class Msti(Base):
         -------
         - number: The ID for the last VLAN in the VLAN range to which the MSTI is mapped. An unsigned integer. Valid range: 1 to 4094.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanStop'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanStop"])
+
     @VlanStop.setter
     def VlanStop(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanStop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanStop"], value)
 
-    def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+    def update(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        MstiHops=None,
+        MstiId=None,
+        MstiName=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanStart=None,
+        VlanStop=None,
+    ):
         # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Updates msti resource on the server.
 
@@ -268,7 +333,20 @@ class Msti(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+    def add(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        MstiHops=None,
+        MstiId=None,
+        MstiName=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanStart=None,
+        VlanStop=None,
+    ):
         # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Adds a new msti resource on the server and adds it to the container.
 
@@ -306,7 +384,20 @@ class Msti(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+    def find(
+        self,
+        Enabled=None,
+        InternalRootPathCost=None,
+        Mac=None,
+        MstiHops=None,
+        MstiId=None,
+        MstiName=None,
+        PortPriority=None,
+        Priority=None,
+        UpdateRequired=None,
+        VlanStart=None,
+        VlanStop=None,
+    ):
         # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Finds and retrieves msti resources from the server.
 
@@ -372,10 +463,12 @@ class Msti(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('topologyChange', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("topologyChange", payload=payload, response_object=None)
 
     def UpdateParameters(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -393,7 +486,9 @@ class Msti(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateParameters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateParameters", payload=payload, response_object=None)

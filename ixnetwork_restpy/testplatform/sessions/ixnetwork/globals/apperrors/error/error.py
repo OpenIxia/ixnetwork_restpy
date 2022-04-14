@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,20 @@ class Error(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'error'
+    _SDM_NAME = "error"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'ErrorCode': 'errorCode',
-        'ErrorLevel': 'errorLevel',
-        'InstanceCount': 'instanceCount',
-        'LastModified': 'lastModified',
-        'Name': 'name',
-        'Provider': 'provider',
-        'SourceColumns': 'sourceColumns',
-        'SourceColumnsDisplayName': 'sourceColumnsDisplayName',
+        "Description": "description",
+        "ErrorCode": "errorCode",
+        "ErrorLevel": "errorLevel",
+        "InstanceCount": "instanceCount",
+        "LastModified": "lastModified",
+        "Name": "name",
+        "Provider": "provider",
+        "SourceColumns": "sourceColumns",
+        "SourceColumnsDisplayName": "sourceColumnsDisplayName",
     }
     _SDM_ENUM_MAP = {
-        'errorLevel': ['kAnalysis', 'kCount', 'kError', 'kMessage', 'kWarning'],
+        "errorLevel": ["kAnalysis", "kCount", "kError", "kMessage", "kWarning"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,10 +64,13 @@ class Error(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance import Instance
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance import (
+            Instance,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Instance', None) is not None:
-                return self._properties.get('Instance')
+            if self._properties.get("Instance", None) is not None:
+                return self._properties.get("Instance")
         return Instance(self)
 
     @property
@@ -77,7 +81,7 @@ class Error(Base):
         -------
         - str: The description of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def ErrorCode(self):
@@ -87,7 +91,7 @@ class Error(Base):
         -------
         - number: The error code of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorLevel(self):
@@ -97,7 +101,7 @@ class Error(Base):
         -------
         - str(kAnalysis | kCount | kError | kMessage | kWarning): The error level of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorLevel"])
 
     @property
     def InstanceCount(self):
@@ -107,7 +111,7 @@ class Error(Base):
         -------
         - number: The number of instances of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstanceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstanceCount"])
 
     @property
     def LastModified(self):
@@ -115,9 +119,9 @@ class Error(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastModified'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastModified"])
 
     @property
     def Name(self):
@@ -127,7 +131,7 @@ class Error(Base):
         -------
         - str: The name of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def Provider(self):
@@ -137,7 +141,7 @@ class Error(Base):
         -------
         - str: The error provider of the error
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Provider'])
+        return self._get_attribute(self._SDM_ATT_MAP["Provider"])
 
     @property
     def SourceColumns(self):
@@ -147,7 +151,7 @@ class Error(Base):
         -------
         - list(str): If the error content originated from an xml meta file, these are the source column names if any for this error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceColumns'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceColumns"])
 
     @property
     def SourceColumnsDisplayName(self):
@@ -155,12 +159,12 @@ class Error(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceColumnsDisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceColumnsDisplayName"])
 
     def add(self):
-        """Adds a new error resource on the json, only valid with config assistant
+        """Adds a new error resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -172,7 +176,18 @@ class Error(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Description=None, ErrorCode=None, ErrorLevel=None, InstanceCount=None, LastModified=None, Name=None, Provider=None, SourceColumns=None, SourceColumnsDisplayName=None):
+    def find(
+        self,
+        Description=None,
+        ErrorCode=None,
+        ErrorLevel=None,
+        InstanceCount=None,
+        LastModified=None,
+        Name=None,
+        Provider=None,
+        SourceColumns=None,
+        SourceColumnsDisplayName=None,
+    ):
         # type: (str, int, str, int, str, str, str, List[str], List[str]) -> Error
         """Finds and retrieves error resources from the server.
 
@@ -186,11 +201,11 @@ class Error(Base):
         - ErrorCode (number): The error code of the error
         - ErrorLevel (str(kAnalysis | kCount | kError | kMessage | kWarning)): The error level of the error
         - InstanceCount (number): The number of instances of the error
-        - LastModified (str): 
+        - LastModified (str):
         - Name (str): The name of the error
         - Provider (str): The error provider of the error
         - SourceColumns (list(str)): If the error content originated from an xml meta file, these are the source column names if any for this error.
-        - SourceColumnsDisplayName (list(str)): 
+        - SourceColumnsDisplayName (list(str)):
 
         Returns
         -------

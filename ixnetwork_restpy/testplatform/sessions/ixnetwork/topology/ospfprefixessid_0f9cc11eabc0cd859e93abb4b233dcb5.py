@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,25 +33,24 @@ class OspfPrefixesSid(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfPrefixesSid'
+    _SDM_NAME = "ospfPrefixesSid"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseFapm': 'advertiseFapm',
-        'Algorithm': 'algorithm',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'FapmMetric': 'fapmMetric',
-        'LFlag': 'lFlag',
-        'LocalRouterID': 'localRouterID',
-        'MFlag': 'mFlag',
-        'Name': 'name',
-        'NpFlag': 'npFlag',
-        'SidIndexLabel': 'sidIndexLabel',
-        'VFlag': 'vFlag',
+        "Active": "active",
+        "AdvertiseFapm": "advertiseFapm",
+        "Algorithm": "algorithm",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EFlag": "eFlag",
+        "FapmMetric": "fapmMetric",
+        "LFlag": "lFlag",
+        "LocalRouterID": "localRouterID",
+        "MFlag": "mFlag",
+        "Name": "name",
+        "NpFlag": "npFlag",
+        "SidIndexLabel": "sidIndexLabel",
+        "VFlag": "vFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OspfPrefixesSid, self).__init__(parent, list_op)
@@ -64,7 +64,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseFapm(self):
@@ -75,7 +76,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise FAPM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseFapm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseFapm"]))
 
     @property
     def Algorithm(self):
@@ -86,7 +88,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def Count(self):
@@ -96,7 +99,7 @@ class OspfPrefixesSid(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -106,7 +109,7 @@ class OspfPrefixesSid(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EFlag(self):
@@ -117,7 +120,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit-Null Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EFlag"]))
 
     @property
     def FapmMetric(self):
@@ -128,7 +132,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): FAPM Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FapmMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FapmMetric"]))
 
     @property
     def LFlag(self):
@@ -139,7 +144,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local or Global Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LocalRouterID(self):
@@ -149,7 +155,7 @@ class OspfPrefixesSid(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def MFlag(self):
@@ -160,7 +166,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mapping Server Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MFlag"]))
 
     @property
     def Name(self):
@@ -170,11 +177,12 @@ class OspfPrefixesSid(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NpFlag(self):
@@ -185,7 +193,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NpFlag"]))
 
     @property
     def SidIndexLabel(self):
@@ -196,7 +205,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexLabel"]))
 
     @property
     def VFlag(self):
@@ -207,7 +217,8 @@ class OspfPrefixesSid(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value or Index Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     def update(self, Name=None):
         # type: (str) -> OspfPrefixesSid
@@ -269,7 +280,20 @@ class OspfPrefixesSid(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseFapm=None, Algorithm=None, EFlag=None, FapmMetric=None, LFlag=None, MFlag=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseFapm=None,
+        Algorithm=None,
+        EFlag=None,
+        FapmMetric=None,
+        LFlag=None,
+        MFlag=None,
+        NpFlag=None,
+        SidIndexLabel=None,
+        VFlag=None,
+    ):
         """Base class infrastructure that gets a list of ospfPrefixesSid device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

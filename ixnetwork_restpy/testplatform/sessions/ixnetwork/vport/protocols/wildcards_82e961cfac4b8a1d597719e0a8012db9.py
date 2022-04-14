@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,52 +33,51 @@ class Wildcards(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'wildcards'
+    _SDM_NAME = "wildcards"
     _SDM_ATT_MAP = {
-        'ArpDestinationHardwareAddress': 'arpDestinationHardwareAddress',
-        'ArpDestinationIpv4Address': 'arpDestinationIpv4Address',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSourceHardwareAddress': 'arpSourceHardwareAddress',
-        'ArpSourceIpv4Address': 'arpSourceIpv4Address',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'Experimenter': 'experimenter',
-        'IcmpCode': 'icmpCode',
-        'IcmpType': 'icmpType',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'InPort': 'inPort',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTarget': 'ipv6NdTarget',
-        'Ipv6NdTll': 'ipv6NdTll',
-        'Ipv6Source': 'ipv6Source',
-        'Metadata': 'metadata',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'PbbIsid': 'pbbIsid',
-        'PhysicalInPort': 'physicalInPort',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TunnelId': 'tunnelId',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ArpDestinationHardwareAddress": "arpDestinationHardwareAddress",
+        "ArpDestinationIpv4Address": "arpDestinationIpv4Address",
+        "ArpOpcode": "arpOpcode",
+        "ArpSourceHardwareAddress": "arpSourceHardwareAddress",
+        "ArpSourceIpv4Address": "arpSourceIpv4Address",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "EthernetType": "ethernetType",
+        "Experimenter": "experimenter",
+        "IcmpCode": "icmpCode",
+        "IcmpType": "icmpType",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "InPort": "inPort",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProtocol": "ipProtocol",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTarget": "ipv6NdTarget",
+        "Ipv6NdTll": "ipv6NdTll",
+        "Ipv6Source": "ipv6Source",
+        "Metadata": "metadata",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "PbbIsid": "pbbIsid",
+        "PhysicalInPort": "physicalInPort",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TunnelId": "tunnelId",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Wildcards, self).__init__(parent, list_op)
@@ -90,11 +90,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ARP Source Hardware Address is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDestinationHardwareAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDestinationHardwareAddress"])
+
     @ArpDestinationHardwareAddress.setter
     def ArpDestinationHardwareAddress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDestinationHardwareAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDestinationHardwareAddress"], value)
 
     @property
     def ArpDestinationIpv4Address(self):
@@ -104,11 +105,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ARP Destination IPv4 Address is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDestinationIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDestinationIpv4Address"])
+
     @ArpDestinationIpv4Address.setter
     def ArpDestinationIpv4Address(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDestinationIpv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDestinationIpv4Address"], value)
 
     @property
     def ArpOpcode(self):
@@ -118,11 +120,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ARP Opcode is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
+
     @ArpOpcode.setter
     def ArpOpcode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpOpcode"], value)
 
     @property
     def ArpSourceHardwareAddress(self):
@@ -132,11 +135,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ARP Source Hardware Address is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSourceHardwareAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSourceHardwareAddress"])
+
     @ArpSourceHardwareAddress.setter
     def ArpSourceHardwareAddress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSourceHardwareAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSourceHardwareAddress"], value)
 
     @property
     def ArpSourceIpv4Address(self):
@@ -146,11 +150,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ARP Source IPv4 Address is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSourceIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSourceIpv4Address"])
+
     @ArpSourceIpv4Address.setter
     def ArpSourceIpv4Address(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSourceIpv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSourceIpv4Address"], value)
 
     @property
     def EthernetDestination(self):
@@ -160,11 +165,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Ethernet Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
+
     @EthernetDestination.setter
     def EthernetDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestination"], value)
 
     @property
     def EthernetSource(self):
@@ -174,11 +180,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Ethernet Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
+
     @EthernetSource.setter
     def EthernetSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSource"], value)
 
     @property
     def EthernetType(self):
@@ -188,11 +195,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Ethernet Type is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
+
     @EthernetType.setter
     def EthernetType(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetType"], value)
 
     @property
     def Experimenter(self):
@@ -202,11 +210,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Experimenter is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
+
     @Experimenter.setter
     def Experimenter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Experimenter"], value)
 
     @property
     def IcmpCode(self):
@@ -216,11 +225,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ICMP Code is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IcmpCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IcmpCode"])
+
     @IcmpCode.setter
     def IcmpCode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IcmpCode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IcmpCode"], value)
 
     @property
     def IcmpType(self):
@@ -230,11 +240,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ICMP Type is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IcmpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IcmpType"])
+
     @IcmpType.setter
     def IcmpType(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IcmpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IcmpType"], value)
 
     @property
     def Icmpv6Code(self):
@@ -244,11 +255,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ICMPv6 Code is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
+
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Code"], value)
 
     @property
     def Icmpv6Type(self):
@@ -258,11 +270,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards ICMPv6 Type is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
+
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Type"], value)
 
     @property
     def InPort(self):
@@ -272,11 +285,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards In Port is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPort"])
+
     @InPort.setter
     def InPort(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InPort"], value)
 
     @property
     def IpDscp(self):
@@ -286,11 +300,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IP DSCP is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def IpEcn(self):
@@ -300,11 +315,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IP ECN is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
+
     @IpEcn.setter
     def IpEcn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpEcn"], value)
 
     @property
     def IpProtocol(self):
@@ -314,11 +330,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IP Protocol is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProtocol"])
+
     @IpProtocol.setter
     def IpProtocol(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpProtocol"], value)
 
     @property
     def Ipv4Destination(self):
@@ -328,11 +345,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv4 Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -342,11 +360,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv4 Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def Ipv6Destination(self):
@@ -356,11 +375,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
+
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Destination"], value)
 
     @property
     def Ipv6ExtHeader(self):
@@ -370,11 +390,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 Ext Header is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
+
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -384,11 +405,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 Flow Label is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def Ipv6NdSll(self):
@@ -398,11 +420,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 ND SLL is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
+
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdSll"], value)
 
     @property
     def Ipv6NdTarget(self):
@@ -412,11 +435,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 ND Target is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"])
+
     @Ipv6NdTarget.setter
     def Ipv6NdTarget(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"], value)
 
     @property
     def Ipv6NdTll(self):
@@ -426,11 +450,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 ND TLL is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTll"])
+
     @Ipv6NdTll.setter
     def Ipv6NdTll(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdTll"], value)
 
     @property
     def Ipv6Source(self):
@@ -440,11 +465,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards IPv6 Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
+
     @Ipv6Source.setter
     def Ipv6Source(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Source"], value)
 
     @property
     def Metadata(self):
@@ -454,11 +480,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Metadata is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metadata"])
+
     @Metadata.setter
     def Metadata(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metadata'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metadata"], value)
 
     @property
     def MplsBos(self):
@@ -468,11 +495,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards MPLS BoS is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
+
     @MplsBos.setter
     def MplsBos(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsBos"], value)
 
     @property
     def MplsLabel(self):
@@ -482,11 +510,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards MPLS Label is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
+
     @MplsLabel.setter
     def MplsLabel(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabel"], value)
 
     @property
     def MplsTc(self):
@@ -496,11 +525,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards MPLS TC is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
+
     @MplsTc.setter
     def MplsTc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTc"], value)
 
     @property
     def PbbIsid(self):
@@ -510,11 +540,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards PBB ISID is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsid"])
+
     @PbbIsid.setter
     def PbbIsid(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PbbIsid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PbbIsid"], value)
 
     @property
     def PhysicalInPort(self):
@@ -524,11 +555,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Physical In Port is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PhysicalInPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["PhysicalInPort"])
+
     @PhysicalInPort.setter
     def PhysicalInPort(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PhysicalInPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PhysicalInPort"], value)
 
     @property
     def SctpDestination(self):
@@ -538,11 +570,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards SCTP Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
+
     @SctpDestination.setter
     def SctpDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpDestination"], value)
 
     @property
     def SctpSource(self):
@@ -552,11 +585,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards SCTP Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
+
     @SctpSource.setter
     def SctpSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpSource"], value)
 
     @property
     def TcpDestination(self):
@@ -566,11 +600,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards TCP Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
+
     @TcpDestination.setter
     def TcpDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpDestination"], value)
 
     @property
     def TcpSource(self):
@@ -580,11 +615,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards TCP Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
+
     @TcpSource.setter
     def TcpSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpSource"], value)
 
     @property
     def TunnelId(self):
@@ -594,11 +630,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards Tunnel ID is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
+
     @TunnelId.setter
     def TunnelId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelId"], value)
 
     @property
     def UdpDestination(self):
@@ -608,11 +645,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards UDP Destination is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
+
     @UdpDestination.setter
     def UdpDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestination"], value)
 
     @property
     def UdpSource(self):
@@ -622,11 +660,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards UDP Source is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
+
     @UdpSource.setter
     def UdpSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSource"], value)
 
     @property
     def VlanId(self):
@@ -636,11 +675,12 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards VLAN ID is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -650,13 +690,57 @@ class Wildcards(Base):
         -------
         - bool: If selected, Wildcards VLAN Priority is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        ArpDestinationHardwareAddress=None,
+        ArpDestinationIpv4Address=None,
+        ArpOpcode=None,
+        ArpSourceHardwareAddress=None,
+        ArpSourceIpv4Address=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        IcmpCode=None,
+        IcmpType=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        Metadata=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbIsid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Wildcards
         """Updates wildcards resource on the server.
 
@@ -710,7 +794,50 @@ class Wildcards(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ArpDestinationHardwareAddress=None,
+        ArpDestinationIpv4Address=None,
+        ArpOpcode=None,
+        ArpSourceHardwareAddress=None,
+        ArpSourceIpv4Address=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        IcmpCode=None,
+        IcmpType=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        Metadata=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbIsid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Wildcards
         """Finds and retrieves wildcards resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,33 +33,33 @@ class Atm(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atm'
+    _SDM_NAME = "atm"
     _SDM_ATT_MAP = {
-        'AvailableSpeeds': 'availableSpeeds',
-        'C2Expected': 'c2Expected',
-        'C2Tx': 'c2Tx',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'CellHeader': 'cellHeader',
-        'CosetActive': 'cosetActive',
-        'CrcSize': 'crcSize',
-        'DataScrambling': 'dataScrambling',
-        'EnablePPM': 'enablePPM',
-        'FillerCell': 'fillerCell',
-        'InterfaceType': 'interfaceType',
-        'Loopback': 'loopback',
-        'PatternMatching': 'patternMatching',
-        'Ppm': 'ppm',
-        'ReassemblyTimeout': 'reassemblyTimeout',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'TransmitClocking': 'transmitClocking',
+        "AvailableSpeeds": "availableSpeeds",
+        "C2Expected": "c2Expected",
+        "C2Tx": "c2Tx",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "CellHeader": "cellHeader",
+        "CosetActive": "cosetActive",
+        "CrcSize": "crcSize",
+        "DataScrambling": "dataScrambling",
+        "EnablePPM": "enablePPM",
+        "FillerCell": "fillerCell",
+        "InterfaceType": "interfaceType",
+        "Loopback": "loopback",
+        "PatternMatching": "patternMatching",
+        "Ppm": "ppm",
+        "ReassemblyTimeout": "reassemblyTimeout",
+        "SelectedSpeeds": "selectedSpeeds",
+        "TransmitClocking": "transmitClocking",
     }
     _SDM_ENUM_MAP = {
-        'cellHeader': ['nni', 'uni'],
-        'crcSize': ['crc32', 'crc16'],
-        'fillerCell': ['idle', 'unassigned'],
-        'interfaceType': ['oc3', 'oc12', 'stm1', 'stm4'],
-        'transmitClocking': ['internal', 'external', 'recovered'],
+        "cellHeader": ["nni", "uni"],
+        "crcSize": ["crc32", "crc16"],
+        "fillerCell": ["idle", "unassigned"],
+        "interfaceType": ["oc3", "oc12", "stm1", "stm4"],
+        "transmitClocking": ["internal", "external", "recovered"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,7 +73,7 @@ class Atm(Base):
         -------
         - list(str[]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def C2Expected(self):
@@ -82,11 +83,12 @@ class Atm(Base):
         -------
         - number: The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
+        return self._get_attribute(self._SDM_ATT_MAP["C2Expected"])
+
     @C2Expected.setter
     def C2Expected(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
+        self._set_attribute(self._SDM_ATT_MAP["C2Expected"], value)
 
     @property
     def C2Tx(self):
@@ -96,11 +98,12 @@ class Atm(Base):
         -------
         - number: The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
+        return self._get_attribute(self._SDM_ATT_MAP["C2Tx"])
+
     @C2Tx.setter
     def C2Tx(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["C2Tx"], value)
 
     @property
     def CanModifySpeed(self):
@@ -110,7 +113,7 @@ class Atm(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -120,7 +123,7 @@ class Atm(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def CellHeader(self):
@@ -130,11 +133,12 @@ class Atm(Base):
         -------
         - str(nni | uni): user/network-to-network interface
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CellHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["CellHeader"])
+
     @CellHeader.setter
     def CellHeader(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CellHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CellHeader"], value)
 
     @property
     def CosetActive(self):
@@ -144,11 +148,12 @@ class Atm(Base):
         -------
         - bool: CRC + Exclusive OR Operation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CosetActive'])
+        return self._get_attribute(self._SDM_ATT_MAP["CosetActive"])
+
     @CosetActive.setter
     def CosetActive(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CosetActive'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CosetActive"], value)
 
     @property
     def CrcSize(self):
@@ -158,11 +163,12 @@ class Atm(Base):
         -------
         - str(crc32 | crc16): Choose the type of Cyclic Redundancy Check to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["CrcSize"])
+
     @CrcSize.setter
     def CrcSize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CrcSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CrcSize"], value)
 
     @property
     def DataScrambling(self):
@@ -172,11 +178,12 @@ class Atm(Base):
         -------
         - bool: If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataScrambling'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataScrambling"])
+
     @DataScrambling.setter
     def DataScrambling(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataScrambling'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataScrambling"], value)
 
     @property
     def EnablePPM(self):
@@ -186,11 +193,12 @@ class Atm(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePPM"])
+
     @EnablePPM.setter
     def EnablePPM(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePPM"], value)
 
     @property
     def FillerCell(self):
@@ -200,11 +208,12 @@ class Atm(Base):
         -------
         - str(idle | unassigned): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FillerCell'])
+        return self._get_attribute(self._SDM_ATT_MAP["FillerCell"])
+
     @FillerCell.setter
     def FillerCell(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FillerCell'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FillerCell"], value)
 
     @property
     def InterfaceType(self):
@@ -214,11 +223,12 @@ class Atm(Base):
         -------
         - str(oc3 | oc12 | stm1 | stm4): The interface type for ATM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Loopback(self):
@@ -228,11 +238,12 @@ class Atm(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["Loopback"])
+
     @Loopback.setter
     def Loopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Loopback"], value)
 
     @property
     def PatternMatching(self):
@@ -242,11 +253,12 @@ class Atm(Base):
         -------
         - bool: Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PatternMatching'])
+        return self._get_attribute(self._SDM_ATT_MAP["PatternMatching"])
+
     @PatternMatching.setter
     def PatternMatching(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PatternMatching'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PatternMatching"], value)
 
     @property
     def Ppm(self):
@@ -256,11 +268,12 @@ class Atm(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ppm"])
+
     @Ppm.setter
     def Ppm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ppm"], value)
 
     @property
     def ReassemblyTimeout(self):
@@ -270,11 +283,12 @@ class Atm(Base):
         -------
         - number: Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReassemblyTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReassemblyTimeout"])
+
     @ReassemblyTimeout.setter
     def ReassemblyTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReassemblyTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReassemblyTimeout"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -284,11 +298,12 @@ class Atm(Base):
         -------
         - list(str[]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     @property
     def TransmitClocking(self):
@@ -298,13 +313,31 @@ class Atm(Base):
         -------
         - str(internal | external | recovered): The options for the transmit clock.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitClocking"])
+
     @TransmitClocking.setter
     def TransmitClocking(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitClocking"], value)
 
-    def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, SelectedSpeeds=None, TransmitClocking=None):
+    def update(
+        self,
+        C2Expected=None,
+        C2Tx=None,
+        CellHeader=None,
+        CosetActive=None,
+        CrcSize=None,
+        DataScrambling=None,
+        EnablePPM=None,
+        FillerCell=None,
+        InterfaceType=None,
+        Loopback=None,
+        PatternMatching=None,
+        Ppm=None,
+        ReassemblyTimeout=None,
+        SelectedSpeeds=None,
+        TransmitClocking=None,
+    ):
         # type: (int, int, str, bool, str, bool, bool, str, str, bool, bool, int, int, List[str], str) -> Atm
         """Updates atm resource on the server.
 
@@ -332,7 +365,27 @@ class Atm(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableSpeeds=None, C2Expected=None, C2Tx=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, SelectedSpeeds=None, TransmitClocking=None):
+    def find(
+        self,
+        AvailableSpeeds=None,
+        C2Expected=None,
+        C2Tx=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        CellHeader=None,
+        CosetActive=None,
+        CrcSize=None,
+        DataScrambling=None,
+        EnablePPM=None,
+        FillerCell=None,
+        InterfaceType=None,
+        Loopback=None,
+        PatternMatching=None,
+        Ppm=None,
+        ReassemblyTimeout=None,
+        SelectedSpeeds=None,
+        TransmitClocking=None,
+    ):
         # type: (List[str], int, int, bool, bool, str, bool, str, bool, bool, str, str, bool, bool, int, int, List[str], str) -> Atm
         """Finds and retrieves atm resources from the server.
 

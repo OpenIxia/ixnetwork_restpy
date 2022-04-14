@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,30 +35,29 @@ class AncpRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ancpRange'
+    _SDM_NAME = "ancpRange"
     _SDM_ATT_MAP = {
-        'AccessAggregationCbTlv': 'accessAggregationCbTlv',
-        'AtmVci': 'atmVci',
-        'AtmVpi': 'atmVpi',
-        'CircuitId': 'circuitId',
-        'DistributionAlgorithmPercent': 'distributionAlgorithmPercent',
-        'EnableAccessAggregation': 'enableAccessAggregation',
-        'Enabled': 'enabled',
-        'InnerVlanId': 'innerVlanId',
-        'Name': 'name',
-        'NasAncpServicePort': 'nasAncpServicePort',
-        'NasIPAddressIncr': 'nasIPAddressIncr',
-        'NasIpAddress': 'nasIpAddress',
-        'NasIpAddressIncr': 'nasIpAddressIncr',
-        'NasKeepAliveRetries': 'nasKeepAliveRetries',
-        'NasKeepAliveTimeout': 'nasKeepAliveTimeout',
-        'ObjectId': 'objectId',
-        'OuterVlanId': 'outerVlanId',
-        'UseDslInnerVlan': 'useDslInnerVlan',
-        'UseDslOuterVlan': 'useDslOuterVlan',
+        "AccessAggregationCbTlv": "accessAggregationCbTlv",
+        "AtmVci": "atmVci",
+        "AtmVpi": "atmVpi",
+        "CircuitId": "circuitId",
+        "DistributionAlgorithmPercent": "distributionAlgorithmPercent",
+        "EnableAccessAggregation": "enableAccessAggregation",
+        "Enabled": "enabled",
+        "InnerVlanId": "innerVlanId",
+        "Name": "name",
+        "NasAncpServicePort": "nasAncpServicePort",
+        "NasIPAddressIncr": "nasIPAddressIncr",
+        "NasIpAddress": "nasIpAddress",
+        "NasIpAddressIncr": "nasIpAddressIncr",
+        "NasKeepAliveRetries": "nasKeepAliveRetries",
+        "NasKeepAliveTimeout": "nasKeepAliveTimeout",
+        "ObjectId": "objectId",
+        "OuterVlanId": "outerVlanId",
+        "UseDslInnerVlan": "useDslInnerVlan",
+        "UseDslOuterVlan": "useDslOuterVlan",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AncpRange, self).__init__(parent, list_op)
@@ -73,10 +73,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpatmrange_5a847a4252ccfc54cf44bf7bc6298b6f import AncpAtmRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpatmrange_5a847a4252ccfc54cf44bf7bc6298b6f import (
+            AncpAtmRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpAtmRange', None) is not None:
-                return self._properties.get('AncpAtmRange')
+            if self._properties.get("AncpAtmRange", None) is not None:
+                return self._properties.get("AncpAtmRange")
         return AncpAtmRange(self)._select()
 
     @property
@@ -90,10 +93,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpiprange_447af0bbfbd11d0c63d2ecc8f95681e0 import AncpIpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpiprange_447af0bbfbd11d0c63d2ecc8f95681e0 import (
+            AncpIpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpIpRange', None) is not None:
-                return self._properties.get('AncpIpRange')
+            if self._properties.get("AncpIpRange", None) is not None:
+                return self._properties.get("AncpIpRange")
         return AncpIpRange(self)._select()
 
     @property
@@ -107,10 +113,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpmacrange_7786a117ed728a2a06983672f7850f76 import AncpMacRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpmacrange_7786a117ed728a2a06983672f7850f76 import (
+            AncpMacRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpMacRange', None) is not None:
-                return self._properties.get('AncpMacRange')
+            if self._properties.get("AncpMacRange", None) is not None:
+                return self._properties.get("AncpMacRange")
         return AncpMacRange(self)._select()
 
     @property
@@ -124,10 +133,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancppvcrange_cc86b4614e8c341879400d022b60c269 import AncpPvcRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancppvcrange_cc86b4614e8c341879400d022b60c269 import (
+            AncpPvcRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpPvcRange', None) is not None:
-                return self._properties.get('AncpPvcRange')
+            if self._properties.get("AncpPvcRange", None) is not None:
+                return self._properties.get("AncpPvcRange")
         return AncpPvcRange(self)._select()
 
     @property
@@ -141,10 +153,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpvlanrange_ecbcaed463f42d7ffc1bcab28e905868 import AncpVlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpvlanrange_ecbcaed463f42d7ffc1bcab28e905868 import (
+            AncpVlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AncpVlanRange', None) is not None:
-                return self._properties.get('AncpVlanRange')
+            if self._properties.get("AncpVlanRange", None) is not None:
+                return self._properties.get("AncpVlanRange")
         return AncpVlanRange(self)._select()
 
     @property
@@ -158,10 +173,13 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslprofileallocationtable_6a2d1e43842f5e004937adea1eb37d9b import DslProfileAllocationTable
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslprofileallocationtable_6a2d1e43842f5e004937adea1eb37d9b import (
+            DslProfileAllocationTable,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DslProfileAllocationTable', None) is not None:
-                return self._properties.get('DslProfileAllocationTable')
+            if self._properties.get("DslProfileAllocationTable", None) is not None:
+                return self._properties.get("DslProfileAllocationTable")
         return DslProfileAllocationTable(self)
 
     @property
@@ -175,10 +193,16 @@ class AncpRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslresyncprofileallocationtable_4e4f26de7a1d00f43d5baaf566372f57 import DslResyncProfileAllocationTable
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslresyncprofileallocationtable_4e4f26de7a1d00f43d5baaf566372f57 import (
+            DslResyncProfileAllocationTable,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DslResyncProfileAllocationTable', None) is not None:
-                return self._properties.get('DslResyncProfileAllocationTable')
+            if (
+                self._properties.get("DslResyncProfileAllocationTable", None)
+                is not None
+            ):
+                return self._properties.get("DslResyncProfileAllocationTable")
         return DslResyncProfileAllocationTable(self)
 
     @property
@@ -189,11 +213,12 @@ class AncpRange(Base):
         -------
         - str: Enable Access Aggregation Circuit ID Binary TLV
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AccessAggregationCbTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["AccessAggregationCbTlv"])
+
     @AccessAggregationCbTlv.setter
     def AccessAggregationCbTlv(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AccessAggregationCbTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AccessAggregationCbTlv"], value)
 
     @property
     def AtmVci(self):
@@ -203,11 +228,12 @@ class AncpRange(Base):
         -------
         - number: Custom VPI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AtmVci'])
+        return self._get_attribute(self._SDM_ATT_MAP["AtmVci"])
+
     @AtmVci.setter
     def AtmVci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AtmVci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AtmVci"], value)
 
     @property
     def AtmVpi(self):
@@ -217,11 +243,12 @@ class AncpRange(Base):
         -------
         - number: Custom VCI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AtmVpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["AtmVpi"])
+
     @AtmVpi.setter
     def AtmVpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AtmVpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AtmVpi"], value)
 
     @property
     def CircuitId(self):
@@ -231,11 +258,12 @@ class AncpRange(Base):
         -------
         - str: Circuit ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CircuitId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CircuitId"])
+
     @CircuitId.setter
     def CircuitId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CircuitId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CircuitId"], value)
 
     @property
     def DistributionAlgorithmPercent(self):
@@ -245,11 +273,12 @@ class AncpRange(Base):
         -------
         - number: DSL_Subscriber-per-AN distribution scattering model.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistributionAlgorithmPercent'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistributionAlgorithmPercent"])
+
     @DistributionAlgorithmPercent.setter
     def DistributionAlgorithmPercent(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistributionAlgorithmPercent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistributionAlgorithmPercent"], value)
 
     @property
     def EnableAccessAggregation(self):
@@ -259,11 +288,12 @@ class AncpRange(Base):
         -------
         - bool: Enable Access Aggregation Circuit Binary.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAccessAggregation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAccessAggregation"])
+
     @EnableAccessAggregation.setter
     def EnableAccessAggregation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAccessAggregation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAccessAggregation"], value)
 
     @property
     def Enabled(self):
@@ -273,11 +303,12 @@ class AncpRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InnerVlanId(self):
@@ -287,11 +318,12 @@ class AncpRange(Base):
         -------
         - number: Custom inner VLAN ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerVlanId"])
+
     @InnerVlanId.setter
     def InnerVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerVlanId"], value)
 
     @property
     def Name(self):
@@ -301,11 +333,12 @@ class AncpRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NasAncpServicePort(self):
@@ -315,25 +348,27 @@ class AncpRange(Base):
         -------
         - number: NAS Ancp Service Port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasAncpServicePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasAncpServicePort"])
+
     @NasAncpServicePort.setter
     def NasAncpServicePort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasAncpServicePort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasAncpServicePort"], value)
 
     @property
     def NasIPAddressIncr(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: NAS IP Increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasIPAddressIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasIPAddressIncr"])
+
     @NasIPAddressIncr.setter
     def NasIPAddressIncr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasIPAddressIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasIPAddressIncr"], value)
 
     @property
     def NasIpAddress(self):
@@ -343,11 +378,12 @@ class AncpRange(Base):
         -------
         - str: NAS IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasIpAddress"])
+
     @NasIpAddress.setter
     def NasIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasIpAddress"], value)
 
     @property
     def NasIpAddressIncr(self):
@@ -357,11 +393,12 @@ class AncpRange(Base):
         -------
         - str: NAS IP Increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasIpAddressIncr'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasIpAddressIncr"])
+
     @NasIpAddressIncr.setter
     def NasIpAddressIncr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasIpAddressIncr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasIpAddressIncr"], value)
 
     @property
     def NasKeepAliveRetries(self):
@@ -371,11 +408,12 @@ class AncpRange(Base):
         -------
         - number: NAS Keep Alive Retries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasKeepAliveRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasKeepAliveRetries"])
+
     @NasKeepAliveRetries.setter
     def NasKeepAliveRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasKeepAliveRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasKeepAliveRetries"], value)
 
     @property
     def NasKeepAliveTimeout(self):
@@ -385,11 +423,12 @@ class AncpRange(Base):
         -------
         - number: NAS Keep Alive Timeout, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NasKeepAliveTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["NasKeepAliveTimeout"])
+
     @NasKeepAliveTimeout.setter
     def NasKeepAliveTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NasKeepAliveTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NasKeepAliveTimeout"], value)
 
     @property
     def ObjectId(self):
@@ -399,7 +438,7 @@ class AncpRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OuterVlanId(self):
@@ -409,11 +448,12 @@ class AncpRange(Base):
         -------
         - number: Custom outer VLAN ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OuterVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OuterVlanId"])
+
     @OuterVlanId.setter
     def OuterVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OuterVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OuterVlanId"], value)
 
     @property
     def UseDslInnerVlan(self):
@@ -423,11 +463,12 @@ class AncpRange(Base):
         -------
         - bool: Use DSL subscriber inner VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseDslInnerVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseDslInnerVlan"])
+
     @UseDslInnerVlan.setter
     def UseDslInnerVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseDslInnerVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseDslInnerVlan"], value)
 
     @property
     def UseDslOuterVlan(self):
@@ -437,13 +478,34 @@ class AncpRange(Base):
         -------
         - bool: Use actual DSL outer VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseDslOuterVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseDslOuterVlan"])
+
     @UseDslOuterVlan.setter
     def UseDslOuterVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseDslOuterVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseDslOuterVlan"], value)
 
-    def update(self, AccessAggregationCbTlv=None, AtmVci=None, AtmVpi=None, CircuitId=None, DistributionAlgorithmPercent=None, EnableAccessAggregation=None, Enabled=None, InnerVlanId=None, Name=None, NasAncpServicePort=None, NasIPAddressIncr=None, NasIpAddress=None, NasIpAddressIncr=None, NasKeepAliveRetries=None, NasKeepAliveTimeout=None, OuterVlanId=None, UseDslInnerVlan=None, UseDslOuterVlan=None):
+    def update(
+        self,
+        AccessAggregationCbTlv=None,
+        AtmVci=None,
+        AtmVpi=None,
+        CircuitId=None,
+        DistributionAlgorithmPercent=None,
+        EnableAccessAggregation=None,
+        Enabled=None,
+        InnerVlanId=None,
+        Name=None,
+        NasAncpServicePort=None,
+        NasIPAddressIncr=None,
+        NasIpAddress=None,
+        NasIpAddressIncr=None,
+        NasKeepAliveRetries=None,
+        NasKeepAliveTimeout=None,
+        OuterVlanId=None,
+        UseDslInnerVlan=None,
+        UseDslOuterVlan=None,
+    ):
         # type: (str, int, int, str, int, bool, bool, int, str, int, str, str, str, int, int, int, bool, bool) -> AncpRange
         """Updates ancpRange resource on the server.
 
@@ -474,7 +536,27 @@ class AncpRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AccessAggregationCbTlv=None, AtmVci=None, AtmVpi=None, CircuitId=None, DistributionAlgorithmPercent=None, EnableAccessAggregation=None, Enabled=None, InnerVlanId=None, Name=None, NasAncpServicePort=None, NasIPAddressIncr=None, NasIpAddress=None, NasIpAddressIncr=None, NasKeepAliveRetries=None, NasKeepAliveTimeout=None, OuterVlanId=None, UseDslInnerVlan=None, UseDslOuterVlan=None):
+    def add(
+        self,
+        AccessAggregationCbTlv=None,
+        AtmVci=None,
+        AtmVpi=None,
+        CircuitId=None,
+        DistributionAlgorithmPercent=None,
+        EnableAccessAggregation=None,
+        Enabled=None,
+        InnerVlanId=None,
+        Name=None,
+        NasAncpServicePort=None,
+        NasIPAddressIncr=None,
+        NasIpAddress=None,
+        NasIpAddressIncr=None,
+        NasKeepAliveRetries=None,
+        NasKeepAliveTimeout=None,
+        OuterVlanId=None,
+        UseDslInnerVlan=None,
+        UseDslOuterVlan=None,
+    ):
         # type: (str, int, int, str, int, bool, bool, int, str, int, str, str, str, int, int, int, bool, bool) -> AncpRange
         """Adds a new ancpRange resource on the server and adds it to the container.
 
@@ -519,7 +601,28 @@ class AncpRange(Base):
         """
         self._delete()
 
-    def find(self, AccessAggregationCbTlv=None, AtmVci=None, AtmVpi=None, CircuitId=None, DistributionAlgorithmPercent=None, EnableAccessAggregation=None, Enabled=None, InnerVlanId=None, Name=None, NasAncpServicePort=None, NasIPAddressIncr=None, NasIpAddress=None, NasIpAddressIncr=None, NasKeepAliveRetries=None, NasKeepAliveTimeout=None, ObjectId=None, OuterVlanId=None, UseDslInnerVlan=None, UseDslOuterVlan=None):
+    def find(
+        self,
+        AccessAggregationCbTlv=None,
+        AtmVci=None,
+        AtmVpi=None,
+        CircuitId=None,
+        DistributionAlgorithmPercent=None,
+        EnableAccessAggregation=None,
+        Enabled=None,
+        InnerVlanId=None,
+        Name=None,
+        NasAncpServicePort=None,
+        NasIPAddressIncr=None,
+        NasIpAddress=None,
+        NasIpAddressIncr=None,
+        NasKeepAliveRetries=None,
+        NasKeepAliveTimeout=None,
+        ObjectId=None,
+        OuterVlanId=None,
+        UseDslInnerVlan=None,
+        UseDslOuterVlan=None,
+    ):
         # type: (str, int, int, str, int, bool, bool, int, str, int, str, str, str, int, int, str, int, bool, bool) -> AncpRange
         """Finds and retrieves ancpRange resources from the server.
 
@@ -599,10 +702,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpBringUpDslSubscribers', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ancpBringUpDslSubscribers", payload=payload, response_object=None
+        )
 
     def AncpStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -626,10 +733,12 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ancpStart", payload=payload, response_object=None)
 
     def AncpStartAdjacency(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -653,10 +762,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpStartAdjacency', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ancpStartAdjacency", payload=payload, response_object=None
+        )
 
     def AncpStartResync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -684,10 +797,12 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpStartResync', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ancpStartResync", payload=payload, response_object=None)
 
     def AncpStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -711,10 +826,12 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ancpStop", payload=payload, response_object=None)
 
     def AncpStopAdjacency(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -738,10 +855,12 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpStopAdjacency', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ancpStopAdjacency", payload=payload, response_object=None)
 
     def AncpTeardownDslSubscribers(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -765,10 +884,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ancpTeardownDslSubscribers', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ancpTeardownDslSubscribers", payload=payload, response_object=None
+        )
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -787,10 +910,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -809,10 +936,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -831,10 +962,14 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -858,10 +993,12 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -885,7 +1022,9 @@ class AncpRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

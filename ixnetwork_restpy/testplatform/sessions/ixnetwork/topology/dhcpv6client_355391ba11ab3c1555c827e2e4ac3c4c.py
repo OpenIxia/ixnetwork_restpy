@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,48 +35,56 @@ class Dhcpv6client(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6client'
+    _SDM_NAME = "dhcpv6client"
     _SDM_ATT_MAP = {
-        'ComputedIapdAddresses': 'computedIapdAddresses',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'CustomLinkLocalAddress': 'customLinkLocalAddress',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp6DuidEnterpriseId': 'dhcp6DuidEnterpriseId',
-        'Dhcp6DuidType': 'dhcp6DuidType',
-        'Dhcp6DuidVendorId': 'dhcp6DuidVendorId',
-        'Dhcp6GatewayAddress': 'dhcp6GatewayAddress',
-        'Dhcp6GatewayMac': 'dhcp6GatewayMac',
-        'Dhcp6IANACount': 'dhcp6IANACount',
-        'Dhcp6IAPDCount': 'dhcp6IAPDCount',
-        'Dhcp6IaId': 'dhcp6IaId',
-        'Dhcp6IaIdInc': 'dhcp6IaIdInc',
-        'Dhcp6IaT1': 'dhcp6IaT1',
-        'Dhcp6IaT2': 'dhcp6IaT2',
-        'Dhcp6IaType': 'dhcp6IaType',
-        'Dhcp6UsePDGlobalAddress': 'dhcp6UsePDGlobalAddress',
-        'DiscoveredAddresses': 'discoveredAddresses',
-        'DiscoveredGateways': 'discoveredGateways',
-        'DiscoveredPrefix': 'discoveredPrefix',
-        'DiscoveredPrefixLength': 'discoveredPrefixLength',
-        'EnableStateless': 'enableStateless',
-        'Errors': 'errors',
-        'MaxNoPerClient': 'maxNoPerClient',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NoOfAddresses': 'noOfAddresses',
-        'NoOfPrefixes': 'noOfPrefixes',
-        'RenewTimer': 'renewTimer',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'UseCustomLinkLocalAddress': 'useCustomLinkLocalAddress',
-        'UseRapidCommit': 'useRapidCommit',
+        "ComputedIapdAddresses": "computedIapdAddresses",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "CustomLinkLocalAddress": "customLinkLocalAddress",
+        "DescriptiveName": "descriptiveName",
+        "Dhcp6DuidEnterpriseId": "dhcp6DuidEnterpriseId",
+        "Dhcp6DuidType": "dhcp6DuidType",
+        "Dhcp6DuidVendorId": "dhcp6DuidVendorId",
+        "Dhcp6GatewayAddress": "dhcp6GatewayAddress",
+        "Dhcp6GatewayMac": "dhcp6GatewayMac",
+        "Dhcp6IANACount": "dhcp6IANACount",
+        "Dhcp6IAPDCount": "dhcp6IAPDCount",
+        "Dhcp6IaId": "dhcp6IaId",
+        "Dhcp6IaIdInc": "dhcp6IaIdInc",
+        "Dhcp6IaT1": "dhcp6IaT1",
+        "Dhcp6IaT2": "dhcp6IaT2",
+        "Dhcp6IaType": "dhcp6IaType",
+        "Dhcp6UsePDGlobalAddress": "dhcp6UsePDGlobalAddress",
+        "DiscoveredAddresses": "discoveredAddresses",
+        "DiscoveredGateways": "discoveredGateways",
+        "DiscoveredPrefix": "discoveredPrefix",
+        "DiscoveredPrefixLength": "discoveredPrefixLength",
+        "EnableStateless": "enableStateless",
+        "Errors": "errors",
+        "MaxNoPerClient": "maxNoPerClient",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NoOfAddresses": "noOfAddresses",
+        "NoOfPrefixes": "noOfPrefixes",
+        "RenewTimer": "renewTimer",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "UseCustomLinkLocalAddress": "useCustomLinkLocalAddress",
+        "UseRapidCommit": "useRapidCommit",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -92,10 +101,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import (
+            Bfdv6Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bfdv6Interface', None) is not None:
-                return self._properties.get('Bfdv6Interface')
+            if self._properties.get("Bfdv6Interface", None) is not None:
+                return self._properties.get("Bfdv6Interface")
         return Bfdv6Interface(self)
 
     @property
@@ -109,10 +121,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import (
+            BgpIpv6Peer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpIpv6Peer', None) is not None:
-                return self._properties.get('BgpIpv6Peer')
+            if self._properties.get("BgpIpv6Peer", None) is not None:
+                return self._properties.get("BgpIpv6Peer")
         return BgpIpv6Peer(self)
 
     @property
@@ -126,10 +141,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana_1fdc932fd14b686d54038abe7dbb6f0c import Dhcp6Iana
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana_1fdc932fd14b686d54038abe7dbb6f0c import (
+            Dhcp6Iana,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana', None) is not None:
-                return self._properties.get('Dhcp6Iana')
+            if self._properties.get("Dhcp6Iana", None) is not None:
+                return self._properties.get("Dhcp6Iana")
         return Dhcp6Iana(self)._select()
 
     @property
@@ -143,10 +161,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana1_afae4078d5465a41b7a0b1fa28f04ed6 import Dhcp6Iana1
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana1_afae4078d5465a41b7a0b1fa28f04ed6 import (
+            Dhcp6Iana1,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana1', None) is not None:
-                return self._properties.get('Dhcp6Iana1')
+            if self._properties.get("Dhcp6Iana1", None) is not None:
+                return self._properties.get("Dhcp6Iana1")
         return Dhcp6Iana1(self)._select()
 
     @property
@@ -160,10 +181,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana2_8780d42215180f08e6e8445b53170c10 import Dhcp6Iana2
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana2_8780d42215180f08e6e8445b53170c10 import (
+            Dhcp6Iana2,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana2', None) is not None:
-                return self._properties.get('Dhcp6Iana2')
+            if self._properties.get("Dhcp6Iana2", None) is not None:
+                return self._properties.get("Dhcp6Iana2")
         return Dhcp6Iana2(self)._select()
 
     @property
@@ -177,10 +201,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana3_d9182a6f15c9c4511011e7796b6e6482 import Dhcp6Iana3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana3_d9182a6f15c9c4511011e7796b6e6482 import (
+            Dhcp6Iana3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana3', None) is not None:
-                return self._properties.get('Dhcp6Iana3')
+            if self._properties.get("Dhcp6Iana3", None) is not None:
+                return self._properties.get("Dhcp6Iana3")
         return Dhcp6Iana3(self)._select()
 
     @property
@@ -194,10 +221,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana4_59de65e7b5806938834b0b31ab911645 import Dhcp6Iana4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana4_59de65e7b5806938834b0b31ab911645 import (
+            Dhcp6Iana4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana4', None) is not None:
-                return self._properties.get('Dhcp6Iana4')
+            if self._properties.get("Dhcp6Iana4", None) is not None:
+                return self._properties.get("Dhcp6Iana4")
         return Dhcp6Iana4(self)._select()
 
     @property
@@ -211,10 +241,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana5_9f29804966bbe93dd53900eafa383c22 import Dhcp6Iana5
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana5_9f29804966bbe93dd53900eafa383c22 import (
+            Dhcp6Iana5,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana5', None) is not None:
-                return self._properties.get('Dhcp6Iana5')
+            if self._properties.get("Dhcp6Iana5", None) is not None:
+                return self._properties.get("Dhcp6Iana5")
         return Dhcp6Iana5(self)._select()
 
     @property
@@ -228,10 +261,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana6_7939c0233bac17c3e3764bc9bc1a9571 import Dhcp6Iana6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana6_7939c0233bac17c3e3764bc9bc1a9571 import (
+            Dhcp6Iana6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana6', None) is not None:
-                return self._properties.get('Dhcp6Iana6')
+            if self._properties.get("Dhcp6Iana6", None) is not None:
+                return self._properties.get("Dhcp6Iana6")
         return Dhcp6Iana6(self)._select()
 
     @property
@@ -245,10 +281,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana7_e0f696023e5c20916196c8d33f395cae import Dhcp6Iana7
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana7_e0f696023e5c20916196c8d33f395cae import (
+            Dhcp6Iana7,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iana7', None) is not None:
-                return self._properties.get('Dhcp6Iana7')
+            if self._properties.get("Dhcp6Iana7", None) is not None:
+                return self._properties.get("Dhcp6Iana7")
         return Dhcp6Iana7(self)._select()
 
     @property
@@ -262,10 +301,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd_b6cbdab151b403cbbdb4bf99e1caf7b1 import Dhcp6Iapd
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd_b6cbdab151b403cbbdb4bf99e1caf7b1 import (
+            Dhcp6Iapd,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd', None) is not None:
-                return self._properties.get('Dhcp6Iapd')
+            if self._properties.get("Dhcp6Iapd", None) is not None:
+                return self._properties.get("Dhcp6Iapd")
         return Dhcp6Iapd(self)._select()
 
     @property
@@ -279,10 +321,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd1_7faba276e9bd1fe8044fca79065254a7 import Dhcp6Iapd1
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd1_7faba276e9bd1fe8044fca79065254a7 import (
+            Dhcp6Iapd1,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd1', None) is not None:
-                return self._properties.get('Dhcp6Iapd1')
+            if self._properties.get("Dhcp6Iapd1", None) is not None:
+                return self._properties.get("Dhcp6Iapd1")
         return Dhcp6Iapd1(self)._select()
 
     @property
@@ -296,10 +341,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd2_a86dfc2bcc765583bc7cf336b264c68b import Dhcp6Iapd2
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd2_a86dfc2bcc765583bc7cf336b264c68b import (
+            Dhcp6Iapd2,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd2', None) is not None:
-                return self._properties.get('Dhcp6Iapd2')
+            if self._properties.get("Dhcp6Iapd2", None) is not None:
+                return self._properties.get("Dhcp6Iapd2")
         return Dhcp6Iapd2(self)._select()
 
     @property
@@ -313,10 +361,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd3_ba20e56748a428c3b9345cf88c1539fd import Dhcp6Iapd3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd3_ba20e56748a428c3b9345cf88c1539fd import (
+            Dhcp6Iapd3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd3', None) is not None:
-                return self._properties.get('Dhcp6Iapd3')
+            if self._properties.get("Dhcp6Iapd3", None) is not None:
+                return self._properties.get("Dhcp6Iapd3")
         return Dhcp6Iapd3(self)._select()
 
     @property
@@ -330,10 +381,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd4_491b33d4a7b6a77105854603fd6a9004 import Dhcp6Iapd4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd4_491b33d4a7b6a77105854603fd6a9004 import (
+            Dhcp6Iapd4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd4', None) is not None:
-                return self._properties.get('Dhcp6Iapd4')
+            if self._properties.get("Dhcp6Iapd4", None) is not None:
+                return self._properties.get("Dhcp6Iapd4")
         return Dhcp6Iapd4(self)._select()
 
     @property
@@ -347,10 +401,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd5_36145a5bec4444c5107e1c59676ab3a1 import Dhcp6Iapd5
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd5_36145a5bec4444c5107e1c59676ab3a1 import (
+            Dhcp6Iapd5,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd5', None) is not None:
-                return self._properties.get('Dhcp6Iapd5')
+            if self._properties.get("Dhcp6Iapd5", None) is not None:
+                return self._properties.get("Dhcp6Iapd5")
         return Dhcp6Iapd5(self)._select()
 
     @property
@@ -364,10 +421,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd6_1010a4aa43f5dd9a03d6aab4c6a66a68 import Dhcp6Iapd6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd6_1010a4aa43f5dd9a03d6aab4c6a66a68 import (
+            Dhcp6Iapd6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd6', None) is not None:
-                return self._properties.get('Dhcp6Iapd6')
+            if self._properties.get("Dhcp6Iapd6", None) is not None:
+                return self._properties.get("Dhcp6Iapd6")
         return Dhcp6Iapd6(self)._select()
 
     @property
@@ -381,10 +441,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd7_156f14311910b918f77a699ecec78e79 import Dhcp6Iapd7
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd7_156f14311910b918f77a699ecec78e79 import (
+            Dhcp6Iapd7,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6Iapd7', None) is not None:
-                return self._properties.get('Dhcp6Iapd7')
+            if self._properties.get("Dhcp6Iapd7", None) is not None:
+                return self._properties.get("Dhcp6Iapd7")
         return Dhcp6Iapd7(self)._select()
 
     @property
@@ -398,10 +461,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6learnedinfo_096f62fbfd89979e813da06c573399d9 import Dhcp6LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6learnedinfo_096f62fbfd89979e813da06c573399d9 import (
+            Dhcp6LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcp6LearnedInfo', None) is not None:
-                return self._properties.get('Dhcp6LearnedInfo')
+            if self._properties.get("Dhcp6LearnedInfo", None) is not None:
+                return self._properties.get("Dhcp6LearnedInfo")
         return Dhcp6LearnedInfo(self)._select()
 
     @property
@@ -415,10 +481,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import (
+            MldHost,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldHost', None) is not None:
-                return self._properties.get('MldHost')
+            if self._properties.get("MldHost", None) is not None:
+                return self._properties.get("MldHost")
         return MldHost(self)
 
     @property
@@ -432,10 +501,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import (
+            MldQuerier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MldQuerier', None) is not None:
-                return self._properties.get('MldQuerier')
+            if self._properties.get("MldQuerier", None) is not None:
+                return self._properties.get("MldQuerier")
         return MldQuerier(self)
 
     @property
@@ -449,10 +521,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import Ospfv3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import (
+            Ospfv3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv3', None) is not None:
-                return self._properties.get('Ospfv3')
+            if self._properties.get("Ospfv3", None) is not None:
+                return self._properties.get("Ospfv3")
         return Ospfv3(self)
 
     @property
@@ -466,10 +541,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import (
+            PimV6Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PimV6Interface', None) is not None:
-                return self._properties.get('PimV6Interface')
+            if self._properties.get("PimV6Interface", None) is not None:
+                return self._properties.get("PimV6Interface")
         return PimV6Interface(self)
 
     @property
@@ -483,10 +561,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import Srv6Oam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import (
+            Srv6Oam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Srv6Oam', None) is not None:
-                return self._properties.get('Srv6Oam')
+            if self._properties.get("Srv6Oam", None) is not None:
+                return self._properties.get("Srv6Oam")
         return Srv6Oam(self)
 
     @property
@@ -500,10 +581,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -517,10 +601,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import (
+            TlvProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvProfile', None) is not None:
-                return self._properties.get('TlvProfile')
+            if self._properties.get("TlvProfile", None) is not None:
+                return self._properties.get("TlvProfile")
         return TlvProfile(self)
 
     @property
@@ -534,10 +621,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import (
+            Vxlanv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlanv6', None) is not None:
-                return self._properties.get('Vxlanv6')
+            if self._properties.get("Vxlanv6", None) is not None:
+                return self._properties.get("Vxlanv6")
         return Vxlanv6(self)
 
     @property
@@ -551,10 +641,13 @@ class Dhcpv6client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import Vxlanv6gpe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import (
+            Vxlanv6gpe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlanv6gpe', None) is not None:
-                return self._properties.get('Vxlanv6gpe')
+            if self._properties.get("Vxlanv6gpe", None) is not None:
+                return self._properties.get("Vxlanv6gpe")
         return Vxlanv6gpe(self)
 
     @property
@@ -565,21 +658,22 @@ class Dhcpv6client(Base):
         -------
         - list(str): The computed IPv6 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ComputedIapdAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["ComputedIapdAddresses"])
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -589,7 +683,7 @@ class Dhcpv6client(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomLinkLocalAddress(self):
@@ -600,7 +694,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the Manual Link-Local IPv6 Address for the DHCPv6 Client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomLinkLocalAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomLinkLocalAddress"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -610,7 +707,7 @@ class Dhcpv6client(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Dhcp6DuidEnterpriseId(self):
@@ -621,7 +718,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The enterprise-number is the vendor's registered Private Enterprise Number as maintained by IANA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidEnterpriseId"])
+        )
 
     @property
     def Dhcp6DuidType(self):
@@ -632,7 +732,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): DHCP Unique Identifier Type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidType"]))
 
     @property
     def Dhcp6DuidVendorId(self):
@@ -643,7 +744,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The vendor-assigned unique ID for this range. This ID is incremented automaticaly for each DHCP client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidVendorId"])
+        )
 
     @property
     def Dhcp6GatewayAddress(self):
@@ -654,7 +758,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the Manual Gateway IPv6 Address for the DHCPv6 Client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6GatewayAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6GatewayAddress"])
+        )
 
     @property
     def Dhcp6GatewayMac(self):
@@ -665,7 +772,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv6 Client session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6GatewayMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6GatewayMac"])
+        )
 
     @property
     def Dhcp6IANACount(self):
@@ -676,7 +786,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of IANA options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IANACount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IANACount"])
+        )
 
     @property
     def Dhcp6IAPDCount(self):
@@ -687,7 +800,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of IAPD options to be included in a negotiation. This value must be smaller than Maximum Leases per Client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IAPDCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IAPDCount"])
+        )
 
     @property
     def Dhcp6IaId(self):
@@ -698,7 +814,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The identity association unique ID for this range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaId"]))
 
     @property
     def Dhcp6IaIdInc(self):
@@ -709,7 +826,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Increment step for each IAID in a multiple IANA/IAPD case.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaIdInc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaIdInc"]))
 
     @property
     def Dhcp6IaT1(self):
@@ -720,7 +838,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaT1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaT1"]))
 
     @property
     def Dhcp6IaT2(self):
@@ -731,7 +850,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaT2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaT2"]))
 
     @property
     def Dhcp6IaType(self):
@@ -742,7 +862,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identity Association Type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaType"]))
 
     @property
     def Dhcp6UsePDGlobalAddress(self):
@@ -753,7 +874,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use DHCPc6-PD global addressing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp6UsePDGlobalAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp6UsePDGlobalAddress"])
+        )
 
     @property
     def DiscoveredAddresses(self):
@@ -763,7 +887,7 @@ class Dhcpv6client(Base):
         -------
         - list(str): The discovered IPv6 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredAddresses"])
 
     @property
     def DiscoveredGateways(self):
@@ -773,7 +897,7 @@ class Dhcpv6client(Base):
         -------
         - list(str): The discovered gateway IPv6 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredGateways'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredGateways"])
 
     @property
     def DiscoveredPrefix(self):
@@ -783,7 +907,7 @@ class Dhcpv6client(Base):
         -------
         - list(str): The discovered IPv6 prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredPrefix"])
 
     @property
     def DiscoveredPrefixLength(self):
@@ -793,7 +917,7 @@ class Dhcpv6client(Base):
         -------
         - list(number): The length of the discovered IPv6 prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredPrefixLength"])
 
     @property
     def EnableStateless(self):
@@ -803,11 +927,12 @@ class Dhcpv6client(Base):
         -------
         - bool: Enables DHCP stateless.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStateless'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStateless"])
+
     @EnableStateless.setter
     def EnableStateless(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStateless'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStateless"], value)
 
     @property
     def Errors(self):
@@ -816,7 +941,7 @@ class Dhcpv6client(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def MaxNoPerClient(self):
@@ -826,11 +951,12 @@ class Dhcpv6client(Base):
         -------
         - number: Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNoPerClient'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNoPerClient"])
+
     @MaxNoPerClient.setter
     def MaxNoPerClient(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxNoPerClient'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxNoPerClient"], value)
 
     @property
     def Multiplier(self):
@@ -840,11 +966,12 @@ class Dhcpv6client(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -854,11 +981,12 @@ class Dhcpv6client(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfAddresses(self):
@@ -868,7 +996,7 @@ class Dhcpv6client(Base):
         -------
         - list(number): Number of Negotiated Addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfAddresses"])
 
     @property
     def NoOfPrefixes(self):
@@ -878,7 +1006,7 @@ class Dhcpv6client(Base):
         -------
         - list(number): Number of Negotiated Addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfPrefixes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfPrefixes"])
 
     @property
     def RenewTimer(self):
@@ -889,7 +1017,8 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RenewTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RenewTimer"]))
 
     @property
     def SessionInfo(self):
@@ -899,7 +1028,7 @@ class Dhcpv6client(Base):
         -------
         - list(str[duidNak | excessiveTlvs | noAddrsAvail | noAddrsBelow | none | noPrefixAvail | nsFailed | partiallyNegotiated | rebindTimeout | relayDown | renewTimeout | requestTimeout | solicitTimeout]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -909,7 +1038,7 @@ class Dhcpv6client(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -919,11 +1048,12 @@ class Dhcpv6client(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -932,7 +1062,7 @@ class Dhcpv6client(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -942,7 +1072,7 @@ class Dhcpv6client(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def UseCustomLinkLocalAddress(self):
@@ -953,7 +1083,10 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables users to manually set non-EUI link local addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseCustomLinkLocalAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseCustomLinkLocalAddress"])
+        )
 
     @property
     def UseRapidCommit(self):
@@ -964,9 +1097,20 @@ class Dhcpv6client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP clients to negotiate leases with rapid commit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit']))
 
-    def update(self, ConnectedVia=None, EnableStateless=None, MaxNoPerClient=None, Multiplier=None, Name=None, StackedLayers=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseRapidCommit"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        EnableStateless=None,
+        MaxNoPerClient=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, int, str, List[str]) -> Dhcpv6client
         """Updates dhcpv6client resource on the server.
 
@@ -988,7 +1132,15 @@ class Dhcpv6client(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, EnableStateless=None, MaxNoPerClient=None, Multiplier=None, Name=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        EnableStateless=None,
+        MaxNoPerClient=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, int, str, List[str]) -> Dhcpv6client
         """Adds a new dhcpv6client resource on the server and adds it to the container.
 
@@ -1021,7 +1173,29 @@ class Dhcpv6client(Base):
         """
         self._delete()
 
-    def find(self, ComputedIapdAddresses=None, ConnectedVia=None, Count=None, DescriptiveName=None, DiscoveredAddresses=None, DiscoveredGateways=None, DiscoveredPrefix=None, DiscoveredPrefixLength=None, EnableStateless=None, Errors=None, MaxNoPerClient=None, Multiplier=None, Name=None, NoOfAddresses=None, NoOfPrefixes=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ComputedIapdAddresses=None,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        DiscoveredAddresses=None,
+        DiscoveredGateways=None,
+        DiscoveredPrefix=None,
+        DiscoveredPrefixLength=None,
+        EnableStateless=None,
+        Errors=None,
+        MaxNoPerClient=None,
+        Multiplier=None,
+        Name=None,
+        NoOfAddresses=None,
+        NoOfPrefixes=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves dhcpv6client resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6client resources from the server.
@@ -1106,10 +1280,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Rebind(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1138,10 +1314,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rebind', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rebind", payload=payload, response_object=None)
 
     def Renew(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1170,10 +1348,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('renew', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("renew", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1202,10 +1382,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
@@ -1239,10 +1421,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPing", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1271,10 +1455,12 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1303,12 +1489,34 @@ class Dhcpv6client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, CustomLinkLocalAddress=None, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6GatewayAddress=None, Dhcp6GatewayMac=None, Dhcp6IANACount=None, Dhcp6IAPDCount=None, Dhcp6IaId=None, Dhcp6IaIdInc=None, Dhcp6IaT1=None, Dhcp6IaT2=None, Dhcp6IaType=None, Dhcp6UsePDGlobalAddress=None, RenewTimer=None, UseCustomLinkLocalAddress=None, UseRapidCommit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        CustomLinkLocalAddress=None,
+        Dhcp6DuidEnterpriseId=None,
+        Dhcp6DuidType=None,
+        Dhcp6DuidVendorId=None,
+        Dhcp6GatewayAddress=None,
+        Dhcp6GatewayMac=None,
+        Dhcp6IANACount=None,
+        Dhcp6IAPDCount=None,
+        Dhcp6IaId=None,
+        Dhcp6IaIdInc=None,
+        Dhcp6IaT1=None,
+        Dhcp6IaT2=None,
+        Dhcp6IaType=None,
+        Dhcp6UsePDGlobalAddress=None,
+        RenewTimer=None,
+        UseCustomLinkLocalAddress=None,
+        UseRapidCommit=None,
+    ):
         """Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -158,7 +158,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpUmhExportRouteTargetList
-        """Adds a new bgpUmhExportRouteTargetList resource on the json, only valid with config assistant
+        """Adds a new bgpUmhExportRouteTargetList resource on the json, only valid with batch add utility
 
         Args
         ----

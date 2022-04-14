@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,60 +33,59 @@ class PcReplyLspParameters(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pcReplyLspParameters'
+    _SDM_NAME = "pcReplyLspParameters"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Bandwidth': 'bandwidth',
-        'BiDirectional': 'biDirectional',
-        'BindingType': 'bindingType',
-        'Bos': 'bos',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableCFlag': 'enableCFlag',
-        'EnableEro': 'enableEro',
-        'EnableLoose': 'enableLoose',
-        'EnableXro': 'enableXro',
-        'ExcludeAny': 'excludeAny',
-        'FailBit': 'failBit',
-        'HoldingPriority': 'holdingPriority',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeBandwidth': 'includeBandwidth',
-        'IncludeConfiguredERO': 'includeConfiguredERO',
-        'IncludeLsp': 'includeLsp',
-        'IncludeLspa': 'includeLspa',
-        'IncludeMetric': 'includeMetric',
-        'IncludeRp': 'includeRp',
-        'IncludeSymbolicPathNameTlv': 'includeSymbolicPathNameTlv',
-        'IncludeTEPathBindingTLV': 'includeTEPathBindingTLV',
-        'LocalProtection': 'localProtection',
-        'MplsLabel': 'mplsLabel',
-        'Name': 'name',
-        'NatureOfIssue': 'natureOfIssue',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'NumberOfMetricSubObject': 'numberOfMetricSubObject',
-        'NumberOfXroSubObjects': 'numberOfXroSubObjects',
-        'PlspId': 'plspId',
-        'PriorityValue': 'priorityValue',
-        'ProcessType': 'processType',
-        'ReceivedPLSPID': 'receivedPLSPID',
-        'ReceivedSymbolicPath': 'receivedSymbolicPath',
-        'ReflectLSP': 'reflectLSP',
-        'ReflectRP': 'reflectRP',
-        'ReflectedObjectNoPath': 'reflectedObjectNoPath',
-        'RequestId': 'requestId',
-        'ResponseOptions': 'responseOptions',
-        'ResponsePathType': 'responsePathType',
-        'SendEmptyTLV': 'sendEmptyTLV',
-        'SessionInfo': 'sessionInfo',
-        'SetupPriority': 'setupPriority',
-        'Srv6SID': 'srv6SID',
-        'SymbolicPathName': 'symbolicPathName',
-        'Tc': 'tc',
-        'Ttl': 'ttl',
+        "Active": "active",
+        "Bandwidth": "bandwidth",
+        "BiDirectional": "biDirectional",
+        "BindingType": "bindingType",
+        "Bos": "bos",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableCFlag": "enableCFlag",
+        "EnableEro": "enableEro",
+        "EnableLoose": "enableLoose",
+        "EnableXro": "enableXro",
+        "ExcludeAny": "excludeAny",
+        "FailBit": "failBit",
+        "HoldingPriority": "holdingPriority",
+        "IncludeAll": "includeAll",
+        "IncludeAny": "includeAny",
+        "IncludeBandwidth": "includeBandwidth",
+        "IncludeConfiguredERO": "includeConfiguredERO",
+        "IncludeLsp": "includeLsp",
+        "IncludeLspa": "includeLspa",
+        "IncludeMetric": "includeMetric",
+        "IncludeRp": "includeRp",
+        "IncludeSymbolicPathNameTlv": "includeSymbolicPathNameTlv",
+        "IncludeTEPathBindingTLV": "includeTEPathBindingTLV",
+        "LocalProtection": "localProtection",
+        "MplsLabel": "mplsLabel",
+        "Name": "name",
+        "NatureOfIssue": "natureOfIssue",
+        "NumberOfEroSubObjects": "numberOfEroSubObjects",
+        "NumberOfMetricSubObject": "numberOfMetricSubObject",
+        "NumberOfXroSubObjects": "numberOfXroSubObjects",
+        "PlspId": "plspId",
+        "PriorityValue": "priorityValue",
+        "ProcessType": "processType",
+        "ReceivedPLSPID": "receivedPLSPID",
+        "ReceivedSymbolicPath": "receivedSymbolicPath",
+        "ReflectLSP": "reflectLSP",
+        "ReflectRP": "reflectRP",
+        "ReflectedObjectNoPath": "reflectedObjectNoPath",
+        "RequestId": "requestId",
+        "ResponseOptions": "responseOptions",
+        "ResponsePathType": "responsePathType",
+        "SendEmptyTLV": "sendEmptyTLV",
+        "SessionInfo": "sessionInfo",
+        "SetupPriority": "setupPriority",
+        "Srv6SID": "srv6SID",
+        "SymbolicPathName": "symbolicPathName",
+        "Tc": "tc",
+        "Ttl": "ttl",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PcReplyLspParameters, self).__init__(parent, list_op)
@@ -101,10 +101,13 @@ class PcReplyLspParameters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcexrosubobjectslist_497bc286ebfb51b8813947a23cd5817a import PceXroSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcexrosubobjectslist_497bc286ebfb51b8813947a23cd5817a import (
+            PceXroSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PceXroSubObjectsList', None) is not None:
-                return self._properties.get('PceXroSubObjectsList')
+            if self._properties.get("PceXroSubObjectsList", None) is not None:
+                return self._properties.get("PceXroSubObjectsList")
         return PceXroSubObjectsList(self)
 
     @property
@@ -118,10 +121,13 @@ class PcReplyLspParameters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import (
+            PcepEroSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepEroSubObjectsList', None) is not None:
-                return self._properties.get('PcepEroSubObjectsList')
+            if self._properties.get("PcepEroSubObjectsList", None) is not None:
+                return self._properties.get("PcepEroSubObjectsList")
         return PcepEroSubObjectsList(self)
 
     @property
@@ -135,10 +141,13 @@ class PcReplyLspParameters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import (
+            PcepMetricSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepMetricSubObjectsList', None) is not None:
-                return self._properties.get('PcepMetricSubObjectsList')
+            if self._properties.get("PcepMetricSubObjectsList", None) is not None:
+                return self._properties.get("PcepMetricSubObjectsList")
         return PcepMetricSubObjectsList(self)
 
     @property
@@ -150,7 +159,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Bandwidth(self):
@@ -161,7 +171,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bits/sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bandwidth"]))
 
     @property
     def BiDirectional(self):
@@ -172,7 +183,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bi-directional
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BiDirectional']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BiDirectional"]))
 
     @property
     def BindingType(self):
@@ -183,7 +195,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label. SRv6 SID Default value is 20bit MPLS Label.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BindingType"]))
 
     @property
     def Bos(self):
@@ -194,7 +207,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bos']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bos"]))
 
     @property
     def Count(self):
@@ -204,7 +218,7 @@ class PcReplyLspParameters(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -214,7 +228,7 @@ class PcReplyLspParameters(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableCFlag(self):
@@ -225,7 +239,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): C Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableCFlag"]))
 
     @property
     def EnableEro(self):
@@ -236,7 +251,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableEro"]))
 
     @property
     def EnableLoose(self):
@@ -247,7 +263,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Loose
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLoose']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableLoose"]))
 
     @property
     def EnableXro(self):
@@ -258,7 +275,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include XRO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableXro"]))
 
     @property
     def ExcludeAny(self):
@@ -269,7 +287,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAny"]))
 
     @property
     def FailBit(self):
@@ -280,7 +299,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Fail Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FailBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FailBit"]))
 
     @property
     def HoldingPriority(self):
@@ -291,7 +311,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldingPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldingPriority"])
+        )
 
     @property
     def IncludeAll(self):
@@ -302,7 +325,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAll']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAll"]))
 
     @property
     def IncludeAny(self):
@@ -313,7 +337,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
 
     @property
     def IncludeBandwidth(self):
@@ -324,7 +349,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Bandwidth
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeBandwidth"])
+        )
 
     @property
     def IncludeConfiguredERO(self):
@@ -335,7 +363,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, entire ERO will go out in packet even if there is Binding SID, which means no SR-ERO/SRv6-ERO validation will be done.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeConfiguredERO']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeConfiguredERO"])
+        )
 
     @property
     def IncludeLsp(self):
@@ -346,7 +377,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeLsp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeLsp"]))
 
     @property
     def IncludeLspa(self):
@@ -357,7 +389,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include LSPA
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeLspa']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeLspa"]))
 
     @property
     def IncludeMetric(self):
@@ -368,7 +401,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeMetric"]))
 
     @property
     def IncludeRp(self):
@@ -379,7 +413,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include RP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeRp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeRp"]))
 
     @property
     def IncludeSymbolicPathNameTlv(self):
@@ -390,7 +425,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if Symbolic-Path-Name TLV is to be included in PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSymbolicPathNameTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeSymbolicPathNameTlv"])
+        )
 
     @property
     def IncludeTEPathBindingTLV(self):
@@ -401,7 +439,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if TE-PATH-BINDING TLV is to be included in PCInitiate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTEPathBindingTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTEPathBindingTLV"])
+        )
 
     @property
     def LocalProtection(self):
@@ -412,7 +453,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalProtection"])
+        )
 
     @property
     def MplsLabel(self):
@@ -423,7 +467,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MplsLabel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MplsLabel"]))
 
     @property
     def Name(self):
@@ -433,11 +478,12 @@ class PcReplyLspParameters(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NatureOfIssue(self):
@@ -448,7 +494,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nature Of Issue
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NatureOfIssue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NatureOfIssue"]))
 
     @property
     def NumberOfEroSubObjects(self):
@@ -458,11 +505,12 @@ class PcReplyLspParameters(Base):
         -------
         - number: Number of ERO Sub Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"])
+
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"], value)
 
     @property
     def NumberOfMetricSubObject(self):
@@ -472,11 +520,12 @@ class PcReplyLspParameters(Base):
         -------
         - number: Number of Metric
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObject"])
+
     @NumberOfMetricSubObject.setter
     def NumberOfMetricSubObject(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMetricSubObject"], value)
 
     @property
     def NumberOfXroSubObjects(self):
@@ -486,11 +535,12 @@ class PcReplyLspParameters(Base):
         -------
         - number: Number of XRO Sub Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfXroSubObjects"])
+
     @NumberOfXroSubObjects.setter
     def NumberOfXroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfXroSubObjects"], value)
 
     @property
     def PlspId(self):
@@ -501,7 +551,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier for the LSP. A PCC creates a unique PLSP-ID for each LSP that is constant for the lifetime of a PCEP session. The PCC will advertise the same PLSP-ID on all PCEP sessions it maintains at a given time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PlspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PlspId"]))
 
     @property
     def PriorityValue(self):
@@ -512,7 +563,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PriorityValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PriorityValue"]))
 
     @property
     def ProcessType(self):
@@ -523,7 +575,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates how the XRO is responded in the Path Request Response.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProcessType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProcessType"]))
 
     @property
     def ReceivedPLSPID(self):
@@ -533,7 +586,7 @@ class PcReplyLspParameters(Base):
         -------
         - list(number): Received PLSP-ID in PcRequest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedPLSPID'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedPLSPID"])
 
     @property
     def ReceivedSymbolicPath(self):
@@ -543,7 +596,7 @@ class PcReplyLspParameters(Base):
         -------
         - list(str): Received Symbolic Path Name in PcRequest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceivedSymbolicPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceivedSymbolicPath"])
 
     @property
     def ReflectLSP(self):
@@ -554,7 +607,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reflect LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReflectLSP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReflectLSP"]))
 
     @property
     def ReflectRP(self):
@@ -565,7 +619,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reflect RP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReflectRP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReflectRP"]))
 
     @property
     def ReflectedObjectNoPath(self):
@@ -576,7 +631,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reflected Object
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReflectedObjectNoPath']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReflectedObjectNoPath"])
+        )
 
     @property
     def RequestId(self):
@@ -587,7 +645,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Request ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RequestId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RequestId"]))
 
     @property
     def ResponseOptions(self):
@@ -598,7 +657,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reply Options
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResponseOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ResponseOptions"])
+        )
 
     @property
     def ResponsePathType(self):
@@ -609,7 +671,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates which type of LSP will be responsed in the Path Request Response.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResponsePathType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ResponsePathType"])
+        )
 
     @property
     def SendEmptyTLV(self):
@@ -620,7 +685,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled all fields after Binding Type will be grayed out.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendEmptyTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SendEmptyTLV"]))
 
     @property
     def SessionInfo(self):
@@ -630,7 +696,7 @@ class PcReplyLspParameters(Base):
         -------
         - list(str[delegatedActive | delegatedDown | delegatedGoingUp | delegatedUp | noLSPObjectInPCRequest | none | notDelegatedActive | notDelegatedDown | notDelegatedGoingUp | notDelegatedUp | pcErrorReceived | removedByPCC | replySent | replySentReportNotReceived]): Logs additional information about the LSP state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SetupPriority(self):
@@ -641,7 +707,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetupPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetupPriority"]))
 
     @property
     def Srv6SID(self):
@@ -652,7 +719,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID with a format of a 16 byte IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SID"]))
 
     @property
     def SymbolicPathName(self):
@@ -663,7 +731,10 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Each LSP (path) must have a symbolic name that is unique in the PCC. It must remain constant throughout a path's lifetime, which may span across multiple consecutive PCEP sessions and/or PCC restarts.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SymbolicPathName"])
+        )
 
     @property
     def Tc(self):
@@ -674,7 +745,8 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tc']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tc"]))
 
     @property
     def Ttl(self):
@@ -685,9 +757,16 @@ class PcReplyLspParameters(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
-    def update(self, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ttl"]))
+
+    def update(
+        self,
+        Name=None,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObject=None,
+        NumberOfXroSubObjects=None,
+    ):
         # type: (str, int, int, int) -> PcReplyLspParameters
         """Updates pcReplyLspParameters resource on the server.
 
@@ -707,7 +786,18 @@ class PcReplyLspParameters(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None, ReceivedPLSPID=None, ReceivedSymbolicPath=None, SessionInfo=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfEroSubObjects=None,
+        NumberOfMetricSubObject=None,
+        NumberOfXroSubObjects=None,
+        ReceivedPLSPID=None,
+        ReceivedSymbolicPath=None,
+        SessionInfo=None,
+    ):
         # type: (int, str, str, int, int, int, List[int], List[str], List[str]) -> PcReplyLspParameters
         """Finds and retrieves pcReplyLspParameters resources from the server.
 
@@ -788,12 +878,57 @@ class PcReplyLspParameters(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('returnDelegation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("returnDelegation", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, Bandwidth=None, BiDirectional=None, BindingType=None, Bos=None, EnableCFlag=None, EnableEro=None, EnableLoose=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeConfiguredERO=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, LocalProtection=None, MplsLabel=None, NatureOfIssue=None, PlspId=None, PriorityValue=None, ProcessType=None, ReflectLSP=None, ReflectRP=None, ReflectedObjectNoPath=None, RequestId=None, ResponseOptions=None, ResponsePathType=None, SendEmptyTLV=None, SetupPriority=None, Srv6SID=None, SymbolicPathName=None, Tc=None, Ttl=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Bandwidth=None,
+        BiDirectional=None,
+        BindingType=None,
+        Bos=None,
+        EnableCFlag=None,
+        EnableEro=None,
+        EnableLoose=None,
+        EnableXro=None,
+        ExcludeAny=None,
+        FailBit=None,
+        HoldingPriority=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IncludeBandwidth=None,
+        IncludeConfiguredERO=None,
+        IncludeLsp=None,
+        IncludeLspa=None,
+        IncludeMetric=None,
+        IncludeRp=None,
+        IncludeSymbolicPathNameTlv=None,
+        IncludeTEPathBindingTLV=None,
+        LocalProtection=None,
+        MplsLabel=None,
+        NatureOfIssue=None,
+        PlspId=None,
+        PriorityValue=None,
+        ProcessType=None,
+        ReflectLSP=None,
+        ReflectRP=None,
+        ReflectedObjectNoPath=None,
+        RequestId=None,
+        ResponseOptions=None,
+        ResponsePathType=None,
+        SendEmptyTLV=None,
+        SetupPriority=None,
+        Srv6SID=None,
+        SymbolicPathName=None,
+        Tc=None,
+        Ttl=None,
+    ):
         """Base class infrastructure that gets a list of pcReplyLspParameters device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

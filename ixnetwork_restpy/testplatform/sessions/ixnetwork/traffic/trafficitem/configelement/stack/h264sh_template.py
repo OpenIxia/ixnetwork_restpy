@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class H264sh(Base):
     __slots__ = ()
-    _SDM_NAME = 'h264_sh'
+    _SDM_NAME = "h264_sh"
     _SDM_ATT_MAP = {
-        'H264SpecificHeaderF': 'h264SH.h264SpecificHeader.F-1',
-        'H264SpecificHeaderNRI': 'h264SH.h264SpecificHeader.NRI-2',
-        'H264SpecificHeaderNalUnitType': 'h264SH.h264SpecificHeader.nalUnitType-3',
-        'H264SpecificHeaderLength': 'h264SH.h264SpecificHeader.length-4',
-        'H264SpecificHeaderRawPayload': 'h264SH.h264SpecificHeader.rawPayload-5',
-        'H264SpecificHeaderPadding': 'h264SH.h264SpecificHeader.Padding-6',
+        "H264SpecificHeaderF": "h264SH.h264SpecificHeader.F-1",
+        "H264SpecificHeaderNRI": "h264SH.h264SpecificHeader.NRI-2",
+        "H264SpecificHeaderNalUnitType": "h264SH.h264SpecificHeader.nalUnitType-3",
+        "H264SpecificHeaderLength": "h264SH.h264SpecificHeader.length-4",
+        "H264SpecificHeaderRawPayload": "h264SH.h264SpecificHeader.rawPayload-5",
+        "H264SpecificHeaderPadding": "h264SH.h264SpecificHeader.Padding-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,10 @@ class H264sh(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderF']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderF"])
+        )
 
     @property
     def H264SpecificHeaderNRI(self):
@@ -35,7 +38,10 @@ class H264sh(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderNRI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderNRI"])
+        )
 
     @property
     def H264SpecificHeaderNalUnitType(self):
@@ -45,7 +51,11 @@ class H264sh(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderNalUnitType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderNalUnitType"]),
+        )
 
     @property
     def H264SpecificHeaderLength(self):
@@ -55,7 +65,10 @@ class H264sh(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderLength"])
+        )
 
     @property
     def H264SpecificHeaderRawPayload(self):
@@ -65,7 +78,10 @@ class H264sh(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderRawPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderRawPayload"])
+        )
 
     @property
     def H264SpecificHeaderPadding(self):
@@ -75,7 +91,10 @@ class H264sh(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['H264SpecificHeaderPadding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["H264SpecificHeaderPadding"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

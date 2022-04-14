@@ -4,17 +4,17 @@ from ixnetwork_restpy.files import Files
 
 class Gtpu(Base):
     __slots__ = ()
-    _SDM_NAME = 'gtpu'
+    _SDM_NAME = "gtpu"
     _SDM_ATT_MAP = {
-        'Version': 'gtpu.header.version-1',
-        'Pt': 'gtpu.header.pt-2',
-        'Reserved': 'gtpu.header.reserved-3',
-        'E': 'gtpu.header.e-4',
-        'S': 'gtpu.header.s-5',
-        'N': 'gtpu.header.n-6',
-        'Type': 'gtpu.header.type-7',
-        'TotalLength': 'gtpu.header.totalLength-8',
-        'Teid': 'gtpu.header.teid-9',
+        "Version": "gtpu.header.version-1",
+        "Pt": "gtpu.header.pt-2",
+        "Reserved": "gtpu.header.reserved-3",
+        "E": "gtpu.header.e-4",
+        "S": "gtpu.header.s-5",
+        "N": "gtpu.header.n-6",
+        "Type": "gtpu.header.type-7",
+        "TotalLength": "gtpu.header.totalLength-8",
+        "Teid": "gtpu.header.teid-9",
     }
 
     def __init__(self, parent, list_op=False):
@@ -29,7 +29,8 @@ class Gtpu(Base):
         Available enum values: GTPv1, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Pt(self):
@@ -40,7 +41,8 @@ class Gtpu(Base):
         Available enum values: GTP', 0, GTP, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Pt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Pt"]))
 
     @property
     def Reserved(self):
@@ -50,7 +52,8 @@ class Gtpu(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def E(self):
@@ -61,7 +64,8 @@ class Gtpu(Base):
         Available enum values: Extension Header Not Present, 0, Extension Header Present, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['E']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["E"]))
 
     @property
     def S(self):
@@ -72,7 +76,8 @@ class Gtpu(Base):
         Available enum values: Sequence Number Not Present, 0, Sequence Number Present, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['S']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["S"]))
 
     @property
     def N(self):
@@ -83,7 +88,8 @@ class Gtpu(Base):
         Available enum values: N-PDU Field Not Present, 0, N-PDU Field Present, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['N']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["N"]))
 
     @property
     def Type(self):
@@ -93,7 +99,8 @@ class Gtpu(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
     def TotalLength(self):
@@ -103,7 +110,8 @@ class Gtpu(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TotalLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TotalLength"]))
 
     @property
     def Teid(self):
@@ -113,7 +121,8 @@ class Gtpu(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Teid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Teid"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

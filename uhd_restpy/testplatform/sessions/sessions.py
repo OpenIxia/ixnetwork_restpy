@@ -69,15 +69,11 @@ class Sessions(Base):
                     % build_number
                 )
             else:
-                self.info(
-                    "Using IxNetwork api server version %s" % (build_number)
-                )
+                self.info("Using IxNetwork api server version %s" % (build_number))
                 self.info("User info %s" % (user_name))
             self._build_numbers.append(build_number)
         ixnetwork._set_properties(
-            ixnetwork._connection._read(
-                "%s/%s" % (self.href, Ixnetwork._SDM_NAME)
-            )
+            ixnetwork._connection._read("%s/%s" % (self.href, Ixnetwork._SDM_NAME))
         )
         return ixnetwork
 
@@ -155,10 +151,7 @@ class Sessions(Base):
                     "Setting the session name is not supported on the %s platform"
                     % self._connection.platform
                 )
-        elif (
-            self._connection.platform == "linux"
-            and "name" not in self._properties
-        ):
+        elif self._connection.platform == "linux" and "name" not in self._properties:
             if "sessionName" in self._properties:
                 self._properties["name"] = self._properties["sessionName"]
             else:
@@ -183,26 +176,19 @@ class Sessions(Base):
             and self._properties["state"].upper() != "ACTIVE"
         ):
             # linux and windows offer async operation status on session start
-            self._execute(
-                "start", payload={"applicationType": self.ApplicationType}
-            )
+            self._execute("start", payload={"applicationType": self.ApplicationType})
         elif (
             self.parent.Platform == "connection_manager"
             and "IN USE" not in self._properties["subState"]
         ):
             # connection manager does not offer async operation status on session start
-            self._execute(
-                "start", payload={"applicationType": self.ApplicationType}
-            )
+            self._execute("start", payload={"applicationType": self.ApplicationType})
             start = time.time()
             while True:
                 response = self._connection._read(
                     "%s/%s/%s" % (self._parent.href, self._SDM_NAME, id)
                 )
-                if (
-                    response["state"] == "ACTIVE"
-                    and "IN USE" in response["subState"]
-                ):
+                if response["state"] == "ACTIVE" and "IN USE" in response["subState"]:
                     self._properties["state"] = response["state"]
                     self._properties["subState"] = response["subState"]
                     break
@@ -277,15 +263,11 @@ class Sessions(Base):
         elif ApplicationType == "ixnrest":
             applicationType = "ixnrest"
         else:
-            raise ValueError(
-                "%s is not a supported SessionType" % ApplicationType
-            )
+            raise ValueError("%s is not a supported SessionType" % ApplicationType)
         ApplicationType = None
         self._create(locals())
         if self._properties["applicationType"] == "ixnetwork":
-            self._object_properties[self.index][
-                "applicationType"
-            ] = "quicktest"
+            self._object_properties[self.index]["applicationType"] = "quicktest"
         self.Start()
         self.Name = Name
         return self
@@ -322,10 +304,7 @@ class Sessions(Base):
             try:
                 url = None
                 if self.parent.Platform == "linux":
-                    url = (
-                        "%s/operations/stop?deleteAfterStop=true"
-                        % properties["href"]
-                    )
+                    url = "%s/operations/stop?deleteAfterStop=true" % properties["href"]
                 elif self.parent.Platform == "connection_manager":
                     url = "%s/operations/stop" % properties["href"]
                 if url is not None:

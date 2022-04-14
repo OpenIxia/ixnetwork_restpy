@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class IsisPseudoInterface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisPseudoInterface'
+    _SDM_NAME = "isisPseudoInterface"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LinkType': 'linkType',
-        'Name': 'name',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LinkType": "linkType",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisPseudoInterface, self).__init__(parent, list_op)
@@ -57,10 +57,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint1config_dce0066317952a09c055b9f568621953 import IsisDcePseudoIfaceAttPoint1Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint1config_dce0066317952a09c055b9f568621953 import (
+            IsisDcePseudoIfaceAttPoint1Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisDcePseudoIfaceAttPoint1Config', None) is not None:
-                return self._properties.get('IsisDcePseudoIfaceAttPoint1Config')
+            if (
+                self._properties.get("IsisDcePseudoIfaceAttPoint1Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisDcePseudoIfaceAttPoint1Config")
         return IsisDcePseudoIfaceAttPoint1Config(self)
 
     @property
@@ -74,10 +80,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint2config_08c96458d8806c0878ba2591f7235870 import IsisDcePseudoIfaceAttPoint2Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint2config_08c96458d8806c0878ba2591f7235870 import (
+            IsisDcePseudoIfaceAttPoint2Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisDcePseudoIfaceAttPoint2Config', None) is not None:
-                return self._properties.get('IsisDcePseudoIfaceAttPoint2Config')
+            if (
+                self._properties.get("IsisDcePseudoIfaceAttPoint2Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisDcePseudoIfaceAttPoint2Config")
         return IsisDcePseudoIfaceAttPoint2Config(self)
 
     @property
@@ -91,10 +103,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint1config_e6b2374da4892fed3474f1ab974dbf1c import IsisL3PseudoIfaceAttPoint1Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint1config_e6b2374da4892fed3474f1ab974dbf1c import (
+            IsisL3PseudoIfaceAttPoint1Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3PseudoIfaceAttPoint1Config', None) is not None:
-                return self._properties.get('IsisL3PseudoIfaceAttPoint1Config')
+            if (
+                self._properties.get("IsisL3PseudoIfaceAttPoint1Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisL3PseudoIfaceAttPoint1Config")
         return IsisL3PseudoIfaceAttPoint1Config(self)
 
     @property
@@ -108,10 +126,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config_37681cb7f2d7b1eb6c812c1b9f243542 import IsisL3PseudoIfaceAttPoint2Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config_37681cb7f2d7b1eb6c812c1b9f243542 import (
+            IsisL3PseudoIfaceAttPoint2Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3PseudoIfaceAttPoint2Config', None) is not None:
-                return self._properties.get('IsisL3PseudoIfaceAttPoint2Config')
+            if (
+                self._properties.get("IsisL3PseudoIfaceAttPoint2Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisL3PseudoIfaceAttPoint2Config")
         return IsisL3PseudoIfaceAttPoint2Config(self)
 
     @property
@@ -125,10 +149,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint1config_04ab03c0f19e657e435c655358111db5 import IsisSpbPseudoIfaceAttPoint1Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint1config_04ab03c0f19e657e435c655358111db5 import (
+            IsisSpbPseudoIfaceAttPoint1Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbPseudoIfaceAttPoint1Config', None) is not None:
-                return self._properties.get('IsisSpbPseudoIfaceAttPoint1Config')
+            if (
+                self._properties.get("IsisSpbPseudoIfaceAttPoint1Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisSpbPseudoIfaceAttPoint1Config")
         return IsisSpbPseudoIfaceAttPoint1Config(self)
 
     @property
@@ -142,10 +172,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint2config_0781ccf029e86f2c708647212802930e import IsisSpbPseudoIfaceAttPoint2Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint2config_0781ccf029e86f2c708647212802930e import (
+            IsisSpbPseudoIfaceAttPoint2Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbPseudoIfaceAttPoint2Config', None) is not None:
-                return self._properties.get('IsisSpbPseudoIfaceAttPoint2Config')
+            if (
+                self._properties.get("IsisSpbPseudoIfaceAttPoint2Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisSpbPseudoIfaceAttPoint2Config")
         return IsisSpbPseudoIfaceAttPoint2Config(self)
 
     @property
@@ -159,10 +195,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint1config_4c83cc199df8becee43d785e9ef03dc7 import IsisTrillPseudoIfaceAttPoint1Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint1config_4c83cc199df8becee43d785e9ef03dc7 import (
+            IsisTrillPseudoIfaceAttPoint1Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillPseudoIfaceAttPoint1Config', None) is not None:
-                return self._properties.get('IsisTrillPseudoIfaceAttPoint1Config')
+            if (
+                self._properties.get("IsisTrillPseudoIfaceAttPoint1Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisTrillPseudoIfaceAttPoint1Config")
         return IsisTrillPseudoIfaceAttPoint1Config(self)
 
     @property
@@ -176,10 +218,16 @@ class IsisPseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint2config_1910327d5bcdde39c812851ec539a846 import IsisTrillPseudoIfaceAttPoint2Config
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint2config_1910327d5bcdde39c812851ec539a846 import (
+            IsisTrillPseudoIfaceAttPoint2Config,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillPseudoIfaceAttPoint2Config', None) is not None:
-                return self._properties.get('IsisTrillPseudoIfaceAttPoint2Config')
+            if (
+                self._properties.get("IsisTrillPseudoIfaceAttPoint2Config", None)
+                is not None
+            ):
+                return self._properties.get("IsisTrillPseudoIfaceAttPoint2Config")
         return IsisTrillPseudoIfaceAttPoint2Config(self)
 
     @property
@@ -190,7 +238,7 @@ class IsisPseudoInterface(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -200,7 +248,7 @@ class IsisPseudoInterface(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LinkType(self):
@@ -211,7 +259,8 @@ class IsisPseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkType"]))
 
     @property
     def Name(self):
@@ -221,11 +270,12 @@ class IsisPseudoInterface(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> IsisPseudoInterface
@@ -246,7 +296,7 @@ class IsisPseudoInterface(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisPseudoInterface
-        """Adds a new isisPseudoInterface resource on the json, only valid with config assistant
+        """Adds a new isisPseudoInterface resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -319,10 +369,12 @@ class IsisPseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -339,10 +391,12 @@ class IsisPseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -359,10 +413,12 @@ class IsisPseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, LinkType=None):
         """Base class infrastructure that gets a list of isisPseudoInterface device ids encapsulated by this object.

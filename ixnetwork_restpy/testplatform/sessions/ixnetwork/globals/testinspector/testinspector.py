@@ -18,34 +18,34 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class TestInspector(Base):
-    """DEPRECATED 
+    """DEPRECATED
     The TestInspector class encapsulates a required testInspector resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testInspector'
+    _SDM_NAME = "testInspector"
     _SDM_ATT_MAP = {
-        'EnableTestInspector': 'enableTestInspector',
-        'PollingInterval': 'pollingInterval',
+        "EnableTestInspector": "enableTestInspector",
+        "PollingInterval": "pollingInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TestInspector, self).__init__(parent, list_op)
 
     @property
     def Statistic(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic): An instance of the Statistic class
@@ -54,10 +54,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import (
+            Statistic,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Statistic', None) is not None:
-                return self._properties.get('Statistic')
+            if self._properties.get("Statistic", None) is not None:
+                return self._properties.get("Statistic")
         return Statistic(self)
 
     @property
@@ -68,11 +71,12 @@ class TestInspector(Base):
         -------
         - bool: Enable/Disable Test Inspector
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableTestInspector'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableTestInspector"])
+
     @EnableTestInspector.setter
     def EnableTestInspector(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableTestInspector'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableTestInspector"], value)
 
     @property
     def PollingInterval(self):
@@ -82,11 +86,12 @@ class TestInspector(Base):
         -------
         - number: Polling Interval
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollingInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollingInterval"])
+
     @PollingInterval.setter
     def PollingInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollingInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollingInterval"], value)
 
     def update(self, EnableTestInspector=None, PollingInterval=None):
         # type: (bool, int) -> TestInspector

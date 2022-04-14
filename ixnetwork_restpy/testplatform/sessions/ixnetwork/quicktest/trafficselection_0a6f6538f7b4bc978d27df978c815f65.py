@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,18 @@ class TrafficSelection(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trafficSelection'
+    _SDM_NAME = "trafficSelection"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'IncludeMode': 'includeMode',
-        'IsGenerated': 'isGenerated',
-        'ItemType': 'itemType',
-        'TrafficItemType': 'trafficItemType',
+        "Id__": "__id__",
+        "IncludeMode": "includeMode",
+        "IsGenerated": "isGenerated",
+        "ItemType": "itemType",
+        "TrafficItemType": "trafficItemType",
     }
     _SDM_ENUM_MAP = {
-        'includeMode': ['background', 'inTest'],
-        'itemType': ['flowGroup', 'trafficItem'],
-        'trafficItemType': ['ipv4', 'ipv6', 'mac'],
+        "includeMode": ["background", "inTest"],
+        "itemType": ["flowGroup", "trafficItem"],
+        "trafficItemType": ["ipv4", "ipv6", "mac"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,11 +60,12 @@ class TrafficSelection(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
+        return self._get_attribute(self._SDM_ATT_MAP["Id__"])
+
     @Id__.setter
     def Id__(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Id__"], value)
 
     @property
     def IncludeMode(self):
@@ -73,11 +75,12 @@ class TrafficSelection(Base):
         -------
         - str(background | inTest): Traffic type for the frame data
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeMode"])
+
     @IncludeMode.setter
     def IncludeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeMode"], value)
 
     @property
     def IsGenerated(self):
@@ -87,11 +90,12 @@ class TrafficSelection(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsGenerated'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsGenerated"])
+
     @IsGenerated.setter
     def IsGenerated(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsGenerated'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsGenerated"], value)
 
     @property
     def ItemType(self):
@@ -101,11 +105,12 @@ class TrafficSelection(Base):
         -------
         - str(flowGroup | trafficItem): Traffic type for the frame data
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ItemType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ItemType"])
+
     @ItemType.setter
     def ItemType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ItemType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ItemType"], value)
 
     @property
     def TrafficItemType(self):
@@ -115,13 +120,21 @@ class TrafficSelection(Base):
         -------
         - str(ipv4 | ipv6 | mac): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemType"])
+
     @TrafficItemType.setter
     def TrafficItemType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemType"], value)
 
-    def update(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+    def update(
+        self,
+        Id__=None,
+        IncludeMode=None,
+        IsGenerated=None,
+        ItemType=None,
+        TrafficItemType=None,
+    ):
         # type: (str, str, bool, str, str) -> TrafficSelection
         """Updates trafficSelection resource on the server.
 
@@ -139,7 +152,14 @@ class TrafficSelection(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+    def add(
+        self,
+        Id__=None,
+        IncludeMode=None,
+        IsGenerated=None,
+        ItemType=None,
+        TrafficItemType=None,
+    ):
         # type: (str, str, bool, str, str) -> TrafficSelection
         """Adds a new trafficSelection resource on the server and adds it to the container.
 
@@ -171,7 +191,14 @@ class TrafficSelection(Base):
         """
         self._delete()
 
-    def find(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+    def find(
+        self,
+        Id__=None,
+        IncludeMode=None,
+        IsGenerated=None,
+        ItemType=None,
+        TrafficItemType=None,
+    ):
         # type: (str, str, bool, str, str) -> TrafficSelection
         """Finds and retrieves trafficSelection resources from the server.
 
@@ -230,10 +257,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -248,10 +277,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -260,17 +291,19 @@ class TrafficSelection(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -287,10 +320,14 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -308,10 +345,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -337,10 +376,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -364,10 +405,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -384,10 +427,12 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -405,7 +450,9 @@ class TrafficSelection(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

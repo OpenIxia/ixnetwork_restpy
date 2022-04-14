@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,23 @@ class Delay(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'delay'
+    _SDM_NAME = "delay"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Units': 'units',
-        'Value': 'value',
+        "Enabled": "enabled",
+        "Units": "units",
+        "Value": "value",
     }
     _SDM_ENUM_MAP = {
-        'units': ['kilometers', 'kKilometers', 'kMicroseconds', 'kMilliseconds', 'kSeconds', 'microseconds', 'milliseconds', 'seconds'],
+        "units": [
+            "kilometers",
+            "kKilometers",
+            "kMicroseconds",
+            "kMilliseconds",
+            "kSeconds",
+            "microseconds",
+            "milliseconds",
+            "seconds",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,11 +63,12 @@ class Delay(Base):
         -------
         - bool: If true, delay packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Units(self):
@@ -67,11 +78,12 @@ class Delay(Base):
         -------
         - str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Specify the units for the delay value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Units'])
+        return self._get_attribute(self._SDM_ATT_MAP["Units"])
+
     @Units.setter
     def Units(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Units"], value)
 
     @property
     def Value(self):
@@ -81,11 +93,12 @@ class Delay(Base):
         -------
         - number: Time to delay each packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Enabled=None, Units=None, Value=None):
         # type: (bool, str, int) -> Delay

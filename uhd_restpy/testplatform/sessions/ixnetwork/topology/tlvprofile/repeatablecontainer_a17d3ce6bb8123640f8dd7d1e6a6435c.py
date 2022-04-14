@@ -106,7 +106,7 @@ class RepeatableContainer(Base):
 
     def add(self, IsEnabled=None, Name=None):
         # type: (bool, str) -> RepeatableContainer
-        """Adds a new repeatableContainer resource on the json, only valid with config assistant
+        """Adds a new repeatableContainer resource on the json, only valid with batch add utility
 
         Args
         ----

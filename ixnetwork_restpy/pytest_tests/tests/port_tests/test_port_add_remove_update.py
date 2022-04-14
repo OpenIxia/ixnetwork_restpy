@@ -4,7 +4,7 @@ import pytest
 def test_add_vports(ixnetwork):
     """
         vports can be added from client
-    
+
     :given: session: an ixnetwork session
     :when: perform vport add operation
     :then: should create a vport
@@ -24,22 +24,22 @@ def test_add_vports(ixnetwork):
 def test_can_change_vport_attributes(vports):
     """
         vport attributes can be changed from client
-    
+
     :given: session: a couple of vports
     :when: perform vport attributes operation
     :then: should edit a vport
     """
-    vport_1,vport_2 = vports
-    vport_1.TxMode = 'sequential'
-    vport_1.TransmitIgnoreLinkStatus=True
-    vport_1.L1Config.Ethernet.Media = 'fiber'
+    vport_1, vport_2 = vports
+    vport_1.TxMode = "sequential"
+    vport_1.TransmitIgnoreLinkStatus = True
+    vport_1.L1Config.Ethernet.Media = "fiber"
     vport_1.L1Config.Ethernet.AutoNegotiate = False
-    vport_1.L1Config.CurrentType = 'krakenFourHundredGigLan'
+    vport_1.L1Config.CurrentType = "krakenFourHundredGigLan"
 
 
 def test_can_change_uppercase_property_names(vports):
     """
-        attributes that have uppercase python class property names  
+        attributes that have uppercase python class property names
         and uppercase rest api property names should not raise an error
         when patched
 
@@ -47,9 +47,9 @@ def test_can_change_uppercase_property_names(vports):
     :when: perform FilterPallette attributes operation
     :then: should successfully be patched
     """
-    vport_1,vport_2 = vports
-    vport_1.Capture.FilterPallette.DA1 = '00:00:de:ad:be:ef'
-    vport_1.Capture.FilterPallette.update(DA1='00:00:de:ad:be:ef')
+    vport_1, vport_2 = vports
+    vport_1.Capture.FilterPallette.DA1 = "00:00:de:ad:be:ef"
+    vport_1.Capture.FilterPallette.update(DA1="00:00:de:ad:be:ef")
 
 
 def test_can_remove_vport(ixnetwork):
@@ -77,9 +77,9 @@ def test_can_add_lag_ports(ixnetwork):
 
     :given: session: a couple of vports
     :when: perform lag add operation
-    :then: should add vports 
+    :then: should add vports
     """
     vports = ixnetwork.Vport.add().add()
-    lag = ixnetwork.Lag.add(Name='Lag 1', Vports=vports)
+    lag = ixnetwork.Lag.add(Name="Lag 1", Vports=vports)
     lag.ProtocolStack.add().Ethernet.add().Lagportlacp.add()
-    assert(len(lag.Vports) == 2)
+    assert len(lag.Vports) == 2

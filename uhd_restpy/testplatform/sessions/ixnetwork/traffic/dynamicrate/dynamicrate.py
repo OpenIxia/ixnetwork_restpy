@@ -184,7 +184,7 @@ class DynamicRate(Base):
 
     def add(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, RateType=None):
         # type: (str, int, str, int, str) -> DynamicRate
-        """Adds a new dynamicRate resource on the json, only valid with config assistant
+        """Adds a new dynamicRate resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,20 @@ class ItrRemoteEidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'itrRemoteEidRange'
+    _SDM_NAME = "itrRemoteEidRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'EnableMapReplyRecordSegmentMbit': 'enableMapReplyRecordSegmentMbit',
-        'Enabled': 'enabled',
-        'Family': 'family',
-        'KeepQueryingUnlessResolved': 'keepQueryingUnlessResolved',
-        'MapResolvingInterval': 'mapResolvingInterval',
-        'PrefixLength': 'prefixLength',
-        'QueryIntervalUnlessResolved': 'queryIntervalUnlessResolved',
-        'StartAddress': 'startAddress',
+        "Count": "count",
+        "EnableMapReplyRecordSegmentMbit": "enableMapReplyRecordSegmentMbit",
+        "Enabled": "enabled",
+        "Family": "family",
+        "KeepQueryingUnlessResolved": "keepQueryingUnlessResolved",
+        "MapResolvingInterval": "mapResolvingInterval",
+        "PrefixLength": "prefixLength",
+        "QueryIntervalUnlessResolved": "queryIntervalUnlessResolved",
+        "StartAddress": "startAddress",
     }
     _SDM_ENUM_MAP = {
-        'family': ['ipv4', 'ipv6'],
+        "family": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,11 +62,12 @@ class ItrRemoteEidRange(Base):
         -------
         - number: it gives details about the count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def EnableMapReplyRecordSegmentMbit(self):
@@ -75,11 +77,12 @@ class ItrRemoteEidRange(Base):
         -------
         - bool: If true, it enables Map reply record Segment Mbit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMapReplyRecordSegmentMbit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMapReplyRecordSegmentMbit"])
+
     @EnableMapReplyRecordSegmentMbit.setter
     def EnableMapReplyRecordSegmentMbit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMapReplyRecordSegmentMbit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMapReplyRecordSegmentMbit"], value)
 
     @property
     def Enabled(self):
@@ -89,11 +92,12 @@ class ItrRemoteEidRange(Base):
         -------
         - bool: If true, it gives details about then protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Family(self):
@@ -103,11 +107,12 @@ class ItrRemoteEidRange(Base):
         -------
         - str(ipv4 | ipv6): It gives details about the IP family it represents
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Family'])
+        return self._get_attribute(self._SDM_ATT_MAP["Family"])
+
     @Family.setter
     def Family(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Family'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Family"], value)
 
     @property
     def KeepQueryingUnlessResolved(self):
@@ -117,11 +122,12 @@ class ItrRemoteEidRange(Base):
         -------
         - bool: If true, it keeps Querying Unless resolved
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepQueryingUnlessResolved'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepQueryingUnlessResolved"])
+
     @KeepQueryingUnlessResolved.setter
     def KeepQueryingUnlessResolved(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepQueryingUnlessResolved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepQueryingUnlessResolved"], value)
 
     @property
     def MapResolvingInterval(self):
@@ -131,11 +137,12 @@ class ItrRemoteEidRange(Base):
         -------
         - number: It gives the map resolving interval
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MapResolvingInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MapResolvingInterval"])
+
     @MapResolvingInterval.setter
     def MapResolvingInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MapResolvingInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MapResolvingInterval"], value)
 
     @property
     def PrefixLength(self):
@@ -145,11 +152,12 @@ class ItrRemoteEidRange(Base):
         -------
         - number: it gives the prefix length
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
+
     @PrefixLength.setter
     def PrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLength"], value)
 
     @property
     def QueryIntervalUnlessResolved(self):
@@ -159,11 +167,12 @@ class ItrRemoteEidRange(Base):
         -------
         - number: It gives the query regarding the interval unless resolved
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueryIntervalUnlessResolved'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueryIntervalUnlessResolved"])
+
     @QueryIntervalUnlessResolved.setter
     def QueryIntervalUnlessResolved(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueryIntervalUnlessResolved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueryIntervalUnlessResolved"], value)
 
     @property
     def StartAddress(self):
@@ -173,13 +182,25 @@ class ItrRemoteEidRange(Base):
         -------
         - str: It gives details about the start address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartAddress"])
+
     @StartAddress.setter
     def StartAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartAddress"], value)
 
-    def update(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
+    def update(
+        self,
+        Count=None,
+        EnableMapReplyRecordSegmentMbit=None,
+        Enabled=None,
+        Family=None,
+        KeepQueryingUnlessResolved=None,
+        MapResolvingInterval=None,
+        PrefixLength=None,
+        QueryIntervalUnlessResolved=None,
+        StartAddress=None,
+    ):
         # type: (int, bool, bool, str, bool, int, int, int, str) -> ItrRemoteEidRange
         """Updates itrRemoteEidRange resource on the server.
 
@@ -201,7 +222,18 @@ class ItrRemoteEidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
+    def add(
+        self,
+        Count=None,
+        EnableMapReplyRecordSegmentMbit=None,
+        Enabled=None,
+        Family=None,
+        KeepQueryingUnlessResolved=None,
+        MapResolvingInterval=None,
+        PrefixLength=None,
+        QueryIntervalUnlessResolved=None,
+        StartAddress=None,
+    ):
         # type: (int, bool, bool, str, bool, int, int, int, str) -> ItrRemoteEidRange
         """Adds a new itrRemoteEidRange resource on the server and adds it to the container.
 
@@ -237,7 +269,18 @@ class ItrRemoteEidRange(Base):
         """
         self._delete()
 
-    def find(self, Count=None, EnableMapReplyRecordSegmentMbit=None, Enabled=None, Family=None, KeepQueryingUnlessResolved=None, MapResolvingInterval=None, PrefixLength=None, QueryIntervalUnlessResolved=None, StartAddress=None):
+    def find(
+        self,
+        Count=None,
+        EnableMapReplyRecordSegmentMbit=None,
+        Enabled=None,
+        Family=None,
+        KeepQueryingUnlessResolved=None,
+        MapResolvingInterval=None,
+        PrefixLength=None,
+        QueryIntervalUnlessResolved=None,
+        StartAddress=None,
+    ):
         # type: (int, bool, bool, str, bool, int, int, int, str) -> ItrRemoteEidRange
         """Finds and retrieves itrRemoteEidRange resources from the server.
 

@@ -4,54 +4,54 @@ from ixnetwork_restpy.files import Files
 
 class Bfd(Base):
     __slots__ = ()
-    _SDM_NAME = 'bfd'
+    _SDM_NAME = "bfd"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'bfd.header.version-1',
-        'HeaderDiagnostic': 'bfd.header.diagnostic-2',
-        'HeaderState': 'bfd.header.state-3',
-        'HeaderPollP': 'bfd.header.pollP-4',
-        'HeaderFinalF': 'bfd.header.finalF-5',
-        'HeaderControlPlaneIndependentC': 'bfd.header.controlPlaneIndependentC-6',
-        'HeaderAuthenticationA': 'bfd.header.authenticationA-7',
-        'HeaderDemandD': 'bfd.header.demandD-8',
-        'HeaderReserved': 'bfd.header.reserved-9',
-        'HeaderDetectTimeMultiplier': 'bfd.header.detectTimeMultiplier-10',
-        'HeaderLength': 'bfd.header.length-11',
-        'HeaderMyDiscriminator': 'bfd.header.myDiscriminator-12',
-        'HeaderYourDiscriminator': 'bfd.header.yourDiscriminator-13',
-        'HeaderDesiredMinTXInterval': 'bfd.header.desiredMinTXInterval-14',
-        'HeaderRequiredMinRXInterval': 'bfd.header.requiredMinRXInterval-15',
-        'HeaderRequiredMinEchoRXInterval': 'bfd.header.requiredMinEchoRXInterval-16',
-        'SimplePasswordType': 'bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.type-17',
-        'SimplePasswordLength': 'bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.length-18',
-        'SimplePasswordKeyID': 'bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.keyID-19',
-        'SimplePasswordPasswordLengthoctets': 'bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.passwordLengthoctets-20',
-        'SimplePasswordPassword': 'bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.password-21',
-        'KeyedMD5Type': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.type-22',
-        'KeyedMD5Length': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.length-23',
-        'KeyedMD5KeyID': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.keyID-24',
-        'KeyedMD5Reserved': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.reserved-25',
-        'KeyedMD5SequenceNumber': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.sequenceNumber-26',
-        'KeyedMD5Checksum': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.checksum-27',
-        'MeticulousKeyedMD5Type': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.type-28',
-        'MeticulousKeyedMD5Length': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.length-29',
-        'MeticulousKeyedMD5KeyID': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.keyID-30',
-        'MeticulousKeyedMD5Reserved': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.reserved-31',
-        'MeticulousKeyedMD5SequenceNumber': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.sequenceNumber-32',
-        'MeticulousKeyedMD5Checksum': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.checksum-33',
-        'KeyedSHA1Type': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.type-34',
-        'KeyedSHA1Length': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.length-35',
-        'KeyedSHA1KeyID': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.keyID-36',
-        'KeyedSHA1Reserved': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.reserved-37',
-        'KeyedSHA1SequenceNumber': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.sequenceNumber-38',
-        'KeyedSHA1Checksum': 'bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.checksum-39',
-        'MeticulousKeyedSHA1Type': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.type-40',
-        'MeticulousKeyedSHA1Length': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.length-41',
-        'MeticulousKeyedSHA1KeyID': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.keyID-42',
-        'MeticulousKeyedSHA1Reserved': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.reserved-43',
-        'MeticulousKeyedSHA1SequenceNumber': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.sequenceNumber-44',
-        'MeticulousKeyedSHA1Checksum': 'bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.checksum-45',
-        'AuthenticationOptionNoAuthentication': 'bfd.header.authenticationOption.noAuthentication-46',
+        "HeaderVersion": "bfd.header.version-1",
+        "HeaderDiagnostic": "bfd.header.diagnostic-2",
+        "HeaderState": "bfd.header.state-3",
+        "HeaderPollP": "bfd.header.pollP-4",
+        "HeaderFinalF": "bfd.header.finalF-5",
+        "HeaderControlPlaneIndependentC": "bfd.header.controlPlaneIndependentC-6",
+        "HeaderAuthenticationA": "bfd.header.authenticationA-7",
+        "HeaderDemandD": "bfd.header.demandD-8",
+        "HeaderReserved": "bfd.header.reserved-9",
+        "HeaderDetectTimeMultiplier": "bfd.header.detectTimeMultiplier-10",
+        "HeaderLength": "bfd.header.length-11",
+        "HeaderMyDiscriminator": "bfd.header.myDiscriminator-12",
+        "HeaderYourDiscriminator": "bfd.header.yourDiscriminator-13",
+        "HeaderDesiredMinTXInterval": "bfd.header.desiredMinTXInterval-14",
+        "HeaderRequiredMinRXInterval": "bfd.header.requiredMinRXInterval-15",
+        "HeaderRequiredMinEchoRXInterval": "bfd.header.requiredMinEchoRXInterval-16",
+        "SimplePasswordType": "bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.type-17",
+        "SimplePasswordLength": "bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.length-18",
+        "SimplePasswordKeyID": "bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.keyID-19",
+        "SimplePasswordPasswordLengthoctets": "bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.passwordLengthoctets-20",
+        "SimplePasswordPassword": "bfd.header.authenticationOption.withAuthentication.authentication.simplePassword.password-21",
+        "KeyedMD5Type": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.type-22",
+        "KeyedMD5Length": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.length-23",
+        "KeyedMD5KeyID": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.keyID-24",
+        "KeyedMD5Reserved": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.reserved-25",
+        "KeyedMD5SequenceNumber": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.sequenceNumber-26",
+        "KeyedMD5Checksum": "bfd.header.authenticationOption.withAuthentication.authentication.keyedMD5.checksum-27",
+        "MeticulousKeyedMD5Type": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.type-28",
+        "MeticulousKeyedMD5Length": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.length-29",
+        "MeticulousKeyedMD5KeyID": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.keyID-30",
+        "MeticulousKeyedMD5Reserved": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.reserved-31",
+        "MeticulousKeyedMD5SequenceNumber": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.sequenceNumber-32",
+        "MeticulousKeyedMD5Checksum": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedMD5.checksum-33",
+        "KeyedSHA1Type": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.type-34",
+        "KeyedSHA1Length": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.length-35",
+        "KeyedSHA1KeyID": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.keyID-36",
+        "KeyedSHA1Reserved": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.reserved-37",
+        "KeyedSHA1SequenceNumber": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.sequenceNumber-38",
+        "KeyedSHA1Checksum": "bfd.header.authenticationOption.withAuthentication.authentication.keyedSHA1.checksum-39",
+        "MeticulousKeyedSHA1Type": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.type-40",
+        "MeticulousKeyedSHA1Length": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.length-41",
+        "MeticulousKeyedSHA1KeyID": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.keyID-42",
+        "MeticulousKeyedSHA1Reserved": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.reserved-43",
+        "MeticulousKeyedSHA1SequenceNumber": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.sequenceNumber-44",
+        "MeticulousKeyedSHA1Checksum": "bfd.header.authenticationOption.withAuthentication.authentication.meticulousKeyedSHA1.checksum-45",
+        "AuthenticationOptionNoAuthentication": "bfd.header.authenticationOption.noAuthentication-46",
     }
 
     def __init__(self, parent, list_op=False):
@@ -65,7 +65,8 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderDiagnostic(self):
@@ -76,7 +77,10 @@ class Bfd(Base):
         Available enum values: No diagnostic, 0, Control detection time expired, 1, Echo function disabled, 2, Neighbor signaled session down, 3, Forwarding plane reset, 4, Path down, 5, Concatenated path down, 6, Administratively down, 7, Reverse Concatenated Path Down, 8
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDiagnostic']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDiagnostic"])
+        )
 
     @property
     def HeaderState(self):
@@ -87,7 +91,8 @@ class Bfd(Base):
         Available enum values: AdmitDown, 0, Down, 1, Init, 2, Up, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderState']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderState"]))
 
     @property
     def HeaderPollP(self):
@@ -98,7 +103,8 @@ class Bfd(Base):
         Available enum values: Request Connectivity Verification, 1, Not Requesting Verification, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPollP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderPollP"]))
 
     @property
     def HeaderFinalF(self):
@@ -109,7 +115,8 @@ class Bfd(Base):
         Available enum values: Responding to Poll, 1, Not Responding to Poll, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFinalF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderFinalF"]))
 
     @property
     def HeaderControlPlaneIndependentC(self):
@@ -120,7 +127,11 @@ class Bfd(Base):
         Available enum values: Does Not Share to Control Panel, 1, Sharing to Control Panel, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderControlPlaneIndependentC']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderControlPlaneIndependentC"]),
+        )
 
     @property
     def HeaderAuthenticationA(self):
@@ -131,7 +142,10 @@ class Bfd(Base):
         Available enum values: Not to be Authenticated, 0, To be Authenticated, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAuthenticationA']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAuthenticationA"])
+        )
 
     @property
     def HeaderDemandD(self):
@@ -142,7 +156,8 @@ class Bfd(Base):
         Available enum values: Not in Demand Mode, 0, Demand Mode, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDemandD']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDemandD"]))
 
     @property
     def HeaderReserved(self):
@@ -152,7 +167,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderDetectTimeMultiplier(self):
@@ -162,7 +180,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDetectTimeMultiplier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDetectTimeMultiplier"])
+        )
 
     @property
     def HeaderLength(self):
@@ -172,7 +193,8 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMyDiscriminator(self):
@@ -182,7 +204,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMyDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMyDiscriminator"])
+        )
 
     @property
     def HeaderYourDiscriminator(self):
@@ -192,7 +217,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderYourDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderYourDiscriminator"])
+        )
 
     @property
     def HeaderDesiredMinTXInterval(self):
@@ -202,7 +230,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDesiredMinTXInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDesiredMinTXInterval"])
+        )
 
     @property
     def HeaderRequiredMinRXInterval(self):
@@ -212,7 +243,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRequiredMinRXInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRequiredMinRXInterval"])
+        )
 
     @property
     def HeaderRequiredMinEchoRXInterval(self):
@@ -222,7 +256,11 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRequiredMinEchoRXInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderRequiredMinEchoRXInterval"]),
+        )
 
     @property
     def SimplePasswordType(self):
@@ -232,7 +270,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SimplePasswordType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SimplePasswordType"])
+        )
 
     @property
     def SimplePasswordLength(self):
@@ -242,7 +283,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SimplePasswordLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SimplePasswordLength"])
+        )
 
     @property
     def SimplePasswordKeyID(self):
@@ -252,7 +296,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SimplePasswordKeyID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SimplePasswordKeyID"])
+        )
 
     @property
     def SimplePasswordPasswordLengthoctets(self):
@@ -262,7 +309,13 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SimplePasswordPasswordLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SimplePasswordPasswordLengthoctets"]
+            ),
+        )
 
     @property
     def SimplePasswordPassword(self):
@@ -272,7 +325,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SimplePasswordPassword']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SimplePasswordPassword"])
+        )
 
     @property
     def KeyedMD5Type(self):
@@ -282,7 +338,8 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5Type"]))
 
     @property
     def KeyedMD5Length(self):
@@ -292,7 +349,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5Length"])
+        )
 
     @property
     def KeyedMD5KeyID(self):
@@ -302,7 +362,8 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5KeyID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5KeyID"]))
 
     @property
     def KeyedMD5Reserved(self):
@@ -312,7 +373,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5Reserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5Reserved"])
+        )
 
     @property
     def KeyedMD5SequenceNumber(self):
@@ -322,7 +386,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5SequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5SequenceNumber"])
+        )
 
     @property
     def KeyedMD5Checksum(self):
@@ -332,7 +399,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedMD5Checksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedMD5Checksum"])
+        )
 
     @property
     def MeticulousKeyedMD5Type(self):
@@ -342,7 +412,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5Type"])
+        )
 
     @property
     def MeticulousKeyedMD5Length(self):
@@ -352,7 +425,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5Length"])
+        )
 
     @property
     def MeticulousKeyedMD5KeyID(self):
@@ -362,7 +438,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5KeyID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5KeyID"])
+        )
 
     @property
     def MeticulousKeyedMD5Reserved(self):
@@ -372,7 +451,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5Reserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5Reserved"])
+        )
 
     @property
     def MeticulousKeyedMD5SequenceNumber(self):
@@ -382,7 +464,11 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5SequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5SequenceNumber"]),
+        )
 
     @property
     def MeticulousKeyedMD5Checksum(self):
@@ -392,7 +478,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedMD5Checksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedMD5Checksum"])
+        )
 
     @property
     def KeyedSHA1Type(self):
@@ -402,7 +491,8 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1Type"]))
 
     @property
     def KeyedSHA1Length(self):
@@ -412,7 +502,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1Length"])
+        )
 
     @property
     def KeyedSHA1KeyID(self):
@@ -422,7 +515,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1KeyID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1KeyID"])
+        )
 
     @property
     def KeyedSHA1Reserved(self):
@@ -432,7 +528,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1Reserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1Reserved"])
+        )
 
     @property
     def KeyedSHA1SequenceNumber(self):
@@ -442,7 +541,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1SequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1SequenceNumber"])
+        )
 
     @property
     def KeyedSHA1Checksum(self):
@@ -452,7 +554,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyedSHA1Checksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyedSHA1Checksum"])
+        )
 
     @property
     def MeticulousKeyedSHA1Type(self):
@@ -462,7 +567,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1Type']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1Type"])
+        )
 
     @property
     def MeticulousKeyedSHA1Length(self):
@@ -472,7 +580,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1Length']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1Length"])
+        )
 
     @property
     def MeticulousKeyedSHA1KeyID(self):
@@ -482,7 +593,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1KeyID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1KeyID"])
+        )
 
     @property
     def MeticulousKeyedSHA1Reserved(self):
@@ -492,7 +606,10 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1Reserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1Reserved"])
+        )
 
     @property
     def MeticulousKeyedSHA1SequenceNumber(self):
@@ -502,7 +619,11 @@ class Bfd(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1SequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1SequenceNumber"]),
+        )
 
     @property
     def MeticulousKeyedSHA1Checksum(self):
@@ -512,7 +633,10 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeticulousKeyedSHA1Checksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MeticulousKeyedSHA1Checksum"])
+        )
 
     @property
     def AuthenticationOptionNoAuthentication(self):
@@ -522,7 +646,13 @@ class Bfd(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationOptionNoAuthentication']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationOptionNoAuthentication"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

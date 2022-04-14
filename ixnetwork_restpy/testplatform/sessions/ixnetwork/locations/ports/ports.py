@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,80 @@ class Ports(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ports'
+    _SDM_NAME = "ports"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'IsAvailable': 'isAvailable',
-        'IsBusy': 'isBusy',
-        'IsLinkUp': 'isLinkUp',
-        'Location': 'location',
-        'Owner': 'owner',
-        'PeerPortDescription': 'peerPortDescription',
-        'PeerPortId': 'peerPortId',
-        'PeerSystemIp': 'peerSystemIp',
-        'PeerSystemMac': 'peerSystemMac',
-        'PeerSystemName': 'peerSystemName',
-        'ResourceMode': 'resourceMode',
+        "Description": "description",
+        "IsAvailable": "isAvailable",
+        "IsBusy": "isBusy",
+        "IsLinkUp": "isLinkUp",
+        "Location": "location",
+        "Owner": "owner",
+        "PeerPortDescription": "peerPortDescription",
+        "PeerPortId": "peerPortId",
+        "PeerSystemIp": "peerSystemIp",
+        "PeerSystemMac": "peerSystemMac",
+        "PeerSystemName": "peerSystemName",
+        "ResourceMode": "resourceMode",
     }
     _SDM_ENUM_MAP = {
-        'resourceMode': ['normal', 'tenGig', 'fortyGig', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut', 'novus5GOneByTenGigNonFanOut', 'novus5GOneByTwentyFiveGigNonFanOut', 'novus5GOneByFiftyGigNonFanOut', 'novus5GOneByHundredGigNonFanOut', 'starTwoByFourHundredGigNonFannedOutPAM4', 'starFourByTwoHundredGigFannedOutPAM4', 'starEightByHundredGigFannedOutPAM4', 'starFourByHundredGigFannedOutNRZ', 'starSixteenByFiftyGigFannedOutPAM4', 'starEightByFiftyGigFannedOutNRZ', 'starFourByFortyGigFannedOutNRZ', 'starSixteenByTwentyFiveGigFannedOutNRZ', 'starSixteenByTenGigFannedOutNRZ', 'novusHundredGigNonFanOutHighStream', 'novusFourByTwentyFiveGigNonFanOutHighStream', 'novusTwoByFiftyGigNonFanOutHighStream', 'novusOneByFortyGigNonFanOutHighStream', 'novusFourByTenGigNonFanOutHighStream', 'notApplicable'],
+        "resourceMode": [
+            "normal",
+            "tenGig",
+            "fortyGig",
+            "singleMode",
+            "dualMode",
+            "hundredGigNonFanOut",
+            "fortyGigFanOut",
+            "threeByTenGigFanOut",
+            "eightByTenGigFanOut",
+            "fourByTwentyFiveGigNonFanOut",
+            "twoByTwentyFiveGigNonFanOut",
+            "oneByFiftyGigNonFanOut",
+            "fortyGigNonFanOut",
+            "oneByTenGigFanOut",
+            "fourByTenGigFanOut",
+            "incompatibleMode",
+            "hundredGigCapturePlayback",
+            "fortyGigCapturePlayback",
+            "novusHundredGigNonFanOut",
+            "novusFourByTwentyFiveGigNonFanOut",
+            "novusTwoByFiftyGigNonFanOut",
+            "novusOneByFortyGigNonFanOut",
+            "novusFourByTenGigNonFanOut",
+            "krakenOneByFourHundredGigNonFanOut",
+            "krakenOneByTwoHundredGigNonFanOut",
+            "krakenTwoByOneHundredGigFanOut",
+            "krakenFourByFiftyGigFanOut",
+            "aresOneOneByFourHundredGigNonFanOut",
+            "aresOneTwoByTwoHundredGigFanOut",
+            "aresOneFourByOneHundredGigFanOut",
+            "aresOneFourByOneHundredGigMacSecFanOut",
+            "aresOneEightByFiftyGigFanOut",
+            "uhdOneHundredEightByHundredGigNonFanOut",
+            "uhdOneHundredEightByFortyGigNonFanOut",
+            "uhdOneHundredSixteenByFiftyGigFanOut",
+            "uhdOneHundredThirtyTwoByTwentyFiveGigFanOut",
+            "uhdOneHundredThirtyTwoByTenGigFanOut",
+            "novus5GOneByTenGigNonFanOut",
+            "novus5GOneByTwentyFiveGigNonFanOut",
+            "novus5GOneByFiftyGigNonFanOut",
+            "novus5GOneByHundredGigNonFanOut",
+            "starTwoByFourHundredGigNonFannedOutPAM4",
+            "starFourByTwoHundredGigFannedOutPAM4",
+            "starEightByHundredGigFannedOutPAM4",
+            "starFourByHundredGigFannedOutNRZ",
+            "starSixteenByFiftyGigFannedOutPAM4",
+            "starEightByFiftyGigFannedOutNRZ",
+            "starFourByFortyGigFannedOutNRZ",
+            "starSixteenByTwentyFiveGigFannedOutNRZ",
+            "starSixteenByTenGigFannedOutNRZ",
+            "novusHundredGigNonFanOutHighStream",
+            "novusFourByTwentyFiveGigNonFanOutHighStream",
+            "novusTwoByFiftyGigNonFanOutHighStream",
+            "novusOneByFortyGigNonFanOutHighStream",
+            "novusFourByTenGigNonFanOutHighStream",
+            "notApplicable",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,9 +119,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
     @property
     def IsAvailable(self):
@@ -71,9 +129,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsAvailable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsAvailable"])
 
     @property
     def IsBusy(self):
@@ -81,9 +139,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsBusy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsBusy"])
 
     @property
     def IsLinkUp(self):
@@ -91,9 +149,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLinkUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLinkUp"])
 
     @property
     def Location(self):
@@ -101,9 +159,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Location'])
+        return self._get_attribute(self._SDM_ATT_MAP["Location"])
 
     @property
     def Owner(self):
@@ -111,9 +169,9 @@ class Ports(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
+        return self._get_attribute(self._SDM_ATT_MAP["Owner"])
 
     @property
     def PeerPortDescription(self):
@@ -123,7 +181,7 @@ class Ports(Base):
         -------
         - str: Discovered peer port description.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerPortDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerPortDescription"])
 
     @property
     def PeerPortId(self):
@@ -133,7 +191,7 @@ class Ports(Base):
         -------
         - str: The port ID of the discovered peer port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerPortId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerPortId"])
 
     @property
     def PeerSystemIp(self):
@@ -143,7 +201,7 @@ class Ports(Base):
         -------
         - str: The IP address of the discovered peer system.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerSystemIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerSystemIp"])
 
     @property
     def PeerSystemMac(self):
@@ -153,7 +211,7 @@ class Ports(Base):
         -------
         - str: The MAC address of the discovered peer system.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerSystemMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerSystemMac"])
 
     @property
     def PeerSystemName(self):
@@ -163,7 +221,7 @@ class Ports(Base):
         -------
         - str: The system name of the discovered peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerSystemName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerSystemName"])
 
     @property
     def ResourceMode(self):
@@ -171,12 +229,12 @@ class Ports(Base):
         """
         Returns
         -------
-        - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable): 
+        - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResourceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResourceMode"])
 
     def add(self):
-        """Adds a new ports resource on the json, only valid with config assistant
+        """Adds a new ports resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -188,7 +246,21 @@ class Ports(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Description=None, IsAvailable=None, IsBusy=None, IsLinkUp=None, Location=None, Owner=None, PeerPortDescription=None, PeerPortId=None, PeerSystemIp=None, PeerSystemMac=None, PeerSystemName=None, ResourceMode=None):
+    def find(
+        self,
+        Description=None,
+        IsAvailable=None,
+        IsBusy=None,
+        IsLinkUp=None,
+        Location=None,
+        Owner=None,
+        PeerPortDescription=None,
+        PeerPortId=None,
+        PeerSystemIp=None,
+        PeerSystemMac=None,
+        PeerSystemName=None,
+        ResourceMode=None,
+    ):
         # type: (str, bool, bool, bool, str, str, str, str, str, str, str, str) -> Ports
         """Finds and retrieves ports resources from the server.
 
@@ -198,18 +270,18 @@ class Ports(Base):
 
         Args
         ----
-        - Description (str): 
-        - IsAvailable (bool): 
-        - IsBusy (bool): 
-        - IsLinkUp (bool): 
-        - Location (str): 
-        - Owner (str): 
+        - Description (str):
+        - IsAvailable (bool):
+        - IsBusy (bool):
+        - IsLinkUp (bool):
+        - Location (str):
+        - Owner (str):
         - PeerPortDescription (str): Discovered peer port description.
         - PeerPortId (str): The port ID of the discovered peer port.
         - PeerSystemIp (str): The IP address of the discovered peer system.
         - PeerSystemMac (str): The MAC address of the discovered peer system.
         - PeerSystemName (str): The system name of the discovered peer.
-        - ResourceMode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable)): 
+        - ResourceMode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable)):
 
         Returns
         -------
@@ -254,7 +326,9 @@ class Ports(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearOwnership', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("clearOwnership", payload=payload, response_object=None)

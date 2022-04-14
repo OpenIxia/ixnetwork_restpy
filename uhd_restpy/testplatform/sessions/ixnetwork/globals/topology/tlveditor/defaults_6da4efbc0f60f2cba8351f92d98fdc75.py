@@ -60,7 +60,7 @@ class Defaults(Base):
         return Template(self)
 
     def add(self):
-        """Adds a new defaults resource on the json, only valid with config assistant
+        """Adds a new defaults resource on the json, only valid with batch add utility
 
         Returns
         -------

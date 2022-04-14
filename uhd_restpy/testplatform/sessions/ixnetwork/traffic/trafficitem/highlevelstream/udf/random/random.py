@@ -101,7 +101,7 @@ class Random(Base):
 
     def add(self, Mask=None, Width=None):
         # type: (str, str) -> Random
-        """Adds a new random resource on the json, only valid with config assistant
+        """Adds a new random resource on the json, only valid with batch add utility
 
         Args
         ----

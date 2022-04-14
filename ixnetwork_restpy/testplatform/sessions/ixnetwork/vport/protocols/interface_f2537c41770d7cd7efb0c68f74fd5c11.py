@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,70 +35,70 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'AdvertiseNetworkRange': 'advertiseNetworkRange',
-        'AreaId': 'areaId',
-        'AuthenticationMethods': 'authenticationMethods',
-        'AuthenticationPassword': 'authenticationPassword',
-        'BBit': 'bBit',
-        'ConnectedToDut': 'connectedToDut',
-        'DeadInterval': 'deadInterval',
-        'EBit': 'eBit',
-        'EnableAdvertiseRouterLsaLoopback': 'enableAdvertiseRouterLsaLoopback',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFastHello': 'enableFastHello',
-        'Enabled': 'enabled',
-        'EntryColumn': 'entryColumn',
-        'EntryRow': 'entryRow',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceIpAddress': 'interfaceIpAddress',
-        'InterfaceIpMaskAddress': 'interfaceIpMaskAddress',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'LinkTypes': 'linkTypes',
-        'Md5AuthenticationKey': 'md5AuthenticationKey',
-        'Md5AuthenticationKeyId': 'md5AuthenticationKeyId',
-        'Metric': 'metric',
-        'Mtu': 'mtu',
-        'NeighborIpAddress': 'neighborIpAddress',
-        'NeighborRouterId': 'neighborRouterId',
-        'NetworkRangeIp': 'networkRangeIp',
-        'NetworkRangeIpByMask': 'networkRangeIpByMask',
-        'NetworkRangeIpIncrementBy': 'networkRangeIpIncrementBy',
-        'NetworkRangeIpMask': 'networkRangeIpMask',
-        'NetworkRangeLinkType': 'networkRangeLinkType',
-        'NetworkRangeRouterId': 'networkRangeRouterId',
-        'NetworkRangeRouterIdIncrementBy': 'networkRangeRouterIdIncrementBy',
-        'NetworkRangeTeEnable': 'networkRangeTeEnable',
-        'NetworkRangeTeMaxBandwidth': 'networkRangeTeMaxBandwidth',
-        'NetworkRangeTeMetric': 'networkRangeTeMetric',
-        'NetworkRangeTeResMaxBandwidth': 'networkRangeTeResMaxBandwidth',
-        'NetworkRangeTeUnreservedBwPriority': 'networkRangeTeUnreservedBwPriority',
-        'NetworkType': 'networkType',
-        'NoOfCols': 'noOfCols',
-        'NoOfRows': 'noOfRows',
-        'Options': 'options',
-        'Priority': 'priority',
-        'ProtocolInterface': 'protocolInterface',
-        'ShowExternal': 'showExternal',
-        'ShowNssa': 'showNssa',
-        'TeAdminGroup': 'teAdminGroup',
-        'TeEnable': 'teEnable',
-        'TeMaxBandwidth': 'teMaxBandwidth',
-        'TeMetricLevel': 'teMetricLevel',
-        'TeResMaxBandwidth': 'teResMaxBandwidth',
-        'TeUnreservedBwPriority': 'teUnreservedBwPriority',
-        'ValidateReceivedMtuSize': 'validateReceivedMtuSize',
+        "AdvertiseNetworkRange": "advertiseNetworkRange",
+        "AreaId": "areaId",
+        "AuthenticationMethods": "authenticationMethods",
+        "AuthenticationPassword": "authenticationPassword",
+        "BBit": "bBit",
+        "ConnectedToDut": "connectedToDut",
+        "DeadInterval": "deadInterval",
+        "EBit": "eBit",
+        "EnableAdvertiseRouterLsaLoopback": "enableAdvertiseRouterLsaLoopback",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableFastHello": "enableFastHello",
+        "Enabled": "enabled",
+        "EntryColumn": "entryColumn",
+        "EntryRow": "entryRow",
+        "HelloInterval": "helloInterval",
+        "HelloMultiplier": "helloMultiplier",
+        "InterfaceIndex": "interfaceIndex",
+        "InterfaceIpAddress": "interfaceIpAddress",
+        "InterfaceIpMaskAddress": "interfaceIpMaskAddress",
+        "InterfaceType": "interfaceType",
+        "Interfaces": "interfaces",
+        "IsLearnedInfoRefreshed": "isLearnedInfoRefreshed",
+        "LinkTypes": "linkTypes",
+        "Md5AuthenticationKey": "md5AuthenticationKey",
+        "Md5AuthenticationKeyId": "md5AuthenticationKeyId",
+        "Metric": "metric",
+        "Mtu": "mtu",
+        "NeighborIpAddress": "neighborIpAddress",
+        "NeighborRouterId": "neighborRouterId",
+        "NetworkRangeIp": "networkRangeIp",
+        "NetworkRangeIpByMask": "networkRangeIpByMask",
+        "NetworkRangeIpIncrementBy": "networkRangeIpIncrementBy",
+        "NetworkRangeIpMask": "networkRangeIpMask",
+        "NetworkRangeLinkType": "networkRangeLinkType",
+        "NetworkRangeRouterId": "networkRangeRouterId",
+        "NetworkRangeRouterIdIncrementBy": "networkRangeRouterIdIncrementBy",
+        "NetworkRangeTeEnable": "networkRangeTeEnable",
+        "NetworkRangeTeMaxBandwidth": "networkRangeTeMaxBandwidth",
+        "NetworkRangeTeMetric": "networkRangeTeMetric",
+        "NetworkRangeTeResMaxBandwidth": "networkRangeTeResMaxBandwidth",
+        "NetworkRangeTeUnreservedBwPriority": "networkRangeTeUnreservedBwPriority",
+        "NetworkType": "networkType",
+        "NoOfCols": "noOfCols",
+        "NoOfRows": "noOfRows",
+        "Options": "options",
+        "Priority": "priority",
+        "ProtocolInterface": "protocolInterface",
+        "ShowExternal": "showExternal",
+        "ShowNssa": "showNssa",
+        "TeAdminGroup": "teAdminGroup",
+        "TeEnable": "teEnable",
+        "TeMaxBandwidth": "teMaxBandwidth",
+        "TeMetricLevel": "teMetricLevel",
+        "TeResMaxBandwidth": "teResMaxBandwidth",
+        "TeUnreservedBwPriority": "teUnreservedBwPriority",
+        "ValidateReceivedMtuSize": "validateReceivedMtuSize",
     }
     _SDM_ENUM_MAP = {
-        'authenticationMethods': ['null', 'password', 'md5'],
-        'linkTypes': ['pointToPoint', 'transit', 'stub', 'virtual'],
-        'networkRangeLinkType': ['broadcast', 'pointToPoint'],
-        'networkType': ['pointToPoint', 'broadcast', 'pointToMultipoint'],
+        "authenticationMethods": ["null", "password", "md5"],
+        "linkTypes": ["pointToPoint", "transit", "stub", "virtual"],
+        "networkRangeLinkType": ["broadcast", "pointToPoint"],
+        "networkType": ["pointToPoint", "broadcast", "pointToMultipoint"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -114,10 +115,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_eda6e0ed969d98c2ab529bbb7d43ce5d import LearnedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_eda6e0ed969d98c2ab529bbb7d43ce5d import (
+            LearnedFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedFilter', None) is not None:
-                return self._properties.get('LearnedFilter')
+            if self._properties.get("LearnedFilter", None) is not None:
+                return self._properties.get("LearnedFilter")
         return LearnedFilter(self)._select()
 
     @property
@@ -131,10 +135,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedlsa_7ae32a0018f81f135ef70ec5259d7e63 import LearnedLsa
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedlsa_7ae32a0018f81f135ef70ec5259d7e63 import (
+            LearnedLsa,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedLsa', None) is not None:
-                return self._properties.get('LearnedLsa')
+            if self._properties.get("LearnedLsa", None) is not None:
+                return self._properties.get("LearnedLsa")
         return LearnedLsa(self)
 
     @property
@@ -145,11 +152,12 @@ class Interface(Base):
         -------
         - bool: Enables the advertisement of the OSPF network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseNetworkRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseNetworkRange"])
+
     @AdvertiseNetworkRange.setter
     def AdvertiseNetworkRange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseNetworkRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseNetworkRange"], value)
 
     @property
     def AreaId(self):
@@ -159,11 +167,12 @@ class Interface(Base):
         -------
         - number: The OSPF area ID associated with the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AreaId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AreaId"])
+
     @AreaId.setter
     def AreaId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AreaId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AreaId"], value)
 
     @property
     def AuthenticationMethods(self):
@@ -173,11 +182,12 @@ class Interface(Base):
         -------
         - str(null | password | md5): The type of authentication to be used on this link interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationMethods'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationMethods"])
+
     @AuthenticationMethods.setter
     def AuthenticationMethods(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationMethods'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationMethods"], value)
 
     @property
     def AuthenticationPassword(self):
@@ -187,11 +197,12 @@ class Interface(Base):
         -------
         - str: Enter a clear-text 64-bit password. A password is configured at each end of the link. The password is inserted as is into the packet, and is compared upon receipt at the other end of the link. The received packet is dropped if the contained password does not match the configured password.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationPassword'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationPassword"])
+
     @AuthenticationPassword.setter
     def AuthenticationPassword(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationPassword'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationPassword"], value)
 
     @property
     def BBit(self):
@@ -201,11 +212,12 @@ class Interface(Base):
         -------
         - bool: Indicates that this router is an Area Border Router (ABR).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BBit"])
+
     @BBit.setter
     def BBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BBit"], value)
 
     @property
     def ConnectedToDut(self):
@@ -215,11 +227,12 @@ class Interface(Base):
         -------
         - bool: Indicates that this OSPF interface is directly connected to the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedToDut'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedToDut"])
+
     @ConnectedToDut.setter
     def ConnectedToDut(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedToDut'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedToDut"], value)
 
     @property
     def DeadInterval(self):
@@ -229,11 +242,12 @@ class Interface(Base):
         -------
         - number: The number of seconds allowed before declaring a silent router as being down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeadInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeadInterval"])
+
     @DeadInterval.setter
     def DeadInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeadInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeadInterval"], value)
 
     @property
     def EBit(self):
@@ -243,11 +257,12 @@ class Interface(Base):
         -------
         - bool: External bit. Specifies how AS-external-LSAs are flooded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def EnableAdvertiseRouterLsaLoopback(self):
@@ -257,11 +272,16 @@ class Interface(Base):
         -------
         - bool: If true, advertises the router's LSA loopback address. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseRouterLsaLoopback'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableAdvertiseRouterLsaLoopback"]
+        )
+
     @EnableAdvertiseRouterLsaLoopback.setter
     def EnableAdvertiseRouterLsaLoopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseRouterLsaLoopback'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableAdvertiseRouterLsaLoopback"], value
+        )
 
     @property
     def EnableBfdRegistration(self):
@@ -271,11 +291,12 @@ class Interface(Base):
         -------
         - bool: Indicates if a BFD session is to be created to the OSPF peer IP address once the OSPF session is established. This allows OSPF to use BFD to maintain IPv4 connectivity the OSPF peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"], value)
 
     @property
     def EnableFastHello(self):
@@ -285,11 +306,12 @@ class Interface(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFastHello'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFastHello"])
+
     @EnableFastHello.setter
     def EnableFastHello(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFastHello'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFastHello"], value)
 
     @property
     def Enabled(self):
@@ -299,11 +321,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of the simulated interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EntryColumn(self):
@@ -313,11 +336,12 @@ class Interface(Base):
         -------
         - number: The column where the entry point router is located in the OSPFnetwork range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryColumn'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryColumn"])
+
     @EntryColumn.setter
     def EntryColumn(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryColumn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryColumn"], value)
 
     @property
     def EntryRow(self):
@@ -327,11 +351,12 @@ class Interface(Base):
         -------
         - number: The row where the entry point router is located in the OSPF network range grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryRow"])
+
     @EntryRow.setter
     def EntryRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryRow"], value)
 
     @property
     def HelloInterval(self):
@@ -341,11 +366,12 @@ class Interface(Base):
         -------
         - number: The number of seconds between Hello packets sent from an Ixia router. The Ixia state machine sends Hello packets at this interval for all of the defined interfaces.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloInterval"])
+
     @HelloInterval.setter
     def HelloInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloInterval"], value)
 
     @property
     def HelloMultiplier(self):
@@ -355,11 +381,12 @@ class Interface(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloMultiplier"])
+
     @HelloMultiplier.setter
     def HelloMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloMultiplier"], value)
 
     @property
     def InterfaceIndex(self):
@@ -369,11 +396,12 @@ class Interface(Base):
         -------
         - number: The assigned protocol interface ID for this OSPF interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIndex"])
+
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIndex"], value)
 
     @property
     def InterfaceIpAddress(self):
@@ -383,11 +411,12 @@ class Interface(Base):
         -------
         - str: The IP address for this OSPF interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIpAddress"])
+
     @InterfaceIpAddress.setter
     def InterfaceIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIpAddress"], value)
 
     @property
     def InterfaceIpMaskAddress(self):
@@ -397,11 +426,12 @@ class Interface(Base):
         -------
         - str: The IP mask associated with the IP address for this interface. Only used if protocolInterfaceDescription is empty. (default = 255.255.255.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIpMaskAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIpMaskAddress"])
+
     @InterfaceIpMaskAddress.setter
     def InterfaceIpMaskAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIpMaskAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIpMaskAddress"], value)
 
     @property
     def InterfaceType(self):
@@ -411,11 +441,12 @@ class Interface(Base):
         -------
         - str: The type of interface to be selected for this OSPF interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Interfaces(self):
@@ -425,11 +456,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def IsLearnedInfoRefreshed(self):
@@ -439,7 +471,7 @@ class Interface(Base):
         -------
         - bool: If true, refreshes learned information automatically.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLearnedInfoRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLearnedInfoRefreshed"])
 
     @property
     def LinkTypes(self):
@@ -449,11 +481,12 @@ class Interface(Base):
         -------
         - str(pointToPoint | transit | stub | virtual): Indicates the type of network link for the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkTypes"])
+
     @LinkTypes.setter
     def LinkTypes(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkTypes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkTypes"], value)
 
     @property
     def Md5AuthenticationKey(self):
@@ -463,11 +496,12 @@ class Interface(Base):
         -------
         - str: If authenticationMethod is set to ospfInterfaceAuthenticationMD5, then this is MD5 key ID used for authentication. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Md5AuthenticationKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["Md5AuthenticationKey"])
+
     @Md5AuthenticationKey.setter
     def Md5AuthenticationKey(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Md5AuthenticationKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Md5AuthenticationKey"], value)
 
     @property
     def Md5AuthenticationKeyId(self):
@@ -477,11 +511,12 @@ class Interface(Base):
         -------
         - number: A value to be used as a key ID associated with the MD5 key.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Md5AuthenticationKeyId'])
+        return self._get_attribute(self._SDM_ATT_MAP["Md5AuthenticationKeyId"])
+
     @Md5AuthenticationKeyId.setter
     def Md5AuthenticationKeyId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Md5AuthenticationKeyId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Md5AuthenticationKeyId"], value)
 
     @property
     def Metric(self):
@@ -491,11 +526,12 @@ class Interface(Base):
         -------
         - number: A user-assigned routing metric associated with the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def Mtu(self):
@@ -505,11 +541,12 @@ class Interface(Base):
         -------
         - number: The maximum transmission unit (MTU) that is allowed on this link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def NeighborIpAddress(self):
@@ -519,11 +556,12 @@ class Interface(Base):
         -------
         - str: If the link type is a point to point network, this is the address of the other end of the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborIpAddress"])
+
     @NeighborIpAddress.setter
     def NeighborIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborIpAddress"], value)
 
     @property
     def NeighborRouterId(self):
@@ -533,11 +571,12 @@ class Interface(Base):
         -------
         - str: When the linkType option is set to ospfInterfaceLinkPointToPoint, then this option should be set to the ID of the router on the other end of the point-to-point connection. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborRouterId"])
+
     @NeighborRouterId.setter
     def NeighborRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborRouterId"], value)
 
     @property
     def NetworkRangeIp(self):
@@ -547,11 +586,12 @@ class Interface(Base):
         -------
         - str: The IP address for the first OSPFv2 network to be advertised in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeIp"])
+
     @NetworkRangeIp.setter
     def NetworkRangeIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeIp"], value)
 
     @property
     def NetworkRangeIpByMask(self):
@@ -561,11 +601,12 @@ class Interface(Base):
         -------
         - bool: The number of bits in the network mask used with the IP address of the first network, in creating a range of addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeIpByMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeIpByMask"])
+
     @NetworkRangeIpByMask.setter
     def NetworkRangeIpByMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeIpByMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeIpByMask"], value)
 
     @property
     def NetworkRangeIpIncrementBy(self):
@@ -575,11 +616,12 @@ class Interface(Base):
         -------
         - str: The step size by which to automatically increment the IP addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeIpIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeIpIncrementBy"])
+
     @NetworkRangeIpIncrementBy.setter
     def NetworkRangeIpIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeIpIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeIpIncrementBy"], value)
 
     @property
     def NetworkRangeIpMask(self):
@@ -589,11 +631,12 @@ class Interface(Base):
         -------
         - number: The number of bits in the network mask used with the IP address of the first network, in creating a range of addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeIpMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeIpMask"])
+
     @NetworkRangeIpMask.setter
     def NetworkRangeIpMask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeIpMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeIpMask"], value)
 
     @property
     def NetworkRangeLinkType(self):
@@ -603,11 +646,12 @@ class Interface(Base):
         -------
         - str(broadcast | pointToPoint): The attribute for the network range link type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeLinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeLinkType"])
+
     @NetworkRangeLinkType.setter
     def NetworkRangeLinkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeLinkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeLinkType"], value)
 
     @property
     def NetworkRangeRouterId(self):
@@ -617,11 +661,12 @@ class Interface(Base):
         -------
         - str: The unique identifier for the network range router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeRouterId"])
+
     @NetworkRangeRouterId.setter
     def NetworkRangeRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeRouterId"], value)
 
     @property
     def NetworkRangeRouterIdIncrementBy(self):
@@ -631,11 +676,12 @@ class Interface(Base):
         -------
         - str: The step size by which to automatically increment the IP addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeRouterIdIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeRouterIdIncrementBy"])
+
     @NetworkRangeRouterIdIncrementBy.setter
     def NetworkRangeRouterIdIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeRouterIdIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeRouterIdIncrementBy"], value)
 
     @property
     def NetworkRangeTeEnable(self):
@@ -645,11 +691,12 @@ class Interface(Base):
         -------
         - bool: Enables network range TEs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeTeEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeTeEnable"])
+
     @NetworkRangeTeEnable.setter
     def NetworkRangeTeEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeTeEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeTeEnable"], value)
 
     @property
     def NetworkRangeTeMaxBandwidth(self):
@@ -659,11 +706,12 @@ class Interface(Base):
         -------
         - number: The maximum bandwidth for the network range TEs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeTeMaxBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeTeMaxBandwidth"])
+
     @NetworkRangeTeMaxBandwidth.setter
     def NetworkRangeTeMaxBandwidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeTeMaxBandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeTeMaxBandwidth"], value)
 
     @property
     def NetworkRangeTeMetric(self):
@@ -673,11 +721,12 @@ class Interface(Base):
         -------
         - number: The metrics for network range TEs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeTeMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeTeMetric"])
+
     @NetworkRangeTeMetric.setter
     def NetworkRangeTeMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeTeMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeTeMetric"], value)
 
     @property
     def NetworkRangeTeResMaxBandwidth(self):
@@ -687,11 +736,12 @@ class Interface(Base):
         -------
         - number: The maximum bandwidth for reserved network range TEs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeTeResMaxBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkRangeTeResMaxBandwidth"])
+
     @NetworkRangeTeResMaxBandwidth.setter
     def NetworkRangeTeResMaxBandwidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeTeResMaxBandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkRangeTeResMaxBandwidth"], value)
 
     @property
     def NetworkRangeTeUnreservedBwPriority(self):
@@ -700,10 +750,15 @@ class Interface(Base):
         -------
         - dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number): The maximum bandwidth for unreserved network range TEs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkRangeTeUnreservedBwPriority'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NetworkRangeTeUnreservedBwPriority"]
+        )
+
     @NetworkRangeTeUnreservedBwPriority.setter
     def NetworkRangeTeUnreservedBwPriority(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['NetworkRangeTeUnreservedBwPriority'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NetworkRangeTeUnreservedBwPriority"], value
+        )
 
     @property
     def NetworkType(self):
@@ -713,11 +768,12 @@ class Interface(Base):
         -------
         - str(pointToPoint | broadcast | pointToMultipoint): The type of network attached to the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkType"])
+
     @NetworkType.setter
     def NetworkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkType"], value)
 
     @property
     def NoOfCols(self):
@@ -727,11 +783,12 @@ class Interface(Base):
         -------
         - number: The number of columns in a grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCols'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCols"])
+
     @NoOfCols.setter
     def NoOfCols(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCols'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCols"], value)
 
     @property
     def NoOfRows(self):
@@ -741,11 +798,12 @@ class Interface(Base):
         -------
         - number: The number or rows in a grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfRows"])
+
     @NoOfRows.setter
     def NoOfRows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfRows"], value)
 
     @property
     def Options(self):
@@ -755,11 +813,12 @@ class Interface(Base):
         -------
         - number: Options related to the interface. Multiple options may be or'd together.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Options'])
+        return self._get_attribute(self._SDM_ATT_MAP["Options"])
+
     @Options.setter
     def Options(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Options'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Options"], value)
 
     @property
     def Priority(self):
@@ -769,25 +828,27 @@ class Interface(Base):
         -------
         - number: The priority of the interface, for use in election of the designated or backup master.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def ProtocolInterface(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of the defined interface entry from which IP address and mask are extracted for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def ShowExternal(self):
@@ -797,11 +858,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of External routes on this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowExternal'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowExternal"])
+
     @ShowExternal.setter
     def ShowExternal(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowExternal'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowExternal"], value)
 
     @property
     def ShowNssa(self):
@@ -811,11 +873,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of Not So Stubby Area routes on this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowNssa'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowNssa"])
+
     @ShowNssa.setter
     def ShowNssa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowNssa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowNssa"], value)
 
     @property
     def TeAdminGroup(self):
@@ -825,11 +888,12 @@ class Interface(Base):
         -------
         - str: Assignment of traffic engineering administrative group numbers to the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeAdminGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeAdminGroup"])
+
     @TeAdminGroup.setter
     def TeAdminGroup(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeAdminGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeAdminGroup"], value)
 
     @property
     def TeEnable(self):
@@ -839,11 +903,12 @@ class Interface(Base):
         -------
         - bool: Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeEnable"])
+
     @TeEnable.setter
     def TeEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeEnable"], value)
 
     @property
     def TeMaxBandwidth(self):
@@ -853,11 +918,12 @@ class Interface(Base):
         -------
         - str: The maximum bandwidth that can possibly be used on this link in this direction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeMaxBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeMaxBandwidth"])
+
     @TeMaxBandwidth.setter
     def TeMaxBandwidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeMaxBandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeMaxBandwidth"], value)
 
     @property
     def TeMetricLevel(self):
@@ -867,11 +933,12 @@ class Interface(Base):
         -------
         - number: The user-assigned link metric for traffic engineering.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeMetricLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeMetricLevel"])
+
     @TeMetricLevel.setter
     def TeMetricLevel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeMetricLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeMetricLevel"], value)
 
     @property
     def TeResMaxBandwidth(self):
@@ -881,11 +948,12 @@ class Interface(Base):
         -------
         - str: If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeResMaxBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeResMaxBandwidth"])
+
     @TeResMaxBandwidth.setter
     def TeResMaxBandwidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeResMaxBandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeResMaxBandwidth"], value)
 
     @property
     def TeUnreservedBwPriority(self):
@@ -894,10 +962,11 @@ class Interface(Base):
         -------
         - dict(arg1:str,arg2:str,arg3:str,arg4:str,arg5:str,arg6:str,arg7:str,arg8:str): The amount of bandwidth not yet reserved at each of the eight priority levels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeUnreservedBwPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeUnreservedBwPriority"])
+
     @TeUnreservedBwPriority.setter
     def TeUnreservedBwPriority(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TeUnreservedBwPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeUnreservedBwPriority"], value)
 
     @property
     def ValidateReceivedMtuSize(self):
@@ -907,13 +976,71 @@ class Interface(Base):
         -------
         - bool: If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ValidateReceivedMtuSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["ValidateReceivedMtuSize"])
+
     @ValidateReceivedMtuSize.setter
     def ValidateReceivedMtuSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ValidateReceivedMtuSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ValidateReceivedMtuSize"], value)
 
-    def update(self, AdvertiseNetworkRange=None, AreaId=None, AuthenticationMethods=None, AuthenticationPassword=None, BBit=None, ConnectedToDut=None, DeadInterval=None, EBit=None, EnableAdvertiseRouterLsaLoopback=None, EnableBfdRegistration=None, EnableFastHello=None, Enabled=None, EntryColumn=None, EntryRow=None, HelloInterval=None, HelloMultiplier=None, InterfaceIndex=None, InterfaceIpAddress=None, InterfaceIpMaskAddress=None, InterfaceType=None, Interfaces=None, LinkTypes=None, Md5AuthenticationKey=None, Md5AuthenticationKeyId=None, Metric=None, Mtu=None, NeighborIpAddress=None, NeighborRouterId=None, NetworkRangeIp=None, NetworkRangeIpByMask=None, NetworkRangeIpIncrementBy=None, NetworkRangeIpMask=None, NetworkRangeLinkType=None, NetworkRangeRouterId=None, NetworkRangeRouterIdIncrementBy=None, NetworkRangeTeEnable=None, NetworkRangeTeMaxBandwidth=None, NetworkRangeTeMetric=None, NetworkRangeTeResMaxBandwidth=None, NetworkRangeTeUnreservedBwPriority=None, NetworkType=None, NoOfCols=None, NoOfRows=None, Options=None, Priority=None, ProtocolInterface=None, ShowExternal=None, ShowNssa=None, TeAdminGroup=None, TeEnable=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None, ValidateReceivedMtuSize=None):
+    def update(
+        self,
+        AdvertiseNetworkRange=None,
+        AreaId=None,
+        AuthenticationMethods=None,
+        AuthenticationPassword=None,
+        BBit=None,
+        ConnectedToDut=None,
+        DeadInterval=None,
+        EBit=None,
+        EnableAdvertiseRouterLsaLoopback=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        Enabled=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InterfaceIndex=None,
+        InterfaceIpAddress=None,
+        InterfaceIpMaskAddress=None,
+        InterfaceType=None,
+        Interfaces=None,
+        LinkTypes=None,
+        Md5AuthenticationKey=None,
+        Md5AuthenticationKeyId=None,
+        Metric=None,
+        Mtu=None,
+        NeighborIpAddress=None,
+        NeighborRouterId=None,
+        NetworkRangeIp=None,
+        NetworkRangeIpByMask=None,
+        NetworkRangeIpIncrementBy=None,
+        NetworkRangeIpMask=None,
+        NetworkRangeLinkType=None,
+        NetworkRangeRouterId=None,
+        NetworkRangeRouterIdIncrementBy=None,
+        NetworkRangeTeEnable=None,
+        NetworkRangeTeMaxBandwidth=None,
+        NetworkRangeTeMetric=None,
+        NetworkRangeTeResMaxBandwidth=None,
+        NetworkRangeTeUnreservedBwPriority=None,
+        NetworkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        Options=None,
+        Priority=None,
+        ProtocolInterface=None,
+        ShowExternal=None,
+        ShowNssa=None,
+        TeAdminGroup=None,
+        TeEnable=None,
+        TeMaxBandwidth=None,
+        TeMetricLevel=None,
+        TeResMaxBandwidth=None,
+        TeUnreservedBwPriority=None,
+        ValidateReceivedMtuSize=None,
+    ):
         """Updates interface resource on the server.
 
         Args
@@ -980,7 +1107,64 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvertiseNetworkRange=None, AreaId=None, AuthenticationMethods=None, AuthenticationPassword=None, BBit=None, ConnectedToDut=None, DeadInterval=None, EBit=None, EnableAdvertiseRouterLsaLoopback=None, EnableBfdRegistration=None, EnableFastHello=None, Enabled=None, EntryColumn=None, EntryRow=None, HelloInterval=None, HelloMultiplier=None, InterfaceIndex=None, InterfaceIpAddress=None, InterfaceIpMaskAddress=None, InterfaceType=None, Interfaces=None, LinkTypes=None, Md5AuthenticationKey=None, Md5AuthenticationKeyId=None, Metric=None, Mtu=None, NeighborIpAddress=None, NeighborRouterId=None, NetworkRangeIp=None, NetworkRangeIpByMask=None, NetworkRangeIpIncrementBy=None, NetworkRangeIpMask=None, NetworkRangeLinkType=None, NetworkRangeRouterId=None, NetworkRangeRouterIdIncrementBy=None, NetworkRangeTeEnable=None, NetworkRangeTeMaxBandwidth=None, NetworkRangeTeMetric=None, NetworkRangeTeResMaxBandwidth=None, NetworkRangeTeUnreservedBwPriority=None, NetworkType=None, NoOfCols=None, NoOfRows=None, Options=None, Priority=None, ProtocolInterface=None, ShowExternal=None, ShowNssa=None, TeAdminGroup=None, TeEnable=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None, ValidateReceivedMtuSize=None):
+    def add(
+        self,
+        AdvertiseNetworkRange=None,
+        AreaId=None,
+        AuthenticationMethods=None,
+        AuthenticationPassword=None,
+        BBit=None,
+        ConnectedToDut=None,
+        DeadInterval=None,
+        EBit=None,
+        EnableAdvertiseRouterLsaLoopback=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        Enabled=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InterfaceIndex=None,
+        InterfaceIpAddress=None,
+        InterfaceIpMaskAddress=None,
+        InterfaceType=None,
+        Interfaces=None,
+        LinkTypes=None,
+        Md5AuthenticationKey=None,
+        Md5AuthenticationKeyId=None,
+        Metric=None,
+        Mtu=None,
+        NeighborIpAddress=None,
+        NeighborRouterId=None,
+        NetworkRangeIp=None,
+        NetworkRangeIpByMask=None,
+        NetworkRangeIpIncrementBy=None,
+        NetworkRangeIpMask=None,
+        NetworkRangeLinkType=None,
+        NetworkRangeRouterId=None,
+        NetworkRangeRouterIdIncrementBy=None,
+        NetworkRangeTeEnable=None,
+        NetworkRangeTeMaxBandwidth=None,
+        NetworkRangeTeMetric=None,
+        NetworkRangeTeResMaxBandwidth=None,
+        NetworkRangeTeUnreservedBwPriority=None,
+        NetworkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        Options=None,
+        Priority=None,
+        ProtocolInterface=None,
+        ShowExternal=None,
+        ShowNssa=None,
+        TeAdminGroup=None,
+        TeEnable=None,
+        TeMaxBandwidth=None,
+        TeMetricLevel=None,
+        TeResMaxBandwidth=None,
+        TeUnreservedBwPriority=None,
+        ValidateReceivedMtuSize=None,
+    ):
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -1061,7 +1245,65 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, AdvertiseNetworkRange=None, AreaId=None, AuthenticationMethods=None, AuthenticationPassword=None, BBit=None, ConnectedToDut=None, DeadInterval=None, EBit=None, EnableAdvertiseRouterLsaLoopback=None, EnableBfdRegistration=None, EnableFastHello=None, Enabled=None, EntryColumn=None, EntryRow=None, HelloInterval=None, HelloMultiplier=None, InterfaceIndex=None, InterfaceIpAddress=None, InterfaceIpMaskAddress=None, InterfaceType=None, Interfaces=None, IsLearnedInfoRefreshed=None, LinkTypes=None, Md5AuthenticationKey=None, Md5AuthenticationKeyId=None, Metric=None, Mtu=None, NeighborIpAddress=None, NeighborRouterId=None, NetworkRangeIp=None, NetworkRangeIpByMask=None, NetworkRangeIpIncrementBy=None, NetworkRangeIpMask=None, NetworkRangeLinkType=None, NetworkRangeRouterId=None, NetworkRangeRouterIdIncrementBy=None, NetworkRangeTeEnable=None, NetworkRangeTeMaxBandwidth=None, NetworkRangeTeMetric=None, NetworkRangeTeResMaxBandwidth=None, NetworkRangeTeUnreservedBwPriority=None, NetworkType=None, NoOfCols=None, NoOfRows=None, Options=None, Priority=None, ProtocolInterface=None, ShowExternal=None, ShowNssa=None, TeAdminGroup=None, TeEnable=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None, ValidateReceivedMtuSize=None):
+    def find(
+        self,
+        AdvertiseNetworkRange=None,
+        AreaId=None,
+        AuthenticationMethods=None,
+        AuthenticationPassword=None,
+        BBit=None,
+        ConnectedToDut=None,
+        DeadInterval=None,
+        EBit=None,
+        EnableAdvertiseRouterLsaLoopback=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        Enabled=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        InterfaceIndex=None,
+        InterfaceIpAddress=None,
+        InterfaceIpMaskAddress=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IsLearnedInfoRefreshed=None,
+        LinkTypes=None,
+        Md5AuthenticationKey=None,
+        Md5AuthenticationKeyId=None,
+        Metric=None,
+        Mtu=None,
+        NeighborIpAddress=None,
+        NeighborRouterId=None,
+        NetworkRangeIp=None,
+        NetworkRangeIpByMask=None,
+        NetworkRangeIpIncrementBy=None,
+        NetworkRangeIpMask=None,
+        NetworkRangeLinkType=None,
+        NetworkRangeRouterId=None,
+        NetworkRangeRouterIdIncrementBy=None,
+        NetworkRangeTeEnable=None,
+        NetworkRangeTeMaxBandwidth=None,
+        NetworkRangeTeMetric=None,
+        NetworkRangeTeResMaxBandwidth=None,
+        NetworkRangeTeUnreservedBwPriority=None,
+        NetworkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        Options=None,
+        Priority=None,
+        ProtocolInterface=None,
+        ShowExternal=None,
+        ShowNssa=None,
+        TeAdminGroup=None,
+        TeEnable=None,
+        TeMaxBandwidth=None,
+        TeMetricLevel=None,
+        TeResMaxBandwidth=None,
+        TeUnreservedBwPriority=None,
+        ValidateReceivedMtuSize=None,
+    ):
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -1171,10 +1413,14 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )
 
     def RefreshLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1192,7 +1438,11 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

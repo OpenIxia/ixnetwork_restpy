@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class MvrpVectorAttribute(Base):
     __slots__ = ()
-    _SDM_NAME = 'mvrpVectorAttribute'
+    _SDM_NAME = "mvrpVectorAttribute"
     _SDM_ATT_MAP = {
-        'VectorHeaderLeaveAllEvent': 'mvrpVectorAttribute.header.vectorHeader.leaveAllEvent-1',
-        'VectorHeaderNoOfValues': 'mvrpVectorAttribute.header.vectorHeader.noOfValues-2',
-        'MvrpVidVectorFirstValueFirstValue': 'mvrpVectorAttribute.header.selectFirstValueType.mvrpVidVectorFirstValue.firstValue-3',
+        "VectorHeaderLeaveAllEvent": "mvrpVectorAttribute.header.vectorHeader.leaveAllEvent-1",
+        "VectorHeaderNoOfValues": "mvrpVectorAttribute.header.vectorHeader.noOfValues-2",
+        "MvrpVidVectorFirstValueFirstValue": "mvrpVectorAttribute.header.selectFirstValueType.mvrpVidVectorFirstValue.firstValue-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class MvrpVectorAttribute(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VectorHeaderLeaveAllEvent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VectorHeaderLeaveAllEvent"])
+        )
 
     @property
     def VectorHeaderNoOfValues(self):
@@ -32,7 +35,10 @@ class MvrpVectorAttribute(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VectorHeaderNoOfValues']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VectorHeaderNoOfValues"])
+        )
 
     @property
     def MvrpVidVectorFirstValueFirstValue(self):
@@ -42,7 +48,11 @@ class MvrpVectorAttribute(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvrpVidVectorFirstValueFirstValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MvrpVidVectorFirstValueFirstValue"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

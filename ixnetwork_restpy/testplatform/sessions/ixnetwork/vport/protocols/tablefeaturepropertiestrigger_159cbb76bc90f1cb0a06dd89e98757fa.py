@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class TableFeaturePropertiesTrigger(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tableFeaturePropertiesTrigger'
+    _SDM_NAME = "tableFeaturePropertiesTrigger"
     _SDM_ATT_MAP = {
-        'EnableApplyAction': 'enableApplyAction',
-        'EnableApplyActionMiss': 'enableApplyActionMiss',
-        'EnableApplySetField': 'enableApplySetField',
-        'EnableApplySetFieldMiss': 'enableApplySetFieldMiss',
-        'EnableExperimenter': 'enableExperimenter',
-        'EnableExperimenterMiss': 'enableExperimenterMiss',
-        'EnableInstruction': 'enableInstruction',
-        'EnableInstructionMiss': 'enableInstructionMiss',
-        'EnableMatch': 'enableMatch',
-        'EnableNextTable': 'enableNextTable',
-        'EnableNextTableMiss': 'enableNextTableMiss',
-        'EnableWildCard': 'enableWildCard',
-        'EnableWriteAction': 'enableWriteAction',
-        'EnableWriteActionMiss': 'enableWriteActionMiss',
-        'EnableWriteSetField': 'enableWriteSetField',
-        'EnableWriteSetFieldMiss': 'enableWriteSetFieldMiss',
+        "EnableApplyAction": "enableApplyAction",
+        "EnableApplyActionMiss": "enableApplyActionMiss",
+        "EnableApplySetField": "enableApplySetField",
+        "EnableApplySetFieldMiss": "enableApplySetFieldMiss",
+        "EnableExperimenter": "enableExperimenter",
+        "EnableExperimenterMiss": "enableExperimenterMiss",
+        "EnableInstruction": "enableInstruction",
+        "EnableInstructionMiss": "enableInstructionMiss",
+        "EnableMatch": "enableMatch",
+        "EnableNextTable": "enableNextTable",
+        "EnableNextTableMiss": "enableNextTableMiss",
+        "EnableWildCard": "enableWildCard",
+        "EnableWriteAction": "enableWriteAction",
+        "EnableWriteActionMiss": "enableWriteActionMiss",
+        "EnableWriteSetField": "enableWriteSetField",
+        "EnableWriteSetFieldMiss": "enableWriteSetFieldMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TableFeaturePropertiesTrigger, self).__init__(parent, list_op)
@@ -69,10 +69,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyaction_a25d2515972205bfadb3c4eee9b345a8 import ApplyAction
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyaction_a25d2515972205bfadb3c4eee9b345a8 import (
+            ApplyAction,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplyAction', None) is not None:
-                return self._properties.get('ApplyAction')
+            if self._properties.get("ApplyAction", None) is not None:
+                return self._properties.get("ApplyAction")
         return ApplyAction(self)._select()
 
     @property
@@ -86,10 +89,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc import ApplySetField
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc import (
+            ApplySetField,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplySetField', None) is not None:
-                return self._properties.get('ApplySetField')
+            if self._properties.get("ApplySetField", None) is not None:
+                return self._properties.get("ApplySetField")
         return ApplySetField(self)._select()
 
     @property
@@ -103,10 +109,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.experimenter_8f62d5e59a1560c2f29a49b8273e32d9 import Experimenter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.experimenter_8f62d5e59a1560c2f29a49b8273e32d9 import (
+            Experimenter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Experimenter', None) is not None:
-                return self._properties.get('Experimenter')
+            if self._properties.get("Experimenter", None) is not None:
+                return self._properties.get("Experimenter")
         return Experimenter(self)._select()
 
     @property
@@ -120,10 +129,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_0379cfa9d0d64cb1c14d9f8a669dcb24 import Instruction
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_0379cfa9d0d64cb1c14d9f8a669dcb24 import (
+            Instruction,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Instruction', None) is not None:
-                return self._properties.get('Instruction')
+            if self._properties.get("Instruction", None) is not None:
+                return self._properties.get("Instruction")
         return Instruction(self)._select()
 
     @property
@@ -137,10 +149,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_b032b60f8e92f6e0f66fded1be692b8f import Match
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_b032b60f8e92f6e0f66fded1be692b8f import (
+            Match,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Match', None) is not None:
-                return self._properties.get('Match')
+            if self._properties.get("Match", None) is not None:
+                return self._properties.get("Match")
         return Match(self)._select()
 
     @property
@@ -154,10 +169,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttable_b55e2ecee6a23216ce0f8a34c42b425a import NextTable
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttable_b55e2ecee6a23216ce0f8a34c42b425a import (
+            NextTable,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NextTable', None) is not None:
-                return self._properties.get('NextTable')
+            if self._properties.get("NextTable", None) is not None:
+                return self._properties.get("NextTable")
         return NextTable(self)._select()
 
     @property
@@ -171,10 +189,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_97e68e3bd4a38aea6a66dc14629576e3 import Wildcards
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_97e68e3bd4a38aea6a66dc14629576e3 import (
+            Wildcards,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Wildcards', None) is not None:
-                return self._properties.get('Wildcards')
+            if self._properties.get("Wildcards", None) is not None:
+                return self._properties.get("Wildcards")
         return Wildcards(self)._select()
 
     @property
@@ -188,10 +209,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeaction_5ed4bf989119006d5d77872c8c5bf503 import WriteAction
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeaction_5ed4bf989119006d5d77872c8c5bf503 import (
+            WriteAction,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteAction', None) is not None:
-                return self._properties.get('WriteAction')
+            if self._properties.get("WriteAction", None) is not None:
+                return self._properties.get("WriteAction")
         return WriteAction(self)._select()
 
     @property
@@ -205,10 +229,13 @@ class TableFeaturePropertiesTrigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1 import WriteSetField
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1 import (
+            WriteSetField,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteSetField', None) is not None:
-                return self._properties.get('WriteSetField')
+            if self._properties.get("WriteSetField", None) is not None:
+                return self._properties.get("WriteSetField")
         return WriteSetField(self)._select()
 
     @property
@@ -219,11 +246,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableApplyAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableApplyAction"])
+
     @EnableApplyAction.setter
     def EnableApplyAction(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableApplyAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableApplyAction"], value)
 
     @property
     def EnableApplyActionMiss(self):
@@ -233,11 +261,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableApplyActionMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableApplyActionMiss"])
+
     @EnableApplyActionMiss.setter
     def EnableApplyActionMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableApplyActionMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableApplyActionMiss"], value)
 
     @property
     def EnableApplySetField(self):
@@ -247,11 +276,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableApplySetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableApplySetField"])
+
     @EnableApplySetField.setter
     def EnableApplySetField(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableApplySetField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableApplySetField"], value)
 
     @property
     def EnableApplySetFieldMiss(self):
@@ -261,11 +291,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableApplySetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableApplySetFieldMiss"])
+
     @EnableApplySetFieldMiss.setter
     def EnableApplySetFieldMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableApplySetFieldMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableApplySetFieldMiss"], value)
 
     @property
     def EnableExperimenter(self):
@@ -275,11 +306,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExperimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExperimenter"])
+
     @EnableExperimenter.setter
     def EnableExperimenter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExperimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExperimenter"], value)
 
     @property
     def EnableExperimenterMiss(self):
@@ -289,11 +321,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExperimenterMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExperimenterMiss"])
+
     @EnableExperimenterMiss.setter
     def EnableExperimenterMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExperimenterMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExperimenterMiss"], value)
 
     @property
     def EnableInstruction(self):
@@ -303,11 +336,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableInstruction'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableInstruction"])
+
     @EnableInstruction.setter
     def EnableInstruction(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableInstruction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableInstruction"], value)
 
     @property
     def EnableInstructionMiss(self):
@@ -317,11 +351,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableInstructionMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableInstructionMiss"])
+
     @EnableInstructionMiss.setter
     def EnableInstructionMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableInstructionMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableInstructionMiss"], value)
 
     @property
     def EnableMatch(self):
@@ -331,11 +366,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMatch"])
+
     @EnableMatch.setter
     def EnableMatch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMatch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMatch"], value)
 
     @property
     def EnableNextTable(self):
@@ -345,11 +381,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextTable'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextTable"])
+
     @EnableNextTable.setter
     def EnableNextTable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextTable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextTable"], value)
 
     @property
     def EnableNextTableMiss(self):
@@ -359,11 +396,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextTableMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextTableMiss"])
+
     @EnableNextTableMiss.setter
     def EnableNextTableMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextTableMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextTableMiss"], value)
 
     @property
     def EnableWildCard(self):
@@ -373,11 +411,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWildCard'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWildCard"])
+
     @EnableWildCard.setter
     def EnableWildCard(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWildCard'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWildCard"], value)
 
     @property
     def EnableWriteAction(self):
@@ -387,11 +426,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWriteAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWriteAction"])
+
     @EnableWriteAction.setter
     def EnableWriteAction(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWriteAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWriteAction"], value)
 
     @property
     def EnableWriteActionMiss(self):
@@ -401,11 +441,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWriteActionMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWriteActionMiss"])
+
     @EnableWriteActionMiss.setter
     def EnableWriteActionMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWriteActionMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWriteActionMiss"], value)
 
     @property
     def EnableWriteSetField(self):
@@ -415,11 +456,12 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWriteSetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWriteSetField"])
+
     @EnableWriteSetField.setter
     def EnableWriteSetField(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWriteSetField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWriteSetField"], value)
 
     @property
     def EnableWriteSetFieldMiss(self):
@@ -429,13 +471,32 @@ class TableFeaturePropertiesTrigger(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableWriteSetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableWriteSetFieldMiss"])
+
     @EnableWriteSetFieldMiss.setter
     def EnableWriteSetFieldMiss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableWriteSetFieldMiss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableWriteSetFieldMiss"], value)
 
-    def update(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+    def update(
+        self,
+        EnableApplyAction=None,
+        EnableApplyActionMiss=None,
+        EnableApplySetField=None,
+        EnableApplySetFieldMiss=None,
+        EnableExperimenter=None,
+        EnableExperimenterMiss=None,
+        EnableInstruction=None,
+        EnableInstructionMiss=None,
+        EnableMatch=None,
+        EnableNextTable=None,
+        EnableNextTableMiss=None,
+        EnableWildCard=None,
+        EnableWriteAction=None,
+        EnableWriteActionMiss=None,
+        EnableWriteSetField=None,
+        EnableWriteSetFieldMiss=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
         """Updates tableFeaturePropertiesTrigger resource on the server.
 
@@ -464,9 +525,27 @@ class TableFeaturePropertiesTrigger(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+    def add(
+        self,
+        EnableApplyAction=None,
+        EnableApplyActionMiss=None,
+        EnableApplySetField=None,
+        EnableApplySetFieldMiss=None,
+        EnableExperimenter=None,
+        EnableExperimenterMiss=None,
+        EnableInstruction=None,
+        EnableInstructionMiss=None,
+        EnableMatch=None,
+        EnableNextTable=None,
+        EnableNextTableMiss=None,
+        EnableWildCard=None,
+        EnableWriteAction=None,
+        EnableWriteActionMiss=None,
+        EnableWriteSetField=None,
+        EnableWriteSetFieldMiss=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
-        """Adds a new tableFeaturePropertiesTrigger resource on the json, only valid with config assistant
+        """Adds a new tableFeaturePropertiesTrigger resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -497,7 +576,25 @@ class TableFeaturePropertiesTrigger(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+    def find(
+        self,
+        EnableApplyAction=None,
+        EnableApplyActionMiss=None,
+        EnableApplySetField=None,
+        EnableApplySetFieldMiss=None,
+        EnableExperimenter=None,
+        EnableExperimenterMiss=None,
+        EnableInstruction=None,
+        EnableInstructionMiss=None,
+        EnableMatch=None,
+        EnableNextTable=None,
+        EnableNextTableMiss=None,
+        EnableWildCard=None,
+        EnableWriteAction=None,
+        EnableWriteActionMiss=None,
+        EnableWriteSetField=None,
+        EnableWriteSetFieldMiss=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
         """Finds and retrieves tableFeaturePropertiesTrigger resources from the server.
 

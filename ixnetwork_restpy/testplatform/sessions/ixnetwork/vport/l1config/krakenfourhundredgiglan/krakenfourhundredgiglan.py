@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,52 +33,52 @@ class KrakenFourHundredGigLan(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'krakenFourHundredGigLan'
+    _SDM_NAME = "krakenFourHundredGigLan"
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'AvailableSpeeds': 'availableSpeeds',
-        'BadBlocksNumber': 'badBlocksNumber',
-        'CanModifySpeed': 'canModifySpeed',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'EnableAutoNegotiation': 'enableAutoNegotiation',
-        'EnablePPM': 'enablePPM',
-        'EnableRsFec': 'enableRsFec',
-        'EnableRsFecStats': 'enableRsFecStats',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FirecodeAdvertise': 'firecodeAdvertise',
-        'FirecodeForceOff': 'firecodeForceOff',
-        'FirecodeForceOn': 'firecodeForceOn',
-        'FirecodeRequest': 'firecodeRequest',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'ForceDisableFEC': 'forceDisableFEC',
-        'GoodBlocksNumber': 'goodBlocksNumber',
-        'IeeeL1Defaults': 'ieeeL1Defaults',
-        'LaserOn': 'laserOn',
-        'LinkTraining': 'linkTraining',
-        'LoopContinuously': 'loopContinuously',
-        'LoopCountNumber': 'loopCountNumber',
-        'Loopback': 'loopback',
-        'LoopbackMode': 'loopbackMode',
-        'Ppm': 'ppm',
-        'RsFecAdvertise': 'rsFecAdvertise',
-        'RsFecForceOn': 'rsFecForceOn',
-        'RsFecRequest': 'rsFecRequest',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'SendSetsMode': 'sendSetsMode',
-        'Speed': 'speed',
-        'StartErrorInsertion': 'startErrorInsertion',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'TypeAOrderedSets': 'typeAOrderedSets',
-        'TypeBOrderedSets': 'typeBOrderedSets',
-        'UseANResults': 'useANResults',
+        "AutoInstrumentation": "autoInstrumentation",
+        "AvailableSpeeds": "availableSpeeds",
+        "BadBlocksNumber": "badBlocksNumber",
+        "CanModifySpeed": "canModifySpeed",
+        "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
+        "EnableAutoNegotiation": "enableAutoNegotiation",
+        "EnablePPM": "enablePPM",
+        "EnableRsFec": "enableRsFec",
+        "EnableRsFecStats": "enableRsFecStats",
+        "EnabledFlowControl": "enabledFlowControl",
+        "FirecodeAdvertise": "firecodeAdvertise",
+        "FirecodeForceOff": "firecodeForceOff",
+        "FirecodeForceOn": "firecodeForceOn",
+        "FirecodeRequest": "firecodeRequest",
+        "FlowControlDirectedAddress": "flowControlDirectedAddress",
+        "ForceDisableFEC": "forceDisableFEC",
+        "GoodBlocksNumber": "goodBlocksNumber",
+        "IeeeL1Defaults": "ieeeL1Defaults",
+        "LaserOn": "laserOn",
+        "LinkTraining": "linkTraining",
+        "LoopContinuously": "loopContinuously",
+        "LoopCountNumber": "loopCountNumber",
+        "Loopback": "loopback",
+        "LoopbackMode": "loopbackMode",
+        "Ppm": "ppm",
+        "RsFecAdvertise": "rsFecAdvertise",
+        "RsFecForceOn": "rsFecForceOn",
+        "RsFecRequest": "rsFecRequest",
+        "SelectedSpeeds": "selectedSpeeds",
+        "SendSetsMode": "sendSetsMode",
+        "Speed": "speed",
+        "StartErrorInsertion": "startErrorInsertion",
+        "TxIgnoreRxLinkFaults": "txIgnoreRxLinkFaults",
+        "TypeAOrderedSets": "typeAOrderedSets",
+        "TypeBOrderedSets": "typeBOrderedSets",
+        "UseANResults": "useANResults",
     }
     _SDM_ENUM_MAP = {
-        'autoInstrumentation': ['endOfFrame', 'floating'],
-        'loopbackMode': ['none', 'lineLoopback', 'internalLoopback'],
-        'sendSetsMode': ['alternate', 'typeAOnly', 'typeBOnly'],
-        'speed': ['speed100g', 'speed200g', 'speed400g', 'speed50g'],
-        'typeAOrderedSets': ['localFault', 'remoteFault'],
-        'typeBOrderedSets': ['localFault', 'remoteFault'],
+        "autoInstrumentation": ["endOfFrame", "floating"],
+        "loopbackMode": ["none", "lineLoopback", "internalLoopback"],
+        "sendSetsMode": ["alternate", "typeAOnly", "typeBOnly"],
+        "speed": ["speed100g", "speed200g", "speed400g", "speed50g"],
+        "typeAOrderedSets": ["localFault", "remoteFault"],
+        "typeBOrderedSets": ["localFault", "remoteFault"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -94,10 +95,13 @@ class KrakenFourHundredGigLan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.krakenfourhundredgiglan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.krakenfourhundredgiglan.fcoe.fcoe import (
+            Fcoe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Fcoe', None) is not None:
-                return self._properties.get('Fcoe')
+            if self._properties.get("Fcoe", None) is not None:
+                return self._properties.get("Fcoe")
         return Fcoe(self)._select()
 
     @property
@@ -108,11 +112,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoInstrumentation"])
+
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoInstrumentation"], value)
 
     @property
     def AvailableSpeeds(self):
@@ -122,7 +127,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - list(str[speed100g | speed50g | speed200g | speed400g]): Which speeds are available for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
     @property
     def BadBlocksNumber(self):
@@ -132,11 +137,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BadBlocksNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["BadBlocksNumber"])
+
     @BadBlocksNumber.setter
     def BadBlocksNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BadBlocksNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BadBlocksNumber"], value)
 
     @property
     def CanModifySpeed(self):
@@ -146,7 +152,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanModifySpeed"])
 
     @property
     def CanSetMultipleSpeeds(self):
@@ -156,7 +162,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: Can this port selectmultiple speeds for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["CanSetMultipleSpeeds"])
 
     @property
     def EnableAutoNegotiation(self):
@@ -166,7 +172,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAutoNegotiation"])
 
     @property
     def EnablePPM(self):
@@ -176,11 +182,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePPM"])
+
     @EnablePPM.setter
     def EnablePPM(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePPM"], value)
 
     @property
     def EnableRsFec(self):
@@ -190,11 +197,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFec'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRsFec"])
+
     @EnableRsFec.setter
     def EnableRsFec(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRsFec"], value)
 
     @property
     def EnableRsFecStats(self):
@@ -204,11 +212,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFecStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRsFecStats"])
+
     @EnableRsFecStats.setter
     def EnableRsFecStats(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRsFecStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRsFecStats"], value)
 
     @property
     def EnabledFlowControl(self):
@@ -218,11 +227,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnabledFlowControl"])
+
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnabledFlowControl"], value)
 
     @property
     def FirecodeAdvertise(self):
@@ -232,25 +242,27 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirecodeAdvertise"])
+
     @FirecodeAdvertise.setter
     def FirecodeAdvertise(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirecodeAdvertise"], value)
 
     @property
     def FirecodeForceOff(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOff'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirecodeForceOff"])
+
     @FirecodeForceOff.setter
     def FirecodeForceOff(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOff'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirecodeForceOff"], value)
 
     @property
     def FirecodeForceOn(self):
@@ -260,11 +272,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOn'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirecodeForceOn"])
+
     @FirecodeForceOn.setter
     def FirecodeForceOn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirecodeForceOn"], value)
 
     @property
     def FirecodeRequest(self):
@@ -274,11 +287,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirecodeRequest"])
+
     @FirecodeRequest.setter
     def FirecodeRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirecodeRequest"], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -288,11 +302,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowControlDirectedAddress"])
+
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowControlDirectedAddress"], value)
 
     @property
     def ForceDisableFEC(self):
@@ -302,11 +317,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceDisableFEC'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceDisableFEC"])
+
     @ForceDisableFEC.setter
     def ForceDisableFEC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceDisableFEC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceDisableFEC"], value)
 
     @property
     def GoodBlocksNumber(self):
@@ -316,11 +332,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["GoodBlocksNumber"])
+
     @GoodBlocksNumber.setter
     def GoodBlocksNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GoodBlocksNumber"], value)
 
     @property
     def IeeeL1Defaults(self):
@@ -330,7 +347,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'])
+        return self._get_attribute(self._SDM_ATT_MAP["IeeeL1Defaults"])
 
     @property
     def LaserOn(self):
@@ -340,11 +357,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LaserOn'])
+        return self._get_attribute(self._SDM_ATT_MAP["LaserOn"])
+
     @LaserOn.setter
     def LaserOn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LaserOn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LaserOn"], value)
 
     @property
     def LinkTraining(self):
@@ -354,7 +372,7 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkTraining'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkTraining"])
 
     @property
     def LoopContinuously(self):
@@ -364,11 +382,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoopContinuously'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoopContinuously"])
+
     @LoopContinuously.setter
     def LoopContinuously(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoopContinuously'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoopContinuously"], value)
 
     @property
     def LoopCountNumber(self):
@@ -378,11 +397,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoopCountNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoopCountNumber"])
+
     @LoopCountNumber.setter
     def LoopCountNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoopCountNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoopCountNumber"], value)
 
     @property
     def Loopback(self):
@@ -392,11 +412,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["Loopback"])
+
     @Loopback.setter
     def Loopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Loopback"], value)
 
     @property
     def LoopbackMode(self):
@@ -406,11 +427,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(none | lineLoopback | internalLoopback): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoopbackMode"])
+
     @LoopbackMode.setter
     def LoopbackMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoopbackMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoopbackMode"], value)
 
     @property
     def Ppm(self):
@@ -420,11 +442,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ppm"])
+
     @Ppm.setter
     def Ppm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ppm"], value)
 
     @property
     def RsFecAdvertise(self):
@@ -434,11 +457,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsFecAdvertise'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsFecAdvertise"])
+
     @RsFecAdvertise.setter
     def RsFecAdvertise(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsFecAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsFecAdvertise"], value)
 
     @property
     def RsFecForceOn(self):
@@ -448,11 +472,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsFecForceOn'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsFecForceOn"])
+
     @RsFecForceOn.setter
     def RsFecForceOn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsFecForceOn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsFecForceOn"], value)
 
     @property
     def RsFecRequest(self):
@@ -462,11 +487,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsFecRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsFecRequest"])
+
     @RsFecRequest.setter
     def RsFecRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsFecRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsFecRequest"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -476,11 +502,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - list(str[speed100g | speed50g | speed200g | speed400g]): Which speeds are selected for the current media and AN settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
+
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectedSpeeds"], value)
 
     @property
     def SendSetsMode(self):
@@ -490,11 +517,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(alternate | typeAOnly | typeBOnly): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendSetsMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendSetsMode"])
+
     @SendSetsMode.setter
     def SendSetsMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendSetsMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendSetsMode"], value)
 
     @property
     def Speed(self):
@@ -504,11 +532,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(speed100g | speed200g | speed400g | speed50g): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
+        return self._get_attribute(self._SDM_ATT_MAP["Speed"])
+
     @Speed.setter
     def Speed(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Speed"], value)
 
     @property
     def StartErrorInsertion(self):
@@ -518,11 +547,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartErrorInsertion'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartErrorInsertion"])
+
     @StartErrorInsertion.setter
     def StartErrorInsertion(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartErrorInsertion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartErrorInsertion"], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -532,11 +562,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxIgnoreRxLinkFaults"])
+
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxIgnoreRxLinkFaults"], value)
 
     @property
     def TypeAOrderedSets(self):
@@ -546,11 +577,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeAOrderedSets"])
+
     @TypeAOrderedSets.setter
     def TypeAOrderedSets(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeAOrderedSets"], value)
 
     @property
     def TypeBOrderedSets(self):
@@ -560,11 +592,12 @@ class KrakenFourHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeBOrderedSets"])
+
     @TypeBOrderedSets.setter
     def TypeBOrderedSets(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeBOrderedSets"], value)
 
     @property
     def UseANResults(self):
@@ -574,13 +607,46 @@ class KrakenFourHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseANResults'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseANResults"])
+
     @UseANResults.setter
     def UseANResults(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseANResults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseANResults"], value)
 
-    def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+    def update(
+        self,
+        AutoInstrumentation=None,
+        BadBlocksNumber=None,
+        EnablePPM=None,
+        EnableRsFec=None,
+        EnableRsFecStats=None,
+        EnabledFlowControl=None,
+        FirecodeAdvertise=None,
+        FirecodeForceOff=None,
+        FirecodeForceOn=None,
+        FirecodeRequest=None,
+        FlowControlDirectedAddress=None,
+        ForceDisableFEC=None,
+        GoodBlocksNumber=None,
+        LaserOn=None,
+        LoopContinuously=None,
+        LoopCountNumber=None,
+        Loopback=None,
+        LoopbackMode=None,
+        Ppm=None,
+        RsFecAdvertise=None,
+        RsFecForceOn=None,
+        RsFecRequest=None,
+        SelectedSpeeds=None,
+        SendSetsMode=None,
+        Speed=None,
+        StartErrorInsertion=None,
+        TxIgnoreRxLinkFaults=None,
+        TypeAOrderedSets=None,
+        TypeBOrderedSets=None,
+        UseANResults=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> KrakenFourHundredGigLan
         """Updates krakenFourHundredGigLan resource on the server.
 
@@ -623,7 +689,45 @@ class KrakenFourHundredGigLan(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, BadBlocksNumber=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+    def find(
+        self,
+        AutoInstrumentation=None,
+        AvailableSpeeds=None,
+        BadBlocksNumber=None,
+        CanModifySpeed=None,
+        CanSetMultipleSpeeds=None,
+        EnableAutoNegotiation=None,
+        EnablePPM=None,
+        EnableRsFec=None,
+        EnableRsFecStats=None,
+        EnabledFlowControl=None,
+        FirecodeAdvertise=None,
+        FirecodeForceOff=None,
+        FirecodeForceOn=None,
+        FirecodeRequest=None,
+        FlowControlDirectedAddress=None,
+        ForceDisableFEC=None,
+        GoodBlocksNumber=None,
+        IeeeL1Defaults=None,
+        LaserOn=None,
+        LinkTraining=None,
+        LoopContinuously=None,
+        LoopCountNumber=None,
+        Loopback=None,
+        LoopbackMode=None,
+        Ppm=None,
+        RsFecAdvertise=None,
+        RsFecForceOn=None,
+        RsFecRequest=None,
+        SelectedSpeeds=None,
+        SendSetsMode=None,
+        Speed=None,
+        StartErrorInsertion=None,
+        TxIgnoreRxLinkFaults=None,
+        TypeAOrderedSets=None,
+        TypeBOrderedSets=None,
+        UseANResults=None,
+    ):
         # type: (str, List[str], int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> KrakenFourHundredGigLan
         """Finds and retrieves krakenFourHundredGigLan resources from the server.
 

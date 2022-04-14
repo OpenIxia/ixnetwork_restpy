@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,35 @@ class L2Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2Interface'
+    _SDM_NAME = "l2Interface"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'GroupId': 'groupId',
-        'TrafficGroupId': 'trafficGroupId',
-        'Type': 'type',
+        "Count": "count",
+        "Enabled": "enabled",
+        "GroupId": "groupId",
+        "TrafficGroupId": "trafficGroupId",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['frameRelay', 'atmaal5', 'atmxCell', 'vlan', 'ethernet', 'hdlc', 'ppp', 'cem', 'atmvcc', 'atmvpc', 'ip', 'satopE1', 'satopT1', 'satopE3', 'satopT3', 'cesoPsnBasic', 'cesoPsnCas', 'frameRelayRfc4619'],
+        "type": [
+            "frameRelay",
+            "atmaal5",
+            "atmxCell",
+            "vlan",
+            "ethernet",
+            "hdlc",
+            "ppp",
+            "cem",
+            "atmvcc",
+            "atmvpc",
+            "ip",
+            "satopE1",
+            "satopT1",
+            "satopE3",
+            "satopT3",
+            "cesoPsnBasic",
+            "cesoPsnCas",
+            "frameRelayRfc4619",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +80,13 @@ class L2Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_651ba042aec36c4cae0dc6de31d6d00a import L2VcRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_651ba042aec36c4cae0dc6de31d6d00a import (
+            L2VcRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2VcRange', None) is not None:
-                return self._properties.get('L2VcRange')
+            if self._properties.get("L2VcRange", None) is not None:
+                return self._properties.get("L2VcRange")
         return L2VcRange(self)
 
     @property
@@ -74,11 +97,12 @@ class L2Interface(Base):
         -------
         - number: The number of contiguous values of groupId that will be used in generating FECs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -88,11 +112,12 @@ class L2Interface(Base):
         -------
         - bool: Enables the use of this interface for the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupId(self):
@@ -102,11 +127,12 @@ class L2Interface(Base):
         -------
         - number: The group ID associated with all VC FEC elements of this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
+
     @GroupId.setter
     def GroupId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupId"], value)
 
     @property
     def TrafficGroupId(self):
@@ -116,11 +142,12 @@ class L2Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def Type(self):
@@ -130,13 +157,16 @@ class L2Interface(Base):
         -------
         - str(frameRelay | atmaal5 | atmxCell | vlan | ethernet | hdlc | ppp | cem | atmvcc | atmvpc | ip | satopE1 | satopT1 | satopE3 | satopT3 | cesoPsnBasic | cesoPsnCas | frameRelayRfc4619): The type of virtual circuit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+    def update(
+        self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None
+    ):
         # type: (int, bool, int, str, str) -> L2Interface
         """Updates l2Interface resource on the server.
 
@@ -154,7 +184,9 @@ class L2Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+    def add(
+        self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None
+    ):
         # type: (int, bool, int, str, str) -> L2Interface
         """Adds a new l2Interface resource on the server and adds it to the container.
 
@@ -186,7 +218,9 @@ class L2Interface(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+    def find(
+        self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None
+    ):
         # type: (int, bool, int, str, str) -> L2Interface
         """Finds and retrieves l2Interface resources from the server.
 

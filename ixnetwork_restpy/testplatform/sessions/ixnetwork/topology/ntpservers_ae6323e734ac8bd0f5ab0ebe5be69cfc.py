@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class NtpServers(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ntpServers'
+    _SDM_NAME = "ntpServers"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuthDelay': 'authDelay',
-        'Authentication': 'authentication',
-        'AuthenticationKey': 'authenticationKey',
-        'BurstMode': 'burstMode',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InitialBurstMode': 'initialBurstMode',
-        'IsParentV6': 'isParentV6',
-        'KeyId': 'keyId',
-        'MaxPollInterval': 'maxPollInterval',
-        'MinPollInterval': 'minPollInterval',
-        'Name': 'name',
-        'ParticipateInClockSelect': 'participateInClockSelect',
-        'ServerIPAddress': 'serverIPAddress',
-        'ServerIPv6Address': 'serverIPv6Address',
+        "Active": "active",
+        "AuthDelay": "authDelay",
+        "Authentication": "authentication",
+        "AuthenticationKey": "authenticationKey",
+        "BurstMode": "burstMode",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InitialBurstMode": "initialBurstMode",
+        "IsParentV6": "isParentV6",
+        "KeyId": "keyId",
+        "MaxPollInterval": "maxPollInterval",
+        "MinPollInterval": "minPollInterval",
+        "Name": "name",
+        "ParticipateInClockSelect": "participateInClockSelect",
+        "ServerIPAddress": "serverIPAddress",
+        "ServerIPv6Address": "serverIPv6Address",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NtpServers, self).__init__(parent, list_op)
@@ -66,7 +66,8 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AuthDelay(self):
@@ -77,7 +78,8 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Delay (microsecs)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthDelay']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuthDelay"]))
 
     @property
     def Authentication(self):
@@ -88,7 +90,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Authentication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+        )
 
     @property
     def AuthenticationKey(self):
@@ -99,7 +104,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationKey']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticationKey"])
+        )
 
     @property
     def BurstMode(self):
@@ -110,7 +118,8 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Burst Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BurstMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BurstMode"]))
 
     @property
     def Count(self):
@@ -120,7 +129,7 @@ class NtpServers(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -130,7 +139,7 @@ class NtpServers(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InitialBurstMode(self):
@@ -141,7 +150,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Burst Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialBurstMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialBurstMode"])
+        )
 
     @property
     def IsParentV6(self):
@@ -151,11 +163,12 @@ class NtpServers(Base):
         -------
         - bool: Parent v6
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsParentV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsParentV6"])
+
     @IsParentV6.setter
     def IsParentV6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsParentV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsParentV6"], value)
 
     @property
     def KeyId(self):
@@ -166,7 +179,8 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Key Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyId"]))
 
     @property
     def MaxPollInterval(self):
@@ -177,7 +191,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max Poll Interval (log2 seconds)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxPollInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxPollInterval"])
+        )
 
     @property
     def MinPollInterval(self):
@@ -188,7 +205,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Min Poll Interval (log2 seconds)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinPollInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MinPollInterval"])
+        )
 
     @property
     def Name(self):
@@ -198,11 +218,12 @@ class NtpServers(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ParticipateInClockSelect(self):
@@ -213,7 +234,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Participate in Clock Select
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ParticipateInClockSelect']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ParticipateInClockSelect"])
+        )
 
     @property
     def ServerIPAddress(self):
@@ -224,7 +248,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Server IP Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServerIPAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServerIPAddress"])
+        )
 
     @property
     def ServerIPv6Address(self):
@@ -235,7 +262,10 @@ class NtpServers(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Server IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServerIPv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ServerIPv6Address"])
+        )
 
     def update(self, IsParentV6=None, Name=None):
         # type: (bool, str) -> NtpServers
@@ -331,10 +361,12 @@ class NtpServers(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -369,12 +401,29 @@ class NtpServers(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AuthDelay=None, Authentication=None, AuthenticationKey=None, BurstMode=None, InitialBurstMode=None, KeyId=None, MaxPollInterval=None, MinPollInterval=None, ParticipateInClockSelect=None, ServerIPAddress=None, ServerIPv6Address=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AuthDelay=None,
+        Authentication=None,
+        AuthenticationKey=None,
+        BurstMode=None,
+        InitialBurstMode=None,
+        KeyId=None,
+        MaxPollInterval=None,
+        MinPollInterval=None,
+        ParticipateInClockSelect=None,
+        ServerIPAddress=None,
+        ServerIPv6Address=None,
+    ):
         """Base class infrastructure that gets a list of ntpServers device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

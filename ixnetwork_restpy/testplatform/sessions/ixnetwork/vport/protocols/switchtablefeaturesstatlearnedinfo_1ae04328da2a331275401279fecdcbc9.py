@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,34 +34,33 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchTableFeaturesStatLearnedInfo'
+    _SDM_NAME = "switchTableFeaturesStatLearnedInfo"
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'Config': 'config',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Instruction': 'instruction',
-        'InstructionMiss': 'instructionMiss',
-        'LocalIp': 'localIp',
-        'Match': 'match',
-        'MaxEntries': 'maxEntries',
-        'MetadataMatch': 'metadataMatch',
-        'MetadataWrite': 'metadataWrite',
-        'Name': 'name',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
-        'TableId': 'tableId',
-        'WildCards': 'wildCards',
-        'WriteActions': 'writeActions',
-        'WriteActionsMiss': 'writeActionsMiss',
-        'WriteSetField': 'writeSetField',
-        'WriteSetFieldMiss': 'writeSetFieldMiss',
+        "ApplyActions": "applyActions",
+        "ApplyActionsMiss": "applyActionsMiss",
+        "ApplySetField": "applySetField",
+        "ApplySetFieldMiss": "applySetFieldMiss",
+        "Config": "config",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "Instruction": "instruction",
+        "InstructionMiss": "instructionMiss",
+        "LocalIp": "localIp",
+        "Match": "match",
+        "MaxEntries": "maxEntries",
+        "MetadataMatch": "metadataMatch",
+        "MetadataWrite": "metadataWrite",
+        "Name": "name",
+        "NextTable": "nextTable",
+        "NextTableMiss": "nextTableMiss",
+        "TableId": "tableId",
+        "WildCards": "wildCards",
+        "WriteActions": "writeActions",
+        "WriteActionsMiss": "writeActionsMiss",
+        "WriteSetField": "writeSetField",
+        "WriteSetFieldMiss": "writeSetFieldMiss",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchTableFeaturesStatLearnedInfo, self).__init__(parent, list_op)
@@ -76,10 +76,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionslearnedinfo_f0ada513970ed351ca5e970e6ef90516 import ApplyActionsLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionslearnedinfo_f0ada513970ed351ca5e970e6ef90516 import (
+            ApplyActionsLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplyActionsLearnedInfo', None) is not None:
-                return self._properties.get('ApplyActionsLearnedInfo')
+            if self._properties.get("ApplyActionsLearnedInfo", None) is not None:
+                return self._properties.get("ApplyActionsLearnedInfo")
         return ApplyActionsLearnedInfo(self)
 
     @property
@@ -93,10 +96,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmisslearnedinfo_e0bd92327edb05846bc35f8bd1b86f75 import ApplyActionsMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmisslearnedinfo_e0bd92327edb05846bc35f8bd1b86f75 import (
+            ApplyActionsMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplyActionsMissLearnedInfo', None) is not None:
-                return self._properties.get('ApplyActionsMissLearnedInfo')
+            if self._properties.get("ApplyActionsMissLearnedInfo", None) is not None:
+                return self._properties.get("ApplyActionsMissLearnedInfo")
         return ApplyActionsMissLearnedInfo(self)
 
     @property
@@ -110,10 +116,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldlearnedinfo_7f197217be6a9c065d8988e7f77c824c import ApplySetFieldLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldlearnedinfo_7f197217be6a9c065d8988e7f77c824c import (
+            ApplySetFieldLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplySetFieldLearnedInfo', None) is not None:
-                return self._properties.get('ApplySetFieldLearnedInfo')
+            if self._properties.get("ApplySetFieldLearnedInfo", None) is not None:
+                return self._properties.get("ApplySetFieldLearnedInfo")
         return ApplySetFieldLearnedInfo(self)
 
     @property
@@ -127,10 +136,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmisslearnedinfo_a706fb38001dfd5efa880a5460efb716 import ApplySetFieldMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmisslearnedinfo_a706fb38001dfd5efa880a5460efb716 import (
+            ApplySetFieldMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ApplySetFieldMissLearnedInfo', None) is not None:
-                return self._properties.get('ApplySetFieldMissLearnedInfo')
+            if self._properties.get("ApplySetFieldMissLearnedInfo", None) is not None:
+                return self._properties.get("ApplySetFieldMissLearnedInfo")
         return ApplySetFieldMissLearnedInfo(self)
 
     @property
@@ -144,10 +156,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionlearnedinfo_efd9264f2fdac9ba267b1fa386b60932 import InstructionLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionlearnedinfo_efd9264f2fdac9ba267b1fa386b60932 import (
+            InstructionLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InstructionLearnedInfo', None) is not None:
-                return self._properties.get('InstructionLearnedInfo')
+            if self._properties.get("InstructionLearnedInfo", None) is not None:
+                return self._properties.get("InstructionLearnedInfo")
         return InstructionLearnedInfo(self)
 
     @property
@@ -161,10 +176,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmisslearnedinfo_f6640812737de8b6f4b5d356aa373810 import InstructionMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmisslearnedinfo_f6640812737de8b6f4b5d356aa373810 import (
+            InstructionMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InstructionMissLearnedInfo', None) is not None:
-                return self._properties.get('InstructionMissLearnedInfo')
+            if self._properties.get("InstructionMissLearnedInfo", None) is not None:
+                return self._properties.get("InstructionMissLearnedInfo")
         return InstructionMissLearnedInfo(self)
 
     @property
@@ -178,10 +196,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchlearnedinfo_27b9713d3e27bb5c04d59532b30e2301 import MatchLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchlearnedinfo_27b9713d3e27bb5c04d59532b30e2301 import (
+            MatchLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MatchLearnedInfo', None) is not None:
-                return self._properties.get('MatchLearnedInfo')
+            if self._properties.get("MatchLearnedInfo", None) is not None:
+                return self._properties.get("MatchLearnedInfo")
         return MatchLearnedInfo(self)
 
     @property
@@ -195,10 +216,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablelearnedinfo_5090c2a2c198b079982b45c9cf94d021 import NextTableLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablelearnedinfo_5090c2a2c198b079982b45c9cf94d021 import (
+            NextTableLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NextTableLearnedInfo', None) is not None:
-                return self._properties.get('NextTableLearnedInfo')
+            if self._properties.get("NextTableLearnedInfo", None) is not None:
+                return self._properties.get("NextTableLearnedInfo")
         return NextTableLearnedInfo(self)
 
     @property
@@ -212,10 +236,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablemisslearnedinfo_966796c49aeac38cb610b65502943bb4 import NextTableMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablemisslearnedinfo_966796c49aeac38cb610b65502943bb4 import (
+            NextTableMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NextTableMissLearnedInfo', None) is not None:
-                return self._properties.get('NextTableMissLearnedInfo')
+            if self._properties.get("NextTableMissLearnedInfo", None) is not None:
+                return self._properties.get("NextTableMissLearnedInfo")
         return NextTableMissLearnedInfo(self)
 
     @property
@@ -229,10 +256,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardslearnedinfo_f184c966fff39cee4dc8824b2ddfcf0a import WildcardsLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardslearnedinfo_f184c966fff39cee4dc8824b2ddfcf0a import (
+            WildcardsLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WildcardsLearnedInfo', None) is not None:
-                return self._properties.get('WildcardsLearnedInfo')
+            if self._properties.get("WildcardsLearnedInfo", None) is not None:
+                return self._properties.get("WildcardsLearnedInfo")
         return WildcardsLearnedInfo(self)
 
     @property
@@ -246,10 +276,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionslearnedinfo_7610be485bc6b1f7d7ac09bbccbeac62 import WriteActionsLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionslearnedinfo_7610be485bc6b1f7d7ac09bbccbeac62 import (
+            WriteActionsLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteActionsLearnedInfo', None) is not None:
-                return self._properties.get('WriteActionsLearnedInfo')
+            if self._properties.get("WriteActionsLearnedInfo", None) is not None:
+                return self._properties.get("WriteActionsLearnedInfo")
         return WriteActionsLearnedInfo(self)
 
     @property
@@ -263,10 +296,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmisslearnedinfo_47d66a2418998f7efdd78d201a013a3a import WriteActionsMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmisslearnedinfo_47d66a2418998f7efdd78d201a013a3a import (
+            WriteActionsMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteActionsMissLearnedInfo', None) is not None:
-                return self._properties.get('WriteActionsMissLearnedInfo')
+            if self._properties.get("WriteActionsMissLearnedInfo", None) is not None:
+                return self._properties.get("WriteActionsMissLearnedInfo")
         return WriteActionsMissLearnedInfo(self)
 
     @property
@@ -280,10 +316,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldlearnedinfo_baa8ba69dbabb653f5ceb83cfeb81659 import WriteSetFieldLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldlearnedinfo_baa8ba69dbabb653f5ceb83cfeb81659 import (
+            WriteSetFieldLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteSetFieldLearnedInfo', None) is not None:
-                return self._properties.get('WriteSetFieldLearnedInfo')
+            if self._properties.get("WriteSetFieldLearnedInfo", None) is not None:
+                return self._properties.get("WriteSetFieldLearnedInfo")
         return WriteSetFieldLearnedInfo(self)
 
     @property
@@ -297,10 +336,13 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmisslearnedinfo_9e1fd653a82d5a38c717d8c5e922868f import WriteSetFieldMissLearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmisslearnedinfo_9e1fd653a82d5a38c717d8c5e922868f import (
+            WriteSetFieldMissLearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WriteSetFieldMissLearnedInfo', None) is not None:
-                return self._properties.get('WriteSetFieldMissLearnedInfo')
+            if self._properties.get("WriteSetFieldMissLearnedInfo", None) is not None:
+                return self._properties.get("WriteSetFieldMissLearnedInfo")
         return WriteSetFieldMissLearnedInfo(self)
 
     @property
@@ -311,7 +353,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyActions"])
 
     @property
     def ApplyActionsMiss(self):
@@ -321,7 +363,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplyActionsMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplyActionsMiss"])
 
     @property
     def ApplySetField(self):
@@ -331,7 +373,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplySetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplySetField"])
 
     @property
     def ApplySetFieldMiss(self):
@@ -341,7 +383,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["ApplySetFieldMiss"])
 
     @property
     def Config(self):
@@ -351,7 +393,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Config'])
+        return self._get_attribute(self._SDM_ATT_MAP["Config"])
 
     @property
     def DataPathId(self):
@@ -361,7 +403,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -371,7 +413,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def Instruction(self):
@@ -381,7 +423,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Instruction'])
+        return self._get_attribute(self._SDM_ATT_MAP["Instruction"])
 
     @property
     def InstructionMiss(self):
@@ -391,7 +433,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstructionMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstructionMiss"])
 
     @property
     def LocalIp(self):
@@ -401,7 +443,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def Match(self):
@@ -411,7 +453,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Match'])
+        return self._get_attribute(self._SDM_ATT_MAP["Match"])
 
     @property
     def MaxEntries(self):
@@ -421,7 +463,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxEntries'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxEntries"])
 
     @property
     def MetadataMatch(self):
@@ -431,7 +473,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataMatch'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataMatch"])
 
     @property
     def MetadataWrite(self):
@@ -441,7 +483,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataWrite'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataWrite"])
 
     @property
     def Name(self):
@@ -451,7 +493,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def NextTable(self):
@@ -461,7 +503,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextTable'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextTable"])
 
     @property
     def NextTableMiss(self):
@@ -471,7 +513,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextTableMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextTableMiss"])
 
     @property
     def TableId(self):
@@ -481,7 +523,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
 
     @property
     def WildCards(self):
@@ -491,7 +533,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WildCards'])
+        return self._get_attribute(self._SDM_ATT_MAP["WildCards"])
 
     @property
     def WriteActions(self):
@@ -501,7 +543,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteActions'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteActions"])
 
     @property
     def WriteActionsMiss(self):
@@ -511,7 +553,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteActionsMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteActionsMiss"])
 
     @property
     def WriteSetField(self):
@@ -521,7 +563,7 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteSetField'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteSetField"])
 
     @property
     def WriteSetFieldMiss(self):
@@ -531,10 +573,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss'])
+        return self._get_attribute(self._SDM_ATT_MAP["WriteSetFieldMiss"])
 
     def add(self):
-        """Adds a new switchTableFeaturesStatLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchTableFeaturesStatLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -546,7 +588,32 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Config=None, DataPathId=None, DataPathIdAsHex=None, Instruction=None, InstructionMiss=None, LocalIp=None, Match=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, Name=None, NextTable=None, NextTableMiss=None, TableId=None, WildCards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+    def find(
+        self,
+        ApplyActions=None,
+        ApplyActionsMiss=None,
+        ApplySetField=None,
+        ApplySetFieldMiss=None,
+        Config=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        Instruction=None,
+        InstructionMiss=None,
+        LocalIp=None,
+        Match=None,
+        MaxEntries=None,
+        MetadataMatch=None,
+        MetadataWrite=None,
+        Name=None,
+        NextTable=None,
+        NextTableMiss=None,
+        TableId=None,
+        WildCards=None,
+        WriteActions=None,
+        WriteActionsMiss=None,
+        WriteSetField=None,
+        WriteSetFieldMiss=None,
+    ):
         # type: (str, str, str, str, int, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str) -> SwitchTableFeaturesStatLearnedInfo
         """Finds and retrieves switchTableFeaturesStatLearnedInfo resources from the server.
 

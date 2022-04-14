@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,24 +35,23 @@ class EapoUdpGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'eapoUdpGlobals'
+    _SDM_NAME = "eapoUdpGlobals"
     _SDM_ATT_MAP = {
-        'ChangeStatusQuery': 'changeStatusQuery',
-        'CookieSize': 'cookieSize',
-        'FragmentSize': 'fragmentSize',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'Port': 'port',
-        'Timeout': 'timeout',
-        'TriggerCount': 'triggerCount',
-        'TriggerOrigin': 'triggerOrigin',
-        'TriggerType': 'triggerType',
-        'WaitBeforeRun': 'waitBeforeRun',
-        'WaitForCompletion': 'waitForCompletion',
+        "ChangeStatusQuery": "changeStatusQuery",
+        "CookieSize": "cookieSize",
+        "FragmentSize": "fragmentSize",
+        "MaxClientsPerSecond": "maxClientsPerSecond",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "Port": "port",
+        "Timeout": "timeout",
+        "TriggerCount": "triggerCount",
+        "TriggerOrigin": "triggerOrigin",
+        "TriggerType": "triggerType",
+        "WaitBeforeRun": "waitBeforeRun",
+        "WaitForCompletion": "waitForCompletion",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EapoUdpGlobals, self).__init__(parent, list_op)
@@ -67,10 +67,13 @@ class EapoUdpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo import CertInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo import (
+            CertInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CertInfo', None) is not None:
-                return self._properties.get('CertInfo')
+            if self._properties.get("CertInfo", None) is not None:
+                return self._properties.get("CertInfo")
         return CertInfo(self)._select()
 
     @property
@@ -84,10 +87,13 @@ class EapoUdpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings import NacSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings import (
+            NacSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacSettings', None) is not None:
-                return self._properties.get('NacSettings')
+            if self._properties.get("NacSettings", None) is not None:
+                return self._properties.get("NacSettings")
         return NacSettings(self)._select()
 
     @property
@@ -98,11 +104,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: After how many status query messages received from DUT, we announce we changed state, so DUT initiates a full re-authentication. Zero value means that we never announce a state change.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChangeStatusQuery'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChangeStatusQuery"])
+
     @ChangeStatusQuery.setter
     def ChangeStatusQuery(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChangeStatusQuery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChangeStatusQuery"], value)
 
     @property
     def CookieSize(self):
@@ -112,11 +119,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: The size of the cookie we send.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CookieSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["CookieSize"])
+
     @CookieSize.setter
     def CookieSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CookieSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CookieSize"], value)
 
     @property
     def FragmentSize(self):
@@ -126,11 +134,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: Size of the frame sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FragmentSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FragmentSize"])
+
     @FragmentSize.setter
     def FragmentSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FragmentSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FragmentSize"], value)
 
     @property
     def MaxClientsPerSecond(self):
@@ -140,11 +149,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: The number of interfaces to setup per second. Zero value means maximum with no limit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"])
+
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -154,11 +164,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -168,7 +179,7 @@ class EapoUdpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Port(self):
@@ -178,11 +189,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: Port on which we start listening for UDP messages for this plugin.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Port'])
+        return self._get_attribute(self._SDM_ATT_MAP["Port"])
+
     @Port.setter
     def Port(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Port'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Port"], value)
 
     @property
     def Timeout(self):
@@ -192,11 +204,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: After how long we declare a failure due to timeout. In external trigger case, we enable the timer after the first seen message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["Timeout"])
+
     @Timeout.setter
     def Timeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Timeout"], value)
 
     @property
     def TriggerCount(self):
@@ -206,11 +219,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: How many triggers are sent when a client is started.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggerCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggerCount"])
+
     @TriggerCount.setter
     def TriggerCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggerCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggerCount"], value)
 
     @property
     def TriggerOrigin(self):
@@ -220,11 +234,12 @@ class EapoUdpGlobals(Base):
         -------
         - str: The trigger source can be external (outside port) or internal (another plugin or application).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggerOrigin'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggerOrigin"])
+
     @TriggerOrigin.setter
     def TriggerOrigin(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggerOrigin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggerOrigin"], value)
 
     @property
     def TriggerType(self):
@@ -234,11 +249,12 @@ class EapoUdpGlobals(Base):
         -------
         - str: Specify the trigger type when origin is internal. Any DHCP+ mean that after we are receiving the IPv4 address, we send the message (ARP, GratArp, ICMP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggerType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggerType"])
+
     @TriggerType.setter
     def TriggerType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggerType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggerType"], value)
 
     @property
     def WaitBeforeRun(self):
@@ -248,11 +264,12 @@ class EapoUdpGlobals(Base):
         -------
         - number: Time to wait before running this protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitBeforeRun"])
+
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitBeforeRun"], value)
 
     @property
     def WaitForCompletion(self):
@@ -262,13 +279,28 @@ class EapoUdpGlobals(Base):
         -------
         - bool: If true the configuration will end after all interfaces are configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitForCompletion"])
+
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitForCompletion"], value)
 
-    def update(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+    def update(
+        self,
+        ChangeStatusQuery=None,
+        CookieSize=None,
+        FragmentSize=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        Port=None,
+        Timeout=None,
+        TriggerCount=None,
+        TriggerOrigin=None,
+        TriggerType=None,
+        WaitBeforeRun=None,
+        WaitForCompletion=None,
+    ):
         # type: (int, int, int, int, int, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Updates eapoUdpGlobals resource on the server.
 
@@ -293,7 +325,21 @@ class EapoUdpGlobals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+    def add(
+        self,
+        ChangeStatusQuery=None,
+        CookieSize=None,
+        FragmentSize=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        Port=None,
+        Timeout=None,
+        TriggerCount=None,
+        TriggerOrigin=None,
+        TriggerType=None,
+        WaitBeforeRun=None,
+        WaitForCompletion=None,
+    ):
         # type: (int, int, int, int, int, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Adds a new eapoUdpGlobals resource on the server and adds it to the container.
 
@@ -332,7 +378,22 @@ class EapoUdpGlobals(Base):
         """
         self._delete()
 
-    def find(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+    def find(
+        self,
+        ChangeStatusQuery=None,
+        CookieSize=None,
+        FragmentSize=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        Port=None,
+        Timeout=None,
+        TriggerCount=None,
+        TriggerOrigin=None,
+        TriggerType=None,
+        WaitBeforeRun=None,
+        WaitForCompletion=None,
+    ):
         # type: (int, int, int, int, int, str, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Finds and retrieves eapoUdpGlobals resources from the server.
 

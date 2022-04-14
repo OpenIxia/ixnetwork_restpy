@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,42 +34,49 @@ class DiscoveredLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'discoveredLearnedInfo'
+    _SDM_NAME = "discoveredLearnedInfo"
     _SDM_ATT_MAP = {
-        'LocalDiscoveryStatus': 'localDiscoveryStatus',
-        'LocalEvaluating': 'localEvaluating',
-        'LocalMuxAction': 'localMuxAction',
-        'LocalParserAction': 'localParserAction',
-        'LocalRevision': 'localRevision',
-        'LocalStable': 'localStable',
-        'RemoteCriticalEvent': 'remoteCriticalEvent',
-        'RemoteDyingGasp': 'remoteDyingGasp',
-        'RemoteEvaluating': 'remoteEvaluating',
-        'RemoteHeaderRefreshed': 'remoteHeaderRefreshed',
-        'RemoteLinkEvent': 'remoteLinkEvent',
-        'RemoteLinkFault': 'remoteLinkFault',
-        'RemoteLoopbackSupport': 'remoteLoopbackSupport',
-        'RemoteMacAddress': 'remoteMacAddress',
-        'RemoteMaxPduSize': 'remoteMaxPduSize',
-        'RemoteMode': 'remoteMode',
-        'RemoteMuxAction': 'remoteMuxAction',
-        'RemoteOamVersion': 'remoteOamVersion',
-        'RemoteOui': 'remoteOui',
-        'RemoteParserAction': 'remoteParserAction',
-        'RemoteRevision': 'remoteRevision',
-        'RemoteStable': 'remoteStable',
-        'RemoteTlvRefreshed': 'remoteTlvRefreshed',
-        'RemoteUnidirectionalSupport': 'remoteUnidirectionalSupport',
-        'RemoteVariableRetrieval': 'remoteVariableRetrieval',
-        'RemoteVendorSpecificInfo': 'remoteVendorSpecificInfo',
+        "LocalDiscoveryStatus": "localDiscoveryStatus",
+        "LocalEvaluating": "localEvaluating",
+        "LocalMuxAction": "localMuxAction",
+        "LocalParserAction": "localParserAction",
+        "LocalRevision": "localRevision",
+        "LocalStable": "localStable",
+        "RemoteCriticalEvent": "remoteCriticalEvent",
+        "RemoteDyingGasp": "remoteDyingGasp",
+        "RemoteEvaluating": "remoteEvaluating",
+        "RemoteHeaderRefreshed": "remoteHeaderRefreshed",
+        "RemoteLinkEvent": "remoteLinkEvent",
+        "RemoteLinkFault": "remoteLinkFault",
+        "RemoteLoopbackSupport": "remoteLoopbackSupport",
+        "RemoteMacAddress": "remoteMacAddress",
+        "RemoteMaxPduSize": "remoteMaxPduSize",
+        "RemoteMode": "remoteMode",
+        "RemoteMuxAction": "remoteMuxAction",
+        "RemoteOamVersion": "remoteOamVersion",
+        "RemoteOui": "remoteOui",
+        "RemoteParserAction": "remoteParserAction",
+        "RemoteRevision": "remoteRevision",
+        "RemoteStable": "remoteStable",
+        "RemoteTlvRefreshed": "remoteTlvRefreshed",
+        "RemoteUnidirectionalSupport": "remoteUnidirectionalSupport",
+        "RemoteVariableRetrieval": "remoteVariableRetrieval",
+        "RemoteVendorSpecificInfo": "remoteVendorSpecificInfo",
     }
     _SDM_ENUM_MAP = {
-        'localDiscoveryStatus': ['fault', 'activeSendLocal', 'passiveWait', 'sendLocalRemote', 'sendLocalRemoteOk', 'sendAny'],
-        'localMuxAction': ['fwd', 'discard'],
-        'localParserAction': ['fwd', 'lb', 'discard'],
-        'remoteMode': ['active', 'passive'],
-        'remoteMuxAction': ['fwd', 'discard'],
-        'remoteParserAction': ['fwd', 'lb', 'discard'],
+        "localDiscoveryStatus": [
+            "fault",
+            "activeSendLocal",
+            "passiveWait",
+            "sendLocalRemote",
+            "sendLocalRemoteOk",
+            "sendAny",
+        ],
+        "localMuxAction": ["fwd", "discard"],
+        "localParserAction": ["fwd", "lb", "discard"],
+        "remoteMode": ["active", "passive"],
+        "remoteMuxAction": ["fwd", "discard"],
+        "remoteParserAction": ["fwd", "lb", "discard"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -80,9 +88,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(fault | activeSendLocal | passiveWait | sendLocalRemote | sendLocalRemoteOk | sendAny): 
+        - str(fault | activeSendLocal | passiveWait | sendLocalRemote | sendLocalRemoteOk | sendAny):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalDiscoveryStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalDiscoveryStatus"])
 
     @property
     def LocalEvaluating(self):
@@ -90,9 +98,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalEvaluating'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalEvaluating"])
 
     @property
     def LocalMuxAction(self):
@@ -100,9 +108,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(fwd | discard): 
+        - str(fwd | discard):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalMuxAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalMuxAction"])
 
     @property
     def LocalParserAction(self):
@@ -110,9 +118,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(fwd | lb | discard): 
+        - str(fwd | lb | discard):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalParserAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalParserAction"])
 
     @property
     def LocalRevision(self):
@@ -120,9 +128,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRevision'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRevision"])
 
     @property
     def LocalStable(self):
@@ -130,9 +138,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalStable'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalStable"])
 
     @property
     def RemoteCriticalEvent(self):
@@ -140,9 +148,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteCriticalEvent'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteCriticalEvent"])
 
     @property
     def RemoteDyingGasp(self):
@@ -150,9 +158,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteDyingGasp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteDyingGasp"])
 
     @property
     def RemoteEvaluating(self):
@@ -160,9 +168,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteEvaluating'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteEvaluating"])
 
     @property
     def RemoteHeaderRefreshed(self):
@@ -170,9 +178,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteHeaderRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteHeaderRefreshed"])
 
     @property
     def RemoteLinkEvent(self):
@@ -180,9 +188,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteLinkEvent'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteLinkEvent"])
 
     @property
     def RemoteLinkFault(self):
@@ -190,9 +198,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteLinkFault'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteLinkFault"])
 
     @property
     def RemoteLoopbackSupport(self):
@@ -200,9 +208,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteLoopbackSupport'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteLoopbackSupport"])
 
     @property
     def RemoteMacAddress(self):
@@ -210,9 +218,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMacAddress"])
 
     @property
     def RemoteMaxPduSize(self):
@@ -220,9 +228,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMaxPduSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMaxPduSize"])
 
     @property
     def RemoteMode(self):
@@ -230,9 +238,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(active | passive): 
+        - str(active | passive):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMode"])
 
     @property
     def RemoteMuxAction(self):
@@ -240,9 +248,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(fwd | discard): 
+        - str(fwd | discard):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMuxAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMuxAction"])
 
     @property
     def RemoteOamVersion(self):
@@ -250,9 +258,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteOamVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteOamVersion"])
 
     @property
     def RemoteOui(self):
@@ -260,9 +268,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteOui'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteOui"])
 
     @property
     def RemoteParserAction(self):
@@ -270,9 +278,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str(fwd | lb | discard): 
+        - str(fwd | lb | discard):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteParserAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteParserAction"])
 
     @property
     def RemoteRevision(self):
@@ -280,9 +288,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteRevision'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteRevision"])
 
     @property
     def RemoteStable(self):
@@ -290,9 +298,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteStable'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteStable"])
 
     @property
     def RemoteTlvRefreshed(self):
@@ -300,9 +308,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteTlvRefreshed'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteTlvRefreshed"])
 
     @property
     def RemoteUnidirectionalSupport(self):
@@ -310,9 +318,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteUnidirectionalSupport'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteUnidirectionalSupport"])
 
     @property
     def RemoteVariableRetrieval(self):
@@ -320,9 +328,9 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteVariableRetrieval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteVariableRetrieval"])
 
     @property
     def RemoteVendorSpecificInfo(self):
@@ -330,12 +338,12 @@ class DiscoveredLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteVendorSpecificInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteVendorSpecificInfo"])
 
     def add(self):
-        """Adds a new discoveredLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new discoveredLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -347,7 +355,35 @@ class DiscoveredLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, LocalDiscoveryStatus=None, LocalEvaluating=None, LocalMuxAction=None, LocalParserAction=None, LocalRevision=None, LocalStable=None, RemoteCriticalEvent=None, RemoteDyingGasp=None, RemoteEvaluating=None, RemoteHeaderRefreshed=None, RemoteLinkEvent=None, RemoteLinkFault=None, RemoteLoopbackSupport=None, RemoteMacAddress=None, RemoteMaxPduSize=None, RemoteMode=None, RemoteMuxAction=None, RemoteOamVersion=None, RemoteOui=None, RemoteParserAction=None, RemoteRevision=None, RemoteStable=None, RemoteTlvRefreshed=None, RemoteUnidirectionalSupport=None, RemoteVariableRetrieval=None, RemoteVendorSpecificInfo=None):
+    def find(
+        self,
+        LocalDiscoveryStatus=None,
+        LocalEvaluating=None,
+        LocalMuxAction=None,
+        LocalParserAction=None,
+        LocalRevision=None,
+        LocalStable=None,
+        RemoteCriticalEvent=None,
+        RemoteDyingGasp=None,
+        RemoteEvaluating=None,
+        RemoteHeaderRefreshed=None,
+        RemoteLinkEvent=None,
+        RemoteLinkFault=None,
+        RemoteLoopbackSupport=None,
+        RemoteMacAddress=None,
+        RemoteMaxPduSize=None,
+        RemoteMode=None,
+        RemoteMuxAction=None,
+        RemoteOamVersion=None,
+        RemoteOui=None,
+        RemoteParserAction=None,
+        RemoteRevision=None,
+        RemoteStable=None,
+        RemoteTlvRefreshed=None,
+        RemoteUnidirectionalSupport=None,
+        RemoteVariableRetrieval=None,
+        RemoteVendorSpecificInfo=None,
+    ):
         # type: (str, bool, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, str, str, int, str, str, int, bool, bool, bool, bool, str) -> DiscoveredLearnedInfo
         """Finds and retrieves discoveredLearnedInfo resources from the server.
 
@@ -357,32 +393,32 @@ class DiscoveredLearnedInfo(Base):
 
         Args
         ----
-        - LocalDiscoveryStatus (str(fault | activeSendLocal | passiveWait | sendLocalRemote | sendLocalRemoteOk | sendAny)): 
-        - LocalEvaluating (bool): 
-        - LocalMuxAction (str(fwd | discard)): 
-        - LocalParserAction (str(fwd | lb | discard)): 
-        - LocalRevision (number): 
-        - LocalStable (bool): 
-        - RemoteCriticalEvent (bool): 
-        - RemoteDyingGasp (bool): 
-        - RemoteEvaluating (bool): 
-        - RemoteHeaderRefreshed (bool): 
-        - RemoteLinkEvent (bool): 
-        - RemoteLinkFault (bool): 
-        - RemoteLoopbackSupport (bool): 
-        - RemoteMacAddress (str): 
-        - RemoteMaxPduSize (number): 
-        - RemoteMode (str(active | passive)): 
-        - RemoteMuxAction (str(fwd | discard)): 
-        - RemoteOamVersion (number): 
-        - RemoteOui (str): 
-        - RemoteParserAction (str(fwd | lb | discard)): 
-        - RemoteRevision (number): 
-        - RemoteStable (bool): 
-        - RemoteTlvRefreshed (bool): 
-        - RemoteUnidirectionalSupport (bool): 
-        - RemoteVariableRetrieval (bool): 
-        - RemoteVendorSpecificInfo (str): 
+        - LocalDiscoveryStatus (str(fault | activeSendLocal | passiveWait | sendLocalRemote | sendLocalRemoteOk | sendAny)):
+        - LocalEvaluating (bool):
+        - LocalMuxAction (str(fwd | discard)):
+        - LocalParserAction (str(fwd | lb | discard)):
+        - LocalRevision (number):
+        - LocalStable (bool):
+        - RemoteCriticalEvent (bool):
+        - RemoteDyingGasp (bool):
+        - RemoteEvaluating (bool):
+        - RemoteHeaderRefreshed (bool):
+        - RemoteLinkEvent (bool):
+        - RemoteLinkFault (bool):
+        - RemoteLoopbackSupport (bool):
+        - RemoteMacAddress (str):
+        - RemoteMaxPduSize (number):
+        - RemoteMode (str(active | passive)):
+        - RemoteMuxAction (str(fwd | discard)):
+        - RemoteOamVersion (number):
+        - RemoteOui (str):
+        - RemoteParserAction (str(fwd | lb | discard)):
+        - RemoteRevision (number):
+        - RemoteStable (bool):
+        - RemoteTlvRefreshed (bool):
+        - RemoteUnidirectionalSupport (bool):
+        - RemoteVariableRetrieval (bool):
+        - RemoteVendorSpecificInfo (str):
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class Layer23ProtocolRoutingFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23ProtocolRoutingFilter'
+    _SDM_NAME = "layer23ProtocolRoutingFilter"
     _SDM_ATT_MAP = {
-        'PortFilterIds': 'portFilterIds',
-        'ProtocolFilterIds': 'protocolFilterIds',
+        "PortFilterIds": "portFilterIds",
+        "ProtocolFilterIds": "protocolFilterIds",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Layer23ProtocolRoutingFilter, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class Layer23ProtocolRoutingFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Ports that have been filtered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
+
     @PortFilterIds.setter
     def PortFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortFilterIds"], value)
 
     @property
     def ProtocolFilterIds(self):
@@ -67,11 +68,12 @@ class Layer23ProtocolRoutingFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Protocols that have been filtered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"])
+
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"], value)
 
     def update(self, PortFilterIds=None, ProtocolFilterIds=None):
         # type: (List[str], List[str]) -> Layer23ProtocolRoutingFilter

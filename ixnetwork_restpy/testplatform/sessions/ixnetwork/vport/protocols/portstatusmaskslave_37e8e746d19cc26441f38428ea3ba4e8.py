@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class PortStatusMaskSlave(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'portStatusMaskSlave'
+    _SDM_NAME = "portStatusMaskSlave"
     _SDM_ATT_MAP = {
-        'PortAdd': 'portAdd',
-        'PortDelete': 'portDelete',
-        'PortModify': 'portModify',
+        "PortAdd": "portAdd",
+        "PortDelete": "portDelete",
+        "PortModify": "portModify",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PortStatusMaskSlave, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class PortStatusMaskSlave(Base):
         -------
         - bool: This indicates that a port is added.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortAdd'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortAdd"])
+
     @PortAdd.setter
     def PortAdd(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortAdd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortAdd"], value)
 
     @property
     def PortDelete(self):
@@ -66,11 +67,12 @@ class PortStatusMaskSlave(Base):
         -------
         - bool: This indicates that a port is removed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelete'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelete"])
+
     @PortDelete.setter
     def PortDelete(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelete'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelete"], value)
 
     @property
     def PortModify(self):
@@ -80,11 +82,12 @@ class PortStatusMaskSlave(Base):
         -------
         - bool: This indicates that some attributes of the port is changed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortModify'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortModify"])
+
     @PortModify.setter
     def PortModify(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortModify'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortModify"], value)
 
     def update(self, PortAdd=None, PortDelete=None, PortModify=None):
         # type: (bool, bool, bool) -> PortStatusMaskSlave

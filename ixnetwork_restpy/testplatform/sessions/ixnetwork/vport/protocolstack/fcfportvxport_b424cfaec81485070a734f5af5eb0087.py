@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class FcFportVxPort(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcFportVxPort'
+    _SDM_NAME = "fcFportVxPort"
     _SDM_ATT_MAP = {
-        'B2bRxSize': 'b2bRxSize',
-        'Enabled': 'enabled',
-        'FabricName': 'fabricName',
-        'FdiscRejectInterval': 'fdiscRejectInterval',
-        'FlogiRejectInterval': 'flogiRejectInterval',
-        'LogoRejectInterval': 'logoRejectInterval',
-        'Name': 'name',
-        'NameServer': 'nameServer',
-        'NameServerCommands': 'nameServerCommands',
-        'ObjectId': 'objectId',
-        'OperatingMode': 'operatingMode',
-        'PlogiRejectInterval': 'plogiRejectInterval',
-        'SwitchName': 'switchName',
+        "B2bRxSize": "b2bRxSize",
+        "Enabled": "enabled",
+        "FabricName": "fabricName",
+        "FdiscRejectInterval": "fdiscRejectInterval",
+        "FlogiRejectInterval": "flogiRejectInterval",
+        "LogoRejectInterval": "logoRejectInterval",
+        "Name": "name",
+        "NameServer": "nameServer",
+        "NameServerCommands": "nameServerCommands",
+        "ObjectId": "objectId",
+        "OperatingMode": "operatingMode",
+        "PlogiRejectInterval": "plogiRejectInterval",
+        "SwitchName": "switchName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcFportVxPort, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class FcFportVxPort(Base):
         -------
         - number: The buffer-to-buffer receive data field size in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["B2bRxSize"])
+
     @B2bRxSize.setter
     def B2bRxSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["B2bRxSize"], value)
 
     @property
     def Enabled(self):
@@ -76,11 +77,12 @@ class FcFportVxPort(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FabricName(self):
@@ -90,11 +92,12 @@ class FcFportVxPort(Base):
         -------
         - str: The Fabric Name value assigned to this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FabricName'])
+        return self._get_attribute(self._SDM_ATT_MAP["FabricName"])
+
     @FabricName.setter
     def FabricName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FabricName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FabricName"], value)
 
     @property
     def FdiscRejectInterval(self):
@@ -104,11 +107,12 @@ class FcFportVxPort(Base):
         -------
         - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["FdiscRejectInterval"])
+
     @FdiscRejectInterval.setter
     def FdiscRejectInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FdiscRejectInterval"], value)
 
     @property
     def FlogiRejectInterval(self):
@@ -118,11 +122,12 @@ class FcFportVxPort(Base):
         -------
         - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlogiRejectInterval"])
+
     @FlogiRejectInterval.setter
     def FlogiRejectInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlogiRejectInterval"], value)
 
     @property
     def LogoRejectInterval(self):
@@ -132,11 +137,12 @@ class FcFportVxPort(Base):
         -------
         - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogoRejectInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogoRejectInterval"])
+
     @LogoRejectInterval.setter
     def LogoRejectInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogoRejectInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogoRejectInterval"], value)
 
     @property
     def Name(self):
@@ -146,11 +152,12 @@ class FcFportVxPort(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NameServer(self):
@@ -160,11 +167,12 @@ class FcFportVxPort(Base):
         -------
         - bool: Select this option to respond to Name Service requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServer'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServer"])
+
     @NameServer.setter
     def NameServer(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServer"], value)
 
     @property
     def NameServerCommands(self):
@@ -174,11 +182,12 @@ class FcFportVxPort(Base):
         -------
         - list(number): Signifies the Name Server Commands that will be accepted by the forwarder.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerCommands'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerCommands"])
+
     @NameServerCommands.setter
     def NameServerCommands(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerCommands'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerCommands"], value)
 
     @property
     def ObjectId(self):
@@ -188,7 +197,7 @@ class FcFportVxPort(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OperatingMode(self):
@@ -198,11 +207,12 @@ class FcFportVxPort(Base):
         -------
         - str: Describes the operating mode for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OperatingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["OperatingMode"])
+
     @OperatingMode.setter
     def OperatingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OperatingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OperatingMode"], value)
 
     @property
     def PlogiRejectInterval(self):
@@ -212,11 +222,12 @@ class FcFportVxPort(Base):
         -------
         - number: When the user enters N, IxNetwork F_Port will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiRejectInterval"])
+
     @PlogiRejectInterval.setter
     def PlogiRejectInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiRejectInterval"], value)
 
     @property
     def SwitchName(self):
@@ -226,13 +237,28 @@ class FcFportVxPort(Base):
         -------
         - str: The Switch Name value assigned to this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchName"])
+
     @SwitchName.setter
     def SwitchName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchName"], value)
 
-    def update(self, B2bRxSize=None, Enabled=None, FabricName=None, FdiscRejectInterval=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None):
+    def update(
+        self,
+        B2bRxSize=None,
+        Enabled=None,
+        FabricName=None,
+        FdiscRejectInterval=None,
+        FlogiRejectInterval=None,
+        LogoRejectInterval=None,
+        Name=None,
+        NameServer=None,
+        NameServerCommands=None,
+        OperatingMode=None,
+        PlogiRejectInterval=None,
+        SwitchName=None,
+    ):
         # type: (int, bool, str, int, int, int, str, bool, List[int], str, int, str) -> FcFportVxPort
         """Updates fcFportVxPort resource on the server.
 
@@ -257,7 +283,22 @@ class FcFportVxPort(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, B2bRxSize=None, Enabled=None, FabricName=None, FdiscRejectInterval=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, ObjectId=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None):
+    def find(
+        self,
+        B2bRxSize=None,
+        Enabled=None,
+        FabricName=None,
+        FdiscRejectInterval=None,
+        FlogiRejectInterval=None,
+        LogoRejectInterval=None,
+        Name=None,
+        NameServer=None,
+        NameServerCommands=None,
+        ObjectId=None,
+        OperatingMode=None,
+        PlogiRejectInterval=None,
+        SwitchName=None,
+    ):
         # type: (int, bool, str, int, int, int, str, bool, List[int], str, str, int, str) -> FcFportVxPort
         """Finds and retrieves fcFportVxPort resources from the server.
 
@@ -326,10 +367,14 @@ class FcFportVxPort(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -348,10 +393,14 @@ class FcFportVxPort(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -370,7 +419,11 @@ class FcFportVxPort(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

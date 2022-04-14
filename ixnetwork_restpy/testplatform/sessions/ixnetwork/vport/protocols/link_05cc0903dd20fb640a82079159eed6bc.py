@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,38 +35,38 @@ class Link(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'link'
+    _SDM_NAME = "link"
     _SDM_ATT_MAP = {
-        'ActorKey': 'actorKey',
-        'ActorPortNumber': 'actorPortNumber',
-        'ActorPortPriority': 'actorPortPriority',
-        'ActorSystemId': 'actorSystemId',
-        'ActorSystemPriority': 'actorSystemPriority',
-        'AdministrativeKey': 'administrativeKey',
-        'AggregationFlagState': 'aggregationFlagState',
-        'AutoPickPortMac': 'autoPickPortMac',
-        'CollectingFlag': 'collectingFlag',
-        'CollectorMaxDelay': 'collectorMaxDelay',
-        'DistributingFlag': 'distributingFlag',
-        'Enabled': 'enabled',
-        'InterMarkerPduDelay': 'interMarkerPduDelay',
-        'LacpActivity': 'lacpActivity',
-        'LacpTimeout': 'lacpTimeout',
-        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
-        'MarkerRequestMode': 'markerRequestMode',
-        'MarkerResponseWaitTime': 'markerResponseWaitTime',
-        'PortMac': 'portMac',
-        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
-        'SendPeriodicMarkerRequest': 'sendPeriodicMarkerRequest',
-        'SupportRespondingToMarker': 'supportRespondingToMarker',
-        'SyncFlag': 'syncFlag',
-        'UpdateRequired': 'updateRequired',
+        "ActorKey": "actorKey",
+        "ActorPortNumber": "actorPortNumber",
+        "ActorPortPriority": "actorPortPriority",
+        "ActorSystemId": "actorSystemId",
+        "ActorSystemPriority": "actorSystemPriority",
+        "AdministrativeKey": "administrativeKey",
+        "AggregationFlagState": "aggregationFlagState",
+        "AutoPickPortMac": "autoPickPortMac",
+        "CollectingFlag": "collectingFlag",
+        "CollectorMaxDelay": "collectorMaxDelay",
+        "DistributingFlag": "distributingFlag",
+        "Enabled": "enabled",
+        "InterMarkerPduDelay": "interMarkerPduDelay",
+        "LacpActivity": "lacpActivity",
+        "LacpTimeout": "lacpTimeout",
+        "LacpduPeriodicTimeInterval": "lacpduPeriodicTimeInterval",
+        "MarkerRequestMode": "markerRequestMode",
+        "MarkerResponseWaitTime": "markerResponseWaitTime",
+        "PortMac": "portMac",
+        "SendMarkerRequestOnLagChange": "sendMarkerRequestOnLagChange",
+        "SendPeriodicMarkerRequest": "sendPeriodicMarkerRequest",
+        "SupportRespondingToMarker": "supportRespondingToMarker",
+        "SyncFlag": "syncFlag",
+        "UpdateRequired": "updateRequired",
     }
     _SDM_ENUM_MAP = {
-        'aggregationFlagState': ['disable', 'auto'],
-        'lacpActivity': ['active', 'passive'],
-        'markerRequestMode': ['fixed', 'random'],
-        'syncFlag': ['disable', 'auto'],
+        "aggregationFlagState": ["disable", "auto"],
+        "lacpActivity": ["active", "passive"],
+        "markerRequestMode": ["fixed", "random"],
+        "syncFlag": ["disable", "auto"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -79,11 +80,12 @@ class Link(Base):
         -------
         - number: The operational Key value assigned to the port by the Actor. This is a 2 byte field with a default of 1. Minimum value is 0, maximum value is 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActorKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActorKey"])
+
     @ActorKey.setter
     def ActorKey(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActorKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActorKey"], value)
 
     @property
     def ActorPortNumber(self):
@@ -93,11 +95,12 @@ class Link(Base):
         -------
         - number: The port number assigned to the port by the Actor (the System sending the PDU). It is a 2 byte field with a default of 1. Min: 0, Max: 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActorPortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActorPortNumber"])
+
     @ActorPortNumber.setter
     def ActorPortNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActorPortNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActorPortNumber"], value)
 
     @property
     def ActorPortPriority(self):
@@ -107,11 +110,12 @@ class Link(Base):
         -------
         - number: This field specifies the port priority of the link Actor. It is a 2 byte field, with a default or 1. Min: 0, Max: 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActorPortPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActorPortPriority"])
+
     @ActorPortPriority.setter
     def ActorPortPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActorPortPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActorPortPriority"], value)
 
     @property
     def ActorSystemId(self):
@@ -121,11 +125,12 @@ class Link(Base):
         -------
         - str: This field specifies the system identifier for the link Actor. It is a 6 byte field, with a default of 00-00-00-00-00-01. Min: 00-00-00-00-00-00, Max: FF-FF-FF-FF-FF-FF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActorSystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActorSystemId"])
+
     @ActorSystemId.setter
     def ActorSystemId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActorSystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActorSystemId"], value)
 
     @property
     def ActorSystemPriority(self):
@@ -135,11 +140,12 @@ class Link(Base):
         -------
         - number: This field specifies the system priority of the link Actor. It is a 2 byte field, with a default or 1. Min: 0, Max: 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActorSystemPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActorSystemPriority"])
+
     @ActorSystemPriority.setter
     def ActorSystemPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActorSystemPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActorSystemPriority"], value)
 
     @property
     def AdministrativeKey(self):
@@ -149,11 +155,12 @@ class Link(Base):
         -------
         - number: This field controls the aggregation of ports of the same system with similar Actor Key.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdministrativeKey'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdministrativeKey"])
+
     @AdministrativeKey.setter
     def AdministrativeKey(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdministrativeKey'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdministrativeKey"], value)
 
     @property
     def AggregationFlagState(self):
@@ -163,11 +170,12 @@ class Link(Base):
         -------
         - str(disable | auto): If enabled, sets the port status to automatically allow aggregation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationFlagState'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationFlagState"])
+
     @AggregationFlagState.setter
     def AggregationFlagState(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregationFlagState'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregationFlagState"], value)
 
     @property
     def AutoPickPortMac(self):
@@ -177,11 +185,12 @@ class Link(Base):
         -------
         - bool: If true the source MAC is the interface MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoPickPortMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoPickPortMac"])
+
     @AutoPickPortMac.setter
     def AutoPickPortMac(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoPickPortMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoPickPortMac"], value)
 
     @property
     def CollectingFlag(self):
@@ -191,11 +200,12 @@ class Link(Base):
         -------
         - bool: If true, the actor port state Collecting is set to true based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CollectingFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["CollectingFlag"])
+
     @CollectingFlag.setter
     def CollectingFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CollectingFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CollectingFlag"], value)
 
     @property
     def CollectorMaxDelay(self):
@@ -205,11 +215,12 @@ class Link(Base):
         -------
         - number: The maximum time in microseconds that the Frame Collector may delay the delivery of a frame received from an Aggregator to its MAC client. This is a 2 byte field with a default 0. Min: 0, Max: 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CollectorMaxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["CollectorMaxDelay"])
+
     @CollectorMaxDelay.setter
     def CollectorMaxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CollectorMaxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CollectorMaxDelay"], value)
 
     @property
     def DistributingFlag(self):
@@ -219,11 +230,12 @@ class Link(Base):
         -------
         - bool: If true, the actor port state Distributing is set to true based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistributingFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistributingFlag"])
+
     @DistributingFlag.setter
     def DistributingFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistributingFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistributingFlag"], value)
 
     @property
     def Enabled(self):
@@ -233,11 +245,12 @@ class Link(Base):
         -------
         - bool: If true, the link is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterMarkerPduDelay(self):
@@ -247,11 +260,12 @@ class Link(Base):
         -------
         - str: The time gap in seconds between two consecutive Marker PDUs when transmitted periodically.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterMarkerPduDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterMarkerPduDelay"])
+
     @InterMarkerPduDelay.setter
     def InterMarkerPduDelay(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterMarkerPduDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterMarkerPduDelay"], value)
 
     @property
     def LacpActivity(self):
@@ -261,11 +275,12 @@ class Link(Base):
         -------
         - str(active | passive): Sets the value of LACPs Actor activity, either passive or active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpActivity'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpActivity"])
+
     @LacpActivity.setter
     def LacpActivity(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpActivity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpActivity"], value)
 
     @property
     def LacpTimeout(self):
@@ -275,11 +290,12 @@ class Link(Base):
         -------
         - number: This timer is used to detect whether received protocol information has expired. The user can provide a custom value from 1 to 65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpTimeout"])
+
     @LacpTimeout.setter
     def LacpTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpTimeout"], value)
 
     @property
     def LacpduPeriodicTimeInterval(self):
@@ -289,11 +305,12 @@ class Link(Base):
         -------
         - number: This field defines how frequently LACPDUs are sent to the link partner. The user can provide a custom values from 1 to 65535, in seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LacpduPeriodicTimeInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LacpduPeriodicTimeInterval"])
+
     @LacpduPeriodicTimeInterval.setter
     def LacpduPeriodicTimeInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LacpduPeriodicTimeInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LacpduPeriodicTimeInterval"], value)
 
     @property
     def MarkerRequestMode(self):
@@ -303,11 +320,12 @@ class Link(Base):
         -------
         - str(fixed | random): Sets the marker request mode for the Actor link.In either case, the mode parameters are specified in Marker Request Frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerRequestMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerRequestMode"])
+
     @MarkerRequestMode.setter
     def MarkerRequestMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerRequestMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerRequestMode"], value)
 
     @property
     def MarkerResponseWaitTime(self):
@@ -317,11 +335,12 @@ class Link(Base):
         -------
         - number: The number of seconds to wait for Marker Response after sending a Marker Request. After this time, the Marker Response Timeout Count is incremented. If a marker response does arrive for the request after this timeout, it is not considered as a legitimate response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MarkerResponseWaitTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MarkerResponseWaitTime"])
+
     @MarkerResponseWaitTime.setter
     def MarkerResponseWaitTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MarkerResponseWaitTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MarkerResponseWaitTime"], value)
 
     @property
     def PortMac(self):
@@ -331,11 +350,12 @@ class Link(Base):
         -------
         - str: specifies the port MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortMac"])
+
     @PortMac.setter
     def PortMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortMac"], value)
 
     @property
     def SendMarkerRequestOnLagChange(self):
@@ -345,11 +365,12 @@ class Link(Base):
         -------
         - bool: If true, this checkbox causes LACP to send a Marker PDU on the following situations: 1) System Priority has been modified; 2) System Id has been modified; 3) Actor Key has been modified; 4) Port Number/Port Priority has been modified while we are in Individual mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendMarkerRequestOnLagChange'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendMarkerRequestOnLagChange"])
+
     @SendMarkerRequestOnLagChange.setter
     def SendMarkerRequestOnLagChange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendMarkerRequestOnLagChange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendMarkerRequestOnLagChange"], value)
 
     @property
     def SendPeriodicMarkerRequest(self):
@@ -359,11 +380,12 @@ class Link(Base):
         -------
         - bool: If true, Marker Request PDUs are periodically after both actor and partner are IN SYNC and our state is aggregated. The moment we come out of this state, the periodic sending of Marker will be stopped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendPeriodicMarkerRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendPeriodicMarkerRequest"])
+
     @SendPeriodicMarkerRequest.setter
     def SendPeriodicMarkerRequest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendPeriodicMarkerRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendPeriodicMarkerRequest"], value)
 
     @property
     def SupportRespondingToMarker(self):
@@ -373,11 +395,12 @@ class Link(Base):
         -------
         - bool: If true, LACP doesn't respond to MARKER request PDUs from the partner.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportRespondingToMarker'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportRespondingToMarker"])
+
     @SupportRespondingToMarker.setter
     def SupportRespondingToMarker(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportRespondingToMarker'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportRespondingToMarker"], value)
 
     @property
     def SyncFlag(self):
@@ -387,11 +410,12 @@ class Link(Base):
         -------
         - str(disable | auto): If enabled, the actor port state is set to True based on Tx and Rx state machines. Otherwise, the flag in LACPDU remains reset for all packets sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SyncFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["SyncFlag"])
+
     @SyncFlag.setter
     def SyncFlag(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SyncFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SyncFlag"], value)
 
     @property
     def UpdateRequired(self):
@@ -401,9 +425,34 @@ class Link(Base):
         -------
         - bool: (read only) If true, an update LAPDU is required for the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateRequired"])
 
-    def update(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
+    def update(
+        self,
+        ActorKey=None,
+        ActorPortNumber=None,
+        ActorPortPriority=None,
+        ActorSystemId=None,
+        ActorSystemPriority=None,
+        AdministrativeKey=None,
+        AggregationFlagState=None,
+        AutoPickPortMac=None,
+        CollectingFlag=None,
+        CollectorMaxDelay=None,
+        DistributingFlag=None,
+        Enabled=None,
+        InterMarkerPduDelay=None,
+        LacpActivity=None,
+        LacpTimeout=None,
+        LacpduPeriodicTimeInterval=None,
+        MarkerRequestMode=None,
+        MarkerResponseWaitTime=None,
+        PortMac=None,
+        SendMarkerRequestOnLagChange=None,
+        SendPeriodicMarkerRequest=None,
+        SupportRespondingToMarker=None,
+        SyncFlag=None,
+    ):
         # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str) -> Link
         """Updates link resource on the server.
 
@@ -439,7 +488,32 @@ class Link(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
+    def add(
+        self,
+        ActorKey=None,
+        ActorPortNumber=None,
+        ActorPortPriority=None,
+        ActorSystemId=None,
+        ActorSystemPriority=None,
+        AdministrativeKey=None,
+        AggregationFlagState=None,
+        AutoPickPortMac=None,
+        CollectingFlag=None,
+        CollectorMaxDelay=None,
+        DistributingFlag=None,
+        Enabled=None,
+        InterMarkerPduDelay=None,
+        LacpActivity=None,
+        LacpTimeout=None,
+        LacpduPeriodicTimeInterval=None,
+        MarkerRequestMode=None,
+        MarkerResponseWaitTime=None,
+        PortMac=None,
+        SendMarkerRequestOnLagChange=None,
+        SendPeriodicMarkerRequest=None,
+        SupportRespondingToMarker=None,
+        SyncFlag=None,
+    ):
         # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str) -> Link
         """Adds a new link resource on the server and adds it to the container.
 
@@ -489,7 +563,33 @@ class Link(Base):
         """
         self._delete()
 
-    def find(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None, UpdateRequired=None):
+    def find(
+        self,
+        ActorKey=None,
+        ActorPortNumber=None,
+        ActorPortPriority=None,
+        ActorSystemId=None,
+        ActorSystemPriority=None,
+        AdministrativeKey=None,
+        AggregationFlagState=None,
+        AutoPickPortMac=None,
+        CollectingFlag=None,
+        CollectorMaxDelay=None,
+        DistributingFlag=None,
+        Enabled=None,
+        InterMarkerPduDelay=None,
+        LacpActivity=None,
+        LacpTimeout=None,
+        LacpduPeriodicTimeInterval=None,
+        MarkerRequestMode=None,
+        MarkerResponseWaitTime=None,
+        PortMac=None,
+        SendMarkerRequestOnLagChange=None,
+        SendPeriodicMarkerRequest=None,
+        SupportRespondingToMarker=None,
+        SyncFlag=None,
+        UpdateRequired=None,
+    ):
         # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str, bool) -> Link
         """Finds and retrieves link resources from the server.
 

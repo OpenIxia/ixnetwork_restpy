@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,37 +35,54 @@ class Chassis(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'chassis'
+    _SDM_NAME = "chassis"
     _SDM_ATT_MAP = {
-        'CableLength': 'cableLength',
-        'ChainTopology': 'chainTopology',
-        'ChassisOSType': 'chassisOSType',
-        'ChassisType': 'chassisType',
-        'ChassisVersion': 'chassisVersion',
-        'ConnectRetries': 'connectRetries',
-        'ErrorDescription': 'errorDescription',
-        'ErrorState': 'errorState',
-        'Hostname': 'hostname',
-        'Ip': 'ip',
-        'IsLicensesRetrieved': 'isLicensesRetrieved',
-        'IsMaster': 'isMaster',
-        'IsPrimary': 'isPrimary',
-        'IxnBuildNumber': 'ixnBuildNumber',
-        'IxosBuildNumber': 'ixosBuildNumber',
-        'LicenseErrors': 'licenseErrors',
-        'MasterChassis': 'masterChassis',
-        'PrimaryChassis': 'primaryChassis',
-        'ProtocolBuildNumber': 'protocolBuildNumber',
-        'SequenceId': 'sequenceId',
-        'State': 'state',
-        'StateV2': 'stateV2',
+        "CableLength": "cableLength",
+        "ChainTopology": "chainTopology",
+        "ChassisOSType": "chassisOSType",
+        "ChassisType": "chassisType",
+        "ChassisVersion": "chassisVersion",
+        "ConnectRetries": "connectRetries",
+        "ErrorDescription": "errorDescription",
+        "ErrorState": "errorState",
+        "Hostname": "hostname",
+        "Ip": "ip",
+        "IsLicensesRetrieved": "isLicensesRetrieved",
+        "IsMaster": "isMaster",
+        "IsPrimary": "isPrimary",
+        "IxnBuildNumber": "ixnBuildNumber",
+        "IxosBuildNumber": "ixosBuildNumber",
+        "LicenseErrors": "licenseErrors",
+        "MasterChassis": "masterChassis",
+        "PrimaryChassis": "primaryChassis",
+        "ProtocolBuildNumber": "protocolBuildNumber",
+        "SequenceId": "sequenceId",
+        "State": "state",
+        "StateV2": "stateV2",
     }
     _SDM_ENUM_MAP = {
-        'chainTopology': ['daisy', 'none', 'star'],
-        'chassisOSType': ['linux', 'unknown', 'windows'],
-        'errorState': ['ConnectError', 'DuplicateChassis', 'IncompatibleIxOS', 'MultipleNics', 'NoCardsFound', 'NoError', 'NoLicenseFound', 'NonAppliance', 'NonLinuxChassis'],
-        'state': ['down', 'down', 'polling', 'polling', 'polling', 'ready'],
-        'stateV2': ['connectError', 'down', 'notConnected', 'polling', 'pollingWait', 'ready'],
+        "chainTopology": ["daisy", "none", "star"],
+        "chassisOSType": ["linux", "unknown", "windows"],
+        "errorState": [
+            "ConnectError",
+            "DuplicateChassis",
+            "IncompatibleIxOS",
+            "MultipleNics",
+            "NoCardsFound",
+            "NoError",
+            "NoLicenseFound",
+            "NonAppliance",
+            "NonLinuxChassis",
+        ],
+        "state": ["down", "down", "polling", "polling", "polling", "ready"],
+        "stateV2": [
+            "connectError",
+            "down",
+            "notConnected",
+            "polling",
+            "pollingWait",
+            "ready",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -81,10 +99,13 @@ class Chassis(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.card import Card
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.card import (
+            Card,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Card', None) is not None:
-                return self._properties.get('Card')
+            if self._properties.get("Card", None) is not None:
+                return self._properties.get("Card")
         return Card(self)
 
     @property
@@ -95,11 +116,12 @@ class Chassis(Base):
         -------
         - number: Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CableLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["CableLength"])
+
     @CableLength.setter
     def CableLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CableLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CableLength"], value)
 
     @property
     def ChainTopology(self):
@@ -109,11 +131,12 @@ class Chassis(Base):
         -------
         - str(daisy | none | star): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChainTopology'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChainTopology"])
+
     @ChainTopology.setter
     def ChainTopology(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChainTopology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChainTopology"], value)
 
     @property
     def ChassisOSType(self):
@@ -121,9 +144,9 @@ class Chassis(Base):
         """
         Returns
         -------
-        - str(linux | unknown | windows): 
+        - str(linux | unknown | windows):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisOSType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisOSType"])
 
     @property
     def ChassisType(self):
@@ -133,7 +156,7 @@ class Chassis(Base):
         -------
         - str: The type of chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisType"])
 
     @property
     def ChassisVersion(self):
@@ -143,7 +166,7 @@ class Chassis(Base):
         -------
         - str: The version of the Chassis in use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisVersion"])
 
     @property
     def ConnectRetries(self):
@@ -153,7 +176,7 @@ class Chassis(Base):
         -------
         - number: The number of time the client attempted to re-connect with the chassis. (read only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectRetries"])
 
     @property
     def ErrorDescription(self):
@@ -161,9 +184,9 @@ class Chassis(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorDescription"])
 
     @property
     def ErrorState(self):
@@ -171,9 +194,9 @@ class Chassis(Base):
         """
         Returns
         -------
-        - str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis): 
+        - str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorState"])
 
     @property
     def Hostname(self):
@@ -183,11 +206,12 @@ class Chassis(Base):
         -------
         - str: The IP address associated with the chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hostname'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hostname"])
+
     @Hostname.setter
     def Hostname(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Hostname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Hostname"], value)
 
     @property
     def Ip(self):
@@ -197,7 +221,7 @@ class Chassis(Base):
         -------
         - str: The IP address associated with the chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ip"])
 
     @property
     def IsLicensesRetrieved(self):
@@ -207,17 +231,17 @@ class Chassis(Base):
         -------
         - bool: Retrieves the licenses in the chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLicensesRetrieved'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLicensesRetrieved"])
 
     @property
     def IsMaster(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Specifies whether this chassis is a primary of a secondary in a chain. There can be only one primary chassis in a chain. NOTE: The primary is automatically assigned based on cable connections.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMaster'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMaster"])
 
     @property
     def IsPrimary(self):
@@ -227,7 +251,7 @@ class Chassis(Base):
         -------
         - bool: Specifies whether this chassis is a primary of a secondary in a chain. There can be only one primary chassis in a chain. NOTE: The primary is automatically assigned based on cable connections.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsPrimary'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsPrimary"])
 
     @property
     def IxnBuildNumber(self):
@@ -237,7 +261,7 @@ class Chassis(Base):
         -------
         - str: IxNetwork build number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxnBuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxnBuildNumber"])
 
     @property
     def IxosBuildNumber(self):
@@ -247,7 +271,7 @@ class Chassis(Base):
         -------
         - str: The IxOS version of the Chassis in use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IxosBuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["IxosBuildNumber"])
 
     @property
     def LicenseErrors(self):
@@ -257,21 +281,22 @@ class Chassis(Base):
         -------
         - list(str): Shows the licening errors that occurred due to licensing problems.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LicenseErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["LicenseErrors"])
 
     @property
     def MasterChassis(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterChassis'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterChassis"])
+
     @MasterChassis.setter
     def MasterChassis(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterChassis'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterChassis"], value)
 
     @property
     def PrimaryChassis(self):
@@ -281,11 +306,12 @@ class Chassis(Base):
         -------
         - str: Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryChassis'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryChassis"])
+
     @PrimaryChassis.setter
     def PrimaryChassis(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryChassis'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryChassis"], value)
 
     @property
     def ProtocolBuildNumber(self):
@@ -295,7 +321,7 @@ class Chassis(Base):
         -------
         - str: The Protocols version of the Chassis in use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolBuildNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolBuildNumber"])
 
     @property
     def SequenceId(self):
@@ -305,21 +331,22 @@ class Chassis(Base):
         -------
         - number: Indicates the order at which the chassis in a chassis chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceId"])
+
     @SequenceId.setter
     def SequenceId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SequenceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SequenceId"], value)
 
     @property
     def State(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(down | down | polling | polling | polling | ready): The following states can be read from the port: polling, ready, and down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def StateV2(self):
@@ -327,11 +354,19 @@ class Chassis(Base):
         """
         Returns
         -------
-        - str(connectError | down | notConnected | polling | pollingWait | ready): 
+        - str(connectError | down | notConnected | polling | pollingWait | ready):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateV2'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateV2"])
 
-    def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, PrimaryChassis=None, SequenceId=None):
+    def update(
+        self,
+        CableLength=None,
+        ChainTopology=None,
+        Hostname=None,
+        MasterChassis=None,
+        PrimaryChassis=None,
+        SequenceId=None,
+    ):
         # type: (int, str, str, str, str, int) -> Chassis
         """Updates chassis resource on the server.
 
@@ -350,7 +385,15 @@ class Chassis(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, PrimaryChassis=None, SequenceId=None):
+    def add(
+        self,
+        CableLength=None,
+        ChainTopology=None,
+        Hostname=None,
+        MasterChassis=None,
+        PrimaryChassis=None,
+        SequenceId=None,
+    ):
         # type: (int, str, str, str, str, int) -> Chassis
         """Adds a new chassis resource on the server and adds it to the container.
 
@@ -383,7 +426,31 @@ class Chassis(Base):
         """
         self._delete()
 
-    def find(self, CableLength=None, ChainTopology=None, ChassisOSType=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IsPrimary=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, PrimaryChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None, StateV2=None):
+    def find(
+        self,
+        CableLength=None,
+        ChainTopology=None,
+        ChassisOSType=None,
+        ChassisType=None,
+        ChassisVersion=None,
+        ConnectRetries=None,
+        ErrorDescription=None,
+        ErrorState=None,
+        Hostname=None,
+        Ip=None,
+        IsLicensesRetrieved=None,
+        IsMaster=None,
+        IsPrimary=None,
+        IxnBuildNumber=None,
+        IxosBuildNumber=None,
+        LicenseErrors=None,
+        MasterChassis=None,
+        PrimaryChassis=None,
+        ProtocolBuildNumber=None,
+        SequenceId=None,
+        State=None,
+        StateV2=None,
+    ):
         # type: (int, str, str, str, str, int, str, str, str, str, bool, bool, bool, str, str, List[str], str, str, str, int, str, str) -> Chassis
         """Finds and retrieves chassis resources from the server.
 
@@ -395,12 +462,12 @@ class Chassis(Base):
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
-        - ChassisOSType (str(linux | unknown | windows)): 
+        - ChassisOSType (str(linux | unknown | windows)):
         - ChassisType (str): The type of chassis.
         - ChassisVersion (str): The version of the Chassis in use.
         - ConnectRetries (number): The number of time the client attempted to re-connect with the chassis. (read only)
-        - ErrorDescription (str): 
-        - ErrorState (str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis)): 
+        - ErrorDescription (str):
+        - ErrorState (str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis)):
         - Hostname (str): The IP address associated with the chassis.
         - Ip (str): The IP address associated with the chassis.
         - IsLicensesRetrieved (bool): Retrieves the licenses in the chassis.
@@ -414,7 +481,7 @@ class Chassis(Base):
         - ProtocolBuildNumber (str): The Protocols version of the Chassis in use.
         - SequenceId (number): Indicates the order at which the chassis in a chassis chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - State (str(down | down | polling | polling | polling | ready)): The following states can be read from the port: polling, ready, and down.
-        - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)): 
+        - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)):
 
         Returns
         -------
@@ -459,10 +526,12 @@ class Chassis(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTapSettings", payload=payload, response_object=None)
 
     def RefreshInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -479,10 +548,12 @@ class Chassis(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("refreshInfo", payload=payload, response_object=None)
 
     def SetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -499,7 +570,9 @@ class Chassis(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setTapSettings', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setTapSettings", payload=payload, response_object=None)

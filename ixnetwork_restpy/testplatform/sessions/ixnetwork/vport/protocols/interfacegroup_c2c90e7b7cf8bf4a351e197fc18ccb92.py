@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,26 @@ class InterfaceGroup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interfaceGroup'
+    _SDM_NAME = "interfaceGroup"
     _SDM_ATT_MAP = {
-        'AtmEncapsulation': 'atmEncapsulation',
-        'Description': 'description',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'Ip': 'ip',
-        'TrafficGroupId': 'trafficGroupId',
+        "AtmEncapsulation": "atmEncapsulation",
+        "Description": "description",
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "Ip": "ip",
+        "TrafficGroupId": "trafficGroupId",
     }
     _SDM_ENUM_MAP = {
-        'atmEncapsulation': ['vcMuxIpv4Routed', 'vcMuxIpv6Routed', 'vcMuxBridgedEth802p3WithFcs', 'vcMuxBridgedEth802p3WithOutFcs', 'llcRoutedAal5Snap', 'llcBridgedEthernetWithFcs', 'llcBridgedEthernetWithoutFcs'],
-        'ip': ['ipv4', 'ipv6'],
+        "atmEncapsulation": [
+            "vcMuxIpv4Routed",
+            "vcMuxIpv6Routed",
+            "vcMuxBridgedEth802p3WithFcs",
+            "vcMuxBridgedEth802p3WithOutFcs",
+            "llcRoutedAal5Snap",
+            "llcBridgedEthernetWithFcs",
+            "llcBridgedEthernetWithoutFcs",
+        ],
+        "ip": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +71,13 @@ class InterfaceGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_37df5f42aa73fde04b7d1b8fd94eb580 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_37df5f42aa73fde04b7d1b8fd94eb580 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -76,11 +88,12 @@ class InterfaceGroup(Base):
         -------
         - str(vcMuxIpv4Routed | vcMuxIpv6Routed | vcMuxBridgedEth802p3WithFcs | vcMuxBridgedEth802p3WithOutFcs | llcRoutedAal5Snap | llcBridgedEthernetWithFcs | llcBridgedEthernetWithoutFcs): The type of ATM encapsulation used for the Protocol Interfaces in this Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AtmEncapsulation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AtmEncapsulation"])
+
     @AtmEncapsulation.setter
     def AtmEncapsulation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AtmEncapsulation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AtmEncapsulation"], value)
 
     @property
     def Description(self):
@@ -90,11 +103,12 @@ class InterfaceGroup(Base):
         -------
         - str: A brief description of the Interface Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def EnableVlan(self):
@@ -104,11 +118,12 @@ class InterfaceGroup(Base):
         -------
         - bool: Enables the use of VLANs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -118,11 +133,12 @@ class InterfaceGroup(Base):
         -------
         - bool: Enables this Interface Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Ip(self):
@@ -132,11 +148,12 @@ class InterfaceGroup(Base):
         -------
         - str(ipv4 | ipv6): The IP version being used for the Protocol Interfaces in this Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ip"])
+
     @Ip.setter
     def Ip(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ip"], value)
 
     @property
     def TrafficGroupId(self):
@@ -146,13 +163,22 @@ class InterfaceGroup(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+    def update(
+        self,
+        AtmEncapsulation=None,
+        Description=None,
+        EnableVlan=None,
+        Enabled=None,
+        Ip=None,
+        TrafficGroupId=None,
+    ):
         # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Updates interfaceGroup resource on the server.
 
@@ -171,7 +197,15 @@ class InterfaceGroup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+    def add(
+        self,
+        AtmEncapsulation=None,
+        Description=None,
+        EnableVlan=None,
+        Enabled=None,
+        Ip=None,
+        TrafficGroupId=None,
+    ):
         # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Adds a new interfaceGroup resource on the server and adds it to the container.
 
@@ -204,7 +238,15 @@ class InterfaceGroup(Base):
         """
         self._delete()
 
-    def find(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+    def find(
+        self,
+        AtmEncapsulation=None,
+        Description=None,
+        EnableVlan=None,
+        Enabled=None,
+        Ip=None,
+        TrafficGroupId=None,
+    ):
         # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Finds and retrieves interfaceGroup resources from the server.
 

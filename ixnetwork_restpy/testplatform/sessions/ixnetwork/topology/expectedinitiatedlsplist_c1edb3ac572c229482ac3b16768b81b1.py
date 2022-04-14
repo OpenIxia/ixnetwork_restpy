@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class ExpectedInitiatedLspList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'expectedInitiatedLspList'
+    _SDM_NAME = "expectedInitiatedLspList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'MaxExpectedSegmentCount': 'maxExpectedSegmentCount',
-        'Name': 'name',
-        'SourceIpv4Address': 'sourceIpv4Address',
-        'SourceIpv6Address': 'sourceIpv6Address',
-        'SymbolicPathName': 'symbolicPathName',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "InsertIpv6ExplicitNull": "insertIpv6ExplicitNull",
+        "MaxExpectedSegmentCount": "maxExpectedSegmentCount",
+        "Name": "name",
+        "SourceIpv4Address": "sourceIpv4Address",
+        "SourceIpv6Address": "sourceIpv6Address",
+        "SymbolicPathName": "symbolicPathName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ExpectedInitiatedLspList, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class ExpectedInitiatedLspList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -76,7 +79,8 @@ class ExpectedInitiatedLspList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -86,7 +90,7 @@ class ExpectedInitiatedLspList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -96,7 +100,7 @@ class ExpectedInitiatedLspList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def InsertIpv6ExplicitNull(self):
@@ -106,11 +110,12 @@ class ExpectedInitiatedLspList(Base):
         -------
         - bool: Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'])
+        return self._get_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"])
+
     @InsertIpv6ExplicitNull.setter
     def InsertIpv6ExplicitNull(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InsertIpv6ExplicitNull"], value)
 
     @property
     def MaxExpectedSegmentCount(self):
@@ -120,11 +125,12 @@ class ExpectedInitiatedLspList(Base):
         -------
         - number: This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxExpectedSegmentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxExpectedSegmentCount"])
+
     @MaxExpectedSegmentCount.setter
     def MaxExpectedSegmentCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxExpectedSegmentCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxExpectedSegmentCount"], value)
 
     @property
     def Name(self):
@@ -134,11 +140,12 @@ class ExpectedInitiatedLspList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SourceIpv4Address(self):
@@ -149,7 +156,10 @@ class ExpectedInitiatedLspList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv4 address in the IP header of the generated traffic.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceIpv4Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceIpv4Address"])
+        )
 
     @property
     def SourceIpv6Address(self):
@@ -160,7 +170,10 @@ class ExpectedInitiatedLspList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is used to set the Source IPv6 address in the IP header of the generated traffic.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceIpv6Address']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SourceIpv6Address"])
+        )
 
     @property
     def SymbolicPathName(self):
@@ -171,9 +184,14 @@ class ExpectedInitiatedLspList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is used for generating the traffic for those LSPs from PCE for which the Symbolic Path Name is configured and matches the value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
 
-    def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SymbolicPathName"])
+        )
+
+    def update(
+        self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None
+    ):
         # type: (bool, int, str) -> ExpectedInitiatedLspList
         """Updates expectedInitiatedLspList resource on the server.
 
@@ -192,7 +210,14 @@ class ExpectedInitiatedLspList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        InsertIpv6ExplicitNull=None,
+        MaxExpectedSegmentCount=None,
+        Name=None,
+    ):
         # type: (int, str, bool, int, str) -> ExpectedInitiatedLspList
         """Finds and retrieves expectedInitiatedLspList resources from the server.
 
@@ -236,7 +261,14 @@ class ExpectedInitiatedLspList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        SourceIpv4Address=None,
+        SourceIpv6Address=None,
+        SymbolicPathName=None,
+    ):
         """Base class infrastructure that gets a list of expectedInitiatedLspList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

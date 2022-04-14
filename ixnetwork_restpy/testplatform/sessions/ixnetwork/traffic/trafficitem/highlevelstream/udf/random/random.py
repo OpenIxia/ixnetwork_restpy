@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,14 @@ class Random(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'random'
+    _SDM_NAME = "random"
     _SDM_ATT_MAP = {
-        'AvailableWidths': 'availableWidths',
-        'Mask': 'mask',
-        'Width': 'width',
+        "AvailableWidths": "availableWidths",
+        "Mask": "mask",
+        "Width": "width",
     }
     _SDM_ENUM_MAP = {
-        'width': ['16', '24', '32', '8'],
+        "width": ["16", "24", "32", "8"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,7 +55,7 @@ class Random(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableWidths"])
 
     @property
     def Mask(self):
@@ -64,11 +65,12 @@ class Random(Base):
         -------
         - str: Sets the UDF mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def Width(self):
@@ -78,11 +80,12 @@ class Random(Base):
         -------
         - str(16 | 24 | 32 | 8): Specifies the width of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Width'])
+        return self._get_attribute(self._SDM_ATT_MAP["Width"])
+
     @Width.setter
     def Width(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Width"], value)
 
     def update(self, Mask=None, Width=None):
         # type: (str, str) -> Random
@@ -101,7 +104,7 @@ class Random(Base):
 
     def add(self, Mask=None, Width=None):
         # type: (str, str) -> Random
-        """Adds a new random resource on the json, only valid with config assistant
+        """Adds a new random resource on the json, only valid with batch add utility
 
         Args
         ----

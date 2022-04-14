@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,30 +33,29 @@ class IsisPseudoSRv6LocatorEntryList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisPseudoSRv6LocatorEntryList'
+    _SDM_NAME = "isisPseudoSRv6LocatorEntryList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseLocatorAsPrefix': 'advertiseLocatorAsPrefix',
-        'Algorithm': 'algorithm',
-        'Count': 'count',
-        'DBit': 'dBit',
-        'DescriptiveName': 'descriptiveName',
-        'Locator': 'locator',
-        'LocatorName': 'locatorName',
-        'LocatorSize': 'locatorSize',
-        'Metric': 'metric',
-        'MtApplicabilityForIPv6Locator': 'mtApplicabilityForIPv6Locator',
-        'MtId': 'mtId',
-        'Name': 'name',
-        'PrefixLength': 'prefixLength',
-        'Redistribution': 'redistribution',
-        'ReservedFlags': 'reservedFlags',
-        'RouteMetric': 'routeMetric',
-        'RouteOrigin': 'routeOrigin',
-        'SidCount': 'sidCount',
+        "Active": "active",
+        "AdvertiseLocatorAsPrefix": "advertiseLocatorAsPrefix",
+        "Algorithm": "algorithm",
+        "Count": "count",
+        "DBit": "dBit",
+        "DescriptiveName": "descriptiveName",
+        "Locator": "locator",
+        "LocatorName": "locatorName",
+        "LocatorSize": "locatorSize",
+        "Metric": "metric",
+        "MtApplicabilityForIPv6Locator": "mtApplicabilityForIPv6Locator",
+        "MtId": "mtId",
+        "Name": "name",
+        "PrefixLength": "prefixLength",
+        "Redistribution": "redistribution",
+        "ReservedFlags": "reservedFlags",
+        "RouteMetric": "routeMetric",
+        "RouteOrigin": "routeOrigin",
+        "SidCount": "sidCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisPseudoSRv6LocatorEntryList, self).__init__(parent, list_op)
@@ -71,10 +71,13 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_7f1f5407e7e0f543c58ead0450ef8be9 import IsisPseudoSRv6EndSIDList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_7f1f5407e7e0f543c58ead0450ef8be9 import (
+            IsisPseudoSRv6EndSIDList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisPseudoSRv6EndSIDList', None) is not None:
-                return self._properties.get('IsisPseudoSRv6EndSIDList')
+            if self._properties.get("IsisPseudoSRv6EndSIDList", None) is not None:
+                return self._properties.get("IsisPseudoSRv6EndSIDList")
         return IsisPseudoSRv6EndSIDList(self)._select()
 
     @property
@@ -86,7 +89,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseLocatorAsPrefix(self):
@@ -97,7 +101,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Locator as Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseLocatorAsPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseLocatorAsPrefix"])
+        )
 
     @property
     def Algorithm(self):
@@ -108,7 +115,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def Count(self):
@@ -118,7 +126,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DBit(self):
@@ -129,7 +137,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): D Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DBit"]))
 
     @property
     def DescriptiveName(self):
@@ -139,7 +148,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Locator(self):
@@ -150,7 +159,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Locator']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Locator"]))
 
     @property
     def LocatorName(self):
@@ -161,7 +171,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorName"]))
 
     @property
     def LocatorSize(self):
@@ -172,7 +183,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorSize"]))
 
     @property
     def Metric(self):
@@ -183,7 +195,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def MtApplicabilityForIPv6Locator(self):
@@ -194,7 +207,11 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multi-Topology Applicability for IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MtApplicabilityForIPv6Locator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MtApplicabilityForIPv6Locator"]),
+        )
 
     @property
     def MtId(self):
@@ -205,7 +222,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MTID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MtId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MtId"]))
 
     @property
     def Name(self):
@@ -215,11 +233,12 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PrefixLength(self):
@@ -230,7 +249,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def Redistribution(self):
@@ -241,7 +261,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Redistribution']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Redistribution"])
+        )
 
     @property
     def ReservedFlags(self):
@@ -252,7 +275,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved (Flags)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedFlags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReservedFlags"]))
 
     @property
     def RouteMetric(self):
@@ -263,7 +287,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteMetric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteMetric"]))
 
     @property
     def RouteOrigin(self):
@@ -274,7 +299,8 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Route Origin
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteOrigin']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouteOrigin"]))
 
     @property
     def SidCount(self):
@@ -284,11 +310,12 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         -------
         - number: SID Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SidCount"])
+
     @SidCount.setter
     def SidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SidCount"], value)
 
     def update(self, Name=None, SidCount=None):
         # type: (str, int) -> IsisPseudoSRv6LocatorEntryList
@@ -366,10 +393,12 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -386,10 +415,12 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -406,12 +437,32 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, MtApplicabilityForIPv6Locator=None, MtId=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseLocatorAsPrefix=None,
+        Algorithm=None,
+        DBit=None,
+        Locator=None,
+        LocatorName=None,
+        LocatorSize=None,
+        Metric=None,
+        MtApplicabilityForIPv6Locator=None,
+        MtId=None,
+        PrefixLength=None,
+        Redistribution=None,
+        ReservedFlags=None,
+        RouteMetric=None,
+        RouteOrigin=None,
+    ):
         """Base class infrastructure that gets a list of isisPseudoSRv6LocatorEntryList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

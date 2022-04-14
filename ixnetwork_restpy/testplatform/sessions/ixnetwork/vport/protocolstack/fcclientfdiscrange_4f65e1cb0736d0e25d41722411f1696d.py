@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,34 +33,33 @@ class FcClientFdiscRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'fcClientFdiscRange'
+    _SDM_NAME = "fcClientFdiscRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'NameServerCommands': 'nameServerCommands',
-        'NameServerQuery': 'nameServerQuery',
-        'NameServerQueryCommand': 'nameServerQueryCommand',
-        'NameServerQueryParameterType': 'nameServerQueryParameterType',
-        'NameServerQueryParameterValue': 'nameServerQueryParameterValue',
-        'NameServerRegistration': 'nameServerRegistration',
-        'NodeWwnIncrement': 'nodeWwnIncrement',
-        'NodeWwnStart': 'nodeWwnStart',
-        'ObjectId': 'objectId',
-        'OverrideNodeWwn': 'overrideNodeWwn',
-        'PlogiDestId': 'plogiDestId',
-        'PlogiEnabled': 'plogiEnabled',
-        'PlogiMeshMode': 'plogiMeshMode',
-        'PlogiTargetName': 'plogiTargetName',
-        'PortWwnIncrement': 'portWwnIncrement',
-        'PortWwnStart': 'portWwnStart',
-        'PrliEnabled': 'prliEnabled',
-        'SourceOuiIncrement': 'sourceOuiIncrement',
-        'StateChangeRegistration': 'stateChangeRegistration',
-        'StateChangeRegistrationOption': 'stateChangeRegistrationOption',
+        "Count": "count",
+        "Enabled": "enabled",
+        "Name": "name",
+        "NameServerCommands": "nameServerCommands",
+        "NameServerQuery": "nameServerQuery",
+        "NameServerQueryCommand": "nameServerQueryCommand",
+        "NameServerQueryParameterType": "nameServerQueryParameterType",
+        "NameServerQueryParameterValue": "nameServerQueryParameterValue",
+        "NameServerRegistration": "nameServerRegistration",
+        "NodeWwnIncrement": "nodeWwnIncrement",
+        "NodeWwnStart": "nodeWwnStart",
+        "ObjectId": "objectId",
+        "OverrideNodeWwn": "overrideNodeWwn",
+        "PlogiDestId": "plogiDestId",
+        "PlogiEnabled": "plogiEnabled",
+        "PlogiMeshMode": "plogiMeshMode",
+        "PlogiTargetName": "plogiTargetName",
+        "PortWwnIncrement": "portWwnIncrement",
+        "PortWwnStart": "portWwnStart",
+        "PrliEnabled": "prliEnabled",
+        "SourceOuiIncrement": "sourceOuiIncrement",
+        "StateChangeRegistration": "stateChangeRegistration",
+        "StateChangeRegistrationOption": "stateChangeRegistrationOption",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FcClientFdiscRange, self).__init__(parent, list_op)
@@ -72,11 +72,12 @@ class FcClientFdiscRange(Base):
         -------
         - number: The number of FDISC N_Ports per FLOGI N_Port to be created by this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -86,11 +87,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -100,11 +102,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NameServerCommands(self):
@@ -114,11 +117,12 @@ class FcClientFdiscRange(Base):
         -------
         - list(number): Signifies the Name Server Commands that will be sent by the client.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerCommands'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerCommands"])
+
     @NameServerCommands.setter
     def NameServerCommands(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerCommands'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerCommands"], value)
 
     @property
     def NameServerQuery(self):
@@ -128,11 +132,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: If set, the N_Port will attempt to query a Name Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQuery'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQuery"])
+
     @NameServerQuery.setter
     def NameServerQuery(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQuery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQuery"], value)
 
     @property
     def NameServerQueryCommand(self):
@@ -142,11 +147,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: Name Server request command codes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryCommand'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryCommand"])
+
     @NameServerQueryCommand.setter
     def NameServerQueryCommand(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryCommand'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryCommand"], value)
 
     @property
     def NameServerQueryParameterType(self):
@@ -156,11 +162,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: State Change Registration Parameter Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryParameterType'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryParameterType"])
+
     @NameServerQueryParameterType.setter
     def NameServerQueryParameterType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryParameterType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryParameterType"], value)
 
     @property
     def NameServerQueryParameterValue(self):
@@ -170,11 +177,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: State Change Registration Parameter Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerQueryParameterValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerQueryParameterValue"])
+
     @NameServerQueryParameterValue.setter
     def NameServerQueryParameterValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerQueryParameterValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerQueryParameterValue"], value)
 
     @property
     def NameServerRegistration(self):
@@ -184,11 +192,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: If set, the N_Port will attempt to register to a Name Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NameServerRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["NameServerRegistration"])
+
     @NameServerRegistration.setter
     def NameServerRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NameServerRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NameServerRegistration"], value)
 
     @property
     def NodeWwnIncrement(self):
@@ -198,11 +207,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The Node Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"])
+
     @NodeWwnIncrement.setter
     def NodeWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnIncrement"], value)
 
     @property
     def NodeWwnStart(self):
@@ -212,11 +222,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The Node Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeWwnStart"])
+
     @NodeWwnStart.setter
     def NodeWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeWwnStart"], value)
 
     @property
     def ObjectId(self):
@@ -226,7 +237,7 @@ class FcClientFdiscRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideNodeWwn(self):
@@ -236,11 +247,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: If set, the GUI will allow overriding the Node WWN for FDISC N_Ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideNodeWwn'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideNodeWwn"])
+
     @OverrideNodeWwn.setter
     def OverrideNodeWwn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideNodeWwn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideNodeWwn"], value)
 
     @property
     def PlogiDestId(self):
@@ -250,11 +262,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiDestId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiDestId"])
+
     @PlogiDestId.setter
     def PlogiDestId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiDestId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiDestId"], value)
 
     @property
     def PlogiEnabled(self):
@@ -264,11 +277,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: Enables these N_Ports to attempt a PLOGI connection with specified destinations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiEnabled"])
+
     @PlogiEnabled.setter
     def PlogiEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiEnabled"], value)
 
     @property
     def PlogiMeshMode(self):
@@ -278,11 +292,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The association mode between PLOGI initiators and targets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiMeshMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiMeshMode"])
+
     @PlogiMeshMode.setter
     def PlogiMeshMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiMeshMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiMeshMode"], value)
 
     @property
     def PlogiTargetName(self):
@@ -292,11 +307,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: Indicates the N_Port range used as destination for PLOGI requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PlogiTargetName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PlogiTargetName"])
+
     @PlogiTargetName.setter
     def PlogiTargetName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PlogiTargetName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PlogiTargetName"], value)
 
     @property
     def PortWwnIncrement(self):
@@ -306,11 +322,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The Port Name incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnIncrement"])
+
     @PortWwnIncrement.setter
     def PortWwnIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnIncrement"], value)
 
     @property
     def PortWwnStart(self):
@@ -320,11 +337,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The Port Name starting value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortWwnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortWwnStart"])
+
     @PortWwnStart.setter
     def PortWwnStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortWwnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortWwnStart"], value)
 
     @property
     def PrliEnabled(self):
@@ -334,11 +352,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: Process login.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrliEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrliEnabled"])
+
     @PrliEnabled.setter
     def PrliEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrliEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrliEnabled"], value)
 
     @property
     def SourceOuiIncrement(self):
@@ -348,11 +367,12 @@ class FcClientFdiscRange(Base):
         -------
         - str: The OUI ID incrementing value for this N_Port range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceOuiIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceOuiIncrement"])
+
     @SourceOuiIncrement.setter
     def SourceOuiIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceOuiIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceOuiIncrement"], value)
 
     @property
     def StateChangeRegistration(self):
@@ -362,11 +382,12 @@ class FcClientFdiscRange(Base):
         -------
         - bool: If set, the N_Port will attempt to subscribe to State Change events.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateChangeRegistration'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateChangeRegistration"])
+
     @StateChangeRegistration.setter
     def StateChangeRegistration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StateChangeRegistration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StateChangeRegistration"], value)
 
     @property
     def StateChangeRegistrationOption(self):
@@ -376,13 +397,38 @@ class FcClientFdiscRange(Base):
         -------
         - str: State Change Registration option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateChangeRegistrationOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateChangeRegistrationOption"])
+
     @StateChangeRegistrationOption.setter
     def StateChangeRegistrationOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StateChangeRegistrationOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StateChangeRegistrationOption"], value)
 
-    def update(self, Count=None, Enabled=None, Name=None, NameServerCommands=None, NameServerQuery=None, NameServerQueryCommand=None, NameServerQueryParameterType=None, NameServerQueryParameterValue=None, NameServerRegistration=None, NodeWwnIncrement=None, NodeWwnStart=None, OverrideNodeWwn=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortWwnIncrement=None, PortWwnStart=None, PrliEnabled=None, SourceOuiIncrement=None, StateChangeRegistration=None, StateChangeRegistrationOption=None):
+    def update(
+        self,
+        Count=None,
+        Enabled=None,
+        Name=None,
+        NameServerCommands=None,
+        NameServerQuery=None,
+        NameServerQueryCommand=None,
+        NameServerQueryParameterType=None,
+        NameServerQueryParameterValue=None,
+        NameServerRegistration=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        OverrideNodeWwn=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        PrliEnabled=None,
+        SourceOuiIncrement=None,
+        StateChangeRegistration=None,
+        StateChangeRegistrationOption=None,
+    ):
         # type: (int, bool, str, List[int], bool, str, str, str, bool, str, str, bool, str, bool, str, str, str, str, bool, str, bool, str) -> FcClientFdiscRange
         """Updates fcClientFdiscRange resource on the server.
 
@@ -417,7 +463,32 @@ class FcClientFdiscRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, Enabled=None, Name=None, NameServerCommands=None, NameServerQuery=None, NameServerQueryCommand=None, NameServerQueryParameterType=None, NameServerQueryParameterValue=None, NameServerRegistration=None, NodeWwnIncrement=None, NodeWwnStart=None, ObjectId=None, OverrideNodeWwn=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortWwnIncrement=None, PortWwnStart=None, PrliEnabled=None, SourceOuiIncrement=None, StateChangeRegistration=None, StateChangeRegistrationOption=None):
+    def find(
+        self,
+        Count=None,
+        Enabled=None,
+        Name=None,
+        NameServerCommands=None,
+        NameServerQuery=None,
+        NameServerQueryCommand=None,
+        NameServerQueryParameterType=None,
+        NameServerQueryParameterValue=None,
+        NameServerRegistration=None,
+        NodeWwnIncrement=None,
+        NodeWwnStart=None,
+        ObjectId=None,
+        OverrideNodeWwn=None,
+        PlogiDestId=None,
+        PlogiEnabled=None,
+        PlogiMeshMode=None,
+        PlogiTargetName=None,
+        PortWwnIncrement=None,
+        PortWwnStart=None,
+        PrliEnabled=None,
+        SourceOuiIncrement=None,
+        StateChangeRegistration=None,
+        StateChangeRegistrationOption=None,
+    ):
         # type: (int, bool, str, List[int], bool, str, str, str, bool, str, str, str, bool, str, bool, str, str, str, str, bool, str, bool, str) -> FcClientFdiscRange
         """Finds and retrieves fcClientFdiscRange resources from the server.
 
@@ -496,10 +567,14 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -518,10 +593,14 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -540,10 +619,14 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def FcClientFdisc(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -567,10 +650,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientFdisc', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientFdisc", payload=payload, response_object=None)
 
     def FcClientNpivFlogo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -594,10 +679,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientNpivFlogo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientNpivFlogo", payload=payload, response_object=None)
 
     def FcClientPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -614,10 +701,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientPause", payload=payload, response_object=None)
 
     def FcClientPlogi(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -641,10 +730,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientPlogi', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientPlogi", payload=payload, response_object=None)
 
     def FcClientPlogo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -668,10 +759,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientPlogo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientPlogo", payload=payload, response_object=None)
 
     def FcClientResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -688,10 +781,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientResume", payload=payload, response_object=None)
 
     def FcClientStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -715,10 +810,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientStart", payload=payload, response_object=None)
 
     def FcClientStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -742,10 +839,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fcClientStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fcClientStop", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -769,10 +868,12 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -796,7 +897,9 @@ class FcClientFdiscRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

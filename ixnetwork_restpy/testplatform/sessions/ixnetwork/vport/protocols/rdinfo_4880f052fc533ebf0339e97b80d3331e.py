@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class RdInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rdInfo'
+    _SDM_NAME = "rdInfo"
     _SDM_ATT_MAP = {
-        'Rd': 'rd',
+        "Rd": "rd",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RdInfo, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class RdInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_92759388a5719067442f4fe9d2739229 import EthernetTagInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_92759388a5719067442f4fe9d2739229 import (
+            EthernetTagInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EthernetTagInfo', None) is not None:
-                return self._properties.get('EthernetTagInfo')
+            if self._properties.get("EthernetTagInfo", None) is not None:
+                return self._properties.get("EthernetTagInfo")
         return EthernetTagInfo(self)
 
     @property
@@ -68,10 +71,10 @@ class RdInfo(Base):
         -------
         - str: RD value in X:Y format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rd'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rd"])
 
     def add(self):
-        """Adds a new rdInfo resource on the json, only valid with config assistant
+        """Adds a new rdInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

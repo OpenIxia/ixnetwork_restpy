@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Pppoxclient(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pppoxclient'
+    _SDM_NAME = "pppoxclient"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'CreateInterfaces': 'createInterfaces',
-        'DescriptiveName': 'descriptiveName',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'Name': 'name',
-        'RaTimeout': 'raTimeout',
-        'RowNames': 'rowNames',
+        "Count": "count",
+        "CreateInterfaces": "createInterfaces",
+        "DescriptiveName": "descriptiveName",
+        "Ipv6GlobalAddressMode": "ipv6GlobalAddressMode",
+        "Name": "name",
+        "RaTimeout": "raTimeout",
+        "RowNames": "rowNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Pppoxclient, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Pppoxclient(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import (
+            SessionLifetime,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SessionLifetime', None) is not None:
-                return self._properties.get('SessionLifetime')
+            if self._properties.get("SessionLifetime", None) is not None:
+                return self._properties.get("SessionLifetime")
         return SessionLifetime(self)._select()
 
     @property
@@ -76,10 +79,13 @@ class Pppoxclient(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import (
+            StartRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StartRate', None) is not None:
-                return self._properties.get('StartRate')
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
         return StartRate(self)._select()
 
     @property
@@ -93,10 +99,13 @@ class Pppoxclient(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import (
+            StopRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StopRate', None) is not None:
-                return self._properties.get('StopRate')
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
         return StopRate(self)._select()
 
     @property
@@ -110,10 +119,13 @@ class Pppoxclient(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import (
+            TlvEditor,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvEditor', None) is not None:
-                return self._properties.get('TlvEditor')
+            if self._properties.get("TlvEditor", None) is not None:
+                return self._properties.get("TlvEditor")
         return TlvEditor(self)
 
     @property
@@ -124,7 +136,7 @@ class Pppoxclient(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CreateInterfaces(self):
@@ -135,7 +147,10 @@ class Pppoxclient(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable echo request/reply. This command applies only for PPPv4 clients.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CreateInterfaces']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CreateInterfaces"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -145,7 +160,7 @@ class Pppoxclient(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Ipv6GlobalAddressMode(self):
@@ -156,7 +171,10 @@ class Pppoxclient(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When PPP/L2TP is stacked under DHCP, this option selects the protocol used to set the IPv6 global address on the PPP/L2TP-IPv6CP interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6GlobalAddressMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6GlobalAddressMode"])
+        )
 
     @property
     def Name(self):
@@ -166,11 +184,12 @@ class Pppoxclient(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RaTimeout(self):
@@ -181,7 +200,8 @@ class Pppoxclient(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time to wait (in seconds) for Router Advertisment before NCP up.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RaTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RaTimeout"]))
 
     @property
     def RowNames(self):
@@ -191,7 +211,7 @@ class Pppoxclient(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     def update(self, Name=None):
         # type: (str) -> Pppoxclient
@@ -253,7 +273,13 @@ class Pppoxclient(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, CreateInterfaces=None, Ipv6GlobalAddressMode=None, RaTimeout=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        CreateInterfaces=None,
+        Ipv6GlobalAddressMode=None,
+        RaTimeout=None,
+    ):
         """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

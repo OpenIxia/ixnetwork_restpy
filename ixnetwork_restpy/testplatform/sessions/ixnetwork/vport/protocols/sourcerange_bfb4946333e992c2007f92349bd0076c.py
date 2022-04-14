@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,12 @@ class SourceRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'sourceRange'
+    _SDM_NAME = "sourceRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'IpFrom': 'ipFrom',
+        "Count": "count",
+        "IpFrom": "ipFrom",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SourceRange, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class SourceRange(Base):
         -------
         - number: The number of IP addresses in the source range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def IpFrom(self):
@@ -67,11 +68,12 @@ class SourceRange(Base):
         -------
         - str: The first IP address in the source range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpFrom"])
+
     @IpFrom.setter
     def IpFrom(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpFrom"], value)
 
     def update(self, Count=None, IpFrom=None):
         # type: (int, str) -> SourceRange

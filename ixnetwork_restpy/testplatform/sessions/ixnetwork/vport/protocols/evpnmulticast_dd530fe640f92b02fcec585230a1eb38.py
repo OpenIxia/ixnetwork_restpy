@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class EvpnMulticast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evpnMulticast'
+    _SDM_NAME = "evpnMulticast"
     _SDM_ATT_MAP = {
-        'Neighbor': 'neighbor',
-        'OriginatorsIp': 'originatorsIp',
+        "Neighbor": "neighbor",
+        "OriginatorsIp": "originatorsIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EvpnMulticast, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class EvpnMulticast(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_27593f5bf51f1d6b95b80c04d9eaf7f0 import NextHopInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_27593f5bf51f1d6b95b80c04d9eaf7f0 import (
+            NextHopInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NextHopInfo', None) is not None:
-                return self._properties.get('NextHopInfo')
+            if self._properties.get("NextHopInfo", None) is not None:
+                return self._properties.get("NextHopInfo")
         return NextHopInfo(self)
 
     @property
@@ -69,7 +72,7 @@ class EvpnMulticast(Base):
         -------
         - str: (Read Only) Neighbr IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def OriginatorsIp(self):
@@ -79,10 +82,10 @@ class EvpnMulticast(Base):
         -------
         - str: (Read Only) Learned Originator's IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatorsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatorsIp"])
 
     def add(self):
-        """Adds a new evpnMulticast resource on the json, only valid with config assistant
+        """Adds a new evpnMulticast resource on the json, only valid with batch add utility
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,38 +35,46 @@ class Esmc(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'esmc'
+    _SDM_NAME = "esmc"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'CustomEnhancedSsmCode': 'customEnhancedSsmCode',
-        'CustomSsmCode': 'customSsmCode',
-        'CustomSyncEclockIdentity': 'customSyncEclockIdentity',
-        'DescriptiveName': 'descriptiveName',
-        'EnableCustomSyncEclockIdentity': 'enableCustomSyncEclockIdentity',
-        'EnhancedSsmCode': 'enhancedSsmCode',
-        'Errors': 'errors',
-        'ExtendedQlTlvEnable': 'extendedQlTlvEnable',
-        'FlagMode': 'flagMode',
-        'MixedEECs': 'mixedEECs',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfCascadedEecs': 'numberOfCascadedEecs',
-        'NumberOfCascadedEeecs': 'numberOfCascadedEeecs',
-        'PartialChain': 'partialChain',
-        'QualityLevel': 'qualityLevel',
-        'SendDnuIfBetterQlReceived': 'sendDnuIfBetterQlReceived',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'SsmCode': 'ssmCode',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'Timeout': 'timeout',
-        'TransmissionRate': 'transmissionRate',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "CustomEnhancedSsmCode": "customEnhancedSsmCode",
+        "CustomSsmCode": "customSsmCode",
+        "CustomSyncEclockIdentity": "customSyncEclockIdentity",
+        "DescriptiveName": "descriptiveName",
+        "EnableCustomSyncEclockIdentity": "enableCustomSyncEclockIdentity",
+        "EnhancedSsmCode": "enhancedSsmCode",
+        "Errors": "errors",
+        "ExtendedQlTlvEnable": "extendedQlTlvEnable",
+        "FlagMode": "flagMode",
+        "MixedEECs": "mixedEECs",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberOfCascadedEecs": "numberOfCascadedEecs",
+        "NumberOfCascadedEeecs": "numberOfCascadedEeecs",
+        "PartialChain": "partialChain",
+        "QualityLevel": "qualityLevel",
+        "SendDnuIfBetterQlReceived": "sendDnuIfBetterQlReceived",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "SsmCode": "ssmCode",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "Timeout": "timeout",
+        "TransmissionRate": "transmissionRate",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,16 +83,17 @@ class Esmc(Base):
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -93,7 +103,7 @@ class Esmc(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomEnhancedSsmCode(self):
@@ -104,7 +114,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the custom enhanced SSM code entered by User.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEnhancedSsmCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEnhancedSsmCode"])
+        )
 
     @property
     def CustomSsmCode(self):
@@ -115,7 +128,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the custom SSM code entered by user.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomSsmCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CustomSsmCode"]))
 
     @property
     def CustomSyncEclockIdentity(self):
@@ -126,7 +140,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This denotes the Sync E clock identity of the originator of the extended QL TLV. By default it is the MAC address of the underlying ethernet stack.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomSyncEclockIdentity']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomSyncEclockIdentity"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -136,7 +153,7 @@ class Esmc(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableCustomSyncEclockIdentity(self):
@@ -147,7 +164,11 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables user to provide the Sync E clock identity.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableCustomSyncEclockIdentity']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableCustomSyncEclockIdentity"]),
+        )
 
     @property
     def EnhancedSsmCode(self):
@@ -158,7 +179,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the Enhanced SSM code that will be sent in Extended QL Tlv section of the PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnhancedSsmCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnhancedSsmCode"])
+        )
 
     @property
     def Errors(self):
@@ -167,7 +191,7 @@ class Esmc(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExtendedQlTlvEnable(self):
@@ -178,7 +202,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables addition of extended QL tlv in ESMC PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedQlTlvEnable']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedQlTlvEnable"])
+        )
 
     @property
     def FlagMode(self):
@@ -189,7 +216,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sets the event transmition.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlagMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlagMode"]))
 
     @property
     def MixedEECs(self):
@@ -200,7 +228,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This denotes if at least one clock is not eEEC in the chain.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MixedEECs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MixedEECs"]))
 
     @property
     def Multiplier(self):
@@ -210,11 +239,12 @@ class Esmc(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -224,11 +254,12 @@ class Esmc(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfCascadedEecs(self):
@@ -239,7 +270,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the number of cascaded EECs from the nearest SSU/PRC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfCascadedEecs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfCascadedEecs"])
+        )
 
     @property
     def NumberOfCascadedEeecs(self):
@@ -250,7 +284,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the number of cascaded eEECs from the nearest SSU/PRC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfCascadedEeecs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfCascadedEeecs"])
+        )
 
     @property
     def PartialChain(self):
@@ -261,7 +298,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This denotes whether the TLV is generated in the middle of the Chain.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialChain']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PartialChain"]))
 
     @property
     def QualityLevel(self):
@@ -272,7 +310,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SSM clock quality level(QL) code.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QualityLevel']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QualityLevel"]))
 
     @property
     def SendDnuIfBetterQlReceived(self):
@@ -283,7 +322,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Changes transmitted QL to DNU when better QL received.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendDnuIfBetterQlReceived']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendDnuIfBetterQlReceived"])
+        )
 
     @property
     def SessionInfo(self):
@@ -293,7 +335,7 @@ class Esmc(Base):
         -------
         - list(str[discoveryTimeout | duplicateAddress | interfaceRemoved | none]): Logs additional information about the session state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -303,7 +345,7 @@ class Esmc(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SsmCode(self):
@@ -314,7 +356,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the SSM code that will be sent in QL Tlv section of the PDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SsmCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SsmCode"]))
 
     @property
     def StackedLayers(self):
@@ -324,11 +367,12 @@ class Esmc(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -337,7 +381,7 @@ class Esmc(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -347,7 +391,7 @@ class Esmc(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def Timeout(self):
@@ -358,7 +402,8 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transmits old QL if better QL is not received within Timeout seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Timeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Timeout"]))
 
     @property
     def TransmissionRate(self):
@@ -369,7 +414,10 @@ class Esmc(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sets transmission rate in seconds. Default rate is 1 seconds.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransmissionRate"])
+        )
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Esmc
@@ -422,7 +470,20 @@ class Esmc(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves esmc resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve esmc resources from the server.
@@ -498,10 +559,12 @@ class Esmc(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -530,10 +593,12 @@ class Esmc(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -562,10 +627,12 @@ class Esmc(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -594,12 +661,33 @@ class Esmc(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, CustomEnhancedSsmCode=None, CustomSsmCode=None, CustomSyncEclockIdentity=None, EnableCustomSyncEclockIdentity=None, EnhancedSsmCode=None, ExtendedQlTlvEnable=None, FlagMode=None, MixedEECs=None, NumberOfCascadedEecs=None, NumberOfCascadedEeecs=None, PartialChain=None, QualityLevel=None, SendDnuIfBetterQlReceived=None, SsmCode=None, Timeout=None, TransmissionRate=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        CustomEnhancedSsmCode=None,
+        CustomSsmCode=None,
+        CustomSyncEclockIdentity=None,
+        EnableCustomSyncEclockIdentity=None,
+        EnhancedSsmCode=None,
+        ExtendedQlTlvEnable=None,
+        FlagMode=None,
+        MixedEECs=None,
+        NumberOfCascadedEecs=None,
+        NumberOfCascadedEeecs=None,
+        PartialChain=None,
+        QualityLevel=None,
+        SendDnuIfBetterQlReceived=None,
+        SsmCode=None,
+        Timeout=None,
+        TransmissionRate=None,
+    ):
         """Base class infrastructure that gets a list of esmc device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

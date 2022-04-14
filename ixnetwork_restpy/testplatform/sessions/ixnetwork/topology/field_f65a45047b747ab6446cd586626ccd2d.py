@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,48 @@ class Field(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'field'
+    _SDM_NAME = "field"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Description': 'description',
-        'DisplayName': 'displayName',
-        'Encoding': 'encoding',
-        'Enum': 'enum',
-        'IsEditable': 'isEditable',
-        'IsEnabled': 'isEnabled',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
-        'SingleValue': 'singleValue',
-        'Size': 'size',
-        'SizeType': 'sizeType',
-        'Value': 'value',
+        "Count": "count",
+        "Description": "description",
+        "DisplayName": "displayName",
+        "Encoding": "encoding",
+        "Enum": "enum",
+        "IsEditable": "isEditable",
+        "IsEnabled": "isEnabled",
+        "IsRequired": "isRequired",
+        "Name": "name",
+        "SingleValue": "singleValue",
+        "Size": "size",
+        "SizeType": "sizeType",
+        "Value": "value",
     }
     _SDM_ENUM_MAP = {
-        'encoding': ['iPv4', 'iPv6', 'mAC', 'mACVLAN', 'decimal', 'hex', 'aTM', 'mACSiteId', 'mACVLANSiteId', 'debug', 'fCID', 'unknown', 'hex8WithSpaces', 'bool', 'string', 'float', 'floatEng', 'hex8WithColons', 'mACMAC', 'decimalFixed2', 'varLenHex', 'decimalSigned8'],
-        'sizeType': ['byte', 'bit'],
+        "encoding": [
+            "iPv4",
+            "iPv6",
+            "mAC",
+            "mACVLAN",
+            "decimal",
+            "hex",
+            "aTM",
+            "mACSiteId",
+            "mACVLANSiteId",
+            "debug",
+            "fCID",
+            "unknown",
+            "hex8WithSpaces",
+            "bool",
+            "string",
+            "float",
+            "floatEng",
+            "hex8WithColons",
+            "mACMAC",
+            "decimalFixed2",
+            "varLenHex",
+            "decimalSigned8",
+        ],
+        "sizeType": ["byte", "bit"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,7 +90,7 @@ class Field(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Description(self):
@@ -76,11 +100,12 @@ class Field(Base):
         -------
         - str: Description of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DisplayName(self):
@@ -90,7 +115,7 @@ class Field(Base):
         -------
         - str: Display name used by GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def Encoding(self):
@@ -100,11 +125,12 @@ class Field(Base):
         -------
         - str(iPv4 | iPv6 | mAC | mACVLAN | decimal | hex | aTM | mACSiteId | mACVLANSiteId | debug | fCID | unknown | hex8WithSpaces | bool | string | float | floatEng | hex8WithColons | mACMAC | decimalFixed2 | varLenHex | decimalSigned8): The encoding of the field in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Encoding'])
+        return self._get_attribute(self._SDM_ATT_MAP["Encoding"])
+
     @Encoding.setter
     def Encoding(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Encoding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Encoding"], value)
 
     @property
     def Enum(self):
@@ -114,11 +140,12 @@ class Field(Base):
         -------
         - str: Internal enumeration type used to restrict possible field values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enum'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enum"])
+
     @Enum.setter
     def Enum(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enum'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enum"], value)
 
     @property
     def IsEditable(self):
@@ -128,11 +155,12 @@ class Field(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEditable"])
+
     @IsEditable.setter
     def IsEditable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEditable"], value)
 
     @property
     def IsEnabled(self):
@@ -142,11 +170,12 @@ class Field(Base):
         -------
         - bool: Enables disables the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsEnabled"])
+
     @IsEnabled.setter
     def IsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsEnabled"], value)
 
     @property
     def IsRequired(self):
@@ -156,11 +185,12 @@ class Field(Base):
         -------
         - bool: Information on the requirement of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRequired"])
+
     @IsRequired.setter
     def IsRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsRequired"], value)
 
     @property
     def Name(self):
@@ -170,11 +200,12 @@ class Field(Base):
         -------
         - str: Name of packet field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SingleValue(self):
@@ -184,11 +215,12 @@ class Field(Base):
         -------
         - bool: If true the field can only be configured with a single value pattern.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SingleValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SingleValue"])
+
     @SingleValue.setter
     def SingleValue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SingleValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SingleValue"], value)
 
     @property
     def Size(self):
@@ -198,11 +230,12 @@ class Field(Base):
         -------
         - number: The size of the field in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Size'])
+        return self._get_attribute(self._SDM_ATT_MAP["Size"])
+
     @Size.setter
     def Size(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Size'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Size"], value)
 
     @property
     def SizeType(self):
@@ -212,11 +245,12 @@ class Field(Base):
         -------
         - str(byte | bit): The size types/data unit of the field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SizeType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SizeType"])
+
     @SizeType.setter
     def SizeType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SizeType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SizeType"], value)
 
     @property
     def Value(self):
@@ -227,9 +261,22 @@ class Field(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The string value of the field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
-    def update(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Value"]))
+
+    def update(
+        self,
+        Description=None,
+        Encoding=None,
+        Enum=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+        SingleValue=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Updates field resource on the server.
 
@@ -255,7 +302,19 @@ class Field(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+    def add(
+        self,
+        Description=None,
+        Encoding=None,
+        Enum=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+        SingleValue=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Adds a new field resource on the server and adds it to the container.
 
@@ -292,7 +351,21 @@ class Field(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Description=None, DisplayName=None, Encoding=None, Enum=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+    def find(
+        self,
+        Count=None,
+        Description=None,
+        DisplayName=None,
+        Encoding=None,
+        Enum=None,
+        IsEditable=None,
+        IsEnabled=None,
+        IsRequired=None,
+        Name=None,
+        SingleValue=None,
+        Size=None,
+        SizeType=None,
+    ):
         # type: (int, str, str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Finds and retrieves field resources from the server.
 

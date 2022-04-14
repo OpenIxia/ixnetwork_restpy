@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,27 @@ class Evi(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'evi'
+    _SDM_NAME = "evi"
     _SDM_ATT_MAP = {
-        'AdRouteLabel': 'adRouteLabel',
-        'AutoConfigureRdEvi': 'autoConfigureRdEvi',
-        'AutoConfigureRdIpAddress': 'autoConfigureRdIpAddress',
-        'Enabled': 'enabled',
-        'ExportTargetList': 'exportTargetList',
-        'ImportTargetList': 'importTargetList',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'MplsAssignedUpstreamOrDownStreamLabel': 'mplsAssignedUpstreamOrDownStreamLabel',
-        'MulticastTunnelType': 'multicastTunnelType',
-        'RdEvi': 'rdEvi',
-        'RdIpAddress': 'rdIpAddress',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
-        'UseUpstreamOrDownStreamAssignedLabel': 'useUpstreamOrDownStreamAssignedLabel',
-        'UseV4MappedV6Address': 'useV4MappedV6Address',
+        "AdRouteLabel": "adRouteLabel",
+        "AutoConfigureRdEvi": "autoConfigureRdEvi",
+        "AutoConfigureRdIpAddress": "autoConfigureRdIpAddress",
+        "Enabled": "enabled",
+        "ExportTargetList": "exportTargetList",
+        "ImportTargetList": "importTargetList",
+        "IncludePmsiTunnelAttribute": "includePmsiTunnelAttribute",
+        "MplsAssignedUpstreamOrDownStreamLabel": "mplsAssignedUpstreamOrDownStreamLabel",
+        "MulticastTunnelType": "multicastTunnelType",
+        "RdEvi": "rdEvi",
+        "RdIpAddress": "rdIpAddress",
+        "RsvpP2mpId": "rsvpP2mpId",
+        "RsvpP2mpIdAsNumber": "rsvpP2mpIdAsNumber",
+        "RsvpTunnelId": "rsvpTunnelId",
+        "UseUpstreamOrDownStreamAssignedLabel": "useUpstreamOrDownStreamAssignedLabel",
+        "UseV4MappedV6Address": "useV4MappedV6Address",
     }
     _SDM_ENUM_MAP = {
-        'multicastTunnelType': ['rsvpTeP2mp', 'mldpP2mp', 'ingressReplication'],
+        "multicastTunnelType": ["rsvpTeP2mp", "mldpP2mp", "ingressReplication"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +72,16 @@ class Evi(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adinclusivemulticastrouteattributes_cbb2286b138e4134a4fd675abdd1b50f import AdInclusiveMulticastRouteAttributes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adinclusivemulticastrouteattributes_cbb2286b138e4134a4fd675abdd1b50f import (
+            AdInclusiveMulticastRouteAttributes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdInclusiveMulticastRouteAttributes', None) is not None:
-                return self._properties.get('AdInclusiveMulticastRouteAttributes')
+            if (
+                self._properties.get("AdInclusiveMulticastRouteAttributes", None)
+                is not None
+            ):
+                return self._properties.get("AdInclusiveMulticastRouteAttributes")
         return AdInclusiveMulticastRouteAttributes(self)._select()
 
     @property
@@ -88,10 +95,13 @@ class Evi(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.broadcastdomains_e0e4233dfafdf70a0eed2ffe3c495b2d import BroadcastDomains
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.broadcastdomains_e0e4233dfafdf70a0eed2ffe3c495b2d import (
+            BroadcastDomains,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BroadcastDomains', None) is not None:
-                return self._properties.get('BroadcastDomains')
+            if self._properties.get("BroadcastDomains", None) is not None:
+                return self._properties.get("BroadcastDomains")
         return BroadcastDomains(self)
 
     @property
@@ -105,10 +115,13 @@ class Evi(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eviopaquetlv_033801b83d5c442510c75fb6d0e848f9 import EviOpaqueTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eviopaquetlv_033801b83d5c442510c75fb6d0e848f9 import (
+            EviOpaqueTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EviOpaqueTlv', None) is not None:
-                return self._properties.get('EviOpaqueTlv')
+            if self._properties.get("EviOpaqueTlv", None) is not None:
+                return self._properties.get("EviOpaqueTlv")
         return EviOpaqueTlv(self)
 
     @property
@@ -119,11 +132,12 @@ class Evi(Base):
         -------
         - number: Label value carried in AD route per EVI. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdRouteLabel"])
+
     @AdRouteLabel.setter
     def AdRouteLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdRouteLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdRouteLabel"], value)
 
     @property
     def AutoConfigureRdEvi(self):
@@ -133,11 +147,12 @@ class Evi(Base):
         -------
         - bool: If true then RD EVI part of RD is constructed automatically. If false then RD EVI is taken from user in GUI in RD EVI field. Default value is true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoConfigureRdEvi'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoConfigureRdEvi"])
+
     @AutoConfigureRdEvi.setter
     def AutoConfigureRdEvi(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoConfigureRdEvi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoConfigureRdEvi"], value)
 
     @property
     def AutoConfigureRdIpAddress(self):
@@ -147,11 +162,12 @@ class Evi(Base):
         -------
         - bool: If true then IP address part of RD is constructed automatically and this IP address is taken from loopback address of local BGP peer. If false then IP address is taken from user in GUI in RD IP Address field. Default value is true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoConfigureRdIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoConfigureRdIpAddress"])
+
     @AutoConfigureRdIpAddress.setter
     def AutoConfigureRdIpAddress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoConfigureRdIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoConfigureRdIpAddress"], value)
 
     @property
     def Enabled(self):
@@ -161,11 +177,12 @@ class Evi(Base):
         -------
         - bool: If true then this EVI is used in EVPN. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExportTargetList(self):
@@ -174,10 +191,11 @@ class Evi(Base):
         -------
         - list(dict(arg1:str[as | ip],arg2:number,arg3:str,arg4:number)): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExportTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExportTargetList"])
+
     @ExportTargetList.setter
     def ExportTargetList(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExportTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExportTargetList"], value)
 
     @property
     def ImportTargetList(self):
@@ -186,10 +204,11 @@ class Evi(Base):
         -------
         - list(dict(arg1:str[as | ip],arg2:number,arg3:str,arg4:number)): Used to import the routes received from remote peer. Ixia port needs to have at least one export RT of remote peer as import RT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImportTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImportTargetList"])
+
     @ImportTargetList.setter
     def ImportTargetList(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ImportTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImportTargetList"], value)
 
     @property
     def IncludePmsiTunnelAttribute(self):
@@ -199,11 +218,12 @@ class Evi(Base):
         -------
         - bool: If true then PMSI tunnel attribute is included in Inclusive Multicast Ethernet Tag Route. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludePmsiTunnelAttribute"])
+
     @IncludePmsiTunnelAttribute.setter
     def IncludePmsiTunnelAttribute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludePmsiTunnelAttribute"], value)
 
     @property
     def MplsAssignedUpstreamOrDownStreamLabel(self):
@@ -213,11 +233,16 @@ class Evi(Base):
         -------
         - number: If Use Upstream/Downstream Assigned Label is true then label value mentioned in this field is carried in PMSI tunnel attribute. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamOrDownStreamLabel'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MplsAssignedUpstreamOrDownStreamLabel"]
+        )
+
     @MplsAssignedUpstreamOrDownStreamLabel.setter
     def MplsAssignedUpstreamOrDownStreamLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamOrDownStreamLabel'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MplsAssignedUpstreamOrDownStreamLabel"], value
+        )
 
     @property
     def MulticastTunnelType(self):
@@ -227,11 +252,12 @@ class Evi(Base):
         -------
         - str(rsvpTeP2mp | mldpP2mp | ingressReplication): Drop down of {Ingress Replication, RSVP-TE P2MP, mLDP P2MP}. Default value is Ingress Replication.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastTunnelType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastTunnelType"])
+
     @MulticastTunnelType.setter
     def MulticastTunnelType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastTunnelType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastTunnelType"], value)
 
     @property
     def RdEvi(self):
@@ -241,11 +267,12 @@ class Evi(Base):
         -------
         - number: when Auto Configure RD EVI is false then RD EVI part of RD is taken from here. Default value is zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdEvi'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdEvi"])
+
     @RdEvi.setter
     def RdEvi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RdEvi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RdEvi"], value)
 
     @property
     def RdIpAddress(self):
@@ -255,11 +282,12 @@ class Evi(Base):
         -------
         - str: when Auto Configure RD IP Address is false then IP address part of RD is taken from here. Default value is all zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdIpAddress"])
+
     @RdIpAddress.setter
     def RdIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RdIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RdIpAddress"], value)
 
     @property
     def RsvpP2mpId(self):
@@ -269,11 +297,12 @@ class Evi(Base):
         -------
         - str: The P2MP Id represented in IP address format. Default value is all zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpId"])
+
     @RsvpP2mpId.setter
     def RsvpP2mpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpP2mpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpP2mpId"], value)
 
     @property
     def RsvpP2mpIdAsNumber(self):
@@ -283,11 +312,12 @@ class Evi(Base):
         -------
         - number: The P2MP Id represented in integer format. Default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpIdAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpP2mpIdAsNumber"])
+
     @RsvpP2mpIdAsNumber.setter
     def RsvpP2mpIdAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpP2mpIdAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpP2mpIdAsNumber"], value)
 
     @property
     def RsvpTunnelId(self):
@@ -297,11 +327,12 @@ class Evi(Base):
         -------
         - number: The Tunnel ID value. Default value is 0. Minimum value is 0 and maximum value is 0xFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RsvpTunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RsvpTunnelId"])
+
     @RsvpTunnelId.setter
     def RsvpTunnelId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsvpTunnelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RsvpTunnelId"], value)
 
     @property
     def UseUpstreamOrDownStreamAssignedLabel(self):
@@ -311,11 +342,16 @@ class Evi(Base):
         -------
         - bool: If true then MPLS assigned Upstream/Downstream label is carried in PMSI tunnel attribute else 0 is carried in PMSI tunnel attribute. Default value is true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseUpstreamOrDownStreamAssignedLabel'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UseUpstreamOrDownStreamAssignedLabel"]
+        )
+
     @UseUpstreamOrDownStreamAssignedLabel.setter
     def UseUpstreamOrDownStreamAssignedLabel(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseUpstreamOrDownStreamAssignedLabel'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UseUpstreamOrDownStreamAssignedLabel"], value
+        )
 
     @property
     def UseV4MappedV6Address(self):
@@ -325,13 +361,32 @@ class Evi(Base):
         -------
         - bool: If true then V4 mapped V6 address is used for tunnel identifier in case of Ingress Replication only.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseV4MappedV6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseV4MappedV6Address"])
+
     @UseV4MappedV6Address.setter
     def UseV4MappedV6Address(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseV4MappedV6Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseV4MappedV6Address"], value)
 
-    def update(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
+    def update(
+        self,
+        AdRouteLabel=None,
+        AutoConfigureRdEvi=None,
+        AutoConfigureRdIpAddress=None,
+        Enabled=None,
+        ExportTargetList=None,
+        ImportTargetList=None,
+        IncludePmsiTunnelAttribute=None,
+        MplsAssignedUpstreamOrDownStreamLabel=None,
+        MulticastTunnelType=None,
+        RdEvi=None,
+        RdIpAddress=None,
+        RsvpP2mpId=None,
+        RsvpP2mpIdAsNumber=None,
+        RsvpTunnelId=None,
+        UseUpstreamOrDownStreamAssignedLabel=None,
+        UseV4MappedV6Address=None,
+    ):
         """Updates evi resource on the server.
 
         Args
@@ -359,7 +414,25 @@ class Evi(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
+    def add(
+        self,
+        AdRouteLabel=None,
+        AutoConfigureRdEvi=None,
+        AutoConfigureRdIpAddress=None,
+        Enabled=None,
+        ExportTargetList=None,
+        ImportTargetList=None,
+        IncludePmsiTunnelAttribute=None,
+        MplsAssignedUpstreamOrDownStreamLabel=None,
+        MulticastTunnelType=None,
+        RdEvi=None,
+        RdIpAddress=None,
+        RsvpP2mpId=None,
+        RsvpP2mpIdAsNumber=None,
+        RsvpTunnelId=None,
+        UseUpstreamOrDownStreamAssignedLabel=None,
+        UseV4MappedV6Address=None,
+    ):
         """Adds a new evi resource on the server and adds it to the container.
 
         Args
@@ -401,7 +474,25 @@ class Evi(Base):
         """
         self._delete()
 
-    def find(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
+    def find(
+        self,
+        AdRouteLabel=None,
+        AutoConfigureRdEvi=None,
+        AutoConfigureRdIpAddress=None,
+        Enabled=None,
+        ExportTargetList=None,
+        ImportTargetList=None,
+        IncludePmsiTunnelAttribute=None,
+        MplsAssignedUpstreamOrDownStreamLabel=None,
+        MulticastTunnelType=None,
+        RdEvi=None,
+        RdIpAddress=None,
+        RsvpP2mpId=None,
+        RsvpP2mpIdAsNumber=None,
+        RsvpTunnelId=None,
+        UseUpstreamOrDownStreamAssignedLabel=None,
+        UseV4MappedV6Address=None,
+    ):
         """Finds and retrieves evi resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evi resources from the server.
@@ -471,10 +562,12 @@ class Evi(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertiseAliasing", payload=payload, response_object=None)
 
     def WithdrawAliasing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -492,7 +585,9 @@ class Evi(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdrawAliasing", payload=payload, response_object=None)

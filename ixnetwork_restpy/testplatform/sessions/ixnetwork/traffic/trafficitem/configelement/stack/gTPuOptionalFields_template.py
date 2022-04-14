@@ -4,14 +4,14 @@ from ixnetwork_restpy.files import Files
 
 class GTPuOptionalFields(Base):
     __slots__ = ()
-    _SDM_NAME = 'gTPuOptionalFields'
+    _SDM_NAME = "gTPuOptionalFields"
     _SDM_ATT_MAP = {
-        'HeaderSequenceNumber': 'gTPuOptionalFields.header.sequenceNumber-1',
-        'HeaderNpduNumber': 'gTPuOptionalFields.header.npduNumber-2',
-        'HeaderNextExtHdrField': 'gTPuOptionalFields.header.nextExtHdrField-3',
-        'NextExtHdrTotalLength': 'gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.totalLength-4',
-        'NextExtHdrContents': 'gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.contents-5',
-        'NextExtHdrNextExt': 'gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.nextExt-6',
+        "HeaderSequenceNumber": "gTPuOptionalFields.header.sequenceNumber-1",
+        "HeaderNpduNumber": "gTPuOptionalFields.header.npduNumber-2",
+        "HeaderNextExtHdrField": "gTPuOptionalFields.header.nextExtHdrField-3",
+        "NextExtHdrTotalLength": "gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.totalLength-4",
+        "NextExtHdrContents": "gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.contents-5",
+        "NextExtHdrNextExt": "gTPuOptionalFields.header.nextExtHdrs.nextExtHdr.nextExt-6",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,10 @@ class GTPuOptionalFields(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSequenceNumber"])
+        )
 
     @property
     def HeaderNpduNumber(self):
@@ -35,7 +38,10 @@ class GTPuOptionalFields(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNpduNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderNpduNumber"])
+        )
 
     @property
     def HeaderNextExtHdrField(self):
@@ -45,7 +51,10 @@ class GTPuOptionalFields(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNextExtHdrField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderNextExtHdrField"])
+        )
 
     @property
     def NextExtHdrTotalLength(self):
@@ -55,7 +64,10 @@ class GTPuOptionalFields(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextExtHdrTotalLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextExtHdrTotalLength"])
+        )
 
     @property
     def NextExtHdrContents(self):
@@ -65,7 +77,10 @@ class GTPuOptionalFields(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextExtHdrContents']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextExtHdrContents"])
+        )
 
     @property
     def NextExtHdrNextExt(self):
@@ -75,7 +90,10 @@ class GTPuOptionalFields(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextExtHdrNextExt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NextExtHdrNextExt"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,16 @@ class Generate(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'generate'
+    _SDM_NAME = "generate"
     _SDM_ATT_MAP = {
-        'OutputFormat': 'outputFormat',
-        'OutputPath': 'outputPath',
-        'State': 'state',
-        'TemplatePath': 'templatePath',
+        "OutputFormat": "outputFormat",
+        "OutputPath": "outputPath",
+        "State": "state",
+        "TemplatePath": "templatePath",
     }
     _SDM_ENUM_MAP = {
-        'outputFormat': ['html', 'pdf'],
-        'state': ['done', 'failed', 'inProgress', 'none'],
+        "outputFormat": ["html", "pdf"],
+        "state": ["done", "failed", "inProgress", "none"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +56,12 @@ class Generate(Base):
         -------
         - str(html | pdf): The format of the generated report, either PDF or HTML.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputFormat'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputFormat"])
+
     @OutputFormat.setter
     def OutputFormat(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputFormat'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputFormat"], value)
 
     @property
     def OutputPath(self):
@@ -69,11 +71,12 @@ class Generate(Base):
         -------
         - str: The location where the generated report is saved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPath"])
+
     @OutputPath.setter
     def OutputPath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputPath"], value)
 
     @property
     def State(self):
@@ -83,7 +86,7 @@ class Generate(Base):
         -------
         - str(done | failed | inProgress | none): The state of the generated report.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def TemplatePath(self):
@@ -93,11 +96,12 @@ class Generate(Base):
         -------
         - str: The location of the template used to generate a report.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TemplatePath'])
+        return self._get_attribute(self._SDM_ATT_MAP["TemplatePath"])
+
     @TemplatePath.setter
     def TemplatePath(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TemplatePath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TemplatePath"], value)
 
     def update(self, OutputFormat=None, OutputPath=None, TemplatePath=None):
         # type: (str, str, str) -> Generate
@@ -173,7 +177,9 @@ class Generate(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)

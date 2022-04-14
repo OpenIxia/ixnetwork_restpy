@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class Lag(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lag'
+    _SDM_NAME = "lag"
     _SDM_ATT_MAP = {
-        'AggregationStatus': 'aggregationStatus',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'Vports': 'vports',
+        "AggregationStatus": "aggregationStatus",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "Vports": "vports",
     }
     _SDM_ENUM_MAP = {
-        'aggregationStatus': ['none', 'some', 'all', 'unconfigured'],
+        "aggregationStatus": ["none", "some", "all", "unconfigured"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,16 +55,19 @@ class Lag(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e.LagMode): An instance of the LagMode class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_53b365e7fdae49570043f8b9d07a18da.LagMode): An instance of the LagMode class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e import LagMode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_53b365e7fdae49570043f8b9d07a18da import (
+            LagMode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LagMode', None) is not None:
-                return self._properties.get('LagMode')
+            if self._properties.get("LagMode", None) is not None:
+                return self._properties.get("LagMode")
         return LagMode(self)._select()
 
     @property
@@ -77,10 +81,13 @@ class Lag(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.protocolstack_1f83cdd4a566eb265063880d7c835bb4 import ProtocolStack
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.protocolstack_1f83cdd4a566eb265063880d7c835bb4 import (
+            ProtocolStack,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ProtocolStack', None) is not None:
-                return self._properties.get('ProtocolStack')
+            if self._properties.get("ProtocolStack", None) is not None:
+                return self._properties.get("ProtocolStack")
         return ProtocolStack(self)
 
     @property
@@ -91,7 +98,7 @@ class Lag(Base):
         -------
         - str(none | some | all | unconfigured): aggregation status of LAG
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationStatus"])
 
     @property
     def Count(self):
@@ -101,7 +108,7 @@ class Lag(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -111,7 +118,7 @@ class Lag(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -121,11 +128,12 @@ class Lag(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Vports(self):
@@ -135,11 +143,12 @@ class Lag(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Virtual port information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vports'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vports"])
+
     @Vports.setter
     def Vports(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vports'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vports"], value)
 
     def update(self, Name=None, Vports=None):
         # type: (str, List[str]) -> Lag
@@ -185,7 +194,14 @@ class Lag(Base):
         """
         self._delete()
 
-    def find(self, AggregationStatus=None, Count=None, DescriptiveName=None, Name=None, Vports=None):
+    def find(
+        self,
+        AggregationStatus=None,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        Vports=None,
+    ):
         # type: (str, int, str, str, List[str]) -> Lag
         """Finds and retrieves lag resources from the server.
 
@@ -244,10 +260,12 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def AddQuickFlowGroups(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -265,10 +283,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addQuickFlowGroups', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addQuickFlowGroups", payload=payload, response_object=None
+        )
 
     def ClearPortTransmitDuration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -285,10 +307,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPortTransmitDuration', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearPortTransmitDuration", payload=payload, response_object=None
+        )
 
     def PauseStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -306,10 +332,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pauseStatelessTraffic", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -326,10 +356,12 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -346,10 +378,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StartStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -366,10 +402,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -386,10 +426,12 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -406,10 +448,14 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StopStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -426,7 +472,11 @@ class Lag(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTrafficBlocking", payload=payload, response_object=None
+        )

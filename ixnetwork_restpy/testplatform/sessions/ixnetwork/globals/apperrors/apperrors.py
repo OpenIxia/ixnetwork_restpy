@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class AppErrors(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'appErrors'
+    _SDM_NAME = "appErrors"
     _SDM_ATT_MAP = {
-        'ErrorCount': 'errorCount',
-        'LastModified': 'lastModified',
-        'WarningCount': 'warningCount',
+        "ErrorCount": "errorCount",
+        "LastModified": "lastModified",
+        "WarningCount": "warningCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AppErrors, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class AppErrors(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error import Error
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error import (
+            Error,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Error', None) is not None:
-                return self._properties.get('Error')
+            if self._properties.get("Error", None) is not None:
+                return self._properties.get("Error")
         return Error(self)
 
     @property
@@ -70,7 +73,7 @@ class AppErrors(Base):
         -------
         - number: Total number of errors
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCount"])
 
     @property
     def LastModified(self):
@@ -80,7 +83,7 @@ class AppErrors(Base):
         -------
         - str: Time of latest logged error or warning
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastModified'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastModified"])
 
     @property
     def WarningCount(self):
@@ -90,10 +93,10 @@ class AppErrors(Base):
         -------
         - number: Total number of warnings
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WarningCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["WarningCount"])
 
     def add(self):
-        """Adds a new appErrors resource on the json, only valid with config assistant
+        """Adds a new appErrors resource on the json, only valid with batch add utility
 
         Returns
         -------

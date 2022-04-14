@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class CustomDelayVariation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customDelayVariation'
+    _SDM_NAME = "customDelayVariation"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Name': 'name',
+        "Enabled": "enabled",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomDelayVariation, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class CustomDelayVariation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customvalue.customvalue import CustomValue
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customvalue.customvalue import (
+            CustomValue,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomValue', None) is not None:
-                return self._properties.get('CustomValue')
+            if self._properties.get("CustomValue", None) is not None:
+                return self._properties.get("CustomValue")
         return CustomValue(self)
 
     @property
@@ -68,11 +71,12 @@ class CustomDelayVariation(Base):
         -------
         - bool: If true, vary the packet delay.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -82,11 +86,12 @@ class CustomDelayVariation(Base):
         -------
         - str: Descriptive name of custom value list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Enabled=None, Name=None):
         # type: (bool, str) -> CustomDelayVariation

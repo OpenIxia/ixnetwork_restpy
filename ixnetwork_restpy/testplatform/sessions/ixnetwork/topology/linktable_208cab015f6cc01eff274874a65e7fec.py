@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class LinkTable(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'linkTable'
+    _SDM_NAME = "linkTable"
     _SDM_ATT_MAP = {
-        'FromNodeIndex': 'fromNodeIndex',
-        'ToNodeIndex': 'toNodeIndex',
+        "FromNodeIndex": "fromNodeIndex",
+        "ToNodeIndex": "toNodeIndex",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LinkTable, self).__init__(parent, list_op)
@@ -51,11 +51,12 @@ class LinkTable(Base):
         -------
         - list(str): from node index.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FromNodeIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["FromNodeIndex"])
+
     @FromNodeIndex.setter
     def FromNodeIndex(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FromNodeIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FromNodeIndex"], value)
 
     @property
     def ToNodeIndex(self):
@@ -65,11 +66,12 @@ class LinkTable(Base):
         -------
         - list(str): to node index.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ToNodeIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["ToNodeIndex"])
+
     @ToNodeIndex.setter
     def ToNodeIndex(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ToNodeIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ToNodeIndex"], value)
 
     def update(self, FromNodeIndex=None, ToNodeIndex=None):
         # type: (List[str], List[str]) -> LinkTable

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,19 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'controllerAuxiliaryConnectionLearnedInfo'
+    _SDM_NAME = "controllerAuxiliaryConnectionLearnedInfo"
     _SDM_ATT_MAP = {
-        'AuxiliaryId': 'auxiliaryId',
-        'ConnectionType': 'connectionType',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'LocalIp': 'localIp',
-        'LocalPort': 'localPort',
-        'RemoteIp': 'remoteIp',
-        'RemotePort': 'remotePort',
+        "AuxiliaryId": "auxiliaryId",
+        "ConnectionType": "connectionType",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "LocalIp": "localIp",
+        "LocalPort": "localPort",
+        "RemoteIp": "remoteIp",
+        "RemotePort": "remotePort",
     }
     _SDM_ENUM_MAP = {
-        'connectionType': ['tcp', 'tls', 'udp'],
+        "connectionType": ["tcp", "tls", "udp"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +60,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - number: This describes the identifier for auxiliary connections.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxiliaryId"])
 
     @property
     def ConnectionType(self):
@@ -69,7 +70,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - str(tcp | tls | udp): Specifies how this controllerPort is connected to another controller (internal/external) or host or there is no connection (noConnection)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionType"])
 
     @property
     def DataPathId(self):
@@ -79,7 +80,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - str: Indicates the datapath ID of the OpenFlow controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -89,7 +90,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - str: Indicates the datapath ID of the OpenFlow controller in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def LocalIp(self):
@@ -99,7 +100,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - str: Signifies the local IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def LocalPort(self):
@@ -109,7 +110,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - number: This describes the local port number identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPort"])
 
     @property
     def RemoteIp(self):
@@ -119,7 +120,7 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - str: This describes the IP address of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def RemotePort(self):
@@ -129,10 +130,10 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         -------
         - number: This describes the remote port number identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemotePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemotePort"])
 
     def add(self):
-        """Adds a new controllerAuxiliaryConnectionLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new controllerAuxiliaryConnectionLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -144,7 +145,17 @@ class ControllerAuxiliaryConnectionLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AuxiliaryId=None, ConnectionType=None, DataPathId=None, DataPathIdAsHex=None, LocalIp=None, LocalPort=None, RemoteIp=None, RemotePort=None):
+    def find(
+        self,
+        AuxiliaryId=None,
+        ConnectionType=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        LocalIp=None,
+        LocalPort=None,
+        RemoteIp=None,
+        RemotePort=None,
+    ):
         # type: (int, str, str, str, str, int, str, int) -> ControllerAuxiliaryConnectionLearnedInfo
         """Finds and retrieves controllerAuxiliaryConnectionLearnedInfo resources from the server.
 

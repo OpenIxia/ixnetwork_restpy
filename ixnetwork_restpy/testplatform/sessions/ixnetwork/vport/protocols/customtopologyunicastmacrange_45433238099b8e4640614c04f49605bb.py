@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class CustomTopologyUnicastMacRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologyUnicastMacRange'
+    _SDM_NAME = "customTopologyUnicastMacRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'InterNodeMacIncrement': 'interNodeMacIncrement',
-        'MacIncrement': 'macIncrement',
-        'StartMac': 'startMac',
-        'StartVlanId': 'startVlanId',
+        "Count": "count",
+        "Enabled": "enabled",
+        "InterNodeMacIncrement": "interNodeMacIncrement",
+        "MacIncrement": "macIncrement",
+        "StartMac": "startMac",
+        "StartVlanId": "startVlanId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTopologyUnicastMacRange, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -71,11 +72,12 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterNodeMacIncrement(self):
@@ -85,11 +87,12 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeMacIncrement"])
+
     @InterNodeMacIncrement.setter
     def InterNodeMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeMacIncrement"], value)
 
     @property
     def MacIncrement(self):
@@ -99,11 +102,12 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacIncrement"])
+
     @MacIncrement.setter
     def MacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacIncrement"], value)
 
     @property
     def StartMac(self):
@@ -113,11 +117,12 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMac"])
+
     @StartMac.setter
     def StartMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMac"], value)
 
     @property
     def StartVlanId(self):
@@ -127,13 +132,22 @@ class CustomTopologyUnicastMacRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartVlanId"])
+
     @StartVlanId.setter
     def StartVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartVlanId"], value)
 
-    def update(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+    def update(
+        self,
+        Count=None,
+        Enabled=None,
+        InterNodeMacIncrement=None,
+        MacIncrement=None,
+        StartMac=None,
+        StartVlanId=None,
+    ):
         # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Updates customTopologyUnicastMacRange resource on the server.
 
@@ -152,7 +166,15 @@ class CustomTopologyUnicastMacRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+    def add(
+        self,
+        Count=None,
+        Enabled=None,
+        InterNodeMacIncrement=None,
+        MacIncrement=None,
+        StartMac=None,
+        StartVlanId=None,
+    ):
         # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Adds a new customTopologyUnicastMacRange resource on the server and adds it to the container.
 
@@ -185,7 +207,15 @@ class CustomTopologyUnicastMacRange(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+    def find(
+        self,
+        Count=None,
+        Enabled=None,
+        InterNodeMacIncrement=None,
+        MacIncrement=None,
+        StartMac=None,
+        StartVlanId=None,
+    ):
         # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Finds and retrieves customTopologyUnicastMacRange resources from the server.
 

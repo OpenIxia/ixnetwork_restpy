@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,33 +35,41 @@ class MsrpListener(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'msrpListener'
+    _SDM_NAME = "msrpListener"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseAs': 'advertiseAs',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DeclareUnsolicitedVlan': 'declareUnsolicitedVlan',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'JoinTimer': 'joinTimer',
-        'LeaveAllTimer': 'leaveAllTimer',
-        'LeaveTimer': 'leaveTimer',
-        'ListenerDomainCount': 'listenerDomainCount',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'ProtocolVersion': 'protocolVersion',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StartVlanId': 'startVlanId',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SubscribeAll': 'subscribeAll',
-        'SubscribedStreamCount': 'subscribedStreamCount',
-        'VlanCount': 'vlanCount',
+        "Active": "active",
+        "AdvertiseAs": "advertiseAs",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DeclareUnsolicitedVlan": "declareUnsolicitedVlan",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "JoinTimer": "joinTimer",
+        "LeaveAllTimer": "leaveAllTimer",
+        "LeaveTimer": "leaveTimer",
+        "ListenerDomainCount": "listenerDomainCount",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "ProtocolVersion": "protocolVersion",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StartVlanId": "startVlanId",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SubscribeAll": "subscribeAll",
+        "SubscribedStreamCount": "subscribedStreamCount",
+        "VlanCount": "vlanCount",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -77,10 +86,13 @@ class MsrpListener(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -94,10 +106,13 @@ class MsrpListener(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistenerdomains_f2fe387dee9561ca08fc00cc9bf60ef4 import MsrpListenerDomains
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistenerdomains_f2fe387dee9561ca08fc00cc9bf60ef4 import (
+            MsrpListenerDomains,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsrpListenerDomains', None) is not None:
-                return self._properties.get('MsrpListenerDomains')
+            if self._properties.get("MsrpListenerDomains", None) is not None:
+                return self._properties.get("MsrpListenerDomains")
         return MsrpListenerDomains(self)._select()
 
     @property
@@ -111,10 +126,13 @@ class MsrpListener(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.subscribedstreams_b01da202c4f5221aa9094d86a288d1bd import SubscribedStreams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.subscribedstreams_b01da202c4f5221aa9094d86a288d1bd import (
+            SubscribedStreams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SubscribedStreams', None) is not None:
-                return self._properties.get('SubscribedStreams')
+            if self._properties.get("SubscribedStreams", None) is not None:
+                return self._properties.get("SubscribedStreams")
         return SubscribedStreams(self)._select()
 
     @property
@@ -126,7 +144,8 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseAs(self):
@@ -137,21 +156,23 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attribute Advertise As Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseAs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseAs"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -161,7 +182,7 @@ class MsrpListener(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DeclareUnsolicitedVlan(self):
@@ -171,11 +192,12 @@ class MsrpListener(Base):
         -------
         - bool: Declare VLAN membership of configured VLAN range using MVRP even before learning any streams
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeclareUnsolicitedVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeclareUnsolicitedVlan"])
+
     @DeclareUnsolicitedVlan.setter
     def DeclareUnsolicitedVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeclareUnsolicitedVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeclareUnsolicitedVlan"], value)
 
     @property
     def DescriptiveName(self):
@@ -185,7 +207,7 @@ class MsrpListener(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -194,7 +216,7 @@ class MsrpListener(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def JoinTimer(self):
@@ -205,7 +227,8 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MRP Join Timer in miliseconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['JoinTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["JoinTimer"]))
 
     @property
     def LeaveAllTimer(self):
@@ -216,7 +239,8 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MRP Leave All timer in milisecond
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LeaveAllTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LeaveAllTimer"]))
 
     @property
     def LeaveTimer(self):
@@ -227,7 +251,8 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MRP Leave Timer in milisecond
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LeaveTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LeaveTimer"]))
 
     @property
     def ListenerDomainCount(self):
@@ -237,11 +262,12 @@ class MsrpListener(Base):
         -------
         - number: Domain Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ListenerDomainCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ListenerDomainCount"])
+
     @ListenerDomainCount.setter
     def ListenerDomainCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ListenerDomainCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ListenerDomainCount"], value)
 
     @property
     def Multiplier(self):
@@ -251,11 +277,12 @@ class MsrpListener(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -265,11 +292,12 @@ class MsrpListener(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ProtocolVersion(self):
@@ -280,7 +308,10 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MRP protocol version
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtocolVersion"])
+        )
 
     @property
     def SessionStatus(self):
@@ -290,7 +321,7 @@ class MsrpListener(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -300,11 +331,12 @@ class MsrpListener(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StartVlanId(self):
@@ -315,7 +347,8 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start VLAN ID of VLAN range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartVlanId"]))
 
     @property
     def StateCounts(self):
@@ -324,7 +357,7 @@ class MsrpListener(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -334,7 +367,7 @@ class MsrpListener(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SubscribeAll(self):
@@ -344,11 +377,12 @@ class MsrpListener(Base):
         -------
         - bool: Send MSRP Listener Ready for all streams advertised in recieved MSRP Talker Advertise
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SubscribeAll'])
+        return self._get_attribute(self._SDM_ATT_MAP["SubscribeAll"])
+
     @SubscribeAll.setter
     def SubscribeAll(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SubscribeAll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SubscribeAll"], value)
 
     @property
     def SubscribedStreamCount(self):
@@ -358,11 +392,12 @@ class MsrpListener(Base):
         -------
         - number: Count of streams Listener want to listen
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SubscribedStreamCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SubscribedStreamCount"])
+
     @SubscribedStreamCount.setter
     def SubscribedStreamCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SubscribedStreamCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SubscribedStreamCount"], value)
 
     @property
     def VlanCount(self):
@@ -373,9 +408,20 @@ class MsrpListener(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN count of VLAN range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanCount']))
 
-    def update(self, ConnectedVia=None, DeclareUnsolicitedVlan=None, ListenerDomainCount=None, Multiplier=None, Name=None, StackedLayers=None, SubscribeAll=None, SubscribedStreamCount=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanCount"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        DeclareUnsolicitedVlan=None,
+        ListenerDomainCount=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        SubscribeAll=None,
+        SubscribedStreamCount=None,
+    ):
         # type: (List[str], bool, int, int, str, List[str], bool, int) -> MsrpListener
         """Updates msrpListener resource on the server.
 
@@ -399,7 +445,17 @@ class MsrpListener(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, DeclareUnsolicitedVlan=None, ListenerDomainCount=None, Multiplier=None, Name=None, StackedLayers=None, SubscribeAll=None, SubscribedStreamCount=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        DeclareUnsolicitedVlan=None,
+        ListenerDomainCount=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        SubscribeAll=None,
+        SubscribedStreamCount=None,
+    ):
         # type: (List[str], bool, int, int, str, List[str], bool, int) -> MsrpListener
         """Adds a new msrpListener resource on the server and adds it to the container.
 
@@ -434,7 +490,23 @@ class MsrpListener(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DeclareUnsolicitedVlan=None, DescriptiveName=None, Errors=None, ListenerDomainCount=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, SubscribeAll=None, SubscribedStreamCount=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DeclareUnsolicitedVlan=None,
+        DescriptiveName=None,
+        Errors=None,
+        ListenerDomainCount=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        SubscribeAll=None,
+        SubscribedStreamCount=None,
+    ):
         """Finds and retrieves msrpListener resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve msrpListener resources from the server.
@@ -513,10 +585,12 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearListenerDatabasesInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -551,10 +625,14 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearListenerDatabasesInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearListenerDatabasesInClient", payload=payload, response_object=None
+        )
 
     def GetListenerDatabases(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -589,10 +667,14 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getListenerDatabases', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getListenerDatabases", payload=payload, response_object=None
+        )
 
     def GetMsrpListenerDomainDatabase(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -627,10 +709,14 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getMsrpListenerDomainDatabase', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getMsrpListenerDomainDatabase", payload=payload, response_object=None
+        )
 
     def GetMsrpListenerStreamDatabase(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -665,10 +751,14 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getMsrpListenerStreamDatabase', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getMsrpListenerStreamDatabase", payload=payload, response_object=None
+        )
 
     def GetMsrpListenerVlanDatabase(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -703,10 +793,14 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getMsrpListenerVlanDatabase', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getMsrpListenerVlanDatabase", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -735,10 +829,12 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -767,10 +863,12 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -799,12 +897,25 @@ class MsrpListener(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseAs=None, JoinTimer=None, LeaveAllTimer=None, LeaveTimer=None, ProtocolVersion=None, StartVlanId=None, VlanCount=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseAs=None,
+        JoinTimer=None,
+        LeaveAllTimer=None,
+        LeaveTimer=None,
+        ProtocolVersion=None,
+        StartVlanId=None,
+        VlanCount=None,
+    ):
         """Base class infrastructure that gets a list of msrpListener device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

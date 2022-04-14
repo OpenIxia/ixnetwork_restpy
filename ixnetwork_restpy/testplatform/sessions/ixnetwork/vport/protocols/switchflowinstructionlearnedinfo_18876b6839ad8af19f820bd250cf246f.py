@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class SwitchFlowInstructionLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchFlowInstructionLearnedInfo'
+    _SDM_NAME = "switchFlowInstructionLearnedInfo"
     _SDM_ATT_MAP = {
-        'Experimenter': 'experimenter',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'InstructionType': 'instructionType',
-        'Metadata': 'metadata',
-        'MetadataMask': 'metadataMask',
-        'MeterId': 'meterId',
-        'TableId': 'tableId',
+        "Experimenter": "experimenter",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "InstructionType": "instructionType",
+        "Metadata": "metadata",
+        "MetadataMask": "metadataMask",
+        "MeterId": "meterId",
+        "TableId": "tableId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchFlowInstructionLearnedInfo, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class SwitchFlowInstructionLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_86007ee49ffb3db3e01e332902e297a7 import SwitchActionV131LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_86007ee49ffb3db3e01e332902e297a7 import (
+            SwitchActionV131LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SwitchActionV131LearnedInfo', None) is not None:
-                return self._properties.get('SwitchActionV131LearnedInfo')
+            if self._properties.get("SwitchActionV131LearnedInfo", None) is not None:
+                return self._properties.get("SwitchActionV131LearnedInfo")
         return SwitchActionV131LearnedInfo(self)
 
     @property
@@ -75,7 +78,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - number: This describes the unique Experimenter identifier. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
 
     @property
     def ExperimenterData(self):
@@ -85,7 +88,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - str: This describes the data of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
 
     @property
     def ExperimenterDataLength(self):
@@ -95,7 +98,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - number: This describes the data length of the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
 
     @property
     def InstructionType(self):
@@ -105,7 +108,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - str: This describes the action type associated with this instruction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstructionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstructionType"])
 
     @property
     def Metadata(self):
@@ -115,7 +118,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - str: This describes the table metadata value used to pass information between tables.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metadata"])
 
     @property
     def MetadataMask(self):
@@ -125,7 +128,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - str: This describes the metadata bitmask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataMask"])
 
     @property
     def MeterId(self):
@@ -135,7 +138,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def TableId(self):
@@ -145,10 +148,10 @@ class SwitchFlowInstructionLearnedInfo(Base):
         -------
         - number: This describes the table identifier. It indicates the next table in the packet processing pipeline.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
 
     def add(self):
-        """Adds a new switchFlowInstructionLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new switchFlowInstructionLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -160,7 +163,17 @@ class SwitchFlowInstructionLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataMask=None, MeterId=None, TableId=None):
+    def find(
+        self,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        InstructionType=None,
+        Metadata=None,
+        MetadataMask=None,
+        MeterId=None,
+        TableId=None,
+    ):
         # type: (int, str, int, str, str, str, int, int) -> SwitchFlowInstructionLearnedInfo
         """Finds and retrieves switchFlowInstructionLearnedInfo resources from the server.
 

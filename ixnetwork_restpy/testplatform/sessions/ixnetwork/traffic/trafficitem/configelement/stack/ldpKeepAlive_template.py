@@ -4,16 +4,16 @@ from ixnetwork_restpy.files import Files
 
 class LdpKeepAlive(Base):
     __slots__ = ()
-    _SDM_NAME = 'ldpKeepAlive'
+    _SDM_NAME = "ldpKeepAlive"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'ldpKeepAlive.header.version-1',
-        'HeaderPduLengthinOctets': 'ldpKeepAlive.header.pduLengthinOctets-2',
-        'HeaderLsrID': 'ldpKeepAlive.header.lsrID-3',
-        'HeaderLabelSpace': 'ldpKeepAlive.header.labelSpace-4',
-        'HeaderUBit': 'ldpKeepAlive.header.uBit-5',
-        'HeaderType': 'ldpKeepAlive.header.type-6',
-        'HeaderLength': 'ldpKeepAlive.header.length-7',
-        'HeaderMessageID': 'ldpKeepAlive.header.messageID-8',
+        "HeaderVersion": "ldpKeepAlive.header.version-1",
+        "HeaderPduLengthinOctets": "ldpKeepAlive.header.pduLengthinOctets-2",
+        "HeaderLsrID": "ldpKeepAlive.header.lsrID-3",
+        "HeaderLabelSpace": "ldpKeepAlive.header.labelSpace-4",
+        "HeaderUBit": "ldpKeepAlive.header.uBit-5",
+        "HeaderType": "ldpKeepAlive.header.type-6",
+        "HeaderLength": "ldpKeepAlive.header.length-7",
+        "HeaderMessageID": "ldpKeepAlive.header.messageID-8",
     }
 
     def __init__(self, parent, list_op=False):
@@ -27,7 +27,8 @@ class LdpKeepAlive(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderPduLengthinOctets(self):
@@ -37,7 +38,10 @@ class LdpKeepAlive(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPduLengthinOctets']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderPduLengthinOctets"])
+        )
 
     @property
     def HeaderLsrID(self):
@@ -47,7 +51,8 @@ class LdpKeepAlive(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLsrID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLsrID"]))
 
     @property
     def HeaderLabelSpace(self):
@@ -57,7 +62,10 @@ class LdpKeepAlive(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLabelSpace']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLabelSpace"])
+        )
 
     @property
     def HeaderUBit(self):
@@ -68,7 +76,8 @@ class LdpKeepAlive(Base):
         Available enum values: Ignore entire message if unknown TLV, 0, Ignore only unknown TLV, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderUBit"]))
 
     @property
     def HeaderType(self):
@@ -78,7 +87,8 @@ class LdpKeepAlive(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderLength(self):
@@ -88,7 +98,8 @@ class LdpKeepAlive(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderMessageID(self):
@@ -98,7 +109,10 @@ class LdpKeepAlive(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMessageID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMessageID"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

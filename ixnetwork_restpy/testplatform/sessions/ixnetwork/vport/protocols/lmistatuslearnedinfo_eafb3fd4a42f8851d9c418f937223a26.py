@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class LmiStatusLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lmiStatusLearnedInfo'
+    _SDM_NAME = "lmiStatusLearnedInfo"
     _SDM_ATT_MAP = {
-        'DataInstance': 'dataInstance',
-        'DuplicatedIe': 'duplicatedIe',
-        'InvalidEvcReferenceId': 'invalidEvcReferenceId',
-        'InvalidMandatoryIe': 'invalidMandatoryIe',
-        'InvalidMsgType': 'invalidMsgType',
-        'InvalidNonMandatoryIe': 'invalidNonMandatoryIe',
-        'InvalidProtocolVersion': 'invalidProtocolVersion',
-        'LmiStatus': 'lmiStatus',
-        'MandatoryIeMissing': 'mandatoryIeMissing',
-        'OutOfSequenceIe': 'outOfSequenceIe',
-        'ProtocolVersion': 'protocolVersion',
-        'ReceiveSequenceNumber': 'receiveSequenceNumber',
-        'SendSequenceNumber': 'sendSequenceNumber',
-        'ShortMsgCounter': 'shortMsgCounter',
-        'UnexpectedIe': 'unexpectedIe',
-        'UnrecognizedIe': 'unrecognizedIe',
+        "DataInstance": "dataInstance",
+        "DuplicatedIe": "duplicatedIe",
+        "InvalidEvcReferenceId": "invalidEvcReferenceId",
+        "InvalidMandatoryIe": "invalidMandatoryIe",
+        "InvalidMsgType": "invalidMsgType",
+        "InvalidNonMandatoryIe": "invalidNonMandatoryIe",
+        "InvalidProtocolVersion": "invalidProtocolVersion",
+        "LmiStatus": "lmiStatus",
+        "MandatoryIeMissing": "mandatoryIeMissing",
+        "OutOfSequenceIe": "outOfSequenceIe",
+        "ProtocolVersion": "protocolVersion",
+        "ReceiveSequenceNumber": "receiveSequenceNumber",
+        "SendSequenceNumber": "sendSequenceNumber",
+        "ShortMsgCounter": "shortMsgCounter",
+        "UnexpectedIe": "unexpectedIe",
+        "UnrecognizedIe": "unrecognizedIe",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LmiStatusLearnedInfo, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - number: This four-octet field indicates the Data Instance value to be sent in transmitted packet. It will be configurable only if Override Data Instance is enabled. By default it is grayed out with default value 0x0 for UNI-C and 0x1 for UNI-N. Max 4 octet max value, Min 0/1. Change of value in this field takes effect when protocol is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataInstance'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataInstance"])
 
     @property
     def DuplicatedIe(self):
@@ -76,7 +76,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of out of sequence IE received : count of out of sequence IE received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DuplicatedIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["DuplicatedIe"])
 
     @property
     def InvalidEvcReferenceId(self):
@@ -86,7 +86,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Invalid EVC reference Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidEvcReferenceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidEvcReferenceId"])
 
     @property
     def InvalidMandatoryIe(self):
@@ -96,7 +96,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of invalid mandatory IE : count of invalid mandatory IE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidMandatoryIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidMandatoryIe"])
 
     @property
     def InvalidMsgType(self):
@@ -106,7 +106,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: It signfies the invalid message type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidMsgType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidMsgType"])
 
     @property
     def InvalidNonMandatoryIe(self):
@@ -116,7 +116,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of invalid non mandatory IE : count of invalid non mandatory IE
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidNonMandatoryIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidNonMandatoryIe"])
 
     @property
     def InvalidProtocolVersion(self):
@@ -126,7 +126,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Invalid protocol version in received ELMI message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidProtocolVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidProtocolVersion"])
 
     @property
     def LmiStatus(self):
@@ -136,7 +136,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: It signifies the LMI status value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmiStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmiStatus"])
 
     @property
     def MandatoryIeMissing(self):
@@ -146,7 +146,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of mandatory IE missing : count of mandatory IE missing.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MandatoryIeMissing'])
+        return self._get_attribute(self._SDM_ATT_MAP["MandatoryIeMissing"])
 
     @property
     def OutOfSequenceIe(self):
@@ -156,7 +156,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of out of sequence IE received : count of out of sequence IE recieved
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutOfSequenceIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutOfSequenceIe"])
 
     @property
     def ProtocolVersion(self):
@@ -166,7 +166,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - number: This one-octet field indicates the version supported by the sending
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolVersion"])
 
     @property
     def ReceiveSequenceNumber(self):
@@ -176,7 +176,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - number: The value of Receive Sequence Number in received ELMI message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceiveSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveSequenceNumber"])
 
     @property
     def SendSequenceNumber(self):
@@ -186,7 +186,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - number: The value of Send Sequence Number in received ELMI message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendSequenceNumber"])
 
     @property
     def ShortMsgCounter(self):
@@ -196,7 +196,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - number: It signifies the short message counter value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShortMsgCounter'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShortMsgCounter"])
 
     @property
     def UnexpectedIe(self):
@@ -206,7 +206,7 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of unexpected IE : count of unexpected IE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnexpectedIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnexpectedIe"])
 
     @property
     def UnrecognizedIe(self):
@@ -216,10 +216,10 @@ class LmiStatusLearnedInfo(Base):
         -------
         - str: Type of unrecognized IE : count of unrecognized IE.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnrecognizedIe'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnrecognizedIe"])
 
     def add(self):
-        """Adds a new lmiStatusLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new lmiStatusLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class LmiStatusLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataInstance=None, DuplicatedIe=None, InvalidEvcReferenceId=None, InvalidMandatoryIe=None, InvalidMsgType=None, InvalidNonMandatoryIe=None, InvalidProtocolVersion=None, LmiStatus=None, MandatoryIeMissing=None, OutOfSequenceIe=None, ProtocolVersion=None, ReceiveSequenceNumber=None, SendSequenceNumber=None, ShortMsgCounter=None, UnexpectedIe=None, UnrecognizedIe=None):
+    def find(
+        self,
+        DataInstance=None,
+        DuplicatedIe=None,
+        InvalidEvcReferenceId=None,
+        InvalidMandatoryIe=None,
+        InvalidMsgType=None,
+        InvalidNonMandatoryIe=None,
+        InvalidProtocolVersion=None,
+        LmiStatus=None,
+        MandatoryIeMissing=None,
+        OutOfSequenceIe=None,
+        ProtocolVersion=None,
+        ReceiveSequenceNumber=None,
+        SendSequenceNumber=None,
+        ShortMsgCounter=None,
+        UnexpectedIe=None,
+        UnrecognizedIe=None,
+    ):
         # type: (int, str, str, str, str, str, str, str, str, str, int, int, int, int, str, str) -> LmiStatusLearnedInfo
         """Finds and retrieves lmiStatusLearnedInfo resources from the server.
 

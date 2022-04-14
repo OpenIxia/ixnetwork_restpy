@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class RouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeRange'
+    _SDM_NAME = "routeRange"
     _SDM_ATT_MAP = {
-        'AddressFamily': 'addressFamily',
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'IpType': 'ipType',
-        'Mask': 'mask',
-        'Metric': 'metric',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'Step': 'step',
-        'Type': 'type',
+        "AddressFamily": "addressFamily",
+        "Enabled": "enabled",
+        "FirstRoute": "firstRoute",
+        "IpType": "ipType",
+        "Mask": "mask",
+        "Metric": "metric",
+        "NumberOfRoutes": "numberOfRoutes",
+        "Step": "step",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'addressFamily': ['unicast', 'multicast'],
-        'ipType': ['ipV4', 'ipV6'],
-        'type': ['anotherArea', 'asExternal1', 'asExternal2', 'sameArea'],
+        "addressFamily": ["unicast", "multicast"],
+        "ipType": ["ipV4", "ipV6"],
+        "type": ["anotherArea", "asExternal1", "asExternal2", "sameArea"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class RouteRange(Base):
         -------
         - str(unicast | multicast): Indiacates the Address Family type - Unicast or Multicast
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressFamily'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressFamily"])
+
     @AddressFamily.setter
     def AddressFamily(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressFamily'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressFamily"], value)
 
     @property
     def Enabled(self):
@@ -77,11 +79,12 @@ class RouteRange(Base):
         -------
         - bool: Enables the use of this route range for the simulated router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstRoute(self):
@@ -91,11 +94,12 @@ class RouteRange(Base):
         -------
         - str: The first route in this range of routes/network addresses. Note: Multicast addresses are not supported in this route range implementation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstRoute"])
+
     @FirstRoute.setter
     def FirstRoute(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstRoute"], value)
 
     @property
     def IpType(self):
@@ -105,11 +109,12 @@ class RouteRange(Base):
         -------
         - str(ipV4 | ipV6): Indicates the IP Type - IPv4 or IPv6
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Mask(self):
@@ -119,11 +124,12 @@ class RouteRange(Base):
         -------
         - number: The number of bits in the prefixes to be advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def Metric(self):
@@ -133,11 +139,12 @@ class RouteRange(Base):
         -------
         - number: The user-assigned routing metric associated with the route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -147,11 +154,12 @@ class RouteRange(Base):
         -------
         - number: The number of routes/network addresses to be created, based on the first route plus the mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def Step(self):
@@ -161,11 +169,12 @@ class RouteRange(Base):
         -------
         - number: The step value to use for incrementing the network mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     @property
     def Type(self):
@@ -175,13 +184,25 @@ class RouteRange(Base):
         -------
         - str(anotherArea | asExternal1 | asExternal2 | sameArea): The type of route origin.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, AddressFamily=None, Enabled=None, FirstRoute=None, IpType=None, Mask=None, Metric=None, NumberOfRoutes=None, Step=None, Type=None):
+    def update(
+        self,
+        AddressFamily=None,
+        Enabled=None,
+        FirstRoute=None,
+        IpType=None,
+        Mask=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        Step=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, int, int, int, int, str) -> RouteRange
         """Updates routeRange resource on the server.
 
@@ -203,7 +224,18 @@ class RouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddressFamily=None, Enabled=None, FirstRoute=None, IpType=None, Mask=None, Metric=None, NumberOfRoutes=None, Step=None, Type=None):
+    def add(
+        self,
+        AddressFamily=None,
+        Enabled=None,
+        FirstRoute=None,
+        IpType=None,
+        Mask=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        Step=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, int, int, int, int, str) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
@@ -239,7 +271,18 @@ class RouteRange(Base):
         """
         self._delete()
 
-    def find(self, AddressFamily=None, Enabled=None, FirstRoute=None, IpType=None, Mask=None, Metric=None, NumberOfRoutes=None, Step=None, Type=None):
+    def find(
+        self,
+        AddressFamily=None,
+        Enabled=None,
+        FirstRoute=None,
+        IpType=None,
+        Mask=None,
+        Metric=None,
+        NumberOfRoutes=None,
+        Step=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, int, int, int, int, str) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 

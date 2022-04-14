@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class TwampTestRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'twampTestRange'
+    _SDM_NAME = "twampTestRange"
     _SDM_ATT_MAP = {
-        'NegotiateReflectorPort': 'NegotiateReflectorPort',
-        'ControlRangeName': 'controlRangeName',
-        'Enabled': 'enabled',
-        'Explicit': 'explicit',
-        'Name': 'name',
-        'NumberOfPackets': 'numberOfPackets',
-        'ObjectId': 'objectId',
-        'PacketLength': 'packetLength',
-        'PacketsPerSecond': 'packetsPerSecond',
-        'PaddingWithZero': 'paddingWithZero',
-        'SessionReflectorPort': 'sessionReflectorPort',
-        'SessionReflectorPortIncrement': 'sessionReflectorPortIncrement',
-        'SessionSenderPort': 'sessionSenderPort',
-        'SessionSenderPortIncrement': 'sessionSenderPortIncrement',
-        'TestSessionsCount': 'testSessionsCount',
-        'Timeout': 'timeout',
-        'TypepDescriptor': 'typepDescriptor',
+        "NegotiateReflectorPort": "NegotiateReflectorPort",
+        "ControlRangeName": "controlRangeName",
+        "Enabled": "enabled",
+        "Explicit": "explicit",
+        "Name": "name",
+        "NumberOfPackets": "numberOfPackets",
+        "ObjectId": "objectId",
+        "PacketLength": "packetLength",
+        "PacketsPerSecond": "packetsPerSecond",
+        "PaddingWithZero": "paddingWithZero",
+        "SessionReflectorPort": "sessionReflectorPort",
+        "SessionReflectorPortIncrement": "sessionReflectorPortIncrement",
+        "SessionSenderPort": "sessionSenderPort",
+        "SessionSenderPortIncrement": "sessionSenderPortIncrement",
+        "TestSessionsCount": "testSessionsCount",
+        "Timeout": "timeout",
+        "TypepDescriptor": "typepDescriptor",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TwampTestRange, self).__init__(parent, list_op)
@@ -68,11 +68,12 @@ class TwampTestRange(Base):
         -------
         - bool: Negotitate reflector port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiateReflectorPort"])
+
     @NegotiateReflectorPort.setter
     def NegotiateReflectorPort(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NegotiateReflectorPort"], value)
 
     @property
     def ControlRangeName(self):
@@ -82,11 +83,12 @@ class TwampTestRange(Base):
         -------
         - str: Name of the associated TWAMP Control range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlRangeName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlRangeName"])
+
     @ControlRangeName.setter
     def ControlRangeName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlRangeName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlRangeName"], value)
 
     @property
     def Enabled(self):
@@ -96,11 +98,12 @@ class TwampTestRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Explicit(self):
@@ -110,11 +113,12 @@ class TwampTestRange(Base):
         -------
         - bool: True if the range needs to be created, false if the range was created automatically as first range always is
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Explicit'])
+        return self._get_attribute(self._SDM_ATT_MAP["Explicit"])
+
     @Explicit.setter
     def Explicit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Explicit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Explicit"], value)
 
     @property
     def Name(self):
@@ -124,11 +128,12 @@ class TwampTestRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfPackets(self):
@@ -138,11 +143,12 @@ class TwampTestRange(Base):
         -------
         - number: Number of packets to be sent by the Session-Sender.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfPackets'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfPackets"])
+
     @NumberOfPackets.setter
     def NumberOfPackets(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfPackets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfPackets"], value)
 
     @property
     def ObjectId(self):
@@ -152,7 +158,7 @@ class TwampTestRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PacketLength(self):
@@ -162,11 +168,12 @@ class TwampTestRange(Base):
         -------
         - number: Packet size, including padding length as defined by the RFC4656, in section 3.5
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketLength"])
+
     @PacketLength.setter
     def PacketLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketLength"], value)
 
     @property
     def PacketsPerSecond(self):
@@ -176,11 +183,12 @@ class TwampTestRange(Base):
         -------
         - number: Rate at which packets will be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsPerSecond"])
+
     @PacketsPerSecond.setter
     def PacketsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketsPerSecond"], value)
 
     @property
     def PaddingWithZero(self):
@@ -190,11 +198,12 @@ class TwampTestRange(Base):
         -------
         - bool: Per RFC465, data in the packets is random, unless it is configured to be zero
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PaddingWithZero'])
+        return self._get_attribute(self._SDM_ATT_MAP["PaddingWithZero"])
+
     @PaddingWithZero.setter
     def PaddingWithZero(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PaddingWithZero'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PaddingWithZero"], value)
 
     @property
     def SessionReflectorPort(self):
@@ -204,11 +213,12 @@ class TwampTestRange(Base):
         -------
         - number: Port on which the reflector receives the packets from the stream initiated by Session-Sender
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionReflectorPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionReflectorPort"])
+
     @SessionReflectorPort.setter
     def SessionReflectorPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionReflectorPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionReflectorPort"], value)
 
     @property
     def SessionReflectorPortIncrement(self):
@@ -218,11 +228,12 @@ class TwampTestRange(Base):
         -------
         - number: Increment to use for above field when expanding sessions from this range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionReflectorPortIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionReflectorPortIncrement"])
+
     @SessionReflectorPortIncrement.setter
     def SessionReflectorPortIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionReflectorPortIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionReflectorPortIncrement"], value)
 
     @property
     def SessionSenderPort(self):
@@ -232,11 +243,12 @@ class TwampTestRange(Base):
         -------
         - number: Source Port of the stream initiated by Session-Sender
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionSenderPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionSenderPort"])
+
     @SessionSenderPort.setter
     def SessionSenderPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionSenderPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionSenderPort"], value)
 
     @property
     def SessionSenderPortIncrement(self):
@@ -246,11 +258,12 @@ class TwampTestRange(Base):
         -------
         - number: Increment to use for above field when expanding sessions from this range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionSenderPortIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionSenderPortIncrement"])
+
     @SessionSenderPortIncrement.setter
     def SessionSenderPortIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionSenderPortIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionSenderPortIncrement"], value)
 
     @property
     def TestSessionsCount(self):
@@ -260,11 +273,12 @@ class TwampTestRange(Base):
         -------
         - number: Number of TWAMP-Test session expanded for each range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestSessionsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestSessionsCount"])
+
     @TestSessionsCount.setter
     def TestSessionsCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestSessionsCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestSessionsCount"], value)
 
     @property
     def Timeout(self):
@@ -274,11 +288,12 @@ class TwampTestRange(Base):
         -------
         - number: Timeout for receiving packets on Session-Reflector after Stop-Sessions is received, as defined by the TWAMP draft, in section 3.5
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["Timeout"])
+
     @Timeout.setter
     def Timeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Timeout"], value)
 
     @property
     def TypepDescriptor(self):
@@ -288,13 +303,32 @@ class TwampTestRange(Base):
         -------
         - number: Type-P descriptor sets the Differentiated Services Code Point (DSCP).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypepDescriptor'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypepDescriptor"])
+
     @TypepDescriptor.setter
     def TypepDescriptor(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypepDescriptor'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypepDescriptor"], value)
 
-    def update(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+    def update(
+        self,
+        NegotiateReflectorPort=None,
+        ControlRangeName=None,
+        Enabled=None,
+        Explicit=None,
+        Name=None,
+        NumberOfPackets=None,
+        PacketLength=None,
+        PacketsPerSecond=None,
+        PaddingWithZero=None,
+        SessionReflectorPort=None,
+        SessionReflectorPortIncrement=None,
+        SessionSenderPort=None,
+        SessionSenderPortIncrement=None,
+        TestSessionsCount=None,
+        Timeout=None,
+        TypepDescriptor=None,
+    ):
         # type: (bool, str, bool, bool, str, int, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Updates twampTestRange resource on the server.
 
@@ -323,7 +357,25 @@ class TwampTestRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+    def add(
+        self,
+        NegotiateReflectorPort=None,
+        ControlRangeName=None,
+        Enabled=None,
+        Explicit=None,
+        Name=None,
+        NumberOfPackets=None,
+        PacketLength=None,
+        PacketsPerSecond=None,
+        PaddingWithZero=None,
+        SessionReflectorPort=None,
+        SessionReflectorPortIncrement=None,
+        SessionSenderPort=None,
+        SessionSenderPortIncrement=None,
+        TestSessionsCount=None,
+        Timeout=None,
+        TypepDescriptor=None,
+    ):
         # type: (bool, str, bool, bool, str, int, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Adds a new twampTestRange resource on the server and adds it to the container.
 
@@ -366,7 +418,26 @@ class TwampTestRange(Base):
         """
         self._delete()
 
-    def find(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, ObjectId=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+    def find(
+        self,
+        NegotiateReflectorPort=None,
+        ControlRangeName=None,
+        Enabled=None,
+        Explicit=None,
+        Name=None,
+        NumberOfPackets=None,
+        ObjectId=None,
+        PacketLength=None,
+        PacketsPerSecond=None,
+        PaddingWithZero=None,
+        SessionReflectorPort=None,
+        SessionReflectorPortIncrement=None,
+        SessionSenderPort=None,
+        SessionSenderPortIncrement=None,
+        TestSessionsCount=None,
+        Timeout=None,
+        TypepDescriptor=None,
+    ):
         # type: (bool, str, bool, bool, str, int, str, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Finds and retrieves twampTestRange resources from the server.
 
@@ -439,10 +510,14 @@ class TwampTestRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -461,10 +536,14 @@ class TwampTestRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -483,10 +562,14 @@ class TwampTestRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def TwampDeleteTestRange(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -510,7 +593,11 @@ class TwampTestRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('twampDeleteTestRange', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "twampDeleteTestRange", payload=payload, response_object=None
+        )

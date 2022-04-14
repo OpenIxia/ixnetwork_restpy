@@ -410,7 +410,7 @@ class IntraAreaPrefix(Base):
 
     def add(self, Name=None):
         # type: (str) -> IntraAreaPrefix
-        """Adds a new intraAreaPrefix resource on the json, only valid with config assistant
+        """Adds a new intraAreaPrefix resource on the json, only valid with batch add utility
 
         Args
         ----

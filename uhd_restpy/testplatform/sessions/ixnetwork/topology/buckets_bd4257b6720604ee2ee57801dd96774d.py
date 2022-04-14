@@ -201,7 +201,7 @@ class Buckets(Base):
 
     def add(self, Multiplier=None, Name=None):
         # type: (int, str) -> Buckets
-        """Adds a new buckets resource on the json, only valid with config assistant
+        """Adds a new buckets resource on the json, only valid with batch add utility
 
         Args
         ----

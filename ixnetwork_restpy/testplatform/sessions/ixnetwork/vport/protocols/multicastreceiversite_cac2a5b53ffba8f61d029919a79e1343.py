@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,25 @@ class MulticastReceiverSite(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'multicastReceiverSite'
+    _SDM_NAME = "multicastReceiverSite"
     _SDM_ATT_MAP = {
-        'AddressFamilyType': 'addressFamilyType',
-        'CMcastRouteType': 'cMcastRouteType',
-        'Enabled': 'enabled',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'SendTriggeredCmulticastRoute': 'sendTriggeredCmulticastRoute',
-        'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'StartGroupAddress': 'startGroupAddress',
-        'StartSourceAddress': 'startSourceAddress',
-        'SupportLeafAdRoutesSending': 'supportLeafAdRoutesSending',
+        "AddressFamilyType": "addressFamilyType",
+        "CMcastRouteType": "cMcastRouteType",
+        "Enabled": "enabled",
+        "GroupAddressCount": "groupAddressCount",
+        "GroupMaskWidth": "groupMaskWidth",
+        "SendTriggeredCmulticastRoute": "sendTriggeredCmulticastRoute",
+        "SourceAddressCount": "sourceAddressCount",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "SourceMaskWidth": "sourceMaskWidth",
+        "StartGroupAddress": "startGroupAddress",
+        "StartSourceAddress": "startSourceAddress",
+        "SupportLeafAdRoutesSending": "supportLeafAdRoutesSending",
     }
     _SDM_ENUM_MAP = {
-        'addressFamilyType': ['addressFamilyIpv4', 'addressFamilyIpv6'],
-        'cMcastRouteType': ['sourceTreeJoin', 'sharedTreeJoin'],
-        'sourceGroupMapping': ['fullyMeshed', 'oneToOne'],
+        "addressFamilyType": ["addressFamilyIpv4", "addressFamilyIpv6"],
+        "cMcastRouteType": ["sourceTreeJoin", "sharedTreeJoin"],
+        "sourceGroupMapping": ["fullyMeshed", "oneToOne"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,11 +67,12 @@ class MulticastReceiverSite(Base):
         -------
         - str(addressFamilyIpv4 | addressFamilyIpv6): Indicates the IPv4/IPv6 interface id of the router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressFamilyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressFamilyType"])
+
     @AddressFamilyType.setter
     def AddressFamilyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressFamilyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressFamilyType"], value)
 
     @property
     def CMcastRouteType(self):
@@ -80,11 +82,12 @@ class MulticastReceiverSite(Base):
         -------
         - str(sourceTreeJoin | sharedTreeJoin): The C-Multicast Route Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMcastRouteType'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMcastRouteType"])
+
     @CMcastRouteType.setter
     def CMcastRouteType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CMcastRouteType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CMcastRouteType"], value)
 
     @property
     def Enabled(self):
@@ -94,11 +97,12 @@ class MulticastReceiverSite(Base):
         -------
         - bool: Enables or disables use of the multicast Sender site.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupAddressCount(self):
@@ -108,11 +112,12 @@ class MulticastReceiverSite(Base):
         -------
         - number: The number of group addresses to be included in the Register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddressCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddressCount"])
+
     @GroupAddressCount.setter
     def GroupAddressCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddressCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddressCount"], value)
 
     @property
     def GroupMaskWidth(self):
@@ -122,11 +127,12 @@ class MulticastReceiverSite(Base):
         -------
         - number: The number of bits in the network mask used with the Group Address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMaskWidth"])
+
     @GroupMaskWidth.setter
     def GroupMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupMaskWidth"], value)
 
     @property
     def SendTriggeredCmulticastRoute(self):
@@ -136,11 +142,12 @@ class MulticastReceiverSite(Base):
         -------
         - bool: This helps to send Source Tree Join C-Multicast route after receiving Source Active A-D route. This is also required by Shared Tree Join C-Multicast route to send Source Tree Join after receiving Source Active A-D Route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendTriggeredCmulticastRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendTriggeredCmulticastRoute"])
+
     @SendTriggeredCmulticastRoute.setter
     def SendTriggeredCmulticastRoute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendTriggeredCmulticastRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendTriggeredCmulticastRoute"], value)
 
     @property
     def SourceAddressCount(self):
@@ -150,11 +157,12 @@ class MulticastReceiverSite(Base):
         -------
         - number: The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values for the Source Address and the Source Mask Width. the default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddressCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddressCount"])
+
     @SourceAddressCount.setter
     def SourceAddressCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAddressCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAddressCount"], value)
 
     @property
     def SourceGroupMapping(self):
@@ -164,11 +172,12 @@ class MulticastReceiverSite(Base):
         -------
         - str(fullyMeshed | oneToOne): Indicates the source group mapping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def SourceMaskWidth(self):
@@ -178,11 +187,12 @@ class MulticastReceiverSite(Base):
         -------
         - number: The number of bits in the mask applied to the Source Address. (The masked bits in the Source Address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type.Used for (S,G) Type and (S,G, rpt) only.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMaskWidth"])
+
     @SourceMaskWidth.setter
     def SourceMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceMaskWidth"], value)
 
     @property
     def StartGroupAddress(self):
@@ -192,11 +202,12 @@ class MulticastReceiverSite(Base):
         -------
         - str: The first IPv4 or IPv6 Multicast group address in the range of group addresses included in this Register message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartGroupAddress"])
+
     @StartGroupAddress.setter
     def StartGroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartGroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartGroupAddress"], value)
 
     @property
     def StartSourceAddress(self):
@@ -206,11 +217,12 @@ class MulticastReceiverSite(Base):
         -------
         - str: The first IPv4 or IPv6 source address to be included in this Register message.(IPv4 Multicast addresses are not valid for sources.).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSourceAddress"])
+
     @StartSourceAddress.setter
     def StartSourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSourceAddress"], value)
 
     @property
     def SupportLeafAdRoutesSending(self):
@@ -220,13 +232,28 @@ class MulticastReceiverSite(Base):
         -------
         - bool: If true, helps IXIA to send Leaf A-D Route on receiving a S-PMSI A-D Route with the Leaf Information Required flag set. If false, IXIA shall not send the Leaf A-D Route even if such Update message is received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportLeafAdRoutesSending'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportLeafAdRoutesSending"])
+
     @SupportLeafAdRoutesSending.setter
     def SupportLeafAdRoutesSending(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportLeafAdRoutesSending'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportLeafAdRoutesSending"], value)
 
-    def update(self, AddressFamilyType=None, CMcastRouteType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, SendTriggeredCmulticastRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, SupportLeafAdRoutesSending=None):
+    def update(
+        self,
+        AddressFamilyType=None,
+        CMcastRouteType=None,
+        Enabled=None,
+        GroupAddressCount=None,
+        GroupMaskWidth=None,
+        SendTriggeredCmulticastRoute=None,
+        SourceAddressCount=None,
+        SourceGroupMapping=None,
+        SourceMaskWidth=None,
+        StartGroupAddress=None,
+        StartSourceAddress=None,
+        SupportLeafAdRoutesSending=None,
+    ):
         # type: (str, str, bool, int, int, bool, int, str, int, str, str, bool) -> MulticastReceiverSite
         """Updates multicastReceiverSite resource on the server.
 
@@ -251,7 +278,21 @@ class MulticastReceiverSite(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddressFamilyType=None, CMcastRouteType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, SendTriggeredCmulticastRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, SupportLeafAdRoutesSending=None):
+    def add(
+        self,
+        AddressFamilyType=None,
+        CMcastRouteType=None,
+        Enabled=None,
+        GroupAddressCount=None,
+        GroupMaskWidth=None,
+        SendTriggeredCmulticastRoute=None,
+        SourceAddressCount=None,
+        SourceGroupMapping=None,
+        SourceMaskWidth=None,
+        StartGroupAddress=None,
+        StartSourceAddress=None,
+        SupportLeafAdRoutesSending=None,
+    ):
         # type: (str, str, bool, int, int, bool, int, str, int, str, str, bool) -> MulticastReceiverSite
         """Adds a new multicastReceiverSite resource on the server and adds it to the container.
 
@@ -290,7 +331,21 @@ class MulticastReceiverSite(Base):
         """
         self._delete()
 
-    def find(self, AddressFamilyType=None, CMcastRouteType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, SendTriggeredCmulticastRoute=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, SupportLeafAdRoutesSending=None):
+    def find(
+        self,
+        AddressFamilyType=None,
+        CMcastRouteType=None,
+        Enabled=None,
+        GroupAddressCount=None,
+        GroupMaskWidth=None,
+        SendTriggeredCmulticastRoute=None,
+        SourceAddressCount=None,
+        SourceGroupMapping=None,
+        SourceMaskWidth=None,
+        StartGroupAddress=None,
+        StartSourceAddress=None,
+        SupportLeafAdRoutesSending=None,
+    ):
         # type: (str, str, bool, int, int, bool, int, str, int, str, str, bool) -> MulticastReceiverSite
         """Finds and retrieves multicastReceiverSite resources from the server.
 

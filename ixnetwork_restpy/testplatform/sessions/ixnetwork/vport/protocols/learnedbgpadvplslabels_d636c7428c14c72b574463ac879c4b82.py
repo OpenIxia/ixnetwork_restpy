@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class LearnedBgpAdVplsLabels(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedBgpAdVplsLabels'
+    _SDM_NAME = "learnedBgpAdVplsLabels"
     _SDM_ATT_MAP = {
-        'CBit': 'cBit',
-        'GroupId': 'groupId',
-        'Label': 'label',
-        'LocalPwSubState': 'localPwSubState',
-        'Mtu': 'mtu',
-        'PeerAddress': 'peerAddress',
-        'PwState': 'pwState',
-        'RemotePwSubState': 'remotePwSubState',
-        'SourceAii': 'sourceAii',
-        'TargetAii': 'targetAii',
-        'VplsId': 'vplsId',
+        "CBit": "cBit",
+        "GroupId": "groupId",
+        "Label": "label",
+        "LocalPwSubState": "localPwSubState",
+        "Mtu": "mtu",
+        "PeerAddress": "peerAddress",
+        "PwState": "pwState",
+        "RemotePwSubState": "remotePwSubState",
+        "SourceAii": "sourceAii",
+        "TargetAii": "targetAii",
+        "VplsId": "vplsId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedBgpAdVplsLabels, self).__init__(parent, list_op)
@@ -61,7 +61,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - bool: (Read Only) The boolean value for c Bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CBit"])
 
     @property
     def GroupId(self):
@@ -71,7 +71,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 4-byte unsigned number indicating the Group Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def Label(self):
@@ -81,7 +81,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 4-byte unsigned number indicating the Label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def LocalPwSubState(self):
@@ -91,7 +91,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 4-byte unsigned number indicating the Local PW Sub State.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPwSubState'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPwSubState"])
 
     @property
     def Mtu(self):
@@ -101,7 +101,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 2 byte value for the maximum Transmission Unit (MTU).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
 
     @property
     def PeerAddress(self):
@@ -111,7 +111,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - str: (Read Only) The Peer Address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerAddress"])
 
     @property
     def PwState(self):
@@ -121,7 +121,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - bool: (Read Only) The boolean value for PW State.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwState'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwState"])
 
     @property
     def RemotePwSubState(self):
@@ -131,7 +131,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only)The 4-byte unsigned number indicating the PE Sub State.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemotePwSubState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemotePwSubState"])
 
     @property
     def SourceAii(self):
@@ -141,7 +141,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 4 byte unsigned number indicationg the Source AII.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAii'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAii"])
 
     @property
     def TargetAii(self):
@@ -151,7 +151,7 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - number: (Read Only) The 4 byte unsigned number indicationg the Target AII.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetAii'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetAii"])
 
     @property
     def VplsId(self):
@@ -161,10 +161,10 @@ class LearnedBgpAdVplsLabels(Base):
         -------
         - str: (Read Only) The VPLS ID indicated by an IP or AS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsId"])
 
     def add(self):
-        """Adds a new learnedBgpAdVplsLabels resource on the json, only valid with config assistant
+        """Adds a new learnedBgpAdVplsLabels resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -176,7 +176,20 @@ class LearnedBgpAdVplsLabels(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CBit=None, GroupId=None, Label=None, LocalPwSubState=None, Mtu=None, PeerAddress=None, PwState=None, RemotePwSubState=None, SourceAii=None, TargetAii=None, VplsId=None):
+    def find(
+        self,
+        CBit=None,
+        GroupId=None,
+        Label=None,
+        LocalPwSubState=None,
+        Mtu=None,
+        PeerAddress=None,
+        PwState=None,
+        RemotePwSubState=None,
+        SourceAii=None,
+        TargetAii=None,
+        VplsId=None,
+    ):
         # type: (bool, int, int, int, int, str, bool, int, int, int, str) -> LearnedBgpAdVplsLabels
         """Finds and retrieves learnedBgpAdVplsLabels resources from the server.
 

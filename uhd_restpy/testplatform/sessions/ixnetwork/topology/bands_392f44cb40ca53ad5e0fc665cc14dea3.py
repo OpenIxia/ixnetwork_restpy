@@ -197,7 +197,7 @@ class Bands(Base):
 
     def add(self, Multiplier=None, Name=None):
         # type: (int, str) -> Bands
-        """Adds a new bands resource on the json, only valid with config assistant
+        """Adds a new bands resource on the json, only valid with batch add utility
 
         Args
         ----

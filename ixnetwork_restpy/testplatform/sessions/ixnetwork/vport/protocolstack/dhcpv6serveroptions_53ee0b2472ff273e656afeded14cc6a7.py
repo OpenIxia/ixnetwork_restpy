@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class Dhcpv6ServerOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6ServerOptions'
+    _SDM_NAME = "dhcpv6ServerOptions"
     _SDM_ATT_MAP = {
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
-        'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
-        'SetupRateIncrement': 'setupRateIncrement',
-        'SetupRateInitial': 'setupRateInitial',
-        'SetupRateMax': 'setupRateMax',
-        'TeardownRateIncrement': 'teardownRateIncrement',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'TeardownRateMax': 'teardownRateMax',
+        "MaxOutstandingReleases": "maxOutstandingReleases",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "OverrideGlobalSetupRate": "overrideGlobalSetupRate",
+        "OverrideGlobalTeardownRate": "overrideGlobalTeardownRate",
+        "SetupRateIncrement": "setupRateIncrement",
+        "SetupRateInitial": "setupRateInitial",
+        "SetupRateMax": "setupRateMax",
+        "TeardownRateIncrement": "teardownRateIncrement",
+        "TeardownRateInitial": "teardownRateInitial",
+        "TeardownRateMax": "teardownRateMax",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv6ServerOptions, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: The maximum number of requests to be send by all DHCP clients during session teardown.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"])
+
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -76,11 +77,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: The maximum number of requests to be send by all DHCP clients during session startup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -90,7 +92,7 @@ class Dhcpv6ServerOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalSetupRate(self):
@@ -100,11 +102,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"])
+
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"], value)
 
     @property
     def OverrideGlobalTeardownRate(self):
@@ -114,11 +117,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session levelwill be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalTeardownRate"])
+
     @OverrideGlobalTeardownRate.setter
     def OverrideGlobalTeardownRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalTeardownRate"], value)
 
     @property
     def SetupRateIncrement(self):
@@ -128,11 +132,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: This value represents the increment value for setup rate.This value is applied every second and can be negative.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateIncrement"])
+
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateIncrement"], value)
 
     @property
     def SetupRateInitial(self):
@@ -142,11 +147,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateInitial"])
+
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateInitial"], value)
 
     @property
     def SetupRateMax(self):
@@ -156,11 +162,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: This value represents the final value for setup rate.The setup rate will not change after this value is reached.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateMax"])
+
     @SetupRateMax.setter
     def SetupRateMax(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateMax"], value)
 
     @property
     def TeardownRateIncrement(self):
@@ -170,11 +177,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: This value represents the increment value for teardown rate.This value is applied every second and can be negative.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateIncrement"])
+
     @TeardownRateIncrement.setter
     def TeardownRateIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateIncrement"], value)
 
     @property
     def TeardownRateInitial(self):
@@ -184,11 +192,12 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateInitial"])
+
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateInitial"], value)
 
     @property
     def TeardownRateMax(self):
@@ -198,13 +207,26 @@ class Dhcpv6ServerOptions(Base):
         -------
         - number: This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateMax'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateMax"])
+
     @TeardownRateMax.setter
     def TeardownRateMax(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateMax'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateMax"], value)
 
-    def update(self, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None):
+    def update(
+        self,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRateIncrement=None,
+        SetupRateInitial=None,
+        SetupRateMax=None,
+        TeardownRateIncrement=None,
+        TeardownRateInitial=None,
+        TeardownRateMax=None,
+    ):
         # type: (int, int, bool, bool, int, int, int, int, int, int) -> Dhcpv6ServerOptions
         """Updates dhcpv6ServerOptions resource on the server.
 
@@ -227,7 +249,19 @@ class Dhcpv6ServerOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None):
+    def add(
+        self,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRateIncrement=None,
+        SetupRateInitial=None,
+        SetupRateMax=None,
+        TeardownRateIncrement=None,
+        TeardownRateInitial=None,
+        TeardownRateMax=None,
+    ):
         # type: (int, int, bool, bool, int, int, int, int, int, int) -> Dhcpv6ServerOptions
         """Adds a new dhcpv6ServerOptions resource on the server and adds it to the container.
 
@@ -264,7 +298,20 @@ class Dhcpv6ServerOptions(Base):
         """
         self._delete()
 
-    def find(self, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None):
+    def find(
+        self,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        OverrideGlobalSetupRate=None,
+        OverrideGlobalTeardownRate=None,
+        SetupRateIncrement=None,
+        SetupRateInitial=None,
+        SetupRateMax=None,
+        TeardownRateIncrement=None,
+        TeardownRateInitial=None,
+        TeardownRateMax=None,
+    ):
         # type: (int, int, str, bool, bool, int, int, int, int, int, int) -> Dhcpv6ServerOptions
         """Finds and retrieves dhcpv6ServerOptions resources from the server.
 
@@ -331,10 +378,14 @@ class Dhcpv6ServerOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -353,10 +404,14 @@ class Dhcpv6ServerOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -375,7 +430,11 @@ class Dhcpv6ServerOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

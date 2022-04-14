@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,12 +35,11 @@ class IptvGlobals(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'iptvGlobals'
+    _SDM_NAME = "iptvGlobals"
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IptvGlobals, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class IptvGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.globalchannellist.globalchannellist import GlobalChannelList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.globalchannellist.globalchannellist import (
+            GlobalChannelList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GlobalChannelList', None) is not None:
-                return self._properties.get('GlobalChannelList')
+            if self._properties.get("GlobalChannelList", None) is not None:
+                return self._properties.get("GlobalChannelList")
         return GlobalChannelList(self)
 
     @property
@@ -72,10 +75,13 @@ class IptvGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange import (
+            IgmpGroupRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpGroupRange', None) is not None:
-                return self._properties.get('IgmpGroupRange')
+            if self._properties.get("IgmpGroupRange", None) is not None:
+                return self._properties.get("IgmpGroupRange")
         return IgmpGroupRange(self)
 
     @property
@@ -89,10 +95,13 @@ class IptvGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvprofile.iptvprofile import IptvProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvprofile.iptvprofile import (
+            IptvProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IptvProfile', None) is not None:
-                return self._properties.get('IptvProfile')
+            if self._properties.get("IptvProfile", None) is not None:
+                return self._properties.get("IptvProfile")
         return IptvProfile(self)
 
     @property
@@ -103,7 +112,7 @@ class IptvGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def add(self):
         """Adds a new iptvGlobals resource on the server and adds it to the container.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class TableStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tableStatLearnedInformation'
+    _SDM_NAME = "tableStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'ActiveCount': 'activeCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'LookupCount': 'lookupCount',
-        'MatchedCount': 'matchedCount',
-        'MaxEntries': 'maxEntries',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'TableId': 'tableId',
-        'TableName': 'tableName',
-        'Wildcards': 'wildcards',
+        "ActiveCount": "activeCount",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "LookupCount": "lookupCount",
+        "MatchedCount": "matchedCount",
+        "MaxEntries": "maxEntries",
+        "NegotiatedVersion": "negotiatedVersion",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "TableId": "tableId",
+        "TableName": "tableName",
+        "Wildcards": "wildcards",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TableStatLearnedInformation, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class TableStatLearnedInformation(Base):
         -------
         - number: Indicates the number of active entries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActiveCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActiveCount"])
 
     @property
     def DataPathId(self):
@@ -76,7 +76,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -86,7 +86,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -96,7 +96,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -106,7 +106,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def Latency(self):
@@ -116,7 +116,7 @@ class TableStatLearnedInformation(Base):
         -------
         - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -126,7 +126,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def LookupCount(self):
@@ -136,7 +136,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the number of packets looked up in table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LookupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LookupCount"])
 
     @property
     def MatchedCount(self):
@@ -146,7 +146,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the number of packets that hit table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MatchedCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MatchedCount"])
 
     @property
     def MaxEntries(self):
@@ -156,7 +156,7 @@ class TableStatLearnedInformation(Base):
         -------
         - number: Indicates the maximum number of entries supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxEntries'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxEntries"])
 
     @property
     def NegotiatedVersion(self):
@@ -166,7 +166,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def RemoteIp(self):
@@ -176,7 +176,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the IP of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -186,7 +186,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the reply state of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def TableId(self):
@@ -196,7 +196,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the Identifier of table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
 
     @property
     def TableName(self):
@@ -206,7 +206,7 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates a name of the table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableName"])
 
     @property
     def Wildcards(self):
@@ -216,10 +216,10 @@ class TableStatLearnedInformation(Base):
         -------
         - str: Indicates the Wildcards that are supported by the table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Wildcards'])
+        return self._get_attribute(self._SDM_ATT_MAP["Wildcards"])
 
     def add(self):
-        """Adds a new tableStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new tableStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class TableStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActiveCount=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, LookupCount=None, MatchedCount=None, MaxEntries=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, TableId=None, TableName=None, Wildcards=None):
+    def find(
+        self,
+        ActiveCount=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        Latency=None,
+        LocalIp=None,
+        LookupCount=None,
+        MatchedCount=None,
+        MaxEntries=None,
+        NegotiatedVersion=None,
+        RemoteIp=None,
+        ReplyState=None,
+        TableId=None,
+        TableName=None,
+        Wildcards=None,
+    ):
         # type: (int, str, str, str, str, int, str, str, str, int, str, str, str, str, str, str) -> TableStatLearnedInformation
         """Finds and retrieves tableStatLearnedInformation resources from the server.
 

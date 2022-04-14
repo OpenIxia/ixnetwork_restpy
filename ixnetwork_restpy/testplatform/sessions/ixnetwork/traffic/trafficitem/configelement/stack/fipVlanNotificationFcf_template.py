@@ -4,27 +4,27 @@ from ixnetwork_restpy.files import Files
 
 class FipVlanNotificationFcf(Base):
     __slots__ = ()
-    _SDM_NAME = 'fipVlanNotificationFcf'
+    _SDM_NAME = "fipVlanNotificationFcf"
     _SDM_ATT_MAP = {
-        'HeaderFipVersion': 'fipVlanNotificationFcf.header.fipVersion-1',
-        'HeaderFipReserved': 'fipVlanNotificationFcf.header.fipReserved-2',
-        'FipOperationCodeFipVlanDiscovery': 'fipVlanNotificationFcf.header.fipOperation.fipOperationCode.fipVlanDiscovery-3',
-        'FipOperationFipOperationReserved1': 'fipVlanNotificationFcf.header.fipOperation.fipOperationReserved1-4',
-        'FipSubcodeFipSubcode02h': 'fipVlanNotificationFcf.header.fipOperation.fipSubcode.fipSubcode02h-5',
-        'FipOperationFipDescriptorListLength': 'fipVlanNotificationFcf.header.fipOperation.fipDescriptorListLength-6',
-        'FipOperationFipFp': 'fipVlanNotificationFcf.header.fipOperation.fipFp-7',
-        'FipOperationFipSp': 'fipVlanNotificationFcf.header.fipOperation.fipSp-8',
-        'FipOperationFipReserved2': 'fipVlanNotificationFcf.header.fipOperation.fipReserved2-9',
-        'FipOperationFipABit': 'fipVlanNotificationFcf.header.fipOperation.fipABit-10',
-        'FipOperationFipSBit': 'fipVlanNotificationFcf.header.fipOperation.fipSBit-11',
-        'FipOperationFipFBit': 'fipVlanNotificationFcf.header.fipOperation.fipFBit-12',
-        'FipMacAddressDescriptorFipMacAddressDescriptorType': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13',
-        'FipMacAddressDescriptorFipMacAddressDescriptorLength': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14',
-        'FipMacAddressDescriptorFipMacAddressDescriptorValue': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15',
-        'FipVlanDescriptorFipVlanDescriptorType': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorType-16',
-        'FipVlanDescriptorFipVlanDescriptorLength': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorLength-17',
-        'FipVlanDescriptorFipVlanDescriptorReserved': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorReserved-18',
-        'FipVlanDescriptorFipVlanDescriptorValue': 'fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorValue-19',
+        "HeaderFipVersion": "fipVlanNotificationFcf.header.fipVersion-1",
+        "HeaderFipReserved": "fipVlanNotificationFcf.header.fipReserved-2",
+        "FipOperationCodeFipVlanDiscovery": "fipVlanNotificationFcf.header.fipOperation.fipOperationCode.fipVlanDiscovery-3",
+        "FipOperationFipOperationReserved1": "fipVlanNotificationFcf.header.fipOperation.fipOperationReserved1-4",
+        "FipSubcodeFipSubcode02h": "fipVlanNotificationFcf.header.fipOperation.fipSubcode.fipSubcode02h-5",
+        "FipOperationFipDescriptorListLength": "fipVlanNotificationFcf.header.fipOperation.fipDescriptorListLength-6",
+        "FipOperationFipFp": "fipVlanNotificationFcf.header.fipOperation.fipFp-7",
+        "FipOperationFipSp": "fipVlanNotificationFcf.header.fipOperation.fipSp-8",
+        "FipOperationFipReserved2": "fipVlanNotificationFcf.header.fipOperation.fipReserved2-9",
+        "FipOperationFipABit": "fipVlanNotificationFcf.header.fipOperation.fipABit-10",
+        "FipOperationFipSBit": "fipVlanNotificationFcf.header.fipOperation.fipSBit-11",
+        "FipOperationFipFBit": "fipVlanNotificationFcf.header.fipOperation.fipFBit-12",
+        "FipMacAddressDescriptorFipMacAddressDescriptorType": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorType-13",
+        "FipMacAddressDescriptorFipMacAddressDescriptorLength": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorLength-14",
+        "FipMacAddressDescriptorFipMacAddressDescriptorValue": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipMacAddressDescriptor.fipMacAddressDescriptorValue-15",
+        "FipVlanDescriptorFipVlanDescriptorType": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorType-16",
+        "FipVlanDescriptorFipVlanDescriptorLength": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorLength-17",
+        "FipVlanDescriptorFipVlanDescriptorReserved": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorReserved-18",
+        "FipVlanDescriptorFipVlanDescriptorValue": "fipVlanNotificationFcf.header.fipDescriptors.fipSelectFipDescriptor.fipVlanDescriptor.fipVlanDescriptorValue-19",
     }
 
     def __init__(self, parent, list_op=False):
@@ -38,7 +38,10 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipVersion"])
+        )
 
     @property
     def HeaderFipReserved(self):
@@ -48,7 +51,10 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFipReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFipReserved"])
+        )
 
     @property
     def FipOperationCodeFipVlanDiscovery(self):
@@ -58,7 +64,11 @@ class FipVlanNotificationFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationCodeFipVlanDiscovery']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationCodeFipVlanDiscovery"]),
+        )
 
     @property
     def FipOperationFipOperationReserved1(self):
@@ -68,7 +78,11 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipOperationReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FipOperationFipOperationReserved1"]),
+        )
 
     @property
     def FipSubcodeFipSubcode02h(self):
@@ -78,7 +92,10 @@ class FipVlanNotificationFcf(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipSubcodeFipSubcode02h']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipSubcodeFipSubcode02h"])
+        )
 
     @property
     def FipOperationFipDescriptorListLength(self):
@@ -88,7 +105,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipDescriptorListLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipOperationFipDescriptorListLength"]
+            ),
+        )
 
     @property
     def FipOperationFipFp(self):
@@ -99,7 +122,10 @@ class FipVlanNotificationFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFp"])
+        )
 
     @property
     def FipOperationFipSp(self):
@@ -110,7 +136,10 @@ class FipVlanNotificationFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSp"])
+        )
 
     @property
     def FipOperationFipReserved2(self):
@@ -120,7 +149,10 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipReserved2"])
+        )
 
     @property
     def FipOperationFipABit(self):
@@ -131,7 +163,10 @@ class FipVlanNotificationFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipABit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipABit"])
+        )
 
     @property
     def FipOperationFipSBit(self):
@@ -142,7 +177,10 @@ class FipVlanNotificationFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipSBit"])
+        )
 
     @property
     def FipOperationFipFBit(self):
@@ -153,7 +191,10 @@ class FipVlanNotificationFcf(Base):
         Available enum values: False, 0, True, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipOperationFipFBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FipOperationFipFBit"])
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorType(self):
@@ -163,7 +204,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorType"]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorLength(self):
@@ -173,7 +220,15 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "FipMacAddressDescriptorFipMacAddressDescriptorLength"
+                ]
+            ),
+        )
 
     @property
     def FipMacAddressDescriptorFipMacAddressDescriptorValue(self):
@@ -183,7 +238,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipMacAddressDescriptorFipMacAddressDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipMacAddressDescriptorFipMacAddressDescriptorValue"]
+            ),
+        )
 
     @property
     def FipVlanDescriptorFipVlanDescriptorType(self):
@@ -193,7 +254,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipVlanDescriptorFipVlanDescriptorType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipVlanDescriptorFipVlanDescriptorType"]
+            ),
+        )
 
     @property
     def FipVlanDescriptorFipVlanDescriptorLength(self):
@@ -203,7 +270,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipVlanDescriptorFipVlanDescriptorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipVlanDescriptorFipVlanDescriptorLength"]
+            ),
+        )
 
     @property
     def FipVlanDescriptorFipVlanDescriptorReserved(self):
@@ -213,7 +286,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipVlanDescriptorFipVlanDescriptorReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipVlanDescriptorFipVlanDescriptorReserved"]
+            ),
+        )
 
     @property
     def FipVlanDescriptorFipVlanDescriptorValue(self):
@@ -223,7 +302,13 @@ class FipVlanNotificationFcf(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FipVlanDescriptorFipVlanDescriptorValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FipVlanDescriptorFipVlanDescriptorValue"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

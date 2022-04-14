@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class SpbmNodeBaseVidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbmNodeBaseVidRange'
+    _SDM_NAME = "spbmNodeBaseVidRange"
     _SDM_ATT_MAP = {
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpId': 'bVlanTpId',
-        'BaseVid': 'baseVid',
-        'EctAlgorithm': 'ectAlgorithm',
-        'UseFlag': 'useFlag',
+        "BVlanPriority": "bVlanPriority",
+        "BVlanTpId": "bVlanTpId",
+        "BaseVid": "baseVid",
+        "EctAlgorithm": "ectAlgorithm",
+        "UseFlag": "useFlag",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbmNodeBaseVidRange, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class SpbmNodeBaseVidRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_ce5aa3fd54769fa53d910c12b9b3cddb import SpbmNodeIsIdRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_ce5aa3fd54769fa53d910c12b9b3cddb import (
+            SpbmNodeIsIdRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbmNodeIsIdRange', None) is not None:
-                return self._properties.get('SpbmNodeIsIdRange')
+            if self._properties.get("SpbmNodeIsIdRange", None) is not None:
+                return self._properties.get("SpbmNodeIsIdRange")
         return SpbmNodeIsIdRange(self)
 
     @property
@@ -73,11 +76,12 @@ class SpbmNodeBaseVidRange(Base):
         -------
         - number: The user priority of the Base VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanPriority"])
+
     @BVlanPriority.setter
     def BVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanPriority"], value)
 
     @property
     def BVlanTpId(self):
@@ -87,11 +91,12 @@ class SpbmNodeBaseVidRange(Base):
         -------
         - number: The tag priority identifier for base VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlanTpId"])
+
     @BVlanTpId.setter
     def BVlanTpId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BVlanTpId"], value)
 
     @property
     def BaseVid(self):
@@ -101,11 +106,12 @@ class SpbmNodeBaseVidRange(Base):
         -------
         - number: The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVid'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVid"])
+
     @BaseVid.setter
     def BaseVid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseVid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseVid"], value)
 
     @property
     def EctAlgorithm(self):
@@ -115,11 +121,12 @@ class SpbmNodeBaseVidRange(Base):
         -------
         - number: The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["EctAlgorithm"])
+
     @EctAlgorithm.setter
     def EctAlgorithm(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EctAlgorithm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EctAlgorithm"], value)
 
     @property
     def UseFlag(self):
@@ -129,13 +136,21 @@ class SpbmNodeBaseVidRange(Base):
         -------
         - bool: Set to true to activate the user flag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseFlag"])
+
     @UseFlag.setter
     def UseFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseFlag"], value)
 
-    def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def update(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Updates spbmNodeBaseVidRange resource on the server.
 
@@ -153,7 +168,14 @@ class SpbmNodeBaseVidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def add(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Adds a new spbmNodeBaseVidRange resource on the server and adds it to the container.
 
@@ -185,7 +207,14 @@ class SpbmNodeBaseVidRange(Base):
         """
         self._delete()
 
-    def find(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+    def find(
+        self,
+        BVlanPriority=None,
+        BVlanTpId=None,
+        BaseVid=None,
+        EctAlgorithm=None,
+        UseFlag=None,
+    ):
         # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Finds and retrieves spbmNodeBaseVidRange resources from the server.
 

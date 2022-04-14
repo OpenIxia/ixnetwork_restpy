@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,45 +33,44 @@ class Dhcp6ServerSessions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcp6ServerSessions'
+    _SDM_NAME = "dhcp6ServerSessions"
     _SDM_ATT_MAP = {
-        'AddressDuidMask': 'addressDuidMask',
-        'AddressDuidPattern': 'addressDuidPattern',
-        'AddressesPerIA': 'addressesPerIA',
-        'Count': 'count',
-        'CustomRebindTime': 'customRebindTime',
-        'CustomRenewTime': 'customRenewTime',
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAddressMatchDuid': 'enableAddressMatchDuid',
-        'EnablePrefixMatchDuid': 'enablePrefixMatchDuid',
-        'EnableVssAddrAssgnmt': 'enableVssAddrAssgnmt',
-        'IaType': 'iaType',
-        'Ignore': 'ignore',
-        'IgnoreMask': 'ignoreMask',
-        'IgnorePattern': 'ignorePattern',
-        'IpAddress': 'ipAddress',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'IpAddressPD': 'ipAddressPD',
-        'IpPrefix': 'ipPrefix',
-        'IpPrefixIncrement': 'ipPrefixIncrement',
-        'LeaseTimeIncrement': 'leaseTimeIncrement',
-        'Nak': 'nak',
-        'NakMask': 'nakMask',
-        'NakPattern': 'nakPattern',
-        'Name': 'name',
-        'PoolPrefixSize': 'poolPrefixSize',
-        'PoolSize': 'poolSize',
-        'PrefixDuidIncrement': 'prefixDuidIncrement',
-        'PrefixDuidStart': 'prefixDuidStart',
-        'PrefixLength': 'prefixLength',
-        'PrefixesPerIA': 'prefixesPerIA',
-        'UseCustomTimes': 'useCustomTimes',
-        'VpnId': 'vpnId',
-        'VpnName': 'vpnName',
+        "AddressDuidMask": "addressDuidMask",
+        "AddressDuidPattern": "addressDuidPattern",
+        "AddressesPerIA": "addressesPerIA",
+        "Count": "count",
+        "CustomRebindTime": "customRebindTime",
+        "CustomRenewTime": "customRenewTime",
+        "DefaultLeaseTime": "defaultLeaseTime",
+        "DescriptiveName": "descriptiveName",
+        "EnableAddressMatchDuid": "enableAddressMatchDuid",
+        "EnablePrefixMatchDuid": "enablePrefixMatchDuid",
+        "EnableVssAddrAssgnmt": "enableVssAddrAssgnmt",
+        "IaType": "iaType",
+        "Ignore": "ignore",
+        "IgnoreMask": "ignoreMask",
+        "IgnorePattern": "ignorePattern",
+        "IpAddress": "ipAddress",
+        "IpAddressIncrement": "ipAddressIncrement",
+        "IpAddressPD": "ipAddressPD",
+        "IpPrefix": "ipPrefix",
+        "IpPrefixIncrement": "ipPrefixIncrement",
+        "LeaseTimeIncrement": "leaseTimeIncrement",
+        "Nak": "nak",
+        "NakMask": "nakMask",
+        "NakPattern": "nakPattern",
+        "Name": "name",
+        "PoolPrefixSize": "poolPrefixSize",
+        "PoolSize": "poolSize",
+        "PrefixDuidIncrement": "prefixDuidIncrement",
+        "PrefixDuidStart": "prefixDuidStart",
+        "PrefixLength": "prefixLength",
+        "PrefixesPerIA": "prefixesPerIA",
+        "UseCustomTimes": "useCustomTimes",
+        "VpnId": "vpnId",
+        "VpnName": "vpnName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcp6ServerSessions, self).__init__(parent, list_op)
@@ -84,7 +84,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mask based on which the DUIDs are chosen for address assignment.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressDuidMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressDuidMask"])
+        )
 
     @property
     def AddressDuidPattern(self):
@@ -95,7 +98,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The pattern based on which the DUIDs are chosen for address assignment.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressDuidPattern']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressDuidPattern"])
+        )
 
     @property
     def AddressesPerIA(self):
@@ -106,7 +112,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of addresses to be advertised in a single IANA option.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressesPerIA']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressesPerIA"])
+        )
 
     @property
     def Count(self):
@@ -116,7 +125,7 @@ class Dhcp6ServerSessions(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomRebindTime(self):
@@ -127,7 +136,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Time (in seconds) after the client will start rebinding the leases from the server.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomRebindTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomRebindTime"])
+        )
 
     @property
     def CustomRenewTime(self):
@@ -138,7 +150,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Time (in seconds) after the client will start renewing the leases from the server.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomRenewTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomRenewTime"])
+        )
 
     @property
     def DefaultLeaseTime(self):
@@ -149,7 +164,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Life Time length in seconds that will be assigned to a lease if the requesting DHCP Client does not specify a specific expiration time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -159,7 +177,7 @@ class Dhcp6ServerSessions(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableAddressMatchDuid(self):
@@ -170,7 +188,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the requests with DUIDs matching the mask and pattern will be assigned addresses from this pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAddressMatchDuid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableAddressMatchDuid"])
+        )
 
     @property
     def EnablePrefixMatchDuid(self):
@@ -181,7 +202,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the requests with DUIDs matching DUID start and increment will be given a specific prefix from this pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePrefixMatchDuid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePrefixMatchDuid"])
+        )
 
     @property
     def EnableVssAddrAssgnmt(self):
@@ -192,7 +216,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP server will assign leases based on VPN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVssAddrAssgnmt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableVssAddrAssgnmt"])
+        )
 
     @property
     def IaType(self):
@@ -203,7 +230,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Identity Association type supported by IPv6 address pools .
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IaType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IaType"]))
 
     @property
     def Ignore(self):
@@ -214,7 +242,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the requests with DUIDs matching the mask and pattern will be ignored by the Server.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ignore']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ignore"]))
 
     @property
     def IgnoreMask(self):
@@ -225,7 +254,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mask based on which the DUIDs of ignored addresses are chosen.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreMask']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IgnoreMask"]))
 
     @property
     def IgnorePattern(self):
@@ -236,7 +266,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The pattern based on which the DUIDs of ignored addresses are chosen.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnorePattern']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IgnorePattern"]))
 
     @property
     def IpAddress(self):
@@ -247,7 +278,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the first lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpAddress"]))
 
     @property
     def IpAddressIncrement(self):
@@ -258,7 +290,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The increment value for the lease address within the lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddressIncrement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpAddressIncrement"])
+        )
 
     @property
     def IpAddressPD(self):
@@ -269,7 +304,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The prefix of the first lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddressPD']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpAddressPD"]))
 
     @property
     def IpPrefix(self):
@@ -280,7 +316,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Subnet Address length used to compute the subnetwork the advertised lease is part of.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpPrefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpPrefix"]))
 
     @property
     def IpPrefixIncrement(self):
@@ -291,7 +328,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The increment value for the lease prefix within the lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpPrefixIncrement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpPrefixIncrement"])
+        )
 
     @property
     def LeaseTimeIncrement(self):
@@ -302,7 +342,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Increment step for Lease Time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LeaseTimeIncrement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LeaseTimeIncrement"])
+        )
 
     @property
     def Nak(self):
@@ -313,7 +356,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the requests with DUIDs matching the mask and pattern will be NAKed by the Server.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Nak']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Nak"]))
 
     @property
     def NakMask(self):
@@ -324,7 +368,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mask based on which the DUIDs of NAKed addresses are chosen.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NakMask']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NakMask"]))
 
     @property
     def NakPattern(self):
@@ -335,7 +380,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The pattern based on which the DUIDs of NAKed addresses are chosen.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NakPattern']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NakPattern"]))
 
     @property
     def Name(self):
@@ -345,11 +391,12 @@ class Dhcp6ServerSessions(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PoolPrefixSize(self):
@@ -360,7 +407,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of leases to be allocated per each server prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PoolPrefixSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PoolPrefixSize"])
+        )
 
     @property
     def PoolSize(self):
@@ -371,7 +421,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of leases to be allocated per each server address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PoolSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PoolSize"]))
 
     @property
     def PrefixDuidIncrement(self):
@@ -382,7 +433,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The increment used to generate the DUIDs which will be chosen for prefix assignment.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixDuidIncrement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixDuidIncrement"])
+        )
 
     @property
     def PrefixDuidStart(self):
@@ -393,7 +447,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The first DUID which will be chosen for prefix assignment.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixDuidStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrefixDuidStart"])
+        )
 
     @property
     def PrefixLength(self):
@@ -404,7 +461,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The subnet address length advertised in DHCP Offer and Reply messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def PrefixesPerIA(self):
@@ -415,7 +473,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of prefixes to be advertised in a single IANA option.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixesPerIA']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixesPerIA"]))
 
     @property
     def UseCustomTimes(self):
@@ -426,7 +485,10 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): >Use Custom Renew/Rebind Times instead of the ones computed from the valability times of the leases.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseCustomTimes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseCustomTimes"])
+        )
 
     @property
     def VpnId(self):
@@ -437,7 +499,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN ID, DHCP server will assign leases.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VpnId"]))
 
     @property
     def VpnName(self):
@@ -448,7 +511,8 @@ class Dhcp6ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN Name, DHCP server will assign leases.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VpnName"]))
 
     def update(self, Name=None):
         # type: (str) -> Dhcp6ServerSessions
@@ -509,7 +573,41 @@ class Dhcp6ServerSessions(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AddressDuidMask=None, AddressDuidPattern=None, AddressesPerIA=None, CustomRebindTime=None, CustomRenewTime=None, DefaultLeaseTime=None, EnableAddressMatchDuid=None, EnablePrefixMatchDuid=None, EnableVssAddrAssgnmt=None, IaType=None, Ignore=None, IgnoreMask=None, IgnorePattern=None, IpAddress=None, IpAddressIncrement=None, IpAddressPD=None, IpPrefix=None, IpPrefixIncrement=None, LeaseTimeIncrement=None, Nak=None, NakMask=None, NakPattern=None, PoolPrefixSize=None, PoolSize=None, PrefixDuidIncrement=None, PrefixDuidStart=None, PrefixLength=None, PrefixesPerIA=None, UseCustomTimes=None, VpnId=None, VpnName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AddressDuidMask=None,
+        AddressDuidPattern=None,
+        AddressesPerIA=None,
+        CustomRebindTime=None,
+        CustomRenewTime=None,
+        DefaultLeaseTime=None,
+        EnableAddressMatchDuid=None,
+        EnablePrefixMatchDuid=None,
+        EnableVssAddrAssgnmt=None,
+        IaType=None,
+        Ignore=None,
+        IgnoreMask=None,
+        IgnorePattern=None,
+        IpAddress=None,
+        IpAddressIncrement=None,
+        IpAddressPD=None,
+        IpPrefix=None,
+        IpPrefixIncrement=None,
+        LeaseTimeIncrement=None,
+        Nak=None,
+        NakMask=None,
+        NakPattern=None,
+        PoolPrefixSize=None,
+        PoolSize=None,
+        PrefixDuidIncrement=None,
+        PrefixDuidStart=None,
+        PrefixLength=None,
+        PrefixesPerIA=None,
+        UseCustomTimes=None,
+        VpnId=None,
+        VpnName=None,
+    ):
         """Base class infrastructure that gets a list of dhcp6ServerSessions device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

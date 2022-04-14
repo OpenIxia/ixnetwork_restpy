@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class Flags(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flags'
+    _SDM_NAME = "flags"
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'CollectStatistics': 'collectStatistics',
-        'RateKb': 'rateKb',
-        'RatePacket': 'ratePacket',
+        "BurstSize": "burstSize",
+        "CollectStatistics": "collectStatistics",
+        "RateKb": "rateKb",
+        "RatePacket": "ratePacket",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Flags, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class Flags(Base):
         -------
         - bool: This flag indicate that burst size calculation is to be done while applying the bands.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
+
     @BurstSize.setter
     def BurstSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstSize"], value)
 
     @property
     def CollectStatistics(self):
@@ -67,11 +68,12 @@ class Flags(Base):
         -------
         - bool: This flag enables statistics collection for the meter and each band.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CollectStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["CollectStatistics"])
+
     @CollectStatistics.setter
     def CollectStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CollectStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CollectStatistics"], value)
 
     @property
     def RateKb(self):
@@ -81,11 +83,12 @@ class Flags(Base):
         -------
         - bool: This flag indicates the rate value for bands associated with this meter is considered in kilo-bits per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RateKb'])
+        return self._get_attribute(self._SDM_ATT_MAP["RateKb"])
+
     @RateKb.setter
     def RateKb(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RateKb'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RateKb"], value)
 
     @property
     def RatePacket(self):
@@ -95,13 +98,16 @@ class Flags(Base):
         -------
         - bool: This flag indicates same as Rate (kb/sec)but the rate value is in packet per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RatePacket'])
+        return self._get_attribute(self._SDM_ATT_MAP["RatePacket"])
+
     @RatePacket.setter
     def RatePacket(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RatePacket'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RatePacket"], value)
 
-    def update(self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None):
+    def update(
+        self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None
+    ):
         # type: (bool, bool, bool, bool) -> Flags
         """Updates flags resource on the server.
 
@@ -118,7 +124,9 @@ class Flags(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None):
+    def find(
+        self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None
+    ):
         # type: (bool, bool, bool, bool) -> Flags
         """Finds and retrieves flags resources from the server.
 

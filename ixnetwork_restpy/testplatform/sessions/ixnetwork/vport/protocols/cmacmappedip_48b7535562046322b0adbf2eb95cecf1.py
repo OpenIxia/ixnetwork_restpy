@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,15 @@ class CMacMappedIp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cMacMappedIp'
+    _SDM_NAME = "cMacMappedIp"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IpAddress': 'ipAddress',
-        'IpStep': 'ipStep',
-        'IpType': 'ipType',
+        "Enabled": "enabled",
+        "IpAddress": "ipAddress",
+        "IpStep": "ipStep",
+        "IpType": "ipType",
     }
     _SDM_ENUM_MAP = {
-        'ipType': ['ipv4', 'ipv6'],
+        "ipType": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,11 +57,12 @@ class CMacMappedIp(Base):
         -------
         - bool: If true then this IP is associated with the B-MAC of the ethernet segment. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpAddress(self):
@@ -70,11 +72,12 @@ class CMacMappedIp(Base):
         -------
         - str: IP address value is given here depending on the IP Type. Default value is all zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpStep(self):
@@ -84,11 +87,12 @@ class CMacMappedIp(Base):
         -------
         - number: If IP address is associated with a MAC range (C-MAC Range) then this step value is used to make the IP addresses for all C-MAC of that range unique. For example if C-MAC range has no of C-MAC 3 and IP address associated with this mac range is 1.1.1.1 with step 2 then IP addresses for 3 MACs of the mac range will be 1.1.1.1, 1.1.1.3 and 1.1.1.5. Default value is 1. This is used only in EVPN mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpStep"])
+
     @IpStep.setter
     def IpStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpStep"], value)
 
     @property
     def IpType(self):
@@ -98,11 +102,12 @@ class CMacMappedIp(Base):
         -------
         - str(ipv4 | ipv6): Drop down of {IPv4, IPv6}. If IPv4 is selected then IPv4 address is used. If IPv6 is selected then IPv6 address is used. Default value is IPv4.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     def update(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
         # type: (bool, str, int, str) -> CMacMappedIp

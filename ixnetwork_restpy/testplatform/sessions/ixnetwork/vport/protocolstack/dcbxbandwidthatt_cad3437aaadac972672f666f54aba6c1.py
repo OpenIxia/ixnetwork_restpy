@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class DcbxBandwidthAtt(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxBandwidthAtt'
+    _SDM_NAME = "dcbxBandwidthAtt"
     _SDM_ATT_MAP = {
-        'BwGroupId': 'bwGroupId',
-        'BwPercentage': 'bwPercentage',
-        'ObjectId': 'objectId',
-        'Priority': 'priority',
-        'StrictPriority': 'strictPriority',
+        "BwGroupId": "bwGroupId",
+        "BwPercentage": "bwPercentage",
+        "ObjectId": "objectId",
+        "Priority": "priority",
+        "StrictPriority": "strictPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxBandwidthAtt, self).__init__(parent, list_op)
@@ -54,13 +54,14 @@ class DcbxBandwidthAtt(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BwGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BwGroupId"])
+
     @BwGroupId.setter
     def BwGroupId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BwGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BwGroupId"], value)
 
     @property
     def BwPercentage(self):
@@ -68,13 +69,14 @@ class DcbxBandwidthAtt(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BwPercentage'])
+        return self._get_attribute(self._SDM_ATT_MAP["BwPercentage"])
+
     @BwPercentage.setter
     def BwPercentage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BwPercentage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BwPercentage"], value)
 
     @property
     def ObjectId(self):
@@ -84,7 +86,7 @@ class DcbxBandwidthAtt(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Priority(self):
@@ -92,13 +94,14 @@ class DcbxBandwidthAtt(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def StrictPriority(self):
@@ -106,24 +109,27 @@ class DcbxBandwidthAtt(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StrictPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["StrictPriority"])
+
     @StrictPriority.setter
     def StrictPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StrictPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StrictPriority"], value)
 
-    def update(self, BwGroupId=None, BwPercentage=None, Priority=None, StrictPriority=None):
+    def update(
+        self, BwGroupId=None, BwPercentage=None, Priority=None, StrictPriority=None
+    ):
         # type: (int, int, int, int) -> DcbxBandwidthAtt
         """Updates dcbxBandwidthAtt resource on the server.
 
         Args
         ----
-        - BwGroupId (number): 
-        - BwPercentage (number): 
-        - Priority (number): 
-        - StrictPriority (number): 
+        - BwGroupId (number):
+        - BwPercentage (number):
+        - Priority (number):
+        - StrictPriority (number):
 
         Raises
         ------
@@ -131,16 +137,18 @@ class DcbxBandwidthAtt(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BwGroupId=None, BwPercentage=None, Priority=None, StrictPriority=None):
+    def add(
+        self, BwGroupId=None, BwPercentage=None, Priority=None, StrictPriority=None
+    ):
         # type: (int, int, int, int) -> DcbxBandwidthAtt
         """Adds a new dcbxBandwidthAtt resource on the server and adds it to the container.
 
         Args
         ----
-        - BwGroupId (number): 
-        - BwPercentage (number): 
-        - Priority (number): 
-        - StrictPriority (number): 
+        - BwGroupId (number):
+        - BwPercentage (number):
+        - Priority (number):
+        - StrictPriority (number):
 
         Returns
         -------
@@ -162,7 +170,14 @@ class DcbxBandwidthAtt(Base):
         """
         self._delete()
 
-    def find(self, BwGroupId=None, BwPercentage=None, ObjectId=None, Priority=None, StrictPriority=None):
+    def find(
+        self,
+        BwGroupId=None,
+        BwPercentage=None,
+        ObjectId=None,
+        Priority=None,
+        StrictPriority=None,
+    ):
         # type: (int, int, str, int, int) -> DcbxBandwidthAtt
         """Finds and retrieves dcbxBandwidthAtt resources from the server.
 
@@ -172,11 +187,11 @@ class DcbxBandwidthAtt(Base):
 
         Args
         ----
-        - BwGroupId (number): 
-        - BwPercentage (number): 
+        - BwGroupId (number):
+        - BwPercentage (number):
         - ObjectId (str): Unique identifier for this object
-        - Priority (number): 
-        - StrictPriority (number): 
+        - Priority (number):
+        - StrictPriority (number):
 
         Returns
         -------
@@ -223,10 +238,14 @@ class DcbxBandwidthAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -245,10 +264,14 @@ class DcbxBandwidthAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -267,7 +290,11 @@ class DcbxBandwidthAtt(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

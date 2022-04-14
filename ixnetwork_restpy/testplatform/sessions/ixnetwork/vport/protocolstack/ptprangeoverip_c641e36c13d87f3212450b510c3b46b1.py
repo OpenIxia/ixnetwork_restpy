@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,86 +35,85 @@ class PtpRangeOverIp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ptpRangeOverIp'
+    _SDM_NAME = "ptpRangeOverIp"
     _SDM_ATT_MAP = {
-        'AnnounceCurrentUtcOffsetValid': 'announceCurrentUtcOffsetValid',
-        'AnnounceDropRate': 'announceDropRate',
-        'AnnounceFrequencyTraceable': 'announceFrequencyTraceable',
-        'AnnounceLeap59': 'announceLeap59',
-        'AnnounceLeap61': 'announceLeap61',
-        'AnnouncePtpTimescale': 'announcePtpTimescale',
-        'AnnounceReceiptTimeout': 'announceReceiptTimeout',
-        'AnnounceTimeTraceable': 'announceTimeTraceable',
-        'ClientCount': 'clientCount',
-        'ClientIpAddress': 'clientIpAddress',
-        'ClientIpIncrementBy': 'clientIpIncrementBy',
-        'ClientMacAddress': 'clientMacAddress',
-        'ClientMacIncrementBy': 'clientMacIncrementBy',
-        'ClockAccuracy': 'clockAccuracy',
-        'ClockClass': 'clockClass',
-        'ClockIncrement': 'clockIncrement',
-        'CommunicationMode': 'communicationMode',
-        'DelayMechanism': 'delayMechanism',
-        'DelayRespDropRate': 'delayRespDropRate',
-        'DelayRespReceiptTimeout': 'delayRespReceiptTimeout',
-        'DelayResponseDelay': 'delayResponseDelay',
-        'DelayResponseDelayInsertionRate': 'delayResponseDelayInsertionRate',
-        'Domain': 'domain',
-        'DropSignalReqAnnounce': 'dropSignalReqAnnounce',
-        'DropSignalReqDelayResp': 'dropSignalReqDelayResp',
-        'DropSignalReqSync': 'dropSignalReqSync',
-        'Enabled': 'enabled',
-        'FirstClock': 'firstClock',
-        'FollowUpBadCrcRate': 'followUpBadCrcRate',
-        'FollowUpDelay': 'followUpDelay',
-        'FollowUpDelayInsertionRate': 'followUpDelayInsertionRate',
-        'FollowUpDropRate': 'followUpDropRate',
-        'GrantDelayRespDurationInterval': 'grantDelayRespDurationInterval',
-        'GrantSyncDurationInterval': 'grantSyncDurationInterval',
-        'GrantUnicastDurationInterval': 'grantUnicastDurationInterval',
-        'IpTos': 'ipTos',
-        'LearnPortId': 'learnPortId',
-        'LogAnnounceInterval': 'logAnnounceInterval',
-        'LogDelayReqInterval': 'logDelayReqInterval',
-        'LogSyncInterval': 'logSyncInterval',
-        'MasterCount': 'masterCount',
-        'MasterIpAddress': 'masterIpAddress',
-        'MasterIpIncrementBy': 'masterIpIncrementBy',
-        'MasterIpIncrementInterEntity': 'masterIpIncrementInterEntity',
-        'MasterMacAddress': 'masterMacAddress',
-        'MasterMacIncrementBy': 'masterMacIncrementBy',
-        'MasterMacIncrementInterEntity': 'masterMacIncrementInterEntity',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PortNumber': 'portNumber',
-        'PortNumberIncrement': 'portNumberIncrement',
-        'Priority1': 'priority1',
-        'Priority2': 'priority2',
-        'RenewalInvited': 'renewalInvited',
-        'RequestAttempts': 'requestAttempts',
-        'RequestHolddown': 'requestHolddown',
-        'RequestInterval': 'requestInterval',
-        'ResidenceTime': 'residenceTime',
-        'RxCalibration': 'rxCalibration',
-        'SendAnnounceMulticast': 'sendAnnounceMulticast',
-        'SendAnnounceTlv': 'sendAnnounceTlv',
-        'SendCancelTlv': 'sendCancelTlv',
-        'SignalInterval': 'signalInterval',
-        'SignalUnicastHandling': 'signalUnicastHandling',
-        'StepMode': 'stepMode',
-        'StepsRemoved': 'stepsRemoved',
-        'StrictGrant': 'strictGrant',
-        'SyncDropRate': 'syncDropRate',
-        'SyncReceiptTimeout': 'syncReceiptTimeout',
-        'TimeSource': 'timeSource',
-        'TimestampOffset': 'timestampOffset',
-        'TimestampOffsetVariation': 'timestampOffsetVariation',
-        'TxCalibration': 'txCalibration',
-        'UseAlternateMasterFlag': 'useAlternateMasterFlag',
-        'UseClockIdentity': 'useClockIdentity',
+        "AnnounceCurrentUtcOffsetValid": "announceCurrentUtcOffsetValid",
+        "AnnounceDropRate": "announceDropRate",
+        "AnnounceFrequencyTraceable": "announceFrequencyTraceable",
+        "AnnounceLeap59": "announceLeap59",
+        "AnnounceLeap61": "announceLeap61",
+        "AnnouncePtpTimescale": "announcePtpTimescale",
+        "AnnounceReceiptTimeout": "announceReceiptTimeout",
+        "AnnounceTimeTraceable": "announceTimeTraceable",
+        "ClientCount": "clientCount",
+        "ClientIpAddress": "clientIpAddress",
+        "ClientIpIncrementBy": "clientIpIncrementBy",
+        "ClientMacAddress": "clientMacAddress",
+        "ClientMacIncrementBy": "clientMacIncrementBy",
+        "ClockAccuracy": "clockAccuracy",
+        "ClockClass": "clockClass",
+        "ClockIncrement": "clockIncrement",
+        "CommunicationMode": "communicationMode",
+        "DelayMechanism": "delayMechanism",
+        "DelayRespDropRate": "delayRespDropRate",
+        "DelayRespReceiptTimeout": "delayRespReceiptTimeout",
+        "DelayResponseDelay": "delayResponseDelay",
+        "DelayResponseDelayInsertionRate": "delayResponseDelayInsertionRate",
+        "Domain": "domain",
+        "DropSignalReqAnnounce": "dropSignalReqAnnounce",
+        "DropSignalReqDelayResp": "dropSignalReqDelayResp",
+        "DropSignalReqSync": "dropSignalReqSync",
+        "Enabled": "enabled",
+        "FirstClock": "firstClock",
+        "FollowUpBadCrcRate": "followUpBadCrcRate",
+        "FollowUpDelay": "followUpDelay",
+        "FollowUpDelayInsertionRate": "followUpDelayInsertionRate",
+        "FollowUpDropRate": "followUpDropRate",
+        "GrantDelayRespDurationInterval": "grantDelayRespDurationInterval",
+        "GrantSyncDurationInterval": "grantSyncDurationInterval",
+        "GrantUnicastDurationInterval": "grantUnicastDurationInterval",
+        "IpTos": "ipTos",
+        "LearnPortId": "learnPortId",
+        "LogAnnounceInterval": "logAnnounceInterval",
+        "LogDelayReqInterval": "logDelayReqInterval",
+        "LogSyncInterval": "logSyncInterval",
+        "MasterCount": "masterCount",
+        "MasterIpAddress": "masterIpAddress",
+        "MasterIpIncrementBy": "masterIpIncrementBy",
+        "MasterIpIncrementInterEntity": "masterIpIncrementInterEntity",
+        "MasterMacAddress": "masterMacAddress",
+        "MasterMacIncrementBy": "masterMacIncrementBy",
+        "MasterMacIncrementInterEntity": "masterMacIncrementInterEntity",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PortNumber": "portNumber",
+        "PortNumberIncrement": "portNumberIncrement",
+        "Priority1": "priority1",
+        "Priority2": "priority2",
+        "RenewalInvited": "renewalInvited",
+        "RequestAttempts": "requestAttempts",
+        "RequestHolddown": "requestHolddown",
+        "RequestInterval": "requestInterval",
+        "ResidenceTime": "residenceTime",
+        "RxCalibration": "rxCalibration",
+        "SendAnnounceMulticast": "sendAnnounceMulticast",
+        "SendAnnounceTlv": "sendAnnounceTlv",
+        "SendCancelTlv": "sendCancelTlv",
+        "SignalInterval": "signalInterval",
+        "SignalUnicastHandling": "signalUnicastHandling",
+        "StepMode": "stepMode",
+        "StepsRemoved": "stepsRemoved",
+        "StrictGrant": "strictGrant",
+        "SyncDropRate": "syncDropRate",
+        "SyncReceiptTimeout": "syncReceiptTimeout",
+        "TimeSource": "timeSource",
+        "TimestampOffset": "timestampOffset",
+        "TimestampOffsetVariation": "timestampOffsetVariation",
+        "TxCalibration": "txCalibration",
+        "UseAlternateMasterFlag": "useAlternateMasterFlag",
+        "UseClockIdentity": "useClockIdentity",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PtpRangeOverIp, self).__init__(parent, list_op)
@@ -126,11 +126,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce currentUtcOffsetValid bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceCurrentUtcOffsetValid'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceCurrentUtcOffsetValid"])
+
     @AnnounceCurrentUtcOffsetValid.setter
     def AnnounceCurrentUtcOffsetValid(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceCurrentUtcOffsetValid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceCurrentUtcOffsetValid"], value)
 
     @property
     def AnnounceDropRate(self):
@@ -140,11 +141,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the dropped Announce messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceDropRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceDropRate"])
+
     @AnnounceDropRate.setter
     def AnnounceDropRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceDropRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceDropRate"], value)
 
     @property
     def AnnounceFrequencyTraceable(self):
@@ -154,11 +156,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce frequency traceable bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceFrequencyTraceable'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceFrequencyTraceable"])
+
     @AnnounceFrequencyTraceable.setter
     def AnnounceFrequencyTraceable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceFrequencyTraceable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceFrequencyTraceable"], value)
 
     @property
     def AnnounceLeap59(self):
@@ -168,11 +171,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce leap59 bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceLeap59'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceLeap59"])
+
     @AnnounceLeap59.setter
     def AnnounceLeap59(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceLeap59'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceLeap59"], value)
 
     @property
     def AnnounceLeap61(self):
@@ -182,11 +186,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce leap61 bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceLeap61'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceLeap61"])
+
     @AnnounceLeap61.setter
     def AnnounceLeap61(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceLeap61'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceLeap61"], value)
 
     @property
     def AnnouncePtpTimescale(self):
@@ -196,11 +201,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce ptpTimescale bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnouncePtpTimescale"])
+
     @AnnouncePtpTimescale.setter
     def AnnouncePtpTimescale(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnouncePtpTimescale"], value)
 
     @property
     def AnnounceReceiptTimeout(self):
@@ -210,11 +216,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: the number of announceInterval that has to pass without receipt of an Announce message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceReceiptTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceReceiptTimeout"])
+
     @AnnounceReceiptTimeout.setter
     def AnnounceReceiptTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceReceiptTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceReceiptTimeout"], value)
 
     @property
     def AnnounceTimeTraceable(self):
@@ -224,11 +231,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set Announce time traceable bit
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AnnounceTimeTraceable'])
+        return self._get_attribute(self._SDM_ATT_MAP["AnnounceTimeTraceable"])
+
     @AnnounceTimeTraceable.setter
     def AnnounceTimeTraceable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AnnounceTimeTraceable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AnnounceTimeTraceable"], value)
 
     @property
     def ClientCount(self):
@@ -238,11 +246,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The total number of Unicast clients to be used for the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientCount"])
+
     @ClientCount.setter
     def ClientCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientCount"], value)
 
     @property
     def ClientIpAddress(self):
@@ -252,11 +261,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the base address to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientIpAddress"])
+
     @ClientIpAddress.setter
     def ClientIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientIpAddress"], value)
 
     @property
     def ClientIpIncrementBy(self):
@@ -266,11 +276,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientIpIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientIpIncrementBy"])
+
     @ClientIpIncrementBy.setter
     def ClientIpIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientIpIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientIpIncrementBy"], value)
 
     @property
     def ClientMacAddress(self):
@@ -280,11 +291,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the base address to be used for enumerating all the addresses in the range. This property is used in conjunction with 'clientMacIncrementBy' as an incrementor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientMacAddress"])
+
     @ClientMacAddress.setter
     def ClientMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientMacAddress"], value)
 
     @property
     def ClientMacIncrementBy(self):
@@ -294,11 +306,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClientMacIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClientMacIncrementBy"])
+
     @ClientMacIncrementBy.setter
     def ClientMacIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClientMacIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClientMacIncrementBy"], value)
 
     @property
     def ClockAccuracy(self):
@@ -308,11 +321,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Clock accuracy.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClockAccuracy'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClockAccuracy"])
+
     @ClockAccuracy.setter
     def ClockAccuracy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClockAccuracy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClockAccuracy"], value)
 
     @property
     def ClockClass(self):
@@ -322,11 +336,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Traceability of the time or frequency distributed by the grandmaster clock.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClockClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClockClass"])
+
     @ClockClass.setter
     def ClockClass(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClockClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClockClass"], value)
 
     @property
     def ClockIncrement(self):
@@ -336,11 +351,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the ClockIdentity increment to be used in this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ClockIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["ClockIncrement"])
+
     @ClockIncrement.setter
     def ClockIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ClockIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ClockIncrement"], value)
 
     @property
     def CommunicationMode(self):
@@ -350,11 +366,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Communication mode (unicast/multicast).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CommunicationMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["CommunicationMode"])
+
     @CommunicationMode.setter
     def CommunicationMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CommunicationMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CommunicationMode"], value)
 
     @property
     def DelayMechanism(self):
@@ -364,11 +381,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Clock delay mechanism.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayMechanism'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayMechanism"])
+
     @DelayMechanism.setter
     def DelayMechanism(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayMechanism'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayMechanism"], value)
 
     @property
     def DelayRespDropRate(self):
@@ -378,11 +396,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the dropped Delay_Resp messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayRespDropRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayRespDropRate"])
+
     @DelayRespDropRate.setter
     def DelayRespDropRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayRespDropRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayRespDropRate"], value)
 
     @property
     def DelayRespReceiptTimeout(self):
@@ -392,11 +411,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: DelayResponse Receipt Timeout in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayRespReceiptTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayRespReceiptTimeout"])
+
     @DelayRespReceiptTimeout.setter
     def DelayRespReceiptTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayRespReceiptTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayRespReceiptTimeout"], value)
 
     @property
     def DelayResponseDelay(self):
@@ -406,11 +426,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Additional delay introduced in the Delay_Resp message timestamp (nanoseconds).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayResponseDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayResponseDelay"])
+
     @DelayResponseDelay.setter
     def DelayResponseDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayResponseDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayResponseDelay"], value)
 
     @property
     def DelayResponseDelayInsertionRate(self):
@@ -420,11 +441,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the Delay_Resp messages in which the delay is introduced.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayResponseDelayInsertionRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayResponseDelayInsertionRate"])
+
     @DelayResponseDelayInsertionRate.setter
     def DelayResponseDelayInsertionRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayResponseDelayInsertionRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayResponseDelayInsertionRate"], value)
 
     @property
     def Domain(self):
@@ -434,11 +456,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: PTP Domain
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Domain'])
+        return self._get_attribute(self._SDM_ATT_MAP["Domain"])
+
     @Domain.setter
     def Domain(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Domain'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Domain"], value)
 
     @property
     def DropSignalReqAnnounce(self):
@@ -448,11 +471,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Select this check box to drop any Signal Request that contains Announce TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqAnnounce'])
+        return self._get_attribute(self._SDM_ATT_MAP["DropSignalReqAnnounce"])
+
     @DropSignalReqAnnounce.setter
     def DropSignalReqAnnounce(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DropSignalReqAnnounce'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DropSignalReqAnnounce"], value)
 
     @property
     def DropSignalReqDelayResp(self):
@@ -462,11 +486,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Select this check box to drop any Signal Request that contains DelayResp TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqDelayResp'])
+        return self._get_attribute(self._SDM_ATT_MAP["DropSignalReqDelayResp"])
+
     @DropSignalReqDelayResp.setter
     def DropSignalReqDelayResp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DropSignalReqDelayResp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DropSignalReqDelayResp"], value)
 
     @property
     def DropSignalReqSync(self):
@@ -476,11 +501,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Select this check box to drop any Signal Request that contains Sync TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqSync'])
+        return self._get_attribute(self._SDM_ATT_MAP["DropSignalReqSync"])
+
     @DropSignalReqSync.setter
     def DropSignalReqSync(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DropSignalReqSync'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DropSignalReqSync"], value)
 
     @property
     def Enabled(self):
@@ -490,11 +516,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstClock(self):
@@ -504,11 +531,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the first ClockIdentity to be used in this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstClock'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstClock"])
+
     @FirstClock.setter
     def FirstClock(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstClock'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstClock"], value)
 
     @property
     def FollowUpBadCrcRate(self):
@@ -518,11 +546,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the bad crc Follow_Up messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FollowUpBadCrcRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["FollowUpBadCrcRate"])
+
     @FollowUpBadCrcRate.setter
     def FollowUpBadCrcRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FollowUpBadCrcRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FollowUpBadCrcRate"], value)
 
     @property
     def FollowUpDelay(self):
@@ -532,11 +561,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Additional delay introduced in the Follow_Up message timestamp (nanoseconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FollowUpDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["FollowUpDelay"])
+
     @FollowUpDelay.setter
     def FollowUpDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FollowUpDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FollowUpDelay"], value)
 
     @property
     def FollowUpDelayInsertionRate(self):
@@ -546,11 +576,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the Follow_Up messages in which the delay is introduced
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FollowUpDelayInsertionRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["FollowUpDelayInsertionRate"])
+
     @FollowUpDelayInsertionRate.setter
     def FollowUpDelayInsertionRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FollowUpDelayInsertionRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FollowUpDelayInsertionRate"], value)
 
     @property
     def FollowUpDropRate(self):
@@ -560,11 +591,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the dropped Follow_Up messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FollowUpDropRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["FollowUpDropRate"])
+
     @FollowUpDropRate.setter
     def FollowUpDropRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FollowUpDropRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FollowUpDropRate"], value)
 
     @property
     def GrantDelayRespDurationInterval(self):
@@ -574,11 +606,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for DelayResp messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrantDelayRespDurationInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrantDelayRespDurationInterval"])
+
     @GrantDelayRespDurationInterval.setter
     def GrantDelayRespDurationInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrantDelayRespDurationInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrantDelayRespDurationInterval"], value)
 
     @property
     def GrantSyncDurationInterval(self):
@@ -588,11 +621,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV for Sync messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrantSyncDurationInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrantSyncDurationInterval"])
+
     @GrantSyncDurationInterval.setter
     def GrantSyncDurationInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrantSyncDurationInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrantSyncDurationInterval"], value)
 
     @property
     def GrantUnicastDurationInterval(self):
@@ -602,11 +636,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Value of DurationField in REQUEST_UNICAST_TRANSMISSION_TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrantUnicastDurationInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrantUnicastDurationInterval"])
+
     @GrantUnicastDurationInterval.setter
     def GrantUnicastDurationInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrantUnicastDurationInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrantUnicastDurationInterval"], value)
 
     @property
     def IpTos(self):
@@ -616,11 +651,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: IP TOS or DS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpTos'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpTos"])
+
     @IpTos.setter
     def IpTos(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpTos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpTos"], value)
 
     @property
     def LearnPortId(self):
@@ -630,11 +666,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Slave learns Master Port ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnPortId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnPortId"])
+
     @LearnPortId.setter
     def LearnPortId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnPortId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnPortId"], value)
 
     @property
     def LogAnnounceInterval(self):
@@ -644,11 +681,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The log mean time interval between successive Announce messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogAnnounceInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogAnnounceInterval"])
+
     @LogAnnounceInterval.setter
     def LogAnnounceInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogAnnounceInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogAnnounceInterval"], value)
 
     @property
     def LogDelayReqInterval(self):
@@ -658,11 +696,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The log mean time interval between successive Delay_Req messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogDelayReqInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogDelayReqInterval"])
+
     @LogDelayReqInterval.setter
     def LogDelayReqInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogDelayReqInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogDelayReqInterval"], value)
 
     @property
     def LogSyncInterval(self):
@@ -672,11 +711,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The log mean time interval between successive Sync messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogSyncInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogSyncInterval"])
+
     @LogSyncInterval.setter
     def LogSyncInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogSyncInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogSyncInterval"], value)
 
     @property
     def MasterCount(self):
@@ -686,11 +726,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The total number of Unicast masters to be used for the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterCount"])
+
     @MasterCount.setter
     def MasterCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterCount"], value)
 
     @property
     def MasterIpAddress(self):
@@ -700,11 +741,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the base address to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterIpAddress"])
+
     @MasterIpAddress.setter
     def MasterIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterIpAddress"], value)
 
     @property
     def MasterIpIncrementBy(self):
@@ -714,11 +756,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterIpIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterIpIncrementBy"])
+
     @MasterIpIncrementBy.setter
     def MasterIpIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterIpIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterIpIncrementBy"], value)
 
     @property
     def MasterIpIncrementInterEntity(self):
@@ -728,11 +771,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for the start address of Master
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterIpIncrementInterEntity'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterIpIncrementInterEntity"])
+
     @MasterIpIncrementInterEntity.setter
     def MasterIpIncrementInterEntity(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterIpIncrementInterEntity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterIpIncrementInterEntity"], value)
 
     @property
     def MasterMacAddress(self):
@@ -742,11 +786,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the base address to be used for enumerating all the addresses in the range. This property is used in conjunction with 'masterMacIncrementBy' as an incrementor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterMacAddress"])
+
     @MasterMacAddress.setter
     def MasterMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterMacAddress"], value)
 
     @property
     def MasterMacIncrementBy(self):
@@ -756,11 +801,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterMacIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterMacIncrementBy"])
+
     @MasterMacIncrementBy.setter
     def MasterMacIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterMacIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterMacIncrementBy"], value)
 
     @property
     def MasterMacIncrementInterEntity(self):
@@ -770,11 +816,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Defines the increment to be used for the start address of Master
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasterMacIncrementInterEntity'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasterMacIncrementInterEntity"])
+
     @MasterMacIncrementInterEntity.setter
     def MasterMacIncrementInterEntity(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasterMacIncrementInterEntity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasterMacIncrementInterEntity"], value)
 
     @property
     def Name(self):
@@ -784,11 +831,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -798,7 +846,7 @@ class PtpRangeOverIp(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PortNumber(self):
@@ -808,11 +856,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Port number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
+
     @PortNumber.setter
     def PortNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortNumber"], value)
 
     @property
     def PortNumberIncrement(self):
@@ -822,11 +871,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Port number increment
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumberIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumberIncrement"])
+
     @PortNumberIncrement.setter
     def PortNumberIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortNumberIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortNumberIncrement"], value)
 
     @property
     def Priority1(self):
@@ -836,11 +886,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: PTP priority1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority1'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority1"])
+
     @Priority1.setter
     def Priority1(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority1"], value)
 
     @property
     def Priority2(self):
@@ -850,11 +901,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: PTP priority2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority2'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority2"])
+
     @Priority2.setter
     def Priority2(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority2"], value)
 
     @property
     def RenewalInvited(self):
@@ -864,11 +916,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Set the Renewal Invited flag in Grant Unicast Transmission TLV
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RenewalInvited'])
+        return self._get_attribute(self._SDM_ATT_MAP["RenewalInvited"])
+
     @RenewalInvited.setter
     def RenewalInvited(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RenewalInvited'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RenewalInvited"], value)
 
     @property
     def RequestAttempts(self):
@@ -878,11 +931,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: How many succesive requests a client can request before entering into holddown.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestAttempts'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestAttempts"])
+
     @RequestAttempts.setter
     def RequestAttempts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestAttempts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestAttempts"], value)
 
     @property
     def RequestHolddown(self):
@@ -892,11 +946,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Time between succesive requests if denied/timeout for Signal Request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestHolddown'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestHolddown"])
+
     @RequestHolddown.setter
     def RequestHolddown(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestHolddown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestHolddown"], value)
 
     @property
     def RequestInterval(self):
@@ -906,11 +961,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Time between succesive requests if denied/timeout for Signal Request.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestInterval"])
+
     @RequestInterval.setter
     def RequestInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestInterval"], value)
 
     @property
     def ResidenceTime(self):
@@ -920,11 +976,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Master to slave residence time of the associated transparent clock
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResidenceTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResidenceTime"])
+
     @ResidenceTime.setter
     def ResidenceTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResidenceTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResidenceTime"], value)
 
     @property
     def RxCalibration(self):
@@ -934,11 +991,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The amount of time (in ns) that the Receive side timestamp needs to be offset to allow for error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxCalibration'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxCalibration"])
+
     @RxCalibration.setter
     def RxCalibration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RxCalibration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxCalibration"], value)
 
     @property
     def SendAnnounceMulticast(self):
@@ -948,11 +1006,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Send multicast Announce messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendAnnounceMulticast'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendAnnounceMulticast"])
+
     @SendAnnounceMulticast.setter
     def SendAnnounceMulticast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendAnnounceMulticast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendAnnounceMulticast"], value)
 
     @property
     def SendAnnounceTlv(self):
@@ -962,11 +1021,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Send and respond to Announce TLV unicast requests in signal messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendAnnounceTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendAnnounceTlv"])
+
     @SendAnnounceTlv.setter
     def SendAnnounceTlv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendAnnounceTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendAnnounceTlv"], value)
 
     @property
     def SendCancelTlv(self):
@@ -976,11 +1036,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Send and respond to Cancel TLV unicast requests in signal messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendCancelTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendCancelTlv"])
+
     @SendCancelTlv.setter
     def SendCancelTlv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendCancelTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendCancelTlv"], value)
 
     @property
     def SignalInterval(self):
@@ -990,11 +1051,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Time between Signal Request messages, in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignalInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignalInterval"])
+
     @SignalInterval.setter
     def SignalInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignalInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignalInterval"], value)
 
     @property
     def SignalUnicastHandling(self):
@@ -1002,13 +1064,14 @@ class PtpRangeOverIp(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignalUnicastHandling'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignalUnicastHandling"])
+
     @SignalUnicastHandling.setter
     def SignalUnicastHandling(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignalUnicastHandling'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignalUnicastHandling"], value)
 
     @property
     def StepMode(self):
@@ -1018,11 +1081,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Clock step mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepMode"])
+
     @StepMode.setter
     def StepMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepMode"], value)
 
     @property
     def StepsRemoved(self):
@@ -1032,11 +1096,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The number of hops between the Grandmaster Clock and the emulated clock. Valid values: 0 to 65,535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepsRemoved'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepsRemoved"])
+
     @StepsRemoved.setter
     def StepsRemoved(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepsRemoved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepsRemoved"], value)
 
     @property
     def StrictGrant(self):
@@ -1046,11 +1111,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: If selected, server will not grant values that are above maximum offered values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StrictGrant'])
+        return self._get_attribute(self._SDM_ATT_MAP["StrictGrant"])
+
     @StrictGrant.setter
     def StrictGrant(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StrictGrant'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StrictGrant"], value)
 
     @property
     def SyncDropRate(self):
@@ -1060,11 +1126,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Percentage rate of the dropped Sync messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SyncDropRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SyncDropRate"])
+
     @SyncDropRate.setter
     def SyncDropRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SyncDropRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SyncDropRate"], value)
 
     @property
     def SyncReceiptTimeout(self):
@@ -1074,11 +1141,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Sync Receipt Timeout in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SyncReceiptTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["SyncReceiptTimeout"])
+
     @SyncReceiptTimeout.setter
     def SyncReceiptTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SyncReceiptTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SyncReceiptTimeout"], value)
 
     @property
     def TimeSource(self):
@@ -1088,11 +1156,12 @@ class PtpRangeOverIp(Base):
         -------
         - str: Time source for the PTP device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeSource"])
+
     @TimeSource.setter
     def TimeSource(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeSource"], value)
 
     @property
     def TimestampOffset(self):
@@ -1102,11 +1171,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Timestamp offset.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimestampOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimestampOffset"])
+
     @TimestampOffset.setter
     def TimestampOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimestampOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimestampOffset"], value)
 
     @property
     def TimestampOffsetVariation(self):
@@ -1116,11 +1186,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: Timestamp offset variation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimestampOffsetVariation'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimestampOffsetVariation"])
+
     @TimestampOffsetVariation.setter
     def TimestampOffsetVariation(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimestampOffsetVariation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimestampOffsetVariation"], value)
 
     @property
     def TxCalibration(self):
@@ -1130,11 +1201,12 @@ class PtpRangeOverIp(Base):
         -------
         - number: The amount of time (in ns) that the Transmit side timestamp needs to be offset to allow for error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxCalibration'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxCalibration"])
+
     @TxCalibration.setter
     def TxCalibration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxCalibration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxCalibration"], value)
 
     @property
     def UseAlternateMasterFlag(self):
@@ -1144,11 +1216,12 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Select this check box to set the Alternate Master flag in all Announce and Sync messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseAlternateMasterFlag'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseAlternateMasterFlag"])
+
     @UseAlternateMasterFlag.setter
     def UseAlternateMasterFlag(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseAlternateMasterFlag'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseAlternateMasterFlag"], value)
 
     @property
     def UseClockIdentity(self):
@@ -1158,13 +1231,90 @@ class PtpRangeOverIp(Base):
         -------
         - bool: Use the ClockIdentity configured below.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseClockIdentity'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseClockIdentity"])
+
     @UseClockIdentity.setter
     def UseClockIdentity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseClockIdentity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseClockIdentity"], value)
 
-    def update(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+    def update(
+        self,
+        AnnounceCurrentUtcOffsetValid=None,
+        AnnounceDropRate=None,
+        AnnounceFrequencyTraceable=None,
+        AnnounceLeap59=None,
+        AnnounceLeap61=None,
+        AnnouncePtpTimescale=None,
+        AnnounceReceiptTimeout=None,
+        AnnounceTimeTraceable=None,
+        ClientCount=None,
+        ClientIpAddress=None,
+        ClientIpIncrementBy=None,
+        ClientMacAddress=None,
+        ClientMacIncrementBy=None,
+        ClockAccuracy=None,
+        ClockClass=None,
+        ClockIncrement=None,
+        CommunicationMode=None,
+        DelayMechanism=None,
+        DelayRespDropRate=None,
+        DelayRespReceiptTimeout=None,
+        DelayResponseDelay=None,
+        DelayResponseDelayInsertionRate=None,
+        Domain=None,
+        DropSignalReqAnnounce=None,
+        DropSignalReqDelayResp=None,
+        DropSignalReqSync=None,
+        Enabled=None,
+        FirstClock=None,
+        FollowUpBadCrcRate=None,
+        FollowUpDelay=None,
+        FollowUpDelayInsertionRate=None,
+        FollowUpDropRate=None,
+        GrantDelayRespDurationInterval=None,
+        GrantSyncDurationInterval=None,
+        GrantUnicastDurationInterval=None,
+        IpTos=None,
+        LearnPortId=None,
+        LogAnnounceInterval=None,
+        LogDelayReqInterval=None,
+        LogSyncInterval=None,
+        MasterCount=None,
+        MasterIpAddress=None,
+        MasterIpIncrementBy=None,
+        MasterIpIncrementInterEntity=None,
+        MasterMacAddress=None,
+        MasterMacIncrementBy=None,
+        MasterMacIncrementInterEntity=None,
+        Name=None,
+        PortNumber=None,
+        PortNumberIncrement=None,
+        Priority1=None,
+        Priority2=None,
+        RenewalInvited=None,
+        RequestAttempts=None,
+        RequestHolddown=None,
+        RequestInterval=None,
+        ResidenceTime=None,
+        RxCalibration=None,
+        SendAnnounceMulticast=None,
+        SendAnnounceTlv=None,
+        SendCancelTlv=None,
+        SignalInterval=None,
+        SignalUnicastHandling=None,
+        StepMode=None,
+        StepsRemoved=None,
+        StrictGrant=None,
+        SyncDropRate=None,
+        SyncReceiptTimeout=None,
+        TimeSource=None,
+        TimestampOffset=None,
+        TimestampOffsetVariation=None,
+        TxCalibration=None,
+        UseAlternateMasterFlag=None,
+        UseClockIdentity=None,
+    ):
         # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Updates ptpRangeOverIp resource on the server.
 
@@ -1232,7 +1382,7 @@ class PtpRangeOverIp(Base):
         - SendAnnounceTlv (bool): Send and respond to Announce TLV unicast requests in signal messages.
         - SendCancelTlv (bool): Send and respond to Cancel TLV unicast requests in signal messages.
         - SignalInterval (number): Time between Signal Request messages, in seconds.
-        - SignalUnicastHandling (str): 
+        - SignalUnicastHandling (str):
         - StepMode (str): Clock step mode.
         - StepsRemoved (number): The number of hops between the Grandmaster Clock and the emulated clock. Valid values: 0 to 65,535.
         - StrictGrant (bool): If selected, server will not grant values that are above maximum offered values.
@@ -1251,7 +1401,83 @@ class PtpRangeOverIp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+    def add(
+        self,
+        AnnounceCurrentUtcOffsetValid=None,
+        AnnounceDropRate=None,
+        AnnounceFrequencyTraceable=None,
+        AnnounceLeap59=None,
+        AnnounceLeap61=None,
+        AnnouncePtpTimescale=None,
+        AnnounceReceiptTimeout=None,
+        AnnounceTimeTraceable=None,
+        ClientCount=None,
+        ClientIpAddress=None,
+        ClientIpIncrementBy=None,
+        ClientMacAddress=None,
+        ClientMacIncrementBy=None,
+        ClockAccuracy=None,
+        ClockClass=None,
+        ClockIncrement=None,
+        CommunicationMode=None,
+        DelayMechanism=None,
+        DelayRespDropRate=None,
+        DelayRespReceiptTimeout=None,
+        DelayResponseDelay=None,
+        DelayResponseDelayInsertionRate=None,
+        Domain=None,
+        DropSignalReqAnnounce=None,
+        DropSignalReqDelayResp=None,
+        DropSignalReqSync=None,
+        Enabled=None,
+        FirstClock=None,
+        FollowUpBadCrcRate=None,
+        FollowUpDelay=None,
+        FollowUpDelayInsertionRate=None,
+        FollowUpDropRate=None,
+        GrantDelayRespDurationInterval=None,
+        GrantSyncDurationInterval=None,
+        GrantUnicastDurationInterval=None,
+        IpTos=None,
+        LearnPortId=None,
+        LogAnnounceInterval=None,
+        LogDelayReqInterval=None,
+        LogSyncInterval=None,
+        MasterCount=None,
+        MasterIpAddress=None,
+        MasterIpIncrementBy=None,
+        MasterIpIncrementInterEntity=None,
+        MasterMacAddress=None,
+        MasterMacIncrementBy=None,
+        MasterMacIncrementInterEntity=None,
+        Name=None,
+        PortNumber=None,
+        PortNumberIncrement=None,
+        Priority1=None,
+        Priority2=None,
+        RenewalInvited=None,
+        RequestAttempts=None,
+        RequestHolddown=None,
+        RequestInterval=None,
+        ResidenceTime=None,
+        RxCalibration=None,
+        SendAnnounceMulticast=None,
+        SendAnnounceTlv=None,
+        SendCancelTlv=None,
+        SignalInterval=None,
+        SignalUnicastHandling=None,
+        StepMode=None,
+        StepsRemoved=None,
+        StrictGrant=None,
+        SyncDropRate=None,
+        SyncReceiptTimeout=None,
+        TimeSource=None,
+        TimestampOffset=None,
+        TimestampOffsetVariation=None,
+        TxCalibration=None,
+        UseAlternateMasterFlag=None,
+        UseClockIdentity=None,
+    ):
         # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Adds a new ptpRangeOverIp resource on the server and adds it to the container.
 
@@ -1319,7 +1545,7 @@ class PtpRangeOverIp(Base):
         - SendAnnounceTlv (bool): Send and respond to Announce TLV unicast requests in signal messages.
         - SendCancelTlv (bool): Send and respond to Cancel TLV unicast requests in signal messages.
         - SignalInterval (number): Time between Signal Request messages, in seconds.
-        - SignalUnicastHandling (str): 
+        - SignalUnicastHandling (str):
         - StepMode (str): Clock step mode.
         - StepsRemoved (number): The number of hops between the Grandmaster Clock and the emulated clock. Valid values: 0 to 65,535.
         - StrictGrant (bool): If selected, server will not grant values that are above maximum offered values.
@@ -1352,7 +1578,84 @@ class PtpRangeOverIp(Base):
         """
         self._delete()
 
-    def find(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, ObjectId=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+    def find(
+        self,
+        AnnounceCurrentUtcOffsetValid=None,
+        AnnounceDropRate=None,
+        AnnounceFrequencyTraceable=None,
+        AnnounceLeap59=None,
+        AnnounceLeap61=None,
+        AnnouncePtpTimescale=None,
+        AnnounceReceiptTimeout=None,
+        AnnounceTimeTraceable=None,
+        ClientCount=None,
+        ClientIpAddress=None,
+        ClientIpIncrementBy=None,
+        ClientMacAddress=None,
+        ClientMacIncrementBy=None,
+        ClockAccuracy=None,
+        ClockClass=None,
+        ClockIncrement=None,
+        CommunicationMode=None,
+        DelayMechanism=None,
+        DelayRespDropRate=None,
+        DelayRespReceiptTimeout=None,
+        DelayResponseDelay=None,
+        DelayResponseDelayInsertionRate=None,
+        Domain=None,
+        DropSignalReqAnnounce=None,
+        DropSignalReqDelayResp=None,
+        DropSignalReqSync=None,
+        Enabled=None,
+        FirstClock=None,
+        FollowUpBadCrcRate=None,
+        FollowUpDelay=None,
+        FollowUpDelayInsertionRate=None,
+        FollowUpDropRate=None,
+        GrantDelayRespDurationInterval=None,
+        GrantSyncDurationInterval=None,
+        GrantUnicastDurationInterval=None,
+        IpTos=None,
+        LearnPortId=None,
+        LogAnnounceInterval=None,
+        LogDelayReqInterval=None,
+        LogSyncInterval=None,
+        MasterCount=None,
+        MasterIpAddress=None,
+        MasterIpIncrementBy=None,
+        MasterIpIncrementInterEntity=None,
+        MasterMacAddress=None,
+        MasterMacIncrementBy=None,
+        MasterMacIncrementInterEntity=None,
+        Name=None,
+        ObjectId=None,
+        PortNumber=None,
+        PortNumberIncrement=None,
+        Priority1=None,
+        Priority2=None,
+        RenewalInvited=None,
+        RequestAttempts=None,
+        RequestHolddown=None,
+        RequestInterval=None,
+        ResidenceTime=None,
+        RxCalibration=None,
+        SendAnnounceMulticast=None,
+        SendAnnounceTlv=None,
+        SendCancelTlv=None,
+        SignalInterval=None,
+        SignalUnicastHandling=None,
+        StepMode=None,
+        StepsRemoved=None,
+        StrictGrant=None,
+        SyncDropRate=None,
+        SyncReceiptTimeout=None,
+        TimeSource=None,
+        TimestampOffset=None,
+        TimestampOffsetVariation=None,
+        TxCalibration=None,
+        UseAlternateMasterFlag=None,
+        UseClockIdentity=None,
+    ):
         # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Finds and retrieves ptpRangeOverIp resources from the server.
 
@@ -1425,7 +1728,7 @@ class PtpRangeOverIp(Base):
         - SendAnnounceTlv (bool): Send and respond to Announce TLV unicast requests in signal messages.
         - SendCancelTlv (bool): Send and respond to Cancel TLV unicast requests in signal messages.
         - SignalInterval (number): Time between Signal Request messages, in seconds.
-        - SignalUnicastHandling (str): 
+        - SignalUnicastHandling (str):
         - StepMode (str): Clock step mode.
         - StepsRemoved (number): The number of hops between the Grandmaster Clock and the emulated clock. Valid values: 0 to 65,535.
         - StrictGrant (bool): If selected, server will not grant values that are above maximum offered values.
@@ -1481,10 +1784,12 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1503,10 +1808,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1525,10 +1834,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1547,10 +1860,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def PtpChangeDropSignalParams(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1580,10 +1897,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpChangeDropSignalParams', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ptpChangeDropSignalParams", payload=payload, response_object=None
+        )
 
     def PtpChangeMiscParams(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1611,10 +1932,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpChangeMiscParams', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ptpChangeMiscParams", payload=payload, response_object=None
+        )
 
     def PtpChangeNegativeTesting(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1656,10 +1981,14 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpChangeNegativeTesting', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "ptpChangeNegativeTesting", payload=payload, response_object=None
+        )
 
     def PtpConfigure(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1676,10 +2005,12 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpConfigure', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ptpConfigure", payload=payload, response_object=None)
 
     def PtpPause(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1696,10 +2027,12 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpPause', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ptpPause", payload=payload, response_object=None)
 
     def PtpResume(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1716,10 +2049,12 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpResume', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ptpResume", payload=payload, response_object=None)
 
     def PtpStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1743,10 +2078,12 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ptpStart", payload=payload, response_object=None)
 
     def PtpStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1770,7 +2107,9 @@ class PtpRangeOverIp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ptpStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("ptpStop", payload=payload, response_object=None)

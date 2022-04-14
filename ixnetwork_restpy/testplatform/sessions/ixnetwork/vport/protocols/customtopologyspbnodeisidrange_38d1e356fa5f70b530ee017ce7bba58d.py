@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,27 @@ class CustomTopologySpbNodeIsidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologySpbNodeIsidRange'
+    _SDM_NAME = "customTopologySpbNodeIsidRange"
     _SDM_ATT_MAP = {
-        'CMacAddressCount': 'cMacAddressCount',
-        'CMacAddressStep': 'cMacAddressStep',
-        'EnableIsid': 'enableIsid',
-        'InterNodeCmacAddress': 'interNodeCmacAddress',
-        'InterNodeCvlan': 'interNodeCvlan',
-        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
-        'InterNodeSvlan': 'interNodeSvlan',
-        'Isid': 'isid',
-        'RBit': 'rBit',
-        'StartCmacAddress': 'startCmacAddress',
-        'StartCvlan': 'startCvlan',
-        'StartSvlan': 'startSvlan',
-        'TBit': 'tBit',
-        'TransmissionType': 'transmissionType',
-        'VlanType': 'vlanType',
+        "CMacAddressCount": "cMacAddressCount",
+        "CMacAddressStep": "cMacAddressStep",
+        "EnableIsid": "enableIsid",
+        "InterNodeCmacAddress": "interNodeCmacAddress",
+        "InterNodeCvlan": "interNodeCvlan",
+        "InterNodeIsIdIncrement": "interNodeIsIdIncrement",
+        "InterNodeSvlan": "interNodeSvlan",
+        "Isid": "isid",
+        "RBit": "rBit",
+        "StartCmacAddress": "startCmacAddress",
+        "StartCvlan": "startCvlan",
+        "StartSvlan": "startSvlan",
+        "TBit": "tBit",
+        "TransmissionType": "transmissionType",
+        "VlanType": "vlanType",
     }
     _SDM_ENUM_MAP = {
-        'transmissionType': ['unicast', 'multicast'],
-        'vlanType': ['singleVlan', 'stackedVlanQinQ'],
+        "transmissionType": ["unicast", "multicast"],
+        "vlanType": ["singleVlan", "stackedVlanQinQ"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -68,11 +69,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMacAddressCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMacAddressCount"])
+
     @CMacAddressCount.setter
     def CMacAddressCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CMacAddressCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CMacAddressCount"], value)
 
     @property
     def CMacAddressStep(self):
@@ -82,11 +84,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMacAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMacAddressStep"])
+
     @CMacAddressStep.setter
     def CMacAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CMacAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CMacAddressStep"], value)
 
     @property
     def EnableIsid(self):
@@ -96,11 +99,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableIsid'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableIsid"])
+
     @EnableIsid.setter
     def EnableIsid(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableIsid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableIsid"], value)
 
     @property
     def InterNodeCmacAddress(self):
@@ -110,11 +114,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeCmacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeCmacAddress"])
+
     @InterNodeCmacAddress.setter
     def InterNodeCmacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeCmacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeCmacAddress"], value)
 
     @property
     def InterNodeCvlan(self):
@@ -124,11 +129,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeCvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeCvlan"])
+
     @InterNodeCvlan.setter
     def InterNodeCvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeCvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeCvlan"], value)
 
     @property
     def InterNodeIsIdIncrement(self):
@@ -138,11 +144,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeIsIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeIsIdIncrement"])
+
     @InterNodeIsIdIncrement.setter
     def InterNodeIsIdIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeIsIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeIsIdIncrement"], value)
 
     @property
     def InterNodeSvlan(self):
@@ -152,11 +159,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeSvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeSvlan"])
+
     @InterNodeSvlan.setter
     def InterNodeSvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeSvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeSvlan"], value)
 
     @property
     def Isid(self):
@@ -166,11 +174,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Isid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Isid"])
+
     @Isid.setter
     def Isid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Isid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Isid"], value)
 
     @property
     def RBit(self):
@@ -180,11 +189,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["RBit"])
+
     @RBit.setter
     def RBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RBit"], value)
 
     @property
     def StartCmacAddress(self):
@@ -194,11 +204,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartCmacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartCmacAddress"])
+
     @StartCmacAddress.setter
     def StartCmacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartCmacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartCmacAddress"], value)
 
     @property
     def StartCvlan(self):
@@ -208,11 +219,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartCvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartCvlan"])
+
     @StartCvlan.setter
     def StartCvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartCvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartCvlan"], value)
 
     @property
     def StartSvlan(self):
@@ -222,11 +234,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSvlan"])
+
     @StartSvlan.setter
     def StartSvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSvlan"], value)
 
     @property
     def TBit(self):
@@ -236,11 +249,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["TBit"])
+
     @TBit.setter
     def TBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TBit"], value)
 
     @property
     def TransmissionType(self):
@@ -250,11 +264,12 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - str(unicast | multicast): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmissionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmissionType"])
+
     @TransmissionType.setter
     def TransmissionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmissionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmissionType"], value)
 
     @property
     def VlanType(self):
@@ -264,13 +279,31 @@ class CustomTopologySpbNodeIsidRange(Base):
         -------
         - str(singleVlan | stackedVlanQinQ): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanType'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanType"])
+
     @VlanType.setter
     def VlanType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanType"], value)
 
-    def update(self, CMacAddressCount=None, CMacAddressStep=None, EnableIsid=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, Isid=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TransmissionType=None, VlanType=None):
+    def update(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        EnableIsid=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        Isid=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, bool, str, int, int, int, int, bool, str, int, int, bool, str, str) -> CustomTopologySpbNodeIsidRange
         """Updates customTopologySpbNodeIsidRange resource on the server.
 
@@ -298,7 +331,24 @@ class CustomTopologySpbNodeIsidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CMacAddressCount=None, CMacAddressStep=None, EnableIsid=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, Isid=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TransmissionType=None, VlanType=None):
+    def add(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        EnableIsid=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        Isid=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, bool, str, int, int, int, int, bool, str, int, int, bool, str, str) -> CustomTopologySpbNodeIsidRange
         """Adds a new customTopologySpbNodeIsidRange resource on the server and adds it to the container.
 
@@ -340,7 +390,24 @@ class CustomTopologySpbNodeIsidRange(Base):
         """
         self._delete()
 
-    def find(self, CMacAddressCount=None, CMacAddressStep=None, EnableIsid=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, Isid=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TransmissionType=None, VlanType=None):
+    def find(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        EnableIsid=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        Isid=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, bool, str, int, int, int, int, bool, str, int, int, bool, str, str) -> CustomTopologySpbNodeIsidRange
         """Finds and retrieves customTopologySpbNodeIsidRange resources from the server.
 

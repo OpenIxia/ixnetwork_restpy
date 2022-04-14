@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpSRTEPoliciesSRv6BindingListV6'
+    _SDM_NAME = "bgpSRTEPoliciesSRv6BindingListV6"
     _SDM_ATT_MAP = {
-        'ArgLength': 'argLength',
-        'BflagSRv6': 'bflagSRv6',
-        'BindingListNumber': 'bindingListNumber',
-        'Count': 'count',
-        'CustomEndPointBehaviour': 'customEndPointBehaviour',
-        'DescriptiveName': 'descriptiveName',
-        'EnSRv6BindingTLV': 'enSRv6BindingTLV',
-        'EndPointBehaviour': 'endPointBehaviour',
-        'FunLength': 'funLength',
-        'IflagSRv6': 'iflagSRv6',
-        'LbLength': 'lbLength',
-        'LnLength': 'lnLength',
-        'Name': 'name',
-        'RemainingSRv6Bits': 'remainingSRv6Bits',
-        'SflagSRv6': 'sflagSRv6',
-        'SrtepolicyName': 'srtepolicyName',
-        'Srv6BindingSID': 'srv6BindingSID',
-        'Srv6SidEndpointBehaviourFlagReserved': 'srv6SidEndpointBehaviourFlagReserved',
+        "ArgLength": "argLength",
+        "BflagSRv6": "bflagSRv6",
+        "BindingListNumber": "bindingListNumber",
+        "Count": "count",
+        "CustomEndPointBehaviour": "customEndPointBehaviour",
+        "DescriptiveName": "descriptiveName",
+        "EnSRv6BindingTLV": "enSRv6BindingTLV",
+        "EndPointBehaviour": "endPointBehaviour",
+        "FunLength": "funLength",
+        "IflagSRv6": "iflagSRv6",
+        "LbLength": "lbLength",
+        "LnLength": "lnLength",
+        "Name": "name",
+        "RemainingSRv6Bits": "remainingSRv6Bits",
+        "SflagSRv6": "sflagSRv6",
+        "SrtepolicyName": "srtepolicyName",
+        "Srv6BindingSID": "srv6BindingSID",
+        "Srv6SidEndpointBehaviourFlagReserved": "srv6SidEndpointBehaviourFlagReserved",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpSRTEPoliciesSRv6BindingListV6, self).__init__(parent, list_op)
@@ -68,7 +68,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Arguments length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ArgLength"]))
 
     @property
     def BflagSRv6(self):
@@ -79,7 +80,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag indicates the presence of the SRv6 Endpoint Behaviour and SID Structure encoding.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BflagSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BflagSRv6"]))
 
     @property
     def BindingListNumber(self):
@@ -90,7 +92,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Binding List Number For Reference.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingListNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BindingListNumber"])
+        )
 
     @property
     def Count(self):
@@ -100,7 +105,7 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomEndPointBehaviour(self):
@@ -111,7 +116,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Behaviour, applicable when Endpoint behaviour is 256-Custom End Point.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEndPointBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEndPointBehaviour"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -121,7 +129,7 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnSRv6BindingTLV(self):
@@ -132,7 +140,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Checkbox to enable SRv6 Binding Sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnSRv6BindingTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnSRv6BindingTLV"])
+        )
 
     @property
     def EndPointBehaviour(self):
@@ -143,7 +154,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the behaviour that can be associated with a SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointBehaviour"])
+        )
 
     @property
     def FunLength(self):
@@ -154,7 +168,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Function length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FunLength"]))
 
     @property
     def IflagSRv6(self):
@@ -165,7 +180,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes the Drop Upon Invalid behaviour.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IflagSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IflagSRv6"]))
 
     @property
     def LbLength(self):
@@ -176,7 +192,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Block Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LbLength"]))
 
     @property
     def LnLength(self):
@@ -187,7 +204,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Node Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LnLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LnLength"]))
 
     @property
     def Name(self):
@@ -197,11 +215,12 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RemainingSRv6Bits(self):
@@ -212,7 +231,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remaining Flag Bits takes the 8-bit flags value in Hex format. It ignores the bit position for flags exposed separately in GUI. For example, the 1st and 2nd bits and 3rd bits are ignored since they are set using the S Flag, I Flag and B flag settings.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemainingSRv6Bits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemainingSRv6Bits"])
+        )
 
     @property
     def SflagSRv6(self):
@@ -223,7 +245,8 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes the Specified-BSID-only behaviour.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SflagSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SflagSRv6"]))
 
     @property
     def SrtepolicyName(self):
@@ -233,7 +256,7 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         -------
         - list(str): Policy Name For Reference.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrtepolicyName"])
 
     @property
     def Srv6BindingSID(self):
@@ -244,7 +267,10 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Binding SID, a 16 octet IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6BindingSID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6BindingSID"])
+        )
 
     @property
     def Srv6SidEndpointBehaviourFlagReserved(self):
@@ -255,7 +281,13 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 16 bits Reserved for SRv6 Sid Endpoint Behaviour and Structure Flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidEndpointBehaviourFlagReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Srv6SidEndpointBehaviourFlagReserved"]
+            ),
+        )
 
     def update(self, Name=None):
         # type: (str) -> BgpSRTEPoliciesSRv6BindingListV6
@@ -317,7 +349,24 @@ class BgpSRTEPoliciesSRv6BindingListV6(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ArgLength=None, BflagSRv6=None, BindingListNumber=None, CustomEndPointBehaviour=None, EnSRv6BindingTLV=None, EndPointBehaviour=None, FunLength=None, IflagSRv6=None, LbLength=None, LnLength=None, RemainingSRv6Bits=None, SflagSRv6=None, Srv6BindingSID=None, Srv6SidEndpointBehaviourFlagReserved=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ArgLength=None,
+        BflagSRv6=None,
+        BindingListNumber=None,
+        CustomEndPointBehaviour=None,
+        EnSRv6BindingTLV=None,
+        EndPointBehaviour=None,
+        FunLength=None,
+        IflagSRv6=None,
+        LbLength=None,
+        LnLength=None,
+        RemainingSRv6Bits=None,
+        SflagSRv6=None,
+        Srv6BindingSID=None,
+        Srv6SidEndpointBehaviourFlagReserved=None,
+    ):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesSRv6BindingListV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

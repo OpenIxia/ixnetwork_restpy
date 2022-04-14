@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,18 @@ class RouteDistinguisher(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeDistinguisher'
+    _SDM_NAME = "routeDistinguisher"
     _SDM_ATT_MAP = {
-        'AsNumber': 'asNumber',
-        'AsNumberStep': 'asNumberStep',
-        'AssignedNumber': 'assignedNumber',
-        'AssignedNumberStep': 'assignedNumberStep',
-        'IpAddress': 'ipAddress',
-        'IpAddressStep': 'ipAddressStep',
-        'Type': 'type',
+        "AsNumber": "asNumber",
+        "AsNumberStep": "asNumberStep",
+        "AssignedNumber": "assignedNumber",
+        "AssignedNumberStep": "assignedNumberStep",
+        "IpAddress": "ipAddress",
+        "IpAddressStep": "ipAddressStep",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['as', 'ip', 'asNumber2'],
+        "type": ["as", "ip", "asNumber2"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class RouteDistinguisher(Base):
         -------
         - number: If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsNumber"])
+
     @AsNumber.setter
     def AsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsNumber"], value)
 
     @property
     def AsNumberStep(self):
@@ -71,11 +73,12 @@ class RouteDistinguisher(Base):
         -------
         - number: The increment step for for the AS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsNumberStep"])
+
     @AsNumberStep.setter
     def AsNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AsNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AsNumberStep"], value)
 
     @property
     def AssignedNumber(self):
@@ -85,11 +88,12 @@ class RouteDistinguisher(Base):
         -------
         - number: The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssignedNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssignedNumber"])
+
     @AssignedNumber.setter
     def AssignedNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AssignedNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AssignedNumber"], value)
 
     @property
     def AssignedNumberStep(self):
@@ -99,11 +103,12 @@ class RouteDistinguisher(Base):
         -------
         - number: The increment step for for the assigned number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssignedNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssignedNumberStep"])
+
     @AssignedNumberStep.setter
     def AssignedNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AssignedNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AssignedNumberStep"], value)
 
     @property
     def IpAddress(self):
@@ -113,11 +118,12 @@ class RouteDistinguisher(Base):
         -------
         - str: If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpAddressStep(self):
@@ -127,11 +133,12 @@ class RouteDistinguisher(Base):
         -------
         - str: The increment step for for the IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressStep"])
+
     @IpAddressStep.setter
     def IpAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressStep"], value)
 
     @property
     def Type(self):
@@ -141,13 +148,23 @@ class RouteDistinguisher(Base):
         -------
         - str(as | ip | asNumber2): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
+    def update(
+        self,
+        AsNumber=None,
+        AsNumberStep=None,
+        AssignedNumber=None,
+        AssignedNumberStep=None,
+        IpAddress=None,
+        IpAddressStep=None,
+        Type=None,
+    ):
         # type: (int, int, int, int, str, str, str) -> RouteDistinguisher
         """Updates routeDistinguisher resource on the server.
 
@@ -167,7 +184,16 @@ class RouteDistinguisher(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
+    def find(
+        self,
+        AsNumber=None,
+        AsNumberStep=None,
+        AssignedNumber=None,
+        AssignedNumberStep=None,
+        IpAddress=None,
+        IpAddressStep=None,
+        Type=None,
+    ):
         # type: (int, int, int, int, str, str, str) -> RouteDistinguisher
         """Finds and retrieves routeDistinguisher resources from the server.
 

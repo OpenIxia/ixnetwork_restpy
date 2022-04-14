@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,36 @@ class IsisTrillSimRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisTrillSimRouter'
+    _SDM_NAME = "isisTrillSimRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'Nickname': 'nickname',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SystemId': 'systemId',
-        'TrillMCastIpv4GroupCount': 'trillMCastIpv4GroupCount',
-        'TrillMCastIpv6GroupCount': 'trillMCastIpv6GroupCount',
-        'TrillMCastMacGroupCount': 'trillMCastMacGroupCount',
+        "Active": "active",
+        "BroadcastRootPriority": "broadcastRootPriority",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "Nickname": "nickname",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SystemId": "systemId",
+        "TrillMCastIpv4GroupCount": "trillMCastIpv4GroupCount",
+        "TrillMCastIpv6GroupCount": "trillMCastIpv6GroupCount",
+        "TrillMCastMacGroupCount": "trillMCastMacGroupCount",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,10 +81,13 @@ class IsisTrillSimRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -89,10 +101,16 @@ class IsisTrillSimRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv4grouplist_c79d67ba115d7ed47c7c73c05670cc0d import TrillSimulatedMCastIpv4GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv4grouplist_c79d67ba115d7ed47c7c73c05670cc0d import (
+            TrillSimulatedMCastIpv4GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillSimulatedMCastIpv4GroupList', None) is not None:
-                return self._properties.get('TrillSimulatedMCastIpv4GroupList')
+            if (
+                self._properties.get("TrillSimulatedMCastIpv4GroupList", None)
+                is not None
+            ):
+                return self._properties.get("TrillSimulatedMCastIpv4GroupList")
         return TrillSimulatedMCastIpv4GroupList(self)._select()
 
     @property
@@ -106,10 +124,16 @@ class IsisTrillSimRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv6grouplist_89c8c841a0a83999d64fdbb091de6f9e import TrillSimulatedMCastIpv6GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv6grouplist_89c8c841a0a83999d64fdbb091de6f9e import (
+            TrillSimulatedMCastIpv6GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillSimulatedMCastIpv6GroupList', None) is not None:
-                return self._properties.get('TrillSimulatedMCastIpv6GroupList')
+            if (
+                self._properties.get("TrillSimulatedMCastIpv6GroupList", None)
+                is not None
+            ):
+                return self._properties.get("TrillSimulatedMCastIpv6GroupList")
         return TrillSimulatedMCastIpv6GroupList(self)._select()
 
     @property
@@ -123,10 +147,16 @@ class IsisTrillSimRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastmacgrouplist_ddbcd1cff50daaf74cd80d85ea7655da import TrillSimulatedMCastMacGroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastmacgrouplist_ddbcd1cff50daaf74cd80d85ea7655da import (
+            TrillSimulatedMCastMacGroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillSimulatedMCastMacGroupList', None) is not None:
-                return self._properties.get('TrillSimulatedMCastMacGroupList')
+            if (
+                self._properties.get("TrillSimulatedMCastMacGroupList", None)
+                is not None
+            ):
+                return self._properties.get("TrillSimulatedMCastMacGroupList")
         return TrillSimulatedMCastMacGroupList(self)._select()
 
     @property
@@ -138,7 +168,8 @@ class IsisTrillSimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BroadcastRootPriority(self):
@@ -149,21 +180,25 @@ class IsisTrillSimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Broadcast Root Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BroadcastRootPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BroadcastRootPriority"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -173,7 +208,7 @@ class IsisTrillSimRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -183,7 +218,7 @@ class IsisTrillSimRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -192,7 +227,7 @@ class IsisTrillSimRouter(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Multiplier(self):
@@ -202,11 +237,12 @@ class IsisTrillSimRouter(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -216,11 +252,12 @@ class IsisTrillSimRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Nickname(self):
@@ -231,7 +268,8 @@ class IsisTrillSimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nickname
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Nickname']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Nickname"]))
 
     @property
     def SessionStatus(self):
@@ -241,7 +279,7 @@ class IsisTrillSimRouter(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -251,11 +289,12 @@ class IsisTrillSimRouter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -264,7 +303,7 @@ class IsisTrillSimRouter(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -274,7 +313,7 @@ class IsisTrillSimRouter(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SystemId(self):
@@ -285,7 +324,8 @@ class IsisTrillSimRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): System Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SystemId"]))
 
     @property
     def TrillMCastIpv4GroupCount(self):
@@ -295,11 +335,12 @@ class IsisTrillSimRouter(Base):
         -------
         - number: # Multicast IPv4 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastIpv4GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastIpv4GroupCount"])
+
     @TrillMCastIpv4GroupCount.setter
     def TrillMCastIpv4GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastIpv4GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastIpv4GroupCount"], value)
 
     @property
     def TrillMCastIpv6GroupCount(self):
@@ -309,11 +350,12 @@ class IsisTrillSimRouter(Base):
         -------
         - number: # Multicast IPv6 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastIpv6GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastIpv6GroupCount"])
+
     @TrillMCastIpv6GroupCount.setter
     def TrillMCastIpv6GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastIpv6GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastIpv6GroupCount"], value)
 
     @property
     def TrillMCastMacGroupCount(self):
@@ -323,13 +365,23 @@ class IsisTrillSimRouter(Base):
         -------
         - number: MAC Group Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastMacGroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastMacGroupCount"])
+
     @TrillMCastMacGroupCount.setter
     def TrillMCastMacGroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastMacGroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastMacGroupCount"], value)
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         # type: (List[str], int, str, List[str], int, int, int) -> IsisTrillSimRouter
         """Updates isisTrillSimRouter resource on the server.
 
@@ -352,7 +404,16 @@ class IsisTrillSimRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         # type: (List[str], int, str, List[str], int, int, int) -> IsisTrillSimRouter
         """Adds a new isisTrillSimRouter resource on the server and adds it to the container.
 
@@ -386,7 +447,22 @@ class IsisTrillSimRouter(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         """Finds and retrieves isisTrillSimRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillSimRouter resources from the server.
@@ -464,10 +540,12 @@ class IsisTrillSimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -496,10 +574,12 @@ class IsisTrillSimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -528,10 +608,12 @@ class IsisTrillSimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -560,12 +642,21 @@ class IsisTrillSimRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, BroadcastRootPriority=None, Nickname=None, SystemId=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BroadcastRootPriority=None,
+        Nickname=None,
+        SystemId=None,
+    ):
         """Base class infrastructure that gets a list of isisTrillSimRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

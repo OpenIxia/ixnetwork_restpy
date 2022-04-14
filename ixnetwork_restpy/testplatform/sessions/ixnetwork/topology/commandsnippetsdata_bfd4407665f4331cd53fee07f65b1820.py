@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class CommandSnippetsData(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'commandSnippetsData'
+    _SDM_NAME = "commandSnippetsData"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CommandSnippetDirectory': 'commandSnippetDirectory',
-        'CommandSnippetFile': 'commandSnippetFile',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'PeriodicTransmissionInterval': 'periodicTransmissionInterval',
-        'TransmissionBehaviour': 'transmissionBehaviour',
-        'TransmissionCount': 'transmissionCount',
+        "Active": "active",
+        "CommandSnippetDirectory": "commandSnippetDirectory",
+        "CommandSnippetFile": "commandSnippetFile",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "PeriodicTransmissionInterval": "periodicTransmissionInterval",
+        "TransmissionBehaviour": "transmissionBehaviour",
+        "TransmissionCount": "transmissionCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CommandSnippetsData, self).__init__(parent, list_op)
@@ -59,7 +59,8 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def CommandSnippetDirectory(self):
@@ -70,7 +71,10 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Directory containing XML based Netconf compliant command snippets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommandSnippetDirectory']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommandSnippetDirectory"])
+        )
 
     @property
     def CommandSnippetFile(self):
@@ -81,7 +85,10 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): File containing XML based Netconf compliant command snippet. For multiple command snippets with assymetric file names( which cannot be expressed easily as a pattern) please explore File option in Master Row Pattern Editor by putting the file namesin a .csv and pulling those values into the column cells.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommandSnippetFile']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommandSnippetFile"])
+        )
 
     @property
     def Count(self):
@@ -91,7 +98,7 @@ class CommandSnippetsData(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -101,7 +108,7 @@ class CommandSnippetsData(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -111,11 +118,12 @@ class CommandSnippetsData(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PeriodicTransmissionInterval(self):
@@ -126,7 +134,10 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum interval between scheduling of two transmits of the Command Snippet.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeriodicTransmissionInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeriodicTransmissionInterval"])
+        )
 
     @property
     def TransmissionBehaviour(self):
@@ -137,7 +148,10 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transmission behaviour for command snippet.Don't Send : This means that command will not be automatically executed. This choice should beused if user wants to control the order or/and timing of sending the command snippet to the DUTusing Test Composer or Automation Script.Once: The command will be sent only once to the DUT every time session comes up with the DUT.Periodic - Continuous: The command will be sent every Transmission Interval for the full lifetime of the session.Capture should be enabled with care if this option is selected.Periodic - Fixed Count: The command will be sent Transmission Count number of times, every Periodic Transmission Interval.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransmissionBehaviour"])
+        )
 
     @property
     def TransmissionCount(self):
@@ -148,7 +162,10 @@ class CommandSnippetsData(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times to transmit the Command Snippet.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransmissionCount"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> CommandSnippetsData
@@ -242,12 +259,23 @@ class CommandSnippetsData(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('executeCommand', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("executeCommand", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, CommandSnippetDirectory=None, CommandSnippetFile=None, PeriodicTransmissionInterval=None, TransmissionBehaviour=None, TransmissionCount=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        CommandSnippetDirectory=None,
+        CommandSnippetFile=None,
+        PeriodicTransmissionInterval=None,
+        TransmissionBehaviour=None,
+        TransmissionCount=None,
+    ):
         """Base class infrastructure that gets a list of commandSnippetsData device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,14 @@ class Licensing(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'licensing'
+    _SDM_NAME = "licensing"
     _SDM_ATT_MAP = {
-        'LicensingServers': 'licensingServers',
-        'Mode': 'mode',
-        'Tier': 'tier',
+        "LicensingServers": "licensingServers",
+        "Mode": "mode",
+        "Tier": "tier",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['aggregation', 'mixed', 'perpetual', 'subscription'],
+        "mode": ["aggregation", "mixed", "perpetual", "subscription"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,11 +54,12 @@ class Licensing(Base):
         -------
         - list(str): List of license servers to use
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LicensingServers'])
+        return self._get_attribute(self._SDM_ATT_MAP["LicensingServers"])
+
     @LicensingServers.setter
     def LicensingServers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LicensingServers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LicensingServers"], value)
 
     @property
     def Mode(self):
@@ -67,11 +69,12 @@ class Licensing(Base):
         -------
         - str(aggregation | mixed | perpetual | subscription): Set license mode to either of perpetual,subscription,mixed or aggregation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def Tier(self):
@@ -81,11 +84,12 @@ class Licensing(Base):
         -------
         - str: set or get the tier level, using the tier ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tier"])
+
     @Tier.setter
     def Tier(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tier"], value)
 
     def update(self, LicensingServers=None, Mode=None, Tier=None):
         # type: (List[str], str, str) -> Licensing

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class DiscoveredNeighbor(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'discoveredNeighbor'
+    _SDM_NAME = "discoveredNeighbor"
     _SDM_ATT_MAP = {
-        'IsRouter': 'isRouter',
-        'LastUpdate': 'lastUpdate',
-        'NeighborIp': 'neighborIp',
-        'NeighborMac': 'neighborMac',
+        "IsRouter": "isRouter",
+        "LastUpdate": "lastUpdate",
+        "NeighborIp": "neighborIp",
+        "NeighborMac": "neighborMac",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DiscoveredNeighbor, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) Indicates if the neighbor is a router or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRouter'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRouter"])
 
     @property
     def LastUpdate(self):
@@ -65,7 +65,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) Indicates when the last update for the neighbor happened.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastUpdate'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastUpdate"])
 
     @property
     def NeighborIp(self):
@@ -75,7 +75,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) The IP address of the neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborIp"])
 
     @property
     def NeighborMac(self):
@@ -85,7 +85,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) The MAC address of the neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborMac"])
 
     def add(self):
         """Adds a new discoveredNeighbor resource on the server and adds it to the container.

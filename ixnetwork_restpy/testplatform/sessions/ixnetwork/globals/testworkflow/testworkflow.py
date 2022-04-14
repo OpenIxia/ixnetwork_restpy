@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,32 @@ class Testworkflow(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testworkflow'
+    _SDM_NAME = "testworkflow"
     _SDM_ATT_MAP = {
-        'CurrentDescription': 'currentDescription',
-        'CurrentState': 'currentState',
-        'IsCaptureRunning': 'isCaptureRunning',
+        "CurrentDescription": "currentDescription",
+        "CurrentState": "currentState",
+        "IsCaptureRunning": "isCaptureRunning",
     }
     _SDM_ENUM_MAP = {
-        'currentState': ['kApplyTraffic', 'kConnectPorts', 'kError', 'kGenerateTraffic', 'kIdle', 'kReleaseCrashedPorts', 'kStartLAG', 'kStartProtocols', 'kStartTopology', 'kStartTraffic', 'kStopLAG', 'kStopProtocols', 'kStopTraffic', 'kWaitForChassisUp', 'kWaitForLicenseBroadcast', 'kWaitForPortsUp', 'kWaitForProtocolsUp'],
+        "currentState": [
+            "kApplyTraffic",
+            "kConnectPorts",
+            "kError",
+            "kGenerateTraffic",
+            "kIdle",
+            "kReleaseCrashedPorts",
+            "kStartLAG",
+            "kStartProtocols",
+            "kStartTopology",
+            "kStartTraffic",
+            "kStopLAG",
+            "kStopProtocols",
+            "kStopTraffic",
+            "kWaitForChassisUp",
+            "kWaitForLicenseBroadcast",
+            "kWaitForPortsUp",
+            "kWaitForProtocolsUp",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,9 +70,9 @@ class Testworkflow(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentDescription'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentDescription"])
 
     @property
     def CurrentState(self):
@@ -61,9 +80,9 @@ class Testworkflow(Base):
         """
         Returns
         -------
-        - str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp): 
+        - str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentState'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentState"])
 
     @property
     def IsCaptureRunning(self):
@@ -73,7 +92,7 @@ class Testworkflow(Base):
         -------
         - bool: Indicates whether capture is running on any port in config.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsCaptureRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsCaptureRunning"])
 
     def find(self, CurrentDescription=None, CurrentState=None, IsCaptureRunning=None):
         # type: (str, str, bool) -> Testworkflow
@@ -85,8 +104,8 @@ class Testworkflow(Base):
 
         Args
         ----
-        - CurrentDescription (str): 
-        - CurrentState (str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp)): 
+        - CurrentDescription (str):
+        - CurrentState (str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp)):
         - IsCaptureRunning (bool): Indicates whether capture is running on any port in config.
 
         Returns
@@ -133,10 +152,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartAllProtocolsGlobally(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -154,10 +175,14 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startAllProtocolsGlobally', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startAllProtocolsGlobally", payload=payload, response_object=None
+        )
 
     def Startlag(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -175,10 +200,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startlag', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startlag", payload=payload, response_object=None)
 
     def Startprotocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -196,10 +223,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startprotocols', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startprotocols", payload=payload, response_object=None)
 
     def Startselected(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -218,10 +247,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startselected', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startselected", payload=payload, response_object=None)
 
     def Starttraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -238,10 +269,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('starttraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("starttraffic", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -258,10 +291,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def Stoplag(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -278,10 +313,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stoplag', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stoplag", payload=payload, response_object=None)
 
     def Stopprotocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -298,10 +335,12 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopprotocols', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopprotocols", payload=payload, response_object=None)
 
     def Stoptraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -318,7 +357,9 @@ class Testworkflow(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stoptraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stoptraffic", payload=payload, response_object=None)

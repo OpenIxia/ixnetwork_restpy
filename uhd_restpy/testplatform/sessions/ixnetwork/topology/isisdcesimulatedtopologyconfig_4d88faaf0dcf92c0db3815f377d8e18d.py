@@ -167,7 +167,7 @@ class IsisDceSimulatedTopologyConfig(Base):
 
     def add(self, DceNodeTopologyCount=None, Name=None):
         # type: (int, str) -> IsisDceSimulatedTopologyConfig
-        """Adds a new isisDceSimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisDceSimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----

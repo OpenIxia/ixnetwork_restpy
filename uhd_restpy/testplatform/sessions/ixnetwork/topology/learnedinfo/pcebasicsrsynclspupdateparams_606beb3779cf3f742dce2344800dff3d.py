@@ -519,7 +519,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     def add(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
         # type: (int, int, int) -> PceBasicSrSyncLspUpdateParams
-        """Adds a new pceBasicSrSyncLspUpdateParams resource on the json, only valid with config assistant
+        """Adds a new pceBasicSrSyncLspUpdateParams resource on the json, only valid with batch add utility
 
         Args
         ----

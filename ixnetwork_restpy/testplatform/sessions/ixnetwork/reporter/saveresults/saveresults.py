@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,13 @@ class SaveResults(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'saveResults'
+    _SDM_NAME = "saveResults"
     _SDM_ATT_MAP = {
-        'EnableAllResults': 'enableAllResults',
-        'State': 'state',
+        "EnableAllResults": "enableAllResults",
+        "State": "state",
     }
     _SDM_ENUM_MAP = {
-        'state': ['done', 'failed', 'inProgress', 'none'],
+        "state": ["done", "failed", "inProgress", "none"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -52,11 +53,12 @@ class SaveResults(Base):
         -------
         - bool: If true, all the results are enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAllResults'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAllResults"])
+
     @EnableAllResults.setter
     def EnableAllResults(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAllResults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAllResults"], value)
 
     @property
     def State(self):
@@ -66,7 +68,7 @@ class SaveResults(Base):
         -------
         - str(done | failed | inProgress | none): The state of the results.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     def update(self, EnableAllResults=None):
         # type: (bool) -> SaveResults
@@ -138,10 +140,14 @@ class SaveResults(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveDetailedResults', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "saveDetailedResults", payload=payload, response_object=None
+        )
 
     def SaveFile(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -160,10 +166,12 @@ class SaveResults(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveFile', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("saveFile", payload=payload, response_object=None)
 
     def SaveSummaryResults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -180,7 +188,11 @@ class SaveResults(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveSummaryResults', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "saveSummaryResults", payload=payload, response_object=None
+        )

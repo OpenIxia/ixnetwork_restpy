@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class LearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedInfo'
+    _SDM_NAME = "learnedInfo"
     _SDM_ATT_MAP = {
-        'BridgeMac': 'bridgeMac',
-        'RootCost': 'rootCost',
-        'RootMac': 'rootMac',
-        'RootPriority': 'rootPriority',
+        "BridgeMac": "bridgeMac",
+        "RootCost": "rootCost",
+        "RootMac": "rootMac",
+        "RootPriority": "rootPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedInfo, self).__init__(parent, list_op)
@@ -53,7 +53,7 @@ class LearnedInfo(Base):
         -------
         - str: The MAC address of the bridge advertising information on this link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgeMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgeMac"])
 
     @property
     def RootCost(self):
@@ -63,7 +63,7 @@ class LearnedInfo(Base):
         -------
         - number: The cost for the shortest path from this bridge to the root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootCost"])
 
     @property
     def RootMac(self):
@@ -73,7 +73,7 @@ class LearnedInfo(Base):
         -------
         - str: The root bridge MAC address being advertised by the bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootMac"])
 
     @property
     def RootPriority(self):
@@ -83,7 +83,7 @@ class LearnedInfo(Base):
         -------
         - number: The priority for the root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootPriority"])
 
     def find(self, BridgeMac=None, RootCost=None, RootMac=None, RootPriority=None):
         # type: (str, int, str, int) -> LearnedInfo

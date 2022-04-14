@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class VxlanIPv6StaticInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vxlanIPv6StaticInfo'
+    _SDM_NAME = "vxlanIPv6StaticInfo"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableManualRemoteVMMac': 'enableManualRemoteVMMac',
-        'LocalVNI': 'localVNI',
-        'Name': 'name',
-        'RemoteVMIpv4': 'remoteVMIpv4',
-        'RemoteVMMacAddress': 'remoteVMMacAddress',
-        'RemoteVtepUnicastIpv6': 'remoteVtepUnicastIpv6',
-        'SuppressArp': 'suppressArp',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableManualRemoteVMMac": "enableManualRemoteVMMac",
+        "LocalVNI": "localVNI",
+        "Name": "name",
+        "RemoteVMIpv4": "remoteVMIpv4",
+        "RemoteVMMacAddress": "remoteVMMacAddress",
+        "RemoteVtepUnicastIpv6": "remoteVtepUnicastIpv6",
+        "SuppressArp": "suppressArp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VxlanIPv6StaticInfo, self).__init__(parent, list_op)
@@ -60,7 +60,8 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -70,7 +71,7 @@ class VxlanIPv6StaticInfo(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -80,7 +81,7 @@ class VxlanIPv6StaticInfo(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableManualRemoteVMMac(self):
@@ -91,7 +92,10 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Statically configure the Remote Inner Mac address to Outer Vtep IPv6 mapping, used for traffic.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableManualRemoteVMMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableManualRemoteVMMac"])
+        )
 
     @property
     def LocalVNI(self):
@@ -101,7 +105,7 @@ class VxlanIPv6StaticInfo(Base):
         -------
         - list(str): VNI
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalVNI'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalVNI"])
 
     @property
     def Name(self):
@@ -111,11 +115,12 @@ class VxlanIPv6StaticInfo(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RemoteVMIpv4(self):
@@ -126,7 +131,8 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VM IPv4 Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteVMIpv4']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteVMIpv4"]))
 
     @property
     def RemoteVMMacAddress(self):
@@ -137,7 +143,10 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote VM MAC address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteVMMacAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteVMMacAddress"])
+        )
 
     @property
     def RemoteVtepUnicastIpv6(self):
@@ -148,7 +157,10 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote VTEP Unicast IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteVtepUnicastIpv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteVtepUnicastIpv6"])
+        )
 
     @property
     def SuppressArp(self):
@@ -159,7 +171,8 @@ class VxlanIPv6StaticInfo(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Suppress Arp for VM IP, VM MAC pair.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressArp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SuppressArp"]))
 
     def update(self, Name=None):
         # type: (str) -> VxlanIPv6StaticInfo
@@ -221,7 +234,16 @@ class VxlanIPv6StaticInfo(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableManualRemoteVMMac=None, RemoteVMIpv4=None, RemoteVMMacAddress=None, RemoteVtepUnicastIpv6=None, SuppressArp=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnableManualRemoteVMMac=None,
+        RemoteVMIpv4=None,
+        RemoteVMMacAddress=None,
+        RemoteVtepUnicastIpv6=None,
+        SuppressArp=None,
+    ):
         """Base class infrastructure that gets a list of vxlanIPv6StaticInfo device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

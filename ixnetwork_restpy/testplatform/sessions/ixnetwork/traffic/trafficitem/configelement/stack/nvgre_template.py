@@ -4,22 +4,22 @@ from ixnetwork_restpy.files import Files
 
 class Nvgre(Base):
     __slots__ = ()
-    _SDM_NAME = 'nvgre'
+    _SDM_NAME = "nvgre"
     _SDM_ATT_MAP = {
-        'ChecksumPresent': 'nvgre.header.checksumPresent-1',
-        'Reserved1': 'nvgre.header.reserved1-2',
-        'KeyPresent': 'nvgre.header.keyPresent-3',
-        'SequencePresent': 'nvgre.header.sequencePresent-4',
-        'Reserved2': 'nvgre.header.reserved2-5',
-        'Version': 'nvgre.header.version-6',
-        'Protocol': 'nvgre.header.protocol-7',
-        'WithChecksumChecksum': 'nvgre.header.checksumHolder.withChecksum.checksum-8',
-        'WithChecksumReserved': 'nvgre.header.checksumHolder.withChecksum.reserved-9',
-        'ChecksumHolderNoChecksum': 'nvgre.header.checksumHolder.noChecksum-10',
-        'Vsid': 'nvgre.header.vsid-11',
-        'FlowId': 'nvgre.header.flowId-12',
-        'SequenceHolderSequenceNum': 'nvgre.header.sequenceHolder.sequenceNum-13',
-        'SequenceHolderNoSequenceNum': 'nvgre.header.sequenceHolder.noSequenceNum-14',
+        "ChecksumPresent": "nvgre.header.checksumPresent-1",
+        "Reserved1": "nvgre.header.reserved1-2",
+        "KeyPresent": "nvgre.header.keyPresent-3",
+        "SequencePresent": "nvgre.header.sequencePresent-4",
+        "Reserved2": "nvgre.header.reserved2-5",
+        "Version": "nvgre.header.version-6",
+        "Protocol": "nvgre.header.protocol-7",
+        "WithChecksumChecksum": "nvgre.header.checksumHolder.withChecksum.checksum-8",
+        "WithChecksumReserved": "nvgre.header.checksumHolder.withChecksum.reserved-9",
+        "ChecksumHolderNoChecksum": "nvgre.header.checksumHolder.noChecksum-10",
+        "Vsid": "nvgre.header.vsid-11",
+        "FlowId": "nvgre.header.flowId-12",
+        "SequenceHolderSequenceNum": "nvgre.header.sequenceHolder.sequenceNum-13",
+        "SequenceHolderNoSequenceNum": "nvgre.header.sequenceHolder.noSequenceNum-14",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class Nvgre(Base):
         Available enum values: 0:No Checksum, 0, 1:Has Checksum, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumPresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumPresent"])
+        )
 
     @property
     def Reserved1(self):
@@ -44,7 +47,8 @@ class Nvgre(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved1"]))
 
     @property
     def KeyPresent(self):
@@ -55,7 +59,8 @@ class Nvgre(Base):
         Available enum values: 0:No Key field, 0, 1:Has Key field, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyPresent']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyPresent"]))
 
     @property
     def SequencePresent(self):
@@ -66,7 +71,10 @@ class Nvgre(Base):
         Available enum values: 0:No sequence number field, 0, 1:Has sequence number field, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequencePresent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequencePresent"])
+        )
 
     @property
     def Reserved2(self):
@@ -76,7 +84,8 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved2"]))
 
     @property
     def Version(self):
@@ -86,7 +95,8 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Version"]))
 
     @property
     def Protocol(self):
@@ -96,7 +106,8 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Protocol']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Protocol"]))
 
     @property
     def WithChecksumChecksum(self):
@@ -106,7 +117,10 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WithChecksumChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WithChecksumChecksum"])
+        )
 
     @property
     def WithChecksumReserved(self):
@@ -116,7 +130,10 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WithChecksumReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["WithChecksumReserved"])
+        )
 
     @property
     def ChecksumHolderNoChecksum(self):
@@ -126,7 +143,10 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ChecksumHolderNoChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ChecksumHolderNoChecksum"])
+        )
 
     @property
     def Vsid(self):
@@ -136,7 +156,8 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vsid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vsid"]))
 
     @property
     def FlowId(self):
@@ -146,7 +167,8 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlowId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowId"]))
 
     @property
     def SequenceHolderSequenceNum(self):
@@ -156,7 +178,10 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceHolderSequenceNum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceHolderSequenceNum"])
+        )
 
     @property
     def SequenceHolderNoSequenceNum(self):
@@ -166,7 +191,10 @@ class Nvgre(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceHolderNoSequenceNum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceHolderNoSequenceNum"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class AdvancedFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'advancedFilter'
+    _SDM_NAME = "advancedFilter"
     _SDM_ATT_MAP = {
-        'Expression': 'expression',
-        'Name': 'name',
-        'SortingStats': 'sortingStats',
-        'TrackingFilterId': 'trackingFilterId',
+        "Expression": "expression",
+        "Name": "name",
+        "SortingStats": "sortingStats",
+        "TrackingFilterId": "trackingFilterId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AdvancedFilter, self).__init__(parent, list_op)
@@ -55,11 +55,12 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Expression'])
+        return self._get_attribute(self._SDM_ATT_MAP["Expression"])
+
     @Expression.setter
     def Expression(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Expression'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Expression"], value)
 
     @property
     def Name(self):
@@ -69,11 +70,12 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the filter name. It must be unique per view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SortingStats(self):
@@ -83,11 +85,12 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the list of statistics by which the view will be sorted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortingStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortingStats"])
+
     @SortingStats.setter
     def SortingStats(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortingStats'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortingStats"], value)
 
     @property
     def TrackingFilterId(self):
@@ -97,13 +100,16 @@ class AdvancedFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Gets the id of the filter, which is used to add the filter to a view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
+
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackingFilterId"], value)
 
-    def update(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+    def update(
+        self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None
+    ):
         # type: (str, str, str, str) -> AdvancedFilter
         """Updates advancedFilter resource on the server.
 
@@ -151,7 +157,9 @@ class AdvancedFilter(Base):
         """
         self._delete()
 
-    def find(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+    def find(
+        self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None
+    ):
         # type: (str, str, str, str) -> AdvancedFilter
         """Finds and retrieves advancedFilter resources from the server.
 

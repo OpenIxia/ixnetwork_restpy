@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,15 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterfaceId': 'interfaceId',
-        'InterfaceMetric': 'interfaceMetric',
-        'ResponseMode': 'responseMode',
+        "Enabled": "enabled",
+        "InterfaceId": "interfaceId",
+        "InterfaceMetric": "interfaceMetric",
+        "ResponseMode": "responseMode",
     }
     _SDM_ENUM_MAP = {
-        'responseMode': ['splitHorizon', 'noSplitHorizon', 'poisonReverse'],
+        "responseMode": ["splitHorizon", "noSplitHorizon", "poisonReverse"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,11 +57,12 @@ class Interface(Base):
         -------
         - bool: Enables this particular RIPng interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterfaceId(self):
@@ -70,11 +72,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The assigned interface ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceId"])
+
     @InterfaceId.setter
     def InterfaceId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceId"], value)
 
     @property
     def InterfaceMetric(self):
@@ -84,11 +87,12 @@ class Interface(Base):
         -------
         - number: The value of the metric assigned to this particular interface. This value is added to the RIPng routing metric before transmission on this interface. It allows metrics for routes with the same standard RIPng routing metric to be identified by the particular interface.The default value is'0. Care should be taken so the combined metric value for a route does not exceed 15. A combined metric of 16 or above indicates that the route is unreachable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceMetric"], value)
 
     @property
     def ResponseMode(self):
@@ -98,13 +102,16 @@ class Interface(Base):
         -------
         - str(splitHorizon | noSplitHorizon | poisonReverse): The response mode of the RIPng interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResponseMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResponseMode"])
+
     @ResponseMode.setter
     def ResponseMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ResponseMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ResponseMode"], value)
 
-    def update(self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None):
+    def update(
+        self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None
+    ):
         # type: (bool, str, int, str) -> Interface
         """Updates interface resource on the server.
 
@@ -121,7 +128,9 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None):
+    def add(
+        self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None
+    ):
         # type: (bool, str, int, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -152,7 +161,9 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None):
+    def find(
+        self, Enabled=None, InterfaceId=None, InterfaceMetric=None, ResponseMode=None
+    ):
         # type: (bool, str, int, str) -> Interface
         """Finds and retrieves interface resources from the server.
 

@@ -4,20 +4,20 @@ from ixnetwork_restpy.files import Files
 
 class PppIPv6CP(Base):
     __slots__ = ()
-    _SDM_NAME = 'pppIPv6CP'
+    _SDM_NAME = "pppIPv6CP"
     _SDM_ATT_MAP = {
-        'HeaderCode': 'pppIPv6CP.header.code-1',
-        'HeaderIdentifier': 'pppIPv6CP.header.identifier-2',
-        'HeaderLength': 'pppIPv6CP.header.length-3',
-        'OptionsType': 'pppIPv6CP.header.data.options.type-4',
-        'FieldsForInterfaceIdentifierLength': 'pppIPv6CP.header.data.options.nextFields.fieldsForInterfaceIdentifier.length-5',
-        'FieldsForInterfaceIdentifierIdentifier': 'pppIPv6CP.header.data.options.nextFields.fieldsForInterfaceIdentifier.identifier-6',
-        'FieldsForIPv6CompressionLength': 'pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.length-7',
-        'FieldsForIPv6CompressionCompressionProtocol': 'pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.compressionProtocol-8',
-        'NextfieldsFieldsForIPv6CompressionLength': 'pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.length-9',
-        'FieldsForIPv6CompressionData': 'pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.data-10',
-        'DataInLCPLength': 'pppIPv6CP.header.data.dataInLCP.length-11',
-        'DataInLCPData': 'pppIPv6CP.header.data.dataInLCP.data-12',
+        "HeaderCode": "pppIPv6CP.header.code-1",
+        "HeaderIdentifier": "pppIPv6CP.header.identifier-2",
+        "HeaderLength": "pppIPv6CP.header.length-3",
+        "OptionsType": "pppIPv6CP.header.data.options.type-4",
+        "FieldsForInterfaceIdentifierLength": "pppIPv6CP.header.data.options.nextFields.fieldsForInterfaceIdentifier.length-5",
+        "FieldsForInterfaceIdentifierIdentifier": "pppIPv6CP.header.data.options.nextFields.fieldsForInterfaceIdentifier.identifier-6",
+        "FieldsForIPv6CompressionLength": "pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.length-7",
+        "FieldsForIPv6CompressionCompressionProtocol": "pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.compressionProtocol-8",
+        "NextfieldsFieldsForIPv6CompressionLength": "pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.length-9",
+        "FieldsForIPv6CompressionData": "pppIPv6CP.header.data.options.nextFields.fieldsForIPv6Compression.data-10",
+        "DataInLCPLength": "pppIPv6CP.header.data.dataInLCP.length-11",
+        "DataInLCPData": "pppIPv6CP.header.data.dataInLCP.data-12",
     }
 
     def __init__(self, parent, list_op=False):
@@ -32,7 +32,8 @@ class PppIPv6CP(Base):
         Available enum values: Configure-Request, 1, Configure-Ack, 2, Configure-Nak, 3, Configure-Reject, 4, Terminate-Request, 5, Terminate-Ack, 6, Code-Reject, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderCode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCode"]))
 
     @property
     def HeaderIdentifier(self):
@@ -42,7 +43,10 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderIdentifier"])
+        )
 
     @property
     def HeaderLength(self):
@@ -52,7 +56,8 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def OptionsType(self):
@@ -63,7 +68,8 @@ class PppIPv6CP(Base):
         Available enum values: Interface-Identifier, 1, IPv6-Compression-Protocol, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionsType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OptionsType"]))
 
     @property
     def FieldsForInterfaceIdentifierLength(self):
@@ -73,7 +79,13 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldsForInterfaceIdentifierLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FieldsForInterfaceIdentifierLength"]
+            ),
+        )
 
     @property
     def FieldsForInterfaceIdentifierIdentifier(self):
@@ -83,17 +95,27 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldsForInterfaceIdentifierIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FieldsForInterfaceIdentifierIdentifier"]
+            ),
+        )
 
     @property
     def FieldsForIPv6CompressionLength(self):
         """
-        Display Name: Length 
+        Display Name: Length
         Default Value: 1
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldsForIPv6CompressionLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FieldsForIPv6CompressionLength"]),
+        )
 
     @property
     def FieldsForIPv6CompressionCompressionProtocol(self):
@@ -103,7 +125,13 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldsForIPv6CompressionCompressionProtocol']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["FieldsForIPv6CompressionCompressionProtocol"]
+            ),
+        )
 
     @property
     def NextfieldsFieldsForIPv6CompressionLength(self):
@@ -113,7 +141,13 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NextfieldsFieldsForIPv6CompressionLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["NextfieldsFieldsForIPv6CompressionLength"]
+            ),
+        )
 
     @property
     def FieldsForIPv6CompressionData(self):
@@ -123,7 +157,10 @@ class PppIPv6CP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FieldsForIPv6CompressionData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FieldsForIPv6CompressionData"])
+        )
 
     @property
     def DataInLCPLength(self):
@@ -133,7 +170,10 @@ class PppIPv6CP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataInLCPLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DataInLCPLength"])
+        )
 
     @property
     def DataInLCPData(self):
@@ -143,7 +183,8 @@ class PppIPv6CP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataInLCPData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataInLCPData"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

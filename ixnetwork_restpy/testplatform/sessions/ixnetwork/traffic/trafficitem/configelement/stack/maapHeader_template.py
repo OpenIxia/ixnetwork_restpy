@@ -4,23 +4,23 @@ from ixnetwork_restpy.files import Files
 
 class MaapHeader(Base):
     __slots__ = ()
-    _SDM_NAME = 'maapHeader'
+    _SDM_NAME = "maapHeader"
     _SDM_ATT_MAP = {
-        'DefaultControlDataIndicator': 'maapHeader.header..controlDataIndicator-1',
-        'DefaultSubtype': 'maapHeader.header..subtype-2',
-        'DefaultStreamIdValid': 'maapHeader.header..streamIdValid-3',
-        'DefaultVersion': 'maapHeader.header..version-4',
-        'MaapReservedMessageTypeMessageType': 'maapHeader.header.selectMessageType.maapReservedMessageType.messageType-5',
-        'MaapProbMessageTypeMessageType': 'maapHeader.header.selectMessageType.maapProbMessageType.messageType-6',
-        'MaapDefendMessageTypeMessageType': 'maapHeader.header.selectMessageType.maapDefendMessageType.messageType-7',
-        'MaapAnnounceMessageTypeMessageType': 'maapHeader.header.selectMessageType.maapAnnounceMessageType.messageType-8',
-        'HeaderMaapVersion': 'maapHeader.header.maapVersion-9',
-        'HeaderMaapVersion': 'maapHeader.header.maapVersion-10',
-        'HeaderStreamId': 'maapHeader.header.streamId-11',
-        'HeaderRequestedStartAddress': 'maapHeader.header.requestedStartAddress-12',
-        'HeaderRequestedCount': 'maapHeader.header.requestedCount-13',
-        'HeaderConflictStartAddress': 'maapHeader.header.conflictStartAddress-14',
-        'HeaderConflictCount': 'maapHeader.header.conflictCount-15',
+        "DefaultControlDataIndicator": "maapHeader.header..controlDataIndicator-1",
+        "DefaultSubtype": "maapHeader.header..subtype-2",
+        "DefaultStreamIdValid": "maapHeader.header..streamIdValid-3",
+        "DefaultVersion": "maapHeader.header..version-4",
+        "MaapReservedMessageTypeMessageType": "maapHeader.header.selectMessageType.maapReservedMessageType.messageType-5",
+        "MaapProbMessageTypeMessageType": "maapHeader.header.selectMessageType.maapProbMessageType.messageType-6",
+        "MaapDefendMessageTypeMessageType": "maapHeader.header.selectMessageType.maapDefendMessageType.messageType-7",
+        "MaapAnnounceMessageTypeMessageType": "maapHeader.header.selectMessageType.maapAnnounceMessageType.messageType-8",
+        "HeaderMaapVersion": "maapHeader.header.maapVersion-9",
+        "HeaderMaapVersion": "maapHeader.header.maapVersion-10",
+        "HeaderStreamId": "maapHeader.header.streamId-11",
+        "HeaderRequestedStartAddress": "maapHeader.header.requestedStartAddress-12",
+        "HeaderRequestedCount": "maapHeader.header.requestedCount-13",
+        "HeaderConflictStartAddress": "maapHeader.header.conflictStartAddress-14",
+        "HeaderConflictCount": "maapHeader.header.conflictCount-15",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultControlDataIndicator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultControlDataIndicator"])
+        )
 
     @property
     def DefaultSubtype(self):
@@ -44,7 +47,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultSubtype']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultSubtype"])
+        )
 
     @property
     def DefaultStreamIdValid(self):
@@ -54,7 +60,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultStreamIdValid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultStreamIdValid"])
+        )
 
     @property
     def DefaultVersion(self):
@@ -64,7 +73,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultVersion"])
+        )
 
     @property
     def MaapReservedMessageTypeMessageType(self):
@@ -74,7 +86,13 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaapReservedMessageTypeMessageType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaapReservedMessageTypeMessageType"]
+            ),
+        )
 
     @property
     def MaapProbMessageTypeMessageType(self):
@@ -84,7 +102,11 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaapProbMessageTypeMessageType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MaapProbMessageTypeMessageType"]),
+        )
 
     @property
     def MaapDefendMessageTypeMessageType(self):
@@ -94,7 +116,11 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaapDefendMessageTypeMessageType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MaapDefendMessageTypeMessageType"]),
+        )
 
     @property
     def MaapAnnounceMessageTypeMessageType(self):
@@ -104,7 +130,13 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaapAnnounceMessageTypeMessageType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MaapAnnounceMessageTypeMessageType"]
+            ),
+        )
 
     @property
     def HeaderMaapVersion(self):
@@ -114,7 +146,10 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMaapVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMaapVersion"])
+        )
 
     @property
     def HeaderMaapVersion(self):
@@ -124,7 +159,10 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderMaapVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMaapVersion"])
+        )
 
     @property
     def HeaderStreamId(self):
@@ -134,7 +172,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderStreamId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderStreamId"])
+        )
 
     @property
     def HeaderRequestedStartAddress(self):
@@ -144,7 +185,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRequestedStartAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRequestedStartAddress"])
+        )
 
     @property
     def HeaderRequestedCount(self):
@@ -154,7 +198,10 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRequestedCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRequestedCount"])
+        )
 
     @property
     def HeaderConflictStartAddress(self):
@@ -164,7 +211,10 @@ class MaapHeader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderConflictStartAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderConflictStartAddress"])
+        )
 
     @property
     def HeaderConflictCount(self):
@@ -174,7 +224,10 @@ class MaapHeader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderConflictCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderConflictCount"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

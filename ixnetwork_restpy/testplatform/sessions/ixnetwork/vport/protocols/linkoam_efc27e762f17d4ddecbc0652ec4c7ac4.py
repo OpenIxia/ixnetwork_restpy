@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,13 @@ class LinkOam(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'linkOam'
+    _SDM_NAME = "linkOam"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'RunningState': 'runningState',
+        "Enabled": "enabled",
+        "RunningState": "runningState",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,10 +56,13 @@ class LinkOam(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_38cd496cb7f730be08b2e1ec647ec0dd import Link
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_38cd496cb7f730be08b2e1ec647ec0dd import (
+            Link,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Link', None) is not None:
-                return self._properties.get('Link')
+            if self._properties.get("Link", None) is not None:
+                return self._properties.get("Link")
         return Link(self)
 
     @property
@@ -69,11 +73,12 @@ class LinkOam(Base):
         -------
         - bool: If true, the Link OAM protocol is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def RunningState(self):
@@ -83,7 +88,7 @@ class LinkOam(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current runnings state of Link OAM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     def update(self, Enabled=None):
         # type: (bool) -> LinkOam
@@ -155,10 +160,12 @@ class LinkOam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -175,7 +182,9 @@ class LinkOam(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

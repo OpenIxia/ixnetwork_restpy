@@ -203,7 +203,7 @@ class Ospfv2Router(Base):
 
     def add(self, Name=None):
         # type: (str) -> Ospfv2Router
-        """Adds a new ospfv2Router resource on the json, only valid with config assistant
+        """Adds a new ospfv2Router resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
-        'EBit': 'eBit',
-        'Interfaces': 'interfaces',
-        'VBit': 'vBit',
+        "BBit": "bBit",
+        "EBit": "eBit",
+        "Interfaces": "interfaces",
+        "VBit": "vBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Router, self).__init__(parent, list_op)
@@ -52,13 +52,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BBit"])
+
     @BBit.setter
     def BBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BBit"], value)
 
     @property
     def EBit(self):
@@ -66,25 +67,27 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def Interfaces(self):
         """
         Returns
         -------
-        - list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number)): 
+        - list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number)):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def VBit(self):
@@ -92,23 +95,24 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["VBit"])
+
     @VBit.setter
     def VBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VBit"], value)
 
     def update(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
         """Updates router resource on the server.
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))): 
-        - VBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))):
+        - VBit (bool):
 
         Raises
         ------
@@ -117,14 +121,14 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
-        """Adds a new router resource on the json, only valid with config assistant
+        """Adds a new router resource on the json, only valid with batch add utility
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))): 
-        - VBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))):
+        - VBit (bool):
 
         Returns
         -------
@@ -145,10 +149,10 @@ class Router(Base):
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))): 
-        - VBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))):
+        - VBit (bool):
 
         Returns
         -------

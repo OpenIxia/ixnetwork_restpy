@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,49 +34,57 @@ class IsisTrillRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisTrillRouter'
+    _SDM_NAME = "isisTrillRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AreaAddresses': 'areaAddresses',
-        'AreaAuthenticationType': 'areaAuthenticationType',
-        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
-        'Attached': 'attached',
-        'CSNPInterval': 'cSNPInterval',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLSPs': 'discardLSPs',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHostName': 'enableHostName',
-        'EnableMtuProbe': 'enableMtuProbe',
-        'EnableWideMetric': 'enableWideMetric',
-        'Errors': 'errors',
-        'HostName': 'hostName',
-        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
-        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
-        'LSPLifetime': 'lSPLifetime',
-        'LSPRefreshRate': 'lSPRefreshRate',
-        'LSPorMGroupPDUMinTransmissionInterval': 'lSPorMGroupPDUMinTransmissionInterval',
-        'LocalSystemID': 'localSystemID',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLSPSize': 'maxLSPSize',
-        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
-        'Name': 'name',
-        'NoOfMtuProbes': 'noOfMtuProbes',
-        'OrigLspBufSize': 'origLspBufSize',
-        'Overloaded': 'overloaded',
-        'PSNPInterval': 'pSNPInterval',
-        'PartitionRepair': 'partitionRepair',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TrillMCastIpv4GroupCount': 'trillMCastIpv4GroupCount',
-        'TrillMCastIpv6GroupCount': 'trillMCastIpv6GroupCount',
-        'TrillMCastMacGroupCount': 'trillMCastMacGroupCount',
+        "Active": "active",
+        "AreaAddresses": "areaAddresses",
+        "AreaAuthenticationType": "areaAuthenticationType",
+        "AreaTransmitPasswordOrMD5Key": "areaTransmitPasswordOrMD5Key",
+        "Attached": "attached",
+        "CSNPInterval": "cSNPInterval",
+        "CapabilityRouterId": "capabilityRouterId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DiscardLSPs": "discardLSPs",
+        "EnableHelloPadding": "enableHelloPadding",
+        "EnableHostName": "enableHostName",
+        "EnableMtuProbe": "enableMtuProbe",
+        "EnableWideMetric": "enableWideMetric",
+        "Errors": "errors",
+        "HostName": "hostName",
+        "IgnoreReceiveMD5": "ignoreReceiveMD5",
+        "InterLSPsOrMGroupPDUBurstGap": "interLSPsOrMGroupPDUBurstGap",
+        "LSPLifetime": "lSPLifetime",
+        "LSPRefreshRate": "lSPRefreshRate",
+        "LSPorMGroupPDUMinTransmissionInterval": "lSPorMGroupPDUMinTransmissionInterval",
+        "LocalSystemID": "localSystemID",
+        "MaxAreaAddresses": "maxAreaAddresses",
+        "MaxLSPSize": "maxLSPSize",
+        "MaxLSPsOrMGroupPDUsPerBurst": "maxLSPsOrMGroupPDUsPerBurst",
+        "Name": "name",
+        "NoOfMtuProbes": "noOfMtuProbes",
+        "OrigLspBufSize": "origLspBufSize",
+        "Overloaded": "overloaded",
+        "PSNPInterval": "pSNPInterval",
+        "PartitionRepair": "partitionRepair",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TrillMCastIpv4GroupCount": "trillMCastIpv4GroupCount",
+        "TrillMCastIpv6GroupCount": "trillMCastIpv6GroupCount",
+        "TrillMCastMacGroupCount": "trillMCastMacGroupCount",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -92,10 +101,13 @@ class IsisTrillRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv4grouplist_067fcb786745f03382b0f3242126f4a0 import TrillMCastIpv4GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv4grouplist_067fcb786745f03382b0f3242126f4a0 import (
+            TrillMCastIpv4GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillMCastIpv4GroupList', None) is not None:
-                return self._properties.get('TrillMCastIpv4GroupList')
+            if self._properties.get("TrillMCastIpv4GroupList", None) is not None:
+                return self._properties.get("TrillMCastIpv4GroupList")
         return TrillMCastIpv4GroupList(self)._select()
 
     @property
@@ -109,10 +121,13 @@ class IsisTrillRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv6grouplist_18b118137ec4704f682253ecb0f4797b import TrillMCastIpv6GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv6grouplist_18b118137ec4704f682253ecb0f4797b import (
+            TrillMCastIpv6GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillMCastIpv6GroupList', None) is not None:
-                return self._properties.get('TrillMCastIpv6GroupList')
+            if self._properties.get("TrillMCastIpv6GroupList", None) is not None:
+                return self._properties.get("TrillMCastIpv6GroupList")
         return TrillMCastIpv6GroupList(self)._select()
 
     @property
@@ -126,10 +141,13 @@ class IsisTrillRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastmacgrouplist_fef95367003707238873712058525e55 import TrillMCastMacGroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastmacgrouplist_fef95367003707238873712058525e55 import (
+            TrillMCastMacGroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillMCastMacGroupList', None) is not None:
-                return self._properties.get('TrillMCastMacGroupList')
+            if self._properties.get("TrillMCastMacGroupList", None) is not None:
+                return self._properties.get("TrillMCastMacGroupList")
         return TrillMCastMacGroupList(self)._select()
 
     @property
@@ -143,10 +161,13 @@ class IsisTrillRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trilltopologylist_d5329b70c837a29596a33cda2c9bc96d import TrillTopologyList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trilltopologylist_d5329b70c837a29596a33cda2c9bc96d import (
+            TrillTopologyList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillTopologyList', None) is not None:
-                return self._properties.get('TrillTopologyList')
+            if self._properties.get("TrillTopologyList", None) is not None:
+                return self._properties.get("TrillTopologyList")
         return TrillTopologyList(self)._select()
 
     @property
@@ -158,7 +179,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AreaAddresses(self):
@@ -169,7 +191,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaAddresses']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AreaAddresses"]))
 
     @property
     def AreaAuthenticationType(self):
@@ -180,7 +203,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Authentication Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaAuthenticationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AreaAuthenticationType"])
+        )
 
     @property
     def AreaTransmitPasswordOrMD5Key(self):
@@ -191,7 +217,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Transmit Password / MD5-Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaTransmitPasswordOrMD5Key']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AreaTransmitPasswordOrMD5Key"])
+        )
 
     @property
     def Attached(self):
@@ -202,7 +231,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attached
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Attached']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Attached"]))
 
     @property
     def CSNPInterval(self):
@@ -213,7 +243,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CSNP Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CSNPInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CSNPInterval"]))
 
     @property
     def CapabilityRouterId(self):
@@ -224,7 +255,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Capability Router Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CapabilityRouterId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CapabilityRouterId"])
+        )
 
     @property
     def Count(self):
@@ -234,7 +268,7 @@ class IsisTrillRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -244,7 +278,7 @@ class IsisTrillRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardLSPs(self):
@@ -255,7 +289,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Discard LSPs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardLSPs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DiscardLSPs"]))
 
     @property
     def EnableHelloPadding(self):
@@ -266,7 +301,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Padding
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloPadding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloPadding"])
+        )
 
     @property
     def EnableHostName(self):
@@ -277,7 +315,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHostName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+        )
 
     @property
     def EnableMtuProbe(self):
@@ -288,7 +329,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MTU Probe
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMtuProbe']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableMtuProbe"])
+        )
 
     @property
     def EnableWideMetric(self):
@@ -299,7 +343,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Wide Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableWideMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableWideMetric"])
+        )
 
     @property
     def Errors(self):
@@ -308,7 +355,7 @@ class IsisTrillRouter(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def HostName(self):
@@ -319,7 +366,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HostName"]))
 
     @property
     def IgnoreReceiveMD5(self):
@@ -330,7 +378,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ignore Receive MD5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreReceiveMD5']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IgnoreReceiveMD5"])
+        )
 
     @property
     def InterLSPsOrMGroupPDUBurstGap(self):
@@ -341,7 +392,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter LSPs/MGROUP-PDUs Burst Gap (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterLSPsOrMGroupPDUBurstGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterLSPsOrMGroupPDUBurstGap"])
+        )
 
     @property
     def LSPLifetime(self):
@@ -352,7 +406,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Rifetime (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPLifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LSPLifetime"]))
 
     @property
     def LSPRefreshRate(self):
@@ -363,7 +418,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Refresh Rate (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPRefreshRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LSPRefreshRate"])
+        )
 
     @property
     def LSPorMGroupPDUMinTransmissionInterval(self):
@@ -374,7 +432,13 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP/MGROUP-PDU Min Transmission Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPorMGroupPDUMinTransmissionInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LSPorMGroupPDUMinTransmissionInterval"]
+            ),
+        )
 
     @property
     def LocalSystemID(self):
@@ -384,7 +448,7 @@ class IsisTrillRouter(Base):
         -------
         - list(str): System ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalSystemID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalSystemID"])
 
     @property
     def MaxAreaAddresses(self):
@@ -395,7 +459,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Area Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxAreaAddresses']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxAreaAddresses"])
+        )
 
     @property
     def MaxLSPSize(self):
@@ -406,7 +473,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSP Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLSPSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxLSPSize"]))
 
     @property
     def MaxLSPsOrMGroupPDUsPerBurst(self):
@@ -417,7 +485,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSPs/MGROUP-PDUs Per Burst
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLSPsOrMGroupPDUsPerBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxLSPsOrMGroupPDUsPerBurst"])
+        )
 
     @property
     def Name(self):
@@ -427,11 +498,12 @@ class IsisTrillRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfMtuProbes(self):
@@ -442,7 +514,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of MTU Probes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoOfMtuProbes']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NoOfMtuProbes"]))
 
     @property
     def OrigLspBufSize(self):
@@ -453,7 +526,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Originating LSP Buf Size(Sz)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OrigLspBufSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OrigLspBufSize"])
+        )
 
     @property
     def Overloaded(self):
@@ -464,7 +540,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Overloaded
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Overloaded']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Overloaded"]))
 
     @property
     def PSNPInterval(self):
@@ -475,7 +552,8 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PSNP Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PSNPInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PSNPInterval"]))
 
     @property
     def PartitionRepair(self):
@@ -486,7 +564,10 @@ class IsisTrillRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Partition Repair
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartitionRepair']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartitionRepair"])
+        )
 
     @property
     def SessionInfo(self):
@@ -496,7 +577,7 @@ class IsisTrillRouter(Base):
         -------
         - list(str[noIfaceUp | up]): Logs additional information about the session Information
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -506,7 +587,7 @@ class IsisTrillRouter(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StateCounts(self):
@@ -515,7 +596,7 @@ class IsisTrillRouter(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -525,7 +606,7 @@ class IsisTrillRouter(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TrillMCastIpv4GroupCount(self):
@@ -535,11 +616,12 @@ class IsisTrillRouter(Base):
         -------
         - number: # Multicast IPv4 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastIpv4GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastIpv4GroupCount"])
+
     @TrillMCastIpv4GroupCount.setter
     def TrillMCastIpv4GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastIpv4GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastIpv4GroupCount"], value)
 
     @property
     def TrillMCastIpv6GroupCount(self):
@@ -549,11 +631,12 @@ class IsisTrillRouter(Base):
         -------
         - number: # Multicast IPv6 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastIpv6GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastIpv6GroupCount"])
+
     @TrillMCastIpv6GroupCount.setter
     def TrillMCastIpv6GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastIpv6GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastIpv6GroupCount"], value)
 
     @property
     def TrillMCastMacGroupCount(self):
@@ -563,13 +646,20 @@ class IsisTrillRouter(Base):
         -------
         - number: MAC Group Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrillMCastMacGroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrillMCastMacGroupCount"])
+
     @TrillMCastMacGroupCount.setter
     def TrillMCastMacGroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrillMCastMacGroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrillMCastMacGroupCount"], value)
 
-    def update(self, Name=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def update(
+        self,
+        Name=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         # type: (str, int, int, int) -> IsisTrillRouter
         """Updates isisTrillRouter resource on the server.
 
@@ -589,9 +679,15 @@ class IsisTrillRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Name=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def add(
+        self,
+        Name=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         # type: (str, int, int, int) -> IsisTrillRouter
-        """Adds a new isisTrillRouter resource on the json, only valid with config assistant
+        """Adds a new isisTrillRouter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -610,7 +706,21 @@ class IsisTrillRouter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Name=None, SessionInfo=None, SessionStatus=None, StateCounts=None, Status=None, TrillMCastIpv4GroupCount=None, TrillMCastIpv6GroupCount=None, TrillMCastMacGroupCount=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        LocalSystemID=None,
+        Name=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StateCounts=None,
+        Status=None,
+        TrillMCastIpv4GroupCount=None,
+        TrillMCastIpv6GroupCount=None,
+        TrillMCastMacGroupCount=None,
+    ):
         """Finds and retrieves isisTrillRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillRouter resources from the server.
@@ -687,10 +797,12 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def IsisStartRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -719,10 +831,12 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStartRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("isisStartRouter", payload=payload, response_object=None)
 
     def IsisStopRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -751,10 +865,12 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStopRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("isisStopRouter", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -783,10 +899,12 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -815,10 +933,12 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -847,12 +967,43 @@ class IsisTrillRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, CSNPInterval=None, CapabilityRouterId=None, DiscardLSPs=None, EnableHelloPadding=None, EnableHostName=None, EnableMtuProbe=None, EnableWideMetric=None, HostName=None, IgnoreReceiveMD5=None, InterLSPsOrMGroupPDUBurstGap=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, MaxAreaAddresses=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, NoOfMtuProbes=None, OrigLspBufSize=None, Overloaded=None, PSNPInterval=None, PartitionRepair=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AreaAddresses=None,
+        AreaAuthenticationType=None,
+        AreaTransmitPasswordOrMD5Key=None,
+        Attached=None,
+        CSNPInterval=None,
+        CapabilityRouterId=None,
+        DiscardLSPs=None,
+        EnableHelloPadding=None,
+        EnableHostName=None,
+        EnableMtuProbe=None,
+        EnableWideMetric=None,
+        HostName=None,
+        IgnoreReceiveMD5=None,
+        InterLSPsOrMGroupPDUBurstGap=None,
+        LSPLifetime=None,
+        LSPRefreshRate=None,
+        LSPorMGroupPDUMinTransmissionInterval=None,
+        MaxAreaAddresses=None,
+        MaxLSPSize=None,
+        MaxLSPsOrMGroupPDUsPerBurst=None,
+        NoOfMtuProbes=None,
+        OrigLspBufSize=None,
+        Overloaded=None,
+        PSNPInterval=None,
+        PartitionRepair=None,
+    ):
         """Base class infrastructure that gets a list of isisTrillRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

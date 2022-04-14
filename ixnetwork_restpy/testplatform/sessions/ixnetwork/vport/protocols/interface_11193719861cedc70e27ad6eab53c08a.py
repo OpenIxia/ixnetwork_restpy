@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'AutoPick': 'autoPick',
-        'BdpuGap': 'bdpuGap',
-        'Cost': 'cost',
-        'Enabled': 'enabled',
-        'InterfaceId': 'interfaceId',
-        'JitterEnabled': 'jitterEnabled',
-        'JitterPercentage': 'jitterPercentage',
-        'LinkType': 'linkType',
-        'MstiOrVlanId': 'mstiOrVlanId',
-        'PortNo': 'portNo',
-        'Pvid': 'pvid',
+        "AutoPick": "autoPick",
+        "BdpuGap": "bdpuGap",
+        "Cost": "cost",
+        "Enabled": "enabled",
+        "InterfaceId": "interfaceId",
+        "JitterEnabled": "jitterEnabled",
+        "JitterPercentage": "jitterPercentage",
+        "LinkType": "linkType",
+        "MstiOrVlanId": "mstiOrVlanId",
+        "PortNo": "portNo",
+        "Pvid": "pvid",
     }
     _SDM_ENUM_MAP = {
-        'linkType': ['pointToPoint', 'shared'],
+        "linkType": ["pointToPoint", "shared"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,10 +67,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_565f2a84b28ad9f6bdf139bde78d79ea import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_565f2a84b28ad9f6bdf139bde78d79ea import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)._select()
 
     @property
@@ -80,11 +84,12 @@ class Interface(Base):
         -------
         - bool: If set, then the Auto-Pick Port Number feature is enabled and each STP interface configured for the same bridge will be assigned a unique port number automatically.(default = enabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoPick'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoPick"])
+
     @AutoPick.setter
     def AutoPick(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoPick'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoPick"], value)
 
     @property
     def BdpuGap(self):
@@ -94,11 +99,12 @@ class Interface(Base):
         -------
         - number: The length of time between transmissions of BPDUs, in milliseconds. The valid range is 0 msec to 60,000 msec. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BdpuGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["BdpuGap"])
+
     @BdpuGap.setter
     def BdpuGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BdpuGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BdpuGap"], value)
 
     @property
     def Cost(self):
@@ -108,11 +114,12 @@ class Interface(Base):
         -------
         - number: The administrative path cost assigned to this interface. The valid range is 0 to 4294967295. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cost'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cost"])
+
     @Cost.setter
     def Cost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cost"], value)
 
     @property
     def Enabled(self):
@@ -122,11 +129,12 @@ class Interface(Base):
         -------
         - bool: Enables or disables the use of the interface. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InterfaceId(self):
@@ -136,11 +144,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The unique identifier for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceId"])
+
     @InterfaceId.setter
     def InterfaceId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceId"], value)
 
     @property
     def JitterEnabled(self):
@@ -150,11 +159,12 @@ class Interface(Base):
         -------
         - bool: Staggered transmit (jitter) for Hello messages. If set, then the jitter feature is enabled. (default = enabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JitterEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["JitterEnabled"])
+
     @JitterEnabled.setter
     def JitterEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JitterEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JitterEnabled"], value)
 
     @property
     def JitterPercentage(self):
@@ -164,11 +174,12 @@ class Interface(Base):
         -------
         - number: The maximum percentage of +/- variation (jitter) from the Hello message transmission interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JitterPercentage'])
+        return self._get_attribute(self._SDM_ATT_MAP["JitterPercentage"])
+
     @JitterPercentage.setter
     def JitterPercentage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JitterPercentage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JitterPercentage"], value)
 
     @property
     def LinkType(self):
@@ -178,11 +189,12 @@ class Interface(Base):
         -------
         - str(pointToPoint | shared): The type of link attached to this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkType"])
+
     @LinkType.setter
     def LinkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkType"], value)
 
     @property
     def MstiOrVlanId(self):
@@ -192,11 +204,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../all | /api/v1/sessions/1/ixnetwork/vport/.../msti | /api/v1/sessions/1/ixnetwork/vport/.../vlan): The identifier for this MSTI or the identifier for the first VLAN in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstiOrVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstiOrVlanId"])
+
     @MstiOrVlanId.setter
     def MstiOrVlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstiOrVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstiOrVlanId"], value)
 
     @property
     def PortNo(self):
@@ -206,11 +219,12 @@ class Interface(Base):
         -------
         - number: The port number associated with this STP interface. If enableAutoPickPortNum is set, the port number will be automatically assigned (not editable by the user). If enableAutoPickPortNum is not set, the port number can be configured by the user. The valid range is 1 to 4,095. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNo'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNo"])
+
     @PortNo.setter
     def PortNo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortNo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortNo"], value)
 
     @property
     def Pvid(self):
@@ -220,13 +234,27 @@ class Interface(Base):
         -------
         - number: The Port VLAN ID. This value must be the same for all ports participating in the PVST+/RPVST+ protocol. The valid range is 1 to 4,094. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Pvid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Pvid"])
+
     @Pvid.setter
     def Pvid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Pvid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Pvid"], value)
 
-    def update(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+    def update(
+        self,
+        AutoPick=None,
+        BdpuGap=None,
+        Cost=None,
+        Enabled=None,
+        InterfaceId=None,
+        JitterEnabled=None,
+        JitterPercentage=None,
+        LinkType=None,
+        MstiOrVlanId=None,
+        PortNo=None,
+        Pvid=None,
+    ):
         # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Updates interface resource on the server.
 
@@ -250,7 +278,20 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+    def add(
+        self,
+        AutoPick=None,
+        BdpuGap=None,
+        Cost=None,
+        Enabled=None,
+        InterfaceId=None,
+        JitterEnabled=None,
+        JitterPercentage=None,
+        LinkType=None,
+        MstiOrVlanId=None,
+        PortNo=None,
+        Pvid=None,
+    ):
         # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -288,7 +329,20 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+    def find(
+        self,
+        AutoPick=None,
+        BdpuGap=None,
+        Cost=None,
+        Enabled=None,
+        InterfaceId=None,
+        JitterEnabled=None,
+        JitterPercentage=None,
+        LinkType=None,
+        MstiOrVlanId=None,
+        PortNo=None,
+        Pvid=None,
+    ):
         # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
@@ -354,7 +408,9 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateParameters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateParameters", payload=payload, response_object=None)

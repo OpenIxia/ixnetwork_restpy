@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class DataMdt(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dataMdt'
+    _SDM_NAME = "dataMdt"
     _SDM_ATT_MAP = {
-        'ActivationInterval': 'activationInterval',
-        'CeGroupAddress': 'ceGroupAddress',
-        'CeGroupCount': 'ceGroupCount',
-        'CeSourceAddress': 'ceSourceAddress',
-        'CeSourceCount': 'ceSourceCount',
-        'DataMdtGroupAddress': 'dataMdtGroupAddress',
-        'DataMdtGroupAddressCount': 'dataMdtGroupAddressCount',
-        'DiscardLearnedState': 'discardLearnedState',
-        'Enabled': 'enabled',
-        'PackTlv': 'packTlv',
-        'RangeType': 'rangeType',
+        "ActivationInterval": "activationInterval",
+        "CeGroupAddress": "ceGroupAddress",
+        "CeGroupCount": "ceGroupCount",
+        "CeSourceAddress": "ceSourceAddress",
+        "CeSourceCount": "ceSourceCount",
+        "DataMdtGroupAddress": "dataMdtGroupAddress",
+        "DataMdtGroupAddressCount": "dataMdtGroupAddressCount",
+        "DiscardLearnedState": "discardLearnedState",
+        "Enabled": "enabled",
+        "PackTlv": "packTlv",
+        "RangeType": "rangeType",
     }
     _SDM_ENUM_MAP = {
-        'rangeType': ['fullyMeshed', 'oneToOne'],
+        "rangeType": ["fullyMeshed", "oneToOne"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,10 +67,13 @@ class DataMdt(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_dde8b4051ae44ed52084e863309783f6 import LearnedMdtState
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_dde8b4051ae44ed52084e863309783f6 import (
+            LearnedMdtState,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedMdtState', None) is not None:
-                return self._properties.get('LearnedMdtState')
+            if self._properties.get("LearnedMdtState", None) is not None:
+                return self._properties.get("LearnedMdtState")
         return LearnedMdtState(self)
 
     @property
@@ -80,11 +84,12 @@ class DataMdt(Base):
         -------
         - number: The time period after which packets will be sent (to support the switchover from the default MDT to the data MDT). The default is 60 seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActivationInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActivationInterval"])
+
     @ActivationInterval.setter
     def ActivationInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActivationInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActivationInterval"], value)
 
     @property
     def CeGroupAddress(self):
@@ -94,11 +99,12 @@ class DataMdt(Base):
         -------
         - str: A multicast IPv4 address for the first CE destination group in the range.The default is 225.0.0.0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeGroupAddress"])
+
     @CeGroupAddress.setter
     def CeGroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeGroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeGroupAddress"], value)
 
     @property
     def CeGroupCount(self):
@@ -108,11 +114,12 @@ class DataMdt(Base):
         -------
         - number: The number of CE group addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeGroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeGroupCount"])
+
     @CeGroupCount.setter
     def CeGroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeGroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeGroupCount"], value)
 
     @property
     def CeSourceAddress(self):
@@ -122,11 +129,12 @@ class DataMdt(Base):
         -------
         - str: A unicast IPv4 address for the first CE source.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeSourceAddress"])
+
     @CeSourceAddress.setter
     def CeSourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeSourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeSourceAddress"], value)
 
     @property
     def CeSourceCount(self):
@@ -136,11 +144,12 @@ class DataMdt(Base):
         -------
         - number: The number of CE Source Addresses in the range. Used with fully-meshed range type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeSourceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeSourceCount"])
+
     @CeSourceCount.setter
     def CeSourceCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeSourceCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeSourceCount"], value)
 
     @property
     def DataMdtGroupAddress(self):
@@ -150,11 +159,12 @@ class DataMdt(Base):
         -------
         - str: The first multicast group address in the data MDT range. The default is 230.0.0.0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataMdtGroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataMdtGroupAddress"])
+
     @DataMdtGroupAddress.setter
     def DataMdtGroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataMdtGroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataMdtGroupAddress"], value)
 
     @property
     def DataMdtGroupAddressCount(self):
@@ -164,11 +174,12 @@ class DataMdt(Base):
         -------
         - number: The number of group addresses in the data MDT range. The default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataMdtGroupAddressCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataMdtGroupAddressCount"])
+
     @DataMdtGroupAddressCount.setter
     def DataMdtGroupAddressCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DataMdtGroupAddressCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataMdtGroupAddressCount"], value)
 
     @property
     def DiscardLearnedState(self):
@@ -178,11 +189,12 @@ class DataMdt(Base):
         -------
         - bool: If enabled, learned states associated with this data MDT range will be discarded.The default is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedState'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedState"])
+
     @DiscardLearnedState.setter
     def DiscardLearnedState(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedState'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardLearnedState"], value)
 
     @property
     def Enabled(self):
@@ -192,11 +204,12 @@ class DataMdt(Base):
         -------
         - bool: If enabled, the switchover from the default MDT to the data MDT will triggered. The default is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def PackTlv(self):
@@ -206,11 +219,12 @@ class DataMdt(Base):
         -------
         - bool: Enables packing of the data MDT type-length-values (TLVs). Multiple TLVs can be transmitted in one message.The default is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PackTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["PackTlv"])
+
     @PackTlv.setter
     def PackTlv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PackTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PackTlv"], value)
 
     @property
     def RangeType(self):
@@ -220,13 +234,27 @@ class DataMdt(Base):
         -------
         - str(fullyMeshed | oneToOne): The type of data MDT range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RangeType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RangeType"])
+
     @RangeType.setter
     def RangeType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RangeType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RangeType"], value)
 
-    def update(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+    def update(
+        self,
+        ActivationInterval=None,
+        CeGroupAddress=None,
+        CeGroupCount=None,
+        CeSourceAddress=None,
+        CeSourceCount=None,
+        DataMdtGroupAddress=None,
+        DataMdtGroupAddressCount=None,
+        DiscardLearnedState=None,
+        Enabled=None,
+        PackTlv=None,
+        RangeType=None,
+    ):
         # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Updates dataMdt resource on the server.
 
@@ -250,7 +278,20 @@ class DataMdt(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+    def add(
+        self,
+        ActivationInterval=None,
+        CeGroupAddress=None,
+        CeGroupCount=None,
+        CeSourceAddress=None,
+        CeSourceCount=None,
+        DataMdtGroupAddress=None,
+        DataMdtGroupAddressCount=None,
+        DiscardLearnedState=None,
+        Enabled=None,
+        PackTlv=None,
+        RangeType=None,
+    ):
         # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Adds a new dataMdt resource on the server and adds it to the container.
 
@@ -288,7 +329,20 @@ class DataMdt(Base):
         """
         self._delete()
 
-    def find(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+    def find(
+        self,
+        ActivationInterval=None,
+        CeGroupAddress=None,
+        CeGroupCount=None,
+        CeSourceAddress=None,
+        CeSourceCount=None,
+        DataMdtGroupAddress=None,
+        DataMdtGroupAddressCount=None,
+        DiscardLearnedState=None,
+        Enabled=None,
+        PackTlv=None,
+        RangeType=None,
+    ):
         # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Finds and retrieves dataMdt resources from the server.
 

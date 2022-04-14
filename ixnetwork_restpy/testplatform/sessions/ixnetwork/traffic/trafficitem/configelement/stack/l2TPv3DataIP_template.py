@@ -4,17 +4,17 @@ from ixnetwork_restpy.files import Files
 
 class L2TPv3DataIP(Base):
     __slots__ = ()
-    _SDM_NAME = 'l2TPv3DataIP'
+    _SDM_NAME = "l2TPv3DataIP"
     _SDM_ATT_MAP = {
-        'SessionHeaderSessionId': 'l2TPv3DataIP.dataHeader.sessionHeader.sessionId-1',
-        'CookieCookie64': 'l2TPv3DataIP.dataHeader.sessionHeader.cookie.cookie64-2',
-        'CookieCookie32': 'l2TPv3DataIP.dataHeader.sessionHeader.cookie.cookie32-3',
-        'CustomCookieLength': 'l2TPv3DataIP.dataHeader.sessionHeader.cookie.customCookie.length-4',
-        'CustomCookieData': 'l2TPv3DataIP.dataHeader.sessionHeader.cookie.customCookie.data-5',
-        'L2SublayerReserved': 'l2TPv3DataIP.dataHeader.l2Sublayer.reserved-6',
-        'L2SublayerSequenceBit': 'l2TPv3DataIP.dataHeader.l2Sublayer.sequenceBit-7',
-        'L2SublayerReserved': 'l2TPv3DataIP.dataHeader.l2Sublayer.reserved-8',
-        'L2SublayerSequenceNumber': 'l2TPv3DataIP.dataHeader.l2Sublayer.sequenceNumber-9',
+        "SessionHeaderSessionId": "l2TPv3DataIP.dataHeader.sessionHeader.sessionId-1",
+        "CookieCookie64": "l2TPv3DataIP.dataHeader.sessionHeader.cookie.cookie64-2",
+        "CookieCookie32": "l2TPv3DataIP.dataHeader.sessionHeader.cookie.cookie32-3",
+        "CustomCookieLength": "l2TPv3DataIP.dataHeader.sessionHeader.cookie.customCookie.length-4",
+        "CustomCookieData": "l2TPv3DataIP.dataHeader.sessionHeader.cookie.customCookie.data-5",
+        "L2SublayerReserved": "l2TPv3DataIP.dataHeader.l2Sublayer.reserved-6",
+        "L2SublayerSequenceBit": "l2TPv3DataIP.dataHeader.l2Sublayer.sequenceBit-7",
+        "L2SublayerReserved": "l2TPv3DataIP.dataHeader.l2Sublayer.reserved-8",
+        "L2SublayerSequenceNumber": "l2TPv3DataIP.dataHeader.l2Sublayer.sequenceNumber-9",
     }
 
     def __init__(self, parent, list_op=False):
@@ -28,7 +28,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SessionHeaderSessionId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SessionHeaderSessionId"])
+        )
 
     @property
     def CookieCookie64(self):
@@ -38,7 +41,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CookieCookie64']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CookieCookie64"])
+        )
 
     @property
     def CookieCookie32(self):
@@ -48,7 +54,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CookieCookie32']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CookieCookie32"])
+        )
 
     @property
     def CustomCookieLength(self):
@@ -58,7 +67,10 @@ class L2TPv3DataIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomCookieLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomCookieLength"])
+        )
 
     @property
     def CustomCookieData(self):
@@ -68,7 +80,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomCookieData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomCookieData"])
+        )
 
     @property
     def L2SublayerReserved(self):
@@ -78,7 +93,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2SublayerReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2SublayerReserved"])
+        )
 
     @property
     def L2SublayerSequenceBit(self):
@@ -89,7 +107,10 @@ class L2TPv3DataIP(Base):
         Available enum values: Invalid sequence number, 0, Valid sequence number, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2SublayerSequenceBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2SublayerSequenceBit"])
+        )
 
     @property
     def L2SublayerReserved(self):
@@ -99,7 +120,10 @@ class L2TPv3DataIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2SublayerReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2SublayerReserved"])
+        )
 
     @property
     def L2SublayerSequenceNumber(self):
@@ -109,7 +133,10 @@ class L2TPv3DataIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['L2SublayerSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["L2SublayerSequenceNumber"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,22 @@ class RadiusRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'radiusRange'
+    _SDM_NAME = "radiusRange"
     _SDM_ATT_MAP = {
-        'AccountingPort': 'accountingPort',
-        'AccountingServer': 'accountingServer',
-        'AuthenticationPort': 'authenticationPort',
-        'AuthenticationServer': 'authenticationServer',
-        'EnableAccounting': 'enableAccounting',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Retries': 'retries',
-        'Secret': 'secret',
-        'Timeout': 'timeout',
-        'TunnelAttributeSet': 'tunnelAttributeSet',
+        "AccountingPort": "accountingPort",
+        "AccountingServer": "accountingServer",
+        "AuthenticationPort": "authenticationPort",
+        "AuthenticationServer": "authenticationServer",
+        "EnableAccounting": "enableAccounting",
+        "Enabled": "enabled",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Retries": "retries",
+        "Secret": "secret",
+        "Timeout": "timeout",
+        "TunnelAttributeSet": "tunnelAttributeSet",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RadiusRange, self).__init__(parent, list_op)
@@ -63,11 +63,12 @@ class RadiusRange(Base):
         -------
         - number: Accounting UDP port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AccountingPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["AccountingPort"])
+
     @AccountingPort.setter
     def AccountingPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AccountingPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AccountingPort"], value)
 
     @property
     def AccountingServer(self):
@@ -77,11 +78,12 @@ class RadiusRange(Base):
         -------
         - str: RADIUS Accounting Server, specified as IP address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AccountingServer'])
+        return self._get_attribute(self._SDM_ATT_MAP["AccountingServer"])
+
     @AccountingServer.setter
     def AccountingServer(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AccountingServer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AccountingServer"], value)
 
     @property
     def AuthenticationPort(self):
@@ -91,11 +93,12 @@ class RadiusRange(Base):
         -------
         - number: Authentication UDP port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationPort"])
+
     @AuthenticationPort.setter
     def AuthenticationPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationPort"], value)
 
     @property
     def AuthenticationServer(self):
@@ -105,11 +108,12 @@ class RadiusRange(Base):
         -------
         - str: RADIUS Authentication Server, specified as IP address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationServer'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationServer"])
+
     @AuthenticationServer.setter
     def AuthenticationServer(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationServer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationServer"], value)
 
     @property
     def EnableAccounting(self):
@@ -119,11 +123,12 @@ class RadiusRange(Base):
         -------
         - bool: Enables support for RADIUS accounting
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAccounting'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAccounting"])
+
     @EnableAccounting.setter
     def EnableAccounting(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAccounting'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAccounting"], value)
 
     @property
     def Enabled(self):
@@ -133,11 +138,12 @@ class RadiusRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -147,11 +153,12 @@ class RadiusRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -161,7 +168,7 @@ class RadiusRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Retries(self):
@@ -171,11 +178,12 @@ class RadiusRange(Base):
         -------
         - number: RADIUS retry value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Retries'])
+        return self._get_attribute(self._SDM_ATT_MAP["Retries"])
+
     @Retries.setter
     def Retries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Retries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Retries"], value)
 
     @property
     def Secret(self):
@@ -185,11 +193,12 @@ class RadiusRange(Base):
         -------
         - str: Shared secret used by Ixia RADIUS client and RADIUS server
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Secret'])
+        return self._get_attribute(self._SDM_ATT_MAP["Secret"])
+
     @Secret.setter
     def Secret(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Secret'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Secret"], value)
 
     @property
     def Timeout(self):
@@ -199,11 +208,12 @@ class RadiusRange(Base):
         -------
         - number: RADIUS timeout value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["Timeout"])
+
     @Timeout.setter
     def Timeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Timeout"], value)
 
     @property
     def TunnelAttributeSet(self):
@@ -213,13 +223,27 @@ class RadiusRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): Defines the RADIUS tunnel attributes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelAttributeSet'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelAttributeSet"])
+
     @TunnelAttributeSet.setter
     def TunnelAttributeSet(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelAttributeSet'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelAttributeSet"], value)
 
-    def update(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+    def update(
+        self,
+        AccountingPort=None,
+        AccountingServer=None,
+        AuthenticationPort=None,
+        AuthenticationServer=None,
+        EnableAccounting=None,
+        Enabled=None,
+        Name=None,
+        Retries=None,
+        Secret=None,
+        Timeout=None,
+        TunnelAttributeSet=None,
+    ):
         # type: (int, str, int, str, bool, bool, str, int, str, int, str) -> RadiusRange
         """Updates radiusRange resource on the server.
 
@@ -243,7 +267,20 @@ class RadiusRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+    def add(
+        self,
+        AccountingPort=None,
+        AccountingServer=None,
+        AuthenticationPort=None,
+        AuthenticationServer=None,
+        EnableAccounting=None,
+        Enabled=None,
+        Name=None,
+        Retries=None,
+        Secret=None,
+        Timeout=None,
+        TunnelAttributeSet=None,
+    ):
         # type: (int, str, int, str, bool, bool, str, int, str, int, str) -> RadiusRange
         """Adds a new radiusRange resource on the server and adds it to the container.
 
@@ -281,7 +318,21 @@ class RadiusRange(Base):
         """
         self._delete()
 
-    def find(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, ObjectId=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+    def find(
+        self,
+        AccountingPort=None,
+        AccountingServer=None,
+        AuthenticationPort=None,
+        AuthenticationServer=None,
+        EnableAccounting=None,
+        Enabled=None,
+        Name=None,
+        ObjectId=None,
+        Retries=None,
+        Secret=None,
+        Timeout=None,
+        TunnelAttributeSet=None,
+    ):
         # type: (int, str, int, str, bool, bool, str, str, int, str, int, str) -> RadiusRange
         """Finds and retrieves radiusRange resources from the server.
 
@@ -349,10 +400,14 @@ class RadiusRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -371,10 +426,14 @@ class RadiusRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -393,7 +452,11 @@ class RadiusRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

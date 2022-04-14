@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class PbbTeLtLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pbbTeLtLearnedInfo'
+    _SDM_NAME = "pbbTeLtLearnedInfo"
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'HopCount': 'hopCount',
-        'Hops': 'hops',
-        'MdLevel': 'mdLevel',
-        'ReplyStatus': 'replyStatus',
-        'SrcMacAddress': 'srcMacAddress',
-        'TransactionId': 'transactionId',
+        "BVlan": "bVlan",
+        "DstMacAddress": "dstMacAddress",
+        "HopCount": "hopCount",
+        "Hops": "hops",
+        "MdLevel": "mdLevel",
+        "ReplyStatus": "replyStatus",
+        "SrcMacAddress": "srcMacAddress",
+        "TransactionId": "transactionId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PbbTeLtLearnedInfo, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class PbbTeLtLearnedInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_ec35fa3d1715c9c0cad316ab904f4886 import LtLearnedHop
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_ec35fa3d1715c9c0cad316ab904f4886 import (
+            LtLearnedHop,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LtLearnedHop', None) is not None:
-                return self._properties.get('LtLearnedHop')
+            if self._properties.get("LtLearnedHop", None) is not None:
+                return self._properties.get("LtLearnedHop")
         return LtLearnedHop(self)
 
     @property
@@ -75,7 +78,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - str: (read only) The learned B-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def DstMacAddress(self):
@@ -85,7 +88,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - str: (read only) The learned destination MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def HopCount(self):
@@ -95,7 +98,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - number: (read only) The learned number of hops in the link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["HopCount"])
 
     @property
     def Hops(self):
@@ -105,7 +108,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - str: (read only) The learned list of hops to reach the particular MEP (MAC address).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Hops'])
+        return self._get_attribute(self._SDM_ATT_MAP["Hops"])
 
     @property
     def MdLevel(self):
@@ -115,7 +118,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - number: (read only) The learned MD level for the periodic OAM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def ReplyStatus(self):
@@ -125,7 +128,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - str: (read only) The learned current reply status.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyStatus"])
 
     @property
     def SrcMacAddress(self):
@@ -135,7 +138,7 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - str: (read only) The learned source MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     @property
     def TransactionId(self):
@@ -145,10 +148,10 @@ class PbbTeLtLearnedInfo(Base):
         -------
         - number: (read only) The learned identifier sent with the LTM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransactionId"])
 
     def add(self):
-        """Adds a new pbbTeLtLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new pbbTeLtLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -160,7 +163,17 @@ class PbbTeLtLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BVlan=None, DstMacAddress=None, HopCount=None, Hops=None, MdLevel=None, ReplyStatus=None, SrcMacAddress=None, TransactionId=None):
+    def find(
+        self,
+        BVlan=None,
+        DstMacAddress=None,
+        HopCount=None,
+        Hops=None,
+        MdLevel=None,
+        ReplyStatus=None,
+        SrcMacAddress=None,
+        TransactionId=None,
+    ):
         # type: (str, str, int, str, int, str, str, int) -> PbbTeLtLearnedInfo
         """Finds and retrieves pbbTeLtLearnedInfo resources from the server.
 

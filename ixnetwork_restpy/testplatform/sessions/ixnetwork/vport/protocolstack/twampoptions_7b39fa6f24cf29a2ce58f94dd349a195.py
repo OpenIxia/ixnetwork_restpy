@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class TwampOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'twampOptions'
+    _SDM_NAME = "twampOptions"
     _SDM_ATT_MAP = {
-        'ErrorEstimateMultiplier': 'errorEstimateMultiplier',
-        'ErrorEstimateScale': 'errorEstimateScale',
-        'MaxOutstanding': 'maxOutstanding',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
-        'SessionTimeout': 'sessionTimeout',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "ErrorEstimateMultiplier": "errorEstimateMultiplier",
+        "ErrorEstimateScale": "errorEstimateScale",
+        "MaxOutstanding": "maxOutstanding",
+        "ObjectId": "objectId",
+        "OverrideGlobalRateOptions": "overrideGlobalRateOptions",
+        "SessionTimeout": "sessionTimeout",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TwampOptions, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class TwampOptions(Base):
         -------
         - number: Twamp error estimate scale multiplier - used for the Error estimation computation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorEstimateMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorEstimateMultiplier"])
+
     @ErrorEstimateMultiplier.setter
     def ErrorEstimateMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ErrorEstimateMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ErrorEstimateMultiplier"], value)
 
     @property
     def ErrorEstimateScale(self):
@@ -73,11 +74,12 @@ class TwampOptions(Base):
         -------
         - number: Twamp error estimate scale factor - used for the Error estimation computation
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorEstimateScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorEstimateScale"])
+
     @ErrorEstimateScale.setter
     def ErrorEstimateScale(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ErrorEstimateScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ErrorEstimateScale"], value)
 
     @property
     def MaxOutstanding(self):
@@ -87,11 +89,12 @@ class TwampOptions(Base):
         -------
         - number: The number of Twamp-control connections to be in initiation or terminating state at any time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstanding"])
+
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstanding"], value)
 
     @property
     def ObjectId(self):
@@ -101,7 +104,7 @@ class TwampOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRateOptions(self):
@@ -111,11 +114,12 @@ class TwampOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden byrate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRateOptions"])
+
     @OverrideGlobalRateOptions.setter
     def OverrideGlobalRateOptions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRateOptions"], value)
 
     @property
     def SessionTimeout(self):
@@ -125,11 +129,12 @@ class TwampOptions(Base):
         -------
         - number: Maximum duration for establishment of a control-session, test-session, and the start-sessions command
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionTimeout"])
+
     @SessionTimeout.setter
     def SessionTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionTimeout"], value)
 
     @property
     def SetupRate(self):
@@ -139,11 +144,12 @@ class TwampOptions(Base):
         -------
         - number: The number of Twamp-Control connections initiated in a second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -153,13 +159,23 @@ class TwampOptions(Base):
         -------
         - number: The number of Twamp-Control connections torn down in a second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
-    def update(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+    def update(
+        self,
+        ErrorEstimateMultiplier=None,
+        ErrorEstimateScale=None,
+        MaxOutstanding=None,
+        OverrideGlobalRateOptions=None,
+        SessionTimeout=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, int, int, bool, int, int, int) -> TwampOptions
         """Updates twampOptions resource on the server.
 
@@ -179,7 +195,16 @@ class TwampOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+    def add(
+        self,
+        ErrorEstimateMultiplier=None,
+        ErrorEstimateScale=None,
+        MaxOutstanding=None,
+        OverrideGlobalRateOptions=None,
+        SessionTimeout=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, int, int, bool, int, int, int) -> TwampOptions
         """Adds a new twampOptions resource on the server and adds it to the container.
 
@@ -213,7 +238,17 @@ class TwampOptions(Base):
         """
         self._delete()
 
-    def find(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, ObjectId=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self,
+        ErrorEstimateMultiplier=None,
+        ErrorEstimateScale=None,
+        MaxOutstanding=None,
+        ObjectId=None,
+        OverrideGlobalRateOptions=None,
+        SessionTimeout=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, int, int, str, bool, int, int, int) -> TwampOptions
         """Finds and retrieves twampOptions resources from the server.
 
@@ -277,10 +312,14 @@ class TwampOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -299,10 +338,14 @@ class TwampOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -321,7 +364,11 @@ class TwampOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

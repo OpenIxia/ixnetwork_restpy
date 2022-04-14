@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,32 +35,32 @@ class JoinPrune(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'joinPrune'
+    _SDM_NAME = "joinPrune"
     _SDM_ATT_MAP = {
-        'DiscardRegisterStates': 'discardRegisterStates',
-        'Enabled': 'enabled',
-        'EnabledDataMdt': 'enabledDataMdt',
-        'FlapEnabled': 'flapEnabled',
-        'FlapInterval': 'flapInterval',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'GroupMappingMode': 'groupMappingMode',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'GroupRange': 'groupRange',
-        'NumRegToReceivePerSg': 'numRegToReceivePerSg',
-        'PackGroupsEnabled': 'packGroupsEnabled',
-        'PruneSourceAddress': 'pruneSourceAddress',
-        'PruneSourceCount': 'pruneSourceCount',
-        'PruneSourceMaskWidth': 'pruneSourceMaskWidth',
-        'RpAddress': 'rpAddress',
-        'SourceAddress': 'sourceAddress',
-        'SourceCount': 'sourceCount',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'SptSwitchoverInterval': 'sptSwitchoverInterval',
+        "DiscardRegisterStates": "discardRegisterStates",
+        "Enabled": "enabled",
+        "EnabledDataMdt": "enabledDataMdt",
+        "FlapEnabled": "flapEnabled",
+        "FlapInterval": "flapInterval",
+        "GroupAddress": "groupAddress",
+        "GroupCount": "groupCount",
+        "GroupMappingMode": "groupMappingMode",
+        "GroupMaskWidth": "groupMaskWidth",
+        "GroupRange": "groupRange",
+        "NumRegToReceivePerSg": "numRegToReceivePerSg",
+        "PackGroupsEnabled": "packGroupsEnabled",
+        "PruneSourceAddress": "pruneSourceAddress",
+        "PruneSourceCount": "pruneSourceCount",
+        "PruneSourceMaskWidth": "pruneSourceMaskWidth",
+        "RpAddress": "rpAddress",
+        "SourceAddress": "sourceAddress",
+        "SourceCount": "sourceCount",
+        "SourceMaskWidth": "sourceMaskWidth",
+        "SptSwitchoverInterval": "sptSwitchoverInterval",
     }
     _SDM_ENUM_MAP = {
-        'groupMappingMode': ['fullyMeshed', 'oneToOne'],
-        'groupRange': ['rp', 'g', 'sg', 'sptSwitchOver', 'registerTriggeredSg'],
+        "groupMappingMode": ["fullyMeshed", "oneToOne"],
+        "groupRange": ["rp", "g", "sg", "sptSwitchOver", "registerTriggeredSg"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -76,10 +77,13 @@ class JoinPrune(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmgrstate_d7919072a223792ffde967c8d24af004 import LearnedMgrState
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmgrstate_d7919072a223792ffde967c8d24af004 import (
+            LearnedMgrState,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedMgrState', None) is not None:
-                return self._properties.get('LearnedMgrState')
+            if self._properties.get("LearnedMgrState", None) is not None:
+                return self._properties.get("LearnedMgrState")
         return LearnedMgrState(self)
 
     @property
@@ -90,11 +94,12 @@ class JoinPrune(Base):
         -------
         - bool: If checked, the Learned Join States sent by the RP (DUT) in response to this specific Register Message will be discarded - and will not be displayed in the table of the Register Range window.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardRegisterStates'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardRegisterStates"])
+
     @DiscardRegisterStates.setter
     def DiscardRegisterStates(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardRegisterStates'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardRegisterStates"], value)
 
     @property
     def Enabled(self):
@@ -104,11 +109,12 @@ class JoinPrune(Base):
         -------
         - bool: Enables the use of this join/prune.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EnabledDataMdt(self):
@@ -118,11 +124,12 @@ class JoinPrune(Base):
         -------
         - bool: If enabled, pimsmLearnedDataMdt will be available. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnabledDataMdt'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnabledDataMdt"])
+
     @EnabledDataMdt.setter
     def EnabledDataMdt(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnabledDataMdt'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnabledDataMdt"], value)
 
     @property
     def FlapEnabled(self):
@@ -132,11 +139,12 @@ class JoinPrune(Base):
         -------
         - bool: Enables emulated flapping of this multicast group range. NOTE: Flapping is not supported for the Switchover (*, G) -> (S, G) range type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlapEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlapEnabled"])
+
     @FlapEnabled.setter
     def FlapEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlapEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlapEnabled"], value)
 
     @property
     def FlapInterval(self):
@@ -146,11 +154,12 @@ class JoinPrune(Base):
         -------
         - number: Defines the join/prune flapping interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlapInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlapInterval"])
+
     @FlapInterval.setter
     def FlapInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlapInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlapInterval"], value)
 
     @property
     def GroupAddress(self):
@@ -160,11 +169,12 @@ class JoinPrune(Base):
         -------
         - str: An IPv4 or IPv6 address used with the group mask to create a range of multicast addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
+
     @GroupAddress.setter
     def GroupAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAddress"], value)
 
     @property
     def GroupCount(self):
@@ -174,11 +184,12 @@ class JoinPrune(Base):
         -------
         - number: The number of multicast group addresses to be included in the multicast group range. The maximum number of valid possible addresses depends on the values for the group address and the group mask width.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupCount"])
+
     @GroupCount.setter
     def GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupCount"], value)
 
     @property
     def GroupMappingMode(self):
@@ -188,11 +199,12 @@ class JoinPrune(Base):
         -------
         - str(fullyMeshed | oneToOne): Sets the type of mapping that occurs when routes are advertised. This only applies for (S, G) and switchover types for MGR and is meaningful for RR.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMappingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMappingMode"])
+
     @GroupMappingMode.setter
     def GroupMappingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupMappingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupMappingMode"], value)
 
     @property
     def GroupMaskWidth(self):
@@ -202,11 +214,12 @@ class JoinPrune(Base):
         -------
         - number: The number of bits in the mask applied to the group address. (The masked bits in the group address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMaskWidth"])
+
     @GroupMaskWidth.setter
     def GroupMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupMaskWidth"], value)
 
     @property
     def GroupRange(self):
@@ -216,11 +229,12 @@ class JoinPrune(Base):
         -------
         - str(rp | g | sg | sptSwitchOver | registerTriggeredSg): The multicast group range type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupRange"])
+
     @GroupRange.setter
     def GroupRange(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupRange"], value)
 
     @property
     def NumRegToReceivePerSg(self):
@@ -230,11 +244,12 @@ class JoinPrune(Base):
         -------
         - number: If rangeType is set to pimsmJoinsPrunesTypeRegisterTriggeredSG, then this is the count of register messages received that will trigger transmission of a (S,G) message. (default = 10)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRegToReceivePerSg'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRegToReceivePerSg"])
+
     @NumRegToReceivePerSg.setter
     def NumRegToReceivePerSg(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRegToReceivePerSg'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRegToReceivePerSg"], value)
 
     @property
     def PackGroupsEnabled(self):
@@ -244,11 +259,12 @@ class JoinPrune(Base):
         -------
         - bool: If enabled, multiple groups can be included within a single packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PackGroupsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PackGroupsEnabled"])
+
     @PackGroupsEnabled.setter
     def PackGroupsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PackGroupsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PackGroupsEnabled"], value)
 
     @property
     def PruneSourceAddress(self):
@@ -258,11 +274,12 @@ class JoinPrune(Base):
         -------
         - str: ONLY used for (*,G) Type to send (S,G,rpt) Prune Messages. (Multicast addresses are invalid.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSourceAddress"])
+
     @PruneSourceAddress.setter
     def PruneSourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSourceAddress"], value)
 
     @property
     def PruneSourceCount(self):
@@ -272,11 +289,12 @@ class JoinPrune(Base):
         -------
         - number: The number of prune source addresses to be included. The maximum number of valid possible addresses depends on the values for the source address and the source mask width. The default value is 0. ONLY used for (*,G) type to send (S,G,rpt) prune messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSourceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSourceCount"])
+
     @PruneSourceCount.setter
     def PruneSourceCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSourceCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSourceCount"], value)
 
     @property
     def PruneSourceMaskWidth(self):
@@ -286,11 +304,12 @@ class JoinPrune(Base):
         -------
         - number: The number of bits in the mask applied to the prune source address. (The masked bits in the prune source address form the address prefix.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PruneSourceMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["PruneSourceMaskWidth"])
+
     @PruneSourceMaskWidth.setter
     def PruneSourceMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PruneSourceMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PruneSourceMaskWidth"], value)
 
     @property
     def RpAddress(self):
@@ -300,11 +319,12 @@ class JoinPrune(Base):
         -------
         - str: The IP address of the Rendezvous Point (RP) router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpAddress"])
+
     @RpAddress.setter
     def RpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpAddress"], value)
 
     @property
     def SourceAddress(self):
@@ -314,11 +334,12 @@ class JoinPrune(Base):
         -------
         - str: The Multicast Source Address. Used for (S,G) Type and (S,G, rpt) only. (Multicast addresses are invalid.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAddress"])
+
     @SourceAddress.setter
     def SourceAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAddress"], value)
 
     @property
     def SourceCount(self):
@@ -328,11 +349,12 @@ class JoinPrune(Base):
         -------
         - number: The number of multicast source addresses to be included. The maximum number of valid possible addresses depends on the values for the source address and the source mask width.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceCount"])
+
     @SourceCount.setter
     def SourceCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceCount"], value)
 
     @property
     def SourceMaskWidth(self):
@@ -342,11 +364,12 @@ class JoinPrune(Base):
         -------
         - number: The number of bits in the mask applied to the source address. (The masked bits in the source address form the address prefix.)The default value is 32. The valid range is 1 to 128, depending on address family type. Used for (S,G) Type and (S,G, rpt) only.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMaskWidth"])
+
     @SourceMaskWidth.setter
     def SourceMaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceMaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceMaskWidth"], value)
 
     @property
     def SptSwitchoverInterval(self):
@@ -356,13 +379,36 @@ class JoinPrune(Base):
         -------
         - number: The time interval (in seconds) allowed for the switch from using the RP tree to using a Source-specific tree - from (*,G) to (S,G). The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SptSwitchoverInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["SptSwitchoverInterval"])
+
     @SptSwitchoverInterval.setter
     def SptSwitchoverInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SptSwitchoverInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SptSwitchoverInterval"], value)
 
-    def update(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+    def update(
+        self,
+        DiscardRegisterStates=None,
+        Enabled=None,
+        EnabledDataMdt=None,
+        FlapEnabled=None,
+        FlapInterval=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        GroupRange=None,
+        NumRegToReceivePerSg=None,
+        PackGroupsEnabled=None,
+        PruneSourceAddress=None,
+        PruneSourceCount=None,
+        PruneSourceMaskWidth=None,
+        RpAddress=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SourceMaskWidth=None,
+        SptSwitchoverInterval=None,
+    ):
         # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Updates joinPrune resource on the server.
 
@@ -395,7 +441,29 @@ class JoinPrune(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+    def add(
+        self,
+        DiscardRegisterStates=None,
+        Enabled=None,
+        EnabledDataMdt=None,
+        FlapEnabled=None,
+        FlapInterval=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        GroupRange=None,
+        NumRegToReceivePerSg=None,
+        PackGroupsEnabled=None,
+        PruneSourceAddress=None,
+        PruneSourceCount=None,
+        PruneSourceMaskWidth=None,
+        RpAddress=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SourceMaskWidth=None,
+        SptSwitchoverInterval=None,
+    ):
         # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Adds a new joinPrune resource on the server and adds it to the container.
 
@@ -442,7 +510,29 @@ class JoinPrune(Base):
         """
         self._delete()
 
-    def find(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+    def find(
+        self,
+        DiscardRegisterStates=None,
+        Enabled=None,
+        EnabledDataMdt=None,
+        FlapEnabled=None,
+        FlapInterval=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMappingMode=None,
+        GroupMaskWidth=None,
+        GroupRange=None,
+        NumRegToReceivePerSg=None,
+        PackGroupsEnabled=None,
+        PruneSourceAddress=None,
+        PruneSourceCount=None,
+        PruneSourceMaskWidth=None,
+        RpAddress=None,
+        SourceAddress=None,
+        SourceCount=None,
+        SourceMaskWidth=None,
+        SptSwitchoverInterval=None,
+    ):
         # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Finds and retrieves joinPrune resources from the server.
 

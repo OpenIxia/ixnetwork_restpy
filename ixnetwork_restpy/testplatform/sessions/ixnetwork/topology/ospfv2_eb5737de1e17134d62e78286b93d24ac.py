@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,74 +35,82 @@ class Ospfv2(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv2'
+    _SDM_NAME = "ospfv2"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdjSID': 'adjSID',
-        'AreaId': 'areaId',
-        'AreaIdIp': 'areaIdIp',
-        'Authentication': 'authentication',
-        'AuthenticationPassword': 'authenticationPassword',
-        'BFlag': 'bFlag',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DeadInterval': 'deadInterval',
-        'Dedicated1Plus1': 'dedicated1Plus1',
-        'Dedicated1To1': 'dedicated1To1',
-        'DemandCircuit': 'demandCircuit',
-        'DescriptiveName': 'descriptiveName',
-        'EnLinkProtection': 'enLinkProtection',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFast2wayConvergence': 'enableFast2wayConvergence',
-        'EnableFastHello': 'enableFastHello',
-        'EnableSRLG': 'enableSRLG',
-        'Enhanced': 'enhanced',
-        'Errors': 'errors',
-        'ExternalAttribute': 'externalAttribute',
-        'ExternalCapability': 'externalCapability',
-        'ExtraTraffic': 'extraTraffic',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'LFlag': 'lFlag',
-        'LocalRouterID': 'localRouterID',
-        'MaxMtu': 'maxMtu',
-        'Md5Key': 'md5Key',
-        'Md5KeyId': 'md5KeyId',
-        'Metric': 'metric',
-        'MulticastCapability': 'multicastCapability',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NeighborIp': 'neighborIp',
-        'NetworkType': 'networkType',
-        'NoOfTeProfile': 'noOfTeProfile',
-        'NssaCapability': 'nssaCapability',
-        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
-        'OspfIfaceState': 'ospfIfaceState',
-        'OspfNeighborState': 'ospfNeighborState',
-        'PFlag': 'pFlag',
-        'Priority': 'priority',
-        'Reserved40': 'reserved40',
-        'Reserved80': 'reserved80',
-        'SFlag': 'sFlag',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SuppressHello': 'suppressHello',
-        'TypeAreaId': 'typeAreaId',
-        'TypeOfServiceRouting': 'typeOfServiceRouting',
-        'Unprotected': 'unprotected',
-        'Unused': 'unused',
-        'VFlag': 'vFlag',
-        'ValidateRxMtu': 'validateRxMtu',
-        'Weight': 'weight',
+        "Active": "active",
+        "AdjSID": "adjSID",
+        "AreaId": "areaId",
+        "AreaIdIp": "areaIdIp",
+        "Authentication": "authentication",
+        "AuthenticationPassword": "authenticationPassword",
+        "BFlag": "bFlag",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DeadInterval": "deadInterval",
+        "Dedicated1Plus1": "dedicated1Plus1",
+        "Dedicated1To1": "dedicated1To1",
+        "DemandCircuit": "demandCircuit",
+        "DescriptiveName": "descriptiveName",
+        "EnLinkProtection": "enLinkProtection",
+        "EnableAdjSID": "enableAdjSID",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableFast2wayConvergence": "enableFast2wayConvergence",
+        "EnableFastHello": "enableFastHello",
+        "EnableSRLG": "enableSRLG",
+        "Enhanced": "enhanced",
+        "Errors": "errors",
+        "ExternalAttribute": "externalAttribute",
+        "ExternalCapability": "externalCapability",
+        "ExtraTraffic": "extraTraffic",
+        "HelloInterval": "helloInterval",
+        "HelloMultiplier": "helloMultiplier",
+        "LFlag": "lFlag",
+        "LocalRouterID": "localRouterID",
+        "MaxMtu": "maxMtu",
+        "Md5Key": "md5Key",
+        "Md5KeyId": "md5KeyId",
+        "Metric": "metric",
+        "MulticastCapability": "multicastCapability",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NeighborIp": "neighborIp",
+        "NetworkType": "networkType",
+        "NoOfTeProfile": "noOfTeProfile",
+        "NssaCapability": "nssaCapability",
+        "OpaqueLsaForwarded": "opaqueLsaForwarded",
+        "OspfIfaceState": "ospfIfaceState",
+        "OspfNeighborState": "ospfNeighborState",
+        "PFlag": "pFlag",
+        "Priority": "priority",
+        "Reserved40": "reserved40",
+        "Reserved80": "reserved80",
+        "SFlag": "sFlag",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "Shared": "shared",
+        "SrlgCount": "srlgCount",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SuppressHello": "suppressHello",
+        "TypeAreaId": "typeAreaId",
+        "TypeOfServiceRouting": "typeOfServiceRouting",
+        "Unprotected": "unprotected",
+        "Unused": "unused",
+        "VFlag": "vFlag",
+        "ValidateRxMtu": "validateRxMtu",
+        "Weight": "weight",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -118,10 +127,13 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -135,10 +147,13 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -152,15 +167,18 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist_862027d65187e27ca0fba54bb0c8b3f4 import OspfSRMappingServerList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist_862027d65187e27ca0fba54bb0c8b3f4 import (
+            OspfSRMappingServerList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfSRMappingServerList', None) is not None:
-                return self._properties.get('OspfSRMappingServerList')
+            if self._properties.get("OspfSRMappingServerList", None) is not None:
+                return self._properties.get("OspfSRMappingServerList")
         return OspfSRMappingServerList(self)._select()
 
     @property
     def OspfTrafficEngineering(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering_d69348cf2c027c25fac7ced298f72f15.OspfTrafficEngineering): An instance of the OspfTrafficEngineering class
@@ -169,10 +187,13 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering_d69348cf2c027c25fac7ced298f72f15 import OspfTrafficEngineering
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering_d69348cf2c027c25fac7ced298f72f15 import (
+            OspfTrafficEngineering,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfTrafficEngineering', None) is not None:
-                return self._properties.get('OspfTrafficEngineering')
+            if self._properties.get("OspfTrafficEngineering", None) is not None:
+                return self._properties.get("OspfTrafficEngineering")
         return OspfTrafficEngineering(self)._select()
 
     @property
@@ -186,10 +207,16 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_401775f4ebafd104abb270e025fbc95e import OspfTrafficEngineeringProfileList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_401775f4ebafd104abb270e025fbc95e import (
+            OspfTrafficEngineeringProfileList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OspfTrafficEngineeringProfileList', None) is not None:
-                return self._properties.get('OspfTrafficEngineeringProfileList')
+            if (
+                self._properties.get("OspfTrafficEngineeringProfileList", None)
+                is not None
+            ):
+                return self._properties.get("OspfTrafficEngineeringProfileList")
         return OspfTrafficEngineeringProfileList(self)._select()
 
     @property
@@ -203,10 +230,13 @@ class Ospfv2(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import (
+            SrlgValueList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SrlgValueList', None) is not None:
-                return self._properties.get('SrlgValueList')
+            if self._properties.get("SrlgValueList", None) is not None:
+                return self._properties.get("SrlgValueList")
         return SrlgValueList(self)
 
     @property
@@ -218,7 +248,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdjSID(self):
@@ -229,7 +260,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Adjacency SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdjSID"]))
 
     @property
     def AreaId(self):
@@ -240,7 +272,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): OSPF Area ID for a non-connected interface, displayed in Interger format
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AreaId"]))
 
     @property
     def AreaIdIp(self):
@@ -251,7 +284,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): OSPF Area ID for a non-connected interface, displayed in IP Address format
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaIdIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AreaIdIp"]))
 
     @property
     def Authentication(self):
@@ -262,7 +296,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Authentication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+        )
 
     @property
     def AuthenticationPassword(self):
@@ -273,7 +310,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Password
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationPassword']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticationPassword"])
+        )
 
     @property
     def BFlag(self):
@@ -284,21 +324,23 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Backup Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -308,7 +350,7 @@ class Ospfv2(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DeadInterval(self):
@@ -319,7 +361,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Dead Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeadInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DeadInterval"]))
 
     @property
     def Dedicated1Plus1(self):
@@ -330,7 +373,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x10. It means that a dedicated disjoint link is protecting this link. However, the protecting link is not advertised in the link state database and is therefore not available for the routing of LSPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dedicated1Plus1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dedicated1Plus1"])
+        )
 
     @property
     def Dedicated1To1(self):
@@ -341,7 +387,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x08. It means that there is one dedicated disjoint link of type Extra Traffic that is protecting this link.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dedicated1To1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dedicated1To1"]))
 
     @property
     def DemandCircuit(self):
@@ -352,7 +399,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DemandCircuit"]))
 
     @property
     def DescriptiveName(self):
@@ -362,7 +410,7 @@ class Ospfv2(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnLinkProtection(self):
@@ -373,7 +421,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the link protection on the OSPF link between two mentioned interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnLinkProtection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnLinkProtection"])
+        )
 
     @property
     def EnableAdjSID(self):
@@ -384,7 +435,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAdjSID"]))
 
     @property
     def EnableBfdRegistration(self):
@@ -395,7 +447,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+        )
 
     @property
     def EnableFast2wayConvergence(self):
@@ -405,11 +460,12 @@ class Ospfv2(Base):
         -------
         - bool: Enable 2-way Adj Fast Convergence
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFast2wayConvergence'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFast2wayConvergence"])
+
     @EnableFast2wayConvergence.setter
     def EnableFast2wayConvergence(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFast2wayConvergence'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFast2wayConvergence"], value)
 
     @property
     def EnableFastHello(self):
@@ -420,7 +476,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Fast Hello
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFastHello']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableFastHello"])
+        )
 
     @property
     def EnableSRLG(self):
@@ -431,7 +490,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables the SRLG on the OSPF link between two mentioned interfaces.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRLG']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSRLG"]))
 
     @property
     def Enhanced(self):
@@ -442,7 +502,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x20. It means that a protection scheme that is more reliable than Dedicated 1+1, e.g., 4 fiber BLSR/MS-SPRING, is being used to protect this link.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enhanced']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enhanced"]))
 
     @property
     def Errors(self):
@@ -451,7 +512,7 @@ class Ospfv2(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ExternalAttribute(self):
@@ -462,7 +523,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalAttribute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalAttribute"])
+        )
 
     @property
     def ExternalCapability(self):
@@ -473,7 +537,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalCapability"])
+        )
 
     @property
     def ExtraTraffic(self):
@@ -484,7 +551,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x01. It means that the link is protecting another link or links. The LSPs on a link of this type will be lost if any of the links it is protecting fail.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtraTraffic']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExtraTraffic"]))
 
     @property
     def HelloInterval(self):
@@ -495,7 +563,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloInterval"]))
 
     @property
     def HelloMultiplier(self):
@@ -506,7 +575,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Multiplier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloMultiplier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloMultiplier"])
+        )
 
     @property
     def LFlag(self):
@@ -517,7 +589,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local/Global Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def LocalRouterID(self):
@@ -527,7 +600,7 @@ class Ospfv2(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def MaxMtu(self):
@@ -538,7 +611,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum trasmission unit, min=68, max=14000
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxMtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxMtu"]))
 
     @property
     def Md5Key(self):
@@ -549,7 +623,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD5 Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Md5Key']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Md5Key"]))
 
     @property
     def Md5KeyId(self):
@@ -560,7 +635,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MD5 Key ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Md5KeyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Md5KeyId"]))
 
     @property
     def Metric(self):
@@ -571,7 +647,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Routing Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def MulticastCapability(self):
@@ -582,7 +659,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastCapability"])
+        )
 
     @property
     def Multiplier(self):
@@ -592,11 +672,12 @@ class Ospfv2(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -606,11 +687,12 @@ class Ospfv2(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NeighborIp(self):
@@ -621,7 +703,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Neighbor IP when connected network is Point to Multipoint
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NeighborIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NeighborIp"]))
 
     @property
     def NetworkType(self):
@@ -632,7 +715,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Network Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NetworkType"]))
 
     @property
     def NoOfTeProfile(self):
@@ -642,11 +726,12 @@ class Ospfv2(Base):
         -------
         - number: Number of TE Profile
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfTeProfile'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfTeProfile"])
+
     @NoOfTeProfile.setter
     def NoOfTeProfile(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfTeProfile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfTeProfile"], value)
 
     @property
     def NssaCapability(self):
@@ -657,7 +742,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NssaCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NssaCapability"])
+        )
 
     @property
     def OpaqueLsaForwarded(self):
@@ -668,7 +756,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueLsaForwarded']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OpaqueLsaForwarded"])
+        )
 
     @property
     def OspfIfaceState(self):
@@ -678,7 +769,7 @@ class Ospfv2(Base):
         -------
         - list(str[backup | down | dr | drOther | pointToPoint | unrecognized | waiting]): Logs additional information about the Interface State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OspfIfaceState'])
+        return self._get_attribute(self._SDM_ATT_MAP["OspfIfaceState"])
 
     @property
     def OspfNeighborState(self):
@@ -688,7 +779,7 @@ class Ospfv2(Base):
         -------
         - list(str[attempt | down | exchange | exStart | full | init | loading | multiNeighbor | none | twoWay]): Logs additional information about the Neighbor State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OspfNeighborState'])
+        return self._get_attribute(self._SDM_ATT_MAP["OspfNeighborState"])
 
     @property
     def PFlag(self):
@@ -699,7 +790,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Persistent Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def Priority(self):
@@ -710,7 +802,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Priority (when DR/BDR)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     @property
     def Reserved40(self):
@@ -721,7 +814,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x40.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved40']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved40"]))
 
     @property
     def Reserved80(self):
@@ -732,7 +826,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x80.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved80']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved80"]))
 
     @property
     def SFlag(self):
@@ -743,7 +838,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Set/Group Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlag"]))
 
     @property
     def SessionInfo(self):
@@ -753,7 +849,7 @@ class Ospfv2(Base):
         -------
         - list(str[ifaceSessInfoAllNbrIn2Way | ifaceSessInfoAllNbrInattempt | ifaceSessInfoAllNbrInDown | ifaceSessInfoAllNbrInExchange | ifaceSessInfoAllNbrInExStart | ifaceSessInfoAllNbrInInit | ifaceSessInfoAllNbrInLoading | ifaceSessInfoFsmNotStarted | ifaceSessInfoSameNbrId | iPAddressNotRcvd | none]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -763,7 +859,7 @@ class Ospfv2(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def Shared(self):
@@ -774,7 +870,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x04. It means that there are one or more disjoint links of type Extra Traffic that are protecting this link. These Extra Traffic links are shared between one or more links of type Shared.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Shared']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Shared"]))
 
     @property
     def SrlgCount(self):
@@ -784,11 +881,12 @@ class Ospfv2(Base):
         -------
         - number: This field value shows how many SRLG Value columns would be there in the GUI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrlgCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrlgCount"])
+
     @SrlgCount.setter
     def SrlgCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrlgCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrlgCount"], value)
 
     @property
     def StackedLayers(self):
@@ -798,11 +896,12 @@ class Ospfv2(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -811,7 +910,7 @@ class Ospfv2(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -821,7 +920,7 @@ class Ospfv2(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SuppressHello(self):
@@ -832,7 +931,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Suppress Hello for BGP-LS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressHello']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SuppressHello"]))
 
     @property
     def TypeAreaId(self):
@@ -843,7 +943,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area ID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeAreaId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TypeAreaId"]))
 
     @property
     def TypeOfServiceRouting(self):
@@ -854,7 +955,10 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfServiceRouting']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TypeOfServiceRouting"])
+        )
 
     @property
     def Unprotected(self):
@@ -865,7 +969,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is a Protection Scheme with value 0x02. It means that there is no other link protecting this link. The LSPs on a link of this type will be lost if the link fails.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unprotected']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unprotected"]))
 
     @property
     def Unused(self):
@@ -876,7 +981,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Unused"]))
 
     @property
     def VFlag(self):
@@ -887,7 +993,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value/Index Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     @property
     def ValidateRxMtu(self):
@@ -898,7 +1005,8 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Validate Received MTU
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValidateRxMtu']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ValidateRxMtu"]))
 
     @property
     def Weight(self):
@@ -909,9 +1017,19 @@ class Ospfv2(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
-    def update(self, ConnectedVia=None, EnableFast2wayConvergence=None, Multiplier=None, Name=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        EnableFast2wayConvergence=None,
+        Multiplier=None,
+        Name=None,
+        NoOfTeProfile=None,
+        SrlgCount=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, str, int, int, List[str]) -> Ospfv2
         """Updates ospfv2 resource on the server.
 
@@ -934,7 +1052,16 @@ class Ospfv2(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, EnableFast2wayConvergence=None, Multiplier=None, Name=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        EnableFast2wayConvergence=None,
+        Multiplier=None,
+        Name=None,
+        NoOfTeProfile=None,
+        SrlgCount=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, str, int, int, List[str]) -> Ospfv2
         """Adds a new ospfv2 resource on the server and adds it to the container.
 
@@ -968,7 +1095,26 @@ class Ospfv2(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableFast2wayConvergence=None, Errors=None, LocalRouterID=None, Multiplier=None, Name=None, NoOfTeProfile=None, OspfIfaceState=None, OspfNeighborState=None, SessionInfo=None, SessionStatus=None, SrlgCount=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        EnableFast2wayConvergence=None,
+        Errors=None,
+        LocalRouterID=None,
+        Multiplier=None,
+        Name=None,
+        NoOfTeProfile=None,
+        OspfIfaceState=None,
+        OspfNeighborState=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        SrlgCount=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ospfv2 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv2 resources from the server.
@@ -1050,10 +1196,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1082,10 +1230,14 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1104,10 +1256,14 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetBasicLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1142,10 +1298,14 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getBasicLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getBasicLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetDetailedLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1174,10 +1334,14 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getDetailedLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getDetailedLearnedInfo", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1206,10 +1370,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def ResumeHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1238,10 +1404,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumeHello", payload=payload, response_object=None)
 
     def Resumehello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1260,10 +1428,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumehello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumehello", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1292,10 +1462,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1324,10 +1496,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1356,10 +1530,12 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopHello", payload=payload, response_object=None)
 
     def Stophello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1378,12 +1554,63 @@ class Ospfv2(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stophello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stophello", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AreaId=None, AreaIdIp=None, Authentication=None, AuthenticationPassword=None, BFlag=None, DeadInterval=None, Dedicated1Plus1=None, Dedicated1To1=None, DemandCircuit=None, EnLinkProtection=None, EnableAdjSID=None, EnableBfdRegistration=None, EnableFastHello=None, EnableSRLG=None, Enhanced=None, ExternalAttribute=None, ExternalCapability=None, ExtraTraffic=None, HelloInterval=None, HelloMultiplier=None, LFlag=None, MaxMtu=None, Md5Key=None, Md5KeyId=None, Metric=None, MulticastCapability=None, NeighborIp=None, NetworkType=None, NssaCapability=None, OpaqueLsaForwarded=None, PFlag=None, Priority=None, Reserved40=None, Reserved80=None, SFlag=None, Shared=None, SuppressHello=None, TypeAreaId=None, TypeOfServiceRouting=None, Unprotected=None, Unused=None, VFlag=None, ValidateRxMtu=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdjSID=None,
+        AreaId=None,
+        AreaIdIp=None,
+        Authentication=None,
+        AuthenticationPassword=None,
+        BFlag=None,
+        DeadInterval=None,
+        Dedicated1Plus1=None,
+        Dedicated1To1=None,
+        DemandCircuit=None,
+        EnLinkProtection=None,
+        EnableAdjSID=None,
+        EnableBfdRegistration=None,
+        EnableFastHello=None,
+        EnableSRLG=None,
+        Enhanced=None,
+        ExternalAttribute=None,
+        ExternalCapability=None,
+        ExtraTraffic=None,
+        HelloInterval=None,
+        HelloMultiplier=None,
+        LFlag=None,
+        MaxMtu=None,
+        Md5Key=None,
+        Md5KeyId=None,
+        Metric=None,
+        MulticastCapability=None,
+        NeighborIp=None,
+        NetworkType=None,
+        NssaCapability=None,
+        OpaqueLsaForwarded=None,
+        PFlag=None,
+        Priority=None,
+        Reserved40=None,
+        Reserved80=None,
+        SFlag=None,
+        Shared=None,
+        SuppressHello=None,
+        TypeAreaId=None,
+        TypeOfServiceRouting=None,
+        Unprotected=None,
+        Unused=None,
+        VFlag=None,
+        ValidateRxMtu=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of ospfv2 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

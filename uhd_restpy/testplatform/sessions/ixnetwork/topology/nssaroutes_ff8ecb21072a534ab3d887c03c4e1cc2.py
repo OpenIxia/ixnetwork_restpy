@@ -314,7 +314,7 @@ class NssaRoutes(Base):
 
     def add(self, Name=None):
         # type: (str) -> NssaRoutes
-        """Adds a new nssaRoutes resource on the json, only valid with config assistant
+        """Adds a new nssaRoutes resource on the json, only valid with batch add utility
 
         Args
         ----

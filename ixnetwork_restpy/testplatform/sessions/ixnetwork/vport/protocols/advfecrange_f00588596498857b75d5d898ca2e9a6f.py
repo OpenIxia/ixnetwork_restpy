@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class AdvFecRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'advFecRange'
+    _SDM_NAME = "advFecRange"
     _SDM_ATT_MAP = {
-        'EnablePacking': 'enablePacking',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'Enabled': 'enabled',
-        'FirstNetwork': 'firstNetwork',
-        'LabelMode': 'labelMode',
-        'LabelValueStart': 'labelValueStart',
-        'MaskWidth': 'maskWidth',
-        'NumberOfNetworks': 'numberOfNetworks',
+        "EnablePacking": "enablePacking",
+        "EnableReplyingLspPing": "enableReplyingLspPing",
+        "Enabled": "enabled",
+        "FirstNetwork": "firstNetwork",
+        "LabelMode": "labelMode",
+        "LabelValueStart": "labelValueStart",
+        "MaskWidth": "maskWidth",
+        "NumberOfNetworks": "numberOfNetworks",
     }
     _SDM_ENUM_MAP = {
-        'labelMode': ['none', 'increment'],
+        "labelMode": ["none", "increment"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,11 +61,12 @@ class AdvFecRange(Base):
         -------
         - bool: (For IPv4 FEC ranges and in Unsolicited Label Distribution Mode ONLY) If checked, FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePacking"])
+
     @EnablePacking.setter
     def EnablePacking(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePacking"], value)
 
     @property
     def EnableReplyingLspPing(self):
@@ -74,11 +76,12 @@ class AdvFecRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableReplyingLspPing"])
+
     @EnableReplyingLspPing.setter
     def EnableReplyingLspPing(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableReplyingLspPing"], value)
 
     @property
     def Enabled(self):
@@ -88,11 +91,12 @@ class AdvFecRange(Base):
         -------
         - bool: Enables this FEC range for use in label mapping messages. By default, the Ixia LDP emulation uses the prefix FEC type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstNetwork(self):
@@ -102,11 +106,12 @@ class AdvFecRange(Base):
         -------
         - str: The first network address in the range (in IP address format).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstNetwork'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstNetwork"])
+
     @FirstNetwork.setter
     def FirstNetwork(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstNetwork'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstNetwork"], value)
 
     @property
     def LabelMode(self):
@@ -116,11 +121,12 @@ class AdvFecRange(Base):
         -------
         - str(none | increment): Indicates whether the same label or incrementing labels should be used in the VC ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelMode"])
+
     @LabelMode.setter
     def LabelMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelMode"], value)
 
     @property
     def LabelValueStart(self):
@@ -130,11 +136,12 @@ class AdvFecRange(Base):
         -------
         - number: The first label in the range of labels.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelValueStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelValueStart"])
+
     @LabelValueStart.setter
     def LabelValueStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelValueStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelValueStart"], value)
 
     @property
     def MaskWidth(self):
@@ -144,11 +151,12 @@ class AdvFecRange(Base):
         -------
         - number: The number of bits in the mask applied to the network address. The masked bits in the First Network address form the address prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     @property
     def NumberOfNetworks(self):
@@ -158,13 +166,24 @@ class AdvFecRange(Base):
         -------
         - number: The number of network addresses to be included in the range. The maximum number of valid possible addresses depends on the values for the first network and the network mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfNetworks'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfNetworks"])
+
     @NumberOfNetworks.setter
     def NumberOfNetworks(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfNetworks'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfNetworks"], value)
 
-    def update(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
+    def update(
+        self,
+        EnablePacking=None,
+        EnableReplyingLspPing=None,
+        Enabled=None,
+        FirstNetwork=None,
+        LabelMode=None,
+        LabelValueStart=None,
+        MaskWidth=None,
+        NumberOfNetworks=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, int) -> AdvFecRange
         """Updates advFecRange resource on the server.
 
@@ -185,7 +204,17 @@ class AdvFecRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
+    def add(
+        self,
+        EnablePacking=None,
+        EnableReplyingLspPing=None,
+        Enabled=None,
+        FirstNetwork=None,
+        LabelMode=None,
+        LabelValueStart=None,
+        MaskWidth=None,
+        NumberOfNetworks=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, int) -> AdvFecRange
         """Adds a new advFecRange resource on the server and adds it to the container.
 
@@ -220,7 +249,17 @@ class AdvFecRange(Base):
         """
         self._delete()
 
-    def find(self, EnablePacking=None, EnableReplyingLspPing=None, Enabled=None, FirstNetwork=None, LabelMode=None, LabelValueStart=None, MaskWidth=None, NumberOfNetworks=None):
+    def find(
+        self,
+        EnablePacking=None,
+        EnableReplyingLspPing=None,
+        Enabled=None,
+        FirstNetwork=None,
+        LabelMode=None,
+        LabelValueStart=None,
+        MaskWidth=None,
+        NumberOfNetworks=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, int) -> AdvFecRange
         """Finds and retrieves advFecRange resources from the server.
 

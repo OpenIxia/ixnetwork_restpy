@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,61 +35,125 @@ class InstructionActions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'instructionActions'
+    _SDM_NAME = "instructionActions"
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
-        'ArpDstHwAddr': 'arpDstHwAddr',
-        'ArpDstIpv4Addr': 'arpDstIpv4Addr',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSrcHwAddr': 'arpSrcHwAddr',
-        'ArpSrcIpv4Addr': 'arpSrcIpv4Addr',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'Experimenter': 'experimenter',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDatalength': 'experimenterDatalength',
-        'ExperimenterField': 'experimenterField',
-        'GroupId': 'groupId',
-        'Icmpv4Code': 'icmpv4Code',
-        'Icmpv4Type': 'icmpv4Type',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTll': 'ipv6NdTll',
-        'Ipv6Source': 'ipv6Source',
-        'Ipv6ndTarget': 'ipv6ndTarget',
-        'MaxByteLength': 'maxByteLength',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'MplsTtl': 'mplsTtl',
-        'NwTtl': 'nwTtl',
-        'OutputPort': 'outputPort',
-        'OutputPortType': 'outputPortType',
-        'PbbIsId': 'pbbIsId',
-        'QueueId': 'queueId',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TunnelId': 'tunnelId',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ActionType": "actionType",
+        "ArpDstHwAddr": "arpDstHwAddr",
+        "ArpDstIpv4Addr": "arpDstIpv4Addr",
+        "ArpOpcode": "arpOpcode",
+        "ArpSrcHwAddr": "arpSrcHwAddr",
+        "ArpSrcIpv4Addr": "arpSrcIpv4Addr",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "EthernetType": "ethernetType",
+        "Experimenter": "experimenter",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDatalength": "experimenterDatalength",
+        "ExperimenterField": "experimenterField",
+        "GroupId": "groupId",
+        "Icmpv4Code": "icmpv4Code",
+        "Icmpv4Type": "icmpv4Type",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProtocol": "ipProtocol",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTll": "ipv6NdTll",
+        "Ipv6Source": "ipv6Source",
+        "Ipv6ndTarget": "ipv6ndTarget",
+        "MaxByteLength": "maxByteLength",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "MplsTtl": "mplsTtl",
+        "NwTtl": "nwTtl",
+        "OutputPort": "outputPort",
+        "OutputPortType": "outputPortType",
+        "PbbIsId": "pbbIsId",
+        "QueueId": "queueId",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TunnelId": "tunnelId",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
     _SDM_ENUM_MAP = {
-        'actionType': ['drop', 'output', 'setEthernetSource', 'setEthernetDestination', 'setEthernetType', 'setVlanId', 'setVlanPriority', 'setIpDscp', 'setIpEcn', 'setIpProtocol', 'setIpv4Source', 'setIpv4Destination', 'setTcpSource', 'setTcpDestination', 'setUdpSource', 'setUdpDestination', 'setSctpSource', 'setSctpDestination', 'setIcmpv4Type', 'setIcmpv4Code', 'setArpOpcode', 'setArpSourceHwAddress', 'setArpTargetHwAddress', 'setArpSourceIpv4Address', 'setArpTargetIpv4Address', 'setIpv6Source', 'setIpv6Destination', 'setIpv6FlowLabel', 'setIcmpv6Type', 'setIcmpv6Code', 'setIpv6NdTarget', 'setIpv6NdSll', 'setIpv6NdTll', 'setMplsLabel', 'setMplsTc', 'setMplsBos', 'setPbbIsid', 'setTunnelId', 'setIpv6ExtHeader', 'copyTtlOut', 'copyTtlIn', 'setMplsTtl', 'decrementMplsTtl', 'pushVlan', 'popVlan', 'pushMpls', 'popMpls', 'setQueue', 'group', 'setNetworkTtl', 'decrementNetworkTtl', 'pushPbb', 'popPbb', 'experimenter', 'setExperimenter'],
-        'outputPortType': ['ofppInPort', 'manual', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal'],
+        "actionType": [
+            "drop",
+            "output",
+            "setEthernetSource",
+            "setEthernetDestination",
+            "setEthernetType",
+            "setVlanId",
+            "setVlanPriority",
+            "setIpDscp",
+            "setIpEcn",
+            "setIpProtocol",
+            "setIpv4Source",
+            "setIpv4Destination",
+            "setTcpSource",
+            "setTcpDestination",
+            "setUdpSource",
+            "setUdpDestination",
+            "setSctpSource",
+            "setSctpDestination",
+            "setIcmpv4Type",
+            "setIcmpv4Code",
+            "setArpOpcode",
+            "setArpSourceHwAddress",
+            "setArpTargetHwAddress",
+            "setArpSourceIpv4Address",
+            "setArpTargetIpv4Address",
+            "setIpv6Source",
+            "setIpv6Destination",
+            "setIpv6FlowLabel",
+            "setIcmpv6Type",
+            "setIcmpv6Code",
+            "setIpv6NdTarget",
+            "setIpv6NdSll",
+            "setIpv6NdTll",
+            "setMplsLabel",
+            "setMplsTc",
+            "setMplsBos",
+            "setPbbIsid",
+            "setTunnelId",
+            "setIpv6ExtHeader",
+            "copyTtlOut",
+            "copyTtlIn",
+            "setMplsTtl",
+            "decrementMplsTtl",
+            "pushVlan",
+            "popVlan",
+            "pushMpls",
+            "popMpls",
+            "setQueue",
+            "group",
+            "setNetworkTtl",
+            "decrementNetworkTtl",
+            "pushPbb",
+            "popPbb",
+            "experimenter",
+            "setExperimenter",
+        ],
+        "outputPortType": [
+            "ofppInPort",
+            "manual",
+            "ofppNormal",
+            "ofppFlood",
+            "ofppAll",
+            "ofppController",
+            "ofppLocal",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -102,11 +167,12 @@ class InstructionActions(Base):
         -------
         - str(drop | output | setEthernetSource | setEthernetDestination | setEthernetType | setVlanId | setVlanPriority | setIpDscp | setIpEcn | setIpProtocol | setIpv4Source | setIpv4Destination | setTcpSource | setTcpDestination | setUdpSource | setUdpDestination | setSctpSource | setSctpDestination | setIcmpv4Type | setIcmpv4Code | setArpOpcode | setArpSourceHwAddress | setArpTargetHwAddress | setArpSourceIpv4Address | setArpTargetIpv4Address | setIpv6Source | setIpv6Destination | setIpv6FlowLabel | setIcmpv6Type | setIcmpv6Code | setIpv6NdTarget | setIpv6NdSll | setIpv6NdTll | setMplsLabel | setMplsTc | setMplsBos | setPbbIsid | setTunnelId | setIpv6ExtHeader | copyTtlOut | copyTtlIn | setMplsTtl | decrementMplsTtl | pushVlan | popVlan | pushMpls | popMpls | setQueue | group | setNetworkTtl | decrementNetworkTtl | pushPbb | popPbb | experimenter | setExperimenter): The action type associated with this instruction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionType"])
+
     @ActionType.setter
     def ActionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActionType"], value)
 
     @property
     def ArpDstHwAddr(self):
@@ -116,11 +182,12 @@ class InstructionActions(Base):
         -------
         - str: Value of the ARP destination hardware address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"])
+
     @ArpDstHwAddr.setter
     def ArpDstHwAddr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"], value)
 
     @property
     def ArpDstIpv4Addr(self):
@@ -130,11 +197,12 @@ class InstructionActions(Base):
         -------
         - str: The ARP destination IPv4 address field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"])
+
     @ArpDstIpv4Addr.setter
     def ArpDstIpv4Addr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"], value)
 
     @property
     def ArpOpcode(self):
@@ -144,11 +212,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the ARP opcode field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
+
     @ArpOpcode.setter
     def ArpOpcode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpOpcode"], value)
 
     @property
     def ArpSrcHwAddr(self):
@@ -158,11 +227,12 @@ class InstructionActions(Base):
         -------
         - str: Value of the ARP source hardware address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"])
+
     @ArpSrcHwAddr.setter
     def ArpSrcHwAddr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"], value)
 
     @property
     def ArpSrcIpv4Addr(self):
@@ -172,11 +242,12 @@ class InstructionActions(Base):
         -------
         - str: The ARP source IPv4 address field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"])
+
     @ArpSrcIpv4Addr.setter
     def ArpSrcIpv4Addr(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"], value)
 
     @property
     def EthernetDestination(self):
@@ -186,11 +257,12 @@ class InstructionActions(Base):
         -------
         - str: The Ethernet destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
+
     @EthernetDestination.setter
     def EthernetDestination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestination"], value)
 
     @property
     def EthernetSource(self):
@@ -200,11 +272,12 @@ class InstructionActions(Base):
         -------
         - str: The Ethernet source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
+
     @EthernetSource.setter
     def EthernetSource(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSource"], value)
 
     @property
     def EthernetType(self):
@@ -214,11 +287,12 @@ class InstructionActions(Base):
         -------
         - str: The type of Ethernet port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
+
     @EthernetType.setter
     def EthernetType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetType"], value)
 
     @property
     def Experimenter(self):
@@ -228,11 +302,12 @@ class InstructionActions(Base):
         -------
         - number: The unique Experimenter identifier. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
+
     @Experimenter.setter
     def Experimenter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Experimenter"], value)
 
     @property
     def ExperimenterData(self):
@@ -242,11 +317,12 @@ class InstructionActions(Base):
         -------
         - str: The experimenter data field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDatalength(self):
@@ -256,11 +332,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the Experimenter data length field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDatalength"])
+
     @ExperimenterDatalength.setter
     def ExperimenterDatalength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDatalength"], value)
 
     @property
     def ExperimenterField(self):
@@ -270,11 +347,12 @@ class InstructionActions(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def GroupId(self):
@@ -284,11 +362,12 @@ class InstructionActions(Base):
         -------
         - number: Set the Group identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
+
     @GroupId.setter
     def GroupId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupId"], value)
 
     @property
     def Icmpv4Code(self):
@@ -298,11 +377,12 @@ class InstructionActions(Base):
         -------
         - number: The code of ICMPv4 port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Code"])
+
     @Icmpv4Code.setter
     def Icmpv4Code(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Code"], value)
 
     @property
     def Icmpv4Type(self):
@@ -312,11 +392,12 @@ class InstructionActions(Base):
         -------
         - number: The type of ICMPv4 port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Type"])
+
     @Icmpv4Type.setter
     def Icmpv4Type(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Type"], value)
 
     @property
     def Icmpv6Code(self):
@@ -326,11 +407,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the ICMPv6 code field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
+
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Code"], value)
 
     @property
     def Icmpv6Type(self):
@@ -340,11 +422,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the ICMPv6 type field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
+
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Type"], value)
 
     @property
     def IpDscp(self):
@@ -354,11 +437,12 @@ class InstructionActions(Base):
         -------
         - number: The IP DSCP value for advertising.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def IpEcn(self):
@@ -368,11 +452,12 @@ class InstructionActions(Base):
         -------
         - number: The IP ECN field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
+
     @IpEcn.setter
     def IpEcn(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpEcn"], value)
 
     @property
     def IpProtocol(self):
@@ -382,11 +467,12 @@ class InstructionActions(Base):
         -------
         - number: The IP protocol used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProtocol"])
+
     @IpProtocol.setter
     def IpProtocol(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpProtocol"], value)
 
     @property
     def Ipv4Destination(self):
@@ -396,11 +482,12 @@ class InstructionActions(Base):
         -------
         - str: The IPv4 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -410,11 +497,12 @@ class InstructionActions(Base):
         -------
         - str: The IPv4 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def Ipv6Destination(self):
@@ -424,11 +512,12 @@ class InstructionActions(Base):
         -------
         - str: Value of the IPv6 destination field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
+
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Destination"], value)
 
     @property
     def Ipv6ExtHeader(self):
@@ -438,11 +527,12 @@ class InstructionActions(Base):
         -------
         - number: The Ipv6 extension header field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
+
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -452,11 +542,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the IPv6 flow label field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def Ipv6NdSll(self):
@@ -466,11 +557,12 @@ class InstructionActions(Base):
         -------
         - str: Set the source link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
+
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdSll"], value)
 
     @property
     def Ipv6NdTll(self):
@@ -480,11 +572,12 @@ class InstructionActions(Base):
         -------
         - str: Set the target link-layer address option in an IPv6 Neighbor Discovery message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTll"])
+
     @Ipv6NdTll.setter
     def Ipv6NdTll(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdTll"], value)
 
     @property
     def Ipv6Source(self):
@@ -494,11 +587,12 @@ class InstructionActions(Base):
         -------
         - str: Value of the IPv6 source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
+
     @Ipv6Source.setter
     def Ipv6Source(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Source"], value)
 
     @property
     def Ipv6ndTarget(self):
@@ -508,11 +602,12 @@ class InstructionActions(Base):
         -------
         - str: The IPv6 ND target field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ndTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ndTarget"])
+
     @Ipv6ndTarget.setter
     def Ipv6ndTarget(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ndTarget'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ndTarget"], value)
 
     @property
     def MaxByteLength(self):
@@ -522,11 +617,12 @@ class InstructionActions(Base):
         -------
         - number: Sets the maximum length in bytes. The minimum value is 0 and the maximum value is 65,535 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxByteLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxByteLength"])
+
     @MaxByteLength.setter
     def MaxByteLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxByteLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxByteLength"], value)
 
     @property
     def MplsBos(self):
@@ -536,11 +632,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the MPLS BoS field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
+
     @MplsBos.setter
     def MplsBos(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsBos"], value)
 
     @property
     def MplsLabel(self):
@@ -550,11 +647,12 @@ class InstructionActions(Base):
         -------
         - number: Set the LABEL in the first MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
+
     @MplsLabel.setter
     def MplsLabel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabel"], value)
 
     @property
     def MplsTc(self):
@@ -564,11 +662,12 @@ class InstructionActions(Base):
         -------
         - number: The MPLS TC field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
+
     @MplsTc.setter
     def MplsTc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTc"], value)
 
     @property
     def MplsTtl(self):
@@ -578,11 +677,12 @@ class InstructionActions(Base):
         -------
         - number: Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTtl"])
+
     @MplsTtl.setter
     def MplsTtl(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTtl"], value)
 
     @property
     def NwTtl(self):
@@ -592,11 +692,12 @@ class InstructionActions(Base):
         -------
         - number: Set the IP TTL.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NwTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["NwTtl"])
+
     @NwTtl.setter
     def NwTtl(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NwTtl'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NwTtl"], value)
 
     @property
     def OutputPort(self):
@@ -606,11 +707,12 @@ class InstructionActions(Base):
         -------
         - number: The Output port number to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPort"])
+
     @OutputPort.setter
     def OutputPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputPort"], value)
 
     @property
     def OutputPortType(self):
@@ -620,11 +722,12 @@ class InstructionActions(Base):
         -------
         - str(ofppInPort | manual | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal): Specify the Output Port Type for this Instruction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPortType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPortType"])
+
     @OutputPortType.setter
     def OutputPortType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputPortType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputPortType"], value)
 
     @property
     def PbbIsId(self):
@@ -634,11 +737,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the PBB I-SID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbIsId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbIsId"])
+
     @PbbIsId.setter
     def PbbIsId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PbbIsId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PbbIsId"], value)
 
     @property
     def QueueId(self):
@@ -648,11 +752,12 @@ class InstructionActions(Base):
         -------
         - number: The identifier of the Queue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
+
     @QueueId.setter
     def QueueId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueId"], value)
 
     @property
     def SctpDestination(self):
@@ -662,11 +767,12 @@ class InstructionActions(Base):
         -------
         - number: The SCTP destination field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
+
     @SctpDestination.setter
     def SctpDestination(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpDestination"], value)
 
     @property
     def SctpSource(self):
@@ -676,11 +782,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the SCTP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
+
     @SctpSource.setter
     def SctpSource(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpSource"], value)
 
     @property
     def TcpDestination(self):
@@ -690,11 +797,12 @@ class InstructionActions(Base):
         -------
         - number: The Transport destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
+
     @TcpDestination.setter
     def TcpDestination(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpDestination"], value)
 
     @property
     def TcpSource(self):
@@ -704,11 +812,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the TCP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
+
     @TcpSource.setter
     def TcpSource(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpSource"], value)
 
     @property
     def TunnelId(self):
@@ -718,11 +827,12 @@ class InstructionActions(Base):
         -------
         - str: Value of the tunnel ID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
+
     @TunnelId.setter
     def TunnelId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelId"], value)
 
     @property
     def UdpDestination(self):
@@ -732,11 +842,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the UDP destination field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
+
     @UdpDestination.setter
     def UdpDestination(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestination"], value)
 
     @property
     def UdpSource(self):
@@ -746,11 +857,12 @@ class InstructionActions(Base):
         -------
         - number: Value of the UDP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
+
     @UdpSource.setter
     def UdpSource(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSource"], value)
 
     @property
     def VlanId(self):
@@ -760,11 +872,12 @@ class InstructionActions(Base):
         -------
         - number: The unique VLAN Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -774,13 +887,65 @@ class InstructionActions(Base):
         -------
         - number: The User Priority for this VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        ActionType=None,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDatalength=None,
+        ExperimenterField=None,
+        GroupId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        Ipv6ndTarget=None,
+        MaxByteLength=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        MplsTtl=None,
+        NwTtl=None,
+        OutputPort=None,
+        OutputPortType=None,
+        PbbIsId=None,
+        QueueId=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, str, int, str, int, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, str, int, int, int, int) -> InstructionActions
         """Updates instructionActions resource on the server.
 
@@ -842,7 +1007,58 @@ class InstructionActions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def add(
+        self,
+        ActionType=None,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDatalength=None,
+        ExperimenterField=None,
+        GroupId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        Ipv6ndTarget=None,
+        MaxByteLength=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        MplsTtl=None,
+        NwTtl=None,
+        OutputPort=None,
+        OutputPortType=None,
+        PbbIsId=None,
+        QueueId=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, str, int, str, int, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, str, int, int, int, int) -> InstructionActions
         """Adds a new instructionActions resource on the server and adds it to the container.
 
@@ -918,7 +1134,58 @@ class InstructionActions(Base):
         """
         self._delete()
 
-    def find(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbIsId=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ActionType=None,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDatalength=None,
+        ExperimenterField=None,
+        GroupId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdSll=None,
+        Ipv6NdTll=None,
+        Ipv6Source=None,
+        Ipv6ndTarget=None,
+        MaxByteLength=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        MplsTtl=None,
+        NwTtl=None,
+        OutputPort=None,
+        OutputPortType=None,
+        PbbIsId=None,
+        QueueId=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, str, int, str, int, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, str, int, int, int, int) -> InstructionActions
         """Finds and retrieves instructionActions resources from the server.
 

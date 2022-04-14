@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,36 +35,44 @@ class MldQuerier(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mldQuerier'
+    _SDM_NAME = "mldQuerier"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLearntInfo': 'discardLearntInfo',
-        'Errors': 'errors',
-        'GeneralQueryInterval': 'generalQueryInterval',
-        'GeneralQueryResponseInterval': 'generalQueryResponseInterval',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'ProxyQuerier': 'proxyQuerier',
-        'RobustnessVariable': 'robustnessVariable',
-        'RouterAlert': 'routerAlert',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'SpecificQueryResponseInterval': 'specificQueryResponseInterval',
-        'SpecificQueryTransmissionCount': 'specificQueryTransmissionCount',
-        'StackedLayers': 'stackedLayers',
-        'StartupQueryCount': 'startupQueryCount',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SupportElection': 'supportElection',
-        'SupportOlderVersionHost': 'supportOlderVersionHost',
-        'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
-        'VersionType': 'versionType',
+        "Active": "active",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DiscardLearntInfo": "discardLearntInfo",
+        "Errors": "errors",
+        "GeneralQueryInterval": "generalQueryInterval",
+        "GeneralQueryResponseInterval": "generalQueryResponseInterval",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "ProxyQuerier": "proxyQuerier",
+        "RobustnessVariable": "robustnessVariable",
+        "RouterAlert": "routerAlert",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "SpecificQueryResponseInterval": "specificQueryResponseInterval",
+        "SpecificQueryTransmissionCount": "specificQueryTransmissionCount",
+        "StackedLayers": "stackedLayers",
+        "StartupQueryCount": "startupQueryCount",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SupportElection": "supportElection",
+        "SupportOlderVersionHost": "supportOlderVersionHost",
+        "SupportOlderVersionQuerier": "supportOlderVersionQuerier",
+        "VersionType": "versionType",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -80,10 +89,13 @@ class MldQuerier(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -95,21 +107,23 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -119,7 +133,7 @@ class MldQuerier(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -129,7 +143,7 @@ class MldQuerier(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardLearntInfo(self):
@@ -140,7 +154,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Discard Learned Info
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardLearntInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DiscardLearntInfo"])
+        )
 
     @property
     def Errors(self):
@@ -149,7 +166,7 @@ class MldQuerier(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def GeneralQueryInterval(self):
@@ -160,7 +177,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): General Query Interval in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GeneralQueryInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GeneralQueryInterval"])
+        )
 
     @property
     def GeneralQueryResponseInterval(self):
@@ -171,7 +191,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): General Query Response Interval in milliseconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GeneralQueryResponseInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["GeneralQueryResponseInterval"])
+        )
 
     @property
     def Multiplier(self):
@@ -181,11 +204,12 @@ class MldQuerier(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -195,11 +219,12 @@ class MldQuerier(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ProxyQuerier(self):
@@ -210,7 +235,8 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Proxy Querier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyQuerier']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProxyQuerier"]))
 
     @property
     def RobustnessVariable(self):
@@ -221,7 +247,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Robustness Variable
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RobustnessVariable"])
+        )
 
     @property
     def RouterAlert(self):
@@ -232,7 +261,8 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router Alert
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterAlert']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RouterAlert"]))
 
     @property
     def SessionInfo(self):
@@ -242,7 +272,7 @@ class MldQuerier(Base):
         -------
         - list(str[noIfaceUp | up]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -252,7 +282,7 @@ class MldQuerier(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SpecificQueryResponseInterval(self):
@@ -263,7 +293,11 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specific Query Response Interval in milliseconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SpecificQueryResponseInterval"]),
+        )
 
     @property
     def SpecificQueryTransmissionCount(self):
@@ -274,7 +308,11 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specific Query Transmission Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SpecificQueryTransmissionCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SpecificQueryTransmissionCount"]),
+        )
 
     @property
     def StackedLayers(self):
@@ -284,11 +322,12 @@ class MldQuerier(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StartupQueryCount(self):
@@ -299,7 +338,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Startup Query Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartupQueryCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartupQueryCount"])
+        )
 
     @property
     def StateCounts(self):
@@ -308,7 +350,7 @@ class MldQuerier(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -318,7 +360,7 @@ class MldQuerier(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SupportElection(self):
@@ -329,7 +371,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support Election
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportElection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportElection"])
+        )
 
     @property
     def SupportOlderVersionHost(self):
@@ -340,7 +385,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support Older Version Host
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionHost']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportOlderVersionHost"])
+        )
 
     @property
     def SupportOlderVersionQuerier(self):
@@ -351,7 +399,10 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Support Older Version Querier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionQuerier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportOlderVersionQuerier"])
+        )
 
     @property
     def VersionType(self):
@@ -362,7 +413,8 @@ class MldQuerier(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Version
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VersionType"]))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> MldQuerier
@@ -415,7 +467,20 @@ class MldQuerier(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves mldQuerier resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mldQuerier resources from the server.
@@ -491,10 +556,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -513,10 +580,14 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -535,10 +606,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
     def MldGetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -567,10 +640,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldGetLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("mldGetLearnedInfo", payload=payload, response_object=None)
 
     def MldResumePeriodicGenQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -599,10 +674,14 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldResumePeriodicGenQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "mldResumePeriodicGenQuery", payload=payload, response_object=None
+        )
 
     def MldSendSpecificQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -646,10 +725,14 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldSendSpecificQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "mldSendSpecificQuery", payload=payload, response_object=None
+        )
 
     def MldStartQuerier(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -678,10 +761,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStartQuerier', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("mldStartQuerier", payload=payload, response_object=None)
 
     def MldStopPeriodicGenQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -710,10 +795,14 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStopPeriodicGenQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "mldStopPeriodicGenQuery", payload=payload, response_object=None
+        )
 
     def MldStopQuerier(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -742,10 +831,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStopQuerier', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("mldStopQuerier", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -774,10 +865,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def ResumePeriodicGenQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -796,10 +889,14 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumePeriodicGenQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "resumePeriodicGenQuery", payload=payload, response_object=None
+        )
 
     def SendSpecificQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -823,10 +920,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendSpecificQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendSpecificQuery", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -855,10 +954,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartMLD(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -893,10 +994,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startMLD', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startMLD", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -925,10 +1028,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopMLD(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -963,10 +1068,12 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopMLD', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopMLD", payload=payload, response_object=None)
 
     def StopPeriodicGenQuery(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -985,12 +1092,33 @@ class MldQuerier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPeriodicGenQuery', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopPeriodicGenQuery", payload=payload, response_object=None
+        )
 
-    def get_device_ids(self, PortNames=None, Active=None, DiscardLearntInfo=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, ProxyQuerier=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseInterval=None, SpecificQueryTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, VersionType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        DiscardLearntInfo=None,
+        GeneralQueryInterval=None,
+        GeneralQueryResponseInterval=None,
+        ProxyQuerier=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SpecificQueryResponseInterval=None,
+        SpecificQueryTransmissionCount=None,
+        StartupQueryCount=None,
+        SupportElection=None,
+        SupportOlderVersionHost=None,
+        SupportOlderVersionQuerier=None,
+        VersionType=None,
+    ):
         """Base class infrastructure that gets a list of mldQuerier device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

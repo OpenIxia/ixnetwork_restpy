@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class CfmCustomTLVList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmCustomTLVList'
+    _SDM_NAME = "cfmCustomTLVList"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IncludeTLVinCCM': 'includeTLVinCCM',
-        'IncludeTLVinLBM': 'includeTLVinLBM',
-        'IncludeTLVinLBR': 'includeTLVinLBR',
-        'IncludeTLVinLMM': 'includeTLVinLMM',
-        'IncludeTLVinLMR': 'includeTLVinLMR',
-        'IncludeTLVinLTM': 'includeTLVinLTM',
-        'IncludeTLVinLTR': 'includeTLVinLTR',
-        'Length': 'length',
-        'Name': 'name',
-        'Type': 'type',
-        'Value': 'value',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "IncludeTLVinCCM": "includeTLVinCCM",
+        "IncludeTLVinLBM": "includeTLVinLBM",
+        "IncludeTLVinLBR": "includeTLVinLBR",
+        "IncludeTLVinLMM": "includeTLVinLMM",
+        "IncludeTLVinLMR": "includeTLVinLMR",
+        "IncludeTLVinLTM": "includeTLVinLTM",
+        "IncludeTLVinLTR": "includeTLVinLTR",
+        "Length": "length",
+        "Name": "name",
+        "Type": "type",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CfmCustomTLVList, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class CfmCustomTLVList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -73,7 +73,7 @@ class CfmCustomTLVList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def IncludeTLVinCCM(self):
@@ -84,7 +84,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in CCM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinCCM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinCCM"])
+        )
 
     @property
     def IncludeTLVinLBM(self):
@@ -95,7 +98,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LBM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLBM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLBM"])
+        )
 
     @property
     def IncludeTLVinLBR(self):
@@ -106,7 +112,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LBR
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLBR']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLBR"])
+        )
 
     @property
     def IncludeTLVinLMM(self):
@@ -117,7 +126,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LMM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLMM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLMM"])
+        )
 
     @property
     def IncludeTLVinLMR(self):
@@ -128,7 +140,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LMR
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLMR']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLMR"])
+        )
 
     @property
     def IncludeTLVinLTM(self):
@@ -139,7 +154,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LTM
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLTM']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLTM"])
+        )
 
     @property
     def IncludeTLVinLTR(self):
@@ -150,7 +168,10 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Custom TLV in LTR
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTLVinLTR']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeTLVinLTR"])
+        )
 
     @property
     def Length(self):
@@ -161,7 +182,8 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TLV Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Length']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Length"]))
 
     @property
     def Name(self):
@@ -171,11 +193,12 @@ class CfmCustomTLVList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Type(self):
@@ -186,7 +209,8 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
     def Value(self):
@@ -197,7 +221,8 @@ class CfmCustomTLVList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TLV Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Value"]))
 
     def update(self, Name=None):
         # type: (str) -> CfmCustomTLVList
@@ -218,7 +243,7 @@ class CfmCustomTLVList(Base):
 
     def add(self, Name=None):
         # type: (str) -> CfmCustomTLVList
-        """Adds a new cfmCustomTLVList resource on the json, only valid with config assistant
+        """Adds a new cfmCustomTLVList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -276,7 +301,20 @@ class CfmCustomTLVList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, IncludeTLVinCCM=None, IncludeTLVinLBM=None, IncludeTLVinLBR=None, IncludeTLVinLMM=None, IncludeTLVinLMR=None, IncludeTLVinLTM=None, IncludeTLVinLTR=None, Length=None, Type=None, Value=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        IncludeTLVinCCM=None,
+        IncludeTLVinLBM=None,
+        IncludeTLVinLBR=None,
+        IncludeTLVinLMM=None,
+        IncludeTLVinLMR=None,
+        IncludeTLVinLTM=None,
+        IncludeTLVinLTR=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         """Base class infrastructure that gets a list of cfmCustomTLVList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

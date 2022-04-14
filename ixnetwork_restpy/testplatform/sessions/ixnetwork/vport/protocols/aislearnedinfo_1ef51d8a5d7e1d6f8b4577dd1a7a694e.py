@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class AisLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'aisLearnedInfo'
+    _SDM_NAME = "aisLearnedInfo"
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'CVlan': 'cVlan',
-        'MepMacAddress': 'mepMacAddress',
-        'RemoteMepMacAddress': 'remoteMepMacAddress',
-        'RxCount': 'rxCount',
-        'RxInterval': 'rxInterval',
-        'RxState': 'rxState',
-        'SVlan': 'sVlan',
-        'TxCount': 'txCount',
-        'TxState': 'txState',
+        "BVlan": "bVlan",
+        "CVlan": "cVlan",
+        "MepMacAddress": "mepMacAddress",
+        "RemoteMepMacAddress": "remoteMepMacAddress",
+        "RxCount": "rxCount",
+        "RxInterval": "rxInterval",
+        "RxState": "rxState",
+        "SVlan": "sVlan",
+        "TxCount": "txCount",
+        "TxState": "txState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AisLearnedInfo, self).__init__(parent, list_op)
@@ -60,7 +60,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["BVlan"])
 
     @property
     def CVlan(self):
@@ -70,7 +70,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def MepMacAddress(self):
@@ -80,7 +80,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepMacAddress"])
 
     @property
     def RemoteMepMacAddress(self):
@@ -90,7 +90,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMepMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMepMacAddress"])
 
     @property
     def RxCount(self):
@@ -100,7 +100,7 @@ class AisLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxCount"])
 
     @property
     def RxInterval(self):
@@ -110,7 +110,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxInterval"])
 
     @property
     def RxState(self):
@@ -120,7 +120,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RxState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RxState"])
 
     @property
     def SVlan(self):
@@ -130,7 +130,7 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def TxCount(self):
@@ -140,7 +140,7 @@ class AisLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxCount"])
 
     @property
     def TxState(self):
@@ -150,10 +150,10 @@ class AisLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxState'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxState"])
 
     def add(self):
-        """Adds a new aisLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new aisLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -165,7 +165,19 @@ class AisLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BVlan=None, CVlan=None, MepMacAddress=None, RemoteMepMacAddress=None, RxCount=None, RxInterval=None, RxState=None, SVlan=None, TxCount=None, TxState=None):
+    def find(
+        self,
+        BVlan=None,
+        CVlan=None,
+        MepMacAddress=None,
+        RemoteMepMacAddress=None,
+        RxCount=None,
+        RxInterval=None,
+        RxState=None,
+        SVlan=None,
+        TxCount=None,
+        TxState=None,
+    ):
         # type: (str, str, str, str, int, str, str, str, int, str) -> AisLearnedInfo
         """Finds and retrieves aisLearnedInfo resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Bgpv4BMacMappedIpList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpv4BMacMappedIpList'
+    _SDM_NAME = "bgpv4BMacMappedIpList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IpAddress': 'ipAddress',
-        'IpType': 'ipType',
-        'Ipv6Address': 'ipv6Address',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "IpAddress": "ipAddress",
+        "IpType": "ipType",
+        "Ipv6Address": "ipv6Address",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Bgpv4BMacMappedIpList, self).__init__(parent, list_op)
@@ -57,7 +57,8 @@ class Bgpv4BMacMappedIpList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -67,7 +68,7 @@ class Bgpv4BMacMappedIpList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -77,7 +78,7 @@ class Bgpv4BMacMappedIpList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def IpAddress(self):
@@ -88,7 +89,8 @@ class Bgpv4BMacMappedIpList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpAddress"]))
 
     @property
     def IpType(self):
@@ -99,7 +101,8 @@ class Bgpv4BMacMappedIpList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpType"]))
 
     @property
     def Ipv6Address(self):
@@ -110,7 +113,8 @@ class Bgpv4BMacMappedIpList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"]))
 
     @property
     def Name(self):
@@ -120,11 +124,12 @@ class Bgpv4BMacMappedIpList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> Bgpv4BMacMappedIpList
@@ -185,7 +190,9 @@ class Bgpv4BMacMappedIpList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, IpAddress=None, IpType=None, Ipv6Address=None):
+    def get_device_ids(
+        self, PortNames=None, Active=None, IpAddress=None, IpType=None, Ipv6Address=None
+    ):
         """Base class infrastructure that gets a list of bgpv4BMacMappedIpList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

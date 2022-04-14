@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class GroupDescriptionStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupDescriptionStatLearnedInformation'
+    _SDM_NAME = "groupDescriptionStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'GroupId': 'groupId',
-        'GroupType': 'groupType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NumberOfBucketStats': 'numberOfBucketStats',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "GroupId": "groupId",
+        "GroupType": "groupType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "NumberOfBucketStats": "numberOfBucketStats",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupDescriptionStatLearnedInformation, self).__init__(parent, list_op)
@@ -65,10 +65,16 @@ class GroupDescriptionStatLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_c5c1fdcf0cd8750ead47c9919177d367 import GroupBucketDescStatLearnedInformation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_c5c1fdcf0cd8750ead47c9919177d367 import (
+            GroupBucketDescStatLearnedInformation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GroupBucketDescStatLearnedInformation', None) is not None:
-                return self._properties.get('GroupBucketDescStatLearnedInformation')
+            if (
+                self._properties.get("GroupBucketDescStatLearnedInformation", None)
+                is not None
+            ):
+                return self._properties.get("GroupBucketDescStatLearnedInformation")
         return GroupBucketDescStatLearnedInformation(self)
 
     @property
@@ -79,7 +85,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the connected switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -89,7 +95,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -99,7 +105,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -109,7 +115,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def GroupId(self):
@@ -119,7 +125,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - number: A 32-bit integer uniquely identifying the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def GroupType(self):
@@ -129,7 +135,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: Specify the group types supported by Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupType'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupType"])
 
     @property
     def Latency(self):
@@ -139,7 +145,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - number: The latency measurement for the OpenFlow channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -149,7 +155,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The local IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -159,7 +165,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The OpenFlow version supported by this configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def NumberOfBucketStats(self):
@@ -169,7 +175,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBucketStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBucketStats"])
 
     @property
     def RemoteIp(self):
@@ -179,7 +185,7 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -189,10 +195,10 @@ class GroupDescriptionStatLearnedInformation(Base):
         -------
         - str: The reply state of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new groupDescriptionStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new groupDescriptionStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -204,7 +210,21 @@ class GroupDescriptionStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, GroupId=None, GroupType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        GroupId=None,
+        GroupType=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        NumberOfBucketStats=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, int, str, int, str, str, str, str, str) -> GroupDescriptionStatLearnedInformation
         """Finds and retrieves groupDescriptionStatLearnedInformation resources from the server.
 

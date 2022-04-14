@@ -18,41 +18,42 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class EmulatedRouterRange(Base):
-    """Emulated Router range. Provides ability to have multiple IPs with same MAC address 
+    """Emulated Router range. Provides ability to have multiple IPs with same MAC address
+
         (just like it would appear behind a router).
     The EmulatedRouterRange class encapsulates a required emulatedRouterRange resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'emulatedRouterRange'
+    _SDM_NAME = "emulatedRouterRange"
     _SDM_ATT_MAP = {
-        'AutoCountEnabled': 'autoCountEnabled',
-        'AutoMacGeneration': 'autoMacGeneration',
-        'Count': 'count',
-        'EnableGatewayArp': 'enableGatewayArp',
-        'Enabled': 'enabled',
-        'GatewayAddress': 'gatewayAddress',
-        'GatewayIncrement': 'gatewayIncrement',
-        'GatewayIncrementMode': 'gatewayIncrementMode',
-        'IncrementBy': 'incrementBy',
-        'IpAddress': 'ipAddress',
-        'IpType': 'ipType',
-        'Mss': 'mss',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Prefix': 'prefix',
+        "AutoCountEnabled": "autoCountEnabled",
+        "AutoMacGeneration": "autoMacGeneration",
+        "Count": "count",
+        "EnableGatewayArp": "enableGatewayArp",
+        "Enabled": "enabled",
+        "GatewayAddress": "gatewayAddress",
+        "GatewayIncrement": "gatewayIncrement",
+        "GatewayIncrementMode": "gatewayIncrementMode",
+        "IncrementBy": "incrementBy",
+        "IpAddress": "ipAddress",
+        "IpType": "ipType",
+        "Mss": "mss",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Prefix": "prefix",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EmulatedRouterRange, self).__init__(parent, list_op)
@@ -65,11 +66,12 @@ class EmulatedRouterRange(Base):
         -------
         - bool: If set, IP address count will be automatically adjusted based on other plugins
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoCountEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoCountEnabled"])
+
     @AutoCountEnabled.setter
     def AutoCountEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoCountEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoCountEnabled"], value)
 
     @property
     def AutoMacGeneration(self):
@@ -79,11 +81,12 @@ class EmulatedRouterRange(Base):
         -------
         - bool: If set, MAC addresses will be auto-generated based on IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoMacGeneration'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoMacGeneration"])
+
     @AutoMacGeneration.setter
     def AutoMacGeneration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoMacGeneration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoMacGeneration"], value)
 
     @property
     def Count(self):
@@ -93,11 +96,12 @@ class EmulatedRouterRange(Base):
         -------
         - number: The total number of addresses to be created for the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def EnableGatewayArp(self):
@@ -107,11 +111,12 @@ class EmulatedRouterRange(Base):
         -------
         - bool: Deprecated property, please use Static IP globals instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGatewayArp"])
+
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGatewayArp"], value)
 
     @property
     def Enabled(self):
@@ -121,11 +126,12 @@ class EmulatedRouterRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GatewayAddress(self):
@@ -135,11 +141,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the gateway to be associated with all the addresses created in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayAddress"])
+
     @GatewayAddress.setter
     def GatewayAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayAddress"], value)
 
     @property
     def GatewayIncrement(self):
@@ -149,11 +156,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the gateway step size to be used in the association with the addresses created in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayIncrement"])
+
     @GatewayIncrement.setter
     def GatewayIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayIncrement"], value)
 
     @property
     def GatewayIncrementMode(self):
@@ -163,11 +171,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the gateway step size to be used in the association with the addresses created in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayIncrementMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayIncrementMode"])
+
     @GatewayIncrementMode.setter
     def GatewayIncrementMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayIncrementMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayIncrementMode"], value)
 
     @property
     def IncrementBy(self):
@@ -177,11 +186,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the increment to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementBy"])
+
     @IncrementBy.setter
     def IncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementBy"], value)
 
     @property
     def IpAddress(self):
@@ -191,11 +201,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the base address to be used for enumerating all the addresses in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpType(self):
@@ -205,11 +216,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Defines the version of IP address style to be used for describing the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Mss(self):
@@ -219,11 +231,12 @@ class EmulatedRouterRange(Base):
         -------
         - number: The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mss'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mss"])
+
     @Mss.setter
     def Mss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mss"], value)
 
     @property
     def Name(self):
@@ -233,11 +246,12 @@ class EmulatedRouterRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -247,7 +261,7 @@ class EmulatedRouterRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Prefix(self):
@@ -257,13 +271,30 @@ class EmulatedRouterRange(Base):
         -------
         - number: Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Prefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["Prefix"])
+
     @Prefix.setter
     def Prefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Prefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Prefix"], value)
 
-    def update(self, AutoCountEnabled=None, AutoMacGeneration=None, Count=None, EnableGatewayArp=None, Enabled=None, GatewayAddress=None, GatewayIncrement=None, GatewayIncrementMode=None, IncrementBy=None, IpAddress=None, IpType=None, Mss=None, Name=None, Prefix=None):
+    def update(
+        self,
+        AutoCountEnabled=None,
+        AutoMacGeneration=None,
+        Count=None,
+        EnableGatewayArp=None,
+        Enabled=None,
+        GatewayAddress=None,
+        GatewayIncrement=None,
+        GatewayIncrementMode=None,
+        IncrementBy=None,
+        IpAddress=None,
+        IpType=None,
+        Mss=None,
+        Name=None,
+        Prefix=None,
+    ):
         # type: (bool, bool, int, bool, bool, str, str, str, str, str, str, int, str, int) -> EmulatedRouterRange
         """Updates emulatedRouterRange resource on the server.
 
@@ -290,7 +321,24 @@ class EmulatedRouterRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AutoCountEnabled=None, AutoMacGeneration=None, Count=None, EnableGatewayArp=None, Enabled=None, GatewayAddress=None, GatewayIncrement=None, GatewayIncrementMode=None, IncrementBy=None, IpAddress=None, IpType=None, Mss=None, Name=None, ObjectId=None, Prefix=None):
+    def find(
+        self,
+        AutoCountEnabled=None,
+        AutoMacGeneration=None,
+        Count=None,
+        EnableGatewayArp=None,
+        Enabled=None,
+        GatewayAddress=None,
+        GatewayIncrement=None,
+        GatewayIncrementMode=None,
+        IncrementBy=None,
+        IpAddress=None,
+        IpType=None,
+        Mss=None,
+        Name=None,
+        ObjectId=None,
+        Prefix=None,
+    ):
         # type: (bool, bool, int, bool, bool, str, str, str, str, str, str, int, str, str, int) -> EmulatedRouterRange
         """Finds and retrieves emulatedRouterRange resources from the server.
 
@@ -361,10 +409,14 @@ class EmulatedRouterRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -383,10 +435,14 @@ class EmulatedRouterRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -405,7 +461,11 @@ class EmulatedRouterRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

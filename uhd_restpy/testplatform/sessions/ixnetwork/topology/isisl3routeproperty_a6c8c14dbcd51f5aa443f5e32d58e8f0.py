@@ -557,7 +557,7 @@ class IsisL3RouteProperty(Base):
 
     def add(self, IncludeBIERInfo=None, Name=None, NoOfSidperPrefix=None):
         # type: (bool, str, int) -> IsisL3RouteProperty
-        """Adds a new isisL3RouteProperty resource on the json, only valid with config assistant
+        """Adds a new isisL3RouteProperty resource on the json, only valid with batch add utility
 
         Args
         ----

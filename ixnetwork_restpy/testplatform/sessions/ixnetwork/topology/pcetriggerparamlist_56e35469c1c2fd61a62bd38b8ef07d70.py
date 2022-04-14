@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,54 +35,53 @@ class PceTriggerParamList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pceTriggerParamList'
+    _SDM_NAME = "pceTriggerParamList"
     _SDM_ATT_MAP = {
-        'AssociationIdForTriggerParam': 'associationIdForTriggerParam',
-        'Bandwidth': 'bandwidth',
-        'BindingTypeTriggerParam': 'bindingTypeTriggerParam',
-        'Bos_TriggerParam': 'bos_TriggerParam',
-        'ConfigureBandwidthForSendPcUpdateTriggerParam': 'configureBandwidthForSendPcUpdateTriggerParam',
-        'ConfigureEroForSendPcUpdateTriggerParam': 'configureEroForSendPcUpdateTriggerParam',
-        'ConfigureLspForSendPcUpdateTriggerParam': 'configureLspForSendPcUpdateTriggerParam',
-        'ConfigureLspaForSendPcUpdateTriggerParam': 'configureLspaForSendPcUpdateTriggerParam',
-        'ConfigureMetricForSendPcUpdateTriggerParam': 'configureMetricForSendPcUpdateTriggerParam',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DeviceIndex': 'deviceIndex',
-        'ExcludeAnyForTriggerParam': 'excludeAnyForTriggerParam',
-        'HoldingPriorityForTriggerParam': 'holdingPriorityForTriggerParam',
-        'IncludeAllForTriggerParam': 'includeAllForTriggerParam',
-        'IncludeAnyForTriggerParam': 'includeAnyForTriggerParam',
-        'IncludeAssociation': 'includeAssociation',
-        'IncludeConfiguredERO_TriggerParam': 'includeConfiguredERO_TriggerParam',
-        'IncludeSrp': 'includeSrp',
-        'IncludeSymbolicPathNameTlvTriggerParam': 'includeSymbolicPathNameTlvTriggerParam',
-        'IncludeTEPathBindingTLVTriggerParam': 'includeTEPathBindingTLVTriggerParam',
-        'IncludeXro': 'includeXro',
-        'LearnedPlspId': 'learnedPlspId',
-        'LearnedSymbolicPathName': 'learnedSymbolicPathName',
-        'LocalProtectionForTriggerParam': 'localProtectionForTriggerParam',
-        'Mpls_label_20_TriggerParam': 'mpls_label_20_TriggerParam',
-        'Name': 'name',
-        'NumberOfEroSubObjectsTriggerParam': 'numberOfEroSubObjectsTriggerParam',
-        'NumberOfMetricSubObjectTriggerParam': 'numberOfMetricSubObjectTriggerParam',
-        'NumberOfXroSubObjectsTriggerParam': 'numberOfXroSubObjectsTriggerParam',
-        'OverridePLSPID': 'overridePLSPID',
-        'OverrideSrpId': 'overrideSrpId',
-        'PlspIdTriggerParam': 'plspIdTriggerParam',
-        'ProtectionLspStatusForTriggerParam': 'protectionLspStatusForTriggerParam',
-        'RemoveAssociationStatusForTriggerParam': 'removeAssociationStatusForTriggerParam',
-        'SendEmptyTLVTriggerParam': 'sendEmptyTLVTriggerParam',
-        'SetupPriorityForTriggerParam': 'setupPriorityForTriggerParam',
-        'SrpId': 'srpId',
-        'Srv6SID_TriggerParam': 'srv6SID_TriggerParam',
-        'StandbyModeStatusForTriggerParam': 'standbyModeStatusForTriggerParam',
-        'Tos_TriggerParam': 'tos_TriggerParam',
-        'Ttl_TriggerParam': 'ttl_TriggerParam',
-        'XroFailBit': 'xroFailBit',
+        "AssociationIdForTriggerParam": "associationIdForTriggerParam",
+        "Bandwidth": "bandwidth",
+        "BindingTypeTriggerParam": "bindingTypeTriggerParam",
+        "Bos_TriggerParam": "bos_TriggerParam",
+        "ConfigureBandwidthForSendPcUpdateTriggerParam": "configureBandwidthForSendPcUpdateTriggerParam",
+        "ConfigureEroForSendPcUpdateTriggerParam": "configureEroForSendPcUpdateTriggerParam",
+        "ConfigureLspForSendPcUpdateTriggerParam": "configureLspForSendPcUpdateTriggerParam",
+        "ConfigureLspaForSendPcUpdateTriggerParam": "configureLspaForSendPcUpdateTriggerParam",
+        "ConfigureMetricForSendPcUpdateTriggerParam": "configureMetricForSendPcUpdateTriggerParam",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DeviceIndex": "deviceIndex",
+        "ExcludeAnyForTriggerParam": "excludeAnyForTriggerParam",
+        "HoldingPriorityForTriggerParam": "holdingPriorityForTriggerParam",
+        "IncludeAllForTriggerParam": "includeAllForTriggerParam",
+        "IncludeAnyForTriggerParam": "includeAnyForTriggerParam",
+        "IncludeAssociation": "includeAssociation",
+        "IncludeConfiguredERO_TriggerParam": "includeConfiguredERO_TriggerParam",
+        "IncludeSrp": "includeSrp",
+        "IncludeSymbolicPathNameTlvTriggerParam": "includeSymbolicPathNameTlvTriggerParam",
+        "IncludeTEPathBindingTLVTriggerParam": "includeTEPathBindingTLVTriggerParam",
+        "IncludeXro": "includeXro",
+        "LearnedPlspId": "learnedPlspId",
+        "LearnedSymbolicPathName": "learnedSymbolicPathName",
+        "LocalProtectionForTriggerParam": "localProtectionForTriggerParam",
+        "Mpls_label_20_TriggerParam": "mpls_label_20_TriggerParam",
+        "Name": "name",
+        "NumberOfEroSubObjectsTriggerParam": "numberOfEroSubObjectsTriggerParam",
+        "NumberOfMetricSubObjectTriggerParam": "numberOfMetricSubObjectTriggerParam",
+        "NumberOfXroSubObjectsTriggerParam": "numberOfXroSubObjectsTriggerParam",
+        "OverridePLSPID": "overridePLSPID",
+        "OverrideSrpId": "overrideSrpId",
+        "PlspIdTriggerParam": "plspIdTriggerParam",
+        "ProtectionLspStatusForTriggerParam": "protectionLspStatusForTriggerParam",
+        "RemoveAssociationStatusForTriggerParam": "removeAssociationStatusForTriggerParam",
+        "SendEmptyTLVTriggerParam": "sendEmptyTLVTriggerParam",
+        "SetupPriorityForTriggerParam": "setupPriorityForTriggerParam",
+        "SrpId": "srpId",
+        "Srv6SID_TriggerParam": "srv6SID_TriggerParam",
+        "StandbyModeStatusForTriggerParam": "standbyModeStatusForTriggerParam",
+        "Tos_TriggerParam": "tos_TriggerParam",
+        "Ttl_TriggerParam": "ttl_TriggerParam",
+        "XroFailBit": "xroFailBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PceTriggerParamList, self).__init__(parent, list_op)
@@ -97,10 +97,13 @@ class PceTriggerParamList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperoobjectslisttriggerparam_7a5c524782bff6932bd99b311c55e9ad import PcepEROObjectsListTriggerParam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperoobjectslisttriggerparam_7a5c524782bff6932bd99b311c55e9ad import (
+            PcepEROObjectsListTriggerParam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepEROObjectsListTriggerParam', None) is not None:
-                return self._properties.get('PcepEROObjectsListTriggerParam')
+            if self._properties.get("PcepEROObjectsListTriggerParam", None) is not None:
+                return self._properties.get("PcepEROObjectsListTriggerParam")
         return PcepEROObjectsListTriggerParam(self)
 
     @property
@@ -114,10 +117,16 @@ class PceTriggerParamList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslisttriggerparam_de2e60079005ccd984641de408d76c7e import PcepMetricSubObjectsListTriggerParam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslisttriggerparam_de2e60079005ccd984641de408d76c7e import (
+            PcepMetricSubObjectsListTriggerParam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepMetricSubObjectsListTriggerParam', None) is not None:
-                return self._properties.get('PcepMetricSubObjectsListTriggerParam')
+            if (
+                self._properties.get("PcepMetricSubObjectsListTriggerParam", None)
+                is not None
+            ):
+                return self._properties.get("PcepMetricSubObjectsListTriggerParam")
         return PcepMetricSubObjectsListTriggerParam(self)
 
     @property
@@ -131,10 +140,13 @@ class PceTriggerParamList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxroobjectslisttriggerparam_5f7b6057618984dd647c0e901b41ccfc import PcepXROObjectsListTriggerParam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxroobjectslisttriggerparam_5f7b6057618984dd647c0e901b41ccfc import (
+            PcepXROObjectsListTriggerParam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcepXROObjectsListTriggerParam', None) is not None:
-                return self._properties.get('PcepXROObjectsListTriggerParam')
+            if self._properties.get("PcepXROObjectsListTriggerParam", None) is not None:
+                return self._properties.get("PcepXROObjectsListTriggerParam")
         return PcepXROObjectsListTriggerParam(self)
 
     @property
@@ -146,7 +158,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Association ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssociationIdForTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssociationIdForTriggerParam"])
+        )
 
     @property
     def Bandwidth(self):
@@ -157,7 +172,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bps)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bandwidth"]))
 
     @property
     def BindingTypeTriggerParam(self):
@@ -168,7 +184,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the type of binding included in the TLV. Types are as follows: 20bit MPLS Label 32bit MPLS Label SRv6 SID Default value is 20bit MPLS Label.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingTypeTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BindingTypeTriggerParam"])
+        )
 
     @property
     def Bos_TriggerParam(self):
@@ -179,7 +198,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This bit is set to True for the last entry in the label stack i.e., for the bottom of the stack, and False for all other label stack entries. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bos_TriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Bos_TriggerParam"])
+        )
 
     @property
     def ConfigureBandwidthForSendPcUpdateTriggerParam(self):
@@ -190,7 +212,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Bandwidth
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureBandwidthForSendPcUpdateTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigureBandwidthForSendPcUpdateTriggerParam"]
+            ),
+        )
 
     @property
     def ConfigureEroForSendPcUpdateTriggerParam(self):
@@ -201,7 +229,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureEroForSendPcUpdateTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigureEroForSendPcUpdateTriggerParam"]
+            ),
+        )
 
     @property
     def ConfigureLspForSendPcUpdateTriggerParam(self):
@@ -212,7 +246,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureLspForSendPcUpdateTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigureLspForSendPcUpdateTriggerParam"]
+            ),
+        )
 
     @property
     def ConfigureLspaForSendPcUpdateTriggerParam(self):
@@ -223,7 +263,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure LSPA
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureLspaForSendPcUpdateTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigureLspaForSendPcUpdateTriggerParam"]
+            ),
+        )
 
     @property
     def ConfigureMetricForSendPcUpdateTriggerParam(self):
@@ -234,7 +280,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureMetricForSendPcUpdateTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ConfigureMetricForSendPcUpdateTriggerParam"]
+            ),
+        )
 
     @property
     def Count(self):
@@ -244,7 +296,7 @@ class PceTriggerParamList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -254,7 +306,7 @@ class PceTriggerParamList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DeviceIndex(self):
@@ -264,11 +316,12 @@ class PceTriggerParamList(Base):
         -------
         - number: Device Index of the parent PCCGroup Device
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeviceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeviceIndex"])
+
     @DeviceIndex.setter
     def DeviceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeviceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeviceIndex"], value)
 
     @property
     def ExcludeAnyForTriggerParam(self):
@@ -279,7 +332,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAnyForTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAnyForTriggerParam"])
+        )
 
     @property
     def HoldingPriorityForTriggerParam(self):
@@ -290,7 +346,11 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldingPriorityForTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HoldingPriorityForTriggerParam"]),
+        )
 
     @property
     def IncludeAllForTriggerParam(self):
@@ -301,7 +361,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAllForTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAllForTriggerParam"])
+        )
 
     @property
     def IncludeAnyForTriggerParam(self):
@@ -312,7 +375,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAnyForTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAnyForTriggerParam"])
+        )
 
     @property
     def IncludeAssociation(self):
@@ -323,7 +389,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association object will be included in a PcUpdate message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAssociation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAssociation"])
+        )
 
     @property
     def IncludeConfiguredERO_TriggerParam(self):
@@ -334,7 +403,11 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled, entire ERO will be go out in packet even if there is Binding SID, meaning no SR-ERO/SRv6-ERO validation will be done.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeConfiguredERO_TriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncludeConfiguredERO_TriggerParam"]),
+        )
 
     @property
     def IncludeSrp(self):
@@ -345,7 +418,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether SRP object will be included in a PCInitiate message. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSrp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeSrp"]))
 
     @property
     def IncludeSymbolicPathNameTlvTriggerParam(self):
@@ -356,7 +430,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if Symbolic-Path-Name TLV is to be included in PCUpate trigger message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSymbolicPathNameTlvTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IncludeSymbolicPathNameTlvTriggerParam"]
+            ),
+        )
 
     @property
     def IncludeTEPathBindingTLVTriggerParam(self):
@@ -367,7 +447,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates if TE-PATH-BINDING TLV is to be included in PCUpate trigger message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeTEPathBindingTLVTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IncludeTEPathBindingTLVTriggerParam"]
+            ),
+        )
 
     @property
     def IncludeXro(self):
@@ -378,7 +464,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether XRO object will be included in a PcUpdate message. All other attributes in sub-tab Update XRO would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeXro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeXro"]))
 
     @property
     def LearnedPlspId(self):
@@ -389,7 +476,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PLSP-ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LearnedPlspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LearnedPlspId"]))
 
     @property
     def LearnedSymbolicPathName(self):
@@ -400,7 +488,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Symbolic Path Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LearnedSymbolicPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LearnedSymbolicPathName"])
+        )
 
     @property
     def LocalProtectionForTriggerParam(self):
@@ -411,7 +502,11 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalProtectionForTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LocalProtectionForTriggerParam"]),
+        )
 
     @property
     def Mpls_label_20_TriggerParam(self):
@@ -422,7 +517,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This control will be editable if the Binding Type is set to either 20bit or 32bit MPLS-Label. This field will take the 20bit value of the MPLS-Label
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Mpls_label_20_TriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Mpls_label_20_TriggerParam"])
+        )
 
     @property
     def Name(self):
@@ -432,11 +530,12 @@ class PceTriggerParamList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfEroSubObjectsTriggerParam(self):
@@ -446,11 +545,16 @@ class PceTriggerParamList(Base):
         -------
         - number: Value that indicates the number of ERO Sub Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjectsTriggerParam'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfEroSubObjectsTriggerParam"]
+        )
+
     @NumberOfEroSubObjectsTriggerParam.setter
     def NumberOfEroSubObjectsTriggerParam(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjectsTriggerParam'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfEroSubObjectsTriggerParam"], value
+        )
 
     @property
     def NumberOfMetricSubObjectTriggerParam(self):
@@ -460,11 +564,16 @@ class PceTriggerParamList(Base):
         -------
         - number: Value that indicates the number of Metric Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjectTriggerParam'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfMetricSubObjectTriggerParam"]
+        )
+
     @NumberOfMetricSubObjectTriggerParam.setter
     def NumberOfMetricSubObjectTriggerParam(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjectTriggerParam'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfMetricSubObjectTriggerParam"], value
+        )
 
     @property
     def NumberOfXroSubObjectsTriggerParam(self):
@@ -474,11 +583,16 @@ class PceTriggerParamList(Base):
         -------
         - number: Value that indicates the number of XRO Sub Objects to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjectsTriggerParam'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfXroSubObjectsTriggerParam"]
+        )
+
     @NumberOfXroSubObjectsTriggerParam.setter
     def NumberOfXroSubObjectsTriggerParam(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjectsTriggerParam'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfXroSubObjectsTriggerParam"], value
+        )
 
     @property
     def OverridePLSPID(self):
@@ -489,7 +603,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Allows the user to Send PcUpdate with an unknown PLSP-ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverridePLSPID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OverridePLSPID"])
+        )
 
     @property
     def OverrideSrpId(self):
@@ -500,7 +617,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether SRP object will be included in a PCUpdate trigger parameters. All other attributes in sub-tab-SRP would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OverrideSrpId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OverrideSrpId"]))
 
     @property
     def PlspIdTriggerParam(self):
@@ -511,7 +629,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The value of PLSP-ID that should be put in the PcUpdate Message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PlspIdTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PlspIdTriggerParam"])
+        )
 
     @property
     def ProtectionLspStatusForTriggerParam(self):
@@ -522,7 +643,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Protection LSP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionLspStatusForTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ProtectionLspStatusForTriggerParam"]
+            ),
+        )
 
     @property
     def RemoveAssociationStatusForTriggerParam(self):
@@ -533,7 +660,13 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remove Association
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoveAssociationStatusForTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["RemoveAssociationStatusForTriggerParam"]
+            ),
+        )
 
     @property
     def SendEmptyTLVTriggerParam(self):
@@ -544,7 +677,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled all fields after Binding Type will be grayed out.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendEmptyTLVTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendEmptyTLVTriggerParam"])
+        )
 
     @property
     def SetupPriorityForTriggerParam(self):
@@ -555,7 +691,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetupPriorityForTriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetupPriorityForTriggerParam"])
+        )
 
     @property
     def SrpId(self):
@@ -566,7 +705,8 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The SRP object is used to correlate between initiation requests sent by the PCE and the error reports and state reports sent by the PCC. This number is unique per PCEP session and is incremented per initiation.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrpId"]))
 
     @property
     def Srv6SID_TriggerParam(self):
@@ -577,7 +717,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID with a format of a 16 byte IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SID_TriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SID_TriggerParam"])
+        )
 
     @property
     def StandbyModeStatusForTriggerParam(self):
@@ -588,7 +731,11 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Standby Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StandbyModeStatusForTriggerParam']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["StandbyModeStatusForTriggerParam"]),
+        )
 
     @property
     def Tos_TriggerParam(self):
@@ -599,7 +746,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to carry traffic class information. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tos_TriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tos_TriggerParam"])
+        )
 
     @property
     def Ttl_TriggerParam(self):
@@ -610,7 +760,10 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to encode a time-to-live value. This control will be editable only if Binding Type is MPLS Label 32bit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl_TriggerParam']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ttl_TriggerParam"])
+        )
 
     @property
     def XroFailBit(self):
@@ -621,9 +774,17 @@ class PceTriggerParamList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): XRO Fail bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XroFailBit']))
 
-    def update(self, DeviceIndex=None, Name=None, NumberOfEroSubObjectsTriggerParam=None, NumberOfMetricSubObjectTriggerParam=None, NumberOfXroSubObjectsTriggerParam=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["XroFailBit"]))
+
+    def update(
+        self,
+        DeviceIndex=None,
+        Name=None,
+        NumberOfEroSubObjectsTriggerParam=None,
+        NumberOfMetricSubObjectTriggerParam=None,
+        NumberOfXroSubObjectsTriggerParam=None,
+    ):
         # type: (int, str, int, int, int) -> PceTriggerParamList
         """Updates pceTriggerParamList resource on the server.
 
@@ -644,7 +805,14 @@ class PceTriggerParamList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DeviceIndex=None, Name=None, NumberOfEroSubObjectsTriggerParam=None, NumberOfMetricSubObjectTriggerParam=None, NumberOfXroSubObjectsTriggerParam=None):
+    def add(
+        self,
+        DeviceIndex=None,
+        Name=None,
+        NumberOfEroSubObjectsTriggerParam=None,
+        NumberOfMetricSubObjectTriggerParam=None,
+        NumberOfXroSubObjectsTriggerParam=None,
+    ):
         # type: (int, str, int, int, int) -> PceTriggerParamList
         """Adds a new pceTriggerParamList resource on the server and adds it to the container.
 
@@ -676,7 +844,16 @@ class PceTriggerParamList(Base):
         """
         self._delete()
 
-    def find(self, Count=None, DescriptiveName=None, DeviceIndex=None, Name=None, NumberOfEroSubObjectsTriggerParam=None, NumberOfMetricSubObjectTriggerParam=None, NumberOfXroSubObjectsTriggerParam=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        DeviceIndex=None,
+        Name=None,
+        NumberOfEroSubObjectsTriggerParam=None,
+        NumberOfMetricSubObjectTriggerParam=None,
+        NumberOfXroSubObjectsTriggerParam=None,
+    ):
         # type: (int, str, int, str, int, int, int) -> PceTriggerParamList
         """Finds and retrieves pceTriggerParamList resources from the server.
 
@@ -722,7 +899,46 @@ class PceTriggerParamList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AssociationIdForTriggerParam=None, Bandwidth=None, BindingTypeTriggerParam=None, Bos_TriggerParam=None, ConfigureBandwidthForSendPcUpdateTriggerParam=None, ConfigureEroForSendPcUpdateTriggerParam=None, ConfigureLspForSendPcUpdateTriggerParam=None, ConfigureLspaForSendPcUpdateTriggerParam=None, ConfigureMetricForSendPcUpdateTriggerParam=None, ExcludeAnyForTriggerParam=None, HoldingPriorityForTriggerParam=None, IncludeAllForTriggerParam=None, IncludeAnyForTriggerParam=None, IncludeAssociation=None, IncludeConfiguredERO_TriggerParam=None, IncludeSrp=None, IncludeSymbolicPathNameTlvTriggerParam=None, IncludeTEPathBindingTLVTriggerParam=None, IncludeXro=None, LearnedPlspId=None, LearnedSymbolicPathName=None, LocalProtectionForTriggerParam=None, Mpls_label_20_TriggerParam=None, OverridePLSPID=None, OverrideSrpId=None, PlspIdTriggerParam=None, ProtectionLspStatusForTriggerParam=None, RemoveAssociationStatusForTriggerParam=None, SendEmptyTLVTriggerParam=None, SetupPriorityForTriggerParam=None, SrpId=None, Srv6SID_TriggerParam=None, StandbyModeStatusForTriggerParam=None, Tos_TriggerParam=None, Ttl_TriggerParam=None, XroFailBit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AssociationIdForTriggerParam=None,
+        Bandwidth=None,
+        BindingTypeTriggerParam=None,
+        Bos_TriggerParam=None,
+        ConfigureBandwidthForSendPcUpdateTriggerParam=None,
+        ConfigureEroForSendPcUpdateTriggerParam=None,
+        ConfigureLspForSendPcUpdateTriggerParam=None,
+        ConfigureLspaForSendPcUpdateTriggerParam=None,
+        ConfigureMetricForSendPcUpdateTriggerParam=None,
+        ExcludeAnyForTriggerParam=None,
+        HoldingPriorityForTriggerParam=None,
+        IncludeAllForTriggerParam=None,
+        IncludeAnyForTriggerParam=None,
+        IncludeAssociation=None,
+        IncludeConfiguredERO_TriggerParam=None,
+        IncludeSrp=None,
+        IncludeSymbolicPathNameTlvTriggerParam=None,
+        IncludeTEPathBindingTLVTriggerParam=None,
+        IncludeXro=None,
+        LearnedPlspId=None,
+        LearnedSymbolicPathName=None,
+        LocalProtectionForTriggerParam=None,
+        Mpls_label_20_TriggerParam=None,
+        OverridePLSPID=None,
+        OverrideSrpId=None,
+        PlspIdTriggerParam=None,
+        ProtectionLspStatusForTriggerParam=None,
+        RemoveAssociationStatusForTriggerParam=None,
+        SendEmptyTLVTriggerParam=None,
+        SetupPriorityForTriggerParam=None,
+        SrpId=None,
+        Srv6SID_TriggerParam=None,
+        StandbyModeStatusForTriggerParam=None,
+        Tos_TriggerParam=None,
+        Ttl_TriggerParam=None,
+        XroFailBit=None,
+    ):
         """Base class infrastructure that gets a list of pceTriggerParamList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

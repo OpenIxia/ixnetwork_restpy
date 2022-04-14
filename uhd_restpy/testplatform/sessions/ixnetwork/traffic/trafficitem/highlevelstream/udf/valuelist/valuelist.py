@@ -101,7 +101,7 @@ class ValueList(Base):
 
     def add(self, StartValueList=None, Width=None):
         # type: (List[int], str) -> ValueList
-        """Adds a new valueList resource on the json, only valid with config assistant
+        """Adds a new valueList resource on the json, only valid with batch add utility
 
         Args
         ----

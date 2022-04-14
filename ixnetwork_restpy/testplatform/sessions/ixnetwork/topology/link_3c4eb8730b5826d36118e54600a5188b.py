@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class Link(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'link'
+    _SDM_NAME = "link"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FromMp': 'fromMp',
-        'FromMpIndex': 'fromMpIndex',
-        'LinkType': 'linkType',
-        'Name': 'name',
-        'ToMp': 'toMp',
-        'ToMpIndex': 'toMpIndex',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "FromMp": "fromMp",
+        "FromMpIndex": "fromMpIndex",
+        "LinkType": "linkType",
+        "Name": "name",
+        "ToMp": "toMp",
+        "ToMpIndex": "toMpIndex",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Link, self).__init__(parent, list_op)
@@ -59,7 +59,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -69,7 +70,7 @@ class Link(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -79,7 +80,7 @@ class Link(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def FromMp(self):
@@ -90,7 +91,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): From MP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FromMp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FromMp"]))
 
     @property
     def FromMpIndex(self):
@@ -101,7 +103,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): From MP Index
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FromMpIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FromMpIndex"]))
 
     @property
     def LinkType(self):
@@ -112,7 +115,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkType"]))
 
     @property
     def Name(self):
@@ -122,11 +126,12 @@ class Link(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ToMp(self):
@@ -137,7 +142,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): To MP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToMp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ToMp"]))
 
     @property
     def ToMpIndex(self):
@@ -148,7 +154,8 @@ class Link(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): To MP Index
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToMpIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ToMpIndex"]))
 
     def update(self, Name=None):
         # type: (str) -> Link
@@ -209,7 +216,16 @@ class Link(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, FromMp=None, FromMpIndex=None, LinkType=None, ToMp=None, ToMpIndex=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        FromMp=None,
+        FromMpIndex=None,
+        LinkType=None,
+        ToMp=None,
+        ToMpIndex=None,
+    ):
         """Base class infrastructure that gets a list of link device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

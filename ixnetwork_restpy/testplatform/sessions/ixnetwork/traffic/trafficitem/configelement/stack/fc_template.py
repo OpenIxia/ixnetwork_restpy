@@ -4,49 +4,49 @@ from ixnetwork_restpy.files import Files
 
 class Fc(Base):
     __slots__ = ()
-    _SDM_NAME = 'fc'
+    _SDM_NAME = "fc"
     _SDM_ATT_MAP = {
-        'Sof': 'fc.fcHeader.sof-1',
-        'DeviceDataFramesDeviceDataInfo': 'fc.fcHeader.rCTL.deviceDataFrames.deviceDataInfo-2',
-        'RCTLReserved': 'fc.fcHeader.rCTL.reserved-3',
-        'ExtendedLinkServicesInfo': 'fc.fcHeader.rCTL.extendedLinkServices.info-4',
-        'Fc4LinkDataInfo': 'fc.fcHeader.rCTL.fc4LinkData.info-5',
-        'VideoDataInfo': 'fc.fcHeader.rCTL.videoData.info-6',
-        'ExtendedHeaderInfo': 'fc.fcHeader.rCTL.extendedHeader.info-7',
-        'BasicLinkServicesInfo': 'fc.fcHeader.rCTL.basicLinkServices.info-8',
-        'LinkControlFramesInfo': 'fc.fcHeader.rCTL.linkControlFrames.info-9',
-        'ExtendedRoutingInfo': 'fc.fcHeader.rCTL.extendedRouting.info-10',
-        'DstId': 'fc.fcHeader.dstId-11',
-        'CsCTLPriority': 'fc.fcHeader.csCTLPriority-12',
-        'SrcId': 'fc.fcHeader.srcId-13',
-        'Type': 'fc.fcHeader.type-14',
-        'FCTLCustom': 'fc.fcHeader.fCTL.custom-15',
-        'BuildFCTLExchangeContext': 'fc.fcHeader.fCTL.buildFCTL.exchangeContext-16',
-        'BuildFCTLSequenceContext': 'fc.fcHeader.fCTL.buildFCTL.sequenceContext-17',
-        'BuildFCTLFirstSequence': 'fc.fcHeader.fCTL.buildFCTL.firstSequence-18',
-        'BuildFCTLLastSequence': 'fc.fcHeader.fCTL.buildFCTL.lastSequence-19',
-        'BuildFCTLEndSequence': 'fc.fcHeader.fCTL.buildFCTL.endSequence-20',
-        'BuildFCTLEndConnection': 'fc.fcHeader.fCTL.buildFCTL.endConnection-21',
-        'BuildFCTLCsCTLPriority': 'fc.fcHeader.fCTL.buildFCTL.csCTLPriority-22',
-        'BuildFCTLSequenceInitiative': 'fc.fcHeader.fCTL.buildFCTL.sequenceInitiative-23',
-        'BuildFCTLFcXIDReassigned': 'fc.fcHeader.fCTL.buildFCTL.fcXIDReassigned-24',
-        'BuildFCTLFcInvalidateXID': 'fc.fcHeader.fCTL.buildFCTL.fcInvalidateXID-25',
-        'BuildFCTLAckForm': 'fc.fcHeader.fCTL.buildFCTL.ackForm-26',
-        'BuildFCTLFcDataCompression': 'fc.fcHeader.fCTL.buildFCTL.fcDataCompression-27',
-        'BuildFCTLFcDataEncryption': 'fc.fcHeader.fCTL.buildFCTL.fcDataEncryption-28',
-        'BuildFCTLRetransmittedSequence': 'fc.fcHeader.fCTL.buildFCTL.retransmittedSequence-29',
-        'BuildFCTLUnidirectionalTransmit': 'fc.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-30',
-        'BuildFCTLContinueSeqCondition': 'fc.fcHeader.fCTL.buildFCTL.continueSeqCondition-31',
-        'BuildFCTLAbortSeqCondition': 'fc.fcHeader.fCTL.buildFCTL.abortSeqCondition-32',
-        'BuildFCTLRelativeOffsetPresent': 'fc.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-33',
-        'BuildFCTLExchangeReassembly': 'fc.fcHeader.fCTL.buildFCTL.exchangeReassembly-34',
-        'BuildFCTLFillBytes': 'fc.fcHeader.fCTL.buildFCTL.fillBytes-35',
-        'SeqID': 'fc.fcHeader.seqID-36',
-        'DfCTL': 'fc.fcHeader.dfCTL-37',
-        'SeqCNT': 'fc.fcHeader.seqCNT-38',
-        'OxID': 'fc.fcHeader.oxID-39',
-        'RxID': 'fc.fcHeader.rxID-40',
-        'Parameter': 'fc.fcHeader.parameter-41',
+        "Sof": "fc.fcHeader.sof-1",
+        "DeviceDataFramesDeviceDataInfo": "fc.fcHeader.rCTL.deviceDataFrames.deviceDataInfo-2",
+        "RCTLReserved": "fc.fcHeader.rCTL.reserved-3",
+        "ExtendedLinkServicesInfo": "fc.fcHeader.rCTL.extendedLinkServices.info-4",
+        "Fc4LinkDataInfo": "fc.fcHeader.rCTL.fc4LinkData.info-5",
+        "VideoDataInfo": "fc.fcHeader.rCTL.videoData.info-6",
+        "ExtendedHeaderInfo": "fc.fcHeader.rCTL.extendedHeader.info-7",
+        "BasicLinkServicesInfo": "fc.fcHeader.rCTL.basicLinkServices.info-8",
+        "LinkControlFramesInfo": "fc.fcHeader.rCTL.linkControlFrames.info-9",
+        "ExtendedRoutingInfo": "fc.fcHeader.rCTL.extendedRouting.info-10",
+        "DstId": "fc.fcHeader.dstId-11",
+        "CsCTLPriority": "fc.fcHeader.csCTLPriority-12",
+        "SrcId": "fc.fcHeader.srcId-13",
+        "Type": "fc.fcHeader.type-14",
+        "FCTLCustom": "fc.fcHeader.fCTL.custom-15",
+        "BuildFCTLExchangeContext": "fc.fcHeader.fCTL.buildFCTL.exchangeContext-16",
+        "BuildFCTLSequenceContext": "fc.fcHeader.fCTL.buildFCTL.sequenceContext-17",
+        "BuildFCTLFirstSequence": "fc.fcHeader.fCTL.buildFCTL.firstSequence-18",
+        "BuildFCTLLastSequence": "fc.fcHeader.fCTL.buildFCTL.lastSequence-19",
+        "BuildFCTLEndSequence": "fc.fcHeader.fCTL.buildFCTL.endSequence-20",
+        "BuildFCTLEndConnection": "fc.fcHeader.fCTL.buildFCTL.endConnection-21",
+        "BuildFCTLCsCTLPriority": "fc.fcHeader.fCTL.buildFCTL.csCTLPriority-22",
+        "BuildFCTLSequenceInitiative": "fc.fcHeader.fCTL.buildFCTL.sequenceInitiative-23",
+        "BuildFCTLFcXIDReassigned": "fc.fcHeader.fCTL.buildFCTL.fcXIDReassigned-24",
+        "BuildFCTLFcInvalidateXID": "fc.fcHeader.fCTL.buildFCTL.fcInvalidateXID-25",
+        "BuildFCTLAckForm": "fc.fcHeader.fCTL.buildFCTL.ackForm-26",
+        "BuildFCTLFcDataCompression": "fc.fcHeader.fCTL.buildFCTL.fcDataCompression-27",
+        "BuildFCTLFcDataEncryption": "fc.fcHeader.fCTL.buildFCTL.fcDataEncryption-28",
+        "BuildFCTLRetransmittedSequence": "fc.fcHeader.fCTL.buildFCTL.retransmittedSequence-29",
+        "BuildFCTLUnidirectionalTransmit": "fc.fcHeader.fCTL.buildFCTL.unidirectionalTransmit-30",
+        "BuildFCTLContinueSeqCondition": "fc.fcHeader.fCTL.buildFCTL.continueSeqCondition-31",
+        "BuildFCTLAbortSeqCondition": "fc.fcHeader.fCTL.buildFCTL.abortSeqCondition-32",
+        "BuildFCTLRelativeOffsetPresent": "fc.fcHeader.fCTL.buildFCTL.relativeOffsetPresent-33",
+        "BuildFCTLExchangeReassembly": "fc.fcHeader.fCTL.buildFCTL.exchangeReassembly-34",
+        "BuildFCTLFillBytes": "fc.fcHeader.fCTL.buildFCTL.fillBytes-35",
+        "SeqID": "fc.fcHeader.seqID-36",
+        "DfCTL": "fc.fcHeader.dfCTL-37",
+        "SeqCNT": "fc.fcHeader.seqCNT-38",
+        "OxID": "fc.fcHeader.oxID-39",
+        "RxID": "fc.fcHeader.rxID-40",
+        "Parameter": "fc.fcHeader.parameter-41",
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,7 +61,8 @@ class Fc(Base):
         Available enum values: SOFf - Fabric, 3166001232, SOFi4 - Initiate Class 4, 3166001497, SOFi2 - Initiate Class 2, 3166000469, SOFi3 - Initiate Class 3, 3166000726, SOFn4 - Normal Class 4, 3165993273, SOFn2 - Normal Class 2, 3165992245, SOFn3 - Normal Class 3, 3165992502, SOFc4 - Connect Class 4, 3165985049, SOFn1 - Normal Class 1 or 6, 3165992759
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Sof']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sof"]))
 
     @property
     def DeviceDataFramesDeviceDataInfo(self):
@@ -72,7 +73,11 @@ class Fc(Base):
         Available enum values: Uncategorized Information, 0, Solicited Data, 1, Unsolicited Control, 2, Solicited Control, 3, Unsolicited Data, 4, Data Descriptor, 5, Unsolicited Command, 6, Command Status, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DeviceDataFramesDeviceDataInfo']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["DeviceDataFramesDeviceDataInfo"]),
+        )
 
     @property
     def RCTLReserved(self):
@@ -82,7 +87,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RCTLReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RCTLReserved"]))
 
     @property
     def ExtendedLinkServicesInfo(self):
@@ -93,7 +99,10 @@ class Fc(Base):
         Available enum values: Solicited Data, 33, Request, 34, Reply, 35
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedLinkServicesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedLinkServicesInfo"])
+        )
 
     @property
     def Fc4LinkDataInfo(self):
@@ -104,7 +113,10 @@ class Fc(Base):
         Available enum values: Uncategorized Information, 48, Solicited Data, 49, Unsolicited Control, 50, Solicited Control, 51, Unsolicited Data, 52, Data Descriptor, 53, Unsolicited Command, 54, Command Status, 55
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Fc4LinkDataInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Fc4LinkDataInfo"])
+        )
 
     @property
     def VideoDataInfo(self):
@@ -115,7 +127,8 @@ class Fc(Base):
         Available enum values: Unsolicited Data, 68
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VideoDataInfo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VideoDataInfo"]))
 
     @property
     def ExtendedHeaderInfo(self):
@@ -126,7 +139,10 @@ class Fc(Base):
         Available enum values: Virtual Fabric Tagging Header, 80, Inter Fabric Routing Header, 81, Encapsulation Header, 82
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedHeaderInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedHeaderInfo"])
+        )
 
     @property
     def BasicLinkServicesInfo(self):
@@ -137,7 +153,10 @@ class Fc(Base):
         Available enum values: No Operation, 128, Abort Sequence, 129, Remove Connection, 130, Basic Accept, 132, Basic Reject, 133, Dedicated Connection Preempted, 134
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BasicLinkServicesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BasicLinkServicesInfo"])
+        )
 
     @property
     def LinkControlFramesInfo(self):
@@ -148,7 +167,10 @@ class Fc(Base):
         Available enum values: Acknowledge_1, 128, Acknowledge_0, 129, Nx Port Reject, 130, Fabric Reject, 131, Nx Port Busy, 132, Fabric Busy to Data Frame, 133, Fabric Busy to Link Control Frame, 134, Link Credit Reset, 135, Notify, 136, End, 137
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkControlFramesInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkControlFramesInfo"])
+        )
 
     @property
     def ExtendedRoutingInfo(self):
@@ -159,7 +181,10 @@ class Fc(Base):
         Available enum values: Vendor Unique, 240
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExtendedRoutingInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExtendedRoutingInfo"])
+        )
 
     @property
     def DstId(self):
@@ -169,7 +194,8 @@ class Fc(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstId"]))
 
     @property
     def CsCTLPriority(self):
@@ -179,7 +205,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CsCTLPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CsCTLPriority"]))
 
     @property
     def SrcId(self):
@@ -189,7 +216,8 @@ class Fc(Base):
         Value Format: fCID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcId"]))
 
     @property
     def Type(self):
@@ -199,7 +227,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
     def FCTLCustom(self):
@@ -209,7 +238,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FCTLCustom']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FCTLCustom"]))
 
     @property
     def BuildFCTLExchangeContext(self):
@@ -220,7 +250,10 @@ class Fc(Base):
         Available enum values: Originator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeContext"])
+        )
 
     @property
     def BuildFCTLSequenceContext(self):
@@ -231,7 +264,10 @@ class Fc(Base):
         Available enum values: Initiator, 0, Receipient, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceContext']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceContext"])
+        )
 
     @property
     def BuildFCTLFirstSequence(self):
@@ -242,7 +278,10 @@ class Fc(Base):
         Available enum values: Other, 0, First, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFirstSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFirstSequence"])
+        )
 
     @property
     def BuildFCTLLastSequence(self):
@@ -253,7 +292,10 @@ class Fc(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLLastSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLLastSequence"])
+        )
 
     @property
     def BuildFCTLEndSequence(self):
@@ -264,7 +306,10 @@ class Fc(Base):
         Available enum values: Other, 0, Last, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndSequence']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndSequence"])
+        )
 
     @property
     def BuildFCTLEndConnection(self):
@@ -275,7 +320,10 @@ class Fc(Base):
         Available enum values: Alive, 0, Pending, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLEndConnection']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLEndConnection"])
+        )
 
     @property
     def BuildFCTLCsCTLPriority(self):
@@ -286,7 +334,10 @@ class Fc(Base):
         Available enum values: CS_CTL, 0, Priority, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLCsCTLPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLCsCTLPriority"])
+        )
 
     @property
     def BuildFCTLSequenceInitiative(self):
@@ -297,7 +348,10 @@ class Fc(Base):
         Available enum values: Hold, 0, Transfer, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLSequenceInitiative']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLSequenceInitiative"])
+        )
 
     @property
     def BuildFCTLFcXIDReassigned(self):
@@ -308,7 +362,10 @@ class Fc(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcXIDReassigned']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcXIDReassigned"])
+        )
 
     @property
     def BuildFCTLFcInvalidateXID(self):
@@ -319,7 +376,10 @@ class Fc(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcInvalidateXID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcInvalidateXID"])
+        )
 
     @property
     def BuildFCTLAckForm(self):
@@ -330,7 +390,10 @@ class Fc(Base):
         Available enum values: No assistance provided, 0, ACK_1 Required, 1, reserved, 2, Ack_0 Required, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAckForm']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAckForm"])
+        )
 
     @property
     def BuildFCTLFcDataCompression(self):
@@ -341,7 +404,10 @@ class Fc(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataCompression']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataCompression"])
+        )
 
     @property
     def BuildFCTLFcDataEncryption(self):
@@ -352,7 +418,10 @@ class Fc(Base):
         Available enum values: No, 0, Yes, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFcDataEncryption']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFcDataEncryption"])
+        )
 
     @property
     def BuildFCTLRetransmittedSequence(self):
@@ -363,7 +432,11 @@ class Fc(Base):
         Available enum values: Original, 0, Retransmission, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRetransmittedSequence']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRetransmittedSequence"]),
+        )
 
     @property
     def BuildFCTLUnidirectionalTransmit(self):
@@ -374,7 +447,11 @@ class Fc(Base):
         Available enum values: Bi-directional, 0, Unidirectional, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLUnidirectionalTransmit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLUnidirectionalTransmit"]),
+        )
 
     @property
     def BuildFCTLContinueSeqCondition(self):
@@ -385,7 +462,11 @@ class Fc(Base):
         Available enum values: No information, 0, Sequence to follow-immediately, 1, Squence to follow-soon, 2, Sequence to follow-delayed, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLContinueSeqCondition']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLContinueSeqCondition"]),
+        )
 
     @property
     def BuildFCTLAbortSeqCondition(self):
@@ -396,7 +477,10 @@ class Fc(Base):
         Available enum values: 0x00, 0, 0x01, 1, 0x10, 2, 0x11, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLAbortSeqCondition']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLAbortSeqCondition"])
+        )
 
     @property
     def BuildFCTLRelativeOffsetPresent(self):
@@ -407,7 +491,11 @@ class Fc(Base):
         Available enum values: Parameter field defined, 0, Relative offset, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLRelativeOffsetPresent']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BuildFCTLRelativeOffsetPresent"]),
+        )
 
     @property
     def BuildFCTLExchangeReassembly(self):
@@ -418,7 +506,10 @@ class Fc(Base):
         Available enum values: off, 0, on, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLExchangeReassembly']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLExchangeReassembly"])
+        )
 
     @property
     def BuildFCTLFillBytes(self):
@@ -429,7 +520,10 @@ class Fc(Base):
         Available enum values: 0 bytes of fill, 0, 1 bytes of fill, 1, 2 bytes of fill, 2, 3 bytes of fill, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BuildFCTLFillBytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BuildFCTLFillBytes"])
+        )
 
     @property
     def SeqID(self):
@@ -439,7 +533,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SeqID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SeqID"]))
 
     @property
     def DfCTL(self):
@@ -449,7 +544,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DfCTL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DfCTL"]))
 
     @property
     def SeqCNT(self):
@@ -459,7 +555,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SeqCNT']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SeqCNT"]))
 
     @property
     def OxID(self):
@@ -469,7 +566,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OxID"]))
 
     @property
     def RxID(self):
@@ -479,7 +577,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RxID"]))
 
     @property
     def Parameter(self):
@@ -489,7 +588,8 @@ class Fc(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Parameter']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Parameter"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

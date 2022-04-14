@@ -71,7 +71,7 @@ class Stack(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     def add(self):
-        """Adds a new stack resource on the json, only valid with config assistant
+        """Adds a new stack resource on the json, only valid with batch add utility
 
         Returns
         -------

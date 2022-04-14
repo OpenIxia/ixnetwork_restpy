@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class NextHopInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'nextHopInfo'
+    _SDM_NAME = "nextHopInfo"
     _SDM_ATT_MAP = {
-        'NextHop': 'nextHop',
+        "NextHop": "nextHop",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NextHopInfo, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class NextHopInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_4880f052fc533ebf0339e97b80d3331e import RdInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_4880f052fc533ebf0339e97b80d3331e import (
+            RdInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RdInfo', None) is not None:
-                return self._properties.get('RdInfo')
+            if self._properties.get("RdInfo", None) is not None:
+                return self._properties.get("RdInfo")
         return RdInfo(self)
 
     @property
@@ -68,10 +71,10 @@ class NextHopInfo(Base):
         -------
         - str: (Read Only) Next Hop IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     def add(self):
-        """Adds a new nextHopInfo resource on the json, only valid with config assistant
+        """Adds a new nextHopInfo resource on the json, only valid with batch add utility
 
         Returns
         -------

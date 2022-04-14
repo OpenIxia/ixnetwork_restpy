@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class StackLink(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'stackLink'
+    _SDM_NAME = "stackLink"
     _SDM_ATT_MAP = {
-        'LinkedTo': 'linkedTo',
+        "LinkedTo": "linkedTo",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StackLink, self).__init__(parent, list_op)
@@ -51,11 +51,12 @@ class StackLink(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink): Indicates which stack item this is linked to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkedTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkedTo"])
+
     @LinkedTo.setter
     def LinkedTo(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkedTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkedTo"], value)
 
     def update(self, LinkedTo=None):
         # type: (str) -> StackLink
@@ -73,7 +74,7 @@ class StackLink(Base):
 
     def add(self, LinkedTo=None):
         # type: (str) -> StackLink
-        """Adds a new stackLink resource on the json, only valid with config assistant
+        """Adds a new stackLink resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class Manager(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'manager'
+    _SDM_NAME = "manager"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'ManagerActive': 'managerActive',
-        'ManagerIp': 'managerIp',
-        'Name': 'name',
-        'TcpPort': 'tcpPort',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "ManagerActive": "managerActive",
+        "ManagerIp": "managerIp",
+        "Name": "name",
+        "TcpPort": "tcpPort",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Manager, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class Manager(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -65,7 +65,7 @@ class Manager(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def ManagerActive(self):
@@ -76,7 +76,8 @@ class Manager(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Manager
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagerActive']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ManagerActive"]))
 
     @property
     def ManagerIp(self):
@@ -87,7 +88,8 @@ class Manager(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address of the Manager
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManagerIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ManagerIp"]))
 
     @property
     def Name(self):
@@ -97,11 +99,12 @@ class Manager(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def TcpPort(self):
@@ -112,7 +115,8 @@ class Manager(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the TCP port for the Manager
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TcpPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TcpPort"]))
 
     def update(self, Name=None):
         # type: (str) -> Manager
@@ -173,7 +177,9 @@ class Manager(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ManagerActive=None, ManagerIp=None, TcpPort=None):
+    def get_device_ids(
+        self, PortNames=None, ManagerActive=None, ManagerIp=None, TcpPort=None
+    ):
         """Base class infrastructure that gets a list of manager device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,37 @@ class MacAddressRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'macAddressRange'
+    _SDM_NAME = "macAddressRange"
     _SDM_ATT_MAP = {
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'IncrementVlan': 'incrementVlan',
-        'IncrementVlanMode': 'incrementVlanMode',
-        'IncremetVlanMode': 'incremetVlanMode',
-        'MacCount': 'macCount',
-        'MacCountPerL2Site': 'macCountPerL2Site',
-        'MacIncrement': 'macIncrement',
-        'SkipVlanIdZero': 'skipVlanIdZero',
-        'StartMacAddress': 'startMacAddress',
-        'TotalMacCount': 'totalMacCount',
-        'Tpid': 'tpid',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "IncrementVlan": "incrementVlan",
+        "IncrementVlanMode": "incrementVlanMode",
+        "IncremetVlanMode": "incremetVlanMode",
+        "MacCount": "macCount",
+        "MacCountPerL2Site": "macCountPerL2Site",
+        "MacIncrement": "macIncrement",
+        "SkipVlanIdZero": "skipVlanIdZero",
+        "StartMacAddress": "startMacAddress",
+        "TotalMacCount": "totalMacCount",
+        "Tpid": "tpid",
+        "VlanCount": "vlanCount",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
     _SDM_ENUM_MAP = {
-        'incrementVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
-        'incremetVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        "incrementVlanMode": [
+            "noIncrement",
+            "parallelIncrement",
+            "innerFirst",
+            "outerFirst",
+        ],
+        "incremetVlanMode": [
+            "noIncrement",
+            "parallelIncrement",
+            "innerFirst",
+            "outerFirst",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -68,11 +79,12 @@ class MacAddressRange(Base):
         -------
         - bool: If enabled, VLANs will be created and associated with the MAC addresses. The default is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -82,11 +94,12 @@ class MacAddressRange(Base):
         -------
         - bool: Enables the MAC address range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IncrementVlan(self):
@@ -96,11 +109,12 @@ class MacAddressRange(Base):
         -------
         - bool: If enabled, each additional VLAN in the range will be incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementVlan"])
+
     @IncrementVlan.setter
     def IncrementVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementVlan"], value)
 
     @property
     def IncrementVlanMode(self):
@@ -110,39 +124,42 @@ class MacAddressRange(Base):
         -------
         - str(noIncrement | parallelIncrement | innerFirst | outerFirst): If enabled, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementVlanMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementVlanMode"])
+
     @IncrementVlanMode.setter
     def IncrementVlanMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementVlanMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementVlanMode"], value)
 
     @property
     def IncremetVlanMode(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(noIncrement | parallelIncrement | innerFirst | outerFirst): If enabled, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1. The default is disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncremetVlanMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncremetVlanMode"])
+
     @IncremetVlanMode.setter
     def IncremetVlanMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncremetVlanMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncremetVlanMode"], value)
 
     @property
     def MacCount(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The number of MAC addresses to be created for this range. A 4-byte unsigned integer. The default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacCount"])
+
     @MacCount.setter
     def MacCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacCount"], value)
 
     @property
     def MacCountPerL2Site(self):
@@ -152,11 +169,12 @@ class MacAddressRange(Base):
         -------
         - number: Signifies the count of MAC values per L2 site
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacCountPerL2Site'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacCountPerL2Site"])
+
     @MacCountPerL2Site.setter
     def MacCountPerL2Site(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacCountPerL2Site'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacCountPerL2Site"], value)
 
     @property
     def MacIncrement(self):
@@ -166,11 +184,12 @@ class MacAddressRange(Base):
         -------
         - bool: If enabled, each additional MAC Address in this range of addresses will be incremented by 00 00 00 00 00 01.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacIncrement"])
+
     @MacIncrement.setter
     def MacIncrement(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacIncrement"], value)
 
     @property
     def SkipVlanIdZero(self):
@@ -180,11 +199,12 @@ class MacAddressRange(Base):
         -------
         - bool: If enabled, the VLAN ID with zero value will be ignored.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipVlanIdZero"])
+
     @SkipVlanIdZero.setter
     def SkipVlanIdZero(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipVlanIdZero"], value)
 
     @property
     def StartMacAddress(self):
@@ -194,11 +214,12 @@ class MacAddressRange(Base):
         -------
         - str: The first 6-byte MAC address in the range of MAC addresses. The default is 00 00 00 00 00 00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMacAddress"])
+
     @StartMacAddress.setter
     def StartMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMacAddress"], value)
 
     @property
     def TotalMacCount(self):
@@ -208,7 +229,7 @@ class MacAddressRange(Base):
         -------
         - number: Signifies the total MAC count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalMacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalMacCount"])
 
     @property
     def Tpid(self):
@@ -218,11 +239,12 @@ class MacAddressRange(Base):
         -------
         - str: Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).The dropdown list contains the available TPIDs. Choose one of: 0x8100 (the default), 0x88a8, 0x9100, 0x9200.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tpid"])
+
     @Tpid.setter
     def Tpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tpid"], value)
 
     @property
     def VlanCount(self):
@@ -232,11 +254,12 @@ class MacAddressRange(Base):
         -------
         - number: The number of VLANs created.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanId(self):
@@ -246,11 +269,12 @@ class MacAddressRange(Base):
         -------
         - str: The ID for the first VLAN in a range of VLANs. An 2-byte unsigned integer. The valid range is 0 to 4095. The default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -260,13 +284,30 @@ class MacAddressRange(Base):
         -------
         - str: The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        EnableVlan=None,
+        Enabled=None,
+        IncrementVlan=None,
+        IncrementVlanMode=None,
+        IncremetVlanMode=None,
+        MacCount=None,
+        MacCountPerL2Site=None,
+        MacIncrement=None,
+        SkipVlanIdZero=None,
+        StartMacAddress=None,
+        Tpid=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, bool, bool, str, str, int, str, str) -> MacAddressRange
         """Updates macAddressRange resource on the server.
 
@@ -293,7 +334,23 @@ class MacAddressRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def add(
+        self,
+        EnableVlan=None,
+        Enabled=None,
+        IncrementVlan=None,
+        IncrementVlanMode=None,
+        IncremetVlanMode=None,
+        MacCount=None,
+        MacCountPerL2Site=None,
+        MacIncrement=None,
+        SkipVlanIdZero=None,
+        StartMacAddress=None,
+        Tpid=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, bool, bool, str, str, int, str, str) -> MacAddressRange
         """Adds a new macAddressRange resource on the server and adds it to the container.
 
@@ -334,7 +391,24 @@ class MacAddressRange(Base):
         """
         self._delete()
 
-    def find(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, TotalMacCount=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        EnableVlan=None,
+        Enabled=None,
+        IncrementVlan=None,
+        IncrementVlanMode=None,
+        IncremetVlanMode=None,
+        MacCount=None,
+        MacCountPerL2Site=None,
+        MacIncrement=None,
+        SkipVlanIdZero=None,
+        StartMacAddress=None,
+        TotalMacCount=None,
+        Tpid=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, str, str, int, int, bool, bool, str, int, str, int, str, str) -> MacAddressRange
         """Finds and retrieves macAddressRange resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class SpbNodeTopologyList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbNodeTopologyList'
+    _SDM_NAME = "spbNodeTopologyList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVIDCount': 'baseVIDCount',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootId': 'cistRootId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfPorts': 'numberOfPorts',
-        'PortIdentifier': 'portIdentifier',
-        'TopologyId': 'topologyId',
-        'Vbit': 'vbit',
+        "Active": "active",
+        "BaseVIDCount": "baseVIDCount",
+        "CistExternalRootCost": "cistExternalRootCost",
+        "CistRootId": "cistRootId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NumberOfPorts": "numberOfPorts",
+        "PortIdentifier": "portIdentifier",
+        "TopologyId": "topologyId",
+        "Vbit": "vbit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbNodeTopologyList, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class SpbNodeTopologyList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_0854f00d7287dd167f5cc03126e3011d import BaseVidList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_0854f00d7287dd167f5cc03126e3011d import (
+            BaseVidList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BaseVidList', None) is not None:
-                return self._properties.get('BaseVidList')
+            if self._properties.get("BaseVidList", None) is not None:
+                return self._properties.get("BaseVidList")
         return BaseVidList(self)._select()
 
     @property
@@ -78,7 +81,8 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BaseVIDCount(self):
@@ -88,11 +92,12 @@ class SpbNodeTopologyList(Base):
         -------
         - number: Base VID Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVIDCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVIDCount"])
+
     @BaseVIDCount.setter
     def BaseVIDCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseVIDCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseVIDCount"], value)
 
     @property
     def CistExternalRootCost(self):
@@ -103,7 +108,10 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CIST External Root Cost
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CistExternalRootCost"])
+        )
 
     @property
     def CistRootId(self):
@@ -114,7 +122,8 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CIST Root Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CistRootId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CistRootId"]))
 
     @property
     def Count(self):
@@ -124,7 +133,7 @@ class SpbNodeTopologyList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -134,7 +143,7 @@ class SpbNodeTopologyList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -144,11 +153,12 @@ class SpbNodeTopologyList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfPorts(self):
@@ -159,7 +169,8 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Ports
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfPorts']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NumberOfPorts"]))
 
     @property
     def PortIdentifier(self):
@@ -170,7 +181,10 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Port Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortIdentifier"])
+        )
 
     @property
     def TopologyId(self):
@@ -181,7 +195,8 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     @property
     def Vbit(self):
@@ -192,7 +207,8 @@ class SpbNodeTopologyList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable V Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vbit"]))
 
     def update(self, BaseVIDCount=None, Name=None):
         # type: (int, str) -> SpbNodeTopologyList
@@ -255,7 +271,17 @@ class SpbNodeTopologyList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, CistExternalRootCost=None, CistRootId=None, NumberOfPorts=None, PortIdentifier=None, TopologyId=None, Vbit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        CistExternalRootCost=None,
+        CistRootId=None,
+        NumberOfPorts=None,
+        PortIdentifier=None,
+        TopologyId=None,
+        Vbit=None,
+    ):
         """Base class infrastructure that gets a list of spbNodeTopologyList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

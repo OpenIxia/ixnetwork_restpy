@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,36 @@ class CfmBridge(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmBridge'
+    _SDM_NAME = "cfmBridge"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AllowCfmMaidFormatsinY1731': 'allowCfmMaidFormatsinY1731',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableOutOfSequenceCcmDetection': 'enableOutOfSequenceCcmDetection',
-        'EncapsulationType': 'encapsulationType',
-        'Errors': 'errors',
-        'EtherType': 'etherType',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfMPs': 'numberOfMPs',
-        'OperationMode': 'operationMode',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Active": "active",
+        "AllowCfmMaidFormatsinY1731": "allowCfmMaidFormatsinY1731",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableOutOfSequenceCcmDetection": "enableOutOfSequenceCcmDetection",
+        "EncapsulationType": "encapsulationType",
+        "Errors": "errors",
+        "EtherType": "etherType",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberOfMPs": "numberOfMPs",
+        "OperationMode": "operationMode",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -72,10 +81,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions_b2029cff9a0e1b9db1c05c032a4f003c import AdvancedLearnedInfoOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions_b2029cff9a0e1b9db1c05c032a4f003c import (
+            AdvancedLearnedInfoOptions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvancedLearnedInfoOptions', None) is not None:
-                return self._properties.get('AdvancedLearnedInfoOptions')
+            if self._properties.get("AdvancedLearnedInfoOptions", None) is not None:
+                return self._properties.get("AdvancedLearnedInfoOptions")
         return AdvancedLearnedInfoOptions(self)._select()
 
     @property
@@ -89,10 +101,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import (
+            CfmMp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmMp', None) is not None:
-                return self._properties.get('CfmMp')
+            if self._properties.get("CfmMp", None) is not None:
+                return self._properties.get("CfmMp")
         return CfmMp(self)._select()
 
     @property
@@ -106,10 +121,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -123,10 +141,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv_9dedbdbc1a4a245cbe35b21b51fa3a57 import CustomTLV
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv_9dedbdbc1a4a245cbe35b21b51fa3a57 import (
+            CustomTLV,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTLV', None) is not None:
-                return self._properties.get('CustomTLV')
+            if self._properties.get("CustomTLV", None) is not None:
+                return self._properties.get("CustomTLV")
         return CustomTLV(self)._select()
 
     @property
@@ -140,10 +161,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -157,10 +181,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link_3c4eb8730b5826d36118e54600a5188b import Link
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link_3c4eb8730b5826d36118e54600a5188b import (
+            Link,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Link', None) is not None:
-                return self._properties.get('Link')
+            if self._properties.get("Link", None) is not None:
+                return self._properties.get("Link")
         return Link(self)._select()
 
     @property
@@ -174,10 +201,13 @@ class CfmBridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mdlevels_139c757bfb085e85b81902e33a549b1f import MdLevels
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mdlevels_139c757bfb085e85b81902e33a549b1f import (
+            MdLevels,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MdLevels', None) is not None:
-                return self._properties.get('MdLevels')
+            if self._properties.get("MdLevels", None) is not None:
+                return self._properties.get("MdLevels")
         return MdLevels(self)._select()
 
     @property
@@ -189,7 +219,8 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AllowCfmMaidFormatsinY1731(self):
@@ -200,21 +231,25 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAID formats supported in CFM mode will be available in Y.1731 mode.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AllowCfmMaidFormatsinY1731']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AllowCfmMaidFormatsinY1731"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -224,7 +259,7 @@ class CfmBridge(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -234,7 +269,7 @@ class CfmBridge(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableOutOfSequenceCcmDetection(self):
@@ -245,7 +280,11 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Detects wheather a CCM PDU is out of sequence.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOutOfSequenceCcmDetection']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableOutOfSequenceCcmDetection"]),
+        )
 
     @property
     def EncapsulationType(self):
@@ -256,7 +295,10 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select an encapsulation type Ethernet or LLC-SNAP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncapsulationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncapsulationType"])
+        )
 
     @property
     def Errors(self):
@@ -265,7 +307,7 @@ class CfmBridge(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EtherType(self):
@@ -276,7 +318,8 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select a Ether Type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EtherType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EtherType"]))
 
     @property
     def Multiplier(self):
@@ -286,11 +329,12 @@ class CfmBridge(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -300,11 +344,12 @@ class CfmBridge(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfMPs(self):
@@ -314,11 +359,12 @@ class CfmBridge(Base):
         -------
         - number: Number of MPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMPs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMPs"])
+
     @NumberOfMPs.setter
     def NumberOfMPs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMPs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMPs"], value)
 
     @property
     def OperationMode(self):
@@ -329,7 +375,8 @@ class CfmBridge(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select CFM or Y.1731 operation mode.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OperationMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OperationMode"]))
 
     @property
     def SessionStatus(self):
@@ -339,7 +386,7 @@ class CfmBridge(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -349,11 +396,12 @@ class CfmBridge(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -362,7 +410,7 @@ class CfmBridge(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -372,9 +420,16 @@ class CfmBridge(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfMPs=None, StackedLayers=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfMPs=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> CfmBridge
         """Updates cfmBridge resource on the server.
 
@@ -395,7 +450,14 @@ class CfmBridge(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfMPs=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfMPs=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> CfmBridge
         """Adds a new cfmBridge resource on the server and adds it to the container.
 
@@ -427,7 +489,20 @@ class CfmBridge(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfMPs=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfMPs=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves cfmBridge resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cfmBridge resources from the server.
@@ -503,10 +578,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -541,10 +618,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetAISLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -573,10 +654,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAISLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getAISLearnedInfo", payload=payload, response_object=None)
 
     def GetAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -611,10 +694,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getAllLearnedInfo", payload=payload, response_object=None)
 
     def GetCCMLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -643,10 +728,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCCMLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCCMLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -665,10 +754,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmAISDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmCcmLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -687,10 +780,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmCcmLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -709,10 +806,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmDMDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -731,10 +832,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLCKDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -753,10 +858,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLinkTraceDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -775,10 +884,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLMDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -797,10 +910,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmLoopbackDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -819,10 +936,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmSLMDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -841,10 +962,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCfmTSTDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetDelayMeasurementLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -873,10 +998,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getDelayMeasurementLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getDelayMeasurementLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetLCKLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -905,10 +1034,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLCKLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLCKLearnedInfo", payload=payload, response_object=None)
 
     def GetLinkTraceDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -937,10 +1068,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getLinkTraceDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetLoopbackDbLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -969,10 +1104,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLoopbackDbLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getLoopbackDbLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetLossMeasurementLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1001,10 +1140,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLossMeasurementLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getLossMeasurementLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPeriodicDelayMeasurementLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1033,10 +1176,16 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDelayMeasurementLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicDelayMeasurementLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1055,10 +1204,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicDMLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1077,10 +1230,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLBLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLinkTraceLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1109,10 +1266,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLinkTraceLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLinkTraceLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1131,10 +1292,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLMLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetPeriodicLoopBackLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1163,10 +1328,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLoopBackLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLoopBackLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPeriodicLossMeasurementLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1195,10 +1364,16 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLossMeasurementLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLossMeasurementLearnedInfo",
+            payload=payload,
+            response_object=None,
+        )
 
     def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1217,10 +1392,14 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicLTLearnedInformation", payload=payload, response_object=None
+        )
 
     def GetSLMLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1249,10 +1428,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getSLMLearnedInfo", payload=payload, response_object=None)
 
     def GetTSTLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1281,10 +1462,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTSTLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTSTLearnedInfo", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1313,10 +1496,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1345,10 +1530,12 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1377,12 +1564,23 @@ class CfmBridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AllowCfmMaidFormatsinY1731=None, EnableOutOfSequenceCcmDetection=None, EncapsulationType=None, EtherType=None, OperationMode=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AllowCfmMaidFormatsinY1731=None,
+        EnableOutOfSequenceCcmDetection=None,
+        EncapsulationType=None,
+        EtherType=None,
+        OperationMode=None,
+    ):
         """Base class infrastructure that gets a list of cfmBridge device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

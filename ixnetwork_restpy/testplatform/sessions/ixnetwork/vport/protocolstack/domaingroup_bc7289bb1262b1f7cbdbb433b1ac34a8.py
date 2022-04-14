@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class DomainGroup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'domainGroup'
+    _SDM_NAME = "domainGroup"
     _SDM_ATT_MAP = {
-        'AutoIncrement': 'autoIncrement',
-        'BaseName': 'baseName',
-        'FullName': 'fullName',
-        'IncrementCount': 'incrementCount',
-        'IncrementRepeat': 'incrementRepeat',
-        'IpAddresses': 'ipAddresses',
-        'ObjectId': 'objectId',
-        'StartWidth': 'startWidth',
-        'TrailingName': 'trailingName',
+        "AutoIncrement": "autoIncrement",
+        "BaseName": "baseName",
+        "FullName": "fullName",
+        "IncrementCount": "incrementCount",
+        "IncrementRepeat": "incrementRepeat",
+        "IpAddresses": "ipAddresses",
+        "ObjectId": "objectId",
+        "StartWidth": "startWidth",
+        "TrailingName": "trailingName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DomainGroup, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class DomainGroup(Base):
         -------
         - bool: If enabled, ID is incremented
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoIncrement"])
+
     @AutoIncrement.setter
     def AutoIncrement(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoIncrement"], value)
 
     @property
     def BaseName(self):
@@ -74,11 +75,12 @@ class DomainGroup(Base):
         -------
         - str: Base name of the domain group
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseName'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseName"])
+
     @BaseName.setter
     def BaseName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BaseName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BaseName"], value)
 
     @property
     def FullName(self):
@@ -88,11 +90,12 @@ class DomainGroup(Base):
         -------
         - str: Full name of the domain group
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FullName'])
+        return self._get_attribute(self._SDM_ATT_MAP["FullName"])
+
     @FullName.setter
     def FullName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FullName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FullName"], value)
 
     @property
     def IncrementCount(self):
@@ -102,11 +105,12 @@ class DomainGroup(Base):
         -------
         - number: Number of iterations of numerical field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementCount"])
+
     @IncrementCount.setter
     def IncrementCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementCount"], value)
 
     @property
     def IncrementRepeat(self):
@@ -116,11 +120,12 @@ class DomainGroup(Base):
         -------
         - number: Number of times the ID is repeated before passing to the next value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementRepeat'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementRepeat"])
+
     @IncrementRepeat.setter
     def IncrementRepeat(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementRepeat'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementRepeat"], value)
 
     @property
     def IpAddresses(self):
@@ -130,11 +135,12 @@ class DomainGroup(Base):
         -------
         - list(str): List of ipAddresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddresses"])
+
     @IpAddresses.setter
     def IpAddresses(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddresses"], value)
 
     @property
     def ObjectId(self):
@@ -144,7 +150,7 @@ class DomainGroup(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def StartWidth(self):
@@ -154,11 +160,12 @@ class DomainGroup(Base):
         -------
         - str: Initial increment pattern including trailing characters e.g. 0001
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartWidth"])
+
     @StartWidth.setter
     def StartWidth(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartWidth"], value)
 
     @property
     def TrailingName(self):
@@ -168,13 +175,24 @@ class DomainGroup(Base):
         -------
         - str: String appended after the numeric expression in the name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrailingName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrailingName"])
+
     @TrailingName.setter
     def TrailingName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrailingName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrailingName"], value)
 
-    def update(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
+    def update(
+        self,
+        AutoIncrement=None,
+        BaseName=None,
+        FullName=None,
+        IncrementCount=None,
+        IncrementRepeat=None,
+        IpAddresses=None,
+        StartWidth=None,
+        TrailingName=None,
+    ):
         # type: (bool, str, str, int, int, List[str], str, str) -> DomainGroup
         """Updates domainGroup resource on the server.
 
@@ -195,7 +213,17 @@ class DomainGroup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
+    def add(
+        self,
+        AutoIncrement=None,
+        BaseName=None,
+        FullName=None,
+        IncrementCount=None,
+        IncrementRepeat=None,
+        IpAddresses=None,
+        StartWidth=None,
+        TrailingName=None,
+    ):
         # type: (bool, str, str, int, int, List[str], str, str) -> DomainGroup
         """Adds a new domainGroup resource on the server and adds it to the container.
 
@@ -230,7 +258,18 @@ class DomainGroup(Base):
         """
         self._delete()
 
-    def find(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, ObjectId=None, StartWidth=None, TrailingName=None):
+    def find(
+        self,
+        AutoIncrement=None,
+        BaseName=None,
+        FullName=None,
+        IncrementCount=None,
+        IncrementRepeat=None,
+        IpAddresses=None,
+        ObjectId=None,
+        StartWidth=None,
+        TrailingName=None,
+    ):
         # type: (bool, str, str, int, int, List[str], str, str, str) -> DomainGroup
         """Finds and retrieves domainGroup resources from the server.
 
@@ -295,10 +334,14 @@ class DomainGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -317,10 +360,14 @@ class DomainGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -339,7 +386,11 @@ class DomainGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

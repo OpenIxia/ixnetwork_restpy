@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,25 @@ class LosLof(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'losLof'
+    _SDM_NAME = "losLof"
     _SDM_ATT_MAP = {
-        'Duration': 'duration',
-        'IsBurst': 'isBurst',
-        'State': 'state',
-        'Type': 'type',
-        'Units': 'units',
+        "Duration": "duration",
+        "IsBurst": "isBurst",
+        "State": "state",
+        "Type": "type",
+        "Units": "units",
     }
     _SDM_ENUM_MAP = {
-        'state': ['started', 'stopped'],
-        'type': ['lof', 'los'],
-        'units': ['kMicroseconds', 'kMilliseconds', 'kSeconds', 'microseconds', 'milliseconds', 'seconds'],
+        "state": ["started", "stopped"],
+        "type": ["lof", "los"],
+        "units": [
+            "kMicroseconds",
+            "kMilliseconds",
+            "kSeconds",
+            "microseconds",
+            "milliseconds",
+            "seconds",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +65,12 @@ class LosLof(Base):
         -------
         - number: The burst duration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def IsBurst(self):
@@ -71,11 +80,12 @@ class LosLof(Base):
         -------
         - bool: If true, loss of signal or loss of frame will be enabled for the specified duration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsBurst"])
+
     @IsBurst.setter
     def IsBurst(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsBurst"], value)
 
     @property
     def State(self):
@@ -85,7 +95,7 @@ class LosLof(Base):
         -------
         - str(started | stopped): Gets the loss of signal or loss of framing state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def Type(self):
@@ -95,11 +105,12 @@ class LosLof(Base):
         -------
         - str(lof | los): Selects loss of signal or loss of framing.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def Units(self):
@@ -109,11 +120,12 @@ class LosLof(Base):
         -------
         - str(kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Burst duration units.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Units'])
+        return self._get_attribute(self._SDM_ATT_MAP["Units"])
+
     @Units.setter
     def Units(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Units"], value)
 
     def update(self, Duration=None, IsBurst=None, Type=None, Units=None):
         # type: (int, bool, str, str) -> LosLof
@@ -191,10 +203,12 @@ class LosLof(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -211,7 +225,9 @@ class LosLof(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

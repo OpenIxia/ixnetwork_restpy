@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class VicOptionSet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vicOptionSet'
+    _SDM_NAME = "vicOptionSet"
     _SDM_ATT_MAP = {
-        'Defaultp': 'defaultp',
-        'FeatureType': 'featureType',
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        "Defaultp": "defaultp",
+        "FeatureType": "featureType",
+        "Name": "name",
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VicOptionSet, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class VicOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptiontlv.vicoptiontlv import VicOptionTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptiontlv.vicoptiontlv import (
+            VicOptionTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VicOptionTlv', None) is not None:
-                return self._properties.get('VicOptionTlv')
+            if self._properties.get("VicOptionTlv", None) is not None:
+                return self._properties.get("VicOptionTlv")
         return VicOptionTlv(self)
 
     @property
@@ -72,11 +75,12 @@ class VicOptionSet(Base):
         -------
         - bool: True to assign this option set to new ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Defaultp"])
+
     @Defaultp.setter
     def Defaultp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Defaultp"], value)
 
     @property
     def FeatureType(self):
@@ -86,11 +90,12 @@ class VicOptionSet(Base):
         -------
         - number: The usage purpose of this TLV set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FeatureType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FeatureType"])
+
     @FeatureType.setter
     def FeatureType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FeatureType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FeatureType"], value)
 
     @property
     def Name(self):
@@ -100,11 +105,12 @@ class VicOptionSet(Base):
         -------
         - str: Option set name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -114,7 +120,7 @@ class VicOptionSet(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def update(self, Defaultp=None, FeatureType=None, Name=None):
         # type: (bool, int, str) -> VicOptionSet

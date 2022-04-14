@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class QueueStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'queueStatLearnedInformation'
+    _SDM_NAME = "queueStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'BytesTx': 'bytesTx',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Duration': 'duration',
-        'DurationInNsec': 'durationInNsec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PacketsTx': 'packetsTx',
-        'PortNumber': 'portNumber',
-        'QueueId': 'queueId',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'TxErrors': 'txErrors',
+        "BytesTx": "bytesTx",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "Duration": "duration",
+        "DurationInNsec": "durationInNsec",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "NegotiatedVersion": "negotiatedVersion",
+        "PacketsTx": "packetsTx",
+        "PortNumber": "portNumber",
+        "QueueId": "queueId",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "TxErrors": "txErrors",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(QueueStatLearnedInformation, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the number of transmitted bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BytesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BytesTx"])
 
     @property
     def DataPathId(self):
@@ -76,7 +76,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -86,7 +86,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the Datapath ID, in hexadecimal format, of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def Duration(self):
@@ -96,7 +96,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - number: The time in seconds, for which the queue has been alive.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
 
     @property
     def DurationInNsec(self):
@@ -106,7 +106,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - number: The time in nanoseconds, for which the queue has been alive beyond Duration (sec).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationInNsec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationInNsec"])
 
     @property
     def ErrorCode(self):
@@ -116,7 +116,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -126,7 +126,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def Latency(self):
@@ -136,7 +136,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - number: Indicates the duration elapsed (in microsecond) between the learned info request and response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -146,7 +146,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def NegotiatedVersion(self):
@@ -156,7 +156,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def PacketsTx(self):
@@ -166,7 +166,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the number of transmitted packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsTx"])
 
     @property
     def PortNumber(self):
@@ -176,7 +176,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - number: Indicates the port to which the queue belongs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
 
     @property
     def QueueId(self):
@@ -186,7 +186,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - number: Indicates the Identifier of the queue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
 
     @property
     def RemoteIp(self):
@@ -196,7 +196,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the IP of the remote end of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -206,7 +206,7 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the reply state of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def TxErrors(self):
@@ -216,10 +216,10 @@ class QueueStatLearnedInformation(Base):
         -------
         - str: Indicates the number of packets dropped due to overrun.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxErrors'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxErrors"])
 
     def add(self):
-        """Adds a new queueStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new queueStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class QueueStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BytesTx=None, DataPathId=None, DataPathIdAsHex=None, Duration=None, DurationInNsec=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketsTx=None, PortNumber=None, QueueId=None, RemoteIp=None, ReplyState=None, TxErrors=None):
+    def find(
+        self,
+        BytesTx=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        Duration=None,
+        DurationInNsec=None,
+        ErrorCode=None,
+        ErrorType=None,
+        Latency=None,
+        LocalIp=None,
+        NegotiatedVersion=None,
+        PacketsTx=None,
+        PortNumber=None,
+        QueueId=None,
+        RemoteIp=None,
+        ReplyState=None,
+        TxErrors=None,
+    ):
         # type: (str, str, str, int, int, str, str, int, str, str, str, int, int, str, str, str) -> QueueStatLearnedInformation
         """Finds and retrieves queueStatLearnedInformation resources from the server.
 

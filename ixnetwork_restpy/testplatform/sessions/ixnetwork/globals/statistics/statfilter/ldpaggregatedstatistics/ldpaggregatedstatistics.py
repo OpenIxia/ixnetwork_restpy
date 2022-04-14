@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,42 +33,41 @@ class LdpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldpAggregatedStatistics'
+    _SDM_NAME = "ldpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'BasicSessUp': 'basicSessUp',
-        'EstablishedLSPEgress': 'establishedLSPEgress',
-        'EstablishedLSPIngress': 'establishedLSPIngress',
-        'EstablishedP2MPLSPEgress': 'establishedP2MPLSPEgress',
-        'EstablishedP2MPLSPIngress': 'establishedP2MPLSPIngress',
-        'InitializedStateCount': 'initializedStateCount',
-        'LabelAbortRx': 'labelAbortRx',
-        'LabelAbortTx': 'labelAbortTx',
-        'LabelMappingRx': 'labelMappingRx',
-        'LabelMappingTx': 'labelMappingTx',
-        'LabelNotificationRx': 'labelNotificationRx',
-        'LabelNotificationTx': 'labelNotificationTx',
-        'LabelReleaseRx': 'labelReleaseRx',
-        'LabelReleaseTx': 'labelReleaseTx',
-        'LabelRequestRx': 'labelRequestRx',
-        'LabelRequestTx': 'labelRequestTx',
-        'LabelWithdrawRx': 'labelWithdrawRx',
-        'LabelWithdrawTx': 'labelWithdrawTx',
-        'NonExistentStateCount': 'nonExistentStateCount',
-        'OpenRecvStateCount': 'openRecvStateCount',
-        'OpenSentStateCount': 'openSentStateCount',
-        'OperationalStateCount': 'operationalStateCount',
-        'PortName': 'portName',
-        'PwStatusClearedRx': 'pwStatusClearedRx',
-        'PwStatusClearedTx': 'pwStatusClearedTx',
-        'PwStatusDown': 'pwStatusDown',
-        'PwStatusNotificationRx': 'pwStatusNotificationRx',
-        'PwStatusNotificationTx': 'pwStatusNotificationTx',
-        'SessionFlapCount': 'sessionFlapCount',
-        'TargetedSessConfigured': 'targetedSessConfigured',
-        'TargetedSessUp': 'targetedSessUp',
+        "BasicSessUp": "basicSessUp",
+        "EstablishedLSPEgress": "establishedLSPEgress",
+        "EstablishedLSPIngress": "establishedLSPIngress",
+        "EstablishedP2MPLSPEgress": "establishedP2MPLSPEgress",
+        "EstablishedP2MPLSPIngress": "establishedP2MPLSPIngress",
+        "InitializedStateCount": "initializedStateCount",
+        "LabelAbortRx": "labelAbortRx",
+        "LabelAbortTx": "labelAbortTx",
+        "LabelMappingRx": "labelMappingRx",
+        "LabelMappingTx": "labelMappingTx",
+        "LabelNotificationRx": "labelNotificationRx",
+        "LabelNotificationTx": "labelNotificationTx",
+        "LabelReleaseRx": "labelReleaseRx",
+        "LabelReleaseTx": "labelReleaseTx",
+        "LabelRequestRx": "labelRequestRx",
+        "LabelRequestTx": "labelRequestTx",
+        "LabelWithdrawRx": "labelWithdrawRx",
+        "LabelWithdrawTx": "labelWithdrawTx",
+        "NonExistentStateCount": "nonExistentStateCount",
+        "OpenRecvStateCount": "openRecvStateCount",
+        "OpenSentStateCount": "openSentStateCount",
+        "OperationalStateCount": "operationalStateCount",
+        "PortName": "portName",
+        "PwStatusClearedRx": "pwStatusClearedRx",
+        "PwStatusClearedTx": "pwStatusClearedTx",
+        "PwStatusDown": "pwStatusDown",
+        "PwStatusNotificationRx": "pwStatusNotificationRx",
+        "PwStatusNotificationTx": "pwStatusNotificationTx",
+        "SessionFlapCount": "sessionFlapCount",
+        "TargetedSessConfigured": "targetedSessConfigured",
+        "TargetedSessUp": "targetedSessUp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LdpAggregatedStatistics, self).__init__(parent, list_op)
@@ -80,11 +80,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Basic Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BasicSessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["BasicSessUp"])
+
     @BasicSessUp.setter
     def BasicSessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BasicSessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BasicSessUp"], value)
 
     @property
     def EstablishedLSPEgress(self):
@@ -94,11 +95,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Established LSP Egress
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstablishedLSPEgress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstablishedLSPEgress"])
+
     @EstablishedLSPEgress.setter
     def EstablishedLSPEgress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EstablishedLSPEgress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EstablishedLSPEgress"], value)
 
     @property
     def EstablishedLSPIngress(self):
@@ -108,11 +110,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Established LSP Ingress
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstablishedLSPIngress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstablishedLSPIngress"])
+
     @EstablishedLSPIngress.setter
     def EstablishedLSPIngress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EstablishedLSPIngress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EstablishedLSPIngress"], value)
 
     @property
     def EstablishedP2MPLSPEgress(self):
@@ -122,11 +125,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Established P2MP LSP Egress
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstablishedP2MPLSPEgress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstablishedP2MPLSPEgress"])
+
     @EstablishedP2MPLSPEgress.setter
     def EstablishedP2MPLSPEgress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EstablishedP2MPLSPEgress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EstablishedP2MPLSPEgress"], value)
 
     @property
     def EstablishedP2MPLSPIngress(self):
@@ -136,11 +140,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Established P2MP LSP Ingress
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstablishedP2MPLSPIngress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstablishedP2MPLSPIngress"])
+
     @EstablishedP2MPLSPIngress.setter
     def EstablishedP2MPLSPIngress(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EstablishedP2MPLSPIngress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EstablishedP2MPLSPIngress"], value)
 
     @property
     def InitializedStateCount(self):
@@ -150,11 +155,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Initialized State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitializedStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitializedStateCount"])
+
     @InitializedStateCount.setter
     def InitializedStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitializedStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitializedStateCount"], value)
 
     @property
     def LabelAbortRx(self):
@@ -164,11 +170,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Abort Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelAbortRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelAbortRx"])
+
     @LabelAbortRx.setter
     def LabelAbortRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelAbortRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelAbortRx"], value)
 
     @property
     def LabelAbortTx(self):
@@ -178,11 +185,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Abort Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelAbortTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelAbortTx"])
+
     @LabelAbortTx.setter
     def LabelAbortTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelAbortTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelAbortTx"], value)
 
     @property
     def LabelMappingRx(self):
@@ -192,11 +200,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Mapping Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelMappingRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelMappingRx"])
+
     @LabelMappingRx.setter
     def LabelMappingRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelMappingRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelMappingRx"], value)
 
     @property
     def LabelMappingTx(self):
@@ -206,11 +215,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Mapping Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelMappingTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelMappingTx"])
+
     @LabelMappingTx.setter
     def LabelMappingTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelMappingTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelMappingTx"], value)
 
     @property
     def LabelNotificationRx(self):
@@ -220,11 +230,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Notification Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelNotificationRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelNotificationRx"])
+
     @LabelNotificationRx.setter
     def LabelNotificationRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelNotificationRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelNotificationRx"], value)
 
     @property
     def LabelNotificationTx(self):
@@ -234,11 +245,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Notification Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelNotificationTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelNotificationTx"])
+
     @LabelNotificationTx.setter
     def LabelNotificationTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelNotificationTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelNotificationTx"], value)
 
     @property
     def LabelReleaseRx(self):
@@ -248,11 +260,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Release Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelReleaseRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelReleaseRx"])
+
     @LabelReleaseRx.setter
     def LabelReleaseRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelReleaseRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelReleaseRx"], value)
 
     @property
     def LabelReleaseTx(self):
@@ -262,11 +275,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Release Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelReleaseTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelReleaseTx"])
+
     @LabelReleaseTx.setter
     def LabelReleaseTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelReleaseTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelReleaseTx"], value)
 
     @property
     def LabelRequestRx(self):
@@ -276,11 +290,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Request Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelRequestRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelRequestRx"])
+
     @LabelRequestRx.setter
     def LabelRequestRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelRequestRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelRequestRx"], value)
 
     @property
     def LabelRequestTx(self):
@@ -290,11 +305,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Request Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelRequestTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelRequestTx"])
+
     @LabelRequestTx.setter
     def LabelRequestTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelRequestTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelRequestTx"], value)
 
     @property
     def LabelWithdrawRx(self):
@@ -304,11 +320,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Withdraw Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelWithdrawRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelWithdrawRx"])
+
     @LabelWithdrawRx.setter
     def LabelWithdrawRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelWithdrawRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelWithdrawRx"], value)
 
     @property
     def LabelWithdrawTx(self):
@@ -318,11 +335,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Label Withdraw Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelWithdrawTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelWithdrawTx"])
+
     @LabelWithdrawTx.setter
     def LabelWithdrawTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelWithdrawTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelWithdrawTx"], value)
 
     @property
     def NonExistentStateCount(self):
@@ -332,11 +350,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Non Existent State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NonExistentStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NonExistentStateCount"])
+
     @NonExistentStateCount.setter
     def NonExistentStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NonExistentStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NonExistentStateCount"], value)
 
     @property
     def OpenRecvStateCount(self):
@@ -346,11 +365,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Open Recv State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenRecvStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenRecvStateCount"])
+
     @OpenRecvStateCount.setter
     def OpenRecvStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenRecvStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenRecvStateCount"], value)
 
     @property
     def OpenSentStateCount(self):
@@ -360,11 +380,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Open Sent State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenSentStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenSentStateCount"])
+
     @OpenSentStateCount.setter
     def OpenSentStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenSentStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenSentStateCount"], value)
 
     @property
     def OperationalStateCount(self):
@@ -374,11 +395,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Operational State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OperationalStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OperationalStateCount"])
+
     @OperationalStateCount.setter
     def OperationalStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OperationalStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OperationalStateCount"], value)
 
     @property
     def PortName(self):
@@ -388,11 +410,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def PwStatusClearedRx(self):
@@ -402,11 +425,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: PW Status Cleared Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusClearedRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusClearedRx"])
+
     @PwStatusClearedRx.setter
     def PwStatusClearedRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusClearedRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusClearedRx"], value)
 
     @property
     def PwStatusClearedTx(self):
@@ -416,11 +440,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: PW Status Cleared Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusClearedTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusClearedTx"])
+
     @PwStatusClearedTx.setter
     def PwStatusClearedTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusClearedTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusClearedTx"], value)
 
     @property
     def PwStatusDown(self):
@@ -430,11 +455,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: PW Status Down
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusDown"])
+
     @PwStatusDown.setter
     def PwStatusDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusDown"], value)
 
     @property
     def PwStatusNotificationRx(self):
@@ -444,11 +470,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: PW Status Notification Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusNotificationRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusNotificationRx"])
+
     @PwStatusNotificationRx.setter
     def PwStatusNotificationRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusNotificationRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusNotificationRx"], value)
 
     @property
     def PwStatusNotificationTx(self):
@@ -458,11 +485,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: PW Status Notification Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusNotificationTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusNotificationTx"])
+
     @PwStatusNotificationTx.setter
     def PwStatusNotificationTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusNotificationTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusNotificationTx"], value)
 
     @property
     def SessionFlapCount(self):
@@ -472,11 +500,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def TargetedSessConfigured(self):
@@ -486,11 +515,12 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Targeted Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetedSessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetedSessConfigured"])
+
     @TargetedSessConfigured.setter
     def TargetedSessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetedSessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetedSessConfigured"], value)
 
     @property
     def TargetedSessUp(self):
@@ -500,13 +530,47 @@ class LdpAggregatedStatistics(Base):
         -------
         - bool: Targeted Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetedSessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetedSessUp"])
+
     @TargetedSessUp.setter
     def TargetedSessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetedSessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetedSessUp"], value)
 
-    def update(self, BasicSessUp=None, EstablishedLSPEgress=None, EstablishedLSPIngress=None, EstablishedP2MPLSPEgress=None, EstablishedP2MPLSPIngress=None, InitializedStateCount=None, LabelAbortRx=None, LabelAbortTx=None, LabelMappingRx=None, LabelMappingTx=None, LabelNotificationRx=None, LabelNotificationTx=None, LabelReleaseRx=None, LabelReleaseTx=None, LabelRequestRx=None, LabelRequestTx=None, LabelWithdrawRx=None, LabelWithdrawTx=None, NonExistentStateCount=None, OpenRecvStateCount=None, OpenSentStateCount=None, OperationalStateCount=None, PortName=None, PwStatusClearedRx=None, PwStatusClearedTx=None, PwStatusDown=None, PwStatusNotificationRx=None, PwStatusNotificationTx=None, SessionFlapCount=None, TargetedSessConfigured=None, TargetedSessUp=None):
+    def update(
+        self,
+        BasicSessUp=None,
+        EstablishedLSPEgress=None,
+        EstablishedLSPIngress=None,
+        EstablishedP2MPLSPEgress=None,
+        EstablishedP2MPLSPIngress=None,
+        InitializedStateCount=None,
+        LabelAbortRx=None,
+        LabelAbortTx=None,
+        LabelMappingRx=None,
+        LabelMappingTx=None,
+        LabelNotificationRx=None,
+        LabelNotificationTx=None,
+        LabelReleaseRx=None,
+        LabelReleaseTx=None,
+        LabelRequestRx=None,
+        LabelRequestTx=None,
+        LabelWithdrawRx=None,
+        LabelWithdrawTx=None,
+        NonExistentStateCount=None,
+        OpenRecvStateCount=None,
+        OpenSentStateCount=None,
+        OperationalStateCount=None,
+        PortName=None,
+        PwStatusClearedRx=None,
+        PwStatusClearedTx=None,
+        PwStatusDown=None,
+        PwStatusNotificationRx=None,
+        PwStatusNotificationTx=None,
+        SessionFlapCount=None,
+        TargetedSessConfigured=None,
+        TargetedSessUp=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LdpAggregatedStatistics
         """Updates ldpAggregatedStatistics resource on the server.
 
@@ -550,7 +614,40 @@ class LdpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BasicSessUp=None, EstablishedLSPEgress=None, EstablishedLSPIngress=None, EstablishedP2MPLSPEgress=None, EstablishedP2MPLSPIngress=None, InitializedStateCount=None, LabelAbortRx=None, LabelAbortTx=None, LabelMappingRx=None, LabelMappingTx=None, LabelNotificationRx=None, LabelNotificationTx=None, LabelReleaseRx=None, LabelReleaseTx=None, LabelRequestRx=None, LabelRequestTx=None, LabelWithdrawRx=None, LabelWithdrawTx=None, NonExistentStateCount=None, OpenRecvStateCount=None, OpenSentStateCount=None, OperationalStateCount=None, PortName=None, PwStatusClearedRx=None, PwStatusClearedTx=None, PwStatusDown=None, PwStatusNotificationRx=None, PwStatusNotificationTx=None, SessionFlapCount=None, TargetedSessConfigured=None, TargetedSessUp=None):
+    def find(
+        self,
+        BasicSessUp=None,
+        EstablishedLSPEgress=None,
+        EstablishedLSPIngress=None,
+        EstablishedP2MPLSPEgress=None,
+        EstablishedP2MPLSPIngress=None,
+        InitializedStateCount=None,
+        LabelAbortRx=None,
+        LabelAbortTx=None,
+        LabelMappingRx=None,
+        LabelMappingTx=None,
+        LabelNotificationRx=None,
+        LabelNotificationTx=None,
+        LabelReleaseRx=None,
+        LabelReleaseTx=None,
+        LabelRequestRx=None,
+        LabelRequestTx=None,
+        LabelWithdrawRx=None,
+        LabelWithdrawTx=None,
+        NonExistentStateCount=None,
+        OpenRecvStateCount=None,
+        OpenSentStateCount=None,
+        OperationalStateCount=None,
+        PortName=None,
+        PwStatusClearedRx=None,
+        PwStatusClearedTx=None,
+        PwStatusDown=None,
+        PwStatusNotificationRx=None,
+        PwStatusNotificationTx=None,
+        SessionFlapCount=None,
+        TargetedSessConfigured=None,
+        TargetedSessUp=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LdpAggregatedStatistics
         """Finds and retrieves ldpAggregatedStatistics resources from the server.
 

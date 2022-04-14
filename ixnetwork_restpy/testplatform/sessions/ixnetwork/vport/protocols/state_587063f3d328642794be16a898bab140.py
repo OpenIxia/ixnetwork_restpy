@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,15 @@ class State(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'state'
+    _SDM_NAME = "state"
     _SDM_ATT_MAP = {
-        'LinkDown': 'linkDown',
-        'StpBlock': 'stpBlock',
-        'StpForward': 'stpForward',
-        'StpLearn': 'stpLearn',
-        'StpListen': 'stpListen',
+        "LinkDown": "linkDown",
+        "StpBlock": "stpBlock",
+        "StpForward": "stpForward",
+        "StpLearn": "stpLearn",
+        "StpListen": "stpListen",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(State, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class State(Base):
         -------
         - bool: Indicates that, no physical link is present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkDown"])
+
     @LinkDown.setter
     def LinkDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkDown"], value)
 
     @property
     def StpBlock(self):
@@ -68,11 +69,12 @@ class State(Base):
         -------
         - bool: Indicates that the port is not part of spanning tree.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBlock'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBlock"])
+
     @StpBlock.setter
     def StpBlock(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBlock'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBlock"], value)
 
     @property
     def StpForward(self):
@@ -82,11 +84,12 @@ class State(Base):
         -------
         - bool: Indicates that the port is learning and relaying frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpForward'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpForward"])
+
     @StpForward.setter
     def StpForward(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpForward'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpForward"], value)
 
     @property
     def StpLearn(self):
@@ -96,11 +99,12 @@ class State(Base):
         -------
         - bool: Indicates that the port is learning but not relaying frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpLearn'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpLearn"])
+
     @StpLearn.setter
     def StpLearn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpLearn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpLearn"], value)
 
     @property
     def StpListen(self):
@@ -110,13 +114,21 @@ class State(Base):
         -------
         - bool: Indicates that the port is not learning or relaying frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpListen'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpListen"])
+
     @StpListen.setter
     def StpListen(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpListen'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpListen"], value)
 
-    def update(self, LinkDown=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+    def update(
+        self,
+        LinkDown=None,
+        StpBlock=None,
+        StpForward=None,
+        StpLearn=None,
+        StpListen=None,
+    ):
         # type: (bool, bool, bool, bool, bool) -> State
         """Updates state resource on the server.
 
@@ -134,7 +146,14 @@ class State(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, LinkDown=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+    def find(
+        self,
+        LinkDown=None,
+        StpBlock=None,
+        StpForward=None,
+        StpLearn=None,
+        StpListen=None,
+    ):
         # type: (bool, bool, bool, bool, bool) -> State
         """Finds and retrieves state resources from the server.
 

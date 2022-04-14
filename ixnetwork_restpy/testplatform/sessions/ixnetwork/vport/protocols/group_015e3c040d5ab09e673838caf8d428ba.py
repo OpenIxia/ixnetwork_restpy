@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,17 @@ class Group(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'group'
+    _SDM_NAME = "group"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'Description': 'description',
-        'Enabled': 'enabled',
-        'GroupAdvertise': 'groupAdvertise',
-        'Type': 'type',
-        'UpdateGroupModStatus': 'updateGroupModStatus',
+        "Id__": "__id__",
+        "Description": "description",
+        "Enabled": "enabled",
+        "GroupAdvertise": "groupAdvertise",
+        "Type": "type",
+        "UpdateGroupModStatus": "updateGroupModStatus",
     }
     _SDM_ENUM_MAP = {
-        'type': ['all', 'select', 'indirect', 'fastFailover'],
+        "type": ["all", "select", "indirect", "fastFailover"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,10 +62,13 @@ class Group(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucket_70fad76e12d52147154e1637a004a478 import Bucket
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucket_70fad76e12d52147154e1637a004a478 import (
+            Bucket,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bucket', None) is not None:
-                return self._properties.get('Bucket')
+            if self._properties.get("Bucket", None) is not None:
+                return self._properties.get("Bucket")
         return Bucket(self)
 
     @property
@@ -75,11 +79,12 @@ class Group(Base):
         -------
         - number: A 32-bit integer uniquely identifying the group. The minimum value is 1. the maximum value is 4294967295
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
+        return self._get_attribute(self._SDM_ATT_MAP["Id__"])
+
     @Id__.setter
     def Id__(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Id__"], value)
 
     @property
     def Description(self):
@@ -89,11 +94,12 @@ class Group(Base):
         -------
         - str: A description of the group is shown
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Enabled(self):
@@ -103,11 +109,12 @@ class Group(Base):
         -------
         - bool: If selected, this group is used in this controller configuration. The default value is False.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupAdvertise(self):
@@ -117,11 +124,12 @@ class Group(Base):
         -------
         - bool: If this check box is selected, Group ADD message is sent automatically after OpenFlow channel comes up. Group ADD or DEL message is sent out when the Enable is checked or cleared respectively. When this check box is not selected, no group is advertised when the OpenFlow channel comes up or when the Enable check box is selected/ cleared. This field is useful to send group ADD/MOD/DEL messages on demand, or doing negative testing. The on-demand ADD/MOD/DEL messages can be sent by choosing the appropriate option from the right-click menu or from the ribbon option of Update Group Mod Status.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAdvertise'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAdvertise"])
+
     @GroupAdvertise.setter
     def GroupAdvertise(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupAdvertise"], value)
 
     @property
     def Type(self):
@@ -131,11 +139,12 @@ class Group(Base):
         -------
         - str(all | select | indirect | fastFailover): Select the type to determine the group semantics.The default Value is all.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def UpdateGroupModStatus(self):
@@ -145,9 +154,11 @@ class Group(Base):
         -------
         - str: It is a read-only field which indicates if any group is changed in the GUI. If any group is changed then this status indicates to the user to send a Group MOD request to the switch so that the changed value is updated in switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateGroupModStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateGroupModStatus"])
 
-    def update(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
+    def update(
+        self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None
+    ):
         # type: (int, str, bool, bool, str) -> Group
         """Updates group resource on the server.
 
@@ -165,7 +176,9 @@ class Group(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
+    def add(
+        self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None
+    ):
         # type: (int, str, bool, bool, str) -> Group
         """Adds a new group resource on the server and adds it to the container.
 
@@ -197,7 +210,15 @@ class Group(Base):
         """
         self._delete()
 
-    def find(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None, UpdateGroupModStatus=None):
+    def find(
+        self,
+        Id__=None,
+        Description=None,
+        Enabled=None,
+        GroupAdvertise=None,
+        Type=None,
+        UpdateGroupModStatus=None,
+    ):
         # type: (int, str, bool, bool, str, str) -> Group
         """Finds and retrieves group resources from the server.
 
@@ -259,7 +280,9 @@ class Group(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateGroupMod', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateGroupMod", payload=payload, response_object=None)

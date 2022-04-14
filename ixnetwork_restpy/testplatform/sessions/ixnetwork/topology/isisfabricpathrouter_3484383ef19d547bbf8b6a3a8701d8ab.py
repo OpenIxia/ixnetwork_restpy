@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,47 +34,55 @@ class IsisFabricPathRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisFabricPathRouter'
+    _SDM_NAME = "isisFabricPathRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AreaAddresses': 'areaAddresses',
-        'AreaAuthenticationType': 'areaAuthenticationType',
-        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
-        'Attached': 'attached',
-        'CSNPInterval': 'cSNPInterval',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'Count': 'count',
-        'DceMCastIpv4GroupCount': 'dceMCastIpv4GroupCount',
-        'DceMCastIpv6GroupCount': 'dceMCastIpv6GroupCount',
-        'DceMCastMacGroupCount': 'dceMCastMacGroupCount',
-        'DceTopologyCount': 'dceTopologyCount',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLSPs': 'discardLSPs',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHostName': 'enableHostName',
-        'EnableWideMetric': 'enableWideMetric',
-        'Errors': 'errors',
-        'HostName': 'hostName',
-        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
-        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
-        'LSPLifetime': 'lSPLifetime',
-        'LSPRefreshRate': 'lSPRefreshRate',
-        'LSPorMGroupPDUMinTransmissionInterval': 'lSPorMGroupPDUMinTransmissionInterval',
-        'LocalSystemID': 'localSystemID',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLSPSize': 'maxLSPSize',
-        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
-        'Name': 'name',
-        'Overloaded': 'overloaded',
-        'PSNPInterval': 'pSNPInterval',
-        'PartitionRepair': 'partitionRepair',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Active": "active",
+        "AreaAddresses": "areaAddresses",
+        "AreaAuthenticationType": "areaAuthenticationType",
+        "AreaTransmitPasswordOrMD5Key": "areaTransmitPasswordOrMD5Key",
+        "Attached": "attached",
+        "CSNPInterval": "cSNPInterval",
+        "CapabilityRouterId": "capabilityRouterId",
+        "Count": "count",
+        "DceMCastIpv4GroupCount": "dceMCastIpv4GroupCount",
+        "DceMCastIpv6GroupCount": "dceMCastIpv6GroupCount",
+        "DceMCastMacGroupCount": "dceMCastMacGroupCount",
+        "DceTopologyCount": "dceTopologyCount",
+        "DescriptiveName": "descriptiveName",
+        "DiscardLSPs": "discardLSPs",
+        "EnableHelloPadding": "enableHelloPadding",
+        "EnableHostName": "enableHostName",
+        "EnableWideMetric": "enableWideMetric",
+        "Errors": "errors",
+        "HostName": "hostName",
+        "IgnoreReceiveMD5": "ignoreReceiveMD5",
+        "InterLSPsOrMGroupPDUBurstGap": "interLSPsOrMGroupPDUBurstGap",
+        "LSPLifetime": "lSPLifetime",
+        "LSPRefreshRate": "lSPRefreshRate",
+        "LSPorMGroupPDUMinTransmissionInterval": "lSPorMGroupPDUMinTransmissionInterval",
+        "LocalSystemID": "localSystemID",
+        "MaxAreaAddresses": "maxAreaAddresses",
+        "MaxLSPSize": "maxLSPSize",
+        "MaxLSPsOrMGroupPDUsPerBurst": "maxLSPsOrMGroupPDUsPerBurst",
+        "Name": "name",
+        "Overloaded": "overloaded",
+        "PSNPInterval": "pSNPInterval",
+        "PartitionRepair": "partitionRepair",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -90,10 +99,13 @@ class IsisFabricPathRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv4grouplist_a8b0a14d8e77939b2e00841f8ca4aa44 import DceMCastIpv4GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv4grouplist_a8b0a14d8e77939b2e00841f8ca4aa44 import (
+            DceMCastIpv4GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMCastIpv4GroupList', None) is not None:
-                return self._properties.get('DceMCastIpv4GroupList')
+            if self._properties.get("DceMCastIpv4GroupList", None) is not None:
+                return self._properties.get("DceMCastIpv4GroupList")
         return DceMCastIpv4GroupList(self)._select()
 
     @property
@@ -107,10 +119,13 @@ class IsisFabricPathRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv6grouplist_48e0f523130d7b4e7948cb21c19b53d3 import DceMCastIpv6GroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv6grouplist_48e0f523130d7b4e7948cb21c19b53d3 import (
+            DceMCastIpv6GroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMCastIpv6GroupList', None) is not None:
-                return self._properties.get('DceMCastIpv6GroupList')
+            if self._properties.get("DceMCastIpv6GroupList", None) is not None:
+                return self._properties.get("DceMCastIpv6GroupList")
         return DceMCastIpv6GroupList(self)._select()
 
     @property
@@ -124,10 +139,13 @@ class IsisFabricPathRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastmacgrouplist_1115ac54d89360ba3a14a6027a9eda75 import DceMCastMacGroupList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastmacgrouplist_1115ac54d89360ba3a14a6027a9eda75 import (
+            DceMCastMacGroupList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceMCastMacGroupList', None) is not None:
-                return self._properties.get('DceMCastMacGroupList')
+            if self._properties.get("DceMCastMacGroupList", None) is not None:
+                return self._properties.get("DceMCastMacGroupList")
         return DceMCastMacGroupList(self)._select()
 
     @property
@@ -141,10 +159,13 @@ class IsisFabricPathRouter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcetopologylist_c10ab6e3d1d7e663c0f17b8227b0dafe import DceTopologyList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcetopologylist_c10ab6e3d1d7e663c0f17b8227b0dafe import (
+            DceTopologyList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceTopologyList', None) is not None:
-                return self._properties.get('DceTopologyList')
+            if self._properties.get("DceTopologyList", None) is not None:
+                return self._properties.get("DceTopologyList")
         return DceTopologyList(self)._select()
 
     @property
@@ -156,7 +177,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AreaAddresses(self):
@@ -167,7 +189,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaAddresses']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AreaAddresses"]))
 
     @property
     def AreaAuthenticationType(self):
@@ -178,7 +201,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Authentication Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaAuthenticationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AreaAuthenticationType"])
+        )
 
     @property
     def AreaTransmitPasswordOrMD5Key(self):
@@ -189,7 +215,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Area Transmit Password / MD5-Key
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AreaTransmitPasswordOrMD5Key']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AreaTransmitPasswordOrMD5Key"])
+        )
 
     @property
     def Attached(self):
@@ -200,7 +229,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Attached
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Attached']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Attached"]))
 
     @property
     def CSNPInterval(self):
@@ -211,7 +241,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CSNP Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CSNPInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CSNPInterval"]))
 
     @property
     def CapabilityRouterId(self):
@@ -222,7 +253,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Capability Router Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CapabilityRouterId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CapabilityRouterId"])
+        )
 
     @property
     def Count(self):
@@ -232,7 +266,7 @@ class IsisFabricPathRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DceMCastIpv4GroupCount(self):
@@ -242,11 +276,12 @@ class IsisFabricPathRouter(Base):
         -------
         - number: # Multicast IPv4 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DceMCastIpv4GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DceMCastIpv4GroupCount"])
+
     @DceMCastIpv4GroupCount.setter
     def DceMCastIpv4GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DceMCastIpv4GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DceMCastIpv4GroupCount"], value)
 
     @property
     def DceMCastIpv6GroupCount(self):
@@ -256,11 +291,12 @@ class IsisFabricPathRouter(Base):
         -------
         - number: # Multicast IPv6 Groups(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DceMCastIpv6GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DceMCastIpv6GroupCount"])
+
     @DceMCastIpv6GroupCount.setter
     def DceMCastIpv6GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DceMCastIpv6GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DceMCastIpv6GroupCount"], value)
 
     @property
     def DceMCastMacGroupCount(self):
@@ -270,11 +306,12 @@ class IsisFabricPathRouter(Base):
         -------
         - number: MAC Group Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DceMCastMacGroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DceMCastMacGroupCount"])
+
     @DceMCastMacGroupCount.setter
     def DceMCastMacGroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DceMCastMacGroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DceMCastMacGroupCount"], value)
 
     @property
     def DceTopologyCount(self):
@@ -284,11 +321,12 @@ class IsisFabricPathRouter(Base):
         -------
         - number: Topology Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DceTopologyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DceTopologyCount"])
+
     @DceTopologyCount.setter
     def DceTopologyCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DceTopologyCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DceTopologyCount"], value)
 
     @property
     def DescriptiveName(self):
@@ -298,7 +336,7 @@ class IsisFabricPathRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DiscardLSPs(self):
@@ -309,7 +347,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Discard LSPs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DiscardLSPs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DiscardLSPs"]))
 
     @property
     def EnableHelloPadding(self):
@@ -320,7 +359,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Padding
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloPadding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloPadding"])
+        )
 
     @property
     def EnableHostName(self):
@@ -331,7 +373,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHostName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+        )
 
     @property
     def EnableWideMetric(self):
@@ -342,7 +387,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Wide Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableWideMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableWideMetric"])
+        )
 
     @property
     def Errors(self):
@@ -351,7 +399,7 @@ class IsisFabricPathRouter(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def HostName(self):
@@ -362,7 +410,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HostName"]))
 
     @property
     def IgnoreReceiveMD5(self):
@@ -373,7 +422,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Ignore Receive MD5
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreReceiveMD5']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IgnoreReceiveMD5"])
+        )
 
     @property
     def InterLSPsOrMGroupPDUBurstGap(self):
@@ -384,7 +436,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inter LSPs/MGROUP-PDUs Burst Gap (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterLSPsOrMGroupPDUBurstGap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterLSPsOrMGroupPDUBurstGap"])
+        )
 
     @property
     def LSPLifetime(self):
@@ -395,7 +450,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Rifetime (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPLifetime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LSPLifetime"]))
 
     @property
     def LSPRefreshRate(self):
@@ -406,7 +462,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Refresh Rate (sec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPRefreshRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LSPRefreshRate"])
+        )
 
     @property
     def LSPorMGroupPDUMinTransmissionInterval(self):
@@ -417,7 +476,13 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP/MGROUP-PDU Min Transmission Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LSPorMGroupPDUMinTransmissionInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LSPorMGroupPDUMinTransmissionInterval"]
+            ),
+        )
 
     @property
     def LocalSystemID(self):
@@ -427,7 +492,7 @@ class IsisFabricPathRouter(Base):
         -------
         - list(str): System ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalSystemID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalSystemID"])
 
     @property
     def MaxAreaAddresses(self):
@@ -438,7 +503,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Area Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxAreaAddresses']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxAreaAddresses"])
+        )
 
     @property
     def MaxLSPSize(self):
@@ -449,7 +517,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSP Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLSPSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxLSPSize"]))
 
     @property
     def MaxLSPsOrMGroupPDUsPerBurst(self):
@@ -460,7 +529,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Max LSPs/MGROUP-PDUs Per Burst
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLSPsOrMGroupPDUsPerBurst']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxLSPsOrMGroupPDUsPerBurst"])
+        )
 
     @property
     def Name(self):
@@ -470,11 +542,12 @@ class IsisFabricPathRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Overloaded(self):
@@ -485,7 +558,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Overloaded
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Overloaded']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Overloaded"]))
 
     @property
     def PSNPInterval(self):
@@ -496,7 +570,8 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PSNP Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PSNPInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PSNPInterval"]))
 
     @property
     def PartitionRepair(self):
@@ -507,7 +582,10 @@ class IsisFabricPathRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Partition Repair
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartitionRepair']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PartitionRepair"])
+        )
 
     @property
     def SessionInfo(self):
@@ -517,7 +595,7 @@ class IsisFabricPathRouter(Base):
         -------
         - list(str[noIfaceUp | up]): Logs additional information about the session Information
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -527,7 +605,7 @@ class IsisFabricPathRouter(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StateCounts(self):
@@ -536,7 +614,7 @@ class IsisFabricPathRouter(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -546,9 +624,16 @@ class IsisFabricPathRouter(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, DceMCastIpv4GroupCount=None, DceMCastIpv6GroupCount=None, DceMCastMacGroupCount=None, DceTopologyCount=None, Name=None):
+    def update(
+        self,
+        DceMCastIpv4GroupCount=None,
+        DceMCastIpv6GroupCount=None,
+        DceMCastMacGroupCount=None,
+        DceTopologyCount=None,
+        Name=None,
+    ):
         # type: (int, int, int, int, str) -> IsisFabricPathRouter
         """Updates isisFabricPathRouter resource on the server.
 
@@ -569,9 +654,16 @@ class IsisFabricPathRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DceMCastIpv4GroupCount=None, DceMCastIpv6GroupCount=None, DceMCastMacGroupCount=None, DceTopologyCount=None, Name=None):
+    def add(
+        self,
+        DceMCastIpv4GroupCount=None,
+        DceMCastIpv6GroupCount=None,
+        DceMCastMacGroupCount=None,
+        DceTopologyCount=None,
+        Name=None,
+    ):
         # type: (int, int, int, int, str) -> IsisFabricPathRouter
-        """Adds a new isisFabricPathRouter resource on the json, only valid with config assistant
+        """Adds a new isisFabricPathRouter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -591,7 +683,22 @@ class IsisFabricPathRouter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DceMCastIpv4GroupCount=None, DceMCastIpv6GroupCount=None, DceMCastMacGroupCount=None, DceTopologyCount=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Name=None, SessionInfo=None, SessionStatus=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        Count=None,
+        DceMCastIpv4GroupCount=None,
+        DceMCastIpv6GroupCount=None,
+        DceMCastMacGroupCount=None,
+        DceTopologyCount=None,
+        DescriptiveName=None,
+        Errors=None,
+        LocalSystemID=None,
+        Name=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves isisFabricPathRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisFabricPathRouter resources from the server.
@@ -669,10 +776,12 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def IsisStartRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -701,10 +810,12 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStartRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("isisStartRouter", payload=payload, response_object=None)
 
     def IsisStopRouter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -733,10 +844,12 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStopRouter', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("isisStopRouter", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -765,10 +878,12 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -797,10 +912,12 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -829,12 +946,40 @@ class IsisFabricPathRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, CSNPInterval=None, CapabilityRouterId=None, DiscardLSPs=None, EnableHelloPadding=None, EnableHostName=None, EnableWideMetric=None, HostName=None, IgnoreReceiveMD5=None, InterLSPsOrMGroupPDUBurstGap=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, MaxAreaAddresses=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, Overloaded=None, PSNPInterval=None, PartitionRepair=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AreaAddresses=None,
+        AreaAuthenticationType=None,
+        AreaTransmitPasswordOrMD5Key=None,
+        Attached=None,
+        CSNPInterval=None,
+        CapabilityRouterId=None,
+        DiscardLSPs=None,
+        EnableHelloPadding=None,
+        EnableHostName=None,
+        EnableWideMetric=None,
+        HostName=None,
+        IgnoreReceiveMD5=None,
+        InterLSPsOrMGroupPDUBurstGap=None,
+        LSPLifetime=None,
+        LSPRefreshRate=None,
+        LSPorMGroupPDUMinTransmissionInterval=None,
+        MaxAreaAddresses=None,
+        MaxLSPSize=None,
+        MaxLSPsOrMGroupPDUsPerBurst=None,
+        Overloaded=None,
+        PSNPInterval=None,
+        PartitionRepair=None,
+    ):
         """Base class infrastructure that gets a list of isisFabricPathRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

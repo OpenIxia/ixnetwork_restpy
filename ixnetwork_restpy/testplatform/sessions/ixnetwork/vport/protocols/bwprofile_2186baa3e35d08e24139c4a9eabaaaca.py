@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,31 +35,30 @@ class BwProfile(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bwProfile'
+    _SDM_NAME = "bwProfile"
     _SDM_ATT_MAP = {
-        'CbsMagnitude': 'cbsMagnitude',
-        'CbsMultiplier': 'cbsMultiplier',
-        'Cf': 'cf',
-        'CirMagnitude': 'cirMagnitude',
-        'CirMultiplier': 'cirMultiplier',
-        'Cm': 'cm',
-        'EbsMagnitude': 'ebsMagnitude',
-        'EbsMultiplier': 'ebsMultiplier',
-        'EirMagnitude': 'eirMagnitude',
-        'EirMultiplier': 'eirMultiplier',
-        'Enabled': 'enabled',
-        'PerCos': 'perCos',
-        'UserPriorityBits000': 'userPriorityBits000',
-        'UserPriorityBits001': 'userPriorityBits001',
-        'UserPriorityBits010': 'userPriorityBits010',
-        'UserPriorityBits011': 'userPriorityBits011',
-        'UserPriorityBits100': 'userPriorityBits100',
-        'UserPriorityBits101': 'userPriorityBits101',
-        'UserPriorityBits110': 'userPriorityBits110',
-        'UserPriorityBits111': 'userPriorityBits111',
+        "CbsMagnitude": "cbsMagnitude",
+        "CbsMultiplier": "cbsMultiplier",
+        "Cf": "cf",
+        "CirMagnitude": "cirMagnitude",
+        "CirMultiplier": "cirMultiplier",
+        "Cm": "cm",
+        "EbsMagnitude": "ebsMagnitude",
+        "EbsMultiplier": "ebsMultiplier",
+        "EirMagnitude": "eirMagnitude",
+        "EirMultiplier": "eirMultiplier",
+        "Enabled": "enabled",
+        "PerCos": "perCos",
+        "UserPriorityBits000": "userPriorityBits000",
+        "UserPriorityBits001": "userPriorityBits001",
+        "UserPriorityBits010": "userPriorityBits010",
+        "UserPriorityBits011": "userPriorityBits011",
+        "UserPriorityBits100": "userPriorityBits100",
+        "UserPriorityBits101": "userPriorityBits101",
+        "UserPriorityBits110": "userPriorityBits110",
+        "UserPriorityBits111": "userPriorityBits111",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BwProfile, self).__init__(parent, list_op)
@@ -71,11 +71,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CbsMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["CbsMagnitude"])
+
     @CbsMagnitude.setter
     def CbsMagnitude(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CbsMagnitude'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CbsMagnitude"], value)
 
     @property
     def CbsMultiplier(self):
@@ -85,11 +86,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CbsMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CbsMultiplier"])
+
     @CbsMultiplier.setter
     def CbsMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CbsMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CbsMultiplier"], value)
 
     @property
     def Cf(self):
@@ -99,11 +101,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Coupling Flag is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cf'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cf"])
+
     @Cf.setter
     def Cf(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cf"], value)
 
     @property
     def CirMagnitude(self):
@@ -113,11 +116,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CirMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["CirMagnitude"])
+
     @CirMagnitude.setter
     def CirMagnitude(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CirMagnitude'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CirMagnitude"], value)
 
     @property
     def CirMultiplier(self):
@@ -127,11 +131,12 @@ class BwProfile(Base):
         -------
         - number: It signifies two octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CirMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CirMultiplier"])
+
     @CirMultiplier.setter
     def CirMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CirMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CirMultiplier"], value)
 
     @property
     def Cm(self):
@@ -141,11 +146,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Colored Mode Flag is 1. Default is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cm"])
+
     @Cm.setter
     def Cm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cm"], value)
 
     @property
     def EbsMagnitude(self):
@@ -155,11 +161,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EbsMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["EbsMagnitude"])
+
     @EbsMagnitude.setter
     def EbsMagnitude(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EbsMagnitude'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EbsMagnitude"], value)
 
     @property
     def EbsMultiplier(self):
@@ -169,11 +176,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EbsMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EbsMultiplier"])
+
     @EbsMultiplier.setter
     def EbsMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EbsMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EbsMultiplier"], value)
 
     @property
     def EirMagnitude(self):
@@ -183,11 +191,12 @@ class BwProfile(Base):
         -------
         - number: It signifies one octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EirMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["EirMagnitude"])
+
     @EirMagnitude.setter
     def EirMagnitude(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EirMagnitude'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EirMagnitude"], value)
 
     @property
     def EirMultiplier(self):
@@ -197,11 +206,12 @@ class BwProfile(Base):
         -------
         - number: It signifies two octet field. Default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EirMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EirMultiplier"])
+
     @EirMultiplier.setter
     def EirMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EirMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EirMultiplier"], value)
 
     @property
     def Enabled(self):
@@ -211,11 +221,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, bandwidth profile is in effect for the EVC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def PerCos(self):
@@ -225,11 +236,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Per CoS Flag shows user_priority bit values as significant and the value is set to 1. If the value is set to 0, the user_priority bit values as ignored and not processed. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PerCos'])
+        return self._get_attribute(self._SDM_ATT_MAP["PerCos"])
+
     @PerCos.setter
     def PerCos(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PerCos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PerCos"], value)
 
     @property
     def UserPriorityBits000(self):
@@ -239,11 +251,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits000'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits000"])
+
     @UserPriorityBits000.setter
     def UserPriorityBits000(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits000'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits000"], value)
 
     @property
     def UserPriorityBits001(self):
@@ -253,11 +266,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits001'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits001"])
+
     @UserPriorityBits001.setter
     def UserPriorityBits001(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits001'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits001"], value)
 
     @property
     def UserPriorityBits010(self):
@@ -267,11 +281,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits010'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits010"])
+
     @UserPriorityBits010.setter
     def UserPriorityBits010(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits010'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits010"], value)
 
     @property
     def UserPriorityBits011(self):
@@ -281,11 +296,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits011'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits011"])
+
     @UserPriorityBits011.setter
     def UserPriorityBits011(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits011'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits011"], value)
 
     @property
     def UserPriorityBits100(self):
@@ -295,11 +311,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits100'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits100"])
+
     @UserPriorityBits100.setter
     def UserPriorityBits100(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits100'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits100"], value)
 
     @property
     def UserPriorityBits101(self):
@@ -309,11 +326,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits101'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits101"])
+
     @UserPriorityBits101.setter
     def UserPriorityBits101(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits101'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits101"], value)
 
     @property
     def UserPriorityBits110(self):
@@ -323,11 +341,12 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits110'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits110"])
+
     @UserPriorityBits110.setter
     def UserPriorityBits110(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits110'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits110"], value)
 
     @property
     def UserPriorityBits111(self):
@@ -337,13 +356,36 @@ class BwProfile(Base):
         -------
         - bool: If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1. Default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits111'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits111"])
+
     @UserPriorityBits111.setter
     def UserPriorityBits111(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits111'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UserPriorityBits111"], value)
 
-    def update(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+    def update(
+        self,
+        CbsMagnitude=None,
+        CbsMultiplier=None,
+        Cf=None,
+        CirMagnitude=None,
+        CirMultiplier=None,
+        Cm=None,
+        EbsMagnitude=None,
+        EbsMultiplier=None,
+        EirMagnitude=None,
+        EirMultiplier=None,
+        Enabled=None,
+        PerCos=None,
+        UserPriorityBits000=None,
+        UserPriorityBits001=None,
+        UserPriorityBits010=None,
+        UserPriorityBits011=None,
+        UserPriorityBits100=None,
+        UserPriorityBits101=None,
+        UserPriorityBits110=None,
+        UserPriorityBits111=None,
+    ):
         # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Updates bwProfile resource on the server.
 
@@ -376,7 +418,29 @@ class BwProfile(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+    def add(
+        self,
+        CbsMagnitude=None,
+        CbsMultiplier=None,
+        Cf=None,
+        CirMagnitude=None,
+        CirMultiplier=None,
+        Cm=None,
+        EbsMagnitude=None,
+        EbsMultiplier=None,
+        EirMagnitude=None,
+        EirMultiplier=None,
+        Enabled=None,
+        PerCos=None,
+        UserPriorityBits000=None,
+        UserPriorityBits001=None,
+        UserPriorityBits010=None,
+        UserPriorityBits011=None,
+        UserPriorityBits100=None,
+        UserPriorityBits101=None,
+        UserPriorityBits110=None,
+        UserPriorityBits111=None,
+    ):
         # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Adds a new bwProfile resource on the server and adds it to the container.
 
@@ -423,7 +487,29 @@ class BwProfile(Base):
         """
         self._delete()
 
-    def find(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+    def find(
+        self,
+        CbsMagnitude=None,
+        CbsMultiplier=None,
+        Cf=None,
+        CirMagnitude=None,
+        CirMultiplier=None,
+        Cm=None,
+        EbsMagnitude=None,
+        EbsMultiplier=None,
+        EirMagnitude=None,
+        EirMultiplier=None,
+        Enabled=None,
+        PerCos=None,
+        UserPriorityBits000=None,
+        UserPriorityBits001=None,
+        UserPriorityBits010=None,
+        UserPriorityBits011=None,
+        UserPriorityBits100=None,
+        UserPriorityBits101=None,
+        UserPriorityBits110=None,
+        UserPriorityBits111=None,
+    ):
         # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Finds and retrieves bwProfile resources from the server.
 

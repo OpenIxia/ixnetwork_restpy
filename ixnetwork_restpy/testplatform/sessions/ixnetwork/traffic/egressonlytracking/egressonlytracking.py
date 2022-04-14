@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class EgressOnlyTracking(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egressOnlyTracking'
+    _SDM_NAME = "egressOnlyTracking"
     _SDM_ATT_MAP = {
-        'Egress': 'egress',
-        'Enabled': 'enabled',
-        'Port': 'port',
-        'QbvSettings': 'qbvSettings',
-        'SignatureLengthType': 'signatureLengthType',
-        'SignatureMask': 'signatureMask',
-        'SignatureOffset': 'signatureOffset',
-        'SignatureValue': 'signatureValue',
+        "Egress": "egress",
+        "Enabled": "enabled",
+        "Port": "port",
+        "QbvSettings": "qbvSettings",
+        "SignatureLengthType": "signatureLengthType",
+        "SignatureMask": "signatureMask",
+        "SignatureOffset": "signatureOffset",
+        "SignatureValue": "signatureValue",
     }
     _SDM_ENUM_MAP = {
-        'signatureLengthType': ['fourByte', 'twelveByte'],
+        "signatureLengthType": ["fourByte", "twelveByte"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,10 +60,11 @@ class EgressOnlyTracking(Base):
         -------
         - list(dict(arg1:number,arg2:str)): Struct contains: egress offset and egress mask
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Egress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Egress"])
+
     @Egress.setter
     def Egress(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Egress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Egress"], value)
 
     @property
     def Enabled(self):
@@ -72,11 +74,12 @@ class EgressOnlyTracking(Base):
         -------
         - bool: Enables the egress only tracking for the given port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Port(self):
@@ -84,13 +87,14 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): 
+        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Port'])
+        return self._get_attribute(self._SDM_ATT_MAP["Port"])
+
     @Port.setter
     def Port(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Port'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Port"], value)
 
     @property
     def QbvSettings(self):
@@ -99,10 +103,11 @@ class EgressOnlyTracking(Base):
         -------
         - list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str)): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QbvSettings'])
+        return self._get_attribute(self._SDM_ATT_MAP["QbvSettings"])
+
     @QbvSettings.setter
     def QbvSettings(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['QbvSettings'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QbvSettings"], value)
 
     @property
     def SignatureLengthType(self):
@@ -110,13 +115,14 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str(fourByte | twelveByte): 
+        - str(fourByte | twelveByte):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignatureLengthType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignatureLengthType"])
+
     @SignatureLengthType.setter
     def SignatureLengthType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignatureLengthType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignatureLengthType"], value)
 
     @property
     def SignatureMask(self):
@@ -126,11 +132,12 @@ class EgressOnlyTracking(Base):
         -------
         - str: Signature maks to be placed inside the packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignatureMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignatureMask"])
+
     @SignatureMask.setter
     def SignatureMask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignatureMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignatureMask"], value)
 
     @property
     def SignatureOffset(self):
@@ -140,11 +147,12 @@ class EgressOnlyTracking(Base):
         -------
         - number: Offset where the signature value will be placed in the packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignatureOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignatureOffset"])
+
     @SignatureOffset.setter
     def SignatureOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignatureOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignatureOffset"], value)
 
     @property
     def SignatureValue(self):
@@ -154,22 +162,33 @@ class EgressOnlyTracking(Base):
         -------
         - str: Signature value to be placed inside the packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SignatureValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SignatureValue"])
+
     @SignatureValue.setter
     def SignatureValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SignatureValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SignatureValue"], value)
 
-    def update(self, Egress=None, Enabled=None, Port=None, QbvSettings=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
+    def update(
+        self,
+        Egress=None,
+        Enabled=None,
+        Port=None,
+        QbvSettings=None,
+        SignatureLengthType=None,
+        SignatureMask=None,
+        SignatureOffset=None,
+        SignatureValue=None,
+    ):
         """Updates egressOnlyTracking resource on the server.
 
         Args
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureLengthType (str(fourByte | twelveByte)):
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
@@ -180,16 +199,26 @@ class EgressOnlyTracking(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Egress=None, Enabled=None, Port=None, QbvSettings=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
+    def add(
+        self,
+        Egress=None,
+        Enabled=None,
+        Port=None,
+        QbvSettings=None,
+        SignatureLengthType=None,
+        SignatureMask=None,
+        SignatureOffset=None,
+        SignatureValue=None,
+    ):
         """Adds a new egressOnlyTracking resource on the server and adds it to the container.
 
         Args
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureLengthType (str(fourByte | twelveByte)):
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
@@ -214,7 +243,17 @@ class EgressOnlyTracking(Base):
         """
         self._delete()
 
-    def find(self, Egress=None, Enabled=None, Port=None, QbvSettings=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
+    def find(
+        self,
+        Egress=None,
+        Enabled=None,
+        Port=None,
+        QbvSettings=None,
+        SignatureLengthType=None,
+        SignatureMask=None,
+        SignatureOffset=None,
+        SignatureValue=None,
+    ):
         """Finds and retrieves egressOnlyTracking resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egressOnlyTracking resources from the server.
@@ -225,9 +264,9 @@ class EgressOnlyTracking(Base):
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureLengthType (str(fourByte | twelveByte)):
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.

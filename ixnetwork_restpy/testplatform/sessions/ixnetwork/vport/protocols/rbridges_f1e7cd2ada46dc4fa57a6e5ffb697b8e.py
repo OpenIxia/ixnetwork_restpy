@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,25 +34,24 @@ class RBridges(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rBridges'
+    _SDM_NAME = "rBridges"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'EnableCommonMtId': 'enableCommonMtId',
-        'ExtendedCircuitId': 'extendedCircuitId',
-        'GraphId': 'graphId',
-        'HostName': 'hostName',
-        'LinkMetric': 'linkMetric',
-        'MtId': 'mtId',
-        'PrimaryFtag': 'primaryFtag',
-        'Priority': 'priority',
-        'Role': 'role',
-        'SecondaryFtag': 'secondaryFtag',
-        'SequenceNumber': 'sequenceNumber',
-        'SwitchId': 'switchId',
-        'SystemId': 'systemId',
+        "Age": "age",
+        "EnableCommonMtId": "enableCommonMtId",
+        "ExtendedCircuitId": "extendedCircuitId",
+        "GraphId": "graphId",
+        "HostName": "hostName",
+        "LinkMetric": "linkMetric",
+        "MtId": "mtId",
+        "PrimaryFtag": "primaryFtag",
+        "Priority": "priority",
+        "Role": "role",
+        "SecondaryFtag": "secondaryFtag",
+        "SequenceNumber": "sequenceNumber",
+        "SwitchId": "switchId",
+        "SystemId": "systemId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RBridges, self).__init__(parent, list_op)
@@ -64,7 +64,7 @@ class RBridges(Base):
         -------
         - number: This indicates the age in time in seconds, since it was last refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def EnableCommonMtId(self):
@@ -74,7 +74,7 @@ class RBridges(Base):
         -------
         - bool: If true, common Mt ld is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCommonMtId'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCommonMtId"])
 
     @property
     def ExtendedCircuitId(self):
@@ -84,7 +84,7 @@ class RBridges(Base):
         -------
         - number: The hexadecimal format of the extended circuit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtendedCircuitId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExtendedCircuitId"])
 
     @property
     def GraphId(self):
@@ -94,7 +94,7 @@ class RBridges(Base):
         -------
         - number: This indicates the Graph ID value if FTAG is present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GraphId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GraphId"])
 
     @property
     def HostName(self):
@@ -104,7 +104,7 @@ class RBridges(Base):
         -------
         - str: The host name as retrieved from the related packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def LinkMetric(self):
@@ -114,7 +114,7 @@ class RBridges(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
 
     @property
     def MtId(self):
@@ -124,7 +124,7 @@ class RBridges(Base):
         -------
         - number: This indicates the MT ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MtId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MtId"])
 
     @property
     def PrimaryFtag(self):
@@ -134,7 +134,7 @@ class RBridges(Base):
         -------
         - number: This indicates the Primary FTAG value if FTAG is present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryFtag'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryFtag"])
 
     @property
     def Priority(self):
@@ -144,7 +144,7 @@ class RBridges(Base):
         -------
         - number: This indicates the Broadcast Root Priority as advertised by this RBridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
 
     @property
     def Role(self):
@@ -154,7 +154,7 @@ class RBridges(Base):
         -------
         - str: This indicates the role of the RBridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Role'])
+        return self._get_attribute(self._SDM_ATT_MAP["Role"])
 
     @property
     def SecondaryFtag(self):
@@ -164,7 +164,7 @@ class RBridges(Base):
         -------
         - number: This indicates the Secondary FTAG value if FTAG is present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SecondaryFtag'])
+        return self._get_attribute(self._SDM_ATT_MAP["SecondaryFtag"])
 
     @property
     def SequenceNumber(self):
@@ -174,7 +174,7 @@ class RBridges(Base):
         -------
         - number: This indicates the sequence number of the LSP containing the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def SwitchId(self):
@@ -184,7 +184,7 @@ class RBridges(Base):
         -------
         - number: This indicates the Switch ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchId"])
 
     @property
     def SystemId(self):
@@ -194,10 +194,10 @@ class RBridges(Base):
         -------
         - str: This indicates the ISIS System ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SystemId"])
 
     def add(self):
-        """Adds a new rBridges resource on the json, only valid with config assistant
+        """Adds a new rBridges resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -209,7 +209,23 @@ class RBridges(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, EnableCommonMtId=None, ExtendedCircuitId=None, GraphId=None, HostName=None, LinkMetric=None, MtId=None, PrimaryFtag=None, Priority=None, Role=None, SecondaryFtag=None, SequenceNumber=None, SwitchId=None, SystemId=None):
+    def find(
+        self,
+        Age=None,
+        EnableCommonMtId=None,
+        ExtendedCircuitId=None,
+        GraphId=None,
+        HostName=None,
+        LinkMetric=None,
+        MtId=None,
+        PrimaryFtag=None,
+        Priority=None,
+        Role=None,
+        SecondaryFtag=None,
+        SequenceNumber=None,
+        SwitchId=None,
+        SystemId=None,
+    ):
         # type: (int, bool, int, int, str, int, int, int, int, str, int, int, int, str) -> RBridges
         """Finds and retrieves rBridges resources from the server.
 

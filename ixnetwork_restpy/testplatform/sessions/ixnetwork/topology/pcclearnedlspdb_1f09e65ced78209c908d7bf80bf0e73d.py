@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class PccLearnedLspDb(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pccLearnedLspDb'
+    _SDM_NAME = "pccLearnedLspDb"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PccLearnedLspDb, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.destipv4address_82bc6a41b9337a2dedf7e396720959e4 import DestIpv4Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.destipv4address_82bc6a41b9337a2dedf7e396720959e4 import (
+            DestIpv4Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DestIpv4Address', None) is not None:
-                return self._properties.get('DestIpv4Address')
+            if self._properties.get("DestIpv4Address", None) is not None:
+                return self._properties.get("DestIpv4Address")
         return DestIpv4Address(self)._select()
 
     @property
@@ -72,10 +75,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.destipv6address_6333f28bd3662f5a8f83aabc7ece2d2a import DestIpv6Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.destipv6address_6333f28bd3662f5a8f83aabc7ece2d2a import (
+            DestIpv6Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DestIpv6Address', None) is not None:
-                return self._properties.get('DestIpv6Address')
+            if self._properties.get("DestIpv6Address", None) is not None:
+                return self._properties.get("DestIpv6Address")
         return DestIpv6Address(self)._select()
 
     @property
@@ -89,10 +95,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.errorinfo_d1a52084750f6e3362b71d1591073670 import ErrorInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.errorinfo_d1a52084750f6e3362b71d1591073670 import (
+            ErrorInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ErrorInfo', None) is not None:
-                return self._properties.get('ErrorInfo')
+            if self._properties.get("ErrorInfo", None) is not None:
+                return self._properties.get("ErrorInfo")
         return ErrorInfo(self)._select()
 
     @property
@@ -106,10 +115,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipversion_f8376a4cfcc15328a4fe9a3fb44f6670 import IpVersion
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipversion_f8376a4cfcc15328a4fe9a3fb44f6670 import (
+            IpVersion,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IpVersion', None) is not None:
-                return self._properties.get('IpVersion')
+            if self._properties.get("IpVersion", None) is not None:
+                return self._properties.get("IpVersion")
         return IpVersion(self)._select()
 
     @property
@@ -123,10 +135,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4nodeid_0058dcb0072bd8ec4de31da83d10b96a import Ipv4NodeId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4nodeid_0058dcb0072bd8ec4de31da83d10b96a import (
+            Ipv4NodeId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4NodeId', None) is not None:
-                return self._properties.get('Ipv4NodeId')
+            if self._properties.get("Ipv4NodeId", None) is not None:
+                return self._properties.get("Ipv4NodeId")
         return Ipv4NodeId(self)._select()
 
     @property
@@ -140,10 +155,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6nodeid_4387c92ac6681abc984b1a38400183c9 import Ipv6NodeId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6nodeid_4387c92ac6681abc984b1a38400183c9 import (
+            Ipv6NodeId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6NodeId', None) is not None:
-                return self._properties.get('Ipv6NodeId')
+            if self._properties.get("Ipv6NodeId", None) is not None:
+                return self._properties.get("Ipv6NodeId")
         return Ipv6NodeId(self)._select()
 
     @property
@@ -157,10 +175,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedlspindex_c701313bed13ee8aba049d45e00b1355 import LearnedLspIndex
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedlspindex_c701313bed13ee8aba049d45e00b1355 import (
+            LearnedLspIndex,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedLspIndex', None) is not None:
-                return self._properties.get('LearnedLspIndex')
+            if self._properties.get("LearnedLspIndex", None) is not None:
+                return self._properties.get("LearnedLspIndex")
         return LearnedLspIndex(self)._select()
 
     @property
@@ -174,10 +195,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedmsgdbtype_d3eeda9354841cd7f27654332e67c26b import LearnedMsgDbType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedmsgdbtype_d3eeda9354841cd7f27654332e67c26b import (
+            LearnedMsgDbType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedMsgDbType', None) is not None:
-                return self._properties.get('LearnedMsgDbType')
+            if self._properties.get("LearnedMsgDbType", None) is not None:
+                return self._properties.get("LearnedMsgDbType")
         return LearnedMsgDbType(self)._select()
 
     @property
@@ -191,10 +215,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localintefaceid_ae40044a30782cee0087b08a288efe1d import LocalIntefaceId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localintefaceid_ae40044a30782cee0087b08a288efe1d import (
+            LocalIntefaceId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LocalIntefaceId', None) is not None:
-                return self._properties.get('LocalIntefaceId')
+            if self._properties.get("LocalIntefaceId", None) is not None:
+                return self._properties.get("LocalIntefaceId")
         return LocalIntefaceId(self)._select()
 
     @property
@@ -208,10 +235,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localipv4address_b81d048af8b00be0fd4fded7e4d28574 import LocalIpv4Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localipv4address_b81d048af8b00be0fd4fded7e4d28574 import (
+            LocalIpv4Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LocalIpv4Address', None) is not None:
-                return self._properties.get('LocalIpv4Address')
+            if self._properties.get("LocalIpv4Address", None) is not None:
+                return self._properties.get("LocalIpv4Address")
         return LocalIpv4Address(self)._select()
 
     @property
@@ -225,10 +255,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localipv6address_db0b032b0167051f08ee1b875f3bb0d5 import LocalIpv6Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localipv6address_db0b032b0167051f08ee1b875f3bb0d5 import (
+            LocalIpv6Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LocalIpv6Address', None) is not None:
-                return self._properties.get('LocalIpv6Address')
+            if self._properties.get("LocalIpv6Address", None) is not None:
+                return self._properties.get("LocalIpv6Address")
         return LocalIpv6Address(self)._select()
 
     @property
@@ -242,10 +275,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localnodeid_a2150e20db7b7e8a73277c2b4581702d import LocalNodeId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.localnodeid_a2150e20db7b7e8a73277c2b4581702d import (
+            LocalNodeId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LocalNodeId', None) is not None:
-                return self._properties.get('LocalNodeId')
+            if self._properties.get("LocalNodeId", None) is not None:
+                return self._properties.get("LocalNodeId")
         return LocalNodeId(self)._select()
 
     @property
@@ -259,10 +295,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplslabel_f0b733862256902b721f5de4e5a0c542 import MplsLabel
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplslabel_f0b733862256902b721f5de4e5a0c542 import (
+            MplsLabel,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MplsLabel', None) is not None:
-                return self._properties.get('MplsLabel')
+            if self._properties.get("MplsLabel", None) is not None:
+                return self._properties.get("MplsLabel")
         return MplsLabel(self)._select()
 
     @property
@@ -276,10 +315,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.naitype_53c2cdf91ca50e9351d06a63484d2cf1 import NaiType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.naitype_53c2cdf91ca50e9351d06a63484d2cf1 import (
+            NaiType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NaiType', None) is not None:
-                return self._properties.get('NaiType')
+            if self._properties.get("NaiType", None) is not None:
+                return self._properties.get("NaiType")
         return NaiType(self)._select()
 
     @property
@@ -293,10 +335,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.plspid_051d75d17e1fb1b13dc5de62dda1109d import PlspId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.plspid_051d75d17e1fb1b13dc5de62dda1109d import (
+            PlspId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PlspId', None) is not None:
-                return self._properties.get('PlspId')
+            if self._properties.get("PlspId", None) is not None:
+                return self._properties.get("PlspId")
         return PlspId(self)._select()
 
     @property
@@ -310,10 +355,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteinterfaceid_c8d71be034f0bce6f7e7fee6fc575d5a import RemoteInterfaceId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteinterfaceid_c8d71be034f0bce6f7e7fee6fc575d5a import (
+            RemoteInterfaceId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteInterfaceId', None) is not None:
-                return self._properties.get('RemoteInterfaceId')
+            if self._properties.get("RemoteInterfaceId", None) is not None:
+                return self._properties.get("RemoteInterfaceId")
         return RemoteInterfaceId(self)._select()
 
     @property
@@ -327,10 +375,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteipv4address_ce13915019bdc07322aaeadd4f34e428 import RemoteIpv4Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteipv4address_ce13915019bdc07322aaeadd4f34e428 import (
+            RemoteIpv4Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteIpv4Address', None) is not None:
-                return self._properties.get('RemoteIpv4Address')
+            if self._properties.get("RemoteIpv4Address", None) is not None:
+                return self._properties.get("RemoteIpv4Address")
         return RemoteIpv4Address(self)._select()
 
     @property
@@ -344,10 +395,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteipv6address_4387d585717913933b818a169b61aa59 import RemoteIpv6Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remoteipv6address_4387d585717913933b818a169b61aa59 import (
+            RemoteIpv6Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteIpv6Address', None) is not None:
-                return self._properties.get('RemoteIpv6Address')
+            if self._properties.get("RemoteIpv6Address", None) is not None:
+                return self._properties.get("RemoteIpv6Address")
         return RemoteIpv6Address(self)._select()
 
     @property
@@ -361,10 +415,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remotenodeid_26967b9b8d67f080911a80d276776a63 import RemoteNodeId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.remotenodeid_26967b9b8d67f080911a80d276776a63 import (
+            RemoteNodeId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RemoteNodeId', None) is not None:
-                return self._properties.get('RemoteNodeId')
+            if self._properties.get("RemoteNodeId", None) is not None:
+                return self._properties.get("RemoteNodeId")
         return RemoteNodeId(self)._select()
 
     @property
@@ -378,10 +435,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestid_4bb823de2302ea46c48b53652c8059b5 import RequestId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestid_4bb823de2302ea46c48b53652c8059b5 import (
+            RequestId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RequestId', None) is not None:
-                return self._properties.get('RequestId')
+            if self._properties.get("RequestId", None) is not None:
+                return self._properties.get("RequestId")
         return RequestId(self)._select()
 
     @property
@@ -395,10 +455,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sid_8c2f535b036e46b302b17150b1058608 import Sid
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sid_8c2f535b036e46b302b17150b1058608 import (
+            Sid,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Sid', None) is not None:
-                return self._properties.get('Sid')
+            if self._properties.get("Sid", None) is not None:
+                return self._properties.get("Sid")
         return Sid(self)._select()
 
     @property
@@ -412,10 +475,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sidtype_579b966f4e4c3d833da37f5f97dc08ee import SidType
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sidtype_579b966f4e4c3d833da37f5f97dc08ee import (
+            SidType,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SidType', None) is not None:
-                return self._properties.get('SidType')
+            if self._properties.get("SidType", None) is not None:
+                return self._properties.get("SidType")
         return SidType(self)._select()
 
     @property
@@ -429,10 +495,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sourceipv4address_707bf2f3cc4230a0651eaf5afdefe498 import SourceIpv4Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sourceipv4address_707bf2f3cc4230a0651eaf5afdefe498 import (
+            SourceIpv4Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SourceIpv4Address', None) is not None:
-                return self._properties.get('SourceIpv4Address')
+            if self._properties.get("SourceIpv4Address", None) is not None:
+                return self._properties.get("SourceIpv4Address")
         return SourceIpv4Address(self)._select()
 
     @property
@@ -446,10 +515,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sourceipv6address_37f328eecbea00714a96da2c073f4428 import SourceIpv6Address
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sourceipv6address_37f328eecbea00714a96da2c073f4428 import (
+            SourceIpv6Address,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SourceIpv6Address', None) is not None:
-                return self._properties.get('SourceIpv6Address')
+            if self._properties.get("SourceIpv6Address", None) is not None:
+                return self._properties.get("SourceIpv6Address")
         return SourceIpv6Address(self)._select()
 
     @property
@@ -463,10 +535,13 @@ class PccLearnedLspDb(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.symbolicpathname_ed1c62d2f4f0680292dada315970feea import SymbolicPathName
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.symbolicpathname_ed1c62d2f4f0680292dada315970feea import (
+            SymbolicPathName,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SymbolicPathName', None) is not None:
-                return self._properties.get('SymbolicPathName')
+            if self._properties.get("SymbolicPathName", None) is not None:
+                return self._properties.get("SymbolicPathName")
         return SymbolicPathName(self)._select()
 
     @property
@@ -477,7 +552,7 @@ class PccLearnedLspDb(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -487,7 +562,7 @@ class PccLearnedLspDb(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -497,11 +572,12 @@ class PccLearnedLspDb(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> PccLearnedLspDb

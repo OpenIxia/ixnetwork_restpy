@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class VendorStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vendorStatLearnedInformation'
+    _SDM_NAME = "vendorStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'ExperimenterType': 'experimenterType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MessageLength': 'messageLength',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'VendorId': 'vendorId',
-        'VendorMessage': 'vendorMessage',
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "ExperimenterType": "experimenterType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MessageLength": "messageLength",
+        "NegotiatedVersion": "negotiatedVersion",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "VendorId": "vendorId",
+        "VendorMessage": "vendorMessage",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VendorStatLearnedInformation, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the datapath ID of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -73,7 +73,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the datapath ID of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -83,7 +83,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the error code of the error received
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -93,7 +93,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def ExperimenterType(self):
@@ -103,7 +103,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - number: Type of experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterType"])
 
     @property
     def Latency(self):
@@ -113,7 +113,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - number: Signifies the latency measurement for the OpenFlow channel in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -123,7 +123,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the local IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MessageLength(self):
@@ -133,7 +133,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - number: Signifies the length of the message transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessageLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessageLength"])
 
     @property
     def NegotiatedVersion(self):
@@ -143,7 +143,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def RemoteIp(self):
@@ -153,7 +153,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: The IP address of the DUT at the other end of the Open Flow channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -163,7 +163,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the reply state of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def VendorId(self):
@@ -173,7 +173,7 @@ class VendorStatLearnedInformation(Base):
         -------
         - number: Signifies the vendor identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorId"])
 
     @property
     def VendorMessage(self):
@@ -183,10 +183,10 @@ class VendorStatLearnedInformation(Base):
         -------
         - str: Signifies the vendor message value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorMessage'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorMessage"])
 
     def add(self):
-        """Adds a new vendorStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new vendorStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +198,22 @@ class VendorStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterType=None, Latency=None, LocalIp=None, MessageLength=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, VendorId=None, VendorMessage=None):
+    def find(
+        self,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        ExperimenterType=None,
+        Latency=None,
+        LocalIp=None,
+        MessageLength=None,
+        NegotiatedVersion=None,
+        RemoteIp=None,
+        ReplyState=None,
+        VendorId=None,
+        VendorMessage=None,
+    ):
         # type: (str, str, str, str, int, int, str, int, str, str, str, int, str) -> VendorStatLearnedInformation
         """Finds and retrieves vendorStatLearnedInformation resources from the server.
 

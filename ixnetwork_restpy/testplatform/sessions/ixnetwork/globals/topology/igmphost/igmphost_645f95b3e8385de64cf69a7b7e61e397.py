@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class IgmpHost(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpHost'
+    _SDM_NAME = "igmpHost"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Enabled': 'enabled',
-        'IPDSCP': 'iPDSCP',
-        'InterStbStartDelay': 'interStbStartDelay',
-        'IntervalInMs': 'intervalInMs',
-        'Name': 'name',
-        'RatePerInterval': 'ratePerInterval',
-        'RowNames': 'rowNames',
-        'UnicastMode': 'unicastMode',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Enabled": "enabled",
+        "IPDSCP": "iPDSCP",
+        "InterStbStartDelay": "interStbStartDelay",
+        "IntervalInMs": "intervalInMs",
+        "Name": "name",
+        "RatePerInterval": "ratePerInterval",
+        "RowNames": "rowNames",
+        "UnicastMode": "unicastMode",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpHost, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class IgmpHost(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -69,7 +69,7 @@ class IgmpHost(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Enabled(self):
@@ -80,7 +80,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enabled"]))
 
     @property
     def IPDSCP(self):
@@ -91,7 +92,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the ToS/DSCP value in the IPv4 Header
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPDSCP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IPDSCP"]))
 
     @property
     def InterStbStartDelay(self):
@@ -102,7 +104,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds between Join messages from clients within the same range.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterStbStartDelay']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterStbStartDelay"])
+        )
 
     @property
     def IntervalInMs(self):
@@ -113,7 +118,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval used to calculate the rate for triggering an action (rate = count/interval)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntervalInMs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IntervalInMs"]))
 
     @property
     def Name(self):
@@ -123,11 +129,12 @@ class IgmpHost(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RatePerInterval(self):
@@ -138,7 +145,10 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Reports triggered per time interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RatePerInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RatePerInterval"])
+        )
 
     @property
     def RowNames(self):
@@ -148,7 +158,7 @@ class IgmpHost(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def UnicastMode(self):
@@ -159,7 +169,8 @@ class IgmpHost(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Unicast Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UnicastMode"]))
 
     def update(self, Name=None):
         # type: (str) -> IgmpHost
@@ -221,7 +232,16 @@ class IgmpHost(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Enabled=None, IPDSCP=None, InterStbStartDelay=None, IntervalInMs=None, RatePerInterval=None, UnicastMode=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Enabled=None,
+        IPDSCP=None,
+        InterStbStartDelay=None,
+        IntervalInMs=None,
+        RatePerInterval=None,
+        UnicastMode=None,
+    ):
         """Base class infrastructure that gets a list of igmpHost device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

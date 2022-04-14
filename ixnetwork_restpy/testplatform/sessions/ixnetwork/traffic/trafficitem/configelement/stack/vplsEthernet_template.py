@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class VplsEthernet(Base):
     __slots__ = ()
-    _SDM_NAME = 'vplsEthernet'
+    _SDM_NAME = "vplsEthernet"
     _SDM_ATT_MAP = {
-        'PweControlWordZero': 'vplsEthernet.pweControlWord.zero-1',
-        'PweControlWordReserved': 'vplsEthernet.pweControlWord.reserved-2',
-        'PweControlWordSequenceNumber': 'vplsEthernet.pweControlWord.sequenceNumber-3',
+        "PweControlWordZero": "vplsEthernet.pweControlWord.zero-1",
+        "PweControlWordReserved": "vplsEthernet.pweControlWord.reserved-2",
+        "PweControlWordSequenceNumber": "vplsEthernet.pweControlWord.sequenceNumber-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class VplsEthernet(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PweControlWordZero']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PweControlWordZero"])
+        )
 
     @property
     def PweControlWordReserved(self):
@@ -32,7 +35,10 @@ class VplsEthernet(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PweControlWordReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PweControlWordReserved"])
+        )
 
     @property
     def PweControlWordSequenceNumber(self):
@@ -42,7 +48,10 @@ class VplsEthernet(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PweControlWordSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PweControlWordSequenceNumber"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

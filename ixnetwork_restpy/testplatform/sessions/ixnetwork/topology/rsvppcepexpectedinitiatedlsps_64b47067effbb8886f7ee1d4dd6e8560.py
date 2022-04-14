@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class RsvpPcepExpectedInitiatedLsps(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpPcepExpectedInitiatedLsps'
+    _SDM_NAME = "rsvpPcepExpectedInitiatedLsps"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BackupLspId': 'backupLspId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableRRO': 'enableRRO',
-        'LocalIp': 'localIp',
-        'Name': 'name',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'SessionInformation': 'sessionInformation',
-        'State': 'state',
-        'SymbolicPathName': 'symbolicPathName',
+        "Active": "active",
+        "BackupLspId": "backupLspId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableRRO": "enableRRO",
+        "LocalIp": "localIp",
+        "Name": "name",
+        "NumberOfRroSubObjects": "numberOfRroSubObjects",
+        "SessionInformation": "sessionInformation",
+        "State": "state",
+        "SymbolicPathName": "symbolicPathName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpPcepExpectedInitiatedLsps, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import RsvpIngressRROSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import (
+            RsvpIngressRROSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpIngressRROSubObjectsList', None) is not None:
-                return self._properties.get('RsvpIngressRROSubObjectsList')
+            if self._properties.get("RsvpIngressRROSubObjectsList", None) is not None:
+                return self._properties.get("RsvpIngressRROSubObjectsList")
         return RsvpIngressRROSubObjectsList(self)
 
     @property
@@ -80,10 +83,13 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -95,7 +101,8 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BackupLspId(self):
@@ -103,10 +110,11 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 
+        - obj(ixnetwork_restpy.multivalue.Multivalue):
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BackupLspId"]))
 
     @property
     def Count(self):
@@ -116,7 +124,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -126,7 +134,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableRRO(self):
@@ -137,7 +145,8 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable RRO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRRO']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRRO"]))
 
     @property
     def LocalIp(self):
@@ -147,7 +156,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def Name(self):
@@ -157,11 +166,12 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfRroSubObjects(self):
@@ -171,11 +181,12 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - number: Number Of RRO Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"])
+
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"], value)
 
     @property
     def SessionInformation(self):
@@ -185,7 +196,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - list(str[lastErrLSPAdmissionControlFailure | lastErrLSPBadAdSpecValue | lastErrLSPBadExplicitRoute | lastErrLSPBadFlowspecValue | lastErrLSPBadInitialSubobject | lastErrLSPBadLooseNode | lastErrLSPBadStrictNode | lastErrLSPBadTSpecValue | lastErrLSPDelayBoundNotMet | lastErrLSPMPLSAllocationFailure | lastErrLSPMTUTooBig | lastErrLSPNonRSVPRouter | lastErrLSPNoRouteAvailable | lastErrLSPPathErr | lastErrLSPPathTearSent | lastErrLSPRequestedBandwidthUnavailable | lastErrLSPReservationTearReceived | lastErrLSPReservationTearSent | lastErrLSPReservationTimeout | lastErrLSPRoutingLoops | lastErrLSPRoutingProblem | lastErrLSPRSVPSystemError | lastErrLSPServiceConflict | lastErrLSPServiceUnsupported | lastErrLSPTrafficControlError | lastErrLSPTrafficControlSystemError | lastErrLSPTrafficOrganizationError | lastErrLSPTrafficServiceError | lastErrLSPUnknownObjectClass | lastErrLSPUnknownObjectCType | lastErrLSPUnsupportedL3PID | lSPAdmissionControlFailure | lSPBadAdSpecValue | lSPBadExplicitRoute | lSPBadFlowspecValue | lSPBadInitialSubobject | lSPBadLooseNode | lSPBadStrictNode | lSPBadTSpecValue | lSPDelayBoundNotMet | lSPMPLSAllocationFailure | lSPMTUTooBig | lSPNonRSVPRouter | lSPNoRouteAvailable | lSPPathErr | lSPPathTearSent | lSPPceInitiatedMsgNotReceived | lSPRequestedBandwidthUnavailable | lSPReservationNotReceived | lSPReservationTearReceived | lSPReservationTearSent | lSPReservationTimeout | lSPRoutingLoops | lSPRoutingProblem | lSPRSVPSystemError | lSPServiceConflict | lSPServiceUnsupported | lSPTrafficControlError | lSPTrafficControlSystemError | lSPTrafficOrganizationError | lSPTrafficServiceError | lSPUnknownObjectClass | lSPUnknownObjectCType | lSPUnsupportedL3PID | mbbCompleted | mbbTriggered | none]): Logs additional information about the RSVP session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInformation'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInformation"])
 
     @property
     def State(self):
@@ -195,7 +206,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         -------
         - list(str[down | none | notStarted | pceRequestNotReceived | up]): State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def SymbolicPathName(self):
@@ -206,7 +217,10 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is used for generating the traffic for those LSPs from PCE for which the Symbolic Path Name is configured and matches the value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SymbolicPathName"])
+        )
 
     def update(self, Name=None, NumberOfRroSubObjects=None):
         # type: (str, int) -> RsvpPcepExpectedInitiatedLsps
@@ -226,7 +240,16 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None, NumberOfRroSubObjects=None, SessionInformation=None, State=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalIp=None,
+        Name=None,
+        NumberOfRroSubObjects=None,
+        SessionInformation=None,
+        State=None,
+    ):
         # type: (int, str, List[str], str, int, List[str], List[str]) -> RsvpPcepExpectedInitiatedLsps
         """Finds and retrieves rsvpPcepExpectedInitiatedLsps resources from the server.
 
@@ -272,7 +295,14 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, BackupLspId=None, EnableRRO=None, SymbolicPathName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BackupLspId=None,
+        EnableRRO=None,
+        SymbolicPathName=None,
+    ):
         """Base class infrastructure that gets a list of rsvpPcepExpectedInitiatedLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

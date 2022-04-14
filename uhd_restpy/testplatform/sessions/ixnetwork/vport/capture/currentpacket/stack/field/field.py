@@ -65,7 +65,7 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FieldValue'])
 
     def add(self):
-        """Adds a new field resource on the json, only valid with config assistant
+        """Adds a new field resource on the json, only valid with batch add utility
 
         Returns
         -------

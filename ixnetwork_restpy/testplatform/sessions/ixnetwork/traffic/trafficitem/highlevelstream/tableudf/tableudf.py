@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,12 +34,11 @@ class TableUdf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tableUdf'
+    _SDM_NAME = "tableUdf"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
+        "Enabled": "enabled",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TableUdf, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class TableUdf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import Column
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import (
+            Column,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Column', None) is not None:
-                return self._properties.get('Column')
+            if self._properties.get("Column", None) is not None:
+                return self._properties.get("Column")
         return Column(self)
 
     @property
@@ -68,11 +71,12 @@ class TableUdf(Base):
         -------
         - bool: If enabled, enables the UDF table for this flow group if it is supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     def update(self, Enabled=None):
         # type: (bool) -> TableUdf
@@ -90,7 +94,7 @@ class TableUdf(Base):
 
     def add(self, Enabled=None):
         # type: (bool) -> TableUdf
-        """Adds a new tableUdf resource on the json, only valid with config assistant
+        """Adds a new tableUdf resource on the json, only valid with batch add utility
 
         Args
         ----

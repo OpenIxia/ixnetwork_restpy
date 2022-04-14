@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,40 +33,39 @@ class DotOneX(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dotOneX'
+    _SDM_NAME = "dotOneX"
     _SDM_ATT_MAP = {
-        'AltName': 'altName',
-        'AuthOnNoResponse': 'authOnNoResponse',
-        'AuthWaitPeriod': 'authWaitPeriod',
-        'City': 'city',
-        'Company': 'company',
-        'Count': 'count',
-        'Country': 'country',
-        'Department': 'department',
-        'DescriptiveName': 'descriptiveName',
-        'DisableLogoff': 'disableLogoff',
-        'DutTestMode': 'dutTestMode',
-        'FragmentSize': 'fragmentSize',
-        'GetCACertOnly': 'getCACertOnly',
-        'KeySize': 'keySize',
-        'KeyUsage': 'keyUsage',
-        'MacAuthPrefix': 'macAuthPrefix',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'MaxSetupRate': 'maxSetupRate',
-        'MaxStart': 'maxStart',
-        'MaxTeardownRate': 'maxTeardownRate',
-        'Name': 'name',
-        'OnlyMulticast': 'onlyMulticast',
-        'RowNames': 'rowNames',
-        'ServerURL': 'serverURL',
-        'StartPeriod': 'startPeriod',
-        'State': 'state',
-        'SuccessiveStart': 'successiveStart',
-        'UseVlanIdentify': 'useVlanIdentify',
-        'WaitBeforeRun': 'waitBeforeRun',
+        "AltName": "altName",
+        "AuthOnNoResponse": "authOnNoResponse",
+        "AuthWaitPeriod": "authWaitPeriod",
+        "City": "city",
+        "Company": "company",
+        "Count": "count",
+        "Country": "country",
+        "Department": "department",
+        "DescriptiveName": "descriptiveName",
+        "DisableLogoff": "disableLogoff",
+        "DutTestMode": "dutTestMode",
+        "FragmentSize": "fragmentSize",
+        "GetCACertOnly": "getCACertOnly",
+        "KeySize": "keySize",
+        "KeyUsage": "keyUsage",
+        "MacAuthPrefix": "macAuthPrefix",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "MaxSetupRate": "maxSetupRate",
+        "MaxStart": "maxStart",
+        "MaxTeardownRate": "maxTeardownRate",
+        "Name": "name",
+        "OnlyMulticast": "onlyMulticast",
+        "RowNames": "rowNames",
+        "ServerURL": "serverURL",
+        "StartPeriod": "startPeriod",
+        "State": "state",
+        "SuccessiveStart": "successiveStart",
+        "UseVlanIdentify": "useVlanIdentify",
+        "WaitBeforeRun": "waitBeforeRun",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DotOneX, self).__init__(parent, list_op)
@@ -79,7 +79,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Other Options - Alternative Subject Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AltName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AltName"]))
 
     @property
     def AuthOnNoResponse(self):
@@ -90,7 +91,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthOnNoResponse']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthOnNoResponse"])
+        )
 
     @property
     def AuthWaitPeriod(self):
@@ -101,7 +105,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum time interval, measured in seconds, that a Supplicant will wait for an Authenticator response.Maximum value is 3600
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthWaitPeriod']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthWaitPeriod"])
+        )
 
     @property
     def City(self):
@@ -112,7 +119,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification Info - City
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['City']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["City"]))
 
     @property
     def Company(self):
@@ -123,7 +131,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification Info - Company
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Company']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Company"]))
 
     @property
     def Count(self):
@@ -133,7 +142,7 @@ class DotOneX(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Country(self):
@@ -144,7 +153,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification Info - Country
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Country']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Country"]))
 
     @property
     def Department(self):
@@ -155,7 +165,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification Info - Department
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Department']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Department"]))
 
     @property
     def DescriptiveName(self):
@@ -165,7 +176,7 @@ class DotOneX(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DisableLogoff(self):
@@ -176,7 +187,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Do not send Logoff message when closing a session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DisableLogoff']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DisableLogoff"]))
 
     @property
     def DutTestMode(self):
@@ -187,7 +199,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify what is the dut port mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DutTestMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DutTestMode"]))
 
     @property
     def FragmentSize(self):
@@ -198,7 +211,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum size of a fragment that can be sent on the wire for TLS fragments that comprise the phase 1 conversation (tunnel establishment). Max value is 1400
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FragmentSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FragmentSize"]))
 
     @property
     def GetCACertOnly(self):
@@ -209,7 +223,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use this option to get CA Certificate Only. Eg: For PEAPv0/v1 case there is no need to get User Certificate.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GetCACertOnly']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GetCACertOnly"]))
 
     @property
     def KeySize(self):
@@ -220,7 +235,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Key Options - Key Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeySize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeySize"]))
 
     @property
     def KeyUsage(self):
@@ -231,7 +247,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select key usage extensions
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyUsage']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyUsage"]))
 
     @property
     def MacAuthPrefix(self):
@@ -242,7 +259,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When using machine authentication, a prefix is needed to differentiate between users and machines.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacAuthPrefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MacAuthPrefix"]))
 
     @property
     def MaxOutstandingRequests(self):
@@ -253,7 +271,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum number of sessions that can be negotiated at one moment. Max value is 1024
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+        )
 
     @property
     def MaxSetupRate(self):
@@ -264,7 +285,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of interfaces to setup per second. Max rate is 1024
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxSetupRate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxSetupRate"]))
 
     @property
     def MaxStart(self):
@@ -275,7 +297,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of times to send EAPOL Start frames for which no response is received before declaring that the sessions have timed out. Max value is 100
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxStart']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxStart"]))
 
     @property
     def MaxTeardownRate(self):
@@ -286,7 +309,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of interfaces to tear down per second. Max value is 1024
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxTeardownRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxTeardownRate"])
+        )
 
     @property
     def Name(self):
@@ -296,11 +322,12 @@ class DotOneX(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OnlyMulticast(self):
@@ -311,7 +338,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify if destination MAC address can be multicast.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OnlyMulticast']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OnlyMulticast"]))
 
     @property
     def RowNames(self):
@@ -321,7 +349,7 @@ class DotOneX(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     @property
     def ServerURL(self):
@@ -332,7 +360,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Certificate Server URL
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServerURL']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ServerURL"]))
 
     @property
     def StartPeriod(self):
@@ -343,7 +372,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The time interval between successive EAPOL Start messages sent by a Supplicant.Maxium value is 3600
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartPeriod']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartPeriod"]))
 
     @property
     def State(self):
@@ -354,7 +384,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identification Info - State
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['State']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["State"]))
 
     @property
     def SuccessiveStart(self):
@@ -365,7 +396,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of EAPOL Start messages sent when the supplicant starts the process of authentication. Max value is 100
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuccessiveStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SuccessiveStart"])
+        )
 
     @property
     def UseVlanIdentify(self):
@@ -376,7 +410,10 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify if VLAN is to be used to identify the supplicants
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseVlanIdentify']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseVlanIdentify"])
+        )
 
     @property
     def WaitBeforeRun(self):
@@ -387,7 +424,8 @@ class DotOneX(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of secs to wait before running the protocol.Maximum wait is 500
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WaitBeforeRun"]))
 
     def update(self, Name=None):
         # type: (str) -> DotOneX
@@ -449,7 +487,35 @@ class DotOneX(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AltName=None, AuthOnNoResponse=None, AuthWaitPeriod=None, City=None, Company=None, Country=None, Department=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, GetCACertOnly=None, KeySize=None, KeyUsage=None, MacAuthPrefix=None, MaxOutstandingRequests=None, MaxSetupRate=None, MaxStart=None, MaxTeardownRate=None, OnlyMulticast=None, ServerURL=None, StartPeriod=None, State=None, SuccessiveStart=None, UseVlanIdentify=None, WaitBeforeRun=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AltName=None,
+        AuthOnNoResponse=None,
+        AuthWaitPeriod=None,
+        City=None,
+        Company=None,
+        Country=None,
+        Department=None,
+        DisableLogoff=None,
+        DutTestMode=None,
+        FragmentSize=None,
+        GetCACertOnly=None,
+        KeySize=None,
+        KeyUsage=None,
+        MacAuthPrefix=None,
+        MaxOutstandingRequests=None,
+        MaxSetupRate=None,
+        MaxStart=None,
+        MaxTeardownRate=None,
+        OnlyMulticast=None,
+        ServerURL=None,
+        StartPeriod=None,
+        State=None,
+        SuccessiveStart=None,
+        UseVlanIdentify=None,
+        WaitBeforeRun=None,
+    ):
         """Base class infrastructure that gets a list of dotOneX device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

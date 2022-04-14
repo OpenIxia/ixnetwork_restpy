@@ -122,7 +122,7 @@ class IsisPseudoMultiTopologyValuesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisPseudoMultiTopologyValuesList
-        """Adds a new IsisPseudoMultiTopologyValuesList resource on the json, only valid with config assistant
+        """Adds a new IsisPseudoMultiTopologyValuesList resource on the json, only valid with batch add utility
 
         Args
         ----

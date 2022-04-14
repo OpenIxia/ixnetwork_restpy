@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,36 @@ class FrameRate(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'frameRate'
+    _SDM_NAME = "frameRate"
     _SDM_ATT_MAP = {
-        'BitRateUnitsType': 'bitRateUnitsType',
-        'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
-        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
-        'Rate': 'rate',
-        'Type': 'type',
+        "BitRateUnitsType": "bitRateUnitsType",
+        "EnforceMinimumInterPacketGap": "enforceMinimumInterPacketGap",
+        "InterPacketGapUnitsType": "interPacketGapUnitsType",
+        "Rate": "rate",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'bitRateUnitsType': ['bitsPerSec', 'bytesPerSec', 'kbitsPerSec', 'kbytesPerSec', 'mbitsPerSec', 'mbytesPerSec'],
-        'interPacketGapUnitsType': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
-        'type': ['bitsPerSecond', 'framesPerSecond', 'interPacketGap', 'percentLineRate'],
+        "bitRateUnitsType": [
+            "bitsPerSec",
+            "bytesPerSec",
+            "kbitsPerSec",
+            "kbytesPerSec",
+            "mbitsPerSec",
+            "mbytesPerSec",
+        ],
+        "interPacketGapUnitsType": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
+        "type": [
+            "bitsPerSecond",
+            "framesPerSecond",
+            "interPacketGap",
+            "percentLineRate",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +76,12 @@ class FrameRate(Base):
         -------
         - str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec): The rate units for transmitting packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BitRateUnitsType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BitRateUnitsType"])
+
     @BitRateUnitsType.setter
     def BitRateUnitsType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BitRateUnitsType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BitRateUnitsType"], value)
 
     @property
     def EnforceMinimumInterPacketGap(self):
@@ -71,11 +91,12 @@ class FrameRate(Base):
         -------
         - number: Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnforceMinimumInterPacketGap"])
+
     @EnforceMinimumInterPacketGap.setter
     def EnforceMinimumInterPacketGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnforceMinimumInterPacketGap"], value)
 
     @property
     def InterPacketGapUnitsType(self):
@@ -85,11 +106,12 @@ class FrameRate(Base):
         -------
         - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterPacketGapUnitsType"])
+
     @InterPacketGapUnitsType.setter
     def InterPacketGapUnitsType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterPacketGapUnitsType"], value)
 
     @property
     def Rate(self):
@@ -99,11 +121,12 @@ class FrameRate(Base):
         -------
         - number: The rate at which packet is transmitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rate"])
+
     @Rate.setter
     def Rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rate"], value)
 
     @property
     def Type(self):
@@ -113,13 +136,21 @@ class FrameRate(Base):
         -------
         - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): Sets the frame rate types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+    def update(
+        self,
+        BitRateUnitsType=None,
+        EnforceMinimumInterPacketGap=None,
+        InterPacketGapUnitsType=None,
+        Rate=None,
+        Type=None,
+    ):
         # type: (str, int, str, int, str) -> FrameRate
         """Updates frameRate resource on the server.
 
@@ -137,7 +168,14 @@ class FrameRate(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+    def find(
+        self,
+        BitRateUnitsType=None,
+        EnforceMinimumInterPacketGap=None,
+        InterPacketGapUnitsType=None,
+        Rate=None,
+        Type=None,
+    ):
         # type: (str, int, str, int, str) -> FrameRate
         """Finds and retrieves frameRate resources from the server.
 

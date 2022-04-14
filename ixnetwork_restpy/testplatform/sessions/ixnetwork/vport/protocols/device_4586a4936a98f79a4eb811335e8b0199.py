@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,21 @@ class Device(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'device'
+    _SDM_NAME = "device"
     _SDM_ATT_MAP = {
-        'CaCertificateFile': 'caCertificateFile',
-        'CertificateFile': 'certificateFile',
-        'Description': 'description',
-        'DeviceRole': 'deviceRole',
-        'EnableVersion100': 'enableVersion100',
-        'EnableVersion131': 'enableVersion131',
-        'Enabled': 'enabled',
-        'PrivateFile': 'privateFile',
-        'Version': 'version',
+        "CaCertificateFile": "caCertificateFile",
+        "CertificateFile": "certificateFile",
+        "Description": "description",
+        "DeviceRole": "deviceRole",
+        "EnableVersion100": "enableVersion100",
+        "EnableVersion131": "enableVersion131",
+        "Enabled": "enabled",
+        "PrivateFile": "privateFile",
+        "Version": "version",
     }
     _SDM_ENUM_MAP = {
-        'deviceRole': ['controller', 'switch'],
-        'version': ['1.0.0'],
+        "deviceRole": ["controller", "switch"],
+        "version": ["1.0.0"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -65,10 +66,13 @@ class Device(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_dfb69d588f2b15dfce9b51a039348724 import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_dfb69d588f2b15dfce9b51a039348724 import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -79,7 +83,7 @@ class Device(Base):
         -------
         - str: Indicates the Trusted Root certificate file for the device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CaCertificateFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["CaCertificateFile"])
 
     @property
     def CertificateFile(self):
@@ -89,7 +93,7 @@ class Device(Base):
         -------
         - str: Indicates the certificate file for the device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CertificateFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["CertificateFile"])
 
     @property
     def Description(self):
@@ -99,11 +103,12 @@ class Device(Base):
         -------
         - str: A description of the device used to configure this protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DeviceRole(self):
@@ -113,11 +118,12 @@ class Device(Base):
         -------
         - str(controller | switch): Indicates the device role of the OpenFlow device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeviceRole'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeviceRole"])
+
     @DeviceRole.setter
     def DeviceRole(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeviceRole'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeviceRole"], value)
 
     @property
     def EnableVersion100(self):
@@ -127,11 +133,12 @@ class Device(Base):
         -------
         - bool: Enables protocol version 1.0
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVersion100'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVersion100"])
+
     @EnableVersion100.setter
     def EnableVersion100(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVersion100'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVersion100"], value)
 
     @property
     def EnableVersion131(self):
@@ -141,11 +148,12 @@ class Device(Base):
         -------
         - bool: Enables protocol version 1.3
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVersion131'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVersion131"])
+
     @EnableVersion131.setter
     def EnableVersion131(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVersion131'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVersion131"], value)
 
     @property
     def Enabled(self):
@@ -155,11 +163,12 @@ class Device(Base):
         -------
         - bool: If set enables the open-flow device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def PrivateFile(self):
@@ -169,23 +178,32 @@ class Device(Base):
         -------
         - str: Indicates the private key file for the device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrivateFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrivateFile"])
 
     @property
     def Version(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(1.0.0): Indicates the current version of the Openflow protocol implemented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
+    def update(
+        self,
+        Description=None,
+        DeviceRole=None,
+        EnableVersion100=None,
+        EnableVersion131=None,
+        Enabled=None,
+        Version=None,
+    ):
         # type: (str, str, bool, bool, bool, str) -> Device
         """Updates device resource on the server.
 
@@ -204,7 +222,15 @@ class Device(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
+    def add(
+        self,
+        Description=None,
+        DeviceRole=None,
+        EnableVersion100=None,
+        EnableVersion131=None,
+        Enabled=None,
+        Version=None,
+    ):
         # type: (str, str, bool, bool, bool, str) -> Device
         """Adds a new device resource on the server and adds it to the container.
 
@@ -237,7 +263,18 @@ class Device(Base):
         """
         self._delete()
 
-    def find(self, CaCertificateFile=None, CertificateFile=None, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, PrivateFile=None, Version=None):
+    def find(
+        self,
+        CaCertificateFile=None,
+        CertificateFile=None,
+        Description=None,
+        DeviceRole=None,
+        EnableVersion100=None,
+        EnableVersion131=None,
+        Enabled=None,
+        PrivateFile=None,
+        Version=None,
+    ):
         # type: (str, str, str, str, bool, bool, bool, str, str) -> Device
         """Finds and retrieves device resources from the server.
 
@@ -304,7 +341,11 @@ class Device(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addTlsCertificates', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addTlsCertificates", payload=payload, response_object=None
+        )

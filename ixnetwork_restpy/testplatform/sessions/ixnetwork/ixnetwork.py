@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,16 @@ class Ixnetwork(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ixnetwork'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "ixnetwork"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ixnetwork, self).__init__(parent, list_op)
 
     @property
     def AvailableHardware(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware.AvailableHardware): An instance of the AvailableHardware class
@@ -52,10 +51,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware import AvailableHardware
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware import (
+            AvailableHardware,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AvailableHardware', None) is not None:
-                return self._properties.get('AvailableHardware')
+            if self._properties.get("AvailableHardware", None) is not None:
+                return self._properties.get("AvailableHardware")
         return AvailableHardware(self)._select()
 
     @property
@@ -69,10 +71,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals import Globals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals import (
+            Globals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Globals', None) is not None:
-                return self._properties.get('Globals')
+            if self._properties.get("Globals", None) is not None:
+                return self._properties.get("Globals")
         return Globals(self)._select()
 
     @property
@@ -86,10 +91,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment import Impairment
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment import (
+            Impairment,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Impairment', None) is not None:
-                return self._properties.get('Impairment')
+            if self._properties.get("Impairment", None) is not None:
+                return self._properties.get("Impairment")
         return Impairment(self)._select()
 
     @property
@@ -103,10 +111,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import Lag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import (
+            Lag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lag', None) is not None:
-                return self._properties.get('Lag')
+            if self._properties.get("Lag", None) is not None:
+                return self._properties.get("Lag")
         return Lag(self)
 
     @property
@@ -120,10 +131,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.locations import Locations
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.locations import (
+            Locations,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Locations', None) is not None:
-                return self._properties.get('Locations')
+            if self._properties.get("Locations", None) is not None:
+                return self._properties.get("Locations")
         return Locations(self)
 
     @property
@@ -137,10 +151,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import QuickTest
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import (
+            QuickTest,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('QuickTest', None) is not None:
-                return self._properties.get('QuickTest')
+            if self._properties.get("QuickTest", None) is not None:
+                return self._properties.get("QuickTest")
         return QuickTest(self)._select()
 
     @property
@@ -154,10 +171,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.reporter import Reporter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.reporter import (
+            Reporter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Reporter', None) is not None:
-                return self._properties.get('Reporter')
+            if self._properties.get("Reporter", None) is not None:
+                return self._properties.get("Reporter")
         return Reporter(self)._select()
 
     @property
@@ -171,10 +191,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager import ResourceManager
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager import (
+            ResourceManager,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ResourceManager', None) is not None:
-                return self._properties.get('ResourceManager')
+            if self._properties.get("ResourceManager", None) is not None:
+                return self._properties.get("ResourceManager")
         return ResourceManager(self)._select()
 
     @property
@@ -188,11 +211,34 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics import Statistics
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics import (
+            Statistics,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Statistics', None) is not None:
-                return self._properties.get('Statistics')
+            if self._properties.get("Statistics", None) is not None:
+                return self._properties.get("Statistics")
         return Statistics(self)._select()
+
+    @property
+    def Timeline(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline): An instance of the Timeline class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import (
+            Timeline,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Timeline", None) is not None:
+                return self._properties.get("Timeline")
+        return Timeline(self)._select()
 
     @property
     def Topology(self):
@@ -205,10 +251,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import Topology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import (
+            Topology,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Topology', None) is not None:
-                return self._properties.get('Topology')
+            if self._properties.get("Topology", None) is not None:
+                return self._properties.get("Topology")
         return Topology(self)
 
     @property
@@ -222,10 +271,13 @@ class Ixnetwork(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic import Traffic
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic import (
+            Traffic,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Traffic', None) is not None:
-                return self._properties.get('Traffic')
+            if self._properties.get("Traffic", None) is not None:
+                return self._properties.get("Traffic")
         return Traffic(self)._select()
 
     @property
@@ -240,9 +292,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport import Vport
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vport', None) is not None:
-                return self._properties.get('Vport')
+            if self._properties.get("Vport", None) is not None:
+                return self._properties.get("Vport")
         return Vport(self)
 
     @property
@@ -257,9 +310,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch import Watch
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Watch', None) is not None:
-                return self._properties.get('Watch')
+            if self._properties.get("Watch", None) is not None:
+                return self._properties.get("Watch")
         return Watch(self)._select()
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
@@ -285,9 +339,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def ApplyL1Blocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -305,9 +363,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyL1Blocking', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyL1Blocking", payload=payload, response_object=None)
 
     def AssignPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -353,9 +413,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('assignPorts', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("assignPorts", payload=payload, response_object=None)
 
     def ClearAppLibraryStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -373,9 +435,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAppLibraryStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAppLibraryStats", payload=payload, response_object=None
+        )
 
     def ClearCardOwnershipById(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -395,9 +461,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearCardOwnershipById', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearCardOwnershipById", payload=payload, response_object=None
+        )
 
     def ClearCPDPStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -415,9 +485,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearCPDPStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("clearCPDPStats", payload=payload, response_object=None)
 
     def ClearPortsAndTrafficStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -433,7 +505,7 @@ class Ixnetwork(Base):
 
         clearPortsAndTrafficStats(Arg1=list, async_operation=bool)
         ----------------------------------------------------------
-        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])): 
+        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -442,9 +514,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPortsAndTrafficStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearPortsAndTrafficStats", payload=payload, response_object=None
+        )
 
     def ClearProtocolStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -462,9 +538,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearProtocolStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearProtocolStats", payload=payload, response_object=None
+        )
 
     def ClearStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -480,7 +560,7 @@ class Ixnetwork(Base):
 
         clearStats(Arg1=list, async_operation=bool)
         -------------------------------------------
-        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])): 
+        - Arg1 (list(str[waitForPortStatsRefresh | waitForTrafficStatsRefresh])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -489,9 +569,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("clearStats", payload=payload, response_object=None)
 
     def CloseAllTabs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -516,9 +598,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('closeAllTabs', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("closeAllTabs", payload=payload, response_object=None)
 
     def CollectLogs(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -589,9 +673,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('collectLogs', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("collectLogs", payload=payload, response_object=None)
 
     def ConnectCardById(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -611,9 +697,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('connectCardById', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("connectCardById", payload=payload, response_object=None)
 
     def ConnectToChassis(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -632,9 +720,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('connectToChassis', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("connectToChassis", payload=payload, response_object=None)
 
     def ConvertToNgpf(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -654,9 +744,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('convertToNgpf', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("convertToNgpf", payload=payload, response_object=None)
 
     def CopyFile(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -676,9 +768,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('copyFile', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyFile", payload=payload, response_object=None)
 
     def DisconnectCardById(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -698,9 +792,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disconnectCardById', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disconnectCardById", payload=payload, response_object=None
+        )
 
     def FetchColDisplayNamesForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -720,9 +818,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchColDisplayNamesForProtocol', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchColDisplayNamesForProtocol", payload=payload, response_object=None
+        )
 
     def FetchPropertyNameForDisplayName(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -743,9 +845,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchPropertyNameForDisplayName', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchPropertyNameForDisplayName", payload=payload, response_object=None
+        )
 
     def GenerateByteValues(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
@@ -769,9 +875,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateByteValues', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "generateByteValues", payload=payload, response_object=None
+        )
 
     def GenerateHexValues(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -795,9 +905,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateHexValues', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateHexValues", payload=payload, response_object=None)
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -815,9 +927,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def GetAggregatedDeviceGroupStatus(self, *args, **kwargs):
         """Executes the getAggregatedDeviceGroupStatus operation on the server.
@@ -825,7 +939,7 @@ class Ixnetwork(Base):
         getAggregatedDeviceGroupStatus(async_operation=bool)list
         --------------------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])): 
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])):
 
         Raises
         ------
@@ -833,9 +947,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAggregatedDeviceGroupStatus', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAggregatedDeviceGroupStatus", payload=payload, response_object=None
+        )
 
     def GetAllPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -854,9 +972,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllPorts', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getAllPorts", payload=payload, response_object=None)
 
     def GetAvailableProtocolStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -875,9 +995,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAvailableProtocolStats', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableProtocolStats", payload=payload, response_object=None
+        )
 
     def GetAvailableSlotLicense(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -897,9 +1021,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAvailableSlotLicense', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableSlotLicense", payload=payload, response_object=None
+        )
 
     def GetAvailableStatsForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -919,9 +1047,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAvailableStatsForProtocol', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableStatsForProtocol", payload=payload, response_object=None
+        )
 
     def GetAvailableStatsForSourceType(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -941,9 +1073,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAvailableStatsForSourceType', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableStatsForSourceType", payload=payload, response_object=None
+        )
 
     def GetChassisMode(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -962,9 +1098,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getChassisMode', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getChassisMode", payload=payload, response_object=None)
 
     def GetConfiguredProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -983,9 +1121,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getConfiguredProtocols', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getConfiguredProtocols", payload=payload, response_object=None
+        )
 
     def GetConfiguredProtocolsForPort(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1005,9 +1147,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getConfiguredProtocolsForPort', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getConfiguredProtocolsForPort", payload=payload, response_object=None
+        )
 
     def GetCsvColumnNames(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1015,9 +1161,9 @@ class Ixnetwork(Base):
 
         getCsvColumnNames(Arg1=href, async_operation=bool)list
         ------------------------------------------------------
-        - Arg1 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg1 (obj(ixnetwork_restpy.files.Files)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): 
+        - Returns list(str):
 
         Raises
         ------
@@ -1025,9 +1171,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCsvColumnNames', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getCsvColumnNames", payload=payload, response_object=None)
 
     def GetCurrentIxiaFileFormatTypeVersion(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -1046,9 +1194,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCurrentIxiaFileFormatTypeVersion', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getCurrentIxiaFileFormatTypeVersion", payload=payload, response_object=None
+        )
 
     def GetDefaultSnapshotSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1067,9 +1219,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('GetDefaultSnapshotSettings', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "GetDefaultSnapshotSettings", payload=payload, response_object=None
+        )
 
     def GetInstalledSlotLicenseCount(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -1089,9 +1245,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInstalledSlotLicenseCount', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInstalledSlotLicenseCount", payload=payload, response_object=None
+        )
 
     def GetIntersectionPortsForProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1111,9 +1271,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIntersectionPortsForProtocols', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getIntersectionPortsForProtocols", payload=payload, response_object=None
+        )
 
     def GetIxVmCardByIp(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -1133,9 +1297,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIxVmCardByIp', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getIxVmCardByIp", payload=payload, response_object=None)
 
     def GetLicenseSummary(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1144,7 +1310,7 @@ class Ixnetwork(Base):
         getLicenseSummary(async_operation=bool)string
         ---------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: 
+        - Returns str:
 
         Raises
         ------
@@ -1152,9 +1318,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLicenseSummary', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLicenseSummary", payload=payload, response_object=None)
 
     def GetMemoryUsageInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1173,9 +1341,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getMemoryUsageInfo', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getMemoryUsageInfo", payload=payload, response_object=None
+        )
 
     def GetNetworkGroupSize(self, *args, **kwargs):
         """Executes the getNetworkGroupSize operation on the server.
@@ -1183,7 +1355,7 @@ class Ixnetwork(Base):
         getNetworkGroupSize(async_operation=bool)list
         ---------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])): 
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])):
 
         Raises
         ------
@@ -1191,9 +1363,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getNetworkGroupSize', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getNetworkGroupSize", payload=payload, response_object=None
+        )
 
     def GetPastApplicationInstances(self, *args, **kwargs):
         """Executes the getPastApplicationInstances operation on the server.
@@ -1211,9 +1387,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPastApplicationInstances', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPastApplicationInstances", payload=payload, response_object=None
+        )
 
     def GetPortsForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1233,9 +1413,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPortsForProtocol', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPortsForProtocol", payload=payload, response_object=None
+        )
 
     def GetRbMemoryUsageInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1254,9 +1438,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getRbMemoryUsageInfo', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getRbMemoryUsageInfo", payload=payload, response_object=None
+        )
 
     def GetRecommendedSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1268,14 +1456,14 @@ class Ixnetwork(Base):
 
         getRecommendedSettings(Arg1=string, Arg2=list, async_operation=bool)
         --------------------------------------------------------------------
-        - Arg1 (str): 
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
+        - Arg1 (str):
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         getRecommendedSettings(Arg1=string, Arg2=list, async_operation=bool)
         --------------------------------------------------------------------
-        - Arg1 (str): 
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
+        - Arg1 (str):
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1284,9 +1472,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getRecommendedSettings', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getRecommendedSettings", payload=payload, response_object=None
+        )
 
     def GetSlotLicenseInUse(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
@@ -1306,9 +1498,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSlotLicenseInUse', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getSlotLicenseInUse", payload=payload, response_object=None
+        )
 
     def GetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1326,9 +1522,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTapSettings', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTapSettings", payload=payload, response_object=None)
 
     def GetTopologyStatus(self, *args, **kwargs):
         """Executes the getTopologyStatus operation on the server.
@@ -1336,7 +1534,7 @@ class Ixnetwork(Base):
         getTopologyStatus(async_operation=bool)list
         -------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)],arg3:str[notstarted\~starting\~started\~stopping\~error\~mixed])): 
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)],arg3:str[notstarted\~starting\~started\~stopping\~error\~mixed])):
 
         Raises
         ------
@@ -1344,9 +1542,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTopologyStatus', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTopologyStatus", payload=payload, response_object=None)
 
     def GetUnionPortsForProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1366,9 +1566,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getUnionPortsForProtocols', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getUnionPortsForProtocols", payload=payload, response_object=None
+        )
 
     def HwRebootCardByIDs(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1388,9 +1592,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('hwRebootCardByIDs', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("hwRebootCardByIDs", payload=payload, response_object=None)
 
     def IgmpJoin(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1417,9 +1623,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpJoin', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpJoin", payload=payload, response_object=None)
 
     def IgmpLeave(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1446,9 +1654,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpLeave', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpLeave", payload=payload, response_object=None)
 
     def Import(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1467,9 +1677,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('import', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("import", payload=payload, response_object=None)
 
     def LoadConfig(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1488,9 +1700,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('loadConfig', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("loadConfig", payload=payload, response_object=None)
 
     def LoadTopology(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1510,9 +1724,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('loadTopology', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("loadTopology", payload=payload, response_object=None)
 
     def MergeCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1543,9 +1759,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mergeCapture', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("mergeCapture", payload=payload, response_object=None)
 
     def NewConfig(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1563,9 +1781,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('newConfig', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("newConfig", payload=payload, response_object=None)
 
     def RebootVirtualChassis(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1583,9 +1803,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rebootVirtualChassis', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "rebootVirtualChassis", payload=payload, response_object=None
+        )
 
     def RebuildChassisTopology(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1606,9 +1830,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rebuildChassisTopology', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "rebuildChassisTopology", payload=payload, response_object=None
+        )
 
     def RediscoverAppliances(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1627,9 +1855,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rediscoverAppliances', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "rediscoverAppliances", payload=payload, response_object=None
+        )
 
     def Refresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1648,9 +1880,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refresh', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("refresh", payload=payload, response_object=None)
 
     def RefreshChassisTopology(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1669,9 +1903,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshChassisTopology', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshChassisTopology", payload=payload, response_object=None
+        )
 
     def RemoveAllTclViews(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1689,9 +1927,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAllTclViews', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("removeAllTclViews", payload=payload, response_object=None)
 
     def SaveCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1718,9 +1958,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveCapture', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("saveCapture", payload=payload, response_object=None)
 
     def SaveCaptureFiles(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1749,9 +1991,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveCaptureFiles', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("saveCaptureFiles", payload=payload, response_object=None)
 
     def SaveConfig(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1770,9 +2014,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('saveConfig', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("saveConfig", payload=payload, response_object=None)
 
     def Scriptgen(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1820,9 +2066,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('scriptgen', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("scriptgen", payload=payload, response_object=None)
 
     def Select(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1842,9 +2090,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('select', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("select", payload=payload, response_object=None)
 
     def SendArpAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1862,9 +2112,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArpAll', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpAll", payload=payload, response_object=None)
 
     def SendNsAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1882,9 +2134,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNsAll', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNsAll", payload=payload, response_object=None)
 
     def SendRsAll(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1902,9 +2156,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRsAll', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRsAll", payload=payload, response_object=None)
 
     def SetChassisMode(self, *args, **kwargs):
         """Executes the setChassisMode operation on the server.
@@ -1924,9 +2180,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setChassisMode', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setChassisMode", payload=payload, response_object=None)
 
     def SetGuardRailVersion(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1945,9 +2203,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setGuardRailVersion', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setGuardRailVersion", payload=payload, response_object=None
+        )
 
     def SetLoggingLevel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1955,7 +2217,7 @@ class Ixnetwork(Base):
 
         setLoggingLevel(Arg1=enum, async_operation=bool)
         ------------------------------------------------
-        - Arg1 (str(kDebug | kError | kFatal | kInfo | kNote | kNothing | kWarn)): 
+        - Arg1 (str(kDebug | kError | kFatal | kInfo | kNote | kNothing | kWarn)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1964,9 +2226,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setLoggingLevel', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setLoggingLevel", payload=payload, response_object=None)
 
     def SetPortTransmitDuration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1985,9 +2249,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setPortTransmitDuration', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setPortTransmitDuration", payload=payload, response_object=None
+        )
 
     def SetSnapshotSettingsToDefault(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2006,9 +2274,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('SetSnapshotSettingsToDefault', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "SetSnapshotSettingsToDefault", payload=payload, response_object=None
+        )
 
     def SetTapSettings(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2026,9 +2298,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setTapSettings', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setTapSettings", payload=payload, response_object=None)
 
     def StartAllProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2053,9 +2327,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startAllProtocols', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startAllProtocols", payload=payload, response_object=None)
 
     def StartCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2073,9 +2349,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCapture', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startCapture", payload=payload, response_object=None)
 
     def StartTestConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2100,9 +2378,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startTestConfiguration', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startTestConfiguration", payload=payload, response_object=None
+        )
 
     def StopAllProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2127,9 +2409,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopAllProtocols', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopAllProtocols", payload=payload, response_object=None)
 
     def StopCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2147,9 +2431,11 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCapture', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopCapture", payload=payload, response_object=None)
 
     def StopTestConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2167,9 +2453,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopTestConfiguration', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopTestConfiguration", payload=payload, response_object=None
+        )
 
     def SwitchModeLocations(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -2191,9 +2481,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('switchModeLocations', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "switchModeLocations", payload=payload, response_object=None
+        )
 
     def SyncStatisticsStartTimeWithClientClock(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2212,9 +2506,15 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('syncStatisticsStartTimeWithClientClock', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "syncStatisticsStartTimeWithClientClock",
+            payload=payload,
+            response_object=None,
+        )
 
     def TakeViewCSVSnapshot(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2234,9 +2534,13 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('TakeViewCSVSnapshot', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "TakeViewCSVSnapshot", payload=payload, response_object=None
+        )
 
     def WaitForLicenseBroadcast(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2255,6 +2559,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = {}
-        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForLicenseBroadcast', payload=payload, response_object=None)
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "waitForLicenseBroadcast", payload=payload, response_object=None
+        )

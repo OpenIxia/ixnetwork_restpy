@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class FramePreemption(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'framePreemption'
+    _SDM_NAME = "framePreemption"
     _SDM_ATT_MAP = {
-        'IsFramePreemptionEnabled': 'isFramePreemptionEnabled',
-        'IsSmdVREnabled': 'isSmdVREnabled',
+        "IsFramePreemptionEnabled": "isFramePreemptionEnabled",
+        "IsSmdVREnabled": "isSmdVREnabled",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FramePreemption, self).__init__(parent, list_op)
@@ -49,13 +49,14 @@ class FramePreemption(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsFramePreemptionEnabled"])
+
     @IsFramePreemptionEnabled.setter
     def IsFramePreemptionEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsFramePreemptionEnabled"], value)
 
     @property
     def IsSmdVREnabled(self):
@@ -63,13 +64,14 @@ class FramePreemption(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsSmdVREnabled"])
+
     @IsSmdVREnabled.setter
     def IsSmdVREnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsSmdVREnabled"], value)
 
     def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
         # type: (bool, bool) -> FramePreemption
@@ -77,8 +79,8 @@ class FramePreemption(Base):
 
         Args
         ----
-        - IsFramePreemptionEnabled (bool): 
-        - IsSmdVREnabled (bool): 
+        - IsFramePreemptionEnabled (bool):
+        - IsSmdVREnabled (bool):
 
         Raises
         ------
@@ -96,8 +98,8 @@ class FramePreemption(Base):
 
         Args
         ----
-        - IsFramePreemptionEnabled (bool): 
-        - IsSmdVREnabled (bool): 
+        - IsFramePreemptionEnabled (bool):
+        - IsSmdVREnabled (bool):
 
         Returns
         -------

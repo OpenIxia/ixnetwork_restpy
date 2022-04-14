@@ -4,16 +4,16 @@ from ixnetwork_restpy.files import Files
 
 class L2VPNATMCellCW(Base):
     __slots__ = ()
-    _SDM_NAME = 'l2VPNATMCellCW'
+    _SDM_NAME = "l2VPNATMCellCW"
     _SDM_ATT_MAP = {
-        'ControlWordReserved': 'l2VPNATMCellCW.controlWord.reserved-1',
-        'ControlWordTbit': 'l2VPNATMCellCW.controlWord.tbit-2',
-        'ControlWordEbit': 'l2VPNATMCellCW.controlWord.ebit-3',
-        'ControlWordLbit': 'l2VPNATMCellCW.controlWord.lbit-4',
-        'ControlWordCbit': 'l2VPNATMCellCW.controlWord.cbit-5',
-        'ControlWordZero': 'l2VPNATMCellCW.controlWord.zero-6',
-        'ControlWordLength': 'l2VPNATMCellCW.controlWord.length-7',
-        'ControlWordSequenceNumber': 'l2VPNATMCellCW.controlWord.sequenceNumber-8',
+        "ControlWordReserved": "l2VPNATMCellCW.controlWord.reserved-1",
+        "ControlWordTbit": "l2VPNATMCellCW.controlWord.tbit-2",
+        "ControlWordEbit": "l2VPNATMCellCW.controlWord.ebit-3",
+        "ControlWordLbit": "l2VPNATMCellCW.controlWord.lbit-4",
+        "ControlWordCbit": "l2VPNATMCellCW.controlWord.cbit-5",
+        "ControlWordZero": "l2VPNATMCellCW.controlWord.zero-6",
+        "ControlWordLength": "l2VPNATMCellCW.controlWord.length-7",
+        "ControlWordSequenceNumber": "l2VPNATMCellCW.controlWord.sequenceNumber-8",
     }
 
     def __init__(self, parent, list_op=False):
@@ -27,7 +27,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordReserved"])
+        )
 
     @property
     def ControlWordTbit(self):
@@ -37,7 +40,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordTbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordTbit"])
+        )
 
     @property
     def ControlWordEbit(self):
@@ -47,7 +53,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordEbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordEbit"])
+        )
 
     @property
     def ControlWordLbit(self):
@@ -57,7 +66,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordLbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordLbit"])
+        )
 
     @property
     def ControlWordCbit(self):
@@ -67,7 +79,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordCbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordCbit"])
+        )
 
     @property
     def ControlWordZero(self):
@@ -77,7 +92,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordZero']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordZero"])
+        )
 
     @property
     def ControlWordLength(self):
@@ -87,7 +105,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordLength"])
+        )
 
     @property
     def ControlWordSequenceNumber(self):
@@ -97,7 +118,10 @@ class L2VPNATMCellCW(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlWordSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlWordSequenceNumber"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

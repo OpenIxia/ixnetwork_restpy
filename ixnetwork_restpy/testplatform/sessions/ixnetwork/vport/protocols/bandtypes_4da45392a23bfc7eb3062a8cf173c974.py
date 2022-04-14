@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class BandTypes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bandTypes'
+    _SDM_NAME = "bandTypes"
     _SDM_ATT_MAP = {
-        'Drop': 'drop',
-        'DscpRemark': 'dscpRemark',
+        "Drop": "drop",
+        "DscpRemark": "dscpRemark",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BandTypes, self).__init__(parent, list_op)
@@ -51,11 +51,12 @@ class BandTypes(Base):
         -------
         - bool: This indicates that packets which exceed the band rate value are dropped.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Drop'])
+        return self._get_attribute(self._SDM_ATT_MAP["Drop"])
+
     @Drop.setter
     def Drop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Drop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Drop"], value)
 
     @property
     def DscpRemark(self):
@@ -65,11 +66,12 @@ class BandTypes(Base):
         -------
         - bool: This indicates that the drop precedence of the DSCP field is remarked in the IP header of the packets that exceed the band rate value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DscpRemark'])
+        return self._get_attribute(self._SDM_ATT_MAP["DscpRemark"])
+
     @DscpRemark.setter
     def DscpRemark(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DscpRemark'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DscpRemark"], value)
 
     def update(self, Drop=None, DscpRemark=None):
         # type: (bool, bool) -> BandTypes

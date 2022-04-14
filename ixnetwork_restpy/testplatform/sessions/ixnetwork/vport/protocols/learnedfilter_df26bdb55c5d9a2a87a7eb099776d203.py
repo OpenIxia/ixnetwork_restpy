@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class LearnedFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedFilter'
+    _SDM_NAME = "learnedFilter"
     _SDM_ATT_MAP = {
-        'Afi': 'afi',
-        'EnableAfiSafi': 'enableAfiSafi',
-        'EnablePrefix': 'enablePrefix',
-        'Safi': 'safi',
+        "Afi": "afi",
+        "EnableAfiSafi": "enableAfiSafi",
+        "EnablePrefix": "enablePrefix",
+        "Safi": "safi",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedFilter, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class LearnedFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_0f99151175aca98019658ce36676a82c import Capabilities
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_0f99151175aca98019658ce36676a82c import (
+            Capabilities,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Capabilities', None) is not None:
-                return self._properties.get('Capabilities')
+            if self._properties.get("Capabilities", None) is not None:
+                return self._properties.get("Capabilities")
         return Capabilities(self)._select()
 
     @property
@@ -73,10 +76,13 @@ class LearnedFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_0eba571084c9891c5e7d1691a9106eeb import Prefix
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_0eba571084c9891c5e7d1691a9106eeb import (
+            Prefix,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Prefix', None) is not None:
-                return self._properties.get('Prefix')
+            if self._properties.get("Prefix", None) is not None:
+                return self._properties.get("Prefix")
         return Prefix(self)._select()
 
     @property
@@ -87,11 +93,12 @@ class LearnedFilter(Base):
         -------
         - number: Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Afi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Afi"])
+
     @Afi.setter
     def Afi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Afi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Afi"], value)
 
     @property
     def EnableAfiSafi(self):
@@ -101,11 +108,12 @@ class LearnedFilter(Base):
         -------
         - bool: If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAfiSafi'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAfiSafi"])
+
     @EnableAfiSafi.setter
     def EnableAfiSafi(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAfiSafi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAfiSafi"], value)
 
     @property
     def EnablePrefix(self):
@@ -115,11 +123,12 @@ class LearnedFilter(Base):
         -------
         - bool: If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePrefix"])
+
     @EnablePrefix.setter
     def EnablePrefix(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePrefix"], value)
 
     @property
     def Safi(self):
@@ -129,11 +138,12 @@ class LearnedFilter(Base):
         -------
         - number: Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Safi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Safi"])
+
     @Safi.setter
     def Safi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Safi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Safi"], value)
 
     def update(self, Afi=None, EnableAfiSafi=None, EnablePrefix=None, Safi=None):
         # type: (int, bool, bool, int) -> LearnedFilter

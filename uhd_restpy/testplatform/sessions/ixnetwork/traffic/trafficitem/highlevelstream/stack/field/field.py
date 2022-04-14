@@ -600,7 +600,7 @@ class Field(Base):
 
     def add(self, ActiveFieldChoice=None, Auto=None, CountValue=None, FieldValue=None, FixedBits=None, FullMesh=None, MaxValue=None, MinValue=None, OnTheFlyMask=None, OptionalEnabled=None, RandomMask=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, TrackingEnabled=None, ValueList=None, ValueType=None):
         # type: (bool, bool, str, str, str, bool, str, str, str, bool, str, str, str, str, str, bool, List[str], str) -> Field
-        """Adds a new field resource on the json, only valid with config assistant
+        """Adds a new field resource on the json, only valid with batch add utility
 
         Args
         ----

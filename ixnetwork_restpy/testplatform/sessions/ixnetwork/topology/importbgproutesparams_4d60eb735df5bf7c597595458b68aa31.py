@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,19 @@ class ImportBgpRoutesParams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'importBgpRoutesParams'
+    _SDM_NAME = "importBgpRoutesParams"
     _SDM_ATT_MAP = {
-        'BestRoutes': 'bestRoutes',
-        'DataFile': 'dataFile',
-        'FileType': 'fileType',
-        'NextHop': 'nextHop',
-        'RouteDistributionType': 'routeDistributionType',
-        'RouteLimit': 'routeLimit',
+        "BestRoutes": "bestRoutes",
+        "DataFile": "dataFile",
+        "FileType": "fileType",
+        "NextHop": "nextHop",
+        "RouteDistributionType": "routeDistributionType",
+        "RouteLimit": "routeLimit",
     }
     _SDM_ENUM_MAP = {
-        'fileType': ['csv', 'juniper', 'cisco'],
-        'nextHop': ['overwriteTestersAddress', 'preserveFromFile'],
-        'routeDistributionType': ['roundRobin', 'replicate'],
+        "fileType": ["csv", "juniper", "cisco"],
+        "nextHop": ["overwriteTestersAddress", "preserveFromFile"],
+        "routeDistributionType": ["roundRobin", "replicate"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,11 +59,12 @@ class ImportBgpRoutesParams(Base):
         -------
         - bool: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BestRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["BestRoutes"])
+
     @BestRoutes.setter
     def BestRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BestRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BestRoutes"], value)
 
     @property
     def DataFile(self):
@@ -71,10 +73,11 @@ class ImportBgpRoutesParams(Base):
         -------
         - obj(ixnetwork_restpy.files.Files): Select source file having route information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataFile"])
+
     @DataFile.setter
     def DataFile(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['DataFile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DataFile"], value)
 
     @property
     def FileType(self):
@@ -84,11 +87,12 @@ class ImportBgpRoutesParams(Base):
         -------
         - str(csv | juniper | cisco): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FileType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FileType"])
+
     @FileType.setter
     def FileType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FileType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FileType"], value)
 
     @property
     def NextHop(self):
@@ -98,11 +102,12 @@ class ImportBgpRoutesParams(Base):
         -------
         - str(overwriteTestersAddress | preserveFromFile): Option for setting Next Hop modification type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
+
     @NextHop.setter
     def NextHop(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHop"], value)
 
     @property
     def RouteDistributionType(self):
@@ -112,11 +117,12 @@ class ImportBgpRoutesParams(Base):
         -------
         - str(roundRobin | replicate): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteDistributionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteDistributionType"])
+
     @RouteDistributionType.setter
     def RouteDistributionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteDistributionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteDistributionType"], value)
 
     @property
     def RouteLimit(self):
@@ -126,13 +132,22 @@ class ImportBgpRoutesParams(Base):
         -------
         - number: Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteLimit'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteLimit"])
+
     @RouteLimit.setter
     def RouteLimit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteLimit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteLimit"], value)
 
-    def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
+    def update(
+        self,
+        BestRoutes=None,
+        DataFile=None,
+        FileType=None,
+        NextHop=None,
+        RouteDistributionType=None,
+        RouteLimit=None,
+    ):
         """Updates importBgpRoutesParams resource on the server.
 
         Args
@@ -150,7 +165,15 @@ class ImportBgpRoutesParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
+    def find(
+        self,
+        BestRoutes=None,
+        DataFile=None,
+        FileType=None,
+        NextHop=None,
+        RouteDistributionType=None,
+        RouteLimit=None,
+    ):
         """Finds and retrieves importBgpRoutesParams resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve importBgpRoutesParams resources from the server.
@@ -209,7 +232,9 @@ class ImportBgpRoutesParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('importBgpRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("importBgpRoutes", payload=payload, response_object=None)

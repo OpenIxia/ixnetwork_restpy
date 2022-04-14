@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class TestInspector(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testInspector'
+    _SDM_NAME = "testInspector"
     _SDM_ATT_MAP = {
-        'EnableRealTimeMonitoring': 'enableRealTimeMonitoring',
-        'PollingInterval': 'pollingInterval',
+        "EnableRealTimeMonitoring": "enableRealTimeMonitoring",
+        "PollingInterval": "pollingInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TestInspector, self).__init__(parent, list_op)
@@ -54,10 +54,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.averagelatency.averagelatency import AverageLatency
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.averagelatency.averagelatency import (
+            AverageLatency,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AverageLatency', None) is not None:
-                return self._properties.get('AverageLatency')
+            if self._properties.get("AverageLatency", None) is not None:
+                return self._properties.get("AverageLatency")
         return AverageLatency(self)._select()
 
     @property
@@ -71,10 +74,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.collisions.collisions import Collisions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.collisions.collisions import (
+            Collisions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Collisions', None) is not None:
-                return self._properties.get('Collisions')
+            if self._properties.get("Collisions", None) is not None:
+                return self._properties.get("Collisions")
         return Collisions(self)._select()
 
     @property
@@ -88,10 +94,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.crcerrors.crcerrors import CrcErrors
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.crcerrors.crcerrors import (
+            CrcErrors,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CrcErrors', None) is not None:
-                return self._properties.get('CrcErrors')
+            if self._properties.get("CrcErrors", None) is not None:
+                return self._properties.get("CrcErrors")
         return CrcErrors(self)._select()
 
     @property
@@ -105,10 +114,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.losspercent.losspercent import LossPercent
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.losspercent.losspercent import (
+            LossPercent,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LossPercent', None) is not None:
-                return self._properties.get('LossPercent')
+            if self._properties.get("LossPercent", None) is not None:
+                return self._properties.get("LossPercent")
         return LossPercent(self)._select()
 
     @property
@@ -122,10 +134,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.lostframes.lostframes import LostFrames
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.lostframes.lostframes import (
+            LostFrames,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LostFrames', None) is not None:
-                return self._properties.get('LostFrames')
+            if self._properties.get("LostFrames", None) is not None:
+                return self._properties.get("LostFrames")
         return LostFrames(self)._select()
 
     @property
@@ -139,10 +154,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.misdirectedpacketcount.misdirectedpacketcount import MisdirectedPacketCount
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.misdirectedpacketcount.misdirectedpacketcount import (
+            MisdirectedPacketCount,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MisdirectedPacketCount', None) is not None:
-                return self._properties.get('MisdirectedPacketCount')
+            if self._properties.get("MisdirectedPacketCount", None) is not None:
+                return self._properties.get("MisdirectedPacketCount")
         return MisdirectedPacketCount(self)._select()
 
     @property
@@ -156,10 +174,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.pcssyncerrors.pcssyncerrors import PcsSyncErrors
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.pcssyncerrors.pcssyncerrors import (
+            PcsSyncErrors,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PcsSyncErrors', None) is not None:
-                return self._properties.get('PcsSyncErrors')
+            if self._properties.get("PcsSyncErrors", None) is not None:
+                return self._properties.get("PcsSyncErrors")
         return PcsSyncErrors(self)._select()
 
     @property
@@ -173,10 +194,13 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.sequenceerrors.sequenceerrors import SequenceErrors
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.testinspector.sequenceerrors.sequenceerrors import (
+            SequenceErrors,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SequenceErrors', None) is not None:
-                return self._properties.get('SequenceErrors')
+            if self._properties.get("SequenceErrors", None) is not None:
+                return self._properties.get("SequenceErrors")
         return SequenceErrors(self)._select()
 
     @property
@@ -187,11 +211,12 @@ class TestInspector(Base):
         -------
         - bool: Enable/Disable Test Inspector
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRealTimeMonitoring'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRealTimeMonitoring"])
+
     @EnableRealTimeMonitoring.setter
     def EnableRealTimeMonitoring(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRealTimeMonitoring'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRealTimeMonitoring"], value)
 
     @property
     def PollingInterval(self):
@@ -201,11 +226,12 @@ class TestInspector(Base):
         -------
         - number: Test Inspector's polling interval. For best performance set this to a multiple of the Stat Viewer polling interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollingInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollingInterval"])
+
     @PollingInterval.setter
     def PollingInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollingInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollingInterval"], value)
 
     def update(self, EnableRealTimeMonitoring=None, PollingInterval=None):
         # type: (bool, int) -> TestInspector

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,26 @@ class Ldp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldp'
+    _SDM_NAME = "ldp"
     _SDM_ATT_MAP = {
-        'EnableDiscardSelfAdvFecs': 'enableDiscardSelfAdvFecs',
-        'EnableHelloJitter': 'enableHelloJitter',
-        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'Enabled': 'enabled',
-        'HelloHoldTime': 'helloHoldTime',
-        'HelloInterval': 'helloInterval',
-        'KeepAliveHoldTime': 'keepAliveHoldTime',
-        'KeepAliveInterval': 'keepAliveInterval',
-        'P2mpCapabilityParam': 'p2mpCapabilityParam',
-        'P2mpFecType': 'p2mpFecType',
-        'RunningState': 'runningState',
-        'TargetedHelloInterval': 'targetedHelloInterval',
-        'TargetedHoldTime': 'targetedHoldTime',
-        'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
+        "EnableDiscardSelfAdvFecs": "enableDiscardSelfAdvFecs",
+        "EnableHelloJitter": "enableHelloJitter",
+        "EnableLabelExchangeOverLsp": "enableLabelExchangeOverLsp",
+        "EnableVpnLabelExchangeOverLsp": "enableVpnLabelExchangeOverLsp",
+        "Enabled": "enabled",
+        "HelloHoldTime": "helloHoldTime",
+        "HelloInterval": "helloInterval",
+        "KeepAliveHoldTime": "keepAliveHoldTime",
+        "KeepAliveInterval": "keepAliveInterval",
+        "P2mpCapabilityParam": "p2mpCapabilityParam",
+        "P2mpFecType": "p2mpFecType",
+        "RunningState": "runningState",
+        "TargetedHelloInterval": "targetedHelloInterval",
+        "TargetedHoldTime": "targetedHoldTime",
+        "UseTransportLabelsForMplsOam": "useTransportLabelsForMplsOam",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -68,10 +69,13 @@ class Ldp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_94a4088a967c8e82566ebb7145e052d9 import Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_94a4088a967c8e82566ebb7145e052d9 import (
+            Router,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Router', None) is not None:
-                return self._properties.get('Router')
+            if self._properties.get("Router", None) is not None:
+                return self._properties.get("Router")
         return Router(self)
 
     @property
@@ -82,11 +86,12 @@ class Ldp(Base):
         -------
         - bool: Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardSelfAdvFecs'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDiscardSelfAdvFecs"])
+
     @EnableDiscardSelfAdvFecs.setter
     def EnableDiscardSelfAdvFecs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDiscardSelfAdvFecs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDiscardSelfAdvFecs"], value)
 
     @property
     def EnableHelloJitter(self):
@@ -96,25 +101,27 @@ class Ldp(Base):
         -------
         - bool: Allows staggered transmission of many HELLO messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHelloJitter'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHelloJitter"])
+
     @EnableHelloJitter.setter
     def EnableHelloJitter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHelloJitter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHelloJitter"], value)
 
     @property
     def EnableLabelExchangeOverLsp(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Enables the ability to exchange labels over LSP for VPNs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLabelExchangeOverLsp"])
+
     @EnableLabelExchangeOverLsp.setter
     def EnableLabelExchangeOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLabelExchangeOverLsp"], value)
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
@@ -124,11 +131,12 @@ class Ldp(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"])
+
     @EnableVpnLabelExchangeOverLsp.setter
     def EnableVpnLabelExchangeOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"], value)
 
     @property
     def Enabled(self):
@@ -138,11 +146,12 @@ class Ldp(Base):
         -------
         - bool: Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HelloHoldTime(self):
@@ -152,11 +161,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining adjacencies based on hello messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloHoldTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloHoldTime"])
+
     @HelloHoldTime.setter
     def HelloHoldTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloHoldTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloHoldTime"], value)
 
     @property
     def HelloInterval(self):
@@ -166,11 +176,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining adjacencies based on hello messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloInterval"])
+
     @HelloInterval.setter
     def HelloInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloInterval"], value)
 
     @property
     def KeepAliveHoldTime(self):
@@ -180,11 +191,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepAliveHoldTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepAliveHoldTime"])
+
     @KeepAliveHoldTime.setter
     def KeepAliveHoldTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepAliveHoldTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepAliveHoldTime"], value)
 
     @property
     def KeepAliveInterval(self):
@@ -194,11 +206,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepAliveInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepAliveInterval"])
+
     @KeepAliveInterval.setter
     def KeepAliveInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepAliveInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepAliveInterval"], value)
 
     @property
     def P2mpCapabilityParam(self):
@@ -208,11 +221,12 @@ class Ldp(Base):
         -------
         - number: The P2MP capability parameter value in hexadecimal.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParam'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpCapabilityParam"])
+
     @P2mpCapabilityParam.setter
     def P2mpCapabilityParam(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['P2mpCapabilityParam'], value)
+        self._set_attribute(self._SDM_ATT_MAP["P2mpCapabilityParam"], value)
 
     @property
     def P2mpFecType(self):
@@ -222,11 +236,12 @@ class Ldp(Base):
         -------
         - number: The MLDP P2MP FEC type value in hexadecimal.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['P2mpFecType'])
+        return self._get_attribute(self._SDM_ATT_MAP["P2mpFecType"])
+
     @P2mpFecType.setter
     def P2mpFecType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['P2mpFecType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["P2mpFecType"], value)
 
     @property
     def RunningState(self):
@@ -236,7 +251,7 @@ class Ldp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current state of the LDP server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def TargetedHelloInterval(self):
@@ -246,11 +261,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetedHelloInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetedHelloInterval"])
+
     @TargetedHelloInterval.setter
     def TargetedHelloInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetedHelloInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetedHelloInterval"], value)
 
     @property
     def TargetedHoldTime(self):
@@ -260,11 +276,12 @@ class Ldp(Base):
         -------
         - number: One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetedHoldTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetedHoldTime"])
+
     @TargetedHoldTime.setter
     def TargetedHoldTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetedHoldTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetedHoldTime"], value)
 
     @property
     def UseTransportLabelsForMplsOam(self):
@@ -274,13 +291,30 @@ class Ldp(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseTransportLabelsForMplsOam"])
+
     @UseTransportLabelsForMplsOam.setter
     def UseTransportLabelsForMplsOam(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseTransportLabelsForMplsOam"], value)
 
-    def update(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
+    def update(
+        self,
+        EnableDiscardSelfAdvFecs=None,
+        EnableHelloJitter=None,
+        EnableLabelExchangeOverLsp=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        HelloHoldTime=None,
+        HelloInterval=None,
+        KeepAliveHoldTime=None,
+        KeepAliveInterval=None,
+        P2mpCapabilityParam=None,
+        P2mpFecType=None,
+        TargetedHelloInterval=None,
+        TargetedHoldTime=None,
+        UseTransportLabelsForMplsOam=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, int, int, int, int, int, int, int, bool) -> Ldp
         """Updates ldp resource on the server.
 
@@ -307,7 +341,24 @@ class Ldp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, RunningState=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
+    def find(
+        self,
+        EnableDiscardSelfAdvFecs=None,
+        EnableHelloJitter=None,
+        EnableLabelExchangeOverLsp=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        HelloHoldTime=None,
+        HelloInterval=None,
+        KeepAliveHoldTime=None,
+        KeepAliveInterval=None,
+        P2mpCapabilityParam=None,
+        P2mpFecType=None,
+        RunningState=None,
+        TargetedHelloInterval=None,
+        TargetedHoldTime=None,
+        UseTransportLabelsForMplsOam=None,
+    ):
         # type: (bool, bool, bool, bool, bool, int, int, int, int, int, int, str, int, int, bool) -> Ldp
         """Finds and retrieves ldp resources from the server.
 
@@ -376,10 +427,12 @@ class Ldp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -396,7 +449,9 @@ class Ldp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

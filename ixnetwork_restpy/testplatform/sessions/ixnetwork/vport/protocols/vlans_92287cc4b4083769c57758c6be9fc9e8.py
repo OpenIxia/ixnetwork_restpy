@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class Vlans(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vlans'
+    _SDM_NAME = "vlans"
     _SDM_ATT_MAP = {
-        'CVlanId': 'cVlanId',
-        'CVlanPriority': 'cVlanPriority',
-        'CVlanTpId': 'cVlanTpId',
-        'Enabled': 'enabled',
-        'SVlanId': 'sVlanId',
-        'SVlanPriority': 'sVlanPriority',
-        'SVlanTpId': 'sVlanTpId',
-        'Type': 'type',
+        "CVlanId": "cVlanId",
+        "CVlanPriority": "cVlanPriority",
+        "CVlanTpId": "cVlanTpId",
+        "Enabled": "enabled",
+        "SVlanId": "sVlanId",
+        "SVlanPriority": "sVlanPriority",
+        "SVlanTpId": "sVlanTpId",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['singleVlan', 'stackedVlan'],
+        "type": ["singleVlan", "stackedVlan"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,10 +64,13 @@ class Vlans(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_7d9b9c7989bc1d3958915290660de5e7 import MacRanges
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_7d9b9c7989bc1d3958915290660de5e7 import (
+            MacRanges,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MacRanges', None) is not None:
-                return self._properties.get('MacRanges')
+            if self._properties.get("MacRanges", None) is not None:
+                return self._properties.get("MacRanges")
         return MacRanges(self)
 
     @property
@@ -77,11 +81,12 @@ class Vlans(Base):
         -------
         - number: The stacked VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanId"])
+
     @CVlanId.setter
     def CVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanId"], value)
 
     @property
     def CVlanPriority(self):
@@ -91,11 +96,12 @@ class Vlans(Base):
         -------
         - number: The stacked VLAN priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanPriority"])
+
     @CVlanPriority.setter
     def CVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanPriority"], value)
 
     @property
     def CVlanTpId(self):
@@ -105,11 +111,12 @@ class Vlans(Base):
         -------
         - str: The stacked VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanTpId"])
+
     @CVlanTpId.setter
     def CVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanTpId"], value)
 
     @property
     def Enabled(self):
@@ -119,11 +126,12 @@ class Vlans(Base):
         -------
         - bool: If true, the VLAN is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def SVlanId(self):
@@ -133,11 +141,12 @@ class Vlans(Base):
         -------
         - number: The single VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanId"])
+
     @SVlanId.setter
     def SVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanId"], value)
 
     @property
     def SVlanPriority(self):
@@ -147,11 +156,12 @@ class Vlans(Base):
         -------
         - number: The single VLAN priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanPriority"])
+
     @SVlanPriority.setter
     def SVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanPriority"], value)
 
     @property
     def SVlanTpId(self):
@@ -161,11 +171,12 @@ class Vlans(Base):
         -------
         - str: The single VLAN TPID. EtherTypes identify the protocol that follows the VLAN header. Select from: 0x8100, 0x9100, 0x9200, or 0x88A8.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanTpId"])
+
     @SVlanTpId.setter
     def SVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanTpId"], value)
 
     @property
     def Type(self):
@@ -175,13 +186,24 @@ class Vlans(Base):
         -------
         - str(singleVlan | stackedVlan): Sets the VLAN type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
+    def update(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Enabled=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        Type=None,
+    ):
         # type: (int, int, str, bool, int, int, str, str) -> Vlans
         """Updates vlans resource on the server.
 
@@ -202,7 +224,17 @@ class Vlans(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
+    def add(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Enabled=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        Type=None,
+    ):
         # type: (int, int, str, bool, int, int, str, str) -> Vlans
         """Adds a new vlans resource on the server and adds it to the container.
 
@@ -237,7 +269,17 @@ class Vlans(Base):
         """
         self._delete()
 
-    def find(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Enabled=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, Type=None):
+    def find(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Enabled=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        Type=None,
+    ):
         # type: (int, int, str, bool, int, int, str, str) -> Vlans
         """Finds and retrieves vlans resources from the server.
 

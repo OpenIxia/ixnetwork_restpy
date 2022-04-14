@@ -161,7 +161,7 @@ class CfmSimulatedTopology(Base):
 
     def add(self, Name=None):
         # type: (str) -> CfmSimulatedTopology
-        """Adds a new cfmSimulatedTopology resource on the json, only valid with config assistant
+        """Adds a new cfmSimulatedTopology resource on the json, only valid with batch add utility
 
         Args
         ----

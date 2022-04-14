@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class Bands(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bands'
+    _SDM_NAME = "bands"
     _SDM_ATT_MAP = {
-        'BandDescription': 'bandDescription',
-        'BandType': 'bandType',
-        'BurstSize': 'burstSize',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Experimenter': 'experimenter',
-        'MeterIndex': 'meterIndex',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PrecedenceLevel': 'precedenceLevel',
-        'Rate': 'rate',
+        "BandDescription": "bandDescription",
+        "BandType": "bandType",
+        "BurstSize": "burstSize",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Experimenter": "experimenter",
+        "MeterIndex": "meterIndex",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PrecedenceLevel": "precedenceLevel",
+        "Rate": "rate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Bands, self).__init__(parent, list_op)
@@ -62,7 +62,10 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The description of the Meter. It is a read-only field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandDescription']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandDescription"])
+        )
 
     @property
     def BandType(self):
@@ -73,7 +76,8 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select the band type from the list. Options are as follows: 1) Drop 2) DSCP Remark 3) Experimenter
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BandType"]))
 
     @property
     def BurstSize(self):
@@ -84,7 +88,8 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BurstSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BurstSize"]))
 
     @property
     def Count(self):
@@ -94,7 +99,7 @@ class Bands(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -104,7 +109,7 @@ class Bands(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Experimenter(self):
@@ -115,7 +120,8 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicats the experimenter ID. The default value is 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Experimenter']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Experimenter"]))
 
     @property
     def MeterIndex(self):
@@ -125,7 +131,7 @@ class Bands(Base):
         -------
         - list(str): Indicats the Parent Meter Index
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterIndex"])
 
     @property
     def Multiplier(self):
@@ -135,11 +141,12 @@ class Bands(Base):
         -------
         - number: Number of instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -149,11 +156,12 @@ class Bands(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PrecedenceLevel(self):
@@ -164,7 +172,10 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrecedenceLevel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrecedenceLevel"])
+        )
 
     @property
     def Rate(self):
@@ -175,7 +186,8 @@ class Bands(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This indicates the rate value above which the corresponding band may apply to packets. The default value is 1.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Rate"]))
 
     def update(self, Multiplier=None, Name=None):
         # type: (int, str) -> Bands
@@ -197,7 +209,7 @@ class Bands(Base):
 
     def add(self, Multiplier=None, Name=None):
         # type: (int, str) -> Bands
-        """Adds a new bands resource on the json, only valid with config assistant
+        """Adds a new bands resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -214,7 +226,14 @@ class Bands(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, MeterIndex=None, Multiplier=None, Name=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        MeterIndex=None,
+        Multiplier=None,
+        Name=None,
+    ):
         # type: (int, str, List[str], int, str) -> Bands
         """Finds and retrieves bands resources from the server.
 
@@ -258,7 +277,16 @@ class Bands(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BandDescription=None, BandType=None, BurstSize=None, Experimenter=None, PrecedenceLevel=None, Rate=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BandDescription=None,
+        BandType=None,
+        BurstSize=None,
+        Experimenter=None,
+        PrecedenceLevel=None,
+        Rate=None,
+    ):
         """Base class infrastructure that gets a list of bands device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

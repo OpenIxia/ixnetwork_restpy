@@ -186,7 +186,7 @@ class Tracking(Base):
 
     def add(self, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
         # type: (str, int, bool, str, List[str], List[str]) -> Tracking
-        """Adds a new tracking resource on the json, only valid with config assistant
+        """Adds a new tracking resource on the json, only valid with batch add utility
 
         Args
         ----

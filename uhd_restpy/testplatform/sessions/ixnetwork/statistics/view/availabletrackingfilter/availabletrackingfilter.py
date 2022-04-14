@@ -87,7 +87,7 @@ class AvailableTrackingFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ValueType'])
 
     def add(self):
-        """Adds a new availableTrackingFilter resource on the json, only valid with config assistant
+        """Adds a new availableTrackingFilter resource on the json, only valid with batch add utility
 
         Returns
         -------

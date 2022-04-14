@@ -73,7 +73,7 @@ class StackLink(Base):
 
     def add(self, LinkedTo=None):
         # type: (str) -> StackLink
-        """Adds a new stackLink resource on the json, only valid with config assistant
+        """Adds a new stackLink resource on the json, only valid with batch add utility
 
         Args
         ----

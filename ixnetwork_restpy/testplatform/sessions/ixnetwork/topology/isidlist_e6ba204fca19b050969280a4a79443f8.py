@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,21 @@ class IsidList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isidList'
+    _SDM_NAME = "isidList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVid': 'baseVid',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Isid': 'isid',
-        'ItagEthernetType': 'itagEthernetType',
-        'Name': 'name',
-        'Rbit': 'rbit',
-        'Tbit': 'tbit',
-        'TopologyId': 'topologyId',
-        'TransmissionType': 'transmissionType',
+        "Active": "active",
+        "BaseVid": "baseVid",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Isid": "isid",
+        "ItagEthernetType": "itagEthernetType",
+        "Name": "name",
+        "Rbit": "rbit",
+        "Tbit": "tbit",
+        "TopologyId": "topologyId",
+        "TransmissionType": "transmissionType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsidList, self).__init__(parent, list_op)
@@ -63,10 +63,13 @@ class IsidList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -78,7 +81,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BaseVid(self):
@@ -89,7 +93,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Base VID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseVid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BaseVid"]))
 
     @property
     def Count(self):
@@ -99,7 +104,7 @@ class IsidList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -109,7 +114,7 @@ class IsidList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Isid(self):
@@ -120,7 +125,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): I-SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Isid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Isid"]))
 
     @property
     def ItagEthernetType(self):
@@ -131,7 +137,10 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): I-Tag Ethernet Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ItagEthernetType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ItagEthernetType"])
+        )
 
     @property
     def Name(self):
@@ -141,11 +150,12 @@ class IsidList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Rbit(self):
@@ -156,7 +166,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): R Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Rbit"]))
 
     @property
     def Tbit(self):
@@ -167,7 +178,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): T Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Tbit"]))
 
     @property
     def TopologyId(self):
@@ -178,7 +190,8 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Topology Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TopologyId"]))
 
     @property
     def TransmissionType(self):
@@ -189,7 +202,10 @@ class IsidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Transmission Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TransmissionType"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> IsidList
@@ -250,7 +266,18 @@ class IsidList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, BaseVid=None, Isid=None, ItagEthernetType=None, Rbit=None, Tbit=None, TopologyId=None, TransmissionType=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BaseVid=None,
+        Isid=None,
+        ItagEthernetType=None,
+        Rbit=None,
+        Tbit=None,
+        TopologyId=None,
+        TransmissionType=None,
+    ):
         """Base class infrastructure that gets a list of isidList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

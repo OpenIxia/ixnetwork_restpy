@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class Dot1xOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dot1xOptions'
+    _SDM_NAME = "dot1xOptions"
     _SDM_ATT_MAP = {
-        'LogoffMaxClientsPerSecond': 'logoffMaxClientsPerSecond',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
+        "LogoffMaxClientsPerSecond": "logoffMaxClientsPerSecond",
+        "MaxClientsPerSecond": "maxClientsPerSecond",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "OverrideGlobalSetupRate": "overrideGlobalSetupRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dot1xOptions, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class Dot1xOptions(Base):
         -------
         - number: The number interfaces to logoff per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogoffMaxClientsPerSecond"])
+
     @LogoffMaxClientsPerSecond.setter
     def LogoffMaxClientsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogoffMaxClientsPerSecond"], value)
 
     @property
     def MaxClientsPerSecond(self):
@@ -70,11 +71,12 @@ class Dot1xOptions(Base):
         -------
         - number: The number interfaces to setup per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"])
+
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -84,11 +86,12 @@ class Dot1xOptions(Base):
         -------
         - number: The maximum number of sessions that can be negotiated at one moment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -98,7 +101,7 @@ class Dot1xOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalSetupRate(self):
@@ -108,13 +111,20 @@ class Dot1xOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"])
+
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"], value)
 
-    def update(self, LogoffMaxClientsPerSecond=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
+    def update(
+        self,
+        LogoffMaxClientsPerSecond=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, int, bool) -> Dot1xOptions
         """Updates dot1xOptions resource on the server.
 
@@ -131,7 +141,13 @@ class Dot1xOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, LogoffMaxClientsPerSecond=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
+    def add(
+        self,
+        LogoffMaxClientsPerSecond=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, int, bool) -> Dot1xOptions
         """Adds a new dot1xOptions resource on the server and adds it to the container.
 
@@ -162,7 +178,14 @@ class Dot1xOptions(Base):
         """
         self._delete()
 
-    def find(self, LogoffMaxClientsPerSecond=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None):
+    def find(
+        self,
+        LogoffMaxClientsPerSecond=None,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, int, str, bool) -> Dot1xOptions
         """Finds and retrieves dot1xOptions resources from the server.
 
@@ -223,10 +246,14 @@ class Dot1xOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -245,10 +272,14 @@ class Dot1xOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -267,7 +298,11 @@ class Dot1xOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -1006,7 +1006,7 @@ class IsisL3PseudoInterface(Base):
 
     def add(self, AdjSidCount=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None):
         # type: (int, str, int, int, int) -> IsisL3PseudoInterface
-        """Adds a new isisL3PseudoInterface resource on the json, only valid with config assistant
+        """Adds a new isisL3PseudoInterface resource on the json, only valid with batch add utility
 
         Args
         ----

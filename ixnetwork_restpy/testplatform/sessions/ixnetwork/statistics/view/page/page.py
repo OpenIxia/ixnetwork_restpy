@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,30 +33,30 @@ class Page(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'page'
+    _SDM_NAME = "page"
     _SDM_ATT_MAP = {
-        'AllowPaging': 'allowPaging',
-        'ColumnCaptions': 'columnCaptions',
-        'ColumnCount': 'columnCount',
-        'CurrentPage': 'currentPage',
-        'EgressMode': 'egressMode',
-        'EgressOption': 'egressOption',
-        'EgressPageSize': 'egressPageSize',
-        'IsBlocked': 'isBlocked',
-        'IsReady': 'isReady',
-        'IsReadyTimeout': 'isReadyTimeout',
-        'LastPageSize': 'lastPageSize',
-        'PageSize': 'pageSize',
-        'PageValues': 'pageValues',
-        'RowCount': 'rowCount',
-        'RowValues': 'rowValues',
-        'Timestamp': 'timestamp',
-        'TotalPages': 'totalPages',
-        'TotalRows': 'totalRows',
+        "AllowPaging": "allowPaging",
+        "ColumnCaptions": "columnCaptions",
+        "ColumnCount": "columnCount",
+        "CurrentPage": "currentPage",
+        "EgressMode": "egressMode",
+        "EgressOption": "egressOption",
+        "EgressPageSize": "egressPageSize",
+        "IsBlocked": "isBlocked",
+        "IsReady": "isReady",
+        "IsReadyTimeout": "isReadyTimeout",
+        "LastPageSize": "lastPageSize",
+        "PageSize": "pageSize",
+        "PageValues": "pageValues",
+        "RowCount": "rowCount",
+        "RowValues": "rowValues",
+        "Timestamp": "timestamp",
+        "TotalPages": "totalPages",
+        "TotalRows": "totalRows",
     }
     _SDM_ENUM_MAP = {
-        'egressMode': ['conditional', 'paged'],
-        'egressOption': ['rowsWithNoPackets', 'rowsWithPackets', 'showAll'],
+        "egressMode": ["conditional", "paged"],
+        "egressOption": ["rowsWithNoPackets", "rowsWithPackets", "showAll"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,7 +64,7 @@ class Page(Base):
 
     @property
     def Egress(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress): An instance of the Egress class
@@ -72,10 +73,13 @@ class Page(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import (
+            Egress,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Egress', None) is not None:
-                return self._properties.get('Egress')
+            if self._properties.get("Egress", None) is not None:
+                return self._properties.get("Egress")
         return Egress(self)
 
     @property
@@ -89,10 +93,13 @@ class Page(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import (
+            EgressRxCondition,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgressRxCondition', None) is not None:
-                return self._properties.get('EgressRxCondition')
+            if self._properties.get("EgressRxCondition", None) is not None:
+                return self._properties.get("EgressRxCondition")
         return EgressRxCondition(self)._select()
 
     @property
@@ -103,7 +110,7 @@ class Page(Base):
         -------
         - bool: If true, statistics will be displayed in multiple pages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowPaging'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowPaging"])
 
     @property
     def ColumnCaptions(self):
@@ -113,7 +120,7 @@ class Page(Base):
         -------
         - list(str): The statistics column caption.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ColumnCaptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ColumnCaptions"])
 
     @property
     def ColumnCount(self):
@@ -123,7 +130,7 @@ class Page(Base):
         -------
         - number: Displays the particular column number in the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ColumnCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ColumnCount"])
 
     @property
     def CurrentPage(self):
@@ -133,11 +140,12 @@ class Page(Base):
         -------
         - number: The current page number being displayed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentPage"])
+
     @CurrentPage.setter
     def CurrentPage(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CurrentPage"], value)
 
     @property
     def EgressMode(self):
@@ -147,11 +155,12 @@ class Page(Base):
         -------
         - str(conditional | paged): Emulates conditional or paged egress tracking view based on selected mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressMode"])
+
     @EgressMode.setter
     def EgressMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressMode"], value)
 
     @property
     def EgressOption(self):
@@ -159,13 +168,14 @@ class Page(Base):
         """
         Returns
         -------
-        - str(rowsWithNoPackets | rowsWithPackets | showAll): 
+        - str(rowsWithNoPackets | rowsWithPackets | showAll):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressOption"])
+
     @EgressOption.setter
     def EgressOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressOption"], value)
 
     @property
     def EgressPageSize(self):
@@ -175,11 +185,12 @@ class Page(Base):
         -------
         - number: The current egress page size across all ingress rows. Default = 3
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressPageSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressPageSize"])
+
     @EgressPageSize.setter
     def EgressPageSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressPageSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressPageSize"], value)
 
     @property
     def IsBlocked(self):
@@ -189,7 +200,7 @@ class Page(Base):
         -------
         - bool: Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsBlocked'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsBlocked"])
 
     @property
     def IsReady(self):
@@ -199,7 +210,7 @@ class Page(Base):
         -------
         - bool: If true, the counter is ready to record the statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsReady'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsReady"])
 
     @property
     def IsReadyTimeout(self):
@@ -209,11 +220,12 @@ class Page(Base):
         -------
         - number: The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsReadyTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsReadyTimeout"])
+
     @IsReadyTimeout.setter
     def IsReadyTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsReadyTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsReadyTimeout"], value)
 
     @property
     def LastPageSize(self):
@@ -221,9 +233,9 @@ class Page(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastPageSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastPageSize"])
 
     @property
     def PageSize(self):
@@ -233,11 +245,12 @@ class Page(Base):
         -------
         - number: The number of statistics per page.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PageSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["PageSize"])
+
     @PageSize.setter
     def PageSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PageSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PageSize"], value)
 
     @property
     def PageValues(self):
@@ -246,7 +259,7 @@ class Page(Base):
         -------
         - list(list[list[str]]): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PageValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["PageValues"])
 
     @property
     def RowCount(self):
@@ -256,16 +269,16 @@ class Page(Base):
         -------
         - number: Displays the particular row number in the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowCount"])
 
     @property
     def RowValues(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - dict(arg1:list[list[list[str]]]): All statistics values in a row.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowValues"])
 
     @property
     def Timestamp(self):
@@ -275,7 +288,7 @@ class Page(Base):
         -------
         - number: Describes the date and time of the event.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Timestamp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Timestamp"])
 
     @property
     def TotalPages(self):
@@ -285,7 +298,7 @@ class Page(Base):
         -------
         - number: The total number of statistics pages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalPages"])
 
     @property
     def TotalRows(self):
@@ -295,9 +308,17 @@ class Page(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["TotalRows"])
 
-    def update(self, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
+    def update(
+        self,
+        CurrentPage=None,
+        EgressMode=None,
+        EgressOption=None,
+        EgressPageSize=None,
+        IsReadyTimeout=None,
+        PageSize=None,
+    ):
         # type: (int, str, str, int, int, int) -> Page
         """Updates page resource on the server.
 
@@ -305,7 +326,7 @@ class Page(Base):
         ----
         - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
-        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)):
         - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
         - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         - PageSize (number): The number of statistics per page.
@@ -316,7 +337,27 @@ class Page(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AllowPaging=None, ColumnCaptions=None, ColumnCount=None, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, IsBlocked=None, IsReady=None, IsReadyTimeout=None, LastPageSize=None, PageSize=None, PageValues=None, RowCount=None, RowValues=None, Timestamp=None, TotalPages=None, TotalRows=None):
+    def find(
+        self,
+        AllowPaging=None,
+        ColumnCaptions=None,
+        ColumnCount=None,
+        CurrentPage=None,
+        EgressMode=None,
+        EgressOption=None,
+        EgressPageSize=None,
+        IsBlocked=None,
+        IsReady=None,
+        IsReadyTimeout=None,
+        LastPageSize=None,
+        PageSize=None,
+        PageValues=None,
+        RowCount=None,
+        RowValues=None,
+        Timestamp=None,
+        TotalPages=None,
+        TotalRows=None,
+    ):
         """Finds and retrieves page resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve page resources from the server.
@@ -330,12 +371,12 @@ class Page(Base):
         - ColumnCount (number): Displays the particular column number in the view.
         - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
-        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)):
         - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
         - IsBlocked (bool): Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
         - IsReady (bool): If true, the counter is ready to record the statistics.
         - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
-        - LastPageSize (number): 
+        - LastPageSize (number):
         - PageSize (number): The number of statistics per page.
         - PageValues (list(list[list[str]])): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         - RowCount (number): Displays the particular row number in the view.

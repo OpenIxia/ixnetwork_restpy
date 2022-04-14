@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,51 +35,153 @@ class Bridge(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bridge'
+    _SDM_NAME = "bridge"
     _SDM_ATT_MAP = {
-        'AutoPickBridgeMac': 'autoPickBridgeMac',
-        'BridgeMac': 'bridgeMac',
-        'BridgePriority': 'bridgePriority',
-        'BridgeSystemId': 'bridgeSystemId',
-        'BridgeType': 'bridgeType',
-        'CistRegRootCost': 'cistRegRootCost',
-        'CistRegRootMac': 'cistRegRootMac',
-        'CistRegRootPriority': 'cistRegRootPriority',
-        'CistRemainingHop': 'cistRemainingHop',
-        'Enabled': 'enabled',
-        'ExternalRootCost': 'externalRootCost',
-        'ExternalRootMac': 'externalRootMac',
-        'ExternalRootPriority': 'externalRootPriority',
-        'ForwardDelay': 'forwardDelay',
-        'HelloInterval': 'helloInterval',
-        'IsRefreshComplete': 'isRefreshComplete',
-        'MaxAge': 'maxAge',
-        'MessageAge': 'messageAge',
-        'Mode': 'mode',
-        'MstcName': 'mstcName',
-        'MstcRevisionNumber': 'mstcRevisionNumber',
-        'PortPriority': 'portPriority',
-        'PvstpMode': 'pvstpMode',
-        'RootCost': 'rootCost',
-        'RootMac': 'rootMac',
-        'RootPriority': 'rootPriority',
-        'RootSystemId': 'rootSystemId',
-        'UpdateRequired': 'updateRequired',
-        'VlanPortPriority': 'vlanPortPriority',
-        'VlanRootMac': 'vlanRootMac',
-        'VlanRootPathCost': 'vlanRootPathCost',
-        'VlanRootPriority': 'vlanRootPriority',
+        "AutoPickBridgeMac": "autoPickBridgeMac",
+        "BridgeMac": "bridgeMac",
+        "BridgePriority": "bridgePriority",
+        "BridgeSystemId": "bridgeSystemId",
+        "BridgeType": "bridgeType",
+        "CistRegRootCost": "cistRegRootCost",
+        "CistRegRootMac": "cistRegRootMac",
+        "CistRegRootPriority": "cistRegRootPriority",
+        "CistRemainingHop": "cistRemainingHop",
+        "Enabled": "enabled",
+        "ExternalRootCost": "externalRootCost",
+        "ExternalRootMac": "externalRootMac",
+        "ExternalRootPriority": "externalRootPriority",
+        "ForwardDelay": "forwardDelay",
+        "HelloInterval": "helloInterval",
+        "IsRefreshComplete": "isRefreshComplete",
+        "MaxAge": "maxAge",
+        "MessageAge": "messageAge",
+        "Mode": "mode",
+        "MstcName": "mstcName",
+        "MstcRevisionNumber": "mstcRevisionNumber",
+        "PortPriority": "portPriority",
+        "PvstpMode": "pvstpMode",
+        "RootCost": "rootCost",
+        "RootMac": "rootMac",
+        "RootPriority": "rootPriority",
+        "RootSystemId": "rootSystemId",
+        "UpdateRequired": "updateRequired",
+        "VlanPortPriority": "vlanPortPriority",
+        "VlanRootMac": "vlanRootMac",
+        "VlanRootPathCost": "vlanRootPathCost",
+        "VlanRootPriority": "vlanRootPriority",
     }
     _SDM_ENUM_MAP = {
-        'bridgePriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
-        'bridgeType': ['bridges', 'providerBridges'],
-        'cistRegRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
-        'externalRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
-        'mode': ['stp', 'rstp', 'mstp', 'pvst', 'rpvst', 'pvstp'],
-        'portPriority': ['0', '16', '32', '48', '64', '80', '96', '112', '128', '144', '160', '176', '192', '208', '224', '240'],
-        'pvstpMode': ['stp', 'rstp'],
-        'rootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
-        'vlanRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        "bridgePriority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
+        "bridgeType": ["bridges", "providerBridges"],
+        "cistRegRootPriority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
+        "externalRootPriority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
+        "mode": ["stp", "rstp", "mstp", "pvst", "rpvst", "pvstp"],
+        "portPriority": [
+            "0",
+            "16",
+            "32",
+            "48",
+            "64",
+            "80",
+            "96",
+            "112",
+            "128",
+            "144",
+            "160",
+            "176",
+            "192",
+            "208",
+            "224",
+            "240",
+        ],
+        "pvstpMode": ["stp", "rstp"],
+        "rootPriority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
+        "vlanRootPriority": [
+            "0",
+            "4096",
+            "8192",
+            "12288",
+            "16384",
+            "20480",
+            "24576",
+            "28672",
+            "32768",
+            "36864",
+            "40960",
+            "45056",
+            "49152",
+            "53248",
+            "57344",
+            "61440",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -95,10 +198,13 @@ class Bridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af import Cist
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af import (
+            Cist,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Cist', None) is not None:
-                return self._properties.get('Cist')
+            if self._properties.get("Cist", None) is not None:
+                return self._properties.get("Cist")
         return Cist(self)._select()
 
     @property
@@ -112,10 +218,13 @@ class Bridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_11193719861cedc70e27ad6eab53c08a import Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_11193719861cedc70e27ad6eab53c08a import (
+            Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Interface', None) is not None:
-                return self._properties.get('Interface')
+            if self._properties.get("Interface", None) is not None:
+                return self._properties.get("Interface")
         return Interface(self)
 
     @property
@@ -129,10 +238,13 @@ class Bridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0b44805d06507cff11c29ecddf2132ce import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0b44805d06507cff11c29ecddf2132ce import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)._select()
 
     @property
@@ -146,10 +258,13 @@ class Bridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msti_de62cae276de4633f89c17f153c2b860 import Msti
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msti_de62cae276de4633f89c17f153c2b860 import (
+            Msti,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Msti', None) is not None:
-                return self._properties.get('Msti')
+            if self._properties.get("Msti", None) is not None:
+                return self._properties.get("Msti")
         return Msti(self)
 
     @property
@@ -163,10 +278,13 @@ class Bridge(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlan_2fd06caa7af8df8e2b057b8fad32a527 import Vlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlan_2fd06caa7af8df8e2b057b8fad32a527 import (
+            Vlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vlan', None) is not None:
-                return self._properties.get('Vlan')
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)
 
     @property
@@ -177,11 +295,12 @@ class Bridge(Base):
         -------
         - bool: If enabled, the MAC address for one of the STP interfaces will be automatically assigned as the MAC address for this bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoPickBridgeMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoPickBridgeMac"])
+
     @AutoPickBridgeMac.setter
     def AutoPickBridgeMac(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoPickBridgeMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoPickBridgeMac"], value)
 
     @property
     def BridgeMac(self):
@@ -191,11 +310,12 @@ class Bridge(Base):
         -------
         - str: The 6-byte MAC address assigned to this bridge. Part of the bridge identifier (bridge ID).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgeMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgeMac"])
+
     @BridgeMac.setter
     def BridgeMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgeMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgeMac"], value)
 
     @property
     def BridgePriority(self):
@@ -205,11 +325,12 @@ class Bridge(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): The Bridge Priority for this bridge.The valid range is 0 to 61,440, in multiples of 4,096. (default = 32,768)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgePriority"])
+
     @BridgePriority.setter
     def BridgePriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgePriority"], value)
 
     @property
     def BridgeSystemId(self):
@@ -219,11 +340,12 @@ class Bridge(Base):
         -------
         - number: The System ID for the bridge. The valid range is 0 to 4,095. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgeSystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgeSystemId"])
+
     @BridgeSystemId.setter
     def BridgeSystemId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgeSystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgeSystemId"], value)
 
     @property
     def BridgeType(self):
@@ -233,11 +355,12 @@ class Bridge(Base):
         -------
         - str(bridges | providerBridges): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgeType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgeType"])
+
     @BridgeType.setter
     def BridgeType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgeType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgeType"], value)
 
     @property
     def CistRegRootCost(self):
@@ -247,11 +370,12 @@ class Bridge(Base):
         -------
         - number: (For use with PVST+ and RPVST+ only) The Common Spanning Tree (CST) root path cost. The valid range is 0 to 4294967295. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRegRootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRegRootCost"])
+
     @CistRegRootCost.setter
     def CistRegRootCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRegRootCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRegRootCost"], value)
 
     @property
     def CistRegRootMac(self):
@@ -261,11 +385,12 @@ class Bridge(Base):
         -------
         - str: (For use with PVST+ and RPVST+ only) The Common Spanning Tree (CST) 6-byte root MAC address. (default = 00:00:00:00:00:00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRegRootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRegRootMac"])
+
     @CistRegRootMac.setter
     def CistRegRootMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRegRootMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRegRootMac"], value)
 
     @property
     def CistRegRootPriority(self):
@@ -275,11 +400,12 @@ class Bridge(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): (For use with PVST+ and RPVST+ only) The Common Spanning Tree (CST) priority of the root. The valid range is 0 to 61,440, in increments of 4,096. (default = 32,768)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRegRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRegRootPriority"])
+
     @CistRegRootPriority.setter
     def CistRegRootPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRegRootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRegRootPriority"], value)
 
     @property
     def CistRemainingHop(self):
@@ -289,11 +415,12 @@ class Bridge(Base):
         -------
         - number: (For use with MSTP only) The number of additional bridge-to-bridge hops that will be allowed for the MSTP BPDUs. The root sets the maximum hop count, and each subsequent bridge decrements this value by 1. The valid range is 1 to 255. (default = 20)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CistRemainingHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["CistRemainingHop"])
+
     @CistRemainingHop.setter
     def CistRemainingHop(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CistRemainingHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CistRemainingHop"], value)
 
     @property
     def Enabled(self):
@@ -303,11 +430,12 @@ class Bridge(Base):
         -------
         - bool: Enables or disables the bridge's simulation. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExternalRootCost(self):
@@ -317,11 +445,12 @@ class Bridge(Base):
         -------
         - number: Common and Internal Spanning Tree (CIST) external root path cost. A 4-byte unsigned integer. The default is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRootCost"])
+
     @ExternalRootCost.setter
     def ExternalRootCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRootCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRootCost"], value)
 
     @property
     def ExternalRootMac(self):
@@ -331,11 +460,12 @@ class Bridge(Base):
         -------
         - str: Common and Internal Spanning Tree (CIST) external root MAC address. A 6-byte MAC address.The default is 00 00 00 00 00 00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRootMac"])
+
     @ExternalRootMac.setter
     def ExternalRootMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRootMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRootMac"], value)
 
     @property
     def ExternalRootPriority(self):
@@ -345,11 +475,12 @@ class Bridge(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): (For use with MSTP only) The priority value of the root bridge for the CIST/MSTP region (external). Part of the CIST External Root Identifier. The valid range is 0 to 61,440, in increments of 4096. (default = 32,768)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRootPriority"])
+
     @ExternalRootPriority.setter
     def ExternalRootPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRootPriority"], value)
 
     @property
     def ForwardDelay(self):
@@ -359,11 +490,12 @@ class Bridge(Base):
         -------
         - number: The delay used for a port's change to the Forwarding state. (in milliseconds) The valid range is 500 msec to 255 sec. (default = 15,000 msec (15 sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForwardDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForwardDelay"])
+
     @ForwardDelay.setter
     def ForwardDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForwardDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForwardDelay"], value)
 
     @property
     def HelloInterval(self):
@@ -373,11 +505,12 @@ class Bridge(Base):
         -------
         - number: The length of time between transmission of Hello messages from the root bridge (in milliseconds). The valid range is 500 msec to 255 sec. (default = 2,000 msec (2 sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["HelloInterval"])
+
     @HelloInterval.setter
     def HelloInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HelloInterval"], value)
 
     @property
     def IsRefreshComplete(self):
@@ -387,7 +520,7 @@ class Bridge(Base):
         -------
         - bool: If true, this causes the STP bridge to update.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRefreshComplete'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRefreshComplete"])
 
     @property
     def MaxAge(self):
@@ -397,11 +530,12 @@ class Bridge(Base):
         -------
         - number: The maximum Configuration message aging time. (in milliseconds) The valid range is 500 msec to 255 sec. (default = 20,000 msec (20 sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxAge'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxAge"])
+
     @MaxAge.setter
     def MaxAge(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxAge'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxAge"], value)
 
     @property
     def MessageAge(self):
@@ -411,11 +545,12 @@ class Bridge(Base):
         -------
         - number: The message age time parameter in the BPDU (in milliseconds). (It should be less than the Max. Age.) The valid range is 500 msec to 255 sec. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessageAge'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessageAge"])
+
     @MessageAge.setter
     def MessageAge(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MessageAge'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MessageAge"], value)
 
     @property
     def Mode(self):
@@ -425,11 +560,12 @@ class Bridge(Base):
         -------
         - str(stp | rstp | mstp | pvst | rpvst | pvstp): The version of the STP protocol that is being used on the Bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def MstcName(self):
@@ -439,11 +575,12 @@ class Bridge(Base):
         -------
         - str: (For use with MSTP only) The name of the Multiple Spanning Tree Configuration being used. Format = MSTC ID-n (editable by user).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstcName'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstcName"])
+
     @MstcName.setter
     def MstcName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstcName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstcName"], value)
 
     @property
     def MstcRevisionNumber(self):
@@ -453,11 +590,12 @@ class Bridge(Base):
         -------
         - number: (For use with MSTP only) The Revision Number of the Multiple Spanning Tree Configuration being used. A 2-byte unsigned integer. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstcRevisionNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstcRevisionNumber"])
+
     @MstcRevisionNumber.setter
     def MstcRevisionNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstcRevisionNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstcRevisionNumber"], value)
 
     @property
     def PortPriority(self):
@@ -467,11 +605,12 @@ class Bridge(Base):
         -------
         - str(0 | 16 | 32 | 48 | 64 | 80 | 96 | 112 | 128 | 144 | 160 | 176 | 192 | 208 | 224 | 240): The port priority. The valid range is to 240, in multiples of 16. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortPriority"])
+
     @PortPriority.setter
     def PortPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortPriority"], value)
 
     @property
     def PvstpMode(self):
@@ -481,11 +620,12 @@ class Bridge(Base):
         -------
         - str(stp | rstp): The version of the pvSTP protocol that is being used on the Bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstpMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstpMode"])
+
     @PvstpMode.setter
     def PvstpMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstpMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstpMode"], value)
 
     @property
     def RootCost(self):
@@ -495,11 +635,12 @@ class Bridge(Base):
         -------
         - number: (For STP and RSTP) The administrative cost for the shortest path from this bridge to the Root Bridge. The valid range is 0 to 4294967295. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootCost"])
+
     @RootCost.setter
     def RootCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootCost"], value)
 
     @property
     def RootMac(self):
@@ -509,11 +650,12 @@ class Bridge(Base):
         -------
         - str: (For STP and RSTP) The 6-byte MAC Address for the Root Bridge. (default = 00:00:00:00:00:00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootMac"])
+
     @RootMac.setter
     def RootMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootMac"], value)
 
     @property
     def RootPriority(self):
@@ -523,11 +665,12 @@ class Bridge(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): (For STP and RSTP) The Bridge Priority for the root bridge. The valid range is 0 to 61,440, in increments of 4096. (default = 32,768)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootPriority"])
+
     @RootPriority.setter
     def RootPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootPriority"], value)
 
     @property
     def RootSystemId(self):
@@ -537,11 +680,12 @@ class Bridge(Base):
         -------
         - number: (For STP and RSTP) The System ID for the root bridge. The valid range is 0 to 4,095. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootSystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootSystemId"])
+
     @RootSystemId.setter
     def RootSystemId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootSystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootSystemId"], value)
 
     @property
     def UpdateRequired(self):
@@ -551,11 +695,12 @@ class Bridge(Base):
         -------
         - number: Indicates that an updated is required.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdateRequired"])
+
     @UpdateRequired.setter
     def UpdateRequired(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdateRequired"], value)
 
     @property
     def VlanPortPriority(self):
@@ -565,11 +710,12 @@ class Bridge(Base):
         -------
         - number: (For use with PVST+ and RPVST+ only) The Common Spanning Tree (CST) VLAN port priority. The valid range is 0 to 63. (default = 32)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPortPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPortPriority"])
+
     @VlanPortPriority.setter
     def VlanPortPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPortPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPortPriority"], value)
 
     @property
     def VlanRootMac(self):
@@ -579,11 +725,12 @@ class Bridge(Base):
         -------
         - str: Common and Internal Spanning Tree (CIST) Regional (external) MAC address. Part of the CIST External Root Identifier. A 6-byte MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanRootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanRootMac"])
+
     @VlanRootMac.setter
     def VlanRootMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanRootMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanRootMac"], value)
 
     @property
     def VlanRootPathCost(self):
@@ -593,11 +740,12 @@ class Bridge(Base):
         -------
         - number: Common and Internal Spanning Tree (CIST) regional (external) root path cost.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanRootPathCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanRootPathCost"])
+
     @VlanRootPathCost.setter
     def VlanRootPathCost(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanRootPathCost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanRootPathCost"], value)
 
     @property
     def VlanRootPriority(self):
@@ -607,13 +755,47 @@ class Bridge(Base):
         -------
         - str(0 | 4096 | 8192 | 12288 | 16384 | 20480 | 24576 | 28672 | 32768 | 36864 | 40960 | 45056 | 49152 | 53248 | 57344 | 61440): The priority value of the root bridge for the Common Spanning Tree (CST).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanRootPriority"])
+
     @VlanRootPriority.setter
     def VlanRootPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanRootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanRootPriority"], value)
 
-    def update(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+    def update(
+        self,
+        AutoPickBridgeMac=None,
+        BridgeMac=None,
+        BridgePriority=None,
+        BridgeSystemId=None,
+        BridgeType=None,
+        CistRegRootCost=None,
+        CistRegRootMac=None,
+        CistRegRootPriority=None,
+        CistRemainingHop=None,
+        Enabled=None,
+        ExternalRootCost=None,
+        ExternalRootMac=None,
+        ExternalRootPriority=None,
+        ForwardDelay=None,
+        HelloInterval=None,
+        MaxAge=None,
+        MessageAge=None,
+        Mode=None,
+        MstcName=None,
+        MstcRevisionNumber=None,
+        PortPriority=None,
+        PvstpMode=None,
+        RootCost=None,
+        RootMac=None,
+        RootPriority=None,
+        RootSystemId=None,
+        UpdateRequired=None,
+        VlanPortPriority=None,
+        VlanRootMac=None,
+        VlanRootPathCost=None,
+        VlanRootPriority=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Updates bridge resource on the server.
 
@@ -657,7 +839,40 @@ class Bridge(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+    def add(
+        self,
+        AutoPickBridgeMac=None,
+        BridgeMac=None,
+        BridgePriority=None,
+        BridgeSystemId=None,
+        BridgeType=None,
+        CistRegRootCost=None,
+        CistRegRootMac=None,
+        CistRegRootPriority=None,
+        CistRemainingHop=None,
+        Enabled=None,
+        ExternalRootCost=None,
+        ExternalRootMac=None,
+        ExternalRootPriority=None,
+        ForwardDelay=None,
+        HelloInterval=None,
+        MaxAge=None,
+        MessageAge=None,
+        Mode=None,
+        MstcName=None,
+        MstcRevisionNumber=None,
+        PortPriority=None,
+        PvstpMode=None,
+        RootCost=None,
+        RootMac=None,
+        RootPriority=None,
+        RootSystemId=None,
+        UpdateRequired=None,
+        VlanPortPriority=None,
+        VlanRootMac=None,
+        VlanRootPathCost=None,
+        VlanRootPriority=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Adds a new bridge resource on the server and adds it to the container.
 
@@ -715,7 +930,41 @@ class Bridge(Base):
         """
         self._delete()
 
-    def find(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, IsRefreshComplete=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+    def find(
+        self,
+        AutoPickBridgeMac=None,
+        BridgeMac=None,
+        BridgePriority=None,
+        BridgeSystemId=None,
+        BridgeType=None,
+        CistRegRootCost=None,
+        CistRegRootMac=None,
+        CistRegRootPriority=None,
+        CistRemainingHop=None,
+        Enabled=None,
+        ExternalRootCost=None,
+        ExternalRootMac=None,
+        ExternalRootPriority=None,
+        ForwardDelay=None,
+        HelloInterval=None,
+        IsRefreshComplete=None,
+        MaxAge=None,
+        MessageAge=None,
+        Mode=None,
+        MstcName=None,
+        MstcRevisionNumber=None,
+        PortPriority=None,
+        PvstpMode=None,
+        RootCost=None,
+        RootMac=None,
+        RootPriority=None,
+        RootSystemId=None,
+        UpdateRequired=None,
+        VlanPortPriority=None,
+        VlanRootMac=None,
+        VlanRootPathCost=None,
+        VlanRootPriority=None,
+    ):
         # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, bool, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Finds and retrieves bridge resources from the server.
 
@@ -802,10 +1051,14 @@ class Bridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('bridgeTopologyChange', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "bridgeTopologyChange", payload=payload, response_object=None
+        )
 
     def CistTopologyChange(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -823,10 +1076,14 @@ class Bridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('cistTopologyChange', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "cistTopologyChange", payload=payload, response_object=None
+        )
 
     def RefreshLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -844,10 +1101,14 @@ class Bridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )
 
     def UpdateParameters(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -865,7 +1126,9 @@ class Bridge(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateParameters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateParameters", payload=payload, response_object=None)

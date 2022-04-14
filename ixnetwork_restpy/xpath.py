@@ -5,11 +5,10 @@ which helps in the operation of caching and mode recognition
 
 
 class Xpath(object):
-
     def __init__(self):
         self._config = []
         self._children = []
-        self._mode = 'normal'
+        self._mode = "normal"
 
     @property
     def config(self):

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class Layer47AppLibraryTrafficFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer47AppLibraryTrafficFilter'
+    _SDM_NAME = "layer47AppLibraryTrafficFilter"
     _SDM_ATT_MAP = {
-        'AdvancedFilterName': 'advancedFilterName',
-        'AllAdvancedFilters': 'allAdvancedFilters',
-        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
-        'TopxEnabled': 'topxEnabled',
-        'TopxValue': 'topxValue',
+        "AdvancedFilterName": "advancedFilterName",
+        "AllAdvancedFilters": "allAdvancedFilters",
+        "MatchingAdvancedFilters": "matchingAdvancedFilters",
+        "TopxEnabled": "topxEnabled",
+        "TopxValue": "topxValue",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Layer47AppLibraryTrafficFilter, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class Layer47AppLibraryTrafficFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.advancedfilter.advancedfilter import AdvancedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.advancedfilter.advancedfilter import (
+            AdvancedFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AdvancedFilter', None) is not None:
-                return self._properties.get('AdvancedFilter')
+            if self._properties.get("AdvancedFilter", None) is not None:
+                return self._properties.get("AdvancedFilter")
         return AdvancedFilter(self)
 
     @property
@@ -73,11 +76,12 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str: Specifies an advanced filter from the ones available in the selected drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvancedFilterName"])
+
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvancedFilterName"], value)
 
     @property
     def AllAdvancedFilters(self):
@@ -87,7 +91,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllAdvancedFilters"])
 
     @property
     def MatchingAdvancedFilters(self):
@@ -97,7 +101,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
+        return self._get_attribute(self._SDM_ATT_MAP["MatchingAdvancedFilters"])
 
     @property
     def TopxEnabled(self):
@@ -107,11 +111,12 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - bool: The view only shows the number of rows specified by TopXValue. If the view is OnDemand, it will become RealTime.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopxEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopxEnabled"])
+
     @TopxEnabled.setter
     def TopxEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopxEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopxEnabled"], value)
 
     @property
     def TopxValue(self):
@@ -121,11 +126,12 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - number: The number of rows to be shown when TopXEnabled is set to true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopxValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopxValue"])
+
     @TopxValue.setter
     def TopxValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopxValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopxValue"], value)
 
     def update(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
         # type: (str, bool, int) -> Layer47AppLibraryTrafficFilter
@@ -173,7 +179,14 @@ class Layer47AppLibraryTrafficFilter(Base):
         """
         self._delete()
 
-    def find(self, AdvancedFilterName=None, AllAdvancedFilters=None, MatchingAdvancedFilters=None, TopxEnabled=None, TopxValue=None):
+    def find(
+        self,
+        AdvancedFilterName=None,
+        AllAdvancedFilters=None,
+        MatchingAdvancedFilters=None,
+        TopxEnabled=None,
+        TopxValue=None,
+    ):
         # type: (str, str, str, bool, int) -> Layer47AppLibraryTrafficFilter
         """Finds and retrieves layer47AppLibraryTrafficFilter resources from the server.
 
@@ -233,10 +246,12 @@ class Layer47AppLibraryTrafficFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addAdvancedFilter', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addAdvancedFilter", payload=payload, response_object=None)
 
     def RemoveAdvancedFilter(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -254,10 +269,14 @@ class Layer47AppLibraryTrafficFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAdvancedFilter', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "removeAdvancedFilter", payload=payload, response_object=None
+        )
 
     def RemoveAllAdvancedFilters(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -274,7 +293,11 @@ class Layer47AppLibraryTrafficFilter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeAllAdvancedFilters', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "removeAllAdvancedFilters", payload=payload, response_object=None
+        )

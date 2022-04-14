@@ -46,14 +46,14 @@ def test_refresh_for_classic_nodes(ixnetwork):
     # updating few parameter of MacRange
     eth_range[2].MacRange.Count = 20
     eth_range[3].MacRange.Enabled = False
-    eth_range[0].MacRange.Mac = '7A:FD:FE:CF:00:AA'
+    eth_range[0].MacRange.Mac = "7A:FD:FE:CF:00:AA"
 
     # refresh the encapsulated resources and verify the retrieved resources
     # match what was updated
     eth_range.refresh()
     assert eth_range[2].MacRange.Count == 20
     assert eth_range[3].MacRange.Enabled is False
-    assert eth_range[0].MacRange.Mac == '7A:FD:FE:CF:00:AA'
+    assert eth_range[0].MacRange.Mac == "7A:FD:FE:CF:00:AA"
 
 
 if __name__ == "__main__":

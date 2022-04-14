@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class EsmcRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'esmcRange'
+    _SDM_NAME = "esmcRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FlagMode': 'flagMode',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Ql': 'ql',
-        'Rate': 'rate',
-        'WaitId': 'waitId',
+        "Enabled": "enabled",
+        "FlagMode": "flagMode",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Ql": "ql",
+        "Rate": "rate",
+        "WaitId": "waitId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EsmcRange, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class EsmcRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FlagMode(self):
@@ -72,11 +73,12 @@ class EsmcRange(Base):
         -------
         - str: The operation of the SSM header Event flag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlagMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlagMode"])
+
     @FlagMode.setter
     def FlagMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlagMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlagMode"], value)
 
     @property
     def Name(self):
@@ -86,11 +88,12 @@ class EsmcRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -100,7 +103,7 @@ class EsmcRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Ql(self):
@@ -110,11 +113,12 @@ class EsmcRange(Base):
         -------
         - str: The SSM clock quality level(QL) code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ql'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ql"])
+
     @Ql.setter
     def Ql(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ql'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ql"], value)
 
     @property
     def Rate(self):
@@ -124,11 +128,12 @@ class EsmcRange(Base):
         -------
         - number: SSM message transmit rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rate"])
+
     @Rate.setter
     def Rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rate"], value)
 
     @property
     def WaitId(self):
@@ -138,13 +143,16 @@ class EsmcRange(Base):
         -------
         - bool: This value is true if supplicant is waiting for RequestId from DUT part.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WaitId'])
+        return self._get_attribute(self._SDM_ATT_MAP["WaitId"])
+
     @WaitId.setter
     def WaitId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WaitId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WaitId"], value)
 
-    def update(self, Enabled=None, FlagMode=None, Name=None, Ql=None, Rate=None, WaitId=None):
+    def update(
+        self, Enabled=None, FlagMode=None, Name=None, Ql=None, Rate=None, WaitId=None
+    ):
         # type: (bool, str, str, str, int, bool) -> EsmcRange
         """Updates esmcRange resource on the server.
 
@@ -163,7 +171,9 @@ class EsmcRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, FlagMode=None, Name=None, Ql=None, Rate=None, WaitId=None):
+    def add(
+        self, Enabled=None, FlagMode=None, Name=None, Ql=None, Rate=None, WaitId=None
+    ):
         # type: (bool, str, str, str, int, bool) -> EsmcRange
         """Adds a new esmcRange resource on the server and adds it to the container.
 
@@ -196,7 +206,16 @@ class EsmcRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, FlagMode=None, Name=None, ObjectId=None, Ql=None, Rate=None, WaitId=None):
+    def find(
+        self,
+        Enabled=None,
+        FlagMode=None,
+        Name=None,
+        ObjectId=None,
+        Ql=None,
+        Rate=None,
+        WaitId=None,
+    ):
         # type: (bool, str, str, str, str, int, bool) -> EsmcRange
         """Finds and retrieves esmcRange resources from the server.
 
@@ -257,10 +276,12 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -279,10 +300,14 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -301,10 +326,14 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -323,10 +352,14 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def ESMCStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -350,10 +383,12 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('eSMCStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("eSMCStart", payload=payload, response_object=None)
 
     def ESMCStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -377,7 +412,9 @@ class EsmcRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('eSMCStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("eSMCStop", payload=payload, response_object=None)

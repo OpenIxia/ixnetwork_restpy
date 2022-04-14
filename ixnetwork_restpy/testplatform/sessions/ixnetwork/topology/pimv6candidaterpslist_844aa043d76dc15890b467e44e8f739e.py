@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,30 +33,29 @@ class PimV6CandidateRPsList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'pimV6CandidateRPsList'
+    _SDM_NAME = "pimV6CandidateRPsList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertisementHoldTime': 'advertisementHoldTime',
-        'BackOffInterval': 'backOffInterval',
-        'Count': 'count',
-        'CrpAddress': 'crpAddress',
-        'CrpAddressCount': 'crpAddressCount',
-        'DescriptiveName': 'descriptiveName',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'GroupMaskLen': 'groupMaskLen',
-        'LocalRouterId': 'localRouterId',
-        'MeshingType': 'meshingType',
-        'Name': 'name',
-        'PeriodicAdvertisementInterval': 'periodicAdvertisementInterval',
-        'Priority': 'priority',
-        'PriorityChangeInterval': 'priorityChangeInterval',
-        'PriorityType': 'priorityType',
-        'Status': 'status',
-        'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
+        "Active": "active",
+        "AdvertisementHoldTime": "advertisementHoldTime",
+        "BackOffInterval": "backOffInterval",
+        "Count": "count",
+        "CrpAddress": "crpAddress",
+        "CrpAddressCount": "crpAddressCount",
+        "DescriptiveName": "descriptiveName",
+        "GroupAddress": "groupAddress",
+        "GroupCount": "groupCount",
+        "GroupMaskLen": "groupMaskLen",
+        "LocalRouterId": "localRouterId",
+        "MeshingType": "meshingType",
+        "Name": "name",
+        "PeriodicAdvertisementInterval": "periodicAdvertisementInterval",
+        "Priority": "priority",
+        "PriorityChangeInterval": "priorityChangeInterval",
+        "PriorityType": "priorityType",
+        "Status": "status",
+        "TriggeredCrpMessageCount": "triggeredCrpMessageCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PimV6CandidateRPsList, self).__init__(parent, list_op)
@@ -69,7 +69,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertisementHoldTime(self):
@@ -80,7 +81,10 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval between two consecutive Candidate RP advertisements
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertisementHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertisementHoldTime"])
+        )
 
     @property
     def BackOffInterval(self):
@@ -91,7 +95,10 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The back-off time interval for the C-RP-Adv messages
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackOffInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackOffInterval"])
+        )
 
     @property
     def Count(self):
@@ -101,7 +108,7 @@ class PimV6CandidateRPsList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CrpAddress(self):
@@ -112,7 +119,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start address of the set of candidate RPs to be simulated
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CrpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CrpAddress"]))
 
     @property
     def CrpAddressCount(self):
@@ -123,7 +131,10 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Total number of Candidate RPs to be simulated starting from C-RP address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CrpAddressCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CrpAddressCount"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -133,7 +144,7 @@ class PimV6CandidateRPsList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def GroupAddress(self):
@@ -144,7 +155,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Starting group address of the group range for which the candidate RP will advertise candidacy
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupAddress"]))
 
     @property
     def GroupCount(self):
@@ -155,7 +167,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of groups in the range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupCount"]))
 
     @property
     def GroupMaskLen(self):
@@ -166,7 +179,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Mask width (prefix length in bits) for the group range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupMaskLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GroupMaskLen"]))
 
     @property
     def LocalRouterId(self):
@@ -176,7 +190,7 @@ class PimV6CandidateRPsList(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
 
     @property
     def MeshingType(self):
@@ -187,7 +201,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): It indicates if the mappings for groups and RP addresses are Fully-Meshed or One-To-One. One-to-one indicates that for each group only one RP shall be sent regardless of the RP count. Full meshed means for each group all RPs shall be advertised for candidacy which is essentially a (group to rp) mapping.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MeshingType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MeshingType"]))
 
     @property
     def Name(self):
@@ -197,11 +212,12 @@ class PimV6CandidateRPsList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PeriodicAdvertisementInterval(self):
@@ -212,7 +228,11 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Rate controlling variable indicating how many C-RP-Adv messages can be sent in the specified time interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeriodicAdvertisementInterval']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["PeriodicAdvertisementInterval"]),
+        )
 
     @property
     def Priority(self):
@@ -223,7 +243,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value of priority to be sent in candidate RP advertisement
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     @property
     def PriorityChangeInterval(self):
@@ -234,7 +255,10 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval after which priority of all the RPs get changed
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PriorityChangeInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PriorityChangeInterval"])
+        )
 
     @property
     def PriorityType(self):
@@ -245,7 +269,8 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): It indicates the type of priority to be held by the candidate RPs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PriorityType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PriorityType"]))
 
     @property
     def Status(self):
@@ -255,7 +280,7 @@ class PimV6CandidateRPsList(Base):
         -------
         - list(str[none | notStarted | started]): Status
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TriggeredCrpMessageCount(self):
@@ -266,7 +291,10 @@ class PimV6CandidateRPsList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of times C-RP advertisements is sent to the newly elected Bootstrap Routers
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TriggeredCrpMessageCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TriggeredCrpMessageCount"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> PimV6CandidateRPsList
@@ -285,7 +313,14 @@ class PimV6CandidateRPsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, LocalRouterId=None, Name=None, Status=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalRouterId=None,
+        Name=None,
+        Status=None,
+    ):
         # type: (int, str, List[str], str, List[str]) -> PimV6CandidateRPsList
         """Finds and retrieves pimV6CandidateRPsList resources from the server.
 
@@ -362,10 +397,12 @@ class PimV6CandidateRPsList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -400,12 +437,31 @@ class PimV6CandidateRPsList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, CrpAddressCount=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, Priority=None, PriorityChangeInterval=None, PriorityType=None, TriggeredCrpMessageCount=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertisementHoldTime=None,
+        BackOffInterval=None,
+        CrpAddress=None,
+        CrpAddressCount=None,
+        GroupAddress=None,
+        GroupCount=None,
+        GroupMaskLen=None,
+        MeshingType=None,
+        PeriodicAdvertisementInterval=None,
+        Priority=None,
+        PriorityChangeInterval=None,
+        PriorityType=None,
+        TriggeredCrpMessageCount=None,
+    ):
         """Base class infrastructure that gets a list of pimV6CandidateRPsList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

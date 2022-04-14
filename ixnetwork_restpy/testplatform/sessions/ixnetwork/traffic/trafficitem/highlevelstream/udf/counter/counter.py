@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,52 @@ class Counter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'counter'
+    _SDM_NAME = "counter"
     _SDM_ATT_MAP = {
-        'AvailableWidths': 'availableWidths',
-        'BitOffset': 'bitOffset',
-        'Count': 'count',
-        'Direction': 'direction',
-        'StartValue': 'startValue',
-        'StepValue': 'stepValue',
-        'Width': 'width',
+        "AvailableWidths": "availableWidths",
+        "BitOffset": "bitOffset",
+        "Count": "count",
+        "Direction": "direction",
+        "StartValue": "startValue",
+        "StepValue": "stepValue",
+        "Width": "width",
     }
     _SDM_ENUM_MAP = {
-        'direction': ['decrement', 'increment'],
-        'width': ['1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '3', '30', '31', '32', '4', '5', '6', '7', '8', '9'],
+        "direction": ["decrement", "increment"],
+        "width": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "2",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "3",
+            "30",
+            "31",
+            "32",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,7 +93,7 @@ class Counter(Base):
         -------
         - list(str): Contains all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableWidths"])
 
     @property
     def BitOffset(self):
@@ -69,11 +103,12 @@ class Counter(Base):
         -------
         - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["BitOffset"])
+
     @BitOffset.setter
     def BitOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BitOffset"], value)
 
     @property
     def Count(self):
@@ -83,11 +118,12 @@ class Counter(Base):
         -------
         - number: Specifies the repeat count for the UDF. After the elapse of this count, UDF will again start from the Start Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Direction(self):
@@ -97,11 +133,12 @@ class Counter(Base):
         -------
         - str(decrement | increment): Specifies if the UDF value will be incremented or decremented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Direction'])
+        return self._get_attribute(self._SDM_ATT_MAP["Direction"])
+
     @Direction.setter
     def Direction(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Direction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Direction"], value)
 
     @property
     def StartValue(self):
@@ -111,11 +148,12 @@ class Counter(Base):
         -------
         - number: Specifies the Start Value of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartValue"])
+
     @StartValue.setter
     def StartValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartValue"], value)
 
     @property
     def StepValue(self):
@@ -125,11 +163,12 @@ class Counter(Base):
         -------
         - number: Specifies the Step Value by which the UDF value will be incremented or decremented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepValue"])
+
     @StepValue.setter
     def StepValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepValue"], value)
 
     @property
     def Width(self):
@@ -139,13 +178,22 @@ class Counter(Base):
         -------
         - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Width'])
+        return self._get_attribute(self._SDM_ATT_MAP["Width"])
+
     @Width.setter
     def Width(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Width"], value)
 
-    def update(self, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
+    def update(
+        self,
+        BitOffset=None,
+        Count=None,
+        Direction=None,
+        StartValue=None,
+        StepValue=None,
+        Width=None,
+    ):
         # type: (int, int, str, int, int, str) -> Counter
         """Updates counter resource on the server.
 
@@ -164,9 +212,17 @@ class Counter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
+    def add(
+        self,
+        BitOffset=None,
+        Count=None,
+        Direction=None,
+        StartValue=None,
+        StepValue=None,
+        Width=None,
+    ):
         # type: (int, int, str, int, int, str) -> Counter
-        """Adds a new counter resource on the json, only valid with config assistant
+        """Adds a new counter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -187,7 +243,16 @@ class Counter(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AvailableWidths=None, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
+    def find(
+        self,
+        AvailableWidths=None,
+        BitOffset=None,
+        Count=None,
+        Direction=None,
+        StartValue=None,
+        StepValue=None,
+        Width=None,
+    ):
         # type: (List[str], int, int, str, int, int, str) -> Counter
         """Finds and retrieves counter resources from the server.
 

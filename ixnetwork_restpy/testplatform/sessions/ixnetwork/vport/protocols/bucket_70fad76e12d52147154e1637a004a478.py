@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class Bucket(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bucket'
+    _SDM_NAME = "bucket"
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
-        'Weight': 'weight',
+        "Description": "description",
+        "WatchGroup": "watchGroup",
+        "WatchPort": "watchPort",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Bucket, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class Bucket(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_965ab5c99e9b19e16bf56a5314ddc36b import BucketAction
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_965ab5c99e9b19e16bf56a5314ddc36b import (
+            BucketAction,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BucketAction', None) is not None:
-                return self._properties.get('BucketAction')
+            if self._properties.get("BucketAction", None) is not None:
+                return self._properties.get("BucketAction")
         return BucketAction(self)
 
     @property
@@ -72,11 +75,12 @@ class Bucket(Base):
         -------
         - str: A description of the bucket.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def WatchGroup(self):
@@ -86,11 +90,12 @@ class Bucket(Base):
         -------
         - number: A group whose state determines whether this bucket is live.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchGroup"])
+
     @WatchGroup.setter
     def WatchGroup(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WatchGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WatchGroup"], value)
 
     @property
     def WatchPort(self):
@@ -100,11 +105,12 @@ class Bucket(Base):
         -------
         - number: A Port whose state determines whether this bucket is live.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchPort"])
+
     @WatchPort.setter
     def WatchPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WatchPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WatchPort"], value)
 
     @property
     def Weight(self):
@@ -114,11 +120,12 @@ class Bucket(Base):
         -------
         - number: Specify the weight of buckets. The range allowed is 0-65535
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
+
     @Weight.setter
     def Weight(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Weight'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Weight"], value)
 
     def update(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
         # type: (str, int, int, int) -> Bucket

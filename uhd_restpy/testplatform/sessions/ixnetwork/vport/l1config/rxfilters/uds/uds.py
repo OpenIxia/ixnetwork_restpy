@@ -190,7 +190,7 @@ class Uds(Base):
 
     def add(self, CustomFrameSizeFrom=None, CustomFrameSizeTo=None, DestinationAddressSelector=None, Error=None, FrameSizeType=None, IsEnabled=None, PatternSelector=None, SourceAddressSelector=None):
         # type: (int, int, str, str, str, bool, str, str) -> Uds
-        """Adds a new uds resource on the json, only valid with config assistant
+        """Adds a new uds resource on the json, only valid with batch add utility
 
         Args
         ----

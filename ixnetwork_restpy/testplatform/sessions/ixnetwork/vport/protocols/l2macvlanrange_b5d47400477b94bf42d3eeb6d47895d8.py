@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,26 +33,36 @@ class L2MacVlanRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2MacVlanRange'
+    _SDM_NAME = "l2MacVlanRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'EnableRepeatMac': 'enableRepeatMac',
-        'EnableSameVlan': 'enableSameVlan',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'FirstVlanId': 'firstVlanId',
-        'IncrementVlanMode': 'incrementVlanMode',
-        'IncremetVlanMode': 'incremetVlanMode',
-        'SkipVlanIdZero': 'skipVlanIdZero',
-        'StartMac': 'startMac',
-        'Tpid': 'tpid',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "Count": "count",
+        "EnableRepeatMac": "enableRepeatMac",
+        "EnableSameVlan": "enableSameVlan",
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "FirstVlanId": "firstVlanId",
+        "IncrementVlanMode": "incrementVlanMode",
+        "IncremetVlanMode": "incremetVlanMode",
+        "SkipVlanIdZero": "skipVlanIdZero",
+        "StartMac": "startMac",
+        "Tpid": "tpid",
+        "VlanCount": "vlanCount",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
     _SDM_ENUM_MAP = {
-        'incrementVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
-        'incremetVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        "incrementVlanMode": [
+            "noIncrement",
+            "parallelIncrement",
+            "innerFirst",
+            "outerFirst",
+        ],
+        "incremetVlanMode": [
+            "noIncrement",
+            "parallelIncrement",
+            "innerFirst",
+            "outerFirst",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -65,11 +76,12 @@ class L2MacVlanRange(Base):
         -------
         - number: If Enable VLAN is enabled, this it the number of MAC address/VLAN combinations that will be created. If Enabled VLAN is not enabled, this is the number of MAC addresses that will be created.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def EnableRepeatMac(self):
@@ -79,11 +91,12 @@ class L2MacVlanRange(Base):
         -------
         - bool: If enabled, and the count is greater than 1, the same address value will be repeated for all MAC addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRepeatMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRepeatMac"])
+
     @EnableRepeatMac.setter
     def EnableRepeatMac(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRepeatMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRepeatMac"], value)
 
     @property
     def EnableSameVlan(self):
@@ -93,11 +106,12 @@ class L2MacVlanRange(Base):
         -------
         - bool: If enabled, all MAC addresses in the range will be associated with the same VLAN ID. If enabled, all MAC addresses in the range will be associated with different VLAN IDs, where the VLAN IDs will be automatically incremented.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSameVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSameVlan"])
+
     @EnableSameVlan.setter
     def EnableSameVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSameVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSameVlan"], value)
 
     @property
     def EnableVlan(self):
@@ -107,11 +121,12 @@ class L2MacVlanRange(Base):
         -------
         - bool: Enables the MAC/VLAN range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -121,11 +136,12 @@ class L2MacVlanRange(Base):
         -------
         - bool: Enables the Layer 2 MAC/VLAN address range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstVlanId(self):
@@ -135,11 +151,12 @@ class L2MacVlanRange(Base):
         -------
         - number: The VLAN ID for the first VLAN in the MAC/VLAN range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstVlanId"])
+
     @FirstVlanId.setter
     def FirstVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstVlanId"], value)
 
     @property
     def IncrementVlanMode(self):
@@ -149,25 +166,27 @@ class L2MacVlanRange(Base):
         -------
         - str(noIncrement | parallelIncrement | innerFirst | outerFirst): If true, each additional VLAN in the range is incremented to create unique VLAN IDs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementVlanMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementVlanMode"])
+
     @IncrementVlanMode.setter
     def IncrementVlanMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementVlanMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementVlanMode"], value)
 
     @property
     def IncremetVlanMode(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(noIncrement | parallelIncrement | innerFirst | outerFirst): If true, each additional VLAN in the range is incremented to create unique VLAN IDs. The increment value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncremetVlanMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncremetVlanMode"])
+
     @IncremetVlanMode.setter
     def IncremetVlanMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncremetVlanMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncremetVlanMode"], value)
 
     @property
     def SkipVlanIdZero(self):
@@ -177,11 +196,12 @@ class L2MacVlanRange(Base):
         -------
         - bool: Skip the value of vlad id, if the vlan id value is equal to zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipVlanIdZero"])
+
     @SkipVlanIdZero.setter
     def SkipVlanIdZero(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipVlanIdZero"], value)
 
     @property
     def StartMac(self):
@@ -191,11 +211,12 @@ class L2MacVlanRange(Base):
         -------
         - str: The first MAC address in the MAC range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMac"])
+
     @StartMac.setter
     def StartMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMac"], value)
 
     @property
     def Tpid(self):
@@ -205,11 +226,12 @@ class L2MacVlanRange(Base):
         -------
         - str: Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tpid"])
+
     @Tpid.setter
     def Tpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tpid"], value)
 
     @property
     def VlanCount(self):
@@ -219,11 +241,12 @@ class L2MacVlanRange(Base):
         -------
         - number: The number of VLANs created.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanId(self):
@@ -233,11 +256,12 @@ class L2MacVlanRange(Base):
         -------
         - str: The identifier for the first VLAN in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -247,13 +271,30 @@ class L2MacVlanRange(Base):
         -------
         - str: The User Priority for this VLAN. A value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, Count=None, EnableRepeatMac=None, EnableSameVlan=None, EnableVlan=None, Enabled=None, FirstVlanId=None, IncrementVlanMode=None, IncremetVlanMode=None, SkipVlanIdZero=None, StartMac=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        Count=None,
+        EnableRepeatMac=None,
+        EnableSameVlan=None,
+        EnableVlan=None,
+        Enabled=None,
+        FirstVlanId=None,
+        IncrementVlanMode=None,
+        IncremetVlanMode=None,
+        SkipVlanIdZero=None,
+        StartMac=None,
+        Tpid=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (int, bool, bool, bool, bool, int, str, str, bool, str, str, int, str, str) -> L2MacVlanRange
         """Updates l2MacVlanRange resource on the server.
 
@@ -280,7 +321,23 @@ class L2MacVlanRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, EnableRepeatMac=None, EnableSameVlan=None, EnableVlan=None, Enabled=None, FirstVlanId=None, IncrementVlanMode=None, IncremetVlanMode=None, SkipVlanIdZero=None, StartMac=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        Count=None,
+        EnableRepeatMac=None,
+        EnableSameVlan=None,
+        EnableVlan=None,
+        Enabled=None,
+        FirstVlanId=None,
+        IncrementVlanMode=None,
+        IncremetVlanMode=None,
+        SkipVlanIdZero=None,
+        StartMac=None,
+        Tpid=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (int, bool, bool, bool, bool, int, str, str, bool, str, str, int, str, str) -> L2MacVlanRange
         """Finds and retrieves l2MacVlanRange resources from the server.
 

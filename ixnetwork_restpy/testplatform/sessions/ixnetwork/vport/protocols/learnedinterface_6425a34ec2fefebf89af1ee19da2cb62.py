@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class LearnedInterface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedInterface'
+    _SDM_NAME = "learnedInterface"
     _SDM_ATT_MAP = {
-        'DesignatedMac': 'designatedMac',
-        'DesignatedPortId': 'designatedPortId',
-        'DesignatedPriority': 'designatedPriority',
-        'InterfaceDesc': 'interfaceDesc',
-        'InterfaceRole': 'interfaceRole',
-        'InterfaceState': 'interfaceState',
+        "DesignatedMac": "designatedMac",
+        "DesignatedPortId": "designatedPortId",
+        "DesignatedPriority": "designatedPriority",
+        "InterfaceDesc": "interfaceDesc",
+        "InterfaceRole": "interfaceRole",
+        "InterfaceState": "interfaceState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedInterface, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class LearnedInterface(Base):
         -------
         - str: (Read-only) The 6-byte MAC Address of the advertised designated MSTP bridge on the LAN segment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DesignatedMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["DesignatedMac"])
 
     @property
     def DesignatedPortId(self):
@@ -67,7 +67,7 @@ class LearnedInterface(Base):
         -------
         - number: (Read-only) The port ID of the advertised eesignated MSTP bridge's port on the LAN segment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DesignatedPortId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DesignatedPortId"])
 
     @property
     def DesignatedPriority(self):
@@ -77,7 +77,7 @@ class LearnedInterface(Base):
         -------
         - number: (Read-only) The priority of the advertised designated MSTP bridge on the LAN segment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DesignatedPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["DesignatedPriority"])
 
     @property
     def InterfaceDesc(self):
@@ -87,7 +87,7 @@ class LearnedInterface(Base):
         -------
         - str: (Read-only) The descriptive identifier of this advertised protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceDesc'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceDesc"])
 
     @property
     def InterfaceRole(self):
@@ -97,7 +97,7 @@ class LearnedInterface(Base):
         -------
         - str: (Read-only) The role of the advertised interface. One of the following options: Disabled, Root, Designated, Alternate, or Backup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceRole'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceRole"])
 
     @property
     def InterfaceState(self):
@@ -107,7 +107,7 @@ class LearnedInterface(Base):
         -------
         - str: (Read-only) The state of the advertised interface. One of the following options: Discarding (discarding MAC), Learning (MAC frame learning), or Forwarding (forwarding MAC frames).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceState'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceState"])
 
     def add(self):
         """Adds a new learnedInterface resource on the server and adds it to the container.
@@ -132,7 +132,15 @@ class LearnedInterface(Base):
         """
         self._delete()
 
-    def find(self, DesignatedMac=None, DesignatedPortId=None, DesignatedPriority=None, InterfaceDesc=None, InterfaceRole=None, InterfaceState=None):
+    def find(
+        self,
+        DesignatedMac=None,
+        DesignatedPortId=None,
+        DesignatedPriority=None,
+        InterfaceDesc=None,
+        InterfaceRole=None,
+        InterfaceState=None,
+    ):
         # type: (str, int, int, str, str, str) -> LearnedInterface
         """Finds and retrieves learnedInterface resources from the server.
 

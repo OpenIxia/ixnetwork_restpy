@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,13 +35,13 @@ class EnumerationFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'enumerationFilter'
+    _SDM_NAME = "enumerationFilter"
     _SDM_ATT_MAP = {
-        'SortDirection': 'sortDirection',
-        'TrackingFilterId': 'trackingFilterId',
+        "SortDirection": "sortDirection",
+        "TrackingFilterId": "trackingFilterId",
     }
     _SDM_ENUM_MAP = {
-        'sortDirection': ['ascending', 'descending'],
+        "sortDirection": ["ascending", "descending"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -54,11 +55,12 @@ class EnumerationFilter(Base):
         -------
         - str(ascending | descending): Sets the display order of the view.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SortDirection'])
+        return self._get_attribute(self._SDM_ATT_MAP["SortDirection"])
+
     @SortDirection.setter
     def SortDirection(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SortDirection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SortDirection"], value)
 
     @property
     def TrackingFilterId(self):
@@ -68,11 +70,12 @@ class EnumerationFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
+
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrackingFilterId"], value)
 
     def update(self, SortDirection=None, TrackingFilterId=None):
         # type: (str, str) -> EnumerationFilter

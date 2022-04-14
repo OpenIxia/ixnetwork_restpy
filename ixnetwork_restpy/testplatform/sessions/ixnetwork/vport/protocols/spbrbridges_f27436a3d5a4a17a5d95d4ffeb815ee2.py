@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class SpbRbridges(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbRbridges'
+    _SDM_NAME = "spbRbridges"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'AuxillaryMcidConfigName': 'auxillaryMcidConfigName',
-        'BaseVid': 'baseVid',
-        'BridgeMacAddress': 'bridgeMacAddress',
-        'BridgePriority': 'bridgePriority',
-        'EctAlgorithm': 'ectAlgorithm',
-        'HostName': 'hostName',
-        'IsId': 'isId',
-        'LinkMetric': 'linkMetric',
-        'MBit': 'mBit',
-        'McidConfigName': 'mcidConfigName',
-        'RBit': 'rBit',
-        'SequenceNumber': 'sequenceNumber',
-        'SystemId': 'systemId',
-        'TBit': 'tBit',
-        'UseFlagBit': 'useFlagBit',
+        "Age": "age",
+        "AuxillaryMcidConfigName": "auxillaryMcidConfigName",
+        "BaseVid": "baseVid",
+        "BridgeMacAddress": "bridgeMacAddress",
+        "BridgePriority": "bridgePriority",
+        "EctAlgorithm": "ectAlgorithm",
+        "HostName": "hostName",
+        "IsId": "isId",
+        "LinkMetric": "linkMetric",
+        "MBit": "mBit",
+        "McidConfigName": "mcidConfigName",
+        "RBit": "rBit",
+        "SequenceNumber": "sequenceNumber",
+        "SystemId": "systemId",
+        "TBit": "tBit",
+        "UseFlagBit": "useFlagBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbRbridges, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class SpbRbridges(Base):
         -------
         - number: (read only) This indicates the age in time in seconds, since it was last refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def AuxillaryMcidConfigName(self):
@@ -76,7 +76,7 @@ class SpbRbridges(Base):
         -------
         - str: The auxiliary MCID configuration name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxillaryMcidConfigName'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxillaryMcidConfigName"])
 
     @property
     def BaseVid(self):
@@ -86,7 +86,7 @@ class SpbRbridges(Base):
         -------
         - number: The Base VLAN ID. The default value is 1. The maximum value is 4095. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BaseVid'])
+        return self._get_attribute(self._SDM_ATT_MAP["BaseVid"])
 
     @property
     def BridgeMacAddress(self):
@@ -96,7 +96,7 @@ class SpbRbridges(Base):
         -------
         - str: The 6-byte MAC address assigned to this bridge. Part of the bridge identifier (bridge ID).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgeMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgeMacAddress"])
 
     @property
     def BridgePriority(self):
@@ -106,7 +106,7 @@ class SpbRbridges(Base):
         -------
         - number: The Bridge Priority for this bridge.The valid range is 0 to 61,440, in multiples of 4,096. (default = 32,768).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgePriority"])
 
     @property
     def EctAlgorithm(self):
@@ -116,7 +116,7 @@ class SpbRbridges(Base):
         -------
         - number: The SPB Equal Cost Tree (ECT) algorithm. The default algorithm is 01-80-C2-01.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["EctAlgorithm"])
 
     @property
     def HostName(self):
@@ -126,7 +126,7 @@ class SpbRbridges(Base):
         -------
         - str: (read only) The host name as retrieved from the related packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def IsId(self):
@@ -136,7 +136,7 @@ class SpbRbridges(Base):
         -------
         - number: The I-component service identifier. The maximum value is 16777215. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsId"])
 
     @property
     def LinkMetric(self):
@@ -146,7 +146,7 @@ class SpbRbridges(Base):
         -------
         - number: The LSP metric related to the network. The default value is 10. The maximum value is 16777215. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMetric"])
 
     @property
     def MBit(self):
@@ -156,7 +156,7 @@ class SpbRbridges(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["MBit"])
 
     @property
     def McidConfigName(self):
@@ -166,7 +166,7 @@ class SpbRbridges(Base):
         -------
         - str: The MCID configuration name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['McidConfigName'])
+        return self._get_attribute(self._SDM_ATT_MAP["McidConfigName"])
 
     @property
     def RBit(self):
@@ -176,7 +176,7 @@ class SpbRbridges(Base):
         -------
         - bool: The Restart State bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["RBit"])
 
     @property
     def SequenceNumber(self):
@@ -186,7 +186,7 @@ class SpbRbridges(Base):
         -------
         - number: (read only) This indicates the sequence number of the LSP containing the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def SystemId(self):
@@ -196,7 +196,7 @@ class SpbRbridges(Base):
         -------
         - str: (read only) This indicates the ISIS System ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SystemId"])
 
     @property
     def TBit(self):
@@ -206,7 +206,7 @@ class SpbRbridges(Base):
         -------
         - bool: The external route tag bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["TBit"])
 
     @property
     def UseFlagBit(self):
@@ -216,10 +216,10 @@ class SpbRbridges(Base):
         -------
         - bool: Allows to use flag bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseFlagBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseFlagBit"])
 
     def add(self):
-        """Adds a new spbRbridges resource on the json, only valid with config assistant
+        """Adds a new spbRbridges resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class SpbRbridges(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, AuxillaryMcidConfigName=None, BaseVid=None, BridgeMacAddress=None, BridgePriority=None, EctAlgorithm=None, HostName=None, IsId=None, LinkMetric=None, MBit=None, McidConfigName=None, RBit=None, SequenceNumber=None, SystemId=None, TBit=None, UseFlagBit=None):
+    def find(
+        self,
+        Age=None,
+        AuxillaryMcidConfigName=None,
+        BaseVid=None,
+        BridgeMacAddress=None,
+        BridgePriority=None,
+        EctAlgorithm=None,
+        HostName=None,
+        IsId=None,
+        LinkMetric=None,
+        MBit=None,
+        McidConfigName=None,
+        RBit=None,
+        SequenceNumber=None,
+        SystemId=None,
+        TBit=None,
+        UseFlagBit=None,
+    ):
         # type: (int, str, int, str, int, int, str, int, int, bool, str, bool, int, str, bool, bool) -> SpbRbridges
         """Finds and retrieves spbRbridges resources from the server.
 

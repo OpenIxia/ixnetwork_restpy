@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class PtpOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ptpOptions'
+    _SDM_NAME = "ptpOptions"
     _SDM_ATT_MAP = {
-        'MaxOutstanding': 'maxOutstanding',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
-        'Role': 'role',
-        'SetupRate': 'setupRate',
-        'TeardownRate': 'teardownRate',
+        "MaxOutstanding": "maxOutstanding",
+        "ObjectId": "objectId",
+        "OverrideGlobalRateOptions": "overrideGlobalRateOptions",
+        "Role": "role",
+        "SetupRate": "setupRate",
+        "TeardownRate": "teardownRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PtpOptions, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class PtpOptions(Base):
         -------
         - number: The number of PTP connections to be in initiation or terminating state at any time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstanding"])
+
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstanding"], value)
 
     @property
     def ObjectId(self):
@@ -71,7 +72,7 @@ class PtpOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRateOptions(self):
@@ -81,11 +82,12 @@ class PtpOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRateOptions"])
+
     @OverrideGlobalRateOptions.setter
     def OverrideGlobalRateOptions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRateOptions"], value)
 
     @property
     def Role(self):
@@ -95,11 +97,12 @@ class PtpOptions(Base):
         -------
         - str: Clock type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Role'])
+        return self._get_attribute(self._SDM_ATT_MAP["Role"])
+
     @Role.setter
     def Role(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Role'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Role"], value)
 
     @property
     def SetupRate(self):
@@ -109,11 +112,12 @@ class PtpOptions(Base):
         -------
         - number: The number of PTP connections initiated in a second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRate"])
+
     @SetupRate.setter
     def SetupRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRate"], value)
 
     @property
     def TeardownRate(self):
@@ -123,13 +127,21 @@ class PtpOptions(Base):
         -------
         - number: The number of PTP connections torn down in a second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRate"])
+
     @TeardownRate.setter
     def TeardownRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRate"], value)
 
-    def update(self, MaxOutstanding=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+    def update(
+        self,
+        MaxOutstanding=None,
+        OverrideGlobalRateOptions=None,
+        Role=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, bool, str, int, int) -> PtpOptions
         """Updates ptpOptions resource on the server.
 
@@ -147,7 +159,14 @@ class PtpOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, MaxOutstanding=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+    def add(
+        self,
+        MaxOutstanding=None,
+        OverrideGlobalRateOptions=None,
+        Role=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, bool, str, int, int) -> PtpOptions
         """Adds a new ptpOptions resource on the server and adds it to the container.
 
@@ -179,7 +198,15 @@ class PtpOptions(Base):
         """
         self._delete()
 
-    def find(self, MaxOutstanding=None, ObjectId=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+    def find(
+        self,
+        MaxOutstanding=None,
+        ObjectId=None,
+        OverrideGlobalRateOptions=None,
+        Role=None,
+        SetupRate=None,
+        TeardownRate=None,
+    ):
         # type: (int, str, bool, str, int, int) -> PtpOptions
         """Finds and retrieves ptpOptions resources from the server.
 
@@ -241,10 +268,14 @@ class PtpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -263,10 +294,14 @@ class PtpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -285,7 +320,11 @@ class PtpOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

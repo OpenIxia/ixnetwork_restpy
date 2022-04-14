@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,33 +35,41 @@ class Greoipv4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'greoipv4'
+    _SDM_NAME = "greoipv4"
     _SDM_ATT_MAP = {
-        'ConnectedDeviceDstMac': 'connectedDeviceDstMac',
-        'ConnectedDeviceSrcMac': 'connectedDeviceSrcMac',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestIp': 'destIp',
-        'EnableChecksum': 'enableChecksum',
-        'EnableGREConverge': 'enableGREConverge',
-        'EnableKey': 'enableKey',
-        'EnableSequenceNumber': 'enableSequenceNumber',
-        'Errors': 'errors',
-        'InKey': 'inKey',
-        'InternalFwdDstIP': 'internalFwdDstIP',
-        'InternalFwdSrcIP': 'internalFwdSrcIP',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OutKey': 'outKey',
-        'SessionStatus': 'sessionStatus',
-        'SrcIp': 'srcIp',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "ConnectedDeviceDstMac": "connectedDeviceDstMac",
+        "ConnectedDeviceSrcMac": "connectedDeviceSrcMac",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DestIp": "destIp",
+        "EnableChecksum": "enableChecksum",
+        "EnableGREConverge": "enableGREConverge",
+        "EnableKey": "enableKey",
+        "EnableSequenceNumber": "enableSequenceNumber",
+        "Errors": "errors",
+        "InKey": "inKey",
+        "InternalFwdDstIP": "internalFwdDstIP",
+        "InternalFwdSrcIP": "internalFwdSrcIP",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OutKey": "outKey",
+        "SessionStatus": "sessionStatus",
+        "SrcIp": "srcIp",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -77,10 +86,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import BondedGRE
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import (
+            BondedGRE,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BondedGRE', None) is not None:
-                return self._properties.get('BondedGRE')
+            if self._properties.get("BondedGRE", None) is not None:
+                return self._properties.get("BondedGRE")
         return BondedGRE(self)
 
     @property
@@ -94,10 +106,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import (
+            CfmBridge,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CfmBridge', None) is not None:
-                return self._properties.get('CfmBridge')
+            if self._properties.get("CfmBridge", None) is not None:
+                return self._properties.get("CfmBridge")
         return CfmBridge(self)
 
     @property
@@ -111,10 +126,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -128,10 +146,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22 import Dhcpv4client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22 import (
+            Dhcpv4client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv4client', None) is not None:
-                return self._properties.get('Dhcpv4client')
+            if self._properties.get("Dhcpv4client", None) is not None:
+                return self._properties.get("Dhcpv4client")
         return Dhcpv4client(self)
 
     @property
@@ -145,10 +166,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import (
+            Dhcpv6client,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6client', None) is not None:
-                return self._properties.get('Dhcpv6client')
+            if self._properties.get("Dhcpv6client", None) is not None:
+                return self._properties.get("Dhcpv6client")
         return Dhcpv6client(self)
 
     @property
@@ -162,10 +186,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRe', None) is not None:
-                return self._properties.get('ECpriRe')
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
         return ECpriRe(self)
 
     @property
@@ -179,10 +206,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRec', None) is not None:
-                return self._properties.get('ECpriRec')
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
         return ECpriRec(self)
 
     @property
@@ -196,10 +226,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import (
+            Ethernet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ethernet', None) is not None:
-                return self._properties.get('Ethernet')
+            if self._properties.get("Ethernet", None) is not None:
+                return self._properties.get("Ethernet")
         return Ethernet(self)
 
     @property
@@ -213,10 +246,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import (
+            Ipv4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv4', None) is not None:
-                return self._properties.get('Ipv4')
+            if self._properties.get("Ipv4", None) is not None:
+                return self._properties.get("Ipv4")
         return Ipv4(self)
 
     @property
@@ -230,10 +266,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390 import (
+            Ipv6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6', None) is not None:
-                return self._properties.get('Ipv6')
+            if self._properties.get("Ipv6", None) is not None:
+                return self._properties.get("Ipv6")
         return Ipv6(self)
 
     @property
@@ -247,10 +286,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import Ipv6Autoconfiguration
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import (
+            Ipv6Autoconfiguration,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ipv6Autoconfiguration', None) is not None:
-                return self._properties.get('Ipv6Autoconfiguration')
+            if self._properties.get("Ipv6Autoconfiguration", None) is not None:
+                return self._properties.get("Ipv6Autoconfiguration")
         return Ipv6Autoconfiguration(self)
 
     @property
@@ -264,10 +306,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import IsisDceSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import (
+            IsisDceSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisDceSimRouter', None) is not None:
-                return self._properties.get('IsisDceSimRouter')
+            if self._properties.get("IsisDceSimRouter", None) is not None:
+                return self._properties.get("IsisDceSimRouter")
         return IsisDceSimRouter(self)
 
     @property
@@ -281,10 +326,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import IsisFabricPath
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import (
+            IsisFabricPath,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisFabricPath', None) is not None:
-                return self._properties.get('IsisFabricPath')
+            if self._properties.get("IsisFabricPath", None) is not None:
+                return self._properties.get("IsisFabricPath")
         return IsisFabricPath(self)
 
     @property
@@ -298,10 +346,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import IsisL3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import (
+            IsisL3,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisL3', None) is not None:
-                return self._properties.get('IsisL3')
+            if self._properties.get("IsisL3", None) is not None:
+                return self._properties.get("IsisL3")
         return IsisL3(self)
 
     @property
@@ -315,10 +366,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import IsisSpbBcb
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import (
+            IsisSpbBcb,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbBcb', None) is not None:
-                return self._properties.get('IsisSpbBcb')
+            if self._properties.get("IsisSpbBcb", None) is not None:
+                return self._properties.get("IsisSpbBcb")
         return IsisSpbBcb(self)
 
     @property
@@ -332,10 +386,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import IsisSpbBeb
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import (
+            IsisSpbBeb,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbBeb', None) is not None:
-                return self._properties.get('IsisSpbBeb')
+            if self._properties.get("IsisSpbBeb", None) is not None:
+                return self._properties.get("IsisSpbBeb")
         return IsisSpbBeb(self)
 
     @property
@@ -349,10 +406,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import IsisSpbSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import (
+            IsisSpbSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisSpbSimRouter', None) is not None:
-                return self._properties.get('IsisSpbSimRouter')
+            if self._properties.get("IsisSpbSimRouter", None) is not None:
+                return self._properties.get("IsisSpbSimRouter")
         return IsisSpbSimRouter(self)
 
     @property
@@ -366,10 +426,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import IsisTrill
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import (
+            IsisTrill,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrill', None) is not None:
-                return self._properties.get('IsisTrill')
+            if self._properties.get("IsisTrill", None) is not None:
+                return self._properties.get("IsisTrill")
         return IsisTrill(self)
 
     @property
@@ -383,10 +446,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import IsisTrillSimRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import (
+            IsisTrillSimRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IsisTrillSimRouter', None) is not None:
-                return self._properties.get('IsisTrillSimRouter')
+            if self._properties.get("IsisTrillSimRouter", None) is not None:
+                return self._properties.get("IsisTrillSimRouter")
         return IsisTrillSimRouter(self)
 
     @property
@@ -400,10 +466,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import Lacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import (
+            Lacp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lacp', None) is not None:
-                return self._properties.get('Lacp')
+            if self._properties.get("Lacp", None) is not None:
+                return self._properties.get("Lacp")
         return Lacp(self)
 
     @property
@@ -417,10 +486,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import Lagportlacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import (
+            Lagportlacp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportlacp', None) is not None:
-                return self._properties.get('Lagportlacp')
+            if self._properties.get("Lagportlacp", None) is not None:
+                return self._properties.get("Lagportlacp")
         return Lagportlacp(self)
 
     @property
@@ -434,10 +506,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import (
+            Lagportstaticlag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lagportstaticlag', None) is not None:
-                return self._properties.get('Lagportstaticlag')
+            if self._properties.get("Lagportstaticlag", None) is not None:
+                return self._properties.get("Lagportstaticlag")
         return Lagportstaticlag(self)
 
     @property
@@ -451,10 +526,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871 import Mka
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871 import (
+            Mka,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Mka', None) is not None:
-                return self._properties.get('Mka')
+            if self._properties.get("Mka", None) is not None:
+                return self._properties.get("Mka")
         return Mka(self)
 
     @property
@@ -468,10 +546,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import MsrpListener
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import (
+            MsrpListener,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsrpListener', None) is not None:
-                return self._properties.get('MsrpListener')
+            if self._properties.get("MsrpListener", None) is not None:
+                return self._properties.get("MsrpListener")
         return MsrpListener(self)
 
     @property
@@ -485,10 +566,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import MsrpTalker
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import (
+            MsrpTalker,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MsrpTalker', None) is not None:
-                return self._properties.get('MsrpTalker')
+            if self._properties.get("MsrpTalker", None) is not None:
+                return self._properties.get("MsrpTalker")
         return MsrpTalker(self)
 
     @property
@@ -502,10 +586,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import (
+            StaticLag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StaticLag', None) is not None:
-                return self._properties.get('StaticLag')
+            if self._properties.get("StaticLag", None) is not None:
+                return self._properties.get("StaticLag")
         return StaticLag(self)
 
     @property
@@ -519,10 +606,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import Streams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import (
+            Streams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Streams', None) is not None:
-                return self._properties.get('Streams')
+            if self._properties.get("Streams", None) is not None:
+                return self._properties.get("Streams")
         return Streams(self)
 
     @property
@@ -536,10 +626,13 @@ class Greoipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -551,7 +644,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address to which packet need to be sent (should be directly connected).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConnectedDeviceDstMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConnectedDeviceDstMac"])
+        )
 
     @property
     def ConnectedDeviceSrcMac(self):
@@ -562,21 +658,25 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MAC address of the Connected device, on which packet is received.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConnectedDeviceSrcMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConnectedDeviceSrcMac"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -586,7 +686,7 @@ class Greoipv4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -596,7 +696,7 @@ class Greoipv4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestIp(self):
@@ -607,7 +707,8 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv4 address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestIp"]))
 
     @property
     def EnableChecksum(self):
@@ -618,7 +719,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Checksum.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableChecksum"])
+        )
 
     @property
     def EnableGREConverge(self):
@@ -629,7 +733,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable this option to forward GRE Packets that are not destined to ip interface running on it to specified GRE Tunnel.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGREConverge']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableGREConverge"])
+        )
 
     @property
     def EnableKey(self):
@@ -640,7 +747,8 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Key.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableKey"]))
 
     @property
     def EnableSequenceNumber(self):
@@ -651,7 +759,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sequence Number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSequenceNumber"])
+        )
 
     @property
     def Errors(self):
@@ -660,7 +771,7 @@ class Greoipv4(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def InKey(self):
@@ -671,7 +782,8 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): In Key.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InKey"]))
 
     @property
     def InternalFwdDstIP(self):
@@ -682,7 +794,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Internal Forwarding Tunnel destination address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InternalFwdDstIP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InternalFwdDstIP"])
+        )
 
     @property
     def InternalFwdSrcIP(self):
@@ -693,7 +808,10 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Internal Forwarding Tunnel Source address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InternalFwdSrcIP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InternalFwdSrcIP"])
+        )
 
     @property
     def Multiplier(self):
@@ -703,11 +821,12 @@ class Greoipv4(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -717,11 +836,12 @@ class Greoipv4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OutKey(self):
@@ -732,7 +852,8 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Out Key.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OutKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OutKey"]))
 
     @property
     def SessionStatus(self):
@@ -742,7 +863,7 @@ class Greoipv4(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SrcIp(self):
@@ -753,7 +874,8 @@ class Greoipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv4 address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcIp"]))
 
     @property
     def StackedLayers(self):
@@ -763,11 +885,12 @@ class Greoipv4(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -776,7 +899,7 @@ class Greoipv4(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -786,7 +909,7 @@ class Greoipv4(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Greoipv4
@@ -839,7 +962,19 @@ class Greoipv4(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves greoipv4 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve greoipv4 resources from the server.
@@ -914,10 +1049,12 @@ class Greoipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -946,10 +1083,12 @@ class Greoipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -978,10 +1117,12 @@ class Greoipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1010,12 +1151,29 @@ class Greoipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ConnectedDeviceDstMac=None, ConnectedDeviceSrcMac=None, DestIp=None, EnableChecksum=None, EnableGREConverge=None, EnableKey=None, EnableSequenceNumber=None, InKey=None, InternalFwdDstIP=None, InternalFwdSrcIP=None, OutKey=None, SrcIp=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ConnectedDeviceDstMac=None,
+        ConnectedDeviceSrcMac=None,
+        DestIp=None,
+        EnableChecksum=None,
+        EnableGREConverge=None,
+        EnableKey=None,
+        EnableSequenceNumber=None,
+        InKey=None,
+        InternalFwdDstIP=None,
+        InternalFwdSrcIP=None,
+        OutKey=None,
+        SrcIp=None,
+    ):
         """Base class infrastructure that gets a list of greoipv4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

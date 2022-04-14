@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class OpaqueRouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'opaqueRouteRange'
+    _SDM_NAME = "opaqueRouteRange"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'Enabled': 'enabled',
-        'ImportedFile': 'importedFile',
-        'NextHopAsIs': 'nextHopAsIs',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'SendMultiExitDiscovery': 'sendMultiExitDiscovery',
-        'Status': 'status',
+        "Id__": "__id__",
+        "Enabled": "enabled",
+        "ImportedFile": "importedFile",
+        "NextHopAsIs": "nextHopAsIs",
+        "NumberOfRoutes": "numberOfRoutes",
+        "SendMultiExitDiscovery": "sendMultiExitDiscovery",
+        "Status": "status",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(OpaqueRouteRange, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class OpaqueRouteRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
+        return self._get_attribute(self._SDM_ATT_MAP["Id__"])
+
     @Id__.setter
     def Id__(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Id__"], value)
 
     @property
     def Enabled(self):
@@ -72,11 +73,12 @@ class OpaqueRouteRange(Base):
         -------
         - bool: Appends the local AsNumber.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ImportedFile(self):
@@ -86,11 +88,12 @@ class OpaqueRouteRange(Base):
         -------
         - str: Location of the route import file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImportedFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImportedFile"])
+
     @ImportedFile.setter
     def ImportedFile(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImportedFile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImportedFile"], value)
 
     @property
     def NextHopAsIs(self):
@@ -100,11 +103,12 @@ class OpaqueRouteRange(Base):
         -------
         - bool: If true, it takes the next Hop AsIs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopAsIs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopAsIs"])
+
     @NextHopAsIs.setter
     def NextHopAsIs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopAsIs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopAsIs"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -114,11 +118,12 @@ class OpaqueRouteRange(Base):
         -------
         - number: Total number of opaque routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def SendMultiExitDiscovery(self):
@@ -128,11 +133,12 @@ class OpaqueRouteRange(Base):
         -------
         - bool: If true, sends a Multi Exit Discriminator attribute with the indicated value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendMultiExitDiscovery'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendMultiExitDiscovery"])
+
     @SendMultiExitDiscovery.setter
     def SendMultiExitDiscovery(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendMultiExitDiscovery'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendMultiExitDiscovery"], value)
 
     @property
     def Status(self):
@@ -142,9 +148,17 @@ class OpaqueRouteRange(Base):
         -------
         - str: Indicates the status of the imported file.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
+    def update(
+        self,
+        Id__=None,
+        Enabled=None,
+        ImportedFile=None,
+        NextHopAsIs=None,
+        NumberOfRoutes=None,
+        SendMultiExitDiscovery=None,
+    ):
         # type: (str, bool, str, bool, int, bool) -> OpaqueRouteRange
         """Updates opaqueRouteRange resource on the server.
 
@@ -163,7 +177,15 @@ class OpaqueRouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
+    def add(
+        self,
+        Id__=None,
+        Enabled=None,
+        ImportedFile=None,
+        NextHopAsIs=None,
+        NumberOfRoutes=None,
+        SendMultiExitDiscovery=None,
+    ):
         # type: (str, bool, str, bool, int, bool) -> OpaqueRouteRange
         """Adds a new opaqueRouteRange resource on the server and adds it to the container.
 
@@ -196,7 +218,16 @@ class OpaqueRouteRange(Base):
         """
         self._delete()
 
-    def find(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None, Status=None):
+    def find(
+        self,
+        Id__=None,
+        Enabled=None,
+        ImportedFile=None,
+        NextHopAsIs=None,
+        NumberOfRoutes=None,
+        SendMultiExitDiscovery=None,
+        Status=None,
+    ):
         # type: (str, bool, str, bool, int, bool, str) -> OpaqueRouteRange
         """Finds and retrieves opaqueRouteRange resources from the server.
 
@@ -258,7 +289,11 @@ class OpaqueRouteRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyOpaqueRouteRange', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyOpaqueRouteRange", payload=payload, response_object=None
+        )

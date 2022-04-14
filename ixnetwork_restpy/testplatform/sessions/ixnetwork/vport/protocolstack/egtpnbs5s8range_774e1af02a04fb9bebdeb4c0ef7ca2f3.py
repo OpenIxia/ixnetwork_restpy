@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,27 @@ class EgtpNbS5S8Range(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpNbS5S8Range'
+    _SDM_NAME = "egtpNbS5S8Range"
     _SDM_ATT_MAP = {
-        'ECI': 'eCI',
-        'Enabled': 'enabled',
-        'MCC': 'mCC',
-        'MNC': 'mNC',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ParentMme': 'parentMme',
-        'ParentSgw': 'parentSgw',
-        'RAILAC': 'rAILAC',
-        'RAIMCC1': 'rAIMCC1',
-        'RAIMCC2': 'rAIMCC2',
-        'RAIMCC3': 'rAIMCC3',
-        'RAIMNC1': 'rAIMNC1',
-        'RAIMNC2': 'rAIMNC2',
-        'RAIMNC3': 'rAIMNC3',
-        'RAIRAC': 'rAIRAC',
-        'TAC': 'tAC',
+        "ECI": "eCI",
+        "Enabled": "enabled",
+        "MCC": "mCC",
+        "MNC": "mNC",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ParentMme": "parentMme",
+        "ParentSgw": "parentSgw",
+        "RAILAC": "rAILAC",
+        "RAIMCC1": "rAIMCC1",
+        "RAIMCC2": "rAIMCC2",
+        "RAIMCC3": "rAIMCC3",
+        "RAIMNC1": "rAIMNC1",
+        "RAIMNC2": "rAIMNC2",
+        "RAIMNC3": "rAIMNC3",
+        "RAIRAC": "rAIRAC",
+        "TAC": "tAC",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpNbS5S8Range, self).__init__(parent, list_op)
@@ -66,11 +66,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: EUTRAN Cell Identifier
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ECI'])
+        return self._get_attribute(self._SDM_ATT_MAP["ECI"])
+
     @ECI.setter
     def ECI(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ECI'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ECI"], value)
 
     @property
     def Enabled(self):
@@ -80,11 +81,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def MCC(self):
@@ -94,11 +96,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: Mobile Country Code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MCC'])
+        return self._get_attribute(self._SDM_ATT_MAP["MCC"])
+
     @MCC.setter
     def MCC(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MCC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MCC"], value)
 
     @property
     def MNC(self):
@@ -108,11 +111,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: Mobile Network Code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MNC'])
+        return self._get_attribute(self._SDM_ATT_MAP["MNC"])
+
     @MNC.setter
     def MNC(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MNC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MNC"], value)
 
     @property
     def Name(self):
@@ -122,11 +126,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -136,7 +141,7 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ParentMme(self):
@@ -146,11 +151,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange): Id of parent MME range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ParentMme'])
+        return self._get_attribute(self._SDM_ATT_MAP["ParentMme"])
+
     @ParentMme.setter
     def ParentMme(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ParentMme'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ParentMme"], value)
 
     @property
     def ParentSgw(self):
@@ -160,11 +166,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Id of parent SGW range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ParentSgw'])
+        return self._get_attribute(self._SDM_ATT_MAP["ParentSgw"])
+
     @ParentSgw.setter
     def ParentSgw(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ParentSgw'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ParentSgw"], value)
 
     @property
     def RAILAC(self):
@@ -174,11 +181,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: LAC for UEs (Hexa value)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAILAC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAILAC"])
+
     @RAILAC.setter
     def RAILAC(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAILAC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAILAC"], value)
 
     @property
     def RAIMCC1(self):
@@ -188,11 +196,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: First digit of MCC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMCC1'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMCC1"])
+
     @RAIMCC1.setter
     def RAIMCC1(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMCC1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMCC1"], value)
 
     @property
     def RAIMCC2(self):
@@ -202,11 +211,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: Second digit of MCC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMCC2'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMCC2"])
+
     @RAIMCC2.setter
     def RAIMCC2(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMCC2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMCC2"], value)
 
     @property
     def RAIMCC3(self):
@@ -216,11 +226,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: 3rd digit of MCC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMCC3'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMCC3"])
+
     @RAIMCC3.setter
     def RAIMCC3(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMCC3'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMCC3"], value)
 
     @property
     def RAIMNC1(self):
@@ -230,11 +241,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: first digit of MNC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMNC1'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMNC1"])
+
     @RAIMNC1.setter
     def RAIMNC1(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMNC1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMNC1"], value)
 
     @property
     def RAIMNC2(self):
@@ -244,11 +256,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: Second digit of MNC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMNC2'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMNC2"])
+
     @RAIMNC2.setter
     def RAIMNC2(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMNC2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMNC2"], value)
 
     @property
     def RAIMNC3(self):
@@ -258,11 +271,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - number: Third digit of MNC location for UEs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIMNC3'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIMNC3"])
+
     @RAIMNC3.setter
     def RAIMNC3(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIMNC3'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIMNC3"], value)
 
     @property
     def RAIRAC(self):
@@ -272,11 +286,12 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: RAC for UEs (Hexa value)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RAIRAC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RAIRAC"])
+
     @RAIRAC.setter
     def RAIRAC(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RAIRAC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RAIRAC"], value)
 
     @property
     def TAC(self):
@@ -286,13 +301,32 @@ class EgtpNbS5S8Range(Base):
         -------
         - str: Tracking Area Code
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TAC'])
+        return self._get_attribute(self._SDM_ATT_MAP["TAC"])
+
     @TAC.setter
     def TAC(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TAC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TAC"], value)
 
-    def update(self, ECI=None, Enabled=None, MCC=None, MNC=None, Name=None, ParentMme=None, ParentSgw=None, RAILAC=None, RAIMCC1=None, RAIMCC2=None, RAIMCC3=None, RAIMNC1=None, RAIMNC2=None, RAIMNC3=None, RAIRAC=None, TAC=None):
+    def update(
+        self,
+        ECI=None,
+        Enabled=None,
+        MCC=None,
+        MNC=None,
+        Name=None,
+        ParentMme=None,
+        ParentSgw=None,
+        RAILAC=None,
+        RAIMCC1=None,
+        RAIMCC2=None,
+        RAIMCC3=None,
+        RAIMNC1=None,
+        RAIMNC2=None,
+        RAIMNC3=None,
+        RAIRAC=None,
+        TAC=None,
+    ):
         # type: (str, bool, str, str, str, str, str, str, int, int, int, int, int, int, str, str) -> EgtpNbS5S8Range
         """Updates egtpNbS5S8Range resource on the server.
 
@@ -321,7 +355,26 @@ class EgtpNbS5S8Range(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ECI=None, Enabled=None, MCC=None, MNC=None, Name=None, ObjectId=None, ParentMme=None, ParentSgw=None, RAILAC=None, RAIMCC1=None, RAIMCC2=None, RAIMCC3=None, RAIMNC1=None, RAIMNC2=None, RAIMNC3=None, RAIRAC=None, TAC=None):
+    def find(
+        self,
+        ECI=None,
+        Enabled=None,
+        MCC=None,
+        MNC=None,
+        Name=None,
+        ObjectId=None,
+        ParentMme=None,
+        ParentSgw=None,
+        RAILAC=None,
+        RAIMCC1=None,
+        RAIMCC2=None,
+        RAIMCC3=None,
+        RAIMNC1=None,
+        RAIMNC2=None,
+        RAIMNC3=None,
+        RAIRAC=None,
+        TAC=None,
+    ):
         # type: (str, bool, str, str, str, str, str, str, str, int, int, int, int, int, int, str, str) -> EgtpNbS5S8Range
         """Finds and retrieves egtpNbS5S8Range resources from the server.
 
@@ -394,10 +447,14 @@ class EgtpNbS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -416,10 +473,14 @@ class EgtpNbS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -438,7 +499,11 @@ class EgtpNbS5S8Range(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

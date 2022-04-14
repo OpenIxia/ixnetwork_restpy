@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class SimInterfaceIPv6Config(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'simInterfaceIPv6Config'
+    _SDM_NAME = "simInterfaceIPv6Config"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableIp': 'enableIp',
-        'FromIP': 'fromIP',
-        'Name': 'name',
-        'SubnetPrefixLength': 'subnetPrefixLength',
-        'ToIP': 'toIP',
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableIp": "enableIp",
+        "FromIP": "fromIP",
+        "Name": "name",
+        "SubnetPrefixLength": "subnetPrefixLength",
+        "ToIP": "toIP",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SimInterfaceIPv6Config, self).__init__(parent, list_op)
@@ -60,10 +60,13 @@ class SimInterfaceIPv6Config(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_070d7ebe71339739ff1cd3a5c4c96632 import Ospfv3PseudoInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_070d7ebe71339739ff1cd3a5c4c96632 import (
+            Ospfv3PseudoInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv3PseudoInterface', None) is not None:
-                return self._properties.get('Ospfv3PseudoInterface')
+            if self._properties.get("Ospfv3PseudoInterface", None) is not None:
+                return self._properties.get("Ospfv3PseudoInterface")
         return Ospfv3PseudoInterface(self)
 
     @property
@@ -74,7 +77,7 @@ class SimInterfaceIPv6Config(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -84,7 +87,7 @@ class SimInterfaceIPv6Config(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableIp(self):
@@ -95,7 +98,8 @@ class SimInterfaceIPv6Config(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableIp"]))
 
     @property
     def FromIP(self):
@@ -106,7 +110,8 @@ class SimInterfaceIPv6Config(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 128 Bits IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FromIP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FromIP"]))
 
     @property
     def Name(self):
@@ -116,11 +121,12 @@ class SimInterfaceIPv6Config(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SubnetPrefixLength(self):
@@ -131,7 +137,10 @@ class SimInterfaceIPv6Config(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Subnet Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubnetPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SubnetPrefixLength"])
+        )
 
     @property
     def ToIP(self):
@@ -142,7 +151,8 @@ class SimInterfaceIPv6Config(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 128 Bits IPv6 address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToIP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ToIP"]))
 
     def update(self, Name=None):
         # type: (str) -> SimInterfaceIPv6Config
@@ -163,7 +173,7 @@ class SimInterfaceIPv6Config(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimInterfaceIPv6Config
-        """Adds a new simInterfaceIPv6Config resource on the json, only valid with config assistant
+        """Adds a new simInterfaceIPv6Config resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -236,10 +246,12 @@ class SimInterfaceIPv6Config(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -256,10 +268,12 @@ class SimInterfaceIPv6Config(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -276,12 +290,21 @@ class SimInterfaceIPv6Config(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, EnableIp=None, FromIP=None, SubnetPrefixLength=None, ToIP=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        EnableIp=None,
+        FromIP=None,
+        SubnetPrefixLength=None,
+        ToIP=None,
+    ):
         """Base class infrastructure that gets a list of simInterfaceIPv6Config device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

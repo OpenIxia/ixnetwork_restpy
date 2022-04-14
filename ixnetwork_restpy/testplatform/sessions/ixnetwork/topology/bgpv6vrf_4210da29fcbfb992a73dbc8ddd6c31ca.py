@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,33 +35,41 @@ class BgpV6Vrf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpV6Vrf'
+    _SDM_NAME = "bgpV6Vrf"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DutIpv6': 'dutIpv6',
-        'Errors': 'errors',
-        'ImportRtListSameAsExportRtList': 'importRtListSameAsExportRtList',
-        'LocalIpv6': 'localIpv6',
-        'LocalRouterID': 'localRouterID',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumRtInExportRouteTargetList': 'numRtInExportRouteTargetList',
-        'NumRtInImportRouteTargetList': 'numRtInImportRouteTargetList',
-        'NumRtInUmhExportRouteTargetList': 'numRtInUmhExportRouteTargetList',
-        'NumRtInUmhImportRouteTargetList': 'numRtInUmhImportRouteTargetList',
-        'SameAsExportRT': 'sameAsExportRT',
-        'SameAsImportRT': 'sameAsImportRT',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'VrfName': 'vrfName',
+        "Active": "active",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DutIpv6": "dutIpv6",
+        "Errors": "errors",
+        "ImportRtListSameAsExportRtList": "importRtListSameAsExportRtList",
+        "LocalIpv6": "localIpv6",
+        "LocalRouterID": "localRouterID",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumRtInExportRouteTargetList": "numRtInExportRouteTargetList",
+        "NumRtInImportRouteTargetList": "numRtInImportRouteTargetList",
+        "NumRtInUmhExportRouteTargetList": "numRtInUmhExportRouteTargetList",
+        "NumRtInUmhImportRouteTargetList": "numRtInUmhImportRouteTargetList",
+        "SameAsExportRT": "sameAsExportRT",
+        "SameAsImportRT": "sameAsImportRT",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "VrfName": "vrfName",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -77,10 +86,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import BgpExportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import (
+            BgpExportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpExportRouteTargetList', None) is not None:
-                return self._properties.get('BgpExportRouteTargetList')
+            if self._properties.get("BgpExportRouteTargetList", None) is not None:
+                return self._properties.get("BgpExportRouteTargetList")
         return BgpExportRouteTargetList(self)
 
     @property
@@ -94,10 +106,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import BgpImportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import (
+            BgpImportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpImportRouteTargetList', None) is not None:
-                return self._properties.get('BgpImportRouteTargetList')
+            if self._properties.get("BgpImportRouteTargetList", None) is not None:
+                return self._properties.get("BgpImportRouteTargetList")
         return BgpImportRouteTargetList(self)
 
     @property
@@ -111,10 +126,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpumhexportroutetargetlist_536e8a485efae5ffcda5cfc4f848255b import BgpUmhExportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpumhexportroutetargetlist_536e8a485efae5ffcda5cfc4f848255b import (
+            BgpUmhExportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpUmhExportRouteTargetList', None) is not None:
-                return self._properties.get('BgpUmhExportRouteTargetList')
+            if self._properties.get("BgpUmhExportRouteTargetList", None) is not None:
+                return self._properties.get("BgpUmhExportRouteTargetList")
         return BgpUmhExportRouteTargetList(self)
 
     @property
@@ -128,10 +146,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpumhimportroutetargetlist_02ef98778defb99b99d0de435c533ff0 import BgpUmhImportRouteTargetList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpumhimportroutetargetlist_02ef98778defb99b99d0de435c533ff0 import (
+            BgpUmhImportRouteTargetList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpUmhImportRouteTargetList', None) is not None:
-                return self._properties.get('BgpUmhImportRouteTargetList')
+            if self._properties.get("BgpUmhImportRouteTargetList", None) is not None:
+                return self._properties.get("BgpUmhImportRouteTargetList")
         return BgpUmhImportRouteTargetList(self)
 
     @property
@@ -145,10 +166,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -162,10 +186,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -179,10 +206,13 @@ class BgpV6Vrf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -194,21 +224,23 @@ class BgpV6Vrf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -218,7 +250,7 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -228,7 +260,7 @@ class BgpV6Vrf(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DutIpv6(self):
@@ -238,7 +270,7 @@ class BgpV6Vrf(Base):
         -------
         - list(str): DUT IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DutIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["DutIpv6"])
 
     @property
     def Errors(self):
@@ -247,7 +279,7 @@ class BgpV6Vrf(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def ImportRtListSameAsExportRtList(self):
@@ -257,11 +289,12 @@ class BgpV6Vrf(Base):
         -------
         - bool: Import RT List Same As Export RT List
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'])
+        return self._get_attribute(self._SDM_ATT_MAP["ImportRtListSameAsExportRtList"])
+
     @ImportRtListSameAsExportRtList.setter
     def ImportRtListSameAsExportRtList(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ImportRtListSameAsExportRtList"], value)
 
     @property
     def LocalIpv6(self):
@@ -271,7 +304,7 @@ class BgpV6Vrf(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpv6"])
 
     @property
     def LocalRouterID(self):
@@ -281,7 +314,7 @@ class BgpV6Vrf(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def Multiplier(self):
@@ -291,11 +324,12 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -305,11 +339,12 @@ class BgpV6Vrf(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumRtInExportRouteTargetList(self):
@@ -319,11 +354,12 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of RTs in Export Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInExportRouteTargetList"])
+
     @NumRtInExportRouteTargetList.setter
     def NumRtInExportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInExportRouteTargetList"], value)
 
     @property
     def NumRtInImportRouteTargetList(self):
@@ -333,11 +369,12 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of RTs in Import Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInImportRouteTargetList"])
+
     @NumRtInImportRouteTargetList.setter
     def NumRtInImportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInImportRouteTargetList"], value)
 
     @property
     def NumRtInUmhExportRouteTargetList(self):
@@ -347,11 +384,12 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of RTs in Export Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInUmhExportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInUmhExportRouteTargetList"])
+
     @NumRtInUmhExportRouteTargetList.setter
     def NumRtInUmhExportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInUmhExportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInUmhExportRouteTargetList"], value)
 
     @property
     def NumRtInUmhImportRouteTargetList(self):
@@ -361,11 +399,12 @@ class BgpV6Vrf(Base):
         -------
         - number: Number of RTs in Import Route Target List(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumRtInUmhImportRouteTargetList'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumRtInUmhImportRouteTargetList"])
+
     @NumRtInUmhImportRouteTargetList.setter
     def NumRtInUmhImportRouteTargetList(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumRtInUmhImportRouteTargetList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumRtInUmhImportRouteTargetList"], value)
 
     @property
     def SameAsExportRT(self):
@@ -375,11 +414,12 @@ class BgpV6Vrf(Base):
         -------
         - bool: Same As Export RT Attribute
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SameAsExportRT'])
+        return self._get_attribute(self._SDM_ATT_MAP["SameAsExportRT"])
+
     @SameAsExportRT.setter
     def SameAsExportRT(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SameAsExportRT'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SameAsExportRT"], value)
 
     @property
     def SameAsImportRT(self):
@@ -389,11 +429,12 @@ class BgpV6Vrf(Base):
         -------
         - bool: Same As Import RT Attribute
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SameAsImportRT'])
+        return self._get_attribute(self._SDM_ATT_MAP["SameAsImportRT"])
+
     @SameAsImportRT.setter
     def SameAsImportRT(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SameAsImportRT'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SameAsImportRT"], value)
 
     @property
     def SessionStatus(self):
@@ -403,7 +444,7 @@ class BgpV6Vrf(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -413,11 +454,12 @@ class BgpV6Vrf(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -426,7 +468,7 @@ class BgpV6Vrf(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -436,7 +478,7 @@ class BgpV6Vrf(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def VrfName(self):
@@ -447,9 +489,23 @@ class BgpV6Vrf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VRF Identified ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VrfName']))
 
-    def update(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VrfName"]))
+
+    def update(
+        self,
+        ConnectedVia=None,
+        ImportRtListSameAsExportRtList=None,
+        Multiplier=None,
+        Name=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInUmhExportRouteTargetList=None,
+        NumRtInUmhImportRouteTargetList=None,
+        SameAsExportRT=None,
+        SameAsImportRT=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, str, int, int, int, int, bool, bool, List[str]) -> BgpV6Vrf
         """Updates bgpV6Vrf resource on the server.
 
@@ -476,7 +532,20 @@ class BgpV6Vrf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        ImportRtListSameAsExportRtList=None,
+        Multiplier=None,
+        Name=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInUmhExportRouteTargetList=None,
+        NumRtInUmhImportRouteTargetList=None,
+        SameAsExportRT=None,
+        SameAsImportRT=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], bool, int, str, int, int, int, int, bool, bool, List[str]) -> BgpV6Vrf
         """Adds a new bgpV6Vrf resource on the server and adds it to the container.
 
@@ -514,7 +583,29 @@ class BgpV6Vrf(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DutIpv6=None, Errors=None, ImportRtListSameAsExportRtList=None, LocalIpv6=None, LocalRouterID=None, Multiplier=None, Name=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInUmhExportRouteTargetList=None, NumRtInUmhImportRouteTargetList=None, SameAsExportRT=None, SameAsImportRT=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        DutIpv6=None,
+        Errors=None,
+        ImportRtListSameAsExportRtList=None,
+        LocalIpv6=None,
+        LocalRouterID=None,
+        Multiplier=None,
+        Name=None,
+        NumRtInExportRouteTargetList=None,
+        NumRtInImportRouteTargetList=None,
+        NumRtInUmhExportRouteTargetList=None,
+        NumRtInUmhImportRouteTargetList=None,
+        SameAsExportRT=None,
+        SameAsImportRT=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves bgpV6Vrf resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpV6Vrf resources from the server.
@@ -599,10 +690,12 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllBgpVRFLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -631,10 +724,14 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllBgpVRFLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllBgpVRFLearnedInfo", payload=payload, response_object=None
+        )
 
     def ClearAllBgpVRFLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -653,10 +750,14 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllBgpVRFLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllBgpVRFLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetIPv4VpnLearnedInfoPerVRF(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -691,10 +792,14 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4VpnLearnedInfoPerVRF', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getIPv4VpnLearnedInfoPerVRF", payload=payload, response_object=None
+        )
 
     def GetIPv6VpnLearnedInfoPerVRF(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -729,10 +834,14 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6VpnLearnedInfoPerVRF', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getIPv6VpnLearnedInfoPerVRF", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -761,10 +870,12 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -793,10 +904,12 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -825,10 +938,12 @@ class BgpV6Vrf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, VrfName=None):
         """Base class infrastructure that gets a list of bgpV6Vrf device ids encapsulated by this object.

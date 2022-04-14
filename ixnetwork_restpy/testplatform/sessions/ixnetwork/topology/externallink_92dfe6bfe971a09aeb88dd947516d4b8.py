@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,13 @@ class ExternalLink(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'externalLink'
+    _SDM_NAME = "externalLink"
     _SDM_ATT_MAP = {
-        'FromNodeIndex': 'fromNodeIndex',
-        'ToNetworkTopology': 'toNetworkTopology',
-        'ToNodeIndex': 'toNodeIndex',
+        "FromNodeIndex": "fromNodeIndex",
+        "ToNetworkTopology": "toNetworkTopology",
+        "ToNodeIndex": "toNodeIndex",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ExternalLink, self).__init__(parent, list_op)
@@ -54,11 +54,12 @@ class ExternalLink(Base):
         -------
         - number: Index of the originating node as defined in fromNetworkTopology
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FromNodeIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["FromNodeIndex"])
+
     @FromNodeIndex.setter
     def FromNodeIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FromNodeIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FromNodeIndex"], value)
 
     @property
     def ToNetworkTopology(self):
@@ -68,11 +69,12 @@ class ExternalLink(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Network Topology this link is pointing to
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ToNetworkTopology'])
+        return self._get_attribute(self._SDM_ATT_MAP["ToNetworkTopology"])
+
     @ToNetworkTopology.setter
     def ToNetworkTopology(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ToNetworkTopology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ToNetworkTopology"], value)
 
     @property
     def ToNodeIndex(self):
@@ -82,11 +84,12 @@ class ExternalLink(Base):
         -------
         - number: Index of the target node as defined in toNetworkTopology
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ToNodeIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["ToNodeIndex"])
+
     @ToNodeIndex.setter
     def ToNodeIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ToNodeIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ToNodeIndex"], value)
 
     def update(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
         # type: (int, str, int) -> ExternalLink

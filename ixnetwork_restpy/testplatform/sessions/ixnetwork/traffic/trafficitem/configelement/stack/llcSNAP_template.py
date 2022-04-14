@@ -4,13 +4,13 @@ from ixnetwork_restpy.files import Files
 
 class LlcSNAP(Base):
     __slots__ = ()
-    _SDM_NAME = 'llcSNAP'
+    _SDM_NAME = "llcSNAP"
     _SDM_ATT_MAP = {
-        'SnapHeaderDsap': 'llcSNAP.snapHeader.dsap-1',
-        'SnapHeaderSsap': 'llcSNAP.snapHeader.ssap-2',
-        'SnapHeaderControlField': 'llcSNAP.snapHeader.controlField-3',
-        'SnapHeaderSnapOUI': 'llcSNAP.snapHeader.snapOUI-4',
-        'SnapHeaderSnapPID': 'llcSNAP.snapHeader.snapPID-5',
+        "SnapHeaderDsap": "llcSNAP.snapHeader.dsap-1",
+        "SnapHeaderSsap": "llcSNAP.snapHeader.ssap-2",
+        "SnapHeaderControlField": "llcSNAP.snapHeader.controlField-3",
+        "SnapHeaderSnapOUI": "llcSNAP.snapHeader.snapOUI-4",
+        "SnapHeaderSnapPID": "llcSNAP.snapHeader.snapPID-5",
     }
 
     def __init__(self, parent, list_op=False):
@@ -24,7 +24,10 @@ class LlcSNAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapHeaderDsap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SnapHeaderDsap"])
+        )
 
     @property
     def SnapHeaderSsap(self):
@@ -34,7 +37,10 @@ class LlcSNAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapHeaderSsap']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SnapHeaderSsap"])
+        )
 
     @property
     def SnapHeaderControlField(self):
@@ -44,7 +50,10 @@ class LlcSNAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapHeaderControlField']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SnapHeaderControlField"])
+        )
 
     @property
     def SnapHeaderSnapOUI(self):
@@ -54,7 +63,10 @@ class LlcSNAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapHeaderSnapOUI']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SnapHeaderSnapOUI"])
+        )
 
     @property
     def SnapHeaderSnapPID(self):
@@ -64,7 +76,10 @@ class LlcSNAP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapHeaderSnapPID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SnapHeaderSnapPID"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

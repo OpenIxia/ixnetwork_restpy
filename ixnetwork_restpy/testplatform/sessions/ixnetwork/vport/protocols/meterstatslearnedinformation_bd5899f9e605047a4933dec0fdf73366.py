@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,29 +34,28 @@ class MeterStatsLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'meterStatsLearnedInformation'
+    _SDM_NAME = "meterStatsLearnedInformation"
     _SDM_ATT_MAP = {
-        'ByteInCount': 'byteInCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DurationNSec': 'durationNSec',
-        'DurationSec': 'durationSec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FlowCount': 'flowCount',
-        'LastErrorCode': 'lastErrorCode',
-        'LastErrorType': 'lastErrorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MeterId': 'meterId',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NumberOfBandStats': 'numberOfBandStats',
-        'PacketInCount': 'packetInCount',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "ByteInCount": "byteInCount",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "DurationNSec": "durationNSec",
+        "DurationSec": "durationSec",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "FlowCount": "flowCount",
+        "LastErrorCode": "lastErrorCode",
+        "LastErrorType": "lastErrorType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MeterId": "meterId",
+        "NegotiatedVersion": "negotiatedVersion",
+        "NumberOfBandStats": "numberOfBandStats",
+        "PacketInCount": "packetInCount",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MeterStatsLearnedInformation, self).__init__(parent, list_op)
@@ -71,10 +71,16 @@ class MeterStatsLearnedInformation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatsbandlearnedinformation_3262a471f223f3c4c65196c8f2de73a7 import MeterStatsBandLearnedInformation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatsbandlearnedinformation_3262a471f223f3c4c65196c8f2de73a7 import (
+            MeterStatsBandLearnedInformation,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MeterStatsBandLearnedInformation', None) is not None:
-                return self._properties.get('MeterStatsBandLearnedInformation')
+            if (
+                self._properties.get("MeterStatsBandLearnedInformation", None)
+                is not None
+            ):
+                return self._properties.get("MeterStatsBandLearnedInformation")
         return MeterStatsBandLearnedInformation(self)
 
     @property
@@ -85,7 +91,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies Byte in Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteInCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteInCount"])
 
     @property
     def DataPathId(self):
@@ -95,7 +101,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: The Data Path identifier of the OpenFlow controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -105,7 +111,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow controller in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def DurationNSec(self):
@@ -115,7 +121,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies Duration Nano Second
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationNSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationNSec"])
 
     @property
     def DurationSec(self):
@@ -125,7 +131,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies Duration in Second
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationSec"])
 
     @property
     def ErrorCode(self):
@@ -135,7 +141,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The error code of the received error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -145,7 +151,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def FlowCount(self):
@@ -155,7 +161,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies the Flow Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowCount"])
 
     @property
     def LastErrorCode(self):
@@ -165,7 +171,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The Last error code of the received error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastErrorCode"])
 
     @property
     def LastErrorType(self):
@@ -175,7 +181,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The type of the Last error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastErrorType"])
 
     @property
     def Latency(self):
@@ -185,7 +191,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: The latency measurement for the OpenFlow channel in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -195,7 +201,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MeterId(self):
@@ -205,7 +211,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies Meter ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
 
     @property
     def NegotiatedVersion(self):
@@ -215,7 +221,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def NumberOfBandStats(self):
@@ -225,7 +231,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies the number of band
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBandStats'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfBandStats"])
 
     @property
     def PacketInCount(self):
@@ -235,7 +241,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - number: Specifies Packet In Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketInCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketInCount"])
 
     @property
     def RemoteIp(self):
@@ -245,7 +251,7 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -255,10 +261,10 @@ class MeterStatsLearnedInformation(Base):
         -------
         - str: The state of reply for the Open Flow channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new meterStatsLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new meterStatsLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -270,7 +276,27 @@ class MeterStatsLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteInCount=None, DataPathId=None, DataPathIdAsHex=None, DurationNSec=None, DurationSec=None, ErrorCode=None, ErrorType=None, FlowCount=None, LastErrorCode=None, LastErrorType=None, Latency=None, LocalIp=None, MeterId=None, NegotiatedVersion=None, NumberOfBandStats=None, PacketInCount=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        ByteInCount=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        DurationNSec=None,
+        DurationSec=None,
+        ErrorCode=None,
+        ErrorType=None,
+        FlowCount=None,
+        LastErrorCode=None,
+        LastErrorType=None,
+        Latency=None,
+        LocalIp=None,
+        MeterId=None,
+        NegotiatedVersion=None,
+        NumberOfBandStats=None,
+        PacketInCount=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (int, int, str, int, int, str, str, int, str, str, int, str, int, str, int, int, str, str) -> MeterStatsLearnedInformation
         """Finds and retrieves meterStatsLearnedInformation resources from the server.
 

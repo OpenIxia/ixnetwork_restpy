@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class CustomTopologyInterestedVlanRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologyInterestedVlanRange'
+    _SDM_NAME = "customTopologyInterestedVlanRange"
     _SDM_ATT_MAP = {
-        'IncludeInterestedVlan': 'includeInterestedVlan',
-        'InterNodeVlanStep': 'interNodeVlanStep',
-        'M4BitEnabled': 'm4BitEnabled',
-        'M6BitEnabled': 'm6BitEnabled',
-        'NumberOfSpanningTreeRoots': 'numberOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
-        'VlanCount': 'vlanCount',
-        'VlanIdStep': 'vlanIdStep',
+        "IncludeInterestedVlan": "includeInterestedVlan",
+        "InterNodeVlanStep": "interNodeVlanStep",
+        "M4BitEnabled": "m4BitEnabled",
+        "M6BitEnabled": "m6BitEnabled",
+        "NumberOfSpanningTreeRoots": "numberOfSpanningTreeRoots",
+        "StartSpanningTreeRootBridgeId": "startSpanningTreeRootBridgeId",
+        "StartVlanId": "startVlanId",
+        "VlanCount": "vlanCount",
+        "VlanIdStep": "vlanIdStep",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTopologyInterestedVlanRange, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInterestedVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInterestedVlan"])
+
     @IncludeInterestedVlan.setter
     def IncludeInterestedVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInterestedVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInterestedVlan"], value)
 
     @property
     def InterNodeVlanStep(self):
@@ -74,11 +75,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeVlanStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeVlanStep"])
+
     @InterNodeVlanStep.setter
     def InterNodeVlanStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeVlanStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeVlanStep"], value)
 
     @property
     def M4BitEnabled(self):
@@ -88,11 +90,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['M4BitEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["M4BitEnabled"])
+
     @M4BitEnabled.setter
     def M4BitEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['M4BitEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["M4BitEnabled"], value)
 
     @property
     def M6BitEnabled(self):
@@ -102,11 +105,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['M6BitEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["M6BitEnabled"])
+
     @M6BitEnabled.setter
     def M6BitEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['M6BitEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["M6BitEnabled"], value)
 
     @property
     def NumberOfSpanningTreeRoots(self):
@@ -116,11 +120,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSpanningTreeRoots'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSpanningTreeRoots"])
+
     @NumberOfSpanningTreeRoots.setter
     def NumberOfSpanningTreeRoots(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSpanningTreeRoots'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSpanningTreeRoots"], value)
 
     @property
     def StartSpanningTreeRootBridgeId(self):
@@ -130,11 +135,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSpanningTreeRootBridgeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSpanningTreeRootBridgeId"])
+
     @StartSpanningTreeRootBridgeId.setter
     def StartSpanningTreeRootBridgeId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSpanningTreeRootBridgeId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSpanningTreeRootBridgeId"], value)
 
     @property
     def StartVlanId(self):
@@ -144,11 +150,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartVlanId"])
+
     @StartVlanId.setter
     def StartVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartVlanId"], value)
 
     @property
     def VlanCount(self):
@@ -158,11 +165,12 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanIdStep(self):
@@ -172,13 +180,25 @@ class CustomTopologyInterestedVlanRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanIdStep"])
+
     @VlanIdStep.setter
     def VlanIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanIdStep"], value)
 
-    def update(self, IncludeInterestedVlan=None, InterNodeVlanStep=None, M4BitEnabled=None, M6BitEnabled=None, NumberOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def update(
+        self,
+        IncludeInterestedVlan=None,
+        InterNodeVlanStep=None,
+        M4BitEnabled=None,
+        M6BitEnabled=None,
+        NumberOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, int, bool, bool, int, str, int, int, int) -> CustomTopologyInterestedVlanRange
         """Updates customTopologyInterestedVlanRange resource on the server.
 
@@ -200,7 +220,18 @@ class CustomTopologyInterestedVlanRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncludeInterestedVlan=None, InterNodeVlanStep=None, M4BitEnabled=None, M6BitEnabled=None, NumberOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def add(
+        self,
+        IncludeInterestedVlan=None,
+        InterNodeVlanStep=None,
+        M4BitEnabled=None,
+        M6BitEnabled=None,
+        NumberOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, int, bool, bool, int, str, int, int, int) -> CustomTopologyInterestedVlanRange
         """Adds a new customTopologyInterestedVlanRange resource on the server and adds it to the container.
 
@@ -236,7 +267,18 @@ class CustomTopologyInterestedVlanRange(Base):
         """
         self._delete()
 
-    def find(self, IncludeInterestedVlan=None, InterNodeVlanStep=None, M4BitEnabled=None, M6BitEnabled=None, NumberOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdStep=None):
+    def find(
+        self,
+        IncludeInterestedVlan=None,
+        InterNodeVlanStep=None,
+        M4BitEnabled=None,
+        M6BitEnabled=None,
+        NumberOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdStep=None,
+    ):
         # type: (bool, int, bool, bool, int, str, int, int, int) -> CustomTopologyInterestedVlanRange
         """Finds and retrieves customTopologyInterestedVlanRange resources from the server.
 

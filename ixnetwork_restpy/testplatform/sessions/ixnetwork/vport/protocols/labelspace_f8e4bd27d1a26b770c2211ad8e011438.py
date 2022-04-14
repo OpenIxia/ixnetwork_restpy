@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,16 @@ class LabelSpace(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'labelSpace'
+    _SDM_NAME = "labelSpace"
     _SDM_ATT_MAP = {
-        'End': 'end',
-        'LabelId': 'labelId',
-        'Mode': 'mode',
-        'Start': 'start',
-        'Step': 'step',
+        "End": "end",
+        "LabelId": "labelId",
+        "Mode": "mode",
+        "Start": "start",
+        "Step": "step",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['fixedLabel', 'incrementLabel'],
+        "mode": ["fixedLabel", "incrementLabel"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +56,12 @@ class LabelSpace(Base):
         -------
         - number: The last label value available in the label space (range).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['End'])
+        return self._get_attribute(self._SDM_ATT_MAP["End"])
+
     @End.setter
     def End(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['End'], value)
+        self._set_attribute(self._SDM_ATT_MAP["End"], value)
 
     @property
     def LabelId(self):
@@ -69,11 +71,12 @@ class LabelSpace(Base):
         -------
         - number: The identifier for the label space.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelId"])
+
     @LabelId.setter
     def LabelId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelId"], value)
 
     @property
     def Mode(self):
@@ -83,11 +86,12 @@ class LabelSpace(Base):
         -------
         - str(fixedLabel | incrementLabel): Sets the Label mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def Start(self):
@@ -97,11 +101,12 @@ class LabelSpace(Base):
         -------
         - number: The first label value available in the label space (range). The default is 16.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Start'])
+        return self._get_attribute(self._SDM_ATT_MAP["Start"])
+
     @Start.setter
     def Start(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Start'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Start"], value)
 
     @property
     def Step(self):
@@ -111,11 +116,12 @@ class LabelSpace(Base):
         -------
         - number: The value to add for creating each additional label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
         # type: (int, int, str, int, int) -> LabelSpace

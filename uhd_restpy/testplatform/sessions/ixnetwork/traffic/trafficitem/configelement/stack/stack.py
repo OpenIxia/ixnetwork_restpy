@@ -65,76 +65,166 @@ class Stack(Base):
 
     @property
     def EthernetARP(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernetARP_template.EthernetARP): An instance of the EthernetARP traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernetARP_template import EthernetARP
         return EthernetARP(self)
 
     @property
     def Ethernet(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernet_template.Ethernet): An instance of the Ethernet traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernet_template import Ethernet
         return Ethernet(self)
 
     @property
     def EthernetNoFCS(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernetNoFCS_template.EthernetNoFCS): An instance of the EthernetNoFCS traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernetNoFCS_template import EthernetNoFCS
         return EthernetNoFCS(self)
 
     @property
     def Mpls(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mpls_template.Mpls): An instance of the Mpls traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mpls_template import Mpls
         return Mpls(self)
 
     @property
     def Vlan(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vlan_template.Vlan): An instance of the Vlan traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vlan_template import Vlan
         return Vlan(self)
 
     @property
     def PfcPause(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pfcPause_template.PfcPause): An instance of the PfcPause traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pfcPause_template import PfcPause
         return PfcPause(self)
 
     @property
     def GlobalPause(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.globalPause_template.GlobalPause): An instance of the GlobalPause traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.globalPause_template import GlobalPause
         return GlobalPause(self)
 
     @property
     def Ipv4(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv4_template.Ipv4): An instance of the Ipv4 traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv4_template import Ipv4
         return Ipv4(self)
 
     @property
     def Ipv6(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6_template.Ipv6): An instance of the Ipv6 traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6_template import Ipv6
         return Ipv6(self)
 
     @property
     def Gre(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gre_template.Gre): An instance of the Gre traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gre_template import Gre
         return Gre(self)
 
     @property
     def GTPuOptionalFields(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gTPuOptionalFields_template.GTPuOptionalFields): An instance of the GTPuOptionalFields traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gTPuOptionalFields_template import GTPuOptionalFields
         return GTPuOptionalFields(self)
 
     @property
     def Gtpu(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gtpu_template.Gtpu): An instance of the Gtpu traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.gtpu_template import Gtpu
         return Gtpu(self)
 
     @property
     def Vxlan(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vxlan_template.Vxlan): An instance of the Vxlan traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vxlan_template import Vxlan
         return Vxlan(self)
 
     @property
     def Tcp(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.tcp_template.Tcp): An instance of the Tcp traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.tcp_template import Tcp
         return Tcp(self)
 
     @property
     def Udp(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.udp_template.Udp): An instance of the Udp traffic stack
+        """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.udp_template import Udp
         return Udp(self)
 
@@ -169,7 +259,7 @@ class Stack(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TemplateName'])
 
     def add(self):
-        """Adds a new stack resource on the json, only valid with config assistant
+        """Adds a new stack resource on the json, only valid with batch add utility
 
         Returns
         -------

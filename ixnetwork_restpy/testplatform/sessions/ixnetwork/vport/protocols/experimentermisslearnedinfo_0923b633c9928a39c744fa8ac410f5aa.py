@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class ExperimenterMissLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'experimenterMissLearnedInfo'
+    _SDM_NAME = "experimenterMissLearnedInfo"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterId': 'experimenterId',
-        'NextTableIds': 'nextTableIds',
-        'Property': 'property',
-        'SupportedField': 'supportedField',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterId": "experimenterId",
+        "NextTableIds": "nextTableIds",
+        "Property": "property",
+        "SupportedField": "supportedField",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ExperimenterMissLearnedInfo, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
 
     @property
     def ExperimenterDataLength(self):
@@ -67,7 +67,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
 
     @property
     def ExperimenterId(self):
@@ -77,7 +77,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
 
     @property
     def NextTableIds(self):
@@ -87,7 +87,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextTableIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextTableIds"])
 
     @property
     def Property(self):
@@ -97,7 +97,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Property'])
+        return self._get_attribute(self._SDM_ATT_MAP["Property"])
 
     @property
     def SupportedField(self):
@@ -107,7 +107,7 @@ class ExperimenterMissLearnedInfo(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedField'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedField"])
 
     def add(self):
         """Adds a new experimenterMissLearnedInfo resource on the server and adds it to the container.
@@ -132,7 +132,15 @@ class ExperimenterMissLearnedInfo(Base):
         """
         self._delete()
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterId=None,
+        NextTableIds=None,
+        Property=None,
+        SupportedField=None,
+    ):
         # type: (str, int, int, str, str, str) -> ExperimenterMissLearnedInfo
         """Finds and retrieves experimenterMissLearnedInfo resources from the server.
 

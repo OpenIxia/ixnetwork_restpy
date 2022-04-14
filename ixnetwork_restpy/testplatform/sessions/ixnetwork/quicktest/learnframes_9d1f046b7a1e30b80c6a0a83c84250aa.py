@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,22 +33,22 @@ class LearnFrames(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnFrames'
+    _SDM_NAME = "learnFrames"
     _SDM_ATT_MAP = {
-        'FastPathEnable': 'fastPathEnable',
-        'FastPathLearnFrameSize': 'fastPathLearnFrameSize',
-        'FastPathNumFrames': 'fastPathNumFrames',
-        'FastPathRate': 'fastPathRate',
-        'LearnFrequency': 'learnFrequency',
-        'LearnNumFrames': 'learnNumFrames',
-        'LearnRate': 'learnRate',
-        'LearnSendRouterSolicitation': 'learnSendRouterSolicitation',
-        'LearnWaitTime': 'learnWaitTime',
-        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
-        'SendArp': 'sendArp',
+        "FastPathEnable": "fastPathEnable",
+        "FastPathLearnFrameSize": "fastPathLearnFrameSize",
+        "FastPathNumFrames": "fastPathNumFrames",
+        "FastPathRate": "fastPathRate",
+        "LearnFrequency": "learnFrequency",
+        "LearnNumFrames": "learnNumFrames",
+        "LearnRate": "learnRate",
+        "LearnSendRouterSolicitation": "learnSendRouterSolicitation",
+        "LearnWaitTime": "learnWaitTime",
+        "LearnWaitTimeBeforeTransmit": "learnWaitTimeBeforeTransmit",
+        "SendArp": "sendArp",
     }
     _SDM_ENUM_MAP = {
-        'learnFrequency': ['onBinaryIteration'],
+        "learnFrequency": ["onBinaryIteration"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,11 +62,12 @@ class LearnFrames(Base):
         -------
         - bool: If true, the fast path is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastPathEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastPathEnable"])
+
     @FastPathEnable.setter
     def FastPathEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastPathEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastPathEnable"], value)
 
     @property
     def FastPathLearnFrameSize(self):
@@ -75,11 +77,12 @@ class LearnFrames(Base):
         -------
         - number: The path in which the learnt frame sizes are saved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastPathLearnFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastPathLearnFrameSize"])
+
     @FastPathLearnFrameSize.setter
     def FastPathLearnFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastPathLearnFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastPathLearnFrameSize"], value)
 
     @property
     def FastPathNumFrames(self):
@@ -89,11 +92,12 @@ class LearnFrames(Base):
         -------
         - number: The learnt information on the number of frames to be tramsferred.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastPathNumFrames'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastPathNumFrames"])
+
     @FastPathNumFrames.setter
     def FastPathNumFrames(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastPathNumFrames'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastPathNumFrames"], value)
 
     @property
     def FastPathRate(self):
@@ -103,11 +107,12 @@ class LearnFrames(Base):
         -------
         - number: The learnt inofrmation on the rate the data is to be transferred.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastPathRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastPathRate"])
+
     @FastPathRate.setter
     def FastPathRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastPathRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastPathRate"], value)
 
     @property
     def LearnFrequency(self):
@@ -117,11 +122,12 @@ class LearnFrames(Base):
         -------
         - str(onBinaryIteration): Allows to choose how frequently IxNetwork sends learning frames during the test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnFrequency"])
+
     @LearnFrequency.setter
     def LearnFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnFrequency"], value)
 
     @property
     def LearnNumFrames(self):
@@ -131,11 +137,12 @@ class LearnFrames(Base):
         -------
         - number: The number of learned frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnNumFrames'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnNumFrames"])
+
     @LearnNumFrames.setter
     def LearnNumFrames(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnNumFrames'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnNumFrames"], value)
 
     @property
     def LearnRate(self):
@@ -145,11 +152,12 @@ class LearnFrames(Base):
         -------
         - number: The learned frame rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnRate"])
+
     @LearnRate.setter
     def LearnRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnRate"], value)
 
     @property
     def LearnSendRouterSolicitation(self):
@@ -159,11 +167,12 @@ class LearnFrames(Base):
         -------
         - bool: The learnt information on the router sent solicitation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnSendRouterSolicitation'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnSendRouterSolicitation"])
+
     @LearnSendRouterSolicitation.setter
     def LearnSendRouterSolicitation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnSendRouterSolicitation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnSendRouterSolicitation"], value)
 
     @property
     def LearnWaitTime(self):
@@ -173,11 +182,12 @@ class LearnFrames(Base):
         -------
         - number: The learnt information on the wait time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnWaitTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnWaitTime"])
+
     @LearnWaitTime.setter
     def LearnWaitTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnWaitTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnWaitTime"], value)
 
     @property
     def LearnWaitTimeBeforeTransmit(self):
@@ -187,11 +197,12 @@ class LearnFrames(Base):
         -------
         - number: The learned wait time before transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnWaitTimeBeforeTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnWaitTimeBeforeTransmit"])
+
     @LearnWaitTimeBeforeTransmit.setter
     def LearnWaitTimeBeforeTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnWaitTimeBeforeTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnWaitTimeBeforeTransmit"], value)
 
     @property
     def SendArp(self):
@@ -201,13 +212,27 @@ class LearnFrames(Base):
         -------
         - bool: If true, the ARP request sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendArp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendArp"])
+
     @SendArp.setter
     def SendArp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendArp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendArp"], value)
 
-    def update(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None, SendArp=None):
+    def update(
+        self,
+        FastPathEnable=None,
+        FastPathLearnFrameSize=None,
+        FastPathNumFrames=None,
+        FastPathRate=None,
+        LearnFrequency=None,
+        LearnNumFrames=None,
+        LearnRate=None,
+        LearnSendRouterSolicitation=None,
+        LearnWaitTime=None,
+        LearnWaitTimeBeforeTransmit=None,
+        SendArp=None,
+    ):
         # type: (bool, int, int, int, str, int, int, bool, int, int, bool) -> LearnFrames
         """Updates learnFrames resource on the server.
 
@@ -231,7 +256,20 @@ class LearnFrames(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, FastPathEnable=None, FastPathLearnFrameSize=None, FastPathNumFrames=None, FastPathRate=None, LearnFrequency=None, LearnNumFrames=None, LearnRate=None, LearnSendRouterSolicitation=None, LearnWaitTime=None, LearnWaitTimeBeforeTransmit=None, SendArp=None):
+    def find(
+        self,
+        FastPathEnable=None,
+        FastPathLearnFrameSize=None,
+        FastPathNumFrames=None,
+        FastPathRate=None,
+        LearnFrequency=None,
+        LearnNumFrames=None,
+        LearnRate=None,
+        LearnSendRouterSolicitation=None,
+        LearnWaitTime=None,
+        LearnWaitTimeBeforeTransmit=None,
+        SendArp=None,
+    ):
         # type: (bool, int, int, int, str, int, int, bool, int, int, bool) -> LearnFrames
         """Finds and retrieves learnFrames resources from the server.
 
@@ -296,10 +334,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -314,10 +354,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -326,17 +368,19 @@ class LearnFrames(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -353,10 +397,14 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -374,10 +422,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -403,10 +453,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -430,10 +482,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -450,10 +504,12 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -471,7 +527,9 @@ class LearnFrames(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

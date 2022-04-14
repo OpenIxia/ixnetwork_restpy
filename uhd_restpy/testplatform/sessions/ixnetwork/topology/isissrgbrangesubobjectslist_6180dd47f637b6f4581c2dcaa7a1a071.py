@@ -122,7 +122,7 @@ class IsisSRGBRangeSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisSRGBRangeSubObjectsList
-        """Adds a new isisSRGBRangeSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new isisSRGBRangeSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

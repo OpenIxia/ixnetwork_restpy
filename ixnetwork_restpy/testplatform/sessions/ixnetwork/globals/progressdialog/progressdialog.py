@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class ProgressDialog(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'progressDialog'
+    _SDM_NAME = "progressDialog"
     _SDM_ATT_MAP = {
-        'ElapsedDuration': 'elapsedDuration',
-        'EstimatedDuration': 'estimatedDuration',
-        'IsOpen': 'isOpen',
-        'Progress': 'progress',
-        'RemainingDuration': 'remainingDuration',
-        'TaskName': 'taskName',
-        'Title': 'title',
+        "ElapsedDuration": "elapsedDuration",
+        "EstimatedDuration": "estimatedDuration",
+        "IsOpen": "isOpen",
+        "Progress": "progress",
+        "RemainingDuration": "remainingDuration",
+        "TaskName": "taskName",
+        "Title": "title",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ProgressDialog, self).__init__(parent, list_op)
@@ -56,7 +56,7 @@ class ProgressDialog(Base):
         -------
         - str: Elapsed time since the start of the Progress operation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElapsedDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElapsedDuration"])
 
     @property
     def EstimatedDuration(self):
@@ -66,7 +66,7 @@ class ProgressDialog(Base):
         -------
         - str: Estimated time to complete the Progress operation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstimatedDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstimatedDuration"])
 
     @property
     def IsOpen(self):
@@ -76,7 +76,7 @@ class ProgressDialog(Base):
         -------
         - bool: Indicates whether any progress bar is open.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsOpen'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsOpen"])
 
     @property
     def Progress(self):
@@ -86,7 +86,7 @@ class ProgressDialog(Base):
         -------
         - number: A progress update from 0(start) to 1(end) (Not all progress bars may have a progress update).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Progress'])
+        return self._get_attribute(self._SDM_ATT_MAP["Progress"])
 
     @property
     def RemainingDuration(self):
@@ -96,7 +96,7 @@ class ProgressDialog(Base):
         -------
         - str: Remaining time of the Progress operation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemainingDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemainingDuration"])
 
     @property
     def TaskName(self):
@@ -106,7 +106,7 @@ class ProgressDialog(Base):
         -------
         - str: Sub Task name belonging to the Progress bar.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TaskName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TaskName"])
 
     @property
     def Title(self):
@@ -116,9 +116,18 @@ class ProgressDialog(Base):
         -------
         - str: Title or Group name of the Progress bar.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Title'])
+        return self._get_attribute(self._SDM_ATT_MAP["Title"])
 
-    def find(self, ElapsedDuration=None, EstimatedDuration=None, IsOpen=None, Progress=None, RemainingDuration=None, TaskName=None, Title=None):
+    def find(
+        self,
+        ElapsedDuration=None,
+        EstimatedDuration=None,
+        IsOpen=None,
+        Progress=None,
+        RemainingDuration=None,
+        TaskName=None,
+        Title=None,
+    ):
         # type: (str, str, bool, int, str, str, str) -> ProgressDialog
         """Finds and retrieves progressDialog resources from the server.
 

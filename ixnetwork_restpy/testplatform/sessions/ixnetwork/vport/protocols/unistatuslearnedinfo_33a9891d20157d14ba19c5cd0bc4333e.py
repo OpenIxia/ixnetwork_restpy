@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,33 +34,32 @@ class UniStatusLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'uniStatusLearnedInfo'
+    _SDM_NAME = "uniStatusLearnedInfo"
     _SDM_ATT_MAP = {
-        'CbsMagnitude': 'cbsMagnitude',
-        'CbsMultiplier': 'cbsMultiplier',
-        'Cf': 'cf',
-        'CirMagnitude': 'cirMagnitude',
-        'CirMultiplier': 'cirMultiplier',
-        'Cm': 'cm',
-        'EbsMagnitude': 'ebsMagnitude',
-        'EbsMultiplier': 'ebsMultiplier',
-        'EirMagnitude': 'eirMagnitude',
-        'EirMultiplier': 'eirMultiplier',
-        'EvcMapType': 'evcMapType',
-        'PerCos': 'perCos',
-        'UniId': 'uniId',
-        'UniIdLength': 'uniIdLength',
-        'UserPriorityBits000': 'userPriorityBits000',
-        'UserPriorityBits001': 'userPriorityBits001',
-        'UserPriorityBits010': 'userPriorityBits010',
-        'UserPriorityBits011': 'userPriorityBits011',
-        'UserPriorityBits100': 'userPriorityBits100',
-        'UserPriorityBits101': 'userPriorityBits101',
-        'UserPriorityBits110': 'userPriorityBits110',
-        'UserPriorityBits111': 'userPriorityBits111',
+        "CbsMagnitude": "cbsMagnitude",
+        "CbsMultiplier": "cbsMultiplier",
+        "Cf": "cf",
+        "CirMagnitude": "cirMagnitude",
+        "CirMultiplier": "cirMultiplier",
+        "Cm": "cm",
+        "EbsMagnitude": "ebsMagnitude",
+        "EbsMultiplier": "ebsMultiplier",
+        "EirMagnitude": "eirMagnitude",
+        "EirMultiplier": "eirMultiplier",
+        "EvcMapType": "evcMapType",
+        "PerCos": "perCos",
+        "UniId": "uniId",
+        "UniIdLength": "uniIdLength",
+        "UserPriorityBits000": "userPriorityBits000",
+        "UserPriorityBits001": "userPriorityBits001",
+        "UserPriorityBits010": "userPriorityBits010",
+        "UserPriorityBits011": "userPriorityBits011",
+        "UserPriorityBits100": "userPriorityBits100",
+        "UserPriorityBits101": "userPriorityBits101",
+        "UserPriorityBits110": "userPriorityBits110",
+        "UserPriorityBits111": "userPriorityBits111",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(UniStatusLearnedInfo, self).__init__(parent, list_op)
@@ -72,7 +72,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CbsMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["CbsMagnitude"])
 
     @property
     def CbsMultiplier(self):
@@ -82,7 +82,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CbsMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CbsMultiplier"])
 
     @property
     def Cf(self):
@@ -92,7 +92,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies coupling flag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cf'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cf"])
 
     @property
     def CirMagnitude(self):
@@ -102,7 +102,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CirMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["CirMagnitude"])
 
     @property
     def CirMultiplier(self):
@@ -112,7 +112,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies two octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CirMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CirMultiplier"])
 
     @property
     def Cm(self):
@@ -122,7 +122,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies color mode flag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cm'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cm"])
 
     @property
     def EbsMagnitude(self):
@@ -132,7 +132,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EbsMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["EbsMagnitude"])
 
     @property
     def EbsMultiplier(self):
@@ -142,7 +142,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EbsMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EbsMultiplier"])
 
     @property
     def EirMagnitude(self):
@@ -152,7 +152,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies one octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EirMagnitude'])
+        return self._get_attribute(self._SDM_ATT_MAP["EirMagnitude"])
 
     @property
     def EirMultiplier(self):
@@ -162,7 +162,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies two octet field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EirMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EirMultiplier"])
 
     @property
     def EvcMapType(self):
@@ -172,7 +172,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies the type of EVC MAP type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvcMapType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvcMapType"])
 
     @property
     def PerCos(self):
@@ -182,7 +182,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies per cos behavior of bandwidth profile.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PerCos'])
+        return self._get_attribute(self._SDM_ATT_MAP["PerCos"])
 
     @property
     def UniId(self):
@@ -192,7 +192,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: It signifies the ID of user network interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniId'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniId"])
 
     @property
     def UniIdLength(self):
@@ -202,7 +202,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - number: It signifies the length of the UNI ID value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniIdLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniIdLength"])
 
     @property
     def UserPriorityBits000(self):
@@ -212,7 +212,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 000 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits000'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits000"])
 
     @property
     def UserPriorityBits001(self):
@@ -222,7 +222,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 001 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits001'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits001"])
 
     @property
     def UserPriorityBits010(self):
@@ -232,7 +232,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 010 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits010'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits010"])
 
     @property
     def UserPriorityBits011(self):
@@ -242,7 +242,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 011 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits011'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits011"])
 
     @property
     def UserPriorityBits100(self):
@@ -252,7 +252,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 100 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits100'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits100"])
 
     @property
     def UserPriorityBits101(self):
@@ -262,7 +262,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 101 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits101'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits101"])
 
     @property
     def UserPriorityBits110(self):
@@ -272,7 +272,7 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 110 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits110'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits110"])
 
     @property
     def UserPriorityBits111(self):
@@ -282,10 +282,10 @@ class UniStatusLearnedInfo(Base):
         -------
         - str: If enabled, Bandwidth Profile applies to frames with user_priority as 111 and the value is set to 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits111'])
+        return self._get_attribute(self._SDM_ATT_MAP["UserPriorityBits111"])
 
     def add(self):
-        """Adds a new uniStatusLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new uniStatusLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -297,7 +297,31 @@ class UniStatusLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, EvcMapType=None, PerCos=None, UniId=None, UniIdLength=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+    def find(
+        self,
+        CbsMagnitude=None,
+        CbsMultiplier=None,
+        Cf=None,
+        CirMagnitude=None,
+        CirMultiplier=None,
+        Cm=None,
+        EbsMagnitude=None,
+        EbsMultiplier=None,
+        EirMagnitude=None,
+        EirMultiplier=None,
+        EvcMapType=None,
+        PerCos=None,
+        UniId=None,
+        UniIdLength=None,
+        UserPriorityBits000=None,
+        UserPriorityBits001=None,
+        UserPriorityBits010=None,
+        UserPriorityBits011=None,
+        UserPriorityBits100=None,
+        UserPriorityBits101=None,
+        UserPriorityBits110=None,
+        UserPriorityBits111=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> UniStatusLearnedInfo
         """Finds and retrieves uniStatusLearnedInfo resources from the server.
 

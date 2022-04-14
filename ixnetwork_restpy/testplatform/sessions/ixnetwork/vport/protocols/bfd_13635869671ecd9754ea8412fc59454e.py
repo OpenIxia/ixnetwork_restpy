@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,15 @@ class Bfd(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bfd'
+    _SDM_NAME = "bfd"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IntervalValue': 'intervalValue',
-        'PacketsPerInterval': 'packetsPerInterval',
-        'RunningState': 'runningState',
+        "Enabled": "enabled",
+        "IntervalValue": "intervalValue",
+        "PacketsPerInterval": "packetsPerInterval",
+        "RunningState": "runningState",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,10 +58,13 @@ class Bfd(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_8fefbefd4c6343cce300aae644040cd2 import Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_8fefbefd4c6343cce300aae644040cd2 import (
+            Router,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Router', None) is not None:
-                return self._properties.get('Router')
+            if self._properties.get("Router", None) is not None:
+                return self._properties.get("Router")
         return Router(self)
 
     @property
@@ -71,11 +75,12 @@ class Bfd(Base):
         -------
         - bool: Enables or disables the use of this emulated BFD router in the emulated BFD network. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IntervalValue(self):
@@ -85,11 +90,12 @@ class Bfd(Base):
         -------
         - number: Interval Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntervalValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntervalValue"])
+
     @IntervalValue.setter
     def IntervalValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntervalValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntervalValue"], value)
 
     @property
     def PacketsPerInterval(self):
@@ -99,11 +105,12 @@ class Bfd(Base):
         -------
         - number: Number of BFD control packets per interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketsPerInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketsPerInterval"])
+
     @PacketsPerInterval.setter
     def PacketsPerInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketsPerInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketsPerInterval"], value)
 
     @property
     def RunningState(self):
@@ -113,7 +120,7 @@ class Bfd(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the BFD protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     def update(self, Enabled=None, IntervalValue=None, PacketsPerInterval=None):
         # type: (bool, int, int) -> Bfd
@@ -131,7 +138,13 @@ class Bfd(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None, IntervalValue=None, PacketsPerInterval=None, RunningState=None):
+    def find(
+        self,
+        Enabled=None,
+        IntervalValue=None,
+        PacketsPerInterval=None,
+        RunningState=None,
+    ):
         # type: (bool, int, int, str) -> Bfd
         """Finds and retrieves bfd resources from the server.
 
@@ -189,10 +202,12 @@ class Bfd(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -209,7 +224,9 @@ class Bfd(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

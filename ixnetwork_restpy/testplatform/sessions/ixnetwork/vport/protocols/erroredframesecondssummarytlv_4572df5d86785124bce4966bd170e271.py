@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class ErroredFrameSecondsSummaryTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'erroredFrameSecondsSummaryTlv'
+    _SDM_NAME = "erroredFrameSecondsSummaryTlv"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Summary': 'summary',
-        'Threshold': 'threshold',
-        'Window': 'window',
+        "Enabled": "enabled",
+        "Summary": "summary",
+        "Threshold": "threshold",
+        "Window": "window",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ErroredFrameSecondsSummaryTlv, self).__init__(parent, list_op)
@@ -51,13 +51,14 @@ class ErroredFrameSecondsSummaryTlv(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Summary(self):
@@ -65,13 +66,14 @@ class ErroredFrameSecondsSummaryTlv(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Summary'])
+        return self._get_attribute(self._SDM_ATT_MAP["Summary"])
+
     @Summary.setter
     def Summary(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Summary'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Summary"], value)
 
     @property
     def Threshold(self):
@@ -79,13 +81,14 @@ class ErroredFrameSecondsSummaryTlv(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Threshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["Threshold"])
+
     @Threshold.setter
     def Threshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Threshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Threshold"], value)
 
     @property
     def Window(self):
@@ -93,13 +96,14 @@ class ErroredFrameSecondsSummaryTlv(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Window'])
+        return self._get_attribute(self._SDM_ATT_MAP["Window"])
+
     @Window.setter
     def Window(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Window'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Window"], value)
 
     def update(self, Enabled=None, Summary=None, Threshold=None, Window=None):
         # type: (bool, int, int, int) -> ErroredFrameSecondsSummaryTlv
@@ -107,10 +111,10 @@ class ErroredFrameSecondsSummaryTlv(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - Summary (number): 
-        - Threshold (number): 
-        - Window (number): 
+        - Enabled (bool):
+        - Summary (number):
+        - Threshold (number):
+        - Window (number):
 
         Raises
         ------
@@ -128,10 +132,10 @@ class ErroredFrameSecondsSummaryTlv(Base):
 
         Args
         ----
-        - Enabled (bool): 
-        - Summary (number): 
-        - Threshold (number): 
-        - Window (number): 
+        - Enabled (bool):
+        - Summary (number):
+        - Threshold (number):
+        - Window (number):
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class BfdAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bfdAggregatedStatistics'
+    _SDM_NAME = "bfdAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'AutoCreatedUPSessions': 'autoCreatedUPSessions',
-        'BfdMPLSPDUsRx': 'bfdMPLSPDUsRx',
-        'BfdMPLSPDUsTx': 'bfdMPLSPDUsTx',
-        'ConfiguredUPSessions': 'configuredUPSessions',
-        'ControlRx': 'controlRx',
-        'ControlTx': 'controlTx',
-        'EchoDUTLoopBack': 'echoDUTLoopBack',
-        'EchoDUTReceived': 'echoDUTReceived',
-        'EchoSelfRx': 'echoSelfRx',
-        'EchoSelfTx': 'echoSelfTx',
-        'PortName': 'portName',
-        'RoutersConfigured': 'routersConfigured',
-        'RoutersRunning': 'routersRunning',
-        'SessionFlapCount': 'sessionFlapCount',
-        'SessionsAutoCreated': 'sessionsAutoCreated',
-        'SessionsConfigured': 'sessionsConfigured',
+        "AutoCreatedUPSessions": "autoCreatedUPSessions",
+        "BfdMPLSPDUsRx": "bfdMPLSPDUsRx",
+        "BfdMPLSPDUsTx": "bfdMPLSPDUsTx",
+        "ConfiguredUPSessions": "configuredUPSessions",
+        "ControlRx": "controlRx",
+        "ControlTx": "controlTx",
+        "EchoDUTLoopBack": "echoDUTLoopBack",
+        "EchoDUTReceived": "echoDUTReceived",
+        "EchoSelfRx": "echoSelfRx",
+        "EchoSelfTx": "echoSelfTx",
+        "PortName": "portName",
+        "RoutersConfigured": "routersConfigured",
+        "RoutersRunning": "routersRunning",
+        "SessionFlapCount": "sessionFlapCount",
+        "SessionsAutoCreated": "sessionsAutoCreated",
+        "SessionsConfigured": "sessionsConfigured",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BfdAggregatedStatistics, self).__init__(parent, list_op)
@@ -65,11 +65,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Auto-Created UP-Sessions
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoCreatedUPSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoCreatedUPSessions"])
+
     @AutoCreatedUPSessions.setter
     def AutoCreatedUPSessions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoCreatedUPSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoCreatedUPSessions"], value)
 
     @property
     def BfdMPLSPDUsRx(self):
@@ -79,11 +80,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: BFD MPLS PDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdMPLSPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdMPLSPDUsRx"])
+
     @BfdMPLSPDUsRx.setter
     def BfdMPLSPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdMPLSPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdMPLSPDUsRx"], value)
 
     @property
     def BfdMPLSPDUsTx(self):
@@ -93,11 +95,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: BFD MPLS PDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdMPLSPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdMPLSPDUsTx"])
+
     @BfdMPLSPDUsTx.setter
     def BfdMPLSPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdMPLSPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdMPLSPDUsTx"], value)
 
     @property
     def ConfiguredUPSessions(self):
@@ -107,11 +110,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Configured UP-Sessions
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConfiguredUPSessions'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConfiguredUPSessions"])
+
     @ConfiguredUPSessions.setter
     def ConfiguredUPSessions(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConfiguredUPSessions'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConfiguredUPSessions"], value)
 
     @property
     def ControlRx(self):
@@ -121,11 +125,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Control Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlRx"])
+
     @ControlRx.setter
     def ControlRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlRx"], value)
 
     @property
     def ControlTx(self):
@@ -135,11 +140,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Control Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlTx"])
+
     @ControlTx.setter
     def ControlTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlTx"], value)
 
     @property
     def EchoDUTLoopBack(self):
@@ -149,11 +155,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Echo DUT Loop Back
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoDUTLoopBack'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoDUTLoopBack"])
+
     @EchoDUTLoopBack.setter
     def EchoDUTLoopBack(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoDUTLoopBack'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoDUTLoopBack"], value)
 
     @property
     def EchoDUTReceived(self):
@@ -163,11 +170,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Echo DUT Received
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoDUTReceived'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoDUTReceived"])
+
     @EchoDUTReceived.setter
     def EchoDUTReceived(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoDUTReceived'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoDUTReceived"], value)
 
     @property
     def EchoSelfRx(self):
@@ -177,11 +185,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Echo Self Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoSelfRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoSelfRx"])
+
     @EchoSelfRx.setter
     def EchoSelfRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoSelfRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoSelfRx"], value)
 
     @property
     def EchoSelfTx(self):
@@ -191,11 +200,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Echo Self Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoSelfTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoSelfTx"])
+
     @EchoSelfTx.setter
     def EchoSelfTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoSelfTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoSelfTx"], value)
 
     @property
     def PortName(self):
@@ -205,11 +215,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RoutersConfigured(self):
@@ -219,11 +230,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Routers Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutersConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutersConfigured"])
+
     @RoutersConfigured.setter
     def RoutersConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutersConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutersConfigured"], value)
 
     @property
     def RoutersRunning(self):
@@ -233,11 +245,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Routers Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutersRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutersRunning"])
+
     @RoutersRunning.setter
     def RoutersRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutersRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutersRunning"], value)
 
     @property
     def SessionFlapCount(self):
@@ -247,11 +260,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def SessionsAutoCreated(self):
@@ -261,11 +275,12 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Sessions Auto-Created
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionsAutoCreated'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionsAutoCreated"])
+
     @SessionsAutoCreated.setter
     def SessionsAutoCreated(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionsAutoCreated'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionsAutoCreated"], value)
 
     @property
     def SessionsConfigured(self):
@@ -275,13 +290,32 @@ class BfdAggregatedStatistics(Base):
         -------
         - bool: Sessions Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionsConfigured"])
+
     @SessionsConfigured.setter
     def SessionsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionsConfigured"], value)
 
-    def update(self, AutoCreatedUPSessions=None, BfdMPLSPDUsRx=None, BfdMPLSPDUsTx=None, ConfiguredUPSessions=None, ControlRx=None, ControlTx=None, EchoDUTLoopBack=None, EchoDUTReceived=None, EchoSelfRx=None, EchoSelfTx=None, PortName=None, RoutersConfigured=None, RoutersRunning=None, SessionFlapCount=None, SessionsAutoCreated=None, SessionsConfigured=None):
+    def update(
+        self,
+        AutoCreatedUPSessions=None,
+        BfdMPLSPDUsRx=None,
+        BfdMPLSPDUsTx=None,
+        ConfiguredUPSessions=None,
+        ControlRx=None,
+        ControlTx=None,
+        EchoDUTLoopBack=None,
+        EchoDUTReceived=None,
+        EchoSelfRx=None,
+        EchoSelfTx=None,
+        PortName=None,
+        RoutersConfigured=None,
+        RoutersRunning=None,
+        SessionFlapCount=None,
+        SessionsAutoCreated=None,
+        SessionsConfigured=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BfdAggregatedStatistics
         """Updates bfdAggregatedStatistics resource on the server.
 
@@ -310,7 +344,25 @@ class BfdAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AutoCreatedUPSessions=None, BfdMPLSPDUsRx=None, BfdMPLSPDUsTx=None, ConfiguredUPSessions=None, ControlRx=None, ControlTx=None, EchoDUTLoopBack=None, EchoDUTReceived=None, EchoSelfRx=None, EchoSelfTx=None, PortName=None, RoutersConfigured=None, RoutersRunning=None, SessionFlapCount=None, SessionsAutoCreated=None, SessionsConfigured=None):
+    def find(
+        self,
+        AutoCreatedUPSessions=None,
+        BfdMPLSPDUsRx=None,
+        BfdMPLSPDUsTx=None,
+        ConfiguredUPSessions=None,
+        ControlRx=None,
+        ControlTx=None,
+        EchoDUTLoopBack=None,
+        EchoDUTReceived=None,
+        EchoSelfRx=None,
+        EchoSelfTx=None,
+        PortName=None,
+        RoutersConfigured=None,
+        RoutersRunning=None,
+        SessionFlapCount=None,
+        SessionsAutoCreated=None,
+        SessionsConfigured=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BfdAggregatedStatistics
         """Finds and retrieves bfdAggregatedStatistics resources from the server.
 

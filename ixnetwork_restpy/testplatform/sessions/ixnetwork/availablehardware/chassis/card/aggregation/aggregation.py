@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,72 @@ class Aggregation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'aggregation'
+    _SDM_NAME = "aggregation"
     _SDM_ATT_MAP = {
-        'ActivePort': 'activePort',
-        'ActivePorts': 'activePorts',
-        'AvailableModes': 'availableModes',
-        'Mode': 'mode',
-        'ResourcePorts': 'resourcePorts',
+        "ActivePort": "activePort",
+        "ActivePorts": "activePorts",
+        "AvailableModes": "availableModes",
+        "Mode": "mode",
+        "ResourcePorts": "resourcePorts",
     }
     _SDM_ENUM_MAP = {
-        'mode': ['normal', 'tenGig', 'fortyGig', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut', 'novus5GOneByTenGigNonFanOut', 'novus5GOneByTwentyFiveGigNonFanOut', 'novus5GOneByFiftyGigNonFanOut', 'novus5GOneByHundredGigNonFanOut', 'starTwoByFourHundredGigNonFannedOutPAM4', 'starFourByTwoHundredGigFannedOutPAM4', 'starEightByHundredGigFannedOutPAM4', 'starFourByHundredGigFannedOutNRZ', 'starSixteenByFiftyGigFannedOutPAM4', 'starEightByFiftyGigFannedOutNRZ', 'starFourByFortyGigFannedOutNRZ', 'starSixteenByTwentyFiveGigFannedOutNRZ', 'starSixteenByTenGigFannedOutNRZ', 'novusHundredGigNonFanOutHighStream', 'novusFourByTwentyFiveGigNonFanOutHighStream', 'novusTwoByFiftyGigNonFanOutHighStream', 'novusOneByFortyGigNonFanOutHighStream', 'novusFourByTenGigNonFanOutHighStream'],
+        "mode": [
+            "normal",
+            "tenGig",
+            "fortyGig",
+            "singleMode",
+            "dualMode",
+            "hundredGigNonFanOut",
+            "fortyGigFanOut",
+            "threeByTenGigFanOut",
+            "eightByTenGigFanOut",
+            "fourByTwentyFiveGigNonFanOut",
+            "twoByTwentyFiveGigNonFanOut",
+            "oneByFiftyGigNonFanOut",
+            "fortyGigNonFanOut",
+            "oneByTenGigFanOut",
+            "fourByTenGigFanOut",
+            "incompatibleMode",
+            "hundredGigCapturePlayback",
+            "fortyGigCapturePlayback",
+            "novusHundredGigNonFanOut",
+            "novusFourByTwentyFiveGigNonFanOut",
+            "novusTwoByFiftyGigNonFanOut",
+            "novusOneByFortyGigNonFanOut",
+            "novusFourByTenGigNonFanOut",
+            "krakenOneByFourHundredGigNonFanOut",
+            "krakenOneByTwoHundredGigNonFanOut",
+            "krakenTwoByOneHundredGigFanOut",
+            "krakenFourByFiftyGigFanOut",
+            "aresOneOneByFourHundredGigNonFanOut",
+            "aresOneTwoByTwoHundredGigFanOut",
+            "aresOneFourByOneHundredGigFanOut",
+            "aresOneFourByOneHundredGigMacSecFanOut",
+            "aresOneEightByFiftyGigFanOut",
+            "uhdOneHundredEightByHundredGigNonFanOut",
+            "uhdOneHundredEightByFortyGigNonFanOut",
+            "uhdOneHundredSixteenByFiftyGigFanOut",
+            "uhdOneHundredThirtyTwoByTwentyFiveGigFanOut",
+            "uhdOneHundredThirtyTwoByTenGigFanOut",
+            "novus5GOneByTenGigNonFanOut",
+            "novus5GOneByTwentyFiveGigNonFanOut",
+            "novus5GOneByFiftyGigNonFanOut",
+            "novus5GOneByHundredGigNonFanOut",
+            "starTwoByFourHundredGigNonFannedOutPAM4",
+            "starFourByTwoHundredGigFannedOutPAM4",
+            "starEightByHundredGigFannedOutPAM4",
+            "starFourByHundredGigFannedOutNRZ",
+            "starSixteenByFiftyGigFannedOutPAM4",
+            "starEightByFiftyGigFannedOutNRZ",
+            "starFourByFortyGigFannedOutNRZ",
+            "starSixteenByTwentyFiveGigFannedOutNRZ",
+            "starSixteenByTenGigFannedOutNRZ",
+            "novusHundredGigNonFanOutHighStream",
+            "novusFourByTwentyFiveGigNonFanOutHighStream",
+            "novusTwoByFiftyGigNonFanOutHighStream",
+            "novusOneByFortyGigNonFanOutHighStream",
+            "novusFourByTenGigNonFanOutHighStream",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,12 +108,12 @@ class Aggregation(Base):
     @property
     def ActivePort(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): Deprecated. Use activePorts instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActivePort'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActivePort"])
 
     @property
     def ActivePorts(self):
@@ -66,7 +123,7 @@ class Aggregation(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All active ports from Resource Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActivePorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActivePorts"])
 
     @property
     def AvailableModes(self):
@@ -76,7 +133,7 @@ class Aggregation(Base):
         -------
         - list(str[normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream]): Gets the supported resource group modes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AvailableModes'])
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableModes"])
 
     @property
     def Mode(self):
@@ -86,11 +143,12 @@ class Aggregation(Base):
         -------
         - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream): Resource Group mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mode"])
+
     @Mode.setter
     def Mode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mode"], value)
 
     @property
     def ResourcePorts(self):
@@ -100,7 +158,7 @@ class Aggregation(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All ports from Resource Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResourcePorts'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResourcePorts"])
 
     def update(self, Mode=None):
         # type: (str) -> Aggregation
@@ -118,7 +176,7 @@ class Aggregation(Base):
 
     def add(self, Mode=None):
         # type: (str) -> Aggregation
-        """Adds a new aggregation resource on the json, only valid with config assistant
+        """Adds a new aggregation resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -134,7 +192,14 @@ class Aggregation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActivePort=None, ActivePorts=None, AvailableModes=None, Mode=None, ResourcePorts=None):
+    def find(
+        self,
+        ActivePort=None,
+        ActivePorts=None,
+        AvailableModes=None,
+        Mode=None,
+        ResourcePorts=None,
+    ):
         # type: (str, List[str], List[str], str, List[str]) -> Aggregation
         """Finds and retrieves aggregation resources from the server.
 

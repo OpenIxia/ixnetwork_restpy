@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class DceNodeTopologyRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceNodeTopologyRange'
+    _SDM_NAME = "dceNodeTopologyRange"
     _SDM_ATT_MAP = {
-        'BroadcastPriority': 'broadcastPriority',
-        'IncludeL2Topology': 'includeL2Topology',
-        'InternodeNicknameIncrement': 'internodeNicknameIncrement',
-        'NicknameCount': 'nicknameCount',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'StartNickname': 'startNickname',
-        'TopologyCount': 'topologyCount',
-        'TopologyId': 'topologyId',
+        "BroadcastPriority": "broadcastPriority",
+        "IncludeL2Topology": "includeL2Topology",
+        "InternodeNicknameIncrement": "internodeNicknameIncrement",
+        "NicknameCount": "nicknameCount",
+        "NoOfTreesToCompute": "noOfTreesToCompute",
+        "StartNickname": "startNickname",
+        "TopologyCount": "topologyCount",
+        "TopologyId": "topologyId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DceNodeTopologyRange, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class DceNodeTopologyRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_b15c6822c508a957290b5d3ed2b3ea4e import DceNodeInterestedVlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_b15c6822c508a957290b5d3ed2b3ea4e import (
+            DceNodeInterestedVlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeInterestedVlanRange', None) is not None:
-                return self._properties.get('DceNodeInterestedVlanRange')
+            if self._properties.get("DceNodeInterestedVlanRange", None) is not None:
+                return self._properties.get("DceNodeInterestedVlanRange")
         return DceNodeInterestedVlanRange(self)
 
     @property
@@ -76,11 +79,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: Sets the priority in which the topology is broadcast.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BroadcastPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["BroadcastPriority"])
+
     @BroadcastPriority.setter
     def BroadcastPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BroadcastPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BroadcastPriority"], value)
 
     @property
     def IncludeL2Topology(self):
@@ -90,11 +94,12 @@ class DceNodeTopologyRange(Base):
         -------
         - bool: If true, includes the L2 topology.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeL2Topology'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeL2Topology"])
+
     @IncludeL2Topology.setter
     def IncludeL2Topology(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeL2Topology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeL2Topology"], value)
 
     @property
     def InternodeNicknameIncrement(self):
@@ -104,11 +109,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: The increment step to be used for creating the internode increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternodeNicknameIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternodeNicknameIncrement"])
+
     @InternodeNicknameIncrement.setter
     def InternodeNicknameIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternodeNicknameIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternodeNicknameIncrement"], value)
 
     @property
     def NicknameCount(self):
@@ -118,11 +124,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: The count of the nickname.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NicknameCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NicknameCount"])
+
     @NicknameCount.setter
     def NicknameCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NicknameCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NicknameCount"], value)
 
     @property
     def NoOfTreesToCompute(self):
@@ -132,11 +139,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: The number of trees to compute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfTreesToCompute"])
+
     @NoOfTreesToCompute.setter
     def NoOfTreesToCompute(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfTreesToCompute"], value)
 
     @property
     def StartNickname(self):
@@ -146,11 +154,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: If true, uses the nickname.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartNickname"])
+
     @StartNickname.setter
     def StartNickname(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartNickname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartNickname"], value)
 
     @property
     def TopologyCount(self):
@@ -160,11 +169,12 @@ class DceNodeTopologyRange(Base):
         -------
         - number: The count of the topology.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopologyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyCount"])
+
     @TopologyCount.setter
     def TopologyCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopologyCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopologyCount"], value)
 
     @property
     def TopologyId(self):
@@ -174,13 +184,24 @@ class DceNodeTopologyRange(Base):
         -------
         - number: The unique identification number of the topology range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TopologyId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyId"])
+
     @TopologyId.setter
     def TopologyId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TopologyId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TopologyId"], value)
 
-    def update(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+    def update(
+        self,
+        BroadcastPriority=None,
+        IncludeL2Topology=None,
+        InternodeNicknameIncrement=None,
+        NicknameCount=None,
+        NoOfTreesToCompute=None,
+        StartNickname=None,
+        TopologyCount=None,
+        TopologyId=None,
+    ):
         # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Updates dceNodeTopologyRange resource on the server.
 
@@ -201,7 +222,17 @@ class DceNodeTopologyRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+    def add(
+        self,
+        BroadcastPriority=None,
+        IncludeL2Topology=None,
+        InternodeNicknameIncrement=None,
+        NicknameCount=None,
+        NoOfTreesToCompute=None,
+        StartNickname=None,
+        TopologyCount=None,
+        TopologyId=None,
+    ):
         # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Adds a new dceNodeTopologyRange resource on the server and adds it to the container.
 
@@ -236,7 +267,17 @@ class DceNodeTopologyRange(Base):
         """
         self._delete()
 
-    def find(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+    def find(
+        self,
+        BroadcastPriority=None,
+        IncludeL2Topology=None,
+        InternodeNicknameIncrement=None,
+        NicknameCount=None,
+        NoOfTreesToCompute=None,
+        StartNickname=None,
+        TopologyCount=None,
+        TopologyId=None,
+    ):
         # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Finds and retrieves dceNodeTopologyRange resources from the server.
 

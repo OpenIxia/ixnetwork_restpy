@@ -445,7 +445,7 @@ class SwitchTablesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> SwitchTablesList
-        """Adds a new switchTablesList resource on the json, only valid with config assistant
+        """Adds a new switchTablesList resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,16 @@ class CistLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cistLearnedInfo'
+    _SDM_NAME = "cistLearnedInfo"
     _SDM_ATT_MAP = {
-        'RegRootCost': 'regRootCost',
-        'RegRootMac': 'regRootMac',
-        'RegRootPriority': 'regRootPriority',
-        'RootCost': 'rootCost',
-        'RootMac': 'rootMac',
-        'RootPriority': 'rootPriority',
+        "RegRootCost": "regRootCost",
+        "RegRootMac": "regRootMac",
+        "RegRootPriority": "regRootPriority",
+        "RootCost": "rootCost",
+        "RootMac": "rootMac",
+        "RootPriority": "rootPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CistLearnedInfo, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class CistLearnedInfo(Base):
         -------
         - number: (Read-only) The cost for the shortest path from the advertising bridge to the regional root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegRootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegRootCost"])
 
     @property
     def RegRootMac(self):
@@ -65,7 +65,7 @@ class CistLearnedInfo(Base):
         -------
         - str: (Read-only) The regional root MAC address being advertised by the bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegRootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegRootMac"])
 
     @property
     def RegRootPriority(self):
@@ -75,7 +75,7 @@ class CistLearnedInfo(Base):
         -------
         - number: (Read-only) The regional root priority being advertised by the bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegRootPriority"])
 
     @property
     def RootCost(self):
@@ -85,7 +85,7 @@ class CistLearnedInfo(Base):
         -------
         - number: (Read-only) The cost for the shortest path from the advertising bridge to the root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootCost'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootCost"])
 
     @property
     def RootMac(self):
@@ -95,7 +95,7 @@ class CistLearnedInfo(Base):
         -------
         - str: (Read-only) The root bridge MAC address being advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootMac"])
 
     @property
     def RootPriority(self):
@@ -105,9 +105,17 @@ class CistLearnedInfo(Base):
         -------
         - number: (Read-only) The priority being advertised for the root bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootPriority"])
 
-    def find(self, RegRootCost=None, RegRootMac=None, RegRootPriority=None, RootCost=None, RootMac=None, RootPriority=None):
+    def find(
+        self,
+        RegRootCost=None,
+        RegRootMac=None,
+        RegRootPriority=None,
+        RootCost=None,
+        RootMac=None,
+        RootPriority=None,
+    ):
         # type: (int, str, int, int, str, int) -> CistLearnedInfo
         """Finds and retrieves cistLearnedInfo resources from the server.
 

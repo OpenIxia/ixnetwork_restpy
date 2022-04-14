@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,27 +35,26 @@ class SpbmNodeIsIdRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbmNodeIsIdRange'
+    _SDM_NAME = "spbmNodeIsIdRange"
     _SDM_ATT_MAP = {
-        'CMacAddressCount': 'cMacAddressCount',
-        'CMacAddressStep': 'cMacAddressStep',
-        'ITagEthernetType': 'iTagEthernetType',
-        'InterNodeCmacAddress': 'interNodeCmacAddress',
-        'InterNodeCvlan': 'interNodeCvlan',
-        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
-        'InterNodeSvlan': 'interNodeSvlan',
-        'IsId': 'isId',
-        'RBit': 'rBit',
-        'StartCmacAddress': 'startCmacAddress',
-        'StartCvlan': 'startCvlan',
-        'StartSvlan': 'startSvlan',
-        'TBit': 'tBit',
-        'TrafficDestMacAddress': 'trafficDestMacAddress',
-        'TransmissionType': 'transmissionType',
-        'VlanType': 'vlanType',
+        "CMacAddressCount": "cMacAddressCount",
+        "CMacAddressStep": "cMacAddressStep",
+        "ITagEthernetType": "iTagEthernetType",
+        "InterNodeCmacAddress": "interNodeCmacAddress",
+        "InterNodeCvlan": "interNodeCvlan",
+        "InterNodeIsIdIncrement": "interNodeIsIdIncrement",
+        "InterNodeSvlan": "interNodeSvlan",
+        "IsId": "isId",
+        "RBit": "rBit",
+        "StartCmacAddress": "startCmacAddress",
+        "StartCvlan": "startCvlan",
+        "StartSvlan": "startSvlan",
+        "TBit": "tBit",
+        "TrafficDestMacAddress": "trafficDestMacAddress",
+        "TransmissionType": "transmissionType",
+        "VlanType": "vlanType",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbmNodeIsIdRange, self).__init__(parent, list_op)
@@ -67,11 +67,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The number of C-MAC addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMacAddressCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMacAddressCount"])
+
     @CMacAddressCount.setter
     def CMacAddressCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CMacAddressCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CMacAddressCount"], value)
 
     @property
     def CMacAddressStep(self):
@@ -81,11 +82,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - str: The incremental value of C-MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CMacAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["CMacAddressStep"])
+
     @CMacAddressStep.setter
     def CMacAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CMacAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CMacAddressStep"], value)
 
     @property
     def ITagEthernetType(self):
@@ -95,7 +97,7 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The I-Tag Ethernet type. An I-Tag is a multiplexing tag for service instance scaling in Provider Bridged Networks.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ITagEthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ITagEthernetType"])
 
     @property
     def InterNodeCmacAddress(self):
@@ -105,11 +107,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - str: The incremental value of the Inter Node C-MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeCmacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeCmacAddress"])
+
     @InterNodeCmacAddress.setter
     def InterNodeCmacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeCmacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeCmacAddress"], value)
 
     @property
     def InterNodeCvlan(self):
@@ -119,11 +122,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The Inter Node Stacked VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeCvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeCvlan"])
+
     @InterNodeCvlan.setter
     def InterNodeCvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeCvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeCvlan"], value)
 
     @property
     def InterNodeIsIdIncrement(self):
@@ -133,11 +137,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The incremental value of Inter Node service identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeIsIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeIsIdIncrement"])
+
     @InterNodeIsIdIncrement.setter
     def InterNodeIsIdIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeIsIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeIsIdIncrement"], value)
 
     @property
     def InterNodeSvlan(self):
@@ -147,11 +152,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The Inter Node Single VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterNodeSvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterNodeSvlan"])
+
     @InterNodeSvlan.setter
     def InterNodeSvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterNodeSvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterNodeSvlan"], value)
 
     @property
     def IsId(self):
@@ -161,11 +167,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The I-component service identifier. The maximum value is 16777215. The minimum value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsId"])
+
     @IsId.setter
     def IsId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsId"], value)
 
     @property
     def RBit(self):
@@ -175,11 +182,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - bool: The Restart State bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["RBit"])
+
     @RBit.setter
     def RBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RBit"], value)
 
     @property
     def StartCmacAddress(self):
@@ -189,11 +197,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - str: The starting C-MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartCmacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartCmacAddress"])
+
     @StartCmacAddress.setter
     def StartCmacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartCmacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartCmacAddress"], value)
 
     @property
     def StartCvlan(self):
@@ -203,11 +212,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The starting value of Stacked VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartCvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartCvlan"])
+
     @StartCvlan.setter
     def StartCvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartCvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartCvlan"], value)
 
     @property
     def StartSvlan(self):
@@ -217,11 +227,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The starting value of Single VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSvlan"])
+
     @StartSvlan.setter
     def StartSvlan(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSvlan"], value)
 
     @property
     def TBit(self):
@@ -231,11 +242,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - bool: The external route tag bit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["TBit"])
+
     @TBit.setter
     def TBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TBit"], value)
 
     @property
     def TrafficDestMacAddress(self):
@@ -245,11 +257,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - str: The traffic-destination MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficDestMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficDestMacAddress"])
+
     @TrafficDestMacAddress.setter
     def TrafficDestMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficDestMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficDestMacAddress"], value)
 
     @property
     def TransmissionType(self):
@@ -259,11 +272,12 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: Select the type of packet transmission. Options include Unicast and Multicast.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmissionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmissionType"])
+
     @TransmissionType.setter
     def TransmissionType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmissionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmissionType"], value)
 
     @property
     def VlanType(self):
@@ -273,13 +287,31 @@ class SpbmNodeIsIdRange(Base):
         -------
         - number: The type of VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanType'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanType"])
+
     @VlanType.setter
     def VlanType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanType"], value)
 
-    def update(self, CMacAddressCount=None, CMacAddressStep=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, IsId=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
+    def update(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        IsId=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TrafficDestMacAddress=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, str, int, int, int, int, bool, str, int, int, bool, str, int, int) -> SpbmNodeIsIdRange
         """Updates spbmNodeIsIdRange resource on the server.
 
@@ -307,7 +339,24 @@ class SpbmNodeIsIdRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CMacAddressCount=None, CMacAddressStep=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, IsId=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
+    def add(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        IsId=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TrafficDestMacAddress=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, str, int, int, int, int, bool, str, int, int, bool, str, int, int) -> SpbmNodeIsIdRange
         """Adds a new spbmNodeIsIdRange resource on the server and adds it to the container.
 
@@ -349,7 +398,25 @@ class SpbmNodeIsIdRange(Base):
         """
         self._delete()
 
-    def find(self, CMacAddressCount=None, CMacAddressStep=None, ITagEthernetType=None, InterNodeCmacAddress=None, InterNodeCvlan=None, InterNodeIsIdIncrement=None, InterNodeSvlan=None, IsId=None, RBit=None, StartCmacAddress=None, StartCvlan=None, StartSvlan=None, TBit=None, TrafficDestMacAddress=None, TransmissionType=None, VlanType=None):
+    def find(
+        self,
+        CMacAddressCount=None,
+        CMacAddressStep=None,
+        ITagEthernetType=None,
+        InterNodeCmacAddress=None,
+        InterNodeCvlan=None,
+        InterNodeIsIdIncrement=None,
+        InterNodeSvlan=None,
+        IsId=None,
+        RBit=None,
+        StartCmacAddress=None,
+        StartCvlan=None,
+        StartSvlan=None,
+        TBit=None,
+        TrafficDestMacAddress=None,
+        TransmissionType=None,
+        VlanType=None,
+    ):
         # type: (int, str, int, str, int, int, int, int, bool, str, int, int, bool, str, int, int) -> SpbmNodeIsIdRange
         """Finds and retrieves spbmNodeIsIdRange resources from the server.
 

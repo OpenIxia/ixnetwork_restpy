@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class Dhcpv6server(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6server'
+    _SDM_NAME = "dhcpv6server"
     _SDM_ATT_MAP = {
-        'AdvertiseTimeout': 'advertiseTimeout',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'PingCheck': 'pingCheck',
-        'PingTimeout': 'pingTimeout',
-        'ReconfigureMaxRc': 'reconfigureMaxRc',
-        'ReconfigureTimeout': 'reconfigureTimeout',
-        'RowNames': 'rowNames',
+        "AdvertiseTimeout": "advertiseTimeout",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "PingCheck": "pingCheck",
+        "PingTimeout": "pingTimeout",
+        "ReconfigureMaxRc": "reconfigureMaxRc",
+        "ReconfigureTimeout": "reconfigureTimeout",
+        "RowNames": "rowNames",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv6server, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class Dhcpv6server(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4server.reconfigurerate.reconfigurerate_b53721be9adf900572817c723323827f import ReconfigureRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4server.reconfigurerate.reconfigurerate_b53721be9adf900572817c723323827f import (
+            ReconfigureRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ReconfigureRate', None) is not None:
-                return self._properties.get('ReconfigureRate')
+            if self._properties.get("ReconfigureRate", None) is not None:
+                return self._properties.get("ReconfigureRate")
         return ReconfigureRate(self)._select()
 
     @property
@@ -78,10 +81,13 @@ class Dhcpv6server(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import (
+            TlvEditor,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvEditor', None) is not None:
-                return self._properties.get('TlvEditor')
+            if self._properties.get("TlvEditor", None) is not None:
+                return self._properties.get("TlvEditor")
         return TlvEditor(self)
 
     @property
@@ -93,7 +99,10 @@ class Dhcpv6server(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise timeout in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseTimeout"])
+        )
 
     @property
     def Count(self):
@@ -103,7 +112,7 @@ class Dhcpv6server(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -113,7 +122,7 @@ class Dhcpv6server(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -123,11 +132,12 @@ class Dhcpv6server(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PingCheck(self):
@@ -138,7 +148,8 @@ class Dhcpv6server(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): When enabled, the DHCP Server will not assign IP addresses that areresponding to ICMP echo requests (PING) within a certain time period.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PingCheck']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PingCheck"]))
 
     @property
     def PingTimeout(self):
@@ -149,7 +160,8 @@ class Dhcpv6server(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of seconds the DHCP Server will wait for anICMP Echo response before assigning the address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PingTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PingTimeout"]))
 
     @property
     def ReconfigureMaxRc(self):
@@ -160,7 +172,10 @@ class Dhcpv6server(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Reconfigure retry attempts
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReconfigureMaxRc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReconfigureMaxRc"])
+        )
 
     @property
     def ReconfigureTimeout(self):
@@ -171,7 +186,10 @@ class Dhcpv6server(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): RFC 3315 Reconfigure timeout in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReconfigureTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReconfigureTimeout"])
+        )
 
     @property
     def RowNames(self):
@@ -181,7 +199,7 @@ class Dhcpv6server(Base):
         -------
         - list(str): Name of rows
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
 
     def update(self, Name=None):
         # type: (str) -> Dhcpv6server
@@ -243,7 +261,15 @@ class Dhcpv6server(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AdvertiseTimeout=None, PingCheck=None, PingTimeout=None, ReconfigureMaxRc=None, ReconfigureTimeout=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AdvertiseTimeout=None,
+        PingCheck=None,
+        PingTimeout=None,
+        ReconfigureMaxRc=None,
+        ReconfigureTimeout=None,
+    ):
         """Base class infrastructure that gets a list of dhcpv6server device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

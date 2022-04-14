@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,60 +33,60 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'AlgorithmType': 'algorithmType',
-        'CalculateJitter': 'calculateJitter',
-        'CalculateLatency': 'calculateLatency',
-        'ContinuePassFailed': 'continuePassFailed',
-        'CurrentService': 'currentService',
-        'DelayAfterTransmit': 'delayAfterTransmit',
-        'Duration': 'duration',
-        'DurationLabel': 'durationLabel',
-        'EnableBurstTest': 'enableBurstTest',
-        'EnableDataIntegrity': 'enableDataIntegrity',
-        'EnableLatencyPassFailLabel': 'enableLatencyPassFailLabel',
-        'EnableLayer1Rate': 'enableLayer1Rate',
-        'EnableStandardDeviationPassFailLabel': 'enableStandardDeviationPassFailLabel',
-        'ForceRegenerate': 'forceRegenerate',
-        'FrameDataDetailedResults': 'frameDataDetailedResults',
-        'FrameLossFramesMode': 'frameLossFramesMode',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'GenerateTrackingOptionAggregationFiles': 'generateTrackingOptionAggregationFiles',
-        'IsColorAware': 'isColorAware',
-        'IsServicePeformanceMode': 'isServicePeformanceMode',
-        'IterationInitialRate': 'iterationInitialRate',
-        'IterationStep': 'iterationStep',
-        'LatencyBins': 'latencyBins',
-        'LatencyBinsEnabled': 'latencyBinsEnabled',
-        'LatencyType': 'latencyType',
-        'LearnSnoopConfig': 'learnSnoopConfig',
-        'NoOfFrames': 'noOfFrames',
-        'Numtrials': 'numtrials',
-        'PortDelayEnabled': 'portDelayEnabled',
-        'PortDelayUnit': 'portDelayUnit',
-        'PortDelayValue': 'portDelayValue',
-        'ProtocolItem': 'protocolItem',
-        'ReportSequenceError': 'reportSequenceError',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'Rfc2889ordering': 'rfc2889ordering',
-        'ServiceIterations': 'serviceIterations',
-        'ServicesList': 'servicesList',
-        'SkipDefaultPassFailEvaluation': 'skipDefaultPassFailEvaluation',
-        'StaggeredStart': 'staggeredStart',
-        'TestTrafficType': 'testTrafficType',
-        'TransmitMode': 'transmitMode',
-        'TxDelay': 'txDelay',
+        "AlgorithmType": "algorithmType",
+        "CalculateJitter": "calculateJitter",
+        "CalculateLatency": "calculateLatency",
+        "ContinuePassFailed": "continuePassFailed",
+        "CurrentService": "currentService",
+        "DelayAfterTransmit": "delayAfterTransmit",
+        "Duration": "duration",
+        "DurationLabel": "durationLabel",
+        "EnableBurstTest": "enableBurstTest",
+        "EnableDataIntegrity": "enableDataIntegrity",
+        "EnableLatencyPassFailLabel": "enableLatencyPassFailLabel",
+        "EnableLayer1Rate": "enableLayer1Rate",
+        "EnableStandardDeviationPassFailLabel": "enableStandardDeviationPassFailLabel",
+        "ForceRegenerate": "forceRegenerate",
+        "FrameDataDetailedResults": "frameDataDetailedResults",
+        "FrameLossFramesMode": "frameLossFramesMode",
+        "FrameSizeMode": "frameSizeMode",
+        "Gap": "gap",
+        "GenerateTrackingOptionAggregationFiles": "generateTrackingOptionAggregationFiles",
+        "IsColorAware": "isColorAware",
+        "IsServicePeformanceMode": "isServicePeformanceMode",
+        "IterationInitialRate": "iterationInitialRate",
+        "IterationStep": "iterationStep",
+        "LatencyBins": "latencyBins",
+        "LatencyBinsEnabled": "latencyBinsEnabled",
+        "LatencyType": "latencyType",
+        "LearnSnoopConfig": "learnSnoopConfig",
+        "NoOfFrames": "noOfFrames",
+        "Numtrials": "numtrials",
+        "PortDelayEnabled": "portDelayEnabled",
+        "PortDelayUnit": "portDelayUnit",
+        "PortDelayValue": "portDelayValue",
+        "ProtocolItem": "protocolItem",
+        "ReportSequenceError": "reportSequenceError",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "Rfc2889ordering": "rfc2889ordering",
+        "ServiceIterations": "serviceIterations",
+        "ServicesList": "servicesList",
+        "SkipDefaultPassFailEvaluation": "skipDefaultPassFailEvaluation",
+        "StaggeredStart": "staggeredStart",
+        "TestTrafficType": "testTrafficType",
+        "TransmitMode": "transmitMode",
+        "TxDelay": "txDelay",
     }
     _SDM_ENUM_MAP = {
-        'algorithmType': ['srvConfiguration', 'srvPerformance'],
-        'frameSizeMode': ['custom', 'fixed', 'increment', 'random'],
-        'latencyType': ['cutThrough', 'mef', 'storeForward'],
-        'portDelayUnit': ['bytes', 'nanoseconds'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
-        'rfc2889ordering': ['noOrdering', 'unchanged', 'val2889Ordering'],
-        'transmitMode': ['noFrames', 'useDuration'],
+        "algorithmType": ["srvConfiguration", "srvPerformance"],
+        "frameSizeMode": ["custom", "fixed", "increment", "random"],
+        "latencyType": ["cutThrough", "mef", "storeForward"],
+        "portDelayUnit": ["bytes", "nanoseconds"],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
+        "rfc2889ordering": ["noOrdering", "unchanged", "val2889Ordering"],
+        "transmitMode": ["noFrames", "useDuration"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -99,11 +100,12 @@ class TestConfig(Base):
         -------
         - str(srvConfiguration | srvPerformance): The type of algorithm used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlgorithmType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlgorithmType"])
+
     @AlgorithmType.setter
     def AlgorithmType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlgorithmType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlgorithmType"], value)
 
     @property
     def CalculateJitter(self):
@@ -113,11 +115,12 @@ class TestConfig(Base):
         -------
         - bool: Calculates the interval between timestamps of PGID packet arrivals.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateJitter'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateJitter"])
+
     @CalculateJitter.setter
     def CalculateJitter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateJitter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateJitter"], value)
 
     @property
     def CalculateLatency(self):
@@ -127,11 +130,12 @@ class TestConfig(Base):
         -------
         - bool: Calculates and reports latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateLatency"])
+
     @CalculateLatency.setter
     def CalculateLatency(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateLatency"], value)
 
     @property
     def ContinuePassFailed(self):
@@ -141,11 +145,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ContinuePassFailed'])
+        return self._get_attribute(self._SDM_ATT_MAP["ContinuePassFailed"])
+
     @ContinuePassFailed.setter
     def ContinuePassFailed(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ContinuePassFailed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ContinuePassFailed"], value)
 
     @property
     def CurrentService(self):
@@ -155,11 +160,12 @@ class TestConfig(Base):
         -------
         - str: The service in use currently.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentService'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentService"])
+
     @CurrentService.setter
     def CurrentService(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CurrentService'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CurrentService"], value)
 
     @property
     def DelayAfterTransmit(self):
@@ -169,11 +175,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the amount of delay after every transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"])
+
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"], value)
 
     @property
     def Duration(self):
@@ -183,11 +190,12 @@ class TestConfig(Base):
         -------
         - number: The duration of the test in hours, which is used to calculate the number of frames to transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def DurationLabel(self):
@@ -197,11 +205,12 @@ class TestConfig(Base):
         -------
         - str: The label defining the traffic duration time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DurationLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["DurationLabel"])
+
     @DurationLabel.setter
     def DurationLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DurationLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DurationLabel"], value)
 
     @property
     def EnableBurstTest(self):
@@ -211,11 +220,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables burst test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBurstTest'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBurstTest"])
+
     @EnableBurstTest.setter
     def EnableBurstTest(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBurstTest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBurstTest"], value)
 
     @property
     def EnableDataIntegrity(self):
@@ -225,11 +235,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables data integrity test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"])
+
     @EnableDataIntegrity.setter
     def EnableDataIntegrity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"], value)
 
     @property
     def EnableLatencyPassFailLabel(self):
@@ -239,11 +250,12 @@ class TestConfig(Base):
         -------
         - str: The latency pass fail criteria is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLatencyPassFailLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLatencyPassFailLabel"])
+
     @EnableLatencyPassFailLabel.setter
     def EnableLatencyPassFailLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLatencyPassFailLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLatencyPassFailLabel"], value)
 
     @property
     def EnableLayer1Rate(self):
@@ -253,11 +265,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"])
+
     @EnableLayer1Rate.setter
     def EnableLayer1Rate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"], value)
 
     @property
     def EnableStandardDeviationPassFailLabel(self):
@@ -267,11 +280,16 @@ class TestConfig(Base):
         -------
         - str: Standard Deviation for the Pass/Fail criteria is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStandardDeviationPassFailLabel'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableStandardDeviationPassFailLabel"]
+        )
+
     @EnableStandardDeviationPassFailLabel.setter
     def EnableStandardDeviationPassFailLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStandardDeviationPassFailLabel'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableStandardDeviationPassFailLabel"], value
+        )
 
     @property
     def ForceRegenerate(self):
@@ -281,11 +299,12 @@ class TestConfig(Base):
         -------
         - bool: Initiates a forced regeneration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceRegenerate'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceRegenerate"])
+
     @ForceRegenerate.setter
     def ForceRegenerate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceRegenerate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceRegenerate"], value)
 
     @property
     def FrameDataDetailedResults(self):
@@ -295,11 +314,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameDataDetailedResults'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameDataDetailedResults"])
+
     @FrameDataDetailedResults.setter
     def FrameDataDetailedResults(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameDataDetailedResults'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameDataDetailedResults"], value)
 
     @property
     def FrameLossFramesMode(self):
@@ -309,11 +329,12 @@ class TestConfig(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameLossFramesMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameLossFramesMode"])
+
     @FrameLossFramesMode.setter
     def FrameLossFramesMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameLossFramesMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameLossFramesMode"], value)
 
     @property
     def FrameSizeMode(self):
@@ -323,11 +344,12 @@ class TestConfig(Base):
         -------
         - str(custom | fixed | increment | random): This attribute is the frame size mode for the Quad Gaussian.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def Gap(self):
@@ -337,11 +359,12 @@ class TestConfig(Base):
         -------
         - number: The gap in transmission of frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
@@ -351,11 +374,16 @@ class TestConfig(Base):
         -------
         - bool: If true, enables the tracking option in aggregation files.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"]
+        )
+
     @GenerateTrackingOptionAggregationFiles.setter
     def GenerateTrackingOptionAggregationFiles(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"], value
+        )
 
     @property
     def IsColorAware(self):
@@ -365,11 +393,12 @@ class TestConfig(Base):
         -------
         - bool: If true, it becomes aware of the color.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsColorAware'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsColorAware"])
+
     @IsColorAware.setter
     def IsColorAware(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsColorAware'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsColorAware"], value)
 
     @property
     def IsServicePeformanceMode(self):
@@ -379,11 +408,12 @@ class TestConfig(Base):
         -------
         - str: The service performance mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsServicePeformanceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsServicePeformanceMode"])
+
     @IsServicePeformanceMode.setter
     def IsServicePeformanceMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsServicePeformanceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsServicePeformanceMode"], value)
 
     @property
     def IterationInitialRate(self):
@@ -393,11 +423,12 @@ class TestConfig(Base):
         -------
         - str: The initial rate of iteration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IterationInitialRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["IterationInitialRate"])
+
     @IterationInitialRate.setter
     def IterationInitialRate(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IterationInitialRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IterationInitialRate"], value)
 
     @property
     def IterationStep(self):
@@ -407,25 +438,27 @@ class TestConfig(Base):
         -------
         - str: The iteration step.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IterationStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IterationStep"])
+
     @IterationStep.setter
     def IterationStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IterationStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IterationStep"], value)
 
     @property
     def LatencyBins(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Sets the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBins'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBins"])
+
     @LatencyBins.setter
     def LatencyBins(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBins'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBins"], value)
 
     @property
     def LatencyBinsEnabled(self):
@@ -435,11 +468,12 @@ class TestConfig(Base):
         -------
         - bool: Enables the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"])
+
     @LatencyBinsEnabled.setter
     def LatencyBinsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"], value)
 
     @property
     def LatencyType(self):
@@ -449,11 +483,12 @@ class TestConfig(Base):
         -------
         - str(cutThrough | mef | storeForward): The type of latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyType"])
+
     @LatencyType.setter
     def LatencyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyType"], value)
 
     @property
     def LearnSnoopConfig(self):
@@ -463,11 +498,12 @@ class TestConfig(Base):
         -------
         - bool: The learned snoop configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearnSnoopConfig'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearnSnoopConfig"])
+
     @LearnSnoopConfig.setter
     def LearnSnoopConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearnSnoopConfig'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearnSnoopConfig"], value)
 
     @property
     def NoOfFrames(self):
@@ -477,11 +513,12 @@ class TestConfig(Base):
         -------
         - str: The number of frames sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfFrames'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfFrames"])
+
     @NoOfFrames.setter
     def NoOfFrames(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfFrames'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfFrames"], value)
 
     @property
     def Numtrials(self):
@@ -491,11 +528,12 @@ class TestConfig(Base):
         -------
         - number: This signifies the Number of trials.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def PortDelayEnabled(self):
@@ -505,11 +543,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayEnabled"])
+
     @PortDelayEnabled.setter
     def PortDelayEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayEnabled"], value)
 
     @property
     def PortDelayUnit(self):
@@ -519,11 +558,12 @@ class TestConfig(Base):
         -------
         - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayUnit"])
+
     @PortDelayUnit.setter
     def PortDelayUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayUnit"], value)
 
     @property
     def PortDelayValue(self):
@@ -533,11 +573,12 @@ class TestConfig(Base):
         -------
         - number: Sets the port delay value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayValue"])
+
     @PortDelayValue.setter
     def PortDelayValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayValue"], value)
 
     @property
     def ProtocolItem(self):
@@ -547,11 +588,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def ReportSequenceError(self):
@@ -561,11 +603,12 @@ class TestConfig(Base):
         -------
         - bool: If true, the sequence error, if found, is reported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportSequenceError'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportSequenceError"])
+
     @ReportSequenceError.setter
     def ReportSequenceError(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportSequenceError'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportSequenceError"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -575,11 +618,12 @@ class TestConfig(Base):
         -------
         - str(gbps | gBps | kbps | kBps | mbps | mBps): The unit of rate for throughput.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def Rfc2889ordering(self):
@@ -589,11 +633,12 @@ class TestConfig(Base):
         -------
         - str(noOrdering | unchanged | val2889Ordering): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rfc2889ordering'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rfc2889ordering"])
+
     @Rfc2889ordering.setter
     def Rfc2889ordering(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rfc2889ordering'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rfc2889ordering"], value)
 
     @property
     def ServiceIterations(self):
@@ -603,11 +648,12 @@ class TestConfig(Base):
         -------
         - str: Number of service iterations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServiceIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServiceIterations"])
+
     @ServiceIterations.setter
     def ServiceIterations(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServiceIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServiceIterations"], value)
 
     @property
     def ServicesList(self):
@@ -617,11 +663,12 @@ class TestConfig(Base):
         -------
         - str: The list of service.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServicesList'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServicesList"])
+
     @ServicesList.setter
     def ServicesList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServicesList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServicesList"], value)
 
     @property
     def SkipDefaultPassFailEvaluation(self):
@@ -631,11 +678,12 @@ class TestConfig(Base):
         -------
         - bool: If true, it skips the default pass fail evaluation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipDefaultPassFailEvaluation'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipDefaultPassFailEvaluation"])
+
     @SkipDefaultPassFailEvaluation.setter
     def SkipDefaultPassFailEvaluation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipDefaultPassFailEvaluation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipDefaultPassFailEvaluation"], value)
 
     @property
     def StaggeredStart(self):
@@ -645,11 +693,12 @@ class TestConfig(Base):
         -------
         - bool: Staggered start of traffic.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaggeredStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaggeredStart"])
+
     @StaggeredStart.setter
     def StaggeredStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaggeredStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaggeredStart"], value)
 
     @property
     def TestTrafficType(self):
@@ -659,11 +708,12 @@ class TestConfig(Base):
         -------
         - str: It gives the test traffic type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
     @property
     def TransmitMode(self):
@@ -673,11 +723,12 @@ class TestConfig(Base):
         -------
         - str(noFrames | useDuration): The transmit mode for this traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitMode"])
+
     @TransmitMode.setter
     def TransmitMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitMode"], value)
 
     @property
     def TxDelay(self):
@@ -687,13 +738,59 @@ class TestConfig(Base):
         -------
         - number: The minimum delay between successive packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
-    def update(self, AlgorithmType=None, CalculateJitter=None, CalculateLatency=None, ContinuePassFailed=None, CurrentService=None, DelayAfterTransmit=None, Duration=None, DurationLabel=None, EnableBurstTest=None, EnableDataIntegrity=None, EnableLatencyPassFailLabel=None, EnableLayer1Rate=None, EnableStandardDeviationPassFailLabel=None, ForceRegenerate=None, FrameDataDetailedResults=None, FrameLossFramesMode=None, FrameSizeMode=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, IsColorAware=None, IsServicePeformanceMode=None, IterationInitialRate=None, IterationStep=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LearnSnoopConfig=None, NoOfFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Rfc2889ordering=None, ServiceIterations=None, ServicesList=None, SkipDefaultPassFailEvaluation=None, StaggeredStart=None, TestTrafficType=None, TransmitMode=None, TxDelay=None):
+    def update(
+        self,
+        AlgorithmType=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        ContinuePassFailed=None,
+        CurrentService=None,
+        DelayAfterTransmit=None,
+        Duration=None,
+        DurationLabel=None,
+        EnableBurstTest=None,
+        EnableDataIntegrity=None,
+        EnableLatencyPassFailLabel=None,
+        EnableLayer1Rate=None,
+        EnableStandardDeviationPassFailLabel=None,
+        ForceRegenerate=None,
+        FrameDataDetailedResults=None,
+        FrameLossFramesMode=None,
+        FrameSizeMode=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        IsColorAware=None,
+        IsServicePeformanceMode=None,
+        IterationInitialRate=None,
+        IterationStep=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LearnSnoopConfig=None,
+        NoOfFrames=None,
+        Numtrials=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Rfc2889ordering=None,
+        ServiceIterations=None,
+        ServicesList=None,
+        SkipDefaultPassFailEvaluation=None,
+        StaggeredStart=None,
+        TestTrafficType=None,
+        TransmitMode=None,
+        TxDelay=None,
+    ):
         # type: (str, bool, bool, bool, str, int, int, str, bool, bool, str, bool, str, bool, bool, str, str, int, bool, bool, str, str, str, str, bool, str, bool, str, int, bool, str, int, List[str], bool, str, str, str, str, bool, bool, str, str, int) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -749,7 +846,52 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AlgorithmType=None, CalculateJitter=None, CalculateLatency=None, ContinuePassFailed=None, CurrentService=None, DelayAfterTransmit=None, Duration=None, DurationLabel=None, EnableBurstTest=None, EnableDataIntegrity=None, EnableLatencyPassFailLabel=None, EnableLayer1Rate=None, EnableStandardDeviationPassFailLabel=None, ForceRegenerate=None, FrameDataDetailedResults=None, FrameLossFramesMode=None, FrameSizeMode=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, IsColorAware=None, IsServicePeformanceMode=None, IterationInitialRate=None, IterationStep=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LearnSnoopConfig=None, NoOfFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Rfc2889ordering=None, ServiceIterations=None, ServicesList=None, SkipDefaultPassFailEvaluation=None, StaggeredStart=None, TestTrafficType=None, TransmitMode=None, TxDelay=None):
+    def find(
+        self,
+        AlgorithmType=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        ContinuePassFailed=None,
+        CurrentService=None,
+        DelayAfterTransmit=None,
+        Duration=None,
+        DurationLabel=None,
+        EnableBurstTest=None,
+        EnableDataIntegrity=None,
+        EnableLatencyPassFailLabel=None,
+        EnableLayer1Rate=None,
+        EnableStandardDeviationPassFailLabel=None,
+        ForceRegenerate=None,
+        FrameDataDetailedResults=None,
+        FrameLossFramesMode=None,
+        FrameSizeMode=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        IsColorAware=None,
+        IsServicePeformanceMode=None,
+        IterationInitialRate=None,
+        IterationStep=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LearnSnoopConfig=None,
+        NoOfFrames=None,
+        Numtrials=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Rfc2889ordering=None,
+        ServiceIterations=None,
+        ServicesList=None,
+        SkipDefaultPassFailEvaluation=None,
+        StaggeredStart=None,
+        TestTrafficType=None,
+        TransmitMode=None,
+        TxDelay=None,
+    ):
         # type: (str, bool, bool, bool, str, int, int, str, bool, bool, str, bool, str, bool, bool, str, str, int, bool, bool, str, str, str, str, bool, str, bool, str, int, bool, str, int, List[str], bool, str, str, str, str, bool, bool, str, str, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -846,10 +988,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -864,10 +1008,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -876,17 +1022,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -903,10 +1051,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -924,10 +1076,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -953,10 +1107,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -980,10 +1136,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1000,10 +1158,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1021,7 +1181,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

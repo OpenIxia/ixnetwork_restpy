@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class Dhcpv6ClientRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv6ClientRange'
+    _SDM_NAME = "dhcpv6ClientRange"
     _SDM_ATT_MAP = {
-        'Dhcp6DuidEnterpriseId': 'dhcp6DuidEnterpriseId',
-        'Dhcp6DuidType': 'dhcp6DuidType',
-        'Dhcp6DuidVendorId': 'dhcp6DuidVendorId',
-        'Dhcp6DuidVendorIdIncrement': 'dhcp6DuidVendorIdIncrement',
-        'Dhcp6ParamRequestList': 'dhcp6ParamRequestList',
-        'Enabled': 'enabled',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'UseVendorClassId': 'useVendorClassId',
-        'VendorClassId': 'vendorClassId',
+        "Dhcp6DuidEnterpriseId": "dhcp6DuidEnterpriseId",
+        "Dhcp6DuidType": "dhcp6DuidType",
+        "Dhcp6DuidVendorId": "dhcp6DuidVendorId",
+        "Dhcp6DuidVendorIdIncrement": "dhcp6DuidVendorIdIncrement",
+        "Dhcp6ParamRequestList": "dhcp6ParamRequestList",
+        "Enabled": "enabled",
+        "IpType": "ipType",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "UseVendorClassId": "useVendorClassId",
+        "VendorClassId": "vendorClassId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcpv6ClientRange, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - number: The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidEnterpriseId"])
+
     @Dhcp6DuidEnterpriseId.setter
     def Dhcp6DuidEnterpriseId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6DuidEnterpriseId"], value)
 
     @property
     def Dhcp6DuidType(self):
@@ -76,11 +77,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: DHCP Unique Identifier Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidType"])
+
     @Dhcp6DuidType.setter
     def Dhcp6DuidType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6DuidType"], value)
 
     @property
     def Dhcp6DuidVendorId(self):
@@ -90,11 +92,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - number: The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidVendorId"])
+
     @Dhcp6DuidVendorId.setter
     def Dhcp6DuidVendorId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6DuidVendorId"], value)
 
     @property
     def Dhcp6DuidVendorIdIncrement(self):
@@ -104,11 +107,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - number: The value by which the VENDOR-ID is incremented for each DHCP client.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6DuidVendorIdIncrement"])
+
     @Dhcp6DuidVendorIdIncrement.setter
     def Dhcp6DuidVendorIdIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6DuidVendorIdIncrement"], value)
 
     @property
     def Dhcp6ParamRequestList(self):
@@ -118,11 +122,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6ParamRequestList"])
+
     @Dhcp6ParamRequestList.setter
     def Dhcp6ParamRequestList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6ParamRequestList"], value)
 
     @property
     def Enabled(self):
@@ -132,11 +137,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpType(self):
@@ -146,11 +152,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: Defines the version of IP address style to be used for describing the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Name(self):
@@ -160,11 +167,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -174,7 +182,7 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def UseVendorClassId(self):
@@ -184,11 +192,12 @@ class Dhcpv6ClientRange(Base):
         -------
         - bool: Enables use of the Vendor Class Identifier configured in the field below.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseVendorClassId'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseVendorClassId"])
+
     @UseVendorClassId.setter
     def UseVendorClassId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseVendorClassId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseVendorClassId"], value)
 
     @property
     def VendorClassId(self):
@@ -198,13 +207,26 @@ class Dhcpv6ClientRange(Base):
         -------
         - str: This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorClassId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorClassId"])
+
     @VendorClassId.setter
     def VendorClassId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorClassId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorClassId"], value)
 
-    def update(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
+    def update(
+        self,
+        Dhcp6DuidEnterpriseId=None,
+        Dhcp6DuidType=None,
+        Dhcp6DuidVendorId=None,
+        Dhcp6DuidVendorIdIncrement=None,
+        Dhcp6ParamRequestList=None,
+        Enabled=None,
+        IpType=None,
+        Name=None,
+        UseVendorClassId=None,
+        VendorClassId=None,
+    ):
         # type: (int, str, int, int, str, bool, str, str, bool, str) -> Dhcpv6ClientRange
         """Updates dhcpv6ClientRange resource on the server.
 
@@ -227,7 +249,19 @@ class Dhcpv6ClientRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
+    def add(
+        self,
+        Dhcp6DuidEnterpriseId=None,
+        Dhcp6DuidType=None,
+        Dhcp6DuidVendorId=None,
+        Dhcp6DuidVendorIdIncrement=None,
+        Dhcp6ParamRequestList=None,
+        Enabled=None,
+        IpType=None,
+        Name=None,
+        UseVendorClassId=None,
+        VendorClassId=None,
+    ):
         # type: (int, str, int, int, str, bool, str, str, bool, str) -> Dhcpv6ClientRange
         """Adds a new dhcpv6ClientRange resource on the server and adds it to the container.
 
@@ -264,7 +298,20 @@ class Dhcpv6ClientRange(Base):
         """
         self._delete()
 
-    def find(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, ObjectId=None, UseVendorClassId=None, VendorClassId=None):
+    def find(
+        self,
+        Dhcp6DuidEnterpriseId=None,
+        Dhcp6DuidType=None,
+        Dhcp6DuidVendorId=None,
+        Dhcp6DuidVendorIdIncrement=None,
+        Dhcp6ParamRequestList=None,
+        Enabled=None,
+        IpType=None,
+        Name=None,
+        ObjectId=None,
+        UseVendorClassId=None,
+        VendorClassId=None,
+    ):
         # type: (int, str, int, int, str, bool, str, str, str, bool, str) -> Dhcpv6ClientRange
         """Finds and retrieves dhcpv6ClientRange resources from the server.
 
@@ -331,10 +378,14 @@ class Dhcpv6ClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -353,10 +404,14 @@ class Dhcpv6ClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -375,7 +430,11 @@ class Dhcpv6ClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

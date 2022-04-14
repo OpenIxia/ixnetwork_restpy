@@ -117,7 +117,7 @@ class RangeList(Base):
 
     def add(self, BitOffset=None, StartValueCountStepList=None, Width=None):
         # type: (int, List[int], str) -> RangeList
-        """Adds a new rangeList resource on the json, only valid with config assistant
+        """Adds a new rangeList resource on the json, only valid with batch add utility
 
         Args
         ----

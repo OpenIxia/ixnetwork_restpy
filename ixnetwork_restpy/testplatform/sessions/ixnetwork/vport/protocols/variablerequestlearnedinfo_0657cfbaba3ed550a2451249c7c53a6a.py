@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class VariableRequestLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'variableRequestLearnedInfo'
+    _SDM_NAME = "variableRequestLearnedInfo"
     _SDM_ATT_MAP = {
-        'VariableBranch': 'variableBranch',
-        'VariableIndication': 'variableIndication',
-        'VariableLeaf': 'variableLeaf',
-        'VariableValue': 'variableValue',
-        'VariableWidth': 'variableWidth',
+        "VariableBranch": "variableBranch",
+        "VariableIndication": "variableIndication",
+        "VariableLeaf": "variableLeaf",
+        "VariableValue": "variableValue",
+        "VariableWidth": "variableWidth",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VariableRequestLearnedInfo, self).__init__(parent, list_op)
@@ -53,9 +53,9 @@ class VariableRequestLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableBranch'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableBranch"])
 
     @property
     def VariableIndication(self):
@@ -63,9 +63,9 @@ class VariableRequestLearnedInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableIndication'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableIndication"])
 
     @property
     def VariableLeaf(self):
@@ -73,9 +73,9 @@ class VariableRequestLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableLeaf'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableLeaf"])
 
     @property
     def VariableValue(self):
@@ -83,9 +83,9 @@ class VariableRequestLearnedInfo(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableValue"])
 
     @property
     def VariableWidth(self):
@@ -93,12 +93,12 @@ class VariableRequestLearnedInfo(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VariableWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["VariableWidth"])
 
     def add(self):
-        """Adds a new variableRequestLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new variableRequestLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -110,7 +110,14 @@ class VariableRequestLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+    def find(
+        self,
+        VariableBranch=None,
+        VariableIndication=None,
+        VariableLeaf=None,
+        VariableValue=None,
+        VariableWidth=None,
+    ):
         # type: (str, bool, str, str, int) -> VariableRequestLearnedInfo
         """Finds and retrieves variableRequestLearnedInfo resources from the server.
 
@@ -120,11 +127,11 @@ class VariableRequestLearnedInfo(Base):
 
         Args
         ----
-        - VariableBranch (str): 
-        - VariableIndication (bool): 
-        - VariableLeaf (str): 
-        - VariableValue (str): 
-        - VariableWidth (number): 
+        - VariableBranch (str):
+        - VariableIndication (bool):
+        - VariableLeaf (str):
+        - VariableValue (str):
+        - VariableWidth (number):
 
         Returns
         -------

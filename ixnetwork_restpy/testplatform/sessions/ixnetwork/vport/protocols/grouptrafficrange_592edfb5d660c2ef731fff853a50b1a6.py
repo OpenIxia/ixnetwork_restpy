@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,14 @@ class GroupTrafficRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupTrafficRange'
+    _SDM_NAME = "groupTrafficRange"
     _SDM_ATT_MAP = {
-        'AddrFamilyType': 'addrFamilyType',
-        'GrpAddress': 'grpAddress',
-        'GrpCount': 'grpCount',
+        "AddrFamilyType": "addrFamilyType",
+        "GrpAddress": "grpAddress",
+        "GrpCount": "grpCount",
     }
     _SDM_ENUM_MAP = {
-        'addrFamilyType': ['ipv4', 'ipv6'],
+        "addrFamilyType": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +56,12 @@ class GroupTrafficRange(Base):
         -------
         - str(ipv4 | ipv6): The address family of group address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddrFamilyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddrFamilyType"])
+
     @AddrFamilyType.setter
     def AddrFamilyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddrFamilyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddrFamilyType"], value)
 
     @property
     def GrpAddress(self):
@@ -69,11 +71,12 @@ class GroupTrafficRange(Base):
         -------
         - str: Group Address for traffic destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrpAddress"])
+
     @GrpAddress.setter
     def GrpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrpAddress"], value)
 
     @property
     def GrpCount(self):
@@ -83,11 +86,12 @@ class GroupTrafficRange(Base):
         -------
         - number: The group address count per LSP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GrpCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GrpCount"])
+
     @GrpCount.setter
     def GrpCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GrpCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GrpCount"], value)
 
     def update(self, AddrFamilyType=None, GrpAddress=None, GrpCount=None):
         # type: (str, str, int) -> GroupTrafficRange

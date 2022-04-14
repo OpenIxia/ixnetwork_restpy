@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,18 @@ class Capabilities(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'capabilities'
+    _SDM_NAME = "capabilities"
     _SDM_ATT_MAP = {
-        'FlowStatistics': 'flowStatistics',
-        'MatchIpAddressInArpPackets': 'matchIpAddressInArpPackets',
-        'PortStatistics': 'portStatistics',
-        'QueueStatistics': 'queueStatistics',
-        'ReassambleIpFragments': 'reassambleIpFragments',
-        'Reserved': 'reserved',
-        'SpanningTree': 'spanningTree',
-        'TableStatistics': 'tableStatistics',
+        "FlowStatistics": "flowStatistics",
+        "MatchIpAddressInArpPackets": "matchIpAddressInArpPackets",
+        "PortStatistics": "portStatistics",
+        "QueueStatistics": "queueStatistics",
+        "ReassambleIpFragments": "reassambleIpFragments",
+        "Reserved": "reserved",
+        "SpanningTree": "spanningTree",
+        "TableStatistics": "tableStatistics",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Capabilities, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes flow statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowStatistics"])
+
     @FlowStatistics.setter
     def FlowStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowStatistics"], value)
 
     @property
     def MatchIpAddressInArpPackets(self):
@@ -71,11 +72,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes Match IP addresses in ARP pkts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MatchIpAddressInArpPackets'])
+        return self._get_attribute(self._SDM_ATT_MAP["MatchIpAddressInArpPackets"])
+
     @MatchIpAddressInArpPackets.setter
     def MatchIpAddressInArpPackets(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MatchIpAddressInArpPackets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MatchIpAddressInArpPackets"], value)
 
     @property
     def PortStatistics(self):
@@ -85,11 +87,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes port statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortStatistics"])
+
     @PortStatistics.setter
     def PortStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortStatistics"], value)
 
     @property
     def QueueStatistics(self):
@@ -99,11 +102,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch include Queue statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueStatistics"])
+
     @QueueStatistics.setter
     def QueueStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueStatistics"], value)
 
     @property
     def ReassambleIpFragments(self):
@@ -113,11 +117,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch include reassemble IP fragments at the receiver.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReassambleIpFragments'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReassambleIpFragments"])
+
     @ReassambleIpFragments.setter
     def ReassambleIpFragments(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReassambleIpFragments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReassambleIpFragments"], value)
 
     @property
     def Reserved(self):
@@ -127,11 +132,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes reserved, must be zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reserved'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reserved"])
+
     @Reserved.setter
     def Reserved(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Reserved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Reserved"], value)
 
     @property
     def SpanningTree(self):
@@ -141,11 +147,12 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes 802.1d spanning tree.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpanningTree'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpanningTree"])
+
     @SpanningTree.setter
     def SpanningTree(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpanningTree'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpanningTree"], value)
 
     @property
     def TableStatistics(self):
@@ -155,13 +162,24 @@ class Capabilities(Base):
         -------
         - bool: Indicates that the ofChannel capabilities of the switch includes table statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableStatistics'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableStatistics"])
+
     @TableStatistics.setter
     def TableStatistics(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableStatistics'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableStatistics"], value)
 
-    def update(self, FlowStatistics=None, MatchIpAddressInArpPackets=None, PortStatistics=None, QueueStatistics=None, ReassambleIpFragments=None, Reserved=None, SpanningTree=None, TableStatistics=None):
+    def update(
+        self,
+        FlowStatistics=None,
+        MatchIpAddressInArpPackets=None,
+        PortStatistics=None,
+        QueueStatistics=None,
+        ReassambleIpFragments=None,
+        Reserved=None,
+        SpanningTree=None,
+        TableStatistics=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool) -> Capabilities
         """Updates capabilities resource on the server.
 
@@ -182,7 +200,17 @@ class Capabilities(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, FlowStatistics=None, MatchIpAddressInArpPackets=None, PortStatistics=None, QueueStatistics=None, ReassambleIpFragments=None, Reserved=None, SpanningTree=None, TableStatistics=None):
+    def find(
+        self,
+        FlowStatistics=None,
+        MatchIpAddressInArpPackets=None,
+        PortStatistics=None,
+        QueueStatistics=None,
+        ReassambleIpFragments=None,
+        Reserved=None,
+        SpanningTree=None,
+        TableStatistics=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool) -> Capabilities
         """Finds and retrieves capabilities resources from the server.
 

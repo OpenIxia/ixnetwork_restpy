@@ -219,7 +219,7 @@ class SimRouterBridge(Base):
 
     def add(self, Name=None):
         # type: (str) -> SimRouterBridge
-        """Adds a new simRouterBridge resource on the json, only valid with config assistant
+        """Adds a new simRouterBridge resource on the json, only valid with batch add utility
 
         Args
         ----

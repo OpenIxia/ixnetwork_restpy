@@ -4,107 +4,107 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv3LSAUpdate(Base):
     __slots__ = ()
-    _SDM_NAME = 'ospfv3LSAUpdate'
+    _SDM_NAME = "ospfv3LSAUpdate"
     _SDM_ATT_MAP = {
-        'Ospfv3PacketHeaderOspfVersion': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.ospfVersion-1',
-        'Ospfv3PacketHeaderPacketType': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.packetType-2',
-        'Ospfv3PacketHeaderPacketLength': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.packetLength-3',
-        'Ospfv3PacketHeaderRouterID': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.routerID-4',
-        'Ospfv3PacketHeaderAreaID': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.areaID-5',
-        'Ospfv3PacketHeaderOspfPacketChecksum': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.ospfPacketChecksum-6',
-        'Ospfv3PacketHeaderInstanceID': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.instanceID-7',
-        'Ospfv3PacketHeaderReserved': 'ospfv3LSAUpdate.header.ospfv3PacketHeader.reserved-8',
-        'LinkStateUpdateBodyNumLsa': 'ospfv3LSAUpdate.header.linkStateUpdateBody.numLsa-9',
-        'VariableHeaderLinkStateAge': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAge-10',
-        'LinkStateTypeUnrecognizedLSTypeAction': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.unrecognizedLSTypeAction-11',
-        'LinkStateTypeLsaFloodingScope': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.lsaFloodingScope-12',
-        'LinkStateTypeLsaFunctionCode': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.lsaFunctionCode-13',
-        'VariableHeaderLinkStateID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateID-14',
-        'VariableHeaderLinkStateAdvertisingRouter': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisingRouter-15',
-        'VariableHeaderLinkStateSequenceNumber': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateSequenceNumber-16',
-        'VariableHeaderLinkStateChecksum': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateChecksum-17',
-        'VariableHeaderLinkStateLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateLength-18',
-        'RouterLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.reserved-19',
-        'RouterLSARouterLSAFlags': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.routerLSAFlags-20',
-        'RouterLSAOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.options-21',
-        'RouterInterfaceInterfaceType': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceType-22',
-        'RouterInterfaceReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.reserved-23',
-        'RouterInterfaceInterfaceMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceMetric-24',
-        'RouterInterfaceInterfaceID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceID-25',
-        'RouterInterfaceNeighborInterfaceID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.neighborInterfaceID-26',
-        'RouterInterfaceNeighborRouterID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.neighborRouterID-27',
-        'NetworkLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.reserved-28',
-        'NetworkLSAOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.options-29',
-        'AttachedRouterListAttachedRouterID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.attachedRouterList.attachedRouterID-30',
-        'InterAreaPrefixLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.reserved-31',
-        'InterAreaPrefixLSARouteMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.routeMetric-32',
-        'AddressPrefixPrefixLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixLength-33',
-        'AddressPrefixPrefixOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixOptions-34',
-        'AddressPrefixPrefixMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixMetric-35',
-        'AddressPrefixDataLengthoctets': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.dataLengthoctets-36',
-        'AddressPrefixIpv6AddressPrefix': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.ipv6AddressPrefix-37',
-        'InterAreaRouterLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.reserved-38',
-        'InterAreaRouterLSAOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.options-39',
-        'LinkstateadvertisementbodyInterAreaRouterLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.reserved-40',
-        'InterAreaRouterLSARouteMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.routeMetric-41',
-        'InterAreaRouterLSADestinationRouterID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.destinationRouterID-42',
-        'Grace_period_tlvType': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.type-43',
-        'Grace_period_tlvLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.length-44',
-        'Grace_period_tlvValue': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.value-45',
-        'Graceful_restart_reason_tlvType': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.type-46',
-        'Graceful_restart_reason_tlvLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.length-47',
-        'Graceful_restart_reason_tlvValue': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.value-48',
-        'Graceful_restart_reason_tlvPad': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.pad-49',
-        'ExternalLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.reserved-50',
-        'ExternalLSAOptionsTbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.tbit-51',
-        'ExternalLSAOptionsFbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.fbit-52',
-        'ExternalLSAOptionsEbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.ebit-53',
-        'ExternalLSARouteMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.routeMetric-54',
-        'ExternallsaAddressPrefixPrefixLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.prefixLength-55',
-        'ExternallsaAddressPrefixPrefixOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.prefixOptions-56',
-        'ReferencedLSTypeUnrecognizedLSTypeAction': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.unrecognizedLSTypeAction-57',
-        'ReferencedLSTypeLsaFloodingScope': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.lsaFloodingScope-58',
-        'ReferencedLSTypeLsaFunctionCode': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.lsaFunctionCode-59',
-        'ExternallsaAddressPrefixDataLengthoctets': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.dataLengthoctets-60',
-        'ExternallsaAddressPrefixIpv6AddressPrefix': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.ipv6AddressPrefix-61',
-        'ExternalLSAForwardingAddress': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.forwardingAddress-62',
-        'ExternalLSAExternalRouteTag': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalRouteTag-63',
-        'ExternalLSAReferencedLinkStateID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.referencedLinkStateID-64',
-        'Type7NSSAExternalLSAReserved': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.reserved-65',
-        'Type7nssaexternallsaExternalLSAOptionsTbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.tbit-66',
-        'Type7nssaexternallsaExternalLSAOptionsFbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.fbit-67',
-        'Type7nssaexternallsaExternalLSAOptionsEbit': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.ebit-68',
-        'Type7NSSAExternalLSARouteMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.routeMetric-69',
-        'Type7nssaexternallsaAddressPrefixPrefixLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.prefixLength-70',
-        'Type7nssaexternallsaAddressPrefixPrefixOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.prefixOptions-71',
-        'AddressprefixReferencedLSTypeUnrecognizedLSTypeAction': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.unrecognizedLSTypeAction-72',
-        'AddressprefixReferencedLSTypeLsaFloodingScope': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.lsaFloodingScope-73',
-        'AddressprefixReferencedLSTypeLsaFunctionCode': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.lsaFunctionCode-74',
-        'Type7nssaexternallsaAddressPrefixDataLengthoctets': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.dataLengthoctets-75',
-        'Type7nssaexternallsaAddressPrefixIpv6AddressPrefix': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.ipv6AddressPrefix-76',
-        'Type7NSSAExternalLSAForwardingAddress': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.forwardingAddress-77',
-        'Type7NSSAExternalLSAExternalRouteTag': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalRouteTag-78',
-        'Type7NSSAExternalLSAReferencedLinkStateID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.referencedLinkStateID-79',
-        'LinkLSARouterPriority': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.routerPriority-80',
-        'LinkLSAOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.options-81',
-        'LinkLSALinkLocalInterfaceAddress': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.linkLocalInterfaceAddress-82',
-        'LinkLSANumberOfPrefixes': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.numberOfPrefixes-83',
-        'AddressprefixesAddressPrefixPrefixLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixLength-84',
-        'AddressprefixesAddressPrefixPrefixOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixOptions-85',
-        'AddressprefixesAddressPrefixPrefixMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixMetric-86',
-        'AddressprefixesAddressPrefixDataLengthoctets': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.dataLengthoctets-87',
-        'AddressprefixesAddressPrefixIpv6AddressPrefix': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.ipv6AddressPrefix-88',
-        'IntraAreaPrefixLSANumberOfPrefixes': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.numberOfPrefixes-89',
-        'IntraareaprefixlsaReferencedLSTypeUnrecognizedLSTypeAction': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.unrecognizedLSTypeAction-90',
-        'IntraareaprefixlsaReferencedLSTypeLsaFloodingScope': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.lsaFloodingScope-91',
-        'IntraareaprefixlsaReferencedLSTypeLsaFunctionCode': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.lsaFunctionCode-92',
-        'IntraAreaPrefixLSAReferencedLinkStateID': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLinkStateID-93',
-        'IntraAreaPrefixLSAReferencedLinkStateAdvertisingRouter': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLinkStateAdvertisingRouter-94',
-        'IntraareaprefixlsaAddressprefixesAddressPrefixPrefixLength': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixLength-95',
-        'IntraareaprefixlsaAddressprefixesAddressPrefixPrefixOptions': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixOptions-96',
-        'IntraareaprefixlsaAddressprefixesAddressPrefixPrefixMetric': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixMetric-97',
-        'IntraareaprefixlsaAddressprefixesAddressPrefixDataLengthoctets': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.dataLengthoctets-98',
-        'IntraareaprefixlsaAddressprefixesAddressPrefixIpv6AddressPrefix': 'ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.ipv6AddressPrefix-99',
+        "Ospfv3PacketHeaderOspfVersion": "ospfv3LSAUpdate.header.ospfv3PacketHeader.ospfVersion-1",
+        "Ospfv3PacketHeaderPacketType": "ospfv3LSAUpdate.header.ospfv3PacketHeader.packetType-2",
+        "Ospfv3PacketHeaderPacketLength": "ospfv3LSAUpdate.header.ospfv3PacketHeader.packetLength-3",
+        "Ospfv3PacketHeaderRouterID": "ospfv3LSAUpdate.header.ospfv3PacketHeader.routerID-4",
+        "Ospfv3PacketHeaderAreaID": "ospfv3LSAUpdate.header.ospfv3PacketHeader.areaID-5",
+        "Ospfv3PacketHeaderOspfPacketChecksum": "ospfv3LSAUpdate.header.ospfv3PacketHeader.ospfPacketChecksum-6",
+        "Ospfv3PacketHeaderInstanceID": "ospfv3LSAUpdate.header.ospfv3PacketHeader.instanceID-7",
+        "Ospfv3PacketHeaderReserved": "ospfv3LSAUpdate.header.ospfv3PacketHeader.reserved-8",
+        "LinkStateUpdateBodyNumLsa": "ospfv3LSAUpdate.header.linkStateUpdateBody.numLsa-9",
+        "VariableHeaderLinkStateAge": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAge-10",
+        "LinkStateTypeUnrecognizedLSTypeAction": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.unrecognizedLSTypeAction-11",
+        "LinkStateTypeLsaFloodingScope": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.lsaFloodingScope-12",
+        "LinkStateTypeLsaFunctionCode": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateType.lsaFunctionCode-13",
+        "VariableHeaderLinkStateID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateID-14",
+        "VariableHeaderLinkStateAdvertisingRouter": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisingRouter-15",
+        "VariableHeaderLinkStateSequenceNumber": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateSequenceNumber-16",
+        "VariableHeaderLinkStateChecksum": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateChecksum-17",
+        "VariableHeaderLinkStateLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateLength-18",
+        "RouterLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.reserved-19",
+        "RouterLSARouterLSAFlags": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.routerLSAFlags-20",
+        "RouterLSAOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.options-21",
+        "RouterInterfaceInterfaceType": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceType-22",
+        "RouterInterfaceReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.reserved-23",
+        "RouterInterfaceInterfaceMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceMetric-24",
+        "RouterInterfaceInterfaceID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.interfaceID-25",
+        "RouterInterfaceNeighborInterfaceID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.neighborInterfaceID-26",
+        "RouterInterfaceNeighborRouterID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.routerLSA.nextRouterInterface.routerInterface.neighborRouterID-27",
+        "NetworkLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.reserved-28",
+        "NetworkLSAOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.options-29",
+        "AttachedRouterListAttachedRouterID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.networkLSA.attachedRouterList.attachedRouterID-30",
+        "InterAreaPrefixLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.reserved-31",
+        "InterAreaPrefixLSARouteMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.routeMetric-32",
+        "AddressPrefixPrefixLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixLength-33",
+        "AddressPrefixPrefixOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixOptions-34",
+        "AddressPrefixPrefixMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.prefixMetric-35",
+        "AddressPrefixDataLengthoctets": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.dataLengthoctets-36",
+        "AddressPrefixIpv6AddressPrefix": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaPrefixLSA.addressPrefix.ipv6AddressPrefix-37",
+        "InterAreaRouterLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.reserved-38",
+        "InterAreaRouterLSAOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.options-39",
+        "LinkstateadvertisementbodyInterAreaRouterLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.reserved-40",
+        "InterAreaRouterLSARouteMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.routeMetric-41",
+        "InterAreaRouterLSADestinationRouterID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.interAreaRouterLSA.destinationRouterID-42",
+        "Grace_period_tlvType": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.type-43",
+        "Grace_period_tlvLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.length-44",
+        "Grace_period_tlvValue": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.grace_period_tlv.value-45",
+        "Graceful_restart_reason_tlvType": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.type-46",
+        "Graceful_restart_reason_tlvLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.length-47",
+        "Graceful_restart_reason_tlvValue": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.value-48",
+        "Graceful_restart_reason_tlvPad": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.graceLSA.graceful_restart_reason_tlv.pad-49",
+        "ExternalLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.reserved-50",
+        "ExternalLSAOptionsTbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.tbit-51",
+        "ExternalLSAOptionsFbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.fbit-52",
+        "ExternalLSAOptionsEbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalLSAOptions.ebit-53",
+        "ExternalLSARouteMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.routeMetric-54",
+        "ExternallsaAddressPrefixPrefixLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.prefixLength-55",
+        "ExternallsaAddressPrefixPrefixOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.prefixOptions-56",
+        "ReferencedLSTypeUnrecognizedLSTypeAction": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.unrecognizedLSTypeAction-57",
+        "ReferencedLSTypeLsaFloodingScope": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.lsaFloodingScope-58",
+        "ReferencedLSTypeLsaFunctionCode": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.referencedLSType.lsaFunctionCode-59",
+        "ExternallsaAddressPrefixDataLengthoctets": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.dataLengthoctets-60",
+        "ExternallsaAddressPrefixIpv6AddressPrefix": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.addressPrefix.ipv6AddressPrefix-61",
+        "ExternalLSAForwardingAddress": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.forwardingAddress-62",
+        "ExternalLSAExternalRouteTag": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.externalRouteTag-63",
+        "ExternalLSAReferencedLinkStateID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.externalLSA.referencedLinkStateID-64",
+        "Type7NSSAExternalLSAReserved": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.reserved-65",
+        "Type7nssaexternallsaExternalLSAOptionsTbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.tbit-66",
+        "Type7nssaexternallsaExternalLSAOptionsFbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.fbit-67",
+        "Type7nssaexternallsaExternalLSAOptionsEbit": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalLSAOptions.ebit-68",
+        "Type7NSSAExternalLSARouteMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.routeMetric-69",
+        "Type7nssaexternallsaAddressPrefixPrefixLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.prefixLength-70",
+        "Type7nssaexternallsaAddressPrefixPrefixOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.prefixOptions-71",
+        "AddressprefixReferencedLSTypeUnrecognizedLSTypeAction": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.unrecognizedLSTypeAction-72",
+        "AddressprefixReferencedLSTypeLsaFloodingScope": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.lsaFloodingScope-73",
+        "AddressprefixReferencedLSTypeLsaFunctionCode": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.referencedLSType.lsaFunctionCode-74",
+        "Type7nssaexternallsaAddressPrefixDataLengthoctets": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.dataLengthoctets-75",
+        "Type7nssaexternallsaAddressPrefixIpv6AddressPrefix": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.addressPrefix.ipv6AddressPrefix-76",
+        "Type7NSSAExternalLSAForwardingAddress": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.forwardingAddress-77",
+        "Type7NSSAExternalLSAExternalRouteTag": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.externalRouteTag-78",
+        "Type7NSSAExternalLSAReferencedLinkStateID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.type7NSSAExternalLSA.referencedLinkStateID-79",
+        "LinkLSARouterPriority": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.routerPriority-80",
+        "LinkLSAOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.options-81",
+        "LinkLSALinkLocalInterfaceAddress": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.linkLocalInterfaceAddress-82",
+        "LinkLSANumberOfPrefixes": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.numberOfPrefixes-83",
+        "AddressprefixesAddressPrefixPrefixLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixLength-84",
+        "AddressprefixesAddressPrefixPrefixOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixOptions-85",
+        "AddressprefixesAddressPrefixPrefixMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.prefixMetric-86",
+        "AddressprefixesAddressPrefixDataLengthoctets": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.dataLengthoctets-87",
+        "AddressprefixesAddressPrefixIpv6AddressPrefix": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.linkLSA.addressPrefixes.addressPrefix.ipv6AddressPrefix-88",
+        "IntraAreaPrefixLSANumberOfPrefixes": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.numberOfPrefixes-89",
+        "IntraareaprefixlsaReferencedLSTypeUnrecognizedLSTypeAction": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.unrecognizedLSTypeAction-90",
+        "IntraareaprefixlsaReferencedLSTypeLsaFloodingScope": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.lsaFloodingScope-91",
+        "IntraareaprefixlsaReferencedLSTypeLsaFunctionCode": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLSType.lsaFunctionCode-92",
+        "IntraAreaPrefixLSAReferencedLinkStateID": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLinkStateID-93",
+        "IntraAreaPrefixLSAReferencedLinkStateAdvertisingRouter": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.referencedLinkStateAdvertisingRouter-94",
+        "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixLength": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixLength-95",
+        "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixOptions": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixOptions-96",
+        "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixMetric": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.prefixMetric-97",
+        "IntraareaprefixlsaAddressprefixesAddressPrefixDataLengthoctets": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.dataLengthoctets-98",
+        "IntraareaprefixlsaAddressprefixesAddressPrefixIpv6AddressPrefix": "ospfv3LSAUpdate.header.linkStateUpdateBody.lsaList.linkStateAdvertisement.variableHeader.linkStateAdvertisementBody.intraAreaPrefixLSA.addressPrefixes.addressPrefix.ipv6AddressPrefix-99",
     }
 
     def __init__(self, parent, list_op=False):
@@ -118,7 +118,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderOspfVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderOspfVersion"]),
+        )
 
     @property
     def Ospfv3PacketHeaderPacketType(self):
@@ -128,7 +132,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderPacketType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderPacketType"])
+        )
 
     @property
     def Ospfv3PacketHeaderPacketLength(self):
@@ -138,7 +145,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderPacketLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderPacketLength"]),
+        )
 
     @property
     def Ospfv3PacketHeaderRouterID(self):
@@ -148,7 +159,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderRouterID"])
+        )
 
     @property
     def Ospfv3PacketHeaderAreaID(self):
@@ -158,7 +172,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderAreaID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderAreaID"])
+        )
 
     @property
     def Ospfv3PacketHeaderOspfPacketChecksum(self):
@@ -168,7 +185,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderOspfPacketChecksum']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ospfv3PacketHeaderOspfPacketChecksum"]
+            ),
+        )
 
     @property
     def Ospfv3PacketHeaderInstanceID(self):
@@ -178,7 +201,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderInstanceID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderInstanceID"])
+        )
 
     @property
     def Ospfv3PacketHeaderReserved(self):
@@ -188,7 +214,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv3PacketHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv3PacketHeaderReserved"])
+        )
 
     @property
     def LinkStateUpdateBodyNumLsa(self):
@@ -198,7 +227,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateUpdateBodyNumLsa']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkStateUpdateBodyNumLsa"])
+        )
 
     @property
     def VariableHeaderLinkStateAge(self):
@@ -208,7 +240,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateAge']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateAge"])
+        )
 
     @property
     def LinkStateTypeUnrecognizedLSTypeAction(self):
@@ -219,7 +254,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Treat the LSA as if it had link-local flooding scope, 0, Store and flood the LSA, as if type understood, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateTypeUnrecognizedLSTypeAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LinkStateTypeUnrecognizedLSTypeAction"]
+            ),
+        )
 
     @property
     def LinkStateTypeLsaFloodingScope(self):
@@ -230,7 +271,11 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Link-Local Scoping. Flooded only on link it is originating on., 0, Area Scoping. Flooded to all routers in the originating area., 1, AS Scoping. Flooded to all routers in the AS., 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateTypeLsaFloodingScope']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LinkStateTypeLsaFloodingScope"]),
+        )
 
     @property
     def LinkStateTypeLsaFunctionCode(self):
@@ -241,7 +286,10 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Router-LSA, 1, Network-LSA., 2, Inter-Area-Prefix-LSA, 3, Inter-Area-Router-LSA, 4, AS-External-LSA, 5, Group-membership-LSA, 6, Type-7-LSA, 7, Link-LSA, 8, Intra-Area-Prefix-LSA, 9, Grace-LSA, 11
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateTypeLsaFunctionCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkStateTypeLsaFunctionCode"])
+        )
 
     @property
     def VariableHeaderLinkStateID(self):
@@ -251,7 +299,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateID"])
+        )
 
     @property
     def VariableHeaderLinkStateAdvertisingRouter(self):
@@ -261,7 +312,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateAdvertisingRouter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["VariableHeaderLinkStateAdvertisingRouter"]
+            ),
+        )
 
     @property
     def VariableHeaderLinkStateSequenceNumber(self):
@@ -271,7 +328,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["VariableHeaderLinkStateSequenceNumber"]
+            ),
+        )
 
     @property
     def VariableHeaderLinkStateChecksum(self):
@@ -281,7 +344,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateChecksum']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateChecksum"]),
+        )
 
     @property
     def VariableHeaderLinkStateLength(self):
@@ -291,7 +358,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VariableHeaderLinkStateLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["VariableHeaderLinkStateLength"]),
+        )
 
     @property
     def RouterLSAReserved(self):
@@ -301,7 +372,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterLSAReserved"])
+        )
 
     @property
     def RouterLSARouterLSAFlags(self):
@@ -311,7 +385,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterLSARouterLSAFlags']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterLSARouterLSAFlags"])
+        )
 
     @property
     def RouterLSAOptions(self):
@@ -321,7 +398,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterLSAOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterLSAOptions"])
+        )
 
     @property
     def RouterInterfaceInterfaceType(self):
@@ -332,7 +412,10 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Point-to-point connection to another router, 1, Connection to a transit network, 2, Connection to a stub network , 3, Virtual link, 4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceInterfaceType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterInterfaceInterfaceType"])
+        )
 
     @property
     def RouterInterfaceReserved(self):
@@ -342,7 +425,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterInterfaceReserved"])
+        )
 
     @property
     def RouterInterfaceInterfaceMetric(self):
@@ -352,7 +438,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceInterfaceMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RouterInterfaceInterfaceMetric"]),
+        )
 
     @property
     def RouterInterfaceInterfaceID(self):
@@ -362,7 +452,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceInterfaceID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RouterInterfaceInterfaceID"])
+        )
 
     @property
     def RouterInterfaceNeighborInterfaceID(self):
@@ -372,7 +465,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceNeighborInterfaceID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["RouterInterfaceNeighborInterfaceID"]
+            ),
+        )
 
     @property
     def RouterInterfaceNeighborRouterID(self):
@@ -382,7 +481,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouterInterfaceNeighborRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RouterInterfaceNeighborRouterID"]),
+        )
 
     @property
     def NetworkLSAReserved(self):
@@ -392,7 +495,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkLSAReserved"])
+        )
 
     @property
     def NetworkLSAOptions(self):
@@ -402,7 +508,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkLSAOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkLSAOptions"])
+        )
 
     @property
     def AttachedRouterListAttachedRouterID(self):
@@ -412,7 +521,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AttachedRouterListAttachedRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AttachedRouterListAttachedRouterID"]
+            ),
+        )
 
     @property
     def InterAreaPrefixLSAReserved(self):
@@ -422,7 +537,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaPrefixLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterAreaPrefixLSAReserved"])
+        )
 
     @property
     def InterAreaPrefixLSARouteMetric(self):
@@ -432,7 +550,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaPrefixLSARouteMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InterAreaPrefixLSARouteMetric"]),
+        )
 
     @property
     def AddressPrefixPrefixLength(self):
@@ -442,7 +564,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressPrefixPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressPrefixPrefixLength"])
+        )
 
     @property
     def AddressPrefixPrefixOptions(self):
@@ -452,7 +577,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressPrefixPrefixOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressPrefixPrefixOptions"])
+        )
 
     @property
     def AddressPrefixPrefixMetric(self):
@@ -462,7 +590,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressPrefixPrefixMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AddressPrefixPrefixMetric"])
+        )
 
     @property
     def AddressPrefixDataLengthoctets(self):
@@ -472,7 +603,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressPrefixDataLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AddressPrefixDataLengthoctets"]),
+        )
 
     @property
     def AddressPrefixIpv6AddressPrefix(self):
@@ -482,7 +617,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressPrefixIpv6AddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AddressPrefixIpv6AddressPrefix"]),
+        )
 
     @property
     def InterAreaRouterLSAReserved(self):
@@ -492,7 +631,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaRouterLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterAreaRouterLSAReserved"])
+        )
 
     @property
     def InterAreaRouterLSAOptions(self):
@@ -502,7 +644,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaRouterLSAOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterAreaRouterLSAOptions"])
+        )
 
     @property
     def LinkstateadvertisementbodyInterAreaRouterLSAReserved(self):
@@ -512,7 +657,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkstateadvertisementbodyInterAreaRouterLSAReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "LinkstateadvertisementbodyInterAreaRouterLSAReserved"
+                ]
+            ),
+        )
 
     @property
     def InterAreaRouterLSARouteMetric(self):
@@ -522,7 +675,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaRouterLSARouteMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InterAreaRouterLSARouteMetric"]),
+        )
 
     @property
     def InterAreaRouterLSADestinationRouterID(self):
@@ -532,7 +689,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterAreaRouterLSADestinationRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["InterAreaRouterLSADestinationRouterID"]
+            ),
+        )
 
     @property
     def Grace_period_tlvType(self):
@@ -542,7 +705,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Grace_period_tlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Grace_period_tlvType"])
+        )
 
     @property
     def Grace_period_tlvLength(self):
@@ -552,7 +718,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Grace_period_tlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Grace_period_tlvLength"])
+        )
 
     @property
     def Grace_period_tlvValue(self):
@@ -562,7 +731,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Grace_period_tlvValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Grace_period_tlvValue"])
+        )
 
     @property
     def Graceful_restart_reason_tlvType(self):
@@ -572,7 +744,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Graceful_restart_reason_tlvType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Graceful_restart_reason_tlvType"]),
+        )
 
     @property
     def Graceful_restart_reason_tlvLength(self):
@@ -582,7 +758,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Graceful_restart_reason_tlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Graceful_restart_reason_tlvLength"]),
+        )
 
     @property
     def Graceful_restart_reason_tlvValue(self):
@@ -592,7 +772,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Graceful_restart_reason_tlvValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Graceful_restart_reason_tlvValue"]),
+        )
 
     @property
     def Graceful_restart_reason_tlvPad(self):
@@ -602,7 +786,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Graceful_restart_reason_tlvPad']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Graceful_restart_reason_tlvPad"]),
+        )
 
     @property
     def ExternalLSAReserved(self):
@@ -612,7 +800,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAReserved"])
+        )
 
     @property
     def ExternalLSAOptionsTbit(self):
@@ -622,7 +813,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAOptionsTbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAOptionsTbit"])
+        )
 
     @property
     def ExternalLSAOptionsFbit(self):
@@ -632,7 +826,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAOptionsFbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAOptionsFbit"])
+        )
 
     @property
     def ExternalLSAOptionsEbit(self):
@@ -642,7 +839,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAOptionsEbit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAOptionsEbit"])
+        )
 
     @property
     def ExternalLSARouteMetric(self):
@@ -652,7 +852,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSARouteMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSARouteMetric"])
+        )
 
     @property
     def ExternallsaAddressPrefixPrefixLength(self):
@@ -662,7 +865,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternallsaAddressPrefixPrefixLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExternallsaAddressPrefixPrefixLength"]
+            ),
+        )
 
     @property
     def ExternallsaAddressPrefixPrefixOptions(self):
@@ -672,7 +881,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternallsaAddressPrefixPrefixOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExternallsaAddressPrefixPrefixOptions"]
+            ),
+        )
 
     @property
     def ReferencedLSTypeUnrecognizedLSTypeAction(self):
@@ -683,7 +898,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Treat the LSA as if it had link-local flooding scope, 0, Store and flood the LSA, as if type understood, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReferencedLSTypeUnrecognizedLSTypeAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReferencedLSTypeUnrecognizedLSTypeAction"]
+            ),
+        )
 
     @property
     def ReferencedLSTypeLsaFloodingScope(self):
@@ -694,7 +915,11 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Link-Local Scoping. Flooded only on link it is originating on., 0, Area Scoping. Flooded to all routers in the originating area., 1, AS Scoping. Flooded to all routers in the AS., 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReferencedLSTypeLsaFloodingScope']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReferencedLSTypeLsaFloodingScope"]),
+        )
 
     @property
     def ReferencedLSTypeLsaFunctionCode(self):
@@ -705,7 +930,11 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Router-LSA, 1, Network-LSA., 2, Inter-Area-Prefix-LSA, 3, Inter-Area-Router-LSA, 4, AS-External-LSA, 5, Group-membership-LSA, 6, Type-7-LSA, 7, Link-LSA, 8, Intra-Area-Prefix-LSA, 9, Grace-LSA, 11
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReferencedLSTypeLsaFunctionCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReferencedLSTypeLsaFunctionCode"]),
+        )
 
     @property
     def ExternallsaAddressPrefixDataLengthoctets(self):
@@ -715,7 +944,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternallsaAddressPrefixDataLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExternallsaAddressPrefixDataLengthoctets"]
+            ),
+        )
 
     @property
     def ExternallsaAddressPrefixIpv6AddressPrefix(self):
@@ -725,7 +960,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternallsaAddressPrefixIpv6AddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ExternallsaAddressPrefixIpv6AddressPrefix"]
+            ),
+        )
 
     @property
     def ExternalLSAForwardingAddress(self):
@@ -735,7 +976,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAForwardingAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAForwardingAddress"])
+        )
 
     @property
     def ExternalLSAExternalRouteTag(self):
@@ -745,7 +989,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAExternalRouteTag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ExternalLSAExternalRouteTag"])
+        )
 
     @property
     def ExternalLSAReferencedLinkStateID(self):
@@ -755,7 +1002,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalLSAReferencedLinkStateID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ExternalLSAReferencedLinkStateID"]),
+        )
 
     @property
     def Type7NSSAExternalLSAReserved(self):
@@ -765,7 +1016,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7NSSAExternalLSAReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Type7NSSAExternalLSAReserved"])
+        )
 
     @property
     def Type7nssaexternallsaExternalLSAOptionsTbit(self):
@@ -775,7 +1029,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaExternalLSAOptionsTbit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaExternalLSAOptionsTbit"]
+            ),
+        )
 
     @property
     def Type7nssaexternallsaExternalLSAOptionsFbit(self):
@@ -785,7 +1045,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaExternalLSAOptionsFbit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaExternalLSAOptionsFbit"]
+            ),
+        )
 
     @property
     def Type7nssaexternallsaExternalLSAOptionsEbit(self):
@@ -795,7 +1061,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaExternalLSAOptionsEbit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaExternalLSAOptionsEbit"]
+            ),
+        )
 
     @property
     def Type7NSSAExternalLSARouteMetric(self):
@@ -805,7 +1077,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7NSSAExternalLSARouteMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Type7NSSAExternalLSARouteMetric"]),
+        )
 
     @property
     def Type7nssaexternallsaAddressPrefixPrefixLength(self):
@@ -815,7 +1091,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaAddressPrefixPrefixLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaAddressPrefixPrefixLength"]
+            ),
+        )
 
     @property
     def Type7nssaexternallsaAddressPrefixPrefixOptions(self):
@@ -825,7 +1107,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaAddressPrefixPrefixOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaAddressPrefixPrefixOptions"]
+            ),
+        )
 
     @property
     def AddressprefixReferencedLSTypeUnrecognizedLSTypeAction(self):
@@ -836,7 +1124,15 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Treat the LSA as if it had link-local flooding scope, 0, Store and flood the LSA, as if type understood, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixReferencedLSTypeUnrecognizedLSTypeAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "AddressprefixReferencedLSTypeUnrecognizedLSTypeAction"
+                ]
+            ),
+        )
 
     @property
     def AddressprefixReferencedLSTypeLsaFloodingScope(self):
@@ -847,7 +1143,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Link-Local Scoping. Flooded only on link it is originating on., 0, Area Scoping. Flooded to all routers in the originating area., 1, AS Scoping. Flooded to all routers in the AS., 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixReferencedLSTypeLsaFloodingScope']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixReferencedLSTypeLsaFloodingScope"]
+            ),
+        )
 
     @property
     def AddressprefixReferencedLSTypeLsaFunctionCode(self):
@@ -858,7 +1160,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Router-LSA, 1, Network-LSA., 2, Inter-Area-Prefix-LSA, 3, Inter-Area-Router-LSA, 4, AS-External-LSA, 5, Group-membership-LSA, 6, Type-7-LSA, 7, Link-LSA, 8, Intra-Area-Prefix-LSA, 9, Grace-LSA, 11
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixReferencedLSTypeLsaFunctionCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixReferencedLSTypeLsaFunctionCode"]
+            ),
+        )
 
     @property
     def Type7nssaexternallsaAddressPrefixDataLengthoctets(self):
@@ -868,7 +1176,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaAddressPrefixDataLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaAddressPrefixDataLengthoctets"]
+            ),
+        )
 
     @property
     def Type7nssaexternallsaAddressPrefixIpv6AddressPrefix(self):
@@ -878,7 +1192,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7nssaexternallsaAddressPrefixIpv6AddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7nssaexternallsaAddressPrefixIpv6AddressPrefix"]
+            ),
+        )
 
     @property
     def Type7NSSAExternalLSAForwardingAddress(self):
@@ -888,7 +1208,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7NSSAExternalLSAForwardingAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7NSSAExternalLSAForwardingAddress"]
+            ),
+        )
 
     @property
     def Type7NSSAExternalLSAExternalRouteTag(self):
@@ -898,7 +1224,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7NSSAExternalLSAExternalRouteTag']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7NSSAExternalLSAExternalRouteTag"]
+            ),
+        )
 
     @property
     def Type7NSSAExternalLSAReferencedLinkStateID(self):
@@ -908,7 +1240,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type7NSSAExternalLSAReferencedLinkStateID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Type7NSSAExternalLSAReferencedLinkStateID"]
+            ),
+        )
 
     @property
     def LinkLSARouterPriority(self):
@@ -918,7 +1256,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkLSARouterPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkLSARouterPriority"])
+        )
 
     @property
     def LinkLSAOptions(self):
@@ -928,7 +1269,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkLSAOptions']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkLSAOptions"])
+        )
 
     @property
     def LinkLSALinkLocalInterfaceAddress(self):
@@ -938,7 +1282,11 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkLSALinkLocalInterfaceAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LinkLSALinkLocalInterfaceAddress"]),
+        )
 
     @property
     def LinkLSANumberOfPrefixes(self):
@@ -948,7 +1296,10 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkLSANumberOfPrefixes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkLSANumberOfPrefixes"])
+        )
 
     @property
     def AddressprefixesAddressPrefixPrefixLength(self):
@@ -958,7 +1309,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixesAddressPrefixPrefixLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixesAddressPrefixPrefixLength"]
+            ),
+        )
 
     @property
     def AddressprefixesAddressPrefixPrefixOptions(self):
@@ -968,7 +1325,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixesAddressPrefixPrefixOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixesAddressPrefixPrefixOptions"]
+            ),
+        )
 
     @property
     def AddressprefixesAddressPrefixPrefixMetric(self):
@@ -978,7 +1341,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixesAddressPrefixPrefixMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixesAddressPrefixPrefixMetric"]
+            ),
+        )
 
     @property
     def AddressprefixesAddressPrefixDataLengthoctets(self):
@@ -988,7 +1357,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixesAddressPrefixDataLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixesAddressPrefixDataLengthoctets"]
+            ),
+        )
 
     @property
     def AddressprefixesAddressPrefixIpv6AddressPrefix(self):
@@ -998,7 +1373,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressprefixesAddressPrefixIpv6AddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AddressprefixesAddressPrefixIpv6AddressPrefix"]
+            ),
+        )
 
     @property
     def IntraAreaPrefixLSANumberOfPrefixes(self):
@@ -1008,7 +1389,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraAreaPrefixLSANumberOfPrefixes']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IntraAreaPrefixLSANumberOfPrefixes"]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaReferencedLSTypeUnrecognizedLSTypeAction(self):
@@ -1019,7 +1406,15 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Treat the LSA as if it had link-local flooding scope, 0, Store and flood the LSA, as if type understood, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaReferencedLSTypeUnrecognizedLSTypeAction']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaReferencedLSTypeUnrecognizedLSTypeAction"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaReferencedLSTypeLsaFloodingScope(self):
@@ -1030,7 +1425,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Link-Local Scoping. Flooded only on link it is originating on., 0, Area Scoping. Flooded to all routers in the originating area., 1, AS Scoping. Flooded to all routers in the AS., 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaReferencedLSTypeLsaFloodingScope']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IntraareaprefixlsaReferencedLSTypeLsaFloodingScope"]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaReferencedLSTypeLsaFunctionCode(self):
@@ -1041,7 +1442,13 @@ class Ospfv3LSAUpdate(Base):
         Available enum values: Router-LSA, 1, Network-LSA., 2, Inter-Area-Prefix-LSA, 3, Inter-Area-Router-LSA, 4, AS-External-LSA, 5, Group-membership-LSA, 6, Type-7-LSA, 7, Link-LSA, 8, Intra-Area-Prefix-LSA, 9, Grace-LSA, 11
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaReferencedLSTypeLsaFunctionCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IntraareaprefixlsaReferencedLSTypeLsaFunctionCode"]
+            ),
+        )
 
     @property
     def IntraAreaPrefixLSAReferencedLinkStateID(self):
@@ -1051,7 +1458,13 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraAreaPrefixLSAReferencedLinkStateID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IntraAreaPrefixLSAReferencedLinkStateID"]
+            ),
+        )
 
     @property
     def IntraAreaPrefixLSAReferencedLinkStateAdvertisingRouter(self):
@@ -1061,7 +1474,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraAreaPrefixLSAReferencedLinkStateAdvertisingRouter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraAreaPrefixLSAReferencedLinkStateAdvertisingRouter"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaAddressprefixesAddressPrefixPrefixLength(self):
@@ -1071,7 +1492,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaAddressprefixesAddressPrefixPrefixLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixLength"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaAddressprefixesAddressPrefixPrefixOptions(self):
@@ -1081,7 +1510,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaAddressprefixesAddressPrefixPrefixOptions']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixOptions"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaAddressprefixesAddressPrefixPrefixMetric(self):
@@ -1091,7 +1528,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaAddressprefixesAddressPrefixPrefixMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaAddressprefixesAddressPrefixPrefixMetric"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaAddressprefixesAddressPrefixDataLengthoctets(self):
@@ -1101,7 +1546,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaAddressprefixesAddressPrefixDataLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaAddressprefixesAddressPrefixDataLengthoctets"
+                ]
+            ),
+        )
 
     @property
     def IntraareaprefixlsaAddressprefixesAddressPrefixIpv6AddressPrefix(self):
@@ -1111,7 +1564,15 @@ class Ospfv3LSAUpdate(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntraareaprefixlsaAddressprefixesAddressPrefixIpv6AddressPrefix']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "IntraareaprefixlsaAddressprefixesAddressPrefixIpv6AddressPrefix"
+                ]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

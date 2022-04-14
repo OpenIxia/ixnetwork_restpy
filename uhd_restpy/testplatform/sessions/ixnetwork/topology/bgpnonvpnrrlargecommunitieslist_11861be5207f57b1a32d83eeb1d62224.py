@@ -110,7 +110,7 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpNonVPNRRLargeCommunitiesList
-        """Adds a new bgpNonVPNRRLargeCommunitiesList resource on the json, only valid with config assistant
+        """Adds a new bgpNonVPNRRLargeCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----

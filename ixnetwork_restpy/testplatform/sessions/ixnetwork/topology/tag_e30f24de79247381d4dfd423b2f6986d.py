@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class Tag(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tag'
+    _SDM_NAME = "tag"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'Name': 'name',
+        "Id__": "__id__",
+        "Count": "count",
+        "Enabled": "enabled",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Tag, self).__init__(parent, list_op)
@@ -56,7 +56,8 @@ class Tag(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): the tag ids that this entity will use/publish
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Id__']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Id__"]))
 
     @property
     def Count(self):
@@ -66,7 +67,7 @@ class Tag(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def Enabled(self):
@@ -76,11 +77,12 @@ class Tag(Base):
         -------
         - bool: Enables/disables tags
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Name(self):
@@ -90,11 +92,12 @@ class Tag(Base):
         -------
         - str: specifies the name of the tag the entity will be part of
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Enabled=None, Name=None):
         # type: (bool, str) -> Tag

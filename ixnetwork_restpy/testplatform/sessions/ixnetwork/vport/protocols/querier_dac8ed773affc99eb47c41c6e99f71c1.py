@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,32 +35,32 @@ class Querier(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'querier'
+    _SDM_NAME = "querier"
     _SDM_ATT_MAP = {
-        'DiscardLearnedInfo': 'discardLearnedInfo',
-        'Enabled': 'enabled',
-        'GeneralQueryInterval': 'generalQueryInterval',
-        'GqResponseInterval': 'gqResponseInterval',
-        'InterfaceId': 'interfaceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'IsQuerier': 'isQuerier',
-        'IsRefreshComplete': 'isRefreshComplete',
-        'QuerierAddress': 'querierAddress',
-        'QuerierWorkingVersion': 'querierWorkingVersion',
-        'RobustnessVariable': 'robustnessVariable',
-        'RouterAlert': 'routerAlert',
-        'SqResponseInterval': 'sqResponseInterval',
-        'SqTransmissionCount': 'sqTransmissionCount',
-        'StartupQueryCount': 'startupQueryCount',
-        'SupportElection': 'supportElection',
-        'SupportOlderVersionHost': 'supportOlderVersionHost',
-        'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
-        'Version': 'version',
+        "DiscardLearnedInfo": "discardLearnedInfo",
+        "Enabled": "enabled",
+        "GeneralQueryInterval": "generalQueryInterval",
+        "GqResponseInterval": "gqResponseInterval",
+        "InterfaceId": "interfaceId",
+        "InterfaceIndex": "interfaceIndex",
+        "InterfaceType": "interfaceType",
+        "Interfaces": "interfaces",
+        "IsQuerier": "isQuerier",
+        "IsRefreshComplete": "isRefreshComplete",
+        "QuerierAddress": "querierAddress",
+        "QuerierWorkingVersion": "querierWorkingVersion",
+        "RobustnessVariable": "robustnessVariable",
+        "RouterAlert": "routerAlert",
+        "SqResponseInterval": "sqResponseInterval",
+        "SqTransmissionCount": "sqTransmissionCount",
+        "StartupQueryCount": "startupQueryCount",
+        "SupportElection": "supportElection",
+        "SupportOlderVersionHost": "supportOlderVersionHost",
+        "SupportOlderVersionQuerier": "supportOlderVersionQuerier",
+        "Version": "version",
     }
     _SDM_ENUM_MAP = {
-        'version': ['version1', 'version2'],
+        "version": ["version1", "version2"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -76,10 +77,13 @@ class Querier(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_916ee893c3d44f4bdc91e55725b14830 import LearnedGroupInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_916ee893c3d44f4bdc91e55725b14830 import (
+            LearnedGroupInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedGroupInfo', None) is not None:
-                return self._properties.get('LearnedGroupInfo')
+            if self._properties.get("LearnedGroupInfo", None) is not None:
+                return self._properties.get("LearnedGroupInfo")
         return LearnedGroupInfo(self)
 
     @property
@@ -90,11 +94,12 @@ class Querier(Base):
         -------
         - bool: If true, the Querier doesn't maintain any database and only sends periodic general queries. The specific query group/source record information isn't calculated based on any earlier received Report, but solely based on the last received report. If false, the emulated Querier maintains a complete record state for received reports and send queries (based on timer expiry for received groups and sources). Default is true.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedInfo"])
+
     @DiscardLearnedInfo.setter
     def DiscardLearnedInfo(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedInfo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardLearnedInfo"], value)
 
     @property
     def Enabled(self):
@@ -104,11 +109,12 @@ class Querier(Base):
         -------
         - bool: If true, the querier is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GeneralQueryInterval(self):
@@ -118,11 +124,12 @@ class Querier(Base):
         -------
         - number: The amount of time in seconds between MLD General Query messages sent by the querier. The default query interval is 125 seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GeneralQueryInterval"])
+
     @GeneralQueryInterval.setter
     def GeneralQueryInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GeneralQueryInterval"], value)
 
     @property
     def GqResponseInterval(self):
@@ -132,25 +139,27 @@ class Querier(Base):
         -------
         - number: The maximum amount of time in seconds that the MLD querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GqResponseInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["GqResponseInterval"])
+
     @GqResponseInterval.setter
     def GqResponseInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GqResponseInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GqResponseInterval"], value)
 
     @property
     def InterfaceId(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The interface associated with the MLD querier. The interface must be previously configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceId"])
+
     @InterfaceId.setter
     def InterfaceId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceId"], value)
 
     @property
     def InterfaceIndex(self):
@@ -160,11 +169,12 @@ class Querier(Base):
         -------
         - number: The assigned protocol interface ID for this SM interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIndex"])
+
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIndex"], value)
 
     @property
     def InterfaceType(self):
@@ -174,11 +184,12 @@ class Querier(Base):
         -------
         - str: The type of interface to be selected for this SM interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Interfaces(self):
@@ -188,11 +199,12 @@ class Querier(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def IsQuerier(self):
@@ -202,7 +214,7 @@ class Querier(Base):
         -------
         - bool: If true, this MLD entity is a querier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsQuerier'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsQuerier"])
 
     @property
     def IsRefreshComplete(self):
@@ -212,7 +224,7 @@ class Querier(Base):
         -------
         - bool: If true, the querier information is current.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsRefreshComplete'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsRefreshComplete"])
 
     @property
     def QuerierAddress(self):
@@ -222,7 +234,7 @@ class Querier(Base):
         -------
         - str: The querier IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuerierAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuerierAddress"])
 
     @property
     def QuerierWorkingVersion(self):
@@ -232,7 +244,7 @@ class Querier(Base):
         -------
         - number: The querier working MLD version.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuerierWorkingVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuerierWorkingVersion"])
 
     @property
     def RobustnessVariable(self):
@@ -242,11 +254,12 @@ class Querier(Base):
         -------
         - number: Defines the subnet vulnerability to lost packets. MLD can recover from robustness variable minus 1 lost MLD packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable'])
+        return self._get_attribute(self._SDM_ATT_MAP["RobustnessVariable"])
+
     @RobustnessVariable.setter
     def RobustnessVariable(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RobustnessVariable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RobustnessVariable"], value)
 
     @property
     def RouterAlert(self):
@@ -256,11 +269,12 @@ class Querier(Base):
         -------
         - bool: If true, sets the Send Router Alert bit in the IP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterAlert"])
+
     @RouterAlert.setter
     def RouterAlert(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterAlert"], value)
 
     @property
     def SqResponseInterval(self):
@@ -270,11 +284,12 @@ class Querier(Base):
         -------
         - number: The maximum amount of time in seconds that the MLD querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SqResponseInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["SqResponseInterval"])
+
     @SqResponseInterval.setter
     def SqResponseInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SqResponseInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SqResponseInterval"], value)
 
     @property
     def SqTransmissionCount(self):
@@ -284,11 +299,12 @@ class Querier(Base):
         -------
         - number: Indicates the total number of specific Query messages sent every Specific Query Response Interval seconds before assuming that there is no interested listener for the particular group/source.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SqTransmissionCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SqTransmissionCount"])
+
     @SqTransmissionCount.setter
     def SqTransmissionCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SqTransmissionCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SqTransmissionCount"], value)
 
     @property
     def StartupQueryCount(self):
@@ -298,11 +314,12 @@ class Querier(Base):
         -------
         - number: The number of general query messages sent at startup. The default startup query count is 2.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartupQueryCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartupQueryCount"])
+
     @StartupQueryCount.setter
     def StartupQueryCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartupQueryCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartupQueryCount"], value)
 
     @property
     def SupportElection(self):
@@ -312,11 +329,12 @@ class Querier(Base):
         -------
         - bool: If true, indicates whether the Querier participates in querier election or not. If disabled, then all incoming query messages are discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportElection'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportElection"])
+
     @SupportElection.setter
     def SupportElection(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportElection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportElection"], value)
 
     @property
     def SupportOlderVersionHost(self):
@@ -326,11 +344,12 @@ class Querier(Base):
         -------
         - bool: If true, indicates whether the Querier will comply to RFC 3376 Section 7.3.2 and RFC 3810 Section 8.3.2. If disabled, all membership reports with version less than the current version are discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionHost'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportOlderVersionHost"])
+
     @SupportOlderVersionHost.setter
     def SupportOlderVersionHost(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportOlderVersionHost'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportOlderVersionHost"], value)
 
     @property
     def SupportOlderVersionQuerier(self):
@@ -340,11 +359,12 @@ class Querier(Base):
         -------
         - bool: If true, indicates whether the Querier downgrades to the lowest version of received query messages. If disabled, all query messages with version less than the current version are discarded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionQuerier'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportOlderVersionQuerier"])
+
     @SupportOlderVersionQuerier.setter
     def SupportOlderVersionQuerier(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SupportOlderVersionQuerier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SupportOlderVersionQuerier"], value)
 
     @property
     def Version(self):
@@ -354,13 +374,33 @@ class Querier(Base):
         -------
         - str(version1 | version2): Sets the version for the MLD querier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Version'])
+        return self._get_attribute(self._SDM_ATT_MAP["Version"])
+
     @Version.setter
     def Version(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Version'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Version"], value)
 
-    def update(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+    def update(
+        self,
+        DiscardLearnedInfo=None,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GqResponseInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SqResponseInterval=None,
+        SqTransmissionCount=None,
+        StartupQueryCount=None,
+        SupportElection=None,
+        SupportOlderVersionHost=None,
+        SupportOlderVersionQuerier=None,
+        Version=None,
+    ):
         # type: (bool, bool, int, int, str, int, str, str, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Updates querier resource on the server.
 
@@ -390,7 +430,26 @@ class Querier(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+    def add(
+        self,
+        DiscardLearnedInfo=None,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GqResponseInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SqResponseInterval=None,
+        SqTransmissionCount=None,
+        StartupQueryCount=None,
+        SupportElection=None,
+        SupportOlderVersionHost=None,
+        SupportOlderVersionQuerier=None,
+        Version=None,
+    ):
         # type: (bool, bool, int, int, str, int, str, str, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Adds a new querier resource on the server and adds it to the container.
 
@@ -434,7 +493,30 @@ class Querier(Base):
         """
         self._delete()
 
-    def find(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IsQuerier=None, IsRefreshComplete=None, QuerierAddress=None, QuerierWorkingVersion=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+    def find(
+        self,
+        DiscardLearnedInfo=None,
+        Enabled=None,
+        GeneralQueryInterval=None,
+        GqResponseInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IsQuerier=None,
+        IsRefreshComplete=None,
+        QuerierAddress=None,
+        QuerierWorkingVersion=None,
+        RobustnessVariable=None,
+        RouterAlert=None,
+        SqResponseInterval=None,
+        SqTransmissionCount=None,
+        StartupQueryCount=None,
+        SupportElection=None,
+        SupportOlderVersionHost=None,
+        SupportOlderVersionQuerier=None,
+        Version=None,
+    ):
         # type: (bool, bool, int, int, str, int, str, str, bool, bool, str, int, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Finds and retrieves querier resources from the server.
 
@@ -510,10 +592,14 @@ class Querier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )
 
     def RefreshLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -531,7 +617,11 @@ class Querier(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "refreshLearnedInfo", payload=payload, response_object=None
+        )

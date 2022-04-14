@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,20 @@ class GroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupRange'
+    _SDM_NAME = "groupRange"
     _SDM_ATT_MAP = {
-        'EnablePacking': 'enablePacking',
-        'EnableUpdateRequired': 'enableUpdateRequired',
-        'Enabled': 'enabled',
-        'GroupCount': 'groupCount',
-        'GroupIpFrom': 'groupIpFrom',
-        'IncrementStep': 'incrementStep',
-        'RecordsPerFrame': 'recordsPerFrame',
-        'SourceMode': 'sourceMode',
-        'SourcesPerRecord': 'sourcesPerRecord',
+        "EnablePacking": "enablePacking",
+        "EnableUpdateRequired": "enableUpdateRequired",
+        "Enabled": "enabled",
+        "GroupCount": "groupCount",
+        "GroupIpFrom": "groupIpFrom",
+        "IncrementStep": "incrementStep",
+        "RecordsPerFrame": "recordsPerFrame",
+        "SourceMode": "sourceMode",
+        "SourcesPerRecord": "sourcesPerRecord",
     }
     _SDM_ENUM_MAP = {
-        'sourceMode': ['include', 'exclude'],
+        "sourceMode": ["include", "exclude"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +65,13 @@ class GroupRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_bfb4946333e992c2007f92349bd0076c import SourceRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_bfb4946333e992c2007f92349bd0076c import (
+            SourceRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SourceRange', None) is not None:
-                return self._properties.get('SourceRange')
+            if self._properties.get("SourceRange", None) is not None:
+                return self._properties.get("SourceRange")
         return SourceRange(self)
 
     @property
@@ -78,11 +82,12 @@ class GroupRange(Base):
         -------
         - bool: If enabled, the user can specify the number of records per frame and sources per record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePacking"])
+
     @EnablePacking.setter
     def EnablePacking(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePacking"], value)
 
     @property
     def EnableUpdateRequired(self):
@@ -92,11 +97,12 @@ class GroupRange(Base):
         -------
         - bool: If true, updates the the changes to the Source IP addresses to take effect and to be displayed in the table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableUpdateRequired'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableUpdateRequired"])
+
     @EnableUpdateRequired.setter
     def EnableUpdateRequired(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableUpdateRequired'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableUpdateRequired"], value)
 
     @property
     def Enabled(self):
@@ -106,11 +112,12 @@ class GroupRange(Base):
         -------
         - bool: Enables the use of the group range in the MLD simulation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupCount(self):
@@ -120,11 +127,12 @@ class GroupRange(Base):
         -------
         - number: The total number of IPv6 groups (Multicast Addresses) in this group range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupCount"])
+
     @GroupCount.setter
     def GroupCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupCount"], value)
 
     @property
     def GroupIpFrom(self):
@@ -134,11 +142,12 @@ class GroupRange(Base):
         -------
         - str: The IPv6 address of the first member of the Group (Multicast Address).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupIpFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupIpFrom"])
+
     @GroupIpFrom.setter
     def GroupIpFrom(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupIpFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupIpFrom"], value)
 
     @property
     def IncrementStep(self):
@@ -148,11 +157,12 @@ class GroupRange(Base):
         -------
         - number: The value used to increment the IPv6 address for each additional member of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementStep"])
+
     @IncrementStep.setter
     def IncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementStep"], value)
 
     @property
     def RecordsPerFrame(self):
@@ -162,11 +172,12 @@ class GroupRange(Base):
         -------
         - number: The total number of group records to be added to each frame/message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecordsPerFrame'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecordsPerFrame"])
+
     @RecordsPerFrame.setter
     def RecordsPerFrame(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RecordsPerFrame'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RecordsPerFrame"], value)
 
     @property
     def SourceMode(self):
@@ -176,11 +187,12 @@ class GroupRange(Base):
         -------
         - str(include | exclude): Indicates whether the associated source range is a set of IP addresses to be included or excluded.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceMode"])
+
     @SourceMode.setter
     def SourceMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceMode"], value)
 
     @property
     def SourcesPerRecord(self):
@@ -190,13 +202,25 @@ class GroupRange(Base):
         -------
         - number: The total number of sources to be added to each record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourcesPerRecord'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourcesPerRecord"])
+
     @SourcesPerRecord.setter
     def SourcesPerRecord(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourcesPerRecord'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourcesPerRecord"], value)
 
-    def update(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+    def update(
+        self,
+        EnablePacking=None,
+        EnableUpdateRequired=None,
+        Enabled=None,
+        GroupCount=None,
+        GroupIpFrom=None,
+        IncrementStep=None,
+        RecordsPerFrame=None,
+        SourceMode=None,
+        SourcesPerRecord=None,
+    ):
         # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Updates groupRange resource on the server.
 
@@ -218,7 +242,18 @@ class GroupRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+    def add(
+        self,
+        EnablePacking=None,
+        EnableUpdateRequired=None,
+        Enabled=None,
+        GroupCount=None,
+        GroupIpFrom=None,
+        IncrementStep=None,
+        RecordsPerFrame=None,
+        SourceMode=None,
+        SourcesPerRecord=None,
+    ):
         # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Adds a new groupRange resource on the server and adds it to the container.
 
@@ -254,7 +289,18 @@ class GroupRange(Base):
         """
         self._delete()
 
-    def find(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+    def find(
+        self,
+        EnablePacking=None,
+        EnableUpdateRequired=None,
+        Enabled=None,
+        GroupCount=None,
+        GroupIpFrom=None,
+        IncrementStep=None,
+        RecordsPerFrame=None,
+        SourceMode=None,
+        SourcesPerRecord=None,
+    ):
         # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Finds and retrieves groupRange resources from the server.
 
@@ -318,7 +364,9 @@ class GroupRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateSource', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateSource", payload=payload, response_object=None)

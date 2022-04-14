@@ -4,37 +4,37 @@ from ixnetwork_restpy.files import Files
 
 class PimBootstrapMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'pimBootstrapMessage'
+    _SDM_NAME = "pimBootstrapMessage"
     _SDM_ATT_MAP = {
-        'HeaderVersion': 'pimBootstrapMessage.header.version-1',
-        'HeaderType': 'pimBootstrapMessage.header.type-2',
-        'HeaderReserved': 'pimBootstrapMessage.header.reserved-3',
-        'HeaderChecksum': 'pimBootstrapMessage.header.checksum-4',
-        'HeaderFragmentTag': 'pimBootstrapMessage.header.fragmentTag-5',
-        'HeaderHashMaskLen': 'pimBootstrapMessage.header.hashMaskLen-6',
-        'HeaderBsrpriority': 'pimBootstrapMessage.header.bsrpriority-7',
-        'EncodedUnicastBSRAddressAddrFamily': 'pimBootstrapMessage.header.encodedUnicastBSRAddress.addrFamily-8',
-        'EncodedUnicastBSRAddressEncodingType': 'pimBootstrapMessage.header.encodedUnicastBSRAddress.encodingType-9',
-        'UnicastAddrAddrIPv4': 'pimBootstrapMessage.header.encodedUnicastBSRAddress.unicastAddr.addrIPv4-10',
-        'UnicastAddrAddrIPv6': 'pimBootstrapMessage.header.encodedUnicastBSRAddress.unicastAddr.addrIPv6-11',
-        'EncodedGroupAddressAddrFamily': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.addrFamily-12',
-        'EncodedGroupAddressEncodingType': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.encodingType-13',
-        'EncodedGroupAddressB': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.b-14',
-        'EncodedGroupAddressReserved': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.reserved-15',
-        'EncodedGroupAddressZ': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.z-16',
-        'EncodedGroupAddressMaskLength': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.maskLength-17',
-        'GroupMulticastAddrGrpMcastAddrIPv4': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv4-18',
-        'GroupMulticastAddrGrpMcastAddrIPv6': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv6-19',
-        'EncodedGroupAddressFieldsRpcount': 'pimBootstrapMessage.header.encodedGroupAddressFields.rpcount-20',
-        'EncodedGroupAddressFieldsFragRPCount': 'pimBootstrapMessage.header.encodedGroupAddressFields.fragRPCount-21',
-        'EncodedGroupAddressFieldsReserved1': 'pimBootstrapMessage.header.encodedGroupAddressFields.reserved1-22',
-        'EncodedUnicastRPAddressAddrFamily': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.addrFamily-23',
-        'EncodedUnicastRPAddressEncodingType': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.encodingType-24',
-        'RpAddrAddrIPv4': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.rpAddr.addrIPv4-25',
-        'RpAddrAddrIPv6': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.rpAddr.addrIPv6-26',
-        'EncodedUnicastRPAddressFieldsRpholdTime': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.rpholdTime-27',
-        'EncodedUnicastRPAddressFieldsRppriority': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.rppriority-28',
-        'EncodedUnicastRPAddressFieldsReserved2': 'pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.reserved2-29',
+        "HeaderVersion": "pimBootstrapMessage.header.version-1",
+        "HeaderType": "pimBootstrapMessage.header.type-2",
+        "HeaderReserved": "pimBootstrapMessage.header.reserved-3",
+        "HeaderChecksum": "pimBootstrapMessage.header.checksum-4",
+        "HeaderFragmentTag": "pimBootstrapMessage.header.fragmentTag-5",
+        "HeaderHashMaskLen": "pimBootstrapMessage.header.hashMaskLen-6",
+        "HeaderBsrpriority": "pimBootstrapMessage.header.bsrpriority-7",
+        "EncodedUnicastBSRAddressAddrFamily": "pimBootstrapMessage.header.encodedUnicastBSRAddress.addrFamily-8",
+        "EncodedUnicastBSRAddressEncodingType": "pimBootstrapMessage.header.encodedUnicastBSRAddress.encodingType-9",
+        "UnicastAddrAddrIPv4": "pimBootstrapMessage.header.encodedUnicastBSRAddress.unicastAddr.addrIPv4-10",
+        "UnicastAddrAddrIPv6": "pimBootstrapMessage.header.encodedUnicastBSRAddress.unicastAddr.addrIPv6-11",
+        "EncodedGroupAddressAddrFamily": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.addrFamily-12",
+        "EncodedGroupAddressEncodingType": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.encodingType-13",
+        "EncodedGroupAddressB": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.b-14",
+        "EncodedGroupAddressReserved": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.reserved-15",
+        "EncodedGroupAddressZ": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.z-16",
+        "EncodedGroupAddressMaskLength": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.maskLength-17",
+        "GroupMulticastAddrGrpMcastAddrIPv4": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv4-18",
+        "GroupMulticastAddrGrpMcastAddrIPv6": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedGroupAddress.groupMulticastAddr.grpMcastAddrIPv6-19",
+        "EncodedGroupAddressFieldsRpcount": "pimBootstrapMessage.header.encodedGroupAddressFields.rpcount-20",
+        "EncodedGroupAddressFieldsFragRPCount": "pimBootstrapMessage.header.encodedGroupAddressFields.fragRPCount-21",
+        "EncodedGroupAddressFieldsReserved1": "pimBootstrapMessage.header.encodedGroupAddressFields.reserved1-22",
+        "EncodedUnicastRPAddressAddrFamily": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.addrFamily-23",
+        "EncodedUnicastRPAddressEncodingType": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.encodingType-24",
+        "RpAddrAddrIPv4": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.rpAddr.addrIPv4-25",
+        "RpAddrAddrIPv6": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.encodedUnicastRPAddress.rpAddr.addrIPv6-26",
+        "EncodedUnicastRPAddressFieldsRpholdTime": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.rpholdTime-27",
+        "EncodedUnicastRPAddressFieldsRppriority": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.rppriority-28",
+        "EncodedUnicastRPAddressFieldsReserved2": "pimBootstrapMessage.header.encodedGroupAddressFields.encodedUnicastRPAddressFields.reserved2-29",
     }
 
     def __init__(self, parent, list_op=False):
@@ -48,7 +48,8 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def HeaderType(self):
@@ -58,7 +59,8 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
 
     @property
     def HeaderReserved(self):
@@ -68,7 +70,10 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderChecksum(self):
@@ -78,7 +83,10 @@ class PimBootstrapMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderChecksum"])
+        )
 
     @property
     def HeaderFragmentTag(self):
@@ -88,7 +96,10 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFragmentTag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFragmentTag"])
+        )
 
     @property
     def HeaderHashMaskLen(self):
@@ -98,7 +109,10 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHashMaskLen']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHashMaskLen"])
+        )
 
     @property
     def HeaderBsrpriority(self):
@@ -108,7 +122,10 @@ class PimBootstrapMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBsrpriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderBsrpriority"])
+        )
 
     @property
     def EncodedUnicastBSRAddressAddrFamily(self):
@@ -119,7 +136,13 @@ class PimBootstrapMessage(Base):
         Available enum values: IP, 1, IPv6, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastBSRAddressAddrFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastBSRAddressAddrFamily"]
+            ),
+        )
 
     @property
     def EncodedUnicastBSRAddressEncodingType(self):
@@ -129,7 +152,13 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastBSRAddressEncodingType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastBSRAddressEncodingType"]
+            ),
+        )
 
     @property
     def UnicastAddrAddrIPv4(self):
@@ -139,7 +168,10 @@ class PimBootstrapMessage(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastAddrAddrIPv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnicastAddrAddrIPv4"])
+        )
 
     @property
     def UnicastAddrAddrIPv6(self):
@@ -149,7 +181,10 @@ class PimBootstrapMessage(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastAddrAddrIPv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UnicastAddrAddrIPv6"])
+        )
 
     @property
     def EncodedGroupAddressAddrFamily(self):
@@ -160,7 +195,11 @@ class PimBootstrapMessage(Base):
         Available enum values: IP, 1, IPv6, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressAddrFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressAddrFamily"]),
+        )
 
     @property
     def EncodedGroupAddressEncodingType(self):
@@ -170,47 +209,64 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressEncodingType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressEncodingType"]),
+        )
 
     @property
     def EncodedGroupAddressB(self):
         """
-        Display Name: B 
+        Display Name: B
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressB"])
+        )
 
     @property
     def EncodedGroupAddressReserved(self):
         """
-        Display Name: Reserved 
+        Display Name: Reserved
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressReserved"])
+        )
 
     @property
     def EncodedGroupAddressZ(self):
         """
-        Display Name: Z 
+        Display Name: Z
         Default Value: 0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressZ']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressZ"])
+        )
 
     @property
     def EncodedGroupAddressMaskLength(self):
         """
-        Display Name: Mask Length 
+        Display Name: Mask Length
         Default Value: 32
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressMaskLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressMaskLength"]),
+        )
 
     @property
     def GroupMulticastAddrGrpMcastAddrIPv4(self):
@@ -220,7 +276,13 @@ class PimBootstrapMessage(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupMulticastAddrGrpMcastAddrIPv4']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["GroupMulticastAddrGrpMcastAddrIPv4"]
+            ),
+        )
 
     @property
     def GroupMulticastAddrGrpMcastAddrIPv6(self):
@@ -230,27 +292,43 @@ class PimBootstrapMessage(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GroupMulticastAddrGrpMcastAddrIPv6']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["GroupMulticastAddrGrpMcastAddrIPv6"]
+            ),
+        )
 
     @property
     def EncodedGroupAddressFieldsRpcount(self):
         """
-        Display Name: RP-Count 
+        Display Name: RP-Count
         Default Value: 0x0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressFieldsRpcount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedGroupAddressFieldsRpcount"]),
+        )
 
     @property
     def EncodedGroupAddressFieldsFragRPCount(self):
         """
-        Display Name: Frag RP-Count 
+        Display Name: Frag RP-Count
         Default Value: 0x0
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressFieldsFragRPCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedGroupAddressFieldsFragRPCount"]
+            ),
+        )
 
     @property
     def EncodedGroupAddressFieldsReserved1(self):
@@ -260,7 +338,13 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedGroupAddressFieldsReserved1']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedGroupAddressFieldsReserved1"]
+            ),
+        )
 
     @property
     def EncodedUnicastRPAddressAddrFamily(self):
@@ -271,7 +355,11 @@ class PimBootstrapMessage(Base):
         Available enum values: IP, 1, IPv6, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressAddrFamily']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EncodedUnicastRPAddressAddrFamily"]),
+        )
 
     @property
     def EncodedUnicastRPAddressEncodingType(self):
@@ -281,7 +369,13 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressEncodingType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastRPAddressEncodingType"]
+            ),
+        )
 
     @property
     def RpAddrAddrIPv4(self):
@@ -291,7 +385,10 @@ class PimBootstrapMessage(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RpAddrAddrIPv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RpAddrAddrIPv4"])
+        )
 
     @property
     def RpAddrAddrIPv6(self):
@@ -301,7 +398,10 @@ class PimBootstrapMessage(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RpAddrAddrIPv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RpAddrAddrIPv6"])
+        )
 
     @property
     def EncodedUnicastRPAddressFieldsRpholdTime(self):
@@ -311,7 +411,13 @@ class PimBootstrapMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressFieldsRpholdTime']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastRPAddressFieldsRpholdTime"]
+            ),
+        )
 
     @property
     def EncodedUnicastRPAddressFieldsRppriority(self):
@@ -321,7 +427,13 @@ class PimBootstrapMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressFieldsRppriority']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastRPAddressFieldsRppriority"]
+            ),
+        )
 
     @property
     def EncodedUnicastRPAddressFieldsReserved2(self):
@@ -331,7 +443,13 @@ class PimBootstrapMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EncodedUnicastRPAddressFieldsReserved2']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EncodedUnicastRPAddressFieldsReserved2"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

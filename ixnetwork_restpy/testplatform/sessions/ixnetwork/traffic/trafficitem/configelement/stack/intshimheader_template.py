@@ -4,13 +4,13 @@ from ixnetwork_restpy.files import Files
 
 class Intshimheader(Base):
     __slots__ = ()
-    _SDM_NAME = 'intshimheader'
+    _SDM_NAME = "intshimheader"
     _SDM_ATT_MAP = {
-        'ShimheaderType': 'intshimheader.shimheader.type-1',
-        'ShimheaderReserved8': 'intshimheader.shimheader.reserved8-2',
-        'ShimheaderLength': 'intshimheader.shimheader.length-3',
-        'ShimheaderDscp': 'intshimheader.shimheader.dscp-4',
-        'ShimheaderReserved2': 'intshimheader.shimheader.reserved2-5',
+        "ShimheaderType": "intshimheader.shimheader.type-1",
+        "ShimheaderReserved8": "intshimheader.shimheader.reserved8-2",
+        "ShimheaderLength": "intshimheader.shimheader.length-3",
+        "ShimheaderDscp": "intshimheader.shimheader.dscp-4",
+        "ShimheaderReserved2": "intshimheader.shimheader.reserved2-5",
     }
 
     def __init__(self, parent, list_op=False):
@@ -25,7 +25,10 @@ class Intshimheader(Base):
         Available enum values: Hop-by-Hop, 1, Destination, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShimheaderType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShimheaderType"])
+        )
 
     @property
     def ShimheaderReserved8(self):
@@ -35,7 +38,10 @@ class Intshimheader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShimheaderReserved8']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShimheaderReserved8"])
+        )
 
     @property
     def ShimheaderLength(self):
@@ -45,7 +51,10 @@ class Intshimheader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShimheaderLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShimheaderLength"])
+        )
 
     @property
     def ShimheaderDscp(self):
@@ -55,7 +64,10 @@ class Intshimheader(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShimheaderDscp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShimheaderDscp"])
+        )
 
     @property
     def ShimheaderReserved2(self):
@@ -65,7 +77,10 @@ class Intshimheader(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShimheaderReserved2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ShimheaderReserved2"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

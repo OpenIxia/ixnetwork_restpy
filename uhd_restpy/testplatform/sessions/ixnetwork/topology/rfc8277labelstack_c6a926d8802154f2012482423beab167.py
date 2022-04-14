@@ -134,7 +134,7 @@ class Rfc8277LabelStack(Base):
 
     def add(self, Name=None):
         # type: (str) -> Rfc8277LabelStack
-        """Adds a new Rfc8277LabelStack resource on the json, only valid with config assistant
+        """Adds a new Rfc8277LabelStack resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,21 @@ class Session(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'session'
+    _SDM_NAME = "session"
     _SDM_ATT_MAP = {
-        'BfdSessionType': 'bfdSessionType',
-        'Enabled': 'enabled',
-        'EnabledAutoChooseSource': 'enabledAutoChooseSource',
-        'IpType': 'ipType',
-        'LocalBfdAddress': 'localBfdAddress',
-        'MyDisc': 'myDisc',
-        'RemoteBfdAddress': 'remoteBfdAddress',
-        'RemoteDisc': 'remoteDisc',
-        'RemoteDiscLearned': 'remoteDiscLearned',
+        "BfdSessionType": "bfdSessionType",
+        "Enabled": "enabled",
+        "EnabledAutoChooseSource": "enabledAutoChooseSource",
+        "IpType": "ipType",
+        "LocalBfdAddress": "localBfdAddress",
+        "MyDisc": "myDisc",
+        "RemoteBfdAddress": "remoteBfdAddress",
+        "RemoteDisc": "remoteDisc",
+        "RemoteDiscLearned": "remoteDiscLearned",
     }
     _SDM_ENUM_MAP = {
-        'bfdSessionType': ['singleHop', 'multipleHops'],
-        'ipType': ['ipv4', 'ipv6'],
+        "bfdSessionType": ["singleHop", "multipleHops"],
+        "ipType": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,11 +63,12 @@ class Session(Base):
         -------
         - str(singleHop | multipleHops): The type of BFD session, either single or multiple hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BfdSessionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BfdSessionType"])
+
     @BfdSessionType.setter
     def BfdSessionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BfdSessionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BfdSessionType"], value)
 
     @property
     def Enabled(self):
@@ -76,11 +78,12 @@ class Session(Base):
         -------
         - bool: Enables the use of this route range for the simulated router. The default is disable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EnabledAutoChooseSource(self):
@@ -90,11 +93,12 @@ class Session(Base):
         -------
         - bool: If true, enables the session to automatically choose the source IP address for the BFD session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnabledAutoChooseSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnabledAutoChooseSource"])
+
     @EnabledAutoChooseSource.setter
     def EnabledAutoChooseSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnabledAutoChooseSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnabledAutoChooseSource"], value)
 
     @property
     def IpType(self):
@@ -104,11 +108,12 @@ class Session(Base):
         -------
         - str(ipv4 | ipv6): The session is created with the remote IP. IPv4 or IPv6 (default = IPv4).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def LocalBfdAddress(self):
@@ -118,11 +123,12 @@ class Session(Base):
         -------
         - str: The first IP address that will be used for simulated routers. IPv4 or IPv6.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalBfdAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalBfdAddress"])
+
     @LocalBfdAddress.setter
     def LocalBfdAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalBfdAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalBfdAddress"], value)
 
     @property
     def MyDisc(self):
@@ -132,11 +138,12 @@ class Session(Base):
         -------
         - number: Needs to be a unique value in node. This option is used to demultiplex multiple BFD sessions.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MyDisc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MyDisc"])
+
     @MyDisc.setter
     def MyDisc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MyDisc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MyDisc"], value)
 
     @property
     def RemoteBfdAddress(self):
@@ -146,11 +153,12 @@ class Session(Base):
         -------
         - str: The remote address in which the BFD session is active.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteBfdAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteBfdAddress"])
+
     @RemoteBfdAddress.setter
     def RemoteBfdAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteBfdAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteBfdAddress"], value)
 
     @property
     def RemoteDisc(self):
@@ -160,11 +168,12 @@ class Session(Base):
         -------
         - number: This is the discriminator used by the remote system to identify the BFD session. This must be initialized to zero.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteDisc'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteDisc"])
+
     @RemoteDisc.setter
     def RemoteDisc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteDisc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteDisc"], value)
 
     @property
     def RemoteDiscLearned(self):
@@ -174,13 +183,25 @@ class Session(Base):
         -------
         - bool: The default is 0. If it is set to 0, then the Remote Discriminator will be learned.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteDiscLearned'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteDiscLearned"])
+
     @RemoteDiscLearned.setter
     def RemoteDiscLearned(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteDiscLearned'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteDiscLearned"], value)
 
-    def update(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+    def update(
+        self,
+        BfdSessionType=None,
+        Enabled=None,
+        EnabledAutoChooseSource=None,
+        IpType=None,
+        LocalBfdAddress=None,
+        MyDisc=None,
+        RemoteBfdAddress=None,
+        RemoteDisc=None,
+        RemoteDiscLearned=None,
+    ):
         # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Updates session resource on the server.
 
@@ -202,7 +223,18 @@ class Session(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+    def add(
+        self,
+        BfdSessionType=None,
+        Enabled=None,
+        EnabledAutoChooseSource=None,
+        IpType=None,
+        LocalBfdAddress=None,
+        MyDisc=None,
+        RemoteBfdAddress=None,
+        RemoteDisc=None,
+        RemoteDiscLearned=None,
+    ):
         # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Adds a new session resource on the server and adds it to the container.
 
@@ -238,7 +270,18 @@ class Session(Base):
         """
         self._delete()
 
-    def find(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+    def find(
+        self,
+        BfdSessionType=None,
+        Enabled=None,
+        EnabledAutoChooseSource=None,
+        IpType=None,
+        LocalBfdAddress=None,
+        MyDisc=None,
+        RemoteBfdAddress=None,
+        RemoteDisc=None,
+        RemoteDiscLearned=None,
+    ):
         # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Finds and retrieves session resources from the server.
 

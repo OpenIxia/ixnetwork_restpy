@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,11 @@ class NacSettings(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'nacSettings'
+    _SDM_NAME = "nacSettings"
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NacSettings, self).__init__(parent, list_op)
@@ -53,10 +53,13 @@ class NacSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacposture.nacposture import NacPosture
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacposture.nacposture import (
+            NacPosture,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacPosture', None) is not None:
-                return self._properties.get('NacPosture')
+            if self._properties.get("NacPosture", None) is not None:
+                return self._properties.get("NacPosture")
         return NacPosture(self)
 
     @property
@@ -70,10 +73,13 @@ class NacSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsequence.nacsequence import NacSequence
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsequence.nacsequence import (
+            NacSequence,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacSequence', None) is not None:
-                return self._properties.get('NacSequence')
+            if self._properties.get("NacSequence", None) is not None:
+                return self._properties.get("NacSequence")
         return NacSequence(self)
 
     @property
@@ -87,10 +93,13 @@ class NacSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.nactlv import NacTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.nactlv import (
+            NacTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacTlv', None) is not None:
-                return self._properties.get('NacTlv')
+            if self._properties.get("NacTlv", None) is not None:
+                return self._properties.get("NacTlv")
         return NacTlv(self)
 
     @property
@@ -104,10 +113,13 @@ class NacSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nacvendors import NacVendors
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nacvendors import (
+            NacVendors,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NacVendors', None) is not None:
-                return self._properties.get('NacVendors')
+            if self._properties.get("NacVendors", None) is not None:
+                return self._properties.get("NacVendors")
         return NacVendors(self)
 
     @property
@@ -118,7 +130,7 @@ class NacSettings(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def find(self, ObjectId=None):
         # type: (str) -> NacSettings

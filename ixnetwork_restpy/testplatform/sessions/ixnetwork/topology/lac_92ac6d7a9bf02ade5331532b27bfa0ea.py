@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,50 +35,58 @@ class Lac(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lac'
+    _SDM_NAME = "lac"
     _SDM_ATT_MAP = {
-        'BaseLnsIp': 'baseLnsIp',
-        'BearerCapability': 'bearerCapability',
-        'BearerType': 'bearerType',
-        'Callingnum': 'callingnum',
-        'ConnectedVia': 'connectedVia',
-        'ControlMsgsRetryCounter': 'controlMsgsRetryCounter',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableControlChecksum': 'enableControlChecksum',
-        'EnableDataChecksum': 'enableDataChecksum',
-        'EnableExcludeHdlc': 'enableExcludeHdlc',
-        'EnableHelloRequest': 'enableHelloRequest',
-        'EnableRedial': 'enableRedial',
-        'Errors': 'errors',
-        'FramingCapability': 'framingCapability',
-        'HelloRequestInterval': 'helloRequestInterval',
-        'InitRetransmitInterval': 'initRetransmitInterval',
-        'LacHostName': 'lacHostName',
-        'LacSecret': 'lacSecret',
-        'MaxRedialAttempts': 'maxRedialAttempts',
-        'MaxRetransmitInterval': 'maxRetransmitInterval',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OffsetByte': 'offsetByte',
-        'OffsetLength': 'offsetLength',
-        'ReceiveWindowSize': 'receiveWindowSize',
-        'RedialInterval': 'redialInterval',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TunnelAuthentication': 'tunnelAuthentication',
-        'TunnelsPerInterfaceMultiplier': 'tunnelsPerInterfaceMultiplier',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
-        'UseHiddenAVPs': 'useHiddenAVPs',
-        'UseLengthBitInPayload': 'useLengthBitInPayload',
-        'UseOffsetBitInPayload': 'useOffsetBitInPayload',
-        'UseSequenceNoInPayload': 'useSequenceNoInPayload',
+        "BaseLnsIp": "baseLnsIp",
+        "BearerCapability": "bearerCapability",
+        "BearerType": "bearerType",
+        "Callingnum": "callingnum",
+        "ConnectedVia": "connectedVia",
+        "ControlMsgsRetryCounter": "controlMsgsRetryCounter",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableControlChecksum": "enableControlChecksum",
+        "EnableDataChecksum": "enableDataChecksum",
+        "EnableExcludeHdlc": "enableExcludeHdlc",
+        "EnableHelloRequest": "enableHelloRequest",
+        "EnableRedial": "enableRedial",
+        "Errors": "errors",
+        "FramingCapability": "framingCapability",
+        "HelloRequestInterval": "helloRequestInterval",
+        "InitRetransmitInterval": "initRetransmitInterval",
+        "LacHostName": "lacHostName",
+        "LacSecret": "lacSecret",
+        "MaxRedialAttempts": "maxRedialAttempts",
+        "MaxRetransmitInterval": "maxRetransmitInterval",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OffsetByte": "offsetByte",
+        "OffsetLength": "offsetLength",
+        "ReceiveWindowSize": "receiveWindowSize",
+        "RedialInterval": "redialInterval",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TunnelAuthentication": "tunnelAuthentication",
+        "TunnelsPerInterfaceMultiplier": "tunnelsPerInterfaceMultiplier",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UdpSourcePort": "udpSourcePort",
+        "UseHiddenAVPs": "useHiddenAVPs",
+        "UseLengthBitInPayload": "useLengthBitInPayload",
+        "UseOffsetBitInPayload": "useOffsetBitInPayload",
+        "UseSequenceNoInPayload": "useSequenceNoInPayload",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -94,10 +103,13 @@ class Lac(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -111,10 +123,13 @@ class Lac(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -126,7 +141,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Defines the base address to be used by the L2TP tunnel
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseLnsIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BaseLnsIp"]))
 
     @property
     def BearerCapability(self):
@@ -137,7 +153,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates to the DUT the bearer device types from which incoming calls will be accepted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BearerCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BearerCapability"])
+        )
 
     @property
     def BearerType(self):
@@ -148,32 +167,35 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The bearer type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BearerType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BearerType"]))
 
     @property
     def Callingnum(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Calling Number AVP in ICRQ
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Callingnum']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Callingnum"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def ControlMsgsRetryCounter(self):
@@ -184,7 +206,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of L2TP retries
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlMsgsRetryCounter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlMsgsRetryCounter"])
+        )
 
     @property
     def Count(self):
@@ -194,7 +219,7 @@ class Lac(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -204,7 +229,7 @@ class Lac(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableControlChecksum(self):
@@ -215,7 +240,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on control plane packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableControlChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableControlChecksum"])
+        )
 
     @property
     def EnableDataChecksum(self):
@@ -226,7 +254,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on data plane packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDataChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableDataChecksum"])
+        )
 
     @property
     def EnableExcludeHdlc(self):
@@ -236,11 +267,12 @@ class Lac(Base):
         -------
         - bool: If checked, HDLC header is not encoded in the L2TP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExcludeHdlc"])
+
     @EnableExcludeHdlc.setter
     def EnableExcludeHdlc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExcludeHdlc"], value)
 
     @property
     def EnableHelloRequest(self):
@@ -251,7 +283,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, L2TP hello request is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloRequest"])
+        )
 
     @property
     def EnableRedial(self):
@@ -262,7 +297,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, L2TP redial is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRedial']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRedial"]))
 
     @property
     def Errors(self):
@@ -271,7 +307,7 @@ class Lac(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FramingCapability(self):
@@ -282,7 +318,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Designates sync or async framing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FramingCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FramingCapability"])
+        )
 
     @property
     def HelloRequestInterval(self):
@@ -293,7 +332,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for L2TP hello request, in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloRequestInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloRequestInterval"])
+        )
 
     @property
     def InitRetransmitInterval(self):
@@ -304,7 +346,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitRetransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitRetransmitInterval"])
+        )
 
     @property
     def LacHostName(self):
@@ -315,7 +360,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LAC Hostname used for tunnel authentication.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacHostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacHostName"]))
 
     @property
     def LacSecret(self):
@@ -326,7 +372,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Secret value used for tunnel authentication.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacSecret']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacSecret"]))
 
     @property
     def MaxRedialAttempts(self):
@@ -337,7 +384,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of L2TP redial attempts
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRedialAttempts']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxRedialAttempts"])
+        )
 
     @property
     def MaxRetransmitInterval(self):
@@ -348,7 +398,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum amount of time that can elapse for receiving a reply for a control message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRetransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxRetransmitInterval"])
+        )
 
     @property
     def Multiplier(self):
@@ -358,11 +411,12 @@ class Lac(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -372,11 +426,12 @@ class Lac(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OffsetByte(self):
@@ -387,7 +442,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset byte. Applicable only if offset bit is set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OffsetByte']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OffsetByte"]))
 
     @property
     def OffsetLength(self):
@@ -398,7 +454,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset length in bytes. Applicable only if offset bit set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OffsetLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OffsetLength"]))
 
     @property
     def ReceiveWindowSize(self):
@@ -409,7 +466,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP Receive Window Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiveWindowSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReceiveWindowSize"])
+        )
 
     @property
     def RedialInterval(self):
@@ -420,7 +480,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP redial timeout, in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RedialInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedialInterval"])
+        )
 
     @property
     def SessionStatus(self):
@@ -430,7 +493,7 @@ class Lac(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -440,11 +503,12 @@ class Lac(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -453,7 +517,7 @@ class Lac(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -463,7 +527,7 @@ class Lac(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TunnelAuthentication(self):
@@ -474,7 +538,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables or disables L2TP tunnel authentication
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TunnelAuthentication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TunnelAuthentication"])
+        )
 
     @property
     def TunnelsPerInterfaceMultiplier(self):
@@ -484,11 +551,12 @@ class Lac(Base):
         -------
         - number: Number of tunnels per interface (multiplier).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelsPerInterfaceMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelsPerInterfaceMultiplier"])
+
     @TunnelsPerInterfaceMultiplier.setter
     def TunnelsPerInterfaceMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelsPerInterfaceMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelsPerInterfaceMultiplier"], value)
 
     @property
     def UdpDestinationPort(self):
@@ -499,7 +567,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling destinations
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+        )
 
     @property
     def UdpSourcePort(self):
@@ -510,7 +581,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling sources
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UdpSourcePort"]))
 
     @property
     def UseHiddenAVPs(self):
@@ -521,7 +593,8 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, Attribute Value Pair hiding is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseHiddenAVPs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseHiddenAVPs"]))
 
     @property
     def UseLengthBitInPayload(self):
@@ -532,7 +605,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, length bit is set in L2TP data packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseLengthBitInPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseLengthBitInPayload"])
+        )
 
     @property
     def UseOffsetBitInPayload(self):
@@ -543,7 +619,10 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, offset bit is enabled in L2TP data packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseOffsetBitInPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseOffsetBitInPayload"])
+        )
 
     @property
     def UseSequenceNoInPayload(self):
@@ -554,9 +633,20 @@ class Lac(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, sequence bit is set in L2TP data packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload']))
 
-    def update(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseSequenceNoInPayload"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        EnableExcludeHdlc=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TunnelsPerInterfaceMultiplier=None,
+    ):
         # type: (List[str], bool, int, str, List[str], int) -> Lac
         """Updates lac resource on the server.
 
@@ -578,7 +668,15 @@ class Lac(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        EnableExcludeHdlc=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+        TunnelsPerInterfaceMultiplier=None,
+    ):
         # type: (List[str], bool, int, str, List[str], int) -> Lac
         """Adds a new lac resource on the server and adds it to the container.
 
@@ -611,7 +709,21 @@ class Lac(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, EnableExcludeHdlc=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TunnelsPerInterfaceMultiplier=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        EnableExcludeHdlc=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        TunnelsPerInterfaceMultiplier=None,
+    ):
         """Finds and retrieves lac resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lac resources from the server.
@@ -688,10 +800,12 @@ class Lac(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -720,10 +834,12 @@ class Lac(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -752,10 +868,12 @@ class Lac(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -784,12 +902,44 @@ class Lac(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, BaseLnsIp=None, BearerCapability=None, BearerType=None, Callingnum=None, ControlMsgsRetryCounter=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableHelloRequest=None, EnableRedial=None, FramingCapability=None, HelloRequestInterval=None, InitRetransmitInterval=None, LacHostName=None, LacSecret=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, OffsetByte=None, OffsetLength=None, ReceiveWindowSize=None, RedialInterval=None, TunnelAuthentication=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAVPs=None, UseLengthBitInPayload=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BaseLnsIp=None,
+        BearerCapability=None,
+        BearerType=None,
+        Callingnum=None,
+        ControlMsgsRetryCounter=None,
+        EnableControlChecksum=None,
+        EnableDataChecksum=None,
+        EnableHelloRequest=None,
+        EnableRedial=None,
+        FramingCapability=None,
+        HelloRequestInterval=None,
+        InitRetransmitInterval=None,
+        LacHostName=None,
+        LacSecret=None,
+        MaxRedialAttempts=None,
+        MaxRetransmitInterval=None,
+        OffsetByte=None,
+        OffsetLength=None,
+        ReceiveWindowSize=None,
+        RedialInterval=None,
+        TunnelAuthentication=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        UseHiddenAVPs=None,
+        UseLengthBitInPayload=None,
+        UseOffsetBitInPayload=None,
+        UseSequenceNoInPayload=None,
+    ):
         """Base class infrastructure that gets a list of lac device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

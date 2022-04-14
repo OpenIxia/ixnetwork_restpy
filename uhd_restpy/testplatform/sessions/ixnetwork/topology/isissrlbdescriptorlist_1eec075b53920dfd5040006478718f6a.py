@@ -122,7 +122,7 @@ class IsisSRLBDescriptorList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisSRLBDescriptorList
-        """Adds a new isisSRLBDescriptorList resource on the json, only valid with config assistant
+        """Adds a new isisSRLBDescriptorList resource on the json, only valid with batch add utility
 
         Args
         ----

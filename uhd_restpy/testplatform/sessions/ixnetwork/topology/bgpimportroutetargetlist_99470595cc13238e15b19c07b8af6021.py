@@ -158,7 +158,7 @@ class BgpImportRouteTargetList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpImportRouteTargetList
-        """Adds a new bgpImportRouteTargetList resource on the json, only valid with config assistant
+        """Adds a new bgpImportRouteTargetList resource on the json, only valid with batch add utility
 
         Args
         ----

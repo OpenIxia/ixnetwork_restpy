@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class IgmpMcastIPv4GroupList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'igmpMcastIPv4GroupList'
+    _SDM_NAME = "igmpMcastIPv4GroupList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'McastAddrCnt': 'mcastAddrCnt',
-        'McastAddrIncr': 'mcastAddrIncr',
-        'Name': 'name',
-        'NoOfSrcRanges': 'noOfSrcRanges',
-        'SourceMode': 'sourceMode',
-        'StartMcastAddr': 'startMcastAddr',
-        'State': 'state',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "McastAddrCnt": "mcastAddrCnt",
+        "McastAddrIncr": "mcastAddrIncr",
+        "Name": "name",
+        "NoOfSrcRanges": "noOfSrcRanges",
+        "SourceMode": "sourceMode",
+        "StartMcastAddr": "startMcastAddr",
+        "State": "state",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IgmpMcastIPv4GroupList, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class IgmpMcastIPv4GroupList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist_f050f3572b51b1edb51a7f959ebf249f import IgmpUcastIPv4SourceList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist_f050f3572b51b1edb51a7f959ebf249f import (
+            IgmpUcastIPv4SourceList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpUcastIPv4SourceList', None) is not None:
-                return self._properties.get('IgmpUcastIPv4SourceList')
+            if self._properties.get("IgmpUcastIPv4SourceList", None) is not None:
+                return self._properties.get("IgmpUcastIPv4SourceList")
         return IgmpUcastIPv4SourceList(self)._select()
 
     @property
@@ -79,10 +82,13 @@ class IgmpMcastIPv4GroupList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -94,7 +100,8 @@ class IgmpMcastIPv4GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -104,7 +111,7 @@ class IgmpMcastIPv4GroupList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -114,7 +121,7 @@ class IgmpMcastIPv4GroupList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def McastAddrCnt(self):
@@ -125,7 +132,8 @@ class IgmpMcastIPv4GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastAddrCnt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McastAddrCnt"]))
 
     @property
     def McastAddrIncr(self):
@@ -136,7 +144,8 @@ class IgmpMcastIPv4GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Multicast Address Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['McastAddrIncr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["McastAddrIncr"]))
 
     @property
     def Name(self):
@@ -146,11 +155,12 @@ class IgmpMcastIPv4GroupList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOfSrcRanges(self):
@@ -160,11 +170,12 @@ class IgmpMcastIPv4GroupList(Base):
         -------
         - number: Sources per Multicast Group (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfSrcRanges'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfSrcRanges"])
+
     @NoOfSrcRanges.setter
     def NoOfSrcRanges(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfSrcRanges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfSrcRanges"], value)
 
     @property
     def SourceMode(self):
@@ -175,7 +186,8 @@ class IgmpMcastIPv4GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the IGMP/MLD Source Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMode"]))
 
     @property
     def StartMcastAddr(self):
@@ -186,7 +198,10 @@ class IgmpMcastIPv4GroupList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Multicast Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartMcastAddr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartMcastAddr"])
+        )
 
     @property
     def State(self):
@@ -196,7 +211,7 @@ class IgmpMcastIPv4GroupList(Base):
         -------
         - list(str[iptv | joined | notJoined | notStarted]): Indicates the state of the groups in the range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     def update(self, Name=None, NoOfSrcRanges=None):
         # type: (str, int) -> IgmpMcastIPv4GroupList
@@ -216,7 +231,14 @@ class IgmpMcastIPv4GroupList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfSrcRanges=None, State=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NoOfSrcRanges=None,
+        State=None,
+    ):
         # type: (int, str, str, int, List[str]) -> IgmpMcastIPv4GroupList
         """Finds and retrieves igmpMcastIPv4GroupList resources from the server.
 
@@ -287,10 +309,12 @@ class IgmpMcastIPv4GroupList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpJoinGroup', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpJoinGroup", payload=payload, response_object=None)
 
     def IgmpLeaveGroup(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -319,10 +343,12 @@ class IgmpMcastIPv4GroupList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpLeaveGroup', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("igmpLeaveGroup", payload=payload, response_object=None)
 
     def Join(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -341,10 +367,12 @@ class IgmpMcastIPv4GroupList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('join', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("join", payload=payload, response_object=None)
 
     def Leave(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -363,12 +391,22 @@ class IgmpMcastIPv4GroupList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('leave', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("leave", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, McastAddrCnt=None, McastAddrIncr=None, SourceMode=None, StartMcastAddr=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        McastAddrCnt=None,
+        McastAddrIncr=None,
+        SourceMode=None,
+        StartMcastAddr=None,
+    ):
         """Base class infrastructure that gets a list of igmpMcastIPv4GroupList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

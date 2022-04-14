@@ -12,16 +12,16 @@ use API browser property names in the payload
 from ixnetwork_restpy import SessionAssistant, Files
 
 
-session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
-    UserName='admin', Password='admin',
-    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
-    ClearConfig=True)
+session_assistant = SessionAssistant(
+    IpAddress="127.0.0.1",
+    UserName="admin",
+    Password="admin",
+    LogLevel=SessionAssistant.LOGLEVEL_INFO,
+    ClearConfig=True,
+)
 ixnetwork = session_assistant.Ixnetwork
 
 preferences = session_assistant.Ixnetwork.Globals.Preferences
-url = '%s/debug/mw' % preferences.href
-payload = {
-    'debugLog': True,
-    'traceLevel': 'all'
-}
+url = "%s/debug/mw" % preferences.href
+payload = {"debugLog": True, "traceLevel": "all"}
 preferences._connection._update(url, payload)

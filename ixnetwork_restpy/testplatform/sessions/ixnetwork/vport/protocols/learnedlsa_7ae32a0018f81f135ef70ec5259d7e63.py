@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,26 @@ class LearnedLsa(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedLsa'
+    _SDM_NAME = "learnedLsa"
     _SDM_ATT_MAP = {
-        'AdvRouterId': 'advRouterId',
-        'Age': 'age',
-        'LinkStateId': 'linkStateId',
-        'LsaType': 'lsaType',
-        'SeqNumber': 'seqNumber',
+        "AdvRouterId": "advRouterId",
+        "Age": "age",
+        "LinkStateId": "linkStateId",
+        "LsaType": "lsaType",
+        "SeqNumber": "seqNumber",
     }
     _SDM_ENUM_MAP = {
-        'lsaType': ['router', 'network', 'areaSummary', 'externalSummary', 'external', 'nssa', 'opaqueLocalScope', 'opaqueAreaScope', 'opaqueAsScope'],
+        "lsaType": [
+            "router",
+            "network",
+            "areaSummary",
+            "externalSummary",
+            "external",
+            "nssa",
+            "opaqueLocalScope",
+            "opaqueAreaScope",
+            "opaqueAsScope",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,7 +67,7 @@ class LearnedLsa(Base):
         -------
         - str: The router ID of the router that is originating the LSA. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvRouterId"])
 
     @property
     def Age(self):
@@ -66,7 +77,7 @@ class LearnedLsa(Base):
         -------
         - number: Read only. Only available when this command is used to access a learned LSA. This value holds the age of the LSA extracted from the LSA header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def LinkStateId(self):
@@ -76,7 +87,7 @@ class LearnedLsa(Base):
         -------
         - str: The router ID of the originating router. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkStateId"])
 
     @property
     def LsaType(self):
@@ -86,7 +97,7 @@ class LearnedLsa(Base):
         -------
         - str(router | network | areaSummary | externalSummary | external | nssa | opaqueLocalScope | opaqueAreaScope | opaqueAsScope): Read-only. The current LSA type. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaType"])
 
     @property
     def SeqNumber(self):
@@ -96,10 +107,10 @@ class LearnedLsa(Base):
         -------
         - str: Read only. Only available when this command is used to access a learned LSA. This value holds the sequence number of the LSA extracted from the LSA header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SeqNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SeqNumber"])
 
     def add(self):
-        """Adds a new learnedLsa resource on the json, only valid with config assistant
+        """Adds a new learnedLsa resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -111,7 +122,9 @@ class LearnedLsa(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdvRouterId=None, Age=None, LinkStateId=None, LsaType=None, SeqNumber=None):
+    def find(
+        self, AdvRouterId=None, Age=None, LinkStateId=None, LsaType=None, SeqNumber=None
+    ):
         # type: (str, int, str, str, str) -> LearnedLsa
         """Finds and retrieves learnedLsa resources from the server.
 

@@ -18,74 +18,83 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class Mka(Base):
-    """Mka Configuration
+    """Mka
     The Mka class encapsulates a list of mka resources that are managed by the user.
     A list of resources can be retrieved from the server using the Mka.find() method.
     The list can be managed by using the Mka.add() and Mka.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mka'
+    _SDM_NAME = "mka"
     _SDM_ATT_MAP = {
-        'ActiveDevice': 'activeDevice',
-        'AssociationNumber': 'associationNumber',
-        'CakCount': 'cakCount',
-        'CipherSuite': 'cipherSuite',
-        'ConfidentialityOffset': 'confidentialityOffset',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DelayProtect': 'delayProtect',
-        'DelayProtectSimulation': 'delayProtectSimulation',
-        'DescriptiveName': 'descriptiveName',
-        'ElectedKeyServer': 'electedKeyServer',
-        'Errors': 'errors',
-        'KeyDerivationFunction': 'keyDerivationFunction',
-        'KeyServerPriority': 'keyServerPriority',
-        'KeyType': 'keyType',
-        'LlpnStep': 'llpnStep',
-        'MacsecCapability': 'macsecCapability',
-        'MacsecDesired': 'macsecDesired',
-        'MemberIdentifier': 'memberIdentifier',
-        'MirroredMacAddr': 'mirroredMacAddr',
-        'MkaHelloTime': 'mkaHelloTime',
-        'MkaLifeTime': 'mkaLifeTime',
-        'MkaVersion': 'mkaVersion',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OlpnStep': 'olpnStep',
-        'PeriodicRekeyAttempts': 'periodicRekeyAttempts',
-        'PeriodicRekeyInterval': 'periodicRekeyInterval',
-        'RandomizeMemberIdentifier': 'randomizeMemberIdentifier',
-        'RekeyBehaviour': 'rekeyBehaviour',
-        'RekeyMode': 'rekeyMode',
-        'RekeyThresholdPN': 'rekeyThresholdPN',
-        'RekeyThresholdXPN': 'rekeyThresholdXPN',
-        'Sak': 'sak',
-        'SendICVIndicator': 'sendICVIndicator',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StartingDistributedAN': 'startingDistributedAN',
-        'StartingKeyNumber': 'startingKeyNumber',
-        'StartingLLPN': 'startingLLPN',
-        'StartingOLPN': 'startingOLPN',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TxChannelCount': 'txChannelCount',
+        "ActiveDevice": "activeDevice",
+        "AssociationNumber": "associationNumber",
+        "CakCount": "cakCount",
+        "CipherSuite": "cipherSuite",
+        "ConfidentialityOffset": "confidentialityOffset",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DelayProtect": "delayProtect",
+        "DelayProtectSimulation": "delayProtectSimulation",
+        "DescriptiveName": "descriptiveName",
+        "ElectedKeyServer": "electedKeyServer",
+        "Errors": "errors",
+        "KeyDerivationFunction": "keyDerivationFunction",
+        "KeyServerPriority": "keyServerPriority",
+        "KeyType": "keyType",
+        "LlpnStep": "llpnStep",
+        "MacsecCapability": "macsecCapability",
+        "MacsecDesired": "macsecDesired",
+        "MemberIdentifier": "memberIdentifier",
+        "MirroredMacAddr": "mirroredMacAddr",
+        "MkaHelloTime": "mkaHelloTime",
+        "MkaLifeTime": "mkaLifeTime",
+        "MkaVersion": "mkaVersion",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OlpnStep": "olpnStep",
+        "PeriodicRekeyAttempts": "periodicRekeyAttempts",
+        "PeriodicRekeyInterval": "periodicRekeyInterval",
+        "RandomizeMemberIdentifier": "randomizeMemberIdentifier",
+        "RekeyBehaviour": "rekeyBehaviour",
+        "RekeyMode": "rekeyMode",
+        "RekeyThresholdPN": "rekeyThresholdPN",
+        "RekeyThresholdXPN": "rekeyThresholdXPN",
+        "Sak": "sak",
+        "SendICVIndicator": "sendICVIndicator",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StartingDistributedAN": "startingDistributedAN",
+        "StartingKeyNumber": "startingKeyNumber",
+        "StartingLLPN": "startingLLPN",
+        "StartingOLPN": "startingOLPN",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TxChannelCount": "txChannelCount",
     }
     _SDM_ENUM_MAP = {
-        'keyType': ['psk'],
-        'rekeyBehaviour': ['dontRekey', 'rekeyContinuous', 'rekeyFixedCount'],
-        'rekeyMode': ['timerBased', 'pNBased'],
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "keyType": ["psk"],
+        "rekeyBehaviour": ["dontRekey", "rekeyContinuous", "rekeyFixedCount"],
+        "rekeyMode": ["timerBased", "pNBased"],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -102,10 +111,13 @@ class Mka(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cakcache_82f6cb884290798c18c712f1e527033c import CakCache
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cakcache_82f6cb884290798c18c712f1e527033c import (
+            CakCache,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CakCache', None) is not None:
-                return self._properties.get('CakCache')
+            if self._properties.get("CakCache", None) is not None:
+                return self._properties.get("CakCache")
         return CakCache(self)._select()
 
     @property
@@ -119,10 +131,13 @@ class Mka(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -136,10 +151,13 @@ class Mka(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53 import TxChannels
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53 import (
+            TxChannels,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TxChannels', None) is not None:
-                return self._properties.get('TxChannels')
+            if self._properties.get("TxChannels", None) is not None:
+                return self._properties.get("TxChannels")
         return TxChannels(self)._select()
 
     @property
@@ -151,7 +169,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines whether an MKA device is active or not. If disabled, MKA will not be started on the device.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActiveDevice']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveDevice"]))
 
     @property
     def AssociationNumber(self):
@@ -161,7 +180,7 @@ class Mka(Base):
         -------
         - list(str): Displays the Association Number for the received SAK.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AssociationNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["AssociationNumber"])
 
     @property
     def CakCount(self):
@@ -171,11 +190,12 @@ class Mka(Base):
         -------
         - number: PSK Chain Size (Min 1, Max 10).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CakCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CakCount"])
+
     @CakCount.setter
     def CakCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CakCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CakCount"], value)
 
     @property
     def CipherSuite(self):
@@ -186,7 +206,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the type of cipher suite.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CipherSuite']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CipherSuite"]))
 
     @property
     def ConfidentialityOffset(self):
@@ -197,21 +218,25 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the confidentiality offset.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfidentialityOffset']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfidentialityOffset"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -221,7 +246,7 @@ class Mka(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DelayProtect(self):
@@ -232,7 +257,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Delay Protect behavior of the device.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DelayProtect']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DelayProtect"]))
 
     @property
     def DelayProtectSimulation(self):
@@ -242,7 +268,7 @@ class Mka(Base):
         -------
         - list(str): Displays the actual PN, simulated PN and the MKPDU message number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayProtectSimulation'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayProtectSimulation"])
 
     @property
     def DescriptiveName(self):
@@ -252,7 +278,7 @@ class Mka(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def ElectedKeyServer(self):
@@ -262,7 +288,7 @@ class Mka(Base):
         -------
         - list(str): Denotes whether this device has been elected as a Key Server or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ElectedKeyServer'])
+        return self._get_attribute(self._SDM_ATT_MAP["ElectedKeyServer"])
 
     @property
     def Errors(self):
@@ -271,7 +297,7 @@ class Mka(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def KeyDerivationFunction(self):
@@ -282,7 +308,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the KDF used to generate keys used by MKA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyDerivationFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyDerivationFunction"])
+        )
 
     @property
     def KeyServerPriority(self):
@@ -293,7 +322,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the Key Server Priority.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeyServerPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyServerPriority"])
+        )
 
     @property
     def KeyType(self):
@@ -303,11 +335,12 @@ class Mka(Base):
         -------
         - str(psk): Indicates the source of CAK.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeyType"])
+
     @KeyType.setter
     def KeyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeyType"], value)
 
     @property
     def LlpnStep(self):
@@ -318,7 +351,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the LLPN Step.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LlpnStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LlpnStep"]))
 
     @property
     def MacsecCapability(self):
@@ -329,7 +363,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates MACsec capabilities.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacsecCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacsecCapability"])
+        )
 
     @property
     def MacsecDesired(self):
@@ -340,7 +377,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines whether MACsec is desired or not. It is advertised in periodic hellos.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MacsecDesired']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MacsecDesired"]))
 
     @property
     def MemberIdentifier(self):
@@ -351,7 +389,10 @@ class Mka(Base):
         - list(obj(ixnetwork_restpy.multivalue.Multivalue)): Displays the Member Identifier calculated by the state machine.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MemberIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MemberIdentifier"])
+        )
 
     @property
     def MirroredMacAddr(self):
@@ -361,7 +402,7 @@ class Mka(Base):
         -------
         - list(str): MAC address of the Ethernet devices configured in the Ethernet stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MirroredMacAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["MirroredMacAddr"])
 
     @property
     def MkaHelloTime(self):
@@ -372,7 +413,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates MKA Hello Time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MkaHelloTime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MkaHelloTime"]))
 
     @property
     def MkaLifeTime(self):
@@ -382,11 +424,12 @@ class Mka(Base):
         -------
         - number: Indicates MKA Life Time of a Peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MkaLifeTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["MkaLifeTime"])
+
     @MkaLifeTime.setter
     def MkaLifeTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MkaLifeTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MkaLifeTime"], value)
 
     @property
     def MkaVersion(self):
@@ -397,7 +440,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the version of MKA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MkaVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MkaVersion"]))
 
     @property
     def Multiplier(self):
@@ -407,11 +451,12 @@ class Mka(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -421,11 +466,12 @@ class Mka(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OlpnStep(self):
@@ -436,7 +482,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the OLPN Step.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OlpnStep']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OlpnStep"]))
 
     @property
     def PeriodicRekeyAttempts(self):
@@ -446,11 +493,12 @@ class Mka(Base):
         -------
         - number: Number of times Rekey should be triggered.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeriodicRekeyAttempts"])
+
     @PeriodicRekeyAttempts.setter
     def PeriodicRekeyAttempts(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeriodicRekeyAttempts"], value)
 
     @property
     def PeriodicRekeyInterval(self):
@@ -460,11 +508,12 @@ class Mka(Base):
         -------
         - number: Time interval between two Rekey triggers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeriodicRekeyInterval"])
+
     @PeriodicRekeyInterval.setter
     def PeriodicRekeyInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeriodicRekeyInterval"], value)
 
     @property
     def RandomizeMemberIdentifier(self):
@@ -474,11 +523,12 @@ class Mka(Base):
         -------
         - bool: If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RandomizeMemberIdentifier'])
+        return self._get_attribute(self._SDM_ATT_MAP["RandomizeMemberIdentifier"])
+
     @RandomizeMemberIdentifier.setter
     def RandomizeMemberIdentifier(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RandomizeMemberIdentifier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RandomizeMemberIdentifier"], value)
 
     @property
     def RekeyBehaviour(self):
@@ -488,11 +538,12 @@ class Mka(Base):
         -------
         - str(dontRekey | rekeyContinuous | rekeyFixedCount): Determines the Rekey behavior.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RekeyBehaviour'])
+        return self._get_attribute(self._SDM_ATT_MAP["RekeyBehaviour"])
+
     @RekeyBehaviour.setter
     def RekeyBehaviour(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RekeyBehaviour'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RekeyBehaviour"], value)
 
     @property
     def RekeyMode(self):
@@ -502,11 +553,12 @@ class Mka(Base):
         -------
         - str(timerBased | pNBased): Rekey criteria.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RekeyMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["RekeyMode"])
+
     @RekeyMode.setter
     def RekeyMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RekeyMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RekeyMode"], value)
 
     @property
     def RekeyThresholdPN(self):
@@ -517,7 +569,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the PN rekey threshold.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RekeyThresholdPN']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RekeyThresholdPN"])
+        )
 
     @property
     def RekeyThresholdXPN(self):
@@ -528,7 +583,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the XPN rekey threshold.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RekeyThresholdXPN']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RekeyThresholdXPN"])
+        )
 
     @property
     def Sak(self):
@@ -538,7 +596,7 @@ class Mka(Base):
         -------
         - list(str): Displays the SAK received from the Key Server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Sak'])
+        return self._get_attribute(self._SDM_ATT_MAP["Sak"])
 
     @property
     def SendICVIndicator(self):
@@ -549,7 +607,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send ICV Indicator in MKPDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendICVIndicator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendICVIndicator"])
+        )
 
     @property
     def SessionStatus(self):
@@ -559,7 +620,7 @@ class Mka(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -569,11 +630,12 @@ class Mka(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StartingDistributedAN(self):
@@ -584,7 +646,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines starting distributed AN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingDistributedAN']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartingDistributedAN"])
+        )
 
     @property
     def StartingKeyNumber(self):
@@ -595,7 +660,10 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the starting key number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingKeyNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartingKeyNumber"])
+        )
 
     @property
     def StartingLLPN(self):
@@ -606,7 +674,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the starting LLPN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingLLPN']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingLLPN"]))
 
     @property
     def StartingOLPN(self):
@@ -617,7 +686,8 @@ class Mka(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the starting OLPN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartingOLPN']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingOLPN"]))
 
     @property
     def StateCounts(self):
@@ -626,7 +696,7 @@ class Mka(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -636,7 +706,7 @@ class Mka(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TxChannelCount(self):
@@ -646,9 +716,23 @@ class Mka(Base):
         -------
         - number: Determines the number of Tx Channels configured for each device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxChannelCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxChannelCount"])
 
-    def update(self, CakCount=None, ConnectedVia=None, KeyType=None, MkaLifeTime=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RandomizeMemberIdentifier=None, RekeyBehaviour=None, RekeyMode=None, StackedLayers=None):
+    def update(
+        self,
+        CakCount=None,
+        ConnectedVia=None,
+        KeyType=None,
+        MkaLifeTime=None,
+        Multiplier=None,
+        Name=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
+        StackedLayers=None,
+    ):
         # type: (int, List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
         """Updates mka resource on the server.
 
@@ -676,7 +760,21 @@ class Mka(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CakCount=None, ConnectedVia=None, KeyType=None, MkaLifeTime=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RandomizeMemberIdentifier=None, RekeyBehaviour=None, RekeyMode=None, StackedLayers=None):
+    def add(
+        self,
+        CakCount=None,
+        ConnectedVia=None,
+        KeyType=None,
+        MkaLifeTime=None,
+        Multiplier=None,
+        Name=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
+        StackedLayers=None,
+    ):
         # type: (int, List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
         """Adds a new mka resource on the server and adds it to the container.
 
@@ -715,7 +813,33 @@ class Mka(Base):
         """
         self._delete()
 
-    def find(self, AssociationNumber=None, CakCount=None, ConnectedVia=None, Count=None, DelayProtectSimulation=None, DescriptiveName=None, ElectedKeyServer=None, Errors=None, KeyType=None, MirroredMacAddr=None, MkaLifeTime=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RandomizeMemberIdentifier=None, RekeyBehaviour=None, RekeyMode=None, Sak=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, TxChannelCount=None):
+    def find(
+        self,
+        AssociationNumber=None,
+        CakCount=None,
+        ConnectedVia=None,
+        Count=None,
+        DelayProtectSimulation=None,
+        DescriptiveName=None,
+        ElectedKeyServer=None,
+        Errors=None,
+        KeyType=None,
+        MirroredMacAddr=None,
+        MkaLifeTime=None,
+        Multiplier=None,
+        Name=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
+        Sak=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        TxChannelCount=None,
+    ):
         """Finds and retrieves mka resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mka resources from the server.
@@ -804,10 +928,12 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -842,10 +968,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -880,10 +1010,12 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
     def PauseMKPDUTransmission(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -902,10 +1034,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseMKPDUTransmission', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pauseMKPDUTransmission", payload=payload, response_object=None
+        )
 
     def PausePeriodicRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -934,10 +1070,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('PausePeriodicRekey', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "PausePeriodicRekey", payload=payload, response_object=None
+        )
 
     def PausePeriodicRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -956,10 +1096,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pausePeriodicRekey', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pausePeriodicRekey", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -988,10 +1132,12 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def RestartPeriodicRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1020,10 +1166,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('RestartPeriodicRekey', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "RestartPeriodicRekey", payload=payload, response_object=None
+        )
 
     def RestartPeriodicRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1042,10 +1192,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartPeriodicRekey', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "restartPeriodicRekey", payload=payload, response_object=None
+        )
 
     def ResumeMKPDUTransmission(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1064,10 +1218,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeMKPDUTransmission', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "resumeMKPDUTransmission", payload=payload, response_object=None
+        )
 
     def SimulateDelayedMACsecPacketsStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1102,10 +1260,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('simulateDelayedMACsecPacketsStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "simulateDelayedMACsecPacketsStart", payload=payload, response_object=None
+        )
 
     def SimulateDelayedMACsecPacketsStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1140,10 +1302,14 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('simulateDelayedMACsecPacketsStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "simulateDelayedMACsecPacketsStop", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1172,10 +1338,12 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1204,10 +1372,12 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def TriggerRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1242,12 +1412,37 @@ class Mka(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('triggerRekey', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("triggerRekey", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ActiveDevice=None, CipherSuite=None, ConfidentialityOffset=None, DelayProtect=None, KeyDerivationFunction=None, KeyServerPriority=None, LlpnStep=None, MacsecCapability=None, MacsecDesired=None, MemberIdentifier=None, MkaHelloTime=None, MkaVersion=None, OlpnStep=None, RekeyThresholdPN=None, RekeyThresholdXPN=None, SendICVIndicator=None, StartingDistributedAN=None, StartingKeyNumber=None, StartingLLPN=None, StartingOLPN=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActiveDevice=None,
+        CipherSuite=None,
+        ConfidentialityOffset=None,
+        DelayProtect=None,
+        KeyDerivationFunction=None,
+        KeyServerPriority=None,
+        LlpnStep=None,
+        MacsecCapability=None,
+        MacsecDesired=None,
+        MemberIdentifier=None,
+        MkaHelloTime=None,
+        MkaVersion=None,
+        OlpnStep=None,
+        RekeyThresholdPN=None,
+        RekeyThresholdXPN=None,
+        SendICVIndicator=None,
+        StartingDistributedAN=None,
+        StartingKeyNumber=None,
+        StartingLLPN=None,
+        StartingOLPN=None,
+    ):
         """Base class infrastructure that gets a list of mka device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

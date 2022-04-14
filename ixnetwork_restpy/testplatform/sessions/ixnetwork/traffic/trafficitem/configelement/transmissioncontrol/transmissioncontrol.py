@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,47 @@ class TransmissionControl(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'transmissionControl'
+    _SDM_NAME = "transmissionControl"
     _SDM_ATT_MAP = {
-        'BurstPacketCount': 'burstPacketCount',
-        'Duration': 'duration',
-        'EnableInterBurstGap': 'enableInterBurstGap',
-        'EnableInterStreamGap': 'enableInterStreamGap',
-        'FrameCount': 'frameCount',
-        'InterBurstGap': 'interBurstGap',
-        'InterBurstGapUnits': 'interBurstGapUnits',
-        'InterStreamGap': 'interStreamGap',
-        'IterationCount': 'iterationCount',
-        'MinGapBytes': 'minGapBytes',
-        'RepeatBurst': 'repeatBurst',
-        'StartDelay': 'startDelay',
-        'StartDelayUnits': 'startDelayUnits',
-        'Type': 'type',
+        "BurstPacketCount": "burstPacketCount",
+        "Duration": "duration",
+        "EnableInterBurstGap": "enableInterBurstGap",
+        "EnableInterStreamGap": "enableInterStreamGap",
+        "FrameCount": "frameCount",
+        "InterBurstGap": "interBurstGap",
+        "InterBurstGapUnits": "interBurstGapUnits",
+        "InterStreamGap": "interStreamGap",
+        "IterationCount": "iterationCount",
+        "MinGapBytes": "minGapBytes",
+        "RepeatBurst": "repeatBurst",
+        "StartDelay": "startDelay",
+        "StartDelayUnits": "startDelayUnits",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'interBurstGapUnits': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
-        'startDelayUnits': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
-        'type': ['auto', 'burstFixedDuration', 'continuous', 'custom', 'fixedDuration', 'fixedFrameCount', 'fixedIterationCount'],
+        "interBurstGapUnits": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
+        "startDelayUnits": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
+        "type": [
+            "auto",
+            "burstFixedDuration",
+            "continuous",
+            "custom",
+            "fixedDuration",
+            "fixedFrameCount",
+            "fixedIterationCount",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,11 +87,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the number of packets per burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstPacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstPacketCount"])
+
     @BurstPacketCount.setter
     def BurstPacketCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstPacketCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstPacketCount"], value)
 
     @property
     def Duration(self):
@@ -80,11 +102,12 @@ class TransmissionControl(Base):
         -------
         - number: Indicates the time duration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableInterBurstGap(self):
@@ -94,11 +117,12 @@ class TransmissionControl(Base):
         -------
         - bool: Enables the inter-burst gap of a frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableInterBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableInterBurstGap"])
+
     @EnableInterBurstGap.setter
     def EnableInterBurstGap(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableInterBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableInterBurstGap"], value)
 
     @property
     def EnableInterStreamGap(self):
@@ -108,11 +132,12 @@ class TransmissionControl(Base):
         -------
         - bool: Enables the inter-stream gap of a frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableInterStreamGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableInterStreamGap"])
+
     @EnableInterStreamGap.setter
     def EnableInterStreamGap(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableInterStreamGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableInterStreamGap"], value)
 
     @property
     def FrameCount(self):
@@ -122,11 +147,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies Fixed Packet Count when Transmission Mode is Interleaved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameCount"])
+
     @FrameCount.setter
     def FrameCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameCount"], value)
 
     @property
     def InterBurstGap(self):
@@ -136,11 +162,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the gap between any two consecutive burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterBurstGap"])
+
     @InterBurstGap.setter
     def InterBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterBurstGap"], value)
 
     @property
     def InterBurstGapUnits(self):
@@ -150,11 +177,12 @@ class TransmissionControl(Base):
         -------
         - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterBurstGapUnits'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterBurstGapUnits"])
+
     @InterBurstGapUnits.setter
     def InterBurstGapUnits(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterBurstGapUnits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterBurstGapUnits"], value)
 
     @property
     def InterStreamGap(self):
@@ -164,11 +192,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterStreamGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterStreamGap"])
+
     @InterStreamGap.setter
     def InterStreamGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterStreamGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterStreamGap"], value)
 
     @property
     def IterationCount(self):
@@ -178,11 +207,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IterationCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IterationCount"])
+
     @IterationCount.setter
     def IterationCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IterationCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IterationCount"], value)
 
     @property
     def MinGapBytes(self):
@@ -192,11 +222,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the minimum gap between any 2 packets or frames in term of bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinGapBytes'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinGapBytes"])
+
     @MinGapBytes.setter
     def MinGapBytes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinGapBytes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinGapBytes"], value)
 
     @property
     def RepeatBurst(self):
@@ -206,11 +237,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RepeatBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["RepeatBurst"])
+
     @RepeatBurst.setter
     def RepeatBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RepeatBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RepeatBurst"], value)
 
     @property
     def StartDelay(self):
@@ -220,11 +252,12 @@ class TransmissionControl(Base):
         -------
         - number: Specifies the delay in Start when Transmission Mode is Interleaved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartDelay"])
+
     @StartDelay.setter
     def StartDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartDelay"], value)
 
     @property
     def StartDelayUnits(self):
@@ -234,11 +267,12 @@ class TransmissionControl(Base):
         -------
         - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartDelayUnits'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartDelayUnits"])
+
     @StartDelayUnits.setter
     def StartDelayUnits(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartDelayUnits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartDelayUnits"], value)
 
     @property
     def Type(self):
@@ -248,13 +282,30 @@ class TransmissionControl(Base):
         -------
         - str(auto | burstFixedDuration | continuous | custom | fixedDuration | fixedFrameCount | fixedIterationCount): The Transmission Control types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
+    def update(
+        self,
+        BurstPacketCount=None,
+        Duration=None,
+        EnableInterBurstGap=None,
+        EnableInterStreamGap=None,
+        FrameCount=None,
+        InterBurstGap=None,
+        InterBurstGapUnits=None,
+        InterStreamGap=None,
+        IterationCount=None,
+        MinGapBytes=None,
+        RepeatBurst=None,
+        StartDelay=None,
+        StartDelayUnits=None,
+        Type=None,
+    ):
         # type: (int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
         """Updates transmissionControl resource on the server.
 
@@ -281,7 +332,23 @@ class TransmissionControl(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
+    def find(
+        self,
+        BurstPacketCount=None,
+        Duration=None,
+        EnableInterBurstGap=None,
+        EnableInterStreamGap=None,
+        FrameCount=None,
+        InterBurstGap=None,
+        InterBurstGapUnits=None,
+        InterStreamGap=None,
+        IterationCount=None,
+        MinGapBytes=None,
+        RepeatBurst=None,
+        StartDelay=None,
+        StartDelayUnits=None,
+        Type=None,
+    ):
         # type: (int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
         """Finds and retrieves transmissionControl resources from the server.
 

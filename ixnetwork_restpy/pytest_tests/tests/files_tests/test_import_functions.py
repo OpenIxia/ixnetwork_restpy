@@ -14,7 +14,9 @@ def test_can_save_ixncfg_config_from_sessions(ixnetwork, tmpdir):
 
 def test_can_upload_ixncfg_config_to_session(ixnetwork):
     session = ixnetwork._parent
-    file_name = os.path.join(os.path.dirname(os.path.realpath(__file__)), "local.ixncfg")
+    file_name = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), "local.ixncfg"
+    )
     session.UploadFile(file_name)
     ixnetwork.NewConfig()
     ixnetwork.LoadConfig(Files("local.ixncfg", local_file=False))
@@ -24,7 +26,9 @@ def test_can_upload_ixncfg_config_to_session(ixnetwork):
 
 def test_upload_filename_with_special_chars(ixnetwork):
     session = ixnetwork._parent
-    file_name = os.path.join(os.path.dirname(os.path.realpath(__file__)), "local.ixncfg")
+    file_name = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), "local.ixncfg"
+    )
     with open(file_name, "rb") as fp:
         contents = fp.read()
     special_file_name = "local+-)_(.ixncfg"

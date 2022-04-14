@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class GroupStatBucketLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupStatBucketLearnedInformation'
+    _SDM_NAME = "groupStatBucketLearnedInformation"
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'GroupId': 'groupId',
-        'LocalIp': 'localIp',
-        'PacketCount': 'packetCount',
-        'RemoteIp': 'remoteIp',
+        "ByteCount": "byteCount",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "GroupId": "groupId",
+        "LocalIp": "localIp",
+        "PacketCount": "packetCount",
+        "RemoteIp": "remoteIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupStatBucketLearnedInformation, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ByteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ByteCount"])
 
     @property
     def DataPathId(self):
@@ -67,7 +67,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -77,7 +77,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def GroupId(self):
@@ -87,7 +87,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def LocalIp(self):
@@ -97,7 +97,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def PacketCount(self):
@@ -107,7 +107,7 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCount"])
 
     @property
     def RemoteIp(self):
@@ -117,10 +117,10 @@ class GroupStatBucketLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     def add(self):
-        """Adds a new groupStatBucketLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new groupStatBucketLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -132,7 +132,16 @@ class GroupStatBucketLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ByteCount=None, DataPathId=None, DataPathIdAsHex=None, GroupId=None, LocalIp=None, PacketCount=None, RemoteIp=None):
+    def find(
+        self,
+        ByteCount=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        GroupId=None,
+        LocalIp=None,
+        PacketCount=None,
+        RemoteIp=None,
+    ):
         # type: (str, str, str, str, str, str, str) -> GroupStatBucketLearnedInformation
         """Finds and retrieves groupStatBucketLearnedInformation resources from the server.
 

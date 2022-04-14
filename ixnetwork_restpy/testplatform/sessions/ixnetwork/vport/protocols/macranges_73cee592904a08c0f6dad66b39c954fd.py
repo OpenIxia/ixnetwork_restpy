@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,26 +35,26 @@ class MacRanges(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'macRanges'
+    _SDM_NAME = "macRanges"
     _SDM_ATT_MAP = {
-        'CVlanId': 'cVlanId',
-        'CVlanPriority': 'cVlanPriority',
-        'CVlanTpId': 'cVlanTpId',
-        'Count': 'count',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'ITagethernetType': 'iTagethernetType',
-        'ITagiSid': 'iTagiSid',
-        'SVlanId': 'sVlanId',
-        'SVlanPriority': 'sVlanPriority',
-        'SVlanTpId': 'sVlanTpId',
-        'StartMacAddress': 'startMacAddress',
-        'Step': 'step',
-        'TrafficGroupId': 'trafficGroupId',
-        'Type': 'type',
+        "CVlanId": "cVlanId",
+        "CVlanPriority": "cVlanPriority",
+        "CVlanTpId": "cVlanTpId",
+        "Count": "count",
+        "EnableVlan": "enableVlan",
+        "Enabled": "enabled",
+        "ITagethernetType": "iTagethernetType",
+        "ITagiSid": "iTagiSid",
+        "SVlanId": "sVlanId",
+        "SVlanPriority": "sVlanPriority",
+        "SVlanTpId": "sVlanTpId",
+        "StartMacAddress": "startMacAddress",
+        "Step": "step",
+        "TrafficGroupId": "trafficGroupId",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['singleVlan', 'stackedVlan'],
+        "type": ["singleVlan", "stackedVlan"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,11 +68,12 @@ class MacRanges(Base):
         -------
         - number: The identifier for the C-VLAN for the MAC range. A unique,12-bit VLAN Identifier which specifies the C-VLAN with which this frame is associated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanId"])
+
     @CVlanId.setter
     def CVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanId"], value)
 
     @property
     def CVlanPriority(self):
@@ -81,11 +83,12 @@ class MacRanges(Base):
         -------
         - number: The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanPriority"])
+
     @CVlanPriority.setter
     def CVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanPriority"], value)
 
     @property
     def CVlanTpId(self):
@@ -95,11 +98,12 @@ class MacRanges(Base):
         -------
         - str: The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlanTpId"])
+
     @CVlanTpId.setter
     def CVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CVlanTpId"], value)
 
     @property
     def Count(self):
@@ -109,11 +113,12 @@ class MacRanges(Base):
         -------
         - number: The number of times to increment in this MAC range, starting with the address set in macAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def EnableVlan(self):
@@ -123,11 +128,12 @@ class MacRanges(Base):
         -------
         - bool: If true, the VLAN assigned to the MAC range is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def Enabled(self):
@@ -137,11 +143,12 @@ class MacRanges(Base):
         -------
         - bool: If true, the MAC range is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ITagethernetType(self):
@@ -151,7 +158,7 @@ class MacRanges(Base):
         -------
         - str: (Read-only) The I-Tag Ethernet type for the MAC range. An I-Tag is amultiplexing tag for service instance scaling in Provider Bridged Networks. This value is set to 0x88E7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ITagethernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ITagethernetType"])
 
     @property
     def ITagiSid(self):
@@ -161,11 +168,12 @@ class MacRanges(Base):
         -------
         - number: The I-Tag service instance identifier, and is a 3 octet field. The default is 0. Min:0 Max: 16777215
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ITagiSid'])
+        return self._get_attribute(self._SDM_ATT_MAP["ITagiSid"])
+
     @ITagiSid.setter
     def ITagiSid(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ITagiSid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ITagiSid"], value)
 
     @property
     def SVlanId(self):
@@ -175,11 +183,12 @@ class MacRanges(Base):
         -------
         - number: A unique, 12-bit VLAN Identifier which specifies the VLAN with which this frame is associated. Default = 1 Min: 1 Max: 4095
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanId"])
+
     @SVlanId.setter
     def SVlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanId"], value)
 
     @property
     def SVlanPriority(self):
@@ -189,11 +198,12 @@ class MacRanges(Base):
         -------
         - number: The user priority of the tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanPriority"])
+
     @SVlanPriority.setter
     def SVlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanPriority"], value)
 
     @property
     def SVlanTpId(self):
@@ -203,11 +213,12 @@ class MacRanges(Base):
         -------
         - str: The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlanTpId"])
+
     @SVlanTpId.setter
     def SVlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SVlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SVlanTpId"], value)
 
     @property
     def StartMacAddress(self):
@@ -217,11 +228,12 @@ class MacRanges(Base):
         -------
         - str: The MAC address of the first entry in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMacAddress"])
+
     @StartMacAddress.setter
     def StartMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMacAddress"], value)
 
     @property
     def Step(self):
@@ -231,11 +243,12 @@ class MacRanges(Base):
         -------
         - str: The amount to increment each MAC address in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     @property
     def TrafficGroupId(self):
@@ -245,11 +258,12 @@ class MacRanges(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def Type(self):
@@ -259,13 +273,30 @@ class MacRanges(Base):
         -------
         - str(singleVlan | stackedVlan): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+    def update(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Count=None,
+        EnableVlan=None,
+        Enabled=None,
+        ITagiSid=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        StartMacAddress=None,
+        Step=None,
+        TrafficGroupId=None,
+        Type=None,
+    ):
         # type: (int, int, str, int, bool, bool, int, int, int, str, str, str, str, str) -> MacRanges
         """Updates macRanges resource on the server.
 
@@ -292,7 +323,23 @@ class MacRanges(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+    def add(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Count=None,
+        EnableVlan=None,
+        Enabled=None,
+        ITagiSid=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        StartMacAddress=None,
+        Step=None,
+        TrafficGroupId=None,
+        Type=None,
+    ):
         # type: (int, int, str, int, bool, bool, int, int, int, str, str, str, str, str) -> MacRanges
         """Adds a new macRanges resource on the server and adds it to the container.
 
@@ -333,7 +380,24 @@ class MacRanges(Base):
         """
         self._delete()
 
-    def find(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagethernetType=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+    def find(
+        self,
+        CVlanId=None,
+        CVlanPriority=None,
+        CVlanTpId=None,
+        Count=None,
+        EnableVlan=None,
+        Enabled=None,
+        ITagethernetType=None,
+        ITagiSid=None,
+        SVlanId=None,
+        SVlanPriority=None,
+        SVlanTpId=None,
+        StartMacAddress=None,
+        Step=None,
+        TrafficGroupId=None,
+        Type=None,
+    ):
         # type: (int, int, str, int, bool, bool, str, int, int, int, str, str, str, str, str) -> MacRanges
         """Finds and retrieves macRanges resources from the server.
 

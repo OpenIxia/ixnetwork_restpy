@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,13 @@ class DiscoveredInterface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'discoveredInterface'
+    _SDM_NAME = "discoveredInterface"
     _SDM_ATT_MAP = {
-        'InterfaceName': 'interfaceName',
-        'State': 'state',
+        "InterfaceName": "interfaceName",
+        "State": "state",
     }
     _SDM_ENUM_MAP = {
-        'state': ['assigned', 'available', 'unusable'],
+        "state": ["assigned", "available", "unusable"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,7 +54,7 @@ class DiscoveredInterface(Base):
         -------
         - str: Represents the interface name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceName'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceName"])
 
     @property
     def State(self):
@@ -63,10 +64,10 @@ class DiscoveredInterface(Base):
         -------
         - str(assigned | available | unusable): Represents the interface state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     def add(self):
-        """Adds a new discoveredInterface resource on the json, only valid with config assistant
+        """Adds a new discoveredInterface resource on the json, only valid with batch add utility
 
         Returns
         -------

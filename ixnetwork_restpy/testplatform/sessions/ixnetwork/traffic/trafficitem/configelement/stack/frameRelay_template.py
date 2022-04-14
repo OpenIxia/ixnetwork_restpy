@@ -4,19 +4,19 @@ from ixnetwork_restpy.files import Files
 
 class FrameRelay(Base):
     __slots__ = ()
-    _SDM_NAME = 'frameRelay'
+    _SDM_NAME = "frameRelay"
     _SDM_ATT_MAP = {
-        'Address2ByteDlciHiOrderBits': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.dlciHiOrderBits-1',
-        'Address2ByteCrBit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.crBit-2',
-        'Address2ByteEa0Bit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.ea0Bit-3',
-        'Address2ByteDlciLoOrderBits': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.dlciLoOrderBits-4',
-        'Address2ByteFecnBit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.fecnBit-5',
-        'Address2ByteBecnBit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.becnBit-6',
-        'Address2ByteDeBit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.deBit-7',
-        'Address2ByteEa1Bit': 'frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.ea1Bit-8',
-        'HeaderControl': 'frameRelay.header.control-9',
-        'PaddingPad': 'frameRelay.header.padding.pad-10',
-        'HeaderNlpid': 'frameRelay.header.nlpid-11',
+        "Address2ByteDlciHiOrderBits": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.dlciHiOrderBits-1",
+        "Address2ByteCrBit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.crBit-2",
+        "Address2ByteEa0Bit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.ea0Bit-3",
+        "Address2ByteDlciLoOrderBits": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.dlciLoOrderBits-4",
+        "Address2ByteFecnBit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.fecnBit-5",
+        "Address2ByteBecnBit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.becnBit-6",
+        "Address2ByteDeBit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.deBit-7",
+        "Address2ByteEa1Bit": "frameRelay.header.frameRelayTag.frameRelay.address.address2Byte.ea1Bit-8",
+        "HeaderControl": "frameRelay.header.control-9",
+        "PaddingPad": "frameRelay.header.padding.pad-10",
+        "HeaderNlpid": "frameRelay.header.nlpid-11",
     }
 
     def __init__(self, parent, list_op=False):
@@ -30,7 +30,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteDlciHiOrderBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteDlciHiOrderBits"])
+        )
 
     @property
     def Address2ByteCrBit(self):
@@ -40,7 +43,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteCrBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteCrBit"])
+        )
 
     @property
     def Address2ByteEa0Bit(self):
@@ -50,7 +56,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteEa0Bit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteEa0Bit"])
+        )
 
     @property
     def Address2ByteDlciLoOrderBits(self):
@@ -60,7 +69,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteDlciLoOrderBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteDlciLoOrderBits"])
+        )
 
     @property
     def Address2ByteFecnBit(self):
@@ -70,7 +82,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteFecnBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteFecnBit"])
+        )
 
     @property
     def Address2ByteBecnBit(self):
@@ -80,7 +95,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteBecnBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteBecnBit"])
+        )
 
     @property
     def Address2ByteDeBit(self):
@@ -90,7 +108,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteDeBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteDeBit"])
+        )
 
     @property
     def Address2ByteEa1Bit(self):
@@ -100,7 +121,10 @@ class FrameRelay(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address2ByteEa1Bit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Address2ByteEa1Bit"])
+        )
 
     @property
     def HeaderControl(self):
@@ -110,7 +134,8 @@ class FrameRelay(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderControl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderControl"]))
 
     @property
     def PaddingPad(self):
@@ -120,7 +145,8 @@ class FrameRelay(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PaddingPad']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PaddingPad"]))
 
     @property
     def HeaderNlpid(self):
@@ -130,7 +156,8 @@ class FrameRelay(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNlpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderNlpid"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

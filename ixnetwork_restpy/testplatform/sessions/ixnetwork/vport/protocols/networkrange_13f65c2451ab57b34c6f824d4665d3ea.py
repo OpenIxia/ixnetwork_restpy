@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,29 @@ class NetworkRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'networkRange'
+    _SDM_NAME = "networkRange"
     _SDM_ATT_MAP = {
-        'EnableHostName': 'enableHostName',
-        'Enabled': 'enabled',
-        'EntryCol': 'entryCol',
-        'EntryRow': 'entryRow',
-        'GridNodeRoutes': 'gridNodeRoutes',
-        'GridOutsideExLinks': 'gridOutsideExLinks',
-        'GridOutsideLinks': 'gridOutsideLinks',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceIps': 'interfaceIps',
-        'InterfaceMetric': 'interfaceMetric',
-        'Ipv6MtMetric': 'ipv6MtMetric',
-        'LinkType': 'linkType',
-        'NoOfCols': 'noOfCols',
-        'NoOfRows': 'noOfRows',
-        'RouterId': 'routerId',
-        'RouterIdIncrement': 'routerIdIncrement',
-        'TePaths': 'tePaths',
-        'UseWideMetric': 'useWideMetric',
+        "EnableHostName": "enableHostName",
+        "Enabled": "enabled",
+        "EntryCol": "entryCol",
+        "EntryRow": "entryRow",
+        "GridNodeRoutes": "gridNodeRoutes",
+        "GridOutsideExLinks": "gridOutsideExLinks",
+        "GridOutsideLinks": "gridOutsideLinks",
+        "HostNamePrefix": "hostNamePrefix",
+        "InterfaceIps": "interfaceIps",
+        "InterfaceMetric": "interfaceMetric",
+        "Ipv6MtMetric": "ipv6MtMetric",
+        "LinkType": "linkType",
+        "NoOfCols": "noOfCols",
+        "NoOfRows": "noOfRows",
+        "RouterId": "routerId",
+        "RouterIdIncrement": "routerIdIncrement",
+        "TePaths": "tePaths",
+        "UseWideMetric": "useWideMetric",
     }
     _SDM_ENUM_MAP = {
-        'linkType': ['pointToPoint', 'broadcast'],
+        "linkType": ["pointToPoint", "broadcast"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,10 +74,13 @@ class NetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_f91a7acd3933b98f6f3aecf039325b41 import EntryTe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_f91a7acd3933b98f6f3aecf039325b41 import (
+            EntryTe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EntryTe', None) is not None:
-                return self._properties.get('EntryTe')
+            if self._properties.get("EntryTe", None) is not None:
+                return self._properties.get("EntryTe")
         return EntryTe(self)._select()
 
     @property
@@ -90,10 +94,13 @@ class NetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_4dac5090bdeb7392da854c328353c856 import RangeTe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_4dac5090bdeb7392da854c328353c856 import (
+            RangeTe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RangeTe', None) is not None:
-                return self._properties.get('RangeTe')
+            if self._properties.get("RangeTe", None) is not None:
+                return self._properties.get("RangeTe")
         return RangeTe(self)._select()
 
     @property
@@ -104,11 +111,12 @@ class NetworkRange(Base):
         -------
         - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+
     @EnableHostName.setter
     def EnableHostName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHostName"], value)
 
     @property
     def Enabled(self):
@@ -118,11 +126,12 @@ class NetworkRange(Base):
         -------
         - bool: If enabled, this route range will be advertised by the nodes in the network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EntryCol(self):
@@ -132,11 +141,12 @@ class NetworkRange(Base):
         -------
         - number: The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryCol'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryCol"])
+
     @EntryCol.setter
     def EntryCol(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryCol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryCol"], value)
 
     @property
     def EntryRow(self):
@@ -146,11 +156,12 @@ class NetworkRange(Base):
         -------
         - number: The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryRow"])
+
     @EntryRow.setter
     def EntryRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryRow"], value)
 
     @property
     def GridNodeRoutes(self):
@@ -159,10 +170,11 @@ class NetworkRange(Base):
         -------
         - list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number)): The set of advertised networks within the grid to be included in isisGrid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GridNodeRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["GridNodeRoutes"])
+
     @GridNodeRoutes.setter
     def GridNodeRoutes(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['GridNodeRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GridNodeRoutes"], value)
 
     @property
     def GridOutsideExLinks(self):
@@ -171,22 +183,24 @@ class NetworkRange(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str)): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GridOutsideExLinks'])
+        return self._get_attribute(self._SDM_ATT_MAP["GridOutsideExLinks"])
+
     @GridOutsideExLinks.setter
     def GridOutsideExLinks(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['GridOutsideExLinks'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GridOutsideExLinks"], value)
 
     @property
     def GridOutsideLinks(self):
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:str,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str)): Sets up the outside links between an ISIS grid and another ISIS grid.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GridOutsideLinks'])
+        return self._get_attribute(self._SDM_ATT_MAP["GridOutsideLinks"])
+
     @GridOutsideLinks.setter
     def GridOutsideLinks(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['GridOutsideLinks'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GridOutsideLinks"], value)
 
     @property
     def HostNamePrefix(self):
@@ -196,11 +210,12 @@ class NetworkRange(Base):
         -------
         - str: Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostNamePrefix"])
+
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostNamePrefix"], value)
 
     @property
     def InterfaceIps(self):
@@ -209,10 +224,11 @@ class NetworkRange(Base):
         -------
         - list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)): The interface IP information for the simulated network.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIps'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIps"])
+
     @InterfaceIps.setter
     def InterfaceIps(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIps"], value)
 
     @property
     def InterfaceMetric(self):
@@ -222,11 +238,12 @@ class NetworkRange(Base):
         -------
         - number: The metric cost associated with this emulated ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceMetric"], value)
 
     @property
     def Ipv6MtMetric(self):
@@ -236,11 +253,12 @@ class NetworkRange(Base):
         -------
         - number: This metric is same as the Interface Metric. If enabled, it allows you to enter data.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MtMetric"])
+
     @Ipv6MtMetric.setter
     def Ipv6MtMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6MtMetric"], value)
 
     @property
     def LinkType(self):
@@ -250,11 +268,12 @@ class NetworkRange(Base):
         -------
         - str(pointToPoint | broadcast): The type of network link for this emulated ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkType"])
+
     @LinkType.setter
     def LinkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkType"], value)
 
     @property
     def NoOfCols(self):
@@ -264,11 +283,12 @@ class NetworkRange(Base):
         -------
         - number: The number of columns in the simulated grid. (default = 3)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCols'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCols"])
+
     @NoOfCols.setter
     def NoOfCols(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCols'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCols"], value)
 
     @property
     def NoOfRows(self):
@@ -278,11 +298,12 @@ class NetworkRange(Base):
         -------
         - number: The number of rows in the simulated grid. (default = 3)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfRows"])
+
     @NoOfRows.setter
     def NoOfRows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfRows"], value)
 
     @property
     def RouterId(self):
@@ -292,11 +313,12 @@ class NetworkRange(Base):
         -------
         - str: The router ID for the first emulated ISIS router in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterId"])
+
     @RouterId.setter
     def RouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterId"], value)
 
     @property
     def RouterIdIncrement(self):
@@ -306,11 +328,12 @@ class NetworkRange(Base):
         -------
         - str: The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterIdIncrement"])
+
     @RouterIdIncrement.setter
     def RouterIdIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterIdIncrement"], value)
 
     @property
     def TePaths(self):
@@ -319,10 +342,11 @@ class NetworkRange(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str,arg17:str,arg18:str,arg19:str)): Adds a Traffic Engineering (TE) Path to the list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TePaths'])
+        return self._get_attribute(self._SDM_ATT_MAP["TePaths"])
+
     @TePaths.setter
     def TePaths(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TePaths'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TePaths"], value)
 
     @property
     def UseWideMetric(self):
@@ -332,13 +356,34 @@ class NetworkRange(Base):
         -------
         - bool: Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseWideMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseWideMetric"])
+
     @UseWideMetric.setter
     def UseWideMetric(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseWideMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseWideMetric"], value)
 
-    def update(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
+    def update(
+        self,
+        EnableHostName=None,
+        Enabled=None,
+        EntryCol=None,
+        EntryRow=None,
+        GridNodeRoutes=None,
+        GridOutsideExLinks=None,
+        GridOutsideLinks=None,
+        HostNamePrefix=None,
+        InterfaceIps=None,
+        InterfaceMetric=None,
+        Ipv6MtMetric=None,
+        LinkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        RouterId=None,
+        RouterIdIncrement=None,
+        TePaths=None,
+        UseWideMetric=None,
+    ):
         """Updates networkRange resource on the server.
 
         Args
@@ -368,7 +413,27 @@ class NetworkRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
+    def add(
+        self,
+        EnableHostName=None,
+        Enabled=None,
+        EntryCol=None,
+        EntryRow=None,
+        GridNodeRoutes=None,
+        GridOutsideExLinks=None,
+        GridOutsideLinks=None,
+        HostNamePrefix=None,
+        InterfaceIps=None,
+        InterfaceMetric=None,
+        Ipv6MtMetric=None,
+        LinkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        RouterId=None,
+        RouterIdIncrement=None,
+        TePaths=None,
+        UseWideMetric=None,
+    ):
         """Adds a new networkRange resource on the server and adds it to the container.
 
         Args
@@ -412,7 +477,27 @@ class NetworkRange(Base):
         """
         self._delete()
 
-    def find(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):
+    def find(
+        self,
+        EnableHostName=None,
+        Enabled=None,
+        EntryCol=None,
+        EntryRow=None,
+        GridNodeRoutes=None,
+        GridOutsideExLinks=None,
+        GridOutsideLinks=None,
+        HostNamePrefix=None,
+        InterfaceIps=None,
+        InterfaceMetric=None,
+        Ipv6MtMetric=None,
+        LinkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        RouterId=None,
+        RouterIdIncrement=None,
+        TePaths=None,
+        UseWideMetric=None,
+    ):
         """Finds and retrieves networkRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkRange resources from the server.

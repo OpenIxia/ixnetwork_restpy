@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class NacPosture(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'nacPosture'
+    _SDM_NAME = "nacPosture"
     _SDM_ATT_MAP = {
-        'ExpectedSystemToken': 'expectedSystemToken',
-        'NacTlvs': 'nacTlvs',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Selected': 'selected',
+        "ExpectedSystemToken": "expectedSystemToken",
+        "NacTlvs": "nacTlvs",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Selected": "selected",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NacPosture, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class NacPosture(Base):
         -------
         - number: Expected System Token.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpectedSystemToken"])
+
     @ExpectedSystemToken.setter
     def ExpectedSystemToken(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExpectedSystemToken"], value)
 
     @property
     def NacTlvs(self):
@@ -70,11 +71,12 @@ class NacPosture(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv]): List of NacTLVs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NacTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NacTlvs"])
+
     @NacTlvs.setter
     def NacTlvs(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NacTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NacTlvs"], value)
 
     @property
     def Name(self):
@@ -84,11 +86,12 @@ class NacPosture(Base):
         -------
         - str: Unique name for this NAC Posture.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -98,7 +101,7 @@ class NacPosture(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Selected(self):
@@ -108,11 +111,12 @@ class NacPosture(Base):
         -------
         - bool: Add to postures list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Selected'])
+        return self._get_attribute(self._SDM_ATT_MAP["Selected"])
+
     @Selected.setter
     def Selected(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Selected'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Selected"], value)
 
     def update(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, Selected=None):
         # type: (int, List[str], str, bool) -> NacPosture
@@ -162,7 +166,14 @@ class NacPosture(Base):
         """
         self._delete()
 
-    def find(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, ObjectId=None, Selected=None):
+    def find(
+        self,
+        ExpectedSystemToken=None,
+        NacTlvs=None,
+        Name=None,
+        ObjectId=None,
+        Selected=None,
+    ):
         # type: (int, List[str], str, str, bool) -> NacPosture
         """Finds and retrieves nacPosture resources from the server.
 

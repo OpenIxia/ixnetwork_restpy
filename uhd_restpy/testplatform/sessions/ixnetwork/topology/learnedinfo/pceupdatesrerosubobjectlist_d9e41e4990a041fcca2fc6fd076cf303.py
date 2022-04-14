@@ -295,7 +295,7 @@ class PceUpdateSrEroSubObjectList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
     def add(self):
-        """Adds a new pceUpdateSrEroSubObjectList resource on the json, only valid with config assistant
+        """Adds a new pceUpdateSrEroSubObjectList resource on the json, only valid with batch add utility
 
         Returns
         -------

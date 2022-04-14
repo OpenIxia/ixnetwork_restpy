@@ -381,7 +381,7 @@ class Ospfv3PseudoRouter(Base):
 
     def add(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
         # type: (bool, str, int) -> Ospfv3PseudoRouter
-        """Adds a new ospfv3PseudoRouter resource on the json, only valid with config assistant
+        """Adds a new ospfv3PseudoRouter resource on the json, only valid with batch add utility
 
         Args
         ----

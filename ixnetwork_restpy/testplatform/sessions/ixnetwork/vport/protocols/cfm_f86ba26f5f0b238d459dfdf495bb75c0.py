@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,18 @@ class Cfm(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfm'
+    _SDM_NAME = "cfm"
     _SDM_ATT_MAP = {
-        'EnableOptionalLmFunctionality': 'enableOptionalLmFunctionality',
-        'EnableOptionalTlvValidation': 'enableOptionalTlvValidation',
-        'Enabled': 'enabled',
-        'ReceiveCcm': 'receiveCcm',
-        'RunningState': 'runningState',
-        'SendCcm': 'sendCcm',
-        'SuppressErrorsOnAis': 'suppressErrorsOnAis',
+        "EnableOptionalLmFunctionality": "enableOptionalLmFunctionality",
+        "EnableOptionalTlvValidation": "enableOptionalTlvValidation",
+        "Enabled": "enabled",
+        "ReceiveCcm": "receiveCcm",
+        "RunningState": "runningState",
+        "SendCcm": "sendCcm",
+        "SuppressErrorsOnAis": "suppressErrorsOnAis",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,10 +61,13 @@ class Cfm(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_303490481015947d17e8f3098590185b import Bridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_303490481015947d17e8f3098590185b import (
+            Bridge,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bridge', None) is not None:
-                return self._properties.get('Bridge')
+            if self._properties.get("Bridge", None) is not None:
+                return self._properties.get("Bridge")
         return Bridge(self)
 
     @property
@@ -74,11 +78,12 @@ class Cfm(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOptionalLmFunctionality'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOptionalLmFunctionality"])
+
     @EnableOptionalLmFunctionality.setter
     def EnableOptionalLmFunctionality(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOptionalLmFunctionality'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOptionalLmFunctionality"], value)
 
     @property
     def EnableOptionalTlvValidation(self):
@@ -88,11 +93,12 @@ class Cfm(Base):
         -------
         - bool: If true, the CFM protocol will validate optional TLVs present in CFM packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOptionalTlvValidation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOptionalTlvValidation"])
+
     @EnableOptionalTlvValidation.setter
     def EnableOptionalTlvValidation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOptionalTlvValidation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOptionalTlvValidation"], value)
 
     @property
     def Enabled(self):
@@ -102,11 +108,12 @@ class Cfm(Base):
         -------
         - bool: If true, the CFM protcol is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ReceiveCcm(self):
@@ -116,11 +123,12 @@ class Cfm(Base):
         -------
         - bool: If true, the CFM protocol can receive CFM CCMs on this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReceiveCcm'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveCcm"])
+
     @ReceiveCcm.setter
     def ReceiveCcm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReceiveCcm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReceiveCcm"], value)
 
     @property
     def RunningState(self):
@@ -130,7 +138,7 @@ class Cfm(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the CFM protocol.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def SendCcm(self):
@@ -140,11 +148,12 @@ class Cfm(Base):
         -------
         - bool: If true, the CFM protocol can send CFM CCMs from this port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendCcm'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendCcm"])
+
     @SendCcm.setter
     def SendCcm(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendCcm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendCcm"], value)
 
     @property
     def SuppressErrorsOnAis(self):
@@ -154,13 +163,22 @@ class Cfm(Base):
         -------
         - bool: If true, the errors on AIS are suopressed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SuppressErrorsOnAis'])
+        return self._get_attribute(self._SDM_ATT_MAP["SuppressErrorsOnAis"])
+
     @SuppressErrorsOnAis.setter
     def SuppressErrorsOnAis(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SuppressErrorsOnAis'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SuppressErrorsOnAis"], value)
 
-    def update(self, EnableOptionalLmFunctionality=None, EnableOptionalTlvValidation=None, Enabled=None, ReceiveCcm=None, SendCcm=None, SuppressErrorsOnAis=None):
+    def update(
+        self,
+        EnableOptionalLmFunctionality=None,
+        EnableOptionalTlvValidation=None,
+        Enabled=None,
+        ReceiveCcm=None,
+        SendCcm=None,
+        SuppressErrorsOnAis=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool) -> Cfm
         """Updates cfm resource on the server.
 
@@ -179,7 +197,16 @@ class Cfm(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableOptionalLmFunctionality=None, EnableOptionalTlvValidation=None, Enabled=None, ReceiveCcm=None, RunningState=None, SendCcm=None, SuppressErrorsOnAis=None):
+    def find(
+        self,
+        EnableOptionalLmFunctionality=None,
+        EnableOptionalTlvValidation=None,
+        Enabled=None,
+        ReceiveCcm=None,
+        RunningState=None,
+        SendCcm=None,
+        SuppressErrorsOnAis=None,
+    ):
         # type: (bool, bool, bool, bool, str, bool, bool) -> Cfm
         """Finds and retrieves cfm resources from the server.
 
@@ -240,10 +267,12 @@ class Cfm(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -260,7 +289,9 @@ class Cfm(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

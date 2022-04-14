@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,14 +35,24 @@ class StatisticFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statisticFilter'
+    _SDM_NAME = "statisticFilter"
     _SDM_ATT_MAP = {
-        'Operator': 'operator',
-        'StatisticFilterId': 'statisticFilterId',
-        'Value': 'value',
+        "Operator": "operator",
+        "StatisticFilterId": "statisticFilterId",
+        "Value": "value",
     }
     _SDM_ENUM_MAP = {
-        'operator': ['isAnyOf', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isLike', 'isNotLike', 'isSmaller'],
+        "operator": [
+            "isAnyOf",
+            "isDifferent",
+            "isEqual",
+            "isEqualOrGreater",
+            "isEqualOrSmaller",
+            "isGreater",
+            "isLike",
+            "isNotLike",
+            "isSmaller",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,11 +66,12 @@ class StatisticFilter(Base):
         -------
         - str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller): The logical operation to be performed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
+        return self._get_attribute(self._SDM_ATT_MAP["Operator"])
+
     @Operator.setter
     def Operator(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Operator"], value)
 
     @property
     def StatisticFilterId(self):
@@ -69,11 +81,12 @@ class StatisticFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): Selected statistic filters from the availableStatisticFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StatisticFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StatisticFilterId"])
+
     @StatisticFilterId.setter
     def StatisticFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StatisticFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StatisticFilterId"], value)
 
     @property
     def Value(self):
@@ -83,11 +96,12 @@ class StatisticFilter(Base):
         -------
         - str: Value of statistic to be matched based on operator.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
     def update(self, Operator=None, StatisticFilterId=None, Value=None):
         # type: (str, str, str) -> StatisticFilter

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,21 @@ class VicClientRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vicClientRange'
+    _SDM_NAME = "vicClientRange"
     _SDM_ATT_MAP = {
-        'ChannelIdIncrement': 'channelIdIncrement',
-        'ChannelIdStart': 'channelIdStart',
-        'Enabled': 'enabled',
-        'MacsPerVif': 'macsPerVif',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ProvInfoOui': 'provInfoOui',
-        'ProvInfoTlvs': 'provInfoTlvs',
-        'ProvInfoType': 'provInfoType',
-        'TlvOffset': 'tlvOffset',
-        'VifActive': 'vifActive',
+        "ChannelIdIncrement": "channelIdIncrement",
+        "ChannelIdStart": "channelIdStart",
+        "Enabled": "enabled",
+        "MacsPerVif": "macsPerVif",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "ProvInfoOui": "provInfoOui",
+        "ProvInfoTlvs": "provInfoTlvs",
+        "ProvInfoType": "provInfoType",
+        "TlvOffset": "tlvOffset",
+        "VifActive": "vifActive",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VicClientRange, self).__init__(parent, list_op)
@@ -62,11 +62,12 @@ class VicClientRange(Base):
         -------
         - number: The increment step for channel ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelIdIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelIdIncrement"])
+
     @ChannelIdIncrement.setter
     def ChannelIdIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChannelIdIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChannelIdIncrement"], value)
 
     @property
     def ChannelIdStart(self):
@@ -76,11 +77,12 @@ class VicClientRange(Base):
         -------
         - number: The channel ID within VIC session.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelIdStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelIdStart"])
+
     @ChannelIdStart.setter
     def ChannelIdStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChannelIdStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChannelIdStart"], value)
 
     @property
     def Enabled(self):
@@ -90,11 +92,12 @@ class VicClientRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def MacsPerVif(self):
@@ -104,11 +107,12 @@ class VicClientRange(Base):
         -------
         - number: Number of MAC interfaces managed by a single VIF object.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacsPerVif'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacsPerVif"])
+
     @MacsPerVif.setter
     def MacsPerVif(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacsPerVif'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacsPerVif"], value)
 
     @property
     def Name(self):
@@ -118,11 +122,12 @@ class VicClientRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -132,7 +137,7 @@ class VicClientRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def ProvInfoOui(self):
@@ -142,11 +147,12 @@ class VicClientRange(Base):
         -------
         - str: IEEE OUI owning the provisioning information type space.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProvInfoOui'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProvInfoOui"])
+
     @ProvInfoOui.setter
     def ProvInfoOui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProvInfoOui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProvInfoOui"], value)
 
     @property
     def ProvInfoTlvs(self):
@@ -156,11 +162,12 @@ class VicClientRange(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet): The provisioning TLVs associated with this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProvInfoTlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProvInfoTlvs"])
+
     @ProvInfoTlvs.setter
     def ProvInfoTlvs(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProvInfoTlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProvInfoTlvs"], value)
 
     @property
     def ProvInfoType(self):
@@ -170,11 +177,12 @@ class VicClientRange(Base):
         -------
         - number: The type of the provisioning information (defined in each namespace).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProvInfoType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProvInfoType"])
+
     @ProvInfoType.setter
     def ProvInfoType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProvInfoType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProvInfoType"], value)
 
     @property
     def TlvOffset(self):
@@ -184,11 +192,12 @@ class VicClientRange(Base):
         -------
         - number: The number of TLV increments to apply before using the TLV values for this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TlvOffset'])
+        return self._get_attribute(self._SDM_ATT_MAP["TlvOffset"])
+
     @TlvOffset.setter
     def TlvOffset(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TlvOffset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TlvOffset"], value)
 
     @property
     def VifActive(self):
@@ -198,13 +207,26 @@ class VicClientRange(Base):
         -------
         - bool: The initial state of this interface set: true for Active, false for Standby.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VifActive'])
+        return self._get_attribute(self._SDM_ATT_MAP["VifActive"])
+
     @VifActive.setter
     def VifActive(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VifActive'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VifActive"], value)
 
-    def update(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
+    def update(
+        self,
+        ChannelIdIncrement=None,
+        ChannelIdStart=None,
+        Enabled=None,
+        MacsPerVif=None,
+        Name=None,
+        ProvInfoOui=None,
+        ProvInfoTlvs=None,
+        ProvInfoType=None,
+        TlvOffset=None,
+        VifActive=None,
+    ):
         # type: (int, int, bool, int, str, str, str, int, int, bool) -> VicClientRange
         """Updates vicClientRange resource on the server.
 
@@ -227,7 +249,19 @@ class VicClientRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
+    def add(
+        self,
+        ChannelIdIncrement=None,
+        ChannelIdStart=None,
+        Enabled=None,
+        MacsPerVif=None,
+        Name=None,
+        ProvInfoOui=None,
+        ProvInfoTlvs=None,
+        ProvInfoType=None,
+        TlvOffset=None,
+        VifActive=None,
+    ):
         # type: (int, int, bool, int, str, str, str, int, int, bool) -> VicClientRange
         """Adds a new vicClientRange resource on the server and adds it to the container.
 
@@ -264,7 +298,20 @@ class VicClientRange(Base):
         """
         self._delete()
 
-    def find(self, ChannelIdIncrement=None, ChannelIdStart=None, Enabled=None, MacsPerVif=None, Name=None, ObjectId=None, ProvInfoOui=None, ProvInfoTlvs=None, ProvInfoType=None, TlvOffset=None, VifActive=None):
+    def find(
+        self,
+        ChannelIdIncrement=None,
+        ChannelIdStart=None,
+        Enabled=None,
+        MacsPerVif=None,
+        Name=None,
+        ObjectId=None,
+        ProvInfoOui=None,
+        ProvInfoTlvs=None,
+        ProvInfoType=None,
+        TlvOffset=None,
+        VifActive=None,
+    ):
         # type: (int, int, bool, int, str, str, str, str, int, int, bool) -> VicClientRange
         """Finds and retrieves vicClientRange resources from the server.
 
@@ -331,10 +378,14 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -353,10 +404,14 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -375,10 +430,14 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )
 
     def VicClientActivate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -395,10 +454,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientActivate', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientActivate", payload=payload, response_object=None)
 
     def VicClientCreate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -415,10 +476,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientCreate', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientCreate", payload=payload, response_object=None)
 
     def VicClientDeactivate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -435,10 +498,14 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientDeactivate', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "vicClientDeactivate", payload=payload, response_object=None
+        )
 
     def VicClientDelete(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -455,10 +522,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientDelete', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientDelete", payload=payload, response_object=None)
 
     def VicClientDisable(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -475,10 +544,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientDisable', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientDisable", payload=payload, response_object=None)
 
     def VicClientEnable(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -495,10 +566,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientEnable', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientEnable", payload=payload, response_object=None)
 
     def VicClientStart(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -522,10 +595,12 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientStart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientStart", payload=payload, response_object=None)
 
     def VicClientStop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -549,7 +624,9 @@ class VicClientRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('vicClientStop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("vicClientStop", payload=payload, response_object=None)

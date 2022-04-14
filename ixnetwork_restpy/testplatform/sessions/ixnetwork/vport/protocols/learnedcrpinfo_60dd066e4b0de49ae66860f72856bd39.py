@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class LearnedCrpInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedCrpInfo'
+    _SDM_NAME = "learnedCrpInfo"
     _SDM_ATT_MAP = {
-        'CrpAddress': 'crpAddress',
-        'ExpiryTimer': 'expiryTimer',
-        'GroupAddress': 'groupAddress',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'Priority': 'priority',
+        "CrpAddress": "crpAddress",
+        "ExpiryTimer": "expiryTimer",
+        "GroupAddress": "groupAddress",
+        "GroupMaskWidth": "groupMaskWidth",
+        "Priority": "priority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LearnedCrpInfo, self).__init__(parent, list_op)
@@ -55,7 +55,7 @@ class LearnedCrpInfo(Base):
         -------
         - str: The RP address expresing candidacy for the specific group of RPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CrpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CrpAddress"])
 
     @property
     def ExpiryTimer(self):
@@ -65,7 +65,7 @@ class LearnedCrpInfo(Base):
         -------
         - number: The expiry time for the specific record as received in CRP Adv Message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExpiryTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExpiryTimer"])
 
     @property
     def GroupAddress(self):
@@ -75,7 +75,7 @@ class LearnedCrpInfo(Base):
         -------
         - str: The Group Address learnt through Candidate RP advertisements.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupAddress"])
 
     @property
     def GroupMaskWidth(self):
@@ -85,7 +85,7 @@ class LearnedCrpInfo(Base):
         -------
         - number: It shows the prefix length (in bits) of the group address learnt.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupMaskWidth"])
 
     @property
     def Priority(self):
@@ -95,10 +95,10 @@ class LearnedCrpInfo(Base):
         -------
         - number: Priority of the selected Candidate RP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
 
     def add(self):
-        """Adds a new learnedCrpInfo resource on the json, only valid with config assistant
+        """Adds a new learnedCrpInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -110,7 +110,14 @@ class LearnedCrpInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CrpAddress=None, ExpiryTimer=None, GroupAddress=None, GroupMaskWidth=None, Priority=None):
+    def find(
+        self,
+        CrpAddress=None,
+        ExpiryTimer=None,
+        GroupAddress=None,
+        GroupMaskWidth=None,
+        Priority=None,
+    ):
         # type: (str, int, str, int, int) -> LearnedCrpInfo
         """Finds and retrieves learnedCrpInfo resources from the server.
 

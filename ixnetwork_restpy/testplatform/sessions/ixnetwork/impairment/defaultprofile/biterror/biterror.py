@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class BitError(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bitError'
+    _SDM_NAME = "bitError"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'LogRate': 'logRate',
-        'SkipEndOctets': 'skipEndOctets',
-        'SkipStartOctets': 'skipStartOctets',
+        "Enabled": "enabled",
+        "LogRate": "logRate",
+        "SkipEndOctets": "skipEndOctets",
+        "SkipStartOctets": "skipStartOctets",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BitError, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class BitError(Base):
         -------
         - bool: If true, periodically introduce bit errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LogRate(self):
@@ -67,11 +68,12 @@ class BitError(Base):
         -------
         - number: If logRate is n, error one out of 10^n bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LogRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["LogRate"])
+
     @LogRate.setter
     def LogRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LogRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LogRate"], value)
 
     @property
     def SkipEndOctets(self):
@@ -81,11 +83,12 @@ class BitError(Base):
         -------
         - number: Number of octets to skip at the end of each packet when erroring bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipEndOctets'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipEndOctets"])
+
     @SkipEndOctets.setter
     def SkipEndOctets(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipEndOctets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipEndOctets"], value)
 
     @property
     def SkipStartOctets(self):
@@ -95,13 +98,16 @@ class BitError(Base):
         -------
         - number: Number of octets to skip at the start of each packet when erroring bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipStartOctets'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipStartOctets"])
+
     @SkipStartOctets.setter
     def SkipStartOctets(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipStartOctets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipStartOctets"], value)
 
-    def update(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
+    def update(
+        self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None
+    ):
         # type: (bool, int, int, int) -> BitError
         """Updates bitError resource on the server.
 
@@ -118,7 +124,9 @@ class BitError(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
+    def find(
+        self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None
+    ):
         # type: (bool, int, int, int) -> BitError
         """Finds and retrieves bitError resources from the server.
 

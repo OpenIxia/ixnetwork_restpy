@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class Ethernet(Base):
     __slots__ = ()
-    _SDM_NAME = 'ethernet'
+    _SDM_NAME = "ethernet"
     _SDM_ATT_MAP = {
-        'DestinationAddress': 'ethernet.header.destinationAddress-1',
-        'SourceAddress': 'ethernet.header.sourceAddress-2',
-        'EtherType': 'ethernet.header.etherType-3',
-        'PfcQueue': 'ethernet.header.pfcQueue-4',
+        "DestinationAddress": "ethernet.header.destinationAddress-1",
+        "SourceAddress": "ethernet.header.sourceAddress-2",
+        "EtherType": "ethernet.header.etherType-3",
+        "PfcQueue": "ethernet.header.pfcQueue-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class Ethernet(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationAddress"])
+        )
 
     @property
     def SourceAddress(self):
@@ -33,7 +36,8 @@ class Ethernet(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceAddress"]))
 
     @property
     def EtherType(self):
@@ -43,7 +47,8 @@ class Ethernet(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EtherType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EtherType"]))
 
     @property
     def PfcQueue(self):
@@ -53,7 +58,8 @@ class Ethernet(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PfcQueue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PfcQueue"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

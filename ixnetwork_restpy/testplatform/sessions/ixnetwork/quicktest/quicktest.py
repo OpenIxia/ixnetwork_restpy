@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class QuickTest(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'quickTest'
+    _SDM_NAME = "quickTest"
     _SDM_ATT_MAP = {
-        'RunningTest': 'runningTest',
-        'RunningTestObj': 'runningTestObj',
-        'TestIds': 'testIds',
+        "RunningTest": "runningTest",
+        "RunningTestObj": "runningTestObj",
+        "TestIds": "testIds",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(QuickTest, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss_9e26b411ea07830a6774d24261df4537 import AsymmetricFrameLoss
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricframeloss_9e26b411ea07830a6774d24261df4537 import (
+            AsymmetricFrameLoss,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AsymmetricFrameLoss', None) is not None:
-                return self._properties.get('AsymmetricFrameLoss')
+            if self._properties.get("AsymmetricFrameLoss", None) is not None:
+                return self._properties.get("AsymmetricFrameLoss")
         return AsymmetricFrameLoss(self)
 
     @property
@@ -72,10 +75,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput_0177e577de3fcef100ee4736ed5038fc import AsymmetricThroughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.asymmetricthroughput_0177e577de3fcef100ee4736ed5038fc import (
+            AsymmetricThroughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AsymmetricThroughput', None) is not None:
-                return self._properties.get('AsymmetricThroughput')
+            if self._properties.get("AsymmetricThroughput", None) is not None:
+                return self._properties.get("AsymmetricThroughput")
         return AsymmetricThroughput(self)
 
     @property
@@ -89,10 +95,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf_fdd110ba22283c5cbf388c5117f9a96a import CloudPerf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.cloudperf_fdd110ba22283c5cbf388c5117f9a96a import (
+            CloudPerf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CloudPerf', None) is not None:
-                return self._properties.get('CloudPerf')
+            if self._properties.get("CloudPerf", None) is not None:
+                return self._properties.get("CloudPerf")
         return CloudPerf(self)
 
     @property
@@ -106,10 +115,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration_589f53152bfa0216c8e0994d79e08373 import CustomContDuration
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customcontduration_589f53152bfa0216c8e0994d79e08373 import (
+            CustomContDuration,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomContDuration', None) is not None:
-                return self._properties.get('CustomContDuration')
+            if self._properties.get("CustomContDuration", None) is not None:
+                return self._properties.get("CustomContDuration")
         return CustomContDuration(self)
 
     @property
@@ -123,10 +135,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration_61d433fa46ead4fbcc08caaf30608356 import CustomFixedDuration
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customfixedduration_61d433fa46ead4fbcc08caaf30608356 import (
+            CustomFixedDuration,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomFixedDuration', None) is not None:
-                return self._properties.get('CustomFixedDuration')
+            if self._properties.get("CustomFixedDuration", None) is not None:
+                return self._properties.get("CustomFixedDuration")
         return CustomFixedDuration(self)
 
     @property
@@ -140,10 +155,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep_98f1ecce7c2d88439541c6c12fb66c1d import CustomStep
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customstep_98f1ecce7c2d88439541c6c12fb66c1d import (
+            CustomStep,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomStep', None) is not None:
-                return self._properties.get('CustomStep')
+            if self._properties.get("CustomStep", None) is not None:
+                return self._properties.get("CustomStep")
         return CustomStep(self)
 
     @property
@@ -157,10 +175,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput_43392709d9d2c48c1b386a084571fdf5 import CustomThroughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.customthroughput_43392709d9d2c48c1b386a084571fdf5 import (
+            CustomThroughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomThroughput', None) is not None:
-                return self._properties.get('CustomThroughput')
+            if self._properties.get("CustomThroughput", None) is not None:
+                return self._properties.get("CustomThroughput")
         return CustomThroughput(self)
 
     @property
@@ -174,10 +195,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate_6f52413edee9d4b4cab233342c11f62b import DhcpRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcprate_6f52413edee9d4b4cab233342c11f62b import (
+            DhcpRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpRate', None) is not None:
-                return self._properties.get('DhcpRate')
+            if self._properties.get("DhcpRate", None) is not None:
+                return self._properties.get("DhcpRate")
         return DhcpRate(self)
 
     @property
@@ -191,10 +215,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf_6209b644d3106a06341c5565d4c9938d import DhcpRateCpf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpratecpf_6209b644d3106a06341c5565d4c9938d import (
+            DhcpRateCpf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DhcpRateCpf', None) is not None:
-                return self._properties.get('DhcpRateCpf')
+            if self._properties.get("DhcpRateCpf", None) is not None:
+                return self._properties.get("DhcpRateCpf")
         return DhcpRateCpf(self)
 
     @property
@@ -208,10 +235,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate_b7650b06ef0db627654946a311cbc9bb import Dhcpv6Rate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6rate_b7650b06ef0db627654946a311cbc9bb import (
+            Dhcpv6Rate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6Rate', None) is not None:
-                return self._properties.get('Dhcpv6Rate')
+            if self._properties.get("Dhcpv6Rate", None) is not None:
+                return self._properties.get("Dhcpv6Rate")
         return Dhcpv6Rate(self)
 
     @property
@@ -225,10 +255,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf_6d7fd500899ffb6a0fed017f65397c33 import Dhcpv6RateCpf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dhcpv6ratecpf_6d7fd500899ffb6a0fed017f65397c33 import (
+            Dhcpv6RateCpf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv6RateCpf', None) is not None:
-                return self._properties.get('Dhcpv6RateCpf')
+            if self._properties.get("Dhcpv6RateCpf", None) is not None:
+                return self._properties.get("Dhcpv6RateCpf")
         return Dhcpv6RateCpf(self)
 
     @property
@@ -242,10 +275,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity_060163d41bdfaa3d63e917d0fa7e7995 import Dot1xCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xcapacity_060163d41bdfaa3d63e917d0fa7e7995 import (
+            Dot1xCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1xCapacity', None) is not None:
-                return self._properties.get('Dot1xCapacity')
+            if self._properties.get("Dot1xCapacity", None) is not None:
+                return self._properties.get("Dot1xCapacity")
         return Dot1xCapacity(self)
 
     @property
@@ -259,10 +295,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate_d841037f3c95312f5d95e0c3e8e68e72 import Dot1xRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.dot1xrate_d841037f3c95312f5d95e0c3e8e68e72 import (
+            Dot1xRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dot1xRate', None) is not None:
-                return self._properties.get('Dot1xRate')
+            if self._properties.get("Dot1xRate", None) is not None:
+                return self._properties.get("Dot1xRate")
         return Dot1xRate(self)
 
     @property
@@ -276,10 +315,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler_dbcc776816146a01a3385b4bdec9a524 import EventScheduler
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.eventscheduler_dbcc776816146a01a3385b4bdec9a524 import (
+            EventScheduler,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EventScheduler', None) is not None:
-                return self._properties.get('EventScheduler')
+            if self._properties.get("EventScheduler", None) is not None:
+                return self._properties.get("EventScheduler")
         return EventScheduler(self)
 
     @property
@@ -293,10 +335,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput_caa036e4ea16b6d8490baab54a7a3377 import FcoeMaxNoDropThroughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnodropthroughput_caa036e4ea16b6d8490baab54a7a3377 import (
+            FcoeMaxNoDropThroughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeMaxNoDropThroughput', None) is not None:
-                return self._properties.get('FcoeMaxNoDropThroughput')
+            if self._properties.get("FcoeMaxNoDropThroughput", None) is not None:
+                return self._properties.get("FcoeMaxNoDropThroughput")
         return FcoeMaxNoDropThroughput(self)
 
     @property
@@ -310,10 +355,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput_5ad968ab4d3c9fe2bdf36264fc9140ae import FcoeMaxNoPauseThroughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.fcoemaxnopausethroughput_5ad968ab4d3c9fe2bdf36264fc9140ae import (
+            FcoeMaxNoPauseThroughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FcoeMaxNoPauseThroughput', None) is not None:
-                return self._properties.get('FcoeMaxNoPauseThroughput')
+            if self._properties.get("FcoeMaxNoPauseThroughput", None) is not None:
+                return self._properties.get("FcoeMaxNoPauseThroughput")
         return FcoeMaxNoPauseThroughput(self)
 
     @property
@@ -327,10 +375,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c import Globals
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c import (
+            Globals,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Globals', None) is not None:
-                return self._properties.get('Globals')
+            if self._properties.get("Globals", None) is not None:
+                return self._properties.get("Globals")
         return Globals(self)._select()
 
     @property
@@ -344,10 +395,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping_31de08f962d6589ac7f01ee268afa1f8 import IptvChannelZapping
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.iptvchannelzapping_31de08f962d6589ac7f01ee268afa1f8 import (
+            IptvChannelZapping,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IptvChannelZapping', None) is not None:
-                return self._properties.get('IptvChannelZapping')
+            if self._properties.get("IptvChannelZapping", None) is not None:
+                return self._properties.get("IptvChannelZapping")
         return IptvChannelZapping(self)
 
     @property
@@ -361,10 +415,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity_3ea965e8ab5d5bb33868030e8987180b import L2tpCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpcapacity_3ea965e8ab5d5bb33868030e8987180b import (
+            L2tpCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpCapacity', None) is not None:
-                return self._properties.get('L2tpCapacity')
+            if self._properties.get("L2tpCapacity", None) is not None:
+                return self._properties.get("L2tpCapacity")
         return L2tpCapacity(self)
 
     @property
@@ -378,10 +435,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate_70b6ec9c1ab739f3e122bb9aa824287b import L2tpRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tprate_70b6ec9c1ab739f3e122bb9aa824287b import (
+            L2tpRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpRate', None) is not None:
-                return self._properties.get('L2tpRate')
+            if self._properties.get("L2tpRate", None) is not None:
+                return self._properties.get("L2tpRate")
         return L2tpRate(self)
 
     @property
@@ -395,10 +455,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf_783a49754bc5382d09d62eef08fb6f6f import L2tpRateCpf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.l2tpratecpf_783a49754bc5382d09d62eef08fb6f6f import (
+            L2tpRateCpf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2tpRateCpf', None) is not None:
-                return self._properties.get('L2tpRateCpf')
+            if self._properties.get("L2tpRateCpf", None) is not None:
+                return self._properties.get("L2tpRateCpf")
         return L2tpRateCpf(self)
 
     @property
@@ -412,10 +475,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity_2e1877e2c6cfbff71589fec7847fe90d import LnsCpfCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.lnscpfcapacity_2e1877e2c6cfbff71589fec7847fe90d import (
+            LnsCpfCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LnsCpfCapacity', None) is not None:
-                return self._properties.get('LnsCpfCapacity')
+            if self._properties.get("LnsCpfCapacity", None) is not None:
+                return self._properties.get("LnsCpfCapacity")
         return LnsCpfCapacity(self)
 
     @property
@@ -429,10 +495,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance_50924ff459aa0f2719393c238b1c71a9 import OpenFlowFailoverPerformance
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowfailoverperformance_50924ff459aa0f2719393c238b1c71a9 import (
+            OpenFlowFailoverPerformance,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowFailoverPerformance', None) is not None:
-                return self._properties.get('OpenFlowFailoverPerformance')
+            if self._properties.get("OpenFlowFailoverPerformance", None) is not None:
+                return self._properties.get("OpenFlowFailoverPerformance")
         return OpenFlowFailoverPerformance(self)
 
     @property
@@ -446,10 +515,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate_e5da985364765a56bf90bf997dc09d88 import OpenFlowLayer2LearningRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer2learningrate_e5da985364765a56bf90bf997dc09d88 import (
+            OpenFlowLayer2LearningRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowLayer2LearningRate', None) is not None:
-                return self._properties.get('OpenFlowLayer2LearningRate')
+            if self._properties.get("OpenFlowLayer2LearningRate", None) is not None:
+                return self._properties.get("OpenFlowLayer2LearningRate")
         return OpenFlowLayer2LearningRate(self)
 
     @property
@@ -463,10 +535,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate_24a64d34da695088e642bf2d3643974d import OpenFlowLayer3LearningRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowlayer3learningrate_24a64d34da695088e642bf2d3643974d import (
+            OpenFlowLayer3LearningRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowLayer3LearningRate', None) is not None:
-                return self._properties.get('OpenFlowLayer3LearningRate')
+            if self._properties.get("OpenFlowLayer3LearningRate", None) is not None:
+                return self._properties.get("OpenFlowLayer3LearningRate")
         return OpenFlowLayer3LearningRate(self)
 
     @property
@@ -480,10 +555,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity_9d1b2428e9419c5f88c445937490500d import OpenFlowTableCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.openflowtablecapacity_9d1b2428e9419c5f88c445937490500d import (
+            OpenFlowTableCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowTableCapacity', None) is not None:
-                return self._properties.get('OpenFlowTableCapacity')
+            if self._properties.get("OpenFlowTableCapacity", None) is not None:
+                return self._properties.get("OpenFlowTableCapacity")
         return OpenFlowTableCapacity(self)
 
     @property
@@ -497,10 +575,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity_979eb526d86ff91bb93b7632215d608e import PppServerCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppservercapacity_979eb526d86ff91bb93b7632215d608e import (
+            PppServerCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppServerCapacity', None) is not None:
-                return self._properties.get('PppServerCapacity')
+            if self._properties.get("PppServerCapacity", None) is not None:
+                return self._properties.get("PppServerCapacity")
         return PppServerCapacity(self)
 
     @property
@@ -514,10 +595,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate_7133d4b47f948b84b4bce0cc33228436 import PppSessionRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppsessionrate_7133d4b47f948b84b4bce0cc33228436 import (
+            PppSessionRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppSessionRate', None) is not None:
-                return self._properties.get('PppSessionRate')
+            if self._properties.get("PppSessionRate", None) is not None:
+                return self._properties.get("PppSessionRate")
         return PppSessionRate(self)
 
     @property
@@ -531,10 +615,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf_edf3eb55fe0471c286d4bfc9ef6bf15f import PppoxRateCpf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpf_edf3eb55fe0471c286d4bfc9ef6bf15f import (
+            PppoxRateCpf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppoxRateCpf', None) is not None:
-                return self._properties.get('PppoxRateCpf')
+            if self._properties.get("PppoxRateCpf", None) is not None:
+                return self._properties.get("PppoxRateCpf")
         return PppoxRateCpf(self)
 
     @property
@@ -548,10 +635,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity_4fa9f2f6b60fa2de488c91d089f14bbb import PppoxRateCpfServerCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.pppoxratecpfservercapacity_4fa9f2f6b60fa2de488c91d089f14bbb import (
+            PppoxRateCpfServerCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PppoxRateCpfServerCapacity', None) is not None:
-                return self._properties.get('PppoxRateCpfServerCapacity')
+            if self._properties.get("PppoxRateCpfServerCapacity", None) is not None:
+                return self._properties.get("PppoxRateCpfServerCapacity")
         return PppoxRateCpfServerCapacity(self)
 
     @property
@@ -565,10 +655,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection_6f10a38d2f306fac193108a7cedda79c import PtpBestMasterSelection
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpbestmasterselection_6f10a38d2f306fac193108a7cedda79c import (
+            PtpBestMasterSelection,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpBestMasterSelection', None) is not None:
-                return self._properties.get('PtpBestMasterSelection')
+            if self._properties.get("PtpBestMasterSelection", None) is not None:
+                return self._properties.get("PtpBestMasterSelection")
         return PtpBestMasterSelection(self)
 
     @property
@@ -582,10 +675,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror_a796fd71e51214e85d4e3efc9d23ff7c import PtpCorrectionFactorError
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpcorrectionfactorerror_a796fd71e51214e85d4e3efc9d23ff7c import (
+            PtpCorrectionFactorError,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpCorrectionFactorError', None) is not None:
-                return self._properties.get('PtpCorrectionFactorError')
+            if self._properties.get("PtpCorrectionFactorError", None) is not None:
+                return self._properties.get("PtpCorrectionFactorError")
         return PtpCorrectionFactorError(self)
 
     @property
@@ -599,10 +695,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability_46be9cd153cad47ed0d8acb04a35bd60 import PtpSlaveScalability
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.ptpslavescalability_46be9cd153cad47ed0d8acb04a35bd60 import (
+            PtpSlaveScalability,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PtpSlaveScalability', None) is not None:
-                return self._properties.get('PtpSlaveScalability')
+            if self._properties.get("PtpSlaveScalability", None) is not None:
+                return self._properties.get("PtpSlaveScalability")
         return PtpSlaveScalability(self)
 
     @property
@@ -616,10 +715,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_cfd3f40fbe677cc70482381fc445e21e import Rfc2544back2back
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_cfd3f40fbe677cc70482381fc445e21e import (
+            Rfc2544back2back,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2544back2back', None) is not None:
-                return self._properties.get('Rfc2544back2back')
+            if self._properties.get("Rfc2544back2back", None) is not None:
+                return self._properties.get("Rfc2544back2back")
         return Rfc2544back2back(self)
 
     @property
@@ -633,10 +735,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_868b9746dda2d0cfeed81516cf37d39d import Rfc2544frameLoss
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_868b9746dda2d0cfeed81516cf37d39d import (
+            Rfc2544frameLoss,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2544frameLoss', None) is not None:
-                return self._properties.get('Rfc2544frameLoss')
+            if self._properties.get("Rfc2544frameLoss", None) is not None:
+                return self._properties.get("Rfc2544frameLoss")
         return Rfc2544frameLoss(self)
 
     @property
@@ -650,10 +755,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_86fc74b3228f97518d2513e6b33a3960 import Rfc2544throughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_86fc74b3228f97518d2513e6b33a3960 import (
+            Rfc2544throughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2544throughput', None) is not None:
-                return self._properties.get('Rfc2544throughput')
+            if self._properties.get("Rfc2544throughput", None) is not None:
+                return self._properties.get("Rfc2544throughput")
         return Rfc2544throughput(self)
 
     @property
@@ -667,10 +775,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache_a18b9d3bb943f165530ead1bd2810a19 import Rfc2889addressCache
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addresscache_a18b9d3bb943f165530ead1bd2810a19 import (
+            Rfc2889addressCache,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889addressCache', None) is not None:
-                return self._properties.get('Rfc2889addressCache')
+            if self._properties.get("Rfc2889addressCache", None) is not None:
+                return self._properties.get("Rfc2889addressCache")
         return Rfc2889addressCache(self)
 
     @property
@@ -684,10 +795,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate_6b4eb5ae2d6036ecd651aea962977193 import Rfc2889addressRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889addressrate_6b4eb5ae2d6036ecd651aea962977193 import (
+            Rfc2889addressRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889addressRate', None) is not None:
-                return self._properties.get('Rfc2889addressRate')
+            if self._properties.get("Rfc2889addressRate", None) is not None:
+                return self._properties.get("Rfc2889addressRate")
         return Rfc2889addressRate(self)
 
     @property
@@ -701,10 +815,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate_1f8e1c7f7f9e4d711149db4a572058fb import Rfc2889broadcastRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889broadcastrate_1f8e1c7f7f9e4d711149db4a572058fb import (
+            Rfc2889broadcastRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889broadcastRate', None) is not None:
-                return self._properties.get('Rfc2889broadcastRate')
+            if self._properties.get("Rfc2889broadcastRate", None) is not None:
+                return self._properties.get("Rfc2889broadcastRate")
         return Rfc2889broadcastRate(self)
 
     @property
@@ -718,10 +835,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol_efe62c029fd5ff197d5d57687ac167a6 import Rfc2889congestionControl
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889congestioncontrol_efe62c029fd5ff197d5d57687ac167a6 import (
+            Rfc2889congestionControl,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889congestionControl', None) is not None:
-                return self._properties.get('Rfc2889congestionControl')
+            if self._properties.get("Rfc2889congestionControl", None) is not None:
+                return self._properties.get("Rfc2889congestionControl")
         return Rfc2889congestionControl(self)
 
     @property
@@ -735,10 +855,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering_56eb932020f20bf8144b92be8a4285f9 import Rfc2889frameErrorFiltering
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889frameerrorfiltering_56eb932020f20bf8144b92be8a4285f9 import (
+            Rfc2889frameErrorFiltering,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889frameErrorFiltering', None) is not None:
-                return self._properties.get('Rfc2889frameErrorFiltering')
+            if self._properties.get("Rfc2889frameErrorFiltering", None) is not None:
+                return self._properties.get("Rfc2889frameErrorFiltering")
         return Rfc2889frameErrorFiltering(self)
 
     @property
@@ -752,10 +875,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed_e7a2c563a7e22586b41e6c0ca493e098 import Rfc2889fullyMeshed
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889fullymeshed_e7a2c563a7e22586b41e6c0ca493e098 import (
+            Rfc2889fullyMeshed,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889fullyMeshed', None) is not None:
-                return self._properties.get('Rfc2889fullyMeshed')
+            if self._properties.get("Rfc2889fullyMeshed", None) is not None:
+                return self._properties.get("Rfc2889fullyMeshed")
         return Rfc2889fullyMeshed(self)
 
     @property
@@ -769,10 +895,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone_2b7b125a9428908981ac29770d6d23c1 import Rfc2889manyToOne
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889manytoone_2b7b125a9428908981ac29770d6d23c1 import (
+            Rfc2889manyToOne,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889manyToOne', None) is not None:
-                return self._properties.get('Rfc2889manyToOne')
+            if self._properties.get("Rfc2889manyToOne", None) is not None:
+                return self._properties.get("Rfc2889manyToOne")
         return Rfc2889manyToOne(self)
 
     @property
@@ -786,10 +915,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany_6adf166cb7ca002410d60da9c08f8675 import Rfc2889oneToMany
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889onetomany_6adf166cb7ca002410d60da9c08f8675 import (
+            Rfc2889oneToMany,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889oneToMany', None) is not None:
-                return self._properties.get('Rfc2889oneToMany')
+            if self._properties.get("Rfc2889oneToMany", None) is not None:
+                return self._properties.get("Rfc2889oneToMany")
         return Rfc2889oneToMany(self)
 
     @property
@@ -803,10 +935,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed_a4adcc6d9251331658fb739e2d7454c1 import Rfc2889partiallyMeshed
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2889partiallymeshed_a4adcc6d9251331658fb739e2d7454c1 import (
+            Rfc2889partiallyMeshed,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc2889partiallyMeshed', None) is not None:
-                return self._properties.get('Rfc2889partiallyMeshed')
+            if self._properties.get("Rfc2889partiallyMeshed", None) is not None:
+                return self._properties.get("Rfc2889partiallyMeshed")
         return Rfc2889partiallyMeshed(self)
 
     @property
@@ -820,10 +955,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated_1577cf9dc401fdcbed618d982960f3b4 import Rfc3918aggregated
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918aggregated_1577cf9dc401fdcbed618d982960f3b4 import (
+            Rfc3918aggregated,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918aggregated', None) is not None:
-                return self._properties.get('Rfc3918aggregated')
+            if self._properties.get("Rfc3918aggregated", None) is not None:
+                return self._properties.get("Rfc3918aggregated")
         return Rfc3918aggregated(self)
 
     @property
@@ -837,10 +975,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay_5fb7519f5338b2bbccc6f97d3ffd91a9 import Rfc3918burdenedJoinDelay
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedjoindelay_5fb7519f5338b2bbccc6f97d3ffd91a9 import (
+            Rfc3918burdenedJoinDelay,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918burdenedJoinDelay', None) is not None:
-                return self._properties.get('Rfc3918burdenedJoinDelay')
+            if self._properties.get("Rfc3918burdenedJoinDelay", None) is not None:
+                return self._properties.get("Rfc3918burdenedJoinDelay")
         return Rfc3918burdenedJoinDelay(self)
 
     @property
@@ -854,10 +995,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency_5c655670918a97cde2f838582cac2cb7 import Rfc3918burdenedLatency
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918burdenedlatency_5c655670918a97cde2f838582cac2cb7 import (
+            Rfc3918burdenedLatency,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918burdenedLatency', None) is not None:
-                return self._properties.get('Rfc3918burdenedLatency')
+            if self._properties.get("Rfc3918burdenedLatency", None) is not None:
+                return self._properties.get("Rfc3918burdenedLatency")
         return Rfc3918burdenedLatency(self)
 
     @property
@@ -871,10 +1015,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity_283c76beeb0bd3309d21f95efa64cf3e import Rfc3918groupCapacity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918groupcapacity_283c76beeb0bd3309d21f95efa64cf3e import (
+            Rfc3918groupCapacity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918groupCapacity', None) is not None:
-                return self._properties.get('Rfc3918groupCapacity')
+            if self._properties.get("Rfc3918groupCapacity", None) is not None:
+                return self._properties.get("Rfc3918groupCapacity")
         return Rfc3918groupCapacity(self)
 
     @property
@@ -888,10 +1035,16 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification_2a07ba09c7094b428c0d3922f7629306 import Rfc3918groupPatternVerification
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918grouppatternverification_2a07ba09c7094b428c0d3922f7629306 import (
+            Rfc3918groupPatternVerification,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918groupPatternVerification', None) is not None:
-                return self._properties.get('Rfc3918groupPatternVerification')
+            if (
+                self._properties.get("Rfc3918groupPatternVerification", None)
+                is not None
+            ):
+                return self._properties.get("Rfc3918groupPatternVerification")
         return Rfc3918groupPatternVerification(self)
 
     @property
@@ -905,10 +1058,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat_26e8ac413e1c57bed7d65373af19d55d import Rfc3918ipmcMinMaxLat
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918ipmcminmaxlat_26e8ac413e1c57bed7d65373af19d55d import (
+            Rfc3918ipmcMinMaxLat,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918ipmcMinMaxLat', None) is not None:
-                return self._properties.get('Rfc3918ipmcMinMaxLat')
+            if self._properties.get("Rfc3918ipmcMinMaxLat", None) is not None:
+                return self._properties.get("Rfc3918ipmcMinMaxLat")
         return Rfc3918ipmcMinMaxLat(self)
 
     @property
@@ -922,10 +1078,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay_b6d71057192e2bd335f57efa8ce87cfc import Rfc3918joinLeaveDelay
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinleavedelay_b6d71057192e2bd335f57efa8ce87cfc import (
+            Rfc3918joinLeaveDelay,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918joinLeaveDelay', None) is not None:
-                return self._properties.get('Rfc3918joinLeaveDelay')
+            if self._properties.get("Rfc3918joinLeaveDelay", None) is not None:
+                return self._properties.get("Rfc3918joinLeaveDelay")
         return Rfc3918joinLeaveDelay(self)
 
     @property
@@ -939,10 +1098,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate_6fb6ff9eb8c4ca339d14b141cf94f6d5 import Rfc3918joinRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918joinrate_6fb6ff9eb8c4ca339d14b141cf94f6d5 import (
+            Rfc3918joinRate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918joinRate', None) is not None:
-                return self._properties.get('Rfc3918joinRate')
+            if self._properties.get("Rfc3918joinRate", None) is not None:
+                return self._properties.get("Rfc3918joinRate")
         return Rfc3918joinRate(self)
 
     @property
@@ -956,10 +1118,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput_0bc84bbc09b86982f6afb967256416cc import Rfc3918mixedClassThroughput
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918mixedclassthroughput_0bc84bbc09b86982f6afb967256416cc import (
+            Rfc3918mixedClassThroughput,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918mixedClassThroughput', None) is not None:
-                return self._properties.get('Rfc3918mixedClassThroughput')
+            if self._properties.get("Rfc3918mixedClassThroughput", None) is not None:
+                return self._properties.get("Rfc3918mixedClassThroughput")
         return Rfc3918mixedClassThroughput(self)
 
     @property
@@ -973,10 +1138,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup_1e60c67b625179ef57d82ab7ab1734f8 import Rfc3918scaleGroup
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc3918scalegroup_1e60c67b625179ef57d82ab7ab1734f8 import (
+            Rfc3918scaleGroup,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc3918scaleGroup', None) is not None:
-                return self._properties.get('Rfc3918scaleGroup')
+            if self._properties.get("Rfc3918scaleGroup", None) is not None:
+                return self._properties.get("Rfc3918scaleGroup")
         return Rfc3918scaleGroup(self)
 
     @property
@@ -990,10 +1158,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover_7bc538e343d6f2063518f28f8b660c4d import Rfc7747failover
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747failover_7bc538e343d6f2063518f28f8b660c4d import (
+            Rfc7747failover,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc7747failover', None) is not None:
-                return self._properties.get('Rfc7747failover')
+            if self._properties.get("Rfc7747failover", None) is not None:
+                return self._properties.get("Rfc7747failover")
         return Rfc7747failover(self)
 
     @property
@@ -1007,10 +1178,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin_8a0b8d0a4f79939041fe1d67eb2b120d import Rfc7747ribIn
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.rfc7747ribin_8a0b8d0a4f79939041fe1d67eb2b120d import (
+            Rfc7747ribIn,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Rfc7747ribIn', None) is not None:
-                return self._properties.get('Rfc7747ribIn')
+            if self._properties.get("Rfc7747ribIn", None) is not None:
+                return self._properties.get("Rfc7747ribIn")
         return Rfc7747ribIn(self)
 
     @property
@@ -1024,10 +1198,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_f399e685b29fd795590f27fffbfa469c import TrafficTest
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_f399e685b29fd795590f27fffbfa469c import (
+            TrafficTest,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrafficTest', None) is not None:
-                return self._properties.get('TrafficTest')
+            if self._properties.get("TrafficTest", None) is not None:
+                return self._properties.get("TrafficTest")
         return TrafficTest(self)
 
     @property
@@ -1041,10 +1218,13 @@ class QuickTest(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564_9b70a4fc765ea18ca465ea775da0fa0b import Y1564
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.y1564_9b70a4fc765ea18ca465ea775da0fa0b import (
+            Y1564,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Y1564', None) is not None:
-                return self._properties.get('Y1564')
+            if self._properties.get("Y1564", None) is not None:
+                return self._properties.get("Y1564")
         return Y1564(self)
 
     @property
@@ -1055,7 +1235,7 @@ class QuickTest(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningTest'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningTest"])
 
     @property
     def RunningTestObj(self):
@@ -1065,7 +1245,7 @@ class QuickTest(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningTestObj'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningTestObj"])
 
     @property
     def TestIds(self):
@@ -1075,7 +1255,7 @@ class QuickTest(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the QuickTest test in the configuration
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestIds"])
 
     def find(self, RunningTest=None, RunningTestObj=None, TestIds=None):
         # type: (List[str], List[str], List[str]) -> QuickTest
@@ -1134,10 +1314,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1152,10 +1334,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1164,17 +1348,19 @@ class QuickTest(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1191,10 +1377,14 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1212,10 +1402,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def LoadBatchFile(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1233,10 +1425,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('loadBatchFile', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("loadBatchFile", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1262,10 +1456,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1289,10 +1485,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1309,10 +1507,12 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1330,7 +1530,9 @@ class QuickTest(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

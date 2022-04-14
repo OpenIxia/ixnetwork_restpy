@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,18 @@ class SbfdResponder(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'sbfdResponder'
+    _SDM_NAME = "sbfdResponder"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableLearnedInformation': 'enableLearnedInformation',
-        'MinRxInterval': 'minRxInterval',
-        'Name': 'name',
-        'SBFDDiscriminator': 'sBFDDiscriminator',
-        'SBFDState': 'sBFDState',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableLearnedInformation": "enableLearnedInformation",
+        "MinRxInterval": "minRxInterval",
+        "Name": "name",
+        "SBFDDiscriminator": "sBFDDiscriminator",
+        "SBFDState": "sBFDState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SbfdResponder, self).__init__(parent, list_op)
@@ -58,7 +58,8 @@ class SbfdResponder(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -68,7 +69,7 @@ class SbfdResponder(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -78,7 +79,7 @@ class SbfdResponder(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableLearnedInformation(self):
@@ -89,7 +90,10 @@ class SbfdResponder(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the Responder will store all S-BFD sessions responded to based on requests from remote Initiators. Selected sessions can be paused and resumed by user. Enabling this will reduce supported scale by some amount.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLearnedInformation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLearnedInformation"])
+        )
 
     @property
     def MinRxInterval(self):
@@ -100,7 +104,8 @@ class SbfdResponder(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Rx Interval in ms supported by the Responder.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinRxInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MinRxInterval"]))
 
     @property
     def Name(self):
@@ -110,11 +115,12 @@ class SbfdResponder(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SBFDDiscriminator(self):
@@ -125,7 +131,10 @@ class SbfdResponder(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the local S-BFD discriminator.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SBFDDiscriminator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SBFDDiscriminator"])
+        )
 
     @property
     def SBFDState(self):
@@ -136,7 +145,8 @@ class SbfdResponder(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the S-BFD session state to be sent in Response Packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SBFDState']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SBFDState"]))
 
     def update(self, Name=None):
         # type: (str) -> SbfdResponder
@@ -213,10 +223,14 @@ class SbfdResponder(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearSbfdResponderLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearSbfdResponderLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetSbfdResponderLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -235,12 +249,24 @@ class SbfdResponder(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSbfdResponderLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getSbfdResponderLearnedInfo", payload=payload, response_object=None
+        )
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableLearnedInformation=None, MinRxInterval=None, SBFDDiscriminator=None, SBFDState=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnableLearnedInformation=None,
+        MinRxInterval=None,
+        SBFDDiscriminator=None,
+        SBFDState=None,
+    ):
         """Base class infrastructure that gets a list of sbfdResponder device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

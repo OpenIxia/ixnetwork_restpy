@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class IsisSpbSimulatedTopologyConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisSpbSimulatedTopologyConfig'
+    _SDM_NAME = "isisSpbSimulatedTopologyConfig"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableHostName': 'enableHostName',
-        'HostName': 'hostName',
-        'InterfaceMetric': 'interfaceMetric',
-        'Name': 'name',
-        'SpbNodeTopologyCount': 'spbNodeTopologyCount',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableHostName": "enableHostName",
+        "HostName": "hostName",
+        "InterfaceMetric": "interfaceMetric",
+        "Name": "name",
+        "SpbNodeTopologyCount": "spbNodeTopologyCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisSpbSimulatedTopologyConfig, self).__init__(parent, list_op)
@@ -61,10 +61,13 @@ class IsisSpbSimulatedTopologyConfig(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbnodetopologylist_97764ea2c3708885007bc4d842895ee4 import SpbNodeTopologyList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbnodetopologylist_97764ea2c3708885007bc4d842895ee4 import (
+            SpbNodeTopologyList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbNodeTopologyList', None) is not None:
-                return self._properties.get('SpbNodeTopologyList')
+            if self._properties.get("SpbNodeTopologyList", None) is not None:
+                return self._properties.get("SpbNodeTopologyList")
         return SpbNodeTopologyList(self)._select()
 
     @property
@@ -76,7 +79,8 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -86,7 +90,7 @@ class IsisSpbSimulatedTopologyConfig(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -96,7 +100,7 @@ class IsisSpbSimulatedTopologyConfig(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableHostName(self):
@@ -107,7 +111,10 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHostName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+        )
 
     @property
     def HostName(self):
@@ -118,7 +125,8 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Host Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HostName"]))
 
     @property
     def InterfaceMetric(self):
@@ -129,7 +137,10 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+        )
 
     @property
     def Name(self):
@@ -139,11 +150,12 @@ class IsisSpbSimulatedTopologyConfig(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def SpbNodeTopologyCount(self):
@@ -153,11 +165,12 @@ class IsisSpbSimulatedTopologyConfig(Base):
         -------
         - number: Node Topology Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SpbNodeTopologyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SpbNodeTopologyCount"])
+
     @SpbNodeTopologyCount.setter
     def SpbNodeTopologyCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SpbNodeTopologyCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SpbNodeTopologyCount"], value)
 
     def update(self, Name=None, SpbNodeTopologyCount=None):
         # type: (str, int) -> IsisSpbSimulatedTopologyConfig
@@ -179,7 +192,7 @@ class IsisSpbSimulatedTopologyConfig(Base):
 
     def add(self, Name=None, SpbNodeTopologyCount=None):
         # type: (str, int) -> IsisSpbSimulatedTopologyConfig
-        """Adds a new isisSpbSimulatedTopologyConfig resource on the json, only valid with config assistant
+        """Adds a new isisSpbSimulatedTopologyConfig resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -196,7 +209,9 @@ class IsisSpbSimulatedTopologyConfig(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, SpbNodeTopologyCount=None):
+    def find(
+        self, Count=None, DescriptiveName=None, Name=None, SpbNodeTopologyCount=None
+    ):
         # type: (int, str, str, int) -> IsisSpbSimulatedTopologyConfig
         """Finds and retrieves isisSpbSimulatedTopologyConfig resources from the server.
 
@@ -254,10 +269,12 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -286,10 +303,12 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -318,12 +337,21 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, EnableHostName=None, HostName=None, InterfaceMetric=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        EnableHostName=None,
+        HostName=None,
+        InterfaceMetric=None,
+    ):
         """Base class infrastructure that gets a list of isisSpbSimulatedTopologyConfig device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

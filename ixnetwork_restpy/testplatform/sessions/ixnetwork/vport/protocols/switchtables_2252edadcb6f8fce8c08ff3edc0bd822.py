@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class SwitchTables(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchTables'
+    _SDM_NAME = "switchTables"
     _SDM_ATT_MAP = {
-        'MaxEntries': 'maxEntries',
-        'NumberOfTables': 'numberOfTables',
-        'TableId': 'tableId',
-        'TableName': 'tableName',
+        "MaxEntries": "maxEntries",
+        "NumberOfTables": "numberOfTables",
+        "TableId": "tableId",
+        "TableName": "tableName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SwitchTables, self).__init__(parent, list_op)
@@ -58,10 +58,13 @@ class SwitchTables(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_7f90a3dda0d8f10c99f0019fb1ddbad1 import WildcardsSupported
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_7f90a3dda0d8f10c99f0019fb1ddbad1 import (
+            WildcardsSupported,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WildcardsSupported', None) is not None:
-                return self._properties.get('WildcardsSupported')
+            if self._properties.get("WildcardsSupported", None) is not None:
+                return self._properties.get("WildcardsSupported")
         return WildcardsSupported(self)._select()
 
     @property
@@ -72,11 +75,12 @@ class SwitchTables(Base):
         -------
         - str: Indicates the maximum number of entries supported. The default value is 10,000.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxEntries'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxEntries"])
+
     @MaxEntries.setter
     def MaxEntries(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxEntries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxEntries"], value)
 
     @property
     def NumberOfTables(self):
@@ -86,11 +90,12 @@ class SwitchTables(Base):
         -------
         - number: Indicates the number of entries in the table range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTables'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfTables"])
+
     @NumberOfTables.setter
     def NumberOfTables(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfTables'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfTables"], value)
 
     @property
     def TableId(self):
@@ -100,11 +105,12 @@ class SwitchTables(Base):
         -------
         - str: Indicates the Identifier of the switch table.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
+
     @TableId.setter
     def TableId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableId"], value)
 
     @property
     def TableName(self):
@@ -114,13 +120,16 @@ class SwitchTables(Base):
         -------
         - str: Indicates the name of the switch table
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableName"])
+
     @TableName.setter
     def TableName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableName"], value)
 
-    def update(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
+    def update(
+        self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None
+    ):
         # type: (str, int, str, str) -> SwitchTables
         """Updates switchTables resource on the server.
 

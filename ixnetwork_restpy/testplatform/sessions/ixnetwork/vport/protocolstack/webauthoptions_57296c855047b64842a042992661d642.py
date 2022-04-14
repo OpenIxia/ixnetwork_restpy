@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class WebAuthOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'webAuthOptions'
+    _SDM_NAME = "webAuthOptions"
     _SDM_ATT_MAP = {
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalArpResponse': 'overrideGlobalArpResponse',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
+        "MaxClientsPerSecond": "maxClientsPerSecond",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "OverrideGlobalArpResponse": "overrideGlobalArpResponse",
+        "OverrideGlobalSetupRate": "overrideGlobalSetupRate",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(WebAuthOptions, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class WebAuthOptions(Base):
         -------
         - number: The number interfaces to setup per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"])
+
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxClientsPerSecond"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -70,11 +71,12 @@ class WebAuthOptions(Base):
         -------
         - number: The maximum number of sessions that can be negotiated at one moment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -84,7 +86,7 @@ class WebAuthOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalArpResponse(self):
@@ -94,11 +96,12 @@ class WebAuthOptions(Base):
         -------
         - bool: If enabled, will reverse the global option for Arp Response
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalArpResponse'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalArpResponse"])
+
     @OverrideGlobalArpResponse.setter
     def OverrideGlobalArpResponse(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalArpResponse'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalArpResponse"], value)
 
     @property
     def OverrideGlobalSetupRate(self):
@@ -108,13 +111,20 @@ class WebAuthOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"])
+
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalSetupRate"], value)
 
-    def update(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
+    def update(
+        self,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalArpResponse=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, bool, bool) -> WebAuthOptions
         """Updates webAuthOptions resource on the server.
 
@@ -131,7 +141,13 @@ class WebAuthOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
+    def add(
+        self,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalArpResponse=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, bool, bool) -> WebAuthOptions
         """Adds a new webAuthOptions resource on the server and adds it to the container.
 
@@ -162,7 +178,14 @@ class WebAuthOptions(Base):
         """
         self._delete()
 
-    def find(self, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalArpResponse=None, OverrideGlobalSetupRate=None):
+    def find(
+        self,
+        MaxClientsPerSecond=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        OverrideGlobalArpResponse=None,
+        OverrideGlobalSetupRate=None,
+    ):
         # type: (int, int, str, bool, bool) -> WebAuthOptions
         """Finds and retrieves webAuthOptions resources from the server.
 
@@ -223,10 +246,14 @@ class WebAuthOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -245,10 +272,14 @@ class WebAuthOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -267,7 +298,11 @@ class WebAuthOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

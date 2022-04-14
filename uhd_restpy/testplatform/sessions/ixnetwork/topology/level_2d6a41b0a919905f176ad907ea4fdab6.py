@@ -73,7 +73,7 @@ class Level(Base):
 
     def add(self, NodeCount=None):
         # type: (int) -> Level
-        """Adds a new level resource on the json, only valid with config assistant
+        """Adds a new level resource on the json, only valid with batch add utility
 
         Args
         ----

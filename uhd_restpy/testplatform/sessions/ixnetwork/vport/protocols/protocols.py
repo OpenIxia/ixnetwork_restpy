@@ -43,7 +43,7 @@ class Protocols(Base):
         super(Protocols, self).__init__(parent, list_op)
 
     def add(self):
-        """Adds a new protocols resource on the json, only valid with config assistant
+        """Adds a new protocols resource on the json, only valid with batch add utility
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,16 @@ class MacMulticast(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'macMulticast'
+    _SDM_NAME = "macMulticast"
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'HostName': 'hostName',
-        'LspId': 'lspId',
-        'MulticastGroupMacAddress': 'multicastGroupMacAddress',
-        'SequenceNumber': 'sequenceNumber',
-        'VlanId': 'vlanId',
+        "Age": "age",
+        "HostName": "hostName",
+        "LspId": "lspId",
+        "MulticastGroupMacAddress": "multicastGroupMacAddress",
+        "SequenceNumber": "sequenceNumber",
+        "VlanId": "vlanId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MacMulticast, self).__init__(parent, list_op)
@@ -59,10 +59,13 @@ class MacMulticast(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_27e98e853c72bbc2a69d3eb276897d78 import UnicastMacItem
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_27e98e853c72bbc2a69d3eb276897d78 import (
+            UnicastMacItem,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('UnicastMacItem', None) is not None:
-                return self._properties.get('UnicastMacItem')
+            if self._properties.get("UnicastMacItem", None) is not None:
+                return self._properties.get("UnicastMacItem")
         return UnicastMacItem(self)
 
     @property
@@ -73,7 +76,7 @@ class MacMulticast(Base):
         -------
         - number: This indicates the age in time, in seconds, since it was last refreshed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Age'])
+        return self._get_attribute(self._SDM_ATT_MAP["Age"])
 
     @property
     def HostName(self):
@@ -83,7 +86,7 @@ class MacMulticast(Base):
         -------
         - str: The host name as retrieved from the related packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostName"])
 
     @property
     def LspId(self):
@@ -93,7 +96,7 @@ class MacMulticast(Base):
         -------
         - str: This indicates the LSP identification number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspId'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspId"])
 
     @property
     def MulticastGroupMacAddress(self):
@@ -103,7 +106,7 @@ class MacMulticast(Base):
         -------
         - str: This indicates the MAC Multicast Group Address in the Group Record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastGroupMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastGroupMacAddress"])
 
     @property
     def SequenceNumber(self):
@@ -113,7 +116,7 @@ class MacMulticast(Base):
         -------
         - number: This indicates the sequence number of the LSP containing the route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
 
     @property
     def VlanId(self):
@@ -123,10 +126,10 @@ class MacMulticast(Base):
         -------
         - number: This indicates the VLAN ID in the Group Record.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
 
     def add(self):
-        """Adds a new macMulticast resource on the json, only valid with config assistant
+        """Adds a new macMulticast resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -138,7 +141,15 @@ class MacMulticast(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Age=None, HostName=None, LspId=None, MulticastGroupMacAddress=None, SequenceNumber=None, VlanId=None):
+    def find(
+        self,
+        Age=None,
+        HostName=None,
+        LspId=None,
+        MulticastGroupMacAddress=None,
+        SequenceNumber=None,
+        VlanId=None,
+    ):
         # type: (int, str, str, str, int, int) -> MacMulticast
         """Finds and retrieves macMulticast resources from the server.
 

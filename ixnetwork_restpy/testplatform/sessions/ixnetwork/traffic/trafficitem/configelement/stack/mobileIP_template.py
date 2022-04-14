@@ -4,58 +4,58 @@ from ixnetwork_restpy.files import Files
 
 class MobileIP(Base):
     __slots__ = ()
-    _SDM_NAME = 'mobileIP'
+    _SDM_NAME = "mobileIP"
     _SDM_ATT_MAP = {
-        'RegistrationRequestType': 'mobileIP.header.packetType.registrationRequest.type-1',
-        'RegistrationRequestSBit': 'mobileIP.header.packetType.registrationRequest.sBit-2',
-        'RegistrationRequestBBit': 'mobileIP.header.packetType.registrationRequest.bBit-3',
-        'RegistrationRequestDBit': 'mobileIP.header.packetType.registrationRequest.dBit-4',
-        'RegistrationRequestMBit': 'mobileIP.header.packetType.registrationRequest.mBit-5',
-        'RegistrationRequestGBit': 'mobileIP.header.packetType.registrationRequest.gBit-6',
-        'RegistrationRequestRBit': 'mobileIP.header.packetType.registrationRequest.rBit-7',
-        'RegistrationRequestTBit': 'mobileIP.header.packetType.registrationRequest.tBit-8',
-        'RegistrationRequestXBit': 'mobileIP.header.packetType.registrationRequest.xBit-9',
-        'RegistrationRequestLifetime': 'mobileIP.header.packetType.registrationRequest.lifetime-10',
-        'RegistrationRequestHomeAddress': 'mobileIP.header.packetType.registrationRequest.homeAddress-11',
-        'RegistrationRequestHomeAgent': 'mobileIP.header.packetType.registrationRequest.homeAgent-12',
-        'RegistrationRequestCareOfAddress': 'mobileIP.header.packetType.registrationRequest.careOfAddress-13',
-        'RegistrationRequestIdentification': 'mobileIP.header.packetType.registrationRequest.identification-14',
-        'MobileHomeAuthenticationType': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.type-15',
-        'MobileHomeAuthenticationLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.length-16',
-        'MobileHomeAuthenticationSpi': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.spi-17',
-        'MobileHomeAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.authenticatorLength-18',
-        'MobileHomeAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.authenticator-19',
-        'MobileForeignAuthenticationType': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.type-20',
-        'MobileForeignAuthenticationLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.length-21',
-        'MobileForeignAuthenticationSpi': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.spi-22',
-        'MobileForeignAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.authenticatorLength-23',
-        'MobileForeignAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.authenticator-24',
-        'ForeignHomeAuthenticationType': 'mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.type-25',
-        'ForeignHomeAuthenticationLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.length-26',
-        'ForeignHomeAuthenticationSpi': 'mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.spi-27',
-        'ForeignHomeAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.authenticatorLength-28',
-        'ForeignHomeAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.authenticator-29',
-        'RegistrationReplyType': 'mobileIP.header.packetType.registrationReply.type-30',
-        'RegistrationReplyCode': 'mobileIP.header.packetType.registrationReply.code-31',
-        'RegistrationReplyLifetime': 'mobileIP.header.packetType.registrationReply.lifetime-32',
-        'RegistrationReplyHomeAddress': 'mobileIP.header.packetType.registrationReply.homeAddress-33',
-        'RegistrationReplyHomeAgent': 'mobileIP.header.packetType.registrationReply.homeAgent-34',
-        'RegistrationReplyIdentification': 'mobileIP.header.packetType.registrationReply.identification-35',
-        'OptionMobileHomeAuthenticationType': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.type-36',
-        'OptionMobileHomeAuthenticationLength': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.length-37',
-        'OptionMobileHomeAuthenticationSpi': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.spi-38',
-        'OptionMobileHomeAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.authenticatorLength-39',
-        'OptionMobileHomeAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.authenticator-40',
-        'OptionMobileForeignAuthenticationType': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.type-41',
-        'OptionMobileForeignAuthenticationLength': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.length-42',
-        'OptionMobileForeignAuthenticationSpi': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.spi-43',
-        'OptionMobileForeignAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.authenticatorLength-44',
-        'OptionMobileForeignAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.authenticator-45',
-        'OptionForeignHomeAuthenticationType': 'mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.type-46',
-        'OptionForeignHomeAuthenticationLength': 'mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.length-47',
-        'OptionForeignHomeAuthenticationSpi': 'mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.spi-48',
-        'OptionForeignHomeAuthenticationAuthenticatorLength': 'mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.authenticatorLength-49',
-        'OptionForeignHomeAuthenticationAuthenticator': 'mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.authenticator-50',
+        "RegistrationRequestType": "mobileIP.header.packetType.registrationRequest.type-1",
+        "RegistrationRequestSBit": "mobileIP.header.packetType.registrationRequest.sBit-2",
+        "RegistrationRequestBBit": "mobileIP.header.packetType.registrationRequest.bBit-3",
+        "RegistrationRequestDBit": "mobileIP.header.packetType.registrationRequest.dBit-4",
+        "RegistrationRequestMBit": "mobileIP.header.packetType.registrationRequest.mBit-5",
+        "RegistrationRequestGBit": "mobileIP.header.packetType.registrationRequest.gBit-6",
+        "RegistrationRequestRBit": "mobileIP.header.packetType.registrationRequest.rBit-7",
+        "RegistrationRequestTBit": "mobileIP.header.packetType.registrationRequest.tBit-8",
+        "RegistrationRequestXBit": "mobileIP.header.packetType.registrationRequest.xBit-9",
+        "RegistrationRequestLifetime": "mobileIP.header.packetType.registrationRequest.lifetime-10",
+        "RegistrationRequestHomeAddress": "mobileIP.header.packetType.registrationRequest.homeAddress-11",
+        "RegistrationRequestHomeAgent": "mobileIP.header.packetType.registrationRequest.homeAgent-12",
+        "RegistrationRequestCareOfAddress": "mobileIP.header.packetType.registrationRequest.careOfAddress-13",
+        "RegistrationRequestIdentification": "mobileIP.header.packetType.registrationRequest.identification-14",
+        "MobileHomeAuthenticationType": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.type-15",
+        "MobileHomeAuthenticationLength": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.length-16",
+        "MobileHomeAuthenticationSpi": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.spi-17",
+        "MobileHomeAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.authenticatorLength-18",
+        "MobileHomeAuthenticationAuthenticator": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileHomeAuthentication.authenticator-19",
+        "MobileForeignAuthenticationType": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.type-20",
+        "MobileForeignAuthenticationLength": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.length-21",
+        "MobileForeignAuthenticationSpi": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.spi-22",
+        "MobileForeignAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.authenticatorLength-23",
+        "MobileForeignAuthenticationAuthenticator": "mobileIP.header.packetType.registrationRequest.tlv.option.mobileForeignAuthentication.authenticator-24",
+        "ForeignHomeAuthenticationType": "mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.type-25",
+        "ForeignHomeAuthenticationLength": "mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.length-26",
+        "ForeignHomeAuthenticationSpi": "mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.spi-27",
+        "ForeignHomeAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.authenticatorLength-28",
+        "ForeignHomeAuthenticationAuthenticator": "mobileIP.header.packetType.registrationRequest.tlv.option.foreignHomeAuthentication.authenticator-29",
+        "RegistrationReplyType": "mobileIP.header.packetType.registrationReply.type-30",
+        "RegistrationReplyCode": "mobileIP.header.packetType.registrationReply.code-31",
+        "RegistrationReplyLifetime": "mobileIP.header.packetType.registrationReply.lifetime-32",
+        "RegistrationReplyHomeAddress": "mobileIP.header.packetType.registrationReply.homeAddress-33",
+        "RegistrationReplyHomeAgent": "mobileIP.header.packetType.registrationReply.homeAgent-34",
+        "RegistrationReplyIdentification": "mobileIP.header.packetType.registrationReply.identification-35",
+        "OptionMobileHomeAuthenticationType": "mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.type-36",
+        "OptionMobileHomeAuthenticationLength": "mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.length-37",
+        "OptionMobileHomeAuthenticationSpi": "mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.spi-38",
+        "OptionMobileHomeAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.authenticatorLength-39",
+        "OptionMobileHomeAuthenticationAuthenticator": "mobileIP.header.packetType.registrationReply.tlv.option.mobileHomeAuthentication.authenticator-40",
+        "OptionMobileForeignAuthenticationType": "mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.type-41",
+        "OptionMobileForeignAuthenticationLength": "mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.length-42",
+        "OptionMobileForeignAuthenticationSpi": "mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.spi-43",
+        "OptionMobileForeignAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.authenticatorLength-44",
+        "OptionMobileForeignAuthenticationAuthenticator": "mobileIP.header.packetType.registrationReply.tlv.option.mobileForeignAuthentication.authenticator-45",
+        "OptionForeignHomeAuthenticationType": "mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.type-46",
+        "OptionForeignHomeAuthenticationLength": "mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.length-47",
+        "OptionForeignHomeAuthenticationSpi": "mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.spi-48",
+        "OptionForeignHomeAuthenticationAuthenticatorLength": "mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.authenticatorLength-49",
+        "OptionForeignHomeAuthenticationAuthenticator": "mobileIP.header.packetType.registrationReply.tlv.option.foreignHomeAuthentication.authenticator-50",
     }
 
     def __init__(self, parent, list_op=False):
@@ -69,7 +69,10 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestType"])
+        )
 
     @property
     def RegistrationRequestSBit(self):
@@ -79,7 +82,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestSBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestSBit"])
+        )
 
     @property
     def RegistrationRequestBBit(self):
@@ -89,7 +95,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestBBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestBBit"])
+        )
 
     @property
     def RegistrationRequestDBit(self):
@@ -99,7 +108,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestDBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestDBit"])
+        )
 
     @property
     def RegistrationRequestMBit(self):
@@ -109,7 +121,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestMBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestMBit"])
+        )
 
     @property
     def RegistrationRequestGBit(self):
@@ -119,7 +134,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestGBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestGBit"])
+        )
 
     @property
     def RegistrationRequestRBit(self):
@@ -129,7 +147,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestRBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestRBit"])
+        )
 
     @property
     def RegistrationRequestTBit(self):
@@ -139,7 +160,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestTBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestTBit"])
+        )
 
     @property
     def RegistrationRequestXBit(self):
@@ -149,7 +173,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestXBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestXBit"])
+        )
 
     @property
     def RegistrationRequestLifetime(self):
@@ -159,7 +186,10 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestLifetime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestLifetime"])
+        )
 
     @property
     def RegistrationRequestHomeAddress(self):
@@ -169,7 +199,11 @@ class MobileIP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestHomeAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestHomeAddress"]),
+        )
 
     @property
     def RegistrationRequestHomeAgent(self):
@@ -179,7 +213,10 @@ class MobileIP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestHomeAgent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestHomeAgent"])
+        )
 
     @property
     def RegistrationRequestCareOfAddress(self):
@@ -189,7 +226,11 @@ class MobileIP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestCareOfAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestCareOfAddress"]),
+        )
 
     @property
     def RegistrationRequestIdentification(self):
@@ -199,7 +240,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationRequestIdentification']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RegistrationRequestIdentification"]),
+        )
 
     @property
     def MobileHomeAuthenticationType(self):
@@ -209,7 +254,10 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileHomeAuthenticationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobileHomeAuthenticationType"])
+        )
 
     @property
     def MobileHomeAuthenticationLength(self):
@@ -219,7 +267,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileHomeAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobileHomeAuthenticationLength"]),
+        )
 
     @property
     def MobileHomeAuthenticationSpi(self):
@@ -229,7 +281,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileHomeAuthenticationSpi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MobileHomeAuthenticationSpi"])
+        )
 
     @property
     def MobileHomeAuthenticationAuthenticatorLength(self):
@@ -239,7 +294,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileHomeAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MobileHomeAuthenticationAuthenticatorLength"]
+            ),
+        )
 
     @property
     def MobileHomeAuthenticationAuthenticator(self):
@@ -249,7 +310,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileHomeAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MobileHomeAuthenticationAuthenticator"]
+            ),
+        )
 
     @property
     def MobileForeignAuthenticationType(self):
@@ -259,7 +326,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileForeignAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobileForeignAuthenticationType"]),
+        )
 
     @property
     def MobileForeignAuthenticationLength(self):
@@ -269,7 +340,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileForeignAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobileForeignAuthenticationLength"]),
+        )
 
     @property
     def MobileForeignAuthenticationSpi(self):
@@ -279,7 +354,11 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileForeignAuthenticationSpi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MobileForeignAuthenticationSpi"]),
+        )
 
     @property
     def MobileForeignAuthenticationAuthenticatorLength(self):
@@ -289,7 +368,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileForeignAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MobileForeignAuthenticationAuthenticatorLength"]
+            ),
+        )
 
     @property
     def MobileForeignAuthenticationAuthenticator(self):
@@ -299,7 +384,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MobileForeignAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MobileForeignAuthenticationAuthenticator"]
+            ),
+        )
 
     @property
     def ForeignHomeAuthenticationType(self):
@@ -309,7 +400,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForeignHomeAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ForeignHomeAuthenticationType"]),
+        )
 
     @property
     def ForeignHomeAuthenticationLength(self):
@@ -319,7 +414,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForeignHomeAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ForeignHomeAuthenticationLength"]),
+        )
 
     @property
     def ForeignHomeAuthenticationSpi(self):
@@ -329,7 +428,10 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForeignHomeAuthenticationSpi']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ForeignHomeAuthenticationSpi"])
+        )
 
     @property
     def ForeignHomeAuthenticationAuthenticatorLength(self):
@@ -339,7 +441,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForeignHomeAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ForeignHomeAuthenticationAuthenticatorLength"]
+            ),
+        )
 
     @property
     def ForeignHomeAuthenticationAuthenticator(self):
@@ -349,7 +457,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ForeignHomeAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ForeignHomeAuthenticationAuthenticator"]
+            ),
+        )
 
     @property
     def RegistrationReplyType(self):
@@ -359,7 +473,10 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyType"])
+        )
 
     @property
     def RegistrationReplyCode(self):
@@ -370,7 +487,10 @@ class MobileIP(Base):
         Available enum values: Registration accepted, 0, Registration accepted, but simultaneous mobility bindings unsupported, 1, Reason unspecified, 64, Administratively prohibited, 65, Insufficient resources, 66, Mobile node failed authentication, 67, Home agent failed authentication, 68, Requested Lifetime too long, 69, Poorly formed Request, 70, Poorly formed Reply, 71, Requested encapsulation unavailable, 72, Reserved and unavailable, 73, Invalid care-of address, 77, Registration timeout, 78, Home network unreachable (ICMP error received), 80, Home agent host unreachable (ICMP error received), 81, Home agent port unreachable (ICMP error received), 82, Home agent unreachable (other ICMP error received), 88, Reason unspecified, 128, Administratively prohibited, 129, Insufficient resources, 130, Mobile node failed authentication, 131, Foreign agent failed authentication, 132, Registration Identification mismatch, 133, Poorly formed Request, 134, Too many simultaneous mobility bindings, 135, Unknown home agent address, 136
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyCode"])
+        )
 
     @property
     def RegistrationReplyLifetime(self):
@@ -380,7 +500,10 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyLifetime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyLifetime"])
+        )
 
     @property
     def RegistrationReplyHomeAddress(self):
@@ -390,7 +513,10 @@ class MobileIP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyHomeAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyHomeAddress"])
+        )
 
     @property
     def RegistrationReplyHomeAgent(self):
@@ -400,7 +526,10 @@ class MobileIP(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyHomeAgent']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyHomeAgent"])
+        )
 
     @property
     def RegistrationReplyIdentification(self):
@@ -410,7 +539,11 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RegistrationReplyIdentification']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RegistrationReplyIdentification"]),
+        )
 
     @property
     def OptionMobileHomeAuthenticationType(self):
@@ -420,7 +553,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileHomeAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileHomeAuthenticationType"]
+            ),
+        )
 
     @property
     def OptionMobileHomeAuthenticationLength(self):
@@ -430,7 +569,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileHomeAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileHomeAuthenticationLength"]
+            ),
+        )
 
     @property
     def OptionMobileHomeAuthenticationSpi(self):
@@ -440,7 +585,11 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileHomeAuthenticationSpi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OptionMobileHomeAuthenticationSpi"]),
+        )
 
     @property
     def OptionMobileHomeAuthenticationAuthenticatorLength(self):
@@ -450,7 +599,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileHomeAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileHomeAuthenticationAuthenticatorLength"]
+            ),
+        )
 
     @property
     def OptionMobileHomeAuthenticationAuthenticator(self):
@@ -460,7 +615,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileHomeAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileHomeAuthenticationAuthenticator"]
+            ),
+        )
 
     @property
     def OptionMobileForeignAuthenticationType(self):
@@ -470,7 +631,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileForeignAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileForeignAuthenticationType"]
+            ),
+        )
 
     @property
     def OptionMobileForeignAuthenticationLength(self):
@@ -480,7 +647,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileForeignAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileForeignAuthenticationLength"]
+            ),
+        )
 
     @property
     def OptionMobileForeignAuthenticationSpi(self):
@@ -490,7 +663,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileForeignAuthenticationSpi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileForeignAuthenticationSpi"]
+            ),
+        )
 
     @property
     def OptionMobileForeignAuthenticationAuthenticatorLength(self):
@@ -500,7 +679,15 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileForeignAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "OptionMobileForeignAuthenticationAuthenticatorLength"
+                ]
+            ),
+        )
 
     @property
     def OptionMobileForeignAuthenticationAuthenticator(self):
@@ -510,7 +697,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionMobileForeignAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionMobileForeignAuthenticationAuthenticator"]
+            ),
+        )
 
     @property
     def OptionForeignHomeAuthenticationType(self):
@@ -520,7 +713,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionForeignHomeAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionForeignHomeAuthenticationType"]
+            ),
+        )
 
     @property
     def OptionForeignHomeAuthenticationLength(self):
@@ -530,7 +729,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionForeignHomeAuthenticationLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionForeignHomeAuthenticationLength"]
+            ),
+        )
 
     @property
     def OptionForeignHomeAuthenticationSpi(self):
@@ -540,7 +745,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionForeignHomeAuthenticationSpi']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionForeignHomeAuthenticationSpi"]
+            ),
+        )
 
     @property
     def OptionForeignHomeAuthenticationAuthenticatorLength(self):
@@ -550,7 +761,13 @@ class MobileIP(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionForeignHomeAuthenticationAuthenticatorLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionForeignHomeAuthenticationAuthenticatorLength"]
+            ),
+        )
 
     @property
     def OptionForeignHomeAuthenticationAuthenticator(self):
@@ -560,7 +777,13 @@ class MobileIP(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionForeignHomeAuthenticationAuthenticator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["OptionForeignHomeAuthenticationAuthenticator"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

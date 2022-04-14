@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,46 +33,45 @@ class BgpSRTEPoliciesSegmentListV4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpSRTEPoliciesSegmentListV4'
+    _SDM_NAME = "bgpSRTEPoliciesSegmentListV4"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Aflag': 'aflag',
-        'ArgLength': 'argLength',
-        'Bflag': 'bflag',
-        'Count': 'count',
-        'CustomEndPointBehaviour': 'customEndPointBehaviour',
-        'DescriptiveName': 'descriptiveName',
-        'EnBindingSID': 'enBindingSID',
-        'EnReverseBindingTLV': 'enReverseBindingTLV',
-        'EnWeight': 'enWeight',
-        'EndPointBehaviour': 'endPointBehaviour',
-        'FunLength': 'funLength',
-        'Ipv6SID': 'ipv6SID',
-        'LbLength': 'lbLength',
-        'LnLength': 'lnLength',
-        'MplsSID': 'mplsSID',
-        'Name': 'name',
-        'NumberOfActiveSegments': 'numberOfActiveSegments',
-        'NumberOfSegmentsV4': 'numberOfSegmentsV4',
-        'RemainingBits': 'remainingBits',
-        'ReverseArgLength': 'reverseArgLength',
-        'ReverseCustomEndPoint': 'reverseCustomEndPoint',
-        'ReverseEndPointBehaviour': 'reverseEndPointBehaviour',
-        'ReverseFunLength': 'reverseFunLength',
-        'ReverseIpv6SID': 'reverseIpv6SID',
-        'ReverseLbLength': 'reverseLbLength',
-        'ReverseLnLength': 'reverseLnLength',
-        'ReverseMPLSSID': 'reverseMPLSSID',
-        'SegmentListNumber': 'segmentListNumber',
-        'SrtepolicyName': 'srtepolicyName',
-        'Srv6ReverseSidEndpointBehaviourFlagReserved': 'srv6ReverseSidEndpointBehaviourFlagReserved',
-        'Srv6SidEndpointBehaviourFlagReserved': 'srv6SidEndpointBehaviourFlagReserved',
-        'UseAsMPLSLabel': 'useAsMPLSLabel',
-        'UseAsReverseMPLSLabel': 'useAsReverseMPLSLabel',
-        'Weight': 'weight',
+        "Active": "active",
+        "Aflag": "aflag",
+        "ArgLength": "argLength",
+        "Bflag": "bflag",
+        "Count": "count",
+        "CustomEndPointBehaviour": "customEndPointBehaviour",
+        "DescriptiveName": "descriptiveName",
+        "EnBindingSID": "enBindingSID",
+        "EnReverseBindingTLV": "enReverseBindingTLV",
+        "EnWeight": "enWeight",
+        "EndPointBehaviour": "endPointBehaviour",
+        "FunLength": "funLength",
+        "Ipv6SID": "ipv6SID",
+        "LbLength": "lbLength",
+        "LnLength": "lnLength",
+        "MplsSID": "mplsSID",
+        "Name": "name",
+        "NumberOfActiveSegments": "numberOfActiveSegments",
+        "NumberOfSegmentsV4": "numberOfSegmentsV4",
+        "RemainingBits": "remainingBits",
+        "ReverseArgLength": "reverseArgLength",
+        "ReverseCustomEndPoint": "reverseCustomEndPoint",
+        "ReverseEndPointBehaviour": "reverseEndPointBehaviour",
+        "ReverseFunLength": "reverseFunLength",
+        "ReverseIpv6SID": "reverseIpv6SID",
+        "ReverseLbLength": "reverseLbLength",
+        "ReverseLnLength": "reverseLnLength",
+        "ReverseMPLSSID": "reverseMPLSSID",
+        "SegmentListNumber": "segmentListNumber",
+        "SrtepolicyName": "srtepolicyName",
+        "Srv6ReverseSidEndpointBehaviourFlagReserved": "srv6ReverseSidEndpointBehaviourFlagReserved",
+        "Srv6SidEndpointBehaviourFlagReserved": "srv6SidEndpointBehaviourFlagReserved",
+        "UseAsMPLSLabel": "useAsMPLSLabel",
+        "UseAsReverseMPLSLabel": "useAsReverseMPLSLabel",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpSRTEPoliciesSegmentListV4, self).__init__(parent, list_op)
@@ -87,10 +87,16 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv4_464f2f3f365df8acdb82ae879a9fd9a4 import BgpSRTEPoliciesSegmentsCollectionV4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv4_464f2f3f365df8acdb82ae879a9fd9a4 import (
+            BgpSRTEPoliciesSegmentsCollectionV4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpSRTEPoliciesSegmentsCollectionV4', None) is not None:
-                return self._properties.get('BgpSRTEPoliciesSegmentsCollectionV4')
+            if (
+                self._properties.get("BgpSRTEPoliciesSegmentsCollectionV4", None)
+                is not None
+            ):
+                return self._properties.get("BgpSRTEPoliciesSegmentsCollectionV4")
         return BgpSRTEPoliciesSegmentsCollectionV4(self)._select()
 
     @property
@@ -102,7 +108,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Aflag(self):
@@ -113,7 +120,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes the SID type(MPLS or SRv6).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Aflag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Aflag"]))
 
     @property
     def ArgLength(self):
@@ -124,7 +132,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Argument Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ArgLength"]))
 
     @property
     def Bflag(self):
@@ -135,7 +144,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes whether to carry SRv6 Endpoint behavior and SID structure or not.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bflag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bflag"]))
 
     @property
     def Count(self):
@@ -145,7 +155,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomEndPointBehaviour(self):
@@ -156,7 +166,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Behaviour, applicable when Endpoint behaviour is 256-Custom End Point.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEndPointBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEndPointBehaviour"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -166,7 +179,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnBindingSID(self):
@@ -177,7 +190,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Binding SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnBindingSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnBindingSID"]))
 
     @property
     def EnReverseBindingTLV(self):
@@ -188,7 +202,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): checkbox to enable Reverse Binding SID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnReverseBindingTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnReverseBindingTLV"])
+        )
 
     @property
     def EnWeight(self):
@@ -199,7 +216,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Weight Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnWeight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnWeight"]))
 
     @property
     def EndPointBehaviour(self):
@@ -210,7 +228,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the behavior that can be associated with a SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointBehaviour"])
+        )
 
     @property
     def FunLength(self):
@@ -221,7 +242,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Function Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FunLength"]))
 
     @property
     def Ipv6SID(self):
@@ -232,7 +254,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 SID, a 16 octet value to send out with Binding TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6SID"]))
 
     @property
     def LbLength(self):
@@ -243,7 +266,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Block Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LbLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LbLength"]))
 
     @property
     def LnLength(self):
@@ -254,7 +278,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Node Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LnLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LnLength"]))
 
     @property
     def MplsSID(self):
@@ -265,7 +290,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): MPLS SID, a 32 bit value to sent out with Binding TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MplsSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MplsSID"]))
 
     @property
     def Name(self):
@@ -275,11 +301,12 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfActiveSegments(self):
@@ -290,7 +317,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Count of Active Segments configured.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfActiveSegments']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfActiveSegments"])
+        )
 
     @property
     def NumberOfSegmentsV4(self):
@@ -300,11 +330,12 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         -------
         - number: Count of Segments Per Segment List.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegmentsV4'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSegmentsV4"])
+
     @NumberOfSegmentsV4.setter
     def NumberOfSegmentsV4(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSegmentsV4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSegmentsV4"], value)
 
     @property
     def RemainingBits(self):
@@ -315,7 +346,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remaining Flag Bits takes the 8-bit flags value in Hex format. It ignores the bit position for flags exposed separately in GUI. For example, the 1st and 2nd bits and 3rd bits are ignored since they are set using the A Flag and B Flag settings.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemainingBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemainingBits"]))
 
     @property
     def ReverseArgLength(self):
@@ -326,7 +358,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reverse Argument Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseArgLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseArgLength"])
+        )
 
     @property
     def ReverseCustomEndPoint(self):
@@ -337,7 +372,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Behaviour, enabled when Endpoint behaviour is 256-Custom End Point.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseCustomEndPoint']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseCustomEndPoint"])
+        )
 
     @property
     def ReverseEndPointBehaviour(self):
@@ -348,7 +386,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the behavior that can be associated with a SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseEndPointBehaviour']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseEndPointBehaviour"])
+        )
 
     @property
     def ReverseFunLength(self):
@@ -359,7 +400,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reverse Function Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseFunLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseFunLength"])
+        )
 
     @property
     def ReverseIpv6SID(self):
@@ -370,7 +414,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reverse IPv6 SID, a 16 octet value to sent out with Binding TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseIpv6SID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseIpv6SID"])
+        )
 
     @property
     def ReverseLbLength(self):
@@ -381,7 +428,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reverse Locator Block Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseLbLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseLbLength"])
+        )
 
     @property
     def ReverseLnLength(self):
@@ -392,7 +442,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reverse Locator Node Length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseLnLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseLnLength"])
+        )
 
     @property
     def ReverseMPLSSID(self):
@@ -403,7 +456,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reverse MPLS SID, a 32 bit value to sent out with Binding TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReverseMPLSSID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReverseMPLSSID"])
+        )
 
     @property
     def SegmentListNumber(self):
@@ -414,7 +470,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segment List Number For Reference.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentListNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SegmentListNumber"])
+        )
 
     @property
     def SrtepolicyName(self):
@@ -424,7 +483,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         -------
         - list(str): Policy Name For Reference
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrtepolicyName"])
 
     @property
     def Srv6ReverseSidEndpointBehaviourFlagReserved(self):
@@ -435,7 +494,13 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 16 bits Reserved for SRv6 Sid Endpoint Behaviour and Structure Flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6ReverseSidEndpointBehaviourFlagReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Srv6ReverseSidEndpointBehaviourFlagReserved"]
+            ),
+        )
 
     @property
     def Srv6SidEndpointBehaviourFlagReserved(self):
@@ -446,7 +511,13 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 16 bits Reserved for SRv6 Sid Endpoint Behaviour and Structure Flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidEndpointBehaviourFlagReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Srv6SidEndpointBehaviourFlagReserved"]
+            ),
+        )
 
     @property
     def UseAsMPLSLabel(self):
@@ -457,7 +528,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): when Enanbled the BSID (MPLS SID) value will be treated as 3-Octet MPLS Label part of the BSID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseAsMPLSLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseAsMPLSLabel"])
+        )
 
     @property
     def UseAsReverseMPLSLabel(self):
@@ -468,7 +542,10 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): when Enanbled the BSID (Reverse MPLS SID) value will be treated as 3-Octet MPLS Label part of the BSID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseAsReverseMPLSLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseAsReverseMPLSLabel"])
+        )
 
     @property
     def Weight(self):
@@ -479,7 +556,8 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None, NumberOfSegmentsV4=None):
         # type: (str, int) -> BgpSRTEPoliciesSegmentListV4
@@ -499,7 +577,14 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfSegmentsV4=None, SrtepolicyName=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfSegmentsV4=None,
+        SrtepolicyName=None,
+    ):
         # type: (int, str, str, int, List[str]) -> BgpSRTEPoliciesSegmentListV4
         """Finds and retrieves bgpSRTEPoliciesSegmentListV4 resources from the server.
 
@@ -543,7 +628,40 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Aflag=None, ArgLength=None, Bflag=None, CustomEndPointBehaviour=None, EnBindingSID=None, EnReverseBindingTLV=None, EnWeight=None, EndPointBehaviour=None, FunLength=None, Ipv6SID=None, LbLength=None, LnLength=None, MplsSID=None, NumberOfActiveSegments=None, RemainingBits=None, ReverseArgLength=None, ReverseCustomEndPoint=None, ReverseEndPointBehaviour=None, ReverseFunLength=None, ReverseIpv6SID=None, ReverseLbLength=None, ReverseLnLength=None, ReverseMPLSSID=None, SegmentListNumber=None, Srv6ReverseSidEndpointBehaviourFlagReserved=None, Srv6SidEndpointBehaviourFlagReserved=None, UseAsMPLSLabel=None, UseAsReverseMPLSLabel=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        Aflag=None,
+        ArgLength=None,
+        Bflag=None,
+        CustomEndPointBehaviour=None,
+        EnBindingSID=None,
+        EnReverseBindingTLV=None,
+        EnWeight=None,
+        EndPointBehaviour=None,
+        FunLength=None,
+        Ipv6SID=None,
+        LbLength=None,
+        LnLength=None,
+        MplsSID=None,
+        NumberOfActiveSegments=None,
+        RemainingBits=None,
+        ReverseArgLength=None,
+        ReverseCustomEndPoint=None,
+        ReverseEndPointBehaviour=None,
+        ReverseFunLength=None,
+        ReverseIpv6SID=None,
+        ReverseLbLength=None,
+        ReverseLnLength=None,
+        ReverseMPLSSID=None,
+        SegmentListNumber=None,
+        Srv6ReverseSidEndpointBehaviourFlagReserved=None,
+        Srv6SidEndpointBehaviourFlagReserved=None,
+        UseAsMPLSLabel=None,
+        UseAsReverseMPLSLabel=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesSegmentListV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

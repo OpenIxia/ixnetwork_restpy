@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,22 +35,22 @@ class MapServerResolver(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mapServerResolver'
+    _SDM_NAME = "mapServerResolver"
     _SDM_ATT_MAP = {
-        'AuthenticationAlgorithm': 'authenticationAlgorithm',
-        'Enabled': 'enabled',
-        'ExternalMsmrAddress': 'externalMsmrAddress',
-        'Family': 'family',
-        'InternalIxiaMsmrRouter': 'internalIxiaMsmrRouter',
-        'Key': 'key',
-        'MsmrLocation': 'msmrLocation',
-        'Type': 'type',
+        "AuthenticationAlgorithm": "authenticationAlgorithm",
+        "Enabled": "enabled",
+        "ExternalMsmrAddress": "externalMsmrAddress",
+        "Family": "family",
+        "InternalIxiaMsmrRouter": "internalIxiaMsmrRouter",
+        "Key": "key",
+        "MsmrLocation": "msmrLocation",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'authenticationAlgorithm': ['sha-1-96', 'sha-128-256'],
-        'family': ['ipv4', 'ipv6'],
-        'msmrLocation': ['internal', 'external'],
-        'type': ['ms', 'mr', 'msmr'],
+        "authenticationAlgorithm": ["sha-1-96", "sha-128-256"],
+        "family": ["ipv4", "ipv6"],
+        "msmrLocation": ["internal", "external"],
+        "type": ["ms", "mr", "msmr"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class MapServerResolver(Base):
         -------
         - str(sha-1-96 | sha-128-256): It gives details about the authentication algorithm
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuthenticationAlgorithm"])
+
     @AuthenticationAlgorithm.setter
     def AuthenticationAlgorithm(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuthenticationAlgorithm"], value)
 
     @property
     def Enabled(self):
@@ -77,11 +79,12 @@ class MapServerResolver(Base):
         -------
         - bool: If true, it enables the protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ExternalMsmrAddress(self):
@@ -91,11 +94,12 @@ class MapServerResolver(Base):
         -------
         - str: It gives details about the external Msmr address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalMsmrAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalMsmrAddress"])
+
     @ExternalMsmrAddress.setter
     def ExternalMsmrAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalMsmrAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalMsmrAddress"], value)
 
     @property
     def Family(self):
@@ -105,11 +109,12 @@ class MapServerResolver(Base):
         -------
         - str(ipv4 | ipv6): It gives details about the ip family it represents
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Family'])
+        return self._get_attribute(self._SDM_ATT_MAP["Family"])
+
     @Family.setter
     def Family(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Family'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Family"], value)
 
     @property
     def InternalIxiaMsmrRouter(self):
@@ -119,11 +124,12 @@ class MapServerResolver(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../router): It gives details about the internal ixia msmr router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalIxiaMsmrRouter'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalIxiaMsmrRouter"])
+
     @InternalIxiaMsmrRouter.setter
     def InternalIxiaMsmrRouter(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalIxiaMsmrRouter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalIxiaMsmrRouter"], value)
 
     @property
     def Key(self):
@@ -133,11 +139,12 @@ class MapServerResolver(Base):
         -------
         - str: it gives details about the key
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Key"])
+
     @Key.setter
     def Key(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Key'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Key"], value)
 
     @property
     def MsmrLocation(self):
@@ -147,11 +154,12 @@ class MapServerResolver(Base):
         -------
         - str(internal | external): It details about the msmr location
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MsmrLocation'])
+        return self._get_attribute(self._SDM_ATT_MAP["MsmrLocation"])
+
     @MsmrLocation.setter
     def MsmrLocation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MsmrLocation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MsmrLocation"], value)
 
     @property
     def Type(self):
@@ -161,13 +169,24 @@ class MapServerResolver(Base):
         -------
         - str(ms | mr | msmr): It gives details about the type
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+    def update(
+        self,
+        AuthenticationAlgorithm=None,
+        Enabled=None,
+        ExternalMsmrAddress=None,
+        Family=None,
+        InternalIxiaMsmrRouter=None,
+        Key=None,
+        MsmrLocation=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Updates mapServerResolver resource on the server.
 
@@ -188,7 +207,17 @@ class MapServerResolver(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+    def add(
+        self,
+        AuthenticationAlgorithm=None,
+        Enabled=None,
+        ExternalMsmrAddress=None,
+        Family=None,
+        InternalIxiaMsmrRouter=None,
+        Key=None,
+        MsmrLocation=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Adds a new mapServerResolver resource on the server and adds it to the container.
 
@@ -223,7 +252,17 @@ class MapServerResolver(Base):
         """
         self._delete()
 
-    def find(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+    def find(
+        self,
+        AuthenticationAlgorithm=None,
+        Enabled=None,
+        ExternalMsmrAddress=None,
+        Family=None,
+        InternalIxiaMsmrRouter=None,
+        Key=None,
+        MsmrLocation=None,
+        Type=None,
+    ):
         # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Finds and retrieves mapServerResolver resources from the server.
 

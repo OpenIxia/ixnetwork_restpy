@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,16 @@ class NetTopologyTree(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyTree'
+    _SDM_NAME = "netTopologyTree"
     _SDM_ATT_MAP = {
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LinkMultiplier': 'linkMultiplier',
-        'MaxChildPerNode': 'maxChildPerNode',
-        'Nodes': 'nodes',
-        'TreeDepth': 'treeDepth',
-        'UseTreeDepth': 'useTreeDepth',
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LinkMultiplier": "linkMultiplier",
+        "MaxChildPerNode": "maxChildPerNode",
+        "Nodes": "nodes",
+        "TreeDepth": "treeDepth",
+        "UseTreeDepth": "useTreeDepth",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyTree, self).__init__(parent, list_op)
@@ -57,11 +57,12 @@ class NetTopologyTree(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LinkMultiplier(self):
@@ -71,11 +72,12 @@ class NetTopologyTree(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     @property
     def MaxChildPerNode(self):
@@ -85,11 +87,12 @@ class NetTopologyTree(Base):
         -------
         - number: Maximum children per node
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxChildPerNode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxChildPerNode"])
+
     @MaxChildPerNode.setter
     def MaxChildPerNode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxChildPerNode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxChildPerNode"], value)
 
     @property
     def Nodes(self):
@@ -99,11 +102,12 @@ class NetTopologyTree(Base):
         -------
         - number: number of nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Nodes'])
+        return self._get_attribute(self._SDM_ATT_MAP["Nodes"])
+
     @Nodes.setter
     def Nodes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Nodes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Nodes"], value)
 
     @property
     def TreeDepth(self):
@@ -113,11 +117,12 @@ class NetTopologyTree(Base):
         -------
         - number: Depth of the Tree, defined as length of path from root node to deepest node in the tree
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TreeDepth'])
+        return self._get_attribute(self._SDM_ATT_MAP["TreeDepth"])
+
     @TreeDepth.setter
     def TreeDepth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TreeDepth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TreeDepth"], value)
 
     @property
     def UseTreeDepth(self):
@@ -127,13 +132,22 @@ class NetTopologyTree(Base):
         -------
         - bool: Use Tree Depth
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseTreeDepth'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseTreeDepth"])
+
     @UseTreeDepth.setter
     def UseTreeDepth(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseTreeDepth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseTreeDepth"], value)
 
-    def update(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+    def update(
+        self,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        MaxChildPerNode=None,
+        Nodes=None,
+        TreeDepth=None,
+        UseTreeDepth=None,
+    ):
         # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Updates netTopologyTree resource on the server.
 
@@ -152,7 +166,15 @@ class NetTopologyTree(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+    def add(
+        self,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        MaxChildPerNode=None,
+        Nodes=None,
+        TreeDepth=None,
+        UseTreeDepth=None,
+    ):
         # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Adds a new netTopologyTree resource on the server and adds it to the container.
 
@@ -185,7 +207,15 @@ class NetTopologyTree(Base):
         """
         self._delete()
 
-    def find(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+    def find(
+        self,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        MaxChildPerNode=None,
+        Nodes=None,
+        TreeDepth=None,
+        UseTreeDepth=None,
+    ):
         # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Finds and retrieves netTopologyTree resources from the server.
 

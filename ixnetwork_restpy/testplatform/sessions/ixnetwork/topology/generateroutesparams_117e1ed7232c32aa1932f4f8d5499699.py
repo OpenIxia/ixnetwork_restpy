@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,35 +33,42 @@ class GenerateRoutesParams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'generateRoutesParams'
+    _SDM_NAME = "generateRoutesParams"
     _SDM_ATT_MAP = {
-        'AddressRangesToSkip': 'addressRangesToSkip',
-        'CustomDistributionFile': 'customDistributionFile',
-        'DuplicateRoutesAsPathSuffix': 'duplicateRoutesAsPathSuffix',
-        'DuplicateRoutesPerDevicePercent': 'duplicateRoutesPerDevicePercent',
-        'EnableRandomASPath': 'enableRandomASPath',
-        'IncludeDefaultRoute': 'includeDefaultRoute',
-        'NetworkAddressStart': 'networkAddressStart',
-        'NetworkAddressStep': 'networkAddressStep',
-        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
-        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
-        'PrefixLengthEnd': 'prefixLengthEnd',
-        'PrefixLengthMix': 'prefixLengthMix',
-        'PrefixLengthStart': 'prefixLengthStart',
-        'PrimaryRoutesAsPathSuffix': 'primaryRoutesAsPathSuffix',
-        'PrimaryRoutesPerDevice': 'primaryRoutesPerDevice',
-        'PrimaryRoutesPerRange': 'primaryRoutesPerRange',
-        'RouteCount': 'routeCount',
-        'RouteReplicationType': 'routeReplicationType',
-        'SkipClassEAddresses': 'skipClassEAddresses',
-        'SkipLoopback': 'skipLoopback',
-        'SkipMcast': 'skipMcast',
+        "AddressRangesToSkip": "addressRangesToSkip",
+        "CustomDistributionFile": "customDistributionFile",
+        "DuplicateRoutesAsPathSuffix": "duplicateRoutesAsPathSuffix",
+        "DuplicateRoutesPerDevicePercent": "duplicateRoutesPerDevicePercent",
+        "EnableRandomASPath": "enableRandomASPath",
+        "IncludeDefaultRoute": "includeDefaultRoute",
+        "NetworkAddressStart": "networkAddressStart",
+        "NetworkAddressStep": "networkAddressStep",
+        "PrefixLengthDistributionScope": "prefixLengthDistributionScope",
+        "PrefixLengthDistributionType": "prefixLengthDistributionType",
+        "PrefixLengthEnd": "prefixLengthEnd",
+        "PrefixLengthMix": "prefixLengthMix",
+        "PrefixLengthStart": "prefixLengthStart",
+        "PrimaryRoutesAsPathSuffix": "primaryRoutesAsPathSuffix",
+        "PrimaryRoutesPerDevice": "primaryRoutesPerDevice",
+        "PrimaryRoutesPerRange": "primaryRoutesPerRange",
+        "RouteCount": "routeCount",
+        "RouteReplicationType": "routeReplicationType",
+        "SkipClassEAddresses": "skipClassEAddresses",
+        "SkipLoopback": "skipLoopback",
+        "SkipMcast": "skipMcast",
     }
     _SDM_ENUM_MAP = {
-        'prefixLengthDistributionScope': ['perTopology', 'perDevice', 'perPort'],
-        'prefixLengthDistributionType': ['fixed', 'random', 'even', 'exponential', 'internet', 'custom'],
-        'prefixLengthMix': ['internetMix', 'customMix'],
-        'routeReplicationType': ['none'],
+        "prefixLengthDistributionScope": ["perTopology", "perDevice", "perPort"],
+        "prefixLengthDistributionType": [
+            "fixed",
+            "random",
+            "even",
+            "exponential",
+            "internet",
+            "custom",
+        ],
+        "prefixLengthMix": ["internetMix", "customMix"],
+        "routeReplicationType": ["none"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,11 +82,12 @@ class GenerateRoutesParams(Base):
         -------
         - str: Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: 192.0.0.0 - 192.255.255.255, 201.0.0.0. - 201.255.255.255
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressRangesToSkip'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressRangesToSkip"])
+
     @AddressRangesToSkip.setter
     def AddressRangesToSkip(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressRangesToSkip'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressRangesToSkip"], value)
 
     @property
     def CustomDistributionFile(self):
@@ -87,10 +96,11 @@ class GenerateRoutesParams(Base):
         -------
         - obj(ixnetwork_restpy.files.Files): Source file having custom distribution information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomDistributionFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomDistributionFile"])
+
     @CustomDistributionFile.setter
     def CustomDistributionFile(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['CustomDistributionFile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomDistributionFile"], value)
 
     @property
     def DuplicateRoutesAsPathSuffix(self):
@@ -100,11 +110,12 @@ class GenerateRoutesParams(Base):
         -------
         - str: AS Path Suffix for Duplicate Routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DuplicateRoutesAsPathSuffix'])
+        return self._get_attribute(self._SDM_ATT_MAP["DuplicateRoutesAsPathSuffix"])
+
     @DuplicateRoutesAsPathSuffix.setter
     def DuplicateRoutesAsPathSuffix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DuplicateRoutesAsPathSuffix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DuplicateRoutesAsPathSuffix"], value)
 
     @property
     def DuplicateRoutesPerDevicePercent(self):
@@ -114,11 +125,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: Percentage to Duplicate Primary Routes per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DuplicateRoutesPerDevicePercent'])
+        return self._get_attribute(self._SDM_ATT_MAP["DuplicateRoutesPerDevicePercent"])
+
     @DuplicateRoutesPerDevicePercent.setter
     def DuplicateRoutesPerDevicePercent(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DuplicateRoutesPerDevicePercent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DuplicateRoutesPerDevicePercent"], value)
 
     @property
     def EnableRandomASPath(self):
@@ -128,11 +140,12 @@ class GenerateRoutesParams(Base):
         -------
         - bool: If selected, Random AS Path is turned on for the route range. Only available, when Route Replication is selected as Per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRandomASPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRandomASPath"])
+
     @EnableRandomASPath.setter
     def EnableRandomASPath(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRandomASPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRandomASPath"], value)
 
     @property
     def IncludeDefaultRoute(self):
@@ -142,11 +155,12 @@ class GenerateRoutesParams(Base):
         -------
         - bool: Include the default route address, 0.0.0.0, in the generated Address Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeDefaultRoute"])
+
     @IncludeDefaultRoute.setter
     def IncludeDefaultRoute(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeDefaultRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeDefaultRoute"], value)
 
     @property
     def NetworkAddressStart(self):
@@ -156,11 +170,12 @@ class GenerateRoutesParams(Base):
         -------
         - str: Network Address Start Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkAddressStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkAddressStart"])
+
     @NetworkAddressStart.setter
     def NetworkAddressStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkAddressStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkAddressStart"], value)
 
     @property
     def NetworkAddressStep(self):
@@ -170,11 +185,12 @@ class GenerateRoutesParams(Base):
         -------
         - str: Network Address Step Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkAddressStep"])
+
     @NetworkAddressStep.setter
     def NetworkAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkAddressStep"], value)
 
     @property
     def PrefixLengthDistributionScope(self):
@@ -184,11 +200,12 @@ class GenerateRoutesParams(Base):
         -------
         - str(perTopology | perDevice | perPort): Prefix Length Distribution Scope.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionScope'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionScope"])
+
     @PrefixLengthDistributionScope.setter
     def PrefixLengthDistributionScope(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionScope'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionScope"], value)
 
     @property
     def PrefixLengthDistributionType(self):
@@ -198,11 +215,12 @@ class GenerateRoutesParams(Base):
         -------
         - str(fixed | random | even | exponential | internet | custom): Prefix Length Distribution Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionType"])
+
     @PrefixLengthDistributionType.setter
     def PrefixLengthDistributionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionType"], value)
 
     @property
     def PrefixLengthEnd(self):
@@ -212,11 +230,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: Prefix Length End Value. Applicable only for Even and Exponential distribution type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthEnd'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthEnd"])
+
     @PrefixLengthEnd.setter
     def PrefixLengthEnd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthEnd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthEnd"], value)
 
     @property
     def PrefixLengthMix(self):
@@ -226,11 +245,12 @@ class GenerateRoutesParams(Base):
         -------
         - str(internetMix | customMix): The prefix lengths are assigned to the routes in accordance with Internet Prefix Profile.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthMix'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthMix"])
+
     @PrefixLengthMix.setter
     def PrefixLengthMix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthMix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthMix"], value)
 
     @property
     def PrefixLengthStart(self):
@@ -240,11 +260,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthStart"])
+
     @PrefixLengthStart.setter
     def PrefixLengthStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthStart"], value)
 
     @property
     def PrimaryRoutesAsPathSuffix(self):
@@ -254,11 +275,12 @@ class GenerateRoutesParams(Base):
         -------
         - str: AS Path Suffix for Primary Routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesAsPathSuffix'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesAsPathSuffix"])
+
     @PrimaryRoutesAsPathSuffix.setter
     def PrimaryRoutesAsPathSuffix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesAsPathSuffix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesAsPathSuffix"], value)
 
     @property
     def PrimaryRoutesPerDevice(self):
@@ -268,11 +290,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: Number of Primary Routes per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerDevice'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerDevice"])
+
     @PrimaryRoutesPerDevice.setter
     def PrimaryRoutesPerDevice(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerDevice'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerDevice"], value)
 
     @property
     def PrimaryRoutesPerRange(self):
@@ -282,11 +305,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: Number of Routes per Route Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerRange"])
+
     @PrimaryRoutesPerRange.setter
     def PrimaryRoutesPerRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerRange"], value)
 
     @property
     def RouteCount(self):
@@ -296,11 +320,12 @@ class GenerateRoutesParams(Base):
         -------
         - number: The number of routes you want to generate. Only available, when Route Replication is selected as Per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteCount"])
+
     @RouteCount.setter
     def RouteCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteCount"], value)
 
     @property
     def RouteReplicationType(self):
@@ -310,11 +335,12 @@ class GenerateRoutesParams(Base):
         -------
         - str(none): The replication type of the routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteReplicationType'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteReplicationType"])
+
     @RouteReplicationType.setter
     def RouteReplicationType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteReplicationType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteReplicationType"], value)
 
     @property
     def SkipClassEAddresses(self):
@@ -324,11 +350,12 @@ class GenerateRoutesParams(Base):
         -------
         - bool: DO not include Class E Addresses (240.0.0.0 - 255.255.255.254) in the generated Address Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipClassEAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipClassEAddresses"])
+
     @SkipClassEAddresses.setter
     def SkipClassEAddresses(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipClassEAddresses'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipClassEAddresses"], value)
 
     @property
     def SkipLoopback(self):
@@ -338,11 +365,12 @@ class GenerateRoutesParams(Base):
         -------
         - bool: Do not include Loopback Address in the generated Address Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipLoopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipLoopback"])
+
     @SkipLoopback.setter
     def SkipLoopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipLoopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipLoopback"], value)
 
     @property
     def SkipMcast(self):
@@ -352,13 +380,37 @@ class GenerateRoutesParams(Base):
         -------
         - bool: Do not include Multicast Address in the generated Address Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipMcast'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipMcast"])
+
     @SkipMcast.setter
     def SkipMcast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipMcast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipMcast"], value)
 
-    def update(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, EnableRandomASPath=None, IncludeDefaultRoute=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthMix=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, RouteCount=None, RouteReplicationType=None, SkipClassEAddresses=None, SkipLoopback=None, SkipMcast=None):
+    def update(
+        self,
+        AddressRangesToSkip=None,
+        CustomDistributionFile=None,
+        DuplicateRoutesAsPathSuffix=None,
+        DuplicateRoutesPerDevicePercent=None,
+        EnableRandomASPath=None,
+        IncludeDefaultRoute=None,
+        NetworkAddressStart=None,
+        NetworkAddressStep=None,
+        PrefixLengthDistributionScope=None,
+        PrefixLengthDistributionType=None,
+        PrefixLengthEnd=None,
+        PrefixLengthMix=None,
+        PrefixLengthStart=None,
+        PrimaryRoutesAsPathSuffix=None,
+        PrimaryRoutesPerDevice=None,
+        PrimaryRoutesPerRange=None,
+        RouteCount=None,
+        RouteReplicationType=None,
+        SkipClassEAddresses=None,
+        SkipLoopback=None,
+        SkipMcast=None,
+    ):
         """Updates generateRoutesParams resource on the server.
 
         Args
@@ -391,7 +443,30 @@ class GenerateRoutesParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, EnableRandomASPath=None, IncludeDefaultRoute=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthMix=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, RouteCount=None, RouteReplicationType=None, SkipClassEAddresses=None, SkipLoopback=None, SkipMcast=None):
+    def find(
+        self,
+        AddressRangesToSkip=None,
+        CustomDistributionFile=None,
+        DuplicateRoutesAsPathSuffix=None,
+        DuplicateRoutesPerDevicePercent=None,
+        EnableRandomASPath=None,
+        IncludeDefaultRoute=None,
+        NetworkAddressStart=None,
+        NetworkAddressStep=None,
+        PrefixLengthDistributionScope=None,
+        PrefixLengthDistributionType=None,
+        PrefixLengthEnd=None,
+        PrefixLengthMix=None,
+        PrefixLengthStart=None,
+        PrimaryRoutesAsPathSuffix=None,
+        PrimaryRoutesPerDevice=None,
+        PrimaryRoutesPerRange=None,
+        RouteCount=None,
+        RouteReplicationType=None,
+        SkipClassEAddresses=None,
+        SkipLoopback=None,
+        SkipMcast=None,
+    ):
         """Finds and retrieves generateRoutesParams resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generateRoutesParams resources from the server.
@@ -465,7 +540,9 @@ class GenerateRoutesParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateRoutes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateRoutes", payload=payload, response_object=None)

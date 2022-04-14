@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,49 +35,57 @@ class Lns(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lns'
+    _SDM_NAME = "lns"
     _SDM_ATT_MAP = {
-        'BearerCapability': 'bearerCapability',
-        'BearerType': 'bearerType',
-        'ConnectedVia': 'connectedVia',
-        'ControlMsgsRetryCounter': 'controlMsgsRetryCounter',
-        'Count': 'count',
-        'CredentialsCount': 'credentialsCount',
-        'DescriptiveName': 'descriptiveName',
-        'EnableControlChecksum': 'enableControlChecksum',
-        'EnableDataChecksum': 'enableDataChecksum',
-        'EnableExcludeHdlc': 'enableExcludeHdlc',
-        'EnableHelloRequest': 'enableHelloRequest',
-        'EnablePeriodicCSURQ': 'enablePeriodicCSURQ',
-        'Errors': 'errors',
-        'FramingCapability': 'framingCapability',
-        'HelloRequestInterval': 'helloRequestInterval',
-        'InitRetransmitInterval': 'initRetransmitInterval',
-        'LacHostName': 'lacHostName',
-        'LacSecret': 'lacSecret',
-        'LnsHostName': 'lnsHostName',
-        'MaxRetransmitInterval': 'maxRetransmitInterval',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NoCallTimeout': 'noCallTimeout',
-        'OffsetByte': 'offsetByte',
-        'OffsetLength': 'offsetLength',
-        'PeriodicCSURQInterval': 'periodicCSURQInterval',
-        'ReceiveWindowSize': 'receiveWindowSize',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TunnelAuthentication': 'tunnelAuthentication',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
-        'UseHiddenAVPs': 'useHiddenAVPs',
-        'UseLengthBitInPayload': 'useLengthBitInPayload',
-        'UseOffsetBitInPayload': 'useOffsetBitInPayload',
-        'UseSequenceNoInPayload': 'useSequenceNoInPayload',
+        "BearerCapability": "bearerCapability",
+        "BearerType": "bearerType",
+        "ConnectedVia": "connectedVia",
+        "ControlMsgsRetryCounter": "controlMsgsRetryCounter",
+        "Count": "count",
+        "CredentialsCount": "credentialsCount",
+        "DescriptiveName": "descriptiveName",
+        "EnableControlChecksum": "enableControlChecksum",
+        "EnableDataChecksum": "enableDataChecksum",
+        "EnableExcludeHdlc": "enableExcludeHdlc",
+        "EnableHelloRequest": "enableHelloRequest",
+        "EnablePeriodicCSURQ": "enablePeriodicCSURQ",
+        "Errors": "errors",
+        "FramingCapability": "framingCapability",
+        "HelloRequestInterval": "helloRequestInterval",
+        "InitRetransmitInterval": "initRetransmitInterval",
+        "LacHostName": "lacHostName",
+        "LacSecret": "lacSecret",
+        "LnsHostName": "lnsHostName",
+        "MaxRetransmitInterval": "maxRetransmitInterval",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NoCallTimeout": "noCallTimeout",
+        "OffsetByte": "offsetByte",
+        "OffsetLength": "offsetLength",
+        "PeriodicCSURQInterval": "periodicCSURQInterval",
+        "ReceiveWindowSize": "receiveWindowSize",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "TunnelAuthentication": "tunnelAuthentication",
+        "UdpDestinationPort": "udpDestinationPort",
+        "UdpSourcePort": "udpSourcePort",
+        "UseHiddenAVPs": "useHiddenAVPs",
+        "UseLengthBitInPayload": "useLengthBitInPayload",
+        "UseOffsetBitInPayload": "useOffsetBitInPayload",
+        "UseSequenceNoInPayload": "useSequenceNoInPayload",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -93,10 +102,13 @@ class Lns(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lnsauthcredentials_caa048d94ca4e6927df8160f32c829bf import LnsAuthCredentials
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lnsauthcredentials_caa048d94ca4e6927df8160f32c829bf import (
+            LnsAuthCredentials,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LnsAuthCredentials', None) is not None:
-                return self._properties.get('LnsAuthCredentials')
+            if self._properties.get("LnsAuthCredentials", None) is not None:
+                return self._properties.get("LnsAuthCredentials")
         return LnsAuthCredentials(self)._select()
 
     @property
@@ -110,10 +122,13 @@ class Lns(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import Pppoxserver
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import (
+            Pppoxserver,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pppoxserver', None) is not None:
-                return self._properties.get('Pppoxserver')
+            if self._properties.get("Pppoxserver", None) is not None:
+                return self._properties.get("Pppoxserver")
         return Pppoxserver(self)
 
     @property
@@ -127,10 +142,13 @@ class Lns(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -142,7 +160,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates to the DUT the bearer device types from which incoming calls will be accepted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BearerCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BearerCapability"])
+        )
 
     @property
     def BearerType(self):
@@ -153,21 +174,23 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The bearer type.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BearerType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BearerType"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def ControlMsgsRetryCounter(self):
@@ -178,7 +201,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of L2TP retries
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlMsgsRetryCounter']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlMsgsRetryCounter"])
+        )
 
     @property
     def Count(self):
@@ -188,7 +214,7 @@ class Lns(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CredentialsCount(self):
@@ -198,11 +224,12 @@ class Lns(Base):
         -------
         - number: Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CredentialsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CredentialsCount"])
+
     @CredentialsCount.setter
     def CredentialsCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CredentialsCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CredentialsCount"], value)
 
     @property
     def DescriptiveName(self):
@@ -212,7 +239,7 @@ class Lns(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableControlChecksum(self):
@@ -223,7 +250,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on control plane packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableControlChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableControlChecksum"])
+        )
 
     @property
     def EnableDataChecksum(self):
@@ -234,7 +264,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, UDP checksum is enabled on data plane packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDataChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableDataChecksum"])
+        )
 
     @property
     def EnableExcludeHdlc(self):
@@ -244,11 +277,12 @@ class Lns(Base):
         -------
         - bool: If checked, HDLC header is not encoded in the L2TP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExcludeHdlc"])
+
     @EnableExcludeHdlc.setter
     def EnableExcludeHdlc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExcludeHdlc"], value)
 
     @property
     def EnableHelloRequest(self):
@@ -259,7 +293,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, L2TP hello request is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloRequest']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloRequest"])
+        )
 
     @property
     def EnablePeriodicCSURQ(self):
@@ -270,7 +307,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, CSURQ will be sent at CSURQ interval periodically
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicCSURQ']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePeriodicCSURQ"])
+        )
 
     @property
     def Errors(self):
@@ -279,7 +319,7 @@ class Lns(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FramingCapability(self):
@@ -290,7 +330,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Designates sync or async framing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FramingCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FramingCapability"])
+        )
 
     @property
     def HelloRequestInterval(self):
@@ -301,7 +344,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for L2TP hello request, in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloRequestInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloRequestInterval"])
+        )
 
     @property
     def InitRetransmitInterval(self):
@@ -312,29 +358,34 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The initial amount of time that can elapse before an unacknowledged control message is retransmitted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitRetransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitRetransmitInterval"])
+        )
 
     @property
     def LacHostName(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This is the hostname used in authentication.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacHostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacHostName"]))
 
     @property
     def LacSecret(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP secret to be used in authentication
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LacSecret']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LacSecret"]))
 
     @property
     def LnsHostName(self):
@@ -345,7 +396,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP hostname sent by Ixia port when acting as LNS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LnsHostName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LnsHostName"]))
 
     @property
     def MaxRetransmitInterval(self):
@@ -356,7 +408,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The maximum amount of time that can elapse for receiving a reply for a control message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxRetransmitInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxRetransmitInterval"])
+        )
 
     @property
     def Multiplier(self):
@@ -366,11 +421,12 @@ class Lns(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -380,11 +436,12 @@ class Lns(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoCallTimeout(self):
@@ -395,7 +452,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout for no call establishment, in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoCallTimeout']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NoCallTimeout"]))
 
     @property
     def OffsetByte(self):
@@ -406,7 +464,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset byte. Applicable only if offset bit is set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OffsetByte']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OffsetByte"]))
 
     @property
     def OffsetLength(self):
@@ -417,7 +476,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP offset length in bytes. Applicable only if offset bit set.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OffsetLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OffsetLength"]))
 
     @property
     def PeriodicCSURQInterval(self):
@@ -428,7 +488,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CSURQ interval, in seconds
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeriodicCSURQInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PeriodicCSURQInterval"])
+        )
 
     @property
     def ReceiveWindowSize(self):
@@ -439,7 +502,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L2TP Receive Window Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiveWindowSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReceiveWindowSize"])
+        )
 
     @property
     def SessionStatus(self):
@@ -449,7 +515,7 @@ class Lns(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -459,11 +525,12 @@ class Lns(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -472,7 +539,7 @@ class Lns(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -482,7 +549,7 @@ class Lns(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def TunnelAuthentication(self):
@@ -493,7 +560,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables or disables L2TP tunnel authentication
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TunnelAuthentication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TunnelAuthentication"])
+        )
 
     @property
     def UdpDestinationPort(self):
@@ -504,7 +574,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling destinations
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UdpDestinationPort"])
+        )
 
     @property
     def UdpSourcePort(self):
@@ -515,7 +588,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP port to employ for tunneling sources
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UdpSourcePort"]))
 
     @property
     def UseHiddenAVPs(self):
@@ -526,7 +600,8 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, Attribute Value Pair hiding is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseHiddenAVPs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseHiddenAVPs"]))
 
     @property
     def UseLengthBitInPayload(self):
@@ -537,7 +612,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, length bit is set in L2TP data packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseLengthBitInPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseLengthBitInPayload"])
+        )
 
     @property
     def UseOffsetBitInPayload(self):
@@ -548,7 +626,10 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, offset bit is enabled in L2TP data packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseOffsetBitInPayload']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseOffsetBitInPayload"])
+        )
 
     @property
     def UseSequenceNoInPayload(self):
@@ -559,9 +640,20 @@ class Lns(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If checked, sequence bit is set in L2TP data packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload']))
 
-    def update(self, ConnectedVia=None, CredentialsCount=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseSequenceNoInPayload"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        CredentialsCount=None,
+        EnableExcludeHdlc=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, bool, int, str, List[str]) -> Lns
         """Updates lns resource on the server.
 
@@ -583,7 +675,15 @@ class Lns(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, CredentialsCount=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        CredentialsCount=None,
+        EnableExcludeHdlc=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, bool, int, str, List[str]) -> Lns
         """Adds a new lns resource on the server and adds it to the container.
 
@@ -616,7 +716,21 @@ class Lns(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, CredentialsCount=None, DescriptiveName=None, EnableExcludeHdlc=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        CredentialsCount=None,
+        DescriptiveName=None,
+        EnableExcludeHdlc=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves lns resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lns resources from the server.
@@ -693,10 +807,12 @@ class Lns(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -725,13 +841,15 @@ class Lns(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendCSURQ(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
+        # type: (*Any, **Any) -> None
         """Executes the sendCSURQ operation on the server.
 
         Sends CSURQ from LNS
@@ -758,23 +876,17 @@ class Lns(Base):
         - TunnelId (number): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        sendCSURQ(Arg2=list, Arg3=string, Arg4=number, async_operation=bool)list
-        ------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IPv4 addresses are used as the source of the request messages.
-        - Arg3 (str): Session id for which CSURQ will be sent
-        - Arg4 (number): Tunnel id for which CSURQ will be sent
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendCSURQ', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendCSURQ", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -803,10 +915,12 @@ class Lns(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -835,12 +949,43 @@ class Lns(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, BearerCapability=None, BearerType=None, ControlMsgsRetryCounter=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableHelloRequest=None, EnablePeriodicCSURQ=None, FramingCapability=None, HelloRequestInterval=None, InitRetransmitInterval=None, LacHostName=None, LacSecret=None, LnsHostName=None, MaxRetransmitInterval=None, NoCallTimeout=None, OffsetByte=None, OffsetLength=None, PeriodicCSURQInterval=None, ReceiveWindowSize=None, TunnelAuthentication=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAVPs=None, UseLengthBitInPayload=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        BearerCapability=None,
+        BearerType=None,
+        ControlMsgsRetryCounter=None,
+        EnableControlChecksum=None,
+        EnableDataChecksum=None,
+        EnableHelloRequest=None,
+        EnablePeriodicCSURQ=None,
+        FramingCapability=None,
+        HelloRequestInterval=None,
+        InitRetransmitInterval=None,
+        LacHostName=None,
+        LacSecret=None,
+        LnsHostName=None,
+        MaxRetransmitInterval=None,
+        NoCallTimeout=None,
+        OffsetByte=None,
+        OffsetLength=None,
+        PeriodicCSURQInterval=None,
+        ReceiveWindowSize=None,
+        TunnelAuthentication=None,
+        UdpDestinationPort=None,
+        UdpSourcePort=None,
+        UseHiddenAVPs=None,
+        UseLengthBitInPayload=None,
+        UseOffsetBitInPayload=None,
+        UseSequenceNoInPayload=None,
+    ):
         """Base class infrastructure that gets a list of lns device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

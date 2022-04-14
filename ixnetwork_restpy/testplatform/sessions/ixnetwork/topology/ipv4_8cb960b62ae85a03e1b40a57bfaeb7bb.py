@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,30 +35,38 @@ class Ipv4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipv4'
+    _SDM_NAME = "ipv4"
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableGratarpRarp': 'enableGratarpRarp',
-        'Errors': 'errors',
-        'GatewayIp': 'gatewayIp',
-        'Ipv4GratarpRarp': 'ipv4GratarpRarp',
-        'ManualGatewayMac': 'manualGatewayMac',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'Prefix': 'prefix',
-        'ResolveGateway': 'resolveGateway',
-        'ResolvedGatewayMac': 'resolvedGatewayMac',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Address": "address",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableGratarpRarp": "enableGratarpRarp",
+        "Errors": "errors",
+        "GatewayIp": "gatewayIp",
+        "Ipv4GratarpRarp": "ipv4GratarpRarp",
+        "ManualGatewayMac": "manualGatewayMac",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "Prefix": "prefix",
+        "ResolveGateway": "resolveGateway",
+        "ResolvedGatewayMac": "resolvedGatewayMac",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,10 +83,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ancp_32ef0f30885d45a86fb93ff8c22f3107 import Ancp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ancp_32ef0f30885d45a86fb93ff8c22f3107 import (
+            Ancp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ancp', None) is not None:
-                return self._properties.get('Ancp')
+            if self._properties.get("Ancp", None) is not None:
+                return self._properties.get("Ancp")
         return Ancp(self)
 
     @property
@@ -91,10 +103,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import (
+            Bfdv4Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bfdv4Interface', None) is not None:
-                return self._properties.get('Bfdv4Interface')
+            if self._properties.get("Bfdv4Interface", None) is not None:
+                return self._properties.get("Bfdv4Interface")
         return Bfdv4Interface(self)
 
     @property
@@ -108,10 +123,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import (
+            BgpIpv4Peer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpIpv4Peer', None) is not None:
-                return self._properties.get('BgpIpv4Peer')
+            if self._properties.get("BgpIpv4Peer", None) is not None:
+                return self._properties.get("BgpIpv4Peer")
         return BgpIpv4Peer(self)
 
     @property
@@ -125,10 +143,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcp_1ab532ec5eaeec746678378f2443dafe import CuspCP
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcp_1ab532ec5eaeec746678378f2443dafe import (
+            CuspCP,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspCP', None) is not None:
-                return self._properties.get('CuspCP')
+            if self._properties.get("CuspCP", None) is not None:
+                return self._properties.get("CuspCP")
         return CuspCP(self)
 
     @property
@@ -142,10 +163,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspup_a452407df164d641b27491106f32c6de import CuspUP
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspup_a452407df164d641b27491106f32c6de import (
+            CuspUP,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CuspUP', None) is not None:
-                return self._properties.get('CuspUP')
+            if self._properties.get("CuspUP", None) is not None:
+                return self._properties.get("CuspUP")
         return CuspUP(self)
 
     @property
@@ -159,10 +183,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4relayagent_f4cc56bb53d1903e9ec0dfc563d37d9c import Dhcpv4relayAgent
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4relayagent_f4cc56bb53d1903e9ec0dfc563d37d9c import (
+            Dhcpv4relayAgent,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv4relayAgent', None) is not None:
-                return self._properties.get('Dhcpv4relayAgent')
+            if self._properties.get("Dhcpv4relayAgent", None) is not None:
+                return self._properties.get("Dhcpv4relayAgent")
         return Dhcpv4relayAgent(self)
 
     @property
@@ -176,10 +203,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4server_a0d174266d4c9a35774364ccc4dfccb3 import Dhcpv4server
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4server_a0d174266d4c9a35774364ccc4dfccb3 import (
+            Dhcpv4server,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Dhcpv4server', None) is not None:
-                return self._properties.get('Dhcpv4server')
+            if self._properties.get("Dhcpv4server", None) is not None:
+                return self._properties.get("Dhcpv4server")
         return Dhcpv4server(self)
 
     @property
@@ -193,10 +223,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRe', None) is not None:
-                return self._properties.get('ECpriRe')
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
         return ECpriRe(self)
 
     @property
@@ -210,10 +243,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRec', None) is not None:
-                return self._properties.get('ECpriRec')
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
         return ECpriRec(self)
 
     @property
@@ -227,10 +263,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.grpcclient_7579119d1fa07cc33f5866d00da204cf import GRPCClient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.grpcclient_7579119d1fa07cc33f5866d00da204cf import (
+            GRPCClient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GRPCClient', None) is not None:
-                return self._properties.get('GRPCClient')
+            if self._properties.get("GRPCClient", None) is not None:
+                return self._properties.get("GRPCClient")
         return GRPCClient(self)
 
     @property
@@ -244,10 +283,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import (
+            Geneve,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Geneve', None) is not None:
-                return self._properties.get('Geneve')
+            if self._properties.get("Geneve", None) is not None:
+                return self._properties.get("Geneve")
         return Geneve(self)
 
     @property
@@ -261,10 +303,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.greoipv4_9efa17b6a965b57b3e13cf2957418d99 import Greoipv4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.greoipv4_9efa17b6a965b57b3e13cf2957418d99 import (
+            Greoipv4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Greoipv4', None) is not None:
-                return self._properties.get('Greoipv4')
+            if self._properties.get("Greoipv4", None) is not None:
+                return self._properties.get("Greoipv4")
         return Greoipv4(self)
 
     @property
@@ -278,10 +323,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import (
+            IgmpHost,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpHost', None) is not None:
-                return self._properties.get('IgmpHost')
+            if self._properties.get("IgmpHost", None) is not None:
+                return self._properties.get("IgmpHost")
         return IgmpHost(self)
 
     @property
@@ -295,10 +343,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import (
+            IgmpQuerier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpQuerier', None) is not None:
-                return self._properties.get('IgmpQuerier')
+            if self._properties.get("IgmpQuerier", None) is not None:
+                return self._properties.get("IgmpQuerier")
         return IgmpQuerier(self)
 
     @property
@@ -312,10 +363,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_92ac6d7a9bf02ade5331532b27bfa0ea import Lac
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_92ac6d7a9bf02ade5331532b27bfa0ea import (
+            Lac,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lac', None) is not None:
-                return self._properties.get('Lac')
+            if self._properties.get("Lac", None) is not None:
+                return self._properties.get("Lac")
         return Lac(self)
 
     @property
@@ -329,10 +383,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import (
+            LdpBasicRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpBasicRouter', None) is not None:
-                return self._properties.get('LdpBasicRouter')
+            if self._properties.get("LdpBasicRouter", None) is not None:
+                return self._properties.get("LdpBasicRouter")
         return LdpBasicRouter(self)
 
     @property
@@ -346,10 +403,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpconnectedinterface_be8d40bb9f96a3d7371ddaf597237ff0 import LdpConnectedInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpconnectedinterface_be8d40bb9f96a3d7371ddaf597237ff0 import (
+            LdpConnectedInterface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpConnectedInterface', None) is not None:
-                return self._properties.get('LdpConnectedInterface')
+            if self._properties.get("LdpConnectedInterface", None) is not None:
+                return self._properties.get("LdpConnectedInterface")
         return LdpConnectedInterface(self)
 
     @property
@@ -363,10 +423,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import (
+            LdpTargetedRouter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedRouter', None) is not None:
-                return self._properties.get('LdpTargetedRouter')
+            if self._properties.get("LdpTargetedRouter", None) is not None:
+                return self._properties.get("LdpTargetedRouter")
         return LdpTargetedRouter(self)
 
     @property
@@ -380,10 +443,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a4b3be663ffb1dfb1f114cda5dbbcd4e import Lns
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a4b3be663ffb1dfb1f114cda5dbbcd4e import (
+            Lns,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Lns', None) is not None:
-                return self._properties.get('Lns')
+            if self._properties.get("Lns", None) is not None:
+                return self._properties.get("Lns")
         return Lns(self)
 
     @property
@@ -397,10 +463,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import (
+            MplsOam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MplsOam', None) is not None:
-                return self._properties.get('MplsOam')
+            if self._properties.get("MplsOam", None) is not None:
+                return self._properties.get("MplsOam")
         return MplsOam(self)
 
     @property
@@ -414,10 +483,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import (
+            NetconfClient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NetconfClient', None) is not None:
-                return self._properties.get('NetconfClient')
+            if self._properties.get("NetconfClient", None) is not None:
+                return self._properties.get("NetconfClient")
         return NetconfClient(self)
 
     @property
@@ -431,10 +503,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624 import NetconfServer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624 import (
+            NetconfServer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NetconfServer', None) is not None:
-                return self._properties.get('NetconfServer')
+            if self._properties.get("NetconfServer", None) is not None:
+                return self._properties.get("NetconfServer")
         return NetconfServer(self)
 
     @property
@@ -448,10 +523,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import Ntpclock
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import (
+            Ntpclock,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ntpclock', None) is not None:
-                return self._properties.get('Ntpclock')
+            if self._properties.get("Ntpclock", None) is not None:
+                return self._properties.get("Ntpclock")
         return Ntpclock(self)
 
     @property
@@ -465,10 +543,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.openflowcontroller_855b90b006cc4c874a779dee4d2b3eb2 import OpenFlowController
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.openflowcontroller_855b90b006cc4c874a779dee4d2b3eb2 import (
+            OpenFlowController,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowController', None) is not None:
-                return self._properties.get('OpenFlowController')
+            if self._properties.get("OpenFlowController", None) is not None:
+                return self._properties.get("OpenFlowController")
         return OpenFlowController(self)
 
     @property
@@ -482,10 +563,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.openflowswitch_11d07d0a0b339c8fe20b86a2badffa69 import OpenFlowSwitch
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.openflowswitch_11d07d0a0b339c8fe20b86a2badffa69 import (
+            OpenFlowSwitch,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OpenFlowSwitch', None) is not None:
-                return self._properties.get('OpenFlowSwitch')
+            if self._properties.get("OpenFlowSwitch", None) is not None:
+                return self._properties.get("OpenFlowSwitch")
         return OpenFlowSwitch(self)
 
     @property
@@ -499,10 +583,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import Ospfv2
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import (
+            Ospfv2,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv2', None) is not None:
-                return self._properties.get('Ospfv2')
+            if self._properties.get("Ospfv2", None) is not None:
+                return self._properties.get("Ospfv2")
         return Ospfv2(self)
 
     @property
@@ -516,10 +603,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ovsdbcontroller_789ff2911c009a5ce719da4041ccbf73 import Ovsdbcontroller
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ovsdbcontroller_789ff2911c009a5ce719da4041ccbf73 import (
+            Ovsdbcontroller,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ovsdbcontroller', None) is not None:
-                return self._properties.get('Ovsdbcontroller')
+            if self._properties.get("Ovsdbcontroller", None) is not None:
+                return self._properties.get("Ovsdbcontroller")
         return Ovsdbcontroller(self)
 
     @property
@@ -533,10 +623,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ovsdbserver_54c04aa8692b2b034dcd8eac05978340 import Ovsdbserver
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ovsdbserver_54c04aa8692b2b034dcd8eac05978340 import (
+            Ovsdbserver,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ovsdbserver', None) is not None:
-                return self._properties.get('Ovsdbserver')
+            if self._properties.get("Ovsdbserver", None) is not None:
+                return self._properties.get("Ovsdbserver")
         return Ovsdbserver(self)
 
     @property
@@ -550,10 +643,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import Pcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import (
+            Pcc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pcc', None) is not None:
-                return self._properties.get('Pcc')
+            if self._properties.get("Pcc", None) is not None:
+                return self._properties.get("Pcc")
         return Pcc(self)
 
     @property
@@ -567,10 +663,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import (
+            Pce,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pce', None) is not None:
-                return self._properties.get('Pce')
+            if self._properties.get("Pce", None) is not None:
+                return self._properties.get("Pce")
         return Pce(self)
 
     @property
@@ -584,10 +683,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import (
+            PimV4Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PimV4Interface', None) is not None:
-                return self._properties.get('PimV4Interface')
+            if self._properties.get("PimV4Interface", None) is not None:
+                return self._properties.get("PimV4Interface")
         return PimV4Interface(self)
 
     @property
@@ -601,10 +703,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import (
+            Ptp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ptp', None) is not None:
-                return self._properties.get('Ptp')
+            if self._properties.get("Ptp", None) is not None:
+                return self._properties.get("Ptp")
         return Ptp(self)
 
     @property
@@ -618,10 +723,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpteif_e2b2ecdbf1fa5e15d2f6d87dd1789f1c import RsvpteIf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpteif_e2b2ecdbf1fa5e15d2f6d87dd1789f1c import (
+            RsvpteIf,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpteIf', None) is not None:
-                return self._properties.get('RsvpteIf')
+            if self._properties.get("RsvpteIf", None) is not None:
+                return self._properties.get("RsvpteIf")
         return RsvpteIf(self)
 
     @property
@@ -635,10 +743,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvptelsps_c853570a71a8549c854868139dd47959 import RsvpteLsps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvptelsps_c853570a71a8549c854868139dd47959 import (
+            RsvpteLsps,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpteLsps', None) is not None:
-                return self._properties.get('RsvpteLsps')
+            if self._properties.get("RsvpteLsps", None) is not None:
+                return self._properties.get("RsvpteLsps")
         return RsvpteLsps(self)
 
     @property
@@ -652,10 +763,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -669,10 +783,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import (
+            Vxlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlan', None) is not None:
-                return self._properties.get('Vxlan')
+            if self._properties.get("Vxlan", None) is not None:
+                return self._properties.get("Vxlan")
         return Vxlan(self)
 
     @property
@@ -686,10 +803,13 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import Vxlangpe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import (
+            Vxlangpe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlangpe', None) is not None:
-                return self._properties.get('Vxlangpe')
+            if self._properties.get("Vxlangpe", None) is not None:
+                return self._properties.get("Vxlangpe")
         return Vxlangpe(self)
 
     @property
@@ -701,21 +821,23 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 addresses of the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Address']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Address"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -725,7 +847,7 @@ class Ipv4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -735,7 +857,7 @@ class Ipv4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableGratarpRarp(self):
@@ -746,7 +868,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables GRATARP or RARP packet transmission.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGratarpRarp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableGratarpRarp"])
+        )
 
     @property
     def Errors(self):
@@ -755,7 +880,7 @@ class Ipv4(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def GatewayIp(self):
@@ -766,7 +891,8 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 addresses of the Gateways for the devices
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GatewayIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GatewayIp"]))
 
     @property
     def Ipv4GratarpRarp(self):
@@ -777,7 +903,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sends GRATARP or RARP packet.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4GratarpRarp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4GratarpRarp"])
+        )
 
     @property
     def ManualGatewayMac(self):
@@ -788,7 +917,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User specified Gateway MAC addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ManualGatewayMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ManualGatewayMac"])
+        )
 
     @property
     def Multiplier(self):
@@ -798,11 +930,12 @@ class Ipv4(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -812,11 +945,12 @@ class Ipv4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Prefix(self):
@@ -827,7 +961,8 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The length (in bits) of the mask to be used in conjunction with all the addresses created in the range
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Prefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Prefix"]))
 
     @property
     def ResolveGateway(self):
@@ -838,7 +973,10 @@ class Ipv4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables the gateway MAC address discovery.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResolveGateway']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ResolveGateway"])
+        )
 
     @property
     def ResolvedGatewayMac(self):
@@ -848,7 +986,7 @@ class Ipv4(Base):
         -------
         - list(str): The resolved gateway's MAC addresses
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ResolvedGatewayMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["ResolvedGatewayMac"])
 
     @property
     def SessionInfo(self):
@@ -858,7 +996,7 @@ class Ipv4(Base):
         -------
         - list(str[interfaceRemoved | none | resolveMacFailed]): Logs additional information about the session state.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -868,7 +1006,7 @@ class Ipv4(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -878,11 +1016,12 @@ class Ipv4(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -891,7 +1030,7 @@ class Ipv4(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -901,7 +1040,7 @@ class Ipv4(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Ipv4
@@ -954,7 +1093,21 @@ class Ipv4(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, ResolvedGatewayMac=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        ResolvedGatewayMac=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ipv4 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4 resources from the server.
@@ -1031,10 +1184,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def CancelPing(self, *args, **kwargs):
         """Executes the cancelPing operation on the server.
@@ -1065,10 +1220,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('cancelPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("cancelPing", payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1086,10 +1243,14 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchAndUpdateConfigFromCloud", payload=payload, response_object=None
+        )
 
     def PingStatus(self, *args, **kwargs):
         """Executes the pingStatus operation on the server.
@@ -1120,10 +1281,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pingStatus', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pingStatus", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1152,10 +1315,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendArp(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1184,10 +1349,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArp', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArp", payload=payload, response_object=None)
 
     def SendArpManual(self, *args, **kwargs):
         """Executes the sendArpManual operation on the server.
@@ -1221,10 +1388,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArpManual', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpManual", payload=payload, response_object=None)
 
     def SendGratArp(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1253,10 +1422,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGratArp', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendGratArp", payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
@@ -1290,10 +1461,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPing", payload=payload, response_object=None)
 
     def SendPingAsync(self, *args, **kwargs):
         """Executes the sendPingAsync operation on the server.
@@ -1327,10 +1500,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPingAsync", payload=payload, response_object=None)
 
     def SendPingWithCountAndPayload(self, *args, **kwargs):
         """Executes the sendPingWithCountAndPayload operation on the server.
@@ -1373,10 +1548,14 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingWithCountAndPayload', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPingWithCountAndPayload", payload=payload, response_object=None
+        )
 
     def SendPingWithCountAndPayloadAsync(self, *args, **kwargs):
         """Executes the sendPingWithCountAndPayloadAsync operation on the server.
@@ -1419,10 +1598,14 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingWithCountAndPayloadAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPingWithCountAndPayloadAsync", payload=payload, response_object=None
+        )
 
     def SendRarp(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1451,10 +1634,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRarp', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendRarp", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1483,10 +1668,12 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1515,12 +1702,24 @@ class Ipv4(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Address=None, EnableGratarpRarp=None, GatewayIp=None, Ipv4GratarpRarp=None, ManualGatewayMac=None, Prefix=None, ResolveGateway=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Address=None,
+        EnableGratarpRarp=None,
+        GatewayIp=None,
+        Ipv4GratarpRarp=None,
+        ManualGatewayMac=None,
+        Prefix=None,
+        ResolveGateway=None,
+    ):
         """Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

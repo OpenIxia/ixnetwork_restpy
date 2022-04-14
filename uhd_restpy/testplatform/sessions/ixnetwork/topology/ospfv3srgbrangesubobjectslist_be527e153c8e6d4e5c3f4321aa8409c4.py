@@ -122,7 +122,7 @@ class Ospfv3SRGBRangeSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> Ospfv3SRGBRangeSubObjectsList
-        """Adds a new ospfv3SRGBRangeSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new ospfv3SRGBRangeSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

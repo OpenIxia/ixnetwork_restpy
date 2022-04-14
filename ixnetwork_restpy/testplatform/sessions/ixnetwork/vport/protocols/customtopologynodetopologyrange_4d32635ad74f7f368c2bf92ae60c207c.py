@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,14 @@ class CustomTopologyNodeTopologyRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologyNodeTopologyRange'
+    _SDM_NAME = "customTopologyNodeTopologyRange"
     _SDM_ATT_MAP = {
-        'NicknameCount': 'nicknameCount',
-        'NodeNicknameIncrement': 'nodeNicknameIncrement',
-        'NumberOftreesToCompute': 'numberOftreesToCompute',
-        'StartNickname': 'startNickname',
+        "NicknameCount": "nicknameCount",
+        "NodeNicknameIncrement": "nodeNicknameIncrement",
+        "NumberOftreesToCompute": "numberOftreesToCompute",
+        "StartNickname": "startNickname",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTopologyNodeTopologyRange, self).__init__(parent, list_op)
@@ -58,10 +58,16 @@ class CustomTopologyNodeTopologyRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_83977d105f4d179465b55fa6725a4487 import CustomTopologyInterestedVlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_83977d105f4d179465b55fa6725a4487 import (
+            CustomTopologyInterestedVlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomTopologyInterestedVlanRange', None) is not None:
-                return self._properties.get('CustomTopologyInterestedVlanRange')
+            if (
+                self._properties.get("CustomTopologyInterestedVlanRange", None)
+                is not None
+            ):
+                return self._properties.get("CustomTopologyInterestedVlanRange")
         return CustomTopologyInterestedVlanRange(self)
 
     @property
@@ -72,11 +78,12 @@ class CustomTopologyNodeTopologyRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NicknameCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NicknameCount"])
+
     @NicknameCount.setter
     def NicknameCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NicknameCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NicknameCount"], value)
 
     @property
     def NodeNicknameIncrement(self):
@@ -86,11 +93,12 @@ class CustomTopologyNodeTopologyRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NodeNicknameIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["NodeNicknameIncrement"])
+
     @NodeNicknameIncrement.setter
     def NodeNicknameIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NodeNicknameIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NodeNicknameIncrement"], value)
 
     @property
     def NumberOftreesToCompute(self):
@@ -100,11 +108,12 @@ class CustomTopologyNodeTopologyRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOftreesToCompute'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOftreesToCompute"])
+
     @NumberOftreesToCompute.setter
     def NumberOftreesToCompute(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOftreesToCompute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOftreesToCompute"], value)
 
     @property
     def StartNickname(self):
@@ -114,13 +123,20 @@ class CustomTopologyNodeTopologyRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartNickname'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartNickname"])
+
     @StartNickname.setter
     def StartNickname(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartNickname'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartNickname"], value)
 
-    def update(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
+    def update(
+        self,
+        NicknameCount=None,
+        NodeNicknameIncrement=None,
+        NumberOftreesToCompute=None,
+        StartNickname=None,
+    ):
         # type: (int, int, int, int) -> CustomTopologyNodeTopologyRange
         """Updates customTopologyNodeTopologyRange resource on the server.
 
@@ -137,7 +153,13 @@ class CustomTopologyNodeTopologyRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
+    def add(
+        self,
+        NicknameCount=None,
+        NodeNicknameIncrement=None,
+        NumberOftreesToCompute=None,
+        StartNickname=None,
+    ):
         # type: (int, int, int, int) -> CustomTopologyNodeTopologyRange
         """Adds a new customTopologyNodeTopologyRange resource on the server and adds it to the container.
 
@@ -168,7 +190,13 @@ class CustomTopologyNodeTopologyRange(Base):
         """
         self._delete()
 
-    def find(self, NicknameCount=None, NodeNicknameIncrement=None, NumberOftreesToCompute=None, StartNickname=None):
+    def find(
+        self,
+        NicknameCount=None,
+        NodeNicknameIncrement=None,
+        NumberOftreesToCompute=None,
+        StartNickname=None,
+    ):
         # type: (int, int, int, int) -> CustomTopologyNodeTopologyRange
         """Finds and retrieves customTopologyNodeTopologyRange resources from the server.
 

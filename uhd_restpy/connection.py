@@ -40,15 +40,19 @@ except NameError:
     basestring = str
 
 
+class AsyncOperation(object):
+    """A class that stores the asynchronous state of a operation"""
+
+    def __init__(self):
+        self.request = None
+        self.async_response = None
+        self.poll_url = None
+        self.poll_headers = None
+
+
 class Connection(object):
     """Http/Https transport"""
 
-    ASYNC_OPERATION = {
-        "request": None,
-        "async_response": None,
-        "poll_url": None,
-        "poll_headers": None,
-    }
     X_API_KEY = "X-Api-Key"
     TRACE_NONE = "none"
     TRACE_INFO = "info"
@@ -64,7 +68,17 @@ class Connection(object):
         "Microsoft-HTTPAPI/2.0": "connection_manager",
     }
 
-    def __init__(self, hostname, rest_port, platform, log_file_name=None, ignore_env_proxy=False, verify_cert=False, trace="none", script_watch=True):
+    def __init__(
+        self,
+        hostname,
+        rest_port,
+        platform,
+        log_file_name=None,
+        ignore_env_proxy=False,
+        verify_cert=False,
+        trace="none",
+        script_watch=True,
+    ):
         """Set the connection parameters to a rest server
 
         Args:
@@ -81,16 +95,24 @@ class Connection(object):
             handlers = [logging.StreamHandler(sys.stdout)]
             if log_file_name is not None:
                 handlers.append(logging.FileHandler(log_file_name, mode="w"))
-            formatter = logging.Formatter(fmt="%(asctime)s [%(name)s] [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+            formatter = logging.Formatter(
+                fmt="%(asctime)s [%(name)s tid:%(thread)d] [%(levelname)s] %(message)s",
+                datefmt="%Y-%m-%d %H:%M:%S",
+            )
             formatter.converter = time.gmtime
             for handler in handlers:
                 handler.setFormatter(formatter)
                 logging.getLogger(__name__).addHandler(handler)
             logging.getLogger(__name__).info("using python version %s" % sys.version)
             try:
-                logging.getLogger(__name__).info("using ixnetwork-restpy version %s" % pkg_resources.get_distribution("ixnetwork-restpy").version)
+                logging.getLogger(__name__).info(
+                    "using ixnetwork-restpy version %s"
+                    % pkg_resources.get_distribution("ixnetwork-restpy").version
+                )
             except Exception as e:
-                logging.getLogger(__name__).warning("ixnetwork-restpy not installed using pip, unable to determine version")
+                logging.getLogger(__name__).warning(
+                    "ixnetwork-restpy not installed using pip, unable to determine version"
+                )
         self._verify_cert = verify_cert
         if self._verify_cert is False:
             self._warn("Verification of certificates is disabled")
@@ -102,7 +124,12 @@ class Connection(object):
                 import urllib3
 
                 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        self._headers = {Connection.X_API_KEY: None, "User-Agent": "ixnetwork-restpy", "Connection": "keep-alive"}
+        self._headers = {
+            Connection.X_API_KEY: None,
+            "User-Agent": "ixnetwork-restpy",
+            "Connection": "keep-alive",
+        }
+        self._async_operation = AsyncOperation()
         if script_watch is False:
             self._headers["SDMAPI"] = "GUIREQUEST"
         if ignore_env_proxy is True:
@@ -117,9 +144,15 @@ class Connection(object):
         self._scheme = self._determine_test_tool_platform(platform)
 
     def _determine_test_tool_platform(self, platform):
-        self._info("Determining the platform and rest_port using the %s address..." % self._hostname)
+        self._info(
+            "Determining the platform and rest_port using the %s address..."
+            % self._hostname
+        )
         if platform is not None:
-            self._warn("The `platform` parameter is deprecated and the value `%s` will be ignored." % platform)
+            self._warn(
+                "The `platform` parameter is deprecated and the value `%s` will be ignored."
+                % platform
+            )
         self._platform = None
         rest_ports = [443, 11009]
         if self._rest_port is not None:
@@ -129,11 +162,22 @@ class Connection(object):
         for rest_port in rest_ports:
             for scheme in ["http", "https"]:
                 try:
-                    url = "%s://%s:%s/api/v1/auth/session" % (scheme, self._hostname, rest_port)
+                    url = "%s://%s:%s/api/v1/auth/session" % (
+                        scheme,
+                        self._hostname,
+                        rest_port,
+                    )
                     payload = json.dumps({"username": "", "password": ""})
                     headers = self._headers
                     headers["content-type"] = "application/json"
-                    response = self._request(method="POST", url=url, data=payload, headers=headers, verify=self._verify_cert, timeout=2)
+                    response = self._request(
+                        method="POST",
+                        url=url,
+                        data=payload,
+                        headers=headers,
+                        verify=self._verify_cert,
+                        timeout=2,
+                    )
                     if response.status_code in [401, 403, 200]:
                         if "server" not in response.headers:
                             response.headers["server"] = "Jetty"
@@ -141,13 +185,27 @@ class Connection(object):
                             if server in response.headers["server"]:
                                 self._platform = Connection.PLATFORMS[server]
                                 self._rest_port = rest_port
-                                self._info("Connection established to `%s://%s:%s on %s`" % (scheme, self._hostname, self._rest_port, self._platform))
+                                self._info(
+                                    "Connection established to `%s://%s:%s on %s`"
+                                    % (
+                                        scheme,
+                                        self._hostname,
+                                        self._rest_port,
+                                        self._platform,
+                                    )
+                                )
                                 return scheme
                     else:
                         raise Exception()
                 except Exception as e:
-                    self._warn("Unable to connect to %s://%s:%s." % (scheme, self._hostname, rest_port))
-        raise ConnectionError("Unable to connect to %s. Check the ip address and consider the rest_port parameter." % self._hostname)
+                    self._warn(
+                        "Unable to connect to %s://%s:%s."
+                        % (scheme, self._hostname, rest_port)
+                    )
+        raise ConnectionError(
+            "Unable to connect to %s. Check the ip address and consider the rest_port parameter."
+            % self._hostname
+        )
 
     @property
     def trace(self):
@@ -162,7 +220,11 @@ class Connection(object):
             logging.getLogger(__name__).setLevel(logging.INFO)
         elif value == Connection.TRACE_WARNING:
             logging.getLogger(__name__).setLevel(logging.WARNING)
-        elif value in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
+        elif value in [
+            Connection.TRACE_REQUEST,
+            Connection.TRACE_REQUEST_RESPONSE,
+            Connection.TRACE_ALL,
+        ]:
             logging.getLogger(__name__).setLevel(logging.DEBUG)
         else:
             raise ValueError("the value %s is an incorrect Trace level" % value)
@@ -219,7 +281,11 @@ class Connection(object):
         return self._send_recv("OPTIONS", url)
 
     def _print_request(self, method, url, payload=None):
-        if self._trace in [Connection.TRACE_REQUEST, Connection.TRACE_REQUEST_RESPONSE, Connection.TRACE_ALL]:
+        if self._trace in [
+            Connection.TRACE_REQUEST,
+            Connection.TRACE_REQUEST_RESPONSE,
+            Connection.TRACE_ALL,
+        ]:
             data = ""
             if payload is not None:
                 if self._trace == Connection.TRACE_ALL:
@@ -244,7 +310,9 @@ class Connection(object):
                 data = "%s..." % response.content[0:132]
             else:
                 data = response.content
-            logging.getLogger(__name__).debug("%s %s %s" % (response.status_code, response.reason, data))
+            logging.getLogger(__name__).debug(
+                "%s %s %s" % (response.status_code, response.reason, data)
+            )
 
     def _info(self, message):
         logging.getLogger(__name__).info(message)
@@ -266,13 +334,23 @@ class Connection(object):
         url = "%s%s" % (url[0:path_start], url[path_start:].replace("//", "/"))
         return (connection, url)
 
-    def _get_file(self, url, remote_filename, remote_directory=None, local_filename=None, local_directory=None, return_content=False):
+    def _get_file(
+        self,
+        url,
+        remote_filename,
+        remote_directory=None,
+        local_filename=None,
+        local_directory=None,
+        return_content=False,
+    ):
         headers = self._headers
         url = "%s/files?filename=%s" % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
         if remote_directory is not None:
             url = "%s&absolute=%s" % (url, remote_directory)
-        response = self._session.request("GET", url, headers=headers, verify=self._verify_cert)
+        response = self._session.request(
+            "GET", url, headers=headers, verify=self._verify_cert
+        )
         if response.status_code == 200:
             if return_content is True:
                 return response.content
@@ -285,7 +363,9 @@ class Connection(object):
                 with open(os.path.normpath(local_filename), "wb") as fid:
                     fid.write(response.content)
             except Exception as e:
-                self._info("cwd:%s filename:%s exception:%s" % (os.getcwd(), local_filename, e))
+                self._info(
+                    "cwd:%s filename:%s exception:%s" % (os.getcwd(), local_filename, e)
+                )
                 raise e
             return local_filename
         else:
@@ -300,7 +380,9 @@ class Connection(object):
         connection, url = self._normalize_url(url)
         with open(os.path.normpath(local_filename), "rb") as fid:
             data = fid.read()
-        response = self._session.request("POST", url, headers=headers, data=data, verify=self._verify_cert)
+        response = self._session.request(
+            "POST", url, headers=headers, data=data, verify=self._verify_cert
+        )
         if response.status_code == 201:
             return response.json()
         else:
@@ -310,7 +392,9 @@ class Connection(object):
         headers = self._headers
         url = "%s/files?filename=%s" % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
-        response = self._session.request("DELETE", url, headers=headers, verify=self._verify_cert)
+        response = self._session.request(
+            "DELETE", url, headers=headers, verify=self._verify_cert
+        )
         if response.status_code == 204:
             return
         else:
@@ -321,7 +405,11 @@ class Connection(object):
         # add the initial error
         if async_status is True:
             async_status = response.json()
-            if "message" in async_status and async_status["message"] is not None and "API CONTENTION" in async_status["message"]:
+            if (
+                "message" in async_status
+                and async_status["message"] is not None
+                and "API CONTENTION" in async_status["message"]
+            ):
                 response.status_code = 409
             else:
                 response.status_code = 400
@@ -339,16 +427,32 @@ class Connection(object):
                 errors.append(response.text)
         # add any /globals/appErrors/error items
         try:
-            preamble = url[0 : url.find("/", url.find("/sessions/") + len("/sessions/"))]
+            preamble = url[
+                0 : url.find("/", url.find("/sessions/") + len("/sessions/"))
+            ]
             url = preamble + "/ixnetwork/globals/appErrors/error"
-            error_response = self._session.request("GET", url, headers=headers, verify=self._verify_cert, allow_redirects=False)
+            error_response = self._session.request(
+                "GET",
+                url,
+                headers=headers,
+                verify=self._verify_cert,
+                allow_redirects=False,
+            )
             server_info = "\tCurrent Server Errors/Warnings:"
             for error in error_response.json():
                 if error["errorLevel"] in ["kError", "kWarning"]:
                     if server_info is not None:
                         errors.append(server_info)
                         server_info = None
-                    errors.append("\t%s [%s] [%s] %s" % (error["lastModified"], error["errorLevel"][1:].upper(), error["name"], error["description"]))
+                    errors.append(
+                        "\t%s [%s] [%s] %s"
+                        % (
+                            error["lastModified"],
+                            error["errorLevel"][1:].upper(),
+                            error["name"],
+                            error["description"],
+                        )
+                    )
         except:
             pass
         # raise the appropriate error
@@ -376,12 +480,19 @@ class Connection(object):
             elif isinstance(payload, Files):
                 headers["Content-Type"] = "application/octet-stream"
                 data = ""
-                if payload.is_local_file is True and os.path.exists(os.path.normpath(payload.file_path)) is True:
+                if (
+                    payload.is_local_file is True
+                    and os.path.exists(os.path.normpath(payload.file_path)) is True
+                ):
                     with open(os.path.normpath(payload.file_path), "rb") as fid:
                         data = fid.read()
                 else:
                     response = self._session.request(
-                        "GET", url.replace("filename=", "filter="), headers=headers, verify=self._verify_cert, allow_redirects=False
+                        "GET",
+                        url.replace("filename=", "filter="),
+                        headers=headers,
+                        verify=self._verify_cert,
+                        allow_redirects=False,
                     )
                     if response.status_code == 200:
                         return
@@ -390,14 +501,23 @@ class Connection(object):
                 data = payload
 
         self._print_request(method, url, None if isinstance(payload, Files) else data)
-        response = self._request(method=method, url=url, data=data, headers=headers, verify=self._verify_cert, allow_redirects=False)
+        response = self._request(
+            method=method,
+            url=url,
+            data=data,
+            headers=headers,
+            verify=self._verify_cert,
+            allow_redirects=False,
+        )
         self._print_response(response)
 
         if str(response.status_code).startswith("3"):
             url = response.headers["location"]
             if url.find("://") != -1:
                 self._scheme = url[: url.find("://")]
-                self._hostname = url[url.find("://") + 3 : url.find("/", url.find("://") + 3)]
+                self._hostname = url[
+                    url.find("://") + 3 : url.find("/", url.find("://") + 3)
+                ]
                 if self._scheme == "https":
                     self._rest_port = 443
                 splitter = "]:" if "]" in self._hostname else ":"
@@ -406,9 +526,21 @@ class Connection(object):
                     self._hostname = host_pieces[0]
                     self._rest_port = host_pieces[1]
             else:
-                url = "%s://%s:%s%s" % (self._scheme, self._hostname, self._rest_port, url)
+                url = "%s://%s:%s%s" % (
+                    self._scheme,
+                    self._hostname,
+                    self._rest_port,
+                    url,
+                )
             self._print_request(method, url, data)
-            response = self._session.request(method, url, data=data, headers=headers, verify=self._verify_cert, allow_redirects=False)
+            response = self._session.request(
+                method,
+                url,
+                data=data,
+                headers=headers,
+                verify=self._verify_cert,
+                allow_redirects=False,
+            )
             self._print_response(response)
 
         if response.status_code == 202:
@@ -417,15 +549,17 @@ class Connection(object):
                 poll_url = async_status["url"]
                 if poll_url.startswith(self._scheme) is False:
                     poll_url = "%s/%s" % (connection, poll_url.strip("/"))
-                Connection.ASYNC_OPERATION["poll_url"] = poll_url
-                Connection.ASYNC_OPERATION["poll_headers"] = headers.copy()
-                Connection.ASYNC_OPERATION["async_response"] = response
-                if Connection.ASYNC_OPERATION["request"] is None:
+                self._async_operation.poll_url = poll_url
+                self._async_operation.poll_headers = headers.copy()
+                self._async_operation.async_response = response
+                if self._async_operation.request is None:
                     return self._poll()
 
         while response.status_code == 409:
             time.sleep(6)
-            response = self._session.request(method, url, data=data, headers=headers, verify=self._verify_cert)
+            response = self._session.request(
+                method, url, data=data, headers=headers, verify=self._verify_cert
+            )
 
         if response.status_code == 204:
             return None
@@ -445,16 +579,16 @@ class Connection(object):
         self._get_async_response()
         if isinstance(payload, dict) and "async_operation" in payload:
             if payload["async_operation"] is True:
-                Connection.ASYNC_OPERATION["request"] = url
+                self._async_operation.request = url
             del payload["async_operation"]
 
     def _poll(self):
         """Poll an async operation while the state is IN_PROGRESS"""
-        url = Connection.ASYNC_OPERATION["request"]
-        poll_url = Connection.ASYNC_OPERATION["poll_url"]
-        poll_headers = Connection.ASYNC_OPERATION["poll_headers"]
+        url = self._async_operation.request
+        poll_url = self._async_operation.poll_url
+        poll_headers = self._async_operation.poll_headers
         while True:
-            async_response = Connection.ASYNC_OPERATION["async_response"]
+            async_response = self._async_operation.async_response
             async_status = async_response.json()
             if "state" not in async_status:
                 break
@@ -462,31 +596,40 @@ class Connection(object):
             if state == "IN_PROGRESS":
                 time.sleep(1)
                 self._print_request("GET", poll_url)
-                response = self._session.request("GET", poll_url, headers=poll_headers, verify=self._verify_cert)
+                response = self._session.request(
+                    "GET", poll_url, headers=poll_headers, verify=self._verify_cert
+                )
                 self._print_response(response)
-                Connection.ASYNC_OPERATION["async_response"] = response
+                self._async_operation.async_response = response
             elif state == "SUCCESS":
-                if "result" in async_status.keys() and async_status["result"] != "kVoid":
+                if (
+                    "result" in async_status.keys()
+                    and async_status["result"] != "kVoid"
+                ):
                     return async_status["result"]
                 else:
                     return None
-            elif self._platform == "connection_manager" and state in ["ACTIVE", "STOPPED", "STARTING"]:
+            elif self._platform == "connection_manager" and state in [
+                "ACTIVE",
+                "STOPPED",
+                "STARTING",
+            ]:
                 return async_status
             else:
-                return self._process_response_status_code(url, poll_headers, async_response, async_status=True)
+                return self._process_response_status_code(
+                    url, poll_headers, async_response, async_status=True
+                )
 
     def _get_async_response(self):
         """If there is an outstanding async operation poll until complete"""
-        async_response = Connection.ASYNC_OPERATION["async_response"]
+        async_response = self._async_operation.async_response
         if async_response is not None:
             try:
                 return self._poll()
             finally:
-                Connection.ASYNC_OPERATION = {
-                    "request": None,
-                    "async_response": None,
-                    "poll_url": None,
-                    "poll_headers": None,
-                }
+                self._async_operation.request = None
+                self._async_operation.async_response = None
+                self._async_operation.poll_url = None
+                self._async_operation.poll_headers = None
         else:
             return None

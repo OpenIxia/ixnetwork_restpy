@@ -87,11 +87,7 @@ class BatchFind:
             count = []
             for key, value in self._results.__dict__.items():
                 count.append(".{} {}".format(key, len(value)))
-            t.info(
-                "{}.results: {}".format(
-                    self.__class__.__name__, ", ".join(count)
-                )
-            )
+            t.info("{}.results: {}".format(self.__class__.__name__, ", ".join(count)))
 
     def _process_results(self, parent, results):
         for key, value in results.items():
@@ -115,10 +111,7 @@ class BatchFind:
             obj._parent = parent
             obj_values = {}
             for attr_name, attr_value in value.items():
-                if (
-                    attr_name == "href"
-                    or attr_name in obj._SDM_ATT_MAP.values()
-                ):
+                if attr_name == "href" or attr_name in obj._SDM_ATT_MAP.values():
                     obj_values[attr_name] = attr_value
                 elif attr_name in BatchFind._OBJECTS:
                     self._process_results(obj, {attr_name: attr_value})

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,57 +33,56 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flowStatMatchCriteria131TriggerAttributes'
+    _SDM_NAME = "flowStatMatchCriteria131TriggerAttributes"
     _SDM_ATT_MAP = {
-        'ArpDstHwAddr': 'arpDstHwAddr',
-        'ArpDstIpv4Addr': 'arpDstIpv4Addr',
-        'ArpOpcode': 'arpOpcode',
-        'ArpSrcHwAddr': 'arpSrcHwAddr',
-        'ArpSrcIpv4Addr': 'arpSrcIpv4Addr',
-        'Cookie': 'cookie',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHashmask': 'experimenterHashmask',
-        'ExperimenterId': 'experimenterId',
-        'Icmpv4Code': 'icmpv4Code',
-        'Icmpv4Type': 'icmpv4Type',
-        'Icmpv6Code': 'icmpv6Code',
-        'Icmpv6Type': 'icmpv6Type',
-        'InPort': 'inPort',
-        'IpDscp': 'ipDscp',
-        'IpEcn': 'ipEcn',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv6Destination': 'ipv6Destination',
-        'Ipv6ExtHeader': 'ipv6ExtHeader',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NdDll': 'ipv6NdDll',
-        'Ipv6NdSll': 'ipv6NdSll',
-        'Ipv6NdTarget': 'ipv6NdTarget',
-        'Ipv6Source': 'ipv6Source',
-        'MetaData': 'metaData',
-        'MplsBos': 'mplsBos',
-        'MplsLabel': 'mplsLabel',
-        'MplsTc': 'mplsTc',
-        'PbbISid': 'pbbISid',
-        'PhysicalInPort': 'physicalInPort',
-        'SctpDestination': 'sctpDestination',
-        'SctpSource': 'sctpSource',
-        'TcpDestination': 'tcpDestination',
-        'TcpSource': 'tcpSource',
-        'TunnelId': 'tunnelId',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ArpDstHwAddr": "arpDstHwAddr",
+        "ArpDstIpv4Addr": "arpDstIpv4Addr",
+        "ArpOpcode": "arpOpcode",
+        "ArpSrcHwAddr": "arpSrcHwAddr",
+        "ArpSrcIpv4Addr": "arpSrcIpv4Addr",
+        "Cookie": "cookie",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "EthernetType": "ethernetType",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterHashmask": "experimenterHashmask",
+        "ExperimenterId": "experimenterId",
+        "Icmpv4Code": "icmpv4Code",
+        "Icmpv4Type": "icmpv4Type",
+        "Icmpv6Code": "icmpv6Code",
+        "Icmpv6Type": "icmpv6Type",
+        "InPort": "inPort",
+        "IpDscp": "ipDscp",
+        "IpEcn": "ipEcn",
+        "IpProtocol": "ipProtocol",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Ipv6Destination": "ipv6Destination",
+        "Ipv6ExtHeader": "ipv6ExtHeader",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "Ipv6NdDll": "ipv6NdDll",
+        "Ipv6NdSll": "ipv6NdSll",
+        "Ipv6NdTarget": "ipv6NdTarget",
+        "Ipv6Source": "ipv6Source",
+        "MetaData": "metaData",
+        "MplsBos": "mplsBos",
+        "MplsLabel": "mplsLabel",
+        "MplsTc": "mplsTc",
+        "PbbISid": "pbbISid",
+        "PhysicalInPort": "physicalInPort",
+        "SctpDestination": "sctpDestination",
+        "SctpSource": "sctpSource",
+        "TcpDestination": "tcpDestination",
+        "TcpSource": "tcpSource",
+        "TunnelId": "tunnelId",
+        "UdpDestination": "udpDestination",
+        "UdpSource": "udpSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(FlowStatMatchCriteria131TriggerAttributes, self).__init__(parent, list_op)
@@ -94,10 +94,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the ARP destination hardware address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"])
+
     @ArpDstHwAddr.setter
     def ArpDstHwAddr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstHwAddr"], value)
 
     @property
     def ArpDstIpv4Addr(self):
@@ -106,10 +107,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The ARP destination IPv4 address field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"])
+
     @ArpDstIpv4Addr.setter
     def ArpDstIpv4Addr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpDstIpv4Addr"], value)
 
     @property
     def ArpOpcode(self):
@@ -118,10 +120,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the ARP opcode field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOpcode"])
+
     @ArpOpcode.setter
     def ArpOpcode(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpOpcode"], value)
 
     @property
     def ArpSrcHwAddr(self):
@@ -130,10 +133,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the ARP source hardware address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"])
+
     @ArpSrcHwAddr.setter
     def ArpSrcHwAddr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcHwAddr"], value)
 
     @property
     def ArpSrcIpv4Addr(self):
@@ -142,10 +146,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The ARP source IPv4 address field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"])
+
     @ArpSrcIpv4Addr.setter
     def ArpSrcIpv4Addr(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpSrcIpv4Addr"], value)
 
     @property
     def Cookie(self):
@@ -154,10 +159,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The Cookie field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cookie'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cookie"])
+
     @Cookie.setter
     def Cookie(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Cookie'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cookie"], value)
 
     @property
     def EthernetDestination(self):
@@ -166,10 +172,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The Ethernet destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
+
     @EthernetDestination.setter
     def EthernetDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestination"], value)
 
     @property
     def EthernetSource(self):
@@ -178,10 +185,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The Ethernet source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
+
     @EthernetSource.setter
     def EthernetSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSource"], value)
 
     @property
     def EthernetType(self):
@@ -190,10 +198,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The type of Ethernet port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetType"])
+
     @EthernetType.setter
     def EthernetType(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetType"], value)
 
     @property
     def ExperimenterData(self):
@@ -202,10 +211,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The experimenter data field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -214,10 +224,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:number,arg2:str): Value of the Experimenter data length field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterField(self):
@@ -226,10 +237,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:number,arg2:str): Value of the Experimenter Field field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def ExperimenterHashmask(self):
@@ -238,10 +250,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:bool,arg2:str): The experimented hasmask field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHashmask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterHashmask"])
+
     @ExperimenterHashmask.setter
     def ExperimenterHashmask(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterHashmask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterHashmask"], value)
 
     @property
     def ExperimenterId(self):
@@ -250,10 +263,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the experimenter ID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
     @property
     def Icmpv4Code(self):
@@ -262,10 +276,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The code of ICMPv4 port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Code"])
+
     @Icmpv4Code.setter
     def Icmpv4Code(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Code"], value)
 
     @property
     def Icmpv4Type(self):
@@ -274,10 +289,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The type of ICMPv4 port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv4Type"])
+
     @Icmpv4Type.setter
     def Icmpv4Type(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv4Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv4Type"], value)
 
     @property
     def Icmpv6Code(self):
@@ -286,10 +302,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the ICMPv4 code field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Code"])
+
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Code"], value)
 
     @property
     def Icmpv6Type(self):
@@ -298,10 +315,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the ICMPv6 type field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Icmpv6Type"])
+
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Icmpv6Type"], value)
 
     @property
     def InPort(self):
@@ -310,10 +328,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The input port used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["InPort"])
+
     @InPort.setter
     def InPort(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InPort"], value)
 
     @property
     def IpDscp(self):
@@ -322,10 +341,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IP DSCP value for advertising.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def IpEcn(self):
@@ -334,10 +354,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IP ECN field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpEcn"])
+
     @IpEcn.setter
     def IpEcn(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpEcn"], value)
 
     @property
     def IpProtocol(self):
@@ -346,10 +367,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IP protocol used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpProtocol"])
+
     @IpProtocol.setter
     def IpProtocol(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpProtocol"], value)
 
     @property
     def Ipv4Destination(self):
@@ -358,10 +380,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IPv4 destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -370,10 +393,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IPv4 source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def Ipv6Destination(self):
@@ -382,10 +406,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the IPv6 destination field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Destination"])
+
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Destination"], value)
 
     @property
     def Ipv6ExtHeader(self):
@@ -394,10 +419,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The Ipv6 extension header field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"])
+
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6ExtHeader"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -406,10 +432,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the IPv6 flow label field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def Ipv6NdDll(self):
@@ -418,10 +445,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IPv6 ND DLL field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdDll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdDll"])
+
     @Ipv6NdDll.setter
     def Ipv6NdDll(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdDll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdDll"], value)
 
     @property
     def Ipv6NdSll(self):
@@ -430,10 +458,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Source link-layer for IPv6 neighbour discovery.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdSll"])
+
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdSll"], value)
 
     @property
     def Ipv6NdTarget(self):
@@ -442,10 +471,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The IPv6 ND target field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"])
+
     @Ipv6NdTarget.setter
     def Ipv6NdTarget(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6NdTarget"], value)
 
     @property
     def Ipv6Source(self):
@@ -454,10 +484,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the IPv6 source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Source"])
+
     @Ipv6Source.setter
     def Ipv6Source(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Source"], value)
 
     @property
     def MetaData(self):
@@ -466,10 +497,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the metadata field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetaData'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetaData"])
+
     @MetaData.setter
     def MetaData(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MetaData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetaData"], value)
 
     @property
     def MplsBos(self):
@@ -478,10 +510,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the MPLS BoS field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsBos"])
+
     @MplsBos.setter
     def MplsBos(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsBos"], value)
 
     @property
     def MplsLabel(self):
@@ -490,10 +523,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the MPLS label field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
+
     @MplsLabel.setter
     def MplsLabel(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabel"], value)
 
     @property
     def MplsTc(self):
@@ -502,10 +536,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The MPLS TC field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTc"])
+
     @MplsTc.setter
     def MplsTc(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTc"], value)
 
     @property
     def PbbISid(self):
@@ -514,10 +549,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the PBB I-SID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PbbISid'])
+        return self._get_attribute(self._SDM_ATT_MAP["PbbISid"])
+
     @PbbISid.setter
     def PbbISid(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PbbISid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PbbISid"], value)
 
     @property
     def PhysicalInPort(self):
@@ -526,10 +562,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the Physical IN port field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PhysicalInPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["PhysicalInPort"])
+
     @PhysicalInPort.setter
     def PhysicalInPort(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PhysicalInPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PhysicalInPort"], value)
 
     @property
     def SctpDestination(self):
@@ -538,10 +575,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The SCTP destination field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpDestination"])
+
     @SctpDestination.setter
     def SctpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpDestination"], value)
 
     @property
     def SctpSource(self):
@@ -550,10 +588,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the SCTP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["SctpSource"])
+
     @SctpSource.setter
     def SctpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SctpSource"], value)
 
     @property
     def TcpDestination(self):
@@ -562,10 +601,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The Transport destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpDestination"])
+
     @TcpDestination.setter
     def TcpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpDestination"], value)
 
     @property
     def TcpSource(self):
@@ -574,10 +614,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the TCP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpSource"])
+
     @TcpSource.setter
     def TcpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpSource"], value)
 
     @property
     def TunnelId(self):
@@ -586,10 +627,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the tunnel ID field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelId"])
+
     @TunnelId.setter
     def TunnelId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelId"], value)
 
     @property
     def UdpDestination(self):
@@ -598,10 +640,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the UDP destination field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpDestination"])
+
     @UdpDestination.setter
     def UdpDestination(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpDestination"], value)
 
     @property
     def UdpSource(self):
@@ -610,10 +653,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): Value of the UDP source field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSource"])
+
     @UdpSource.setter
     def UdpSource(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSource"], value)
 
     @property
     def VlanId(self):
@@ -622,10 +666,11 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The unique VLAN Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -634,12 +679,61 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         -------
         - dict(arg1:str,arg2:str): The User Priority for this VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbISid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        Cookie=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHashmask=None,
+        ExperimenterId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdDll=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6Source=None,
+        MetaData=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbISid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         """Updates flowStatMatchCriteria131TriggerAttributes resource on the server.
 
         Args
@@ -697,7 +791,55 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbISid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ArpDstHwAddr=None,
+        ArpDstIpv4Addr=None,
+        ArpOpcode=None,
+        ArpSrcHwAddr=None,
+        ArpSrcIpv4Addr=None,
+        Cookie=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        EthernetType=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHashmask=None,
+        ExperimenterId=None,
+        Icmpv4Code=None,
+        Icmpv4Type=None,
+        Icmpv6Code=None,
+        Icmpv6Type=None,
+        InPort=None,
+        IpDscp=None,
+        IpEcn=None,
+        IpProtocol=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Ipv6Destination=None,
+        Ipv6ExtHeader=None,
+        Ipv6FlowLabel=None,
+        Ipv6NdDll=None,
+        Ipv6NdSll=None,
+        Ipv6NdTarget=None,
+        Ipv6Source=None,
+        MetaData=None,
+        MplsBos=None,
+        MplsLabel=None,
+        MplsTc=None,
+        PbbISid=None,
+        PhysicalInPort=None,
+        SctpDestination=None,
+        SctpSource=None,
+        TcpDestination=None,
+        TcpSource=None,
+        TunnelId=None,
+        UdpDestination=None,
+        UdpSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         """Finds and retrieves flowStatMatchCriteria131TriggerAttributes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowStatMatchCriteria131TriggerAttributes resources from the server.

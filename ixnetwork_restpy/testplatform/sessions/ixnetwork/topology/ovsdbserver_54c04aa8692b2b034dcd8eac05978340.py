@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,32 +35,40 @@ class Ovsdbserver(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ovsdbserver'
+    _SDM_NAME = "ovsdbserver"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'ConnectionType': 'connectionType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DirectoryName': 'directoryName',
-        'Errors': 'errors',
-        'FileCaCertificate': 'fileCaCertificate',
-        'FileCertificate': 'fileCertificate',
-        'FilePrivKey': 'filePrivKey',
-        'ManagerCount': 'managerCount',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OvsdbSchema': 'ovsdbSchema',
-        'PseudoConnectedTo': 'pseudoConnectedTo',
-        'PseudoMultiplier': 'pseudoMultiplier',
-        'ServerTcpPort': 'serverTcpPort',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'Vxlan': 'vxlan',
+        "ConnectedVia": "connectedVia",
+        "ConnectionType": "connectionType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DirectoryName": "directoryName",
+        "Errors": "errors",
+        "FileCaCertificate": "fileCaCertificate",
+        "FileCertificate": "fileCertificate",
+        "FilePrivKey": "filePrivKey",
+        "ManagerCount": "managerCount",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OvsdbSchema": "ovsdbSchema",
+        "PseudoConnectedTo": "pseudoConnectedTo",
+        "PseudoMultiplier": "pseudoMultiplier",
+        "ServerTcpPort": "serverTcpPort",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "Vxlan": "vxlan",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -76,25 +85,29 @@ class Ovsdbserver(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.manager_c6443684a3a8badebe021783a46d1b90 import Manager
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.manager_c6443684a3a8badebe021783a46d1b90 import (
+            Manager,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Manager', None) is not None:
-                return self._properties.get('Manager')
+            if self._properties.get("Manager", None) is not None:
+                return self._properties.get("Manager")
         return Manager(self)._select()
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def ConnectionType(self):
@@ -105,7 +118,10 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Connection should use TCP or TLS
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConnectionType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConnectionType"])
+        )
 
     @property
     def Count(self):
@@ -115,7 +131,7 @@ class Ovsdbserver(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -125,7 +141,7 @@ class Ovsdbserver(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DirectoryName(self):
@@ -136,7 +152,8 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory in Client where the Certificate and Key Files are available
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DirectoryName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DirectoryName"]))
 
     @property
     def Errors(self):
@@ -145,7 +162,7 @@ class Ovsdbserver(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def FileCaCertificate(self):
@@ -156,7 +173,10 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): CA Certificate File
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FileCaCertificate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FileCaCertificate"])
+        )
 
     @property
     def FileCertificate(self):
@@ -167,7 +187,10 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Certificate File
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FileCertificate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FileCertificate"])
+        )
 
     @property
     def FilePrivKey(self):
@@ -178,7 +201,8 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Private Key File
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FilePrivKey']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FilePrivKey"]))
 
     @property
     def ManagerCount(self):
@@ -188,11 +212,12 @@ class Ovsdbserver(Base):
         -------
         - number: Number of Managers the OVSDB Server will initiate connections to
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ManagerCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ManagerCount"])
+
     @ManagerCount.setter
     def ManagerCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ManagerCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ManagerCount"], value)
 
     @property
     def Multiplier(self):
@@ -202,11 +227,12 @@ class Ovsdbserver(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -216,11 +242,12 @@ class Ovsdbserver(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OvsdbSchema(self):
@@ -231,7 +258,8 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Database schema
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OvsdbSchema']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OvsdbSchema"]))
 
     @property
     def PseudoConnectedTo(self):
@@ -241,11 +269,12 @@ class Ovsdbserver(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["PseudoConnectedTo"])
+
     @PseudoConnectedTo.setter
     def PseudoConnectedTo(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PseudoConnectedTo"], value)
 
     @property
     def PseudoMultiplier(self):
@@ -255,7 +284,7 @@ class Ovsdbserver(Base):
         -------
         - number: Multiplier for GUI-only connection
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PseudoMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["PseudoMultiplier"])
 
     @property
     def ServerTcpPort(self):
@@ -266,7 +295,8 @@ class Ovsdbserver(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the TCP port for the Server
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServerTcpPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ServerTcpPort"]))
 
     @property
     def SessionStatus(self):
@@ -276,7 +306,7 @@ class Ovsdbserver(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -286,11 +316,12 @@ class Ovsdbserver(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -299,7 +330,7 @@ class Ovsdbserver(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -309,7 +340,7 @@ class Ovsdbserver(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def Vxlan(self):
@@ -317,15 +348,25 @@ class Ovsdbserver(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vxlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vxlan"])
+
     @Vxlan.setter
     def Vxlan(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vxlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vxlan"], value)
 
-    def update(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        ManagerCount=None,
+        Multiplier=None,
+        Name=None,
+        PseudoConnectedTo=None,
+        StackedLayers=None,
+        Vxlan=None,
+    ):
         # type: (List[str], int, int, str, str, List[str], str) -> Ovsdbserver
         """Updates ovsdbserver resource on the server.
 
@@ -340,7 +381,7 @@ class Ovsdbserver(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
 
         Raises
         ------
@@ -348,7 +389,16 @@ class Ovsdbserver(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        ManagerCount=None,
+        Multiplier=None,
+        Name=None,
+        PseudoConnectedTo=None,
+        StackedLayers=None,
+        Vxlan=None,
+    ):
         # type: (List[str], int, int, str, str, List[str], str) -> Ovsdbserver
         """Adds a new ovsdbserver resource on the server and adds it to the container.
 
@@ -360,7 +410,7 @@ class Ovsdbserver(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
 
         Returns
         -------
@@ -382,7 +432,23 @@ class Ovsdbserver(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoMultiplier=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None, Vxlan=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        ManagerCount=None,
+        Multiplier=None,
+        Name=None,
+        PseudoConnectedTo=None,
+        PseudoMultiplier=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+        Vxlan=None,
+    ):
         """Finds and retrieves ovsdbserver resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ovsdbserver resources from the server.
@@ -404,7 +470,7 @@ class Ovsdbserver(Base):
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
 
         Returns
         -------
@@ -461,10 +527,12 @@ class Ovsdbserver(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -493,10 +561,12 @@ class Ovsdbserver(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -525,10 +595,12 @@ class Ovsdbserver(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -557,12 +629,24 @@ class Ovsdbserver(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ConnectionType=None, DirectoryName=None, FileCaCertificate=None, FileCertificate=None, FilePrivKey=None, OvsdbSchema=None, ServerTcpPort=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ConnectionType=None,
+        DirectoryName=None,
+        FileCaCertificate=None,
+        FileCertificate=None,
+        FilePrivKey=None,
+        OvsdbSchema=None,
+        ServerTcpPort=None,
+    ):
         """Base class infrastructure that gets a list of ovsdbserver device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

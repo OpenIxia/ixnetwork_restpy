@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,24 +34,23 @@ class MeterFeatureStatsLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'meterFeatureStatsLearnedInformation'
+    _SDM_NAME = "meterFeatureStatsLearnedInformation"
     _SDM_ATT_MAP = {
-        'BandTypes': 'bandTypes',
-        'Capabilities': 'capabilities',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MaxBands': 'maxBands',
-        'MaxColor': 'maxColor',
-        'MaxMeters': 'maxMeters',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "BandTypes": "bandTypes",
+        "Capabilities": "capabilities",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MaxBands": "maxBands",
+        "MaxColor": "maxColor",
+        "MaxMeters": "maxMeters",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MeterFeatureStatsLearnedInformation, self).__init__(parent, list_op)
@@ -63,7 +63,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: Specifies Band Types in Meter Feature
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BandTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["BandTypes"])
 
     @property
     def Capabilities(self):
@@ -73,7 +73,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: Specifies the Capabilities Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Capabilities'])
+        return self._get_attribute(self._SDM_ATT_MAP["Capabilities"])
 
     @property
     def DataPathId(self):
@@ -83,7 +83,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - number: The Data Path identifier of the OpenFlow Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -93,7 +93,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow Controller in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -103,7 +103,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: The error code of the received error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -113,7 +113,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: The type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def Latency(self):
@@ -123,7 +123,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - number: The latency measurement for the OpenFlow channel in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -133,7 +133,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MaxBands(self):
@@ -143,7 +143,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - number: Specifies Maximum Band Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxBands'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxBands"])
 
     @property
     def MaxColor(self):
@@ -153,7 +153,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - number: Specifies Maximum Color Value
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxColor'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxColor"])
 
     @property
     def MaxMeters(self):
@@ -163,7 +163,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - number: Specifies the Value of Maximum Meter
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxMeters'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxMeters"])
 
     @property
     def RemoteIp(self):
@@ -173,7 +173,7 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -183,10 +183,10 @@ class MeterFeatureStatsLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new meterFeatureStatsLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new meterFeatureStatsLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -198,7 +198,22 @@ class MeterFeatureStatsLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BandTypes=None, Capabilities=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, MaxBands=None, MaxColor=None, MaxMeters=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        BandTypes=None,
+        Capabilities=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        Latency=None,
+        LocalIp=None,
+        MaxBands=None,
+        MaxColor=None,
+        MaxMeters=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, int, str, str, str, int, str, int, int, int, str, str) -> MeterFeatureStatsLearnedInformation
         """Finds and retrieves meterFeatureStatsLearnedInformation resources from the server.
 

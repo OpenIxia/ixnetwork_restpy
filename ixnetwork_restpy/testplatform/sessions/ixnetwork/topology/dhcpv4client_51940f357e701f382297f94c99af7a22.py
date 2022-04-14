@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,34 +35,42 @@ class Dhcpv4client(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpv4client'
+    _SDM_NAME = "dhcpv4client"
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp4Broadcast': 'dhcp4Broadcast',
-        'Dhcp4GatewayAddress': 'dhcp4GatewayAddress',
-        'Dhcp4GatewayMac': 'dhcp4GatewayMac',
-        'Dhcp4ServerAddress': 'dhcp4ServerAddress',
-        'Dhcp4UseFirstServer': 'dhcp4UseFirstServer',
-        'DiscoveredAddresses': 'discoveredAddresses',
-        'DiscoveredGateways': 'discoveredGateways',
-        'DiscoveredPrefix': 'discoveredPrefix',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PadSize': 'padSize',
-        'RenewTimer': 'renewTimer',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'UseRapidCommit': 'useRapidCommit',
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Dhcp4Broadcast": "dhcp4Broadcast",
+        "Dhcp4GatewayAddress": "dhcp4GatewayAddress",
+        "Dhcp4GatewayMac": "dhcp4GatewayMac",
+        "Dhcp4ServerAddress": "dhcp4ServerAddress",
+        "Dhcp4UseFirstServer": "dhcp4UseFirstServer",
+        "DiscoveredAddresses": "discoveredAddresses",
+        "DiscoveredGateways": "discoveredGateways",
+        "DiscoveredPrefix": "discoveredPrefix",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "Errors": "errors",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PadSize": "padSize",
+        "RenewTimer": "renewTimer",
+        "SessionInfo": "sessionInfo",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "UseRapidCommit": "useRapidCommit",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -78,10 +87,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import (
+            Bfdv4Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Bfdv4Interface', None) is not None:
-                return self._properties.get('Bfdv4Interface')
+            if self._properties.get("Bfdv4Interface", None) is not None:
+                return self._properties.get("Bfdv4Interface")
         return Bfdv4Interface(self)
 
     @property
@@ -95,10 +107,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import (
+            BgpIpv4Peer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpIpv4Peer', None) is not None:
-                return self._properties.get('BgpIpv4Peer')
+            if self._properties.get("BgpIpv4Peer", None) is not None:
+                return self._properties.get("BgpIpv4Peer")
         return BgpIpv4Peer(self)
 
     @property
@@ -112,10 +127,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRe', None) is not None:
-                return self._properties.get('ECpriRe')
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
         return ECpriRe(self)
 
     @property
@@ -129,10 +147,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ECpriRec', None) is not None:
-                return self._properties.get('ECpriRec')
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
         return ECpriRec(self)
 
     @property
@@ -146,10 +167,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import (
+            Geneve,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Geneve', None) is not None:
-                return self._properties.get('Geneve')
+            if self._properties.get("Geneve", None) is not None:
+                return self._properties.get("Geneve")
         return Geneve(self)
 
     @property
@@ -163,10 +187,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import (
+            IgmpHost,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpHost', None) is not None:
-                return self._properties.get('IgmpHost')
+            if self._properties.get("IgmpHost", None) is not None:
+                return self._properties.get("IgmpHost")
         return IgmpHost(self)
 
     @property
@@ -180,10 +207,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import (
+            IgmpQuerier,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('IgmpQuerier', None) is not None:
-                return self._properties.get('IgmpQuerier')
+            if self._properties.get("IgmpQuerier", None) is not None:
+                return self._properties.get("IgmpQuerier")
         return IgmpQuerier(self)
 
     @property
@@ -197,10 +227,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import (
+            MplsOam,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MplsOam', None) is not None:
-                return self._properties.get('MplsOam')
+            if self._properties.get("MplsOam", None) is not None:
+                return self._properties.get("MplsOam")
         return MplsOam(self)
 
     @property
@@ -214,10 +247,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import (
+            NetconfClient,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NetconfClient', None) is not None:
-                return self._properties.get('NetconfClient')
+            if self._properties.get("NetconfClient", None) is not None:
+                return self._properties.get("NetconfClient")
         return NetconfClient(self)
 
     @property
@@ -231,10 +267,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624 import NetconfServer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624 import (
+            NetconfServer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NetconfServer', None) is not None:
-                return self._properties.get('NetconfServer')
+            if self._properties.get("NetconfServer", None) is not None:
+                return self._properties.get("NetconfServer")
         return NetconfServer(self)
 
     @property
@@ -248,10 +287,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import Ospfv2
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import (
+            Ospfv2,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv2', None) is not None:
-                return self._properties.get('Ospfv2')
+            if self._properties.get("Ospfv2", None) is not None:
+                return self._properties.get("Ospfv2")
         return Ospfv2(self)
 
     @property
@@ -265,10 +307,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import Pcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import (
+            Pcc,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pcc', None) is not None:
-                return self._properties.get('Pcc')
+            if self._properties.get("Pcc", None) is not None:
+                return self._properties.get("Pcc")
         return Pcc(self)
 
     @property
@@ -282,10 +327,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import (
+            Pce,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Pce', None) is not None:
-                return self._properties.get('Pce')
+            if self._properties.get("Pce", None) is not None:
+                return self._properties.get("Pce")
         return Pce(self)
 
     @property
@@ -299,10 +347,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import (
+            PimV4Interface,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PimV4Interface', None) is not None:
-                return self._properties.get('PimV4Interface')
+            if self._properties.get("PimV4Interface", None) is not None:
+                return self._properties.get("PimV4Interface")
         return PimV4Interface(self)
 
     @property
@@ -316,10 +367,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -333,10 +387,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import (
+            TlvProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvProfile', None) is not None:
-                return self._properties.get('TlvProfile')
+            if self._properties.get("TlvProfile", None) is not None:
+                return self._properties.get("TlvProfile")
         return TlvProfile(self)
 
     @property
@@ -350,10 +407,13 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import (
+            Vxlan,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlan', None) is not None:
-                return self._properties.get('Vxlan')
+            if self._properties.get("Vxlan", None) is not None:
+                return self._properties.get("Vxlan")
         return Vxlan(self)
 
     @property
@@ -367,25 +427,29 @@ class Dhcpv4client(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import Vxlangpe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import (
+            Vxlangpe,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Vxlangpe', None) is not None:
-                return self._properties.get('Vxlangpe')
+            if self._properties.get("Vxlangpe", None) is not None:
+                return self._properties.get("Vxlangpe")
         return Vxlangpe(self)
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -395,7 +459,7 @@ class Dhcpv4client(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -405,7 +469,7 @@ class Dhcpv4client(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Dhcp4Broadcast(self):
@@ -416,7 +480,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4Broadcast']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4Broadcast"])
+        )
 
     @property
     def Dhcp4GatewayAddress(self):
@@ -427,7 +494,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the Manual Gateway IP Address for the DHCPv4 Client.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4GatewayAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4GatewayAddress"])
+        )
 
     @property
     def Dhcp4GatewayMac(self):
@@ -438,7 +508,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configures the Manual Gateway MAC corresponding to the configured Manual Gateway IP of the DHCPv4 Client session.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4GatewayMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4GatewayMac"])
+        )
 
     @property
     def Dhcp4ServerAddress(self):
@@ -449,7 +522,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The address of the DHCP server from which the subnet will accept IP addresses.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4ServerAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ServerAddress"])
+        )
 
     @property
     def Dhcp4UseFirstServer(self):
@@ -460,7 +536,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the subnet accepts the IP addresses offered by the first server to respond with an offer of IP addresses.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Dhcp4UseFirstServer']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4UseFirstServer"])
+        )
 
     @property
     def DiscoveredAddresses(self):
@@ -470,7 +549,7 @@ class Dhcpv4client(Base):
         -------
         - list(str): The discovered IPv4 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredAddresses'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredAddresses"])
 
     @property
     def DiscoveredGateways(self):
@@ -480,7 +559,7 @@ class Dhcpv4client(Base):
         -------
         - list(str): The discovered gateway IPv4 addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredGateways'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredGateways"])
 
     @property
     def DiscoveredPrefix(self):
@@ -490,7 +569,7 @@ class Dhcpv4client(Base):
         -------
         - list(number): The discovered IPv4 prefix length.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscoveredPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredPrefix"])
 
     @property
     def EnableBfdRegistration(self):
@@ -501,7 +580,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP client will register with BFD. Once registered, DHCP client will go to INIT-REBOOT state whenever BFD will detect link down. By default, this option is disabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+        )
 
     @property
     def Errors(self):
@@ -510,7 +592,7 @@ class Dhcpv4client(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Multiplier(self):
@@ -520,11 +602,12 @@ class Dhcpv4client(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -534,11 +617,12 @@ class Dhcpv4client(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PadSize(self):
@@ -549,7 +633,8 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The no.of bytes that will get padded after the End option in discover packet
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PadSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PadSize"]))
 
     @property
     def RenewTimer(self):
@@ -560,7 +645,8 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The used-defined lease renewal timer. The value is estimated in seconds and will override the lease renewal timer if it is not zero and is smaller than server-defined value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RenewTimer']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RenewTimer"]))
 
     @property
     def SessionInfo(self):
@@ -570,7 +656,7 @@ class Dhcpv4client(Base):
         -------
         - list(str[arpFailed | discoverTimeout | excessiveTlvs | none | rebindTimeout | relayDown | renewTimeout | requestTimeout]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionStatus(self):
@@ -580,7 +666,7 @@ class Dhcpv4client(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -590,11 +676,12 @@ class Dhcpv4client(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -603,7 +690,7 @@ class Dhcpv4client(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -613,7 +700,7 @@ class Dhcpv4client(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def UseRapidCommit(self):
@@ -624,7 +711,10 @@ class Dhcpv4client(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP clients to negotiate leases with rapid commit.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseRapidCommit"])
+        )
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Dhcpv4client
@@ -677,7 +767,23 @@ class Dhcpv4client(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, DiscoveredAddresses=None, DiscoveredGateways=None, DiscoveredPrefix=None, Errors=None, Multiplier=None, Name=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        DiscoveredAddresses=None,
+        DiscoveredGateways=None,
+        DiscoveredPrefix=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves dhcpv4client resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv4client resources from the server.
@@ -756,10 +862,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Inform(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -788,10 +896,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('inform', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("inform", payload=payload, response_object=None)
 
     def Rebind(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -820,10 +930,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rebind', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rebind", payload=payload, response_object=None)
 
     def Renew(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -852,10 +964,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('renew', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("renew", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -884,10 +998,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def SendArp(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -916,10 +1032,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArp', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArp", payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
@@ -953,10 +1071,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPing", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -985,10 +1105,12 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1017,12 +1139,26 @@ class Dhcpv4client(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Dhcp4Broadcast=None, Dhcp4GatewayAddress=None, Dhcp4GatewayMac=None, Dhcp4ServerAddress=None, Dhcp4UseFirstServer=None, EnableBfdRegistration=None, PadSize=None, RenewTimer=None, UseRapidCommit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Dhcp4Broadcast=None,
+        Dhcp4GatewayAddress=None,
+        Dhcp4GatewayMac=None,
+        Dhcp4ServerAddress=None,
+        Dhcp4UseFirstServer=None,
+        EnableBfdRegistration=None,
+        PadSize=None,
+        RenewTimer=None,
+        UseRapidCommit=None,
+    ):
         """Base class infrastructure that gets a list of dhcpv4client device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

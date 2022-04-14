@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,29 @@ class Atm(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'atm'
+    _SDM_NAME = "atm"
     _SDM_ATT_MAP = {
-        'AtmEncapsulation': 'atmEncapsulation',
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'IncrementVci': 'incrementVci',
-        'IncrementVpi': 'incrementVpi',
-        'Name': 'name',
-        'TrafficGroupId': 'trafficGroupId',
-        'Vci': 'vci',
-        'Vpi': 'vpi',
+        "AtmEncapsulation": "atmEncapsulation",
+        "Count": "count",
+        "Enabled": "enabled",
+        "IncrementVci": "incrementVci",
+        "IncrementVpi": "incrementVpi",
+        "Name": "name",
+        "TrafficGroupId": "trafficGroupId",
+        "Vci": "vci",
+        "Vpi": "vpi",
     }
     _SDM_ENUM_MAP = {
-        'atmEncapsulation': ['llcRoutedSnap', 'llcBridged802p3WithFcs', 'llcBridged802p3WithOutFcs', 'ppp', 'vcMultiplexedPpp', 'vcMultiRouted', 'vcMultiBridged802p3WithFcs', 'vcMultiBridged802p3WithOutFcs'],
+        "atmEncapsulation": [
+            "llcRoutedSnap",
+            "llcBridged802p3WithFcs",
+            "llcBridged802p3WithOutFcs",
+            "ppp",
+            "vcMultiplexedPpp",
+            "vcMultiRouted",
+            "vcMultiBridged802p3WithFcs",
+            "vcMultiBridged802p3WithOutFcs",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -61,11 +71,12 @@ class Atm(Base):
         -------
         - str(llcRoutedSnap | llcBridged802p3WithFcs | llcBridged802p3WithOutFcs | ppp | vcMultiplexedPpp | vcMultiRouted | vcMultiBridged802p3WithFcs | vcMultiBridged802p3WithOutFcs): The type of ATM encapsulation to use for this ATM Name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AtmEncapsulation'])
+        return self._get_attribute(self._SDM_ATT_MAP["AtmEncapsulation"])
+
     @AtmEncapsulation.setter
     def AtmEncapsulation(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AtmEncapsulation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AtmEncapsulation"], value)
 
     @property
     def Count(self):
@@ -75,11 +86,12 @@ class Atm(Base):
         -------
         - number: The total number of VPI/VCI pairs to create.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -89,11 +101,12 @@ class Atm(Base):
         -------
         - bool: Enables this ATM VPI/VCI entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IncrementVci(self):
@@ -103,11 +116,12 @@ class Atm(Base):
         -------
         - number: Creates multiple VCIs. Each additional VCI will be incremented by 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementVci'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementVci"])
+
     @IncrementVci.setter
     def IncrementVci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementVci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementVci"], value)
 
     @property
     def IncrementVpi(self):
@@ -117,11 +131,12 @@ class Atm(Base):
         -------
         - number: Creates multiple VPIs. Each additional VPI will be incremented by 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementVpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementVpi"])
+
     @IncrementVpi.setter
     def IncrementVpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementVpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementVpi"], value)
 
     @property
     def Name(self):
@@ -131,11 +146,12 @@ class Atm(Base):
         -------
         - str: The identifier associated with this ATM VPI/VCI entry.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def TrafficGroupId(self):
@@ -145,11 +161,12 @@ class Atm(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def Vci(self):
@@ -159,11 +176,12 @@ class Atm(Base):
         -------
         - number: The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vci'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vci"])
+
     @Vci.setter
     def Vci(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vci'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vci"], value)
 
     @property
     def Vpi(self):
@@ -173,13 +191,25 @@ class Atm(Base):
         -------
         - number: The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Vpi'])
+        return self._get_attribute(self._SDM_ATT_MAP["Vpi"])
+
     @Vpi.setter
     def Vpi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Vpi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Vpi"], value)
 
-    def update(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+    def update(
+        self,
+        AtmEncapsulation=None,
+        Count=None,
+        Enabled=None,
+        IncrementVci=None,
+        IncrementVpi=None,
+        Name=None,
+        TrafficGroupId=None,
+        Vci=None,
+        Vpi=None,
+    ):
         # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Updates atm resource on the server.
 
@@ -201,7 +231,18 @@ class Atm(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+    def add(
+        self,
+        AtmEncapsulation=None,
+        Count=None,
+        Enabled=None,
+        IncrementVci=None,
+        IncrementVpi=None,
+        Name=None,
+        TrafficGroupId=None,
+        Vci=None,
+        Vpi=None,
+    ):
         # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Adds a new atm resource on the server and adds it to the container.
 
@@ -237,7 +278,18 @@ class Atm(Base):
         """
         self._delete()
 
-    def find(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+    def find(
+        self,
+        AtmEncapsulation=None,
+        Count=None,
+        Enabled=None,
+        IncrementVci=None,
+        IncrementVpi=None,
+        Name=None,
+        TrafficGroupId=None,
+        Vci=None,
+        Vpi=None,
+    ):
         # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Finds and retrieves atm resources from the server.
 

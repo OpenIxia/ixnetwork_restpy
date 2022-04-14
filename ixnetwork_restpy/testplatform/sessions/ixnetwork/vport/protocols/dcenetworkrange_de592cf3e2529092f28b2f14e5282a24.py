@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,30 +35,30 @@ class DceNetworkRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceNetworkRange'
+    _SDM_NAME = "dceNetworkRange"
     _SDM_ATT_MAP = {
-        'AdvertiseNetworkRange': 'advertiseNetworkRange',
-        'BroadcastRootPriorityStep': 'broadcastRootPriorityStep',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'EnableHostName': 'enableHostName',
-        'EnableMultiTopology': 'enableMultiTopology',
-        'EntryCol': 'entryCol',
-        'EntryRow': 'entryRow',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
-        'LinkType': 'linkType',
-        'NoOfCols': 'noOfCols',
-        'NoOfRows': 'noOfRows',
-        'NumberOfMultiDestinationTrees': 'numberOfMultiDestinationTrees',
-        'StartBroadcastRootPriority': 'startBroadcastRootPriority',
-        'StartSwitchId': 'startSwitchId',
-        'StartSystemId': 'startSystemId',
-        'SwitchIdPriority': 'switchIdPriority',
-        'SwitchIdStep': 'switchIdStep',
-        'SystemIdIncrementBy': 'systemIdIncrementBy',
+        "AdvertiseNetworkRange": "advertiseNetworkRange",
+        "BroadcastRootPriorityStep": "broadcastRootPriorityStep",
+        "CapabilityRouterId": "capabilityRouterId",
+        "EnableHostName": "enableHostName",
+        "EnableMultiTopology": "enableMultiTopology",
+        "EntryCol": "entryCol",
+        "EntryRow": "entryRow",
+        "HostNamePrefix": "hostNamePrefix",
+        "InterfaceMetric": "interfaceMetric",
+        "LinkType": "linkType",
+        "NoOfCols": "noOfCols",
+        "NoOfRows": "noOfRows",
+        "NumberOfMultiDestinationTrees": "numberOfMultiDestinationTrees",
+        "StartBroadcastRootPriority": "startBroadcastRootPriority",
+        "StartSwitchId": "startSwitchId",
+        "StartSystemId": "startSystemId",
+        "SwitchIdPriority": "switchIdPriority",
+        "SwitchIdStep": "switchIdStep",
+        "SystemIdIncrementBy": "systemIdIncrementBy",
     }
     _SDM_ENUM_MAP = {
-        'linkType': ['pointToPoint', 'broadcast'],
+        "linkType": ["pointToPoint", "broadcast"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,10 +75,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_45c069e4f39be165e2266b91bc876a78 import DceNodeIpv4Groups
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_45c069e4f39be165e2266b91bc876a78 import (
+            DceNodeIpv4Groups,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeIpv4Groups', None) is not None:
-                return self._properties.get('DceNodeIpv4Groups')
+            if self._properties.get("DceNodeIpv4Groups", None) is not None:
+                return self._properties.get("DceNodeIpv4Groups")
         return DceNodeIpv4Groups(self)
 
     @property
@@ -91,10 +95,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_b1c5a6a36b8a89171fe4ff9773ebcf11 import DceNodeIpv6Groups
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_b1c5a6a36b8a89171fe4ff9773ebcf11 import (
+            DceNodeIpv6Groups,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeIpv6Groups', None) is not None:
-                return self._properties.get('DceNodeIpv6Groups')
+            if self._properties.get("DceNodeIpv6Groups", None) is not None:
+                return self._properties.get("DceNodeIpv6Groups")
         return DceNodeIpv6Groups(self)
 
     @property
@@ -108,10 +115,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_1bea0f65691a805b1d1d4bad054594d3 import DceNodeMacGroups
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_1bea0f65691a805b1d1d4bad054594d3 import (
+            DceNodeMacGroups,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeMacGroups', None) is not None:
-                return self._properties.get('DceNodeMacGroups')
+            if self._properties.get("DceNodeMacGroups", None) is not None:
+                return self._properties.get("DceNodeMacGroups")
         return DceNodeMacGroups(self)
 
     @property
@@ -125,10 +135,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_34374b8565456318538178dbf3a92ccb import DceNodeTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_34374b8565456318538178dbf3a92ccb import (
+            DceNodeTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceNodeTopologyRange', None) is not None:
-                return self._properties.get('DceNodeTopologyRange')
+            if self._properties.get("DceNodeTopologyRange", None) is not None:
+                return self._properties.get("DceNodeTopologyRange")
         return DceNodeTopologyRange(self)
 
     @property
@@ -142,10 +155,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_c8ff484de41176eecca6e12142cde237 import DceOutsideLinks
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_c8ff484de41176eecca6e12142cde237 import (
+            DceOutsideLinks,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DceOutsideLinks', None) is not None:
-                return self._properties.get('DceOutsideLinks')
+            if self._properties.get("DceOutsideLinks", None) is not None:
+                return self._properties.get("DceOutsideLinks")
         return DceOutsideLinks(self)
 
     @property
@@ -159,10 +175,13 @@ class DceNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_4f6b90623cca463478f04a7f774acbab import TrillNodeMacRanges
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_4f6b90623cca463478f04a7f774acbab import (
+            TrillNodeMacRanges,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrillNodeMacRanges', None) is not None:
-                return self._properties.get('TrillNodeMacRanges')
+            if self._properties.get("TrillNodeMacRanges", None) is not None:
+                return self._properties.get("TrillNodeMacRanges")
         return TrillNodeMacRanges(self)
 
     @property
@@ -173,25 +192,27 @@ class DceNetworkRange(Base):
         -------
         - bool: If true, this DCE ISIS Network Range is advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertiseNetworkRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertiseNetworkRange"])
+
     @AdvertiseNetworkRange.setter
     def AdvertiseNetworkRange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvertiseNetworkRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvertiseNetworkRange"], value)
 
     @property
     def BroadcastRootPriorityStep(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The increment step of the Broadcast Root Priority of this emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BroadcastRootPriorityStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["BroadcastRootPriorityStep"])
+
     @BroadcastRootPriorityStep.setter
     def BroadcastRootPriorityStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BroadcastRootPriorityStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BroadcastRootPriorityStep"], value)
 
     @property
     def CapabilityRouterId(self):
@@ -201,11 +222,12 @@ class DceNetworkRange(Base):
         -------
         - str: The IP address format of Capability Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CapabilityRouterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CapabilityRouterId"])
+
     @CapabilityRouterId.setter
     def CapabilityRouterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CapabilityRouterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CapabilityRouterId"], value)
 
     @property
     def EnableHostName(self):
@@ -215,11 +237,12 @@ class DceNetworkRange(Base):
         -------
         - bool: If true, the given dynamic host name is transmitted in all the packets sent from this router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+
     @EnableHostName.setter
     def EnableHostName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHostName"], value)
 
     @property
     def EnableMultiTopology(self):
@@ -229,11 +252,12 @@ class DceNetworkRange(Base):
         -------
         - bool: Enables more than one topology (distribution tree) corresponding to the given R bridge.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMultiTopology'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMultiTopology"])
+
     @EnableMultiTopology.setter
     def EnableMultiTopology(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMultiTopology'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMultiTopology"], value)
 
     @property
     def EntryCol(self):
@@ -243,11 +267,12 @@ class DceNetworkRange(Base):
         -------
         - number: The value in this field is used in combination with entry row to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryCol'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryCol"])
+
     @EntryCol.setter
     def EntryCol(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryCol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryCol"], value)
 
     @property
     def EntryRow(self):
@@ -257,11 +282,12 @@ class DceNetworkRange(Base):
         -------
         - number: The value in this field is used in combination with entry column to specify which 'virtual' router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryRow"])
+
     @EntryRow.setter
     def EntryRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryRow"], value)
 
     @property
     def HostNamePrefix(self):
@@ -271,11 +297,12 @@ class DceNetworkRange(Base):
         -------
         - str: Allows to add a prefix to the generated host name of this router. When host name prefix is provided, the generated host name is appended by -1 for the first router and subsequently increased by 1 for each router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostNamePrefix"])
+
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostNamePrefix"], value)
 
     @property
     def InterfaceMetric(self):
@@ -285,11 +312,12 @@ class DceNetworkRange(Base):
         -------
         - number: The metric cost associated with this emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceMetric"], value)
 
     @property
     def LinkType(self):
@@ -299,7 +327,7 @@ class DceNetworkRange(Base):
         -------
         - str(pointToPoint | broadcast): For DCE ISIS emulation type, the type of network link is set to Point-Point and made read-only.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkType"])
 
     @property
     def NoOfCols(self):
@@ -309,11 +337,12 @@ class DceNetworkRange(Base):
         -------
         - number: The value in this field is used in combination with number of rows to create a matrix (grid) for a network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCols'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCols"])
+
     @NoOfCols.setter
     def NoOfCols(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCols'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCols"], value)
 
     @property
     def NoOfRows(self):
@@ -323,53 +352,57 @@ class DceNetworkRange(Base):
         -------
         - number: The value in this field is used in combination with number of columns to create a matrix (grid) for a network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfRows"])
+
     @NoOfRows.setter
     def NoOfRows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfRows"], value)
 
     @property
     def NumberOfMultiDestinationTrees(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The number of Multi-Destination Trees for the DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfMultiDestinationTrees"])
+
     @NumberOfMultiDestinationTrees.setter
     def NumberOfMultiDestinationTrees(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfMultiDestinationTrees"], value)
 
     @property
     def StartBroadcastRootPriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The starting value of the Broadcast Root Priority of this DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartBroadcastRootPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartBroadcastRootPriority"])
+
     @StartBroadcastRootPriority.setter
     def StartBroadcastRootPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartBroadcastRootPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartBroadcastRootPriority"], value)
 
     @property
     def StartSwitchId(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The Switch ID of this emulated DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSwitchId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSwitchId"])
+
     @StartSwitchId.setter
     def StartSwitchId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSwitchId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSwitchId"], value)
 
     @property
     def StartSystemId(self):
@@ -379,39 +412,42 @@ class DceNetworkRange(Base):
         -------
         - str: The System ID assigned to the starting DCE ISIS router in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSystemId"])
+
     @StartSystemId.setter
     def StartSystemId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSystemId"], value)
 
     @property
     def SwitchIdPriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The Switch ID priority of this DCE ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchIdPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchIdPriority"])
+
     @SwitchIdPriority.setter
     def SwitchIdPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchIdPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchIdPriority"], value)
 
     @property
     def SwitchIdStep(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The increment value by which the Switch ID of the DCE ISIS router increases.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SwitchIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SwitchIdStep"])
+
     @SwitchIdStep.setter
     def SwitchIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SwitchIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SwitchIdStep"], value)
 
     @property
     def SystemIdIncrementBy(self):
@@ -421,13 +457,34 @@ class DceNetworkRange(Base):
         -------
         - str: The incremented System ID used when more than one router is emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["SystemIdIncrementBy"])
+
     @SystemIdIncrementBy.setter
     def SystemIdIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SystemIdIncrementBy"], value)
 
-    def update(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
+    def update(
+        self,
+        AdvertiseNetworkRange=None,
+        BroadcastRootPriorityStep=None,
+        CapabilityRouterId=None,
+        EnableHostName=None,
+        EnableMultiTopology=None,
+        EntryCol=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        NumberOfMultiDestinationTrees=None,
+        StartBroadcastRootPriority=None,
+        StartSwitchId=None,
+        StartSystemId=None,
+        SwitchIdPriority=None,
+        SwitchIdStep=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, int, str, bool, bool, int, int, str, int, int, int, int, int, int, str, int, int, str) -> DceNetworkRange
         """Updates dceNetworkRange resource on the server.
 
@@ -458,7 +515,27 @@ class DceNetworkRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
+    def add(
+        self,
+        AdvertiseNetworkRange=None,
+        BroadcastRootPriorityStep=None,
+        CapabilityRouterId=None,
+        EnableHostName=None,
+        EnableMultiTopology=None,
+        EntryCol=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        NumberOfMultiDestinationTrees=None,
+        StartBroadcastRootPriority=None,
+        StartSwitchId=None,
+        StartSystemId=None,
+        SwitchIdPriority=None,
+        SwitchIdStep=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, int, str, bool, bool, int, int, str, int, int, int, int, int, int, str, int, int, str) -> DceNetworkRange
         """Adds a new dceNetworkRange resource on the server and adds it to the container.
 
@@ -503,7 +580,28 @@ class DceNetworkRange(Base):
         """
         self._delete()
 
-    def find(self, AdvertiseNetworkRange=None, BroadcastRootPriorityStep=None, CapabilityRouterId=None, EnableHostName=None, EnableMultiTopology=None, EntryCol=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, NumberOfMultiDestinationTrees=None, StartBroadcastRootPriority=None, StartSwitchId=None, StartSystemId=None, SwitchIdPriority=None, SwitchIdStep=None, SystemIdIncrementBy=None):
+    def find(
+        self,
+        AdvertiseNetworkRange=None,
+        BroadcastRootPriorityStep=None,
+        CapabilityRouterId=None,
+        EnableHostName=None,
+        EnableMultiTopology=None,
+        EntryCol=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        LinkType=None,
+        NoOfCols=None,
+        NoOfRows=None,
+        NumberOfMultiDestinationTrees=None,
+        StartBroadcastRootPriority=None,
+        StartSwitchId=None,
+        StartSystemId=None,
+        SwitchIdPriority=None,
+        SwitchIdStep=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, int, str, bool, bool, int, int, str, int, str, int, int, int, int, int, str, int, int, str) -> DceNetworkRange
         """Finds and retrieves dceNetworkRange resources from the server.
 

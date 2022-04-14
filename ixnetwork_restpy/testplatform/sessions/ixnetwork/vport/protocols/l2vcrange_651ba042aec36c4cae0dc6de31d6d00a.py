@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,85 +35,85 @@ class L2VcRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'l2VcRange'
+    _SDM_NAME = "l2VcRange"
     _SDM_ATT_MAP = {
-        'CapableOfReassembly': 'capableOfReassembly',
-        'Cas': 'cas',
-        'CeIpAddress': 'ceIpAddress',
-        'CemOption': 'cemOption',
-        'CemPayload': 'cemPayload',
-        'Count': 'count',
-        'Description': 'description',
-        'DoNotExpandIntoVcs': 'doNotExpandIntoVcs',
-        'DownInterval': 'downInterval',
-        'DownStartInterval': 'downStartInterval',
-        'EnableBfdIpUdpCv': 'enableBfdIpUdpCv',
-        'EnableBfdPwAchCv': 'enableBfdPwAchCv',
-        'EnableCBit': 'enableCBit',
-        'EnableCccvNegotiation': 'enableCccvNegotiation',
-        'EnableCemOption': 'enableCemOption',
-        'EnableCemPayload': 'enableCemPayload',
-        'EnableDescriptionPresent': 'enableDescriptionPresent',
-        'EnableLspPingCv': 'enableLspPingCv',
-        'EnableMaxAtmPresent': 'enableMaxAtmPresent',
-        'EnableMtuPresent': 'enableMtuPresent',
-        'EnablePacking': 'enablePacking',
-        'EnablePwAchCc': 'enablePwAchCc',
-        'EnablePwStatusTlv': 'enablePwStatusTlv',
-        'EnableRouterAlertCc': 'enableRouterAlertCc',
-        'Enabled': 'enabled',
-        'FecType': 'fecType',
-        'Frequency': 'frequency',
-        'IncludeRtpHeader': 'includeRtpHeader',
-        'IncludeSsrc': 'includeSsrc',
-        'IncludeTdmBitrate': 'includeTdmBitrate',
-        'IncludeTdmOption': 'includeTdmOption',
-        'IncludeTdmPayload': 'includeTdmPayload',
-        'IpType': 'ipType',
-        'LabelMode': 'labelMode',
-        'LabelStart': 'labelStart',
-        'MaxNumberOfAtmCells': 'maxNumberOfAtmCells',
-        'Mtu': 'mtu',
-        'PayloadType': 'payloadType',
-        'PeerAddress': 'peerAddress',
-        'ProvisioningModel': 'provisioningModel',
-        'PwStatusCode': 'pwStatusCode',
-        'RepeatCount': 'repeatCount',
-        'SendPwStatus': 'sendPwStatus',
-        'SourceAiiAsIp': 'sourceAiiAsIp',
-        'SourceAiiAsNumber': 'sourceAiiAsNumber',
-        'SourceAiiType': 'sourceAiiType',
-        'Sp': 'sp',
-        'Ssrc': 'ssrc',
-        'Step': 'step',
-        'TargetAiiAsIp': 'targetAiiAsIp',
-        'TargetAiiAsNumber': 'targetAiiAsNumber',
-        'TargetAiiType': 'targetAiiType',
-        'TdmBitrate': 'tdmBitrate',
-        'TdmDataSize': 'tdmDataSize',
-        'TimestampMode': 'timestampMode',
-        'UpInterval': 'upInterval',
-        'VcId': 'vcId',
-        'VcIdStep': 'vcIdStep',
-        'VplsIdAsNumber': 'vplsIdAsNumber',
-        'VplsIdAsNumberStep': 'vplsIdAsNumberStep',
-        'VplsIdAssignedNumber': 'vplsIdAssignedNumber',
-        'VplsIdAssignedNumberStep': 'vplsIdAssignedNumberStep',
-        'VplsIdCount': 'vplsIdCount',
-        'VplsIdIpAddress': 'vplsIdIpAddress',
-        'VplsIdIpAddressStep': 'vplsIdIpAddressStep',
-        'VplsIdType': 'vplsIdType',
+        "CapableOfReassembly": "capableOfReassembly",
+        "Cas": "cas",
+        "CeIpAddress": "ceIpAddress",
+        "CemOption": "cemOption",
+        "CemPayload": "cemPayload",
+        "Count": "count",
+        "Description": "description",
+        "DoNotExpandIntoVcs": "doNotExpandIntoVcs",
+        "DownInterval": "downInterval",
+        "DownStartInterval": "downStartInterval",
+        "EnableBfdIpUdpCv": "enableBfdIpUdpCv",
+        "EnableBfdPwAchCv": "enableBfdPwAchCv",
+        "EnableCBit": "enableCBit",
+        "EnableCccvNegotiation": "enableCccvNegotiation",
+        "EnableCemOption": "enableCemOption",
+        "EnableCemPayload": "enableCemPayload",
+        "EnableDescriptionPresent": "enableDescriptionPresent",
+        "EnableLspPingCv": "enableLspPingCv",
+        "EnableMaxAtmPresent": "enableMaxAtmPresent",
+        "EnableMtuPresent": "enableMtuPresent",
+        "EnablePacking": "enablePacking",
+        "EnablePwAchCc": "enablePwAchCc",
+        "EnablePwStatusTlv": "enablePwStatusTlv",
+        "EnableRouterAlertCc": "enableRouterAlertCc",
+        "Enabled": "enabled",
+        "FecType": "fecType",
+        "Frequency": "frequency",
+        "IncludeRtpHeader": "includeRtpHeader",
+        "IncludeSsrc": "includeSsrc",
+        "IncludeTdmBitrate": "includeTdmBitrate",
+        "IncludeTdmOption": "includeTdmOption",
+        "IncludeTdmPayload": "includeTdmPayload",
+        "IpType": "ipType",
+        "LabelMode": "labelMode",
+        "LabelStart": "labelStart",
+        "MaxNumberOfAtmCells": "maxNumberOfAtmCells",
+        "Mtu": "mtu",
+        "PayloadType": "payloadType",
+        "PeerAddress": "peerAddress",
+        "ProvisioningModel": "provisioningModel",
+        "PwStatusCode": "pwStatusCode",
+        "RepeatCount": "repeatCount",
+        "SendPwStatus": "sendPwStatus",
+        "SourceAiiAsIp": "sourceAiiAsIp",
+        "SourceAiiAsNumber": "sourceAiiAsNumber",
+        "SourceAiiType": "sourceAiiType",
+        "Sp": "sp",
+        "Ssrc": "ssrc",
+        "Step": "step",
+        "TargetAiiAsIp": "targetAiiAsIp",
+        "TargetAiiAsNumber": "targetAiiAsNumber",
+        "TargetAiiType": "targetAiiType",
+        "TdmBitrate": "tdmBitrate",
+        "TdmDataSize": "tdmDataSize",
+        "TimestampMode": "timestampMode",
+        "UpInterval": "upInterval",
+        "VcId": "vcId",
+        "VcIdStep": "vcIdStep",
+        "VplsIdAsNumber": "vplsIdAsNumber",
+        "VplsIdAsNumberStep": "vplsIdAsNumberStep",
+        "VplsIdAssignedNumber": "vplsIdAssignedNumber",
+        "VplsIdAssignedNumberStep": "vplsIdAssignedNumberStep",
+        "VplsIdCount": "vplsIdCount",
+        "VplsIdIpAddress": "vplsIdIpAddress",
+        "VplsIdIpAddressStep": "vplsIdIpAddressStep",
+        "VplsIdType": "vplsIdType",
     }
     _SDM_ENUM_MAP = {
-        'cas': ['e1Trunk', 't1EsfTrunk', 't1SfTrunk'],
-        'fecType': ['pwIdFec', 'generalizedIdFecVpls'],
-        'labelMode': ['none', 'increment'],
-        'provisioningModel': ['manualConfiguration', 'bgpAutoDiscovery'],
-        'sourceAiiType': ['number', 'ipAddress'],
-        'sp': ['hexVal0', 'hexVal1', 'hexVal2', 'hexVal3'],
-        'targetAiiType': ['number', 'ipAddress'],
-        'timestampMode': ['absolute', 'differential'],
-        'vplsIdType': ['asNumber', 'ipAddress'],
+        "cas": ["e1Trunk", "t1EsfTrunk", "t1SfTrunk"],
+        "fecType": ["pwIdFec", "generalizedIdFecVpls"],
+        "labelMode": ["none", "increment"],
+        "provisioningModel": ["manualConfiguration", "bgpAutoDiscovery"],
+        "sourceAiiType": ["number", "ipAddress"],
+        "sp": ["hexVal0", "hexVal1", "hexVal2", "hexVal3"],
+        "targetAiiType": ["number", "ipAddress"],
+        "timestampMode": ["absolute", "differential"],
+        "vplsIdType": ["asNumber", "ipAddress"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -129,10 +130,13 @@ class L2VcRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2macvlanrange_b5d47400477b94bf42d3eeb6d47895d8 import L2MacVlanRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2macvlanrange_b5d47400477b94bf42d3eeb6d47895d8 import (
+            L2MacVlanRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2MacVlanRange', None) is not None:
-                return self._properties.get('L2MacVlanRange')
+            if self._properties.get("L2MacVlanRange", None) is not None:
+                return self._properties.get("L2MacVlanRange")
         return L2MacVlanRange(self)._select()
 
     @property
@@ -146,10 +150,13 @@ class L2VcRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vciprange_c61a81972a63da93a88d24c8322709a3 import L2VcIpRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vciprange_c61a81972a63da93a88d24c8322709a3 import (
+            L2VcIpRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('L2VcIpRange', None) is not None:
-                return self._properties.get('L2VcIpRange')
+            if self._properties.get("L2VcIpRange", None) is not None:
+                return self._properties.get("L2VcIpRange")
         return L2VcIpRange(self)._select()
 
     @property
@@ -163,10 +170,13 @@ class L2VcRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_9b5892cccfe90f8c60d2b9f6abbb5413 import TrafficGroupId
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_9b5892cccfe90f8c60d2b9f6abbb5413 import (
+            TrafficGroupId,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrafficGroupId', None) is not None:
-                return self._properties.get('TrafficGroupId')
+            if self._properties.get("TrafficGroupId", None) is not None:
+                return self._properties.get("TrafficGroupId")
         return TrafficGroupId(self)
 
     @property
@@ -177,11 +187,12 @@ class L2VcRange(Base):
         -------
         - bool: If enabled, makes the interface capable of reassembly.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CapableOfReassembly'])
+        return self._get_attribute(self._SDM_ATT_MAP["CapableOfReassembly"])
+
     @CapableOfReassembly.setter
     def CapableOfReassembly(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CapableOfReassembly'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CapableOfReassembly"], value)
 
     @property
     def Cas(self):
@@ -191,11 +202,12 @@ class L2VcRange(Base):
         -------
         - str(e1Trunk | t1EsfTrunk | t1SfTrunk): It signifies the CAS value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cas'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cas"])
+
     @Cas.setter
     def Cas(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cas'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cas"], value)
 
     @property
     def CeIpAddress(self):
@@ -205,11 +217,12 @@ class L2VcRange(Base):
         -------
         - str: The IP address of attached CE endpoint. If IP Type is set to Ipv4, then the default is 0.0.0.0, and if the IP type is set to Ipv6, then the default is 0:0:0:0:0:0:0:0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CeIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["CeIpAddress"])
+
     @CeIpAddress.setter
     def CeIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CeIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CeIpAddress"], value)
 
     @property
     def CemOption(self):
@@ -219,11 +232,12 @@ class L2VcRange(Base):
         -------
         - number: The value of the CEM option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CemOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["CemOption"])
+
     @CemOption.setter
     def CemOption(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CemOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CemOption"], value)
 
     @property
     def CemPayload(self):
@@ -233,11 +247,12 @@ class L2VcRange(Base):
         -------
         - number: If enabled, indicates that there is a Circuit Emulation Service over MPLS (CEM) payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CemPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["CemPayload"])
+
     @CemPayload.setter
     def CemPayload(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CemPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CemPayload"], value)
 
     @property
     def Count(self):
@@ -247,11 +262,12 @@ class L2VcRange(Base):
         -------
         - number: (In octets) The 8-bit VC information Length field. It indicates the length of the (2-octet) VC ID field plus combined length of all of the parameters in the VC FEC element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Description(self):
@@ -261,11 +277,12 @@ class L2VcRange(Base):
         -------
         - str: An optional user-defined interface description. It may be used with ALL VC types. Valid length is 0 to 80 octets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def DoNotExpandIntoVcs(self):
@@ -275,11 +292,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, the VC ranges do not expand into individual VCs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DoNotExpandIntoVcs'])
+        return self._get_attribute(self._SDM_ATT_MAP["DoNotExpandIntoVcs"])
+
     @DoNotExpandIntoVcs.setter
     def DoNotExpandIntoVcs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DoNotExpandIntoVcs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DoNotExpandIntoVcs"], value)
 
     @property
     def DownInterval(self):
@@ -289,11 +307,12 @@ class L2VcRange(Base):
         -------
         - number: Time interval for which the PW status will remain down. (Default= 60 seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownInterval"])
+
     @DownInterval.setter
     def DownInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownInterval"], value)
 
     @property
     def DownStartInterval(self):
@@ -303,11 +322,12 @@ class L2VcRange(Base):
         -------
         - number: The duration in time after session becomes up and a notification message being sent to make the session down. (Default= 30 seconds)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownStartInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownStartInterval"])
+
     @DownStartInterval.setter
     def DownStartInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownStartInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownStartInterval"], value)
 
     @property
     def EnableBfdIpUdpCv(self):
@@ -317,11 +337,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdIpUdpCv'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdIpUdpCv"])
+
     @EnableBfdIpUdpCv.setter
     def EnableBfdIpUdpCv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdIpUdpCv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdIpUdpCv"], value)
 
     @property
     def EnableBfdPwAchCv(self):
@@ -331,11 +352,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBfdPwAchCv'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBfdPwAchCv"])
+
     @EnableBfdPwAchCv.setter
     def EnableBfdPwAchCv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBfdPwAchCv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBfdPwAchCv"], value)
 
     @property
     def EnableCBit(self):
@@ -345,11 +367,12 @@ class L2VcRange(Base):
         -------
         - bool: Controls generation of the control word.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCBit"])
+
     @EnableCBit.setter
     def EnableCBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCBit"], value)
 
     @property
     def EnableCccvNegotiation(self):
@@ -359,11 +382,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCccvNegotiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCccvNegotiation"])
+
     @EnableCccvNegotiation.setter
     def EnableCccvNegotiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCccvNegotiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCccvNegotiation"], value)
 
     @property
     def EnableCemOption(self):
@@ -373,11 +397,12 @@ class L2VcRange(Base):
         -------
         - bool: Enable the Circuit Emulation over MPLS option, for encapsulation of TDM signals.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCemOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCemOption"])
+
     @EnableCemOption.setter
     def EnableCemOption(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCemOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCemOption"], value)
 
     @property
     def EnableCemPayload(self):
@@ -387,11 +412,12 @@ class L2VcRange(Base):
         -------
         - bool: Enable the Circuit Emulation over MPLS payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCemPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCemPayload"])
+
     @EnableCemPayload.setter
     def EnableCemPayload(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCemPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCemPayload"], value)
 
     @property
     def EnableDescriptionPresent(self):
@@ -401,11 +427,12 @@ class L2VcRange(Base):
         -------
         - bool: If enabled, indicates that an optional interface description is present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDescriptionPresent'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDescriptionPresent"])
+
     @EnableDescriptionPresent.setter
     def EnableDescriptionPresent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDescriptionPresent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDescriptionPresent"], value)
 
     @property
     def EnableLspPingCv(self):
@@ -415,11 +442,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLspPingCv'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLspPingCv"])
+
     @EnableLspPingCv.setter
     def EnableLspPingCv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLspPingCv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLspPingCv"], value)
 
     @property
     def EnableMaxAtmPresent(self):
@@ -429,11 +457,12 @@ class L2VcRange(Base):
         -------
         - bool: Enables the generation of an interface parameter field with the maximum number of concatenated ATM cells. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMaxAtmPresent'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMaxAtmPresent"])
+
     @EnableMaxAtmPresent.setter
     def EnableMaxAtmPresent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMaxAtmPresent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMaxAtmPresent"], value)
 
     @property
     def EnableMtuPresent(self):
@@ -443,11 +472,12 @@ class L2VcRange(Base):
         -------
         - bool: This attribute enables the generation of an MTU interface parameter field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMtuPresent'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMtuPresent"])
+
     @EnableMtuPresent.setter
     def EnableMtuPresent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMtuPresent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMtuPresent"], value)
 
     @property
     def EnablePacking(self):
@@ -457,11 +487,12 @@ class L2VcRange(Base):
         -------
         - bool: (For L2 VC FEC ranges and in Unsolicited Label Distribution Mode ONLY.) If enabled, L2 VC FEC ranges will be aggregated within a single LDP PDU to conserve bandwidth and processing.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePacking"])
+
     @EnablePacking.setter
     def EnablePacking(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePacking"], value)
 
     @property
     def EnablePwAchCc(self):
@@ -471,11 +502,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePwAchCc'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePwAchCc"])
+
     @EnablePwAchCc.setter
     def EnablePwAchCc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePwAchCc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePwAchCc"], value)
 
     @property
     def EnablePwStatusTlv(self):
@@ -485,11 +517,12 @@ class L2VcRange(Base):
         -------
         - bool: If checked, this enables the use of PW status TLV in notification messages to notify the PW status.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePwStatusTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePwStatusTlv"])
+
     @EnablePwStatusTlv.setter
     def EnablePwStatusTlv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePwStatusTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePwStatusTlv"], value)
 
     @property
     def EnableRouterAlertCc(self):
@@ -499,11 +532,12 @@ class L2VcRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRouterAlertCc'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableRouterAlertCc"])
+
     @EnableRouterAlertCc.setter
     def EnableRouterAlertCc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRouterAlertCc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableRouterAlertCc"], value)
 
     @property
     def Enabled(self):
@@ -513,11 +547,12 @@ class L2VcRange(Base):
         -------
         - bool: Enables use of this VC range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FecType(self):
@@ -527,11 +562,12 @@ class L2VcRange(Base):
         -------
         - str(pwIdFec | generalizedIdFecVpls): The FEC type. The options are: PW Id FEC 0x80, Generalized Id FEC 0x81 VPLS.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FecType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FecType"])
+
     @FecType.setter
     def FecType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FecType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FecType"], value)
 
     @property
     def Frequency(self):
@@ -541,11 +577,12 @@ class L2VcRange(Base):
         -------
         - number: It is the frequency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Frequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Frequency"])
+
     @Frequency.setter
     def Frequency(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Frequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Frequency"], value)
 
     @property
     def IncludeRtpHeader(self):
@@ -555,11 +592,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, includes the RTP header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeRtpHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeRtpHeader"])
+
     @IncludeRtpHeader.setter
     def IncludeRtpHeader(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeRtpHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeRtpHeader"], value)
 
     @property
     def IncludeSsrc(self):
@@ -569,11 +607,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, enables SSRC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeSsrc'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeSsrc"])
+
     @IncludeSsrc.setter
     def IncludeSsrc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeSsrc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeSsrc"], value)
 
     @property
     def IncludeTdmBitrate(self):
@@ -583,11 +622,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, enables TDM bit rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTdmBitrate'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTdmBitrate"])
+
     @IncludeTdmBitrate.setter
     def IncludeTdmBitrate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTdmBitrate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTdmBitrate"], value)
 
     @property
     def IncludeTdmOption(self):
@@ -597,11 +637,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, includes the TDM option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTdmOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTdmOption"])
+
     @IncludeTdmOption.setter
     def IncludeTdmOption(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTdmOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTdmOption"], value)
 
     @property
     def IncludeTdmPayload(self):
@@ -611,11 +652,12 @@ class L2VcRange(Base):
         -------
         - bool: If true, enables TDM payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeTdmPayload'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTdmPayload"])
+
     @IncludeTdmPayload.setter
     def IncludeTdmPayload(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeTdmPayload'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTdmPayload"], value)
 
     @property
     def IpType(self):
@@ -625,11 +667,12 @@ class L2VcRange(Base):
         -------
         - number: The type (IPv4 or IPv6) of the neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def LabelMode(self):
@@ -639,11 +682,12 @@ class L2VcRange(Base):
         -------
         - str(none | increment): Indicates whether the same label or incrementing labels should be used in the VC ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelMode"])
+
     @LabelMode.setter
     def LabelMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelMode"], value)
 
     @property
     def LabelStart(self):
@@ -653,11 +697,12 @@ class L2VcRange(Base):
         -------
         - number: The first label in the range of labels. The default is 16.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelStart"])
+
     @LabelStart.setter
     def LabelStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelStart"], value)
 
     @property
     def MaxNumberOfAtmCells(self):
@@ -667,11 +712,12 @@ class L2VcRange(Base):
         -------
         - number: The maximum number of ATM cells which may be concatenated and sent in a single MPLS frame. This parameter is part of the FEC element.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfAtmCells'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfAtmCells"])
+
     @MaxNumberOfAtmCells.setter
     def MaxNumberOfAtmCells(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfAtmCells'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxNumberOfAtmCells"], value)
 
     @property
     def Mtu(self):
@@ -681,11 +727,12 @@ class L2VcRange(Base):
         -------
         - number: (in octets) The 2-octet value for the maximum Transmission Unit (MTU).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mtu"])
+
     @Mtu.setter
     def Mtu(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
     def PayloadType(self):
@@ -695,11 +742,12 @@ class L2VcRange(Base):
         -------
         - number: It is the payload type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PayloadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PayloadType"])
+
     @PayloadType.setter
     def PayloadType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PayloadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PayloadType"], value)
 
     @property
     def PeerAddress(self):
@@ -709,11 +757,12 @@ class L2VcRange(Base):
         -------
         - str: The IPv4 address of the LDP router which is the peer for this VC range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerAddress"])
+
     @PeerAddress.setter
     def PeerAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerAddress"], value)
 
     @property
     def ProvisioningModel(self):
@@ -723,11 +772,12 @@ class L2VcRange(Base):
         -------
         - str(manualConfiguration | bgpAutoDiscovery): Editable dropdown to denote the Provisioning Model.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProvisioningModel'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProvisioningModel"])
+
     @ProvisioningModel.setter
     def ProvisioningModel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProvisioningModel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProvisioningModel"], value)
 
     @property
     def PwStatusCode(self):
@@ -737,11 +787,12 @@ class L2VcRange(Base):
         -------
         - number: This is an editable dropdown to denote the PW status. This field is editable. The range is from 0x00000001 - 0xFFFFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PwStatusCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["PwStatusCode"])
+
     @PwStatusCode.setter
     def PwStatusCode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PwStatusCode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PwStatusCode"], value)
 
     @property
     def RepeatCount(self):
@@ -751,11 +802,12 @@ class L2VcRange(Base):
         -------
         - number: The number of times to repeat the above processes. The default is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RepeatCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RepeatCount"])
+
     @RepeatCount.setter
     def RepeatCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RepeatCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RepeatCount"], value)
 
     @property
     def SendPwStatus(self):
@@ -765,11 +817,12 @@ class L2VcRange(Base):
         -------
         - bool: If checked, it signifies whether to send a notification message with a PW status for the corresponding PW.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendPwStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendPwStatus"])
+
     @SendPwStatus.setter
     def SendPwStatus(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendPwStatus'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendPwStatus"], value)
 
     @property
     def SourceAiiAsIp(self):
@@ -779,11 +832,12 @@ class L2VcRange(Base):
         -------
         - str: The IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAiiAsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAiiAsIp"])
+
     @SourceAiiAsIp.setter
     def SourceAiiAsIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAiiAsIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAiiAsIp"], value)
 
     @property
     def SourceAiiAsNumber(self):
@@ -793,11 +847,12 @@ class L2VcRange(Base):
         -------
         - number: The numerical value indicating the AS of the Source AII.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAiiAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAiiAsNumber"])
+
     @SourceAiiAsNumber.setter
     def SourceAiiAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAiiAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAiiAsNumber"], value)
 
     @property
     def SourceAiiType(self):
@@ -807,11 +862,12 @@ class L2VcRange(Base):
         -------
         - str(number | ipAddress): Editable dropdown. The options are: AS, IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceAiiType'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceAiiType"])
+
     @SourceAiiType.setter
     def SourceAiiType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceAiiType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceAiiType"], value)
 
     @property
     def Sp(self):
@@ -821,11 +877,12 @@ class L2VcRange(Base):
         -------
         - str(hexVal0 | hexVal1 | hexVal2 | hexVal3): It signifies the SP value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Sp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Sp"])
+
     @Sp.setter
     def Sp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Sp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Sp"], value)
 
     @property
     def Ssrc(self):
@@ -835,11 +892,12 @@ class L2VcRange(Base):
         -------
         - number: Indicates the SSRC value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ssrc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ssrc"])
+
     @Ssrc.setter
     def Ssrc(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ssrc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ssrc"], value)
 
     @property
     def Step(self):
@@ -849,11 +907,12 @@ class L2VcRange(Base):
         -------
         - number: The number to increment the peer address by.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     @property
     def TargetAiiAsIp(self):
@@ -863,11 +922,12 @@ class L2VcRange(Base):
         -------
         - str: The IP address of the Target AII.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetAiiAsIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetAiiAsIp"])
+
     @TargetAiiAsIp.setter
     def TargetAiiAsIp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetAiiAsIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetAiiAsIp"], value)
 
     @property
     def TargetAiiAsNumber(self):
@@ -877,11 +937,12 @@ class L2VcRange(Base):
         -------
         - number: The numerical value of the Target AII.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetAiiAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetAiiAsNumber"])
+
     @TargetAiiAsNumber.setter
     def TargetAiiAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetAiiAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetAiiAsNumber"], value)
 
     @property
     def TargetAiiType(self):
@@ -891,11 +952,12 @@ class L2VcRange(Base):
         -------
         - str(number | ipAddress): Editable dropdown. The options are: AS, IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TargetAiiType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TargetAiiType"])
+
     @TargetAiiType.setter
     def TargetAiiType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TargetAiiType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TargetAiiType"], value)
 
     @property
     def TdmBitrate(self):
@@ -905,11 +967,12 @@ class L2VcRange(Base):
         -------
         - number: The tdm bit rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TdmBitrate'])
+        return self._get_attribute(self._SDM_ATT_MAP["TdmBitrate"])
+
     @TdmBitrate.setter
     def TdmBitrate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TdmBitrate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TdmBitrate"], value)
 
     @property
     def TdmDataSize(self):
@@ -919,11 +982,12 @@ class L2VcRange(Base):
         -------
         - number: Indicates the TDM data size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TdmDataSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["TdmDataSize"])
+
     @TdmDataSize.setter
     def TdmDataSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TdmDataSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TdmDataSize"], value)
 
     @property
     def TimestampMode(self):
@@ -933,11 +997,12 @@ class L2VcRange(Base):
         -------
         - str(absolute | differential): The time stamp mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimestampMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimestampMode"])
+
     @TimestampMode.setter
     def TimestampMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimestampMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimestampMode"], value)
 
     @property
     def UpInterval(self):
@@ -947,11 +1012,12 @@ class L2VcRange(Base):
         -------
         - number: Time interval for which the same process to be repeated. (Default = 30 sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpInterval"])
+
     @UpInterval.setter
     def UpInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpInterval"], value)
 
     @property
     def VcId(self):
@@ -961,11 +1027,12 @@ class L2VcRange(Base):
         -------
         - number: The 32-bit VC connection identifier. Used with the VC type to identify a specific VC (for VC types 0x0001 to 0x000B).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VcId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VcId"])
+
     @VcId.setter
     def VcId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VcId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VcId"], value)
 
     @property
     def VcIdStep(self):
@@ -975,11 +1042,12 @@ class L2VcRange(Base):
         -------
         - number: The increment step to be added to each additional VC ID in the range of VC IDs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VcIdStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VcIdStep"])
+
     @VcIdStep.setter
     def VcIdStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VcIdStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VcIdStep"], value)
 
     @property
     def VplsIdAsNumber(self):
@@ -989,11 +1057,12 @@ class L2VcRange(Base):
         -------
         - number: The 2 byte unsigned integer value indicating the VPLS ID AS Number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdAsNumber"])
+
     @VplsIdAsNumber.setter
     def VplsIdAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdAsNumber"], value)
 
     @property
     def VplsIdAsNumberStep(self):
@@ -1003,11 +1072,12 @@ class L2VcRange(Base):
         -------
         - number: The 2 byte unsigned integer value indicating the VPLS ID AS Number Step.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdAsNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdAsNumberStep"])
+
     @VplsIdAsNumberStep.setter
     def VplsIdAsNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdAsNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdAsNumberStep"], value)
 
     @property
     def VplsIdAssignedNumber(self):
@@ -1017,11 +1087,12 @@ class L2VcRange(Base):
         -------
         - number: The 2 or 4 byte unsigned integer value dependent on the vplsIdType
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdAssignedNumber"])
+
     @VplsIdAssignedNumber.setter
     def VplsIdAssignedNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdAssignedNumber"], value)
 
     @property
     def VplsIdAssignedNumberStep(self):
@@ -1031,11 +1102,12 @@ class L2VcRange(Base):
         -------
         - number: The 2 or 4 byte unsigned integer value dependent on the vplsIdType.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdAssignedNumberStep"])
+
     @VplsIdAssignedNumberStep.setter
     def VplsIdAssignedNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdAssignedNumberStep"], value)
 
     @property
     def VplsIdCount(self):
@@ -1045,11 +1117,12 @@ class L2VcRange(Base):
         -------
         - number: The 4 byte unsigned integer indicating the VPLS ID Count.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdCount"])
+
     @VplsIdCount.setter
     def VplsIdCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdCount"], value)
 
     @property
     def VplsIdIpAddress(self):
@@ -1059,11 +1132,12 @@ class L2VcRange(Base):
         -------
         - str: The IP address of the VPLS Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdIpAddress"])
+
     @VplsIdIpAddress.setter
     def VplsIdIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdIpAddress"], value)
 
     @property
     def VplsIdIpAddressStep(self):
@@ -1073,11 +1147,12 @@ class L2VcRange(Base):
         -------
         - str: The IP address of the VPLS Id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdIpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdIpAddressStep"])
+
     @VplsIdIpAddressStep.setter
     def VplsIdIpAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdIpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdIpAddressStep"], value)
 
     @property
     def VplsIdType(self):
@@ -1087,13 +1162,82 @@ class L2VcRange(Base):
         -------
         - str(asNumber | ipAddress): Editable dropdown. The options are: AS, IP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VplsIdType'])
+        return self._get_attribute(self._SDM_ATT_MAP["VplsIdType"])
+
     @VplsIdType.setter
     def VplsIdType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VplsIdType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VplsIdType"], value)
 
-    def update(self, CapableOfReassembly=None, Cas=None, CeIpAddress=None, CemOption=None, CemPayload=None, Count=None, Description=None, DoNotExpandIntoVcs=None, DownInterval=None, DownStartInterval=None, EnableBfdIpUdpCv=None, EnableBfdPwAchCv=None, EnableCBit=None, EnableCccvNegotiation=None, EnableCemOption=None, EnableCemPayload=None, EnableDescriptionPresent=None, EnableLspPingCv=None, EnableMaxAtmPresent=None, EnableMtuPresent=None, EnablePacking=None, EnablePwAchCc=None, EnablePwStatusTlv=None, EnableRouterAlertCc=None, Enabled=None, FecType=None, Frequency=None, IncludeRtpHeader=None, IncludeSsrc=None, IncludeTdmBitrate=None, IncludeTdmOption=None, IncludeTdmPayload=None, IpType=None, LabelMode=None, LabelStart=None, MaxNumberOfAtmCells=None, Mtu=None, PayloadType=None, PeerAddress=None, ProvisioningModel=None, PwStatusCode=None, RepeatCount=None, SendPwStatus=None, SourceAiiAsIp=None, SourceAiiAsNumber=None, SourceAiiType=None, Sp=None, Ssrc=None, Step=None, TargetAiiAsIp=None, TargetAiiAsNumber=None, TargetAiiType=None, TdmBitrate=None, TdmDataSize=None, TimestampMode=None, UpInterval=None, VcId=None, VcIdStep=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdCount=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None):
+    def update(
+        self,
+        CapableOfReassembly=None,
+        Cas=None,
+        CeIpAddress=None,
+        CemOption=None,
+        CemPayload=None,
+        Count=None,
+        Description=None,
+        DoNotExpandIntoVcs=None,
+        DownInterval=None,
+        DownStartInterval=None,
+        EnableBfdIpUdpCv=None,
+        EnableBfdPwAchCv=None,
+        EnableCBit=None,
+        EnableCccvNegotiation=None,
+        EnableCemOption=None,
+        EnableCemPayload=None,
+        EnableDescriptionPresent=None,
+        EnableLspPingCv=None,
+        EnableMaxAtmPresent=None,
+        EnableMtuPresent=None,
+        EnablePacking=None,
+        EnablePwAchCc=None,
+        EnablePwStatusTlv=None,
+        EnableRouterAlertCc=None,
+        Enabled=None,
+        FecType=None,
+        Frequency=None,
+        IncludeRtpHeader=None,
+        IncludeSsrc=None,
+        IncludeTdmBitrate=None,
+        IncludeTdmOption=None,
+        IncludeTdmPayload=None,
+        IpType=None,
+        LabelMode=None,
+        LabelStart=None,
+        MaxNumberOfAtmCells=None,
+        Mtu=None,
+        PayloadType=None,
+        PeerAddress=None,
+        ProvisioningModel=None,
+        PwStatusCode=None,
+        RepeatCount=None,
+        SendPwStatus=None,
+        SourceAiiAsIp=None,
+        SourceAiiAsNumber=None,
+        SourceAiiType=None,
+        Sp=None,
+        Ssrc=None,
+        Step=None,
+        TargetAiiAsIp=None,
+        TargetAiiAsNumber=None,
+        TargetAiiType=None,
+        TdmBitrate=None,
+        TdmDataSize=None,
+        TimestampMode=None,
+        UpInterval=None,
+        VcId=None,
+        VcIdStep=None,
+        VplsIdAsNumber=None,
+        VplsIdAsNumberStep=None,
+        VplsIdAssignedNumber=None,
+        VplsIdAssignedNumberStep=None,
+        VplsIdCount=None,
+        VplsIdIpAddress=None,
+        VplsIdIpAddressStep=None,
+        VplsIdType=None,
+    ):
         # type: (bool, str, str, int, int, int, str, bool, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, bool, bool, bool, bool, bool, int, str, int, int, int, int, str, str, int, int, bool, str, int, str, str, int, int, str, int, str, int, int, str, int, int, int, int, int, int, int, int, str, str, str) -> L2VcRange
         """Updates l2VcRange resource on the server.
 
@@ -1172,7 +1316,75 @@ class L2VcRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CapableOfReassembly=None, Cas=None, CeIpAddress=None, CemOption=None, CemPayload=None, Count=None, Description=None, DoNotExpandIntoVcs=None, DownInterval=None, DownStartInterval=None, EnableBfdIpUdpCv=None, EnableBfdPwAchCv=None, EnableCBit=None, EnableCccvNegotiation=None, EnableCemOption=None, EnableCemPayload=None, EnableDescriptionPresent=None, EnableLspPingCv=None, EnableMaxAtmPresent=None, EnableMtuPresent=None, EnablePacking=None, EnablePwAchCc=None, EnablePwStatusTlv=None, EnableRouterAlertCc=None, Enabled=None, FecType=None, Frequency=None, IncludeRtpHeader=None, IncludeSsrc=None, IncludeTdmBitrate=None, IncludeTdmOption=None, IncludeTdmPayload=None, IpType=None, LabelMode=None, LabelStart=None, MaxNumberOfAtmCells=None, Mtu=None, PayloadType=None, PeerAddress=None, ProvisioningModel=None, PwStatusCode=None, RepeatCount=None, SendPwStatus=None, SourceAiiAsIp=None, SourceAiiAsNumber=None, SourceAiiType=None, Sp=None, Ssrc=None, Step=None, TargetAiiAsIp=None, TargetAiiAsNumber=None, TargetAiiType=None, TdmBitrate=None, TdmDataSize=None, TimestampMode=None, UpInterval=None, VcId=None, VcIdStep=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdCount=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None):
+    def add(
+        self,
+        CapableOfReassembly=None,
+        Cas=None,
+        CeIpAddress=None,
+        CemOption=None,
+        CemPayload=None,
+        Count=None,
+        Description=None,
+        DoNotExpandIntoVcs=None,
+        DownInterval=None,
+        DownStartInterval=None,
+        EnableBfdIpUdpCv=None,
+        EnableBfdPwAchCv=None,
+        EnableCBit=None,
+        EnableCccvNegotiation=None,
+        EnableCemOption=None,
+        EnableCemPayload=None,
+        EnableDescriptionPresent=None,
+        EnableLspPingCv=None,
+        EnableMaxAtmPresent=None,
+        EnableMtuPresent=None,
+        EnablePacking=None,
+        EnablePwAchCc=None,
+        EnablePwStatusTlv=None,
+        EnableRouterAlertCc=None,
+        Enabled=None,
+        FecType=None,
+        Frequency=None,
+        IncludeRtpHeader=None,
+        IncludeSsrc=None,
+        IncludeTdmBitrate=None,
+        IncludeTdmOption=None,
+        IncludeTdmPayload=None,
+        IpType=None,
+        LabelMode=None,
+        LabelStart=None,
+        MaxNumberOfAtmCells=None,
+        Mtu=None,
+        PayloadType=None,
+        PeerAddress=None,
+        ProvisioningModel=None,
+        PwStatusCode=None,
+        RepeatCount=None,
+        SendPwStatus=None,
+        SourceAiiAsIp=None,
+        SourceAiiAsNumber=None,
+        SourceAiiType=None,
+        Sp=None,
+        Ssrc=None,
+        Step=None,
+        TargetAiiAsIp=None,
+        TargetAiiAsNumber=None,
+        TargetAiiType=None,
+        TdmBitrate=None,
+        TdmDataSize=None,
+        TimestampMode=None,
+        UpInterval=None,
+        VcId=None,
+        VcIdStep=None,
+        VplsIdAsNumber=None,
+        VplsIdAsNumberStep=None,
+        VplsIdAssignedNumber=None,
+        VplsIdAssignedNumberStep=None,
+        VplsIdCount=None,
+        VplsIdIpAddress=None,
+        VplsIdIpAddressStep=None,
+        VplsIdType=None,
+    ):
         # type: (bool, str, str, int, int, int, str, bool, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, bool, bool, bool, bool, bool, int, str, int, int, int, int, str, str, int, int, bool, str, int, str, str, int, int, str, int, str, int, int, str, int, int, int, int, int, int, int, int, str, str, str) -> L2VcRange
         """Adds a new l2VcRange resource on the server and adds it to the container.
 
@@ -1265,7 +1477,75 @@ class L2VcRange(Base):
         """
         self._delete()
 
-    def find(self, CapableOfReassembly=None, Cas=None, CeIpAddress=None, CemOption=None, CemPayload=None, Count=None, Description=None, DoNotExpandIntoVcs=None, DownInterval=None, DownStartInterval=None, EnableBfdIpUdpCv=None, EnableBfdPwAchCv=None, EnableCBit=None, EnableCccvNegotiation=None, EnableCemOption=None, EnableCemPayload=None, EnableDescriptionPresent=None, EnableLspPingCv=None, EnableMaxAtmPresent=None, EnableMtuPresent=None, EnablePacking=None, EnablePwAchCc=None, EnablePwStatusTlv=None, EnableRouterAlertCc=None, Enabled=None, FecType=None, Frequency=None, IncludeRtpHeader=None, IncludeSsrc=None, IncludeTdmBitrate=None, IncludeTdmOption=None, IncludeTdmPayload=None, IpType=None, LabelMode=None, LabelStart=None, MaxNumberOfAtmCells=None, Mtu=None, PayloadType=None, PeerAddress=None, ProvisioningModel=None, PwStatusCode=None, RepeatCount=None, SendPwStatus=None, SourceAiiAsIp=None, SourceAiiAsNumber=None, SourceAiiType=None, Sp=None, Ssrc=None, Step=None, TargetAiiAsIp=None, TargetAiiAsNumber=None, TargetAiiType=None, TdmBitrate=None, TdmDataSize=None, TimestampMode=None, UpInterval=None, VcId=None, VcIdStep=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdCount=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None):
+    def find(
+        self,
+        CapableOfReassembly=None,
+        Cas=None,
+        CeIpAddress=None,
+        CemOption=None,
+        CemPayload=None,
+        Count=None,
+        Description=None,
+        DoNotExpandIntoVcs=None,
+        DownInterval=None,
+        DownStartInterval=None,
+        EnableBfdIpUdpCv=None,
+        EnableBfdPwAchCv=None,
+        EnableCBit=None,
+        EnableCccvNegotiation=None,
+        EnableCemOption=None,
+        EnableCemPayload=None,
+        EnableDescriptionPresent=None,
+        EnableLspPingCv=None,
+        EnableMaxAtmPresent=None,
+        EnableMtuPresent=None,
+        EnablePacking=None,
+        EnablePwAchCc=None,
+        EnablePwStatusTlv=None,
+        EnableRouterAlertCc=None,
+        Enabled=None,
+        FecType=None,
+        Frequency=None,
+        IncludeRtpHeader=None,
+        IncludeSsrc=None,
+        IncludeTdmBitrate=None,
+        IncludeTdmOption=None,
+        IncludeTdmPayload=None,
+        IpType=None,
+        LabelMode=None,
+        LabelStart=None,
+        MaxNumberOfAtmCells=None,
+        Mtu=None,
+        PayloadType=None,
+        PeerAddress=None,
+        ProvisioningModel=None,
+        PwStatusCode=None,
+        RepeatCount=None,
+        SendPwStatus=None,
+        SourceAiiAsIp=None,
+        SourceAiiAsNumber=None,
+        SourceAiiType=None,
+        Sp=None,
+        Ssrc=None,
+        Step=None,
+        TargetAiiAsIp=None,
+        TargetAiiAsNumber=None,
+        TargetAiiType=None,
+        TdmBitrate=None,
+        TdmDataSize=None,
+        TimestampMode=None,
+        UpInterval=None,
+        VcId=None,
+        VcIdStep=None,
+        VplsIdAsNumber=None,
+        VplsIdAsNumberStep=None,
+        VplsIdAssignedNumber=None,
+        VplsIdAssignedNumberStep=None,
+        VplsIdCount=None,
+        VplsIdIpAddress=None,
+        VplsIdIpAddressStep=None,
+        VplsIdType=None,
+    ):
         # type: (bool, str, str, int, int, int, str, bool, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, bool, bool, bool, bool, bool, int, str, int, int, int, int, str, str, int, int, bool, str, int, str, str, int, int, str, int, str, int, int, str, int, int, int, int, int, int, int, int, str, str, str) -> L2VcRange
         """Finds and retrieves l2VcRange resources from the server.
 

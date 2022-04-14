@@ -13,7 +13,9 @@ class Timer(object):
         - base (ixnetwork_restpy.base.Base): object that inherits from ixnetwork_restpy.base.Base
         """
         if isinstance(base, Base) is False:
-            raise Exception("The base object must be a valid instance of ixnetwork_restpy.base.Base")
+            raise Exception(
+                "The base object must be a valid instance of ixnetwork_restpy.base.Base"
+            )
         self._caller = getframeinfo(stack()[1][0])
         self._base = base
         self._msgs = []

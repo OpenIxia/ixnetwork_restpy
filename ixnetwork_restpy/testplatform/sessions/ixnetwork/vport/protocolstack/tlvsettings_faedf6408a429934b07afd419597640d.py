@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,12 +33,11 @@ class TlvSettings(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tlvSettings'
+    _SDM_NAME = "tlvSettings"
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
+        "ObjectId": "objectId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(TlvSettings, self).__init__(parent, list_op)
@@ -53,10 +53,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvcisconivcapable_ac09c6a52c14632b690eaa0d1b5e73a8 import LldpTlvCiscoNivCapable
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvcisconivcapable_ac09c6a52c14632b690eaa0d1b5e73a8 import (
+            LldpTlvCiscoNivCapable,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvCiscoNivCapable', None) is not None:
-                return self._properties.get('LldpTlvCiscoNivCapable')
+            if self._properties.get("LldpTlvCiscoNivCapable", None) is not None:
+                return self._properties.get("LldpTlvCiscoNivCapable")
         return LldpTlvCiscoNivCapable(self)._select()
 
     @property
@@ -70,10 +73,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvma_b51f62f119f8071d61fd9079b984e5b1 import LldpTlvMa
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvma_b51f62f119f8071d61fd9079b984e5b1 import (
+            LldpTlvMa,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvMa', None) is not None:
-                return self._properties.get('LldpTlvMa')
+            if self._properties.get("LldpTlvMa", None) is not None:
+                return self._properties.get("LldpTlvMa")
         return LldpTlvMa(self)._select()
 
     @property
@@ -87,10 +93,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvoui_4e354d831fb96e884fb961bdc998300c import LldpTlvOui
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvoui_4e354d831fb96e884fb961bdc998300c import (
+            LldpTlvOui,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvOui', None) is not None:
-                return self._properties.get('LldpTlvOui')
+            if self._properties.get("LldpTlvOui", None) is not None:
+                return self._properties.get("LldpTlvOui")
         return LldpTlvOui(self)._select()
 
     @property
@@ -104,10 +113,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvpd_4171f170fecfc786a3d45c6e849068fe import LldpTlvPd
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvpd_4171f170fecfc786a3d45c6e849068fe import (
+            LldpTlvPd,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvPd', None) is not None:
-                return self._properties.get('LldpTlvPd')
+            if self._properties.get("LldpTlvPd", None) is not None:
+                return self._properties.get("LldpTlvPd")
         return LldpTlvPd(self)._select()
 
     @property
@@ -121,10 +133,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsd_3b1eb228dea2a2d31a85fe1519124060 import LldpTlvSd
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsd_3b1eb228dea2a2d31a85fe1519124060 import (
+            LldpTlvSd,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvSd', None) is not None:
-                return self._properties.get('LldpTlvSd')
+            if self._properties.get("LldpTlvSd", None) is not None:
+                return self._properties.get("LldpTlvSd")
         return LldpTlvSd(self)._select()
 
     @property
@@ -138,10 +153,13 @@ class TlvSettings(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsn_24bf0d2844544a93d5fbf4a91d165bc2 import LldpTlvSn
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsn_24bf0d2844544a93d5fbf4a91d165bc2 import (
+            LldpTlvSn,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlvSn', None) is not None:
-                return self._properties.get('LldpTlvSn')
+            if self._properties.get("LldpTlvSn", None) is not None:
+                return self._properties.get("LldpTlvSn")
         return LldpTlvSn(self)._select()
 
     @property
@@ -152,7 +170,7 @@ class TlvSettings(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     def find(self, ObjectId=None):
         # type: (str) -> TlvSettings
@@ -211,10 +229,14 @@ class TlvSettings(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -233,10 +255,14 @@ class TlvSettings(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -255,7 +281,11 @@ class TlvSettings(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

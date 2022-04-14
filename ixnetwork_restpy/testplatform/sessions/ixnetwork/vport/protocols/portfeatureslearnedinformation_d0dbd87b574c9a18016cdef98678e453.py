@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,31 +34,30 @@ class PortFeaturesLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'portFeaturesLearnedInformation'
+    _SDM_NAME = "portFeaturesLearnedInformation"
     _SDM_ATT_MAP = {
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'Config': 'config',
-        'CurrentFeatures': 'currentFeatures',
-        'CurrentSpeed': 'currentSpeed',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'EthernetAddress': 'ethernetAddress',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MaxSpeed': 'maxSpeed',
-        'Name': 'name',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
-        'PortNumber': 'portNumber',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'State': 'state',
-        'SupportedFeatures': 'supportedFeatures',
+        "AdvertisedFeatures": "advertisedFeatures",
+        "Config": "config",
+        "CurrentFeatures": "currentFeatures",
+        "CurrentSpeed": "currentSpeed",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "EthernetAddress": "ethernetAddress",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MaxSpeed": "maxSpeed",
+        "Name": "name",
+        "NegotiatedVersion": "negotiatedVersion",
+        "PeerAdvertisedFeatures": "peerAdvertisedFeatures",
+        "PortNumber": "portNumber",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
+        "State": "state",
+        "SupportedFeatures": "supportedFeatures",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PortFeaturesLearnedInformation, self).__init__(parent, list_op)
@@ -70,7 +70,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The current features, like link modes, link types, and link features that the port advertises.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvertisedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvertisedFeatures"])
 
     @property
     def Config(self):
@@ -80,7 +80,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: Signifies the configuration supported by the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Config'])
+        return self._get_attribute(self._SDM_ATT_MAP["Config"])
 
     @property
     def CurrentFeatures(self):
@@ -90,7 +90,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The current features like the link modes, link types, and link features that the port supports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentFeatures"])
 
     @property
     def CurrentSpeed(self):
@@ -100,7 +100,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - number: The current speed of the port in kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CurrentSpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["CurrentSpeed"])
 
     @property
     def DataPathId(self):
@@ -110,7 +110,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -120,7 +120,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The Data Path identifier of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def ErrorCode(self):
@@ -130,7 +130,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The error code of the received error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -140,7 +140,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def EthernetAddress(self):
@@ -150,7 +150,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The Ethernet address of the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetAddress"])
 
     @property
     def Latency(self):
@@ -160,7 +160,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - number: The latency measurement for the OpenFlow channel in microseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -170,7 +170,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: Indicates the local IP of the Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MaxSpeed(self):
@@ -180,7 +180,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - number: The maximum speed of the port in kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxSpeed'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxSpeed"])
 
     @property
     def Name(self):
@@ -190,7 +190,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: Signifies the name of the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
     @property
     def NegotiatedVersion(self):
@@ -200,7 +200,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: Version of the protocol that has been negotiated between OpenFLow Controller and Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def PeerAdvertisedFeatures(self):
@@ -210,7 +210,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The current features, like, link modes, link types, and link features, that the peer advertises.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerAdvertisedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerAdvertisedFeatures"])
 
     @property
     def PortNumber(self):
@@ -220,7 +220,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - number: The port number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortNumber"])
 
     @property
     def RemoteIp(self):
@@ -230,7 +230,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -240,7 +240,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The state of reply for the Open Flow channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     @property
     def State(self):
@@ -250,7 +250,7 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: Signifies the states supported by the port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def SupportedFeatures(self):
@@ -260,10 +260,10 @@ class PortFeaturesLearnedInformation(Base):
         -------
         - str: The features like link modes, link types, and link features that is supported by the switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SupportedFeatures'])
+        return self._get_attribute(self._SDM_ATT_MAP["SupportedFeatures"])
 
     def add(self):
-        """Adds a new portFeaturesLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new portFeaturesLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -275,7 +275,29 @@ class PortFeaturesLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, EthernetAddress=None, Latency=None, LocalIp=None, MaxSpeed=None, Name=None, NegotiatedVersion=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, ReplyState=None, State=None, SupportedFeatures=None):
+    def find(
+        self,
+        AdvertisedFeatures=None,
+        Config=None,
+        CurrentFeatures=None,
+        CurrentSpeed=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        ErrorCode=None,
+        ErrorType=None,
+        EthernetAddress=None,
+        Latency=None,
+        LocalIp=None,
+        MaxSpeed=None,
+        Name=None,
+        NegotiatedVersion=None,
+        PeerAdvertisedFeatures=None,
+        PortNumber=None,
+        RemoteIp=None,
+        ReplyState=None,
+        State=None,
+        SupportedFeatures=None,
+    ):
         # type: (str, str, str, int, str, str, str, str, str, int, str, int, str, str, str, int, str, str, str, str) -> PortFeaturesLearnedInformation
         """Finds and retrieves portFeaturesLearnedInformation resources from the server.
 
@@ -350,7 +372,11 @@ class PortFeaturesLearnedInformation(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addRecordForTrigger', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addRecordForTrigger", payload=payload, response_object=None
+        )

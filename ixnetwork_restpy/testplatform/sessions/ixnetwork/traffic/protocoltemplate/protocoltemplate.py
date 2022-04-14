@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,14 +34,13 @@ class ProtocolTemplate(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'protocolTemplate'
+    _SDM_NAME = "protocolTemplate"
     _SDM_ATT_MAP = {
-        'DisplayName': 'displayName',
-        'StackTypeId': 'stackTypeId',
-        'TemplateName': 'templateName',
+        "DisplayName": "displayName",
+        "StackTypeId": "stackTypeId",
+        "TemplateName": "templateName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ProtocolTemplate, self).__init__(parent, list_op)
@@ -56,10 +56,13 @@ class ProtocolTemplate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.field.field import Field
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.field.field import (
+            Field,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Field', None) is not None:
-                return self._properties.get('Field')
+            if self._properties.get("Field", None) is not None:
+                return self._properties.get("Field")
         return Field(self)
 
     @property
@@ -70,7 +73,7 @@ class ProtocolTemplate(Base):
         -------
         - str: The display name of the template.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def StackTypeId(self):
@@ -78,9 +81,9 @@ class ProtocolTemplate(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackTypeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackTypeId"])
 
     @property
     def TemplateName(self):
@@ -90,10 +93,10 @@ class ProtocolTemplate(Base):
         -------
         - str: Indicates the protocol template name that is added to a packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TemplateName'])
+        return self._get_attribute(self._SDM_ATT_MAP["TemplateName"])
 
     def add(self):
-        """Adds a new protocolTemplate resource on the json, only valid with config assistant
+        """Adds a new protocolTemplate resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -116,7 +119,7 @@ class ProtocolTemplate(Base):
         Args
         ----
         - DisplayName (str): The display name of the template.
-        - StackTypeId (str): 
+        - StackTypeId (str):
         - TemplateName (str): Indicates the protocol template name that is added to a packet.
 
         Returns

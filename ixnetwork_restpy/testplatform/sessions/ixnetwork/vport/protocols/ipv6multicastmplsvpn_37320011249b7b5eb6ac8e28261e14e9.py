@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,18 +34,17 @@ class IpV6MulticastMplsVpn(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ipV6MulticastMplsVpn'
+    _SDM_NAME = "ipV6MulticastMplsVpn"
     _SDM_ATT_MAP = {
-        'AsPath': 'asPath',
-        'IpPrefix': 'ipPrefix',
-        'Label': 'label',
-        'Neighbor': 'neighbor',
-        'NextHop': 'nextHop',
-        'PrefixLength': 'prefixLength',
-        'RouteDistinguisher': 'routeDistinguisher',
+        "AsPath": "asPath",
+        "IpPrefix": "ipPrefix",
+        "Label": "label",
+        "Neighbor": "neighbor",
+        "NextHop": "nextHop",
+        "PrefixLength": "prefixLength",
+        "RouteDistinguisher": "routeDistinguisher",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IpV6MulticastMplsVpn, self).__init__(parent, list_op)
@@ -57,7 +57,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - str: Indicates the local IP address of the BGP router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["AsPath"])
 
     @property
     def IpPrefix(self):
@@ -67,7 +67,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - str: The route IP prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
 
     @property
     def Label(self):
@@ -77,7 +77,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Label'])
+        return self._get_attribute(self._SDM_ATT_MAP["Label"])
 
     @property
     def Neighbor(self):
@@ -87,7 +87,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - str: The descriptive identifier for the BGP neighbor.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
+        return self._get_attribute(self._SDM_ATT_MAP["Neighbor"])
 
     @property
     def NextHop(self):
@@ -97,7 +97,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - str: A 4-octet IP address which indicates the next hop.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHop"])
 
     @property
     def PrefixLength(self):
@@ -107,7 +107,7 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - number: The length of the route IP prefix, in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
 
     @property
     def RouteDistinguisher(self):
@@ -117,10 +117,10 @@ class IpV6MulticastMplsVpn(Base):
         -------
         - str: The route distinguisher for the route, for use with IPv6 MPLS VPN address types.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisher'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteDistinguisher"])
 
     def add(self):
-        """Adds a new ipV6MulticastMplsVpn resource on the json, only valid with config assistant
+        """Adds a new ipV6MulticastMplsVpn resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -132,7 +132,16 @@ class IpV6MulticastMplsVpn(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AsPath=None, IpPrefix=None, Label=None, Neighbor=None, NextHop=None, PrefixLength=None, RouteDistinguisher=None):
+    def find(
+        self,
+        AsPath=None,
+        IpPrefix=None,
+        Label=None,
+        Neighbor=None,
+        NextHop=None,
+        PrefixLength=None,
+        RouteDistinguisher=None,
+    ):
         # type: (str, str, int, str, str, int, str) -> IpV6MulticastMplsVpn
         """Finds and retrieves ipV6MulticastMplsVpn resources from the server.
 

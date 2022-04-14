@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,19 +33,28 @@ class SwitchFlow131TriggerAttributes(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'switchFlow131TriggerAttributes'
+    _SDM_NAME = "switchFlow131TriggerAttributes"
     _SDM_ATT_MAP = {
-        'OutGroup': 'outGroup',
-        'OutGroupInputMode': 'outGroupInputMode',
-        'OutPort': 'outPort',
-        'OutPortInputMode': 'outPortInputMode',
-        'TableId': 'tableId',
-        'TableIdInputMode': 'tableIdInputMode',
+        "OutGroup": "outGroup",
+        "OutGroupInputMode": "outGroupInputMode",
+        "OutPort": "outPort",
+        "OutPortInputMode": "outPortInputMode",
+        "TableId": "tableId",
+        "TableIdInputMode": "tableIdInputMode",
     }
     _SDM_ENUM_MAP = {
-        'outGroupInputMode': ['allGroups', 'anyGroup', 'outGroupCustom'],
-        'outPortInputMode': ['ofppInPort', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppAny', 'outPortCustom'],
-        'tableIdInputMode': ['allTables', 'emergency', 'custom'],
+        "outGroupInputMode": ["allGroups", "anyGroup", "outGroupCustom"],
+        "outPortInputMode": [
+            "ofppInPort",
+            "ofppNormal",
+            "ofppFlood",
+            "ofppAll",
+            "ofppController",
+            "ofppLocal",
+            "ofppAny",
+            "outPortCustom",
+        ],
+        "tableIdInputMode": ["allTables", "emergency", "custom"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,11 +68,12 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - number: This describes the out group value. It requires matching entries to include this as an output group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutGroup"])
+
     @OutGroup.setter
     def OutGroup(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutGroup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutGroup"], value)
 
     @property
     def OutGroupInputMode(self):
@@ -72,11 +83,12 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - str(allGroups | anyGroup | outGroupCustom): This describes the input mode of the out group value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutGroupInputMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutGroupInputMode"])
+
     @OutGroupInputMode.setter
     def OutGroupInputMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutGroupInputMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutGroupInputMode"], value)
 
     @property
     def OutPort(self):
@@ -86,11 +98,12 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - number: This describes the out port value. It requires matching entries to include this as an output port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPort"])
+
     @OutPort.setter
     def OutPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutPort"], value)
 
     @property
     def OutPortInputMode(self):
@@ -100,11 +113,12 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom): This describes the input mode of the out port value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutPortInputMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutPortInputMode"])
+
     @OutPortInputMode.setter
     def OutPortInputMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutPortInputMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutPortInputMode"], value)
 
     @property
     def TableId(self):
@@ -114,11 +128,12 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - number: This describes the table identifier. It indicates the next table in the packet processing pipeline.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
+
     @TableId.setter
     def TableId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableId"], value)
 
     @property
     def TableIdInputMode(self):
@@ -128,13 +143,22 @@ class SwitchFlow131TriggerAttributes(Base):
         -------
         - str(allTables | emergency | custom): This describes the input mode of the Table Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableIdInputMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableIdInputMode"])
+
     @TableIdInputMode.setter
     def TableIdInputMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableIdInputMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableIdInputMode"], value)
 
-    def update(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
+    def update(
+        self,
+        OutGroup=None,
+        OutGroupInputMode=None,
+        OutPort=None,
+        OutPortInputMode=None,
+        TableId=None,
+        TableIdInputMode=None,
+    ):
         # type: (int, str, int, str, int, str) -> SwitchFlow131TriggerAttributes
         """Updates switchFlow131TriggerAttributes resource on the server.
 
@@ -153,7 +177,15 @@ class SwitchFlow131TriggerAttributes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, OutGroup=None, OutGroupInputMode=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None):
+    def find(
+        self,
+        OutGroup=None,
+        OutGroupInputMode=None,
+        OutPort=None,
+        OutPortInputMode=None,
+        TableId=None,
+        TableIdInputMode=None,
+    ):
         # type: (int, str, int, str, int, str) -> SwitchFlow131TriggerAttributes
         """Finds and retrieves switchFlow131TriggerAttributes resources from the server.
 

@@ -4,91 +4,91 @@ from ixnetwork_restpy.files import Files
 
 class Tcp(Base):
     __slots__ = ()
-    _SDM_NAME = 'tcp'
+    _SDM_NAME = "tcp"
     _SDM_ATT_MAP = {
-        'SrcPort': 'tcp.header.srcPort-1',
-        'DstPort': 'tcp.header.dstPort-2',
-        'SequenceNumber': 'tcp.header.sequenceNumber-3',
-        'AcknowledgementNumber': 'tcp.header.acknowledgementNumber-4',
-        'DataOffset': 'tcp.header.dataOffset-5',
-        'Reserved': 'tcp.header.reserved-6',
-        'EcnNsBit': 'tcp.header.ecn.nsBit-7',
-        'EcnCwrBit': 'tcp.header.ecn.cwrBit-8',
-        'EcnEcnEchoBit': 'tcp.header.ecn.ecnEchoBit-9',
-        'ControlBitsUrgBit': 'tcp.header.controlBits.urgBit-10',
-        'ControlBitsAckBit': 'tcp.header.controlBits.ackBit-11',
-        'ControlBitsPshBit': 'tcp.header.controlBits.pshBit-12',
-        'ControlBitsRstBit': 'tcp.header.controlBits.rstBit-13',
-        'ControlBitsSynBit': 'tcp.header.controlBits.synBit-14',
-        'ControlBitsFinBit': 'tcp.header.controlBits.finBit-15',
-        'Window': 'tcp.header.window-16',
-        'Checksum': 'tcp.header.checksum-17',
-        'UrgentPtr': 'tcp.header.urgentPtr-18',
-        'UserDefinedKind': 'tcp.header.options.option.type.userDefined.kind-19',
-        'UserDefinedLength': 'tcp.header.options.option.type.userDefined.length-20',
-        'UserDefinedData': 'tcp.header.options.option.type.userDefined.data-21',
-        'EndOfOptionListKind': 'tcp.header.options.option.type.endOfOptionList.kind-22',
-        'NoOperationKind': 'tcp.header.options.option.type.noOperation.kind-23',
-        'MaximumSegmentSizeKind': 'tcp.header.options.option.type.maximumSegmentSize.kind-24',
-        'MaximumSegmentSizeLength': 'tcp.header.options.option.type.maximumSegmentSize.length-25',
-        'MaximumSegmentSizeData': 'tcp.header.options.option.type.maximumSegmentSize.data-26',
-        'WsoptKind': 'tcp.header.options.option.type.wsopt.kind-27',
-        'WsoptLength': 'tcp.header.options.option.type.wsopt.length-28',
-        'WsoptData': 'tcp.header.options.option.type.wsopt.data-29',
-        'SackPermittedKind': 'tcp.header.options.option.type.sackPermitted.kind-30',
-        'SackPermittedLength': 'tcp.header.options.option.type.sackPermitted.length-31',
-        'SackKind': 'tcp.header.options.option.type.sack.kind-32',
-        'SackLength': 'tcp.header.options.option.type.sack.length-33',
-        'SackData': 'tcp.header.options.option.type.sack.data-34',
-        'EchoKind': 'tcp.header.options.option.type.echo.kind-35',
-        'EchoLength': 'tcp.header.options.option.type.echo.length-36',
-        'EchoData': 'tcp.header.options.option.type.echo.data-37',
-        'EchoReplyKind': 'tcp.header.options.option.type.echoReply.kind-38',
-        'EchoReplyLength': 'tcp.header.options.option.type.echoReply.length-39',
-        'EchoReplyData': 'tcp.header.options.option.type.echoReply.data-40',
-        'TsoptKind': 'tcp.header.options.option.type.tsopt.kind-41',
-        'TsoptLength': 'tcp.header.options.option.type.tsopt.length-42',
-        'TsoptData': 'tcp.header.options.option.type.tsopt.data-43',
-        'PartialOrderConnectionPermittedKind': 'tcp.header.options.option.type.partialOrderConnectionPermitted.kind-44',
-        'PartialOrderConnectionPermittedLength': 'tcp.header.options.option.type.partialOrderConnectionPermitted.length-45',
-        'PartialOrderServiceProfileKind': 'tcp.header.options.option.type.partialOrderServiceProfile.kind-46',
-        'PartialOrderServiceProfileLength': 'tcp.header.options.option.type.partialOrderServiceProfile.length-47',
-        'PartialOrderServiceProfileData': 'tcp.header.options.option.type.partialOrderServiceProfile.data-48',
-        'CcKind': 'tcp.header.options.option.type.cc.kind-49',
-        'CcNewKind': 'tcp.header.options.option.type.ccNew.kind-50',
-        'CcEchoKind': 'tcp.header.options.option.type.ccEcho.kind-51',
-        'AlternateChecksumRequestKind': 'tcp.header.options.option.type.alternateChecksumRequest.kind-52',
-        'AlternateChecksumRequestLength': 'tcp.header.options.option.type.alternateChecksumRequest.length-53',
-        'AlternateChecksumRequestData': 'tcp.header.options.option.type.alternateChecksumRequest.data-54',
-        'AlternateChecksumDataKind': 'tcp.header.options.option.type.alternateChecksumData.kind-55',
-        'AlternateChecksumDataLength': 'tcp.header.options.option.type.alternateChecksumData.length-56',
-        'AlternateChecksumDataData': 'tcp.header.options.option.type.alternateChecksumData.data-57',
-        'SkeeterKind': 'tcp.header.options.option.type.skeeter.kind-58',
-        'BubbaKind': 'tcp.header.options.option.type.bubba.kind-59',
-        'TrailerChecksumKind': 'tcp.header.options.option.type.trailerChecksum.kind-60',
-        'TrailerChecksumLength': 'tcp.header.options.option.type.trailerChecksum.length-61',
-        'TrailerChecksumData': 'tcp.header.options.option.type.trailerChecksum.data-62',
-        'Md5SignatureKind': 'tcp.header.options.option.type.md5Signature.kind-63',
-        'Md5SignatureLength': 'tcp.header.options.option.type.md5Signature.length-64',
-        'Md5SignatureData': 'tcp.header.options.option.type.md5Signature.data-65',
-        'ScpsCapabilitiesKind': 'tcp.header.options.option.type.scpsCapabilities.kind-66',
-        'SelectiveNegativeAckKind': 'tcp.header.options.option.type.selectiveNegativeAck.kind-67',
-        'RecordBoundariesKind': 'tcp.header.options.option.type.recordBoundaries.kind-68',
-        'CorruptionExperiencedKind': 'tcp.header.options.option.type.corruptionExperienced.kind-69',
-        'SnapKind': 'tcp.header.options.option.type.snap.kind-70',
-        'Unassigned1Kind': 'tcp.header.options.option.type.unassigned1.kind-71',
-        'CompressionFilterKind': 'tcp.header.options.option.type.compressionFilter.kind-72',
-        'QuickStartResponseKind': 'tcp.header.options.option.type.quickStartResponse.kind-73',
-        'QuickStartResponseLength': 'tcp.header.options.option.type.quickStartResponse.length-74',
-        'QuickStartResponseData': 'tcp.header.options.option.type.quickStartResponse.data-75',
-        'Unassigned2Kind': 'tcp.header.options.option.type.unassigned2.kind-76',
-        'Rfc3692StypeExperiment1Kind': 'tcp.header.options.option.type.rfc3692StypeExperiment1.kind-77',
-        'Rfc3692StypeExperiment1Length': 'tcp.header.options.option.type.rfc3692StypeExperiment1.length-78',
-        'Rfc3692StypeExperiment1Data': 'tcp.header.options.option.type.rfc3692StypeExperiment1.data-79',
-        'Rfc3692StypeExperiment2Kind': 'tcp.header.options.option.type.rfc3692StypeExperiment2.kind-80',
-        'Rfc3692StypeExperiment2Length': 'tcp.header.options.option.type.rfc3692StypeExperiment2.length-81',
-        'Rfc3692StypeExperiment2Data': 'tcp.header.options.option.type.rfc3692StypeExperiment2.data-82',
-        'OptionsPad': 'tcp.header.options.pad-83',
+        "SrcPort": "tcp.header.srcPort-1",
+        "DstPort": "tcp.header.dstPort-2",
+        "SequenceNumber": "tcp.header.sequenceNumber-3",
+        "AcknowledgementNumber": "tcp.header.acknowledgementNumber-4",
+        "DataOffset": "tcp.header.dataOffset-5",
+        "Reserved": "tcp.header.reserved-6",
+        "EcnNsBit": "tcp.header.ecn.nsBit-7",
+        "EcnCwrBit": "tcp.header.ecn.cwrBit-8",
+        "EcnEcnEchoBit": "tcp.header.ecn.ecnEchoBit-9",
+        "ControlBitsUrgBit": "tcp.header.controlBits.urgBit-10",
+        "ControlBitsAckBit": "tcp.header.controlBits.ackBit-11",
+        "ControlBitsPshBit": "tcp.header.controlBits.pshBit-12",
+        "ControlBitsRstBit": "tcp.header.controlBits.rstBit-13",
+        "ControlBitsSynBit": "tcp.header.controlBits.synBit-14",
+        "ControlBitsFinBit": "tcp.header.controlBits.finBit-15",
+        "Window": "tcp.header.window-16",
+        "Checksum": "tcp.header.checksum-17",
+        "UrgentPtr": "tcp.header.urgentPtr-18",
+        "UserDefinedKind": "tcp.header.options.option.type.userDefined.kind-19",
+        "UserDefinedLength": "tcp.header.options.option.type.userDefined.length-20",
+        "UserDefinedData": "tcp.header.options.option.type.userDefined.data-21",
+        "EndOfOptionListKind": "tcp.header.options.option.type.endOfOptionList.kind-22",
+        "NoOperationKind": "tcp.header.options.option.type.noOperation.kind-23",
+        "MaximumSegmentSizeKind": "tcp.header.options.option.type.maximumSegmentSize.kind-24",
+        "MaximumSegmentSizeLength": "tcp.header.options.option.type.maximumSegmentSize.length-25",
+        "MaximumSegmentSizeData": "tcp.header.options.option.type.maximumSegmentSize.data-26",
+        "WsoptKind": "tcp.header.options.option.type.wsopt.kind-27",
+        "WsoptLength": "tcp.header.options.option.type.wsopt.length-28",
+        "WsoptData": "tcp.header.options.option.type.wsopt.data-29",
+        "SackPermittedKind": "tcp.header.options.option.type.sackPermitted.kind-30",
+        "SackPermittedLength": "tcp.header.options.option.type.sackPermitted.length-31",
+        "SackKind": "tcp.header.options.option.type.sack.kind-32",
+        "SackLength": "tcp.header.options.option.type.sack.length-33",
+        "SackData": "tcp.header.options.option.type.sack.data-34",
+        "EchoKind": "tcp.header.options.option.type.echo.kind-35",
+        "EchoLength": "tcp.header.options.option.type.echo.length-36",
+        "EchoData": "tcp.header.options.option.type.echo.data-37",
+        "EchoReplyKind": "tcp.header.options.option.type.echoReply.kind-38",
+        "EchoReplyLength": "tcp.header.options.option.type.echoReply.length-39",
+        "EchoReplyData": "tcp.header.options.option.type.echoReply.data-40",
+        "TsoptKind": "tcp.header.options.option.type.tsopt.kind-41",
+        "TsoptLength": "tcp.header.options.option.type.tsopt.length-42",
+        "TsoptData": "tcp.header.options.option.type.tsopt.data-43",
+        "PartialOrderConnectionPermittedKind": "tcp.header.options.option.type.partialOrderConnectionPermitted.kind-44",
+        "PartialOrderConnectionPermittedLength": "tcp.header.options.option.type.partialOrderConnectionPermitted.length-45",
+        "PartialOrderServiceProfileKind": "tcp.header.options.option.type.partialOrderServiceProfile.kind-46",
+        "PartialOrderServiceProfileLength": "tcp.header.options.option.type.partialOrderServiceProfile.length-47",
+        "PartialOrderServiceProfileData": "tcp.header.options.option.type.partialOrderServiceProfile.data-48",
+        "CcKind": "tcp.header.options.option.type.cc.kind-49",
+        "CcNewKind": "tcp.header.options.option.type.ccNew.kind-50",
+        "CcEchoKind": "tcp.header.options.option.type.ccEcho.kind-51",
+        "AlternateChecksumRequestKind": "tcp.header.options.option.type.alternateChecksumRequest.kind-52",
+        "AlternateChecksumRequestLength": "tcp.header.options.option.type.alternateChecksumRequest.length-53",
+        "AlternateChecksumRequestData": "tcp.header.options.option.type.alternateChecksumRequest.data-54",
+        "AlternateChecksumDataKind": "tcp.header.options.option.type.alternateChecksumData.kind-55",
+        "AlternateChecksumDataLength": "tcp.header.options.option.type.alternateChecksumData.length-56",
+        "AlternateChecksumDataData": "tcp.header.options.option.type.alternateChecksumData.data-57",
+        "SkeeterKind": "tcp.header.options.option.type.skeeter.kind-58",
+        "BubbaKind": "tcp.header.options.option.type.bubba.kind-59",
+        "TrailerChecksumKind": "tcp.header.options.option.type.trailerChecksum.kind-60",
+        "TrailerChecksumLength": "tcp.header.options.option.type.trailerChecksum.length-61",
+        "TrailerChecksumData": "tcp.header.options.option.type.trailerChecksum.data-62",
+        "Md5SignatureKind": "tcp.header.options.option.type.md5Signature.kind-63",
+        "Md5SignatureLength": "tcp.header.options.option.type.md5Signature.length-64",
+        "Md5SignatureData": "tcp.header.options.option.type.md5Signature.data-65",
+        "ScpsCapabilitiesKind": "tcp.header.options.option.type.scpsCapabilities.kind-66",
+        "SelectiveNegativeAckKind": "tcp.header.options.option.type.selectiveNegativeAck.kind-67",
+        "RecordBoundariesKind": "tcp.header.options.option.type.recordBoundaries.kind-68",
+        "CorruptionExperiencedKind": "tcp.header.options.option.type.corruptionExperienced.kind-69",
+        "SnapKind": "tcp.header.options.option.type.snap.kind-70",
+        "Unassigned1Kind": "tcp.header.options.option.type.unassigned1.kind-71",
+        "CompressionFilterKind": "tcp.header.options.option.type.compressionFilter.kind-72",
+        "QuickStartResponseKind": "tcp.header.options.option.type.quickStartResponse.kind-73",
+        "QuickStartResponseLength": "tcp.header.options.option.type.quickStartResponse.length-74",
+        "QuickStartResponseData": "tcp.header.options.option.type.quickStartResponse.data-75",
+        "Unassigned2Kind": "tcp.header.options.option.type.unassigned2.kind-76",
+        "Rfc3692StypeExperiment1Kind": "tcp.header.options.option.type.rfc3692StypeExperiment1.kind-77",
+        "Rfc3692StypeExperiment1Length": "tcp.header.options.option.type.rfc3692StypeExperiment1.length-78",
+        "Rfc3692StypeExperiment1Data": "tcp.header.options.option.type.rfc3692StypeExperiment1.data-79",
+        "Rfc3692StypeExperiment2Kind": "tcp.header.options.option.type.rfc3692StypeExperiment2.kind-80",
+        "Rfc3692StypeExperiment2Length": "tcp.header.options.option.type.rfc3692StypeExperiment2.length-81",
+        "Rfc3692StypeExperiment2Data": "tcp.header.options.option.type.rfc3692StypeExperiment2.data-82",
+        "OptionsPad": "tcp.header.options.pad-83",
     }
 
     def __init__(self, parent, list_op=False):
@@ -103,7 +103,8 @@ class Tcp(Base):
         Available enum values: Unassigned, 60, MSDP, 639, LDP, 646
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcPort"]))
 
     @property
     def DstPort(self):
@@ -114,7 +115,8 @@ class Tcp(Base):
         Available enum values: Unassigned, 60, MSDP, 639, LDP, 646
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DstPort']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstPort"]))
 
     @property
     def SequenceNumber(self):
@@ -124,7 +126,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SequenceNumber"])
+        )
 
     @property
     def AcknowledgementNumber(self):
@@ -134,7 +139,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AcknowledgementNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AcknowledgementNumber"])
+        )
 
     @property
     def DataOffset(self):
@@ -144,7 +152,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataOffset']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DataOffset"]))
 
     @property
     def Reserved(self):
@@ -154,7 +163,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def EcnNsBit(self):
@@ -164,7 +174,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcnNsBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EcnNsBit"]))
 
     @property
     def EcnCwrBit(self):
@@ -174,7 +185,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcnCwrBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EcnCwrBit"]))
 
     @property
     def EcnEcnEchoBit(self):
@@ -184,7 +196,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EcnEcnEchoBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EcnEcnEchoBit"]))
 
     @property
     def ControlBitsUrgBit(self):
@@ -194,7 +207,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsUrgBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsUrgBit"])
+        )
 
     @property
     def ControlBitsAckBit(self):
@@ -204,7 +220,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsAckBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsAckBit"])
+        )
 
     @property
     def ControlBitsPshBit(self):
@@ -214,7 +233,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsPshBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsPshBit"])
+        )
 
     @property
     def ControlBitsRstBit(self):
@@ -224,7 +246,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsRstBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsRstBit"])
+        )
 
     @property
     def ControlBitsSynBit(self):
@@ -234,7 +259,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsSynBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsSynBit"])
+        )
 
     @property
     def ControlBitsFinBit(self):
@@ -244,7 +272,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ControlBitsFinBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ControlBitsFinBit"])
+        )
 
     @property
     def Window(self):
@@ -254,7 +285,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Window']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Window"]))
 
     @property
     def Checksum(self):
@@ -264,7 +296,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Checksum']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Checksum"]))
 
     @property
     def UrgentPtr(self):
@@ -274,7 +307,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UrgentPtr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UrgentPtr"]))
 
     @property
     def UserDefinedKind(self):
@@ -284,7 +318,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedKind"])
+        )
 
     @property
     def UserDefinedLength(self):
@@ -294,7 +331,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedLength"])
+        )
 
     @property
     def UserDefinedData(self):
@@ -304,7 +344,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedData"])
+        )
 
     @property
     def EndOfOptionListKind(self):
@@ -314,7 +357,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndOfOptionListKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndOfOptionListKind"])
+        )
 
     @property
     def NoOperationKind(self):
@@ -324,7 +370,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoOperationKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NoOperationKind"])
+        )
 
     @property
     def MaximumSegmentSizeKind(self):
@@ -334,7 +383,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaximumSegmentSizeKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaximumSegmentSizeKind"])
+        )
 
     @property
     def MaximumSegmentSizeLength(self):
@@ -344,7 +396,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaximumSegmentSizeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaximumSegmentSizeLength"])
+        )
 
     @property
     def MaximumSegmentSizeData(self):
@@ -354,7 +409,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaximumSegmentSizeData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaximumSegmentSizeData"])
+        )
 
     @property
     def WsoptKind(self):
@@ -364,7 +422,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WsoptKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WsoptKind"]))
 
     @property
     def WsoptLength(self):
@@ -374,7 +433,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WsoptLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WsoptLength"]))
 
     @property
     def WsoptData(self):
@@ -384,7 +444,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WsoptData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WsoptData"]))
 
     @property
     def SackPermittedKind(self):
@@ -394,7 +455,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SackPermittedKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SackPermittedKind"])
+        )
 
     @property
     def SackPermittedLength(self):
@@ -404,7 +468,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SackPermittedLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SackPermittedLength"])
+        )
 
     @property
     def SackKind(self):
@@ -414,7 +481,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SackKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SackKind"]))
 
     @property
     def SackLength(self):
@@ -424,7 +492,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SackLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SackLength"]))
 
     @property
     def SackData(self):
@@ -434,7 +503,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SackData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SackData"]))
 
     @property
     def EchoKind(self):
@@ -444,7 +514,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoKind"]))
 
     @property
     def EchoLength(self):
@@ -454,7 +525,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoLength"]))
 
     @property
     def EchoData(self):
@@ -464,7 +536,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoData"]))
 
     @property
     def EchoReplyKind(self):
@@ -474,7 +547,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoReplyKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoReplyKind"]))
 
     @property
     def EchoReplyLength(self):
@@ -484,7 +558,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoReplyLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EchoReplyLength"])
+        )
 
     @property
     def EchoReplyData(self):
@@ -494,7 +571,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoReplyData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoReplyData"]))
 
     @property
     def TsoptKind(self):
@@ -504,7 +582,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TsoptKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsoptKind"]))
 
     @property
     def TsoptLength(self):
@@ -514,7 +593,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TsoptLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsoptLength"]))
 
     @property
     def TsoptData(self):
@@ -524,7 +604,8 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TsoptData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsoptData"]))
 
     @property
     def PartialOrderConnectionPermittedKind(self):
@@ -534,7 +615,13 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialOrderConnectionPermittedKind']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["PartialOrderConnectionPermittedKind"]
+            ),
+        )
 
     @property
     def PartialOrderConnectionPermittedLength(self):
@@ -544,7 +631,13 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialOrderConnectionPermittedLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["PartialOrderConnectionPermittedLength"]
+            ),
+        )
 
     @property
     def PartialOrderServiceProfileKind(self):
@@ -554,7 +647,11 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialOrderServiceProfileKind']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["PartialOrderServiceProfileKind"]),
+        )
 
     @property
     def PartialOrderServiceProfileLength(self):
@@ -564,7 +661,11 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialOrderServiceProfileLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["PartialOrderServiceProfileLength"]),
+        )
 
     @property
     def PartialOrderServiceProfileData(self):
@@ -574,7 +675,11 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PartialOrderServiceProfileData']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["PartialOrderServiceProfileData"]),
+        )
 
     @property
     def CcKind(self):
@@ -584,7 +689,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcKind"]))
 
     @property
     def CcNewKind(self):
@@ -594,7 +700,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcNewKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcNewKind"]))
 
     @property
     def CcEchoKind(self):
@@ -604,7 +711,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CcEchoKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CcEchoKind"]))
 
     @property
     def AlternateChecksumRequestKind(self):
@@ -614,7 +722,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumRequestKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumRequestKind"])
+        )
 
     @property
     def AlternateChecksumRequestLength(self):
@@ -624,7 +735,11 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumRequestLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumRequestLength"]),
+        )
 
     @property
     def AlternateChecksumRequestData(self):
@@ -634,7 +749,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumRequestData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumRequestData"])
+        )
 
     @property
     def AlternateChecksumDataKind(self):
@@ -644,7 +762,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumDataKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumDataKind"])
+        )
 
     @property
     def AlternateChecksumDataLength(self):
@@ -654,7 +775,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumDataLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumDataLength"])
+        )
 
     @property
     def AlternateChecksumDataData(self):
@@ -664,7 +788,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AlternateChecksumDataData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AlternateChecksumDataData"])
+        )
 
     @property
     def SkeeterKind(self):
@@ -674,7 +801,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SkeeterKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SkeeterKind"]))
 
     @property
     def BubbaKind(self):
@@ -684,7 +812,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BubbaKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BubbaKind"]))
 
     @property
     def TrailerChecksumKind(self):
@@ -694,7 +823,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrailerChecksumKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TrailerChecksumKind"])
+        )
 
     @property
     def TrailerChecksumLength(self):
@@ -704,7 +836,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrailerChecksumLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TrailerChecksumLength"])
+        )
 
     @property
     def TrailerChecksumData(self):
@@ -714,7 +849,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrailerChecksumData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TrailerChecksumData"])
+        )
 
     @property
     def Md5SignatureKind(self):
@@ -724,7 +862,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Md5SignatureKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Md5SignatureKind"])
+        )
 
     @property
     def Md5SignatureLength(self):
@@ -734,7 +875,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Md5SignatureLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Md5SignatureLength"])
+        )
 
     @property
     def Md5SignatureData(self):
@@ -744,7 +888,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Md5SignatureData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Md5SignatureData"])
+        )
 
     @property
     def ScpsCapabilitiesKind(self):
@@ -754,7 +901,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ScpsCapabilitiesKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ScpsCapabilitiesKind"])
+        )
 
     @property
     def SelectiveNegativeAckKind(self):
@@ -764,7 +914,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SelectiveNegativeAckKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SelectiveNegativeAckKind"])
+        )
 
     @property
     def RecordBoundariesKind(self):
@@ -774,7 +927,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecordBoundariesKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RecordBoundariesKind"])
+        )
 
     @property
     def CorruptionExperiencedKind(self):
@@ -784,7 +940,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CorruptionExperiencedKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CorruptionExperiencedKind"])
+        )
 
     @property
     def SnapKind(self):
@@ -794,7 +953,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SnapKind']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SnapKind"]))
 
     @property
     def Unassigned1Kind(self):
@@ -804,7 +964,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unassigned1Kind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Unassigned1Kind"])
+        )
 
     @property
     def CompressionFilterKind(self):
@@ -814,7 +977,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CompressionFilterKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CompressionFilterKind"])
+        )
 
     @property
     def QuickStartResponseKind(self):
@@ -824,7 +990,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QuickStartResponseKind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QuickStartResponseKind"])
+        )
 
     @property
     def QuickStartResponseLength(self):
@@ -834,7 +1003,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QuickStartResponseLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QuickStartResponseLength"])
+        )
 
     @property
     def QuickStartResponseData(self):
@@ -844,7 +1016,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QuickStartResponseData']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QuickStartResponseData"])
+        )
 
     @property
     def Unassigned2Kind(self):
@@ -854,7 +1029,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unassigned2Kind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Unassigned2Kind"])
+        )
 
     @property
     def Rfc3692StypeExperiment1Kind(self):
@@ -864,7 +1042,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment1Kind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment1Kind"])
+        )
 
     @property
     def Rfc3692StypeExperiment1Length(self):
@@ -874,7 +1055,11 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment1Length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment1Length"]),
+        )
 
     @property
     def Rfc3692StypeExperiment1Data(self):
@@ -884,7 +1069,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment1Data']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment1Data"])
+        )
 
     @property
     def Rfc3692StypeExperiment2Kind(self):
@@ -894,7 +1082,10 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment2Kind']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment2Kind"])
+        )
 
     @property
     def Rfc3692StypeExperiment2Length(self):
@@ -904,7 +1095,11 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment2Length']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment2Length"]),
+        )
 
     @property
     def Rfc3692StypeExperiment2Data(self):
@@ -914,7 +1109,10 @@ class Tcp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rfc3692StypeExperiment2Data']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment2Data"])
+        )
 
     @property
     def OptionsPad(self):
@@ -924,7 +1122,8 @@ class Tcp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionsPad']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OptionsPad"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

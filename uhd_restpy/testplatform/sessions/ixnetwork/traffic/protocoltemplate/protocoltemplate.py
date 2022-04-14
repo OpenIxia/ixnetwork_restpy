@@ -93,7 +93,7 @@ class ProtocolTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TemplateName'])
 
     def add(self):
-        """Adds a new protocolTemplate resource on the json, only valid with config assistant
+        """Adds a new protocolTemplate resource on the json, only valid with batch add utility
 
         Returns
         -------

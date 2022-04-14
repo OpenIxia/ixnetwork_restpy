@@ -4,31 +4,31 @@ from ixnetwork_restpy.files import Files
 
 class Fabricpath(Base):
     __slots__ = ()
-    _SDM_NAME = 'fabricpath'
+    _SDM_NAME = "fabricpath"
     _SDM_ATT_MAP = {
-        'OuterdestinationAddressMacformat': 'fabricpath.fabricpathHeader.outerdestinationAddress.macformat-1',
-        'DestaddEndnodeid1': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.endnodeid1-2',
-        'DestaddUbit': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ubit-3',
-        'DestaddIbit': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ibit-4',
-        'DestaddEndnodeid2': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.endnodeid2-5',
-        'DestaddResv': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.resv-6',
-        'DestaddOoo_dl_bit': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ooo_dl_bit-7',
-        'DestaddSwitchid': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.switchid-8',
-        'DestaddSubswitchid': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.subswitchid-9',
-        'DestaddPortid': 'fabricpath.fabricpathHeader.outerdestinationAddress.destadd.portid-10',
-        'OutersrcAddressMacformat': 'fabricpath.fabricpathHeader.outersrcAddress.macformat-11',
-        'SrcaddEndnodeid1': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.endnodeid1-12',
-        'SrcaddUbit': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.ubit-13',
-        'SrcaddIbit': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.ibit-14',
-        'SrcaddEndnodeid2': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.endnodeid2-15',
-        'SrcaddResv': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.resv-16',
-        'SrcaddOoo_dl_bit': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.ooo_dl_bit-17',
-        'SrcaddSwitchid': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.switchid-18',
-        'SrcaddSubswitchid': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.subswitchid-19',
-        'SrcaddPortid': 'fabricpath.fabricpathHeader.outersrcAddress.srcadd.portid-20',
-        'FptagEtherType': 'fabricpath.fabricpathHeader.fptag.etherType-21',
-        'FptagFtag': 'fabricpath.fabricpathHeader.fptag.ftag-22',
-        'FptagTtl': 'fabricpath.fabricpathHeader.fptag.ttl-23',
+        "OuterdestinationAddressMacformat": "fabricpath.fabricpathHeader.outerdestinationAddress.macformat-1",
+        "DestaddEndnodeid1": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.endnodeid1-2",
+        "DestaddUbit": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ubit-3",
+        "DestaddIbit": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ibit-4",
+        "DestaddEndnodeid2": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.endnodeid2-5",
+        "DestaddResv": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.resv-6",
+        "DestaddOoo_dl_bit": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.ooo_dl_bit-7",
+        "DestaddSwitchid": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.switchid-8",
+        "DestaddSubswitchid": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.subswitchid-9",
+        "DestaddPortid": "fabricpath.fabricpathHeader.outerdestinationAddress.destadd.portid-10",
+        "OutersrcAddressMacformat": "fabricpath.fabricpathHeader.outersrcAddress.macformat-11",
+        "SrcaddEndnodeid1": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.endnodeid1-12",
+        "SrcaddUbit": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.ubit-13",
+        "SrcaddIbit": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.ibit-14",
+        "SrcaddEndnodeid2": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.endnodeid2-15",
+        "SrcaddResv": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.resv-16",
+        "SrcaddOoo_dl_bit": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.ooo_dl_bit-17",
+        "SrcaddSwitchid": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.switchid-18",
+        "SrcaddSubswitchid": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.subswitchid-19",
+        "SrcaddPortid": "fabricpath.fabricpathHeader.outersrcAddress.srcadd.portid-20",
+        "FptagEtherType": "fabricpath.fabricpathHeader.fptag.etherType-21",
+        "FptagFtag": "fabricpath.fabricpathHeader.fptag.ftag-22",
+        "FptagTtl": "fabricpath.fabricpathHeader.fptag.ttl-23",
     }
 
     def __init__(self, parent, list_op=False):
@@ -42,7 +42,11 @@ class Fabricpath(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OuterdestinationAddressMacformat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["OuterdestinationAddressMacformat"]),
+        )
 
     @property
     def DestaddEndnodeid1(self):
@@ -52,7 +56,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddEndnodeid1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestaddEndnodeid1"])
+        )
 
     @property
     def DestaddUbit(self):
@@ -62,7 +69,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddUbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestaddUbit"]))
 
     @property
     def DestaddIbit(self):
@@ -73,7 +81,8 @@ class Fabricpath(Base):
         Available enum values: Individual Address, 0, Group Address, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddIbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestaddIbit"]))
 
     @property
     def DestaddEndnodeid2(self):
@@ -83,7 +92,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddEndnodeid2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestaddEndnodeid2"])
+        )
 
     @property
     def DestaddResv(self):
@@ -93,7 +105,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddResv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestaddResv"]))
 
     @property
     def DestaddOoo_dl_bit(self):
@@ -103,7 +116,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddOoo_dl_bit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestaddOoo_dl_bit"])
+        )
 
     @property
     def DestaddSwitchid(self):
@@ -113,7 +129,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddSwitchid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestaddSwitchid"])
+        )
 
     @property
     def DestaddSubswitchid(self):
@@ -123,7 +142,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddSubswitchid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestaddSubswitchid"])
+        )
 
     @property
     def DestaddPortid(self):
@@ -133,7 +155,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestaddPortid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestaddPortid"]))
 
     @property
     def OutersrcAddressMacformat(self):
@@ -143,7 +166,10 @@ class Fabricpath(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OutersrcAddressMacformat']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OutersrcAddressMacformat"])
+        )
 
     @property
     def SrcaddEndnodeid1(self):
@@ -153,7 +179,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddEndnodeid1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcaddEndnodeid1"])
+        )
 
     @property
     def SrcaddUbit(self):
@@ -163,7 +192,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddUbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcaddUbit"]))
 
     @property
     def SrcaddIbit(self):
@@ -174,7 +204,8 @@ class Fabricpath(Base):
         Available enum values: IndividualAddress, 0, GroupAddress, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddIbit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcaddIbit"]))
 
     @property
     def SrcaddEndnodeid2(self):
@@ -184,7 +215,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddEndnodeid2']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcaddEndnodeid2"])
+        )
 
     @property
     def SrcaddResv(self):
@@ -194,7 +228,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddResv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcaddResv"]))
 
     @property
     def SrcaddOoo_dl_bit(self):
@@ -204,7 +239,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddOoo_dl_bit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcaddOoo_dl_bit"])
+        )
 
     @property
     def SrcaddSwitchid(self):
@@ -214,7 +252,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddSwitchid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcaddSwitchid"])
+        )
 
     @property
     def SrcaddSubswitchid(self):
@@ -224,7 +265,10 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddSubswitchid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcaddSubswitchid"])
+        )
 
     @property
     def SrcaddPortid(self):
@@ -234,7 +278,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcaddPortid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcaddPortid"]))
 
     @property
     def FptagEtherType(self):
@@ -244,7 +289,10 @@ class Fabricpath(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FptagEtherType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FptagEtherType"])
+        )
 
     @property
     def FptagFtag(self):
@@ -254,7 +302,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FptagFtag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FptagFtag"]))
 
     @property
     def FptagTtl(self):
@@ -264,7 +313,8 @@ class Fabricpath(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FptagTtl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FptagTtl"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

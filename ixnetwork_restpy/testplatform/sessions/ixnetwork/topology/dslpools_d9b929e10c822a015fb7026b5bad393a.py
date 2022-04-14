@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,39 +35,38 @@ class DslPools(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dslPools'
+    _SDM_NAME = "dslPools"
     _SDM_ATT_MAP = {
-        'ActualBandwidthDownstream': 'actualBandwidthDownstream',
-        'ActualBandwidthUpstream': 'actualBandwidthUpstream',
-        'ActualNetDataRateDownstream': 'actualNetDataRateDownstream',
-        'ActualNetDataRateDownstreamTolerance': 'actualNetDataRateDownstreamTolerance',
-        'ActualNetDataRateUpstream': 'actualNetDataRateUpstream',
-        'ActualNetDataRateUpstreamTolerance': 'actualNetDataRateUpstreamTolerance',
-        'CircuitId': 'circuitId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DslLineState': 'dslLineState',
-        'DslType': 'dslType',
-        'EnableActualNetDataRateDownstream': 'enableActualNetDataRateDownstream',
-        'EnableActualNetDataRateUpstream': 'enableActualNetDataRateUpstream',
-        'EnableDslType': 'enableDslType',
-        'EnablePonType': 'enablePonType',
-        'EnableRemoteId': 'enableRemoteId',
-        'FlappingMode': 'flappingMode',
-        'InnerVlanId': 'innerVlanId',
-        'LineDownInterval': 'lineDownInterval',
-        'LineUpInterval': 'lineUpInterval',
-        'Name': 'name',
-        'OuterVlanId': 'outerVlanId',
-        'PonType': 'ponType',
-        'PortDownSent': 'portDownSent',
-        'PortUpSent': 'portUpSent',
-        'RemoteId': 'remoteId',
-        'TechType': 'techType',
-        'VlanAllocationModel': 'vlanAllocationModel',
+        "ActualBandwidthDownstream": "actualBandwidthDownstream",
+        "ActualBandwidthUpstream": "actualBandwidthUpstream",
+        "ActualNetDataRateDownstream": "actualNetDataRateDownstream",
+        "ActualNetDataRateDownstreamTolerance": "actualNetDataRateDownstreamTolerance",
+        "ActualNetDataRateUpstream": "actualNetDataRateUpstream",
+        "ActualNetDataRateUpstreamTolerance": "actualNetDataRateUpstreamTolerance",
+        "CircuitId": "circuitId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DslLineState": "dslLineState",
+        "DslType": "dslType",
+        "EnableActualNetDataRateDownstream": "enableActualNetDataRateDownstream",
+        "EnableActualNetDataRateUpstream": "enableActualNetDataRateUpstream",
+        "EnableDslType": "enableDslType",
+        "EnablePonType": "enablePonType",
+        "EnableRemoteId": "enableRemoteId",
+        "FlappingMode": "flappingMode",
+        "InnerVlanId": "innerVlanId",
+        "LineDownInterval": "lineDownInterval",
+        "LineUpInterval": "lineUpInterval",
+        "Name": "name",
+        "OuterVlanId": "outerVlanId",
+        "PonType": "ponType",
+        "PortDownSent": "portDownSent",
+        "PortUpSent": "portUpSent",
+        "RemoteId": "remoteId",
+        "TechType": "techType",
+        "VlanAllocationModel": "vlanAllocationModel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DslPools, self).__init__(parent, list_op)
@@ -82,10 +82,13 @@ class DslPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -99,10 +102,13 @@ class DslPools(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import (
+            TlvProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvProfile', None) is not None:
-                return self._properties.get('TlvProfile')
+            if self._properties.get("TlvProfile", None) is not None:
+                return self._properties.get("TlvProfile")
         return TlvProfile(self)
 
     @property
@@ -113,7 +119,7 @@ class DslPools(Base):
         -------
         - list(number): Subscriber Line Actual Bandwidth Downstream
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActualBandwidthDownstream'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActualBandwidthDownstream"])
 
     @property
     def ActualBandwidthUpstream(self):
@@ -123,7 +129,7 @@ class DslPools(Base):
         -------
         - list(number): Subscriber Line Actual Bandwidth Upstream
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActualBandwidthUpstream'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActualBandwidthUpstream"])
 
     @property
     def ActualNetDataRateDownstream(self):
@@ -134,7 +140,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actual downstream net data rate on a DSL access line. Rate in kbits/s as a 32-bit unsigned integer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActualNetDataRateDownstream']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActualNetDataRateDownstream"])
+        )
 
     @property
     def ActualNetDataRateDownstreamTolerance(self):
@@ -145,7 +154,13 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Percentage for variation of Actual Net Data Rate Downstream TLV value when sending port-up messages in flapping behavior
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActualNetDataRateDownstreamTolerance']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ActualNetDataRateDownstreamTolerance"]
+            ),
+        )
 
     @property
     def ActualNetDataRateUpstream(self):
@@ -156,7 +171,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actual upstream net data rate on a DSL access line. Rate in kbits/s as a 32-bit unsigned integer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActualNetDataRateUpstream']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActualNetDataRateUpstream"])
+        )
 
     @property
     def ActualNetDataRateUpstreamTolerance(self):
@@ -167,7 +185,13 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Percentage for variation of Actual Net Data Rate Upstream TLV value when sending port-up messages in flapping behavior
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActualNetDataRateUpstreamTolerance']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ActualNetDataRateUpstreamTolerance"]
+            ),
+        )
 
     @property
     def CircuitId(self):
@@ -178,7 +202,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A locally administered human-readable string generated by or configured on the Access Node, identifying the corresponding access loop logical port on the user side of the Access Node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CircuitId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CircuitId"]))
 
     @property
     def Count(self):
@@ -188,7 +213,7 @@ class DslPools(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -198,7 +223,7 @@ class DslPools(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DslLineState(self):
@@ -208,7 +233,7 @@ class DslPools(Base):
         -------
         - list(str[disabled | idle | none | showTime | silent | tlvNa]): The state of the DSL line as defined in DSL Line State TLV SHOWTIME - Status Info TLV has value 1 IDLE - Status Info TLV has value 2 SILENT - Status Info TLV has value 3 TLV N/A - Status Info TLV was not configured for this message None - The DSL Line did not send any messages Disabled - The DSL Line is disabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DslLineState'])
+        return self._get_attribute(self._SDM_ATT_MAP["DslLineState"])
 
     @property
     def DslType(self):
@@ -219,7 +244,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): DSL Type value for DSL Type TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DslType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DslType"]))
 
     @property
     def EnableActualNetDataRateDownstream(self):
@@ -230,7 +256,11 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Actual-Net-Data-Rate-Downstream TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableActualNetDataRateDownstream']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableActualNetDataRateDownstream"]),
+        )
 
     @property
     def EnableActualNetDataRateUpstream(self):
@@ -241,7 +271,11 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Actual-Net-Data-Rate-Upstream TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableActualNetDataRateUpstream']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableActualNetDataRateUpstream"]),
+        )
 
     @property
     def EnableDslType(self):
@@ -252,7 +286,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable DSL Type TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableDslType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableDslType"]))
 
     @property
     def EnablePonType(self):
@@ -263,7 +298,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable PON Type TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePonType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnablePonType"]))
 
     @property
     def EnableRemoteId(self):
@@ -274,7 +310,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Access-Loop-Remote-ID TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRemoteId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRemoteId"])
+        )
 
     @property
     def FlappingMode(self):
@@ -285,7 +324,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable a flapping profile. Resync will send Port-Up messages, one message every 'Flap Interval' seconds. Reset will send Port-Up followed by Port-Down messages, one message every 'Flap Interval' seconds. Stop will stop the flapping profile, and send one Port-Up message if the line is silent at the time of stopping the flapping profile.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FlappingMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlappingMode"]))
 
     @property
     def InnerVlanId(self):
@@ -296,7 +336,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Inner VLAN ID for N:1 and 1:1 VLAN mapping in Access-Aggregation-Circuit-ID-Binary TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InnerVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InnerVlanId"]))
 
     @property
     def LineDownInterval(self):
@@ -307,7 +348,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval in milliseconds to wait after sending port-down message when flapping is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LineDownInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LineDownInterval"])
+        )
 
     @property
     def LineUpInterval(self):
@@ -318,7 +362,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interval in milliseconds to wait after sending port-up message when flapping is enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LineUpInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LineUpInterval"])
+        )
 
     @property
     def Name(self):
@@ -328,11 +375,12 @@ class DslPools(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OuterVlanId(self):
@@ -343,7 +391,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Outer VLAN ID for 1:1 VLAN mapping in Access-Aggregation-Circuit-ID-Binary TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OuterVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OuterVlanId"]))
 
     @property
     def PonType(self):
@@ -354,7 +403,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PON Type value for PON Type TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PonType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PonType"]))
 
     @property
     def PortDownSent(self):
@@ -364,7 +414,7 @@ class DslPools(Base):
         -------
         - list(number): Number of Topology Discovery Port Down messages sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDownSent'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDownSent"])
 
     @property
     def PortUpSent(self):
@@ -374,7 +424,7 @@ class DslPools(Base):
         -------
         - list(number): Number of Topology Discovery Port Up messages sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortUpSent'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortUpSent"])
 
     @property
     def RemoteId(self):
@@ -385,7 +435,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An operator-configured string that uniquely identifies the user on the associated access line
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteId"]))
 
     @property
     def TechType(self):
@@ -396,7 +447,8 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type of Access Loop Technology
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TechType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TechType"]))
 
     @property
     def VlanAllocationModel(self):
@@ -407,7 +459,10 @@ class DslPools(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Access-Aggregation-Circuit-ID-Binary TLV disable, enable N:1 vlan allocation model or 1:1 vlan allocation model
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanAllocationModel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["VlanAllocationModel"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> DslPools
@@ -454,7 +509,17 @@ class DslPools(Base):
         """
         self._delete()
 
-    def find(self, ActualBandwidthDownstream=None, ActualBandwidthUpstream=None, Count=None, DescriptiveName=None, DslLineState=None, Name=None, PortDownSent=None, PortUpSent=None):
+    def find(
+        self,
+        ActualBandwidthDownstream=None,
+        ActualBandwidthUpstream=None,
+        Count=None,
+        DescriptiveName=None,
+        DslLineState=None,
+        Name=None,
+        PortDownSent=None,
+        PortUpSent=None,
+    ):
         # type: (List[int], List[int], int, str, List[str], str, List[int], List[int]) -> DslPools
         """Finds and retrieves dslPools resources from the server.
 
@@ -516,10 +581,12 @@ class DslPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def SendPortDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -548,10 +615,12 @@ class DslPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPortDown", payload=payload, response_object=None)
 
     def SendPortUp(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -580,10 +649,12 @@ class DslPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortUp', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPortUp", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -600,10 +671,12 @@ class DslPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -620,12 +693,37 @@ class DslPools(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, ActualNetDataRateDownstream=None, ActualNetDataRateDownstreamTolerance=None, ActualNetDataRateUpstream=None, ActualNetDataRateUpstreamTolerance=None, CircuitId=None, DslType=None, EnableActualNetDataRateDownstream=None, EnableActualNetDataRateUpstream=None, EnableDslType=None, EnablePonType=None, EnableRemoteId=None, FlappingMode=None, InnerVlanId=None, LineDownInterval=None, LineUpInterval=None, OuterVlanId=None, PonType=None, RemoteId=None, TechType=None, VlanAllocationModel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ActualNetDataRateDownstream=None,
+        ActualNetDataRateDownstreamTolerance=None,
+        ActualNetDataRateUpstream=None,
+        ActualNetDataRateUpstreamTolerance=None,
+        CircuitId=None,
+        DslType=None,
+        EnableActualNetDataRateDownstream=None,
+        EnableActualNetDataRateUpstream=None,
+        EnableDslType=None,
+        EnablePonType=None,
+        EnableRemoteId=None,
+        FlappingMode=None,
+        InnerVlanId=None,
+        LineDownInterval=None,
+        LineUpInterval=None,
+        OuterVlanId=None,
+        PonType=None,
+        RemoteId=None,
+        TechType=None,
+        VlanAllocationModel=None,
+    ):
         """Base class infrastructure that gets a list of dslPools device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

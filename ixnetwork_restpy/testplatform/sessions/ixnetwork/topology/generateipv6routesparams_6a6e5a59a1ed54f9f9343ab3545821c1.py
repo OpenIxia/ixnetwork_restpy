@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,34 @@ class GenerateIpv6RoutesParams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'generateIpv6RoutesParams'
+    _SDM_NAME = "generateIpv6RoutesParams"
     _SDM_ATT_MAP = {
-        'AddressRangesToSkip': 'addressRangesToSkip',
-        'CustomDistributionFile': 'customDistributionFile',
-        'DuplicateRoutesAsPathSuffix': 'duplicateRoutesAsPathSuffix',
-        'DuplicateRoutesPerDevicePercent': 'duplicateRoutesPerDevicePercent',
-        'NetworkAddressStart': 'networkAddressStart',
-        'NetworkAddressStep': 'networkAddressStep',
-        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
-        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
-        'PrefixLengthEnd': 'prefixLengthEnd',
-        'PrefixLengthStart': 'prefixLengthStart',
-        'PrimaryRoutesAsPathSuffix': 'primaryRoutesAsPathSuffix',
-        'PrimaryRoutesPerDevice': 'primaryRoutesPerDevice',
-        'PrimaryRoutesPerRange': 'primaryRoutesPerRange',
-        'SkipLoopback': 'skipLoopback',
-        'SkipMcast': 'skipMcast',
+        "AddressRangesToSkip": "addressRangesToSkip",
+        "CustomDistributionFile": "customDistributionFile",
+        "DuplicateRoutesAsPathSuffix": "duplicateRoutesAsPathSuffix",
+        "DuplicateRoutesPerDevicePercent": "duplicateRoutesPerDevicePercent",
+        "NetworkAddressStart": "networkAddressStart",
+        "NetworkAddressStep": "networkAddressStep",
+        "PrefixLengthDistributionScope": "prefixLengthDistributionScope",
+        "PrefixLengthDistributionType": "prefixLengthDistributionType",
+        "PrefixLengthEnd": "prefixLengthEnd",
+        "PrefixLengthStart": "prefixLengthStart",
+        "PrimaryRoutesAsPathSuffix": "primaryRoutesAsPathSuffix",
+        "PrimaryRoutesPerDevice": "primaryRoutesPerDevice",
+        "PrimaryRoutesPerRange": "primaryRoutesPerRange",
+        "SkipLoopback": "skipLoopback",
+        "SkipMcast": "skipMcast",
     }
     _SDM_ENUM_MAP = {
-        'prefixLengthDistributionScope': ['perTopology', 'perDevice', 'perPort'],
-        'prefixLengthDistributionType': ['fixed', 'random', 'even', 'exponential', 'internet', 'custom'],
+        "prefixLengthDistributionScope": ["perTopology", "perDevice", "perPort"],
+        "prefixLengthDistributionType": [
+            "fixed",
+            "random",
+            "even",
+            "exponential",
+            "internet",
+            "custom",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,11 +74,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str: Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressRangesToSkip'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressRangesToSkip"])
+
     @AddressRangesToSkip.setter
     def AddressRangesToSkip(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressRangesToSkip'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressRangesToSkip"], value)
 
     @property
     def CustomDistributionFile(self):
@@ -79,10 +88,11 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - obj(ixnetwork_restpy.files.Files): Source file having custom distribution information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomDistributionFile'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomDistributionFile"])
+
     @CustomDistributionFile.setter
     def CustomDistributionFile(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['CustomDistributionFile'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomDistributionFile"], value)
 
     @property
     def DuplicateRoutesAsPathSuffix(self):
@@ -92,11 +102,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str: AS Path Suffix for Duplicate Routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DuplicateRoutesAsPathSuffix'])
+        return self._get_attribute(self._SDM_ATT_MAP["DuplicateRoutesAsPathSuffix"])
+
     @DuplicateRoutesAsPathSuffix.setter
     def DuplicateRoutesAsPathSuffix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DuplicateRoutesAsPathSuffix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DuplicateRoutesAsPathSuffix"], value)
 
     @property
     def DuplicateRoutesPerDevicePercent(self):
@@ -106,11 +117,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - number: Percentage to Duplicate Primary Routes per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DuplicateRoutesPerDevicePercent'])
+        return self._get_attribute(self._SDM_ATT_MAP["DuplicateRoutesPerDevicePercent"])
+
     @DuplicateRoutesPerDevicePercent.setter
     def DuplicateRoutesPerDevicePercent(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DuplicateRoutesPerDevicePercent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DuplicateRoutesPerDevicePercent"], value)
 
     @property
     def NetworkAddressStart(self):
@@ -120,11 +132,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str: Network Address Start Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkAddressStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkAddressStart"])
+
     @NetworkAddressStart.setter
     def NetworkAddressStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkAddressStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkAddressStart"], value)
 
     @property
     def NetworkAddressStep(self):
@@ -134,11 +147,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str: Network Address Step Value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkAddressStep"])
+
     @NetworkAddressStep.setter
     def NetworkAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkAddressStep"], value)
 
     @property
     def PrefixLengthDistributionScope(self):
@@ -148,11 +162,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str(perTopology | perDevice | perPort): Prefix Length Distribution Scope.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionScope'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionScope"])
+
     @PrefixLengthDistributionScope.setter
     def PrefixLengthDistributionScope(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionScope'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionScope"], value)
 
     @property
     def PrefixLengthDistributionType(self):
@@ -162,11 +177,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str(fixed | random | even | exponential | internet | custom): Prefix Length Distribution Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionType"])
+
     @PrefixLengthDistributionType.setter
     def PrefixLengthDistributionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthDistributionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthDistributionType"], value)
 
     @property
     def PrefixLengthEnd(self):
@@ -176,11 +192,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - number: Prefix Length End Value. Applicable only for Even and Exponential distribution type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthEnd'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthEnd"])
+
     @PrefixLengthEnd.setter
     def PrefixLengthEnd(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthEnd'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthEnd"], value)
 
     @property
     def PrefixLengthStart(self):
@@ -190,11 +207,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - number: Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLengthStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLengthStart"])
+
     @PrefixLengthStart.setter
     def PrefixLengthStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLengthStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLengthStart"], value)
 
     @property
     def PrimaryRoutesAsPathSuffix(self):
@@ -204,11 +222,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - str: AS Path Suffix for Primary Routes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesAsPathSuffix'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesAsPathSuffix"])
+
     @PrimaryRoutesAsPathSuffix.setter
     def PrimaryRoutesAsPathSuffix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesAsPathSuffix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesAsPathSuffix"], value)
 
     @property
     def PrimaryRoutesPerDevice(self):
@@ -218,11 +237,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - number: Number of Primary Routes per Device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerDevice'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerDevice"])
+
     @PrimaryRoutesPerDevice.setter
     def PrimaryRoutesPerDevice(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerDevice'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerDevice"], value)
 
     @property
     def PrimaryRoutesPerRange(self):
@@ -232,11 +252,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - number: Number of Routes per Route Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerRange"])
+
     @PrimaryRoutesPerRange.setter
     def PrimaryRoutesPerRange(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrimaryRoutesPerRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrimaryRoutesPerRange"], value)
 
     @property
     def SkipLoopback(self):
@@ -246,11 +267,12 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - bool: Do not include Loopback Address in the generated Address Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipLoopback'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipLoopback"])
+
     @SkipLoopback.setter
     def SkipLoopback(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipLoopback'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipLoopback"], value)
 
     @property
     def SkipMcast(self):
@@ -260,13 +282,31 @@ class GenerateIpv6RoutesParams(Base):
         -------
         - bool: Do not include Multicast Address in the generated Address Range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SkipMcast'])
+        return self._get_attribute(self._SDM_ATT_MAP["SkipMcast"])
+
     @SkipMcast.setter
     def SkipMcast(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SkipMcast'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SkipMcast"], value)
 
-    def update(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, SkipLoopback=None, SkipMcast=None):
+    def update(
+        self,
+        AddressRangesToSkip=None,
+        CustomDistributionFile=None,
+        DuplicateRoutesAsPathSuffix=None,
+        DuplicateRoutesPerDevicePercent=None,
+        NetworkAddressStart=None,
+        NetworkAddressStep=None,
+        PrefixLengthDistributionScope=None,
+        PrefixLengthDistributionType=None,
+        PrefixLengthEnd=None,
+        PrefixLengthStart=None,
+        PrimaryRoutesAsPathSuffix=None,
+        PrimaryRoutesPerDevice=None,
+        PrimaryRoutesPerRange=None,
+        SkipLoopback=None,
+        SkipMcast=None,
+    ):
         """Updates generateIpv6RoutesParams resource on the server.
 
         Args
@@ -293,7 +333,24 @@ class GenerateIpv6RoutesParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, SkipLoopback=None, SkipMcast=None):
+    def find(
+        self,
+        AddressRangesToSkip=None,
+        CustomDistributionFile=None,
+        DuplicateRoutesAsPathSuffix=None,
+        DuplicateRoutesPerDevicePercent=None,
+        NetworkAddressStart=None,
+        NetworkAddressStep=None,
+        PrefixLengthDistributionScope=None,
+        PrefixLengthDistributionType=None,
+        PrefixLengthEnd=None,
+        PrefixLengthStart=None,
+        PrimaryRoutesAsPathSuffix=None,
+        PrimaryRoutesPerDevice=None,
+        PrimaryRoutesPerRange=None,
+        SkipLoopback=None,
+        SkipMcast=None,
+    ):
         """Finds and retrieves generateIpv6RoutesParams resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generateIpv6RoutesParams resources from the server.
@@ -361,7 +418,11 @@ class GenerateIpv6RoutesParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateIpv6Routes', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "generateIpv6Routes", payload=payload, response_object=None
+        )

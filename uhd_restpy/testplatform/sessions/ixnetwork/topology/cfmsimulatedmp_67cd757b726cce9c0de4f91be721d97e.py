@@ -1497,7 +1497,7 @@ class CfmSimulatedMp(Base):
 
     def add(self, Name=None, NumberOfCustomTLVs=None):
         # type: (str, int) -> CfmSimulatedMp
-        """Adds a new cfmSimulatedMp resource on the json, only valid with config assistant
+        """Adds a new cfmSimulatedMp resource on the json, only valid with batch add utility
 
         Args
         ----

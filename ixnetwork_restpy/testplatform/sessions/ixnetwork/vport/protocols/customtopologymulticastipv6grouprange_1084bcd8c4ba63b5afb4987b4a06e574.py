@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,23 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTopologyMulticastIpv6GroupRange'
+    _SDM_NAME = "customTopologyMulticastIpv6GroupRange"
     _SDM_ATT_MAP = {
-        'IncludeIpv6Groups': 'includeIpv6Groups',
-        'IntergroupUnicastIpv6Increment': 'intergroupUnicastIpv6Increment',
-        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
-        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
-        'MulticastIpv6Count': 'multicastIpv6Count',
-        'MulticastIpv6Step': 'multicastIpv6Step',
-        'NumberOfUnicastSourceIpv6MacsPerMulticastIpv6': 'numberOfUnicastSourceIpv6MacsPerMulticastIpv6',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastIpv6': 'startMulticastIpv6',
-        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
-        'VlanId': 'vlanId',
+        "IncludeIpv6Groups": "includeIpv6Groups",
+        "IntergroupUnicastIpv6Increment": "intergroupUnicastIpv6Increment",
+        "IntraGroupUnicastIpv6Increment": "intraGroupUnicastIpv6Increment",
+        "MulticastAddressNodeStep": "multicastAddressNodeStep",
+        "MulticastIpv6Count": "multicastIpv6Count",
+        "MulticastIpv6Step": "multicastIpv6Step",
+        "NumberOfUnicastSourceIpv6MacsPerMulticastIpv6": "numberOfUnicastSourceIpv6MacsPerMulticastIpv6",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastIpv6": "startMulticastIpv6",
+        "StartUnicastSourceIpv6": "startUnicastSourceIpv6",
+        "UnicastAddressNodeStep": "unicastAddressNodeStep",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fully-Meshed', 'one-To-One', 'manual-Mapping'],
+        "sourceGroupMapping": ["fully-Meshed", "one-To-One", "manual-Mapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,11 +65,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeIpv6Groups'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeIpv6Groups"])
+
     @IncludeIpv6Groups.setter
     def IncludeIpv6Groups(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeIpv6Groups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeIpv6Groups"], value)
 
     @property
     def IntergroupUnicastIpv6Increment(self):
@@ -78,11 +80,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntergroupUnicastIpv6Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntergroupUnicastIpv6Increment"])
+
     @IntergroupUnicastIpv6Increment.setter
     def IntergroupUnicastIpv6Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntergroupUnicastIpv6Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntergroupUnicastIpv6Increment"], value)
 
     @property
     def IntraGroupUnicastIpv6Increment(self):
@@ -92,11 +95,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv6Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv6Increment"])
+
     @IntraGroupUnicastIpv6Increment.setter
     def IntraGroupUnicastIpv6Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastIpv6Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastIpv6Increment"], value)
 
     @property
     def MulticastAddressNodeStep(self):
@@ -106,11 +110,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"])
+
     @MulticastAddressNodeStep.setter
     def MulticastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"], value)
 
     @property
     def MulticastIpv6Count(self):
@@ -120,11 +125,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv6Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv6Count"])
+
     @MulticastIpv6Count.setter
     def MulticastIpv6Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv6Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv6Count"], value)
 
     @property
     def MulticastIpv6Step(self):
@@ -134,11 +140,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastIpv6Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastIpv6Step"])
+
     @MulticastIpv6Step.setter
     def MulticastIpv6Step(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastIpv6Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastIpv6Step"], value)
 
     @property
     def NumberOfUnicastSourceIpv6MacsPerMulticastIpv6(self):
@@ -148,11 +155,16 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfUnicastSourceIpv6MacsPerMulticastIpv6'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfUnicastSourceIpv6MacsPerMulticastIpv6"]
+        )
+
     @NumberOfUnicastSourceIpv6MacsPerMulticastIpv6.setter
     def NumberOfUnicastSourceIpv6MacsPerMulticastIpv6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfUnicastSourceIpv6MacsPerMulticastIpv6'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfUnicastSourceIpv6MacsPerMulticastIpv6"], value
+        )
 
     @property
     def SourceGroupMapping(self):
@@ -162,11 +174,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str(fully-Meshed | one-To-One | manual-Mapping): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastIpv6(self):
@@ -176,11 +189,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastIpv6"])
+
     @StartMulticastIpv6.setter
     def StartMulticastIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastIpv6"], value)
 
     @property
     def StartUnicastSourceIpv6(self):
@@ -190,11 +204,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv6'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv6"])
+
     @StartUnicastSourceIpv6.setter
     def StartUnicastSourceIpv6(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceIpv6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceIpv6"], value)
 
     @property
     def UnicastAddressNodeStep(self):
@@ -204,11 +219,12 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"])
+
     @UnicastAddressNodeStep.setter
     def UnicastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"], value)
 
     @property
     def VlanId(self):
@@ -218,13 +234,28 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, IncludeIpv6Groups=None, IntergroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
+    def update(
+        self,
+        IncludeIpv6Groups=None,
+        IntergroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastAddressNodeStep=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastIpv6GroupRange
         """Updates customTopologyMulticastIpv6GroupRange resource on the server.
 
@@ -249,7 +280,21 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncludeIpv6Groups=None, IntergroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
+    def add(
+        self,
+        IncludeIpv6Groups=None,
+        IntergroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastAddressNodeStep=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastIpv6GroupRange
         """Adds a new customTopologyMulticastIpv6GroupRange resource on the server and adds it to the container.
 
@@ -288,7 +333,21 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
         """
         self._delete()
 
-    def find(self, IncludeIpv6Groups=None, IntergroupUnicastIpv6Increment=None, IntraGroupUnicastIpv6Increment=None, MulticastAddressNodeStep=None, MulticastIpv6Count=None, MulticastIpv6Step=None, NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None, SourceGroupMapping=None, StartMulticastIpv6=None, StartUnicastSourceIpv6=None, UnicastAddressNodeStep=None, VlanId=None):
+    def find(
+        self,
+        IncludeIpv6Groups=None,
+        IntergroupUnicastIpv6Increment=None,
+        IntraGroupUnicastIpv6Increment=None,
+        MulticastAddressNodeStep=None,
+        MulticastIpv6Count=None,
+        MulticastIpv6Step=None,
+        NumberOfUnicastSourceIpv6MacsPerMulticastIpv6=None,
+        SourceGroupMapping=None,
+        StartMulticastIpv6=None,
+        StartUnicastSourceIpv6=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> CustomTopologyMulticastIpv6GroupRange
         """Finds and retrieves customTopologyMulticastIpv6GroupRange resources from the server.
 

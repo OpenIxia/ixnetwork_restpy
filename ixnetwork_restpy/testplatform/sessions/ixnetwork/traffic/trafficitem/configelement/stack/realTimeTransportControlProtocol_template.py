@@ -4,39 +4,39 @@ from ixnetwork_restpy.files import Files
 
 class RealTimeTransportControlProtocol(Base):
     __slots__ = ()
-    _SDM_NAME = 'realTimeTransportControlProtocol'
+    _SDM_NAME = "realTimeTransportControlProtocol"
     _SDM_ATT_MAP = {
-        'RtcpHeaderVersion': 'realTimeTransportControlProtocol.header.rtcpHeader.version-1',
-        'RtcpHeaderPaddingBit': 'realTimeTransportControlProtocol.header.rtcpHeader.paddingBit-2',
-        'RtcpHeaderReceptionReportCount': 'realTimeTransportControlProtocol.header.rtcpHeader.receptionReportCount-3',
-        'RtcpHeaderPacketType': 'realTimeTransportControlProtocol.header.rtcpHeader.packetType-4',
-        'RtcpHeaderMessageLength': 'realTimeTransportControlProtocol.header.rtcpHeader.messageLength-5',
-        'RtcpHeaderSsrcOfReportSender': 'realTimeTransportControlProtocol.header.rtcpHeader.ssrcOfReportSender-6',
-        'SenderReportHeaderNtpTimestamp': 'realTimeTransportControlProtocol.header.senderReportHeader.ntpTimestamp-7',
-        'SenderReportHeaderRtpTimestamp': 'realTimeTransportControlProtocol.header.senderReportHeader.rtpTimestamp-8',
-        'SenderReportHeaderSenderPacketCount': 'realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-9',
-        'SenderReportHeaderSenderPacketCount': 'realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-10',
-        'SenderReportHeaderSenderByteCount': 'realTimeTransportControlProtocol.header.senderReportHeader.senderByteCount-11',
-        'SenderReportHeaderSenderPacketCount': 'realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-12',
-        'SenderReportHeaderSenderPacketCount': 'realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-13',
-        'ReceiverReportHeaderSsrcOfSource': 'realTimeTransportControlProtocol.header.receiverReportHeader.ssrcOfSource-14',
-        'ReceiverReportHeaderFractionLost': 'realTimeTransportControlProtocol.header.receiverReportHeader.fractionLost-15',
-        'ReceiverReportHeaderNumberOfPacketLost': 'realTimeTransportControlProtocol.header.receiverReportHeader.NumberOfPacketLost-16',
-        'ReceiverReportHeaderExtendedHighestSequenceNumber': 'realTimeTransportControlProtocol.header.receiverReportHeader.extendedHighestSequenceNumber-17',
-        'ReceiverReportHeaderInterarrivalJitter': 'realTimeTransportControlProtocol.header.receiverReportHeader.interarrivalJitter-18',
-        'ReceiverReportHeaderLastSr': 'realTimeTransportControlProtocol.header.receiverReportHeader.lastSr-19',
-        'ReceiverReportHeaderDelaySincelastSr': 'realTimeTransportControlProtocol.header.receiverReportHeader.delaySincelastSr-20',
-        'ReceiverReportHeaderSenderPacketCount': 'realTimeTransportControlProtocol.header.receiverReportHeader.senderPacketCount-21',
-        'SourceDescriptionPacketSsrcOfFirstCsrc': 'realTimeTransportControlProtocol.header.sourceDescriptionPacket.ssrcOfFirstCsrc-22',
-        'SourceDescriptionPacketSdesType': 'realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesType-23',
-        'SourceDescriptionPacketSdesLength': 'realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesLength-24',
-        'SourceDescriptionPacketSdesItem': 'realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesItem-25',
-        'ByePacketSsrc/csrcOfSender': 'realTimeTransportControlProtocol.header.byePacket.ssrc/csrcOfSender-26',
-        'ByePacketLength': 'realTimeTransportControlProtocol.header.byePacket.length-27',
-        'ByePacketReasonForLeaving': 'realTimeTransportControlProtocol.header.byePacket.reasonForLeaving-28',
-        'ApplicationDefinedPacketSsrc/csrcOfSender': 'realTimeTransportControlProtocol.header.applicationDefinedPacket.ssrc/csrcOfSender-29',
-        'ApplicationDefinedPacketName': 'realTimeTransportControlProtocol.header.applicationDefinedPacket.name-30',
-        'ApplicationDefinedPacketApplicationDependentData': 'realTimeTransportControlProtocol.header.applicationDefinedPacket.applicationDependentData-31',
+        "RtcpHeaderVersion": "realTimeTransportControlProtocol.header.rtcpHeader.version-1",
+        "RtcpHeaderPaddingBit": "realTimeTransportControlProtocol.header.rtcpHeader.paddingBit-2",
+        "RtcpHeaderReceptionReportCount": "realTimeTransportControlProtocol.header.rtcpHeader.receptionReportCount-3",
+        "RtcpHeaderPacketType": "realTimeTransportControlProtocol.header.rtcpHeader.packetType-4",
+        "RtcpHeaderMessageLength": "realTimeTransportControlProtocol.header.rtcpHeader.messageLength-5",
+        "RtcpHeaderSsrcOfReportSender": "realTimeTransportControlProtocol.header.rtcpHeader.ssrcOfReportSender-6",
+        "SenderReportHeaderNtpTimestamp": "realTimeTransportControlProtocol.header.senderReportHeader.ntpTimestamp-7",
+        "SenderReportHeaderRtpTimestamp": "realTimeTransportControlProtocol.header.senderReportHeader.rtpTimestamp-8",
+        "SenderReportHeaderSenderPacketCount": "realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-9",
+        "SenderReportHeaderSenderPacketCount": "realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-10",
+        "SenderReportHeaderSenderByteCount": "realTimeTransportControlProtocol.header.senderReportHeader.senderByteCount-11",
+        "SenderReportHeaderSenderPacketCount": "realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-12",
+        "SenderReportHeaderSenderPacketCount": "realTimeTransportControlProtocol.header.senderReportHeader.senderPacketCount-13",
+        "ReceiverReportHeaderSsrcOfSource": "realTimeTransportControlProtocol.header.receiverReportHeader.ssrcOfSource-14",
+        "ReceiverReportHeaderFractionLost": "realTimeTransportControlProtocol.header.receiverReportHeader.fractionLost-15",
+        "ReceiverReportHeaderNumberOfPacketLost": "realTimeTransportControlProtocol.header.receiverReportHeader.NumberOfPacketLost-16",
+        "ReceiverReportHeaderExtendedHighestSequenceNumber": "realTimeTransportControlProtocol.header.receiverReportHeader.extendedHighestSequenceNumber-17",
+        "ReceiverReportHeaderInterarrivalJitter": "realTimeTransportControlProtocol.header.receiverReportHeader.interarrivalJitter-18",
+        "ReceiverReportHeaderLastSr": "realTimeTransportControlProtocol.header.receiverReportHeader.lastSr-19",
+        "ReceiverReportHeaderDelaySincelastSr": "realTimeTransportControlProtocol.header.receiverReportHeader.delaySincelastSr-20",
+        "ReceiverReportHeaderSenderPacketCount": "realTimeTransportControlProtocol.header.receiverReportHeader.senderPacketCount-21",
+        "SourceDescriptionPacketSsrcOfFirstCsrc": "realTimeTransportControlProtocol.header.sourceDescriptionPacket.ssrcOfFirstCsrc-22",
+        "SourceDescriptionPacketSdesType": "realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesType-23",
+        "SourceDescriptionPacketSdesLength": "realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesLength-24",
+        "SourceDescriptionPacketSdesItem": "realTimeTransportControlProtocol.header.sourceDescriptionPacket.sdesItem-25",
+        "ByePacketSsrc/csrcOfSender": "realTimeTransportControlProtocol.header.byePacket.ssrc/csrcOfSender-26",
+        "ByePacketLength": "realTimeTransportControlProtocol.header.byePacket.length-27",
+        "ByePacketReasonForLeaving": "realTimeTransportControlProtocol.header.byePacket.reasonForLeaving-28",
+        "ApplicationDefinedPacketSsrc/csrcOfSender": "realTimeTransportControlProtocol.header.applicationDefinedPacket.ssrc/csrcOfSender-29",
+        "ApplicationDefinedPacketName": "realTimeTransportControlProtocol.header.applicationDefinedPacket.name-30",
+        "ApplicationDefinedPacketApplicationDependentData": "realTimeTransportControlProtocol.header.applicationDefinedPacket.applicationDependentData-31",
     }
 
     def __init__(self, parent, list_op=False):
@@ -50,7 +50,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderVersion"])
+        )
 
     @property
     def RtcpHeaderPaddingBit(self):
@@ -60,7 +63,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderPaddingBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderPaddingBit"])
+        )
 
     @property
     def RtcpHeaderReceptionReportCount(self):
@@ -70,7 +76,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderReceptionReportCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderReceptionReportCount"]),
+        )
 
     @property
     def RtcpHeaderPacketType(self):
@@ -81,7 +91,10 @@ class RealTimeTransportControlProtocol(Base):
         Available enum values: SR, sender report., 200, RR, receiver report., 201, SDES, source description., 202, BYE, goodbye., 203, APP, application defined., 204
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderPacketType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderPacketType"])
+        )
 
     @property
     def RtcpHeaderMessageLength(self):
@@ -91,7 +104,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderMessageLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderMessageLength"])
+        )
 
     @property
     def RtcpHeaderSsrcOfReportSender(self):
@@ -101,7 +117,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RtcpHeaderSsrcOfReportSender']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RtcpHeaderSsrcOfReportSender"])
+        )
 
     @property
     def SenderReportHeaderNtpTimestamp(self):
@@ -111,7 +130,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderNtpTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SenderReportHeaderNtpTimestamp"]),
+        )
 
     @property
     def SenderReportHeaderRtpTimestamp(self):
@@ -121,7 +144,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderRtpTimestamp']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SenderReportHeaderRtpTimestamp"]),
+        )
 
     @property
     def SenderReportHeaderSenderPacketCount(self):
@@ -131,7 +158,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderSenderPacketCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SenderReportHeaderSenderPacketCount"]
+            ),
+        )
 
     @property
     def SenderReportHeaderSenderPacketCount(self):
@@ -141,7 +174,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderSenderPacketCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SenderReportHeaderSenderPacketCount"]
+            ),
+        )
 
     @property
     def SenderReportHeaderSenderByteCount(self):
@@ -151,7 +190,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderSenderByteCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SenderReportHeaderSenderByteCount"]),
+        )
 
     @property
     def SenderReportHeaderSenderPacketCount(self):
@@ -161,7 +204,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderSenderPacketCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SenderReportHeaderSenderPacketCount"]
+            ),
+        )
 
     @property
     def SenderReportHeaderSenderPacketCount(self):
@@ -171,7 +220,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SenderReportHeaderSenderPacketCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SenderReportHeaderSenderPacketCount"]
+            ),
+        )
 
     @property
     def ReceiverReportHeaderSsrcOfSource(self):
@@ -181,7 +236,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderSsrcOfSource']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReceiverReportHeaderSsrcOfSource"]),
+        )
 
     @property
     def ReceiverReportHeaderFractionLost(self):
@@ -191,7 +250,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderFractionLost']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ReceiverReportHeaderFractionLost"]),
+        )
 
     @property
     def ReceiverReportHeaderNumberOfPacketLost(self):
@@ -201,7 +264,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderNumberOfPacketLost']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReceiverReportHeaderNumberOfPacketLost"]
+            ),
+        )
 
     @property
     def ReceiverReportHeaderExtendedHighestSequenceNumber(self):
@@ -211,7 +280,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderExtendedHighestSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReceiverReportHeaderExtendedHighestSequenceNumber"]
+            ),
+        )
 
     @property
     def ReceiverReportHeaderInterarrivalJitter(self):
@@ -221,7 +296,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderInterarrivalJitter']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReceiverReportHeaderInterarrivalJitter"]
+            ),
+        )
 
     @property
     def ReceiverReportHeaderLastSr(self):
@@ -231,7 +312,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderLastSr']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReceiverReportHeaderLastSr"])
+        )
 
     @property
     def ReceiverReportHeaderDelaySincelastSr(self):
@@ -241,7 +325,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderDelaySincelastSr']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReceiverReportHeaderDelaySincelastSr"]
+            ),
+        )
 
     @property
     def ReceiverReportHeaderSenderPacketCount(self):
@@ -251,7 +341,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReceiverReportHeaderSenderPacketCount']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ReceiverReportHeaderSenderPacketCount"]
+            ),
+        )
 
     @property
     def SourceDescriptionPacketSsrcOfFirstCsrc(self):
@@ -261,7 +357,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceDescriptionPacketSsrcOfFirstCsrc']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SourceDescriptionPacketSsrcOfFirstCsrc"]
+            ),
+        )
 
     @property
     def SourceDescriptionPacketSdesType(self):
@@ -271,7 +373,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceDescriptionPacketSdesType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SourceDescriptionPacketSdesType"]),
+        )
 
     @property
     def SourceDescriptionPacketSdesLength(self):
@@ -281,7 +387,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceDescriptionPacketSdesLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SourceDescriptionPacketSdesLength"]),
+        )
 
     @property
     def SourceDescriptionPacketSdesItem(self):
@@ -291,7 +401,11 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceDescriptionPacketSdesItem']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SourceDescriptionPacketSdesItem"]),
+        )
 
     @property
     def ByePacketSsrccsrcOfSender(self):
@@ -301,7 +415,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ByePacketSsrc/csrcOfSender']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ByePacketSsrc/csrcOfSender"])
+        )
 
     @property
     def ByePacketLength(self):
@@ -311,7 +428,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ByePacketLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ByePacketLength"])
+        )
 
     @property
     def ByePacketReasonForLeaving(self):
@@ -321,7 +441,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ByePacketReasonForLeaving']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ByePacketReasonForLeaving"])
+        )
 
     @property
     def ApplicationDefinedPacketSsrccsrcOfSender(self):
@@ -331,7 +454,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplicationDefinedPacketSsrc/csrcOfSender']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ApplicationDefinedPacketSsrc/csrcOfSender"]
+            ),
+        )
 
     @property
     def ApplicationDefinedPacketName(self):
@@ -341,7 +470,10 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplicationDefinedPacketName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ApplicationDefinedPacketName"])
+        )
 
     @property
     def ApplicationDefinedPacketApplicationDependentData(self):
@@ -351,7 +483,13 @@ class RealTimeTransportControlProtocol(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ApplicationDefinedPacketApplicationDependentData']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ApplicationDefinedPacketApplicationDependentData"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

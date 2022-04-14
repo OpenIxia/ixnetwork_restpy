@@ -169,7 +169,7 @@ class BackupLspEROSubObjectsList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BackupLspEROSubObjectsList
-        """Adds a new backupLspEROSubObjectsList resource on the json, only valid with config assistant
+        """Adds a new backupLspEROSubObjectsList resource on the json, only valid with batch add utility
 
         Args
         ----

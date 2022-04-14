@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class CfmSimulatedTopology(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmSimulatedTopology'
+    _SDM_NAME = "cfmSimulatedTopology"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CfmSimulatedTopology, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class CfmSimulatedTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configmanamesparams_122374d4856af71309d8e8b3391bfdcd import ConfigMANamesParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configmanamesparams_122374d4856af71309d8e8b3391bfdcd import (
+            ConfigMANamesParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ConfigMANamesParams', None) is not None:
-                return self._properties.get('ConfigMANamesParams')
+            if self._properties.get("ConfigMANamesParams", None) is not None:
+                return self._properties.get("ConfigMANamesParams")
         return ConfigMANamesParams(self)._select()
 
     @property
@@ -74,10 +77,13 @@ class CfmSimulatedTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configmdlevelsparams_1bf3d8514855f50e409c0aef7ac6bf1e import ConfigMDLevelsParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configmdlevelsparams_1bf3d8514855f50e409c0aef7ac6bf1e import (
+            ConfigMDLevelsParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ConfigMDLevelsParams', None) is not None:
-                return self._properties.get('ConfigMDLevelsParams')
+            if self._properties.get("ConfigMDLevelsParams", None) is not None:
+                return self._properties.get("ConfigMDLevelsParams")
         return ConfigMDLevelsParams(self)._select()
 
     @property
@@ -91,10 +97,13 @@ class CfmSimulatedTopology(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configvlanparams_ab1a6e3f956da910a4175820dceb06bd import ConfigVLANParams
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.configvlanparams_ab1a6e3f956da910a4175820dceb06bd import (
+            ConfigVLANParams,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ConfigVLANParams', None) is not None:
-                return self._properties.get('ConfigVLANParams')
+            if self._properties.get("ConfigVLANParams", None) is not None:
+                return self._properties.get("ConfigVLANParams")
         return ConfigVLANParams(self)._select()
 
     @property
@@ -106,7 +115,8 @@ class CfmSimulatedTopology(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -116,7 +126,7 @@ class CfmSimulatedTopology(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -126,7 +136,7 @@ class CfmSimulatedTopology(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -136,11 +146,12 @@ class CfmSimulatedTopology(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
         # type: (str) -> CfmSimulatedTopology
@@ -161,7 +172,7 @@ class CfmSimulatedTopology(Base):
 
     def add(self, Name=None):
         # type: (str) -> CfmSimulatedTopology
-        """Adds a new cfmSimulatedTopology resource on the json, only valid with config assistant
+        """Adds a new cfmSimulatedTopology resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -234,10 +245,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ConfigMANames(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -258,10 +271,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('configMANames', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("configMANames", payload=payload, response_object=None)
 
     def ConfigMDLevels(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -304,10 +319,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('configMDLevels', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("configMDLevels", payload=payload, response_object=None)
 
     def ConfigVLAN(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -339,10 +356,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('configVLAN', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("configVLAN", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -359,10 +378,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -379,10 +400,12 @@ class CfmSimulatedTopology(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None):
         """Base class infrastructure that gets a list of cfmSimulatedTopology device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,28 +35,27 @@ class VsiFiltersInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vsiFiltersInfo'
+    _SDM_NAME = "vsiFiltersInfo"
     _SDM_ATT_MAP = {
-        'CvlanFirstId': 'cvlanFirstId',
-        'CvlanIncrement': 'cvlanIncrement',
-        'CvlanIncrementStep': 'cvlanIncrementStep',
-        'CvlanUniqueCount': 'cvlanUniqueCount',
-        'Enabled': 'enabled',
-        'GroupFirstId': 'groupFirstId',
-        'GroupIncrement': 'groupIncrement',
-        'GroupIncrementStep': 'groupIncrementStep',
-        'GroupUniqueCount': 'groupUniqueCount',
-        'Mac': 'mac',
-        'MacIncrementBy': 'macIncrementBy',
-        'ObjectId': 'objectId',
-        'PcpFirstId': 'pcpFirstId',
-        'PcpIncrement': 'pcpIncrement',
-        'PcpIncrementStep': 'pcpIncrementStep',
-        'PcpUniqueCount': 'pcpUniqueCount',
-        'Ps': 'ps',
+        "CvlanFirstId": "cvlanFirstId",
+        "CvlanIncrement": "cvlanIncrement",
+        "CvlanIncrementStep": "cvlanIncrementStep",
+        "CvlanUniqueCount": "cvlanUniqueCount",
+        "Enabled": "enabled",
+        "GroupFirstId": "groupFirstId",
+        "GroupIncrement": "groupIncrement",
+        "GroupIncrementStep": "groupIncrementStep",
+        "GroupUniqueCount": "groupUniqueCount",
+        "Mac": "mac",
+        "MacIncrementBy": "macIncrementBy",
+        "ObjectId": "objectId",
+        "PcpFirstId": "pcpFirstId",
+        "PcpIncrement": "pcpIncrement",
+        "PcpIncrementStep": "pcpIncrementStep",
+        "PcpUniqueCount": "pcpUniqueCount",
+        "Ps": "ps",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VsiFiltersInfo, self).__init__(parent, list_op)
@@ -68,11 +68,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: The first ID to be used for the C-VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanFirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanFirstId"])
+
     @CvlanFirstId.setter
     def CvlanFirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanFirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanFirstId"], value)
 
     @property
     def CvlanIncrement(self):
@@ -82,11 +83,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanIncrement"])
+
     @CvlanIncrement.setter
     def CvlanIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanIncrement"], value)
 
     @property
     def CvlanIncrementStep(self):
@@ -96,11 +98,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanIncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanIncrementStep"])
+
     @CvlanIncrementStep.setter
     def CvlanIncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanIncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanIncrementStep"], value)
 
     @property
     def CvlanUniqueCount(self):
@@ -110,11 +113,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Number of unique C-VLAN IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanUniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanUniqueCount"])
+
     @CvlanUniqueCount.setter
     def CvlanUniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanUniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanUniqueCount"], value)
 
     @property
     def Enabled(self):
@@ -122,13 +126,14 @@ class VsiFiltersInfo(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def GroupFirstId(self):
@@ -138,11 +143,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: The first Group ID to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupFirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupFirstId"])
+
     @GroupFirstId.setter
     def GroupFirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupFirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupFirstId"], value)
 
     @property
     def GroupIncrement(self):
@@ -152,11 +158,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Amount of increment per increment step for Group ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupIncrement"])
+
     @GroupIncrement.setter
     def GroupIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupIncrement"], value)
 
     @property
     def GroupIncrementStep(self):
@@ -166,11 +173,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Frequency of Group ID increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupIncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupIncrementStep"])
+
     @GroupIncrementStep.setter
     def GroupIncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupIncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupIncrementStep"], value)
 
     @property
     def GroupUniqueCount(self):
@@ -180,11 +188,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Number of unique Group IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupUniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupUniqueCount"])
+
     @GroupUniqueCount.setter
     def GroupUniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupUniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupUniqueCount"], value)
 
     @property
     def Mac(self):
@@ -194,11 +203,12 @@ class VsiFiltersInfo(Base):
         -------
         - str: The start MAC address for the interface. It is always available.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mac'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mac"])
+
     @Mac.setter
     def Mac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mac"], value)
 
     @property
     def MacIncrementBy(self):
@@ -208,11 +218,12 @@ class VsiFiltersInfo(Base):
         -------
         - str: The increment MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacIncrementBy"])
+
     @MacIncrementBy.setter
     def MacIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacIncrementBy"], value)
 
     @property
     def ObjectId(self):
@@ -222,7 +233,7 @@ class VsiFiltersInfo(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PcpFirstId(self):
@@ -232,11 +243,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: The first ID to be used for the PCP tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpFirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpFirstId"])
+
     @PcpFirstId.setter
     def PcpFirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpFirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpFirstId"], value)
 
     @property
     def PcpIncrement(self):
@@ -246,11 +258,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Amount of increment per increment step for PCP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpIncrement"])
+
     @PcpIncrement.setter
     def PcpIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpIncrement"], value)
 
     @property
     def PcpIncrementStep(self):
@@ -260,11 +273,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Frequency of PCP ID increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpIncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpIncrementStep"])
+
     @PcpIncrementStep.setter
     def PcpIncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpIncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpIncrementStep"], value)
 
     @property
     def PcpUniqueCount(self):
@@ -274,11 +288,12 @@ class VsiFiltersInfo(Base):
         -------
         - number: Number of unique PCP IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpUniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpUniqueCount"])
+
     @PcpUniqueCount.setter
     def PcpUniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpUniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpUniqueCount"], value)
 
     @property
     def Ps(self):
@@ -288,13 +303,32 @@ class VsiFiltersInfo(Base):
         -------
         - bool: Enable/disable priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ps'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ps"])
+
     @Ps.setter
     def Ps(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ps"], value)
 
-    def update(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+    def update(
+        self,
+        CvlanFirstId=None,
+        CvlanIncrement=None,
+        CvlanIncrementStep=None,
+        CvlanUniqueCount=None,
+        Enabled=None,
+        GroupFirstId=None,
+        GroupIncrement=None,
+        GroupIncrementStep=None,
+        GroupUniqueCount=None,
+        Mac=None,
+        MacIncrementBy=None,
+        PcpFirstId=None,
+        PcpIncrement=None,
+        PcpIncrementStep=None,
+        PcpUniqueCount=None,
+        Ps=None,
+    ):
         # type: (int, int, int, int, bool, int, int, int, int, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Updates vsiFiltersInfo resource on the server.
 
@@ -304,7 +338,7 @@ class VsiFiltersInfo(Base):
         - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
         - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
         - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-        - Enabled (bool): 
+        - Enabled (bool):
         - GroupFirstId (number): The first Group ID to be used.
         - GroupIncrement (number): Amount of increment per increment step for Group ID.
         - GroupIncrementStep (number): Frequency of Group ID increment.
@@ -323,7 +357,25 @@ class VsiFiltersInfo(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+    def add(
+        self,
+        CvlanFirstId=None,
+        CvlanIncrement=None,
+        CvlanIncrementStep=None,
+        CvlanUniqueCount=None,
+        Enabled=None,
+        GroupFirstId=None,
+        GroupIncrement=None,
+        GroupIncrementStep=None,
+        GroupUniqueCount=None,
+        Mac=None,
+        MacIncrementBy=None,
+        PcpFirstId=None,
+        PcpIncrement=None,
+        PcpIncrementStep=None,
+        PcpUniqueCount=None,
+        Ps=None,
+    ):
         # type: (int, int, int, int, bool, int, int, int, int, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Adds a new vsiFiltersInfo resource on the server and adds it to the container.
 
@@ -333,7 +385,7 @@ class VsiFiltersInfo(Base):
         - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
         - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
         - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-        - Enabled (bool): 
+        - Enabled (bool):
         - GroupFirstId (number): The first Group ID to be used.
         - GroupIncrement (number): Amount of increment per increment step for Group ID.
         - GroupIncrementStep (number): Frequency of Group ID increment.
@@ -366,7 +418,26 @@ class VsiFiltersInfo(Base):
         """
         self._delete()
 
-    def find(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, ObjectId=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+    def find(
+        self,
+        CvlanFirstId=None,
+        CvlanIncrement=None,
+        CvlanIncrementStep=None,
+        CvlanUniqueCount=None,
+        Enabled=None,
+        GroupFirstId=None,
+        GroupIncrement=None,
+        GroupIncrementStep=None,
+        GroupUniqueCount=None,
+        Mac=None,
+        MacIncrementBy=None,
+        ObjectId=None,
+        PcpFirstId=None,
+        PcpIncrement=None,
+        PcpIncrementStep=None,
+        PcpUniqueCount=None,
+        Ps=None,
+    ):
         # type: (int, int, int, int, bool, int, int, int, int, str, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Finds and retrieves vsiFiltersInfo resources from the server.
 
@@ -380,7 +451,7 @@ class VsiFiltersInfo(Base):
         - CvlanIncrement (number): Amount of increment per increment step for C-VLAN. E.g. increment step = 10 and increment = 2 means increment C-VLAN ID by 2 for every 10 IPs.
         - CvlanIncrementStep (number): Frequency of C-VLAN ID increment. E.g., value of 10 means increment C-VLAN ID once for every 10 IP addresses.
         - CvlanUniqueCount (number): Number of unique C-VLAN IDs to use.
-        - Enabled (bool): 
+        - Enabled (bool):
         - GroupFirstId (number): The first Group ID to be used.
         - GroupIncrement (number): Amount of increment per increment step for Group ID.
         - GroupIncrementStep (number): Frequency of Group ID increment.
@@ -439,10 +510,14 @@ class VsiFiltersInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -461,10 +536,14 @@ class VsiFiltersInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -483,7 +562,11 @@ class VsiFiltersInfo(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

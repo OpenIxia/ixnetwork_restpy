@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,34 +33,34 @@ class Srv6OamDestination(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'srv6OamDestination'
+    _SDM_NAME = "srv6OamDestination"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AutoGenSegmentLeftValue': 'autoGenSegmentLeftValue',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnReducedSRH': 'enReducedSRH',
-        'MaxTtlForTR': 'maxTtlForTR',
-        'Name': 'name',
-        'NumPingRequest': 'numPingRequest',
-        'NumSegments': 'numSegments',
-        'OFlag': 'oFlag',
-        'PayloadLen': 'payloadLen',
-        'PingInterval': 'pingInterval',
-        'PingTriggerType': 'pingTriggerType',
-        'ResponseTimeout': 'responseTimeout',
-        'SegmentLeftValue': 'segmentLeftValue',
-        'SiIndex': 'siIndex',
-        'Srv6DestAddress': 'srv6DestAddress',
-        'Srv6DstName': 'srv6DstName',
-        'Ttl': 'ttl',
-        'TxCfgSrcAddrFlag': 'txCfgSrcAddrFlag',
-        'TxSrcAddr': 'txSrcAddr',
-        'UseGSRv6SI': 'useGSRv6SI',
-        'ValidateDestination': 'validateDestination',
+        "Active": "active",
+        "AutoGenSegmentLeftValue": "autoGenSegmentLeftValue",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnReducedSRH": "enReducedSRH",
+        "MaxTtlForTR": "maxTtlForTR",
+        "Name": "name",
+        "NumPingRequest": "numPingRequest",
+        "NumSegments": "numSegments",
+        "OFlag": "oFlag",
+        "PayloadLen": "payloadLen",
+        "PingInterval": "pingInterval",
+        "PingTriggerType": "pingTriggerType",
+        "ResponseTimeout": "responseTimeout",
+        "SegmentLeftValue": "segmentLeftValue",
+        "SiIndex": "siIndex",
+        "Srv6DestAddress": "srv6DestAddress",
+        "Srv6DstName": "srv6DstName",
+        "Ttl": "ttl",
+        "TxCfgSrcAddrFlag": "txCfgSrcAddrFlag",
+        "TxSrcAddr": "txSrcAddr",
+        "UseGSRv6SI": "useGSRv6SI",
+        "ValidateDestination": "validateDestination",
     }
     _SDM_ENUM_MAP = {
-        'pingTriggerType': ['singlePing', 'periodicPing', 'continuosPing'],
+        "pingTriggerType": ["singlePing", "periodicPing", "continuosPing"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -76,10 +77,13 @@ class Srv6OamDestination(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamsegmentnode_d3b3fcd80f1d1cbaba726b72e946acc7 import Srv6oamSegmentNode
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamsegmentnode_d3b3fcd80f1d1cbaba726b72e946acc7 import (
+            Srv6oamSegmentNode,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Srv6oamSegmentNode', None) is not None:
-                return self._properties.get('Srv6oamSegmentNode')
+            if self._properties.get("Srv6oamSegmentNode", None) is not None:
+                return self._properties.get("Srv6oamSegmentNode")
         return Srv6oamSegmentNode(self)._select()
 
     @property
@@ -91,7 +95,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AutoGenSegmentLeftValue(self):
@@ -102,7 +107,10 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled then Segment Left field value will be auto generated.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoGenSegmentLeftValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoGenSegmentLeftValue"])
+        )
 
     @property
     def Count(self):
@@ -112,7 +120,7 @@ class Srv6OamDestination(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -122,7 +130,7 @@ class Srv6OamDestination(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnReducedSRH(self):
@@ -133,7 +141,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If Enabled the First Segment will not be added to SRH. If Enabled and Number of Segments are 0 then no SRH header i.e Best Effort case.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnReducedSRH']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnReducedSRH"]))
 
     @property
     def MaxTtlForTR(self):
@@ -144,7 +153,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum TTL for Trace Route request packets. Once hop count reaches max ttl, it will be considered destination unreachable and no further requests sent.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxTtlForTR']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxTtlForTR"]))
 
     @property
     def Name(self):
@@ -154,11 +164,12 @@ class Srv6OamDestination(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumPingRequest(self):
@@ -168,11 +179,12 @@ class Srv6OamDestination(Base):
         -------
         - number: Mention number of ping request message to send.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumPingRequest'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumPingRequest"])
+
     @NumPingRequest.setter
     def NumPingRequest(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumPingRequest'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumPingRequest"], value)
 
     @property
     def NumSegments(self):
@@ -182,11 +194,12 @@ class Srv6OamDestination(Base):
         -------
         - number: Total Number Segments/Trasit addresses present to reach destination. This count is excluding the actual Destination Address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumSegments'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumSegments"])
+
     @NumSegments.setter
     def NumSegments(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumSegments'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumSegments"], value)
 
     @property
     def OFlag(self):
@@ -197,7 +210,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): O-flag in Segment Routing Header.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OFlag"]))
 
     @property
     def PayloadLen(self):
@@ -208,7 +222,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ICMPv6/UDP payload length, min 0 and max 1500 bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PayloadLen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PayloadLen"]))
 
     @property
     def PingInterval(self):
@@ -218,11 +233,12 @@ class Srv6OamDestination(Base):
         -------
         - number: Delay between each ping request message in ms.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingInterval"])
+
     @PingInterval.setter
     def PingInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingInterval"], value)
 
     @property
     def PingTriggerType(self):
@@ -232,11 +248,12 @@ class Srv6OamDestination(Base):
         -------
         - str(singlePing | periodicPing | continuosPing): Select Single or Periodic or Continuous Ping Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PingTriggerType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PingTriggerType"])
+
     @PingTriggerType.setter
     def PingTriggerType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PingTriggerType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PingTriggerType"], value)
 
     @property
     def ResponseTimeout(self):
@@ -247,7 +264,10 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Threshold time for Response for Request packets. After this Timeout, it will be treated as Ping Failure.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResponseTimeout']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ResponseTimeout"])
+        )
 
     @property
     def SegmentLeftValue(self):
@@ -258,7 +278,10 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segment Left value to be used in SRH.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentLeftValue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SegmentLeftValue"])
+        )
 
     @property
     def SiIndex(self):
@@ -269,7 +292,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Segment Index to be filled in argument field of IPv6 Destination Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SiIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SiIndex"]))
 
     @property
     def Srv6DestAddress(self):
@@ -280,7 +304,10 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination address to be pinged.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6DestAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6DestAddress"])
+        )
 
     @property
     def Srv6DstName(self):
@@ -291,7 +318,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Address Name For Reference.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6DstName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6DstName"]))
 
     @property
     def Ttl(self):
@@ -302,7 +330,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): TTL to be used in IPv6 Header for Ping Packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ttl"]))
 
     @property
     def TxCfgSrcAddrFlag(self):
@@ -313,7 +342,10 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, configured Source Address will be considered as Source Address of Ipv6. If Disabled, Source Address of IPv6 will be taken from the Interface on which this destination is learned (emulated/loopback interfaces).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxCfgSrcAddrFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TxCfgSrcAddrFlag"])
+        )
 
     @property
     def TxSrcAddr(self):
@@ -324,7 +356,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Source address to be used in Ping Requests.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSrcAddr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TxSrcAddr"]))
 
     @property
     def UseGSRv6SI(self):
@@ -335,7 +368,8 @@ class Srv6OamDestination(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use G SRv6 SI in SRH.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseGSRv6SI']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseGSRv6SI"]))
 
     @property
     def ValidateDestination(self):
@@ -345,13 +379,22 @@ class Srv6OamDestination(Base):
         -------
         - bool: If Enabled, then Ping request will be sent only if this destination is learned either from IGP (ISIS/OSPFv2/v3) or BGP. If Disabled, then Ping request will be sent for this destination without failure even if it is not learnt from IGP/BGP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ValidateDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["ValidateDestination"])
+
     @ValidateDestination.setter
     def ValidateDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ValidateDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ValidateDestination"], value)
 
-    def update(self, Name=None, NumPingRequest=None, NumSegments=None, PingInterval=None, PingTriggerType=None, ValidateDestination=None):
+    def update(
+        self,
+        Name=None,
+        NumPingRequest=None,
+        NumSegments=None,
+        PingInterval=None,
+        PingTriggerType=None,
+        ValidateDestination=None,
+    ):
         # type: (str, int, int, int, str, bool) -> Srv6OamDestination
         """Updates srv6OamDestination resource on the server.
 
@@ -373,7 +416,17 @@ class Srv6OamDestination(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumPingRequest=None, NumSegments=None, PingInterval=None, PingTriggerType=None, ValidateDestination=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumPingRequest=None,
+        NumSegments=None,
+        PingInterval=None,
+        PingTriggerType=None,
+        ValidateDestination=None,
+    ):
         # type: (int, str, str, int, int, int, str, bool) -> Srv6OamDestination
         """Finds and retrieves srv6OamDestination resources from the server.
 
@@ -437,10 +490,14 @@ class Srv6OamDestination(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetPeriodicOrContLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -459,10 +516,14 @@ class Srv6OamDestination(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicOrContLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPeriodicOrContLearnedInfo", payload=payload, response_object=None
+        )
 
     def SendPingRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -481,10 +542,12 @@ class Srv6OamDestination(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPingRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendPingRequest", payload=payload, response_object=None)
 
     def SendTraceRouteRequest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -503,10 +566,14 @@ class Srv6OamDestination(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTraceRouteRequest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendTraceRouteRequest", payload=payload, response_object=None
+        )
 
     def StopPing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -525,12 +592,32 @@ class Srv6OamDestination(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPing', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopPing", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AutoGenSegmentLeftValue=None, EnReducedSRH=None, MaxTtlForTR=None, OFlag=None, PayloadLen=None, ResponseTimeout=None, SegmentLeftValue=None, SiIndex=None, Srv6DestAddress=None, Srv6DstName=None, Ttl=None, TxCfgSrcAddrFlag=None, TxSrcAddr=None, UseGSRv6SI=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AutoGenSegmentLeftValue=None,
+        EnReducedSRH=None,
+        MaxTtlForTR=None,
+        OFlag=None,
+        PayloadLen=None,
+        ResponseTimeout=None,
+        SegmentLeftValue=None,
+        SiIndex=None,
+        Srv6DestAddress=None,
+        Srv6DstName=None,
+        Ttl=None,
+        TxCfgSrcAddrFlag=None,
+        TxSrcAddr=None,
+        UseGSRv6SI=None,
+    ):
         """Base class infrastructure that gets a list of srv6OamDestination device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

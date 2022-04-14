@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,19 @@ class SequenceChecking(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'sequenceChecking'
+    _SDM_NAME = "sequenceChecking"
     _SDM_ATT_MAP = {
-        'AdvancedSequenceThreshold': 'advancedSequenceThreshold',
-        'Enabled': 'enabled',
-        'SequenceMode': 'sequenceMode',
+        "AdvancedSequenceThreshold": "advancedSequenceThreshold",
+        "Enabled": "enabled",
+        "SequenceMode": "sequenceMode",
     }
     _SDM_ENUM_MAP = {
-        'sequenceMode': ['advanced', 'rxPacketArrival', 'rxSwitchedPath', 'rxThreshold'],
+        "sequenceMode": [
+            "advanced",
+            "rxPacketArrival",
+            "rxSwitchedPath",
+            "rxThreshold",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -48,16 +54,17 @@ class SequenceChecking(Base):
     @property
     def AdvancedSequenceThreshold(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Checks the sequence.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdvancedSequenceThreshold"])
+
     @AdvancedSequenceThreshold.setter
     def AdvancedSequenceThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdvancedSequenceThreshold"], value)
 
     @property
     def Enabled(self):
@@ -67,11 +74,12 @@ class SequenceChecking(Base):
         -------
         - bool: If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def SequenceMode(self):
@@ -81,11 +89,12 @@ class SequenceChecking(Base):
         -------
         - str(advanced | rxPacketArrival | rxSwitchedPath | rxThreshold): The mode to conduct sequence checking.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SequenceMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["SequenceMode"])
+
     @SequenceMode.setter
     def SequenceMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SequenceMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SequenceMode"], value)
 
     def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
         # type: (int, bool, str) -> SequenceChecking

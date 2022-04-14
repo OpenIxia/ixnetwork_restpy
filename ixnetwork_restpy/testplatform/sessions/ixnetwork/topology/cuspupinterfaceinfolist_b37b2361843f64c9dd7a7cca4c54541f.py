@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,22 @@ class CuspUPInterfaceInfoList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cuspUPInterfaceInfoList'
+    _SDM_NAME = "cuspUPInterfaceInfoList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IfIndex': 'ifIndex',
-        'IncludeInterfaceDesc': 'includeInterfaceDesc',
-        'InterfaceType': 'interfaceType',
-        'LogicID': 'logicID',
-        'MACAddress': 'mACAddress',
-        'Name': 'name',
-        'PhyStatus': 'phyStatus',
-        'PortNumber': 'portNumber',
-        'SubPortNumber': 'subPortNumber',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "IfIndex": "ifIndex",
+        "IncludeInterfaceDesc": "includeInterfaceDesc",
+        "InterfaceType": "interfaceType",
+        "LogicID": "logicID",
+        "MACAddress": "mACAddress",
+        "Name": "name",
+        "PhyStatus": "phyStatus",
+        "PortNumber": "portNumber",
+        "SubPortNumber": "subPortNumber",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CuspUPInterfaceInfoList, self).__init__(parent, list_op)
@@ -62,7 +62,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -72,7 +73,7 @@ class CuspUPInterfaceInfoList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -82,7 +83,7 @@ class CuspUPInterfaceInfoList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def IfIndex(self):
@@ -93,7 +94,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Interface index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IfIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IfIndex"]))
 
     @property
     def IncludeInterfaceDesc(self):
@@ -104,7 +106,10 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Interface Descriptor Sub TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeInterfaceDesc']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeInterfaceDesc"])
+        )
 
     @property
     def InterfaceType(self):
@@ -115,7 +120,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the interface.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InterfaceType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InterfaceType"]))
 
     @property
     def LogicID(self):
@@ -126,7 +132,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Virtual port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LogicID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LogicID"]))
 
     @property
     def MACAddress(self):
@@ -137,7 +144,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System MAC Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MACAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MACAddress"]))
 
     @property
     def Name(self):
@@ -147,11 +155,12 @@ class CuspUPInterfaceInfoList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PhyStatus(self):
@@ -162,7 +171,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The status of the Phy.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PhyStatus']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PhyStatus"]))
 
     @property
     def PortNumber(self):
@@ -173,7 +183,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Physical port number.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PortNumber"]))
 
     @property
     def SubPortNumber(self):
@@ -184,7 +195,8 @@ class CuspUPInterfaceInfoList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Sub-Port number. All F and all 0 are invalid.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubPortNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubPortNumber"]))
 
     def update(self, Name=None):
         # type: (str) -> CuspUPInterfaceInfoList
@@ -245,7 +257,19 @@ class CuspUPInterfaceInfoList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, IfIndex=None, IncludeInterfaceDesc=None, InterfaceType=None, LogicID=None, MACAddress=None, PhyStatus=None, PortNumber=None, SubPortNumber=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        IfIndex=None,
+        IncludeInterfaceDesc=None,
+        InterfaceType=None,
+        LogicID=None,
+        MACAddress=None,
+        PhyStatus=None,
+        PortNumber=None,
+        SubPortNumber=None,
+    ):
         """Base class infrastructure that gets a list of cuspUPInterfaceInfoList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

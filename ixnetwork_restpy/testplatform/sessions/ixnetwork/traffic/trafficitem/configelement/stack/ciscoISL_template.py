@@ -4,20 +4,20 @@ from ixnetwork_restpy.files import Files
 
 class CiscoISL(Base):
     __slots__ = ()
-    _SDM_NAME = 'ciscoISL'
+    _SDM_NAME = "ciscoISL"
     _SDM_ATT_MAP = {
-        'HeaderDstAddress': 'ciscoISL.header.dstAddress-1',
-        'HeaderFrameType': 'ciscoISL.header.frameType-2',
-        'HeaderUserBits': 'ciscoISL.header.userBits-3',
-        'HeaderSrcAddressHi24': 'ciscoISL.header.srcAddressHi24-4',
-        'HeaderSrcAddressLo24': 'ciscoISL.header.srcAddressLo24-5',
-        'HeaderLength': 'ciscoISL.header.length-6',
-        'HeaderSnapLLC': 'ciscoISL.header.snapLLC-7',
-        'HeaderHiBitsOfSrcAddress': 'ciscoISL.header.hiBitsOfSrcAddress-8',
-        'HeaderDstVlan': 'ciscoISL.header.dstVlan-9',
-        'HeaderBpduCDP': 'ciscoISL.header.bpduCDP-10',
-        'HeaderIndex': 'ciscoISL.header.index-11',
-        'HeaderReserved': 'ciscoISL.header.reserved-12',
+        "HeaderDstAddress": "ciscoISL.header.dstAddress-1",
+        "HeaderFrameType": "ciscoISL.header.frameType-2",
+        "HeaderUserBits": "ciscoISL.header.userBits-3",
+        "HeaderSrcAddressHi24": "ciscoISL.header.srcAddressHi24-4",
+        "HeaderSrcAddressLo24": "ciscoISL.header.srcAddressLo24-5",
+        "HeaderLength": "ciscoISL.header.length-6",
+        "HeaderSnapLLC": "ciscoISL.header.snapLLC-7",
+        "HeaderHiBitsOfSrcAddress": "ciscoISL.header.hiBitsOfSrcAddress-8",
+        "HeaderDstVlan": "ciscoISL.header.dstVlan-9",
+        "HeaderBpduCDP": "ciscoISL.header.bpduCDP-10",
+        "HeaderIndex": "ciscoISL.header.index-11",
+        "HeaderReserved": "ciscoISL.header.reserved-12",
     }
 
     def __init__(self, parent, list_op=False):
@@ -31,7 +31,10 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstAddress"])
+        )
 
     @property
     def HeaderFrameType(self):
@@ -42,7 +45,10 @@ class CiscoISL(Base):
         Available enum values: Ethernet, 0, Token-Ring, 1, FDDI, 2, ATM, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFrameType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderFrameType"])
+        )
 
     @property
     def HeaderUserBits(self):
@@ -53,7 +59,10 @@ class CiscoISL(Base):
         Available enum values: Priority 0 (Normal), 0, Priority 1, 1, Priority 2, 2, Priority 3, 3, Priority 4, 4, Priority 5, 5, Priority 6, 6, Priority 7, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderUserBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderUserBits"])
+        )
 
     @property
     def HeaderSrcAddressHi24(self):
@@ -63,7 +72,10 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcAddressHi24']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcAddressHi24"])
+        )
 
     @property
     def HeaderSrcAddressLo24(self):
@@ -73,7 +85,10 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcAddressLo24']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcAddressLo24"])
+        )
 
     @property
     def HeaderLength(self):
@@ -83,7 +98,8 @@ class CiscoISL(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderSnapLLC(self):
@@ -93,7 +109,8 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSnapLLC']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSnapLLC"]))
 
     @property
     def HeaderHiBitsOfSrcAddress(self):
@@ -103,7 +120,10 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHiBitsOfSrcAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHiBitsOfSrcAddress"])
+        )
 
     @property
     def HeaderDstVlan(self):
@@ -113,7 +133,8 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstVlan']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstVlan"]))
 
     @property
     def HeaderBpduCDP(self):
@@ -123,7 +144,8 @@ class CiscoISL(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBpduCDP']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderBpduCDP"]))
 
     @property
     def HeaderIndex(self):
@@ -133,7 +155,8 @@ class CiscoISL(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderIndex"]))
 
     @property
     def HeaderReserved(self):
@@ -143,7 +166,10 @@ class CiscoISL(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

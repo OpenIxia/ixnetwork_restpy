@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,19 @@ class RouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'routeRange'
+    _SDM_NAME = "routeRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Mask': 'mask',
-        'Metric': 'metric',
-        'NetworkNumber': 'networkNumber',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'Origin': 'origin',
-        'Propagate': 'propagate',
-        'Step': 'step',
+        "Enabled": "enabled",
+        "Mask": "mask",
+        "Metric": "metric",
+        "NetworkNumber": "networkNumber",
+        "NumberOfRoutes": "numberOfRoutes",
+        "Origin": "origin",
+        "Propagate": "propagate",
+        "Step": "step",
     }
     _SDM_ENUM_MAP = {
-        'origin': ['area', 'externalType1', 'externalType2', 'nssa', 'sameArea'],
+        "origin": ["area", "externalType1", "externalType2", "nssa", "sameArea"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -60,11 +61,12 @@ class RouteRange(Base):
         -------
         - bool: Enables the router range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Mask(self):
@@ -74,11 +76,12 @@ class RouteRange(Base):
         -------
         - number: The number of bits in the network mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mask"])
+
     @Mask.setter
     def Mask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mask"], value)
 
     @property
     def Metric(self):
@@ -88,11 +91,12 @@ class RouteRange(Base):
         -------
         - number: The user-assigned routing metric associated with the route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def NetworkNumber(self):
@@ -102,11 +106,12 @@ class RouteRange(Base):
         -------
         - str: The number of prefixes to be advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkNumber"])
+
     @NetworkNumber.setter
     def NetworkNumber(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkNumber"], value)
 
     @property
     def NumberOfRoutes(self):
@@ -116,11 +121,12 @@ class RouteRange(Base):
         -------
         - number: The number of routes/network addresses to be created, based on the first route plus the mask.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRoutes"])
+
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRoutes"], value)
 
     @property
     def Origin(self):
@@ -130,11 +136,12 @@ class RouteRange(Base):
         -------
         - str(area | externalType1 | externalType2 | nssa | sameArea): The origin of the advertised route.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Origin'])
+        return self._get_attribute(self._SDM_ATT_MAP["Origin"])
+
     @Origin.setter
     def Origin(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Origin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Origin"], value)
 
     @property
     def Propagate(self):
@@ -144,11 +151,12 @@ class RouteRange(Base):
         -------
         - bool: Enables emulation of NSSA-LSA propagation.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Propagate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Propagate"])
+
     @Propagate.setter
     def Propagate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Propagate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Propagate"], value)
 
     @property
     def Step(self):
@@ -156,11 +164,20 @@ class RouteRange(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
 
-    def update(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None):
+    def update(
+        self,
+        Enabled=None,
+        Mask=None,
+        Metric=None,
+        NetworkNumber=None,
+        NumberOfRoutes=None,
+        Origin=None,
+        Propagate=None,
+    ):
         # type: (bool, int, int, str, int, str, bool) -> RouteRange
         """Updates routeRange resource on the server.
 
@@ -180,7 +197,16 @@ class RouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None):
+    def add(
+        self,
+        Enabled=None,
+        Mask=None,
+        Metric=None,
+        NetworkNumber=None,
+        NumberOfRoutes=None,
+        Origin=None,
+        Propagate=None,
+    ):
         # type: (bool, int, int, str, int, str, bool) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
@@ -214,7 +240,17 @@ class RouteRange(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None, Step=None):
+    def find(
+        self,
+        Enabled=None,
+        Mask=None,
+        Metric=None,
+        NetworkNumber=None,
+        NumberOfRoutes=None,
+        Origin=None,
+        Propagate=None,
+        Step=None,
+    ):
         # type: (bool, int, int, str, int, str, bool, int) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 
@@ -231,7 +267,7 @@ class RouteRange(Base):
         - NumberOfRoutes (number): The number of routes/network addresses to be created, based on the first route plus the mask.
         - Origin (str(area | externalType1 | externalType2 | nssa | sameArea)): The origin of the advertised route.
         - Propagate (bool): Enables emulation of NSSA-LSA propagation.
-        - Step (number): 
+        - Step (number):
 
         Returns
         -------

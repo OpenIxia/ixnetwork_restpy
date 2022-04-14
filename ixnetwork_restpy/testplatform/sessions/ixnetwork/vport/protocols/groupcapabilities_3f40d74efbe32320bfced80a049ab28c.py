@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class GroupCapabilities(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupCapabilities'
+    _SDM_NAME = "groupCapabilities"
     _SDM_ATT_MAP = {
-        'Chaining': 'chaining',
-        'ChainingChecks': 'chainingChecks',
-        'SelectLiveness': 'selectLiveness',
-        'SelectWeight': 'selectWeight',
+        "Chaining": "chaining",
+        "ChainingChecks": "chainingChecks",
+        "SelectLiveness": "selectLiveness",
+        "SelectWeight": "selectWeight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupCapabilities, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class GroupCapabilities(Base):
         -------
         - bool: Chaining groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Chaining'])
+        return self._get_attribute(self._SDM_ATT_MAP["Chaining"])
+
     @Chaining.setter
     def Chaining(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Chaining'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Chaining"], value)
 
     @property
     def ChainingChecks(self):
@@ -67,11 +68,12 @@ class GroupCapabilities(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChainingChecks'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChainingChecks"])
+
     @ChainingChecks.setter
     def ChainingChecks(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChainingChecks'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChainingChecks"], value)
 
     @property
     def SelectLiveness(self):
@@ -81,11 +83,12 @@ class GroupCapabilities(Base):
         -------
         - bool: Liveness for select groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectLiveness'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectLiveness"])
+
     @SelectLiveness.setter
     def SelectLiveness(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectLiveness'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectLiveness"], value)
 
     @property
     def SelectWeight(self):
@@ -95,13 +98,16 @@ class GroupCapabilities(Base):
         -------
         - bool: Weight for select groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SelectWeight'])
+        return self._get_attribute(self._SDM_ATT_MAP["SelectWeight"])
+
     @SelectWeight.setter
     def SelectWeight(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SelectWeight'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SelectWeight"], value)
 
-    def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
+    def update(
+        self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None
+    ):
         # type: (bool, bool, bool, bool) -> GroupCapabilities
         """Updates groupCapabilities resource on the server.
 
@@ -118,7 +124,9 @@ class GroupCapabilities(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
+    def find(
+        self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None
+    ):
         # type: (bool, bool, bool, bool) -> GroupCapabilities
         """Finds and retrieves groupCapabilities resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,16 +34,15 @@ class Field(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'field'
+    _SDM_NAME = "field"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'DisplayName': 'displayName',
-        'FieldTypeId': 'fieldTypeId',
-        'Length': 'length',
-        'Trackable': 'trackable',
+        "Id__": "__id__",
+        "DisplayName": "displayName",
+        "FieldTypeId": "fieldTypeId",
+        "Length": "length",
+        "Trackable": "trackable",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Field, self).__init__(parent, list_op)
@@ -50,12 +50,12 @@ class Field(Base):
     @property
     def Id__(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: An alphanumeric string that defines the internal field ID.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
+        return self._get_attribute(self._SDM_ATT_MAP["Id__"])
 
     @property
     def DisplayName(self):
@@ -65,7 +65,7 @@ class Field(Base):
         -------
         - str: It is used to get the name of the particular field as available in the protocol template.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisplayName"])
 
     @property
     def FieldTypeId(self):
@@ -73,9 +73,9 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FieldTypeId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FieldTypeId"])
 
     @property
     def Length(self):
@@ -85,7 +85,7 @@ class Field(Base):
         -------
         - number: It is used to get the length of the field in bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Length'])
+        return self._get_attribute(self._SDM_ATT_MAP["Length"])
 
     @property
     def Trackable(self):
@@ -95,10 +95,10 @@ class Field(Base):
         -------
         - bool: The trackable fields.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Trackable'])
+        return self._get_attribute(self._SDM_ATT_MAP["Trackable"])
 
     def add(self):
-        """Adds a new field resource on the json, only valid with config assistant
+        """Adds a new field resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -110,7 +110,9 @@ class Field(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Id__=None, DisplayName=None, FieldTypeId=None, Length=None, Trackable=None):
+    def find(
+        self, Id__=None, DisplayName=None, FieldTypeId=None, Length=None, Trackable=None
+    ):
         # type: (str, str, str, int, bool) -> Field
         """Finds and retrieves field resources from the server.
 
@@ -122,7 +124,7 @@ class Field(Base):
         ----
         - Id__ (str): An alphanumeric string that defines the internal field ID.
         - DisplayName (str): It is used to get the name of the particular field as available in the protocol template.
-        - FieldTypeId (str): 
+        - FieldTypeId (str):
         - Length (number): It is used to get the length of the field in bits.
         - Trackable (bool): The trackable fields.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,26 +35,34 @@ class GRIBINextHopGroup(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'gRIBINextHopGroup'
+    _SDM_NAME = "gRIBINextHopGroup"
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'BackupNextHopGroup': 'backupNextHopGroup',
-        'Color': 'color',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetworkInstance': 'networkInstance',
-        'NumberOfNextHops': 'numberOfNextHops',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Id__": "__id__",
+        "BackupNextHopGroup": "backupNextHopGroup",
+        "Color": "color",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Errors": "errors",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NetworkInstance": "networkInstance",
+        "NumberOfNextHops": "numberOfNextHops",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,10 +79,13 @@ class GRIBINextHopGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -87,10 +99,13 @@ class GRIBINextHopGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.gribinexthop_9c90b1a16614ab034f81611321f3f6a9 import GRIBINexthop
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.gribinexthop_9c90b1a16614ab034f81611321f3f6a9 import (
+            GRIBINexthop,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GRIBINexthop', None) is not None:
-                return self._properties.get('GRIBINexthop')
+            if self._properties.get("GRIBINexthop", None) is not None:
+                return self._properties.get("GRIBINexthop")
         return GRIBINexthop(self)._select()
 
     @property
@@ -102,7 +117,8 @@ class GRIBINextHopGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): A reference to a unique identifier for the next-hop-group.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Id__']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Id__"]))
 
     @property
     def BackupNextHopGroup(self):
@@ -113,7 +129,10 @@ class GRIBINextHopGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The backup next-hop-group for the current group. When all entries within the next-hop group become unusable, the backup next-hop group is used if specified.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupNextHopGroup']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupNextHopGroup"])
+        )
 
     @property
     def Color(self):
@@ -124,21 +143,23 @@ class GRIBINextHopGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An arbitrary colour that is used as an identifier for the next-hop group.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Color']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Color"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -148,7 +169,7 @@ class GRIBINextHopGroup(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -158,7 +179,7 @@ class GRIBINextHopGroup(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Errors(self):
@@ -167,7 +188,7 @@ class GRIBINextHopGroup(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def Multiplier(self):
@@ -177,11 +198,12 @@ class GRIBINextHopGroup(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -191,11 +213,12 @@ class GRIBINextHopGroup(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NetworkInstance(self):
@@ -206,7 +229,10 @@ class GRIBINextHopGroup(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The network instance to look up the next-hop-group in. If unspecified, the next hop group is in the local network instance.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkInstance']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NetworkInstance"])
+        )
 
     @property
     def NumberOfNextHops(self):
@@ -216,11 +242,12 @@ class GRIBINextHopGroup(Base):
         -------
         - number: Number of Next Hops per Next Hop Groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfNextHops'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfNextHops"])
+
     @NumberOfNextHops.setter
     def NumberOfNextHops(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfNextHops'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfNextHops"], value)
 
     @property
     def SessionStatus(self):
@@ -230,7 +257,7 @@ class GRIBINextHopGroup(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -240,11 +267,12 @@ class GRIBINextHopGroup(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -253,7 +281,7 @@ class GRIBINextHopGroup(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -263,9 +291,16 @@ class GRIBINextHopGroup(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfNextHops=None, StackedLayers=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfNextHops=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> GRIBINextHopGroup
         """Updates gRIBINextHopGroup resource on the server.
 
@@ -286,7 +321,14 @@ class GRIBINextHopGroup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfNextHops=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfNextHops=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, List[str]) -> GRIBINextHopGroup
         """Adds a new gRIBINextHopGroup resource on the server and adds it to the container.
 
@@ -318,7 +360,20 @@ class GRIBINextHopGroup(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, NumberOfNextHops=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        NumberOfNextHops=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves gRIBINextHopGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve gRIBINextHopGroup resources from the server.
@@ -394,10 +449,12 @@ class GRIBINextHopGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -426,10 +483,12 @@ class GRIBINextHopGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -458,10 +517,12 @@ class GRIBINextHopGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -490,12 +551,21 @@ class GRIBINextHopGroup(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Id__=None, BackupNextHopGroup=None, Color=None, NetworkInstance=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Id__=None,
+        BackupNextHopGroup=None,
+        Color=None,
+        NetworkInstance=None,
+    ):
         """Base class infrastructure that gets a list of gRIBINextHopGroup device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

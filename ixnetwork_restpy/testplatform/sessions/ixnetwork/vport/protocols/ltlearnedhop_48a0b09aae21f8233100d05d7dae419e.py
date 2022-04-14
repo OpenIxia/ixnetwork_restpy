@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,14 @@ class LtLearnedHop(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ltLearnedHop'
+    _SDM_NAME = "ltLearnedHop"
     _SDM_ATT_MAP = {
-        'EgressMac': 'egressMac',
-        'IngressMac': 'ingressMac',
-        'ReplyTtl': 'replyTtl',
-        'Self': 'self',
+        "EgressMac": "egressMac",
+        "IngressMac": "ingressMac",
+        "ReplyTtl": "replyTtl",
+        "Self": "self",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(LtLearnedHop, self).__init__(parent, list_op)
@@ -54,7 +54,7 @@ class LtLearnedHop(Base):
         -------
         - str: (read only) The link trace message egress MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressMac"])
 
     @property
     def IngressMac(self):
@@ -64,7 +64,7 @@ class LtLearnedHop(Base):
         -------
         - str: (read only) The link trace message ingress MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IngressMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["IngressMac"])
 
     @property
     def ReplyTtl(self):
@@ -74,7 +74,7 @@ class LtLearnedHop(Base):
         -------
         - number: (read only) The time-to-live value of the link trace hop information, in milliseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyTtl'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyTtl"])
 
     @property
     def Self(self):
@@ -84,10 +84,10 @@ class LtLearnedHop(Base):
         -------
         - bool: (read only) If true, the next hop is the origin of the message.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Self'])
+        return self._get_attribute(self._SDM_ATT_MAP["Self"])
 
     def add(self):
-        """Adds a new ltLearnedHop resource on the json, only valid with config assistant
+        """Adds a new ltLearnedHop resource on the json, only valid with batch add utility
 
         Returns
         -------

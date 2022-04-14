@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,37 +35,45 @@ class Streams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'streams'
+    _SDM_NAME = "streams"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActualBandwidth': 'actualBandwidth',
-        'ClassMeasurementInterval': 'classMeasurementInterval',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DataFramePriority': 'dataFramePriority',
-        'DescriptiveName': 'descriptiveName',
-        'DestinationMac': 'destinationMac',
-        'Errors': 'errors',
-        'MaxFrameSize': 'maxFrameSize',
-        'MaxIntervalFrames': 'maxIntervalFrames',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PerFrameOverhead': 'perFrameOverhead',
-        'PortTcMaxLatency': 'portTcMaxLatency',
-        'Rank': 'rank',
-        'SessionStatus': 'sessionStatus',
-        'SourceMac': 'sourceMac',
-        'SrClass': 'srClass',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'StreamId': 'streamId',
-        'StreamName': 'streamName',
-        'UniqueId': 'uniqueId',
-        'VlanId': 'vlanId',
+        "Active": "active",
+        "ActualBandwidth": "actualBandwidth",
+        "ClassMeasurementInterval": "classMeasurementInterval",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DataFramePriority": "dataFramePriority",
+        "DescriptiveName": "descriptiveName",
+        "DestinationMac": "destinationMac",
+        "Errors": "errors",
+        "MaxFrameSize": "maxFrameSize",
+        "MaxIntervalFrames": "maxIntervalFrames",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "PerFrameOverhead": "perFrameOverhead",
+        "PortTcMaxLatency": "portTcMaxLatency",
+        "Rank": "rank",
+        "SessionStatus": "sessionStatus",
+        "SourceMac": "sourceMac",
+        "SrClass": "srClass",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "StreamId": "streamId",
+        "StreamName": "streamName",
+        "UniqueId": "uniqueId",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -79,7 +88,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActualBandwidth(self):
@@ -89,7 +99,7 @@ class Streams(Base):
         -------
         - list(str): Bandwidth (Mbps)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActualBandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActualBandwidth"])
 
     @property
     def ClassMeasurementInterval(self):
@@ -100,21 +110,25 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Class Measurement Interval (us)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ClassMeasurementInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ClassMeasurementInterval"])
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -124,7 +138,7 @@ class Streams(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DataFramePriority(self):
@@ -135,7 +149,10 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): data frame priority of tagged data stream
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DataFramePriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DataFramePriority"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -145,7 +162,7 @@ class Streams(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestinationMac(self):
@@ -156,7 +173,10 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination MAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestinationMac']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationMac"])
+        )
 
     @property
     def Errors(self):
@@ -165,7 +185,7 @@ class Streams(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def MaxFrameSize(self):
@@ -176,7 +196,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): maximum frame size that talker will produce
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxFrameSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxFrameSize"]))
 
     @property
     def MaxIntervalFrames(self):
@@ -187,7 +208,10 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of frames that the talker may transmit in one class measurement interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxIntervalFrames']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxIntervalFrames"])
+        )
 
     @property
     def Multiplier(self):
@@ -197,11 +221,12 @@ class Streams(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -211,11 +236,12 @@ class Streams(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PerFrameOverhead(self):
@@ -226,7 +252,10 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Per Frame Overhead (Bytes)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PerFrameOverhead']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PerFrameOverhead"])
+        )
 
     @property
     def PortTcMaxLatency(self):
@@ -237,7 +266,10 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): maximum latency that is introduced by talker
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortTcMaxLatency']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PortTcMaxLatency"])
+        )
 
     @property
     def Rank(self):
@@ -248,7 +280,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Rank of the stream
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rank']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Rank"]))
 
     @property
     def SessionStatus(self):
@@ -258,7 +291,7 @@ class Streams(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def SourceMac(self):
@@ -269,7 +302,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source MAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceMac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceMac"]))
 
     @property
     def SrClass(self):
@@ -280,7 +314,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Derived SR Class
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrClass']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrClass"]))
 
     @property
     def StackedLayers(self):
@@ -290,11 +325,12 @@ class Streams(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -303,7 +339,7 @@ class Streams(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -313,7 +349,7 @@ class Streams(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def StreamId(self):
@@ -324,7 +360,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 64 bit stream ID after concatenation of 48 bit source MAC and 16 bit Unique ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StreamId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StreamId"]))
 
     @property
     def StreamName(self):
@@ -335,7 +372,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): User friendly name for 64 bit stream ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StreamName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StreamName"]))
 
     @property
     def UniqueId(self):
@@ -346,7 +384,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 16 bit unsigned integer value to distinguish among multiple streams sourced by same talker
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UniqueId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UniqueId"]))
 
     @property
     def VlanId(self):
@@ -357,7 +396,8 @@ class Streams(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): VLAN ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanId"]))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Streams
@@ -410,7 +450,20 @@ class Streams(Base):
         """
         self._delete()
 
-    def find(self, ActualBandwidth=None, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Multiplier=None, Name=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ActualBandwidth=None,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Multiplier=None,
+        Name=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves streams resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve streams resources from the server.
@@ -486,10 +539,12 @@ class Streams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ApplyTSpecToPort(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -508,10 +563,12 @@ class Streams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyTSpecToPort', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyTSpecToPort", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -540,10 +597,12 @@ class Streams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -572,10 +631,12 @@ class Streams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -604,12 +665,32 @@ class Streams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ClassMeasurementInterval=None, DataFramePriority=None, DestinationMac=None, MaxFrameSize=None, MaxIntervalFrames=None, PerFrameOverhead=None, PortTcMaxLatency=None, Rank=None, SourceMac=None, SrClass=None, StreamId=None, StreamName=None, UniqueId=None, VlanId=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ClassMeasurementInterval=None,
+        DataFramePriority=None,
+        DestinationMac=None,
+        MaxFrameSize=None,
+        MaxIntervalFrames=None,
+        PerFrameOverhead=None,
+        PortTcMaxLatency=None,
+        Rank=None,
+        SourceMac=None,
+        SrClass=None,
+        StreamId=None,
+        StreamName=None,
+        UniqueId=None,
+        VlanId=None,
+    ):
         """Base class infrastructure that gets a list of streams device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

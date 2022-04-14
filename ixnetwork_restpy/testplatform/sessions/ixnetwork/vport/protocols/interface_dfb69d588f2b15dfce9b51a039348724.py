@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,40 +35,43 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'AcceptUnconfiguredChannel': 'acceptUnconfiguredChannel',
-        'AllFlowsDelOnStart': 'allFlowsDelOnStart',
-        'AuxiliaryConnectionTimeout': 'auxiliaryConnectionTimeout',
-        'BadVersionErrorAction': 'badVersionErrorAction',
-        'EchoInterval': 'echoInterval',
-        'EchoMultiplier': 'echoMultiplier',
-        'EchoTimeout': 'echoTimeout',
-        'EnableEchoTimeOut': 'enableEchoTimeOut',
-        'EnableMultipleLogicalSwitch': 'enableMultipleLogicalSwitch',
-        'EnablePeriodicEcho': 'enablePeriodicEcho',
-        'EnablePeriodicLldp': 'enablePeriodicLldp',
-        'Enabled': 'enabled',
-        'FeatureRequestTimeout': 'featureRequestTimeout',
-        'FeatureRequestTimeoutAction': 'featureRequestTimeoutAction',
-        'InstallFlowForLldp': 'installFlowForLldp',
-        'LldpDestinationMacAddress': 'lldpDestinationMacAddress',
-        'ModeOfConnection': 'modeOfConnection',
-        'NonHelloMessageStartupAction': 'nonHelloMessageStartupAction',
-        'PeriodicLldpInterval': 'periodicLldpInterval',
-        'ProtocolInterfaces': 'protocolInterfaces',
-        'SendPortFeatureAtStartup': 'sendPortFeatureAtStartup',
-        'TcpPort': 'tcpPort',
-        'TimeOutOption': 'timeOutOption',
-        'TypeOfConnection': 'typeOfConnection',
+        "AcceptUnconfiguredChannel": "acceptUnconfiguredChannel",
+        "AllFlowsDelOnStart": "allFlowsDelOnStart",
+        "AuxiliaryConnectionTimeout": "auxiliaryConnectionTimeout",
+        "BadVersionErrorAction": "badVersionErrorAction",
+        "EchoInterval": "echoInterval",
+        "EchoMultiplier": "echoMultiplier",
+        "EchoTimeout": "echoTimeout",
+        "EnableEchoTimeOut": "enableEchoTimeOut",
+        "EnableMultipleLogicalSwitch": "enableMultipleLogicalSwitch",
+        "EnablePeriodicEcho": "enablePeriodicEcho",
+        "EnablePeriodicLldp": "enablePeriodicLldp",
+        "Enabled": "enabled",
+        "FeatureRequestTimeout": "featureRequestTimeout",
+        "FeatureRequestTimeoutAction": "featureRequestTimeoutAction",
+        "InstallFlowForLldp": "installFlowForLldp",
+        "LldpDestinationMacAddress": "lldpDestinationMacAddress",
+        "ModeOfConnection": "modeOfConnection",
+        "NonHelloMessageStartupAction": "nonHelloMessageStartupAction",
+        "PeriodicLldpInterval": "periodicLldpInterval",
+        "ProtocolInterfaces": "protocolInterfaces",
+        "SendPortFeatureAtStartup": "sendPortFeatureAtStartup",
+        "TcpPort": "tcpPort",
+        "TimeOutOption": "timeOutOption",
+        "TypeOfConnection": "typeOfConnection",
     }
     _SDM_ENUM_MAP = {
-        'auxiliaryConnectionTimeout': ['auxReSendFeatureRequest', 'auxFeatureRequestTerminateConnection'],
-        'badVersionErrorAction': ['auxReSendHello', 'auxTerminateConnection'],
-        'modeOfConnection': ['passive', 'active', 'mixed'],
-        'nonHelloMessageStartupAction': ['auxAcceptConnection', 'auxSendError'],
-        'timeOutOption': ['multiplier', 'timeOutValue'],
-        'typeOfConnection': ['tcp', 'tls'],
+        "auxiliaryConnectionTimeout": [
+            "auxReSendFeatureRequest",
+            "auxFeatureRequestTerminateConnection",
+        ],
+        "badVersionErrorAction": ["auxReSendHello", "auxTerminateConnection"],
+        "modeOfConnection": ["passive", "active", "mixed"],
+        "nonHelloMessageStartupAction": ["auxAcceptConnection", "auxSendError"],
+        "timeOutOption": ["multiplier", "timeOutValue"],
+        "typeOfConnection": ["tcp", "tls"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -84,10 +88,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannel_6438927b294940eb069f5082e5b0256a import OfChannel
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannel_6438927b294940eb069f5082e5b0256a import (
+            OfChannel,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('OfChannel', None) is not None:
-                return self._properties.get('OfChannel')
+            if self._properties.get("OfChannel", None) is not None:
+                return self._properties.get("OfChannel")
         return OfChannel(self)
 
     @property
@@ -101,10 +108,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switch_01307b98e565f217f4916d54fbbe93ce import Switch
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switch_01307b98e565f217f4916d54fbbe93ce import (
+            Switch,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Switch', None) is not None:
-                return self._properties.get('Switch')
+            if self._properties.get("Switch", None) is not None:
+                return self._properties.get("Switch")
         return Switch(self)
 
     @property
@@ -115,11 +125,12 @@ class Interface(Base):
         -------
         - bool: If true, un-configured channels are accepted for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AcceptUnconfiguredChannel'])
+        return self._get_attribute(self._SDM_ATT_MAP["AcceptUnconfiguredChannel"])
+
     @AcceptUnconfiguredChannel.setter
     def AcceptUnconfiguredChannel(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AcceptUnconfiguredChannel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AcceptUnconfiguredChannel"], value)
 
     @property
     def AllFlowsDelOnStart(self):
@@ -129,11 +140,12 @@ class Interface(Base):
         -------
         - bool: If set, Ixia sends out an OpenFlow flow delete message (all wildcard) at startup. This should delete all existing flows in DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllFlowsDelOnStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllFlowsDelOnStart"])
+
     @AllFlowsDelOnStart.setter
     def AllFlowsDelOnStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllFlowsDelOnStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllFlowsDelOnStart"], value)
 
     @property
     def AuxiliaryConnectionTimeout(self):
@@ -143,11 +155,12 @@ class Interface(Base):
         -------
         - str(auxReSendFeatureRequest | auxFeatureRequestTerminateConnection): Period of time after which auxiliary connection will time out , if no messages are received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionTimeout"])
+
     @AuxiliaryConnectionTimeout.setter
     def AuxiliaryConnectionTimeout(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxiliaryConnectionTimeout"], value)
 
     @property
     def BadVersionErrorAction(self):
@@ -157,11 +170,12 @@ class Interface(Base):
         -------
         - str(auxReSendHello | auxTerminateConnection): Defines what action to take in case an auxiliary connection receives an error of type OFPET_BAD_REQUEST and code OFPBRC_BAD_VERSION.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BadVersionErrorAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["BadVersionErrorAction"])
+
     @BadVersionErrorAction.setter
     def BadVersionErrorAction(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BadVersionErrorAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BadVersionErrorAction"], value)
 
     @property
     def EchoInterval(self):
@@ -171,11 +185,12 @@ class Interface(Base):
         -------
         - number: Indicates the periodic interval in seconds at which the Interface sends Echo Request Packets applicable if enablePeriodicEcho attribute is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoInterval"])
+
     @EchoInterval.setter
     def EchoInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoInterval"], value)
 
     @property
     def EchoMultiplier(self):
@@ -185,11 +200,12 @@ class Interface(Base):
         -------
         - number: Indicates the value specified for the selected Timeout option.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoMultiplier"])
+
     @EchoMultiplier.setter
     def EchoMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoMultiplier"], value)
 
     @property
     def EchoTimeout(self):
@@ -199,11 +215,12 @@ class Interface(Base):
         -------
         - number: Indicates the duration interval of the state machine waiting for echo reply to arrive applicable if echoTimeout is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoTimeout"])
+
     @EchoTimeout.setter
     def EchoTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoTimeout"], value)
 
     @property
     def EnableEchoTimeOut(self):
@@ -213,11 +230,12 @@ class Interface(Base):
         -------
         - bool: If true, enables echoTimeout field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableEchoTimeOut'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableEchoTimeOut"])
+
     @EnableEchoTimeOut.setter
     def EnableEchoTimeOut(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableEchoTimeOut'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableEchoTimeOut"], value)
 
     @property
     def EnableMultipleLogicalSwitch(self):
@@ -227,11 +245,12 @@ class Interface(Base):
         -------
         - bool: if true, we add multiple number of switch per interface
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMultipleLogicalSwitch'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMultipleLogicalSwitch"])
+
     @EnableMultipleLogicalSwitch.setter
     def EnableMultipleLogicalSwitch(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMultipleLogicalSwitch'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMultipleLogicalSwitch"], value)
 
     @property
     def EnablePeriodicEcho(self):
@@ -241,11 +260,12 @@ class Interface(Base):
         -------
         - bool: If set enables echoInterval field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicEcho'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePeriodicEcho"])
+
     @EnablePeriodicEcho.setter
     def EnablePeriodicEcho(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicEcho'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePeriodicEcho"], value)
 
     @property
     def EnablePeriodicLldp(self):
@@ -255,11 +275,12 @@ class Interface(Base):
         -------
         - bool: If true, enables Periodic LLDP PacketOut Sending for each Switch Port
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicLldp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePeriodicLldp"])
+
     @EnablePeriodicLldp.setter
     def EnablePeriodicLldp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicLldp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnablePeriodicLldp"], value)
 
     @property
     def Enabled(self):
@@ -269,11 +290,12 @@ class Interface(Base):
         -------
         - bool: If set enables the interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FeatureRequestTimeout(self):
@@ -283,11 +305,12 @@ class Interface(Base):
         -------
         - number: Specifies the time after which a feature request will time out , if feature reply is received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FeatureRequestTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["FeatureRequestTimeout"])
+
     @FeatureRequestTimeout.setter
     def FeatureRequestTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FeatureRequestTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FeatureRequestTimeout"], value)
 
     @property
     def FeatureRequestTimeoutAction(self):
@@ -297,11 +320,12 @@ class Interface(Base):
         -------
         - number: Specifies if action should be taken when feature request timeouts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FeatureRequestTimeoutAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["FeatureRequestTimeoutAction"])
+
     @FeatureRequestTimeoutAction.setter
     def FeatureRequestTimeoutAction(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FeatureRequestTimeoutAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FeatureRequestTimeoutAction"], value)
 
     @property
     def InstallFlowForLldp(self):
@@ -311,11 +335,12 @@ class Interface(Base):
         -------
         - bool: If true, installs Flow in Switch for LLDP Packets to be explicitly send to Controller.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstallFlowForLldp'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstallFlowForLldp"])
+
     @InstallFlowForLldp.setter
     def InstallFlowForLldp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstallFlowForLldp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstallFlowForLldp"], value)
 
     @property
     def LldpDestinationMacAddress(self):
@@ -325,11 +350,12 @@ class Interface(Base):
         -------
         - str: Indicates the Destination MAC Address for LLDP Packet Out.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LldpDestinationMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["LldpDestinationMacAddress"])
+
     @LldpDestinationMacAddress.setter
     def LldpDestinationMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LldpDestinationMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LldpDestinationMacAddress"], value)
 
     @property
     def ModeOfConnection(self):
@@ -339,11 +365,12 @@ class Interface(Base):
         -------
         - str(passive | active | mixed): Indicates the mode of connection used for the Interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ModeOfConnection'])
+        return self._get_attribute(self._SDM_ATT_MAP["ModeOfConnection"])
+
     @ModeOfConnection.setter
     def ModeOfConnection(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ModeOfConnection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ModeOfConnection"], value)
 
     @property
     def NonHelloMessageStartupAction(self):
@@ -353,11 +380,12 @@ class Interface(Base):
         -------
         - str(auxAcceptConnection | auxSendError): Defines what action to take in case an auxiliary connection receives a non-hello message at startup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NonHelloMessageStartupAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["NonHelloMessageStartupAction"])
+
     @NonHelloMessageStartupAction.setter
     def NonHelloMessageStartupAction(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NonHelloMessageStartupAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NonHelloMessageStartupAction"], value)
 
     @property
     def PeriodicLldpInterval(self):
@@ -367,11 +395,12 @@ class Interface(Base):
         -------
         - number: Indicates the Periodic LLDP Packet Out Interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeriodicLldpInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeriodicLldpInterval"])
+
     @PeriodicLldpInterval.setter
     def PeriodicLldpInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeriodicLldpInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeriodicLldpInterval"], value)
 
     @property
     def ProtocolInterfaces(self):
@@ -381,11 +410,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): Indicates the name of the protocol interface being used for this OpenFlow configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterfaces"])
+
     @ProtocolInterfaces.setter
     def ProtocolInterfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterfaces"], value)
 
     @property
     def SendPortFeatureAtStartup(self):
@@ -395,11 +425,12 @@ class Interface(Base):
         -------
         - bool: If true , Port feature request is sent , once OF session is established.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendPortFeatureAtStartup'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendPortFeatureAtStartup"])
+
     @SendPortFeatureAtStartup.setter
     def SendPortFeatureAtStartup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendPortFeatureAtStartup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendPortFeatureAtStartup"], value)
 
     @property
     def TcpPort(self):
@@ -409,11 +440,12 @@ class Interface(Base):
         -------
         - number: Specify the TCP port for this interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcpPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcpPort"])
+
     @TcpPort.setter
     def TcpPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcpPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcpPort"], value)
 
     @property
     def TimeOutOption(self):
@@ -423,11 +455,12 @@ class Interface(Base):
         -------
         - str(multiplier | timeOutValue): Indicates the types of timeout options supported.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeOutOption'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeOutOption"])
+
     @TimeOutOption.setter
     def TimeOutOption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeOutOption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeOutOption"], value)
 
     @property
     def TypeOfConnection(self):
@@ -437,13 +470,40 @@ class Interface(Base):
         -------
         - str(tcp | tls): Indicates the type of connection used for the Interfaces.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeOfConnection'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeOfConnection"])
+
     @TypeOfConnection.setter
     def TypeOfConnection(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeOfConnection'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeOfConnection"], value)
 
-    def update(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+    def update(
+        self,
+        AcceptUnconfiguredChannel=None,
+        AllFlowsDelOnStart=None,
+        AuxiliaryConnectionTimeout=None,
+        BadVersionErrorAction=None,
+        EchoInterval=None,
+        EchoMultiplier=None,
+        EchoTimeout=None,
+        EnableEchoTimeOut=None,
+        EnableMultipleLogicalSwitch=None,
+        EnablePeriodicEcho=None,
+        EnablePeriodicLldp=None,
+        Enabled=None,
+        FeatureRequestTimeout=None,
+        FeatureRequestTimeoutAction=None,
+        InstallFlowForLldp=None,
+        LldpDestinationMacAddress=None,
+        ModeOfConnection=None,
+        NonHelloMessageStartupAction=None,
+        PeriodicLldpInterval=None,
+        ProtocolInterfaces=None,
+        SendPortFeatureAtStartup=None,
+        TcpPort=None,
+        TimeOutOption=None,
+        TypeOfConnection=None,
+    ):
         # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Updates interface resource on the server.
 
@@ -480,7 +540,33 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+    def add(
+        self,
+        AcceptUnconfiguredChannel=None,
+        AllFlowsDelOnStart=None,
+        AuxiliaryConnectionTimeout=None,
+        BadVersionErrorAction=None,
+        EchoInterval=None,
+        EchoMultiplier=None,
+        EchoTimeout=None,
+        EnableEchoTimeOut=None,
+        EnableMultipleLogicalSwitch=None,
+        EnablePeriodicEcho=None,
+        EnablePeriodicLldp=None,
+        Enabled=None,
+        FeatureRequestTimeout=None,
+        FeatureRequestTimeoutAction=None,
+        InstallFlowForLldp=None,
+        LldpDestinationMacAddress=None,
+        ModeOfConnection=None,
+        NonHelloMessageStartupAction=None,
+        PeriodicLldpInterval=None,
+        ProtocolInterfaces=None,
+        SendPortFeatureAtStartup=None,
+        TcpPort=None,
+        TimeOutOption=None,
+        TypeOfConnection=None,
+    ):
         # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -531,7 +617,33 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+    def find(
+        self,
+        AcceptUnconfiguredChannel=None,
+        AllFlowsDelOnStart=None,
+        AuxiliaryConnectionTimeout=None,
+        BadVersionErrorAction=None,
+        EchoInterval=None,
+        EchoMultiplier=None,
+        EchoTimeout=None,
+        EnableEchoTimeOut=None,
+        EnableMultipleLogicalSwitch=None,
+        EnablePeriodicEcho=None,
+        EnablePeriodicLldp=None,
+        Enabled=None,
+        FeatureRequestTimeout=None,
+        FeatureRequestTimeoutAction=None,
+        InstallFlowForLldp=None,
+        LldpDestinationMacAddress=None,
+        ModeOfConnection=None,
+        NonHelloMessageStartupAction=None,
+        PeriodicLldpInterval=None,
+        ProtocolInterfaces=None,
+        SendPortFeatureAtStartup=None,
+        TcpPort=None,
+        TimeOutOption=None,
+        TypeOfConnection=None,
+    ):
         # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Finds and retrieves interface resources from the server.
 

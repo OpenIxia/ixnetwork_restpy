@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,62 +35,77 @@ class TrafficItem(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'trafficItem'
+    _SDM_NAME = "trafficItem"
     _SDM_ATT_MAP = {
-        'AllowSelfDestined': 'allowSelfDestined',
-        'BgpEpeOrdinalValue': 'bgpEpeOrdinalValue',
-        'BgpEpeSidType': 'bgpEpeSidType',
-        'BiDirectional': 'biDirectional',
-        'EgressEnabled': 'egressEnabled',
-        'EnableDynamicMplsLabelValues': 'enableDynamicMplsLabelValues',
-        'EnableMacsecEgressOnlyAutoConfig': 'enableMacsecEgressOnlyAutoConfig',
-        'Enabled': 'enabled',
-        'Errors': 'errors',
-        'EvpnNextHopOrdinalValue': 'evpnNextHopOrdinalValue',
-        'FlowGroupCount': 'flowGroupCount',
-        'FrerDuplicateElimination': 'frerDuplicateElimination',
-        'HasOpenFlow': 'hasOpenFlow',
-        'HostsPerNetwork': 'hostsPerNetwork',
-        'InterAsBgpPreference': 'interAsBgpPreference',
-        'InterAsLdpPreference': 'interAsLdpPreference',
-        'LabelPreferences': 'labelPreferences',
-        'MaxNumberOfVpnLabelStack': 'maxNumberOfVpnLabelStack',
-        'MergeDestinations': 'mergeDestinations',
-        'MulticastForwardingMode': 'multicastForwardingMode',
-        'Name': 'name',
-        'NumVlansForMulticastReplication': 'numVlansForMulticastReplication',
-        'OrdinalNo': 'ordinalNo',
-        'OriginatorType': 'originatorType',
-        'RawTrafficRxPortsBehavior': 'rawTrafficRxPortsBehavior',
-        'RegenerateCount': 'regenerateCount',
-        'RoundRobinPacketOrdering': 'roundRobinPacketOrdering',
-        'RouteMesh': 'routeMesh',
-        'SrcDestMesh': 'srcDestMesh',
-        'State': 'state',
-        'Suspend': 'suspend',
-        'TrafficItemType': 'trafficItemType',
-        'TrafficType': 'trafficType',
-        'TransmitMode': 'transmitMode',
-        'TransportLdpPreference': 'transportLdpPreference',
-        'TransportRsvpTePreference': 'transportRsvpTePreference',
-        'UseControlPlaneFrameSize': 'useControlPlaneFrameSize',
-        'UseControlPlaneRate': 'useControlPlaneRate',
-        'Warnings': 'warnings',
+        "AllowSelfDestined": "allowSelfDestined",
+        "BgpEpeOrdinalValue": "bgpEpeOrdinalValue",
+        "BgpEpeSidType": "bgpEpeSidType",
+        "BiDirectional": "biDirectional",
+        "EgressEnabled": "egressEnabled",
+        "EnableDynamicMplsLabelValues": "enableDynamicMplsLabelValues",
+        "EnableMacsecEgressOnlyAutoConfig": "enableMacsecEgressOnlyAutoConfig",
+        "Enabled": "enabled",
+        "Errors": "errors",
+        "EvpnNextHopOrdinalValue": "evpnNextHopOrdinalValue",
+        "FlowGroupCount": "flowGroupCount",
+        "FrerDuplicateElimination": "frerDuplicateElimination",
+        "HasOpenFlow": "hasOpenFlow",
+        "HostsPerNetwork": "hostsPerNetwork",
+        "InterAsBgpPreference": "interAsBgpPreference",
+        "InterAsLdpPreference": "interAsLdpPreference",
+        "LabelPreferences": "labelPreferences",
+        "MaxNumberOfVpnLabelStack": "maxNumberOfVpnLabelStack",
+        "MergeDestinations": "mergeDestinations",
+        "MulticastForwardingMode": "multicastForwardingMode",
+        "Name": "name",
+        "NumVlansForMulticastReplication": "numVlansForMulticastReplication",
+        "OrdinalNo": "ordinalNo",
+        "OriginatorType": "originatorType",
+        "RawTrafficRxPortsBehavior": "rawTrafficRxPortsBehavior",
+        "RegenerateCount": "regenerateCount",
+        "RoundRobinPacketOrdering": "roundRobinPacketOrdering",
+        "RouteMesh": "routeMesh",
+        "SrcDestMesh": "srcDestMesh",
+        "State": "state",
+        "Suspend": "suspend",
+        "TrafficItemType": "trafficItemType",
+        "TrafficType": "trafficType",
+        "TransmitMode": "transmitMode",
+        "TransportLdpPreference": "transportLdpPreference",
+        "TransportRsvpTePreference": "transportRsvpTePreference",
+        "UseControlPlaneFrameSize": "useControlPlaneFrameSize",
+        "UseControlPlaneRate": "useControlPlaneRate",
+        "Warnings": "warnings",
     }
     _SDM_ENUM_MAP = {
-        'bgpEpeSidType': ['adjSID', 'nodeSID', 'setSID'],
-        'interAsBgpPreference': ['one', 'two'],
-        'interAsLdpPreference': ['one', 'two'],
-        'multicastForwardingMode': ['loadBalancing', 'replication'],
-        'originatorType': ['endUser', 'quickTest'],
-        'rawTrafficRxPortsBehavior': ['loadBalanced', 'replicated'],
-        'routeMesh': ['fullMesh', 'oneToOne'],
-        'srcDestMesh': ['fullMesh', 'manyToMany', 'none', 'oneToOne'],
-        'trafficItemType': ['application', 'applicationLibrary', 'l2L3', 'quick'],
-        'trafficType': ['atm', 'avb1722', 'avbRaw', 'ethernetVlan', 'fc', 'fcoe', 'frameRelay', 'hdlc', 'ipv4', 'ipv4ApplicationTraffic', 'ipv6', 'ipv6ApplicationTraffic', 'ppp', 'raw'],
-        'transmitMode': ['interleaved', 'sequential'],
-        'transportLdpPreference': ['one', 'two'],
-        'transportRsvpTePreference': ['one', 'two'],
+        "bgpEpeSidType": ["adjSID", "nodeSID", "setSID"],
+        "interAsBgpPreference": ["one", "two"],
+        "interAsLdpPreference": ["one", "two"],
+        "multicastForwardingMode": ["loadBalancing", "replication"],
+        "originatorType": ["endUser", "quickTest"],
+        "rawTrafficRxPortsBehavior": ["loadBalanced", "replicated"],
+        "routeMesh": ["fullMesh", "oneToOne"],
+        "srcDestMesh": ["fullMesh", "manyToMany", "none", "oneToOne"],
+        "trafficItemType": ["application", "applicationLibrary", "l2L3", "quick"],
+        "trafficType": [
+            "atm",
+            "avb1722",
+            "avbRaw",
+            "ethernetVlan",
+            "fc",
+            "fcoe",
+            "frameRelay",
+            "hdlc",
+            "ipv4",
+            "ipv4ApplicationTraffic",
+            "ipv6",
+            "ipv6ApplicationTraffic",
+            "ppp",
+            "raw",
+        ],
+        "transmitMode": ["interleaved", "sequential"],
+        "transportLdpPreference": ["one", "two"],
+        "transportRsvpTePreference": ["one", "two"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -106,10 +122,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import AppLibProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import (
+            AppLibProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AppLibProfile', None) is not None:
-                return self._properties.get('AppLibProfile')
+            if self._properties.get("AppLibProfile", None) is not None:
+                return self._properties.get("AppLibProfile")
         return AppLibProfile(self)
 
     @property
@@ -123,10 +142,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import (
+            ConfigElement,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ConfigElement', None) is not None:
-                return self._properties.get('ConfigElement')
+            if self._properties.get("ConfigElement", None) is not None:
+                return self._properties.get("ConfigElement")
         return ConfigElement(self)
 
     @property
@@ -140,10 +162,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import DynamicUpdate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import (
+            DynamicUpdate,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DynamicUpdate', None) is not None:
-                return self._properties.get('DynamicUpdate')
+            if self._properties.get("DynamicUpdate", None) is not None:
+                return self._properties.get("DynamicUpdate")
         return DynamicUpdate(self)
 
     @property
@@ -157,10 +182,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import (
+            EgressTracking,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EgressTracking', None) is not None:
-                return self._properties.get('EgressTracking')
+            if self._properties.get("EgressTracking", None) is not None:
+                return self._properties.get("EgressTracking")
         return EgressTracking(self)
 
     @property
@@ -174,10 +202,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import (
+            EndpointSet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('EndpointSet', None) is not None:
-                return self._properties.get('EndpointSet')
+            if self._properties.get("EndpointSet", None) is not None:
+                return self._properties.get("EndpointSet")
         return EndpointSet(self)
 
     @property
@@ -191,10 +222,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import (
+            HighLevelStream,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('HighLevelStream', None) is not None:
-                return self._properties.get('HighLevelStream')
+            if self._properties.get("HighLevelStream", None) is not None:
+                return self._properties.get("HighLevelStream")
         return HighLevelStream(self)
 
     @property
@@ -208,10 +242,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import (
+            Tracking,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tracking', None) is not None:
-                return self._properties.get('Tracking')
+            if self._properties.get("Tracking", None) is not None:
+                return self._properties.get("Tracking")
         return Tracking(self)
 
     @property
@@ -225,10 +262,13 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import (
+            TransmissionDistribution,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TransmissionDistribution', None) is not None:
-                return self._properties.get('TransmissionDistribution')
+            if self._properties.get("TransmissionDistribution", None) is not None:
+                return self._properties.get("TransmissionDistribution")
         return TransmissionDistribution(self)
 
     @property
@@ -239,11 +279,12 @@ class TrafficItem(Base):
         -------
         - bool: If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AllowSelfDestined'])
+        return self._get_attribute(self._SDM_ATT_MAP["AllowSelfDestined"])
+
     @AllowSelfDestined.setter
     def AllowSelfDestined(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AllowSelfDestined'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AllowSelfDestined"], value)
 
     @property
     def BgpEpeOrdinalValue(self):
@@ -251,13 +292,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["BgpEpeOrdinalValue"])
+
     @BgpEpeOrdinalValue.setter
     def BgpEpeOrdinalValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BgpEpeOrdinalValue"], value)
 
     @property
     def BgpEpeSidType(self):
@@ -265,13 +307,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - str(adjSID | nodeSID | setSID): 
+        - str(adjSID | nodeSID | setSID):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BgpEpeSidType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BgpEpeSidType"])
+
     @BgpEpeSidType.setter
     def BgpEpeSidType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BgpEpeSidType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BgpEpeSidType"], value)
 
     @property
     def BiDirectional(self):
@@ -281,11 +324,12 @@ class TrafficItem(Base):
         -------
         - bool: If true, this enables traffic to be sent in forward and reverse destination.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BiDirectional'])
+        return self._get_attribute(self._SDM_ATT_MAP["BiDirectional"])
+
     @BiDirectional.setter
     def BiDirectional(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BiDirectional'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BiDirectional"], value)
 
     @property
     def EgressEnabled(self):
@@ -295,11 +339,12 @@ class TrafficItem(Base):
         -------
         - bool: Enables the egress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressEnabled"])
+
     @EgressEnabled.setter
     def EgressEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressEnabled"], value)
 
     @property
     def EnableDynamicMplsLabelValues(self):
@@ -309,11 +354,12 @@ class TrafficItem(Base):
         -------
         - bool: Enables the dynamic MPLS label values.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDynamicMplsLabelValues"])
+
     @EnableDynamicMplsLabelValues.setter
     def EnableDynamicMplsLabelValues(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDynamicMplsLabelValues"], value)
 
     @property
     def EnableMacsecEgressOnlyAutoConfig(self):
@@ -321,13 +367,18 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableMacsecEgressOnlyAutoConfig"]
+        )
+
     @EnableMacsecEgressOnlyAutoConfig.setter
     def EnableMacsecEgressOnlyAutoConfig(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableMacsecEgressOnlyAutoConfig"], value
+        )
 
     @property
     def Enabled(self):
@@ -337,11 +388,12 @@ class TrafficItem(Base):
         -------
         - bool: If true, this enables the selected traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Errors(self):
@@ -351,7 +403,7 @@ class TrafficItem(Base):
         -------
         - list(str): Displays the errors.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def EvpnNextHopOrdinalValue(self):
@@ -359,13 +411,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvpnNextHopOrdinalValue"])
+
     @EvpnNextHopOrdinalValue.setter
     def EvpnNextHopOrdinalValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvpnNextHopOrdinalValue"], value)
 
     @property
     def FlowGroupCount(self):
@@ -375,7 +428,7 @@ class TrafficItem(Base):
         -------
         - number: Indicates the number of flow groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowGroupCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowGroupCount"])
 
     @property
     def FrerDuplicateElimination(self):
@@ -383,13 +436,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrerDuplicateElimination"])
+
     @FrerDuplicateElimination.setter
     def FrerDuplicateElimination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrerDuplicateElimination"], value)
 
     @property
     def HasOpenFlow(self):
@@ -399,11 +453,12 @@ class TrafficItem(Base):
         -------
         - bool: Indicates whether or not this trafficItem has openflow.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HasOpenFlow'])
+        return self._get_attribute(self._SDM_ATT_MAP["HasOpenFlow"])
+
     @HasOpenFlow.setter
     def HasOpenFlow(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HasOpenFlow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HasOpenFlow"], value)
 
     @property
     def HostsPerNetwork(self):
@@ -413,39 +468,42 @@ class TrafficItem(Base):
         -------
         - number: The number of emulated hosts for the traffic stream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostsPerNetwork'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostsPerNetwork"])
+
     @HostsPerNetwork.setter
     def HostsPerNetwork(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostsPerNetwork'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostsPerNetwork"], value)
 
     @property
     def InterAsBgpPreference(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterAsBgpPreference"])
+
     @InterAsBgpPreference.setter
     def InterAsBgpPreference(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterAsBgpPreference"], value)
 
     @property
     def InterAsLdpPreference(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterAsLdpPreference"])
+
     @InterAsLdpPreference.setter
     def InterAsLdpPreference(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterAsLdpPreference"], value)
 
     @property
     def LabelPreferences(self):
@@ -454,10 +512,11 @@ class TrafficItem(Base):
         -------
         - list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]])): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelPreferences'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelPreferences"])
+
     @LabelPreferences.setter
     def LabelPreferences(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['LabelPreferences'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelPreferences"], value)
 
     @property
     def MaxNumberOfVpnLabelStack(self):
@@ -467,11 +526,12 @@ class TrafficItem(Base):
         -------
         - number: Signifies the maximum number of VPN label stack
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfVpnLabelStack"])
+
     @MaxNumberOfVpnLabelStack.setter
     def MaxNumberOfVpnLabelStack(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxNumberOfVpnLabelStack"], value)
 
     @property
     def MergeDestinations(self):
@@ -481,11 +541,12 @@ class TrafficItem(Base):
         -------
         - bool: If true, merges the traffic flow in the destination ranges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MergeDestinations'])
+        return self._get_attribute(self._SDM_ATT_MAP["MergeDestinations"])
+
     @MergeDestinations.setter
     def MergeDestinations(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MergeDestinations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MergeDestinations"], value)
 
     @property
     def MulticastForwardingMode(self):
@@ -493,13 +554,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - str(loadBalancing | replication): 
+        - str(loadBalancing | replication):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastForwardingMode"])
+
     @MulticastForwardingMode.setter
     def MulticastForwardingMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastForwardingMode"], value)
 
     @property
     def Name(self):
@@ -509,11 +571,12 @@ class TrafficItem(Base):
         -------
         - str: The name of the traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumVlansForMulticastReplication(self):
@@ -523,11 +586,12 @@ class TrafficItem(Base):
         -------
         - number: Set the number of vlans for multicast replication
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumVlansForMulticastReplication"])
+
     @NumVlansForMulticastReplication.setter
     def NumVlansForMulticastReplication(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumVlansForMulticastReplication"], value)
 
     @property
     def OrdinalNo(self):
@@ -537,11 +601,12 @@ class TrafficItem(Base):
         -------
         - number: Signifies the ordinal number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OrdinalNo'])
+        return self._get_attribute(self._SDM_ATT_MAP["OrdinalNo"])
+
     @OrdinalNo.setter
     def OrdinalNo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OrdinalNo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OrdinalNo"], value)
 
     @property
     def OriginatorType(self):
@@ -551,11 +616,12 @@ class TrafficItem(Base):
         -------
         - str(endUser | quickTest): Indicates who created this trafficItem.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatorType"])
+
     @OriginatorType.setter
     def OriginatorType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatorType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatorType"], value)
 
     @property
     def RawTrafficRxPortsBehavior(self):
@@ -563,13 +629,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - str(loadBalanced | replicated): 
+        - str(loadBalanced | replicated):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'])
+        return self._get_attribute(self._SDM_ATT_MAP["RawTrafficRxPortsBehavior"])
+
     @RawTrafficRxPortsBehavior.setter
     def RawTrafficRxPortsBehavior(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RawTrafficRxPortsBehavior"], value)
 
     @property
     def RegenerateCount(self):
@@ -577,9 +644,9 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RegenerateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RegenerateCount"])
 
     @property
     def RoundRobinPacketOrdering(self):
@@ -589,11 +656,12 @@ class TrafficItem(Base):
         -------
         - bool: This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoundRobinPacketOrdering"])
+
     @RoundRobinPacketOrdering.setter
     def RoundRobinPacketOrdering(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoundRobinPacketOrdering"], value)
 
     @property
     def RouteMesh(self):
@@ -603,11 +671,12 @@ class TrafficItem(Base):
         -------
         - str(fullMesh | oneToOne): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteMesh'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteMesh"])
+
     @RouteMesh.setter
     def RouteMesh(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteMesh'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteMesh"], value)
 
     @property
     def SrcDestMesh(self):
@@ -617,11 +686,12 @@ class TrafficItem(Base):
         -------
         - str(fullMesh | manyToMany | none | oneToOne): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcDestMesh'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcDestMesh"])
+
     @SrcDestMesh.setter
     def SrcDestMesh(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SrcDestMesh'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SrcDestMesh"], value)
 
     @property
     def State(self):
@@ -631,7 +701,7 @@ class TrafficItem(Base):
         -------
         - str: (Read only) A read-only field which indicates the current state of the traffic item.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def Suspend(self):
@@ -641,11 +711,12 @@ class TrafficItem(Base):
         -------
         - bool: uspends all traffic on this stream.<
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Suspend'])
+        return self._get_attribute(self._SDM_ATT_MAP["Suspend"])
+
     @Suspend.setter
     def Suspend(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Suspend'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Suspend"], value)
 
     @property
     def TrafficItemType(self):
@@ -655,11 +726,12 @@ class TrafficItem(Base):
         -------
         - str(application | applicationLibrary | l2L3 | quick): Helps to configure and edit a traffic item that is sent across Ixia ports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemType"])
+
     @TrafficItemType.setter
     def TrafficItemType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemType"], value)
 
     @property
     def TrafficType(self):
@@ -669,11 +741,12 @@ class TrafficItem(Base):
         -------
         - str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw): Helps to select the type of traffic endpoint to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
+
     @TrafficType.setter
     def TrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficType"], value)
 
     @property
     def TransmitMode(self):
@@ -683,39 +756,42 @@ class TrafficItem(Base):
         -------
         - str(interleaved | sequential): The transmit mode for this traffic item
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransmitMode"])
+
     @TransmitMode.setter
     def TransmitMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransmitMode"], value)
 
     @property
     def TransportLdpPreference(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportLdpPreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportLdpPreference"])
+
     @TransportLdpPreference.setter
     def TransportLdpPreference(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportLdpPreference'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportLdpPreference"], value)
 
     @property
     def TransportRsvpTePreference(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportRsvpTePreference"])
+
     @TransportRsvpTePreference.setter
     def TransportRsvpTePreference(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportRsvpTePreference"], value)
 
     @property
     def UseControlPlaneFrameSize(self):
@@ -723,13 +799,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseControlPlaneFrameSize"])
+
     @UseControlPlaneFrameSize.setter
     def UseControlPlaneFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseControlPlaneFrameSize"], value)
 
     @property
     def UseControlPlaneRate(self):
@@ -737,13 +814,14 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseControlPlaneRate"])
+
     @UseControlPlaneRate.setter
     def UseControlPlaneRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseControlPlaneRate"], value)
 
     @property
     def Warnings(self):
@@ -753,23 +831,59 @@ class TrafficItem(Base):
         -------
         - list(str): Displays the warnings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
+        return self._get_attribute(self._SDM_ATT_MAP["Warnings"])
 
-    def update(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, EvpnNextHopOrdinalValue=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def update(
+        self,
+        AllowSelfDestined=None,
+        BgpEpeOrdinalValue=None,
+        BgpEpeSidType=None,
+        BiDirectional=None,
+        EgressEnabled=None,
+        EnableDynamicMplsLabelValues=None,
+        EnableMacsecEgressOnlyAutoConfig=None,
+        Enabled=None,
+        EvpnNextHopOrdinalValue=None,
+        FrerDuplicateElimination=None,
+        HasOpenFlow=None,
+        HostsPerNetwork=None,
+        InterAsBgpPreference=None,
+        InterAsLdpPreference=None,
+        LabelPreferences=None,
+        MaxNumberOfVpnLabelStack=None,
+        MergeDestinations=None,
+        MulticastForwardingMode=None,
+        Name=None,
+        NumVlansForMulticastReplication=None,
+        OrdinalNo=None,
+        OriginatorType=None,
+        RawTrafficRxPortsBehavior=None,
+        RoundRobinPacketOrdering=None,
+        RouteMesh=None,
+        SrcDestMesh=None,
+        Suspend=None,
+        TrafficItemType=None,
+        TrafficType=None,
+        TransmitMode=None,
+        TransportLdpPreference=None,
+        TransportRsvpTePreference=None,
+        UseControlPlaneFrameSize=None,
+        UseControlPlaneRate=None,
+    ):
         """Updates trafficItem resource on the server.
 
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-        - BgpEpeOrdinalValue (number): 
-        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
+        - BgpEpeOrdinalValue (number):
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-        - EnableMacsecEgressOnlyAutoConfig (bool): 
+        - EnableMacsecEgressOnlyAutoConfig (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
-        - EvpnNextHopOrdinalValue (number): 
-        - FrerDuplicateElimination (bool): 
+        - EvpnNextHopOrdinalValue (number):
+        - FrerDuplicateElimination (bool):
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
         - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
@@ -777,12 +891,12 @@ class TrafficItem(Base):
         - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - MulticastForwardingMode (str(loadBalancing | replication)):
         - Name (str): The name of the traffic item.
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
-        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)):
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -792,8 +906,8 @@ class TrafficItem(Base):
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
-        - UseControlPlaneFrameSize (bool): 
-        - UseControlPlaneRate (bool): 
+        - UseControlPlaneFrameSize (bool):
+        - UseControlPlaneRate (bool):
 
         Raises
         ------
@@ -801,21 +915,57 @@ class TrafficItem(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, EvpnNextHopOrdinalValue=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def add(
+        self,
+        AllowSelfDestined=None,
+        BgpEpeOrdinalValue=None,
+        BgpEpeSidType=None,
+        BiDirectional=None,
+        EgressEnabled=None,
+        EnableDynamicMplsLabelValues=None,
+        EnableMacsecEgressOnlyAutoConfig=None,
+        Enabled=None,
+        EvpnNextHopOrdinalValue=None,
+        FrerDuplicateElimination=None,
+        HasOpenFlow=None,
+        HostsPerNetwork=None,
+        InterAsBgpPreference=None,
+        InterAsLdpPreference=None,
+        LabelPreferences=None,
+        MaxNumberOfVpnLabelStack=None,
+        MergeDestinations=None,
+        MulticastForwardingMode=None,
+        Name=None,
+        NumVlansForMulticastReplication=None,
+        OrdinalNo=None,
+        OriginatorType=None,
+        RawTrafficRxPortsBehavior=None,
+        RoundRobinPacketOrdering=None,
+        RouteMesh=None,
+        SrcDestMesh=None,
+        Suspend=None,
+        TrafficItemType=None,
+        TrafficType=None,
+        TransmitMode=None,
+        TransportLdpPreference=None,
+        TransportRsvpTePreference=None,
+        UseControlPlaneFrameSize=None,
+        UseControlPlaneRate=None,
+    ):
         """Adds a new trafficItem resource on the server and adds it to the container.
 
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-        - BgpEpeOrdinalValue (number): 
-        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
+        - BgpEpeOrdinalValue (number):
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-        - EnableMacsecEgressOnlyAutoConfig (bool): 
+        - EnableMacsecEgressOnlyAutoConfig (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
-        - EvpnNextHopOrdinalValue (number): 
-        - FrerDuplicateElimination (bool): 
+        - EvpnNextHopOrdinalValue (number):
+        - FrerDuplicateElimination (bool):
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
         - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
@@ -823,12 +973,12 @@ class TrafficItem(Base):
         - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - MulticastForwardingMode (str(loadBalancing | replication)):
         - Name (str): The name of the traffic item.
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
-        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)):
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -838,8 +988,8 @@ class TrafficItem(Base):
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
-        - UseControlPlaneFrameSize (bool): 
-        - UseControlPlaneRate (bool): 
+        - UseControlPlaneFrameSize (bool):
+        - UseControlPlaneRate (bool):
 
         Returns
         -------
@@ -861,7 +1011,48 @@ class TrafficItem(Base):
         """
         self._delete()
 
-    def find(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, EvpnNextHopOrdinalValue=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RegenerateCount=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
+    def find(
+        self,
+        AllowSelfDestined=None,
+        BgpEpeOrdinalValue=None,
+        BgpEpeSidType=None,
+        BiDirectional=None,
+        EgressEnabled=None,
+        EnableDynamicMplsLabelValues=None,
+        EnableMacsecEgressOnlyAutoConfig=None,
+        Enabled=None,
+        Errors=None,
+        EvpnNextHopOrdinalValue=None,
+        FlowGroupCount=None,
+        FrerDuplicateElimination=None,
+        HasOpenFlow=None,
+        HostsPerNetwork=None,
+        InterAsBgpPreference=None,
+        InterAsLdpPreference=None,
+        LabelPreferences=None,
+        MaxNumberOfVpnLabelStack=None,
+        MergeDestinations=None,
+        MulticastForwardingMode=None,
+        Name=None,
+        NumVlansForMulticastReplication=None,
+        OrdinalNo=None,
+        OriginatorType=None,
+        RawTrafficRxPortsBehavior=None,
+        RegenerateCount=None,
+        RoundRobinPacketOrdering=None,
+        RouteMesh=None,
+        SrcDestMesh=None,
+        State=None,
+        Suspend=None,
+        TrafficItemType=None,
+        TrafficType=None,
+        TransmitMode=None,
+        TransportLdpPreference=None,
+        TransportRsvpTePreference=None,
+        UseControlPlaneFrameSize=None,
+        UseControlPlaneRate=None,
+        Warnings=None,
+    ):
         """Finds and retrieves trafficItem resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficItem resources from the server.
@@ -871,17 +1062,17 @@ class TrafficItem(Base):
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
-        - BgpEpeOrdinalValue (number): 
-        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
+        - BgpEpeOrdinalValue (number):
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
-        - EnableMacsecEgressOnlyAutoConfig (bool): 
+        - EnableMacsecEgressOnlyAutoConfig (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
         - Errors (list(str)): Displays the errors.
-        - EvpnNextHopOrdinalValue (number): 
+        - EvpnNextHopOrdinalValue (number):
         - FlowGroupCount (number): Indicates the number of flow groups.
-        - FrerDuplicateElimination (bool): 
+        - FrerDuplicateElimination (bool):
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
         - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
@@ -889,13 +1080,13 @@ class TrafficItem(Base):
         - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
-        - MulticastForwardingMode (str(loadBalancing | replication)): 
+        - MulticastForwardingMode (str(loadBalancing | replication)):
         - Name (str): The name of the traffic item.
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
-        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
-        - RegenerateCount (number): 
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)):
+        - RegenerateCount (number):
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -906,8 +1097,8 @@ class TrafficItem(Base):
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
-        - UseControlPlaneFrameSize (bool): 
-        - UseControlPlaneRate (bool): 
+        - UseControlPlaneFrameSize (bool):
+        - UseControlPlaneRate (bool):
         - Warnings (list(str)): Displays the warnings.
 
         Returns
@@ -953,10 +1144,12 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('convertToRaw', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("convertToRaw", payload=payload, response_object=None)
 
     def Duplicate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -974,10 +1167,12 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('duplicate', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("duplicate", payload=payload, response_object=None)
 
     def DuplicateItems(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -994,10 +1189,12 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('duplicateItems', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("duplicateItems", payload=payload, response_object=None)
 
     def Generate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1021,10 +1218,12 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generate', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generate", payload=payload, response_object=None)
 
     def PauseStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1042,10 +1241,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pauseStatelessTraffic", payload=payload, response_object=None
+        )
 
     def ResolveAptixiaEndpoints(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1063,10 +1266,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resolveAptixiaEndpoints', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "resolveAptixiaEndpoints", payload=payload, response_object=None
+        )
 
     def StartDefaultLearning(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1090,10 +1297,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startDefaultLearning', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startDefaultLearning", payload=payload, response_object=None
+        )
 
     def StartLearning(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1136,10 +1347,12 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startLearning', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startLearning", payload=payload, response_object=None)
 
     def StartStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1156,10 +1369,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StartStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1176,10 +1393,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
 
     def StopStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1196,10 +1417,14 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTraffic", payload=payload, response_object=None
+        )
 
     def StopStatelessTrafficBlocking(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1216,7 +1441,11 @@ class TrafficItem(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopStatelessTrafficBlocking", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,29 +35,52 @@ class FlowRangeAction(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'flowRangeAction'
+    _SDM_NAME = "flowRangeAction"
     _SDM_ATT_MAP = {
-        'EthDestination': 'ethDestination',
-        'EthSource': 'ethSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'MaxByteLength': 'maxByteLength',
-        'OutputPort': 'outputPort',
-        'QueueId': 'queueId',
-        'TransportDestination': 'transportDestination',
-        'TransportSource': 'transportSource',
-        'TypeOfAction': 'typeOfAction',
-        'TypeOfOutPort': 'typeOfOutPort',
-        'VendorData': 'vendorData',
-        'VendorDataLength': 'vendorDataLength',
-        'VendorId': 'vendorId',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "EthDestination": "ethDestination",
+        "EthSource": "ethSource",
+        "IpDscp": "ipDscp",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "MaxByteLength": "maxByteLength",
+        "OutputPort": "outputPort",
+        "QueueId": "queueId",
+        "TransportDestination": "transportDestination",
+        "TransportSource": "transportSource",
+        "TypeOfAction": "typeOfAction",
+        "TypeOfOutPort": "typeOfOutPort",
+        "VendorData": "vendorData",
+        "VendorDataLength": "vendorDataLength",
+        "VendorId": "vendorId",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
     _SDM_ENUM_MAP = {
-        'typeOfAction': ['none', 'output', 'enqueue', 'setVlanId', 'setVlanPriority', 'stripVlanHeader', 'setEthernetSrc', 'setEthernetDst', 'setIpv4TosBits', 'setIpv4SrcAddress', 'setIpv4DstAddress', 'setTransportSource', 'setTransportDestination', 'setVendorAction'],
-        'typeOfOutPort': ['ofppManual', 'ofppAll', 'ofppController', 'ofppInPort', 'ofppLocal', 'ofppNormal', 'ofppFlood'],
+        "typeOfAction": [
+            "none",
+            "output",
+            "enqueue",
+            "setVlanId",
+            "setVlanPriority",
+            "stripVlanHeader",
+            "setEthernetSrc",
+            "setEthernetDst",
+            "setIpv4TosBits",
+            "setIpv4SrcAddress",
+            "setIpv4DstAddress",
+            "setTransportSource",
+            "setTransportDestination",
+            "setVendorAction",
+        ],
+        "typeOfOutPort": [
+            "ofppManual",
+            "ofppAll",
+            "ofppController",
+            "ofppInPort",
+            "ofppLocal",
+            "ofppNormal",
+            "ofppFlood",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,11 +94,12 @@ class FlowRangeAction(Base):
         -------
         - str: Specifies the destination address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetDst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthDestination"])
+
     @EthDestination.setter
     def EthDestination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthDestination"], value)
 
     @property
     def EthSource(self):
@@ -84,11 +109,12 @@ class FlowRangeAction(Base):
         -------
         - str: Specifies the source address of the Ethernet port. This attribute value is applicable only when the typeOfAction selected is setEthernetSrc.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthSource"])
+
     @EthSource.setter
     def EthSource(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthSource"], value)
 
     @property
     def IpDscp(self):
@@ -98,11 +124,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the IP DSCP value. This attribute value is applicable only when the typeOfAction selected is setIpv4TosBits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def Ipv4Destination(self):
@@ -112,11 +139,12 @@ class FlowRangeAction(Base):
         -------
         - str: Specifies the destination IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4DstAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -126,11 +154,12 @@ class FlowRangeAction(Base):
         -------
         - str: Specifies the source IPv4 address for this flow range. This attribute value is applicable only when the typeOfAction selected is setIpv4SrcAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def MaxByteLength(self):
@@ -140,11 +169,12 @@ class FlowRangeAction(Base):
         -------
         - number: Indicates the maximum length in bytes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxByteLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxByteLength"])
+
     @MaxByteLength.setter
     def MaxByteLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxByteLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxByteLength"], value)
 
     @property
     def OutputPort(self):
@@ -154,11 +184,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the number of Output ports used. This attribute value is applicable only when the typeOfOutPort selected is ofppManual.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutputPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutputPort"])
+
     @OutputPort.setter
     def OutputPort(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutputPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutputPort"], value)
 
     @property
     def QueueId(self):
@@ -168,11 +199,12 @@ class FlowRangeAction(Base):
         -------
         - number: Indicates the Queue ID for this Flow Range. This attribute value is applicable only when the typeOfAction selected is enqueue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
+        return self._get_attribute(self._SDM_ATT_MAP["QueueId"])
+
     @QueueId.setter
     def QueueId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QueueId"], value)
 
     @property
     def TransportDestination(self):
@@ -182,11 +214,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the transport destination address. This attribute value is applicable only when the typeOfAction selected is setTransportDestination.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportDestination"])
+
     @TransportDestination.setter
     def TransportDestination(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportDestination"], value)
 
     @property
     def TransportSource(self):
@@ -196,11 +229,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the Transport source address. This attribute value is applicable only when the typeOfAction selected is setTransportSource.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportSource"])
+
     @TransportSource.setter
     def TransportSource(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportSource"], value)
 
     @property
     def TypeOfAction(self):
@@ -210,11 +244,12 @@ class FlowRangeAction(Base):
         -------
         - str(none | output | enqueue | setVlanId | setVlanPriority | stripVlanHeader | setEthernetSrc | setEthernetDst | setIpv4TosBits | setIpv4SrcAddress | setIpv4DstAddress | setTransportSource | setTransportDestination | setVendorAction): Indicates the action type associated with this Flow Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeOfAction'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeOfAction"])
+
     @TypeOfAction.setter
     def TypeOfAction(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeOfAction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeOfAction"], value)
 
     @property
     def TypeOfOutPort(self):
@@ -224,11 +259,12 @@ class FlowRangeAction(Base):
         -------
         - str(ofppManual | ofppAll | ofppController | ofppInPort | ofppLocal | ofppNormal | ofppFlood): Specifies the Output Port Type for this Flow Range. This attribute value is applicable only when the typeOfAction selected is output
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TypeOfOutPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["TypeOfOutPort"])
+
     @TypeOfOutPort.setter
     def TypeOfOutPort(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TypeOfOutPort'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TypeOfOutPort"], value)
 
     @property
     def VendorData(self):
@@ -238,11 +274,12 @@ class FlowRangeAction(Base):
         -------
         - str: Specifies the data of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorData'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorData"])
+
     @VendorData.setter
     def VendorData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorData"], value)
 
     @property
     def VendorDataLength(self):
@@ -252,11 +289,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the data length of the Vendor. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorDataLength"])
+
     @VendorDataLength.setter
     def VendorDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorDataLength"], value)
 
     @property
     def VendorId(self):
@@ -266,11 +304,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the unique Vendor identifier. This attribute value is applicable only when the typeOfAction selected is setVendorAction.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VendorId"])
+
     @VendorId.setter
     def VendorId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VendorId"], value)
 
     @property
     def VlanId(self):
@@ -280,11 +319,12 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the unique VLAN Identifier for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanId.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -294,13 +334,33 @@ class FlowRangeAction(Base):
         -------
         - number: Specifies the User Priority for this VLAN. This attribute value is applicable only when the typeOfAction selected is setVlanPriority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        EthDestination=None,
+        EthSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        MaxByteLength=None,
+        OutputPort=None,
+        QueueId=None,
+        TransportDestination=None,
+        TransportSource=None,
+        TypeOfAction=None,
+        TypeOfOutPort=None,
+        VendorData=None,
+        VendorDataLength=None,
+        VendorId=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, int, str, str, int, int, int, int, int, str, str, str, int, int, int, int) -> FlowRangeAction
         """Updates flowRangeAction resource on the server.
 
@@ -330,7 +390,26 @@ class FlowRangeAction(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
+    def add(
+        self,
+        EthDestination=None,
+        EthSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        MaxByteLength=None,
+        OutputPort=None,
+        QueueId=None,
+        TransportDestination=None,
+        TransportSource=None,
+        TypeOfAction=None,
+        TypeOfOutPort=None,
+        VendorData=None,
+        VendorDataLength=None,
+        VendorId=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, int, str, str, int, int, int, int, int, str, str, str, int, int, int, int) -> FlowRangeAction
         """Adds a new flowRangeAction resource on the server and adds it to the container.
 
@@ -374,7 +453,26 @@ class FlowRangeAction(Base):
         """
         self._delete()
 
-    def find(self, EthDestination=None, EthSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, TypeOfAction=None, TypeOfOutPort=None, VendorData=None, VendorDataLength=None, VendorId=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        EthDestination=None,
+        EthSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        MaxByteLength=None,
+        OutputPort=None,
+        QueueId=None,
+        TransportDestination=None,
+        TransportSource=None,
+        TypeOfAction=None,
+        TypeOfOutPort=None,
+        VendorData=None,
+        VendorDataLength=None,
+        VendorId=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (str, str, int, str, str, int, int, int, int, int, str, str, str, int, int, int, int) -> FlowRangeAction
         """Finds and retrieves flowRangeAction resources from the server.
 

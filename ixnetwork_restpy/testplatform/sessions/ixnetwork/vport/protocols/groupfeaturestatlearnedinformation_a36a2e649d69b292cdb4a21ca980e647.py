@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,30 +34,29 @@ class GroupFeatureStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupFeatureStatLearnedInformation'
+    _SDM_NAME = "groupFeatureStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'ActionsAll': 'actionsAll',
-        'ActionsFastFailOver': 'actionsFastFailOver',
-        'ActionsIndirect': 'actionsIndirect',
-        'ActionsSelect': 'actionsSelect',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DatapathId': 'datapathId',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'GroupCapabilities': 'groupCapabilities',
-        'GroupType': 'groupType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MaxGroupsAll': 'maxGroupsAll',
-        'MaxGroupsFastFailOver': 'maxGroupsFastFailOver',
-        'MaxGroupsIndirect': 'maxGroupsIndirect',
-        'MaxGroupsSelect': 'maxGroupsSelect',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        "ActionsAll": "actionsAll",
+        "ActionsFastFailOver": "actionsFastFailOver",
+        "ActionsIndirect": "actionsIndirect",
+        "ActionsSelect": "actionsSelect",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "DatapathId": "datapathId",
+        "ErrorCode": "errorCode",
+        "ErrorType": "errorType",
+        "GroupCapabilities": "groupCapabilities",
+        "GroupType": "groupType",
+        "Latency": "latency",
+        "LocalIp": "localIp",
+        "MaxGroupsAll": "maxGroupsAll",
+        "MaxGroupsFastFailOver": "maxGroupsFastFailOver",
+        "MaxGroupsIndirect": "maxGroupsIndirect",
+        "MaxGroupsSelect": "maxGroupsSelect",
+        "NegotiatedVersion": "negotiatedVersion",
+        "RemoteIp": "remoteIp",
+        "ReplyState": "replyState",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupFeatureStatLearnedInformation, self).__init__(parent, list_op)
@@ -69,7 +69,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionsAll'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionsAll"])
 
     @property
     def ActionsFastFailOver(self):
@@ -79,7 +79,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionsFastFailOver'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionsFastFailOver"])
 
     @property
     def ActionsIndirect(self):
@@ -89,7 +89,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionsIndirect'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionsIndirect"])
 
     @property
     def ActionsSelect(self):
@@ -99,7 +99,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionsSelect'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionsSelect"])
 
     @property
     def DataPathIdAsHex(self):
@@ -109,7 +109,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def DatapathId(self):
@@ -119,7 +119,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the connected switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DatapathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DatapathId"])
 
     @property
     def ErrorCode(self):
@@ -129,7 +129,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The error code of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorCode"])
 
     @property
     def ErrorType(self):
@@ -139,7 +139,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The type of the error received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ErrorType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ErrorType"])
 
     @property
     def GroupCapabilities(self):
@@ -149,7 +149,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: Specify the group capabilities supported by Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupCapabilities'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupCapabilities"])
 
     @property
     def GroupType(self):
@@ -159,7 +159,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: Specify the group types supported by Switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupType'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupType"])
 
     @property
     def Latency(self):
@@ -169,7 +169,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - number: The latency measurement for the OpenFlow channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Latency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Latency"])
 
     @property
     def LocalIp(self):
@@ -179,7 +179,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The local IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def MaxGroupsAll(self):
@@ -189,7 +189,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxGroupsAll'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxGroupsAll"])
 
     @property
     def MaxGroupsFastFailOver(self):
@@ -199,7 +199,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxGroupsFastFailOver'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxGroupsFastFailOver"])
 
     @property
     def MaxGroupsIndirect(self):
@@ -209,7 +209,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxGroupsIndirect'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxGroupsIndirect"])
 
     @property
     def MaxGroupsSelect(self):
@@ -219,7 +219,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxGroupsSelect'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxGroupsSelect"])
 
     @property
     def NegotiatedVersion(self):
@@ -229,7 +229,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The OpenFlow version supported by this configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NegotiatedVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatedVersion"])
 
     @property
     def RemoteIp(self):
@@ -239,7 +239,7 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def ReplyState(self):
@@ -249,10 +249,10 @@ class GroupFeatureStatLearnedInformation(Base):
         -------
         - str: The reply state of the OF Channel.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReplyState"])
 
     def add(self):
-        """Adds a new groupFeatureStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new groupFeatureStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -264,7 +264,28 @@ class GroupFeatureStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActionsAll=None, ActionsFastFailOver=None, ActionsIndirect=None, ActionsSelect=None, DataPathIdAsHex=None, DatapathId=None, ErrorCode=None, ErrorType=None, GroupCapabilities=None, GroupType=None, Latency=None, LocalIp=None, MaxGroupsAll=None, MaxGroupsFastFailOver=None, MaxGroupsIndirect=None, MaxGroupsSelect=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None):
+    def find(
+        self,
+        ActionsAll=None,
+        ActionsFastFailOver=None,
+        ActionsIndirect=None,
+        ActionsSelect=None,
+        DataPathIdAsHex=None,
+        DatapathId=None,
+        ErrorCode=None,
+        ErrorType=None,
+        GroupCapabilities=None,
+        GroupType=None,
+        Latency=None,
+        LocalIp=None,
+        MaxGroupsAll=None,
+        MaxGroupsFastFailOver=None,
+        MaxGroupsIndirect=None,
+        MaxGroupsSelect=None,
+        NegotiatedVersion=None,
+        RemoteIp=None,
+        ReplyState=None,
+    ):
         # type: (str, str, str, str, str, str, str, str, str, str, int, str, int, int, int, int, str, str, str) -> GroupFeatureStatLearnedInformation
         """Finds and retrieves groupFeatureStatLearnedInformation resources from the server.
 

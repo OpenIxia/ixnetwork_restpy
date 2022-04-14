@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,25 +33,28 @@ class Egress(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egress'
+    _SDM_NAME = "egress"
     _SDM_ATT_MAP = {
-        'Bandwidth': 'bandwidth',
-        'EgressBehavior': 'egressBehavior',
-        'EnableFixedLabelForResv': 'enableFixedLabelForResv',
-        'LabelValue': 'labelValue',
-        'PathErrorTlv': 'pathErrorTlv',
-        'ReflectRro': 'reflectRro',
-        'RefreshInterval': 'refreshInterval',
-        'ReservationStyle': 'reservationStyle',
-        'ReservationTearTlv': 'reservationTearTlv',
-        'ReservationTlv': 'reservationTlv',
-        'Rro': 'rro',
-        'SendResvConfirmation': 'sendResvConfirmation',
-        'TimeoutMultiplier': 'timeoutMultiplier',
+        "Bandwidth": "bandwidth",
+        "EgressBehavior": "egressBehavior",
+        "EnableFixedLabelForResv": "enableFixedLabelForResv",
+        "LabelValue": "labelValue",
+        "PathErrorTlv": "pathErrorTlv",
+        "ReflectRro": "reflectRro",
+        "RefreshInterval": "refreshInterval",
+        "ReservationStyle": "reservationStyle",
+        "ReservationTearTlv": "reservationTearTlv",
+        "ReservationTlv": "reservationTlv",
+        "Rro": "rro",
+        "SendResvConfirmation": "sendResvConfirmation",
+        "TimeoutMultiplier": "timeoutMultiplier",
     }
     _SDM_ENUM_MAP = {
-        'egressBehavior': ['alwaysUseConfiguredStyle', 'useSeWhenIndicatedInSessionAttribute'],
-        'reservationStyle': ['se', 'ff', 'wf'],
+        "egressBehavior": [
+            "alwaysUseConfiguredStyle",
+            "useSeWhenIndicatedInSessionAttribute",
+        ],
+        "reservationStyle": ["se", "ff", "wf"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,11 +68,12 @@ class Egress(Base):
         -------
         - number: The requested bandwidth for the tunnel, expressed in kbits per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["Bandwidth"])
+
     @Bandwidth.setter
     def Bandwidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Bandwidth"], value)
 
     @property
     def EgressBehavior(self):
@@ -78,11 +83,12 @@ class Egress(Base):
         -------
         - str(alwaysUseConfiguredStyle | useSeWhenIndicatedInSessionAttribute): Dictates the RSVP reservation style when the value of behavior is rsvpEgress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EgressBehavior'])
+        return self._get_attribute(self._SDM_ATT_MAP["EgressBehavior"])
+
     @EgressBehavior.setter
     def EgressBehavior(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EgressBehavior'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EgressBehavior"], value)
 
     @property
     def EnableFixedLabelForResv(self):
@@ -92,11 +98,12 @@ class Egress(Base):
         -------
         - bool: Enables the use of a fixed label in RESV messages while in Egress mode.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFixedLabelForResv'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFixedLabelForResv"])
+
     @EnableFixedLabelForResv.setter
     def EnableFixedLabelForResv(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFixedLabelForResv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFixedLabelForResv"], value)
 
     @property
     def LabelValue(self):
@@ -106,11 +113,12 @@ class Egress(Base):
         -------
         - str: RSVP label for IPV4 and IPv6 RSVP related routes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelValue"])
+
     @LabelValue.setter
     def LabelValue(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelValue"], value)
 
     @property
     def PathErrorTlv(self):
@@ -119,10 +127,11 @@ class Egress(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): When signaling fails in the head-end area, a path error message is sent to the head-end.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PathErrorTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["PathErrorTlv"])
+
     @PathErrorTlv.setter
     def PathErrorTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['PathErrorTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PathErrorTlv"], value)
 
     @property
     def ReflectRro(self):
@@ -132,11 +141,12 @@ class Egress(Base):
         -------
         - bool: Enables the reflection of a received RRO object for Egress mode destination ranges. When selected, any RRO items added with addRroItem are ignored. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReflectRro'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReflectRro"])
+
     @ReflectRro.setter
     def ReflectRro(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReflectRro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReflectRro"], value)
 
     @property
     def RefreshInterval(self):
@@ -146,11 +156,12 @@ class Egress(Base):
         -------
         - number: When the destination range is used in Egress mode, this indicates the time, in seconds, between the simulated router's message to the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RefreshInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RefreshInterval"])
+
     @RefreshInterval.setter
     def RefreshInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RefreshInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RefreshInterval"], value)
 
     @property
     def ReservationStyle(self):
@@ -160,11 +171,12 @@ class Egress(Base):
         -------
         - str(se | ff | wf): The reservation style desired. One of the following options: rsvpFF (fixed filtered mode) or rsvpSE (shared explicit mode).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReservationStyle'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReservationStyle"])
+
     @ReservationStyle.setter
     def ReservationStyle(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReservationStyle'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReservationStyle"], value)
 
     @property
     def ReservationTearTlv(self):
@@ -173,10 +185,11 @@ class Egress(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): a set of custom TLVs to be included in RESV TEAR messages. These may only be used for egress routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReservationTearTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReservationTearTlv"])
+
     @ReservationTearTlv.setter
     def ReservationTearTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ReservationTearTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReservationTearTlv"], value)
 
     @property
     def ReservationTlv(self):
@@ -185,10 +198,11 @@ class Egress(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:str)): a set of custom TLVs to be included in RESV messages. These may only be used for egress routers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReservationTlv'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReservationTlv"])
+
     @ReservationTlv.setter
     def ReservationTlv(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['ReservationTlv'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReservationTlv"], value)
 
     @property
     def Rro(self):
@@ -197,10 +211,11 @@ class Egress(Base):
         -------
         - list(dict(arg1:str[ip | label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool)): If enabled, an RRO is reflected back to the originating router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rro'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rro"])
+
     @Rro.setter
     def Rro(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Rro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rro"], value)
 
     @property
     def SendResvConfirmation(self):
@@ -210,11 +225,12 @@ class Egress(Base):
         -------
         - bool: Enables the generation of RESV Confirmation messages for received RESV messages which contain a RESV Confirmation Class object. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendResvConfirmation'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendResvConfirmation"])
+
     @SendResvConfirmation.setter
     def SendResvConfirmation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendResvConfirmation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendResvConfirmation"], value)
 
     @property
     def TimeoutMultiplier(self):
@@ -224,13 +240,29 @@ class Egress(Base):
         -------
         - number: The number of Hellos before a router is declared dead.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"])
+
     @TimeoutMultiplier.setter
     def TimeoutMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"], value)
 
-    def update(self, Bandwidth=None, EgressBehavior=None, EnableFixedLabelForResv=None, LabelValue=None, PathErrorTlv=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, ReservationTearTlv=None, ReservationTlv=None, Rro=None, SendResvConfirmation=None, TimeoutMultiplier=None):
+    def update(
+        self,
+        Bandwidth=None,
+        EgressBehavior=None,
+        EnableFixedLabelForResv=None,
+        LabelValue=None,
+        PathErrorTlv=None,
+        ReflectRro=None,
+        RefreshInterval=None,
+        ReservationStyle=None,
+        ReservationTearTlv=None,
+        ReservationTlv=None,
+        Rro=None,
+        SendResvConfirmation=None,
+        TimeoutMultiplier=None,
+    ):
         """Updates egress resource on the server.
 
         Args
@@ -255,7 +287,22 @@ class Egress(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Bandwidth=None, EgressBehavior=None, EnableFixedLabelForResv=None, LabelValue=None, PathErrorTlv=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, ReservationTearTlv=None, ReservationTlv=None, Rro=None, SendResvConfirmation=None, TimeoutMultiplier=None):
+    def find(
+        self,
+        Bandwidth=None,
+        EgressBehavior=None,
+        EnableFixedLabelForResv=None,
+        LabelValue=None,
+        PathErrorTlv=None,
+        ReflectRro=None,
+        RefreshInterval=None,
+        ReservationStyle=None,
+        ReservationTearTlv=None,
+        ReservationTlv=None,
+        Rro=None,
+        SendResvConfirmation=None,
+        TimeoutMultiplier=None,
+    ):
         """Finds and retrieves egress resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.

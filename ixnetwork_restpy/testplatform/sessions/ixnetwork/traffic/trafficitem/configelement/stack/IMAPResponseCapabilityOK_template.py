@@ -4,16 +4,16 @@ from ixnetwork_restpy.files import Files
 
 class IMAPResponseCapabilityOK(Base):
     __slots__ = ()
-    _SDM_NAME = 'IMAP_Response_Capability_OK'
+    _SDM_NAME = "IMAP_Response_Capability_OK"
     _SDM_ATT_MAP = {
-        'RESPONSE1Response Tag1': 'IMAP_Response_Capability_OK.header.RESPONSE1.Response Tag1-1',
-        'RESPONSE1Space5': 'IMAP_Response_Capability_OK.header.RESPONSE1.Space5-2',
-        'RESPONSE1Response': 'IMAP_Response_Capability_OK.header.RESPONSE1.Response-3',
-        'RESPONSE1CRLF': 'IMAP_Response_Capability_OK.header.RESPONSE1.CRLF-4',
-        'RESPONSE2Response Tag': 'IMAP_Response_Capability_OK.header.RESPONSE2.Response Tag-5',
-        'RESPONSE2Space6': 'IMAP_Response_Capability_OK.header.RESPONSE2.Space6-6',
-        'RESPONSE2Response': 'IMAP_Response_Capability_OK.header.RESPONSE2.Response-7',
-        'RESPONSE2CRLF': 'IMAP_Response_Capability_OK.header.RESPONSE2.CRLF-8',
+        "RESPONSE1Response Tag1": "IMAP_Response_Capability_OK.header.RESPONSE1.Response Tag1-1",
+        "RESPONSE1Space5": "IMAP_Response_Capability_OK.header.RESPONSE1.Space5-2",
+        "RESPONSE1Response": "IMAP_Response_Capability_OK.header.RESPONSE1.Response-3",
+        "RESPONSE1CRLF": "IMAP_Response_Capability_OK.header.RESPONSE1.CRLF-4",
+        "RESPONSE2Response Tag": "IMAP_Response_Capability_OK.header.RESPONSE2.Response Tag-5",
+        "RESPONSE2Space6": "IMAP_Response_Capability_OK.header.RESPONSE2.Space6-6",
+        "RESPONSE2Response": "IMAP_Response_Capability_OK.header.RESPONSE2.Response-7",
+        "RESPONSE2CRLF": "IMAP_Response_Capability_OK.header.RESPONSE2.CRLF-8",
     }
 
     def __init__(self, parent, list_op=False):
@@ -27,7 +27,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE1Response Tag1']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE1Response Tag1"])
+        )
 
     @property
     def RESPONSE1Space5(self):
@@ -37,7 +40,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE1Space5']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE1Space5"])
+        )
 
     @property
     def RESPONSE1Response(self):
@@ -47,7 +53,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE1Response']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE1Response"])
+        )
 
     @property
     def RESPONSE1CRLF(self):
@@ -57,7 +66,8 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE1CRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE1CRLF"]))
 
     @property
     def RESPONSE2ResponseTag(self):
@@ -67,7 +77,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE2Response Tag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE2Response Tag"])
+        )
 
     @property
     def RESPONSE2Space6(self):
@@ -77,7 +90,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE2Space6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE2Space6"])
+        )
 
     @property
     def RESPONSE2Response(self):
@@ -87,7 +103,10 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE2Response']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE2Response"])
+        )
 
     @property
     def RESPONSE2CRLF(self):
@@ -97,7 +116,8 @@ class IMAPResponseCapabilityOK(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RESPONSE2CRLF']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RESPONSE2CRLF"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

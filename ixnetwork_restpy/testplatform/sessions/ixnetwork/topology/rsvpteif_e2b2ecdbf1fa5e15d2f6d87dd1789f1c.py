@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,55 +35,63 @@ class RsvpteIf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpteIf'
+    _SDM_NAME = "rsvpteIf"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActualRestartTime': 'actualRestartTime',
-        'AdvertisedRestartTime': 'advertisedRestartTime',
-        'AuthenticationAlgorithm': 'authenticationAlgorithm',
-        'AuthenticationKeyForReceivedPackets': 'authenticationKeyForReceivedPackets',
-        'AuthenticationKeyForSentPackets': 'authenticationKeyForSentPackets',
-        'AuthenticationKeyIdentifier': 'authenticationKeyIdentifier',
-        'AutoGenerateAuthenticationKeyIdentifier': 'autoGenerateAuthenticationKeyIdentifier',
-        'BundleMessageThresholdTime': 'bundleMessageThresholdTime',
-        'CheckIntegrityForReceivedPackets': 'checkIntegrityForReceivedPackets',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DutIp': 'dutIp',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableBundleMessageSending': 'enableBundleMessageSending',
-        'EnableBundleMessageThresholdTimer': 'enableBundleMessageThresholdTimer',
-        'EnableGracefulRestartHelperMode': 'enableGracefulRestartHelperMode',
-        'EnableGracefulRestartRestartingMode': 'enableGracefulRestartRestartingMode',
-        'EnableHelloExtension': 'enableHelloExtension',
-        'EnableRefreshReduction': 'enableRefreshReduction',
-        'Errors': 'errors',
-        'GenerateSequenceNumberBasedOnRealTime': 'generateSequenceNumberBasedOnRealTime',
-        'HandshakeRequired': 'handshakeRequired',
-        'HelloInterval': 'helloInterval',
-        'HelloTimeoutMultiplier': 'helloTimeoutMultiplier',
-        'InitialSequenceNumber': 'initialSequenceNumber',
-        'LabelReqRefCount': 'labelReqRefCount',
-        'LabelSpaceEnd': 'labelSpaceEnd',
-        'LabelSpaceStart': 'labelSpaceStart',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfRestarts': 'numberOfRestarts',
-        'OurIp': 'ourIp',
-        'RecoveryTime': 'recoveryTime',
-        'RestartStartTime': 'restartStartTime',
-        'RestartUpTime': 'restartUpTime',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SummaryRefreshInterval': 'summaryRefreshInterval',
-        'UseSameAuthenticationKeyForPeer': 'useSameAuthenticationKeyForPeer',
-        'UsingGatewayIp': 'usingGatewayIp',
+        "Active": "active",
+        "ActualRestartTime": "actualRestartTime",
+        "AdvertisedRestartTime": "advertisedRestartTime",
+        "AuthenticationAlgorithm": "authenticationAlgorithm",
+        "AuthenticationKeyForReceivedPackets": "authenticationKeyForReceivedPackets",
+        "AuthenticationKeyForSentPackets": "authenticationKeyForSentPackets",
+        "AuthenticationKeyIdentifier": "authenticationKeyIdentifier",
+        "AutoGenerateAuthenticationKeyIdentifier": "autoGenerateAuthenticationKeyIdentifier",
+        "BundleMessageThresholdTime": "bundleMessageThresholdTime",
+        "CheckIntegrityForReceivedPackets": "checkIntegrityForReceivedPackets",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "DutIp": "dutIp",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableBundleMessageSending": "enableBundleMessageSending",
+        "EnableBundleMessageThresholdTimer": "enableBundleMessageThresholdTimer",
+        "EnableGracefulRestartHelperMode": "enableGracefulRestartHelperMode",
+        "EnableGracefulRestartRestartingMode": "enableGracefulRestartRestartingMode",
+        "EnableHelloExtension": "enableHelloExtension",
+        "EnableRefreshReduction": "enableRefreshReduction",
+        "Errors": "errors",
+        "GenerateSequenceNumberBasedOnRealTime": "generateSequenceNumberBasedOnRealTime",
+        "HandshakeRequired": "handshakeRequired",
+        "HelloInterval": "helloInterval",
+        "HelloTimeoutMultiplier": "helloTimeoutMultiplier",
+        "InitialSequenceNumber": "initialSequenceNumber",
+        "LabelReqRefCount": "labelReqRefCount",
+        "LabelSpaceEnd": "labelSpaceEnd",
+        "LabelSpaceStart": "labelSpaceStart",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "NumberOfRestarts": "numberOfRestarts",
+        "OurIp": "ourIp",
+        "RecoveryTime": "recoveryTime",
+        "RestartStartTime": "restartStartTime",
+        "RestartUpTime": "restartUpTime",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
+        "SummaryRefreshInterval": "summaryRefreshInterval",
+        "UseSameAuthenticationKeyForPeer": "useSameAuthenticationKeyForPeer",
+        "UsingGatewayIp": "usingGatewayIp",
     }
     _SDM_ENUM_MAP = {
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -99,10 +108,13 @@ class RsvpteIf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -114,7 +126,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ActualRestartTime(self):
@@ -125,7 +138,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Actual Restart Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActualRestartTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActualRestartTime"])
+        )
 
     @property
     def AdvertisedRestartTime(self):
@@ -136,7 +152,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertised Restart Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertisedRestartTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertisedRestartTime"])
+        )
 
     @property
     def AuthenticationAlgorithm(self):
@@ -147,7 +166,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticationAlgorithm"])
+        )
 
     @property
     def AuthenticationKeyForReceivedPackets(self):
@@ -158,7 +180,13 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key for Received Packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationKeyForReceivedPackets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationKeyForReceivedPackets"]
+            ),
+        )
 
     @property
     def AuthenticationKeyForSentPackets(self):
@@ -169,7 +197,11 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key for Sent Packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationKeyForSentPackets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticationKeyForSentPackets"]),
+        )
 
     @property
     def AuthenticationKeyIdentifier(self):
@@ -180,7 +212,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Key Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationKeyIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AuthenticationKeyIdentifier"])
+        )
 
     @property
     def AutoGenerateAuthenticationKeyIdentifier(self):
@@ -191,7 +226,13 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Generate Authentication Key Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoGenerateAuthenticationKeyIdentifier']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AutoGenerateAuthenticationKeyIdentifier"]
+            ),
+        )
 
     @property
     def BundleMessageThresholdTime(self):
@@ -202,7 +243,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bundle Message Threshold Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BundleMessageThresholdTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BundleMessageThresholdTime"])
+        )
 
     @property
     def CheckIntegrityForReceivedPackets(self):
@@ -213,21 +257,26 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Check Integrity for Received Packets
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CheckIntegrityForReceivedPackets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CheckIntegrityForReceivedPackets"]),
+        )
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -237,7 +286,7 @@ class RsvpteIf(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -247,7 +296,7 @@ class RsvpteIf(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DutIp(self):
@@ -258,7 +307,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): DUT IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DutIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DutIp"]))
 
     @property
     def EnableBfdRegistration(self):
@@ -269,7 +319,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+        )
 
     @property
     def EnableBundleMessageSending(self):
@@ -280,7 +333,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Bundle Message Sending
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBundleMessageSending']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBundleMessageSending"])
+        )
 
     @property
     def EnableBundleMessageThresholdTimer(self):
@@ -291,7 +347,11 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Bundle Message Threshold Timer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBundleMessageThresholdTimer']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableBundleMessageThresholdTimer"]),
+        )
 
     @property
     def EnableGracefulRestartHelperMode(self):
@@ -302,7 +362,11 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Helper-Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestartHelperMode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableGracefulRestartHelperMode"]),
+        )
 
     @property
     def EnableGracefulRestartRestartingMode(self):
@@ -313,7 +377,13 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Restarting-Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestartRestartingMode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["EnableGracefulRestartRestartingMode"]
+            ),
+        )
 
     @property
     def EnableHelloExtension(self):
@@ -324,7 +394,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Hello Extension
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableHelloExtension']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableHelloExtension"])
+        )
 
     @property
     def EnableRefreshReduction(self):
@@ -335,7 +408,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Refresh Reduction
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRefreshReduction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRefreshReduction"])
+        )
 
     @property
     def Errors(self):
@@ -344,7 +420,7 @@ class RsvpteIf(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def GenerateSequenceNumberBasedOnRealTime(self):
@@ -355,7 +431,13 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Generate Sequence Number Based on Real Time
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GenerateSequenceNumberBasedOnRealTime']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["GenerateSequenceNumberBasedOnRealTime"]
+            ),
+        )
 
     @property
     def HandshakeRequired(self):
@@ -366,7 +448,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Handshake Required
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HandshakeRequired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HandshakeRequired"])
+        )
 
     @property
     def HelloInterval(self):
@@ -377,7 +462,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloInterval']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloInterval"]))
 
     @property
     def HelloTimeoutMultiplier(self):
@@ -388,7 +474,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hello Timeout Multiplier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloTimeoutMultiplier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HelloTimeoutMultiplier"])
+        )
 
     @property
     def InitialSequenceNumber(self):
@@ -399,7 +488,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Sequence Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialSequenceNumber"])
+        )
 
     @property
     def LabelReqRefCount(self):
@@ -409,11 +501,12 @@ class RsvpteIf(Base):
         -------
         - number: Number of Label Req in RSVP-TE DG
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelReqRefCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelReqRefCount"])
+
     @LabelReqRefCount.setter
     def LabelReqRefCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelReqRefCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelReqRefCount"], value)
 
     @property
     def LabelSpaceEnd(self):
@@ -424,7 +517,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Space End
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelSpaceEnd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelSpaceEnd"]))
 
     @property
     def LabelSpaceStart(self):
@@ -435,7 +529,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Space Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelSpaceStart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelSpaceStart"])
+        )
 
     @property
     def Multiplier(self):
@@ -445,11 +542,12 @@ class RsvpteIf(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -459,11 +557,12 @@ class RsvpteIf(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfRestarts(self):
@@ -474,7 +573,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Number of Restarts
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfRestarts']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfRestarts"])
+        )
 
     @property
     def OurIp(self):
@@ -484,7 +586,7 @@ class RsvpteIf(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OurIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["OurIp"])
 
     @property
     def RecoveryTime(self):
@@ -495,7 +597,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Recovery Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecoveryTime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecoveryTime"]))
 
     @property
     def RestartStartTime(self):
@@ -506,7 +609,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Start Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RestartStartTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RestartStartTime"])
+        )
 
     @property
     def RestartUpTime(self):
@@ -517,7 +623,8 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Restart Up Time (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RestartUpTime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RestartUpTime"]))
 
     @property
     def SessionStatus(self):
@@ -527,7 +634,7 @@ class RsvpteIf(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -537,11 +644,12 @@ class RsvpteIf(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -550,7 +658,7 @@ class RsvpteIf(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -560,7 +668,7 @@ class RsvpteIf(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
     def SummaryRefreshInterval(self):
@@ -571,7 +679,10 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Summary Refresh Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SummaryRefreshInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SummaryRefreshInterval"])
+        )
 
     @property
     def UseSameAuthenticationKeyForPeer(self):
@@ -582,7 +693,11 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Same Authentication Key for Peer
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSameAuthenticationKeyForPeer']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["UseSameAuthenticationKeyForPeer"]),
+        )
 
     @property
     def UsingGatewayIp(self):
@@ -593,9 +708,19 @@ class RsvpteIf(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Using Gateway IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UsingGatewayIp']))
 
-    def update(self, ConnectedVia=None, LabelReqRefCount=None, Multiplier=None, Name=None, StackedLayers=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UsingGatewayIp"])
+        )
+
+    def update(
+        self,
+        ConnectedVia=None,
+        LabelReqRefCount=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, int, str, List[str]) -> RsvpteIf
         """Updates rsvpteIf resource on the server.
 
@@ -616,7 +741,14 @@ class RsvpteIf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, LabelReqRefCount=None, Multiplier=None, Name=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        LabelReqRefCount=None,
+        Multiplier=None,
+        Name=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, int, str, List[str]) -> RsvpteIf
         """Adds a new rsvpteIf resource on the server and adds it to the container.
 
@@ -648,7 +780,21 @@ class RsvpteIf(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LabelReqRefCount=None, Multiplier=None, Name=None, OurIp=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        LabelReqRefCount=None,
+        Multiplier=None,
+        Name=None,
+        OurIp=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves rsvpteIf resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpteIf resources from the server.
@@ -725,10 +871,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def GetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -763,10 +911,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -795,10 +945,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def RestartNeighbor(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -817,10 +969,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartNeighbor', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartNeighbor", payload=payload, response_object=None)
 
     def RsvpRestartNeighbor(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -849,10 +1003,14 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rsvpRestartNeighbor', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "rsvpRestartNeighbor", payload=payload, response_object=None
+        )
 
     def RsvpResumeHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -881,10 +1039,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rsvpResumeHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rsvpResumeHello", payload=payload, response_object=None)
 
     def RsvpStartSRefresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -913,10 +1073,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rsvpStartSRefresh', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rsvpStartSRefresh", payload=payload, response_object=None)
 
     def RsvpStopHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -945,10 +1107,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rsvpStopHello', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rsvpStopHello", payload=payload, response_object=None)
 
     def RsvpStopSRefresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -977,10 +1141,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rsvpStopSRefresh', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("rsvpStopSRefresh", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1009,10 +1175,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def StartHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1031,10 +1199,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startHello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startHello", payload=payload, response_object=None)
 
     def StartSRefresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1053,10 +1223,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSRefresh', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startSRefresh", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1085,10 +1257,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopHello(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1107,10 +1281,12 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopHello', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopHello", payload=payload, response_object=None)
 
     def StopSRefresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1129,12 +1305,49 @@ class RsvpteIf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSRefresh', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopSRefresh", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, ActualRestartTime=None, AdvertisedRestartTime=None, AuthenticationAlgorithm=None, AuthenticationKeyForReceivedPackets=None, AuthenticationKeyForSentPackets=None, AuthenticationKeyIdentifier=None, AutoGenerateAuthenticationKeyIdentifier=None, BundleMessageThresholdTime=None, CheckIntegrityForReceivedPackets=None, DutIp=None, EnableBfdRegistration=None, EnableBundleMessageSending=None, EnableBundleMessageThresholdTimer=None, EnableGracefulRestartHelperMode=None, EnableGracefulRestartRestartingMode=None, EnableHelloExtension=None, EnableRefreshReduction=None, GenerateSequenceNumberBasedOnRealTime=None, HandshakeRequired=None, HelloInterval=None, HelloTimeoutMultiplier=None, InitialSequenceNumber=None, LabelSpaceEnd=None, LabelSpaceStart=None, NumberOfRestarts=None, RecoveryTime=None, RestartStartTime=None, RestartUpTime=None, SummaryRefreshInterval=None, UseSameAuthenticationKeyForPeer=None, UsingGatewayIp=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ActualRestartTime=None,
+        AdvertisedRestartTime=None,
+        AuthenticationAlgorithm=None,
+        AuthenticationKeyForReceivedPackets=None,
+        AuthenticationKeyForSentPackets=None,
+        AuthenticationKeyIdentifier=None,
+        AutoGenerateAuthenticationKeyIdentifier=None,
+        BundleMessageThresholdTime=None,
+        CheckIntegrityForReceivedPackets=None,
+        DutIp=None,
+        EnableBfdRegistration=None,
+        EnableBundleMessageSending=None,
+        EnableBundleMessageThresholdTimer=None,
+        EnableGracefulRestartHelperMode=None,
+        EnableGracefulRestartRestartingMode=None,
+        EnableHelloExtension=None,
+        EnableRefreshReduction=None,
+        GenerateSequenceNumberBasedOnRealTime=None,
+        HandshakeRequired=None,
+        HelloInterval=None,
+        HelloTimeoutMultiplier=None,
+        InitialSequenceNumber=None,
+        LabelSpaceEnd=None,
+        LabelSpaceStart=None,
+        NumberOfRestarts=None,
+        RecoveryTime=None,
+        RestartStartTime=None,
+        RestartUpTime=None,
+        SummaryRefreshInterval=None,
+        UseSameAuthenticationKeyForPeer=None,
+        UsingGatewayIp=None,
+    ):
         """Base class infrastructure that gets a list of rsvpteIf device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

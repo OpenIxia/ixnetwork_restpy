@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,31 +33,30 @@ class IsisSRv6AdjSIDList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisSRv6AdjSIDList'
+    _SDM_NAME = "isisSRv6AdjSIDList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'Algorithm': 'algorithm',
-        'ArgumentLength': 'argumentLength',
-        'BFlag': 'bFlag',
-        'CFlag': 'cFlag',
-        'Count': 'count',
-        'CustomSubTlv': 'customSubTlv',
-        'DescriptiveName': 'descriptiveName',
-        'EndPointFunction': 'endPointFunction',
-        'FunctionLength': 'functionLength',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'Ipv6AdjSid': 'ipv6AdjSid',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorNodeLength': 'locatorNodeLength',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'Reserved': 'reserved',
-        'SFlag': 'sFlag',
-        'Weight': 'weight',
+        "Active": "active",
+        "AdvertiseCustomSubTLV": "advertiseCustomSubTLV",
+        "Algorithm": "algorithm",
+        "ArgumentLength": "argumentLength",
+        "BFlag": "bFlag",
+        "CFlag": "cFlag",
+        "Count": "count",
+        "CustomSubTlv": "customSubTlv",
+        "DescriptiveName": "descriptiveName",
+        "EndPointFunction": "endPointFunction",
+        "FunctionLength": "functionLength",
+        "IncludeSRv6SIDStructureSubSubTlv": "includeSRv6SIDStructureSubSubTlv",
+        "Ipv6AdjSid": "ipv6AdjSid",
+        "LocatorBlockLength": "locatorBlockLength",
+        "LocatorNodeLength": "locatorNodeLength",
+        "Name": "name",
+        "PFlag": "pFlag",
+        "Reserved": "reserved",
+        "SFlag": "sFlag",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisSRv6AdjSIDList, self).__init__(parent, list_op)
@@ -70,7 +70,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseCustomSubTLV(self):
@@ -81,7 +82,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Custom Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseCustomSubTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseCustomSubTLV"])
+        )
 
     @property
     def Algorithm(self):
@@ -92,7 +96,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Algorithm"]))
 
     @property
     def ArgumentLength(self):
@@ -103,7 +108,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLength"])
+        )
 
     @property
     def BFlag(self):
@@ -114,7 +122,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def CFlag(self):
@@ -125,7 +134,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, it indicates that this Sid support compression.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CFlag"]))
 
     @property
     def Count(self):
@@ -135,7 +145,7 @@ class IsisSRv6AdjSIDList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomSubTlv(self):
@@ -146,7 +156,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomSubTlv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CustomSubTlv"]))
 
     @property
     def DescriptiveName(self):
@@ -156,7 +167,7 @@ class IsisSRv6AdjSIDList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EndPointFunction(self):
@@ -167,7 +178,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): End-Point Function
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunction"])
+        )
 
     @property
     def FunctionLength(self):
@@ -178,7 +192,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLength"])
+        )
 
     @property
     def IncludeSRv6SIDStructureSubSubTlv(self):
@@ -189,7 +206,11 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include SRv6 SID Structure Sub-Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSRv6SIDStructureSubSubTlv']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncludeSRv6SIDStructureSubSubTlv"]),
+        )
 
     @property
     def Ipv6AdjSid(self):
@@ -200,7 +221,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Adj SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6AdjSid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AdjSid"]))
 
     @property
     def LocatorBlockLength(self):
@@ -211,7 +233,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLength"])
+        )
 
     @property
     def LocatorNodeLength(self):
@@ -222,7 +247,10 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLength"])
+        )
 
     @property
     def Name(self):
@@ -232,11 +260,12 @@ class IsisSRv6AdjSIDList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PFlag(self):
@@ -247,7 +276,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def Reserved(self):
@@ -258,7 +288,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def SFlag(self):
@@ -269,7 +300,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-Flag
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SFlag"]))
 
     @property
     def Weight(self):
@@ -280,7 +312,8 @@ class IsisSRv6AdjSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None):
         # type: (str) -> IsisSRv6AdjSIDList
@@ -341,7 +374,27 @@ class IsisSRv6AdjSIDList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseCustomSubTLV=None, Algorithm=None, ArgumentLength=None, BFlag=None, CFlag=None, CustomSubTlv=None, EndPointFunction=None, FunctionLength=None, IncludeSRv6SIDStructureSubSubTlv=None, Ipv6AdjSid=None, LocatorBlockLength=None, LocatorNodeLength=None, PFlag=None, Reserved=None, SFlag=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseCustomSubTLV=None,
+        Algorithm=None,
+        ArgumentLength=None,
+        BFlag=None,
+        CFlag=None,
+        CustomSubTlv=None,
+        EndPointFunction=None,
+        FunctionLength=None,
+        IncludeSRv6SIDStructureSubSubTlv=None,
+        Ipv6AdjSid=None,
+        LocatorBlockLength=None,
+        LocatorNodeLength=None,
+        PFlag=None,
+        Reserved=None,
+        SFlag=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of isisSRv6AdjSIDList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

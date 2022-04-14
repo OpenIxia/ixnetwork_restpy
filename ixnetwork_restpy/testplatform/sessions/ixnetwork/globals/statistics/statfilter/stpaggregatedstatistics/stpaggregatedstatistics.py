@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,43 +33,42 @@ class StpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'stpAggregatedStatistics'
+    _SDM_NAME = "stpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'DiscardingStateCount': 'discardingStateCount',
-        'ForwardingStateCount': 'forwardingStateCount',
-        'LearningStateCount': 'learningStateCount',
-        'ListeningStateCount': 'listeningStateCount',
-        'MstpBPDUsRx': 'mstpBPDUsRx',
-        'MstpBPDUsTx': 'mstpBPDUsTx',
-        'PortName': 'portName',
-        'PvstBPDUsRx': 'pvstBPDUsRx',
-        'PvstBPDUsRxConfigTC': 'pvstBPDUsRxConfigTC',
-        'PvstBPDUsRxConfigTCA': 'pvstBPDUsRxConfigTCA',
-        'PvstBPDUsRxTCN': 'pvstBPDUsRxTCN',
-        'PvstBPDUsTx': 'pvstBPDUsTx',
-        'PvstBPDUsTxConfigTC': 'pvstBPDUsTxConfigTC',
-        'PvstBPDUsTxConfigTCA': 'pvstBPDUsTxConfigTCA',
-        'PvstBPDUsTxTCN': 'pvstBPDUsTxTCN',
-        'RpvstBPDUsRx': 'rpvstBPDUsRx',
-        'RpvstBPDUsRxTC': 'rpvstBPDUsRxTC',
-        'RpvstBPDUsTx': 'rpvstBPDUsTx',
-        'RpvstBPDUsTxTC': 'rpvstBPDUsTxTC',
-        'RstpBPDUsRx': 'rstpBPDUsRx',
-        'RstpBPDUsRxTC': 'rstpBPDUsRxTC',
-        'RstpBPDUsTx': 'rstpBPDUsTx',
-        'RstpBPDUsTxTC': 'rstpBPDUsTxTC',
-        'SessionFlapCount': 'sessionFlapCount',
-        'StpBPDUsRx': 'stpBPDUsRx',
-        'StpBPDUsRxConfigTC': 'stpBPDUsRxConfigTC',
-        'StpBPDUsRxConfigTCA': 'stpBPDUsRxConfigTCA',
-        'StpBPDUsRxTCN': 'stpBPDUsRxTCN',
-        'StpBPDUsTx': 'stpBPDUsTx',
-        'StpBPDUsTxConfigTC': 'stpBPDUsTxConfigTC',
-        'StpBPDUsTxConfigTCA': 'stpBPDUsTxConfigTCA',
-        'StpBPDUsTxTCN': 'stpBPDUsTxTCN',
+        "DiscardingStateCount": "discardingStateCount",
+        "ForwardingStateCount": "forwardingStateCount",
+        "LearningStateCount": "learningStateCount",
+        "ListeningStateCount": "listeningStateCount",
+        "MstpBPDUsRx": "mstpBPDUsRx",
+        "MstpBPDUsTx": "mstpBPDUsTx",
+        "PortName": "portName",
+        "PvstBPDUsRx": "pvstBPDUsRx",
+        "PvstBPDUsRxConfigTC": "pvstBPDUsRxConfigTC",
+        "PvstBPDUsRxConfigTCA": "pvstBPDUsRxConfigTCA",
+        "PvstBPDUsRxTCN": "pvstBPDUsRxTCN",
+        "PvstBPDUsTx": "pvstBPDUsTx",
+        "PvstBPDUsTxConfigTC": "pvstBPDUsTxConfigTC",
+        "PvstBPDUsTxConfigTCA": "pvstBPDUsTxConfigTCA",
+        "PvstBPDUsTxTCN": "pvstBPDUsTxTCN",
+        "RpvstBPDUsRx": "rpvstBPDUsRx",
+        "RpvstBPDUsRxTC": "rpvstBPDUsRxTC",
+        "RpvstBPDUsTx": "rpvstBPDUsTx",
+        "RpvstBPDUsTxTC": "rpvstBPDUsTxTC",
+        "RstpBPDUsRx": "rstpBPDUsRx",
+        "RstpBPDUsRxTC": "rstpBPDUsRxTC",
+        "RstpBPDUsTx": "rstpBPDUsTx",
+        "RstpBPDUsTxTC": "rstpBPDUsTxTC",
+        "SessionFlapCount": "sessionFlapCount",
+        "StpBPDUsRx": "stpBPDUsRx",
+        "StpBPDUsRxConfigTC": "stpBPDUsRxConfigTC",
+        "StpBPDUsRxConfigTCA": "stpBPDUsRxConfigTCA",
+        "StpBPDUsRxTCN": "stpBPDUsRxTCN",
+        "StpBPDUsTx": "stpBPDUsTx",
+        "StpBPDUsTxConfigTC": "stpBPDUsTxConfigTC",
+        "StpBPDUsTxConfigTCA": "stpBPDUsTxConfigTCA",
+        "StpBPDUsTxTCN": "stpBPDUsTxTCN",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StpAggregatedStatistics, self).__init__(parent, list_op)
@@ -81,11 +81,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Discarding State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DiscardingStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DiscardingStateCount"])
+
     @DiscardingStateCount.setter
     def DiscardingStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DiscardingStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DiscardingStateCount"], value)
 
     @property
     def ForwardingStateCount(self):
@@ -95,11 +96,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Forwarding State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForwardingStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForwardingStateCount"])
+
     @ForwardingStateCount.setter
     def ForwardingStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForwardingStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForwardingStateCount"], value)
 
     @property
     def LearningStateCount(self):
@@ -109,11 +111,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Learning State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LearningStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LearningStateCount"])
+
     @LearningStateCount.setter
     def LearningStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LearningStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LearningStateCount"], value)
 
     @property
     def ListeningStateCount(self):
@@ -123,11 +126,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Listening State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ListeningStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ListeningStateCount"])
+
     @ListeningStateCount.setter
     def ListeningStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ListeningStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ListeningStateCount"], value)
 
     @property
     def MstpBPDUsRx(self):
@@ -137,11 +141,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: MSTP BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstpBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstpBPDUsRx"])
+
     @MstpBPDUsRx.setter
     def MstpBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstpBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstpBPDUsRx"], value)
 
     @property
     def MstpBPDUsTx(self):
@@ -151,11 +156,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: MSTP BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MstpBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MstpBPDUsTx"])
+
     @MstpBPDUsTx.setter
     def MstpBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MstpBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MstpBPDUsTx"], value)
 
     @property
     def PortName(self):
@@ -165,11 +171,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def PvstBPDUsRx(self):
@@ -179,11 +186,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsRx"])
+
     @PvstBPDUsRx.setter
     def PvstBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsRx"], value)
 
     @property
     def PvstBPDUsRxConfigTC(self):
@@ -193,11 +201,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Rx Config TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsRxConfigTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsRxConfigTC"])
+
     @PvstBPDUsRxConfigTC.setter
     def PvstBPDUsRxConfigTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsRxConfigTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsRxConfigTC"], value)
 
     @property
     def PvstBPDUsRxConfigTCA(self):
@@ -207,11 +216,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Rx Config TCA
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsRxConfigTCA'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsRxConfigTCA"])
+
     @PvstBPDUsRxConfigTCA.setter
     def PvstBPDUsRxConfigTCA(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsRxConfigTCA'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsRxConfigTCA"], value)
 
     @property
     def PvstBPDUsRxTCN(self):
@@ -221,11 +231,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Rx TCN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsRxTCN'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsRxTCN"])
+
     @PvstBPDUsRxTCN.setter
     def PvstBPDUsRxTCN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsRxTCN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsRxTCN"], value)
 
     @property
     def PvstBPDUsTx(self):
@@ -235,11 +246,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsTx"])
+
     @PvstBPDUsTx.setter
     def PvstBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsTx"], value)
 
     @property
     def PvstBPDUsTxConfigTC(self):
@@ -249,11 +261,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Tx Config TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsTxConfigTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsTxConfigTC"])
+
     @PvstBPDUsTxConfigTC.setter
     def PvstBPDUsTxConfigTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsTxConfigTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsTxConfigTC"], value)
 
     @property
     def PvstBPDUsTxConfigTCA(self):
@@ -263,11 +276,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Tx Config TCA
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsTxConfigTCA'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsTxConfigTCA"])
+
     @PvstBPDUsTxConfigTCA.setter
     def PvstBPDUsTxConfigTCA(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsTxConfigTCA'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsTxConfigTCA"], value)
 
     @property
     def PvstBPDUsTxTCN(self):
@@ -277,11 +291,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: PVST+ BPDUs Tx TCN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PvstBPDUsTxTCN'])
+        return self._get_attribute(self._SDM_ATT_MAP["PvstBPDUsTxTCN"])
+
     @PvstBPDUsTxTCN.setter
     def PvstBPDUsTxTCN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PvstBPDUsTxTCN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PvstBPDUsTxTCN"], value)
 
     @property
     def RpvstBPDUsRx(self):
@@ -291,11 +306,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RPVST BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpvstBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpvstBPDUsRx"])
+
     @RpvstBPDUsRx.setter
     def RpvstBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpvstBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpvstBPDUsRx"], value)
 
     @property
     def RpvstBPDUsRxTC(self):
@@ -305,11 +321,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RPVST BPDUs Rx TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpvstBPDUsRxTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpvstBPDUsRxTC"])
+
     @RpvstBPDUsRxTC.setter
     def RpvstBPDUsRxTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpvstBPDUsRxTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpvstBPDUsRxTC"], value)
 
     @property
     def RpvstBPDUsTx(self):
@@ -319,11 +336,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RPVST BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpvstBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpvstBPDUsTx"])
+
     @RpvstBPDUsTx.setter
     def RpvstBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpvstBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpvstBPDUsTx"], value)
 
     @property
     def RpvstBPDUsTxTC(self):
@@ -333,11 +351,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RPVST BPDUs Tx TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RpvstBPDUsTxTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RpvstBPDUsTxTC"])
+
     @RpvstBPDUsTxTC.setter
     def RpvstBPDUsTxTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RpvstBPDUsTxTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RpvstBPDUsTxTC"], value)
 
     @property
     def RstpBPDUsRx(self):
@@ -347,11 +366,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RSTP BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RstpBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RstpBPDUsRx"])
+
     @RstpBPDUsRx.setter
     def RstpBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RstpBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RstpBPDUsRx"], value)
 
     @property
     def RstpBPDUsRxTC(self):
@@ -361,11 +381,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RSTP BPDUs Rx TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RstpBPDUsRxTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RstpBPDUsRxTC"])
+
     @RstpBPDUsRxTC.setter
     def RstpBPDUsRxTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RstpBPDUsRxTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RstpBPDUsRxTC"], value)
 
     @property
     def RstpBPDUsTx(self):
@@ -375,11 +396,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RSTP BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RstpBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RstpBPDUsTx"])
+
     @RstpBPDUsTx.setter
     def RstpBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RstpBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RstpBPDUsTx"], value)
 
     @property
     def RstpBPDUsTxTC(self):
@@ -389,11 +411,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: RSTP BPDUs Tx TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RstpBPDUsTxTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["RstpBPDUsTxTC"])
+
     @RstpBPDUsTxTC.setter
     def RstpBPDUsTxTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RstpBPDUsTxTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RstpBPDUsTxTC"], value)
 
     @property
     def SessionFlapCount(self):
@@ -403,11 +426,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def StpBPDUsRx(self):
@@ -417,11 +441,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsRx"])
+
     @StpBPDUsRx.setter
     def StpBPDUsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsRx"], value)
 
     @property
     def StpBPDUsRxConfigTC(self):
@@ -431,11 +456,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Rx Config TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsRxConfigTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsRxConfigTC"])
+
     @StpBPDUsRxConfigTC.setter
     def StpBPDUsRxConfigTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsRxConfigTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsRxConfigTC"], value)
 
     @property
     def StpBPDUsRxConfigTCA(self):
@@ -445,11 +471,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Rx Config TCA
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsRxConfigTCA'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsRxConfigTCA"])
+
     @StpBPDUsRxConfigTCA.setter
     def StpBPDUsRxConfigTCA(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsRxConfigTCA'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsRxConfigTCA"], value)
 
     @property
     def StpBPDUsRxTCN(self):
@@ -459,11 +486,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Rx TCN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsRxTCN'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsRxTCN"])
+
     @StpBPDUsRxTCN.setter
     def StpBPDUsRxTCN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsRxTCN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsRxTCN"], value)
 
     @property
     def StpBPDUsTx(self):
@@ -473,11 +501,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsTx"])
+
     @StpBPDUsTx.setter
     def StpBPDUsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsTx"], value)
 
     @property
     def StpBPDUsTxConfigTC(self):
@@ -487,11 +516,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Tx Config TC
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsTxConfigTC'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsTxConfigTC"])
+
     @StpBPDUsTxConfigTC.setter
     def StpBPDUsTxConfigTC(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsTxConfigTC'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsTxConfigTC"], value)
 
     @property
     def StpBPDUsTxConfigTCA(self):
@@ -501,11 +531,12 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Tx Config TCA
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsTxConfigTCA'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsTxConfigTCA"])
+
     @StpBPDUsTxConfigTCA.setter
     def StpBPDUsTxConfigTCA(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsTxConfigTCA'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsTxConfigTCA"], value)
 
     @property
     def StpBPDUsTxTCN(self):
@@ -515,13 +546,48 @@ class StpAggregatedStatistics(Base):
         -------
         - bool: STP BPDUs Tx TCN
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StpBPDUsTxTCN'])
+        return self._get_attribute(self._SDM_ATT_MAP["StpBPDUsTxTCN"])
+
     @StpBPDUsTxTCN.setter
     def StpBPDUsTxTCN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StpBPDUsTxTCN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StpBPDUsTxTCN"], value)
 
-    def update(self, DiscardingStateCount=None, ForwardingStateCount=None, LearningStateCount=None, ListeningStateCount=None, MstpBPDUsRx=None, MstpBPDUsTx=None, PortName=None, PvstBPDUsRx=None, PvstBPDUsRxConfigTC=None, PvstBPDUsRxConfigTCA=None, PvstBPDUsRxTCN=None, PvstBPDUsTx=None, PvstBPDUsTxConfigTC=None, PvstBPDUsTxConfigTCA=None, PvstBPDUsTxTCN=None, RpvstBPDUsRx=None, RpvstBPDUsRxTC=None, RpvstBPDUsTx=None, RpvstBPDUsTxTC=None, RstpBPDUsRx=None, RstpBPDUsRxTC=None, RstpBPDUsTx=None, RstpBPDUsTxTC=None, SessionFlapCount=None, StpBPDUsRx=None, StpBPDUsRxConfigTC=None, StpBPDUsRxConfigTCA=None, StpBPDUsRxTCN=None, StpBPDUsTx=None, StpBPDUsTxConfigTC=None, StpBPDUsTxConfigTCA=None, StpBPDUsTxTCN=None):
+    def update(
+        self,
+        DiscardingStateCount=None,
+        ForwardingStateCount=None,
+        LearningStateCount=None,
+        ListeningStateCount=None,
+        MstpBPDUsRx=None,
+        MstpBPDUsTx=None,
+        PortName=None,
+        PvstBPDUsRx=None,
+        PvstBPDUsRxConfigTC=None,
+        PvstBPDUsRxConfigTCA=None,
+        PvstBPDUsRxTCN=None,
+        PvstBPDUsTx=None,
+        PvstBPDUsTxConfigTC=None,
+        PvstBPDUsTxConfigTCA=None,
+        PvstBPDUsTxTCN=None,
+        RpvstBPDUsRx=None,
+        RpvstBPDUsRxTC=None,
+        RpvstBPDUsTx=None,
+        RpvstBPDUsTxTC=None,
+        RstpBPDUsRx=None,
+        RstpBPDUsRxTC=None,
+        RstpBPDUsTx=None,
+        RstpBPDUsTxTC=None,
+        SessionFlapCount=None,
+        StpBPDUsRx=None,
+        StpBPDUsRxConfigTC=None,
+        StpBPDUsRxConfigTCA=None,
+        StpBPDUsRxTCN=None,
+        StpBPDUsTx=None,
+        StpBPDUsTxConfigTC=None,
+        StpBPDUsTxConfigTCA=None,
+        StpBPDUsTxTCN=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> StpAggregatedStatistics
         """Updates stpAggregatedStatistics resource on the server.
 
@@ -566,7 +632,41 @@ class StpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DiscardingStateCount=None, ForwardingStateCount=None, LearningStateCount=None, ListeningStateCount=None, MstpBPDUsRx=None, MstpBPDUsTx=None, PortName=None, PvstBPDUsRx=None, PvstBPDUsRxConfigTC=None, PvstBPDUsRxConfigTCA=None, PvstBPDUsRxTCN=None, PvstBPDUsTx=None, PvstBPDUsTxConfigTC=None, PvstBPDUsTxConfigTCA=None, PvstBPDUsTxTCN=None, RpvstBPDUsRx=None, RpvstBPDUsRxTC=None, RpvstBPDUsTx=None, RpvstBPDUsTxTC=None, RstpBPDUsRx=None, RstpBPDUsRxTC=None, RstpBPDUsTx=None, RstpBPDUsTxTC=None, SessionFlapCount=None, StpBPDUsRx=None, StpBPDUsRxConfigTC=None, StpBPDUsRxConfigTCA=None, StpBPDUsRxTCN=None, StpBPDUsTx=None, StpBPDUsTxConfigTC=None, StpBPDUsTxConfigTCA=None, StpBPDUsTxTCN=None):
+    def find(
+        self,
+        DiscardingStateCount=None,
+        ForwardingStateCount=None,
+        LearningStateCount=None,
+        ListeningStateCount=None,
+        MstpBPDUsRx=None,
+        MstpBPDUsTx=None,
+        PortName=None,
+        PvstBPDUsRx=None,
+        PvstBPDUsRxConfigTC=None,
+        PvstBPDUsRxConfigTCA=None,
+        PvstBPDUsRxTCN=None,
+        PvstBPDUsTx=None,
+        PvstBPDUsTxConfigTC=None,
+        PvstBPDUsTxConfigTCA=None,
+        PvstBPDUsTxTCN=None,
+        RpvstBPDUsRx=None,
+        RpvstBPDUsRxTC=None,
+        RpvstBPDUsTx=None,
+        RpvstBPDUsTxTC=None,
+        RstpBPDUsRx=None,
+        RstpBPDUsRxTC=None,
+        RstpBPDUsTx=None,
+        RstpBPDUsTxTC=None,
+        SessionFlapCount=None,
+        StpBPDUsRx=None,
+        StpBPDUsRxConfigTC=None,
+        StpBPDUsRxConfigTCA=None,
+        StpBPDUsRxTCN=None,
+        StpBPDUsTx=None,
+        StpBPDUsTxConfigTC=None,
+        StpBPDUsTxConfigTCA=None,
+        StpBPDUsTxTCN=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> StpAggregatedStatistics
         """Finds and retrieves stpAggregatedStatistics resources from the server.
 

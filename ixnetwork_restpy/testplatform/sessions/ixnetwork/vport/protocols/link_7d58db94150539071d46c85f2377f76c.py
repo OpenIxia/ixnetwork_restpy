@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class Link(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'link'
+    _SDM_NAME = "link"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'LinkType': 'linkType',
-        'MoreMps': 'moreMps',
-        'MpOutwardsIxia': 'mpOutwardsIxia',
-        'MpTowardsIxia': 'mpTowardsIxia',
+        "Enabled": "enabled",
+        "LinkType": "linkType",
+        "MoreMps": "moreMps",
+        "MpOutwardsIxia": "mpOutwardsIxia",
+        "MpTowardsIxia": "mpTowardsIxia",
     }
     _SDM_ENUM_MAP = {
-        'linkType': ['broadcast', 'pointToPoint'],
+        "linkType": ["broadcast", "pointToPoint"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class Link(Base):
         -------
         - bool: If true, the link is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def LinkType(self):
@@ -71,11 +73,12 @@ class Link(Base):
         -------
         - str(broadcast | pointToPoint): Sets the link type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkType"])
+
     @LinkType.setter
     def LinkType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkType"], value)
 
     @property
     def MoreMps(self):
@@ -85,11 +88,12 @@ class Link(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp]): Attaches multiple MPs to the link. MPs must be previously configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MoreMps'])
+        return self._get_attribute(self._SDM_ATT_MAP["MoreMps"])
+
     @MoreMps.setter
     def MoreMps(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MoreMps'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MoreMps"], value)
 
     @property
     def MpOutwardsIxia(self):
@@ -99,11 +103,12 @@ class Link(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MpOutwardsIxia'])
+        return self._get_attribute(self._SDM_ATT_MAP["MpOutwardsIxia"])
+
     @MpOutwardsIxia.setter
     def MpOutwardsIxia(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MpOutwardsIxia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MpOutwardsIxia"], value)
 
     @property
     def MpTowardsIxia(self):
@@ -113,13 +118,21 @@ class Link(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MpTowardsIxia'])
+        return self._get_attribute(self._SDM_ATT_MAP["MpTowardsIxia"])
+
     @MpTowardsIxia.setter
     def MpTowardsIxia(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MpTowardsIxia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MpTowardsIxia"], value)
 
-    def update(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
+    def update(
+        self,
+        Enabled=None,
+        LinkType=None,
+        MoreMps=None,
+        MpOutwardsIxia=None,
+        MpTowardsIxia=None,
+    ):
         # type: (bool, str, List[str], str, str) -> Link
         """Updates link resource on the server.
 
@@ -137,7 +150,14 @@ class Link(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
+    def add(
+        self,
+        Enabled=None,
+        LinkType=None,
+        MoreMps=None,
+        MpOutwardsIxia=None,
+        MpTowardsIxia=None,
+    ):
         # type: (bool, str, List[str], str, str) -> Link
         """Adds a new link resource on the server and adds it to the container.
 
@@ -169,7 +189,14 @@ class Link(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, LinkType=None, MoreMps=None, MpOutwardsIxia=None, MpTowardsIxia=None):
+    def find(
+        self,
+        Enabled=None,
+        LinkType=None,
+        MoreMps=None,
+        MpOutwardsIxia=None,
+        MpTowardsIxia=None,
+    ):
         # type: (bool, str, List[str], str, str) -> Link
         """Finds and retrieves link resources from the server.
 

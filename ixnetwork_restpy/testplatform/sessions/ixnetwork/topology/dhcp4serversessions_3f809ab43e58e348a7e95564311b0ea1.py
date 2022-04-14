@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class Dhcp4ServerSessions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcp4ServerSessions'
+    _SDM_NAME = "dhcp4ServerSessions"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'DescriptiveName': 'descriptiveName',
-        'EchoRelayInfo': 'echoRelayInfo',
-        'EnableVssAddrAssgnmt': 'enableVssAddrAssgnmt',
-        'IpAddress': 'ipAddress',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'IpDns1': 'ipDns1',
-        'IpDns2': 'ipDns2',
-        'IpGateway': 'ipGateway',
-        'IpPrefix': 'ipPrefix',
-        'Name': 'name',
-        'PoolSize': 'poolSize',
-        'SessionInfo': 'sessionInfo',
-        'VpnId': 'vpnId',
-        'VpnName': 'vpnName',
+        "Count": "count",
+        "DefaultLeaseTime": "defaultLeaseTime",
+        "DescriptiveName": "descriptiveName",
+        "EchoRelayInfo": "echoRelayInfo",
+        "EnableVssAddrAssgnmt": "enableVssAddrAssgnmt",
+        "IpAddress": "ipAddress",
+        "IpAddressIncrement": "ipAddressIncrement",
+        "IpDns1": "ipDns1",
+        "IpDns2": "ipDns2",
+        "IpGateway": "ipGateway",
+        "IpPrefix": "ipPrefix",
+        "Name": "name",
+        "PoolSize": "poolSize",
+        "SessionInfo": "sessionInfo",
+        "VpnId": "vpnId",
+        "VpnName": "vpnName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Dhcp4ServerSessions, self).__init__(parent, list_op)
@@ -65,7 +65,7 @@ class Dhcp4ServerSessions(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DefaultLeaseTime(self):
@@ -76,7 +76,10 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Life Time length in seconds that will be assigned to a lease if the requesting DHCP Client does not specify a specific expiration time.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DefaultLeaseTime"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -86,7 +89,7 @@ class Dhcp4ServerSessions(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EchoRelayInfo(self):
@@ -97,7 +100,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable echoing of DHCP option 82.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EchoRelayInfo']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EchoRelayInfo"]))
 
     @property
     def EnableVssAddrAssgnmt(self):
@@ -108,7 +112,10 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP server will assign leases based on VPN.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVssAddrAssgnmt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableVssAddrAssgnmt"])
+        )
 
     @property
     def IpAddress(self):
@@ -119,7 +126,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The IP address of the first lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpAddress"]))
 
     @property
     def IpAddressIncrement(self):
@@ -130,7 +138,10 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The increment value for the lease address within the lease pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddressIncrement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpAddressIncrement"])
+        )
 
     @property
     def IpDns1(self):
@@ -141,7 +152,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The first DNS address advertised in DHCP Offer and Reply messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpDns1']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpDns1"]))
 
     @property
     def IpDns2(self):
@@ -152,7 +164,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The second DNS address advertised in DHCP Offer and Reply messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpDns2']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpDns2"]))
 
     @property
     def IpGateway(self):
@@ -163,7 +176,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Router address advertised in DHCP Offer and Reply messages.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpGateway']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpGateway"]))
 
     @property
     def IpPrefix(self):
@@ -174,7 +188,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Subnet Address length used to compute the subnetwork the advertised lease is part of.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpPrefix']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpPrefix"]))
 
     @property
     def Name(self):
@@ -184,11 +199,12 @@ class Dhcp4ServerSessions(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PoolSize(self):
@@ -199,7 +215,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The number of leases to be allocated per each server address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PoolSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PoolSize"]))
 
     @property
     def SessionInfo(self):
@@ -209,7 +226,7 @@ class Dhcp4ServerSessions(Base):
         -------
         - list(str[excessiveTlvs | none | poolTooLarge]): Logs additional information about the session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def VpnId(self):
@@ -220,7 +237,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN ID, DHCP server will assign leases.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VpnId"]))
 
     @property
     def VpnName(self):
@@ -231,7 +249,8 @@ class Dhcp4ServerSessions(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN Name, DHCP server will assign leases.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VpnName"]))
 
     def update(self, Name=None):
         # type: (str) -> Dhcp4ServerSessions
@@ -293,7 +312,22 @@ class Dhcp4ServerSessions(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, DefaultLeaseTime=None, EchoRelayInfo=None, EnableVssAddrAssgnmt=None, IpAddress=None, IpAddressIncrement=None, IpDns1=None, IpDns2=None, IpGateway=None, IpPrefix=None, PoolSize=None, VpnId=None, VpnName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        DefaultLeaseTime=None,
+        EchoRelayInfo=None,
+        EnableVssAddrAssgnmt=None,
+        IpAddress=None,
+        IpAddressIncrement=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpGateway=None,
+        IpPrefix=None,
+        PoolSize=None,
+        VpnId=None,
+        VpnName=None,
+    ):
         """Base class infrastructure that gets a list of dhcp4ServerSessions device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

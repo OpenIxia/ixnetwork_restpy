@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,26 +34,25 @@ class BgpExtendedCommunitiesList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpExtendedCommunitiesList'
+    _SDM_NAME = "bgpExtendedCommunitiesList"
     _SDM_ATT_MAP = {
-        'AsNumber2Bytes': 'asNumber2Bytes',
-        'AsNumber4Bytes': 'asNumber4Bytes',
-        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
-        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
-        'ColorCOBits': 'colorCOBits',
-        'ColorReservedBits': 'colorReservedBits',
-        'ColorValue': 'colorValue',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ip': 'ip',
-        'LinkBandwidth': 'linkBandwidth',
-        'Name': 'name',
-        'OpaqueData': 'opaqueData',
-        'SubType': 'subType',
-        'Type': 'type',
+        "AsNumber2Bytes": "asNumber2Bytes",
+        "AsNumber4Bytes": "asNumber4Bytes",
+        "AssignedNumber2Bytes": "assignedNumber2Bytes",
+        "AssignedNumber4Bytes": "assignedNumber4Bytes",
+        "ColorCOBits": "colorCOBits",
+        "ColorReservedBits": "colorReservedBits",
+        "ColorValue": "colorValue",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Ip": "ip",
+        "LinkBandwidth": "linkBandwidth",
+        "Name": "name",
+        "OpaqueData": "opaqueData",
+        "SubType": "subType",
+        "Type": "type",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpExtendedCommunitiesList, self).__init__(parent, list_op)
@@ -66,7 +66,10 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 2-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber2Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber2Bytes"])
+        )
 
     @property
     def AsNumber4Bytes(self):
@@ -77,7 +80,10 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS 4-Bytes
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AsNumber4Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AsNumber4Bytes"])
+        )
 
     @property
     def AssignedNumber2Bytes(self):
@@ -88,7 +94,10 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(2 Octets)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssignedNumber2Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssignedNumber2Bytes"])
+        )
 
     @property
     def AssignedNumber4Bytes(self):
@@ -99,7 +108,10 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Assigned Number(4 Octets)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssignedNumber4Bytes']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssignedNumber4Bytes"])
+        )
 
     @property
     def ColorCOBits(self):
@@ -110,7 +122,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color CO Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorCOBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorCOBits"]))
 
     @property
     def ColorReservedBits(self):
@@ -121,7 +134,10 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color Reserved Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorReservedBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ColorReservedBits"])
+        )
 
     @property
     def ColorValue(self):
@@ -132,7 +148,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorValue"]))
 
     @property
     def Count(self):
@@ -142,7 +159,7 @@ class BgpExtendedCommunitiesList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -152,7 +169,7 @@ class BgpExtendedCommunitiesList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Ip(self):
@@ -163,7 +180,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ip']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ip"]))
 
     @property
     def LinkBandwidth(self):
@@ -174,7 +192,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Bandwidth
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkBandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkBandwidth"]))
 
     @property
     def Name(self):
@@ -184,11 +203,12 @@ class BgpExtendedCommunitiesList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OpaqueData(self):
@@ -199,7 +219,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Opaque Data
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OpaqueData"]))
 
     @property
     def SubType(self):
@@ -210,7 +231,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SubType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SubType"]))
 
     @property
     def Type(self):
@@ -221,7 +243,8 @@ class BgpExtendedCommunitiesList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     def update(self, Name=None):
         # type: (str) -> BgpExtendedCommunitiesList
@@ -242,7 +265,7 @@ class BgpExtendedCommunitiesList(Base):
 
     def add(self, Name=None):
         # type: (str) -> BgpExtendedCommunitiesList
-        """Adds a new bgpExtendedCommunitiesList resource on the json, only valid with config assistant
+        """Adds a new bgpExtendedCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -300,7 +323,22 @@ class BgpExtendedCommunitiesList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, ColorCOBits=None, ColorReservedBits=None, ColorValue=None, Ip=None, LinkBandwidth=None, OpaqueData=None, SubType=None, Type=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AsNumber2Bytes=None,
+        AsNumber4Bytes=None,
+        AssignedNumber2Bytes=None,
+        AssignedNumber4Bytes=None,
+        ColorCOBits=None,
+        ColorReservedBits=None,
+        ColorValue=None,
+        Ip=None,
+        LinkBandwidth=None,
+        OpaqueData=None,
+        SubType=None,
+        Type=None,
+    ):
         """Base class infrastructure that gets a list of bgpExtendedCommunitiesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

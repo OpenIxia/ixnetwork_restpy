@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,28 @@ class Instructions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'instructions'
+    _SDM_NAME = "instructions"
     _SDM_ATT_MAP = {
-        'Experimenter': 'experimenter',
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'InstructionType': 'instructionType',
-        'Metadata': 'metadata',
-        'MetadataInHex': 'metadataInHex',
-        'MetadataMask': 'metadataMask',
-        'MeterId': 'meterId',
-        'TableId': 'tableId',
+        "Experimenter": "experimenter",
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "InstructionType": "instructionType",
+        "Metadata": "metadata",
+        "MetadataInHex": "metadataInHex",
+        "MetadataMask": "metadataMask",
+        "MeterId": "meterId",
+        "TableId": "tableId",
     }
     _SDM_ENUM_MAP = {
-        'instructionType': ['meter', 'applyActions', 'clearActions', 'experimenter', 'goToTable', 'writeActions', 'writeMetadata'],
+        "instructionType": [
+            "meter",
+            "applyActions",
+            "clearActions",
+            "experimenter",
+            "goToTable",
+            "writeActions",
+            "writeMetadata",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,10 +73,13 @@ class Instructions(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_9a3510fc7a5ebd848e6c88855a210c3c import InstructionActions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_9a3510fc7a5ebd848e6c88855a210c3c import (
+            InstructionActions,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('InstructionActions', None) is not None:
-                return self._properties.get('InstructionActions')
+            if self._properties.get("InstructionActions", None) is not None:
+                return self._properties.get("InstructionActions")
         return InstructionActions(self)
 
     @property
@@ -78,11 +90,12 @@ class Instructions(Base):
         -------
         - number: The unique identifier for the Experimenter.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
+
     @Experimenter.setter
     def Experimenter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Experimenter"], value)
 
     @property
     def ExperimenterData(self):
@@ -92,11 +105,12 @@ class Instructions(Base):
         -------
         - str: The experimenter data field value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -106,11 +120,12 @@ class Instructions(Base):
         -------
         - number: The Value of the data length of the Experimenter. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def InstructionType(self):
@@ -120,11 +135,12 @@ class Instructions(Base):
         -------
         - str(meter | applyActions | clearActions | experimenter | goToTable | writeActions | writeMetadata): The instruction type associated with this Flow Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InstructionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InstructionType"])
+
     @InstructionType.setter
     def InstructionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InstructionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InstructionType"], value)
 
     @property
     def Metadata(self):
@@ -134,11 +150,12 @@ class Instructions(Base):
         -------
         - str: Value of the metadata field.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metadata"])
+
     @Metadata.setter
     def Metadata(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metadata'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metadata"], value)
 
     @property
     def MetadataInHex(self):
@@ -148,11 +165,12 @@ class Instructions(Base):
         -------
         - str: Specify the table metadata value in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataInHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataInHex"])
+
     @MetadataInHex.setter
     def MetadataInHex(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MetadataInHex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetadataInHex"], value)
 
     @property
     def MetadataMask(self):
@@ -162,11 +180,12 @@ class Instructions(Base):
         -------
         - str: Specify the metadata bitmask value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["MetadataMask"])
+
     @MetadataMask.setter
     def MetadataMask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MetadataMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MetadataMask"], value)
 
     @property
     def MeterId(self):
@@ -176,11 +195,12 @@ class Instructions(Base):
         -------
         - number: The value by which a meter is uniquely identified within a switch. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MeterId"])
+
     @MeterId.setter
     def MeterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MeterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MeterId"], value)
 
     @property
     def TableId(self):
@@ -190,13 +210,25 @@ class Instructions(Base):
         -------
         - number: The ID of the table to go to.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TableId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TableId"])
+
     @TableId.setter
     def TableId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TableId"], value)
 
-    def update(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+    def update(
+        self,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        InstructionType=None,
+        Metadata=None,
+        MetadataInHex=None,
+        MetadataMask=None,
+        MeterId=None,
+        TableId=None,
+    ):
         # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Updates instructions resource on the server.
 
@@ -218,7 +250,18 @@ class Instructions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+    def add(
+        self,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        InstructionType=None,
+        Metadata=None,
+        MetadataInHex=None,
+        MetadataMask=None,
+        MeterId=None,
+        TableId=None,
+    ):
         # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Adds a new instructions resource on the server and adds it to the container.
 
@@ -254,7 +297,18 @@ class Instructions(Base):
         """
         self._delete()
 
-    def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+    def find(
+        self,
+        Experimenter=None,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        InstructionType=None,
+        Metadata=None,
+        MetadataInHex=None,
+        MetadataMask=None,
+        MeterId=None,
+        TableId=None,
+    ):
         # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Finds and retrieves instructions resources from the server.
 

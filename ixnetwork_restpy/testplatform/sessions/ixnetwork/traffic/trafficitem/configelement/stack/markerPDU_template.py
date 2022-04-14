@@ -4,23 +4,23 @@ from ixnetwork_restpy.files import Files
 
 class MarkerPDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'markerPDU'
+    _SDM_NAME = "markerPDU"
     _SDM_ATT_MAP = {
-        'HeaderDstAddress': 'markerPDU.header.header.dstAddress-1',
-        'HeaderSrcAddress': 'markerPDU.header.header.srcAddress-2',
-        'HeaderLengthType': 'markerPDU.header.header.lengthType-3',
-        'HeaderSubtype': 'markerPDU.header.header.subtype-4',
-        'HeaderVersion': 'markerPDU.header.header.version-5',
-        'ActorTlvType': 'markerPDU.header.actor.tlvType-6',
-        'ActorTlvLength': 'markerPDU.header.actor.tlvLength-7',
-        'ActorRequesterPort': 'markerPDU.header.actor.requesterPort-8',
-        'ActorRequesterSystem': 'markerPDU.header.actor.requesterSystem-9',
-        'ActorRequesterTransactionId': 'markerPDU.header.actor.requesterTransactionId-10',
-        'ActorPad': 'markerPDU.header.actor.pad-11',
-        'TerminatorTlvType': 'markerPDU.header.terminator.tlvType-12',
-        'TerminatorTlvLength': 'markerPDU.header.terminator.tlvLength-13',
-        'HeaderReserved': 'markerPDU.header.reserved-14',
-        'HeaderFcs': 'markerPDU.header.fcs-15',
+        "HeaderDstAddress": "markerPDU.header.header.dstAddress-1",
+        "HeaderSrcAddress": "markerPDU.header.header.srcAddress-2",
+        "HeaderLengthType": "markerPDU.header.header.lengthType-3",
+        "HeaderSubtype": "markerPDU.header.header.subtype-4",
+        "HeaderVersion": "markerPDU.header.header.version-5",
+        "ActorTlvType": "markerPDU.header.actor.tlvType-6",
+        "ActorTlvLength": "markerPDU.header.actor.tlvLength-7",
+        "ActorRequesterPort": "markerPDU.header.actor.requesterPort-8",
+        "ActorRequesterSystem": "markerPDU.header.actor.requesterSystem-9",
+        "ActorRequesterTransactionId": "markerPDU.header.actor.requesterTransactionId-10",
+        "ActorPad": "markerPDU.header.actor.pad-11",
+        "TerminatorTlvType": "markerPDU.header.terminator.tlvType-12",
+        "TerminatorTlvLength": "markerPDU.header.terminator.tlvLength-13",
+        "HeaderReserved": "markerPDU.header.reserved-14",
+        "HeaderFcs": "markerPDU.header.fcs-15",
     }
 
     def __init__(self, parent, list_op=False):
@@ -34,7 +34,10 @@ class MarkerPDU(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDstAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDstAddress"])
+        )
 
     @property
     def HeaderSrcAddress(self):
@@ -44,7 +47,10 @@ class MarkerPDU(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSrcAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderSrcAddress"])
+        )
 
     @property
     def HeaderLengthType(self):
@@ -54,7 +60,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLengthType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLengthType"])
+        )
 
     @property
     def HeaderSubtype(self):
@@ -64,7 +73,8 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSubtype']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSubtype"]))
 
     @property
     def HeaderVersion(self):
@@ -74,7 +84,8 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderVersion']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderVersion"]))
 
     @property
     def ActorTlvType(self):
@@ -85,7 +96,8 @@ class MarkerPDU(Base):
         Available enum values: Marker Information, 1, Marker Response Information, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorTlvType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorTlvType"]))
 
     @property
     def ActorTlvLength(self):
@@ -95,7 +107,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorTlvLength"])
+        )
 
     @property
     def ActorRequesterPort(self):
@@ -105,7 +120,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorRequesterPort']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorRequesterPort"])
+        )
 
     @property
     def ActorRequesterSystem(self):
@@ -115,7 +133,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorRequesterSystem']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorRequesterSystem"])
+        )
 
     @property
     def ActorRequesterTransactionId(self):
@@ -125,7 +146,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorRequesterTransactionId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActorRequesterTransactionId"])
+        )
 
     @property
     def ActorPad(self):
@@ -135,7 +159,8 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ActorPad']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActorPad"]))
 
     @property
     def TerminatorTlvType(self):
@@ -145,7 +170,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TerminatorTlvType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TerminatorTlvType"])
+        )
 
     @property
     def TerminatorTlvLength(self):
@@ -155,7 +183,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TerminatorTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TerminatorTlvLength"])
+        )
 
     @property
     def HeaderReserved(self):
@@ -165,7 +196,10 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
+        )
 
     @property
     def HeaderFcs(self):
@@ -175,7 +209,8 @@ class MarkerPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderFcs']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderFcs"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,22 @@ class Router(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'router'
+    _SDM_NAME = "router"
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
-        'EBit': 'eBit',
-        'Interfaces': 'interfaces',
-        'OptBitDc': 'optBitDc',
-        'OptBitE': 'optBitE',
-        'OptBitMc': 'optBitMc',
-        'OptBitN': 'optBitN',
-        'OptBitR': 'optBitR',
-        'OptBitV6': 'optBitV6',
-        'Option': 'option',
-        'VBit': 'vBit',
-        'WBit': 'wBit',
+        "BBit": "bBit",
+        "EBit": "eBit",
+        "Interfaces": "interfaces",
+        "OptBitDc": "optBitDc",
+        "OptBitE": "optBitE",
+        "OptBitMc": "optBitMc",
+        "OptBitN": "optBitN",
+        "OptBitR": "optBitR",
+        "OptBitV6": "optBitV6",
+        "Option": "option",
+        "VBit": "vBit",
+        "WBit": "wBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Router, self).__init__(parent, list_op)
@@ -60,13 +60,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BBit"])
+
     @BBit.setter
     def BBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BBit"], value)
 
     @property
     def EBit(self):
@@ -74,25 +75,27 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EBit"])
+
     @EBit.setter
     def EBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EBit"], value)
 
     @property
     def Interfaces(self):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number)): 
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number)):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def OptBitDc(self):
@@ -100,13 +103,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitDc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitDc"])
+
     @OptBitDc.setter
     def OptBitDc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitDc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitDc"], value)
 
     @property
     def OptBitE(self):
@@ -114,13 +118,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitE'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitE"])
+
     @OptBitE.setter
     def OptBitE(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitE'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitE"], value)
 
     @property
     def OptBitMc(self):
@@ -128,13 +133,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitMc"])
+
     @OptBitMc.setter
     def OptBitMc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitMc"], value)
 
     @property
     def OptBitN(self):
@@ -142,13 +148,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitN'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitN"])
+
     @OptBitN.setter
     def OptBitN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitN"], value)
 
     @property
     def OptBitR(self):
@@ -156,13 +163,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitR'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitR"])
+
     @OptBitR.setter
     def OptBitR(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitR'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitR"], value)
 
     @property
     def OptBitV6(self):
@@ -170,13 +178,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitV6"])
+
     @OptBitV6.setter
     def OptBitV6(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitV6"], value)
 
     @property
     def Option(self):
@@ -184,13 +193,14 @@ class Router(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Option'])
+        return self._get_attribute(self._SDM_ATT_MAP["Option"])
+
     @Option.setter
     def Option(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Option'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Option"], value)
 
     @property
     def VBit(self):
@@ -198,13 +208,14 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["VBit"])
+
     @VBit.setter
     def VBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VBit"], value)
 
     @property
     def WBit(self):
@@ -212,31 +223,46 @@ class Router(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["WBit"])
+
     @WBit.setter
     def WBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['WBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["WBit"], value)
 
-    def update(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
+    def update(
+        self,
+        BBit=None,
+        EBit=None,
+        Interfaces=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        VBit=None,
+        WBit=None,
+    ):
         """Updates router resource on the server.
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - VBit (bool): 
-        - WBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - VBit (bool):
+        - WBit (bool):
 
         Raises
         ------
@@ -244,23 +270,37 @@ class Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
-        """Adds a new router resource on the json, only valid with config assistant
+    def add(
+        self,
+        BBit=None,
+        EBit=None,
+        Interfaces=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        VBit=None,
+        WBit=None,
+    ):
+        """Adds a new router resource on the json, only valid with batch add utility
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - VBit (bool): 
-        - WBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - VBit (bool):
+        - WBit (bool):
 
         Returns
         -------
@@ -272,7 +312,21 @@ class Router(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
+    def find(
+        self,
+        BBit=None,
+        EBit=None,
+        Interfaces=None,
+        OptBitDc=None,
+        OptBitE=None,
+        OptBitMc=None,
+        OptBitN=None,
+        OptBitR=None,
+        OptBitV6=None,
+        Option=None,
+        VBit=None,
+        WBit=None,
+    ):
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
@@ -281,18 +335,18 @@ class Router(Base):
 
         Args
         ----
-        - BBit (bool): 
-        - EBit (bool): 
-        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
-        - OptBitDc (bool): 
-        - OptBitE (bool): 
-        - OptBitMc (bool): 
-        - OptBitN (bool): 
-        - OptBitR (bool): 
-        - OptBitV6 (bool): 
-        - Option (number): 
-        - VBit (bool): 
-        - WBit (bool): 
+        - BBit (bool):
+        - EBit (bool):
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))):
+        - OptBitDc (bool):
+        - OptBitE (bool):
+        - OptBitMc (bool):
+        - OptBitN (bool):
+        - OptBitR (bool):
+        - OptBitV6 (bool):
+        - Option (number):
+        - VBit (bool):
+        - WBit (bool):
 
         Returns
         -------

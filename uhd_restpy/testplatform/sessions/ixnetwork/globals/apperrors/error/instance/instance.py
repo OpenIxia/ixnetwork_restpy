@@ -54,7 +54,7 @@ class Instance(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceValues'])
 
     def add(self):
-        """Adds a new instance resource on the json, only valid with config assistant
+        """Adds a new instance resource on the json, only valid with batch add utility
 
         Returns
         -------

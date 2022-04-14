@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class ECpriMsgType3(Base):
     __slots__ = ()
-    _SDM_NAME = 'eCpriMsgType3'
+    _SDM_NAME = "eCpriMsgType3"
     _SDM_ATT_MAP = {
-        'HeaderPcid': 'eCpriMsgType3.header.pcid-1',
-        'HeaderSeqid': 'eCpriMsgType3.header.seqid-2',
-        'HeaderLength': 'eCpriMsgType3.header.header.length-3',
-        'HeaderData': 'eCpriMsgType3.header.header.data-4',
+        "HeaderPcid": "eCpriMsgType3.header.pcid-1",
+        "HeaderSeqid": "eCpriMsgType3.header.seqid-2",
+        "HeaderLength": "eCpriMsgType3.header.header.length-3",
+        "HeaderData": "eCpriMsgType3.header.header.data-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,8 @@ class ECpriMsgType3(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPcid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderPcid"]))
 
     @property
     def HeaderSeqid(self):
@@ -33,7 +34,8 @@ class ECpriMsgType3(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderSeqid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderSeqid"]))
 
     @property
     def HeaderLength(self):
@@ -43,7 +45,8 @@ class ECpriMsgType3(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderLength"]))
 
     @property
     def HeaderData(self):
@@ -53,7 +56,8 @@ class ECpriMsgType3(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderData']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderData"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

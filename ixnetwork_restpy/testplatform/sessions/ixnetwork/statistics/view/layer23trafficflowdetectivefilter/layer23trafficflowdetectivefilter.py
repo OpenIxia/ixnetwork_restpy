@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,18 @@ class Layer23TrafficFlowDetectiveFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23TrafficFlowDetectiveFilter'
+    _SDM_NAME = "layer23TrafficFlowDetectiveFilter"
     _SDM_ATT_MAP = {
-        'DeadFlowsCount': 'deadFlowsCount',
-        'DeadFlowsThreshold': 'deadFlowsThreshold',
-        'FlowFilterType': 'flowFilterType',
-        'PortFilterIds': 'portFilterIds',
-        'ShowEgressFlows': 'showEgressFlows',
-        'TrafficItemFilterId': 'trafficItemFilterId',
-        'TrafficItemFilterIds': 'trafficItemFilterIds',
+        "DeadFlowsCount": "deadFlowsCount",
+        "DeadFlowsThreshold": "deadFlowsThreshold",
+        "FlowFilterType": "flowFilterType",
+        "PortFilterIds": "portFilterIds",
+        "ShowEgressFlows": "showEgressFlows",
+        "TrafficItemFilterId": "trafficItemFilterId",
+        "TrafficItemFilterIds": "trafficItemFilterIds",
     }
     _SDM_ENUM_MAP = {
-        'flowFilterType': ['allFlows', 'deadFlows', 'liveFlows'],
+        "flowFilterType": ["allFlows", "deadFlows", "liveFlows"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +63,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.allflowsfilter.allflowsfilter import AllFlowsFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.allflowsfilter.allflowsfilter import (
+            AllFlowsFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AllFlowsFilter', None) is not None:
-                return self._properties.get('AllFlowsFilter')
+            if self._properties.get("AllFlowsFilter", None) is not None:
+                return self._properties.get("AllFlowsFilter")
         return AllFlowsFilter(self)
 
     @property
@@ -79,10 +83,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.deadflowsfilter.deadflowsfilter import DeadFlowsFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.deadflowsfilter.deadflowsfilter import (
+            DeadFlowsFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DeadFlowsFilter', None) is not None:
-                return self._properties.get('DeadFlowsFilter')
+            if self._properties.get("DeadFlowsFilter", None) is not None:
+                return self._properties.get("DeadFlowsFilter")
         return DeadFlowsFilter(self)
 
     @property
@@ -96,10 +103,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.liveflowsfilter.liveflowsfilter import LiveFlowsFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.liveflowsfilter.liveflowsfilter import (
+            LiveFlowsFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LiveFlowsFilter', None) is not None:
-                return self._properties.get('LiveFlowsFilter')
+            if self._properties.get("LiveFlowsFilter", None) is not None:
+                return self._properties.get("LiveFlowsFilter")
         return LiveFlowsFilter(self)
 
     @property
@@ -113,10 +123,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.statisticfilter.statisticfilter import StatisticFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.statisticfilter.statisticfilter import (
+            StatisticFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('StatisticFilter', None) is not None:
-                return self._properties.get('StatisticFilter')
+            if self._properties.get("StatisticFilter", None) is not None:
+                return self._properties.get("StatisticFilter")
         return StatisticFilter(self)
 
     @property
@@ -130,10 +143,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.trackingfilter.trackingfilter import TrackingFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.trackingfilter.trackingfilter import (
+            TrackingFilter,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TrackingFilter', None) is not None:
-                return self._properties.get('TrackingFilter')
+            if self._properties.get("TrackingFilter", None) is not None:
+                return self._properties.get("TrackingFilter")
         return TrackingFilter(self)
 
     @property
@@ -144,7 +160,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - number: The number of flows declared dead. A flow is declared dead if no traffic is received for a specified number of seconds. To change this threshold use the deadFlowsThreshold attribute.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeadFlowsCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeadFlowsCount"])
 
     @property
     def DeadFlowsThreshold(self):
@@ -154,11 +170,12 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - number: Threshold in seconds after which the flows are declared dead if there are no packets received for a specified number of seconds. This is a global attibute and hence the latest value entered takes precedence over previous values in all the custom views.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeadFlowsThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeadFlowsThreshold"])
+
     @DeadFlowsThreshold.setter
     def DeadFlowsThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeadFlowsThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeadFlowsThreshold"], value)
 
     @property
     def FlowFilterType(self):
@@ -168,11 +185,12 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - str(allFlows | deadFlows | liveFlows): Indicates the flow detective filter settings.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlowFilterType'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlowFilterType"])
+
     @FlowFilterType.setter
     def FlowFilterType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlowFilterType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlowFilterType"], value)
 
     @property
     def PortFilterIds(self):
@@ -182,11 +200,12 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
+
     @PortFilterIds.setter
     def PortFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortFilterIds"], value)
 
     @property
     def ShowEgressFlows(self):
@@ -196,25 +215,27 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ShowEgressFlows'])
+        return self._get_attribute(self._SDM_ATT_MAP["ShowEgressFlows"])
+
     @ShowEgressFlows.setter
     def ShowEgressFlows(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ShowEgressFlows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ShowEgressFlows"], value)
 
     @property
     def TrafficItemFilterId(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter): Selected traffic flow detective filter from the availableTrafficItemFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"])
+
     @TrafficItemFilterId.setter
     def TrafficItemFilterId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"], value)
 
     @property
     def TrafficItemFilterIds(self):
@@ -224,13 +245,22 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
+
     @TrafficItemFilterIds.setter
     def TrafficItemFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"], value)
 
-    def update(self, DeadFlowsThreshold=None, FlowFilterType=None, PortFilterIds=None, ShowEgressFlows=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def update(
+        self,
+        DeadFlowsThreshold=None,
+        FlowFilterType=None,
+        PortFilterIds=None,
+        ShowEgressFlows=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Updates layer23TrafficFlowDetectiveFilter resource on the server.
 
@@ -249,7 +279,15 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DeadFlowsThreshold=None, FlowFilterType=None, PortFilterIds=None, ShowEgressFlows=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def add(
+        self,
+        DeadFlowsThreshold=None,
+        FlowFilterType=None,
+        PortFilterIds=None,
+        ShowEgressFlows=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Adds a new layer23TrafficFlowDetectiveFilter resource on the server and adds it to the container.
 
@@ -282,7 +320,16 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         """
         self._delete()
 
-    def find(self, DeadFlowsCount=None, DeadFlowsThreshold=None, FlowFilterType=None, PortFilterIds=None, ShowEgressFlows=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
+    def find(
+        self,
+        DeadFlowsCount=None,
+        DeadFlowsThreshold=None,
+        FlowFilterType=None,
+        PortFilterIds=None,
+        ShowEgressFlows=None,
+        TrafficItemFilterId=None,
+        TrafficItemFilterIds=None,
+    ):
         # type: (int, int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Finds and retrieves layer23TrafficFlowDetectiveFilter resources from the server.
 

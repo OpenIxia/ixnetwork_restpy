@@ -4,11 +4,11 @@ from ixnetwork_restpy.files import Files
 
 class MvrpMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'mvrpMessage'
+    _SDM_NAME = "mvrpMessage"
     _SDM_ATT_MAP = {
-        'MvrpHeaderProtoVersion': 'mvrpMessage.header.mvrpHeader.protoVersion-1',
-        'MvrpVidVectorAttributeType': 'mvrpMessage.header.attributeType.mvrpVidVector.attributeType-2',
-        'MvrpVidVectorAttributeLength': 'mvrpMessage.header.attributeType.mvrpVidVector.attributeLength-3',
+        "MvrpHeaderProtoVersion": "mvrpMessage.header.mvrpHeader.protoVersion-1",
+        "MvrpVidVectorAttributeType": "mvrpMessage.header.attributeType.mvrpVidVector.attributeType-2",
+        "MvrpVidVectorAttributeLength": "mvrpMessage.header.attributeType.mvrpVidVector.attributeLength-3",
     }
 
     def __init__(self, parent, list_op=False):
@@ -22,7 +22,10 @@ class MvrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvrpHeaderProtoVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvrpHeaderProtoVersion"])
+        )
 
     @property
     def MvrpVidVectorAttributeType(self):
@@ -32,7 +35,10 @@ class MvrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvrpVidVectorAttributeType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvrpVidVectorAttributeType"])
+        )
 
     @property
     def MvrpVidVectorAttributeLength(self):
@@ -42,7 +48,10 @@ class MvrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MvrpVidVectorAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvrpVidVectorAttributeLength"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class GroupBucketDescStatLearnedInformation(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'groupBucketDescStatLearnedInformation'
+    _SDM_NAME = "groupBucketDescStatLearnedInformation"
     _SDM_ATT_MAP = {
-        'ActionCount': 'actionCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'GroupId': 'groupId',
-        'LocalIp': 'localIp',
-        'RemoteIp': 'remoteIp',
-        'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
-        'Weight': 'weight',
+        "ActionCount": "actionCount",
+        "DataPathId": "dataPathId",
+        "DataPathIdAsHex": "dataPathIdAsHex",
+        "GroupId": "groupId",
+        "LocalIp": "localIp",
+        "RemoteIp": "remoteIp",
+        "WatchGroup": "watchGroup",
+        "WatchPort": "watchPort",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(GroupBucketDescStatLearnedInformation, self).__init__(parent, list_op)
@@ -59,7 +59,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActionCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActionCount"])
 
     @property
     def DataPathId(self):
@@ -69,7 +69,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathId'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathId"])
 
     @property
     def DataPathIdAsHex(self):
@@ -79,7 +79,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the OpenFlow switch in hexadecimal format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DataPathIdAsHex'])
+        return self._get_attribute(self._SDM_ATT_MAP["DataPathIdAsHex"])
 
     @property
     def GroupId(self):
@@ -89,7 +89,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - number: A 32-bit integer uniquely identifying the group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupId"])
 
     @property
     def LocalIp(self):
@@ -99,7 +99,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - str: The Data Path ID of the OpenFlow switch.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def RemoteIp(self):
@@ -109,7 +109,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - str: The Remote IP address of the selected interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteIp"])
 
     @property
     def WatchGroup(self):
@@ -119,7 +119,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - number: A group whose state determines whether this bucket is live or not. Default value OFPG_ANY(4,294,967,295) indicates that Watch Group is not specified in ofp_group_mod packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchGroup'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchGroup"])
 
     @property
     def WatchPort(self):
@@ -129,7 +129,7 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - number: A Port whose state determines whether this bucket is live or not. Default value OFPP_ANY(4,294,967,295) indicates that Watch Port is not specified in ofp_group_mod packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['WatchPort'])
+        return self._get_attribute(self._SDM_ATT_MAP["WatchPort"])
 
     @property
     def Weight(self):
@@ -139,10 +139,10 @@ class GroupBucketDescStatLearnedInformation(Base):
         -------
         - number: Specify the weight of buckets. The range allowed is 0-65535.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
 
     def add(self):
-        """Adds a new groupBucketDescStatLearnedInformation resource on the json, only valid with config assistant
+        """Adds a new groupBucketDescStatLearnedInformation resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -154,7 +154,18 @@ class GroupBucketDescStatLearnedInformation(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActionCount=None, DataPathId=None, DataPathIdAsHex=None, GroupId=None, LocalIp=None, RemoteIp=None, WatchGroup=None, WatchPort=None, Weight=None):
+    def find(
+        self,
+        ActionCount=None,
+        DataPathId=None,
+        DataPathIdAsHex=None,
+        GroupId=None,
+        LocalIp=None,
+        RemoteIp=None,
+        WatchGroup=None,
+        WatchPort=None,
+        Weight=None,
+    ):
         # type: (int, str, str, int, str, str, int, int, int) -> GroupBucketDescStatLearnedInformation
         """Finds and retrieves groupBucketDescStatLearnedInformation resources from the server.
 

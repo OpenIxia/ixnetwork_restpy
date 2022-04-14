@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,17 +34,33 @@ class Statistic(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'statistic'
+    _SDM_NAME = "statistic"
     _SDM_ATT_MAP = {
-        'AggregationType': 'aggregationType',
-        'Caption': 'caption',
-        'DefaultCaption': 'defaultCaption',
-        'Enabled': 'enabled',
-        'ScaleFactor': 'scaleFactor',
-        'SourceTypes': 'sourceTypes',
+        "AggregationType": "aggregationType",
+        "Caption": "caption",
+        "DefaultCaption": "defaultCaption",
+        "Enabled": "enabled",
+        "ScaleFactor": "scaleFactor",
+        "SourceTypes": "sourceTypes",
     }
     _SDM_ENUM_MAP = {
-        'aggregationType': ['average', 'averageRate', 'ax', 'axRate', 'intervalAverage', 'min', 'minRate', 'none', 'rate', 'runStateAgg', 'runStateAggIgnoreRamp', 'sum', 'vectorMax', 'vectorMin', 'weightedAverage'],
+        "aggregationType": [
+            "average",
+            "averageRate",
+            "ax",
+            "axRate",
+            "intervalAverage",
+            "min",
+            "minRate",
+            "none",
+            "rate",
+            "runStateAgg",
+            "runStateAggIgnoreRamp",
+            "sum",
+            "vectorMax",
+            "vectorMin",
+            "weightedAverage",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,13 +72,14 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage): 
+        - str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregationType"])
+
     @AggregationType.setter
     def AggregationType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregationType"], value)
 
     @property
     def Caption(self):
@@ -69,13 +87,14 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
+        return self._get_attribute(self._SDM_ATT_MAP["Caption"])
+
     @Caption.setter
     def Caption(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Caption"], value)
 
     @property
     def DefaultCaption(self):
@@ -83,9 +102,9 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefaultCaption'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefaultCaption"])
 
     @property
     def Enabled(self):
@@ -93,13 +112,14 @@ class Statistic(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def ScaleFactor(self):
@@ -107,13 +127,14 @@ class Statistic(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ScaleFactor'])
+        return self._get_attribute(self._SDM_ATT_MAP["ScaleFactor"])
+
     @ScaleFactor.setter
     def ScaleFactor(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ScaleFactor'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ScaleFactor"], value)
 
     @property
     def SourceTypes(self):
@@ -121,20 +142,22 @@ class Statistic(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceTypes'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceTypes"])
 
-    def update(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
+    def update(
+        self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None
+    ):
         # type: (str, str, bool, int) -> Statistic
         """Updates statistic resource on the server.
 
         Args
         ----
-        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
-        - Caption (str): 
-        - Enabled (bool): 
-        - ScaleFactor (number): 
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
+        - Caption (str):
+        - Enabled (bool):
+        - ScaleFactor (number):
 
         Raises
         ------
@@ -144,14 +167,14 @@ class Statistic(Base):
 
     def add(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
         # type: (str, str, bool, int) -> Statistic
-        """Adds a new statistic resource on the json, only valid with config assistant
+        """Adds a new statistic resource on the json, only valid with batch add utility
 
         Args
         ----
-        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
-        - Caption (str): 
-        - Enabled (bool): 
-        - ScaleFactor (number): 
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
+        - Caption (str):
+        - Enabled (bool):
+        - ScaleFactor (number):
 
         Returns
         -------
@@ -163,7 +186,15 @@ class Statistic(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AggregationType=None, Caption=None, DefaultCaption=None, Enabled=None, ScaleFactor=None, SourceTypes=None):
+    def find(
+        self,
+        AggregationType=None,
+        Caption=None,
+        DefaultCaption=None,
+        Enabled=None,
+        ScaleFactor=None,
+        SourceTypes=None,
+    ):
         # type: (str, str, str, bool, int, List[str]) -> Statistic
         """Finds and retrieves statistic resources from the server.
 
@@ -173,12 +204,12 @@ class Statistic(Base):
 
         Args
         ----
-        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
-        - Caption (str): 
-        - DefaultCaption (str): 
-        - Enabled (bool): 
-        - ScaleFactor (number): 
-        - SourceTypes (list(str)): 
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
+        - Caption (str):
+        - DefaultCaption (str):
+        - Enabled (bool):
+        - ScaleFactor (number):
+        - SourceTypes (list(str)):
 
         Returns
         -------

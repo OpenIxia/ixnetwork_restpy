@@ -220,7 +220,7 @@ class LdpIpv6FECProperty(Base):
 
     def add(self, Name=None):
         # type: (str) -> LdpIpv6FECProperty
-        """Adds a new ldpIpv6FECProperty resource on the json, only valid with config assistant
+        """Adds a new ldpIpv6FECProperty resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -218,7 +218,7 @@ class CfmCustomTLVList(Base):
 
     def add(self, Name=None):
         # type: (str) -> CfmCustomTLVList
-        """Adds a new cfmCustomTLVList resource on the json, only valid with config assistant
+        """Adds a new cfmCustomTLVList resource on the json, only valid with batch add utility
 
         Args
         ----

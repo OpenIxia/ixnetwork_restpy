@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,39 +33,39 @@ class Bgp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgp'
+    _SDM_NAME = "bgp"
     _SDM_ATT_MAP = {
-        'AutoFillUpDutIp': 'autoFillUpDutIp',
-        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
-        'EVpnAfi': 'eVpnAfi',
-        'EVpnSafi': 'eVpnSafi',
-        'EnableAdVplsPrefixLengthInBits': 'enableAdVplsPrefixLengthInBits',
-        'EnableExternalActiveConnect': 'enableExternalActiveConnect',
-        'EnableInternalActiveConnect': 'enableInternalActiveConnect',
-        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'Enabled': 'enabled',
-        'EsImportRouteTargetSubType': 'esImportRouteTargetSubType',
-        'EsImportRouteTargetType': 'esImportRouteTargetType',
-        'EsiLabelExtendedCommunitySubType': 'esiLabelExtendedCommunitySubType',
-        'EsiLabelExtendedCommunityType': 'esiLabelExtendedCommunityType',
-        'EvpnIpAddressLengthUnit': 'evpnIpAddressLengthUnit',
-        'ExternalRetries': 'externalRetries',
-        'ExternalRetryDelay': 'externalRetryDelay',
-        'InternalRetries': 'internalRetries',
-        'InternalRetryDelay': 'internalRetryDelay',
-        'MacMobilityExtendedCommunitySubType': 'macMobilityExtendedCommunitySubType',
-        'MacMobilityExtendedCommunityType': 'macMobilityExtendedCommunityType',
-        'MldpP2mpFecType': 'mldpP2mpFecType',
-        'RunningState': 'runningState',
-        'Tester4ByteAsForIbgp': 'tester4ByteAsForIbgp',
-        'TesterAsForIbgp': 'testerAsForIbgp',
-        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
-        'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
+        "AutoFillUpDutIp": "autoFillUpDutIp",
+        "DisableReceivedUpdateValidation": "disableReceivedUpdateValidation",
+        "EVpnAfi": "eVpnAfi",
+        "EVpnSafi": "eVpnSafi",
+        "EnableAdVplsPrefixLengthInBits": "enableAdVplsPrefixLengthInBits",
+        "EnableExternalActiveConnect": "enableExternalActiveConnect",
+        "EnableInternalActiveConnect": "enableInternalActiveConnect",
+        "EnableLabelExchangeOverLsp": "enableLabelExchangeOverLsp",
+        "EnableVpnLabelExchangeOverLsp": "enableVpnLabelExchangeOverLsp",
+        "Enabled": "enabled",
+        "EsImportRouteTargetSubType": "esImportRouteTargetSubType",
+        "EsImportRouteTargetType": "esImportRouteTargetType",
+        "EsiLabelExtendedCommunitySubType": "esiLabelExtendedCommunitySubType",
+        "EsiLabelExtendedCommunityType": "esiLabelExtendedCommunityType",
+        "EvpnIpAddressLengthUnit": "evpnIpAddressLengthUnit",
+        "ExternalRetries": "externalRetries",
+        "ExternalRetryDelay": "externalRetryDelay",
+        "InternalRetries": "internalRetries",
+        "InternalRetryDelay": "internalRetryDelay",
+        "MacMobilityExtendedCommunitySubType": "macMobilityExtendedCommunitySubType",
+        "MacMobilityExtendedCommunityType": "macMobilityExtendedCommunityType",
+        "MldpP2mpFecType": "mldpP2mpFecType",
+        "RunningState": "runningState",
+        "Tester4ByteAsForIbgp": "tester4ByteAsForIbgp",
+        "TesterAsForIbgp": "testerAsForIbgp",
+        "TriggerVplsPwInitiation": "triggerVplsPwInitiation",
+        "VrfRouteImportExtendedCommunitySubType": "vrfRouteImportExtendedCommunitySubType",
     }
     _SDM_ENUM_MAP = {
-        'evpnIpAddressLengthUnit': ['bit', 'byte'],
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "evpnIpAddressLengthUnit": ["bit", "byte"],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -81,10 +82,13 @@ class Bgp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborrange_a1e9ecb177af994ec56d9e054fd677fb import NeighborRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborrange_a1e9ecb177af994ec56d9e054fd677fb import (
+            NeighborRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('NeighborRange', None) is not None:
-                return self._properties.get('NeighborRange')
+            if self._properties.get("NeighborRange", None) is not None:
+                return self._properties.get("NeighborRange")
         return NeighborRange(self)
 
     @property
@@ -95,11 +99,12 @@ class Bgp(Base):
         -------
         - bool: If true, automatically fills up the IP of the DUT
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AutoFillUpDutIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["AutoFillUpDutIp"])
+
     @AutoFillUpDutIp.setter
     def AutoFillUpDutIp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AutoFillUpDutIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AutoFillUpDutIp"], value)
 
     @property
     def DisableReceivedUpdateValidation(self):
@@ -109,11 +114,12 @@ class Bgp(Base):
         -------
         - bool: If true, disables any update validation request from the DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DisableReceivedUpdateValidation'])
+        return self._get_attribute(self._SDM_ATT_MAP["DisableReceivedUpdateValidation"])
+
     @DisableReceivedUpdateValidation.setter
     def DisableReceivedUpdateValidation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DisableReceivedUpdateValidation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DisableReceivedUpdateValidation"], value)
 
     @property
     def EVpnAfi(self):
@@ -123,11 +129,12 @@ class Bgp(Base):
         -------
         - number: AFI to support EVPN. Default value is 25. Minimum valus is 0 and maximum value is 0xFFFF
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EVpnAfi'])
+        return self._get_attribute(self._SDM_ATT_MAP["EVpnAfi"])
+
     @EVpnAfi.setter
     def EVpnAfi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EVpnAfi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EVpnAfi"], value)
 
     @property
     def EVpnSafi(self):
@@ -137,11 +144,12 @@ class Bgp(Base):
         -------
         - number: SAFI to support EVPN. Default value is 70. Minimum valus is 0 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EVpnSafi'])
+        return self._get_attribute(self._SDM_ATT_MAP["EVpnSafi"])
+
     @EVpnSafi.setter
     def EVpnSafi(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EVpnSafi'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EVpnSafi"], value)
 
     @property
     def EnableAdVplsPrefixLengthInBits(self):
@@ -151,11 +159,12 @@ class Bgp(Base):
         -------
         - bool: If true, enables the AdVpls length in bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAdVplsPrefixLengthInBits'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAdVplsPrefixLengthInBits"])
+
     @EnableAdVplsPrefixLengthInBits.setter
     def EnableAdVplsPrefixLengthInBits(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAdVplsPrefixLengthInBits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAdVplsPrefixLengthInBits"], value)
 
     @property
     def EnableExternalActiveConnect(self):
@@ -165,11 +174,12 @@ class Bgp(Base):
         -------
         - bool: Causes a HELLO message to be actively sent when BGP testing starts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExternalActiveConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExternalActiveConnect"])
+
     @EnableExternalActiveConnect.setter
     def EnableExternalActiveConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExternalActiveConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExternalActiveConnect"], value)
 
     @property
     def EnableInternalActiveConnect(self):
@@ -179,25 +189,27 @@ class Bgp(Base):
         -------
         - bool: Causes a HELLO message to be actively sent when BGP testing starts.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableInternalActiveConnect'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableInternalActiveConnect"])
+
     @EnableInternalActiveConnect.setter
     def EnableInternalActiveConnect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableInternalActiveConnect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableInternalActiveConnect"], value)
 
     @property
     def EnableLabelExchangeOverLsp(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Enables the ability to exchange labels over LSP for VPNs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLabelExchangeOverLsp"])
+
     @EnableLabelExchangeOverLsp.setter
     def EnableLabelExchangeOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLabelExchangeOverLsp"], value)
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
@@ -207,11 +219,12 @@ class Bgp(Base):
         -------
         - bool: If true, enables the exchange of VPN exchange over LSP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"])
+
     @EnableVpnLabelExchangeOverLsp.setter
     def EnableVpnLabelExchangeOverLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVpnLabelExchangeOverLsp"], value)
 
     @property
     def Enabled(self):
@@ -221,11 +234,12 @@ class Bgp(Base):
         -------
         - bool: Enables or disables the use of this emulated BGP router in the emulated BGP network. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def EsImportRouteTargetSubType(self):
@@ -235,11 +249,12 @@ class Bgp(Base):
         -------
         - number: This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 2. Minimum value is 1 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EsImportRouteTargetSubType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EsImportRouteTargetSubType"])
+
     @EsImportRouteTargetSubType.setter
     def EsImportRouteTargetSubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EsImportRouteTargetSubType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EsImportRouteTargetSubType"], value)
 
     @property
     def EsImportRouteTargetType(self):
@@ -249,11 +264,12 @@ class Bgp(Base):
         -------
         - number: This is a new transitive Route Target extended community carried with the Ethernet Segment route in EVPN. When used, it enables all the PEs connected to the same multi-homed site to import the Ethernet Segment routes. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EsImportRouteTargetType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EsImportRouteTargetType"])
+
     @EsImportRouteTargetType.setter
     def EsImportRouteTargetType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EsImportRouteTargetType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EsImportRouteTargetType"], value)
 
     @property
     def EsiLabelExtendedCommunitySubType(self):
@@ -263,11 +279,16 @@ class Bgp(Base):
         -------
         - number: This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 1. Minimum value is 1 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EsiLabelExtendedCommunitySubType'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EsiLabelExtendedCommunitySubType"]
+        )
+
     @EsiLabelExtendedCommunitySubType.setter
     def EsiLabelExtendedCommunitySubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EsiLabelExtendedCommunitySubType'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["EsiLabelExtendedCommunitySubType"], value
+        )
 
     @property
     def EsiLabelExtendedCommunityType(self):
@@ -277,11 +298,12 @@ class Bgp(Base):
         -------
         - number: This is a new transitive extended community in EVPN. It may be advertised along with Ethernet Auto-Discovery routes and it enables split-horizon procedures for multi-homed sites. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EsiLabelExtendedCommunityType'])
+        return self._get_attribute(self._SDM_ATT_MAP["EsiLabelExtendedCommunityType"])
+
     @EsiLabelExtendedCommunityType.setter
     def EsiLabelExtendedCommunityType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EsiLabelExtendedCommunityType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EsiLabelExtendedCommunityType"], value)
 
     @property
     def EvpnIpAddressLengthUnit(self):
@@ -291,11 +313,12 @@ class Bgp(Base):
         -------
         - str(bit | byte): The unit of the IP address length field in MAC Advertisement route packet, can be bits or bytes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EvpnIpAddressLengthUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["EvpnIpAddressLengthUnit"])
+
     @EvpnIpAddressLengthUnit.setter
     def EvpnIpAddressLengthUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EvpnIpAddressLengthUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EvpnIpAddressLengthUnit"], value)
 
     @property
     def ExternalRetries(self):
@@ -305,11 +328,12 @@ class Bgp(Base):
         -------
         - number: The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRetries"])
+
     @ExternalRetries.setter
     def ExternalRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRetries"], value)
 
     @property
     def ExternalRetryDelay(self):
@@ -319,11 +343,12 @@ class Bgp(Base):
         -------
         - number: When retries are necessary, the delay between retries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExternalRetryDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExternalRetryDelay"])
+
     @ExternalRetryDelay.setter
     def ExternalRetryDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExternalRetryDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExternalRetryDelay"], value)
 
     @property
     def InternalRetries(self):
@@ -333,11 +358,12 @@ class Bgp(Base):
         -------
         - number: The number of times to attempt an OPEN connection with the DUT router(s) before giving up.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalRetries'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalRetries"])
+
     @InternalRetries.setter
     def InternalRetries(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalRetries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalRetries"], value)
 
     @property
     def InternalRetryDelay(self):
@@ -347,11 +373,12 @@ class Bgp(Base):
         -------
         - number: When retries are necessary, the delay between retries.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InternalRetryDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["InternalRetryDelay"])
+
     @InternalRetryDelay.setter
     def InternalRetryDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InternalRetryDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InternalRetryDelay"], value)
 
     @property
     def MacMobilityExtendedCommunitySubType(self):
@@ -361,11 +388,16 @@ class Bgp(Base):
         -------
         - number: This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 0. Minimum value is 0 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacMobilityExtendedCommunitySubType'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MacMobilityExtendedCommunitySubType"]
+        )
+
     @MacMobilityExtendedCommunitySubType.setter
     def MacMobilityExtendedCommunitySubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacMobilityExtendedCommunitySubType'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MacMobilityExtendedCommunitySubType"], value
+        )
 
     @property
     def MacMobilityExtendedCommunityType(self):
@@ -375,11 +407,16 @@ class Bgp(Base):
         -------
         - number: This is a new transitive extended community used in EVPN. It may be advertised along with MAC Advertisement routes to support MAC mobility. Default value is 6. Minimum value is 1 and maximum value is 0xFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacMobilityExtendedCommunityType'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["MacMobilityExtendedCommunityType"]
+        )
+
     @MacMobilityExtendedCommunityType.setter
     def MacMobilityExtendedCommunityType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacMobilityExtendedCommunityType'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["MacMobilityExtendedCommunityType"], value
+        )
 
     @property
     def MldpP2mpFecType(self):
@@ -389,11 +426,12 @@ class Bgp(Base):
         -------
         - number: The MLDP P2MP FEC type value in hexadecimal.LOCAL EXECS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MldpP2mpFecType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MldpP2mpFecType"])
+
     @MldpP2mpFecType.setter
     def MldpP2mpFecType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MldpP2mpFecType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MldpP2mpFecType"], value)
 
     @property
     def RunningState(self):
@@ -403,7 +441,7 @@ class Bgp(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current running state of the BGP server.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
     @property
     def Tester4ByteAsForIbgp(self):
@@ -413,11 +451,12 @@ class Bgp(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tester4ByteAsForIbgp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tester4ByteAsForIbgp"])
+
     @Tester4ByteAsForIbgp.setter
     def Tester4ByteAsForIbgp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tester4ByteAsForIbgp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tester4ByteAsForIbgp"], value)
 
     @property
     def TesterAsForIbgp(self):
@@ -427,11 +466,12 @@ class Bgp(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TesterAsForIbgp'])
+        return self._get_attribute(self._SDM_ATT_MAP["TesterAsForIbgp"])
+
     @TesterAsForIbgp.setter
     def TesterAsForIbgp(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TesterAsForIbgp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TesterAsForIbgp"], value)
 
     @property
     def TriggerVplsPwInitiation(self):
@@ -441,11 +481,12 @@ class Bgp(Base):
         -------
         - bool: Enable to initiate a trigger a VPLS PW initation that is a BGP-LDP communication.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TriggerVplsPwInitiation'])
+        return self._get_attribute(self._SDM_ATT_MAP["TriggerVplsPwInitiation"])
+
     @TriggerVplsPwInitiation.setter
     def TriggerVplsPwInitiation(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TriggerVplsPwInitiation'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TriggerVplsPwInitiation"], value)
 
     @property
     def VrfRouteImportExtendedCommunitySubType(self):
@@ -455,13 +496,46 @@ class Bgp(Base):
         -------
         - number: Extended Community Sub Type to be used in VRF Route Import Extended Community.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VrfRouteImportExtendedCommunitySubType'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["VrfRouteImportExtendedCommunitySubType"]
+        )
+
     @VrfRouteImportExtendedCommunitySubType.setter
     def VrfRouteImportExtendedCommunitySubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VrfRouteImportExtendedCommunitySubType'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["VrfRouteImportExtendedCommunitySubType"], value
+        )
 
-    def update(self, AutoFillUpDutIp=None, DisableReceivedUpdateValidation=None, EVpnAfi=None, EVpnSafi=None, EnableAdVplsPrefixLengthInBits=None, EnableExternalActiveConnect=None, EnableInternalActiveConnect=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, EsImportRouteTargetSubType=None, EsImportRouteTargetType=None, EsiLabelExtendedCommunitySubType=None, EsiLabelExtendedCommunityType=None, EvpnIpAddressLengthUnit=None, ExternalRetries=None, ExternalRetryDelay=None, InternalRetries=None, InternalRetryDelay=None, MacMobilityExtendedCommunitySubType=None, MacMobilityExtendedCommunityType=None, MldpP2mpFecType=None, Tester4ByteAsForIbgp=None, TesterAsForIbgp=None, TriggerVplsPwInitiation=None, VrfRouteImportExtendedCommunitySubType=None):
+    def update(
+        self,
+        AutoFillUpDutIp=None,
+        DisableReceivedUpdateValidation=None,
+        EVpnAfi=None,
+        EVpnSafi=None,
+        EnableAdVplsPrefixLengthInBits=None,
+        EnableExternalActiveConnect=None,
+        EnableInternalActiveConnect=None,
+        EnableLabelExchangeOverLsp=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        EsImportRouteTargetSubType=None,
+        EsImportRouteTargetType=None,
+        EsiLabelExtendedCommunitySubType=None,
+        EsiLabelExtendedCommunityType=None,
+        EvpnIpAddressLengthUnit=None,
+        ExternalRetries=None,
+        ExternalRetryDelay=None,
+        InternalRetries=None,
+        InternalRetryDelay=None,
+        MacMobilityExtendedCommunitySubType=None,
+        MacMobilityExtendedCommunityType=None,
+        MldpP2mpFecType=None,
+        Tester4ByteAsForIbgp=None,
+        TesterAsForIbgp=None,
+        TriggerVplsPwInitiation=None,
+        VrfRouteImportExtendedCommunitySubType=None,
+    ):
         # type: (bool, bool, int, int, bool, bool, bool, bool, bool, bool, int, int, int, int, str, int, int, int, int, int, int, int, int, int, bool, int) -> Bgp
         """Updates bgp resource on the server.
 
@@ -500,7 +574,36 @@ class Bgp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AutoFillUpDutIp=None, DisableReceivedUpdateValidation=None, EVpnAfi=None, EVpnSafi=None, EnableAdVplsPrefixLengthInBits=None, EnableExternalActiveConnect=None, EnableInternalActiveConnect=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, EsImportRouteTargetSubType=None, EsImportRouteTargetType=None, EsiLabelExtendedCommunitySubType=None, EsiLabelExtendedCommunityType=None, EvpnIpAddressLengthUnit=None, ExternalRetries=None, ExternalRetryDelay=None, InternalRetries=None, InternalRetryDelay=None, MacMobilityExtendedCommunitySubType=None, MacMobilityExtendedCommunityType=None, MldpP2mpFecType=None, RunningState=None, Tester4ByteAsForIbgp=None, TesterAsForIbgp=None, TriggerVplsPwInitiation=None, VrfRouteImportExtendedCommunitySubType=None):
+    def find(
+        self,
+        AutoFillUpDutIp=None,
+        DisableReceivedUpdateValidation=None,
+        EVpnAfi=None,
+        EVpnSafi=None,
+        EnableAdVplsPrefixLengthInBits=None,
+        EnableExternalActiveConnect=None,
+        EnableInternalActiveConnect=None,
+        EnableLabelExchangeOverLsp=None,
+        EnableVpnLabelExchangeOverLsp=None,
+        Enabled=None,
+        EsImportRouteTargetSubType=None,
+        EsImportRouteTargetType=None,
+        EsiLabelExtendedCommunitySubType=None,
+        EsiLabelExtendedCommunityType=None,
+        EvpnIpAddressLengthUnit=None,
+        ExternalRetries=None,
+        ExternalRetryDelay=None,
+        InternalRetries=None,
+        InternalRetryDelay=None,
+        MacMobilityExtendedCommunitySubType=None,
+        MacMobilityExtendedCommunityType=None,
+        MldpP2mpFecType=None,
+        RunningState=None,
+        Tester4ByteAsForIbgp=None,
+        TesterAsForIbgp=None,
+        TriggerVplsPwInitiation=None,
+        VrfRouteImportExtendedCommunitySubType=None,
+    ):
         # type: (bool, bool, int, int, bool, bool, bool, bool, bool, bool, int, int, int, int, str, int, int, int, int, int, int, int, str, int, int, bool, int) -> Bgp
         """Finds and retrieves bgp resources from the server.
 
@@ -581,10 +684,12 @@ class Bgp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -601,7 +706,9 @@ class Bgp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

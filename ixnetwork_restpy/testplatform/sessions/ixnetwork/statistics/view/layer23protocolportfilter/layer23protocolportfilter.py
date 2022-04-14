@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,12 +35,11 @@ class Layer23ProtocolPortFilter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'layer23ProtocolPortFilter'
+    _SDM_NAME = "layer23ProtocolPortFilter"
     _SDM_ATT_MAP = {
-        'PortFilterIds': 'portFilterIds',
+        "PortFilterIds": "portFilterIds",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Layer23ProtocolPortFilter, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class Layer23ProtocolPortFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
+
     @PortFilterIds.setter
     def PortFilterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortFilterIds"], value)
 
     def update(self, PortFilterIds=None):
         # type: (List[str]) -> Layer23ProtocolPortFilter

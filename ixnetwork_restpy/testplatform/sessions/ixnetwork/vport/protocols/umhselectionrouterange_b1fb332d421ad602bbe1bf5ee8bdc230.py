@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,65 +35,65 @@ class UmhSelectionRouteRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'umhSelectionRouteRange'
+    _SDM_NAME = "umhSelectionRouteRange"
     _SDM_ATT_MAP = {
-        'AggregatorAsNumber': 'aggregatorAsNumber',
-        'AggregatorIdIncrementMode': 'aggregatorIdIncrementMode',
-        'AggregatorIpAddress': 'aggregatorIpAddress',
-        'DistinguisherAsNumber': 'distinguisherAsNumber',
-        'DistinguisherAsNumberStep': 'distinguisherAsNumberStep',
-        'DistinguisherAsNumberStepAcrossVrfs': 'distinguisherAsNumberStepAcrossVrfs',
-        'DistinguisherAssignedNumber': 'distinguisherAssignedNumber',
-        'DistinguisherAssignedNumberStep': 'distinguisherAssignedNumberStep',
-        'DistinguisherAssignedNumberStepAcrossVrfs': 'distinguisherAssignedNumberStepAcrossVrfs',
-        'DistinguisherCount': 'distinguisherCount',
-        'DistinguisherCountPerVrf': 'distinguisherCountPerVrf',
-        'DistinguisherIpAddress': 'distinguisherIpAddress',
-        'DistinguisherIpAddressStep': 'distinguisherIpAddressStep',
-        'DistinguisherIpAddressStepAcrossVrfs': 'distinguisherIpAddressStepAcrossVrfs',
-        'DistinguisherMode': 'distinguisherMode',
-        'DistinguisherStep': 'distinguisherStep',
-        'DistinguisherType': 'distinguisherType',
-        'EnableAggregator': 'enableAggregator',
-        'EnableAsPath': 'enableAsPath',
-        'EnableAtomicAggregator': 'enableAtomicAggregator',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableGenerateUniqueRoutes': 'enableGenerateUniqueRoutes',
-        'EnableLocalPref': 'enableLocalPref',
-        'EnableMed': 'enableMed',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginator': 'enableOriginator',
-        'EnableUseTraditionalNlri': 'enableUseTraditionalNlri',
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'IncludeSourceAsExtendedCommunityPresent': 'includeSourceAsExtendedCommunityPresent',
-        'IncludeVrfRouteImportExtendedCommunityPresent': 'includeVrfRouteImportExtendedCommunityPresent',
-        'IpType': 'ipType',
-        'LocalPref': 'localPref',
-        'MaskWidth': 'maskWidth',
-        'MaskWidthTo': 'maskWidthTo',
-        'Med': 'med',
-        'NextHopIpAddress': 'nextHopIpAddress',
-        'NextHopMode': 'nextHopMode',
-        'NextHopSetMode': 'nextHopSetMode',
-        'OriginProtocol': 'originProtocol',
-        'OriginatorId': 'originatorId',
-        'PackingFrom': 'packingFrom',
-        'PackingTo': 'packingTo',
-        'RouteCountPerVrfs': 'routeCountPerVrfs',
-        'RouteStepAcrossVrfs': 'routeStepAcrossVrfs',
-        'Step': 'step',
+        "AggregatorAsNumber": "aggregatorAsNumber",
+        "AggregatorIdIncrementMode": "aggregatorIdIncrementMode",
+        "AggregatorIpAddress": "aggregatorIpAddress",
+        "DistinguisherAsNumber": "distinguisherAsNumber",
+        "DistinguisherAsNumberStep": "distinguisherAsNumberStep",
+        "DistinguisherAsNumberStepAcrossVrfs": "distinguisherAsNumberStepAcrossVrfs",
+        "DistinguisherAssignedNumber": "distinguisherAssignedNumber",
+        "DistinguisherAssignedNumberStep": "distinguisherAssignedNumberStep",
+        "DistinguisherAssignedNumberStepAcrossVrfs": "distinguisherAssignedNumberStepAcrossVrfs",
+        "DistinguisherCount": "distinguisherCount",
+        "DistinguisherCountPerVrf": "distinguisherCountPerVrf",
+        "DistinguisherIpAddress": "distinguisherIpAddress",
+        "DistinguisherIpAddressStep": "distinguisherIpAddressStep",
+        "DistinguisherIpAddressStepAcrossVrfs": "distinguisherIpAddressStepAcrossVrfs",
+        "DistinguisherMode": "distinguisherMode",
+        "DistinguisherStep": "distinguisherStep",
+        "DistinguisherType": "distinguisherType",
+        "EnableAggregator": "enableAggregator",
+        "EnableAsPath": "enableAsPath",
+        "EnableAtomicAggregator": "enableAtomicAggregator",
+        "EnableCluster": "enableCluster",
+        "EnableCommunity": "enableCommunity",
+        "EnableGenerateUniqueRoutes": "enableGenerateUniqueRoutes",
+        "EnableLocalPref": "enableLocalPref",
+        "EnableMed": "enableMed",
+        "EnableNextHop": "enableNextHop",
+        "EnableOrigin": "enableOrigin",
+        "EnableOriginator": "enableOriginator",
+        "EnableUseTraditionalNlri": "enableUseTraditionalNlri",
+        "Enabled": "enabled",
+        "FirstRoute": "firstRoute",
+        "IncludeSourceAsExtendedCommunityPresent": "includeSourceAsExtendedCommunityPresent",
+        "IncludeVrfRouteImportExtendedCommunityPresent": "includeVrfRouteImportExtendedCommunityPresent",
+        "IpType": "ipType",
+        "LocalPref": "localPref",
+        "MaskWidth": "maskWidth",
+        "MaskWidthTo": "maskWidthTo",
+        "Med": "med",
+        "NextHopIpAddress": "nextHopIpAddress",
+        "NextHopMode": "nextHopMode",
+        "NextHopSetMode": "nextHopSetMode",
+        "OriginProtocol": "originProtocol",
+        "OriginatorId": "originatorId",
+        "PackingFrom": "packingFrom",
+        "PackingTo": "packingTo",
+        "RouteCountPerVrfs": "routeCountPerVrfs",
+        "RouteStepAcrossVrfs": "routeStepAcrossVrfs",
+        "Step": "step",
     }
     _SDM_ENUM_MAP = {
-        'aggregatorIdIncrementMode': ['fixed', 'increment'],
-        'distinguisherMode': ['global', 'local'],
-        'distinguisherType': ['as', 'ip', 'asNumber2'],
-        'ipType': ['ipAny', 'ipv4', 'ipv6'],
-        'nextHopMode': ['nextHopIncrement', 'fixed', 'incrementPerPrefix'],
-        'nextHopSetMode': ['sameAsLocalIp', 'setManually'],
-        'originProtocol': ['igp', 'egp', 'incomplete'],
+        "aggregatorIdIncrementMode": ["fixed", "increment"],
+        "distinguisherMode": ["global", "local"],
+        "distinguisherType": ["as", "ip", "asNumber2"],
+        "ipType": ["ipAny", "ipv4", "ipv6"],
+        "nextHopMode": ["nextHopIncrement", "fixed", "incrementPerPrefix"],
+        "nextHopSetMode": ["sameAsLocalIp", "setManually"],
+        "originProtocol": ["igp", "egp", "incomplete"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -109,10 +110,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_4988c478ce9b4241205f6811a359ffe8 import AsSegment
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_4988c478ce9b4241205f6811a359ffe8 import (
+            AsSegment,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('AsSegment', None) is not None:
-                return self._properties.get('AsSegment')
+            if self._properties.get("AsSegment", None) is not None:
+                return self._properties.get("AsSegment")
         return AsSegment(self)._select()
 
     @property
@@ -126,10 +130,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f3997bb962d2128c99954ba076f70beb import Cluster
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f3997bb962d2128c99954ba076f70beb import (
+            Cluster,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Cluster', None) is not None:
-                return self._properties.get('Cluster')
+            if self._properties.get("Cluster", None) is not None:
+                return self._properties.get("Cluster")
         return Cluster(self)._select()
 
     @property
@@ -143,10 +150,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_6aed3c83f2a302323de0f8dd850abdcc import Community
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_6aed3c83f2a302323de0f8dd850abdcc import (
+            Community,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Community', None) is not None:
-                return self._properties.get('Community')
+            if self._properties.get("Community", None) is not None:
+                return self._properties.get("Community")
         return Community(self)._select()
 
     @property
@@ -160,10 +170,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_1088c247b717ff4329d3c4e43ec9916b import ExtendedCommunity
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_1088c247b717ff4329d3c4e43ec9916b import (
+            ExtendedCommunity,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('ExtendedCommunity', None) is not None:
-                return self._properties.get('ExtendedCommunity')
+            if self._properties.get("ExtendedCommunity", None) is not None:
+                return self._properties.get("ExtendedCommunity")
         return ExtendedCommunity(self)._select()
 
     @property
@@ -177,10 +190,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0c191468e6dbc2508006af0395ecab15 import Flapping
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0c191468e6dbc2508006af0395ecab15 import (
+            Flapping,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Flapping', None) is not None:
-                return self._properties.get('Flapping')
+            if self._properties.get("Flapping", None) is not None:
+                return self._properties.get("Flapping")
         return Flapping(self)._select()
 
     @property
@@ -194,10 +210,13 @@ class UmhSelectionRouteRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_f8e4bd27d1a26b770c2211ad8e011438 import LabelSpace
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_f8e4bd27d1a26b770c2211ad8e011438 import (
+            LabelSpace,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LabelSpace', None) is not None:
-                return self._properties.get('LabelSpace')
+            if self._properties.get("LabelSpace", None) is not None:
+                return self._properties.get("LabelSpace")
         return LabelSpace(self)._select()
 
     @property
@@ -208,11 +227,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: AS number associated with Aggregator ID in Aggregator attribute
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorAsNumber"])
+
     @AggregatorAsNumber.setter
     def AggregatorAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorAsNumber"], value)
 
     @property
     def AggregatorIdIncrementMode(self):
@@ -222,11 +242,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(fixed | increment): Increment mode of aggregator ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorIdIncrementMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorIdIncrementMode"])
+
     @AggregatorIdIncrementMode.setter
     def AggregatorIdIncrementMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorIdIncrementMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorIdIncrementMode"], value)
 
     @property
     def AggregatorIpAddress(self):
@@ -236,11 +257,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: IP address of the aggregator in Aggregator attribute
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["AggregatorIpAddress"])
+
     @AggregatorIpAddress.setter
     def AggregatorIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AggregatorIpAddress"], value)
 
     @property
     def DistinguisherAsNumber(self):
@@ -250,11 +272,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Distinguisher AS number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherAsNumber"])
+
     @DistinguisherAsNumber.setter
     def DistinguisherAsNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherAsNumber"], value)
 
     @property
     def DistinguisherAsNumberStep(self):
@@ -264,11 +287,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Increment step of Distinguisher AS number across the routes in route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherAsNumberStep"])
+
     @DistinguisherAsNumberStep.setter
     def DistinguisherAsNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherAsNumberStep"], value)
 
     @property
     def DistinguisherAsNumberStepAcrossVrfs(self):
@@ -278,11 +302,16 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Increment step of Distinguisher AS number across the VRFs in VRF range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStepAcrossVrfs'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DistinguisherAsNumberStepAcrossVrfs"]
+        )
+
     @DistinguisherAsNumberStepAcrossVrfs.setter
     def DistinguisherAsNumberStepAcrossVrfs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStepAcrossVrfs'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DistinguisherAsNumberStepAcrossVrfs"], value
+        )
 
     @property
     def DistinguisherAssignedNumber(self):
@@ -292,11 +321,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Distinguisher assigned number
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherAssignedNumber"])
+
     @DistinguisherAssignedNumber.setter
     def DistinguisherAssignedNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherAssignedNumber"], value)
 
     @property
     def DistinguisherAssignedNumberStep(self):
@@ -306,11 +336,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Increment step of distinguisher assigned number across routes in route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherAssignedNumberStep"])
+
     @DistinguisherAssignedNumberStep.setter
     def DistinguisherAssignedNumberStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherAssignedNumberStep"], value)
 
     @property
     def DistinguisherAssignedNumberStepAcrossVrfs(self):
@@ -320,11 +351,16 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Increment step of distinguisher assigned number across VRFs in VRF range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStepAcrossVrfs'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DistinguisherAssignedNumberStepAcrossVrfs"]
+        )
+
     @DistinguisherAssignedNumberStepAcrossVrfs.setter
     def DistinguisherAssignedNumberStepAcrossVrfs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStepAcrossVrfs'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DistinguisherAssignedNumberStepAcrossVrfs"], value
+        )
 
     @property
     def DistinguisherCount(self):
@@ -334,11 +370,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Number of times increment step will be used ( default = 1 )
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherCount"])
+
     @DistinguisherCount.setter
     def DistinguisherCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherCount"], value)
 
     @property
     def DistinguisherCountPerVrf(self):
@@ -348,11 +385,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Number of times increment step will be used per VRF
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherCountPerVrf'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherCountPerVrf"])
+
     @DistinguisherCountPerVrf.setter
     def DistinguisherCountPerVrf(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherCountPerVrf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherCountPerVrf"], value)
 
     @property
     def DistinguisherIpAddress(self):
@@ -362,11 +400,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: Distinguisher IP address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherIpAddress"])
+
     @DistinguisherIpAddress.setter
     def DistinguisherIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherIpAddress"], value)
 
     @property
     def DistinguisherIpAddressStep(self):
@@ -376,11 +415,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: Increment step of distinguisher IP address across routes in route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherIpAddressStep"])
+
     @DistinguisherIpAddressStep.setter
     def DistinguisherIpAddressStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherIpAddressStep"], value)
 
     @property
     def DistinguisherIpAddressStepAcrossVrfs(self):
@@ -390,11 +430,16 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: Increment step of distinguisher IP address across VRFs in VRF range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStepAcrossVrfs'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DistinguisherIpAddressStepAcrossVrfs"]
+        )
+
     @DistinguisherIpAddressStepAcrossVrfs.setter
     def DistinguisherIpAddressStepAcrossVrfs(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStepAcrossVrfs'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DistinguisherIpAddressStepAcrossVrfs"], value
+        )
 
     @property
     def DistinguisherMode(self):
@@ -404,11 +449,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(global | local): Specifies which part of the route distinguisher you want to increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherMode"])
+
     @DistinguisherMode.setter
     def DistinguisherMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherMode"], value)
 
     @property
     def DistinguisherStep(self):
@@ -418,11 +464,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: The size of the increment step to be used with the part of the route distinguisher which will be incremented. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherStep"])
+
     @DistinguisherStep.setter
     def DistinguisherStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherStep"], value)
 
     @property
     def DistinguisherType(self):
@@ -432,11 +479,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(as | ip | asNumber2): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DistinguisherType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DistinguisherType"])
+
     @DistinguisherType.setter
     def DistinguisherType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DistinguisherType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DistinguisherType"], value)
 
     @property
     def EnableAggregator(self):
@@ -446,11 +494,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAggregator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAggregator"])
+
     @EnableAggregator.setter
     def EnableAggregator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAggregator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAggregator"], value)
 
     @property
     def EnableAsPath(self):
@@ -460,11 +509,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of AS Path related items.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAsPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAsPath"])
+
     @EnableAsPath.setter
     def EnableAsPath(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAsPath'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAsPath"], value)
 
     @property
     def EnableAtomicAggregator(self):
@@ -474,11 +524,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAtomicAggregator"])
+
     @EnableAtomicAggregator.setter
     def EnableAtomicAggregator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAtomicAggregator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAtomicAggregator"], value)
 
     @property
     def EnableCluster(self):
@@ -488,11 +539,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCluster"])
+
     @EnableCluster.setter
     def EnableCluster(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCluster"], value)
 
     @property
     def EnableCommunity(self):
@@ -502,11 +554,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of a COMMUNITY attribute list. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCommunity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCommunity"])
+
     @EnableCommunity.setter
     def EnableCommunity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCommunity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCommunity"], value)
 
     @property
     def EnableGenerateUniqueRoutes(self):
@@ -516,11 +569,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: When set to 1, each router generates a different IP address range. When not enabled, each router will advertise the route range as is.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableGenerateUniqueRoutes"])
+
     @EnableGenerateUniqueRoutes.setter
     def EnableGenerateUniqueRoutes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableGenerateUniqueRoutes"], value)
 
     @property
     def EnableLocalPref(self):
@@ -530,11 +584,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLocalPref"])
+
     @EnableLocalPref.setter
     def EnableLocalPref(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLocalPref"], value)
 
     @property
     def EnableMed(self):
@@ -544,11 +599,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMed'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMed"])
+
     @EnableMed.setter
     def EnableMed(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMed"], value)
 
     @property
     def EnableNextHop(self):
@@ -558,11 +614,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of a NEXT HOP attribute. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableNextHop"])
+
     @EnableNextHop.setter
     def EnableNextHop(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableNextHop"], value)
 
     @property
     def EnableOrigin(self):
@@ -572,11 +629,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of an ORIGIN attribute. (default = true)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOrigin'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOrigin"])
+
     @EnableOrigin.setter
     def EnableOrigin(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOrigin'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOrigin"], value)
 
     @property
     def EnableOriginator(self):
@@ -586,11 +644,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableOriginator'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableOriginator"])
+
     @EnableOriginator.setter
     def EnableOriginator(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableOriginator'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableOriginator"], value)
 
     @property
     def EnableUseTraditionalNlri(self):
@@ -600,11 +659,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: If enabled, use the traditional NLRI in the UPDATE message, instead of using the MP_REACH_NLRI Multi-protocol extension to advertise the routes. (Not applicable for MPLS and MPLS VPN Route Ranges.)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableUseTraditionalNlri'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableUseTraditionalNlri"])
+
     @EnableUseTraditionalNlri.setter
     def EnableUseTraditionalNlri(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableUseTraditionalNlri'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableUseTraditionalNlri"], value)
 
     @property
     def Enabled(self):
@@ -614,11 +674,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Enables the UMH route range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstRoute(self):
@@ -628,11 +689,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: First route in route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstRoute"])
+
     @FirstRoute.setter
     def FirstRoute(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstRoute"], value)
 
     @property
     def IncludeSourceAsExtendedCommunityPresent(self):
@@ -642,11 +704,16 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: If for a given MVPN BGP is used for exchanging C-multicast routes, or if segmented
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeSourceAsExtendedCommunityPresent'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["IncludeSourceAsExtendedCommunityPresent"]
+        )
+
     @IncludeSourceAsExtendedCommunityPresent.setter
     def IncludeSourceAsExtendedCommunityPresent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeSourceAsExtendedCommunityPresent'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["IncludeSourceAsExtendedCommunityPresent"], value
+        )
 
     @property
     def IncludeVrfRouteImportExtendedCommunityPresent(self):
@@ -656,11 +723,16 @@ class UmhSelectionRouteRange(Base):
         -------
         - bool: Defines the route target extended community.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeVrfRouteImportExtendedCommunityPresent'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["IncludeVrfRouteImportExtendedCommunityPresent"]
+        )
+
     @IncludeVrfRouteImportExtendedCommunityPresent.setter
     def IncludeVrfRouteImportExtendedCommunityPresent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeVrfRouteImportExtendedCommunityPresent'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["IncludeVrfRouteImportExtendedCommunityPresent"], value
+        )
 
     @property
     def IpType(self):
@@ -670,11 +742,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(ipAny | ipv4 | ipv6): The type of IP address in nextworkAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def LocalPref(self):
@@ -684,11 +757,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalPref'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalPref"])
+
     @LocalPref.setter
     def LocalPref(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LocalPref'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LocalPref"], value)
 
     @property
     def MaskWidth(self):
@@ -698,11 +772,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Mask width of route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidth"])
+
     @MaskWidth.setter
     def MaskWidth(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidth"], value)
 
     @property
     def MaskWidthTo(self):
@@ -712,11 +787,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: mask width of last route range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaskWidthTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaskWidthTo"])
+
     @MaskWidthTo.setter
     def MaskWidthTo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaskWidthTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaskWidthTo"], value)
 
     @property
     def Med(self):
@@ -726,11 +802,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Med'])
+        return self._get_attribute(self._SDM_ATT_MAP["Med"])
+
     @Med.setter
     def Med(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Med'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Med"], value)
 
     @property
     def NextHopIpAddress(self):
@@ -740,11 +817,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopIpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopIpAddress"])
+
     @NextHopIpAddress.setter
     def NextHopIpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopIpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopIpAddress"], value)
 
     @property
     def NextHopMode(self):
@@ -754,11 +832,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(nextHopIncrement | fixed | incrementPerPrefix): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopMode"])
+
     @NextHopMode.setter
     def NextHopMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopMode"], value)
 
     @property
     def NextHopSetMode(self):
@@ -768,11 +847,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(sameAsLocalIp | setManually): Indicates now to set the next hop IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NextHopSetMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["NextHopSetMode"])
+
     @NextHopSetMode.setter
     def NextHopSetMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NextHopSetMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NextHopSetMode"], value)
 
     @property
     def OriginProtocol(self):
@@ -782,11 +862,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str(igp | egp | incomplete): An indication of where the route entry originated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginProtocol'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginProtocol"])
+
     @OriginProtocol.setter
     def OriginProtocol(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginProtocol'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginProtocol"], value)
 
     @property
     def OriginatorId(self):
@@ -796,11 +877,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OriginatorId'])
+        return self._get_attribute(self._SDM_ATT_MAP["OriginatorId"])
+
     @OriginatorId.setter
     def OriginatorId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OriginatorId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OriginatorId"], value)
 
     @property
     def PackingFrom(self):
@@ -810,11 +892,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Initial number of route packed in one BGP update
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PackingFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["PackingFrom"])
+
     @PackingFrom.setter
     def PackingFrom(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PackingFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PackingFrom"], value)
 
     @property
     def PackingTo(self):
@@ -824,11 +907,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Final number of routes packed in one BGP update
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PackingTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["PackingTo"])
+
     @PackingTo.setter
     def PackingTo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PackingTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PackingTo"], value)
 
     @property
     def RouteCountPerVrfs(self):
@@ -838,11 +922,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: Number of route per VRF
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteCountPerVrfs'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteCountPerVrfs"])
+
     @RouteCountPerVrfs.setter
     def RouteCountPerVrfs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteCountPerVrfs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteCountPerVrfs"], value)
 
     @property
     def RouteStepAcrossVrfs(self):
@@ -852,11 +937,12 @@ class UmhSelectionRouteRange(Base):
         -------
         - str: The route increment value across VRFs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteStepAcrossVrfs'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteStepAcrossVrfs"])
+
     @RouteStepAcrossVrfs.setter
     def RouteStepAcrossVrfs(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteStepAcrossVrfs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteStepAcrossVrfs"], value)
 
     @property
     def Step(self):
@@ -866,13 +952,64 @@ class UmhSelectionRouteRange(Base):
         -------
         - number: step
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
-    def update(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+    def update(
+        self,
+        AggregatorAsNumber=None,
+        AggregatorIdIncrementMode=None,
+        AggregatorIpAddress=None,
+        DistinguisherAsNumber=None,
+        DistinguisherAsNumberStep=None,
+        DistinguisherAsNumberStepAcrossVrfs=None,
+        DistinguisherAssignedNumber=None,
+        DistinguisherAssignedNumberStep=None,
+        DistinguisherAssignedNumberStepAcrossVrfs=None,
+        DistinguisherCount=None,
+        DistinguisherCountPerVrf=None,
+        DistinguisherIpAddress=None,
+        DistinguisherIpAddressStep=None,
+        DistinguisherIpAddressStepAcrossVrfs=None,
+        DistinguisherMode=None,
+        DistinguisherStep=None,
+        DistinguisherType=None,
+        EnableAggregator=None,
+        EnableAsPath=None,
+        EnableAtomicAggregator=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginator=None,
+        EnableUseTraditionalNlri=None,
+        Enabled=None,
+        FirstRoute=None,
+        IncludeSourceAsExtendedCommunityPresent=None,
+        IncludeVrfRouteImportExtendedCommunityPresent=None,
+        IpType=None,
+        LocalPref=None,
+        MaskWidth=None,
+        MaskWidthTo=None,
+        Med=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        PackingFrom=None,
+        PackingTo=None,
+        RouteCountPerVrfs=None,
+        RouteStepAcrossVrfs=None,
+        Step=None,
+    ):
         # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Updates umhSelectionRouteRange resource on the server.
 
@@ -933,7 +1070,57 @@ class UmhSelectionRouteRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+    def add(
+        self,
+        AggregatorAsNumber=None,
+        AggregatorIdIncrementMode=None,
+        AggregatorIpAddress=None,
+        DistinguisherAsNumber=None,
+        DistinguisherAsNumberStep=None,
+        DistinguisherAsNumberStepAcrossVrfs=None,
+        DistinguisherAssignedNumber=None,
+        DistinguisherAssignedNumberStep=None,
+        DistinguisherAssignedNumberStepAcrossVrfs=None,
+        DistinguisherCount=None,
+        DistinguisherCountPerVrf=None,
+        DistinguisherIpAddress=None,
+        DistinguisherIpAddressStep=None,
+        DistinguisherIpAddressStepAcrossVrfs=None,
+        DistinguisherMode=None,
+        DistinguisherStep=None,
+        DistinguisherType=None,
+        EnableAggregator=None,
+        EnableAsPath=None,
+        EnableAtomicAggregator=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginator=None,
+        EnableUseTraditionalNlri=None,
+        Enabled=None,
+        FirstRoute=None,
+        IncludeSourceAsExtendedCommunityPresent=None,
+        IncludeVrfRouteImportExtendedCommunityPresent=None,
+        IpType=None,
+        LocalPref=None,
+        MaskWidth=None,
+        MaskWidthTo=None,
+        Med=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        PackingFrom=None,
+        PackingTo=None,
+        RouteCountPerVrfs=None,
+        RouteStepAcrossVrfs=None,
+        Step=None,
+    ):
         # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Adds a new umhSelectionRouteRange resource on the server and adds it to the container.
 
@@ -1008,7 +1195,57 @@ class UmhSelectionRouteRange(Base):
         """
         self._delete()
 
-    def find(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+    def find(
+        self,
+        AggregatorAsNumber=None,
+        AggregatorIdIncrementMode=None,
+        AggregatorIpAddress=None,
+        DistinguisherAsNumber=None,
+        DistinguisherAsNumberStep=None,
+        DistinguisherAsNumberStepAcrossVrfs=None,
+        DistinguisherAssignedNumber=None,
+        DistinguisherAssignedNumberStep=None,
+        DistinguisherAssignedNumberStepAcrossVrfs=None,
+        DistinguisherCount=None,
+        DistinguisherCountPerVrf=None,
+        DistinguisherIpAddress=None,
+        DistinguisherIpAddressStep=None,
+        DistinguisherIpAddressStepAcrossVrfs=None,
+        DistinguisherMode=None,
+        DistinguisherStep=None,
+        DistinguisherType=None,
+        EnableAggregator=None,
+        EnableAsPath=None,
+        EnableAtomicAggregator=None,
+        EnableCluster=None,
+        EnableCommunity=None,
+        EnableGenerateUniqueRoutes=None,
+        EnableLocalPref=None,
+        EnableMed=None,
+        EnableNextHop=None,
+        EnableOrigin=None,
+        EnableOriginator=None,
+        EnableUseTraditionalNlri=None,
+        Enabled=None,
+        FirstRoute=None,
+        IncludeSourceAsExtendedCommunityPresent=None,
+        IncludeVrfRouteImportExtendedCommunityPresent=None,
+        IpType=None,
+        LocalPref=None,
+        MaskWidth=None,
+        MaskWidthTo=None,
+        Med=None,
+        NextHopIpAddress=None,
+        NextHopMode=None,
+        NextHopSetMode=None,
+        OriginProtocol=None,
+        OriginatorId=None,
+        PackingFrom=None,
+        PackingTo=None,
+        RouteCountPerVrfs=None,
+        RouteStepAcrossVrfs=None,
+        Step=None,
+    ):
         # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Finds and retrieves umhSelectionRouteRange resources from the server.
 

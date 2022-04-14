@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,15 +33,14 @@ class Interfaces(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interfaces'
+    _SDM_NAME = "interfaces"
     _SDM_ATT_MAP = {
-        'ArpOnLinkup': 'arpOnLinkup',
-        'NsOnLinkup': 'nsOnLinkup',
-        'SendSingleArpPerGateway': 'sendSingleArpPerGateway',
-        'SendSingleNsPerGateway': 'sendSingleNsPerGateway',
+        "ArpOnLinkup": "arpOnLinkup",
+        "NsOnLinkup": "nsOnLinkup",
+        "SendSingleArpPerGateway": "sendSingleArpPerGateway",
+        "SendSingleNsPerGateway": "sendSingleNsPerGateway",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Interfaces, self).__init__(parent, list_op)
@@ -53,11 +53,12 @@ class Interfaces(Base):
         -------
         - bool: If true, automatically enables ARP and PING when the interfaces is associated with a port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpOnLinkup'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpOnLinkup"])
+
     @ArpOnLinkup.setter
     def ArpOnLinkup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpOnLinkup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpOnLinkup"], value)
 
     @property
     def NsOnLinkup(self):
@@ -67,11 +68,12 @@ class Interfaces(Base):
         -------
         - bool: If true, automatically enables NS when the interfaces is associated with a port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NsOnLinkup'])
+        return self._get_attribute(self._SDM_ATT_MAP["NsOnLinkup"])
+
     @NsOnLinkup.setter
     def NsOnLinkup(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NsOnLinkup'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NsOnLinkup"], value)
 
     @property
     def SendSingleArpPerGateway(self):
@@ -81,11 +83,12 @@ class Interfaces(Base):
         -------
         - bool: If true, only a single ARP is sent via each defined gateway address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendSingleArpPerGateway"])
+
     @SendSingleArpPerGateway.setter
     def SendSingleArpPerGateway(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendSingleArpPerGateway"], value)
 
     @property
     def SendSingleNsPerGateway(self):
@@ -95,13 +98,20 @@ class Interfaces(Base):
         -------
         - bool: If true, only a single NS is sent via each defined gateway address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendSingleNsPerGateway"])
+
     @SendSingleNsPerGateway.setter
     def SendSingleNsPerGateway(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendSingleNsPerGateway"], value)
 
-    def update(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
+    def update(
+        self,
+        ArpOnLinkup=None,
+        NsOnLinkup=None,
+        SendSingleArpPerGateway=None,
+        SendSingleNsPerGateway=None,
+    ):
         # type: (bool, bool, bool, bool) -> Interfaces
         """Updates interfaces resource on the server.
 
@@ -118,7 +128,13 @@ class Interfaces(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
+    def find(
+        self,
+        ArpOnLinkup=None,
+        NsOnLinkup=None,
+        SendSingleArpPerGateway=None,
+        SendSingleNsPerGateway=None,
+    ):
         # type: (bool, bool, bool, bool) -> Interfaces
         """Finds and retrieves interfaces resources from the server.
 

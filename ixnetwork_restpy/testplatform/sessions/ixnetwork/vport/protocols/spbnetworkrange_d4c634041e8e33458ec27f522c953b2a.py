@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,21 +35,20 @@ class SpbNetworkRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbNetworkRange'
+    _SDM_NAME = "spbNetworkRange"
     _SDM_ATT_MAP = {
-        'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
-        'EnableHostName': 'enableHostName',
-        'EntryColumn': 'entryColumn',
-        'EntryRow': 'entryRow',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
-        'NoOfColumns': 'noOfColumns',
-        'NoOfRows': 'noOfRows',
-        'StartSystemId': 'startSystemId',
-        'SystemIdIncrementBy': 'systemIdIncrementBy',
+        "EnableAdvertiseNetworkRange": "enableAdvertiseNetworkRange",
+        "EnableHostName": "enableHostName",
+        "EntryColumn": "entryColumn",
+        "EntryRow": "entryRow",
+        "HostNamePrefix": "hostNamePrefix",
+        "InterfaceMetric": "interfaceMetric",
+        "NoOfColumns": "noOfColumns",
+        "NoOfRows": "noOfRows",
+        "StartSystemId": "startSystemId",
+        "SystemIdIncrementBy": "systemIdIncrementBy",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbNetworkRange, self).__init__(parent, list_op)
@@ -64,10 +64,13 @@ class SpbNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_086c6473238ca3788e998d3e79d13474 import SpbOutsideLinks
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_086c6473238ca3788e998d3e79d13474 import (
+            SpbOutsideLinks,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbOutsideLinks', None) is not None:
-                return self._properties.get('SpbOutsideLinks')
+            if self._properties.get("SpbOutsideLinks", None) is not None:
+                return self._properties.get("SpbOutsideLinks")
         return SpbOutsideLinks(self)
 
     @property
@@ -81,10 +84,13 @@ class SpbNetworkRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_ae48ad426b9c732f083b1ad513ed2710 import SpbmNodeTopologyRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_ae48ad426b9c732f083b1ad513ed2710 import (
+            SpbmNodeTopologyRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbmNodeTopologyRange', None) is not None:
-                return self._properties.get('SpbmNodeTopologyRange')
+            if self._properties.get("SpbmNodeTopologyRange", None) is not None:
+                return self._properties.get("SpbmNodeTopologyRange")
         return SpbmNodeTopologyRange(self)
 
     @property
@@ -95,11 +101,12 @@ class SpbNetworkRange(Base):
         -------
         - bool: If true, this SPB ISIS Network Range is advertised.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableAdvertiseNetworkRange"])
+
     @EnableAdvertiseNetworkRange.setter
     def EnableAdvertiseNetworkRange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableAdvertiseNetworkRange"], value)
 
     @property
     def EnableHostName(self):
@@ -109,11 +116,12 @@ class SpbNetworkRange(Base):
         -------
         - bool: If true, the host name of the router is activated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableHostName"])
+
     @EnableHostName.setter
     def EnableHostName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableHostName"], value)
 
     @property
     def EntryColumn(self):
@@ -123,11 +131,12 @@ class SpbNetworkRange(Base):
         -------
         - number: The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryColumn'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryColumn"])
+
     @EntryColumn.setter
     def EntryColumn(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryColumn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryColumn"], value)
 
     @property
     def EntryRow(self):
@@ -137,11 +146,12 @@ class SpbNetworkRange(Base):
         -------
         - number: The value is used in combination to specify which virtual router in the Network Range is connected to the current ISIS L2/L3 Router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
+        return self._get_attribute(self._SDM_ATT_MAP["EntryRow"])
+
     @EntryRow.setter
     def EntryRow(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EntryRow"], value)
 
     @property
     def HostNamePrefix(self):
@@ -151,11 +161,12 @@ class SpbNetworkRange(Base):
         -------
         - str: The host name prefix information.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["HostNamePrefix"])
+
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HostNamePrefix"], value)
 
     @property
     def InterfaceMetric(self):
@@ -165,11 +176,12 @@ class SpbNetworkRange(Base):
         -------
         - number: The metric cost associated with this emulated SPB ISIS router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceMetric"])
+
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceMetric"], value)
 
     @property
     def NoOfColumns(self):
@@ -179,11 +191,12 @@ class SpbNetworkRange(Base):
         -------
         - number: The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfColumns'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfColumns"])
+
     @NoOfColumns.setter
     def NoOfColumns(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfColumns'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfColumns"], value)
 
     @property
     def NoOfRows(self):
@@ -193,11 +206,12 @@ class SpbNetworkRange(Base):
         -------
         - number: The value is used in combination to create a matrix (grid) for an emulated network range of the following size: The # Rows multiplied the # Cols = Number of routers in this Network Range. (For example, 3 Rows x 3 Columns = 9 Routers).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfRows"])
+
     @NoOfRows.setter
     def NoOfRows(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfRows"], value)
 
     @property
     def StartSystemId(self):
@@ -207,11 +221,12 @@ class SpbNetworkRange(Base):
         -------
         - str: The System ID assigned to the starting SPB ISIS router in this network range. The default is 00 00 00 00 00 00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartSystemId'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartSystemId"])
+
     @StartSystemId.setter
     def StartSystemId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartSystemId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartSystemId"], value)
 
     @property
     def SystemIdIncrementBy(self):
@@ -221,13 +236,26 @@ class SpbNetworkRange(Base):
         -------
         - str: This is used when more than one router is to be emulated. The increment value is added to the previous System ID for each additional emulated router in this network range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["SystemIdIncrementBy"])
+
     @SystemIdIncrementBy.setter
     def SystemIdIncrementBy(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SystemIdIncrementBy"], value)
 
-    def update(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+    def update(
+        self,
+        EnableAdvertiseNetworkRange=None,
+        EnableHostName=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        NoOfColumns=None,
+        NoOfRows=None,
+        StartSystemId=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Updates spbNetworkRange resource on the server.
 
@@ -250,7 +278,19 @@ class SpbNetworkRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+    def add(
+        self,
+        EnableAdvertiseNetworkRange=None,
+        EnableHostName=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        NoOfColumns=None,
+        NoOfRows=None,
+        StartSystemId=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Adds a new spbNetworkRange resource on the server and adds it to the container.
 
@@ -287,7 +327,19 @@ class SpbNetworkRange(Base):
         """
         self._delete()
 
-    def find(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+    def find(
+        self,
+        EnableAdvertiseNetworkRange=None,
+        EnableHostName=None,
+        EntryColumn=None,
+        EntryRow=None,
+        HostNamePrefix=None,
+        InterfaceMetric=None,
+        NoOfColumns=None,
+        NoOfRows=None,
+        StartSystemId=None,
+        SystemIdIncrementBy=None,
+    ):
         # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Finds and retrieves spbNetworkRange resources from the server.
 

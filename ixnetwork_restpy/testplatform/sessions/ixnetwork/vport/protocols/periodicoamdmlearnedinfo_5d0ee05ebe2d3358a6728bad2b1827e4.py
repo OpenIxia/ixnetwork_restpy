@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,27 +34,26 @@ class PeriodicOamDmLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'periodicOamDmLearnedInfo'
+    _SDM_NAME = "periodicOamDmLearnedInfo"
     _SDM_ATT_MAP = {
-        'AverageDelayNanoSec': 'averageDelayNanoSec',
-        'AverageDelaySec': 'averageDelaySec',
-        'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
-        'AverageDelayVariationSec': 'averageDelayVariationSec',
-        'CVlan': 'cVlan',
-        'DmmCountSent': 'dmmCountSent',
-        'DstMacAddress': 'dstMacAddress',
-        'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
-        'OneDmReceivedCount': 'oneDmReceivedCount',
-        'RecentDelayNanoSec': 'recentDelayNanoSec',
-        'RecentDelaySec': 'recentDelaySec',
-        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
-        'RecentDelayVariationSec': 'recentDelayVariationSec',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
+        "AverageDelayNanoSec": "averageDelayNanoSec",
+        "AverageDelaySec": "averageDelaySec",
+        "AverageDelayVariationNanoSec": "averageDelayVariationNanoSec",
+        "AverageDelayVariationSec": "averageDelayVariationSec",
+        "CVlan": "cVlan",
+        "DmmCountSent": "dmmCountSent",
+        "DstMacAddress": "dstMacAddress",
+        "MdLevel": "mdLevel",
+        "NoReplyCount": "noReplyCount",
+        "OneDmReceivedCount": "oneDmReceivedCount",
+        "RecentDelayNanoSec": "recentDelayNanoSec",
+        "RecentDelaySec": "recentDelaySec",
+        "RecentDelayVariationNanoSec": "recentDelayVariationNanoSec",
+        "RecentDelayVariationSec": "recentDelayVariationSec",
+        "SVlan": "sVlan",
+        "SrcMacAddress": "srcMacAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PeriodicOamDmLearnedInfo, self).__init__(parent, list_op)
@@ -66,7 +66,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned average delay in nanoseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageDelayNanoSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageDelayNanoSec"])
 
     @property
     def AverageDelaySec(self):
@@ -76,7 +76,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned average delay in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageDelaySec'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageDelaySec"])
 
     @property
     def AverageDelayVariationNanoSec(self):
@@ -86,7 +86,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay variation in nano seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageDelayVariationNanoSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageDelayVariationNanoSec"])
 
     @property
     def AverageDelayVariationSec(self):
@@ -96,7 +96,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay variation in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageDelayVariationSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageDelayVariationSec"])
 
     @property
     def CVlan(self):
@@ -106,7 +106,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - str: (read only) The learned C-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def DmmCountSent(self):
@@ -116,7 +116,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned number of DMMs sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmmCountSent'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmmCountSent"])
 
     @property
     def DstMacAddress(self):
@@ -126,7 +126,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - str: (read only) The learned destination MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def MdLevel(self):
@@ -136,7 +136,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned MD level for the periodic OAM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def NoReplyCount(self):
@@ -146,7 +146,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned number of periodic OAM no replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReplyCount"])
 
     @property
     def OneDmReceivedCount(self):
@@ -156,7 +156,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned number of DM received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OneDmReceivedCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OneDmReceivedCount"])
 
     @property
     def RecentDelayNanoSec(self):
@@ -166,7 +166,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay measurement in nanoseconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentDelayNanoSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentDelayNanoSec"])
 
     @property
     def RecentDelaySec(self):
@@ -176,7 +176,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay measurement in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentDelaySec'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentDelaySec"])
 
     @property
     def RecentDelayVariationNanoSec(self):
@@ -186,7 +186,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay variation in nano seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentDelayVariationNanoSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentDelayVariationNanoSec"])
 
     @property
     def RecentDelayVariationSec(self):
@@ -196,7 +196,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - number: (read only) The learned most recent delay variation in seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentDelayVariationSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentDelayVariationSec"])
 
     @property
     def SVlan(self):
@@ -206,7 +206,7 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - str: (read only) The learned S-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SrcMacAddress(self):
@@ -216,10 +216,10 @@ class PeriodicOamDmLearnedInfo(Base):
         -------
         - str: (read only) The learned source MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     def add(self):
-        """Adds a new periodicOamDmLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new periodicOamDmLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -231,7 +231,25 @@ class PeriodicOamDmLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AverageDelayNanoSec=None, AverageDelaySec=None, AverageDelayVariationNanoSec=None, AverageDelayVariationSec=None, CVlan=None, DmmCountSent=None, DstMacAddress=None, MdLevel=None, NoReplyCount=None, OneDmReceivedCount=None, RecentDelayNanoSec=None, RecentDelaySec=None, RecentDelayVariationNanoSec=None, RecentDelayVariationSec=None, SVlan=None, SrcMacAddress=None):
+    def find(
+        self,
+        AverageDelayNanoSec=None,
+        AverageDelaySec=None,
+        AverageDelayVariationNanoSec=None,
+        AverageDelayVariationSec=None,
+        CVlan=None,
+        DmmCountSent=None,
+        DstMacAddress=None,
+        MdLevel=None,
+        NoReplyCount=None,
+        OneDmReceivedCount=None,
+        RecentDelayNanoSec=None,
+        RecentDelaySec=None,
+        RecentDelayVariationNanoSec=None,
+        RecentDelayVariationSec=None,
+        SVlan=None,
+        SrcMacAddress=None,
+    ):
         # type: (int, int, int, int, str, int, str, int, int, int, int, int, int, int, str, str) -> PeriodicOamDmLearnedInfo
         """Finds and retrieves periodicOamDmLearnedInfo resources from the server.
 

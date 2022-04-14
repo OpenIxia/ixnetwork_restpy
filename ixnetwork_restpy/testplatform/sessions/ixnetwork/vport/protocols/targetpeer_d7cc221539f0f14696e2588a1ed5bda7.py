@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class TargetPeer(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'targetPeer'
+    _SDM_NAME = "targetPeer"
     _SDM_ATT_MAP = {
-        'Authentication': 'authentication',
-        'Enabled': 'enabled',
-        'InitiateTargetedHello': 'initiateTargetedHello',
-        'IpAddress': 'ipAddress',
-        'Md5Key': 'md5Key',
+        "Authentication": "authentication",
+        "Enabled": "enabled",
+        "InitiateTargetedHello": "initiateTargetedHello",
+        "IpAddress": "ipAddress",
+        "Md5Key": "md5Key",
     }
     _SDM_ENUM_MAP = {
-        'authentication': ['null', 'md5'],
+        "authentication": ["null", "md5"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class TargetPeer(Base):
         -------
         - str(null | md5): The cryptographic authentication type used by the targeted peer; one of: NULL (no authentication) or MD5. When MD5 is used, an md5Key must be configured by the user.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Authentication'])
+        return self._get_attribute(self._SDM_ATT_MAP["Authentication"])
+
     @Authentication.setter
     def Authentication(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Authentication'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Authentication"], value)
 
     @property
     def Enabled(self):
@@ -71,11 +73,12 @@ class TargetPeer(Base):
         -------
         - bool: Enables the use of this targeted peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def InitiateTargetedHello(self):
@@ -85,11 +88,12 @@ class TargetPeer(Base):
         -------
         - bool: If true, the target peer is set a hello message exclusively.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitiateTargetedHello'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitiateTargetedHello"])
+
     @InitiateTargetedHello.setter
     def InitiateTargetedHello(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitiateTargetedHello'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitiateTargetedHello"], value)
 
     @property
     def IpAddress(self):
@@ -99,11 +103,12 @@ class TargetPeer(Base):
         -------
         - str: The IP address of the targeted peer.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def Md5Key(self):
@@ -113,13 +118,21 @@ class TargetPeer(Base):
         -------
         - str: Used with MD5 authentication. A user-defined string; maximum = 255 characters.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Md5Key'])
+        return self._get_attribute(self._SDM_ATT_MAP["Md5Key"])
+
     @Md5Key.setter
     def Md5Key(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Md5Key'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Md5Key"], value)
 
-    def update(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+    def update(
+        self,
+        Authentication=None,
+        Enabled=None,
+        InitiateTargetedHello=None,
+        IpAddress=None,
+        Md5Key=None,
+    ):
         # type: (str, bool, bool, str, str) -> TargetPeer
         """Updates targetPeer resource on the server.
 
@@ -137,7 +150,14 @@ class TargetPeer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+    def add(
+        self,
+        Authentication=None,
+        Enabled=None,
+        InitiateTargetedHello=None,
+        IpAddress=None,
+        Md5Key=None,
+    ):
         # type: (str, bool, bool, str, str) -> TargetPeer
         """Adds a new targetPeer resource on the server and adds it to the container.
 
@@ -169,7 +189,14 @@ class TargetPeer(Base):
         """
         self._delete()
 
-    def find(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+    def find(
+        self,
+        Authentication=None,
+        Enabled=None,
+        InitiateTargetedHello=None,
+        IpAddress=None,
+        Md5Key=None,
+    ):
         # type: (str, bool, bool, str, str) -> TargetPeer
         """Finds and retrieves targetPeer resources from the server.
 

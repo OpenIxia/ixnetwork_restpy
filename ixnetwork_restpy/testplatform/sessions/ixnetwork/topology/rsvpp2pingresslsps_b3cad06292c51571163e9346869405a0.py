@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,107 +33,106 @@ class RsvpP2PIngressLsps(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rsvpP2PIngressLsps'
+    _SDM_NAME = "rsvpP2PIngressLsps"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AssociationId': 'associationId',
-        'AutoGenerateSessionName': 'autoGenerateSessionName',
-        'AutorouteTraffic': 'autorouteTraffic',
-        'BackupLspEnableEro': 'backupLspEnableEro',
-        'BackupLspId': 'backupLspId',
-        'BackupLspMaximumPacketSize': 'backupLspMaximumPacketSize',
-        'BackupLspMinimumPolicedUnit': 'backupLspMinimumPolicedUnit',
-        'BackupLspNumberOfEroSubObjects': 'backupLspNumberOfEroSubObjects',
-        'BackupLspPeakDataRate': 'backupLspPeakDataRate',
-        'BackupLspPrefixLength': 'backupLspPrefixLength',
-        'BackupLspPrependDutToEro': 'backupLspPrependDutToEro',
-        'BackupLspSessionId': 'backupLspSessionId',
-        'BackupLspTokenBucketRate': 'backupLspTokenBucketRate',
-        'BackupLspTokenBucketSize': 'backupLspTokenBucketSize',
-        'Bandwidth': 'bandwidth',
-        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
-        'ConfigureSyncLspObject': 'configureSyncLspObject',
-        'ConstructEroFromRro': 'constructEroFromRro',
-        'Count': 'count',
-        'DelayLspSwitchOver': 'delayLspSwitchOver',
-        'DescriptiveName': 'descriptiveName',
-        'DoMBBOnApplyChanges': 'doMBBOnApplyChanges',
-        'EnableBfdMpls': 'enableBfdMpls',
-        'EnableEro': 'enableEro',
-        'EnableFastReroute': 'enableFastReroute',
-        'EnableLspPing': 'enableLspPing',
-        'EnableLspSelfPing': 'enableLspSelfPing',
-        'EnablePathReOptimization': 'enablePathReOptimization',
-        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
-        'EroSameAsPrimary': 'eroSameAsPrimary',
-        'ExcludeAny': 'excludeAny',
-        'FacilityBackupDesired': 'facilityBackupDesired',
-        'FastRerouteBandwidth': 'fastRerouteBandwidth',
-        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
-        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
-        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
-        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
-        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
-        'HoldingPriority': 'holdingPriority',
-        'HopLimit': 'hopLimit',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeAssociation': 'includeAssociation',
-        'InitialDelegation': 'initialDelegation',
-        'InsertIPv6ExplicitNull': 'insertIPv6ExplicitNull',
-        'IpDSCPofLspSelfPing': 'ipDSCPofLspSelfPing',
-        'IpTTLofLspSelfPing': 'ipTTLofLspSelfPing',
-        'LabelRecordingDesired': 'labelRecordingDesired',
-        'LocalIp': 'localIp',
-        'LocalProtectionDesired': 'localProtectionDesired',
-        'LspCount': 'lspCount',
-        'LspDelegationState': 'lspDelegationState',
-        'LspId': 'lspId',
-        'LspOperativeMode': 'lspOperativeMode',
-        'LspSelfPingRetryCount': 'lspSelfPingRetryCount',
-        'LspSelfPingRetryInterval': 'lspSelfPingRetryInterval',
-        'LspSelfPingSessionId': 'lspSelfPingSessionId',
-        'LspSelfPingStatus': 'lspSelfPingStatus',
-        'LspSwitchOverDelayTime': 'lspSwitchOverDelayTime',
-        'MaximumPacketSize': 'maximumPacketSize',
-        'MinimumPolicedUnit': 'minimumPolicedUnit',
-        'Name': 'name',
-        'NodeProtectionDesired': 'nodeProtectionDesired',
-        'NumberOfDetourSubObjects': 'numberOfDetourSubObjects',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'OneToOneBackupDesired': 'oneToOneBackupDesired',
-        'PccIp': 'pccIp',
-        'PeakDataRate': 'peakDataRate',
-        'PpagTLVType': 'ppagTLVType',
-        'PrefixLength': 'prefixLength',
-        'PrependDutToEro': 'prependDutToEro',
-        'ProtectionLsp': 'protectionLsp',
-        'ReDelegationTimerStatus': 'reDelegationTimerStatus',
-        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
-        'RedelegationTimeoutInterval': 'redelegationTimeoutInterval',
-        'RefreshInterval': 'refreshInterval',
-        'RemoteIp': 'remoteIp',
-        'ResourceAffinities': 'resourceAffinities',
-        'SeStyleDesired': 'seStyleDesired',
-        'SendDetour': 'sendDetour',
-        'SendRro': 'sendRro',
-        'SessionInformation': 'sessionInformation',
-        'SessionName': 'sessionName',
-        'SetupPriority': 'setupPriority',
-        'SourceIp': 'sourceIp',
-        'SourceIpv6': 'sourceIpv6',
-        'StandbyMode': 'standbyMode',
-        'State': 'state',
-        'TSpecSameAsPrimary': 'tSpecSameAsPrimary',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'TokenBucketRate': 'tokenBucketRate',
-        'TokenBucketSize': 'tokenBucketSize',
-        'TunnelId': 'tunnelId',
-        'UsingHeadendIp': 'usingHeadendIp',
+        "Active": "active",
+        "AssociationId": "associationId",
+        "AutoGenerateSessionName": "autoGenerateSessionName",
+        "AutorouteTraffic": "autorouteTraffic",
+        "BackupLspEnableEro": "backupLspEnableEro",
+        "BackupLspId": "backupLspId",
+        "BackupLspMaximumPacketSize": "backupLspMaximumPacketSize",
+        "BackupLspMinimumPolicedUnit": "backupLspMinimumPolicedUnit",
+        "BackupLspNumberOfEroSubObjects": "backupLspNumberOfEroSubObjects",
+        "BackupLspPeakDataRate": "backupLspPeakDataRate",
+        "BackupLspPrefixLength": "backupLspPrefixLength",
+        "BackupLspPrependDutToEro": "backupLspPrependDutToEro",
+        "BackupLspSessionId": "backupLspSessionId",
+        "BackupLspTokenBucketRate": "backupLspTokenBucketRate",
+        "BackupLspTokenBucketSize": "backupLspTokenBucketSize",
+        "Bandwidth": "bandwidth",
+        "BandwidthProtectionDesired": "bandwidthProtectionDesired",
+        "ConfigureSyncLspObject": "configureSyncLspObject",
+        "ConstructEroFromRro": "constructEroFromRro",
+        "Count": "count",
+        "DelayLspSwitchOver": "delayLspSwitchOver",
+        "DescriptiveName": "descriptiveName",
+        "DoMBBOnApplyChanges": "doMBBOnApplyChanges",
+        "EnableBfdMpls": "enableBfdMpls",
+        "EnableEro": "enableEro",
+        "EnableFastReroute": "enableFastReroute",
+        "EnableLspPing": "enableLspPing",
+        "EnableLspSelfPing": "enableLspSelfPing",
+        "EnablePathReOptimization": "enablePathReOptimization",
+        "EnablePeriodicReEvaluationRequest": "enablePeriodicReEvaluationRequest",
+        "EroSameAsPrimary": "eroSameAsPrimary",
+        "ExcludeAny": "excludeAny",
+        "FacilityBackupDesired": "facilityBackupDesired",
+        "FastRerouteBandwidth": "fastRerouteBandwidth",
+        "FastRerouteExcludeAny": "fastRerouteExcludeAny",
+        "FastRerouteHoldingPriority": "fastRerouteHoldingPriority",
+        "FastRerouteIncludeAll": "fastRerouteIncludeAll",
+        "FastRerouteIncludeAny": "fastRerouteIncludeAny",
+        "FastRerouteSetupPriority": "fastRerouteSetupPriority",
+        "HoldingPriority": "holdingPriority",
+        "HopLimit": "hopLimit",
+        "IncludeAll": "includeAll",
+        "IncludeAny": "includeAny",
+        "IncludeAssociation": "includeAssociation",
+        "InitialDelegation": "initialDelegation",
+        "InsertIPv6ExplicitNull": "insertIPv6ExplicitNull",
+        "IpDSCPofLspSelfPing": "ipDSCPofLspSelfPing",
+        "IpTTLofLspSelfPing": "ipTTLofLspSelfPing",
+        "LabelRecordingDesired": "labelRecordingDesired",
+        "LocalIp": "localIp",
+        "LocalProtectionDesired": "localProtectionDesired",
+        "LspCount": "lspCount",
+        "LspDelegationState": "lspDelegationState",
+        "LspId": "lspId",
+        "LspOperativeMode": "lspOperativeMode",
+        "LspSelfPingRetryCount": "lspSelfPingRetryCount",
+        "LspSelfPingRetryInterval": "lspSelfPingRetryInterval",
+        "LspSelfPingSessionId": "lspSelfPingSessionId",
+        "LspSelfPingStatus": "lspSelfPingStatus",
+        "LspSwitchOverDelayTime": "lspSwitchOverDelayTime",
+        "MaximumPacketSize": "maximumPacketSize",
+        "MinimumPolicedUnit": "minimumPolicedUnit",
+        "Name": "name",
+        "NodeProtectionDesired": "nodeProtectionDesired",
+        "NumberOfDetourSubObjects": "numberOfDetourSubObjects",
+        "NumberOfEroSubObjects": "numberOfEroSubObjects",
+        "NumberOfRroSubObjects": "numberOfRroSubObjects",
+        "OneToOneBackupDesired": "oneToOneBackupDesired",
+        "PccIp": "pccIp",
+        "PeakDataRate": "peakDataRate",
+        "PpagTLVType": "ppagTLVType",
+        "PrefixLength": "prefixLength",
+        "PrependDutToEro": "prependDutToEro",
+        "ProtectionLsp": "protectionLsp",
+        "ReDelegationTimerStatus": "reDelegationTimerStatus",
+        "ReEvaluationRequestInterval": "reEvaluationRequestInterval",
+        "RedelegationTimeoutInterval": "redelegationTimeoutInterval",
+        "RefreshInterval": "refreshInterval",
+        "RemoteIp": "remoteIp",
+        "ResourceAffinities": "resourceAffinities",
+        "SeStyleDesired": "seStyleDesired",
+        "SendDetour": "sendDetour",
+        "SendRro": "sendRro",
+        "SessionInformation": "sessionInformation",
+        "SessionName": "sessionName",
+        "SetupPriority": "setupPriority",
+        "SourceIp": "sourceIp",
+        "SourceIpv6": "sourceIpv6",
+        "StandbyMode": "standbyMode",
+        "State": "state",
+        "TSpecSameAsPrimary": "tSpecSameAsPrimary",
+        "TimeoutMultiplier": "timeoutMultiplier",
+        "TokenBucketRate": "tokenBucketRate",
+        "TokenBucketSize": "tokenBucketSize",
+        "TunnelId": "tunnelId",
+        "UsingHeadendIp": "usingHeadendIp",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RsvpP2PIngressLsps, self).__init__(parent, list_op)
@@ -148,10 +148,13 @@ class RsvpP2PIngressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.backuplsperosubobjectslist_0daa9e1df4598df831fc9c6266f38cb9 import BackupLspEROSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.backuplsperosubobjectslist_0daa9e1df4598df831fc9c6266f38cb9 import (
+            BackupLspEROSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BackupLspEROSubObjectsList', None) is not None:
-                return self._properties.get('BackupLspEROSubObjectsList')
+            if self._properties.get("BackupLspEROSubObjectsList", None) is not None:
+                return self._properties.get("BackupLspEROSubObjectsList")
         return BackupLspEROSubObjectsList(self)
 
     @property
@@ -165,10 +168,13 @@ class RsvpP2PIngressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import (
+            RsvpDetourSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
-                return self._properties.get('RsvpDetourSubObjectsList')
+            if self._properties.get("RsvpDetourSubObjectsList", None) is not None:
+                return self._properties.get("RsvpDetourSubObjectsList")
         return RsvpDetourSubObjectsList(self)
 
     @property
@@ -182,10 +188,13 @@ class RsvpP2PIngressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_a93377fcf5a0e9cd238eac8616f8ff4c import RsvpEROSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_a93377fcf5a0e9cd238eac8616f8ff4c import (
+            RsvpEROSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpEROSubObjectsList', None) is not None:
-                return self._properties.get('RsvpEROSubObjectsList')
+            if self._properties.get("RsvpEROSubObjectsList", None) is not None:
+                return self._properties.get("RsvpEROSubObjectsList")
         return RsvpEROSubObjectsList(self)
 
     @property
@@ -199,10 +208,13 @@ class RsvpP2PIngressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import RsvpIngressRROSubObjectsList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import (
+            RsvpIngressRROSubObjectsList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('RsvpIngressRROSubObjectsList', None) is not None:
-                return self._properties.get('RsvpIngressRROSubObjectsList')
+            if self._properties.get("RsvpIngressRROSubObjectsList", None) is not None:
+                return self._properties.get("RsvpIngressRROSubObjectsList")
         return RsvpIngressRROSubObjectsList(self)
 
     @property
@@ -216,10 +228,13 @@ class RsvpP2PIngressLsps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
+            Tag,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Tag', None) is not None:
-                return self._properties.get('Tag')
+            if self._properties.get("Tag", None) is not None:
+                return self._properties.get("Tag")
         return Tag(self)
 
     @property
@@ -231,7 +246,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AssociationId(self):
@@ -242,7 +258,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Association ID of this LSP.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AssociationId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AssociationId"]))
 
     @property
     def AutoGenerateSessionName(self):
@@ -253,7 +270,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Auto Generate Session Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutoGenerateSessionName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutoGenerateSessionName"])
+        )
 
     @property
     def AutorouteTraffic(self):
@@ -264,7 +284,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Autoroute Traffic
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AutorouteTraffic']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AutorouteTraffic"])
+        )
 
     @property
     def BackupLspEnableEro(self):
@@ -275,7 +298,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspEnableEro']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspEnableEro"])
+        )
 
     @property
     def BackupLspId(self):
@@ -286,7 +312,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Backup LSP Id Pool Start
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BackupLspId"]))
 
     @property
     def BackupLspMaximumPacketSize(self):
@@ -297,7 +324,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Packet Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspMaximumPacketSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspMaximumPacketSize"])
+        )
 
     @property
     def BackupLspMinimumPolicedUnit(self):
@@ -308,7 +338,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Policed Unit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspMinimumPolicedUnit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspMinimumPolicedUnit"])
+        )
 
     @property
     def BackupLspNumberOfEroSubObjects(self):
@@ -318,11 +351,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: Number Of ERO Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackupLspNumberOfEroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackupLspNumberOfEroSubObjects"])
+
     @BackupLspNumberOfEroSubObjects.setter
     def BackupLspNumberOfEroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BackupLspNumberOfEroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BackupLspNumberOfEroSubObjects"], value)
 
     @property
     def BackupLspPeakDataRate(self):
@@ -333,7 +367,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peak Data Rate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspPeakDataRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspPeakDataRate"])
+        )
 
     @property
     def BackupLspPrefixLength(self):
@@ -344,7 +381,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspPrefixLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspPrefixLength"])
+        )
 
     @property
     def BackupLspPrependDutToEro(self):
@@ -355,7 +395,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prepend DUT to ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspPrependDutToEro']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspPrependDutToEro"])
+        )
 
     @property
     def BackupLspSessionId(self):
@@ -366,7 +409,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Backup LSP Session Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspSessionId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspSessionId"])
+        )
 
     @property
     def BackupLspTokenBucketRate(self):
@@ -377,7 +423,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Token Bucket Rate
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspTokenBucketRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspTokenBucketRate"])
+        )
 
     @property
     def BackupLspTokenBucketSize(self):
@@ -388,18 +437,22 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Token Bucket Size
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BackupLspTokenBucketSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BackupLspTokenBucketSize"])
+        )
 
     @property
     def Bandwidth(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bps)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Bandwidth']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Bandwidth"]))
 
     @property
     def BandwidthProtectionDesired(self):
@@ -410,7 +463,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth Protection Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BandwidthProtectionDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BandwidthProtectionDesired"])
+        )
 
     @property
     def ConfigureSyncLspObject(self):
@@ -421,7 +477,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Objects
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConfigureSyncLspObject']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfigureSyncLspObject"])
+        )
 
     @property
     def ConstructEroFromRro(self):
@@ -432,7 +491,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Construct ERO from RRO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConstructEroFromRro']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConstructEroFromRro"])
+        )
 
     @property
     def Count(self):
@@ -442,7 +504,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DelayLspSwitchOver(self):
@@ -452,11 +514,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - bool: Delay LSP switch over
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayLspSwitchOver'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayLspSwitchOver"])
+
     @DelayLspSwitchOver.setter
     def DelayLspSwitchOver(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayLspSwitchOver'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayLspSwitchOver"], value)
 
     @property
     def DescriptiveName(self):
@@ -466,7 +529,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DoMBBOnApplyChanges(self):
@@ -476,11 +539,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - bool: Do Make Before Break on Apply Changes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DoMBBOnApplyChanges'])
+        return self._get_attribute(self._SDM_ATT_MAP["DoMBBOnApplyChanges"])
+
     @DoMBBOnApplyChanges.setter
     def DoMBBOnApplyChanges(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DoMBBOnApplyChanges'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DoMBBOnApplyChanges"], value)
 
     @property
     def EnableBfdMpls(self):
@@ -491,7 +555,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, BFD MPLS is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdMpls']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdMpls"]))
 
     @property
     def EnableEro(self):
@@ -502,7 +567,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableEro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableEro"]))
 
     @property
     def EnableFastReroute(self):
@@ -513,7 +579,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Fast Reroute
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFastReroute']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableFastReroute"])
+        )
 
     @property
     def EnableLspPing(self):
@@ -524,7 +593,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LSP Ping is enabled for learned LSPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLspPing']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableLspPing"]))
 
     @property
     def EnableLspSelfPing(self):
@@ -535,7 +605,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Ingress LSP will use LSP Self Ping procedure to verify that forwarding state has been installed on all downstream nodes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLspSelfPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLspSelfPing"])
+        )
 
     @property
     def EnablePathReOptimization(self):
@@ -546,7 +619,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Path Re-Optimization
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePathReOptimization']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePathReOptimization"])
+        )
 
     @property
     def EnablePeriodicReEvaluationRequest(self):
@@ -557,7 +633,11 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Periodic Re-Evaluation Request
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicReEvaluationRequest']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnablePeriodicReEvaluationRequest"]),
+        )
 
     @property
     def EroSameAsPrimary(self):
@@ -567,11 +647,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - bool: ERO Same As Primary
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EroSameAsPrimary'])
+        return self._get_attribute(self._SDM_ATT_MAP["EroSameAsPrimary"])
+
     @EroSameAsPrimary.setter
     def EroSameAsPrimary(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EroSameAsPrimary'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EroSameAsPrimary"], value)
 
     @property
     def ExcludeAny(self):
@@ -582,7 +663,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExcludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExcludeAny"]))
 
     @property
     def FacilityBackupDesired(self):
@@ -593,7 +675,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Facility Backup Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FacilityBackupDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FacilityBackupDesired"])
+        )
 
     @property
     def FastRerouteBandwidth(self):
@@ -604,7 +689,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth (bps)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteBandwidth"])
+        )
 
     @property
     def FastRerouteExcludeAny(self):
@@ -615,7 +703,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Exclude Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteExcludeAny']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteExcludeAny"])
+        )
 
     @property
     def FastRerouteHoldingPriority(self):
@@ -626,7 +717,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteHoldingPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteHoldingPriority"])
+        )
 
     @property
     def FastRerouteIncludeAll(self):
@@ -637,7 +731,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAll']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAll"])
+        )
 
     @property
     def FastRerouteIncludeAny(self):
@@ -648,7 +745,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAny']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteIncludeAny"])
+        )
 
     @property
     def FastRerouteSetupPriority(self):
@@ -659,7 +759,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FastRerouteSetupPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FastRerouteSetupPriority"])
+        )
 
     @property
     def HoldingPriority(self):
@@ -670,7 +773,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Holding Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HoldingPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HoldingPriority"])
+        )
 
     @property
     def HopLimit(self):
@@ -681,7 +787,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Hop Limit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HopLimit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HopLimit"]))
 
     @property
     def IncludeAll(self):
@@ -692,7 +799,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include All
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAll']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAll"]))
 
     @property
     def IncludeAny(self):
@@ -703,7 +811,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include Any
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAny']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
 
     @property
     def IncludeAssociation(self):
@@ -714,7 +823,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association will be included in a RSVP Sync LSP. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeAssociation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAssociation"])
+        )
 
     @property
     def InitialDelegation(self):
@@ -725,7 +837,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Initial Delegation
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InitialDelegation']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialDelegation"])
+        )
 
     @property
     def InsertIPv6ExplicitNull(self):
@@ -736,7 +851,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Insert IPv6 explicit NULL
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InsertIPv6ExplicitNull']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InsertIPv6ExplicitNull"])
+        )
 
     @property
     def IpDSCPofLspSelfPing(self):
@@ -747,7 +865,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP DSCP of LSP Self Ping. IP DSCP classifies the way an IP packet is routed in a network.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpDSCPofLspSelfPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpDSCPofLspSelfPing"])
+        )
 
     @property
     def IpTTLofLspSelfPing(self):
@@ -758,7 +879,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IP TTL of LSP Self Ping. IP TTL limits the lifespan or lifetime of IP Packet in a network.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpTTLofLspSelfPing']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpTTLofLspSelfPing"])
+        )
 
     @property
     def LabelRecordingDesired(self):
@@ -769,7 +893,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Label Recording Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelRecordingDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LabelRecordingDesired"])
+        )
 
     @property
     def LocalIp(self):
@@ -779,7 +906,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIp"])
 
     @property
     def LocalProtectionDesired(self):
@@ -790,7 +917,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Protection Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalProtectionDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalProtectionDesired"])
+        )
 
     @property
     def LspCount(self):
@@ -801,7 +931,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP#
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LspCount"]))
 
     @property
     def LspDelegationState(self):
@@ -811,7 +942,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none]): LSP Delegation State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspDelegationState'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspDelegationState"])
 
     @property
     def LspId(self):
@@ -822,7 +953,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LspId"]))
 
     @property
     def LspOperativeMode(self):
@@ -833,7 +965,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The mode of LSP in which it is currently behaving.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspOperativeMode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspOperativeMode"])
+        )
 
     @property
     def LspSelfPingRetryCount(self):
@@ -844,7 +979,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Self Ping Retry Count. Maximum number of times LSP Self Ping Message will be Transmitted.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspSelfPingRetryCount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspSelfPingRetryCount"])
+        )
 
     @property
     def LspSelfPingRetryInterval(self):
@@ -855,7 +993,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Self Ping Retry Interval (ms).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspSelfPingRetryInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspSelfPingRetryInterval"])
+        )
 
     @property
     def LspSelfPingSessionId(self):
@@ -866,7 +1007,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): LSP Self Ping Session Id.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspSelfPingSessionId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspSelfPingSessionId"])
+        )
 
     @property
     def LspSelfPingStatus(self):
@@ -876,7 +1020,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str[none | success | timedOut]): Logs additional information about the LSP Self Ping Status(Success/Timed Out)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspSelfPingStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspSelfPingStatus"])
 
     @property
     def LspSwitchOverDelayTime(self):
@@ -886,11 +1030,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: LSP Switch Over Delay timer (sec)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LspSwitchOverDelayTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["LspSwitchOverDelayTime"])
+
     @LspSwitchOverDelayTime.setter
     def LspSwitchOverDelayTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LspSwitchOverDelayTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LspSwitchOverDelayTime"], value)
 
     @property
     def MaximumPacketSize(self):
@@ -901,7 +1046,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Packet Size (in Bytes)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaximumPacketSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaximumPacketSize"])
+        )
 
     @property
     def MinimumPolicedUnit(self):
@@ -912,7 +1060,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Policed Unit (in Bytes)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MinimumPolicedUnit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MinimumPolicedUnit"])
+        )
 
     @property
     def Name(self):
@@ -922,11 +1073,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NodeProtectionDesired(self):
@@ -937,7 +1089,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Node Protection Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NodeProtectionDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NodeProtectionDesired"])
+        )
 
     @property
     def NumberOfDetourSubObjects(self):
@@ -947,11 +1102,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: Number Of Detour Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfDetourSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfDetourSubObjects"])
+
     @NumberOfDetourSubObjects.setter
     def NumberOfDetourSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfDetourSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfDetourSubObjects"], value)
 
     @property
     def NumberOfEroSubObjects(self):
@@ -961,11 +1117,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: Number Of ERO Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"])
+
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfEroSubObjects"], value)
 
     @property
     def NumberOfRroSubObjects(self):
@@ -975,11 +1132,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - number: Number Of RRO Sub-Objects
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"])
+
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfRroSubObjects"], value)
 
     @property
     def OneToOneBackupDesired(self):
@@ -990,7 +1148,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): One To One Backup Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OneToOneBackupDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["OneToOneBackupDesired"])
+        )
 
     @property
     def PccIp(self):
@@ -1000,7 +1161,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str): PCC IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PccIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["PccIp"])
 
     @property
     def PeakDataRate(self):
@@ -1011,7 +1172,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peak Data Rate (in Bytes per seconds)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeakDataRate']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeakDataRate"]))
 
     @property
     def PpagTLVType(self):
@@ -1022,7 +1184,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): PPAG TLV Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PpagTLVType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PpagTLVType"]))
 
     @property
     def PrefixLength(self):
@@ -1033,7 +1196,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixLength']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefixLength"]))
 
     @property
     def PrependDutToEro(self):
@@ -1044,7 +1208,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Prepend DUT to ERO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrependDutToEro']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PrependDutToEro"])
+        )
 
     @property
     def ProtectionLsp(self):
@@ -1055,7 +1222,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Protection LSP Bit is On.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtectionLsp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtectionLsp"]))
 
     @property
     def ReDelegationTimerStatus(self):
@@ -1065,7 +1233,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str[expired | none | notStarted | running | stopped]): Re-Delegation Timer Status
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReDelegationTimerStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReDelegationTimerStatus"])
 
     @property
     def ReEvaluationRequestInterval(self):
@@ -1076,7 +1244,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Re-Evaluation Request Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReEvaluationRequestInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReEvaluationRequestInterval"])
+        )
 
     @property
     def RedelegationTimeoutInterval(self):
@@ -1087,7 +1258,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The period of time a PCC waits for, when a PCEP session is terminated, before revoking LSP delegation to a PCE and attempting to redelegate LSPs associated with the terminated PCEP session to PCE.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RedelegationTimeoutInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedelegationTimeoutInterval"])
+        )
 
     @property
     def RefreshInterval(self):
@@ -1098,7 +1272,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Refresh Interval (ms)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RefreshInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RefreshInterval"])
+        )
 
     @property
     def RemoteIp(self):
@@ -1109,7 +1286,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote IP Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteIp"]))
 
     @property
     def ResourceAffinities(self):
@@ -1120,7 +1298,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Resource Affinities
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResourceAffinities']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ResourceAffinities"])
+        )
 
     @property
     def SeStyleDesired(self):
@@ -1131,7 +1312,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SE Style Desired
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SeStyleDesired']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SeStyleDesired"])
+        )
 
     @property
     def SendDetour(self):
@@ -1142,7 +1326,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send Detour
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendDetour']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SendDetour"]))
 
     @property
     def SendRro(self):
@@ -1153,7 +1338,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Send RRO
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendRro']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SendRro"]))
 
     @property
     def SessionInformation(self):
@@ -1163,7 +1349,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str[lastErrLSPAdmissionControlFailure | lastErrLSPBadAdSpecValue | lastErrLSPBadExplicitRoute | lastErrLSPBadFlowspecValue | lastErrLSPBadInitialSubobject | lastErrLSPBadLooseNode | lastErrLSPBadStrictNode | lastErrLSPBadTSpecValue | lastErrLSPDelayBoundNotMet | lastErrLSPMPLSAllocationFailure | lastErrLSPMTUTooBig | lastErrLSPNonRSVPRouter | lastErrLSPNoRouteAvailable | lastErrLSPPathErr | lastErrLSPPathTearSent | lastErrLSPRequestedBandwidthUnavailable | lastErrLSPReservationTearReceived | lastErrLSPReservationTearSent | lastErrLSPReservationTimeout | lastErrLSPRoutingLoops | lastErrLSPRoutingProblem | lastErrLSPRSVPSystemError | lastErrLSPServiceConflict | lastErrLSPServiceUnsupported | lastErrLSPTrafficControlError | lastErrLSPTrafficControlSystemError | lastErrLSPTrafficOrganizationError | lastErrLSPTrafficServiceError | lastErrLSPUnknownObjectClass | lastErrLSPUnknownObjectCType | lastErrLSPUnsupportedL3PID | lSPAdmissionControlFailure | lSPBadAdSpecValue | lSPBadExplicitRoute | lSPBadFlowspecValue | lSPBadInitialSubobject | lSPBadLooseNode | lSPBadStrictNode | lSPBadTSpecValue | lSPDelayBoundNotMet | lSPMPLSAllocationFailure | lSPMTUTooBig | lSPNonRSVPRouter | lSPNoRouteAvailable | lSPPathErr | lSPPathTearSent | lSPRequestedBandwidthUnavailable | lSPReservationNotReceived | lSPReservationTearReceived | lSPReservationTearSent | lSPReservationTimeout | lSPRoutingLoops | lSPRoutingProblem | lSPRSVPSystemError | lSPServiceConflict | lSPServiceUnsupported | lSPTrafficControlError | lSPTrafficControlSystemError | lSPTrafficOrganizationError | lSPTrafficServiceError | lSPUnknownObjectClass | lSPUnknownObjectCType | lSPUnsupportedL3PID | mbbCompleted | mbbTriggered | none | noPathReceived | pCRepReceived | pCReqSent]): Logs additional information about the RSVP session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInformation'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInformation"])
 
     @property
     def SessionName(self):
@@ -1174,7 +1360,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Session Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SessionName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SessionName"]))
 
     @property
     def SetupPriority(self):
@@ -1185,7 +1372,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Setup Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetupPriority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SetupPriority"]))
 
     @property
     def SourceIp(self):
@@ -1196,7 +1384,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceIp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceIp"]))
 
     @property
     def SourceIpv6(self):
@@ -1207,7 +1396,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Source IPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SourceIpv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SourceIpv6"]))
 
     @property
     def StandbyMode(self):
@@ -1218,7 +1408,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Standby LSP Bit is On.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StandbyMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StandbyMode"]))
 
     @property
     def State(self):
@@ -1228,7 +1419,7 @@ class RsvpP2PIngressLsps(Base):
         -------
         - list(str[down | none | notStarted | up]): State
         """
-        return self._get_attribute(self._SDM_ATT_MAP['State'])
+        return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
     def TSpecSameAsPrimary(self):
@@ -1238,11 +1429,12 @@ class RsvpP2PIngressLsps(Base):
         -------
         - bool: TSpec Same As Primary
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TSpecSameAsPrimary'])
+        return self._get_attribute(self._SDM_ATT_MAP["TSpecSameAsPrimary"])
+
     @TSpecSameAsPrimary.setter
     def TSpecSameAsPrimary(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TSpecSameAsPrimary'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TSpecSameAsPrimary"], value)
 
     @property
     def TimeoutMultiplier(self):
@@ -1253,7 +1445,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Timeout Multiplier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TimeoutMultiplier"])
+        )
 
     @property
     def TokenBucketRate(self):
@@ -1264,7 +1459,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Token Bucket Rate (in Bytes per seconds)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TokenBucketRate']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TokenBucketRate"])
+        )
 
     @property
     def TokenBucketSize(self):
@@ -1275,7 +1473,10 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Token Bucket Size (in Bytes)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TokenBucketSize']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TokenBucketSize"])
+        )
 
     @property
     def TunnelId(self):
@@ -1286,7 +1487,8 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tunnel ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TunnelId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TunnelId"]))
 
     @property
     def UsingHeadendIp(self):
@@ -1297,9 +1499,24 @@ class RsvpP2PIngressLsps(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Using Headend IP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UsingHeadendIp']))
 
-    def update(self, BackupLspNumberOfEroSubObjects=None, DelayLspSwitchOver=None, DoMBBOnApplyChanges=None, EroSameAsPrimary=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfEroSubObjects=None, NumberOfRroSubObjects=None, TSpecSameAsPrimary=None):
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UsingHeadendIp"])
+        )
+
+    def update(
+        self,
+        BackupLspNumberOfEroSubObjects=None,
+        DelayLspSwitchOver=None,
+        DoMBBOnApplyChanges=None,
+        EroSameAsPrimary=None,
+        LspSwitchOverDelayTime=None,
+        Name=None,
+        NumberOfDetourSubObjects=None,
+        NumberOfEroSubObjects=None,
+        NumberOfRroSubObjects=None,
+        TSpecSameAsPrimary=None,
+    ):
         # type: (int, bool, bool, bool, int, str, int, int, int, bool) -> RsvpP2PIngressLsps
         """Updates rsvpP2PIngressLsps resource on the server.
 
@@ -1325,7 +1542,28 @@ class RsvpP2PIngressLsps(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BackupLspNumberOfEroSubObjects=None, Count=None, DelayLspSwitchOver=None, DescriptiveName=None, DoMBBOnApplyChanges=None, EroSameAsPrimary=None, LocalIp=None, LspDelegationState=None, LspSelfPingStatus=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfEroSubObjects=None, NumberOfRroSubObjects=None, PccIp=None, ReDelegationTimerStatus=None, SessionInformation=None, State=None, TSpecSameAsPrimary=None):
+    def find(
+        self,
+        BackupLspNumberOfEroSubObjects=None,
+        Count=None,
+        DelayLspSwitchOver=None,
+        DescriptiveName=None,
+        DoMBBOnApplyChanges=None,
+        EroSameAsPrimary=None,
+        LocalIp=None,
+        LspDelegationState=None,
+        LspSelfPingStatus=None,
+        LspSwitchOverDelayTime=None,
+        Name=None,
+        NumberOfDetourSubObjects=None,
+        NumberOfEroSubObjects=None,
+        NumberOfRroSubObjects=None,
+        PccIp=None,
+        ReDelegationTimerStatus=None,
+        SessionInformation=None,
+        State=None,
+        TSpecSameAsPrimary=None,
+    ):
         # type: (int, int, bool, str, bool, bool, List[str], List[str], List[str], int, str, int, int, int, List[str], List[str], List[str], List[str], bool) -> RsvpP2PIngressLsps
         """Finds and retrieves rsvpP2PIngressLsps resources from the server.
 
@@ -1416,10 +1654,14 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('initiatePathReoptimization', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "initiatePathReoptimization", payload=payload, response_object=None
+        )
 
     def MakeBeforeBreak(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1454,10 +1696,12 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('makeBeforeBreak', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("makeBeforeBreak", payload=payload, response_object=None)
 
     def PcepDelegate(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1492,10 +1736,12 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pcepDelegate', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("pcepDelegate", payload=payload, response_object=None)
 
     def PcepRevokeDelegation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1530,10 +1776,14 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pcepRevokeDelegation', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pcepRevokeDelegation", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1568,10 +1818,12 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1606,12 +1858,94 @@ class RsvpP2PIngressLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, AutoGenerateSessionName=None, AutorouteTraffic=None, BackupLspEnableEro=None, BackupLspId=None, BackupLspMaximumPacketSize=None, BackupLspMinimumPolicedUnit=None, BackupLspPeakDataRate=None, BackupLspPrefixLength=None, BackupLspPrependDutToEro=None, BackupLspSessionId=None, BackupLspTokenBucketRate=None, BackupLspTokenBucketSize=None, Bandwidth=None, BandwidthProtectionDesired=None, ConfigureSyncLspObject=None, ConstructEroFromRro=None, EnableBfdMpls=None, EnableEro=None, EnableFastReroute=None, EnableLspPing=None, EnableLspSelfPing=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, InitialDelegation=None, InsertIPv6ExplicitNull=None, IpDSCPofLspSelfPing=None, IpTTLofLspSelfPing=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspCount=None, LspId=None, LspOperativeMode=None, LspSelfPingRetryCount=None, LspSelfPingRetryInterval=None, LspSelfPingSessionId=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, PeakDataRate=None, PpagTLVType=None, PrefixLength=None, PrependDutToEro=None, ProtectionLsp=None, ReEvaluationRequestInterval=None, RedelegationTimeoutInterval=None, RefreshInterval=None, RemoteIp=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIp=None, SourceIpv6=None, StandbyMode=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AssociationId=None,
+        AutoGenerateSessionName=None,
+        AutorouteTraffic=None,
+        BackupLspEnableEro=None,
+        BackupLspId=None,
+        BackupLspMaximumPacketSize=None,
+        BackupLspMinimumPolicedUnit=None,
+        BackupLspPeakDataRate=None,
+        BackupLspPrefixLength=None,
+        BackupLspPrependDutToEro=None,
+        BackupLspSessionId=None,
+        BackupLspTokenBucketRate=None,
+        BackupLspTokenBucketSize=None,
+        Bandwidth=None,
+        BandwidthProtectionDesired=None,
+        ConfigureSyncLspObject=None,
+        ConstructEroFromRro=None,
+        EnableBfdMpls=None,
+        EnableEro=None,
+        EnableFastReroute=None,
+        EnableLspPing=None,
+        EnableLspSelfPing=None,
+        EnablePathReOptimization=None,
+        EnablePeriodicReEvaluationRequest=None,
+        ExcludeAny=None,
+        FacilityBackupDesired=None,
+        FastRerouteBandwidth=None,
+        FastRerouteExcludeAny=None,
+        FastRerouteHoldingPriority=None,
+        FastRerouteIncludeAll=None,
+        FastRerouteIncludeAny=None,
+        FastRerouteSetupPriority=None,
+        HoldingPriority=None,
+        HopLimit=None,
+        IncludeAll=None,
+        IncludeAny=None,
+        IncludeAssociation=None,
+        InitialDelegation=None,
+        InsertIPv6ExplicitNull=None,
+        IpDSCPofLspSelfPing=None,
+        IpTTLofLspSelfPing=None,
+        LabelRecordingDesired=None,
+        LocalProtectionDesired=None,
+        LspCount=None,
+        LspId=None,
+        LspOperativeMode=None,
+        LspSelfPingRetryCount=None,
+        LspSelfPingRetryInterval=None,
+        LspSelfPingSessionId=None,
+        MaximumPacketSize=None,
+        MinimumPolicedUnit=None,
+        NodeProtectionDesired=None,
+        OneToOneBackupDesired=None,
+        PeakDataRate=None,
+        PpagTLVType=None,
+        PrefixLength=None,
+        PrependDutToEro=None,
+        ProtectionLsp=None,
+        ReEvaluationRequestInterval=None,
+        RedelegationTimeoutInterval=None,
+        RefreshInterval=None,
+        RemoteIp=None,
+        ResourceAffinities=None,
+        SeStyleDesired=None,
+        SendDetour=None,
+        SendRro=None,
+        SessionName=None,
+        SetupPriority=None,
+        SourceIp=None,
+        SourceIpv6=None,
+        StandbyMode=None,
+        TimeoutMultiplier=None,
+        TokenBucketRate=None,
+        TokenBucketSize=None,
+        TunnelId=None,
+        UsingHeadendIp=None,
+    ):
         """Base class infrastructure that gets a list of rsvpP2PIngressLsps device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

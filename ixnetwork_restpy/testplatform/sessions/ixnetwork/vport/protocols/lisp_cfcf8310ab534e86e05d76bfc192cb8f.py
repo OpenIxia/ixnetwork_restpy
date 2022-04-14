@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,20 @@ class Lisp(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lisp'
+    _SDM_NAME = "lisp"
     _SDM_ATT_MAP = {
-        'BurstIntervalInMs': 'burstIntervalInMs',
-        'Enabled': 'enabled',
-        'Ipv4MapRegisterPacketsPerBurst': 'ipv4MapRegisterPacketsPerBurst',
-        'Ipv4MapRequestPacketsPerBurst': 'ipv4MapRequestPacketsPerBurst',
-        'Ipv4SmrPacketsPerBurst': 'ipv4SmrPacketsPerBurst',
-        'Ipv6MapRegisterPacketsPerBurst': 'ipv6MapRegisterPacketsPerBurst',
-        'Ipv6MapRequestPacketsPerBurst': 'ipv6MapRequestPacketsPerBurst',
-        'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
-        'ProtocolState': 'protocolState',
+        "BurstIntervalInMs": "burstIntervalInMs",
+        "Enabled": "enabled",
+        "Ipv4MapRegisterPacketsPerBurst": "ipv4MapRegisterPacketsPerBurst",
+        "Ipv4MapRequestPacketsPerBurst": "ipv4MapRequestPacketsPerBurst",
+        "Ipv4SmrPacketsPerBurst": "ipv4SmrPacketsPerBurst",
+        "Ipv6MapRegisterPacketsPerBurst": "ipv6MapRegisterPacketsPerBurst",
+        "Ipv6MapRequestPacketsPerBurst": "ipv6MapRequestPacketsPerBurst",
+        "Ipv6SmrPacketsPerBurst": "ipv6SmrPacketsPerBurst",
+        "ProtocolState": "protocolState",
     }
     _SDM_ENUM_MAP = {
-        'protocolState': ['stopped', 'unknown', 'stopping', 'started', 'starting'],
+        "protocolState": ["stopped", "unknown", "stopping", "started", "starting"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -62,10 +63,13 @@ class Lisp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_357d2cf668d2b194253f1fce270d5f0d import Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_357d2cf668d2b194253f1fce270d5f0d import (
+            Router,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Router', None) is not None:
-                return self._properties.get('Router')
+            if self._properties.get("Router", None) is not None:
+                return self._properties.get("Router")
         return Router(self)
 
     @property
@@ -79,10 +83,13 @@ class Lisp(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_bcf447bff5a7aca1758c0baa17c72645 import SiteEidRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_bcf447bff5a7aca1758c0baa17c72645 import (
+            SiteEidRange,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SiteEidRange', None) is not None:
-                return self._properties.get('SiteEidRange')
+            if self._properties.get("SiteEidRange", None) is not None:
+                return self._properties.get("SiteEidRange")
         return SiteEidRange(self)
 
     @property
@@ -93,11 +100,12 @@ class Lisp(Base):
         -------
         - number: It shows the details abou the burst interval in micro seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstIntervalInMs'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstIntervalInMs"])
+
     @BurstIntervalInMs.setter
     def BurstIntervalInMs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstIntervalInMs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstIntervalInMs"], value)
 
     @property
     def Enabled(self):
@@ -107,11 +115,12 @@ class Lisp(Base):
         -------
         - bool: If true, it shows enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Ipv4MapRegisterPacketsPerBurst(self):
@@ -121,11 +130,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the ip v4 map register packets per burst
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRegisterPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4MapRegisterPacketsPerBurst"])
+
     @Ipv4MapRegisterPacketsPerBurst.setter
     def Ipv4MapRegisterPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4MapRegisterPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4MapRegisterPacketsPerBurst"], value)
 
     @property
     def Ipv4MapRequestPacketsPerBurst(self):
@@ -135,11 +145,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the ip v4 map requests packets per burst
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRequestPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4MapRequestPacketsPerBurst"])
+
     @Ipv4MapRequestPacketsPerBurst.setter
     def Ipv4MapRequestPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4MapRequestPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4MapRequestPacketsPerBurst"], value)
 
     @property
     def Ipv4SmrPacketsPerBurst(self):
@@ -149,11 +160,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the Ip v4 Smr packets per bursts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4SmrPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4SmrPacketsPerBurst"])
+
     @Ipv4SmrPacketsPerBurst.setter
     def Ipv4SmrPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4SmrPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4SmrPacketsPerBurst"], value)
 
     @property
     def Ipv6MapRegisterPacketsPerBurst(self):
@@ -163,11 +175,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the ip v6 map register packets per burst
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRegisterPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MapRegisterPacketsPerBurst"])
+
     @Ipv6MapRegisterPacketsPerBurst.setter
     def Ipv6MapRegisterPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6MapRegisterPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6MapRegisterPacketsPerBurst"], value)
 
     @property
     def Ipv6MapRequestPacketsPerBurst(self):
@@ -177,11 +190,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the ip v6 map requests packets per burst
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRequestPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6MapRequestPacketsPerBurst"])
+
     @Ipv6MapRequestPacketsPerBurst.setter
     def Ipv6MapRequestPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6MapRequestPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6MapRequestPacketsPerBurst"], value)
 
     @property
     def Ipv6SmrPacketsPerBurst(self):
@@ -191,11 +205,12 @@ class Lisp(Base):
         -------
         - number: It gives details about the Ip v6 Smr packets per bursts
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6SmrPacketsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6SmrPacketsPerBurst"])
+
     @Ipv6SmrPacketsPerBurst.setter
     def Ipv6SmrPacketsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6SmrPacketsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6SmrPacketsPerBurst"], value)
 
     @property
     def ProtocolState(self):
@@ -205,9 +220,19 @@ class Lisp(Base):
         -------
         - str(stopped | unknown | stopping | started | starting): Shows different protocol states (read-only)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolState'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolState"])
 
-    def update(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None):
+    def update(
+        self,
+        BurstIntervalInMs=None,
+        Enabled=None,
+        Ipv4MapRegisterPacketsPerBurst=None,
+        Ipv4MapRequestPacketsPerBurst=None,
+        Ipv4SmrPacketsPerBurst=None,
+        Ipv6MapRegisterPacketsPerBurst=None,
+        Ipv6MapRequestPacketsPerBurst=None,
+        Ipv6SmrPacketsPerBurst=None,
+    ):
         # type: (int, bool, int, int, int, int, int, int) -> Lisp
         """Updates lisp resource on the server.
 
@@ -228,7 +253,18 @@ class Lisp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None, ProtocolState=None):
+    def find(
+        self,
+        BurstIntervalInMs=None,
+        Enabled=None,
+        Ipv4MapRegisterPacketsPerBurst=None,
+        Ipv4MapRequestPacketsPerBurst=None,
+        Ipv4SmrPacketsPerBurst=None,
+        Ipv6MapRegisterPacketsPerBurst=None,
+        Ipv6MapRequestPacketsPerBurst=None,
+        Ipv6SmrPacketsPerBurst=None,
+        ProtocolState=None,
+    ):
         # type: (int, bool, int, int, int, int, int, int, str) -> Lisp
         """Finds and retrieves lisp resources from the server.
 
@@ -291,10 +327,12 @@ class Lisp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -311,7 +349,9 @@ class Lisp(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

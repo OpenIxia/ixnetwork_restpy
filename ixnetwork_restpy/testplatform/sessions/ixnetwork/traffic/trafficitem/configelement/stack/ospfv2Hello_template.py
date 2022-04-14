@@ -4,30 +4,30 @@ from ixnetwork_restpy.files import Files
 
 class Ospfv2Hello(Base):
     __slots__ = ()
-    _SDM_NAME = 'ospfv2Hello'
+    _SDM_NAME = "ospfv2Hello"
     _SDM_ATT_MAP = {
-        'Ospfv2PacketHeaderOspfVersion': 'ospfv2Hello.header.ospfv2PacketHeader.ospfVersion-1',
-        'Ospfv2PacketHeaderPacketType': 'ospfv2Hello.header.ospfv2PacketHeader.packetType-2',
-        'Ospfv2PacketHeaderPacketLength': 'ospfv2Hello.header.ospfv2PacketHeader.packetLength-3',
-        'Ospfv2PacketHeaderRouterID': 'ospfv2Hello.header.ospfv2PacketHeader.routerID-4',
-        'Ospfv2PacketHeaderAreaID': 'ospfv2Hello.header.ospfv2PacketHeader.areaID-5',
-        'Ospfv2PacketHeaderChecksum': 'ospfv2Hello.header.ospfv2PacketHeader.checksum-6',
-        'Ospfv2PacketHeaderAuthenticationType': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationType-7',
-        'AuthenticationDataNullAuthentication': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.nullAuthentication-8',
-        'AuthenticationDataSimplePassword': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.simplePassword-9',
-        'CryptographicAuthenticationDataReserved': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.reserved-10',
-        'CryptographicAuthenticationDataKeyID': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.keyID-11',
-        'CryptographicAuthenticationDataAuthenticationDataLength': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.authenticationDataLength-12',
-        'CryptographicAuthenticationDataCryptographicSequenceNumber': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.cryptographicSequenceNumber-13',
-        'UserDefinedAuthenticationDataUserDefinedAuthData': 'ospfv2Hello.header.ospfv2PacketHeader.authenticationData.userDefinedAuthenticationData.userDefinedAuthData-14',
-        'HeaderNetworkMask': 'ospfv2Hello.header.networkMask-15',
-        'HeaderHelloInterval': 'ospfv2Hello.header.helloInterval-16',
-        'HeaderOptions': 'ospfv2Hello.header.options-17',
-        'HeaderRouterPriority': 'ospfv2Hello.header.routerPriority-18',
-        'HeaderRouterDeadInterval': 'ospfv2Hello.header.routerDeadInterval-19',
-        'HeaderDesignatedRouterID': 'ospfv2Hello.header.designatedRouterID-20',
-        'HeaderBackupDesignatedRouterID': 'ospfv2Hello.header.backupDesignatedRouterID-21',
-        'HelloNeighborListNeighborRouterID': 'ospfv2Hello.header.helloNeighborList.neighborRouterID-22',
+        "Ospfv2PacketHeaderOspfVersion": "ospfv2Hello.header.ospfv2PacketHeader.ospfVersion-1",
+        "Ospfv2PacketHeaderPacketType": "ospfv2Hello.header.ospfv2PacketHeader.packetType-2",
+        "Ospfv2PacketHeaderPacketLength": "ospfv2Hello.header.ospfv2PacketHeader.packetLength-3",
+        "Ospfv2PacketHeaderRouterID": "ospfv2Hello.header.ospfv2PacketHeader.routerID-4",
+        "Ospfv2PacketHeaderAreaID": "ospfv2Hello.header.ospfv2PacketHeader.areaID-5",
+        "Ospfv2PacketHeaderChecksum": "ospfv2Hello.header.ospfv2PacketHeader.checksum-6",
+        "Ospfv2PacketHeaderAuthenticationType": "ospfv2Hello.header.ospfv2PacketHeader.authenticationType-7",
+        "AuthenticationDataNullAuthentication": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.nullAuthentication-8",
+        "AuthenticationDataSimplePassword": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.simplePassword-9",
+        "CryptographicAuthenticationDataReserved": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.reserved-10",
+        "CryptographicAuthenticationDataKeyID": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.keyID-11",
+        "CryptographicAuthenticationDataAuthenticationDataLength": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.authenticationDataLength-12",
+        "CryptographicAuthenticationDataCryptographicSequenceNumber": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.cryptographicAuthenticationData.cryptographicSequenceNumber-13",
+        "UserDefinedAuthenticationDataUserDefinedAuthData": "ospfv2Hello.header.ospfv2PacketHeader.authenticationData.userDefinedAuthenticationData.userDefinedAuthData-14",
+        "HeaderNetworkMask": "ospfv2Hello.header.networkMask-15",
+        "HeaderHelloInterval": "ospfv2Hello.header.helloInterval-16",
+        "HeaderOptions": "ospfv2Hello.header.options-17",
+        "HeaderRouterPriority": "ospfv2Hello.header.routerPriority-18",
+        "HeaderRouterDeadInterval": "ospfv2Hello.header.routerDeadInterval-19",
+        "HeaderDesignatedRouterID": "ospfv2Hello.header.designatedRouterID-20",
+        "HeaderBackupDesignatedRouterID": "ospfv2Hello.header.backupDesignatedRouterID-21",
+        "HelloNeighborListNeighborRouterID": "ospfv2Hello.header.helloNeighborList.neighborRouterID-22",
     }
 
     def __init__(self, parent, list_op=False):
@@ -41,7 +41,11 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderOspfVersion']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderOspfVersion"]),
+        )
 
     @property
     def Ospfv2PacketHeaderPacketType(self):
@@ -51,7 +55,10 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderPacketType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderPacketType"])
+        )
 
     @property
     def Ospfv2PacketHeaderPacketLength(self):
@@ -61,7 +68,11 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderPacketLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderPacketLength"]),
+        )
 
     @property
     def Ospfv2PacketHeaderRouterID(self):
@@ -71,7 +82,10 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderRouterID"])
+        )
 
     @property
     def Ospfv2PacketHeaderAreaID(self):
@@ -81,7 +95,10 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderAreaID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderAreaID"])
+        )
 
     @property
     def Ospfv2PacketHeaderChecksum(self):
@@ -91,7 +108,10 @@ class Ospfv2Hello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ospfv2PacketHeaderChecksum"])
+        )
 
     @property
     def Ospfv2PacketHeaderAuthenticationType(self):
@@ -102,7 +122,13 @@ class Ospfv2Hello(Base):
         Available enum values: Null authentication, 0, Simple password, 1, Cryptographic Authentication, 2, User defined Authentication, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ospfv2PacketHeaderAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Ospfv2PacketHeaderAuthenticationType"]
+            ),
+        )
 
     @property
     def AuthenticationDataNullAuthentication(self):
@@ -112,7 +138,13 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationDataNullAuthentication']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AuthenticationDataNullAuthentication"]
+            ),
+        )
 
     @property
     def AuthenticationDataSimplePassword(self):
@@ -122,7 +154,11 @@ class Ospfv2Hello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthenticationDataSimplePassword']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AuthenticationDataSimplePassword"]),
+        )
 
     @property
     def CryptographicAuthenticationDataReserved(self):
@@ -132,7 +168,13 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataReserved']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CryptographicAuthenticationDataReserved"]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataKeyID(self):
@@ -142,7 +184,13 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataKeyID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CryptographicAuthenticationDataKeyID"]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataAuthenticationDataLength(self):
@@ -152,7 +200,15 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataAuthenticationDataLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "CryptographicAuthenticationDataAuthenticationDataLength"
+                ]
+            ),
+        )
 
     @property
     def CryptographicAuthenticationDataCryptographicSequenceNumber(self):
@@ -162,7 +218,15 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CryptographicAuthenticationDataCryptographicSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "CryptographicAuthenticationDataCryptographicSequenceNumber"
+                ]
+            ),
+        )
 
     @property
     def UserDefinedAuthenticationDataUserDefinedAuthData(self):
@@ -172,7 +236,13 @@ class Ospfv2Hello(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedAuthenticationDataUserDefinedAuthData']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UserDefinedAuthenticationDataUserDefinedAuthData"]
+            ),
+        )
 
     @property
     def HeaderNetworkMask(self):
@@ -182,7 +252,10 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderNetworkMask']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderNetworkMask"])
+        )
 
     @property
     def HeaderHelloInterval(self):
@@ -192,7 +265,10 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderHelloInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderHelloInterval"])
+        )
 
     @property
     def HeaderOptions(self):
@@ -202,7 +278,8 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderOptions']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderOptions"]))
 
     @property
     def HeaderRouterPriority(self):
@@ -212,7 +289,10 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRouterPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRouterPriority"])
+        )
 
     @property
     def HeaderRouterDeadInterval(self):
@@ -222,7 +302,10 @@ class Ospfv2Hello(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderRouterDeadInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderRouterDeadInterval"])
+        )
 
     @property
     def HeaderDesignatedRouterID(self):
@@ -232,7 +315,10 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderDesignatedRouterID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderDesignatedRouterID"])
+        )
 
     @property
     def HeaderBackupDesignatedRouterID(self):
@@ -242,7 +328,11 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderBackupDesignatedRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HeaderBackupDesignatedRouterID"]),
+        )
 
     @property
     def HelloNeighborListNeighborRouterID(self):
@@ -252,7 +342,11 @@ class Ospfv2Hello(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HelloNeighborListNeighborRouterID']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["HelloNeighborListNeighborRouterID"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

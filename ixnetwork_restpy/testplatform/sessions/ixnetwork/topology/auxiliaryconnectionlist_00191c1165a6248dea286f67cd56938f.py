@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,19 +34,18 @@ class AuxiliaryConnectionList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'auxiliaryConnectionList'
+    _SDM_NAME = "auxiliaryConnectionList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuxId': 'auxId',
-        'ChannelName': 'channelName',
-        'ConnectionType': 'connectionType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'UDPSrcPortNum': 'uDPSrcPortNum',
+        "Active": "active",
+        "AuxId": "auxId",
+        "ChannelName": "channelName",
+        "ConnectionType": "connectionType",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "UDPSrcPortNum": "uDPSrcPortNum",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AuxiliaryConnectionList, self).__init__(parent, list_op)
@@ -59,7 +59,8 @@ class AuxiliaryConnectionList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AuxId(self):
@@ -70,7 +71,8 @@ class AuxiliaryConnectionList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the Auxiliary Id, {0 - 255}
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuxId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AuxId"]))
 
     @property
     def ChannelName(self):
@@ -80,7 +82,7 @@ class AuxiliaryConnectionList(Base):
         -------
         - str: Parent Channel Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelName'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelName"])
 
     @property
     def ConnectionType(self):
@@ -91,7 +93,10 @@ class AuxiliaryConnectionList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of connection used for the Interface. Options include: 1) TCP 2) TLS 3) UDP
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ConnectionType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ConnectionType"])
+        )
 
     @property
     def Count(self):
@@ -101,7 +106,7 @@ class AuxiliaryConnectionList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -111,7 +116,7 @@ class AuxiliaryConnectionList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -121,11 +126,12 @@ class AuxiliaryConnectionList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def UDPSrcPortNum(self):
@@ -136,7 +142,8 @@ class AuxiliaryConnectionList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Source Port Number
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UDPSrcPortNum']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UDPSrcPortNum"]))
 
     def update(self, Name=None):
         # type: (str) -> AuxiliaryConnectionList
@@ -157,7 +164,7 @@ class AuxiliaryConnectionList(Base):
 
     def add(self, Name=None):
         # type: (str) -> AuxiliaryConnectionList
-        """Adds a new auxiliaryConnectionList resource on the json, only valid with config assistant
+        """Adds a new auxiliaryConnectionList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -216,7 +223,14 @@ class AuxiliaryConnectionList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AuxId=None, ConnectionType=None, UDPSrcPortNum=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AuxId=None,
+        ConnectionType=None,
+        UDPSrcPortNum=None,
+    ):
         """Base class infrastructure that gets a list of auxiliaryConnectionList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

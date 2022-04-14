@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,51 +33,50 @@ class BgpEpePeerLinkList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEpePeerLinkList'
+    _SDM_NAME = "bgpEpePeerLinkList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ArgumentLengthSRv6': 'argumentLengthSRv6',
-        'BBit': 'bBit',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableLinkAddress': 'enableLinkAddress',
-        'EnableLinkIdentifier': 'enableLinkIdentifier',
-        'EnablePeerAdjSid': 'enablePeerAdjSid',
-        'EnableSRv6EndXSID': 'enableSRv6EndXSID',
-        'EnableSRv6SIDStructureTLV': 'enableSRv6SIDStructureTLV',
-        'EndPointFunctionSRv6': 'endPointFunctionSRv6',
-        'EndpointBehaviorAlgorithmSRv6': 'endpointBehaviorAlgorithmSRv6',
-        'FunctionLengthSRv6': 'functionLengthSRv6',
-        'LBit': 'lBit',
-        'LinkAddressType': 'linkAddressType',
-        'LinkLocalIdentifier': 'linkLocalIdentifier',
-        'LinkNumber': 'linkNumber',
-        'LinkRemoteIdentifier': 'linkRemoteIdentifier',
-        'LocalIpv4LinkAddress': 'localIpv4LinkAddress',
-        'LocalIpv6LinkAddress': 'localIpv6LinkAddress',
-        'LocatorBlockLengthSRv6': 'locatorBlockLengthSRv6',
-        'LocatorNodeLengthSRv6': 'locatorNodeLengthSRv6',
-        'Name': 'name',
-        'PBit': 'pBit',
-        'PeerName': 'peerName',
-        'RemoteIpv4LinkAddress': 'remoteIpv4LinkAddress',
-        'RemoteIpv6LinkAddress': 'remoteIpv6LinkAddress',
-        'Reserved': 'reserved',
-        'RsvdBits': 'rsvdBits',
-        'SidIndex': 'sidIndex',
-        'SidIndexValue': 'sidIndexValue',
-        'SidReservedSRv6': 'sidReservedSRv6',
-        'SidWeightSRV6': 'sidWeightSRV6',
-        'Srv6EndpointBehaviorFlagB': 'srv6EndpointBehaviorFlagB',
-        'Srv6EndpointBehaviorFlagP': 'srv6EndpointBehaviorFlagP',
-        'Srv6EndpointBehaviorFlagRsvd': 'srv6EndpointBehaviorFlagRsvd',
-        'Srv6EndpointBehaviorFlagS': 'srv6EndpointBehaviorFlagS',
-        'Srv6SID': 'srv6SID',
-        'VBit': 'vBit',
-        'Weight': 'weight',
+        "Active": "active",
+        "ArgumentLengthSRv6": "argumentLengthSRv6",
+        "BBit": "bBit",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableLinkAddress": "enableLinkAddress",
+        "EnableLinkIdentifier": "enableLinkIdentifier",
+        "EnablePeerAdjSid": "enablePeerAdjSid",
+        "EnableSRv6EndXSID": "enableSRv6EndXSID",
+        "EnableSRv6SIDStructureTLV": "enableSRv6SIDStructureTLV",
+        "EndPointFunctionSRv6": "endPointFunctionSRv6",
+        "EndpointBehaviorAlgorithmSRv6": "endpointBehaviorAlgorithmSRv6",
+        "FunctionLengthSRv6": "functionLengthSRv6",
+        "LBit": "lBit",
+        "LinkAddressType": "linkAddressType",
+        "LinkLocalIdentifier": "linkLocalIdentifier",
+        "LinkNumber": "linkNumber",
+        "LinkRemoteIdentifier": "linkRemoteIdentifier",
+        "LocalIpv4LinkAddress": "localIpv4LinkAddress",
+        "LocalIpv6LinkAddress": "localIpv6LinkAddress",
+        "LocatorBlockLengthSRv6": "locatorBlockLengthSRv6",
+        "LocatorNodeLengthSRv6": "locatorNodeLengthSRv6",
+        "Name": "name",
+        "PBit": "pBit",
+        "PeerName": "peerName",
+        "RemoteIpv4LinkAddress": "remoteIpv4LinkAddress",
+        "RemoteIpv6LinkAddress": "remoteIpv6LinkAddress",
+        "Reserved": "reserved",
+        "RsvdBits": "rsvdBits",
+        "SidIndex": "sidIndex",
+        "SidIndexValue": "sidIndexValue",
+        "SidReservedSRv6": "sidReservedSRv6",
+        "SidWeightSRV6": "sidWeightSRV6",
+        "Srv6EndpointBehaviorFlagB": "srv6EndpointBehaviorFlagB",
+        "Srv6EndpointBehaviorFlagP": "srv6EndpointBehaviorFlagP",
+        "Srv6EndpointBehaviorFlagRsvd": "srv6EndpointBehaviorFlagRsvd",
+        "Srv6EndpointBehaviorFlagS": "srv6EndpointBehaviorFlagS",
+        "Srv6SID": "srv6SID",
+        "VBit": "vBit",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpEpePeerLinkList, self).__init__(parent, list_op)
@@ -92,10 +92,13 @@ class BgpEpePeerLinkList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import (
+            TlvProfile,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TlvProfile', None) is not None:
-                return self._properties.get('TlvProfile')
+            if self._properties.get("TlvProfile", None) is not None:
+                return self._properties.get("TlvProfile")
         return TlvProfile(self)
 
     @property
@@ -107,7 +110,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ArgumentLengthSRv6(self):
@@ -118,7 +122,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Argument length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLengthSRv6"])
+        )
 
     @property
     def BBit(self):
@@ -129,7 +136,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BBit"]))
 
     @property
     def Count(self):
@@ -139,7 +147,7 @@ class BgpEpePeerLinkList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -149,7 +157,7 @@ class BgpEpePeerLinkList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableLinkAddress(self):
@@ -160,7 +168,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Link Addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLinkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLinkAddress"])
+        )
 
     @property
     def EnableLinkIdentifier(self):
@@ -171,7 +182,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Link Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLinkIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLinkIdentifier"])
+        )
 
     @property
     def EnablePeerAdjSid(self):
@@ -182,7 +196,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Peer-Adj-SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePeerAdjSid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnablePeerAdjSid"])
+        )
 
     @property
     def EnableSRv6EndXSID(self):
@@ -193,7 +210,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 End.X SID TLV in BGP-LS.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6EndXSID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSRv6EndXSID"])
+        )
 
     @property
     def EnableSRv6SIDStructureTLV(self):
@@ -204,7 +224,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 SID Structure sub-TLV in End.X TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6SIDStructureTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSRv6SIDStructureTLV"])
+        )
 
     @property
     def EndPointFunctionSRv6(self):
@@ -215,7 +238,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Choose any End-Point Function from the list, or enter any value. More details: https:/www.iana.org/assignments/segment-routing/segment-routing.xhtml
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunctionSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunctionSRv6"])
+        )
 
     @property
     def EndpointBehaviorAlgorithmSRv6(self):
@@ -226,7 +252,11 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 1 octet field. Algorithm associated with the SID. Algorithm values are defined in the IANA IGP Algorithm Type registry. Common values are 0: SPF, 1: Strict SPF, 2-127: Reserved, 128-255: Flexible Algorithms More Info: https:/www.iana.org/assignments/igp-parameters/igp-parameters.xhtml
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndpointBehaviorAlgorithmSRv6']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EndpointBehaviorAlgorithmSRv6"]),
+        )
 
     @property
     def FunctionLengthSRv6(self):
@@ -237,7 +267,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Function length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLengthSRv6"])
+        )
 
     @property
     def LBit(self):
@@ -248,7 +281,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LBit"]))
 
     @property
     def LinkAddressType(self):
@@ -259,7 +293,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Address Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkAddressType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkAddressType"])
+        )
 
     @property
     def LinkLocalIdentifier(self):
@@ -270,7 +307,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Local Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkLocalIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkLocalIdentifier"])
+        )
 
     @property
     def LinkNumber(self):
@@ -281,7 +321,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): EPE Link Number For Reference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkNumber']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkNumber"]))
 
     @property
     def LinkRemoteIdentifier(self):
@@ -292,7 +333,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Remote Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkRemoteIdentifier']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkRemoteIdentifier"])
+        )
 
     @property
     def LocalIpv4LinkAddress(self):
@@ -303,7 +347,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local IPv4 Link Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalIpv4LinkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalIpv4LinkAddress"])
+        )
 
     @property
     def LocalIpv6LinkAddress(self):
@@ -314,7 +361,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local IPv6 Link Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalIpv6LinkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocalIpv6LinkAddress"])
+        )
 
     @property
     def LocatorBlockLengthSRv6(self):
@@ -325,7 +375,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Block length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLengthSRv6"])
+        )
 
     @property
     def LocatorNodeLengthSRv6(self):
@@ -336,7 +389,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Node length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLengthSRv6"])
+        )
 
     @property
     def Name(self):
@@ -346,11 +402,12 @@ class BgpEpePeerLinkList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PBit(self):
@@ -361,7 +418,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PBit"]))
 
     @property
     def PeerName(self):
@@ -371,7 +429,7 @@ class BgpEpePeerLinkList(Base):
         -------
         - list(str): Peer Name For Reference
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerName"])
 
     @property
     def RemoteIpv4LinkAddress(self):
@@ -382,7 +440,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote IPv4 Link Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteIpv4LinkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteIpv4LinkAddress"])
+        )
 
     @property
     def RemoteIpv6LinkAddress(self):
@@ -393,7 +454,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remote IPv6 Link Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteIpv6LinkAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteIpv6LinkAddress"])
+        )
 
     @property
     def Reserved(self):
@@ -404,7 +468,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def RsvdBits(self):
@@ -415,7 +480,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvdBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RsvdBits"]))
 
     @property
     def SidIndex(self):
@@ -426,7 +492,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Label for Peer-Adj
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndex']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndex"]))
 
     @property
     def SidIndexValue(self):
@@ -437,7 +504,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidIndexValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidIndexValue"]))
 
     @property
     def SidReservedSRv6(self):
@@ -448,7 +516,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 2 Byte Reserved field of Peer Node SID TLV. The value MUST be set to 0 and ignored on receipt.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidReservedSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SidReservedSRv6"])
+        )
 
     @property
     def SidWeightSRV6(self):
@@ -459,7 +530,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of SID for Load Balancing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidWeightSRV6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidWeightSRV6"]))
 
     @property
     def Srv6EndpointBehaviorFlagB(self):
@@ -470,7 +542,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag: Backup Flag. If set, the SID is eligible for protection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehaviorFlagB']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorFlagB"])
+        )
 
     @property
     def Srv6EndpointBehaviorFlagP(self):
@@ -481,7 +556,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag: Persistent Flag: When set, the P-Flag indicates that the SID is persistently allocated.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehaviorFlagP']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorFlagP"])
+        )
 
     @property
     def Srv6EndpointBehaviorFlagRsvd(self):
@@ -492,7 +570,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehaviorFlagRsvd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorFlagRsvd"])
+        )
 
     @property
     def Srv6EndpointBehaviorFlagS(self):
@@ -503,7 +584,10 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-Flag: Set Flag. When set, the S-Flag indicates that the SID refers to a set of BGP peering sessions.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EndpointBehaviorFlagS']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorFlagS"])
+        )
 
     @property
     def Srv6SID(self):
@@ -514,7 +598,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 16 octet field. This field encodes the advertised SRv6 SID as 128 bit value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SID"]))
 
     @property
     def VBit(self):
@@ -525,7 +610,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries a label value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VBit"]))
 
     @property
     def Weight(self):
@@ -536,7 +622,8 @@ class BgpEpePeerLinkList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of the SID for the purpose of load balancing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None):
         # type: (str) -> BgpEpePeerLinkList
@@ -598,7 +685,46 @@ class BgpEpePeerLinkList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, ArgumentLengthSRv6=None, BBit=None, EnableLinkAddress=None, EnableLinkIdentifier=None, EnablePeerAdjSid=None, EnableSRv6EndXSID=None, EnableSRv6SIDStructureTLV=None, EndPointFunctionSRv6=None, EndpointBehaviorAlgorithmSRv6=None, FunctionLengthSRv6=None, LBit=None, LinkAddressType=None, LinkLocalIdentifier=None, LinkNumber=None, LinkRemoteIdentifier=None, LocalIpv4LinkAddress=None, LocalIpv6LinkAddress=None, LocatorBlockLengthSRv6=None, LocatorNodeLengthSRv6=None, PBit=None, RemoteIpv4LinkAddress=None, RemoteIpv6LinkAddress=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, SidReservedSRv6=None, SidWeightSRV6=None, Srv6EndpointBehaviorFlagB=None, Srv6EndpointBehaviorFlagP=None, Srv6EndpointBehaviorFlagRsvd=None, Srv6EndpointBehaviorFlagS=None, Srv6SID=None, VBit=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ArgumentLengthSRv6=None,
+        BBit=None,
+        EnableLinkAddress=None,
+        EnableLinkIdentifier=None,
+        EnablePeerAdjSid=None,
+        EnableSRv6EndXSID=None,
+        EnableSRv6SIDStructureTLV=None,
+        EndPointFunctionSRv6=None,
+        EndpointBehaviorAlgorithmSRv6=None,
+        FunctionLengthSRv6=None,
+        LBit=None,
+        LinkAddressType=None,
+        LinkLocalIdentifier=None,
+        LinkNumber=None,
+        LinkRemoteIdentifier=None,
+        LocalIpv4LinkAddress=None,
+        LocalIpv6LinkAddress=None,
+        LocatorBlockLengthSRv6=None,
+        LocatorNodeLengthSRv6=None,
+        PBit=None,
+        RemoteIpv4LinkAddress=None,
+        RemoteIpv6LinkAddress=None,
+        Reserved=None,
+        RsvdBits=None,
+        SidIndex=None,
+        SidIndexValue=None,
+        SidReservedSRv6=None,
+        SidWeightSRV6=None,
+        Srv6EndpointBehaviorFlagB=None,
+        Srv6EndpointBehaviorFlagP=None,
+        Srv6EndpointBehaviorFlagRsvd=None,
+        Srv6EndpointBehaviorFlagS=None,
+        Srv6SID=None,
+        VBit=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of bgpEpePeerLinkList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,19 +35,18 @@ class Lan(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'lan'
+    _SDM_NAME = "lan"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'MacAddress': 'macAddress',
-        'MacCount': 'macCount',
-        'MacIncrement': 'macIncrement',
-        'TrafficGroupId': 'trafficGroupId',
-        'VlanEnabled': 'vlanEnabled',
-        'VlanId': 'vlanId',
-        'VlanIncrement': 'vlanIncrement',
+        "Enabled": "enabled",
+        "MacAddress": "macAddress",
+        "MacCount": "macCount",
+        "MacIncrement": "macIncrement",
+        "TrafficGroupId": "trafficGroupId",
+        "VlanEnabled": "vlanEnabled",
+        "VlanId": "vlanId",
+        "VlanIncrement": "vlanIncrement",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Lan, self).__init__(parent, list_op)
@@ -59,11 +59,12 @@ class Lan(Base):
         -------
         - bool: Enables the use of the STP LAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def MacAddress(self):
@@ -73,11 +74,12 @@ class Lan(Base):
         -------
         - str: The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
+
     @MacAddress.setter
     def MacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacAddress"], value)
 
     @property
     def MacCount(self):
@@ -87,11 +89,12 @@ class Lan(Base):
         -------
         - number: The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacCount"])
+
     @MacCount.setter
     def MacCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacCount"], value)
 
     @property
     def MacIncrement(self):
@@ -101,11 +104,12 @@ class Lan(Base):
         -------
         - bool: If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacIncrement"])
+
     @MacIncrement.setter
     def MacIncrement(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacIncrement"], value)
 
     @property
     def TrafficGroupId(self):
@@ -115,11 +119,12 @@ class Lan(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): References a traffic group identifier as configured by the trafficGroup object.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
     @property
     def VlanEnabled(self):
@@ -129,11 +134,12 @@ class Lan(Base):
         -------
         - bool: Enables the use of this STP LAN. (default = disabled)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanEnabled"])
+
     @VlanEnabled.setter
     def VlanEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanEnabled"], value)
 
     @property
     def VlanId(self):
@@ -143,11 +149,12 @@ class Lan(Base):
         -------
         - number: The identifier for the first VLAN in the range. Valid range: 1 to 4094.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanIncrement(self):
@@ -157,13 +164,24 @@ class Lan(Base):
         -------
         - bool: If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanIncrement"])
+
     @VlanIncrement.setter
     def VlanIncrement(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanIncrement"], value)
 
-    def update(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+    def update(
+        self,
+        Enabled=None,
+        MacAddress=None,
+        MacCount=None,
+        MacIncrement=None,
+        TrafficGroupId=None,
+        VlanEnabled=None,
+        VlanId=None,
+        VlanIncrement=None,
+    ):
         # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Updates lan resource on the server.
 
@@ -184,7 +202,17 @@ class Lan(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+    def add(
+        self,
+        Enabled=None,
+        MacAddress=None,
+        MacCount=None,
+        MacIncrement=None,
+        TrafficGroupId=None,
+        VlanEnabled=None,
+        VlanId=None,
+        VlanIncrement=None,
+    ):
         # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Adds a new lan resource on the server and adds it to the container.
 
@@ -219,7 +247,17 @@ class Lan(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+    def find(
+        self,
+        Enabled=None,
+        MacAddress=None,
+        MacCount=None,
+        MacIncrement=None,
+        TrafficGroupId=None,
+        VlanEnabled=None,
+        VlanId=None,
+        VlanIncrement=None,
+    ):
         # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Finds and retrieves lan resources from the server.
 

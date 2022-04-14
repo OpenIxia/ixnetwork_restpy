@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,72 +33,71 @@ class CfmAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cfmAggregatedStatistics'
+    _SDM_NAME = "cfmAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'AisRx': 'aisRx',
-        'AisTx': 'aisTx',
-        'BridgesConfigured': 'bridgesConfigured',
-        'BridgesRunning': 'bridgesRunning',
-        'CcmRx': 'ccmRx',
-        'CcmTx': 'ccmTx',
-        'CcmUnexpectedPeriod': 'ccmUnexpectedPeriod',
-        'DefectiveRMEPS': 'defectiveRMEPS',
-        'DmmRx': 'dmmRx',
-        'DmmTx': 'dmmTx',
-        'DmrRx': 'dmrRx',
-        'DmrTx': 'dmrTx',
-        'InvalidCCMRx': 'invalidCCMRx',
-        'InvalidLBMRx': 'invalidLBMRx',
-        'InvalidLBRRx': 'invalidLBRRx',
-        'InvalidLMRRx': 'invalidLMRRx',
-        'InvalidLTMRx': 'invalidLTMRx',
-        'InvalidLTRRx': 'invalidLTRRx',
-        'LbmRx': 'lbmRx',
-        'LbmTx': 'lbmTx',
-        'LbrRx': 'lbrRx',
-        'LbrTx': 'lbrTx',
-        'LckRx': 'lckRx',
-        'LckTx': 'lckTx',
-        'LmmRx': 'lmmRx',
-        'LmmTx': 'lmmTx',
-        'LmrRx': 'lmrRx',
-        'LmrTx': 'lmrTx',
-        'LrRespond': 'lrRespond',
-        'LtmRx': 'ltmRx',
-        'LtmTx': 'ltmTx',
-        'LtrRx': 'ltrRx',
-        'LtrTx': 'ltrTx',
-        'MasConfigured': 'masConfigured',
-        'MasRunning': 'masRunning',
-        'MepFNGDefect': 'mepFNGDefect',
-        'MepFNGDefectClearing': 'mepFNGDefectClearing',
-        'MepFNGDefectReported': 'mepFNGDefectReported',
-        'MepFNGReset': 'mepFNGReset',
-        'MepsConfigured': 'mepsConfigured',
-        'MepsRunning': 'mepsRunning',
-        'OnedmRx': 'onedmRx',
-        'OnedmTx': 'onedmTx',
-        'OutofSequenceCCMRx': 'outofSequenceCCMRx',
-        'PacketRx': 'packetRx',
-        'PacketTx': 'packetTx',
-        'PortName': 'portName',
-        'RdiRx': 'rdiRx',
-        'RdiTx': 'rdiTx',
-        'RemoteMEPs': 'remoteMEPs',
-        'RmepErrorDefect': 'rmepErrorDefect',
-        'RmepErrorNoDefect': 'rmepErrorNoDefect',
-        'RmepOk': 'rmepOk',
-        'SessionFlapCount': 'sessionFlapCount',
-        'TrunksConfigured': 'trunksConfigured',
-        'TrunksRunning': 'trunksRunning',
-        'TstOutofSequenceRx': 'tstOutofSequenceRx',
-        'TstOutofSequenceTx': 'tstOutofSequenceTx',
-        'TstPRBSBitErrorRx': 'tstPRBSBitErrorRx',
-        'TstRx': 'tstRx',
-        'TstTx': 'tstTx',
+        "AisRx": "aisRx",
+        "AisTx": "aisTx",
+        "BridgesConfigured": "bridgesConfigured",
+        "BridgesRunning": "bridgesRunning",
+        "CcmRx": "ccmRx",
+        "CcmTx": "ccmTx",
+        "CcmUnexpectedPeriod": "ccmUnexpectedPeriod",
+        "DefectiveRMEPS": "defectiveRMEPS",
+        "DmmRx": "dmmRx",
+        "DmmTx": "dmmTx",
+        "DmrRx": "dmrRx",
+        "DmrTx": "dmrTx",
+        "InvalidCCMRx": "invalidCCMRx",
+        "InvalidLBMRx": "invalidLBMRx",
+        "InvalidLBRRx": "invalidLBRRx",
+        "InvalidLMRRx": "invalidLMRRx",
+        "InvalidLTMRx": "invalidLTMRx",
+        "InvalidLTRRx": "invalidLTRRx",
+        "LbmRx": "lbmRx",
+        "LbmTx": "lbmTx",
+        "LbrRx": "lbrRx",
+        "LbrTx": "lbrTx",
+        "LckRx": "lckRx",
+        "LckTx": "lckTx",
+        "LmmRx": "lmmRx",
+        "LmmTx": "lmmTx",
+        "LmrRx": "lmrRx",
+        "LmrTx": "lmrTx",
+        "LrRespond": "lrRespond",
+        "LtmRx": "ltmRx",
+        "LtmTx": "ltmTx",
+        "LtrRx": "ltrRx",
+        "LtrTx": "ltrTx",
+        "MasConfigured": "masConfigured",
+        "MasRunning": "masRunning",
+        "MepFNGDefect": "mepFNGDefect",
+        "MepFNGDefectClearing": "mepFNGDefectClearing",
+        "MepFNGDefectReported": "mepFNGDefectReported",
+        "MepFNGReset": "mepFNGReset",
+        "MepsConfigured": "mepsConfigured",
+        "MepsRunning": "mepsRunning",
+        "OnedmRx": "onedmRx",
+        "OnedmTx": "onedmTx",
+        "OutofSequenceCCMRx": "outofSequenceCCMRx",
+        "PacketRx": "packetRx",
+        "PacketTx": "packetTx",
+        "PortName": "portName",
+        "RdiRx": "rdiRx",
+        "RdiTx": "rdiTx",
+        "RemoteMEPs": "remoteMEPs",
+        "RmepErrorDefect": "rmepErrorDefect",
+        "RmepErrorNoDefect": "rmepErrorNoDefect",
+        "RmepOk": "rmepOk",
+        "SessionFlapCount": "sessionFlapCount",
+        "TrunksConfigured": "trunksConfigured",
+        "TrunksRunning": "trunksRunning",
+        "TstOutofSequenceRx": "tstOutofSequenceRx",
+        "TstOutofSequenceTx": "tstOutofSequenceTx",
+        "TstPRBSBitErrorRx": "tstPRBSBitErrorRx",
+        "TstRx": "tstRx",
+        "TstTx": "tstTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CfmAggregatedStatistics, self).__init__(parent, list_op)
@@ -110,11 +110,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: AIS Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AisRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AisRx"])
+
     @AisRx.setter
     def AisRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AisRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AisRx"], value)
 
     @property
     def AisTx(self):
@@ -124,11 +125,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: AIS Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AisTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["AisTx"])
+
     @AisTx.setter
     def AisTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AisTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AisTx"], value)
 
     @property
     def BridgesConfigured(self):
@@ -138,11 +140,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Bridges Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgesConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgesConfigured"])
+
     @BridgesConfigured.setter
     def BridgesConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgesConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgesConfigured"], value)
 
     @property
     def BridgesRunning(self):
@@ -152,11 +155,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Bridges Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BridgesRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["BridgesRunning"])
+
     @BridgesRunning.setter
     def BridgesRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BridgesRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BridgesRunning"], value)
 
     @property
     def CcmRx(self):
@@ -166,11 +170,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: CCM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcmRx"])
+
     @CcmRx.setter
     def CcmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CcmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CcmRx"], value)
 
     @property
     def CcmTx(self):
@@ -180,11 +185,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: CCM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcmTx"])
+
     @CcmTx.setter
     def CcmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CcmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CcmTx"], value)
 
     @property
     def CcmUnexpectedPeriod(self):
@@ -194,11 +200,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: CCM Unexpected Period
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CcmUnexpectedPeriod'])
+        return self._get_attribute(self._SDM_ATT_MAP["CcmUnexpectedPeriod"])
+
     @CcmUnexpectedPeriod.setter
     def CcmUnexpectedPeriod(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CcmUnexpectedPeriod'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CcmUnexpectedPeriod"], value)
 
     @property
     def DefectiveRMEPS(self):
@@ -208,11 +215,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Defective RMEPS
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DefectiveRMEPS'])
+        return self._get_attribute(self._SDM_ATT_MAP["DefectiveRMEPS"])
+
     @DefectiveRMEPS.setter
     def DefectiveRMEPS(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DefectiveRMEPS'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DefectiveRMEPS"], value)
 
     @property
     def DmmRx(self):
@@ -222,11 +230,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: DMM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmmRx"])
+
     @DmmRx.setter
     def DmmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmmRx"], value)
 
     @property
     def DmmTx(self):
@@ -236,11 +245,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: DMM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmmTx"])
+
     @DmmTx.setter
     def DmmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmmTx"], value)
 
     @property
     def DmrRx(self):
@@ -250,11 +260,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: DMR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmrRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmrRx"])
+
     @DmrRx.setter
     def DmrRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmrRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmrRx"], value)
 
     @property
     def DmrTx(self):
@@ -264,11 +275,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: DMR Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DmrTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["DmrTx"])
+
     @DmrTx.setter
     def DmrTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DmrTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DmrTx"], value)
 
     @property
     def InvalidCCMRx(self):
@@ -278,11 +290,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid CCM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidCCMRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidCCMRx"])
+
     @InvalidCCMRx.setter
     def InvalidCCMRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidCCMRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidCCMRx"], value)
 
     @property
     def InvalidLBMRx(self):
@@ -292,11 +305,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid LBM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidLBMRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidLBMRx"])
+
     @InvalidLBMRx.setter
     def InvalidLBMRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidLBMRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidLBMRx"], value)
 
     @property
     def InvalidLBRRx(self):
@@ -306,11 +320,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid LBR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidLBRRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidLBRRx"])
+
     @InvalidLBRRx.setter
     def InvalidLBRRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidLBRRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidLBRRx"], value)
 
     @property
     def InvalidLMRRx(self):
@@ -320,11 +335,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid LMR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidLMRRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidLMRRx"])
+
     @InvalidLMRRx.setter
     def InvalidLMRRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidLMRRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidLMRRx"], value)
 
     @property
     def InvalidLTMRx(self):
@@ -334,11 +350,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid LTM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidLTMRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidLTMRx"])
+
     @InvalidLTMRx.setter
     def InvalidLTMRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidLTMRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidLTMRx"], value)
 
     @property
     def InvalidLTRRx(self):
@@ -348,11 +365,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Invalid LTR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InvalidLTRRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["InvalidLTRRx"])
+
     @InvalidLTRRx.setter
     def InvalidLTRRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InvalidLTRRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InvalidLTRRx"], value)
 
     @property
     def LbmRx(self):
@@ -362,11 +380,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LBM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LbmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LbmRx"])
+
     @LbmRx.setter
     def LbmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LbmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LbmRx"], value)
 
     @property
     def LbmTx(self):
@@ -376,11 +395,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LBM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LbmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LbmTx"])
+
     @LbmTx.setter
     def LbmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LbmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LbmTx"], value)
 
     @property
     def LbrRx(self):
@@ -390,11 +410,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LBR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LbrRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LbrRx"])
+
     @LbrRx.setter
     def LbrRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LbrRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LbrRx"], value)
 
     @property
     def LbrTx(self):
@@ -404,11 +425,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LBR Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LbrTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LbrTx"])
+
     @LbrTx.setter
     def LbrTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LbrTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LbrTx"], value)
 
     @property
     def LckRx(self):
@@ -418,11 +440,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LCK Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LckRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LckRx"])
+
     @LckRx.setter
     def LckRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LckRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LckRx"], value)
 
     @property
     def LckTx(self):
@@ -432,11 +455,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LCK Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LckTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LckTx"])
+
     @LckTx.setter
     def LckTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LckTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LckTx"], value)
 
     @property
     def LmmRx(self):
@@ -446,11 +470,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LMM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmmRx"])
+
     @LmmRx.setter
     def LmmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmmRx"], value)
 
     @property
     def LmmTx(self):
@@ -460,11 +485,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LMM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmmTx"])
+
     @LmmTx.setter
     def LmmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmmTx"], value)
 
     @property
     def LmrRx(self):
@@ -474,11 +500,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LMR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmrRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmrRx"])
+
     @LmrRx.setter
     def LmrRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmrRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmrRx"], value)
 
     @property
     def LmrTx(self):
@@ -488,11 +515,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LMR Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LmrTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LmrTx"])
+
     @LmrTx.setter
     def LmrTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LmrTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LmrTx"], value)
 
     @property
     def LrRespond(self):
@@ -502,11 +530,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LR Respond
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LrRespond'])
+        return self._get_attribute(self._SDM_ATT_MAP["LrRespond"])
+
     @LrRespond.setter
     def LrRespond(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LrRespond'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LrRespond"], value)
 
     @property
     def LtmRx(self):
@@ -516,11 +545,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LTM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LtmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LtmRx"])
+
     @LtmRx.setter
     def LtmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LtmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LtmRx"], value)
 
     @property
     def LtmTx(self):
@@ -530,11 +560,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LTM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LtmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LtmTx"])
+
     @LtmTx.setter
     def LtmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LtmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LtmTx"], value)
 
     @property
     def LtrRx(self):
@@ -544,11 +575,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LTR Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LtrRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LtrRx"])
+
     @LtrRx.setter
     def LtrRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LtrRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LtrRx"], value)
 
     @property
     def LtrTx(self):
@@ -558,11 +590,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: LTR Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LtrTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["LtrTx"])
+
     @LtrTx.setter
     def LtrTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LtrTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LtrTx"], value)
 
     @property
     def MasConfigured(self):
@@ -572,11 +605,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MAs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasConfigured"])
+
     @MasConfigured.setter
     def MasConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasConfigured"], value)
 
     @property
     def MasRunning(self):
@@ -586,11 +620,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MAs Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MasRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["MasRunning"])
+
     @MasRunning.setter
     def MasRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MasRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MasRunning"], value)
 
     @property
     def MepFNGDefect(self):
@@ -600,11 +635,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEP FNG Defect
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepFNGDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepFNGDefect"])
+
     @MepFNGDefect.setter
     def MepFNGDefect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepFNGDefect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepFNGDefect"], value)
 
     @property
     def MepFNGDefectClearing(self):
@@ -614,11 +650,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEP FNG DefectClearing
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepFNGDefectClearing'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepFNGDefectClearing"])
+
     @MepFNGDefectClearing.setter
     def MepFNGDefectClearing(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepFNGDefectClearing'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepFNGDefectClearing"], value)
 
     @property
     def MepFNGDefectReported(self):
@@ -628,11 +665,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEP FNG DefectReported
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepFNGDefectReported'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepFNGDefectReported"])
+
     @MepFNGDefectReported.setter
     def MepFNGDefectReported(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepFNGDefectReported'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepFNGDefectReported"], value)
 
     @property
     def MepFNGReset(self):
@@ -642,11 +680,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEP FNG Reset
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepFNGReset'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepFNGReset"])
+
     @MepFNGReset.setter
     def MepFNGReset(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepFNGReset'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepFNGReset"], value)
 
     @property
     def MepsConfigured(self):
@@ -656,11 +695,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEPs Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepsConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepsConfigured"])
+
     @MepsConfigured.setter
     def MepsConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepsConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepsConfigured"], value)
 
     @property
     def MepsRunning(self):
@@ -670,11 +710,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: MEPs Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MepsRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["MepsRunning"])
+
     @MepsRunning.setter
     def MepsRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MepsRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MepsRunning"], value)
 
     @property
     def OnedmRx(self):
@@ -684,11 +725,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: 1DM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OnedmRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["OnedmRx"])
+
     @OnedmRx.setter
     def OnedmRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OnedmRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OnedmRx"], value)
 
     @property
     def OnedmTx(self):
@@ -698,11 +740,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: 1DM Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OnedmTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["OnedmTx"])
+
     @OnedmTx.setter
     def OnedmTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OnedmTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OnedmTx"], value)
 
     @property
     def OutofSequenceCCMRx(self):
@@ -712,11 +755,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Out of Sequence CCM Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OutofSequenceCCMRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["OutofSequenceCCMRx"])
+
     @OutofSequenceCCMRx.setter
     def OutofSequenceCCMRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OutofSequenceCCMRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OutofSequenceCCMRx"], value)
 
     @property
     def PacketRx(self):
@@ -726,11 +770,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Packet Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketRx"])
+
     @PacketRx.setter
     def PacketRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketRx"], value)
 
     @property
     def PacketTx(self):
@@ -740,11 +785,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Packet Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PacketTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["PacketTx"])
+
     @PacketTx.setter
     def PacketTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PacketTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PacketTx"], value)
 
     @property
     def PortName(self):
@@ -754,11 +800,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RdiRx(self):
@@ -768,11 +815,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: RDI Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdiRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdiRx"])
+
     @RdiRx.setter
     def RdiRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RdiRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RdiRx"], value)
 
     @property
     def RdiTx(self):
@@ -782,11 +830,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: RDI Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RdiTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RdiTx"])
+
     @RdiTx.setter
     def RdiTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RdiTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RdiTx"], value)
 
     @property
     def RemoteMEPs(self):
@@ -796,11 +845,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Remote MEPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RemoteMEPs'])
+        return self._get_attribute(self._SDM_ATT_MAP["RemoteMEPs"])
+
     @RemoteMEPs.setter
     def RemoteMEPs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RemoteMEPs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RemoteMEPs"], value)
 
     @property
     def RmepErrorDefect(self):
@@ -810,11 +860,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: RMEP Error Defect
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RmepErrorDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["RmepErrorDefect"])
+
     @RmepErrorDefect.setter
     def RmepErrorDefect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RmepErrorDefect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RmepErrorDefect"], value)
 
     @property
     def RmepErrorNoDefect(self):
@@ -824,11 +875,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: RMEP Error NoDefect
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RmepErrorNoDefect'])
+        return self._get_attribute(self._SDM_ATT_MAP["RmepErrorNoDefect"])
+
     @RmepErrorNoDefect.setter
     def RmepErrorNoDefect(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RmepErrorNoDefect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RmepErrorNoDefect"], value)
 
     @property
     def RmepOk(self):
@@ -838,11 +890,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: RMEP Ok
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RmepOk'])
+        return self._get_attribute(self._SDM_ATT_MAP["RmepOk"])
+
     @RmepOk.setter
     def RmepOk(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RmepOk'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RmepOk"], value)
 
     @property
     def SessionFlapCount(self):
@@ -852,11 +905,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def TrunksConfigured(self):
@@ -866,11 +920,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Trunks Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrunksConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrunksConfigured"])
+
     @TrunksConfigured.setter
     def TrunksConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrunksConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrunksConfigured"], value)
 
     @property
     def TrunksRunning(self):
@@ -880,11 +935,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: Trunks Running
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrunksRunning'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrunksRunning"])
+
     @TrunksRunning.setter
     def TrunksRunning(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrunksRunning'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrunksRunning"], value)
 
     @property
     def TstOutofSequenceRx(self):
@@ -894,11 +950,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: TST Out of Sequence Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TstOutofSequenceRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TstOutofSequenceRx"])
+
     @TstOutofSequenceRx.setter
     def TstOutofSequenceRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TstOutofSequenceRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TstOutofSequenceRx"], value)
 
     @property
     def TstOutofSequenceTx(self):
@@ -908,11 +965,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: TST Out of Sequence Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TstOutofSequenceTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TstOutofSequenceTx"])
+
     @TstOutofSequenceTx.setter
     def TstOutofSequenceTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TstOutofSequenceTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TstOutofSequenceTx"], value)
 
     @property
     def TstPRBSBitErrorRx(self):
@@ -922,11 +980,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: TST PRBS Bit Error Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TstPRBSBitErrorRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TstPRBSBitErrorRx"])
+
     @TstPRBSBitErrorRx.setter
     def TstPRBSBitErrorRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TstPRBSBitErrorRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TstPRBSBitErrorRx"], value)
 
     @property
     def TstRx(self):
@@ -936,11 +995,12 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: TST Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TstRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TstRx"])
+
     @TstRx.setter
     def TstRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TstRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TstRx"], value)
 
     @property
     def TstTx(self):
@@ -950,13 +1010,77 @@ class CfmAggregatedStatistics(Base):
         -------
         - bool: TST Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TstTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["TstTx"])
+
     @TstTx.setter
     def TstTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TstTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TstTx"], value)
 
-    def update(self, AisRx=None, AisTx=None, BridgesConfigured=None, BridgesRunning=None, CcmRx=None, CcmTx=None, CcmUnexpectedPeriod=None, DefectiveRMEPS=None, DmmRx=None, DmmTx=None, DmrRx=None, DmrTx=None, InvalidCCMRx=None, InvalidLBMRx=None, InvalidLBRRx=None, InvalidLMRRx=None, InvalidLTMRx=None, InvalidLTRRx=None, LbmRx=None, LbmTx=None, LbrRx=None, LbrTx=None, LckRx=None, LckTx=None, LmmRx=None, LmmTx=None, LmrRx=None, LmrTx=None, LrRespond=None, LtmRx=None, LtmTx=None, LtrRx=None, LtrTx=None, MasConfigured=None, MasRunning=None, MepFNGDefect=None, MepFNGDefectClearing=None, MepFNGDefectReported=None, MepFNGReset=None, MepsConfigured=None, MepsRunning=None, OnedmRx=None, OnedmTx=None, OutofSequenceCCMRx=None, PacketRx=None, PacketTx=None, PortName=None, RdiRx=None, RdiTx=None, RemoteMEPs=None, RmepErrorDefect=None, RmepErrorNoDefect=None, RmepOk=None, SessionFlapCount=None, TrunksConfigured=None, TrunksRunning=None, TstOutofSequenceRx=None, TstOutofSequenceTx=None, TstPRBSBitErrorRx=None, TstRx=None, TstTx=None):
+    def update(
+        self,
+        AisRx=None,
+        AisTx=None,
+        BridgesConfigured=None,
+        BridgesRunning=None,
+        CcmRx=None,
+        CcmTx=None,
+        CcmUnexpectedPeriod=None,
+        DefectiveRMEPS=None,
+        DmmRx=None,
+        DmmTx=None,
+        DmrRx=None,
+        DmrTx=None,
+        InvalidCCMRx=None,
+        InvalidLBMRx=None,
+        InvalidLBRRx=None,
+        InvalidLMRRx=None,
+        InvalidLTMRx=None,
+        InvalidLTRRx=None,
+        LbmRx=None,
+        LbmTx=None,
+        LbrRx=None,
+        LbrTx=None,
+        LckRx=None,
+        LckTx=None,
+        LmmRx=None,
+        LmmTx=None,
+        LmrRx=None,
+        LmrTx=None,
+        LrRespond=None,
+        LtmRx=None,
+        LtmTx=None,
+        LtrRx=None,
+        LtrTx=None,
+        MasConfigured=None,
+        MasRunning=None,
+        MepFNGDefect=None,
+        MepFNGDefectClearing=None,
+        MepFNGDefectReported=None,
+        MepFNGReset=None,
+        MepsConfigured=None,
+        MepsRunning=None,
+        OnedmRx=None,
+        OnedmTx=None,
+        OutofSequenceCCMRx=None,
+        PacketRx=None,
+        PacketTx=None,
+        PortName=None,
+        RdiRx=None,
+        RdiTx=None,
+        RemoteMEPs=None,
+        RmepErrorDefect=None,
+        RmepErrorNoDefect=None,
+        RmepOk=None,
+        SessionFlapCount=None,
+        TrunksConfigured=None,
+        TrunksRunning=None,
+        TstOutofSequenceRx=None,
+        TstOutofSequenceTx=None,
+        TstPRBSBitErrorRx=None,
+        TstRx=None,
+        TstTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> CfmAggregatedStatistics
         """Updates cfmAggregatedStatistics resource on the server.
 
@@ -1030,7 +1154,70 @@ class CfmAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AisRx=None, AisTx=None, BridgesConfigured=None, BridgesRunning=None, CcmRx=None, CcmTx=None, CcmUnexpectedPeriod=None, DefectiveRMEPS=None, DmmRx=None, DmmTx=None, DmrRx=None, DmrTx=None, InvalidCCMRx=None, InvalidLBMRx=None, InvalidLBRRx=None, InvalidLMRRx=None, InvalidLTMRx=None, InvalidLTRRx=None, LbmRx=None, LbmTx=None, LbrRx=None, LbrTx=None, LckRx=None, LckTx=None, LmmRx=None, LmmTx=None, LmrRx=None, LmrTx=None, LrRespond=None, LtmRx=None, LtmTx=None, LtrRx=None, LtrTx=None, MasConfigured=None, MasRunning=None, MepFNGDefect=None, MepFNGDefectClearing=None, MepFNGDefectReported=None, MepFNGReset=None, MepsConfigured=None, MepsRunning=None, OnedmRx=None, OnedmTx=None, OutofSequenceCCMRx=None, PacketRx=None, PacketTx=None, PortName=None, RdiRx=None, RdiTx=None, RemoteMEPs=None, RmepErrorDefect=None, RmepErrorNoDefect=None, RmepOk=None, SessionFlapCount=None, TrunksConfigured=None, TrunksRunning=None, TstOutofSequenceRx=None, TstOutofSequenceTx=None, TstPRBSBitErrorRx=None, TstRx=None, TstTx=None):
+    def find(
+        self,
+        AisRx=None,
+        AisTx=None,
+        BridgesConfigured=None,
+        BridgesRunning=None,
+        CcmRx=None,
+        CcmTx=None,
+        CcmUnexpectedPeriod=None,
+        DefectiveRMEPS=None,
+        DmmRx=None,
+        DmmTx=None,
+        DmrRx=None,
+        DmrTx=None,
+        InvalidCCMRx=None,
+        InvalidLBMRx=None,
+        InvalidLBRRx=None,
+        InvalidLMRRx=None,
+        InvalidLTMRx=None,
+        InvalidLTRRx=None,
+        LbmRx=None,
+        LbmTx=None,
+        LbrRx=None,
+        LbrTx=None,
+        LckRx=None,
+        LckTx=None,
+        LmmRx=None,
+        LmmTx=None,
+        LmrRx=None,
+        LmrTx=None,
+        LrRespond=None,
+        LtmRx=None,
+        LtmTx=None,
+        LtrRx=None,
+        LtrTx=None,
+        MasConfigured=None,
+        MasRunning=None,
+        MepFNGDefect=None,
+        MepFNGDefectClearing=None,
+        MepFNGDefectReported=None,
+        MepFNGReset=None,
+        MepsConfigured=None,
+        MepsRunning=None,
+        OnedmRx=None,
+        OnedmTx=None,
+        OutofSequenceCCMRx=None,
+        PacketRx=None,
+        PacketTx=None,
+        PortName=None,
+        RdiRx=None,
+        RdiTx=None,
+        RemoteMEPs=None,
+        RmepErrorDefect=None,
+        RmepErrorNoDefect=None,
+        RmepOk=None,
+        SessionFlapCount=None,
+        TrunksConfigured=None,
+        TrunksRunning=None,
+        TstOutofSequenceRx=None,
+        TstOutofSequenceTx=None,
+        TstPRBSBitErrorRx=None,
+        TstRx=None,
+        TstTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> CfmAggregatedStatistics
         """Finds and retrieves cfmAggregatedStatistics resources from the server.
 

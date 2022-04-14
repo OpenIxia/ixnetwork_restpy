@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,16 @@ class Ospf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospf'
+    _SDM_NAME = "ospf"
     _SDM_ATT_MAP = {
-        'EnableDrOrBdr': 'enableDrOrBdr',
-        'Enabled': 'enabled',
-        'FloodLinkStateUpdatesPerInterval': 'floodLinkStateUpdatesPerInterval',
-        'RateControlInterval': 'rateControlInterval',
-        'RunningState': 'runningState',
+        "EnableDrOrBdr": "enableDrOrBdr",
+        "Enabled": "enabled",
+        "FloodLinkStateUpdatesPerInterval": "floodLinkStateUpdatesPerInterval",
+        "RateControlInterval": "rateControlInterval",
+        "RunningState": "runningState",
     }
     _SDM_ENUM_MAP = {
-        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+        "runningState": ["unknown", "stopped", "stopping", "starting", "started"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,10 +59,13 @@ class Ospf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c3aa6e3585f79ff16c2e8ca6eaa4194c import Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c3aa6e3585f79ff16c2e8ca6eaa4194c import (
+            Router,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Router', None) is not None:
-                return self._properties.get('Router')
+            if self._properties.get("Router", None) is not None:
+                return self._properties.get("Router")
         return Router(self)
 
     @property
@@ -72,11 +76,12 @@ class Ospf(Base):
         -------
         - bool: If true, enables this router as the Designated (DR) or Backup Designated Router (BDR).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDrOrBdr"])
+
     @EnableDrOrBdr.setter
     def EnableDrOrBdr(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDrOrBdr"], value)
 
     @property
     def Enabled(self):
@@ -86,11 +91,12 @@ class Ospf(Base):
         -------
         - bool: Enables this emulated OSPF router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FloodLinkStateUpdatesPerInterval(self):
@@ -100,11 +106,16 @@ class Ospf(Base):
         -------
         - number: Sets the number of Flood Link State Updates to be sent in each rate control interval.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FloodLinkStateUpdatesPerInterval'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["FloodLinkStateUpdatesPerInterval"]
+        )
+
     @FloodLinkStateUpdatesPerInterval.setter
     def FloodLinkStateUpdatesPerInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FloodLinkStateUpdatesPerInterval'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["FloodLinkStateUpdatesPerInterval"], value
+        )
 
     @property
     def RateControlInterval(self):
@@ -114,11 +125,12 @@ class Ospf(Base):
         -------
         - number: Enables the option Rate Control Interval to define a value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RateControlInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RateControlInterval"])
+
     @RateControlInterval.setter
     def RateControlInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RateControlInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RateControlInterval"], value)
 
     @property
     def RunningState(self):
@@ -128,9 +140,15 @@ class Ospf(Base):
         -------
         - str(unknown | stopped | stopping | starting | started): The current state of the OSPF router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
+        return self._get_attribute(self._SDM_ATT_MAP["RunningState"])
 
-    def update(self, EnableDrOrBdr=None, Enabled=None, FloodLinkStateUpdatesPerInterval=None, RateControlInterval=None):
+    def update(
+        self,
+        EnableDrOrBdr=None,
+        Enabled=None,
+        FloodLinkStateUpdatesPerInterval=None,
+        RateControlInterval=None,
+    ):
         # type: (bool, bool, int, int) -> Ospf
         """Updates ospf resource on the server.
 
@@ -147,7 +165,14 @@ class Ospf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableDrOrBdr=None, Enabled=None, FloodLinkStateUpdatesPerInterval=None, RateControlInterval=None, RunningState=None):
+    def find(
+        self,
+        EnableDrOrBdr=None,
+        Enabled=None,
+        FloodLinkStateUpdatesPerInterval=None,
+        RateControlInterval=None,
+        RunningState=None,
+    ):
         # type: (bool, bool, int, int, str) -> Ospf
         """Finds and retrieves ospf resources from the server.
 
@@ -206,10 +231,12 @@ class Ospf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -226,7 +253,9 @@ class Ospf(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)

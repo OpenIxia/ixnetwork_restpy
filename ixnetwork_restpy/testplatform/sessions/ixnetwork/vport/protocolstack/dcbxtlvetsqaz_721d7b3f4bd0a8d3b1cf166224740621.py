@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,20 +33,19 @@ class DcbxTlvEtsQaz(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxTlvEtsQaz'
+    _SDM_NAME = "dcbxTlvEtsQaz"
     _SDM_ATT_MAP = {
-        'Cbs': 'cbs',
-        'MaxTcs': 'maxTcs',
-        'ObjectId': 'objectId',
-        'TcGroupBwPercentMap': 'tcGroupBwPercentMap',
-        'TcGroupPriorityMap': 'tcGroupPriorityMap',
-        'TcGroupTsaMap': 'tcGroupTsaMap',
-        'TlvSendOrder': 'tlvSendOrder',
-        'TlvSendRestriction': 'tlvSendRestriction',
-        'Willing': 'willing',
+        "Cbs": "cbs",
+        "MaxTcs": "maxTcs",
+        "ObjectId": "objectId",
+        "TcGroupBwPercentMap": "tcGroupBwPercentMap",
+        "TcGroupPriorityMap": "tcGroupPriorityMap",
+        "TcGroupTsaMap": "tcGroupTsaMap",
+        "TlvSendOrder": "tlvSendOrder",
+        "TlvSendRestriction": "tlvSendRestriction",
+        "Willing": "willing",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxTlvEtsQaz, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - bool: Indicates whether the station supports credit-based shaper transmission selection algorithm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Cbs'])
+        return self._get_attribute(self._SDM_ATT_MAP["Cbs"])
+
     @Cbs.setter
     def Cbs(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Cbs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Cbs"], value)
 
     @property
     def MaxTcs(self):
@@ -72,11 +73,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - number: Number of traffic classes supported by device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxTcs'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxTcs"])
+
     @MaxTcs.setter
     def MaxTcs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxTcs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxTcs"], value)
 
     @property
     def ObjectId(self):
@@ -86,7 +88,7 @@ class DcbxTlvEtsQaz(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def TcGroupBwPercentMap(self):
@@ -96,11 +98,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - list(number): Bandwidth percentage
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcGroupBwPercentMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcGroupBwPercentMap"])
+
     @TcGroupBwPercentMap.setter
     def TcGroupBwPercentMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcGroupBwPercentMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcGroupBwPercentMap"], value)
 
     @property
     def TcGroupPriorityMap(self):
@@ -108,13 +111,14 @@ class DcbxTlvEtsQaz(Base):
         """
         Returns
         -------
-        - list(number): 
+        - list(number):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcGroupPriorityMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcGroupPriorityMap"])
+
     @TcGroupPriorityMap.setter
     def TcGroupPriorityMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcGroupPriorityMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcGroupPriorityMap"], value)
 
     @property
     def TcGroupTsaMap(self):
@@ -124,11 +128,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - list(number): Transmission selection algorithm
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TcGroupTsaMap'])
+        return self._get_attribute(self._SDM_ATT_MAP["TcGroupTsaMap"])
+
     @TcGroupTsaMap.setter
     def TcGroupTsaMap(self, value):
         # type: (List[int]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TcGroupTsaMap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TcGroupTsaMap"], value)
 
     @property
     def TlvSendOrder(self):
@@ -138,11 +143,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - number: Configure the order in which the ETS TLVs are sent
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TlvSendOrder'])
+        return self._get_attribute(self._SDM_ATT_MAP["TlvSendOrder"])
+
     @TlvSendOrder.setter
     def TlvSendOrder(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TlvSendOrder'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TlvSendOrder"], value)
 
     @property
     def TlvSendRestriction(self):
@@ -152,11 +158,12 @@ class DcbxTlvEtsQaz(Base):
         -------
         - number: Configure if ETS will send the Configuration TLV, Recommendation TLV or both
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TlvSendRestriction'])
+        return self._get_attribute(self._SDM_ATT_MAP["TlvSendRestriction"])
+
     @TlvSendRestriction.setter
     def TlvSendRestriction(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TlvSendRestriction'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TlvSendRestriction"], value)
 
     @property
     def Willing(self):
@@ -166,13 +173,24 @@ class DcbxTlvEtsQaz(Base):
         -------
         - bool: Indicates whether this feature accepts its configuration from remote peers.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Willing'])
+        return self._get_attribute(self._SDM_ATT_MAP["Willing"])
+
     @Willing.setter
     def Willing(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Willing'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Willing"], value)
 
-    def update(self, Cbs=None, MaxTcs=None, TcGroupBwPercentMap=None, TcGroupPriorityMap=None, TcGroupTsaMap=None, TlvSendOrder=None, TlvSendRestriction=None, Willing=None):
+    def update(
+        self,
+        Cbs=None,
+        MaxTcs=None,
+        TcGroupBwPercentMap=None,
+        TcGroupPriorityMap=None,
+        TcGroupTsaMap=None,
+        TlvSendOrder=None,
+        TlvSendRestriction=None,
+        Willing=None,
+    ):
         # type: (bool, int, List[int], List[int], List[int], int, int, bool) -> DcbxTlvEtsQaz
         """Updates dcbxTlvEtsQaz resource on the server.
 
@@ -181,7 +199,7 @@ class DcbxTlvEtsQaz(Base):
         - Cbs (bool): Indicates whether the station supports credit-based shaper transmission selection algorithm.
         - MaxTcs (number): Number of traffic classes supported by device.
         - TcGroupBwPercentMap (list(number)): Bandwidth percentage
-        - TcGroupPriorityMap (list(number)): 
+        - TcGroupPriorityMap (list(number)):
         - TcGroupTsaMap (list(number)): Transmission selection algorithm
         - TlvSendOrder (number): Configure the order in which the ETS TLVs are sent
         - TlvSendRestriction (number): Configure if ETS will send the Configuration TLV, Recommendation TLV or both
@@ -193,7 +211,18 @@ class DcbxTlvEtsQaz(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Cbs=None, MaxTcs=None, ObjectId=None, TcGroupBwPercentMap=None, TcGroupPriorityMap=None, TcGroupTsaMap=None, TlvSendOrder=None, TlvSendRestriction=None, Willing=None):
+    def find(
+        self,
+        Cbs=None,
+        MaxTcs=None,
+        ObjectId=None,
+        TcGroupBwPercentMap=None,
+        TcGroupPriorityMap=None,
+        TcGroupTsaMap=None,
+        TlvSendOrder=None,
+        TlvSendRestriction=None,
+        Willing=None,
+    ):
         # type: (bool, int, str, List[int], List[int], List[int], int, int, bool) -> DcbxTlvEtsQaz
         """Finds and retrieves dcbxTlvEtsQaz resources from the server.
 
@@ -207,7 +236,7 @@ class DcbxTlvEtsQaz(Base):
         - MaxTcs (number): Number of traffic classes supported by device.
         - ObjectId (str): Unique identifier for this object
         - TcGroupBwPercentMap (list(number)): Bandwidth percentage
-        - TcGroupPriorityMap (list(number)): 
+        - TcGroupPriorityMap (list(number)):
         - TcGroupTsaMap (list(number)): Transmission selection algorithm
         - TlvSendOrder (number): Configure the order in which the ETS TLVs are sent
         - TlvSendRestriction (number): Configure if ETS will send the Configuration TLV, Recommendation TLV or both
@@ -258,10 +287,14 @@ class DcbxTlvEtsQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -280,10 +313,14 @@ class DcbxTlvEtsQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -302,7 +339,11 @@ class DcbxTlvEtsQaz(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,25 +33,24 @@ class Options(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'options'
+    _SDM_NAME = "options"
     _SDM_ATT_MAP = {
-        'ActOnGratArp': 'actOnGratArp',
-        'ArpRefreshInterval': 'arpRefreshInterval',
-        'DadEnabled': 'dadEnabled',
-        'DadTransmits': 'dadTransmits',
-        'IgnoreMldQueries': 'ignoreMldQueries',
-        'Ipv4McastSolicit': 'ipv4McastSolicit',
-        'Ipv4RetransTime': 'ipv4RetransTime',
-        'Mcast_solicit': 'mcast_solicit',
-        'NsRefreshInterval': 'nsRefreshInterval',
-        'ObjectId': 'objectId',
-        'RetransTime': 'retransTime',
-        'RouterSolicitationDelay': 'routerSolicitationDelay',
-        'RouterSolicitationInterval': 'routerSolicitationInterval',
-        'RouterSolicitations': 'routerSolicitations',
+        "ActOnGratArp": "actOnGratArp",
+        "ArpRefreshInterval": "arpRefreshInterval",
+        "DadEnabled": "dadEnabled",
+        "DadTransmits": "dadTransmits",
+        "IgnoreMldQueries": "ignoreMldQueries",
+        "Ipv4McastSolicit": "ipv4McastSolicit",
+        "Ipv4RetransTime": "ipv4RetransTime",
+        "Mcast_solicit": "mcast_solicit",
+        "NsRefreshInterval": "nsRefreshInterval",
+        "ObjectId": "objectId",
+        "RetransTime": "retransTime",
+        "RouterSolicitationDelay": "routerSolicitationDelay",
+        "RouterSolicitationInterval": "routerSolicitationInterval",
+        "RouterSolicitations": "routerSolicitations",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Options, self).__init__(parent, list_op)
@@ -63,11 +63,12 @@ class Options(Base):
         -------
         - bool: When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActOnGratArp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActOnGratArp"])
+
     @ActOnGratArp.setter
     def ActOnGratArp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActOnGratArp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActOnGratArp"], value)
 
     @property
     def ArpRefreshInterval(self):
@@ -77,11 +78,12 @@ class Options(Base):
         -------
         - number: The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpRefreshInterval"])
+
     @ArpRefreshInterval.setter
     def ArpRefreshInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpRefreshInterval"], value)
 
     @property
     def DadEnabled(self):
@@ -91,11 +93,12 @@ class Options(Base):
         -------
         - bool: When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DadEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["DadEnabled"])
+
     @DadEnabled.setter
     def DadEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DadEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DadEnabled"], value)
 
     @property
     def DadTransmits(self):
@@ -105,11 +108,12 @@ class Options(Base):
         -------
         - number: Number of Neighbor Solicitations to send until assuming no routers are present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DadTransmits'])
+        return self._get_attribute(self._SDM_ATT_MAP["DadTransmits"])
+
     @DadTransmits.setter
     def DadTransmits(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DadTransmits'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DadTransmits"], value)
 
     @property
     def IgnoreMldQueries(self):
@@ -119,11 +123,12 @@ class Options(Base):
         -------
         - bool: When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IgnoreMldQueries'])
+        return self._get_attribute(self._SDM_ATT_MAP["IgnoreMldQueries"])
+
     @IgnoreMldQueries.setter
     def IgnoreMldQueries(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IgnoreMldQueries'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IgnoreMldQueries"], value)
 
     @property
     def Ipv4McastSolicit(self):
@@ -133,11 +138,12 @@ class Options(Base):
         -------
         - number: Maximum number of ARP requests to send to resolve one MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4McastSolicit'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4McastSolicit"])
+
     @Ipv4McastSolicit.setter
     def Ipv4McastSolicit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4McastSolicit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4McastSolicit"], value)
 
     @property
     def Ipv4RetransTime(self):
@@ -147,11 +153,12 @@ class Options(Base):
         -------
         - number: Number of milliseconds to wait between ARP requests.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4RetransTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4RetransTime"])
+
     @Ipv4RetransTime.setter
     def Ipv4RetransTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4RetransTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4RetransTime"], value)
 
     @property
     def Mcast_solicit(self):
@@ -161,11 +168,12 @@ class Options(Base):
         -------
         - number: Number of Neighbor Solicitations to send until giving up on link layer address resolution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Mcast_solicit'])
+        return self._get_attribute(self._SDM_ATT_MAP["Mcast_solicit"])
+
     @Mcast_solicit.setter
     def Mcast_solicit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Mcast_solicit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Mcast_solicit"], value)
 
     @property
     def NsRefreshInterval(self):
@@ -175,11 +183,12 @@ class Options(Base):
         -------
         - number: The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NsRefreshInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["NsRefreshInterval"])
+
     @NsRefreshInterval.setter
     def NsRefreshInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NsRefreshInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NsRefreshInterval"], value)
 
     @property
     def ObjectId(self):
@@ -189,7 +198,7 @@ class Options(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def RetransTime(self):
@@ -199,11 +208,12 @@ class Options(Base):
         -------
         - number: Number of milliseconds to wait between Neighbor Solicitations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetransTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetransTime"])
+
     @RetransTime.setter
     def RetransTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RetransTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RetransTime"], value)
 
     @property
     def RouterSolicitationDelay(self):
@@ -213,11 +223,12 @@ class Options(Base):
         -------
         - number: Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitationDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterSolicitationDelay"])
+
     @RouterSolicitationDelay.setter
     def RouterSolicitationDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterSolicitationDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterSolicitationDelay"], value)
 
     @property
     def RouterSolicitationInterval(self):
@@ -227,11 +238,12 @@ class Options(Base):
         -------
         - number: Number of seconds to wait between Router Solicitations.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitationInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterSolicitationInterval"])
+
     @RouterSolicitationInterval.setter
     def RouterSolicitationInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterSolicitationInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterSolicitationInterval"], value)
 
     @property
     def RouterSolicitations(self):
@@ -241,13 +253,29 @@ class Options(Base):
         -------
         - number: Number of Router Solicitations to send until assuming no routers are present.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitations'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouterSolicitations"])
+
     @RouterSolicitations.setter
     def RouterSolicitations(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouterSolicitations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouterSolicitations"], value)
 
-    def update(self, ActOnGratArp=None, ArpRefreshInterval=None, DadEnabled=None, DadTransmits=None, IgnoreMldQueries=None, Ipv4McastSolicit=None, Ipv4RetransTime=None, Mcast_solicit=None, NsRefreshInterval=None, RetransTime=None, RouterSolicitationDelay=None, RouterSolicitationInterval=None, RouterSolicitations=None):
+    def update(
+        self,
+        ActOnGratArp=None,
+        ArpRefreshInterval=None,
+        DadEnabled=None,
+        DadTransmits=None,
+        IgnoreMldQueries=None,
+        Ipv4McastSolicit=None,
+        Ipv4RetransTime=None,
+        Mcast_solicit=None,
+        NsRefreshInterval=None,
+        RetransTime=None,
+        RouterSolicitationDelay=None,
+        RouterSolicitationInterval=None,
+        RouterSolicitations=None,
+    ):
         # type: (bool, int, bool, int, bool, int, int, int, int, int, int, int, int) -> Options
         """Updates options resource on the server.
 
@@ -273,7 +301,23 @@ class Options(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActOnGratArp=None, ArpRefreshInterval=None, DadEnabled=None, DadTransmits=None, IgnoreMldQueries=None, Ipv4McastSolicit=None, Ipv4RetransTime=None, Mcast_solicit=None, NsRefreshInterval=None, ObjectId=None, RetransTime=None, RouterSolicitationDelay=None, RouterSolicitationInterval=None, RouterSolicitations=None):
+    def find(
+        self,
+        ActOnGratArp=None,
+        ArpRefreshInterval=None,
+        DadEnabled=None,
+        DadTransmits=None,
+        IgnoreMldQueries=None,
+        Ipv4McastSolicit=None,
+        Ipv4RetransTime=None,
+        Mcast_solicit=None,
+        NsRefreshInterval=None,
+        ObjectId=None,
+        RetransTime=None,
+        RouterSolicitationDelay=None,
+        RouterSolicitationInterval=None,
+        RouterSolicitations=None,
+    ):
         # type: (bool, int, bool, int, bool, int, int, int, int, str, int, int, int, int) -> Options
         """Finds and retrieves options resources from the server.
 
@@ -343,10 +387,14 @@ class Options(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -365,10 +413,14 @@ class Options(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -387,7 +439,11 @@ class Options(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

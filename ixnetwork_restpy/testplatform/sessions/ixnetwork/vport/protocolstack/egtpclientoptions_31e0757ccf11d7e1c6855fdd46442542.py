@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,20 +35,19 @@ class EgtpClientOptions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'egtpClientOptions'
+    _SDM_NAME = "egtpClientOptions"
     _SDM_ATT_MAP = {
-        'AlwaysIncludeRecoveryIE': 'alwaysIncludeRecoveryIE',
-        'DeleteIdleBearers': 'deleteIdleBearers',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'PcpuLogLevel': 'pcpuLogLevel',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
+        "AlwaysIncludeRecoveryIE": "alwaysIncludeRecoveryIE",
+        "DeleteIdleBearers": "deleteIdleBearers",
+        "MaxOutstandingReleases": "maxOutstandingReleases",
+        "MaxOutstandingRequests": "maxOutstandingRequests",
+        "ObjectId": "objectId",
+        "OverrideGlobalRateControls": "overrideGlobalRateControls",
+        "PcpuLogLevel": "pcpuLogLevel",
+        "SetupRateInitial": "setupRateInitial",
+        "TeardownRateInitial": "teardownRateInitial",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(EgtpClientOptions, self).__init__(parent, list_op)
@@ -60,11 +60,12 @@ class EgtpClientOptions(Base):
         -------
         - bool: Always include recovery IE
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AlwaysIncludeRecoveryIE'])
+        return self._get_attribute(self._SDM_ATT_MAP["AlwaysIncludeRecoveryIE"])
+
     @AlwaysIncludeRecoveryIE.setter
     def AlwaysIncludeRecoveryIE(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AlwaysIncludeRecoveryIE'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AlwaysIncludeRecoveryIE"], value)
 
     @property
     def DeleteIdleBearers(self):
@@ -74,11 +75,12 @@ class EgtpClientOptions(Base):
         -------
         - bool: Delete Idle Bearers
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DeleteIdleBearers'])
+        return self._get_attribute(self._SDM_ATT_MAP["DeleteIdleBearers"])
+
     @DeleteIdleBearers.setter
     def DeleteIdleBearers(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DeleteIdleBearers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DeleteIdleBearers"], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -88,11 +90,12 @@ class EgtpClientOptions(Base):
         -------
         - number: - The maximum amount of in progress procedures. If this limit is reached, no new releases shall be started, for all procedures covered. Release rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"])
+
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingReleases"], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -102,11 +105,12 @@ class EgtpClientOptions(Base):
         -------
         - number: - The maximum amount of in progress procedures. If this limit is reached, no new initiations shall be started, for all procedures covered. Initiation rate will be resumed when the amount of outstanding procedures to be completed drops below the max outstanding value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"])
+
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxOutstandingRequests"], value)
 
     @property
     def ObjectId(self):
@@ -116,7 +120,7 @@ class EgtpClientOptions(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def OverrideGlobalRateControls(self):
@@ -126,11 +130,12 @@ class EgtpClientOptions(Base):
         -------
         - bool: If true then all the rate settings defined at Session level will be overriden by rate settings defined on this PortGroup.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'])
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideGlobalRateControls"])
+
     @OverrideGlobalRateControls.setter
     def OverrideGlobalRateControls(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OverrideGlobalRateControls"], value)
 
     @property
     def PcpuLogLevel(self):
@@ -140,11 +145,12 @@ class EgtpClientOptions(Base):
         -------
         - str: PCPU log level
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PcpuLogLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PcpuLogLevel"])
+
     @PcpuLogLevel.setter
     def PcpuLogLevel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PcpuLogLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PcpuLogLevel"], value)
 
     @property
     def SetupRateInitial(self):
@@ -154,11 +160,12 @@ class EgtpClientOptions(Base):
         -------
         - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Attach (create session) o Bearer Resource Command for start o HSS updates o All handover types o Enter Idle (S1 Release procedure) o Exit Idle (UE/Network triggered service request)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["SetupRateInitial"])
+
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SetupRateInitial"], value)
 
     @property
     def TeardownRateInitial(self):
@@ -168,13 +175,24 @@ class EgtpClientOptions(Base):
         -------
         - number: - The maximum procedure initiation rate, cumulative of multiple procedures. The rate of initiation of all procedures, at any given time, shall not exceed this value - Includes the following procedures: o Detach o Delete Bearer Command o Bearer Resource Command for stop
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
+        return self._get_attribute(self._SDM_ATT_MAP["TeardownRateInitial"])
+
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TeardownRateInitial"], value)
 
-    def update(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def update(
+        self,
+        AlwaysIncludeRecoveryIE=None,
+        DeleteIdleBearers=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalRateControls=None,
+        PcpuLogLevel=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, bool, int, int, bool, str, int, int) -> EgtpClientOptions
         """Updates egtpClientOptions resource on the server.
 
@@ -195,7 +213,17 @@ class EgtpClientOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def add(
+        self,
+        AlwaysIncludeRecoveryIE=None,
+        DeleteIdleBearers=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        OverrideGlobalRateControls=None,
+        PcpuLogLevel=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, bool, int, int, bool, str, int, int) -> EgtpClientOptions
         """Adds a new egtpClientOptions resource on the server and adds it to the container.
 
@@ -230,7 +258,18 @@ class EgtpClientOptions(Base):
         """
         self._delete()
 
-    def find(self, AlwaysIncludeRecoveryIE=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+    def find(
+        self,
+        AlwaysIncludeRecoveryIE=None,
+        DeleteIdleBearers=None,
+        MaxOutstandingReleases=None,
+        MaxOutstandingRequests=None,
+        ObjectId=None,
+        OverrideGlobalRateControls=None,
+        PcpuLogLevel=None,
+        SetupRateInitial=None,
+        TeardownRateInitial=None,
+    ):
         # type: (bool, bool, int, int, str, bool, str, int, int) -> EgtpClientOptions
         """Finds and retrieves egtpClientOptions resources from the server.
 
@@ -295,10 +334,14 @@ class EgtpClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -317,10 +360,14 @@ class EgtpClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -339,7 +386,11 @@ class EgtpClientOptions(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,27 +33,26 @@ class DcbxRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dcbxRange'
+    _SDM_NAME = "dcbxRange"
     _SDM_ATT_MAP = {
-        'ChassisId': 'chassisId',
-        'ControlTlvMaxVersion': 'controlTlvMaxVersion',
-        'DcbxEnable': 'dcbxEnable',
-        'DcbxSubtype': 'dcbxSubtype',
-        'DestMacAddress': 'destMacAddress',
-        'Enabled': 'enabled',
-        'FastInitEnable': 'fastInitEnable',
-        'HoldTime': 'holdTime',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Oui': 'oui',
-        'PortIdInterfaceName': 'portIdInterfaceName',
-        'PortIdMacAddress': 'portIdMacAddress',
-        'PortIdSubType': 'portIdSubType',
-        'TxDelay': 'txDelay',
-        'TxInterval': 'txInterval',
+        "ChassisId": "chassisId",
+        "ControlTlvMaxVersion": "controlTlvMaxVersion",
+        "DcbxEnable": "dcbxEnable",
+        "DcbxSubtype": "dcbxSubtype",
+        "DestMacAddress": "destMacAddress",
+        "Enabled": "enabled",
+        "FastInitEnable": "fastInitEnable",
+        "HoldTime": "holdTime",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Oui": "oui",
+        "PortIdInterfaceName": "portIdInterfaceName",
+        "PortIdMacAddress": "portIdMacAddress",
+        "PortIdSubType": "portIdSubType",
+        "TxDelay": "txDelay",
+        "TxInterval": "txInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DcbxRange, self).__init__(parent, list_op)
@@ -68,10 +68,13 @@ class DcbxRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlv_37d6aa3b470efb288cbc76a9c77c1804 import DcbxTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlv_37d6aa3b470efb288cbc76a9c77c1804 import (
+            DcbxTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DcbxTlv', None) is not None:
-                return self._properties.get('DcbxTlv')
+            if self._properties.get("DcbxTlv", None) is not None:
+                return self._properties.get("DcbxTlv")
         return DcbxTlv(self)
 
     @property
@@ -85,10 +88,13 @@ class DcbxRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvqaz_208cf6f4022a5582a454a5c53e9a3b60 import DcbxTlvQaz
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvqaz_208cf6f4022a5582a454a5c53e9a3b60 import (
+            DcbxTlvQaz,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DcbxTlvQaz', None) is not None:
-                return self._properties.get('DcbxTlvQaz')
+            if self._properties.get("DcbxTlvQaz", None) is not None:
+                return self._properties.get("DcbxTlvQaz")
         return DcbxTlvQaz(self)
 
     @property
@@ -102,10 +108,13 @@ class DcbxRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlv_d5fbeb9514995f839bf297520a09968a import LldpTlv
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlv_d5fbeb9514995f839bf297520a09968a import (
+            LldpTlv,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LldpTlv', None) is not None:
-                return self._properties.get('LldpTlv')
+            if self._properties.get("LldpTlv", None) is not None:
+                return self._properties.get("LldpTlv")
         return LldpTlv(self)
 
     @property
@@ -116,11 +125,12 @@ class DcbxRange(Base):
         -------
         - str: Chassis identification for thedevice that transmitted the LLDP frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChassisId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChassisId"])
+
     @ChassisId.setter
     def ChassisId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ChassisId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ChassisId"], value)
 
     @property
     def ControlTlvMaxVersion(self):
@@ -130,11 +140,12 @@ class DcbxRange(Base):
         -------
         - number: Highest DCBX protocol version supported by the system.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ControlTlvMaxVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["ControlTlvMaxVersion"])
+
     @ControlTlvMaxVersion.setter
     def ControlTlvMaxVersion(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ControlTlvMaxVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ControlTlvMaxVersion"], value)
 
     @property
     def DcbxEnable(self):
@@ -144,11 +155,12 @@ class DcbxRange(Base):
         -------
         - bool: Enable DCBX TLVs.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DcbxEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["DcbxEnable"])
+
     @DcbxEnable.setter
     def DcbxEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DcbxEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DcbxEnable"], value)
 
     @property
     def DcbxSubtype(self):
@@ -158,11 +170,12 @@ class DcbxRange(Base):
         -------
         - number: Organizationally defined subtype.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DcbxSubtype'])
+        return self._get_attribute(self._SDM_ATT_MAP["DcbxSubtype"])
+
     @DcbxSubtype.setter
     def DcbxSubtype(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DcbxSubtype'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DcbxSubtype"], value)
 
     @property
     def DestMacAddress(self):
@@ -172,11 +185,12 @@ class DcbxRange(Base):
         -------
         - str: The destination MAC address value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DestMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DestMacAddress"])
+
     @DestMacAddress.setter
     def DestMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DestMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DestMacAddress"], value)
 
     @property
     def Enabled(self):
@@ -186,11 +200,12 @@ class DcbxRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FastInitEnable(self):
@@ -200,11 +215,12 @@ class DcbxRange(Base):
         -------
         - bool: Enable fast initial retransmission.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastInitEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastInitEnable"])
+
     @FastInitEnable.setter
     def FastInitEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastInitEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastInitEnable"], value)
 
     @property
     def HoldTime(self):
@@ -214,11 +230,12 @@ class DcbxRange(Base):
         -------
         - number: Multiplier to get actual TTL value used in an LLDPDU.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HoldTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["HoldTime"])
+
     @HoldTime.setter
     def HoldTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['HoldTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["HoldTime"], value)
 
     @property
     def Name(self):
@@ -228,11 +245,12 @@ class DcbxRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -242,7 +260,7 @@ class DcbxRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Oui(self):
@@ -252,11 +270,12 @@ class DcbxRange(Base):
         -------
         - str: The vendor identifier value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Oui'])
+        return self._get_attribute(self._SDM_ATT_MAP["Oui"])
+
     @Oui.setter
     def Oui(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Oui"], value)
 
     @property
     def PortIdInterfaceName(self):
@@ -266,11 +285,12 @@ class DcbxRange(Base):
         -------
         - str: Port identification for the device that sent the LLDP frame.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdInterfaceName"])
+
     @PortIdInterfaceName.setter
     def PortIdInterfaceName(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdInterfaceName"], value)
 
     @property
     def PortIdMacAddress(self):
@@ -278,13 +298,14 @@ class DcbxRange(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdMacAddress"])
+
     @PortIdMacAddress.setter
     def PortIdMacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdMacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdMacAddress"], value)
 
     @property
     def PortIdSubType(self):
@@ -292,13 +313,14 @@ class DcbxRange(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortIdSubType'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortIdSubType"])
+
     @PortIdSubType.setter
     def PortIdSubType(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortIdSubType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortIdSubType"], value)
 
     @property
     def TxDelay(self):
@@ -308,11 +330,12 @@ class DcbxRange(Base):
         -------
         - number: Minimum delay between successive LLDP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
     @property
     def TxInterval(self):
@@ -322,13 +345,31 @@ class DcbxRange(Base):
         -------
         - number: This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxInterval"])
+
     @TxInterval.setter
     def TxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxInterval"], value)
 
-    def update(self, ChassisId=None, ControlTlvMaxVersion=None, DcbxEnable=None, DcbxSubtype=None, DestMacAddress=None, Enabled=None, FastInitEnable=None, HoldTime=None, Name=None, Oui=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, TxDelay=None, TxInterval=None):
+    def update(
+        self,
+        ChassisId=None,
+        ControlTlvMaxVersion=None,
+        DcbxEnable=None,
+        DcbxSubtype=None,
+        DestMacAddress=None,
+        Enabled=None,
+        FastInitEnable=None,
+        HoldTime=None,
+        Name=None,
+        Oui=None,
+        PortIdInterfaceName=None,
+        PortIdMacAddress=None,
+        PortIdSubType=None,
+        TxDelay=None,
+        TxInterval=None,
+    ):
         # type: (str, int, bool, int, str, bool, bool, int, str, str, str, str, int, int, int) -> DcbxRange
         """Updates dcbxRange resource on the server.
 
@@ -345,8 +386,8 @@ class DcbxRange(Base):
         - Name (str): Name of range
         - Oui (str): The vendor identifier value.
         - PortIdInterfaceName (str): Port identification for the device that sent the LLDP frame.
-        - PortIdMacAddress (str): 
-        - PortIdSubType (number): 
+        - PortIdMacAddress (str):
+        - PortIdSubType (number):
         - TxDelay (number): Minimum delay between successive LLDP packets.
         - TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
 
@@ -356,7 +397,25 @@ class DcbxRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ChassisId=None, ControlTlvMaxVersion=None, DcbxEnable=None, DcbxSubtype=None, DestMacAddress=None, Enabled=None, FastInitEnable=None, HoldTime=None, Name=None, ObjectId=None, Oui=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, TxDelay=None, TxInterval=None):
+    def find(
+        self,
+        ChassisId=None,
+        ControlTlvMaxVersion=None,
+        DcbxEnable=None,
+        DcbxSubtype=None,
+        DestMacAddress=None,
+        Enabled=None,
+        FastInitEnable=None,
+        HoldTime=None,
+        Name=None,
+        ObjectId=None,
+        Oui=None,
+        PortIdInterfaceName=None,
+        PortIdMacAddress=None,
+        PortIdSubType=None,
+        TxDelay=None,
+        TxInterval=None,
+    ):
         # type: (str, int, bool, int, str, bool, bool, int, str, str, str, str, str, int, int, int) -> DcbxRange
         """Finds and retrieves dcbxRange resources from the server.
 
@@ -378,8 +437,8 @@ class DcbxRange(Base):
         - ObjectId (str): Unique identifier for this object
         - Oui (str): The vendor identifier value.
         - PortIdInterfaceName (str): Port identification for the device that sent the LLDP frame.
-        - PortIdMacAddress (str): 
-        - PortIdSubType (number): 
+        - PortIdMacAddress (str):
+        - PortIdSubType (number):
         - TxDelay (number): Minimum delay between successive LLDP packets.
         - TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
 
@@ -428,10 +487,14 @@ class DcbxRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -450,10 +513,14 @@ class DcbxRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -472,7 +539,11 @@ class DcbxRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

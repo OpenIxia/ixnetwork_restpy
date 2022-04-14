@@ -54,7 +54,7 @@ class Row(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
 
     def add(self):
-        """Adds a new row resource on the json, only valid with config assistant
+        """Adds a new row resource on the json, only valid with batch add utility
 
         Returns
         -------

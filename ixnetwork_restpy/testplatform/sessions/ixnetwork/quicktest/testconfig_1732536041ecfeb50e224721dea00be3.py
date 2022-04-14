@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,43 +33,63 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'CalculateJitter': 'calculateJitter',
-        'CalculateLatency': 'calculateLatency',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DetailedResultsEnabled': 'detailedResultsEnabled',
-        'Duration': 'duration',
-        'EnableDataIntegrity': 'enableDataIntegrity',
-        'EnableLayer1Rate': 'enableLayer1Rate',
-        'FixedFrameSize': 'fixedFrameSize',
-        'FloodedFramesEnabled': 'floodedFramesEnabled',
-        'ForceContinuosTraffic': 'forceContinuosTraffic',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'IncrementFramesizeFrom': 'incrementFramesizeFrom',
-        'IncrementFramesizeStep': 'incrementFramesizeStep',
-        'IncrementFramesizeTo': 'incrementFramesizeTo',
-        'IpRatioMode': 'ipRatioMode',
-        'Ipv4rate': 'ipv4rate',
-        'Ipv6rate': 'ipv6rate',
-        'LatencyType': 'latencyType',
-        'LoadRateValue': 'loadRateValue',
-        'LoadType': 'loadType',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'ReportSequenceError': 'reportSequenceError',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'TrafficType': 'trafficType',
+        "CalculateJitter": "calculateJitter",
+        "CalculateLatency": "calculateLatency",
+        "CustomLoadUnit": "customLoadUnit",
+        "DetailedResultsEnabled": "detailedResultsEnabled",
+        "Duration": "duration",
+        "EnableDataIntegrity": "enableDataIntegrity",
+        "EnableLayer1Rate": "enableLayer1Rate",
+        "FixedFrameSize": "fixedFrameSize",
+        "FloodedFramesEnabled": "floodedFramesEnabled",
+        "ForceContinuosTraffic": "forceContinuosTraffic",
+        "FrameSizeMode": "frameSizeMode",
+        "Gap": "gap",
+        "IncrementFramesizeFrom": "incrementFramesizeFrom",
+        "IncrementFramesizeStep": "incrementFramesizeStep",
+        "IncrementFramesizeTo": "incrementFramesizeTo",
+        "IpRatioMode": "ipRatioMode",
+        "Ipv4rate": "ipv4rate",
+        "Ipv6rate": "ipv6rate",
+        "LatencyType": "latencyType",
+        "LoadRateValue": "loadRateValue",
+        "LoadType": "loadType",
+        "Numtrials": "numtrials",
+        "ProtocolItem": "protocolItem",
+        "ReportSequenceError": "reportSequenceError",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "TrafficType": "trafficType",
     }
     _SDM_ENUM_MAP = {
-        'customLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'frameSizeMode': ['fixed', 'increment'],
-        'ipRatioMode': ['custom', 'fixed', 'increment', 'random'],
-        'latencyType': ['cutThrough', 'forwardingDelay', 'mef', 'storeForward'],
-        'loadType': ['binary', 'combo', 'custom', 'fixed', 'increment', 'quickSearch', 'random', 'step', 'unchanged'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
-        'trafficType': ['burstyLoading', 'constantLoading'],
+        "customLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "frameSizeMode": ["fixed", "increment"],
+        "ipRatioMode": ["custom", "fixed", "increment", "random"],
+        "latencyType": ["cutThrough", "forwardingDelay", "mef", "storeForward"],
+        "loadType": [
+            "binary",
+            "combo",
+            "custom",
+            "fixed",
+            "increment",
+            "quickSearch",
+            "random",
+            "step",
+            "unchanged",
+        ],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
+        "trafficType": ["burstyLoading", "constantLoading"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -80,13 +101,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateJitter'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateJitter"])
+
     @CalculateJitter.setter
     def CalculateJitter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateJitter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateJitter"], value)
 
     @property
     def CalculateLatency(self):
@@ -94,13 +116,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateLatency"])
+
     @CalculateLatency.setter
     def CalculateLatency(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateLatency"], value)
 
     @property
     def CustomLoadUnit(self):
@@ -108,13 +131,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): 
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomLoadUnit"])
+
     @CustomLoadUnit.setter
     def CustomLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomLoadUnit"], value)
 
     @property
     def DetailedResultsEnabled(self):
@@ -122,13 +146,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DetailedResultsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["DetailedResultsEnabled"])
+
     @DetailedResultsEnabled.setter
     def DetailedResultsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DetailedResultsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DetailedResultsEnabled"], value)
 
     @property
     def Duration(self):
@@ -136,13 +161,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableDataIntegrity(self):
@@ -150,13 +176,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"])
+
     @EnableDataIntegrity.setter
     def EnableDataIntegrity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"], value)
 
     @property
     def EnableLayer1Rate(self):
@@ -164,13 +191,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"])
+
     @EnableLayer1Rate.setter
     def EnableLayer1Rate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"], value)
 
     @property
     def FixedFrameSize(self):
@@ -178,13 +206,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FixedFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["FixedFrameSize"])
+
     @FixedFrameSize.setter
     def FixedFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FixedFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FixedFrameSize"], value)
 
     @property
     def FloodedFramesEnabled(self):
@@ -192,13 +221,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FloodedFramesEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["FloodedFramesEnabled"])
+
     @FloodedFramesEnabled.setter
     def FloodedFramesEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FloodedFramesEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FloodedFramesEnabled"], value)
 
     @property
     def ForceContinuosTraffic(self):
@@ -206,13 +236,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'])
+        return self._get_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"])
+
     @ForceContinuosTraffic.setter
     def ForceContinuosTraffic(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ForceContinuosTraffic'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ForceContinuosTraffic"], value)
 
     @property
     def FrameSizeMode(self):
@@ -220,13 +251,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(fixed | increment): 
+        - str(fixed | increment):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameSizeMode"])
+
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameSizeMode"], value)
 
     @property
     def Gap(self):
@@ -234,13 +266,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def IncrementFramesizeFrom(self):
@@ -248,13 +281,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementFramesizeFrom'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementFramesizeFrom"])
+
     @IncrementFramesizeFrom.setter
     def IncrementFramesizeFrom(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementFramesizeFrom'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementFramesizeFrom"], value)
 
     @property
     def IncrementFramesizeStep(self):
@@ -262,13 +296,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementFramesizeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementFramesizeStep"])
+
     @IncrementFramesizeStep.setter
     def IncrementFramesizeStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementFramesizeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementFramesizeStep"], value)
 
     @property
     def IncrementFramesizeTo(self):
@@ -276,13 +311,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementFramesizeTo'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementFramesizeTo"])
+
     @IncrementFramesizeTo.setter
     def IncrementFramesizeTo(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementFramesizeTo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementFramesizeTo"], value)
 
     @property
     def IpRatioMode(self):
@@ -290,13 +326,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(custom | fixed | increment | random): 
+        - str(custom | fixed | increment | random):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpRatioMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpRatioMode"])
+
     @IpRatioMode.setter
     def IpRatioMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpRatioMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpRatioMode"], value)
 
     @property
     def Ipv4rate(self):
@@ -304,13 +341,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4rate"])
+
     @Ipv4rate.setter
     def Ipv4rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4rate"], value)
 
     @property
     def Ipv6rate(self):
@@ -318,13 +356,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6rate"])
+
     @Ipv6rate.setter
     def Ipv6rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6rate"], value)
 
     @property
     def LatencyType(self):
@@ -332,13 +371,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(cutThrough | forwardingDelay | mef | storeForward): 
+        - str(cutThrough | forwardingDelay | mef | storeForward):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyType"])
+
     @LatencyType.setter
     def LatencyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyType"], value)
 
     @property
     def LoadRateValue(self):
@@ -346,13 +386,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateValue"])
+
     @LoadRateValue.setter
     def LoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateValue"], value)
 
     @property
     def LoadType(self):
@@ -360,13 +401,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged): 
+        - str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def Numtrials(self):
@@ -374,13 +416,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def ProtocolItem(self):
@@ -390,11 +433,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def ReportSequenceError(self):
@@ -402,13 +446,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportSequenceError'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportSequenceError"])
+
     @ReportSequenceError.setter
     def ReportSequenceError(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportSequenceError'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportSequenceError"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -416,13 +461,14 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(gbps | gBps | kbps | kBps | mbps | mBps): 
+        - str(gbps | gBps | kbps | kBps | mbps | mBps):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def TrafficType(self):
@@ -430,46 +476,75 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(burstyLoading | constantLoading): 
+        - str(burstyLoading | constantLoading):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
+
     @TrafficType.setter
     def TrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficType"], value)
 
-    def update(self, CalculateJitter=None, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IncrementFramesizeFrom=None, IncrementFramesizeStep=None, IncrementFramesizeTo=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
+    def update(
+        self,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        CustomLoadUnit=None,
+        DetailedResultsEnabled=None,
+        Duration=None,
+        EnableDataIntegrity=None,
+        EnableLayer1Rate=None,
+        FixedFrameSize=None,
+        FloodedFramesEnabled=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Gap=None,
+        IncrementFramesizeFrom=None,
+        IncrementFramesizeStep=None,
+        IncrementFramesizeTo=None,
+        IpRatioMode=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        LatencyType=None,
+        LoadRateValue=None,
+        LoadType=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        TrafficType=None,
+    ):
         # type: (bool, bool, str, bool, int, bool, bool, int, bool, bool, str, int, int, int, int, str, int, int, str, int, str, int, List[str], bool, str, str) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
         ----
-        - CalculateJitter (bool): 
-        - CalculateLatency (bool): 
-        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
-        - DetailedResultsEnabled (bool): 
-        - Duration (number): 
-        - EnableDataIntegrity (bool): 
-        - EnableLayer1Rate (bool): 
-        - FixedFrameSize (number): 
-        - FloodedFramesEnabled (bool): 
-        - ForceContinuosTraffic (bool): 
-        - FrameSizeMode (str(fixed | increment)): 
-        - Gap (number): 
-        - IncrementFramesizeFrom (number): 
-        - IncrementFramesizeStep (number): 
-        - IncrementFramesizeTo (number): 
-        - IpRatioMode (str(custom | fixed | increment | random)): 
-        - Ipv4rate (number): 
-        - Ipv6rate (number): 
-        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): 
-        - LoadRateValue (number): 
-        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
-        - Numtrials (number): 
+        - CalculateJitter (bool):
+        - CalculateLatency (bool):
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - DetailedResultsEnabled (bool):
+        - Duration (number):
+        - EnableDataIntegrity (bool):
+        - EnableLayer1Rate (bool):
+        - FixedFrameSize (number):
+        - FloodedFramesEnabled (bool):
+        - ForceContinuosTraffic (bool):
+        - FrameSizeMode (str(fixed | increment)):
+        - Gap (number):
+        - IncrementFramesizeFrom (number):
+        - IncrementFramesizeStep (number):
+        - IncrementFramesizeTo (number):
+        - IpRatioMode (str(custom | fixed | increment | random)):
+        - Ipv4rate (number):
+        - Ipv6rate (number):
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)):
+        - LoadRateValue (number):
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - ReportSequenceError (bool): 
-        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
-        - TrafficType (str(burstyLoading | constantLoading)): 
+        - ReportSequenceError (bool):
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
+        - TrafficType (str(burstyLoading | constantLoading)):
 
         Raises
         ------
@@ -477,7 +552,35 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CalculateJitter=None, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IncrementFramesizeFrom=None, IncrementFramesizeStep=None, IncrementFramesizeTo=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
+    def find(
+        self,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        CustomLoadUnit=None,
+        DetailedResultsEnabled=None,
+        Duration=None,
+        EnableDataIntegrity=None,
+        EnableLayer1Rate=None,
+        FixedFrameSize=None,
+        FloodedFramesEnabled=None,
+        ForceContinuosTraffic=None,
+        FrameSizeMode=None,
+        Gap=None,
+        IncrementFramesizeFrom=None,
+        IncrementFramesizeStep=None,
+        IncrementFramesizeTo=None,
+        IpRatioMode=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        LatencyType=None,
+        LoadRateValue=None,
+        LoadType=None,
+        Numtrials=None,
+        ProtocolItem=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        TrafficType=None,
+    ):
         # type: (bool, bool, str, bool, int, bool, bool, int, bool, bool, str, int, int, int, int, str, int, int, str, int, str, int, List[str], bool, str, str) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -487,32 +590,32 @@ class TestConfig(Base):
 
         Args
         ----
-        - CalculateJitter (bool): 
-        - CalculateLatency (bool): 
-        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
-        - DetailedResultsEnabled (bool): 
-        - Duration (number): 
-        - EnableDataIntegrity (bool): 
-        - EnableLayer1Rate (bool): 
-        - FixedFrameSize (number): 
-        - FloodedFramesEnabled (bool): 
-        - ForceContinuosTraffic (bool): 
-        - FrameSizeMode (str(fixed | increment)): 
-        - Gap (number): 
-        - IncrementFramesizeFrom (number): 
-        - IncrementFramesizeStep (number): 
-        - IncrementFramesizeTo (number): 
-        - IpRatioMode (str(custom | fixed | increment | random)): 
-        - Ipv4rate (number): 
-        - Ipv6rate (number): 
-        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): 
-        - LoadRateValue (number): 
-        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
-        - Numtrials (number): 
+        - CalculateJitter (bool):
+        - CalculateLatency (bool):
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - DetailedResultsEnabled (bool):
+        - Duration (number):
+        - EnableDataIntegrity (bool):
+        - EnableLayer1Rate (bool):
+        - FixedFrameSize (number):
+        - FloodedFramesEnabled (bool):
+        - ForceContinuosTraffic (bool):
+        - FrameSizeMode (str(fixed | increment)):
+        - Gap (number):
+        - IncrementFramesizeFrom (number):
+        - IncrementFramesizeStep (number):
+        - IncrementFramesizeTo (number):
+        - IpRatioMode (str(custom | fixed | increment | random)):
+        - Ipv4rate (number):
+        - Ipv6rate (number):
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)):
+        - LoadRateValue (number):
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
+        - Numtrials (number):
         - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
-        - ReportSequenceError (bool): 
-        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
-        - TrafficType (str(burstyLoading | constantLoading)): 
+        - ReportSequenceError (bool):
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
+        - TrafficType (str(burstyLoading | constantLoading)):
 
         Returns
         -------
@@ -557,10 +660,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -575,10 +680,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -587,17 +694,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -614,10 +723,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -635,10 +748,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -664,10 +779,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -691,10 +808,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -711,10 +830,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -732,7 +853,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

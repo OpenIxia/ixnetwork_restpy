@@ -4,40 +4,40 @@ from ixnetwork_restpy.files import Files
 
 class Intmetadata(Base):
     __slots__ = ()
-    _SDM_NAME = 'intmetadata'
+    _SDM_NAME = "intmetadata"
     _SDM_ATT_MAP = {
-        'IntmetadataVersion': 'intmetadata.intmetadata.version-1',
-        'IntmetadataReplication': 'intmetadata.intmetadata.replication-2',
-        'IntmetadataCopy': 'intmetadata.intmetadata.copy-3',
-        'IntmetadataExceeded': 'intmetadata.intmetadata.exceeded-4',
-        'IntmetadataMtuexceeded': 'intmetadata.intmetadata.mtuexceeded-5',
-        'IntmetadataReserved10': 'intmetadata.intmetadata.reserved10-6',
-        'IntmetadataHopml': 'intmetadata.intmetadata.hopml-7',
-        'IntmetadataRemaininghopcount': 'intmetadata.intmetadata.remaininghopcount-8',
-        'InstbitmapSwitchid': 'intmetadata.intmetadata.instbitmap.switchid-9',
-        'InstbitmapIngressegressportid': 'intmetadata.intmetadata.instbitmap.ingressegressportid-10',
-        'InstbitmapHoplatency': 'intmetadata.intmetadata.instbitmap.hoplatency-11',
-        'InstbitmapQueue': 'intmetadata.intmetadata.instbitmap.queue-12',
-        'InstbitmapIngresstimestamp': 'intmetadata.intmetadata.instbitmap.ingresstimestamp-13',
-        'InstbitmapEgresstimestamp': 'intmetadata.intmetadata.instbitmap.egresstimestamp-14',
-        'InstbitmapIngressegressportidwide': 'intmetadata.intmetadata.instbitmap.ingressegressportidwide-15',
-        'InstbitmapEgressporttxutil': 'intmetadata.intmetadata.instbitmap.egressporttxutil-16',
-        'InstbitmapReserved07': 'intmetadata.intmetadata.instbitmap.reserved07-17',
-        'InstbitmapChecksumcomplement': 'intmetadata.intmetadata.instbitmap.checksumcomplement-18',
-        'IntmetadataReserved16': 'intmetadata.intmetadata.reserved16-19',
-        'IntmetadatastackSid': 'intmetadata.intmetadata.intmetadatastack.sid-20',
-        'Ingressegressportid32Ipid': 'intmetadata.intmetadata.intmetadatastack.ingressegressportid32.ipid-21',
-        'Ingressegressportid32Epid': 'intmetadata.intmetadata.intmetadatastack.ingressegressportid32.epid-22',
-        'IntmetadatastackHl': 'intmetadata.intmetadata.intmetadatastack.hl-23',
-        'QueueidoccupancyQid': 'intmetadata.intmetadata.intmetadatastack.queueidoccupancy.qid-24',
-        'QueueidoccupancyQo': 'intmetadata.intmetadata.intmetadatastack.queueidoccupancy.qo-25',
-        'IntmetadatastackIt': 'intmetadata.intmetadata.intmetadatastack.it-26',
-        'IntmetadatastackEt': 'intmetadata.intmetadata.intmetadatastack.et-27',
-        'Ingressegressportid64Ipid32': 'intmetadata.intmetadata.intmetadatastack.ingressegressportid64.ipid32-28',
-        'Ingressegressportid64Epid32': 'intmetadata.intmetadata.intmetadatastack.ingressegressportid64.epid32-29',
-        'IntmetadatastackEptu32': 'intmetadata.intmetadata.intmetadatastack.eptu32-30',
-        'IntmetadatastackReservedmeta': 'intmetadata.intmetadata.intmetadatastack.reservedmeta-31',
-        'IntmetadatastackDefault': 'intmetadata.intmetadata.intmetadatastack.-32',
+        "IntmetadataVersion": "intmetadata.intmetadata.version-1",
+        "IntmetadataReplication": "intmetadata.intmetadata.replication-2",
+        "IntmetadataCopy": "intmetadata.intmetadata.copy-3",
+        "IntmetadataExceeded": "intmetadata.intmetadata.exceeded-4",
+        "IntmetadataMtuexceeded": "intmetadata.intmetadata.mtuexceeded-5",
+        "IntmetadataReserved10": "intmetadata.intmetadata.reserved10-6",
+        "IntmetadataHopml": "intmetadata.intmetadata.hopml-7",
+        "IntmetadataRemaininghopcount": "intmetadata.intmetadata.remaininghopcount-8",
+        "InstbitmapSwitchid": "intmetadata.intmetadata.instbitmap.switchid-9",
+        "InstbitmapIngressegressportid": "intmetadata.intmetadata.instbitmap.ingressegressportid-10",
+        "InstbitmapHoplatency": "intmetadata.intmetadata.instbitmap.hoplatency-11",
+        "InstbitmapQueue": "intmetadata.intmetadata.instbitmap.queue-12",
+        "InstbitmapIngresstimestamp": "intmetadata.intmetadata.instbitmap.ingresstimestamp-13",
+        "InstbitmapEgresstimestamp": "intmetadata.intmetadata.instbitmap.egresstimestamp-14",
+        "InstbitmapIngressegressportidwide": "intmetadata.intmetadata.instbitmap.ingressegressportidwide-15",
+        "InstbitmapEgressporttxutil": "intmetadata.intmetadata.instbitmap.egressporttxutil-16",
+        "InstbitmapReserved07": "intmetadata.intmetadata.instbitmap.reserved07-17",
+        "InstbitmapChecksumcomplement": "intmetadata.intmetadata.instbitmap.checksumcomplement-18",
+        "IntmetadataReserved16": "intmetadata.intmetadata.reserved16-19",
+        "IntmetadatastackSid": "intmetadata.intmetadata.intmetadatastack.sid-20",
+        "Ingressegressportid32Ipid": "intmetadata.intmetadata.intmetadatastack.ingressegressportid32.ipid-21",
+        "Ingressegressportid32Epid": "intmetadata.intmetadata.intmetadatastack.ingressegressportid32.epid-22",
+        "IntmetadatastackHl": "intmetadata.intmetadata.intmetadatastack.hl-23",
+        "QueueidoccupancyQid": "intmetadata.intmetadata.intmetadatastack.queueidoccupancy.qid-24",
+        "QueueidoccupancyQo": "intmetadata.intmetadata.intmetadatastack.queueidoccupancy.qo-25",
+        "IntmetadatastackIt": "intmetadata.intmetadata.intmetadatastack.it-26",
+        "IntmetadatastackEt": "intmetadata.intmetadata.intmetadatastack.et-27",
+        "Ingressegressportid64Ipid32": "intmetadata.intmetadata.intmetadatastack.ingressegressportid64.ipid32-28",
+        "Ingressegressportid64Epid32": "intmetadata.intmetadata.intmetadatastack.ingressegressportid64.epid32-29",
+        "IntmetadatastackEptu32": "intmetadata.intmetadata.intmetadatastack.eptu32-30",
+        "IntmetadatastackReservedmeta": "intmetadata.intmetadata.intmetadatastack.reservedmeta-31",
+        "IntmetadatastackDefault": "intmetadata.intmetadata.intmetadatastack.-32",
     }
 
     def __init__(self, parent, list_op=False):
@@ -51,7 +51,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataVersion"])
+        )
 
     @property
     def IntmetadataReplication(self):
@@ -62,7 +65,10 @@ class Intmetadata(Base):
         Available enum values: No replication requested, 0, Port Level replication requested, 1, Next hop level replication requested, 2, Port-level and Next-hop-level replication requested, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataReplication']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataReplication"])
+        )
 
     @property
     def IntmetadataCopy(self):
@@ -73,7 +79,10 @@ class Intmetadata(Base):
         Available enum values: Original Packet, 0, Replicated Packet, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataCopy']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataCopy"])
+        )
 
     @property
     def IntmetadataExceeded(self):
@@ -83,7 +92,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataExceeded']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataExceeded"])
+        )
 
     @property
     def IntmetadataMtuexceeded(self):
@@ -93,7 +105,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataMtuexceeded']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataMtuexceeded"])
+        )
 
     @property
     def IntmetadataReserved10(self):
@@ -103,7 +118,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataReserved10']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataReserved10"])
+        )
 
     @property
     def IntmetadataHopml(self):
@@ -113,7 +131,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataHopml']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataHopml"])
+        )
 
     @property
     def IntmetadataRemaininghopcount(self):
@@ -123,7 +144,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataRemaininghopcount']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataRemaininghopcount"])
+        )
 
     @property
     def InstbitmapSwitchid(self):
@@ -133,7 +157,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapSwitchid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapSwitchid"])
+        )
 
     @property
     def InstbitmapIngressegressportid(self):
@@ -143,7 +170,11 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapIngressegressportid']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InstbitmapIngressegressportid"]),
+        )
 
     @property
     def InstbitmapHoplatency(self):
@@ -153,7 +184,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapHoplatency']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapHoplatency"])
+        )
 
     @property
     def InstbitmapQueue(self):
@@ -163,7 +197,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapQueue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapQueue"])
+        )
 
     @property
     def InstbitmapIngresstimestamp(self):
@@ -173,7 +210,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapIngresstimestamp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapIngresstimestamp"])
+        )
 
     @property
     def InstbitmapEgresstimestamp(self):
@@ -183,7 +223,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapEgresstimestamp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapEgresstimestamp"])
+        )
 
     @property
     def InstbitmapIngressegressportidwide(self):
@@ -193,7 +236,11 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapIngressegressportidwide']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["InstbitmapIngressegressportidwide"]),
+        )
 
     @property
     def InstbitmapEgressporttxutil(self):
@@ -203,7 +250,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapEgressporttxutil']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapEgressporttxutil"])
+        )
 
     @property
     def InstbitmapReserved07(self):
@@ -213,7 +263,10 @@ class Intmetadata(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapReserved07']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapReserved07"])
+        )
 
     @property
     def InstbitmapChecksumcomplement(self):
@@ -223,7 +276,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['InstbitmapChecksumcomplement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InstbitmapChecksumcomplement"])
+        )
 
     @property
     def IntmetadataReserved16(self):
@@ -233,7 +289,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadataReserved16']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadataReserved16"])
+        )
 
     @property
     def IntmetadatastackSid(self):
@@ -243,7 +302,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackSid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackSid"])
+        )
 
     @property
     def Ingressegressportid32Ipid(self):
@@ -253,7 +315,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ingressegressportid32Ipid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ingressegressportid32Ipid"])
+        )
 
     @property
     def Ingressegressportid32Epid(self):
@@ -263,7 +328,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ingressegressportid32Epid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ingressegressportid32Epid"])
+        )
 
     @property
     def IntmetadatastackHl(self):
@@ -273,7 +341,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackHl']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackHl"])
+        )
 
     @property
     def QueueidoccupancyQid(self):
@@ -283,7 +354,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueueidoccupancyQid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QueueidoccupancyQid"])
+        )
 
     @property
     def QueueidoccupancyQo(self):
@@ -293,7 +367,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['QueueidoccupancyQo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["QueueidoccupancyQo"])
+        )
 
     @property
     def IntmetadatastackIt(self):
@@ -303,7 +380,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackIt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackIt"])
+        )
 
     @property
     def IntmetadatastackEt(self):
@@ -313,7 +393,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackEt']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackEt"])
+        )
 
     @property
     def Ingressegressportid64Ipid32(self):
@@ -323,7 +406,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ingressegressportid64Ipid32']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ingressegressportid64Ipid32"])
+        )
 
     @property
     def Ingressegressportid64Epid32(self):
@@ -333,7 +419,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ingressegressportid64Epid32']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ingressegressportid64Epid32"])
+        )
 
     @property
     def IntmetadatastackEptu32(self):
@@ -343,7 +432,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackEptu32']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackEptu32"])
+        )
 
     @property
     def IntmetadatastackReservedmeta(self):
@@ -353,7 +445,10 @@ class Intmetadata(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackReservedmeta']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackReservedmeta"])
+        )
 
     @property
     def IntmetadatastackDefault(self):
@@ -363,7 +458,10 @@ class Intmetadata(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IntmetadatastackDefault']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IntmetadatastackDefault"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

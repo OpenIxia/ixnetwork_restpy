@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,23 +34,23 @@ class BgpEpePeerSetList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEpePeerSetList'
+    _SDM_NAME = "bgpEpePeerSetList"
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LBit': 'lBit',
-        'Name': 'name',
-        'PBit': 'pBit',
-        'Reserved': 'reserved',
-        'RsvdBits': 'rsvdBits',
-        'SidIndex': 'sidIndex',
-        'SidIndexValue': 'sidIndexValue',
-        'VBit': 'vBit',
-        'Weight': 'weight',
+        "BBit": "bBit",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LBit": "lBit",
+        "Name": "name",
+        "PBit": "pBit",
+        "Reserved": "reserved",
+        "RsvdBits": "rsvdBits",
+        "SidIndex": "sidIndex",
+        "SidIndexValue": "sidIndexValue",
+        "VBit": "vBit",
+        "Weight": "weight",
     }
     _SDM_ENUM_MAP = {
-        'sidIndex': ['sid', 'index'],
+        "sidIndex": ["sid", "index"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -63,11 +64,12 @@ class BgpEpePeerSetList(Base):
         -------
         - bool: B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BBit"])
+
     @BBit.setter
     def BBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BBit"], value)
 
     @property
     def Count(self):
@@ -77,7 +79,7 @@ class BgpEpePeerSetList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -87,7 +89,7 @@ class BgpEpePeerSetList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LBit(self):
@@ -97,11 +99,12 @@ class BgpEpePeerSetList(Base):
         -------
         - bool: L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["LBit"])
+
     @LBit.setter
     def LBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LBit"], value)
 
     @property
     def Name(self):
@@ -111,11 +114,12 @@ class BgpEpePeerSetList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PBit(self):
@@ -125,11 +129,12 @@ class BgpEpePeerSetList(Base):
         -------
         - bool: P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["PBit"])
+
     @PBit.setter
     def PBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PBit"], value)
 
     @property
     def Reserved(self):
@@ -139,11 +144,12 @@ class BgpEpePeerSetList(Base):
         -------
         - number: Reserved
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Reserved'])
+        return self._get_attribute(self._SDM_ATT_MAP["Reserved"])
+
     @Reserved.setter
     def Reserved(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Reserved'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Reserved"], value)
 
     @property
     def RsvdBits(self):
@@ -154,7 +160,8 @@ class BgpEpePeerSetList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvdBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RsvdBits"]))
 
     @property
     def SidIndex(self):
@@ -164,11 +171,12 @@ class BgpEpePeerSetList(Base):
         -------
         - str(sid | index): Local Label for Peer-Set
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SidIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["SidIndex"])
+
     @SidIndex.setter
     def SidIndex(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SidIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SidIndex"], value)
 
     @property
     def SidIndexValue(self):
@@ -178,11 +186,12 @@ class BgpEpePeerSetList(Base):
         -------
         - number: If Local Label type is SID, max value is 16777215 and for Index max value is 4294967295
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SidIndexValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["SidIndexValue"])
+
     @SidIndexValue.setter
     def SidIndexValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SidIndexValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SidIndexValue"], value)
 
     @property
     def VBit(self):
@@ -192,11 +201,12 @@ class BgpEpePeerSetList(Base):
         -------
         - bool: V-Flag: Value flag. If set, then the SID carries a label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VBit'])
+        return self._get_attribute(self._SDM_ATT_MAP["VBit"])
+
     @VBit.setter
     def VBit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VBit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VBit"], value)
 
     @property
     def Weight(self):
@@ -206,13 +216,25 @@ class BgpEpePeerSetList(Base):
         -------
         - number: Weight of SID for the purpose of load balancing
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Weight'])
+        return self._get_attribute(self._SDM_ATT_MAP["Weight"])
+
     @Weight.setter
     def Weight(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Weight'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Weight"], value)
 
-    def update(self, BBit=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+    def update(
+        self,
+        BBit=None,
+        LBit=None,
+        Name=None,
+        PBit=None,
+        Reserved=None,
+        SidIndex=None,
+        SidIndexValue=None,
+        VBit=None,
+        Weight=None,
+    ):
         # type: (bool, bool, str, bool, int, str, int, bool, int) -> BgpEpePeerSetList
         """Updates bgpEpePeerSetList resource on the server.
 
@@ -237,9 +259,20 @@ class BgpEpePeerSetList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BBit=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+    def add(
+        self,
+        BBit=None,
+        LBit=None,
+        Name=None,
+        PBit=None,
+        Reserved=None,
+        SidIndex=None,
+        SidIndexValue=None,
+        VBit=None,
+        Weight=None,
+    ):
         # type: (bool, bool, str, bool, int, str, int, bool, int) -> BgpEpePeerSetList
-        """Adds a new bgpEpePeerSetList resource on the json, only valid with config assistant
+        """Adds a new bgpEpePeerSetList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -263,7 +296,20 @@ class BgpEpePeerSetList(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BBit=None, Count=None, DescriptiveName=None, LBit=None, Name=None, PBit=None, Reserved=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
+    def find(
+        self,
+        BBit=None,
+        Count=None,
+        DescriptiveName=None,
+        LBit=None,
+        Name=None,
+        PBit=None,
+        Reserved=None,
+        SidIndex=None,
+        SidIndexValue=None,
+        VBit=None,
+        Weight=None,
+    ):
         # type: (bool, int, str, bool, str, bool, int, str, int, bool, int) -> BgpEpePeerSetList
         """Finds and retrieves bgpEpePeerSetList resources from the server.
 

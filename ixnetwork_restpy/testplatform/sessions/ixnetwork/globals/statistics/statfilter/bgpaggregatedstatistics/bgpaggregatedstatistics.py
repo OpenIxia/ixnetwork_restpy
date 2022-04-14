@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,39 +33,38 @@ class BgpAggregatedStatistics(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpAggregatedStatistics'
+    _SDM_NAME = "bgpAggregatedStatistics"
     _SDM_ATT_MAP = {
-        'ActiveStateCount': 'activeStateCount',
-        'ConnectStateCount': 'connectStateCount',
-        'EstablishedStateCount': 'establishedStateCount',
-        'GracefulRestartsAttempted': 'gracefulRestartsAttempted',
-        'GracefulRestartsFailed': 'gracefulRestartsFailed',
-        'IdleStateCount': 'idleStateCount',
-        'KeepalivesRx': 'keepalivesRx',
-        'KeepalivesTx': 'keepalivesTx',
-        'MessagesRx': 'messagesRx',
-        'MessagesTx': 'messagesTx',
-        'NotificationsRx': 'notificationsRx',
-        'NotificationsTx': 'notificationsTx',
-        'OpenconfirmStateCount': 'openconfirmStateCount',
-        'OpensRx': 'opensRx',
-        'OpensTx': 'opensTx',
-        'OpensentStateCount': 'opensentStateCount',
-        'PortName': 'portName',
-        'RouteWithdrawsRx': 'routeWithdrawsRx',
-        'RoutesAdvertised': 'routesAdvertised',
-        'RoutesRx': 'routesRx',
-        'RoutesRxGracefulRestart': 'routesRxGracefulRestart',
-        'RoutesWithdrawn': 'routesWithdrawn',
-        'SessConfigured': 'sessConfigured',
-        'SessUp': 'sessUp',
-        'SessionFlapCount': 'sessionFlapCount',
-        'StartsOccurred': 'startsOccurred',
-        'UpdatesRx': 'updatesRx',
-        'UpdatesTx': 'updatesTx',
+        "ActiveStateCount": "activeStateCount",
+        "ConnectStateCount": "connectStateCount",
+        "EstablishedStateCount": "establishedStateCount",
+        "GracefulRestartsAttempted": "gracefulRestartsAttempted",
+        "GracefulRestartsFailed": "gracefulRestartsFailed",
+        "IdleStateCount": "idleStateCount",
+        "KeepalivesRx": "keepalivesRx",
+        "KeepalivesTx": "keepalivesTx",
+        "MessagesRx": "messagesRx",
+        "MessagesTx": "messagesTx",
+        "NotificationsRx": "notificationsRx",
+        "NotificationsTx": "notificationsTx",
+        "OpenconfirmStateCount": "openconfirmStateCount",
+        "OpensRx": "opensRx",
+        "OpensTx": "opensTx",
+        "OpensentStateCount": "opensentStateCount",
+        "PortName": "portName",
+        "RouteWithdrawsRx": "routeWithdrawsRx",
+        "RoutesAdvertised": "routesAdvertised",
+        "RoutesRx": "routesRx",
+        "RoutesRxGracefulRestart": "routesRxGracefulRestart",
+        "RoutesWithdrawn": "routesWithdrawn",
+        "SessConfigured": "sessConfigured",
+        "SessUp": "sessUp",
+        "SessionFlapCount": "sessionFlapCount",
+        "StartsOccurred": "startsOccurred",
+        "UpdatesRx": "updatesRx",
+        "UpdatesTx": "updatesTx",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpAggregatedStatistics, self).__init__(parent, list_op)
@@ -77,11 +77,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Active State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ActiveStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ActiveStateCount"])
+
     @ActiveStateCount.setter
     def ActiveStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ActiveStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ActiveStateCount"], value)
 
     @property
     def ConnectStateCount(self):
@@ -91,11 +92,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Connect State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectStateCount"])
+
     @ConnectStateCount.setter
     def ConnectStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectStateCount"], value)
 
     @property
     def EstablishedStateCount(self):
@@ -105,11 +107,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Established State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EstablishedStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["EstablishedStateCount"])
+
     @EstablishedStateCount.setter
     def EstablishedStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EstablishedStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EstablishedStateCount"], value)
 
     @property
     def GracefulRestartsAttempted(self):
@@ -119,11 +122,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Graceful Restarts Attempted
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GracefulRestartsAttempted'])
+        return self._get_attribute(self._SDM_ATT_MAP["GracefulRestartsAttempted"])
+
     @GracefulRestartsAttempted.setter
     def GracefulRestartsAttempted(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GracefulRestartsAttempted'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GracefulRestartsAttempted"], value)
 
     @property
     def GracefulRestartsFailed(self):
@@ -133,11 +137,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Graceful Restarts Failed
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GracefulRestartsFailed'])
+        return self._get_attribute(self._SDM_ATT_MAP["GracefulRestartsFailed"])
+
     @GracefulRestartsFailed.setter
     def GracefulRestartsFailed(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GracefulRestartsFailed'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GracefulRestartsFailed"], value)
 
     @property
     def IdleStateCount(self):
@@ -147,11 +152,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Idle State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IdleStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IdleStateCount"])
+
     @IdleStateCount.setter
     def IdleStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IdleStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IdleStateCount"], value)
 
     @property
     def KeepalivesRx(self):
@@ -161,11 +167,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: KeepAlives Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepalivesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepalivesRx"])
+
     @KeepalivesRx.setter
     def KeepalivesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepalivesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepalivesRx"], value)
 
     @property
     def KeepalivesTx(self):
@@ -175,11 +182,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: KeepAlives Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['KeepalivesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["KeepalivesTx"])
+
     @KeepalivesTx.setter
     def KeepalivesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['KeepalivesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["KeepalivesTx"], value)
 
     @property
     def MessagesRx(self):
@@ -189,11 +197,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Messages Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessagesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessagesRx"])
+
     @MessagesRx.setter
     def MessagesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MessagesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MessagesRx"], value)
 
     @property
     def MessagesTx(self):
@@ -203,11 +212,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Messages Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MessagesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["MessagesTx"])
+
     @MessagesTx.setter
     def MessagesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MessagesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MessagesTx"], value)
 
     @property
     def NotificationsRx(self):
@@ -217,11 +227,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Notifications Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NotificationsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NotificationsRx"])
+
     @NotificationsRx.setter
     def NotificationsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NotificationsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NotificationsRx"], value)
 
     @property
     def NotificationsTx(self):
@@ -231,11 +242,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Notifications Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NotificationsTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["NotificationsTx"])
+
     @NotificationsTx.setter
     def NotificationsTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NotificationsTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NotificationsTx"], value)
 
     @property
     def OpenconfirmStateCount(self):
@@ -245,11 +257,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: OpenConfirm State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpenconfirmStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpenconfirmStateCount"])
+
     @OpenconfirmStateCount.setter
     def OpenconfirmStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpenconfirmStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpenconfirmStateCount"], value)
 
     @property
     def OpensRx(self):
@@ -259,11 +272,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Opens Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpensRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpensRx"])
+
     @OpensRx.setter
     def OpensRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpensRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpensRx"], value)
 
     @property
     def OpensTx(self):
@@ -273,11 +287,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Opens Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpensTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpensTx"])
+
     @OpensTx.setter
     def OpensTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpensTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpensTx"], value)
 
     @property
     def OpensentStateCount(self):
@@ -287,11 +302,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: OpenSent State Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OpensentStateCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["OpensentStateCount"])
+
     @OpensentStateCount.setter
     def OpensentStateCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OpensentStateCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OpensentStateCount"], value)
 
     @property
     def PortName(self):
@@ -301,11 +317,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Port Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortName"])
+
     @PortName.setter
     def PortName(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortName"], value)
 
     @property
     def RouteWithdrawsRx(self):
@@ -315,11 +332,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Route Withdraws Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RouteWithdrawsRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RouteWithdrawsRx"])
+
     @RouteWithdrawsRx.setter
     def RouteWithdrawsRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RouteWithdrawsRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RouteWithdrawsRx"], value)
 
     @property
     def RoutesAdvertised(self):
@@ -329,11 +347,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Routes Advertised
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesAdvertised'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesAdvertised"])
+
     @RoutesAdvertised.setter
     def RoutesAdvertised(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesAdvertised'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesAdvertised"], value)
 
     @property
     def RoutesRx(self):
@@ -343,11 +362,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Routes Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesRx"])
+
     @RoutesRx.setter
     def RoutesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesRx"], value)
 
     @property
     def RoutesRxGracefulRestart(self):
@@ -357,11 +377,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Routes Rx Graceful Restart
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesRxGracefulRestart'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesRxGracefulRestart"])
+
     @RoutesRxGracefulRestart.setter
     def RoutesRxGracefulRestart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesRxGracefulRestart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesRxGracefulRestart"], value)
 
     @property
     def RoutesWithdrawn(self):
@@ -371,11 +392,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Routes Withdrawn
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RoutesWithdrawn'])
+        return self._get_attribute(self._SDM_ATT_MAP["RoutesWithdrawn"])
+
     @RoutesWithdrawn.setter
     def RoutesWithdrawn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RoutesWithdrawn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RoutesWithdrawn"], value)
 
     @property
     def SessConfigured(self):
@@ -385,11 +407,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Sess. Configured
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessConfigured'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessConfigured"])
+
     @SessConfigured.setter
     def SessConfigured(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessConfigured'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessConfigured"], value)
 
     @property
     def SessUp(self):
@@ -399,11 +422,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Sess. Up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessUp'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessUp"])
+
     @SessUp.setter
     def SessUp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessUp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessUp"], value)
 
     @property
     def SessionFlapCount(self):
@@ -413,11 +437,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Session Flap Count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionFlapCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionFlapCount"])
+
     @SessionFlapCount.setter
     def SessionFlapCount(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SessionFlapCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SessionFlapCount"], value)
 
     @property
     def StartsOccurred(self):
@@ -427,11 +452,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Starts Occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartsOccurred'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartsOccurred"])
+
     @StartsOccurred.setter
     def StartsOccurred(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartsOccurred'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartsOccurred"], value)
 
     @property
     def UpdatesRx(self):
@@ -441,11 +467,12 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Updates Rx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdatesRx'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdatesRx"])
+
     @UpdatesRx.setter
     def UpdatesRx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdatesRx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdatesRx"], value)
 
     @property
     def UpdatesTx(self):
@@ -455,13 +482,44 @@ class BgpAggregatedStatistics(Base):
         -------
         - bool: Updates Tx
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpdatesTx'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpdatesTx"])
+
     @UpdatesTx.setter
     def UpdatesTx(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpdatesTx'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpdatesTx"], value)
 
-    def update(self, ActiveStateCount=None, ConnectStateCount=None, EstablishedStateCount=None, GracefulRestartsAttempted=None, GracefulRestartsFailed=None, IdleStateCount=None, KeepalivesRx=None, KeepalivesTx=None, MessagesRx=None, MessagesTx=None, NotificationsRx=None, NotificationsTx=None, OpenconfirmStateCount=None, OpensRx=None, OpensTx=None, OpensentStateCount=None, PortName=None, RouteWithdrawsRx=None, RoutesAdvertised=None, RoutesRx=None, RoutesRxGracefulRestart=None, RoutesWithdrawn=None, SessConfigured=None, SessUp=None, SessionFlapCount=None, StartsOccurred=None, UpdatesRx=None, UpdatesTx=None):
+    def update(
+        self,
+        ActiveStateCount=None,
+        ConnectStateCount=None,
+        EstablishedStateCount=None,
+        GracefulRestartsAttempted=None,
+        GracefulRestartsFailed=None,
+        IdleStateCount=None,
+        KeepalivesRx=None,
+        KeepalivesTx=None,
+        MessagesRx=None,
+        MessagesTx=None,
+        NotificationsRx=None,
+        NotificationsTx=None,
+        OpenconfirmStateCount=None,
+        OpensRx=None,
+        OpensTx=None,
+        OpensentStateCount=None,
+        PortName=None,
+        RouteWithdrawsRx=None,
+        RoutesAdvertised=None,
+        RoutesRx=None,
+        RoutesRxGracefulRestart=None,
+        RoutesWithdrawn=None,
+        SessConfigured=None,
+        SessUp=None,
+        SessionFlapCount=None,
+        StartsOccurred=None,
+        UpdatesRx=None,
+        UpdatesTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BgpAggregatedStatistics
         """Updates bgpAggregatedStatistics resource on the server.
 
@@ -502,7 +560,37 @@ class BgpAggregatedStatistics(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ActiveStateCount=None, ConnectStateCount=None, EstablishedStateCount=None, GracefulRestartsAttempted=None, GracefulRestartsFailed=None, IdleStateCount=None, KeepalivesRx=None, KeepalivesTx=None, MessagesRx=None, MessagesTx=None, NotificationsRx=None, NotificationsTx=None, OpenconfirmStateCount=None, OpensRx=None, OpensTx=None, OpensentStateCount=None, PortName=None, RouteWithdrawsRx=None, RoutesAdvertised=None, RoutesRx=None, RoutesRxGracefulRestart=None, RoutesWithdrawn=None, SessConfigured=None, SessUp=None, SessionFlapCount=None, StartsOccurred=None, UpdatesRx=None, UpdatesTx=None):
+    def find(
+        self,
+        ActiveStateCount=None,
+        ConnectStateCount=None,
+        EstablishedStateCount=None,
+        GracefulRestartsAttempted=None,
+        GracefulRestartsFailed=None,
+        IdleStateCount=None,
+        KeepalivesRx=None,
+        KeepalivesTx=None,
+        MessagesRx=None,
+        MessagesTx=None,
+        NotificationsRx=None,
+        NotificationsTx=None,
+        OpenconfirmStateCount=None,
+        OpensRx=None,
+        OpensTx=None,
+        OpensentStateCount=None,
+        PortName=None,
+        RouteWithdrawsRx=None,
+        RoutesAdvertised=None,
+        RoutesRx=None,
+        RoutesRxGracefulRestart=None,
+        RoutesWithdrawn=None,
+        SessConfigured=None,
+        SessUp=None,
+        SessionFlapCount=None,
+        StartsOccurred=None,
+        UpdatesRx=None,
+        UpdatesTx=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BgpAggregatedStatistics
         """Finds and retrieves bgpAggregatedStatistics resources from the server.
 

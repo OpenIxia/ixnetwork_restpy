@@ -146,7 +146,7 @@ class IsisSegmentList(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisSegmentList
-        """Adds a new isisSegmentList resource on the json, only valid with config assistant
+        """Adds a new isisSegmentList resource on the json, only valid with batch add utility
 
         Args
         ----

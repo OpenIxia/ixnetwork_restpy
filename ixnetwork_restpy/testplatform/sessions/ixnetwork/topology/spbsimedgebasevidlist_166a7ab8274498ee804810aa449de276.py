@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,21 +33,20 @@ class SpbSimEdgeBaseVidList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'spbSimEdgeBaseVidList'
+    _SDM_NAME = "spbSimEdgeBaseVidList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVid': 'baseVid',
-        'BaseVlanPriority': 'baseVlanPriority',
-        'BvlanTpid': 'bvlanTpid',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EctAlgorithm': 'ectAlgorithm',
-        'IsidCount': 'isidCount',
-        'Name': 'name',
-        'UseFlagBit': 'useFlagBit',
+        "Active": "active",
+        "BaseVid": "baseVid",
+        "BaseVlanPriority": "baseVlanPriority",
+        "BvlanTpid": "bvlanTpid",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EctAlgorithm": "ectAlgorithm",
+        "IsidCount": "isidCount",
+        "Name": "name",
+        "UseFlagBit": "useFlagBit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SpbSimEdgeBaseVidList, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class SpbSimEdgeBaseVidList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgeisidlist_cfeb124762b8e4653da4ea2e084e78c8 import SpbSimEdgeIsidList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgeisidlist_cfeb124762b8e4653da4ea2e084e78c8 import (
+            SpbSimEdgeIsidList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('SpbSimEdgeIsidList', None) is not None:
-                return self._properties.get('SpbSimEdgeIsidList')
+            if self._properties.get("SpbSimEdgeIsidList", None) is not None:
+                return self._properties.get("SpbSimEdgeIsidList")
         return SpbSimEdgeIsidList(self)._select()
 
     @property
@@ -77,7 +80,8 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BaseVid(self):
@@ -88,7 +92,8 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Base VID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseVid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BaseVid"]))
 
     @property
     def BaseVlanPriority(self):
@@ -99,7 +104,10 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-VLAN Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BaseVlanPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BaseVlanPriority"])
+        )
 
     @property
     def BvlanTpid(self):
@@ -110,7 +118,8 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-VLAN TPID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BvlanTpid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BvlanTpid"]))
 
     @property
     def Count(self):
@@ -120,7 +129,7 @@ class SpbSimEdgeBaseVidList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -130,7 +139,7 @@ class SpbSimEdgeBaseVidList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EctAlgorithm(self):
@@ -141,7 +150,8 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): ECT AlgorithmType
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EctAlgorithm"]))
 
     @property
     def IsidCount(self):
@@ -151,11 +161,12 @@ class SpbSimEdgeBaseVidList(Base):
         -------
         - number: ISID Count(multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsidCount"])
+
     @IsidCount.setter
     def IsidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsidCount"], value)
 
     @property
     def Name(self):
@@ -165,11 +176,12 @@ class SpbSimEdgeBaseVidList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def UseFlagBit(self):
@@ -180,7 +192,8 @@ class SpbSimEdgeBaseVidList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Flag Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseFlagBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UseFlagBit"]))
 
     def update(self, IsidCount=None, Name=None):
         # type: (int, str) -> SpbSimEdgeBaseVidList
@@ -243,7 +256,16 @@ class SpbSimEdgeBaseVidList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, BaseVid=None, BaseVlanPriority=None, BvlanTpid=None, EctAlgorithm=None, UseFlagBit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BaseVid=None,
+        BaseVlanPriority=None,
+        BvlanTpid=None,
+        EctAlgorithm=None,
+        UseFlagBit=None,
+    ):
         """Base class infrastructure that gets a list of spbSimEdgeBaseVidList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

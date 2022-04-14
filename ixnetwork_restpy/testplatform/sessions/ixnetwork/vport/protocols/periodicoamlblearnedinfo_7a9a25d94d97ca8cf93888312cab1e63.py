@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,21 +34,20 @@ class PeriodicOamLbLearnedInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'periodicOamLbLearnedInfo'
+    _SDM_NAME = "periodicOamLbLearnedInfo"
     _SDM_ATT_MAP = {
-        'AverageRtt': 'averageRtt',
-        'CVlan': 'cVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'LbmSentCount': 'lbmSentCount',
-        'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
-        'RecentReachability': 'recentReachability',
-        'RecentRtt': 'recentRtt',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
+        "AverageRtt": "averageRtt",
+        "CVlan": "cVlan",
+        "DstMacAddress": "dstMacAddress",
+        "LbmSentCount": "lbmSentCount",
+        "MdLevel": "mdLevel",
+        "NoReplyCount": "noReplyCount",
+        "RecentReachability": "recentReachability",
+        "RecentRtt": "recentRtt",
+        "SVlan": "sVlan",
+        "SrcMacAddress": "srcMacAddress",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(PeriodicOamLbLearnedInfo, self).__init__(parent, list_op)
@@ -60,7 +60,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - number: (read only) The learned average periodic OAM Round-Trip-Time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AverageRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["AverageRtt"])
 
     @property
     def CVlan(self):
@@ -70,7 +70,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - str: (read only) The learned periodic OAM C-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["CVlan"])
 
     @property
     def DstMacAddress(self):
@@ -80,7 +80,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - str: (read only) The learned periodic OAM destination MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["DstMacAddress"])
 
     @property
     def LbmSentCount(self):
@@ -90,7 +90,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - number: (read only) The learned number of periodic OAM loopback messages sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LbmSentCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LbmSentCount"])
 
     @property
     def MdLevel(self):
@@ -100,7 +100,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - number: (read only) The learned MD level for the periodic OAM.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MdLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
     @property
     def NoReplyCount(self):
@@ -110,7 +110,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - number: (read only) The learned number of periodic OAM no replies.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReplyCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReplyCount"])
 
     @property
     def RecentReachability(self):
@@ -120,7 +120,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - bool: (read only) Indicates the status of the Ping.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentReachability'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentReachability"])
 
     @property
     def RecentRtt(self):
@@ -130,7 +130,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - number: (read only) Indicates the status of the round-trip-time
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RecentRtt'])
+        return self._get_attribute(self._SDM_ATT_MAP["RecentRtt"])
 
     @property
     def SVlan(self):
@@ -140,7 +140,7 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - str: (read only) The learned periodic OAM S-VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["SVlan"])
 
     @property
     def SrcMacAddress(self):
@@ -150,10 +150,10 @@ class PeriodicOamLbLearnedInfo(Base):
         -------
         - str: (read only) The learned periodic OAM source MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrcMacAddress"])
 
     def add(self):
-        """Adds a new periodicOamLbLearnedInfo resource on the json, only valid with config assistant
+        """Adds a new periodicOamLbLearnedInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -165,7 +165,19 @@ class PeriodicOamLbLearnedInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AverageRtt=None, CVlan=None, DstMacAddress=None, LbmSentCount=None, MdLevel=None, NoReplyCount=None, RecentReachability=None, RecentRtt=None, SVlan=None, SrcMacAddress=None):
+    def find(
+        self,
+        AverageRtt=None,
+        CVlan=None,
+        DstMacAddress=None,
+        LbmSentCount=None,
+        MdLevel=None,
+        NoReplyCount=None,
+        RecentReachability=None,
+        RecentRtt=None,
+        SVlan=None,
+        SrcMacAddress=None,
+    ):
         # type: (int, str, str, int, int, int, bool, int, str, str) -> PeriodicOamLbLearnedInfo
         """Finds and retrieves periodicOamLbLearnedInfo resources from the server.
 

@@ -4,53 +4,53 @@ from ixnetwork_restpy.files import Files
 
 class IsisLevel2LANHelloPDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'isisLevel2LANHelloPDU'
+    _SDM_NAME = "isisLevel2LANHelloPDU"
     _SDM_ATT_MAP = {
-        'CommonHeaderIntradomainRoutingProtocolDiscriminator': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.intradomainRoutingProtocolDiscriminator-1',
-        'CommonHeaderLengthIndicator': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.lengthIndicator-2',
-        'CommonHeaderVersionProtocolIDExtension': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.versionProtocolIDExtension-3',
-        'CommonHeaderIdLength': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.idLength-4',
-        'CommonHeaderReservedBit': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.reservedBit-5',
-        'CommonHeaderPduType': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.pduType-6',
-        'CommonHeaderVersion': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.version-7',
-        'CommonHeaderReserved': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.reserved-8',
-        'CommonHeaderMaximumAreaAddresses': 'isisLevel2LANHelloPDU.isisHeader.commonHeader.maximumAreaAddresses-9',
-        'FixedHeaderReservedCircuitType': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.reservedCircuitType-10',
-        'FixedHeaderSourceID': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.sourceID-11',
-        'FixedHeaderHoldingTime': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.holdingTime-12',
-        'FixedHeaderPduLength': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.pduLength-13',
-        'FixedHeaderReservedBit': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.reservedBit-14',
-        'FixedHeaderPriority': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.priority-15',
-        'FixedHeaderLanID': 'isisLevel2LANHelloPDU.isisHeader.fixedHeader.lanID-16',
-        'Tlv1AreaAddressesTlvCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvCode-17',
-        'Tlv1AreaAddressesTlvLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvLength-18',
-        'ValueFieldsAddressLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.addressLength-19',
-        'ValueFieldsAreaAddress': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.areaAddress-20',
-        'Tlv6ISNeighborswith6OctetMACAddressTlvCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.tlvCode-21',
-        'Tlv6ISNeighborswith6OctetMACAddressTlvLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.tlvLength-22',
-        'Tlv6ISNeighborswith6OctetMACAddressLanAddress': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.lanAddress-23',
-        'Tlv7ISNeighborswithVariableLengthSNPAAddressTlvCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.tlvCode-24',
-        'Tlv7ISNeighborswithVariableLengthSNPAAddressTlvLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.tlvLength-25',
-        'ValueFieldsLanAddressLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.valueFields.lanAddressLength-26',
-        'ValueFieldsLanAddress': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.valueFields.lanAddress-27',
-        'Tlv8PaddingTlvCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.tlvCode-28',
-        'Tlv8PaddingTlvLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.tlvLength-29',
-        'ValueFieldsPadding': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.valueFields.padding-30',
-        'Tlv10AuthenticationInformationTlvCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvCode-31',
-        'Tlv10AuthenticationInformationTlvLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvLength-32',
-        'ValueFieldsAuthenticationType': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationType-33',
-        'ValueFieldsAuthenticatorLengthoctets': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticatorLengthoctets-34',
-        'ValueFieldsAuthenticator': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticator-35',
-        'Tlv129ProtocolsSupportedCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.code-36',
-        'Tlv129ProtocolsSupportedLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.length-37',
-        'NlpidEntriesEntryLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.entryLength-38',
-        'NlpidEntriesEntryID': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.entryID-39',
-        'Tlv132IPInterfaceAddressCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.code-40',
-        'Tlv132IPInterfaceAddressLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.length-41',
-        'IpAddressEntriesIpAddress': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.ipAddressEntries.ipAddress-42',
-        'Tlv232IPv6InterfaceAddressCode': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.code-43',
-        'Tlv232IPv6InterfaceAddressLength': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.length-44',
-        'Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress': 'isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.ipAddressEntries.ipAddress-45',
+        "CommonHeaderIntradomainRoutingProtocolDiscriminator": "isisLevel2LANHelloPDU.isisHeader.commonHeader.intradomainRoutingProtocolDiscriminator-1",
+        "CommonHeaderLengthIndicator": "isisLevel2LANHelloPDU.isisHeader.commonHeader.lengthIndicator-2",
+        "CommonHeaderVersionProtocolIDExtension": "isisLevel2LANHelloPDU.isisHeader.commonHeader.versionProtocolIDExtension-3",
+        "CommonHeaderIdLength": "isisLevel2LANHelloPDU.isisHeader.commonHeader.idLength-4",
+        "CommonHeaderReservedBit": "isisLevel2LANHelloPDU.isisHeader.commonHeader.reservedBit-5",
+        "CommonHeaderPduType": "isisLevel2LANHelloPDU.isisHeader.commonHeader.pduType-6",
+        "CommonHeaderVersion": "isisLevel2LANHelloPDU.isisHeader.commonHeader.version-7",
+        "CommonHeaderReserved": "isisLevel2LANHelloPDU.isisHeader.commonHeader.reserved-8",
+        "CommonHeaderMaximumAreaAddresses": "isisLevel2LANHelloPDU.isisHeader.commonHeader.maximumAreaAddresses-9",
+        "FixedHeaderReservedCircuitType": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.reservedCircuitType-10",
+        "FixedHeaderSourceID": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.sourceID-11",
+        "FixedHeaderHoldingTime": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.holdingTime-12",
+        "FixedHeaderPduLength": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.pduLength-13",
+        "FixedHeaderReservedBit": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.reservedBit-14",
+        "FixedHeaderPriority": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.priority-15",
+        "FixedHeaderLanID": "isisLevel2LANHelloPDU.isisHeader.fixedHeader.lanID-16",
+        "Tlv1AreaAddressesTlvCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvCode-17",
+        "Tlv1AreaAddressesTlvLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvLength-18",
+        "ValueFieldsAddressLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.addressLength-19",
+        "ValueFieldsAreaAddress": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.areaAddress-20",
+        "Tlv6ISNeighborswith6OctetMACAddressTlvCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.tlvCode-21",
+        "Tlv6ISNeighborswith6OctetMACAddressTlvLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.tlvLength-22",
+        "Tlv6ISNeighborswith6OctetMACAddressLanAddress": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv6ISNeighborswith6OctetMACAddress.lanAddress-23",
+        "Tlv7ISNeighborswithVariableLengthSNPAAddressTlvCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.tlvCode-24",
+        "Tlv7ISNeighborswithVariableLengthSNPAAddressTlvLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.tlvLength-25",
+        "ValueFieldsLanAddressLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.valueFields.lanAddressLength-26",
+        "ValueFieldsLanAddress": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv7ISNeighborswithVariableLengthSNPAAddress.valueFields.lanAddress-27",
+        "Tlv8PaddingTlvCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.tlvCode-28",
+        "Tlv8PaddingTlvLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.tlvLength-29",
+        "ValueFieldsPadding": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv8Padding.valueFields.padding-30",
+        "Tlv10AuthenticationInformationTlvCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvCode-31",
+        "Tlv10AuthenticationInformationTlvLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvLength-32",
+        "ValueFieldsAuthenticationType": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationType-33",
+        "ValueFieldsAuthenticatorLengthoctets": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticatorLengthoctets-34",
+        "ValueFieldsAuthenticator": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticator-35",
+        "Tlv129ProtocolsSupportedCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.code-36",
+        "Tlv129ProtocolsSupportedLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.length-37",
+        "NlpidEntriesEntryLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.entryLength-38",
+        "NlpidEntriesEntryID": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.entryID-39",
+        "Tlv132IPInterfaceAddressCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.code-40",
+        "Tlv132IPInterfaceAddressLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.length-41",
+        "IpAddressEntriesIpAddress": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.ipAddressEntries.ipAddress-42",
+        "Tlv232IPv6InterfaceAddressCode": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.code-43",
+        "Tlv232IPv6InterfaceAddressLength": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.length-44",
+        "Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress": "isisLevel2LANHelloPDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.ipAddressEntries.ipAddress-45",
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,7 +64,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderIntradomainRoutingProtocolDiscriminator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonHeaderIntradomainRoutingProtocolDiscriminator"]
+            ),
+        )
 
     @property
     def CommonHeaderLengthIndicator(self):
@@ -74,7 +80,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderLengthIndicator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderLengthIndicator"])
+        )
 
     @property
     def CommonHeaderVersionProtocolIDExtension(self):
@@ -84,7 +93,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderVersionProtocolIDExtension']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonHeaderVersionProtocolIDExtension"]
+            ),
+        )
 
     @property
     def CommonHeaderIdLength(self):
@@ -95,7 +110,10 @@ class IsisLevel2LANHelloPDU(Base):
         Available enum values: One, 1, Two, 2, Three, 3, Four, 4, Five, 5, Six, 6, Seven, 7, Eight, 8, 6 Octet ID field, 0, Null ID field, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderIdLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderIdLength"])
+        )
 
     @property
     def CommonHeaderReservedBit(self):
@@ -105,7 +123,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderReservedBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderReservedBit"])
+        )
 
     @property
     def CommonHeaderPduType(self):
@@ -115,7 +136,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderPduType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderPduType"])
+        )
 
     @property
     def CommonHeaderVersion(self):
@@ -125,7 +149,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderVersion"])
+        )
 
     @property
     def CommonHeaderReserved(self):
@@ -135,7 +162,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderReserved"])
+        )
 
     @property
     def CommonHeaderMaximumAreaAddresses(self):
@@ -145,7 +175,11 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderMaximumAreaAddresses']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonHeaderMaximumAreaAddresses"]),
+        )
 
     @property
     def FixedHeaderReservedCircuitType(self):
@@ -156,7 +190,11 @@ class IsisLevel2LANHelloPDU(Base):
         Available enum values: Reserved value, 0, Level 1 only, 1, Level 2 only, 2, Both level 1 and 2, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderReservedCircuitType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FixedHeaderReservedCircuitType"]),
+        )
 
     @property
     def FixedHeaderSourceID(self):
@@ -166,7 +204,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderSourceID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderSourceID"])
+        )
 
     @property
     def FixedHeaderHoldingTime(self):
@@ -176,7 +217,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderHoldingTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderHoldingTime"])
+        )
 
     @property
     def FixedHeaderPduLength(self):
@@ -186,7 +230,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderPduLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderPduLength"])
+        )
 
     @property
     def FixedHeaderReservedBit(self):
@@ -197,7 +244,10 @@ class IsisLevel2LANHelloPDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderReservedBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderReservedBit"])
+        )
 
     @property
     def FixedHeaderPriority(self):
@@ -207,7 +257,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderPriority']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderPriority"])
+        )
 
     @property
     def FixedHeaderLanID(self):
@@ -217,7 +270,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderLanID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderLanID"])
+        )
 
     @property
     def Tlv1AreaAddressesTlvCode(self):
@@ -227,7 +283,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv1AreaAddressesTlvCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv1AreaAddressesTlvCode"])
+        )
 
     @property
     def Tlv1AreaAddressesTlvLength(self):
@@ -237,7 +296,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv1AreaAddressesTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv1AreaAddressesTlvLength"])
+        )
 
     @property
     def ValueFieldsAddressLength(self):
@@ -247,7 +309,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAddressLength"])
+        )
 
     @property
     def ValueFieldsAreaAddress(self):
@@ -257,7 +322,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAreaAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAreaAddress"])
+        )
 
     @property
     def Tlv6ISNeighborswith6OctetMACAddressTlvCode(self):
@@ -267,7 +335,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv6ISNeighborswith6OctetMACAddressTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv6ISNeighborswith6OctetMACAddressTlvCode"]
+            ),
+        )
 
     @property
     def Tlv6ISNeighborswith6OctetMACAddressTlvLength(self):
@@ -277,7 +351,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv6ISNeighborswith6OctetMACAddressTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv6ISNeighborswith6OctetMACAddressTlvLength"]
+            ),
+        )
 
     @property
     def Tlv6ISNeighborswith6OctetMACAddressLanAddress(self):
@@ -287,7 +367,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv6ISNeighborswith6OctetMACAddressLanAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv6ISNeighborswith6OctetMACAddressLanAddress"]
+            ),
+        )
 
     @property
     def Tlv7ISNeighborswithVariableLengthSNPAAddressTlvCode(self):
@@ -297,7 +383,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv7ISNeighborswithVariableLengthSNPAAddressTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv7ISNeighborswithVariableLengthSNPAAddressTlvCode"]
+            ),
+        )
 
     @property
     def Tlv7ISNeighborswithVariableLengthSNPAAddressTlvLength(self):
@@ -307,7 +399,15 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv7ISNeighborswithVariableLengthSNPAAddressTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv7ISNeighborswithVariableLengthSNPAAddressTlvLength"
+                ]
+            ),
+        )
 
     @property
     def ValueFieldsLanAddressLength(self):
@@ -317,7 +417,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsLanAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsLanAddressLength"])
+        )
 
     @property
     def ValueFieldsLanAddress(self):
@@ -327,7 +430,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsLanAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsLanAddress"])
+        )
 
     @property
     def Tlv8PaddingTlvCode(self):
@@ -337,7 +443,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv8PaddingTlvCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv8PaddingTlvCode"])
+        )
 
     @property
     def Tlv8PaddingTlvLength(self):
@@ -347,7 +456,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv8PaddingTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv8PaddingTlvLength"])
+        )
 
     @property
     def ValueFieldsPadding(self):
@@ -357,7 +469,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsPadding']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsPadding"])
+        )
 
     @property
     def Tlv10AuthenticationInformationTlvCode(self):
@@ -367,7 +482,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv10AuthenticationInformationTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv10AuthenticationInformationTlvCode"]
+            ),
+        )
 
     @property
     def Tlv10AuthenticationInformationTlvLength(self):
@@ -377,7 +498,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv10AuthenticationInformationTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv10AuthenticationInformationTlvLength"]
+            ),
+        )
 
     @property
     def ValueFieldsAuthenticationType(self):
@@ -388,7 +515,11 @@ class IsisLevel2LANHelloPDU(Base):
         Available enum values: Cleartext password, 1, Routing domain private authentication method, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAuthenticationType"]),
+        )
 
     @property
     def ValueFieldsAuthenticatorLengthoctets(self):
@@ -398,7 +529,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAuthenticatorLengthoctets']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValueFieldsAuthenticatorLengthoctets"]
+            ),
+        )
 
     @property
     def ValueFieldsAuthenticator(self):
@@ -408,7 +545,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAuthenticator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAuthenticator"])
+        )
 
     @property
     def Tlv129ProtocolsSupportedCode(self):
@@ -418,7 +558,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv129ProtocolsSupportedCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv129ProtocolsSupportedCode"])
+        )
 
     @property
     def Tlv129ProtocolsSupportedLength(self):
@@ -428,7 +571,11 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv129ProtocolsSupportedLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv129ProtocolsSupportedLength"]),
+        )
 
     @property
     def NlpidEntriesEntryLength(self):
@@ -438,7 +585,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NlpidEntriesEntryLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NlpidEntriesEntryLength"])
+        )
 
     @property
     def NlpidEntriesEntryID(self):
@@ -448,7 +598,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NlpidEntriesEntryID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NlpidEntriesEntryID"])
+        )
 
     @property
     def Tlv132IPInterfaceAddressCode(self):
@@ -458,7 +611,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv132IPInterfaceAddressCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv132IPInterfaceAddressCode"])
+        )
 
     @property
     def Tlv132IPInterfaceAddressLength(self):
@@ -468,7 +624,11 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv132IPInterfaceAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv132IPInterfaceAddressLength"]),
+        )
 
     @property
     def IpAddressEntriesIpAddress(self):
@@ -478,7 +638,10 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddressEntriesIpAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpAddressEntriesIpAddress"])
+        )
 
     @property
     def Tlv232IPv6InterfaceAddressCode(self):
@@ -488,7 +651,11 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232IPv6InterfaceAddressCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv232IPv6InterfaceAddressCode"]),
+        )
 
     @property
     def Tlv232IPv6InterfaceAddressLength(self):
@@ -498,7 +665,11 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232IPv6InterfaceAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv232IPv6InterfaceAddressLength"]),
+        )
 
     @property
     def Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress(self):
@@ -508,7 +679,13 @@ class IsisLevel2LANHelloPDU(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

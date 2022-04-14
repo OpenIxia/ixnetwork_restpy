@@ -4,28 +4,28 @@ from ixnetwork_restpy.files import Files
 
 class Avtp(Base):
     __slots__ = ()
-    _SDM_NAME = 'avtp'
+    _SDM_NAME = "avtp"
     _SDM_ATT_MAP = {
-        'AvtpCommonHeaderControlDataIndicator': 'avtp.header.avtpCommonHeader.controlDataIndicator-1',
-        'AvtpCommonHeaderSubtype': 'avtp.header.avtpCommonHeader.subtype-2',
-        'AvtpCommonHeaderStreamIdValid': 'avtp.header.avtpCommonHeader.streamIdValid-3',
-        'AvtpCommonHeaderVersion': 'avtp.header.avtpCommonHeader.version-4',
-        'AvtpTypeSpecificHeaderMediaClockRestart': 'avtp.header.avtpTypeSpecificHeader.mediaClockRestart-5',
-        'AvtpTypeSpecificHeaderReservedField': 'avtp.header.avtpTypeSpecificHeader.reservedField-6',
-        'AvtpTypeSpecificHeaderGatewayInfoValid': 'avtp.header.avtpTypeSpecificHeader.gatewayInfoValid-7',
-        'AvtpTypeSpecificHeaderAvtpTimeStampValid': 'avtp.header.avtpTypeSpecificHeader.avtpTimeStampValid-8',
-        'AvtpTypeSpecificHeaderSequenceNumber': 'avtp.header.avtpTypeSpecificHeader.sequenceNumber-9',
-        'AvtpTypeSpecificHeaderReservedField2': 'avtp.header.avtpTypeSpecificHeader.reservedField2-10',
-        'AvtpTypeSpecificHeaderTimeStampUncertain': 'avtp.header.avtpTypeSpecificHeader.timeStampUncertain-11',
-        'SrpStreamIdStreamId': 'avtp.header.srpStreamId.streamId-12',
-        'SrpStreamIdStream_name': 'avtp.header.srpStreamId.stream_name-13',
-        'SrpStreamIdAvtpTimestamp': 'avtp.header.srpStreamId.avtpTimestamp-14',
-        'SrpStreamIdGatewayInfo': 'avtp.header.srpStreamId.gatewayInfo-15',
-        'SrpStreamIdStreamDataLength': 'avtp.header.srpStreamId.streamDataLength-16',
-        'ProtocolSpecificHeaderTag': 'avtp.header.packetInformation.protocolSpecificHeader.Tag-17',
-        'ProtocolSpecificHeaderChannel': 'avtp.header.packetInformation.protocolSpecificHeader.Channel-18',
-        'ProtocolSpecificHeaderTCode': 'avtp.header.packetInformation.protocolSpecificHeader.tCode-19',
-        'ProtocolSpecificHeaderSyField': 'avtp.header.packetInformation.protocolSpecificHeader.syField-20',
+        "AvtpCommonHeaderControlDataIndicator": "avtp.header.avtpCommonHeader.controlDataIndicator-1",
+        "AvtpCommonHeaderSubtype": "avtp.header.avtpCommonHeader.subtype-2",
+        "AvtpCommonHeaderStreamIdValid": "avtp.header.avtpCommonHeader.streamIdValid-3",
+        "AvtpCommonHeaderVersion": "avtp.header.avtpCommonHeader.version-4",
+        "AvtpTypeSpecificHeaderMediaClockRestart": "avtp.header.avtpTypeSpecificHeader.mediaClockRestart-5",
+        "AvtpTypeSpecificHeaderReservedField": "avtp.header.avtpTypeSpecificHeader.reservedField-6",
+        "AvtpTypeSpecificHeaderGatewayInfoValid": "avtp.header.avtpTypeSpecificHeader.gatewayInfoValid-7",
+        "AvtpTypeSpecificHeaderAvtpTimeStampValid": "avtp.header.avtpTypeSpecificHeader.avtpTimeStampValid-8",
+        "AvtpTypeSpecificHeaderSequenceNumber": "avtp.header.avtpTypeSpecificHeader.sequenceNumber-9",
+        "AvtpTypeSpecificHeaderReservedField2": "avtp.header.avtpTypeSpecificHeader.reservedField2-10",
+        "AvtpTypeSpecificHeaderTimeStampUncertain": "avtp.header.avtpTypeSpecificHeader.timeStampUncertain-11",
+        "SrpStreamIdStreamId": "avtp.header.srpStreamId.streamId-12",
+        "SrpStreamIdStream_name": "avtp.header.srpStreamId.stream_name-13",
+        "SrpStreamIdAvtpTimestamp": "avtp.header.srpStreamId.avtpTimestamp-14",
+        "SrpStreamIdGatewayInfo": "avtp.header.srpStreamId.gatewayInfo-15",
+        "SrpStreamIdStreamDataLength": "avtp.header.srpStreamId.streamDataLength-16",
+        "ProtocolSpecificHeaderTag": "avtp.header.packetInformation.protocolSpecificHeader.Tag-17",
+        "ProtocolSpecificHeaderChannel": "avtp.header.packetInformation.protocolSpecificHeader.Channel-18",
+        "ProtocolSpecificHeaderTCode": "avtp.header.packetInformation.protocolSpecificHeader.tCode-19",
+        "ProtocolSpecificHeaderSyField": "avtp.header.packetInformation.protocolSpecificHeader.syField-20",
     }
 
     def __init__(self, parent, list_op=False):
@@ -39,7 +39,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpCommonHeaderControlDataIndicator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpCommonHeaderControlDataIndicator"]
+            ),
+        )
 
     @property
     def AvtpCommonHeaderSubtype(self):
@@ -49,7 +55,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpCommonHeaderSubtype']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AvtpCommonHeaderSubtype"])
+        )
 
     @property
     def AvtpCommonHeaderStreamIdValid(self):
@@ -59,7 +68,11 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpCommonHeaderStreamIdValid']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["AvtpCommonHeaderStreamIdValid"]),
+        )
 
     @property
     def AvtpCommonHeaderVersion(self):
@@ -69,7 +82,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpCommonHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AvtpCommonHeaderVersion"])
+        )
 
     @property
     def AvtpTypeSpecificHeaderMediaClockRestart(self):
@@ -79,7 +95,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderMediaClockRestart']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderMediaClockRestart"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderReservedField(self):
@@ -89,7 +111,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderReservedField']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderReservedField"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderGatewayInfoValid(self):
@@ -99,7 +127,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderGatewayInfoValid']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderGatewayInfoValid"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderAvtpTimeStampValid(self):
@@ -109,7 +143,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderAvtpTimeStampValid']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderAvtpTimeStampValid"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderSequenceNumber(self):
@@ -119,7 +159,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderSequenceNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderSequenceNumber"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderReservedField2(self):
@@ -129,7 +175,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderReservedField2']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderReservedField2"]
+            ),
+        )
 
     @property
     def AvtpTypeSpecificHeaderTimeStampUncertain(self):
@@ -139,7 +191,13 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AvtpTypeSpecificHeaderTimeStampUncertain']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["AvtpTypeSpecificHeaderTimeStampUncertain"]
+            ),
+        )
 
     @property
     def SrpStreamIdStreamId(self):
@@ -149,7 +207,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpStreamIdStreamId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrpStreamIdStreamId"])
+        )
 
     @property
     def SrpStreamIdStream_name(self):
@@ -159,7 +220,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpStreamIdStream_name']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrpStreamIdStream_name"])
+        )
 
     @property
     def SrpStreamIdAvtpTimestamp(self):
@@ -169,7 +233,10 @@ class Avtp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpStreamIdAvtpTimestamp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrpStreamIdAvtpTimestamp"])
+        )
 
     @property
     def SrpStreamIdGatewayInfo(self):
@@ -179,7 +246,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpStreamIdGatewayInfo']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrpStreamIdGatewayInfo"])
+        )
 
     @property
     def SrpStreamIdStreamDataLength(self):
@@ -189,7 +259,10 @@ class Avtp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrpStreamIdStreamDataLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrpStreamIdStreamDataLength"])
+        )
 
     @property
     def ProtocolSpecificHeaderTag(self):
@@ -199,7 +272,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolSpecificHeaderTag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtocolSpecificHeaderTag"])
+        )
 
     @property
     def ProtocolSpecificHeaderChannel(self):
@@ -209,7 +285,11 @@ class Avtp(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolSpecificHeaderChannel']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ProtocolSpecificHeaderChannel"]),
+        )
 
     @property
     def ProtocolSpecificHeaderTCode(self):
@@ -219,7 +299,10 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolSpecificHeaderTCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ProtocolSpecificHeaderTCode"])
+        )
 
     @property
     def ProtocolSpecificHeaderSyField(self):
@@ -229,7 +312,11 @@ class Avtp(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProtocolSpecificHeaderSyField']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ProtocolSpecificHeaderSyField"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

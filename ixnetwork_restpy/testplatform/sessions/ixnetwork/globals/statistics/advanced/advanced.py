@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class Advanced(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'advanced'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "advanced"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Advanced, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.csvloggingsettings.csvloggingsettings import CsvLoggingSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.csvloggingsettings.csvloggingsettings import (
+            CsvLoggingSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CsvLoggingSettings', None) is not None:
-                return self._properties.get('CsvLoggingSettings')
+            if self._properties.get("CsvLoggingSettings", None) is not None:
+                return self._properties.get("CsvLoggingSettings")
         return CsvLoggingSettings(self)._select()
 
     @property
@@ -69,10 +71,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.customgraph.customgraph import CustomGraph
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.customgraph.customgraph import (
+            CustomGraph,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CustomGraph', None) is not None:
-                return self._properties.get('CustomGraph')
+            if self._properties.get("CustomGraph", None) is not None:
+                return self._properties.get("CustomGraph")
         return CustomGraph(self)._select()
 
     @property
@@ -86,10 +91,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.datastoresettings.datastoresettings import DataStoreSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.datastoresettings.datastoresettings import (
+            DataStoreSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('DataStoreSettings', None) is not None:
-                return self._properties.get('DataStoreSettings')
+            if self._properties.get("DataStoreSettings", None) is not None:
+                return self._properties.get("DataStoreSettings")
         return DataStoreSettings(self)._select()
 
     @property
@@ -103,10 +111,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.guardrail.guardrail import GuardRail
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.guardrail.guardrail import (
+            GuardRail,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('GuardRail', None) is not None:
-                return self._properties.get('GuardRail')
+            if self._properties.get("GuardRail", None) is not None:
+                return self._properties.get("GuardRail")
         return GuardRail(self)._select()
 
     @property
@@ -120,10 +131,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.pollingsettings.pollingsettings import PollingSettings
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.pollingsettings.pollingsettings import (
+            PollingSettings,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('PollingSettings', None) is not None:
-                return self._properties.get('PollingSettings')
+            if self._properties.get("PollingSettings", None) is not None:
+                return self._properties.get("PollingSettings")
         return PollingSettings(self)._select()
 
     @property
@@ -137,10 +151,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.timesynchronization.timesynchronization import TimeSynchronization
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.timesynchronization.timesynchronization import (
+            TimeSynchronization,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('TimeSynchronization', None) is not None:
-                return self._properties.get('TimeSynchronization')
+            if self._properties.get("TimeSynchronization", None) is not None:
+                return self._properties.get("TimeSynchronization")
         return TimeSynchronization(self)._select()
 
     @property
@@ -154,10 +171,13 @@ class Advanced(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.timestamp.timestamp import Timestamp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.timestamp.timestamp import (
+            Timestamp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Timestamp', None) is not None:
-                return self._properties.get('Timestamp')
+            if self._properties.get("Timestamp", None) is not None:
+                return self._properties.get("Timestamp")
         return Timestamp(self)._select()
 
     def find(self):

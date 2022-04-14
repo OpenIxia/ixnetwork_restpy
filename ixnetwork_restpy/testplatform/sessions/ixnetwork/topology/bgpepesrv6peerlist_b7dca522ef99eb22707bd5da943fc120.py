@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,41 +33,40 @@ class BgpEpeSrv6PeerList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpEpeSrv6PeerList'
+    _SDM_NAME = "bgpEpeSrv6PeerList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ArgumentLengthSRv6': 'argumentLengthSRv6',
-        'BBitSRv6': 'bBitSRv6',
-        'BgpLocalRouterId': 'bgpLocalRouterId',
-        'BgpRemoteRouterId': 'bgpRemoteRouterId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableSRv6EndpointBehaviorSubTlv': 'enableSRv6EndpointBehaviorSubTlv',
-        'EnableSRv6PeerNodeSid': 'enableSRv6PeerNodeSid',
-        'EnableSRv6PeerNodeSidTlv': 'enableSRv6PeerNodeSidTlv',
-        'EnableSRv6SIDStructureTLV': 'enableSRv6SIDStructureTLV',
-        'EndPointFunctionSRv6': 'endPointFunctionSRv6',
-        'EndpointBehaviorAlgorithmSRv6': 'endpointBehaviorAlgorithmSRv6',
-        'EndpointBehaviorFlagsSRv6': 'endpointBehaviorFlagsSRv6',
-        'FunctionLengthSRv6': 'functionLengthSRv6',
-        'LocalAsn': 'localAsn',
-        'LocatorBlockLengthSRv6': 'locatorBlockLengthSRv6',
-        'LocatorNodeLengthSRv6': 'locatorNodeLengthSRv6',
-        'Name': 'name',
-        'NoOflinks': 'noOflinks',
-        'PBitSRv6': 'pBitSRv6',
-        'PeerName': 'peerName',
-        'RemoteAsn': 'remoteAsn',
-        'Reserved': 'reserved',
-        'RsvdBitsSRv6': 'rsvdBitsSRv6',
-        'SBitSRv6': 'sBitSRv6',
-        'Srv6EPESID': 'srv6EPESID',
-        'UseLocalConfedId': 'useLocalConfedId',
-        'UseRemoteConfedId': 'useRemoteConfedId',
-        'Weight': 'weight',
+        "Active": "active",
+        "ArgumentLengthSRv6": "argumentLengthSRv6",
+        "BBitSRv6": "bBitSRv6",
+        "BgpLocalRouterId": "bgpLocalRouterId",
+        "BgpRemoteRouterId": "bgpRemoteRouterId",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableSRv6EndpointBehaviorSubTlv": "enableSRv6EndpointBehaviorSubTlv",
+        "EnableSRv6PeerNodeSid": "enableSRv6PeerNodeSid",
+        "EnableSRv6PeerNodeSidTlv": "enableSRv6PeerNodeSidTlv",
+        "EnableSRv6SIDStructureTLV": "enableSRv6SIDStructureTLV",
+        "EndPointFunctionSRv6": "endPointFunctionSRv6",
+        "EndpointBehaviorAlgorithmSRv6": "endpointBehaviorAlgorithmSRv6",
+        "EndpointBehaviorFlagsSRv6": "endpointBehaviorFlagsSRv6",
+        "FunctionLengthSRv6": "functionLengthSRv6",
+        "LocalAsn": "localAsn",
+        "LocatorBlockLengthSRv6": "locatorBlockLengthSRv6",
+        "LocatorNodeLengthSRv6": "locatorNodeLengthSRv6",
+        "Name": "name",
+        "NoOflinks": "noOflinks",
+        "PBitSRv6": "pBitSRv6",
+        "PeerName": "peerName",
+        "RemoteAsn": "remoteAsn",
+        "Reserved": "reserved",
+        "RsvdBitsSRv6": "rsvdBitsSRv6",
+        "SBitSRv6": "sBitSRv6",
+        "Srv6EPESID": "srv6EPESID",
+        "UseLocalConfedId": "useLocalConfedId",
+        "UseRemoteConfedId": "useRemoteConfedId",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpEpeSrv6PeerList, self).__init__(parent, list_op)
@@ -82,10 +82,13 @@ class BgpEpeSrv6PeerList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist_763f9e1a55aa38eb16e9aa15af5fbd00 import BgpEpePeerLinkList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist_763f9e1a55aa38eb16e9aa15af5fbd00 import (
+            BgpEpePeerLinkList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpEpePeerLinkList', None) is not None:
-                return self._properties.get('BgpEpePeerLinkList')
+            if self._properties.get("BgpEpePeerLinkList", None) is not None:
+                return self._properties.get("BgpEpePeerLinkList")
         return BgpEpePeerLinkList(self)._select()
 
     @property
@@ -97,7 +100,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ArgumentLengthSRv6(self):
@@ -108,7 +112,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Argument length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLengthSRv6"])
+        )
 
     @property
     def BBitSRv6(self):
@@ -119,7 +126,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B-Flag: Backup Flag. If set, the SID is eligible for protection.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BBitSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BBitSRv6"]))
 
     @property
     def BgpLocalRouterId(self):
@@ -130,7 +138,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Router ID for Local Node Descriptor
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BgpLocalRouterId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BgpLocalRouterId"])
+        )
 
     @property
     def BgpRemoteRouterId(self):
@@ -141,7 +152,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BGP Router ID for Remote Node Descriptor
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BgpRemoteRouterId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BgpRemoteRouterId"])
+        )
 
     @property
     def Count(self):
@@ -151,7 +165,7 @@ class BgpEpeSrv6PeerList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -161,7 +175,7 @@ class BgpEpeSrv6PeerList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableSRv6EndpointBehaviorSubTlv(self):
@@ -172,7 +186,11 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 Endpoint Behavior Sub TLV in BGP-LS.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6EndpointBehaviorSubTlv']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EnableSRv6EndpointBehaviorSubTlv"]),
+        )
 
     @property
     def EnableSRv6PeerNodeSid(self):
@@ -183,7 +201,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 SID Information TLV in Link State IPv6 SID NLRI.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6PeerNodeSid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSRv6PeerNodeSid"])
+        )
 
     @property
     def EnableSRv6PeerNodeSidTlv(self):
@@ -194,7 +215,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 Peer-Node SID TLV inside BGP-LS Attribute.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6PeerNodeSidTlv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSRv6PeerNodeSidTlv"])
+        )
 
     @property
     def EnableSRv6SIDStructureTLV(self):
@@ -205,7 +229,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SRv6 SID Structure TLV in BGP-LS.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRv6SIDStructureTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSRv6SIDStructureTLV"])
+        )
 
     @property
     def EndPointFunctionSRv6(self):
@@ -216,7 +243,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Choose any End-Point Function from the list, or enter any value. More details: https:/www.iana.org/assignments/segment-routing/segment-routing.xhtml
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunctionSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunctionSRv6"])
+        )
 
     @property
     def EndpointBehaviorAlgorithmSRv6(self):
@@ -227,7 +257,11 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 0: SPF, 1: Strict SPF, 2-127: Reserved, 128-255: Flexible Algorithms More Info: https:/www.iana.org/assignments/igp-parameters/igp-parameters.xhtml
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndpointBehaviorAlgorithmSRv6']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["EndpointBehaviorAlgorithmSRv6"]),
+        )
 
     @property
     def EndpointBehaviorFlagsSRv6(self):
@@ -238,7 +272,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Endpoint Behavior Flags value in Hex (1 Octet).
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndpointBehaviorFlagsSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndpointBehaviorFlagsSRv6"])
+        )
 
     @property
     def FunctionLengthSRv6(self):
@@ -249,7 +286,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Function length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLengthSRv6"])
+        )
 
     @property
     def LocalAsn(self):
@@ -260,7 +300,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# of Egress node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocalAsn']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocalAsn"]))
 
     @property
     def LocatorBlockLengthSRv6(self):
@@ -271,7 +312,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Block length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLengthSRv6"])
+        )
 
     @property
     def LocatorNodeLengthSRv6(self):
@@ -282,7 +326,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Node length in bits.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLengthSRv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLengthSRv6"])
+        )
 
     @property
     def Name(self):
@@ -292,11 +339,12 @@ class BgpEpeSrv6PeerList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NoOflinks(self):
@@ -306,11 +354,12 @@ class BgpEpeSrv6PeerList(Base):
         -------
         - number: Number of Links
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOflinks'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOflinks"])
+
     @NoOflinks.setter
     def NoOflinks(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOflinks'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOflinks"], value)
 
     @property
     def PBitSRv6(self):
@@ -321,7 +370,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag: Persistent Flag: When set, the P-Flag indicates that the SID is persistently allocated.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PBitSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PBitSRv6"]))
 
     @property
     def PeerName(self):
@@ -332,7 +382,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Peer Name For Reference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PeerName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PeerName"]))
 
     @property
     def RemoteAsn(self):
@@ -343,7 +394,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS# of Peer Node
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteAsn']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteAsn"]))
 
     @property
     def Reserved(self):
@@ -354,7 +406,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 2 Byte Reserved field of Peer Node SID TLV. The value MUST be set to 0 and ignored on receipt.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def RsvdBitsSRv6(self):
@@ -365,7 +418,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved for future use and MUST be zero when originated and ignored when received.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RsvdBitsSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RsvdBitsSRv6"]))
 
     @property
     def SBitSRv6(self):
@@ -376,7 +430,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): S-Flag: Set Flag. When set, the S-Flag indicates that the SID refers to a set of BGP peering sessions.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SBitSRv6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SBitSRv6"]))
 
     @property
     def Srv6EPESID(self):
@@ -387,7 +442,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Information, part of mandatory TLV of SRv6 SID NLRI. Acts as Node SID or Peer-Set SID depending upon S-Flag of Peer Node SID TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6EPESID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6EPESID"]))
 
     @property
     def UseLocalConfedId(self):
@@ -398,7 +454,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Local Confederation identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseLocalConfedId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseLocalConfedId"])
+        )
 
     @property
     def UseRemoteConfedId(self):
@@ -409,7 +468,10 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Use Remote Confederation identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseRemoteConfedId']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseRemoteConfedId"])
+        )
 
     @property
     def Weight(self):
@@ -420,7 +482,8 @@ class BgpEpeSrv6PeerList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of SID for Load Balancing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, Name=None, NoOflinks=None):
         # type: (str, int) -> BgpEpeSrv6PeerList
@@ -483,7 +546,36 @@ class BgpEpeSrv6PeerList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, ArgumentLengthSRv6=None, BBitSRv6=None, BgpLocalRouterId=None, BgpRemoteRouterId=None, EnableSRv6EndpointBehaviorSubTlv=None, EnableSRv6PeerNodeSid=None, EnableSRv6PeerNodeSidTlv=None, EnableSRv6SIDStructureTLV=None, EndPointFunctionSRv6=None, EndpointBehaviorAlgorithmSRv6=None, EndpointBehaviorFlagsSRv6=None, FunctionLengthSRv6=None, LocalAsn=None, LocatorBlockLengthSRv6=None, LocatorNodeLengthSRv6=None, PBitSRv6=None, PeerName=None, RemoteAsn=None, Reserved=None, RsvdBitsSRv6=None, SBitSRv6=None, Srv6EPESID=None, UseLocalConfedId=None, UseRemoteConfedId=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        ArgumentLengthSRv6=None,
+        BBitSRv6=None,
+        BgpLocalRouterId=None,
+        BgpRemoteRouterId=None,
+        EnableSRv6EndpointBehaviorSubTlv=None,
+        EnableSRv6PeerNodeSid=None,
+        EnableSRv6PeerNodeSidTlv=None,
+        EnableSRv6SIDStructureTLV=None,
+        EndPointFunctionSRv6=None,
+        EndpointBehaviorAlgorithmSRv6=None,
+        EndpointBehaviorFlagsSRv6=None,
+        FunctionLengthSRv6=None,
+        LocalAsn=None,
+        LocatorBlockLengthSRv6=None,
+        LocatorNodeLengthSRv6=None,
+        PBitSRv6=None,
+        PeerName=None,
+        RemoteAsn=None,
+        Reserved=None,
+        RsvdBitsSRv6=None,
+        SBitSRv6=None,
+        Srv6EPESID=None,
+        UseLocalConfedId=None,
+        UseRemoteConfedId=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of bgpEpeSrv6PeerList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

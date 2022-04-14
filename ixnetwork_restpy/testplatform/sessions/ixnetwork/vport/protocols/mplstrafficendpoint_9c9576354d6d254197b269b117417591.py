@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,37 +35,37 @@ class MplsTrafficEndPoint(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'mplsTrafficEndPoint'
+    _SDM_NAME = "mplsTrafficEndPoint"
     _SDM_ATT_MAP = {
-        'ArpViaInterface': 'arpViaInterface',
-        'EnableVlan': 'enableVlan',
-        'GatewayMac': 'gatewayMac',
-        'IpAddress': 'ipAddress',
-        'IpMask': 'ipMask',
-        'Ipv4Dscp': 'ipv4Dscp',
-        'Ipv4Ecn': 'ipv4Ecn',
-        'Ipv6Address': 'ipv6Address',
-        'Ipv6AddressMask': 'ipv6AddressMask',
-        'Ipv6Dscp': 'ipv6Dscp',
-        'Ipv6Ecn': 'ipv6Ecn',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'MacAddress': 'macAddress',
-        'MplsInnerMacSource': 'mplsInnerMacSource',
-        'MplsInnerVlanId': 'mplsInnerVlanId',
-        'MplsInnerVlanPriority': 'mplsInnerVlanPriority',
-        'MplsLabel': 'mplsLabel',
-        'MplsLabelStackSize': 'mplsLabelStackSize',
-        'MplsPayloadType': 'mplsPayloadType',
-        'MplsTrafficClass': 'mplsTrafficClass',
-        'Name': 'name',
-        'ProtocolInterface': 'protocolInterface',
-        'RangeSize': 'rangeSize',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "ArpViaInterface": "arpViaInterface",
+        "EnableVlan": "enableVlan",
+        "GatewayMac": "gatewayMac",
+        "IpAddress": "ipAddress",
+        "IpMask": "ipMask",
+        "Ipv4Dscp": "ipv4Dscp",
+        "Ipv4Ecn": "ipv4Ecn",
+        "Ipv6Address": "ipv6Address",
+        "Ipv6AddressMask": "ipv6AddressMask",
+        "Ipv6Dscp": "ipv6Dscp",
+        "Ipv6Ecn": "ipv6Ecn",
+        "Ipv6FlowLabel": "ipv6FlowLabel",
+        "MacAddress": "macAddress",
+        "MplsInnerMacSource": "mplsInnerMacSource",
+        "MplsInnerVlanId": "mplsInnerVlanId",
+        "MplsInnerVlanPriority": "mplsInnerVlanPriority",
+        "MplsLabel": "mplsLabel",
+        "MplsLabelStackSize": "mplsLabelStackSize",
+        "MplsPayloadType": "mplsPayloadType",
+        "MplsTrafficClass": "mplsTrafficClass",
+        "Name": "name",
+        "ProtocolInterface": "protocolInterface",
+        "RangeSize": "rangeSize",
+        "VlanCount": "vlanCount",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
     _SDM_ENUM_MAP = {
-        'mplsPayloadType': ['ethernet', 'ipv4', 'ipv6'],
+        "mplsPayloadType": ["ethernet", "ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -78,11 +79,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - bool: If selected, ARP request is conveyed through an Interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpViaInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpViaInterface"])
+
     @ArpViaInterface.setter
     def ArpViaInterface(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpViaInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpViaInterface"], value)
 
     @property
     def EnableVlan(self):
@@ -92,11 +94,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - bool: Select this check box to make VLAN available.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVlan"])
+
     @EnableVlan.setter
     def EnableVlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVlan"], value)
 
     @property
     def GatewayMac(self):
@@ -106,11 +109,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The Gateway MAC address of the destination traffic endpoint. The default value is 00 00 00 00 00 00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GatewayMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["GatewayMac"])
+
     @GatewayMac.setter
     def GatewayMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GatewayMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GatewayMac"], value)
 
     @property
     def IpAddress(self):
@@ -120,11 +124,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: Specify the IP address of the Source Traffic Endpoint. The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpMask(self):
@@ -134,11 +139,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - number: Specify the Mask value. The default value is 24.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpMask"])
+
     @IpMask.setter
     def IpMask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpMask"], value)
 
     @property
     def Ipv4Dscp(self):
@@ -148,11 +154,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The priority specified for the IP address. The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Dscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Dscp"])
+
     @Ipv4Dscp.setter
     def Ipv4Dscp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Dscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Dscp"], value)
 
     @property
     def Ipv4Ecn(self):
@@ -162,11 +169,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The ECN value specified for the IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Ecn'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Ecn"])
+
     @Ipv4Ecn.setter
     def Ipv4Ecn(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Ecn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Ecn"], value)
 
     @property
     def Ipv6Address(self):
@@ -176,11 +184,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: Specify the IPv6 address of the Source Traffic Endpoint. The default value is 0.0.0.0.0.0.0.0
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Address"])
+
     @Ipv6Address.setter
     def Ipv6Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Address"], value)
 
     @property
     def Ipv6AddressMask(self):
@@ -190,11 +199,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6AddressMask"])
+
     @Ipv6AddressMask.setter
     def Ipv6AddressMask(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6AddressMask"], value)
 
     @property
     def Ipv6Dscp(self):
@@ -204,11 +214,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The priority specified for the IP address. The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Dscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Dscp"])
+
     @Ipv6Dscp.setter
     def Ipv6Dscp(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Dscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Dscp"], value)
 
     @property
     def Ipv6Ecn(self):
@@ -218,11 +229,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The ECN value specified for the IP address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6Ecn'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6Ecn"])
+
     @Ipv6Ecn.setter
     def Ipv6Ecn(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6Ecn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6Ecn"], value)
 
     @property
     def Ipv6FlowLabel(self):
@@ -232,11 +244,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The IPv6 Flow Label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"])
+
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6FlowLabel"], value)
 
     @property
     def MacAddress(self):
@@ -246,11 +259,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
+
     @MacAddress.setter
     def MacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacAddress"], value)
 
     @property
     def MplsInnerMacSource(self):
@@ -260,11 +274,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The MPLS Inner Source MAC value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsInnerMacSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsInnerMacSource"])
+
     @MplsInnerMacSource.setter
     def MplsInnerMacSource(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsInnerMacSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsInnerMacSource"], value)
 
     @property
     def MplsInnerVlanId(self):
@@ -274,11 +289,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The MPLS Inner VLAN identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsInnerVlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsInnerVlanId"])
+
     @MplsInnerVlanId.setter
     def MplsInnerVlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsInnerVlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsInnerVlanId"], value)
 
     @property
     def MplsInnerVlanPriority(self):
@@ -288,11 +304,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The MPLS Inner VLAN Priority value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsInnerVlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsInnerVlanPriority"])
+
     @MplsInnerVlanPriority.setter
     def MplsInnerVlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsInnerVlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsInnerVlanPriority"], value)
 
     @property
     def MplsLabel(self):
@@ -302,11 +319,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabel"])
+
     @MplsLabel.setter
     def MplsLabel(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabel"], value)
 
     @property
     def MplsLabelStackSize(self):
@@ -316,11 +334,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - number: The size of the MPLS label stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsLabelStackSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsLabelStackSize"])
+
     @MplsLabelStackSize.setter
     def MplsLabelStackSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsLabelStackSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsLabelStackSize"], value)
 
     @property
     def MplsPayloadType(self):
@@ -330,11 +349,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str(ethernet | ipv4 | ipv6): Specify the MPLS Payload Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsPayloadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsPayloadType"])
+
     @MplsPayloadType.setter
     def MplsPayloadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsPayloadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsPayloadType"], value)
 
     @property
     def MplsTrafficClass(self):
@@ -344,11 +364,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The MPLS Traffic Class value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MplsTrafficClass'])
+        return self._get_attribute(self._SDM_ATT_MAP["MplsTrafficClass"])
+
     @MplsTrafficClass.setter
     def MplsTrafficClass(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MplsTrafficClass'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MplsTrafficClass"], value)
 
     @property
     def Name(self):
@@ -358,11 +379,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: The name of the Traffic Source Endpoint.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ProtocolInterface(self):
@@ -372,11 +394,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
+
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolInterface"], value)
 
     @property
     def RangeSize(self):
@@ -386,11 +409,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - number: Specify the size of the Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RangeSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["RangeSize"])
+
     @RangeSize.setter
     def RangeSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RangeSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RangeSize"], value)
 
     @property
     def VlanCount(self):
@@ -400,11 +424,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - number: Specify the VLAN count. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanCount"])
+
     @VlanCount.setter
     def VlanCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanCount"], value)
 
     @property
     def VlanId(self):
@@ -414,11 +439,12 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: Specify the VLAN ID (Outer and Inner).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -428,13 +454,42 @@ class MplsTrafficEndPoint(Base):
         -------
         - str: Specify the VLAN Priority (Outer and Inner).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, ArpViaInterface=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        ArpViaInterface=None,
+        EnableVlan=None,
+        GatewayMac=None,
+        IpAddress=None,
+        IpMask=None,
+        Ipv4Dscp=None,
+        Ipv4Ecn=None,
+        Ipv6Address=None,
+        Ipv6AddressMask=None,
+        Ipv6Dscp=None,
+        Ipv6Ecn=None,
+        Ipv6FlowLabel=None,
+        MacAddress=None,
+        MplsInnerMacSource=None,
+        MplsInnerVlanId=None,
+        MplsInnerVlanPriority=None,
+        MplsLabel=None,
+        MplsLabelStackSize=None,
+        MplsPayloadType=None,
+        MplsTrafficClass=None,
+        Name=None,
+        ProtocolInterface=None,
+        RangeSize=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, str, str, int, str, str, str, int, str, str, str, str, str, str, str, str, int, str, str, str, str, int, int, str, str) -> MplsTrafficEndPoint
         """Updates mplsTrafficEndPoint resource on the server.
 
@@ -473,7 +528,35 @@ class MplsTrafficEndPoint(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ArpViaInterface=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def add(
+        self,
+        ArpViaInterface=None,
+        EnableVlan=None,
+        GatewayMac=None,
+        IpAddress=None,
+        IpMask=None,
+        Ipv4Dscp=None,
+        Ipv4Ecn=None,
+        Ipv6Address=None,
+        Ipv6AddressMask=None,
+        Ipv6Dscp=None,
+        Ipv6Ecn=None,
+        Ipv6FlowLabel=None,
+        MacAddress=None,
+        MplsInnerMacSource=None,
+        MplsInnerVlanId=None,
+        MplsInnerVlanPriority=None,
+        MplsLabel=None,
+        MplsLabelStackSize=None,
+        MplsPayloadType=None,
+        MplsTrafficClass=None,
+        Name=None,
+        ProtocolInterface=None,
+        RangeSize=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, str, str, int, str, str, str, int, str, str, str, str, str, str, str, str, int, str, str, str, str, int, int, str, str) -> MplsTrafficEndPoint
         """Adds a new mplsTrafficEndPoint resource on the server and adds it to the container.
 
@@ -526,7 +609,35 @@ class MplsTrafficEndPoint(Base):
         """
         self._delete()
 
-    def find(self, ArpViaInterface=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        ArpViaInterface=None,
+        EnableVlan=None,
+        GatewayMac=None,
+        IpAddress=None,
+        IpMask=None,
+        Ipv4Dscp=None,
+        Ipv4Ecn=None,
+        Ipv6Address=None,
+        Ipv6AddressMask=None,
+        Ipv6Dscp=None,
+        Ipv6Ecn=None,
+        Ipv6FlowLabel=None,
+        MacAddress=None,
+        MplsInnerMacSource=None,
+        MplsInnerVlanId=None,
+        MplsInnerVlanPriority=None,
+        MplsLabel=None,
+        MplsLabelStackSize=None,
+        MplsPayloadType=None,
+        MplsTrafficClass=None,
+        Name=None,
+        ProtocolInterface=None,
+        RangeSize=None,
+        VlanCount=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, str, str, int, str, str, str, int, str, str, str, str, str, str, str, str, int, str, str, str, str, int, int, str, str) -> MplsTrafficEndPoint
         """Finds and retrieves mplsTrafficEndPoint resources from the server.
 

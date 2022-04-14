@@ -20,12 +20,26 @@ def test_find_ngpf(ixnetwork):
     which did not have find function earlier
     """
     for i in range(0, 5):
-        srte_v4 = ixnetwork.Topology.add().DeviceGroup.add().Ethernet.add().Ipv4.add().\
-            BgpIpv4Peer.add(NumberSRTEPolicies=1).BgpSRTEPoliciesListV4
+        srte_v4 = (
+            ixnetwork.Topology.add()
+            .DeviceGroup.add()
+            .Ethernet.add()
+            .Ipv4.add()
+            .BgpIpv4Peer.add(NumberSRTEPolicies=1)
+            .BgpSRTEPoliciesListV4
+        )
         if i % 2 == 0:
             srte_v4.NumberOfTunnelsV4 = 2
-    assert (len(ixnetwork.Topology.find().DeviceGroup.find().Ethernet.find().Ipv4.find().
-                BgpIpv4Peer.find().BgpSRTEPoliciesListV4.find(NumberOfTunnelsV4=2))) == 3
+    assert (
+        len(
+            ixnetwork.Topology.find()
+            .DeviceGroup.find()
+            .Ethernet.find()
+            .Ipv4.find()
+            .BgpIpv4Peer.find()
+            .BgpSRTEPoliciesListV4.find(NumberOfTunnelsV4=2)
+        )
+    ) == 3
 
 
 if __name__ == "__main__":

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,30 +35,29 @@ class Interface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interface'
+    _SDM_NAME = "interface"
     _SDM_ATT_MAP = {
-        'EchoConfigureSrcIp': 'echoConfigureSrcIp',
-        'EchoInterval': 'echoInterval',
-        'EchoSrcIpv4Address': 'echoSrcIpv4Address',
-        'EchoSrcIpv6Address': 'echoSrcIpv6Address',
-        'EchoTimeout': 'echoTimeout',
-        'EchoTxInterval': 'echoTxInterval',
-        'EnableCtrlPlaneIndependent': 'enableCtrlPlaneIndependent',
-        'EnableDemandMode': 'enableDemandMode',
-        'Enabled': 'enabled',
-        'FlapTxInterval': 'flapTxInterval',
-        'InterfaceId': 'interfaceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'IpDifferentiatedServiceField': 'ipDifferentiatedServiceField',
-        'MinRxInterval': 'minRxInterval',
-        'Multiplier': 'multiplier',
-        'PollInterval': 'pollInterval',
-        'TxInterval': 'txInterval',
+        "EchoConfigureSrcIp": "echoConfigureSrcIp",
+        "EchoInterval": "echoInterval",
+        "EchoSrcIpv4Address": "echoSrcIpv4Address",
+        "EchoSrcIpv6Address": "echoSrcIpv6Address",
+        "EchoTimeout": "echoTimeout",
+        "EchoTxInterval": "echoTxInterval",
+        "EnableCtrlPlaneIndependent": "enableCtrlPlaneIndependent",
+        "EnableDemandMode": "enableDemandMode",
+        "Enabled": "enabled",
+        "FlapTxInterval": "flapTxInterval",
+        "InterfaceId": "interfaceId",
+        "InterfaceIndex": "interfaceIndex",
+        "InterfaceType": "interfaceType",
+        "Interfaces": "interfaces",
+        "IpDifferentiatedServiceField": "ipDifferentiatedServiceField",
+        "MinRxInterval": "minRxInterval",
+        "Multiplier": "multiplier",
+        "PollInterval": "pollInterval",
+        "TxInterval": "txInterval",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Interface, self).__init__(parent, list_op)
@@ -73,10 +73,13 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.session_528e31d9c93d0ad2afb513a10d9d8be3 import Session
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.session_528e31d9c93d0ad2afb513a10d9d8be3 import (
+            Session,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Session', None) is not None:
-                return self._properties.get('Session')
+            if self._properties.get("Session", None) is not None:
+                return self._properties.get("Session")
         return Session(self)
 
     @property
@@ -87,11 +90,12 @@ class Interface(Base):
         -------
         - bool: If true, allows the user to configure the source IP address of the Echo Message, using echoSrcIpv4Address or echoSrcIpv6Address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoConfigureSrcIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoConfigureSrcIp"])
+
     @EchoConfigureSrcIp.setter
     def EchoConfigureSrcIp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoConfigureSrcIp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoConfigureSrcIp"], value)
 
     @property
     def EchoInterval(self):
@@ -101,11 +105,12 @@ class Interface(Base):
         -------
         - number: This option indicates the desired interval between BFD echo packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoInterval"])
+
     @EchoInterval.setter
     def EchoInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoInterval"], value)
 
     @property
     def EchoSrcIpv4Address(self):
@@ -115,11 +120,12 @@ class Interface(Base):
         -------
         - str: Sets the IPv4 echo source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoSrcIpv4Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoSrcIpv4Address"])
+
     @EchoSrcIpv4Address.setter
     def EchoSrcIpv4Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoSrcIpv4Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoSrcIpv4Address"], value)
 
     @property
     def EchoSrcIpv6Address(self):
@@ -129,11 +135,12 @@ class Interface(Base):
         -------
         - str: Sets the IPv6 echo source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoSrcIpv6Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoSrcIpv6Address"])
+
     @EchoSrcIpv6Address.setter
     def EchoSrcIpv6Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoSrcIpv6Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoSrcIpv6Address"], value)
 
     @property
     def EchoTimeout(self):
@@ -143,11 +150,12 @@ class Interface(Base):
         -------
         - number: The interval, in microseconds, that the interface waits for a response to the last Echo packet sent out.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoTimeout'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoTimeout"])
+
     @EchoTimeout.setter
     def EchoTimeout(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoTimeout'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoTimeout"], value)
 
     @property
     def EchoTxInterval(self):
@@ -157,11 +165,12 @@ class Interface(Base):
         -------
         - number: The minimum interval, in microseconds, that the interface would like to use when transmitting BFD Echo packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EchoTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["EchoTxInterval"])
+
     @EchoTxInterval.setter
     def EchoTxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EchoTxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EchoTxInterval"], value)
 
     @property
     def EnableCtrlPlaneIndependent(self):
@@ -171,11 +180,12 @@ class Interface(Base):
         -------
         - bool: Set to 1 if the local system's BFD implementation is independent of the control plane.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCtrlPlaneIndependent'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCtrlPlaneIndependent"])
+
     @EnableCtrlPlaneIndependent.setter
     def EnableCtrlPlaneIndependent(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCtrlPlaneIndependent'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCtrlPlaneIndependent"], value)
 
     @property
     def EnableDemandMode(self):
@@ -185,11 +195,12 @@ class Interface(Base):
         -------
         - bool: Enables demand mode. 1 indicates demand mode enabled, and 0 indicates demand mode disabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDemandMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDemandMode"])
+
     @EnableDemandMode.setter
     def EnableDemandMode(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDemandMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDemandMode"], value)
 
     @property
     def Enabled(self):
@@ -199,11 +210,12 @@ class Interface(Base):
         -------
         - bool: Enables the use of the simulated interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FlapTxInterval(self):
@@ -213,25 +225,27 @@ class Interface(Base):
         -------
         - number: BFD sessions will flap every flapTxIntvs. (default = 0)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FlapTxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["FlapTxInterval"])
+
     @FlapTxInterval.setter
     def FlapTxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FlapTxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FlapTxInterval"], value)
 
     @property
     def InterfaceId(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This is a local ID and is unique per router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceId"])
+
     @InterfaceId.setter
     def InterfaceId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceId"], value)
 
     @property
     def InterfaceIndex(self):
@@ -241,11 +255,12 @@ class Interface(Base):
         -------
         - number: The assigned protocol interface ID for this BFD interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceIndex"])
+
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceIndex"], value)
 
     @property
     def InterfaceType(self):
@@ -255,11 +270,12 @@ class Interface(Base):
         -------
         - str: The type of interface to be selected for this BFD interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterfaceType"])
+
     @InterfaceType.setter
     def InterfaceType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterfaceType"], value)
 
     @property
     def Interfaces(self):
@@ -269,11 +285,12 @@ class Interface(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
+        return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
+
     @Interfaces.setter
     def Interfaces(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Interfaces"], value)
 
     @property
     def IpDifferentiatedServiceField(self):
@@ -283,11 +300,12 @@ class Interface(Base):
         -------
         - number: Sets the TOS byte for IP Differentiated Service Field
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDifferentiatedServiceField'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDifferentiatedServiceField"])
+
     @IpDifferentiatedServiceField.setter
     def IpDifferentiatedServiceField(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDifferentiatedServiceField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDifferentiatedServiceField"], value)
 
     @property
     def MinRxInterval(self):
@@ -297,11 +315,12 @@ class Interface(Base):
         -------
         - number: This option indicates the desired minimum interval between received BFD control packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRxInterval"])
+
     @MinRxInterval.setter
     def MinRxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRxInterval"], value)
 
     @property
     def Multiplier(self):
@@ -311,11 +330,12 @@ class Interface(Base):
         -------
         - number: Multiplier * intv defines the timeout period. (default = 3)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def PollInterval(self):
@@ -325,11 +345,12 @@ class Interface(Base):
         -------
         - number: If in the Demand Mode, polling will take place every pollIntv interval. (default = 1,000)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["PollInterval"])
+
     @PollInterval.setter
     def PollInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PollInterval"], value)
 
     @property
     def TxInterval(self):
@@ -339,13 +360,35 @@ class Interface(Base):
         -------
         - number: This option indicates the desired interval between transmitted BFD control packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxInterval"])
+
     @TxInterval.setter
     def TxInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxInterval"], value)
 
-    def update(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+    def update(
+        self,
+        EchoConfigureSrcIp=None,
+        EchoInterval=None,
+        EchoSrcIpv4Address=None,
+        EchoSrcIpv6Address=None,
+        EchoTimeout=None,
+        EchoTxInterval=None,
+        EnableCtrlPlaneIndependent=None,
+        EnableDemandMode=None,
+        Enabled=None,
+        FlapTxInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpDifferentiatedServiceField=None,
+        MinRxInterval=None,
+        Multiplier=None,
+        PollInterval=None,
+        TxInterval=None,
+    ):
         # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Updates interface resource on the server.
 
@@ -377,7 +420,28 @@ class Interface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+    def add(
+        self,
+        EchoConfigureSrcIp=None,
+        EchoInterval=None,
+        EchoSrcIpv4Address=None,
+        EchoSrcIpv6Address=None,
+        EchoTimeout=None,
+        EchoTxInterval=None,
+        EnableCtrlPlaneIndependent=None,
+        EnableDemandMode=None,
+        Enabled=None,
+        FlapTxInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpDifferentiatedServiceField=None,
+        MinRxInterval=None,
+        Multiplier=None,
+        PollInterval=None,
+        TxInterval=None,
+    ):
         # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
@@ -423,7 +487,28 @@ class Interface(Base):
         """
         self._delete()
 
-    def find(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+    def find(
+        self,
+        EchoConfigureSrcIp=None,
+        EchoInterval=None,
+        EchoSrcIpv4Address=None,
+        EchoSrcIpv6Address=None,
+        EchoTimeout=None,
+        EchoTxInterval=None,
+        EnableCtrlPlaneIndependent=None,
+        EnableDemandMode=None,
+        Enabled=None,
+        FlapTxInterval=None,
+        InterfaceId=None,
+        InterfaceIndex=None,
+        InterfaceType=None,
+        Interfaces=None,
+        IpDifferentiatedServiceField=None,
+        MinRxInterval=None,
+        Multiplier=None,
+        PollInterval=None,
+        TxInterval=None,
+    ):
         # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
@@ -497,7 +582,11 @@ class Interface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getInterfaceAccessorIfaceList", payload=payload, response_object=None
+        )

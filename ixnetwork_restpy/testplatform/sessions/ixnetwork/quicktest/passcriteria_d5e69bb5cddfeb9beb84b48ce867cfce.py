@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,66 +33,72 @@ class PassCriteria(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'passCriteria'
+    _SDM_NAME = "passCriteria"
     _SDM_ATT_MAP = {
-        'DownstreamDataErrorThresholdMode': 'downstreamDataErrorThresholdMode',
-        'DownstreamDataErrorThresholdValue': 'downstreamDataErrorThresholdValue',
-        'DownstreamEnableDataIntegrityPassFail': 'downstreamEnableDataIntegrityPassFail',
-        'DownstreamEnableLatencyPassFail': 'downstreamEnableLatencyPassFail',
-        'DownstreamEnableRatePassFail': 'downstreamEnableRatePassFail',
-        'DownstreamEnableSequenceErrorsPassFail': 'downstreamEnableSequenceErrorsPassFail',
-        'DownstreamEnableStandardDeviationPassFail': 'downstreamEnableStandardDeviationPassFail',
-        'DownstreamLatencyThresholdMode': 'downstreamLatencyThresholdMode',
-        'DownstreamLatencyThresholdScale': 'downstreamLatencyThresholdScale',
-        'DownstreamLatencyThresholdValue': 'downstreamLatencyThresholdValue',
-        'DownstreamLatencyVarThresholdMode': 'downstreamLatencyVarThresholdMode',
-        'DownstreamLatencyVariationThresholdScale': 'downstreamLatencyVariationThresholdScale',
-        'DownstreamLatencyVariationThresholdValue': 'downstreamLatencyVariationThresholdValue',
-        'DownstreamPassCriteriaLoadRateMode': 'downstreamPassCriteriaLoadRateMode',
-        'DownstreamPassCriteriaLoadRateScale': 'downstreamPassCriteriaLoadRateScale',
-        'DownstreamPassCriteriaLoadRateValue': 'downstreamPassCriteriaLoadRateValue',
-        'DownstreamSeqErrorsThresholdMode': 'downstreamSeqErrorsThresholdMode',
-        'DownstreamSeqErrorsThresholdValue': 'downstreamSeqErrorsThresholdValue',
-        'Downstream_passFailFrequency': 'downstream_passFailFrequency',
-        'UpstreamDataErrorThresholdMode': 'upstreamDataErrorThresholdMode',
-        'UpstreamDataErrorThresholdValue': 'upstreamDataErrorThresholdValue',
-        'UpstreamEnableDataIntegrityPassFail': 'upstreamEnableDataIntegrityPassFail',
-        'UpstreamEnableLatencyPassFail': 'upstreamEnableLatencyPassFail',
-        'UpstreamEnableRatePassFail': 'upstreamEnableRatePassFail',
-        'UpstreamEnableSequenceErrorsPassFail': 'upstreamEnableSequenceErrorsPassFail',
-        'UpstreamEnableStandardDeviationPassFail': 'upstreamEnableStandardDeviationPassFail',
-        'UpstreamLatencyThresholdMode': 'upstreamLatencyThresholdMode',
-        'UpstreamLatencyThresholdScale': 'upstreamLatencyThresholdScale',
-        'UpstreamLatencyThresholdValue': 'upstreamLatencyThresholdValue',
-        'UpstreamLatencyVarThresholdMode': 'upstreamLatencyVarThresholdMode',
-        'UpstreamLatencyVariationThresholdScale': 'upstreamLatencyVariationThresholdScale',
-        'UpstreamLatencyVariationThresholdValue': 'upstreamLatencyVariationThresholdValue',
-        'UpstreamPassCriteriaLoadRateMode': 'upstreamPassCriteriaLoadRateMode',
-        'UpstreamPassCriteriaLoadRateScale': 'upstreamPassCriteriaLoadRateScale',
-        'UpstreamPassCriteriaLoadRateValue': 'upstreamPassCriteriaLoadRateValue',
-        'UpstreamSeqErrorsThresholdMode': 'upstreamSeqErrorsThresholdMode',
-        'UpstreamSeqErrorsThresholdValue': 'upstreamSeqErrorsThresholdValue',
-        'Upstream_passFailFrequency': 'upstream_passFailFrequency',
+        "DownstreamDataErrorThresholdMode": "downstreamDataErrorThresholdMode",
+        "DownstreamDataErrorThresholdValue": "downstreamDataErrorThresholdValue",
+        "DownstreamEnableDataIntegrityPassFail": "downstreamEnableDataIntegrityPassFail",
+        "DownstreamEnableLatencyPassFail": "downstreamEnableLatencyPassFail",
+        "DownstreamEnableRatePassFail": "downstreamEnableRatePassFail",
+        "DownstreamEnableSequenceErrorsPassFail": "downstreamEnableSequenceErrorsPassFail",
+        "DownstreamEnableStandardDeviationPassFail": "downstreamEnableStandardDeviationPassFail",
+        "DownstreamLatencyThresholdMode": "downstreamLatencyThresholdMode",
+        "DownstreamLatencyThresholdScale": "downstreamLatencyThresholdScale",
+        "DownstreamLatencyThresholdValue": "downstreamLatencyThresholdValue",
+        "DownstreamLatencyVarThresholdMode": "downstreamLatencyVarThresholdMode",
+        "DownstreamLatencyVariationThresholdScale": "downstreamLatencyVariationThresholdScale",
+        "DownstreamLatencyVariationThresholdValue": "downstreamLatencyVariationThresholdValue",
+        "DownstreamPassCriteriaLoadRateMode": "downstreamPassCriteriaLoadRateMode",
+        "DownstreamPassCriteriaLoadRateScale": "downstreamPassCriteriaLoadRateScale",
+        "DownstreamPassCriteriaLoadRateValue": "downstreamPassCriteriaLoadRateValue",
+        "DownstreamSeqErrorsThresholdMode": "downstreamSeqErrorsThresholdMode",
+        "DownstreamSeqErrorsThresholdValue": "downstreamSeqErrorsThresholdValue",
+        "Downstream_passFailFrequency": "downstream_passFailFrequency",
+        "UpstreamDataErrorThresholdMode": "upstreamDataErrorThresholdMode",
+        "UpstreamDataErrorThresholdValue": "upstreamDataErrorThresholdValue",
+        "UpstreamEnableDataIntegrityPassFail": "upstreamEnableDataIntegrityPassFail",
+        "UpstreamEnableLatencyPassFail": "upstreamEnableLatencyPassFail",
+        "UpstreamEnableRatePassFail": "upstreamEnableRatePassFail",
+        "UpstreamEnableSequenceErrorsPassFail": "upstreamEnableSequenceErrorsPassFail",
+        "UpstreamEnableStandardDeviationPassFail": "upstreamEnableStandardDeviationPassFail",
+        "UpstreamLatencyThresholdMode": "upstreamLatencyThresholdMode",
+        "UpstreamLatencyThresholdScale": "upstreamLatencyThresholdScale",
+        "UpstreamLatencyThresholdValue": "upstreamLatencyThresholdValue",
+        "UpstreamLatencyVarThresholdMode": "upstreamLatencyVarThresholdMode",
+        "UpstreamLatencyVariationThresholdScale": "upstreamLatencyVariationThresholdScale",
+        "UpstreamLatencyVariationThresholdValue": "upstreamLatencyVariationThresholdValue",
+        "UpstreamPassCriteriaLoadRateMode": "upstreamPassCriteriaLoadRateMode",
+        "UpstreamPassCriteriaLoadRateScale": "upstreamPassCriteriaLoadRateScale",
+        "UpstreamPassCriteriaLoadRateValue": "upstreamPassCriteriaLoadRateValue",
+        "UpstreamSeqErrorsThresholdMode": "upstreamSeqErrorsThresholdMode",
+        "UpstreamSeqErrorsThresholdValue": "upstreamSeqErrorsThresholdValue",
+        "Upstream_passFailFrequency": "upstream_passFailFrequency",
     }
     _SDM_ENUM_MAP = {
-        'downstreamDataErrorThresholdMode': ['average', 'maximum'],
-        'downstreamLatencyThresholdMode': ['average', 'maximum'],
-        'downstreamLatencyThresholdScale': ['ms', 'ns', 'us'],
-        'downstreamLatencyVarThresholdMode': ['average', 'maximum'],
-        'downstreamLatencyVariationThresholdScale': ['ms', 'ns', 'us'],
-        'downstreamPassCriteriaLoadRateMode': ['average', 'minimum'],
-        'downstreamPassCriteriaLoadRateScale': ['fps', 'gbps', 'kbps', 'mbps', 'percent'],
-        'downstreamSeqErrorsThresholdMode': ['average', 'maximum'],
-        'downstream_passFailFrequency': ['framesizes', 'trials'],
-        'upstreamDataErrorThresholdMode': ['average', 'maximum'],
-        'upstreamLatencyThresholdMode': ['average', 'maximum'],
-        'upstreamLatencyThresholdScale': ['ms', 'ns', 'us'],
-        'upstreamLatencyVarThresholdMode': ['average', 'maximum'],
-        'upstreamLatencyVariationThresholdScale': ['ms', 'ns', 'us'],
-        'upstreamPassCriteriaLoadRateMode': ['average', 'minimum'],
-        'upstreamPassCriteriaLoadRateScale': ['fps', 'gbps', 'kbps', 'mbps', 'percent'],
-        'upstreamSeqErrorsThresholdMode': ['average', 'maximum'],
-        'upstream_passFailFrequency': ['framesizes', 'trials'],
+        "downstreamDataErrorThresholdMode": ["average", "maximum"],
+        "downstreamLatencyThresholdMode": ["average", "maximum"],
+        "downstreamLatencyThresholdScale": ["ms", "ns", "us"],
+        "downstreamLatencyVarThresholdMode": ["average", "maximum"],
+        "downstreamLatencyVariationThresholdScale": ["ms", "ns", "us"],
+        "downstreamPassCriteriaLoadRateMode": ["average", "minimum"],
+        "downstreamPassCriteriaLoadRateScale": [
+            "fps",
+            "gbps",
+            "kbps",
+            "mbps",
+            "percent",
+        ],
+        "downstreamSeqErrorsThresholdMode": ["average", "maximum"],
+        "downstream_passFailFrequency": ["framesizes", "trials"],
+        "upstreamDataErrorThresholdMode": ["average", "maximum"],
+        "upstreamLatencyThresholdMode": ["average", "maximum"],
+        "upstreamLatencyThresholdScale": ["ms", "ns", "us"],
+        "upstreamLatencyVarThresholdMode": ["average", "maximum"],
+        "upstreamLatencyVariationThresholdScale": ["ms", "ns", "us"],
+        "upstreamPassCriteriaLoadRateMode": ["average", "minimum"],
+        "upstreamPassCriteriaLoadRateScale": ["fps", "gbps", "kbps", "mbps", "percent"],
+        "upstreamSeqErrorsThresholdMode": ["average", "maximum"],
+        "upstream_passFailFrequency": ["framesizes", "trials"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -105,11 +112,16 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies threshold mode for downstream data error.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamDataErrorThresholdMode'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamDataErrorThresholdMode"]
+        )
+
     @DownstreamDataErrorThresholdMode.setter
     def DownstreamDataErrorThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamDataErrorThresholdMode'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamDataErrorThresholdMode"], value
+        )
 
     @property
     def DownstreamDataErrorThresholdValue(self):
@@ -119,11 +131,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies the downstream data error threshold value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamDataErrorThresholdValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamDataErrorThresholdValue"]
+        )
+
     @DownstreamDataErrorThresholdValue.setter
     def DownstreamDataErrorThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamDataErrorThresholdValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamDataErrorThresholdValue"], value
+        )
 
     @property
     def DownstreamEnableDataIntegrityPassFail(self):
@@ -133,11 +150,16 @@ class PassCriteria(Base):
         -------
         - bool: if true, enables pass or faill of data integrity for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamEnableDataIntegrityPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableDataIntegrityPassFail"]
+        )
+
     @DownstreamEnableDataIntegrityPassFail.setter
     def DownstreamEnableDataIntegrityPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamEnableDataIntegrityPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableDataIntegrityPassFail"], value
+        )
 
     @property
     def DownstreamEnableLatencyPassFail(self):
@@ -147,11 +169,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables latency pass fail for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamEnableLatencyPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamEnableLatencyPassFail"])
+
     @DownstreamEnableLatencyPassFail.setter
     def DownstreamEnableLatencyPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamEnableLatencyPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamEnableLatencyPassFail"], value)
 
     @property
     def DownstreamEnableRatePassFail(self):
@@ -161,11 +184,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables pass fail rate for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamEnableRatePassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamEnableRatePassFail"])
+
     @DownstreamEnableRatePassFail.setter
     def DownstreamEnableRatePassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamEnableRatePassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamEnableRatePassFail"], value)
 
     @property
     def DownstreamEnableSequenceErrorsPassFail(self):
@@ -175,11 +199,16 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables the pass fail for sequence errors for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamEnableSequenceErrorsPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableSequenceErrorsPassFail"]
+        )
+
     @DownstreamEnableSequenceErrorsPassFail.setter
     def DownstreamEnableSequenceErrorsPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamEnableSequenceErrorsPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableSequenceErrorsPassFail"], value
+        )
 
     @property
     def DownstreamEnableStandardDeviationPassFail(self):
@@ -189,11 +218,16 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables pass fail of standard deviation for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamEnableStandardDeviationPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableStandardDeviationPassFail"]
+        )
+
     @DownstreamEnableStandardDeviationPassFail.setter
     def DownstreamEnableStandardDeviationPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamEnableStandardDeviationPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamEnableStandardDeviationPassFail"], value
+        )
 
     @property
     def DownstreamLatencyThresholdMode(self):
@@ -203,11 +237,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the latency threshold mode for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdMode"])
+
     @DownstreamLatencyThresholdMode.setter
     def DownstreamLatencyThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdMode"], value)
 
     @property
     def DownstreamLatencyThresholdScale(self):
@@ -217,11 +252,12 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): Signifies the threshold scale for downstream latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdScale"])
+
     @DownstreamLatencyThresholdScale.setter
     def DownstreamLatencyThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdScale"], value)
 
     @property
     def DownstreamLatencyThresholdValue(self):
@@ -231,11 +267,12 @@ class PassCriteria(Base):
         -------
         - number: Signifies the latency threshold value for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdValue"])
+
     @DownstreamLatencyThresholdValue.setter
     def DownstreamLatencyThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DownstreamLatencyThresholdValue"], value)
 
     @property
     def DownstreamLatencyVarThresholdMode(self):
@@ -245,11 +282,16 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies latency variation threshold mode for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyVarThresholdMode'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVarThresholdMode"]
+        )
+
     @DownstreamLatencyVarThresholdMode.setter
     def DownstreamLatencyVarThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyVarThresholdMode'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVarThresholdMode"], value
+        )
 
     @property
     def DownstreamLatencyVariationThresholdScale(self):
@@ -259,11 +301,16 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): Signifies latency variation threshold scale for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyVariationThresholdScale'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVariationThresholdScale"]
+        )
+
     @DownstreamLatencyVariationThresholdScale.setter
     def DownstreamLatencyVariationThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyVariationThresholdScale'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVariationThresholdScale"], value
+        )
 
     @property
     def DownstreamLatencyVariationThresholdValue(self):
@@ -273,11 +320,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies the latency variation threshold value for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamLatencyVariationThresholdValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVariationThresholdValue"]
+        )
+
     @DownstreamLatencyVariationThresholdValue.setter
     def DownstreamLatencyVariationThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamLatencyVariationThresholdValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamLatencyVariationThresholdValue"], value
+        )
 
     @property
     def DownstreamPassCriteriaLoadRateMode(self):
@@ -287,11 +339,16 @@ class PassCriteria(Base):
         -------
         - str(average | minimum): Signifies the pass criteria load rate mode for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateMode'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateMode"]
+        )
+
     @DownstreamPassCriteriaLoadRateMode.setter
     def DownstreamPassCriteriaLoadRateMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateMode'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateMode"], value
+        )
 
     @property
     def DownstreamPassCriteriaLoadRateScale(self):
@@ -301,11 +358,16 @@ class PassCriteria(Base):
         -------
         - str(fps | gbps | kbps | mbps | percent): Signifies the pass criteria load rate scale for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateScale'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateScale"]
+        )
+
     @DownstreamPassCriteriaLoadRateScale.setter
     def DownstreamPassCriteriaLoadRateScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateScale'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateScale"], value
+        )
 
     @property
     def DownstreamPassCriteriaLoadRateValue(self):
@@ -315,11 +377,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies pass criteria load rate value for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateValue"]
+        )
+
     @DownstreamPassCriteriaLoadRateValue.setter
     def DownstreamPassCriteriaLoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamPassCriteriaLoadRateValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamPassCriteriaLoadRateValue"], value
+        )
 
     @property
     def DownstreamSeqErrorsThresholdMode(self):
@@ -329,11 +396,16 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the threshold mode for sequence errors for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamSeqErrorsThresholdMode'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamSeqErrorsThresholdMode"]
+        )
+
     @DownstreamSeqErrorsThresholdMode.setter
     def DownstreamSeqErrorsThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamSeqErrorsThresholdMode'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamSeqErrorsThresholdMode"], value
+        )
 
     @property
     def DownstreamSeqErrorsThresholdValue(self):
@@ -343,11 +415,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies the threshold value for sequence errors for downstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DownstreamSeqErrorsThresholdValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DownstreamSeqErrorsThresholdValue"]
+        )
+
     @DownstreamSeqErrorsThresholdValue.setter
     def DownstreamSeqErrorsThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DownstreamSeqErrorsThresholdValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["DownstreamSeqErrorsThresholdValue"], value
+        )
 
     @property
     def Downstream_passFailFrequency(self):
@@ -357,11 +434,12 @@ class PassCriteria(Base):
         -------
         - str(framesizes | trials): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Downstream_passFailFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Downstream_passFailFrequency"])
+
     @Downstream_passFailFrequency.setter
     def Downstream_passFailFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Downstream_passFailFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Downstream_passFailFrequency"], value)
 
     @property
     def UpstreamDataErrorThresholdMode(self):
@@ -371,11 +449,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the data error threshold mode for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamDataErrorThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamDataErrorThresholdMode"])
+
     @UpstreamDataErrorThresholdMode.setter
     def UpstreamDataErrorThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamDataErrorThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamDataErrorThresholdMode"], value)
 
     @property
     def UpstreamDataErrorThresholdValue(self):
@@ -385,11 +464,12 @@ class PassCriteria(Base):
         -------
         - number: Signifies data error threshold value for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamDataErrorThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamDataErrorThresholdValue"])
+
     @UpstreamDataErrorThresholdValue.setter
     def UpstreamDataErrorThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamDataErrorThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamDataErrorThresholdValue"], value)
 
     @property
     def UpstreamEnableDataIntegrityPassFail(self):
@@ -399,11 +479,16 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables pass fail of data integrity for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableDataIntegrityPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableDataIntegrityPassFail"]
+        )
+
     @UpstreamEnableDataIntegrityPassFail.setter
     def UpstreamEnableDataIntegrityPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableDataIntegrityPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableDataIntegrityPassFail"], value
+        )
 
     @property
     def UpstreamEnableLatencyPassFail(self):
@@ -413,11 +498,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables latency pass fail for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableLatencyPassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamEnableLatencyPassFail"])
+
     @UpstreamEnableLatencyPassFail.setter
     def UpstreamEnableLatencyPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableLatencyPassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamEnableLatencyPassFail"], value)
 
     @property
     def UpstreamEnableRatePassFail(self):
@@ -427,11 +513,12 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables the rate of pass fail for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableRatePassFail'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamEnableRatePassFail"])
+
     @UpstreamEnableRatePassFail.setter
     def UpstreamEnableRatePassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableRatePassFail'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamEnableRatePassFail"], value)
 
     @property
     def UpstreamEnableSequenceErrorsPassFail(self):
@@ -441,11 +528,16 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables sequence errors pass fail for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableSequenceErrorsPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableSequenceErrorsPassFail"]
+        )
+
     @UpstreamEnableSequenceErrorsPassFail.setter
     def UpstreamEnableSequenceErrorsPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableSequenceErrorsPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableSequenceErrorsPassFail"], value
+        )
 
     @property
     def UpstreamEnableStandardDeviationPassFail(self):
@@ -455,11 +547,16 @@ class PassCriteria(Base):
         -------
         - bool: If true, enables standard deviation of pass and fail for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableStandardDeviationPassFail'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableStandardDeviationPassFail"]
+        )
+
     @UpstreamEnableStandardDeviationPassFail.setter
     def UpstreamEnableStandardDeviationPassFail(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableStandardDeviationPassFail'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamEnableStandardDeviationPassFail"], value
+        )
 
     @property
     def UpstreamLatencyThresholdMode(self):
@@ -469,11 +566,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the latency threshold mode for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdMode"])
+
     @UpstreamLatencyThresholdMode.setter
     def UpstreamLatencyThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdMode"], value)
 
     @property
     def UpstreamLatencyThresholdScale(self):
@@ -483,11 +581,12 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): Signifies the latency threshold scale for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdScale'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdScale"])
+
     @UpstreamLatencyThresholdScale.setter
     def UpstreamLatencyThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdScale'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdScale"], value)
 
     @property
     def UpstreamLatencyThresholdValue(self):
@@ -497,11 +596,12 @@ class PassCriteria(Base):
         -------
         - number: It is the latency threshold value for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdValue"])
+
     @UpstreamLatencyThresholdValue.setter
     def UpstreamLatencyThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamLatencyThresholdValue"], value)
 
     @property
     def UpstreamLatencyVarThresholdMode(self):
@@ -511,11 +611,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the latency variation threshold mode for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyVarThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamLatencyVarThresholdMode"])
+
     @UpstreamLatencyVarThresholdMode.setter
     def UpstreamLatencyVarThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyVarThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamLatencyVarThresholdMode"], value)
 
     @property
     def UpstreamLatencyVariationThresholdScale(self):
@@ -525,11 +626,16 @@ class PassCriteria(Base):
         -------
         - str(ms | ns | us): It is the latency variation threshold scale for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyVariationThresholdScale'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamLatencyVariationThresholdScale"]
+        )
+
     @UpstreamLatencyVariationThresholdScale.setter
     def UpstreamLatencyVariationThresholdScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyVariationThresholdScale'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamLatencyVariationThresholdScale"], value
+        )
 
     @property
     def UpstreamLatencyVariationThresholdValue(self):
@@ -539,11 +645,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies the latency variation threshold value for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamLatencyVariationThresholdValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamLatencyVariationThresholdValue"]
+        )
+
     @UpstreamLatencyVariationThresholdValue.setter
     def UpstreamLatencyVariationThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamLatencyVariationThresholdValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamLatencyVariationThresholdValue"], value
+        )
 
     @property
     def UpstreamPassCriteriaLoadRateMode(self):
@@ -553,11 +664,16 @@ class PassCriteria(Base):
         -------
         - str(average | minimum): Signifies the pass criteria load rate mode for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateMode'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateMode"]
+        )
+
     @UpstreamPassCriteriaLoadRateMode.setter
     def UpstreamPassCriteriaLoadRateMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateMode'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateMode"], value
+        )
 
     @property
     def UpstreamPassCriteriaLoadRateScale(self):
@@ -567,11 +683,16 @@ class PassCriteria(Base):
         -------
         - str(fps | gbps | kbps | mbps | percent): Signifies pass criteria for load rate scale for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateScale'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateScale"]
+        )
+
     @UpstreamPassCriteriaLoadRateScale.setter
     def UpstreamPassCriteriaLoadRateScale(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateScale'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateScale"], value
+        )
 
     @property
     def UpstreamPassCriteriaLoadRateValue(self):
@@ -581,11 +702,16 @@ class PassCriteria(Base):
         -------
         - number: Signifies the pass criteria load rate value for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateValue'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateValue"]
+        )
+
     @UpstreamPassCriteriaLoadRateValue.setter
     def UpstreamPassCriteriaLoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamPassCriteriaLoadRateValue'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["UpstreamPassCriteriaLoadRateValue"], value
+        )
 
     @property
     def UpstreamSeqErrorsThresholdMode(self):
@@ -595,11 +721,12 @@ class PassCriteria(Base):
         -------
         - str(average | maximum): Signifies the sequence errors threshold mode for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamSeqErrorsThresholdMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamSeqErrorsThresholdMode"])
+
     @UpstreamSeqErrorsThresholdMode.setter
     def UpstreamSeqErrorsThresholdMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamSeqErrorsThresholdMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamSeqErrorsThresholdMode"], value)
 
     @property
     def UpstreamSeqErrorsThresholdValue(self):
@@ -609,11 +736,12 @@ class PassCriteria(Base):
         -------
         - number: Signifies sequence errors threshold value for upstream.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UpstreamSeqErrorsThresholdValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["UpstreamSeqErrorsThresholdValue"])
+
     @UpstreamSeqErrorsThresholdValue.setter
     def UpstreamSeqErrorsThresholdValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UpstreamSeqErrorsThresholdValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UpstreamSeqErrorsThresholdValue"], value)
 
     @property
     def Upstream_passFailFrequency(self):
@@ -623,13 +751,54 @@ class PassCriteria(Base):
         -------
         - str(framesizes | trials): NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Upstream_passFailFrequency'])
+        return self._get_attribute(self._SDM_ATT_MAP["Upstream_passFailFrequency"])
+
     @Upstream_passFailFrequency.setter
     def Upstream_passFailFrequency(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Upstream_passFailFrequency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Upstream_passFailFrequency"], value)
 
-    def update(self, DownstreamDataErrorThresholdMode=None, DownstreamDataErrorThresholdValue=None, DownstreamEnableDataIntegrityPassFail=None, DownstreamEnableLatencyPassFail=None, DownstreamEnableRatePassFail=None, DownstreamEnableSequenceErrorsPassFail=None, DownstreamEnableStandardDeviationPassFail=None, DownstreamLatencyThresholdMode=None, DownstreamLatencyThresholdScale=None, DownstreamLatencyThresholdValue=None, DownstreamLatencyVarThresholdMode=None, DownstreamLatencyVariationThresholdScale=None, DownstreamLatencyVariationThresholdValue=None, DownstreamPassCriteriaLoadRateMode=None, DownstreamPassCriteriaLoadRateScale=None, DownstreamPassCriteriaLoadRateValue=None, DownstreamSeqErrorsThresholdMode=None, DownstreamSeqErrorsThresholdValue=None, Downstream_passFailFrequency=None, UpstreamDataErrorThresholdMode=None, UpstreamDataErrorThresholdValue=None, UpstreamEnableDataIntegrityPassFail=None, UpstreamEnableLatencyPassFail=None, UpstreamEnableRatePassFail=None, UpstreamEnableSequenceErrorsPassFail=None, UpstreamEnableStandardDeviationPassFail=None, UpstreamLatencyThresholdMode=None, UpstreamLatencyThresholdScale=None, UpstreamLatencyThresholdValue=None, UpstreamLatencyVarThresholdMode=None, UpstreamLatencyVariationThresholdScale=None, UpstreamLatencyVariationThresholdValue=None, UpstreamPassCriteriaLoadRateMode=None, UpstreamPassCriteriaLoadRateScale=None, UpstreamPassCriteriaLoadRateValue=None, UpstreamSeqErrorsThresholdMode=None, UpstreamSeqErrorsThresholdValue=None, Upstream_passFailFrequency=None):
+    def update(
+        self,
+        DownstreamDataErrorThresholdMode=None,
+        DownstreamDataErrorThresholdValue=None,
+        DownstreamEnableDataIntegrityPassFail=None,
+        DownstreamEnableLatencyPassFail=None,
+        DownstreamEnableRatePassFail=None,
+        DownstreamEnableSequenceErrorsPassFail=None,
+        DownstreamEnableStandardDeviationPassFail=None,
+        DownstreamLatencyThresholdMode=None,
+        DownstreamLatencyThresholdScale=None,
+        DownstreamLatencyThresholdValue=None,
+        DownstreamLatencyVarThresholdMode=None,
+        DownstreamLatencyVariationThresholdScale=None,
+        DownstreamLatencyVariationThresholdValue=None,
+        DownstreamPassCriteriaLoadRateMode=None,
+        DownstreamPassCriteriaLoadRateScale=None,
+        DownstreamPassCriteriaLoadRateValue=None,
+        DownstreamSeqErrorsThresholdMode=None,
+        DownstreamSeqErrorsThresholdValue=None,
+        Downstream_passFailFrequency=None,
+        UpstreamDataErrorThresholdMode=None,
+        UpstreamDataErrorThresholdValue=None,
+        UpstreamEnableDataIntegrityPassFail=None,
+        UpstreamEnableLatencyPassFail=None,
+        UpstreamEnableRatePassFail=None,
+        UpstreamEnableSequenceErrorsPassFail=None,
+        UpstreamEnableStandardDeviationPassFail=None,
+        UpstreamLatencyThresholdMode=None,
+        UpstreamLatencyThresholdScale=None,
+        UpstreamLatencyThresholdValue=None,
+        UpstreamLatencyVarThresholdMode=None,
+        UpstreamLatencyVariationThresholdScale=None,
+        UpstreamLatencyVariationThresholdValue=None,
+        UpstreamPassCriteriaLoadRateMode=None,
+        UpstreamPassCriteriaLoadRateScale=None,
+        UpstreamPassCriteriaLoadRateValue=None,
+        UpstreamSeqErrorsThresholdMode=None,
+        UpstreamSeqErrorsThresholdValue=None,
+        Upstream_passFailFrequency=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str, str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str) -> PassCriteria
         """Updates passCriteria resource on the server.
 
@@ -680,7 +849,47 @@ class PassCriteria(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, DownstreamDataErrorThresholdMode=None, DownstreamDataErrorThresholdValue=None, DownstreamEnableDataIntegrityPassFail=None, DownstreamEnableLatencyPassFail=None, DownstreamEnableRatePassFail=None, DownstreamEnableSequenceErrorsPassFail=None, DownstreamEnableStandardDeviationPassFail=None, DownstreamLatencyThresholdMode=None, DownstreamLatencyThresholdScale=None, DownstreamLatencyThresholdValue=None, DownstreamLatencyVarThresholdMode=None, DownstreamLatencyVariationThresholdScale=None, DownstreamLatencyVariationThresholdValue=None, DownstreamPassCriteriaLoadRateMode=None, DownstreamPassCriteriaLoadRateScale=None, DownstreamPassCriteriaLoadRateValue=None, DownstreamSeqErrorsThresholdMode=None, DownstreamSeqErrorsThresholdValue=None, Downstream_passFailFrequency=None, UpstreamDataErrorThresholdMode=None, UpstreamDataErrorThresholdValue=None, UpstreamEnableDataIntegrityPassFail=None, UpstreamEnableLatencyPassFail=None, UpstreamEnableRatePassFail=None, UpstreamEnableSequenceErrorsPassFail=None, UpstreamEnableStandardDeviationPassFail=None, UpstreamLatencyThresholdMode=None, UpstreamLatencyThresholdScale=None, UpstreamLatencyThresholdValue=None, UpstreamLatencyVarThresholdMode=None, UpstreamLatencyVariationThresholdScale=None, UpstreamLatencyVariationThresholdValue=None, UpstreamPassCriteriaLoadRateMode=None, UpstreamPassCriteriaLoadRateScale=None, UpstreamPassCriteriaLoadRateValue=None, UpstreamSeqErrorsThresholdMode=None, UpstreamSeqErrorsThresholdValue=None, Upstream_passFailFrequency=None):
+    def find(
+        self,
+        DownstreamDataErrorThresholdMode=None,
+        DownstreamDataErrorThresholdValue=None,
+        DownstreamEnableDataIntegrityPassFail=None,
+        DownstreamEnableLatencyPassFail=None,
+        DownstreamEnableRatePassFail=None,
+        DownstreamEnableSequenceErrorsPassFail=None,
+        DownstreamEnableStandardDeviationPassFail=None,
+        DownstreamLatencyThresholdMode=None,
+        DownstreamLatencyThresholdScale=None,
+        DownstreamLatencyThresholdValue=None,
+        DownstreamLatencyVarThresholdMode=None,
+        DownstreamLatencyVariationThresholdScale=None,
+        DownstreamLatencyVariationThresholdValue=None,
+        DownstreamPassCriteriaLoadRateMode=None,
+        DownstreamPassCriteriaLoadRateScale=None,
+        DownstreamPassCriteriaLoadRateValue=None,
+        DownstreamSeqErrorsThresholdMode=None,
+        DownstreamSeqErrorsThresholdValue=None,
+        Downstream_passFailFrequency=None,
+        UpstreamDataErrorThresholdMode=None,
+        UpstreamDataErrorThresholdValue=None,
+        UpstreamEnableDataIntegrityPassFail=None,
+        UpstreamEnableLatencyPassFail=None,
+        UpstreamEnableRatePassFail=None,
+        UpstreamEnableSequenceErrorsPassFail=None,
+        UpstreamEnableStandardDeviationPassFail=None,
+        UpstreamLatencyThresholdMode=None,
+        UpstreamLatencyThresholdScale=None,
+        UpstreamLatencyThresholdValue=None,
+        UpstreamLatencyVarThresholdMode=None,
+        UpstreamLatencyVariationThresholdScale=None,
+        UpstreamLatencyVariationThresholdValue=None,
+        UpstreamPassCriteriaLoadRateMode=None,
+        UpstreamPassCriteriaLoadRateScale=None,
+        UpstreamPassCriteriaLoadRateValue=None,
+        UpstreamSeqErrorsThresholdMode=None,
+        UpstreamSeqErrorsThresholdValue=None,
+        Upstream_passFailFrequency=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str, str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str) -> PassCriteria
         """Finds and retrieves passCriteria resources from the server.
 
@@ -772,10 +981,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -790,10 +1001,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -802,17 +1015,19 @@ class PassCriteria(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -829,10 +1044,14 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -850,10 +1069,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -879,10 +1100,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -906,10 +1129,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -926,10 +1151,12 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -947,7 +1174,9 @@ class PassCriteria(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

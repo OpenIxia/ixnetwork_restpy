@@ -122,7 +122,7 @@ class IsisL3PseudoIfaceAttPoint1Config(Base):
 
     def add(self, Name=None):
         # type: (str) -> IsisL3PseudoIfaceAttPoint1Config
-        """Adds a new isisL3PseudoIfaceAttPoint1Config resource on the json, only valid with config assistant
+        """Adds a new isisL3PseudoIfaceAttPoint1Config resource on the json, only valid with batch add utility
 
         Args
         ----

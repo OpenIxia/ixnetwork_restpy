@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,23 +33,22 @@ class SupportedActions(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'supportedActions'
+    _SDM_NAME = "supportedActions"
     _SDM_ATT_MAP = {
-        'Enqueue': 'enqueue',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Output': 'output',
-        'StripVlanHeader': 'stripVlanHeader',
-        'TransportDestination': 'transportDestination',
-        'TransportSource': 'transportSource',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        "Enqueue": "enqueue",
+        "EthernetDestination": "ethernetDestination",
+        "EthernetSource": "ethernetSource",
+        "IpDscp": "ipDscp",
+        "Ipv4Destination": "ipv4Destination",
+        "Ipv4Source": "ipv4Source",
+        "Output": "output",
+        "StripVlanHeader": "stripVlanHeader",
+        "TransportDestination": "transportDestination",
+        "TransportSource": "transportSource",
+        "VlanId": "vlanId",
+        "VlanPriority": "vlanPriority",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(SupportedActions, self).__init__(parent, list_op)
@@ -61,11 +61,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes Output to queue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enqueue'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enqueue"])
+
     @Enqueue.setter
     def Enqueue(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enqueue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enqueue"], value)
 
     @property
     def EthernetDestination(self):
@@ -75,11 +76,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting Ethernet destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetDestination"])
+
     @EthernetDestination.setter
     def EthernetDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetDestination"], value)
 
     @property
     def EthernetSource(self):
@@ -89,11 +91,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting Ethernet source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSource"])
+
     @EthernetSource.setter
     def EthernetSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSource"], value)
 
     @property
     def IpDscp(self):
@@ -103,11 +106,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting IP ToS, DSCP field, 6 bits.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDscp"])
+
     @IpDscp.setter
     def IpDscp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDscp"], value)
 
     @property
     def Ipv4Destination(self):
@@ -117,11 +121,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting IP destination address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Destination"])
+
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Destination"], value)
 
     @property
     def Ipv4Source(self):
@@ -131,11 +136,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting IP source address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4Source"])
+
     @Ipv4Source.setter
     def Ipv4Source(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4Source"], value)
 
     @property
     def Output(self):
@@ -145,11 +151,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes Output to switch port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Output'])
+        return self._get_attribute(self._SDM_ATT_MAP["Output"])
+
     @Output.setter
     def Output(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Output'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Output"], value)
 
     @property
     def StripVlanHeader(self):
@@ -159,11 +166,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes stripping the 802.1q header.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StripVlanHeader'])
+        return self._get_attribute(self._SDM_ATT_MAP["StripVlanHeader"])
+
     @StripVlanHeader.setter
     def StripVlanHeader(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StripVlanHeader'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StripVlanHeader"], value)
 
     @property
     def TransportDestination(self):
@@ -173,11 +181,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting TCP/UDP destination port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportDestination"])
+
     @TransportDestination.setter
     def TransportDestination(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportDestination'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportDestination"], value)
 
     @property
     def TransportSource(self):
@@ -187,11 +196,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting TCP/UDP source port.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TransportSource'])
+        return self._get_attribute(self._SDM_ATT_MAP["TransportSource"])
+
     @TransportSource.setter
     def TransportSource(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TransportSource'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TransportSource"], value)
 
     @property
     def VlanId(self):
@@ -201,11 +211,12 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting the 802.1q VLAN id.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
     @property
     def VlanPriority(self):
@@ -215,13 +226,28 @@ class SupportedActions(Base):
         -------
         - bool: Indicates that the supported action of the switch includes setting the 802.1q priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
-    def update(self, Enqueue=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, Output=None, StripVlanHeader=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+    def update(
+        self,
+        Enqueue=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Output=None,
+        StripVlanHeader=None,
+        TransportDestination=None,
+        TransportSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SupportedActions
         """Updates supportedActions resource on the server.
 
@@ -246,7 +272,21 @@ class SupportedActions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enqueue=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, Output=None, StripVlanHeader=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+    def find(
+        self,
+        Enqueue=None,
+        EthernetDestination=None,
+        EthernetSource=None,
+        IpDscp=None,
+        Ipv4Destination=None,
+        Ipv4Source=None,
+        Output=None,
+        StripVlanHeader=None,
+        TransportDestination=None,
+        TransportSource=None,
+        VlanId=None,
+        VlanPriority=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SupportedActions
         """Finds and retrieves supportedActions resources from the server.
 

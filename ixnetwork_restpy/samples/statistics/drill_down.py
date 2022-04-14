@@ -6,16 +6,19 @@ from time import sleep
 from ixnetwork_restpy import SessionAssistant
 
 
-session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
-    UserName='admin', Password='admin',
-    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
-    ClearConfig=True)
+session_assistant = SessionAssistant(
+    IpAddress="127.0.0.1",
+    UserName="admin",
+    Password="admin",
+    LogLevel=SessionAssistant.LOGLEVEL_INFO,
+    ClearConfig=True,
+)
 ixnetwork = session_assistant.Ixnetwork
 
 # get the view you want to drill down on
-caption = 'Traffic Item Statistics'
+caption = "Traffic Item Statistics"
 view = ixnetwork.Statistics.View.find(Caption=caption)
-assert(len(view) == 1)
+assert len(view) == 1
 
 # get the drill down node for the view
 drill_down = view.DrillDown.find()
@@ -27,19 +30,21 @@ drill_down.TargetRowIndex = 0
 # print the drill down options for the view
 # drill down options are dynamic and are based on tracking options selected during traffic item creation
 for drill_down_option in drill_down.AvailableDrillDownOptions:
-	print(drill_down_option)
+    print(drill_down_option)
 drill_down.TargetDrillDownOption = drill_down.AvailableDrillDownOptions[1]
 for drill_down_filter in drill_down.AvailableTargetRowFilters:
-	print(drill_down_filter)
+    print(drill_down_filter)
 if len(drill_down.AvailableTargetRowFilters) > 0:
-	drill_down.TargetRowFilter = drill_down.AvailableTargetRowFilters[0]
+    drill_down.TargetRowFilter = drill_down.AvailableTargetRowFilters[0]
 
 # perform the drill down operation
 drill_down.DoDrillDown()
 
 # the drill down operation populates the read only 'User Defined Statistics' view
 # get the resulting drill down view
-user_defined_statistics = ixnetwork.Statistics.View.find(Caption='User Defined Statistics')
+user_defined_statistics = ixnetwork.Statistics.View.find(
+    Caption="User Defined Statistics"
+)
 
 # wait for data to become available
 attempts = 0
@@ -48,9 +53,9 @@ while user_defined_statistics.Data.IsReady is False and attempts < 10:
     attempts += 1
 
 # print the column headers
-print(' '.join(user_defined_statistics.Data.ColumnCaptions))
+print(" ".join(user_defined_statistics.Data.ColumnCaptions))
 
 # print the ingress and egress rows
 for ingress_egress_rows in user_defined_statistics.Data.PageValues:
     for row in ingress_egress_rows:
-        print(' '.join(row))
+        print(" ".join(row))

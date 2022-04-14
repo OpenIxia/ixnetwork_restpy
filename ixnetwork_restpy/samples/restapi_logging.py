@@ -9,20 +9,23 @@ The default log level is SessionAssistant.LOGLEVEL_NONE which has a logging leve
 from ixnetwork_restpy import SessionAssistant, TestPlatform
 
 
-session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
-    UserName='admin', Password='admin', 
-    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
-    ClearConfig=True)
+session_assistant = SessionAssistant(
+    IpAddress="127.0.0.1",
+    UserName="admin",
+    Password="admin",
+    LogLevel=SessionAssistant.LOGLEVEL_INFO,
+    ClearConfig=True,
+)
 test_platform = session_assistant.TestPlatform
 ixnetwork = session_assistant.Ixnetwork
 
 # warn level messages logged
 test_platform.Trace = TestPlatform.TRACE_WARNING
-test_platform.warn('warn message')
+test_platform.warn("warn message")
 
 # info level messages logged
 test_platform.Trace = TestPlatform.TRACE_INFO
-test_platform.info('info message')
+test_platform.info("info message")
 
 # debug level messages showing only request
 test_platform.Trace = TestPlatform.TRACE_REQUEST
@@ -38,7 +41,6 @@ ixnetwork.Vport.add()
 
 # turn logging off
 test_platform.Trace = TestPlatform.TRACE_NONE
-test_platform.warn('warn message')
-test_platform.info('info message')
+test_platform.warn("warn message")
+test_platform.info("info message")
 ixnetwork.Vport.add()
-

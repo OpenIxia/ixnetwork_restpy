@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,35 +34,34 @@ class Ospfv3PseudoInterface(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ospfv3PseudoInterface'
+    _SDM_NAME = "ospfv3PseudoInterface"
     _SDM_ATT_MAP = {
-        'AdjSID': 'adjSID',
-        'AdjSidCount': 'adjSidCount',
-        'AdvertiseLinkMsd': 'advertiseLinkMsd',
-        'BFlag': 'bFlag',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableIPv6SID': 'enableIPv6SID',
-        'GFlag': 'gFlag',
-        'IncludeMaxSlMsd': 'includeMaxSlMsd',
-        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
-        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
-        'IncludeMaximumHEncapsMsd': 'includeMaximumHEncapsMsd',
-        'LFlag': 'lFlag',
-        'MaxEndDMsd': 'maxEndDMsd',
-        'MaxEndPopMsd': 'maxEndPopMsd',
-        'MaxHEncapsMsd': 'maxHEncapsMsd',
-        'MaxSlMsd': 'maxSlMsd',
-        'Metric': 'metric',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'PseudoNetworkType': 'pseudoNetworkType',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        "AdjSID": "adjSID",
+        "AdjSidCount": "adjSidCount",
+        "AdvertiseLinkMsd": "advertiseLinkMsd",
+        "BFlag": "bFlag",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableAdjSID": "enableAdjSID",
+        "EnableIPv6SID": "enableIPv6SID",
+        "GFlag": "gFlag",
+        "IncludeMaxSlMsd": "includeMaxSlMsd",
+        "IncludeMaximumEndDMsd": "includeMaximumEndDMsd",
+        "IncludeMaximumEndPopMsd": "includeMaximumEndPopMsd",
+        "IncludeMaximumHEncapsMsd": "includeMaximumHEncapsMsd",
+        "LFlag": "lFlag",
+        "MaxEndDMsd": "maxEndDMsd",
+        "MaxEndPopMsd": "maxEndPopMsd",
+        "MaxHEncapsMsd": "maxHEncapsMsd",
+        "MaxSlMsd": "maxSlMsd",
+        "Metric": "metric",
+        "Name": "name",
+        "PFlag": "pFlag",
+        "PseudoNetworkType": "pseudoNetworkType",
+        "VFlag": "vFlag",
+        "Weight": "weight",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ospfv3PseudoInterface, self).__init__(parent, list_op)
@@ -77,10 +77,13 @@ class Ospfv3PseudoInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudosrv6adjsidlist_08a5b0e6d4fa3ec826e164debaebe1cc import Ospfv3PseudoSRv6AdjSIDList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudosrv6adjsidlist_08a5b0e6d4fa3ec826e164debaebe1cc import (
+            Ospfv3PseudoSRv6AdjSIDList,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ospfv3PseudoSRv6AdjSIDList', None) is not None:
-                return self._properties.get('Ospfv3PseudoSRv6AdjSIDList')
+            if self._properties.get("Ospfv3PseudoSRv6AdjSIDList", None) is not None:
+                return self._properties.get("Ospfv3PseudoSRv6AdjSIDList")
         return Ospfv3PseudoSRv6AdjSIDList(self)._select()
 
     @property
@@ -92,7 +95,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): An Adjacency Segment Identifier (Adj-SID) represents a router adjacency in Segment Routing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AdjSID"]))
 
     @property
     def AdjSidCount(self):
@@ -102,11 +106,12 @@ class Ospfv3PseudoInterface(Base):
         -------
         - number: Count of SRv6 Adjacency Segment Identifier.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AdjSidCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["AdjSidCount"])
+
     @AdjSidCount.setter
     def AdjSidCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AdjSidCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AdjSidCount"], value)
 
     @property
     def AdvertiseLinkMsd(self):
@@ -117,7 +122,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then router advertises link specific values for Maximum SID Depth (MSD) types.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseLinkMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseLinkMsd"])
+        )
 
     @property
     def BFlag(self):
@@ -128,7 +136,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): B Flag: Backup Flag: If set, the Adj-SID refers to an adjacency that is eligible for protection
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BFlag"]))
 
     @property
     def Count(self):
@@ -138,7 +147,7 @@ class Ospfv3PseudoInterface(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -148,7 +157,7 @@ class Ospfv3PseudoInterface(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableAdjSID(self):
@@ -159,7 +168,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Makes the Adjacency Segment Identifier (Adj-SID) available
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableAdjSID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableAdjSID"]))
 
     @property
     def EnableIPv6SID(self):
@@ -170,7 +180,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If Set, then makes the SRv6 Adjacency Segment Identifier (Adj-SID) available.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIPv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableIPv6SID"]))
 
     @property
     def GFlag(self):
@@ -181,7 +192,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): G-Flag: Group Flag: If set, the G-Flag indicates that the Adj-SID refers to a group of adjacencies where it may be assigned
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['GFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["GFlag"]))
 
     @property
     def IncludeMaxSlMsd(self):
@@ -192,7 +204,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum Segment Left MSD in Link MSD advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaxSlMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaxSlMsd"])
+        )
 
     @property
     def IncludeMaximumEndDMsd(self):
@@ -203,7 +218,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum End D MSD in Link MSD advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumEndDMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumEndDMsd"])
+        )
 
     @property
     def IncludeMaximumEndPopMsd(self):
@@ -214,7 +232,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum End Pop MSD in Link MSD advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumEndPopMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumEndPopMsd"])
+        )
 
     @property
     def IncludeMaximumHEncapsMsd(self):
@@ -225,7 +246,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then Include Maximum H.Encaps MSD in Link MSD advertisement.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeMaximumHEncapsMsd']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumHEncapsMsd"])
+        )
 
     @property
     def LFlag(self):
@@ -236,7 +260,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LFlag"]))
 
     @property
     def MaxEndDMsd(self):
@@ -247,7 +272,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in an SRH when applying End.DX6 and END.DT6 functions. If this field is Zero, then the router cannot apply End.DX6 or End.DT6 functions if the extension header is right underneath the outer IPv6 header is an SRH.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxEndDMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndDMsd"]))
 
     @property
     def MaxEndPopMsd(self):
@@ -258,7 +284,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs in the top MSD in an MSD stack that the router can apply PSP or USP flavors to. If the value of this field is zero, then the router cannot apply PSP or USP flavors.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxEndPopMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndPopMsd"]))
 
     @property
     def MaxHEncapsMsd(self):
@@ -269,7 +296,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the H.Encap behavior.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxHEncapsMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxHEncapsMsd"]))
 
     @property
     def MaxSlMsd(self):
@@ -280,7 +308,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum value of the Segments Left (SL) MSD field in the SRH of a received packet before applying the function associated with a SID.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxSlMsd']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxSlMsd"]))
 
     @property
     def Metric(self):
@@ -291,7 +320,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def Name(self):
@@ -301,11 +331,12 @@ class Ospfv3PseudoInterface(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def PFlag(self):
@@ -316,7 +347,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): P-Flag:Persistent Flag: If set, the SID is persistently allocated. The SID value remains consistent across router restart and session/interface flap
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PFlag"]))
 
     @property
     def PseudoNetworkType(self):
@@ -327,7 +359,10 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This defines the network types of the simulated links between the simulated routers.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PseudoNetworkType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PseudoNetworkType"])
+        )
 
     @property
     def VFlag(self):
@@ -338,7 +373,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): V-Flag: Value flag. If set, then the SID carries an absolute value label value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VFlag"]))
 
     @property
     def Weight(self):
@@ -349,7 +385,8 @@ class Ospfv3PseudoInterface(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Weight of the SID for the purpose of load balancing
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Weight"]))
 
     def update(self, AdjSidCount=None, Name=None):
         # type: (int, str) -> Ospfv3PseudoInterface
@@ -371,7 +408,7 @@ class Ospfv3PseudoInterface(Base):
 
     def add(self, AdjSidCount=None, Name=None):
         # type: (int, str) -> Ospfv3PseudoInterface
-        """Adds a new ospfv3PseudoInterface resource on the json, only valid with config assistant
+        """Adds a new ospfv3PseudoInterface resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -446,10 +483,12 @@ class Ospfv3PseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Disconnect(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -478,10 +517,12 @@ class Ospfv3PseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disconnect', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("disconnect", payload=payload, response_object=None)
 
     def Reconnect(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -510,10 +551,12 @@ class Ospfv3PseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('reconnect', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("reconnect", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -530,10 +573,12 @@ class Ospfv3PseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -550,12 +595,37 @@ class Ospfv3PseudoInterface(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, AdjSID=None, AdvertiseLinkMsd=None, BFlag=None, EnableAdjSID=None, EnableIPv6SID=None, GFlag=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumHEncapsMsd=None, LFlag=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxHEncapsMsd=None, MaxSlMsd=None, Metric=None, PFlag=None, PseudoNetworkType=None, VFlag=None, Weight=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        AdjSID=None,
+        AdvertiseLinkMsd=None,
+        BFlag=None,
+        EnableAdjSID=None,
+        EnableIPv6SID=None,
+        GFlag=None,
+        IncludeMaxSlMsd=None,
+        IncludeMaximumEndDMsd=None,
+        IncludeMaximumEndPopMsd=None,
+        IncludeMaximumHEncapsMsd=None,
+        LFlag=None,
+        MaxEndDMsd=None,
+        MaxEndPopMsd=None,
+        MaxHEncapsMsd=None,
+        MaxSlMsd=None,
+        Metric=None,
+        PFlag=None,
+        PseudoNetworkType=None,
+        VFlag=None,
+        Weight=None,
+    ):
         """Base class infrastructure that gets a list of ospfv3PseudoInterface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

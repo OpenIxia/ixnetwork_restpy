@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,15 +35,15 @@ class AuxiliaryConnection(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'auxiliaryConnection'
+    _SDM_NAME = "auxiliaryConnection"
     _SDM_ATT_MAP = {
-        'AuxiliaryId': 'auxiliaryId',
-        'ConnectionType': 'connectionType',
-        'Enable': 'enable',
-        'UdpSourcePortNumber': 'udpSourcePortNumber',
+        "AuxiliaryId": "auxiliaryId",
+        "ConnectionType": "connectionType",
+        "Enable": "enable",
+        "UdpSourcePortNumber": "udpSourcePortNumber",
     }
     _SDM_ENUM_MAP = {
-        'connectionType': ['tcp', 'tls', 'udp'],
+        "connectionType": ["tcp", "tls", "udp"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,11 +57,12 @@ class AuxiliaryConnection(Base):
         -------
         - number: Indicates the Id of the auxiliary connection.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryId'])
+        return self._get_attribute(self._SDM_ATT_MAP["AuxiliaryId"])
+
     @AuxiliaryId.setter
     def AuxiliaryId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AuxiliaryId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AuxiliaryId"], value)
 
     @property
     def ConnectionType(self):
@@ -70,11 +72,12 @@ class AuxiliaryConnection(Base):
         -------
         - str(tcp | tls | udp): Specifies how this switchPort is connected to another switch (internal/external) or host or there is no connection (noConnection)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectionType"])
+
     @ConnectionType.setter
     def ConnectionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectionType"], value)
 
     @property
     def Enable(self):
@@ -84,11 +87,12 @@ class AuxiliaryConnection(Base):
         -------
         - bool: If true, the object is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enable'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enable"])
+
     @Enable.setter
     def Enable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enable"], value)
 
     @property
     def UdpSourcePortNumber(self):
@@ -98,13 +102,20 @@ class AuxiliaryConnection(Base):
         -------
         - number: Specify the UDP source port number. The default value is 0. This field is available only if the Connection Type specified is UDP.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UdpSourcePortNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["UdpSourcePortNumber"])
+
     @UdpSourcePortNumber.setter
     def UdpSourcePortNumber(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UdpSourcePortNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UdpSourcePortNumber"], value)
 
-    def update(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+    def update(
+        self,
+        AuxiliaryId=None,
+        ConnectionType=None,
+        Enable=None,
+        UdpSourcePortNumber=None,
+    ):
         # type: (int, str, bool, int) -> AuxiliaryConnection
         """Updates auxiliaryConnection resource on the server.
 
@@ -121,7 +132,13 @@ class AuxiliaryConnection(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+    def add(
+        self,
+        AuxiliaryId=None,
+        ConnectionType=None,
+        Enable=None,
+        UdpSourcePortNumber=None,
+    ):
         # type: (int, str, bool, int) -> AuxiliaryConnection
         """Adds a new auxiliaryConnection resource on the server and adds it to the container.
 
@@ -152,7 +169,13 @@ class AuxiliaryConnection(Base):
         """
         self._delete()
 
-    def find(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+    def find(
+        self,
+        AuxiliaryId=None,
+        ConnectionType=None,
+        Enable=None,
+        UdpSourcePortNumber=None,
+    ):
         # type: (int, str, bool, int) -> AuxiliaryConnection
         """Finds and retrieves auxiliaryConnection resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,27 @@ class VlanRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vlanRange'
+    _SDM_NAME = "vlanRange"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FirstId': 'firstId',
-        'IdIncrMode': 'idIncrMode',
-        'Increment': 'increment',
-        'IncrementStep': 'incrementStep',
-        'InnerEnable': 'innerEnable',
-        'InnerFirstId': 'innerFirstId',
-        'InnerIncrement': 'innerIncrement',
-        'InnerIncrementStep': 'innerIncrementStep',
-        'InnerPriority': 'innerPriority',
-        'InnerTpid': 'innerTpid',
-        'InnerUniqueCount': 'innerUniqueCount',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Priority': 'priority',
-        'Tpid': 'tpid',
-        'UniqueCount': 'uniqueCount',
+        "Enabled": "enabled",
+        "FirstId": "firstId",
+        "IdIncrMode": "idIncrMode",
+        "Increment": "increment",
+        "IncrementStep": "incrementStep",
+        "InnerEnable": "innerEnable",
+        "InnerFirstId": "innerFirstId",
+        "InnerIncrement": "innerIncrement",
+        "InnerIncrementStep": "innerIncrementStep",
+        "InnerPriority": "innerPriority",
+        "InnerTpid": "innerTpid",
+        "InnerUniqueCount": "innerUniqueCount",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Priority": "priority",
+        "Tpid": "tpid",
+        "UniqueCount": "uniqueCount",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(VlanRange, self).__init__(parent, list_op)
@@ -69,10 +69,13 @@ class VlanRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_1b91f1b5b94b27362dfb8ec954bf2429 import VlanIdInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_1b91f1b5b94b27362dfb8ec954bf2429 import (
+            VlanIdInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VlanIdInfo', None) is not None:
-                return self._properties.get('VlanIdInfo')
+            if self._properties.get("VlanIdInfo", None) is not None:
+                return self._properties.get("VlanIdInfo")
         return VlanIdInfo(self)
 
     @property
@@ -83,25 +86,27 @@ class VlanRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstId(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The first ID to be used for the first VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstId"])
+
     @FirstId.setter
     def FirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstId"], value)
 
     @property
     def IdIncrMode(self):
@@ -111,137 +116,147 @@ class VlanRange(Base):
         -------
         - number: Method used to increment VLAN IDs. May take the following values: 0 (First VLAN first), 1 (Last VLAN first), 2 (All).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IdIncrMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["IdIncrMode"])
+
     @IdIncrMode.setter
     def IdIncrMode(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IdIncrMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IdIncrMode"], value)
 
     @property
     def Increment(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Amount of increment per increment step for first VLAN. E.g. increment step = 10 and increment = 2 means increment VLAN ID by 2 for every 10 IPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["Increment"])
+
     @Increment.setter
     def Increment(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Increment"], value)
 
     @property
     def IncrementStep(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Frequency of first VLAN ID increment. E.g., value of 10 means increment VLAN ID once for every 10 IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementStep"])
+
     @IncrementStep.setter
     def IncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrementStep"], value)
 
     @property
     def InnerEnable(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: Enable the inner VLAN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerEnable'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerEnable"])
+
     @InnerEnable.setter
     def InnerEnable(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerEnable'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerEnable"], value)
 
     @property
     def InnerFirstId(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The first ID to be used for the inner VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerFirstId'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerFirstId"])
+
     @InnerFirstId.setter
     def InnerFirstId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerFirstId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerFirstId"], value)
 
     @property
     def InnerIncrement(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Amount of increment per increment step for Inner VLAN. E.g. increment step = 10 and increment = 2 means increment VLAN ID by 2 for every 10 IPs
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerIncrement"])
+
     @InnerIncrement.setter
     def InnerIncrement(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerIncrement"], value)
 
     @property
     def InnerIncrementStep(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Frequency of inner VLAN ID increment. E.g., value of 10 means increment VLAN ID once for every 10 IP addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerIncrementStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerIncrementStep"])
+
     @InnerIncrementStep.setter
     def InnerIncrementStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerIncrementStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerIncrementStep"], value)
 
     @property
     def InnerPriority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The 802.1Q priority to be used for the inner VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerPriority"])
+
     @InnerPriority.setter
     def InnerPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerPriority"], value)
 
     @property
     def InnerTpid(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: The TPID value in the inner VLAN Tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerTpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerTpid"])
+
     @InnerTpid.setter
     def InnerTpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerTpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerTpid"], value)
 
     @property
     def InnerUniqueCount(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Number of unique inner VLAN IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InnerUniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["InnerUniqueCount"])
+
     @InnerUniqueCount.setter
     def InnerUniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InnerUniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InnerUniqueCount"], value)
 
     @property
     def Name(self):
@@ -251,11 +266,12 @@ class VlanRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -265,51 +281,72 @@ class VlanRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Priority(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: The 802.1Q priority to be used for the outer VLAN tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
+
     @Priority.setter
     def Priority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Priority"], value)
 
     @property
     def Tpid(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: The TPID value in the outer VLAN Tag.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tpid"])
+
     @Tpid.setter
     def Tpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tpid"], value)
 
     @property
     def UniqueCount(self):
         # type: () -> int
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - number: Number of unique first VLAN IDs to use.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UniqueCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["UniqueCount"])
+
     @UniqueCount.setter
     def UniqueCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UniqueCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UniqueCount"], value)
 
-    def update(self, Enabled=None, FirstId=None, IdIncrMode=None, Increment=None, IncrementStep=None, InnerEnable=None, InnerFirstId=None, InnerIncrement=None, InnerIncrementStep=None, InnerPriority=None, InnerTpid=None, InnerUniqueCount=None, Name=None, Priority=None, Tpid=None, UniqueCount=None):
+    def update(
+        self,
+        Enabled=None,
+        FirstId=None,
+        IdIncrMode=None,
+        Increment=None,
+        IncrementStep=None,
+        InnerEnable=None,
+        InnerFirstId=None,
+        InnerIncrement=None,
+        InnerIncrementStep=None,
+        InnerPriority=None,
+        InnerTpid=None,
+        InnerUniqueCount=None,
+        Name=None,
+        Priority=None,
+        Tpid=None,
+        UniqueCount=None,
+    ):
         # type: (bool, int, int, int, int, bool, int, int, int, int, str, int, str, int, str, int) -> VlanRange
         """Updates vlanRange resource on the server.
 
@@ -338,7 +375,26 @@ class VlanRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None, FirstId=None, IdIncrMode=None, Increment=None, IncrementStep=None, InnerEnable=None, InnerFirstId=None, InnerIncrement=None, InnerIncrementStep=None, InnerPriority=None, InnerTpid=None, InnerUniqueCount=None, Name=None, ObjectId=None, Priority=None, Tpid=None, UniqueCount=None):
+    def find(
+        self,
+        Enabled=None,
+        FirstId=None,
+        IdIncrMode=None,
+        Increment=None,
+        IncrementStep=None,
+        InnerEnable=None,
+        InnerFirstId=None,
+        InnerIncrement=None,
+        InnerIncrementStep=None,
+        InnerPriority=None,
+        InnerTpid=None,
+        InnerUniqueCount=None,
+        Name=None,
+        ObjectId=None,
+        Priority=None,
+        Tpid=None,
+        UniqueCount=None,
+    ):
         # type: (bool, int, int, int, int, bool, int, int, int, int, str, int, str, str, int, str, int) -> VlanRange
         """Finds and retrieves vlanRange resources from the server.
 
@@ -411,10 +467,14 @@ class VlanRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -433,10 +493,14 @@ class VlanRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -455,7 +519,11 @@ class VlanRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

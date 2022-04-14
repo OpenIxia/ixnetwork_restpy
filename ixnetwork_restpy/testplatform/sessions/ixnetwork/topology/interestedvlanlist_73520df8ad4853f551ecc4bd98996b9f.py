@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,24 +33,23 @@ class InterestedVlanList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interestedVlanList'
+    _SDM_NAME = "interestedVlanList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LocalSystemID': 'localSystemID',
-        'M4BitEnabled': 'm4BitEnabled',
-        'M6BitEnabled': 'm6BitEnabled',
-        'Name': 'name',
-        'Nickname': 'nickname',
-        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
-        'VlanCount': 'vlanCount',
-        'VlanIdIncr': 'vlanIdIncr',
+        "Active": "active",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "LocalSystemID": "localSystemID",
+        "M4BitEnabled": "m4BitEnabled",
+        "M6BitEnabled": "m6BitEnabled",
+        "Name": "name",
+        "Nickname": "nickname",
+        "NoOfSpanningTreeRoots": "noOfSpanningTreeRoots",
+        "StartSpanningTreeRootBridgeId": "startSpanningTreeRootBridgeId",
+        "StartVlanId": "startVlanId",
+        "VlanCount": "vlanCount",
+        "VlanIdIncr": "vlanIdIncr",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(InterestedVlanList, self).__init__(parent, list_op)
@@ -63,7 +63,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -73,7 +74,7 @@ class InterestedVlanList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -83,7 +84,7 @@ class InterestedVlanList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def LocalSystemID(self):
@@ -93,7 +94,7 @@ class InterestedVlanList(Base):
         -------
         - list(str): System ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalSystemID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalSystemID"])
 
     @property
     def M4BitEnabled(self):
@@ -104,7 +105,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M4 Bit Enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['M4BitEnabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["M4BitEnabled"]))
 
     @property
     def M6BitEnabled(self):
@@ -115,7 +117,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): M6 Bit Enabled
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['M6BitEnabled']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["M6BitEnabled"]))
 
     @property
     def Name(self):
@@ -125,11 +128,12 @@ class InterestedVlanList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Nickname(self):
@@ -140,7 +144,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nickname
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Nickname']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Nickname"]))
 
     @property
     def NoOfSpanningTreeRoots(self):
@@ -151,7 +156,10 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): No. of Spanning Tree Roots
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NoOfSpanningTreeRoots']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NoOfSpanningTreeRoots"])
+        )
 
     @property
     def StartSpanningTreeRootBridgeId(self):
@@ -162,7 +170,11 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Spanning Tree Root Bridge ID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSpanningTreeRootBridgeId']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["StartSpanningTreeRootBridgeId"]),
+        )
 
     @property
     def StartVlanId(self):
@@ -173,7 +185,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Start Vlan Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartVlanId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartVlanId"]))
 
     @property
     def VlanCount(self):
@@ -184,7 +197,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vlan Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanCount']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanCount"]))
 
     @property
     def VlanIdIncr(self):
@@ -195,7 +209,8 @@ class InterestedVlanList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Vlan Id Increment
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdIncr']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VlanIdIncr"]))
 
     def update(self, Name=None):
         # type: (str) -> InterestedVlanList
@@ -257,7 +272,19 @@ class InterestedVlanList(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, M4BitEnabled=None, M6BitEnabled=None, Nickname=None, NoOfSpanningTreeRoots=None, StartSpanningTreeRootBridgeId=None, StartVlanId=None, VlanCount=None, VlanIdIncr=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        M4BitEnabled=None,
+        M6BitEnabled=None,
+        Nickname=None,
+        NoOfSpanningTreeRoots=None,
+        StartSpanningTreeRootBridgeId=None,
+        StartVlanId=None,
+        VlanCount=None,
+        VlanIdIncr=None,
+    ):
         """Base class infrastructure that gets a list of interestedVlanList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,17 +33,17 @@ class DhcpV6Properties(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpV6Properties'
+    _SDM_NAME = "dhcpV6Properties"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IaId': 'iaId',
-        'IaType': 'iaType',
-        'RenewTimer': 'renewTimer',
-        'RequestRate': 'requestRate',
-        'Tlvs': 'tlvs',
+        "Enabled": "enabled",
+        "IaId": "iaId",
+        "IaType": "iaType",
+        "RenewTimer": "renewTimer",
+        "RequestRate": "requestRate",
+        "Tlvs": "tlvs",
     }
     _SDM_ENUM_MAP = {
-        'iaType': ['permanent', 'temporary', 'prefixDelegation'],
+        "iaType": ["permanent", "temporary", "prefixDelegation"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,11 +57,12 @@ class DhcpV6Properties(Base):
         -------
         - bool: Enables the DHCPv6 client feature. DHCPv6 negotiation will be started and an IPv6 address learned from the DHCPv6 server will be assigned automatically to the protocol interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IaId(self):
@@ -70,11 +72,12 @@ class DhcpV6Properties(Base):
         -------
         - number: The unique identifier value for the Identity Association (IA).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IaId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IaId"])
+
     @IaId.setter
     def IaId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IaId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IaId"], value)
 
     @property
     def IaType(self):
@@ -84,11 +87,12 @@ class DhcpV6Properties(Base):
         -------
         - str(permanent | temporary | prefixDelegation): The Identity Association (IA) Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IaType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IaType"])
+
     @IaType.setter
     def IaType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IaType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IaType"], value)
 
     @property
     def RenewTimer(self):
@@ -98,11 +102,12 @@ class DhcpV6Properties(Base):
         -------
         - number: The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RenewTimer'])
+        return self._get_attribute(self._SDM_ATT_MAP["RenewTimer"])
+
     @RenewTimer.setter
     def RenewTimer(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RenewTimer'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RenewTimer"], value)
 
     @property
     def RequestRate(self):
@@ -112,11 +117,12 @@ class DhcpV6Properties(Base):
         -------
         - number: The user-specified maximum number of Request messages that can be sent per second from the client to the DHCPv6 server, requesting an IPv6 address. A value of zero (0) indicates that there will be no rate control, that is, requests will be sent as quickly as possible.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RequestRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["RequestRate"])
+
     @RequestRate.setter
     def RequestRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RequestRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RequestRate"], value)
 
     @property
     def Tlvs(self):
@@ -125,12 +131,21 @@ class DhcpV6Properties(Base):
         -------
         - list(dict(arg1:number,arg2:str)): DHCP TLVs (type length value) for custom DHCP options.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tlvs'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tlvs"])
+
     @Tlvs.setter
     def Tlvs(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['Tlvs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tlvs"], value)
 
-    def update(self, Enabled=None, IaId=None, IaType=None, RenewTimer=None, RequestRate=None, Tlvs=None):
+    def update(
+        self,
+        Enabled=None,
+        IaId=None,
+        IaType=None,
+        RenewTimer=None,
+        RequestRate=None,
+        Tlvs=None,
+    ):
         """Updates dhcpV6Properties resource on the server.
 
         Args
@@ -148,7 +163,15 @@ class DhcpV6Properties(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None, IaId=None, IaType=None, RenewTimer=None, RequestRate=None, Tlvs=None):
+    def find(
+        self,
+        Enabled=None,
+        IaId=None,
+        IaType=None,
+        RenewTimer=None,
+        RequestRate=None,
+        Tlvs=None,
+    ):
         """Finds and retrieves dhcpV6Properties resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpV6Properties resources from the server.

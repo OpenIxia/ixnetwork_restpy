@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,31 +35,31 @@ class CMacRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'cMacRange'
+    _SDM_NAME = "cMacRange"
     _SDM_ATT_MAP = {
-        'CmacPrefixLength': 'cmacPrefixLength',
-        'CvlanId': 'cvlanId',
-        'CvlanPriority': 'cvlanPriority',
-        'CvlanTpId': 'cvlanTpId',
-        'EnableCvlan': 'enableCvlan',
-        'EnableSecondLabel': 'enableSecondLabel',
-        'EnableSvlan': 'enableSvlan',
-        'Enabled': 'enabled',
-        'FirstLabelStart': 'firstLabelStart',
-        'LabelMode': 'labelMode',
-        'LabelStep': 'labelStep',
-        'NoOfCmacs': 'noOfCmacs',
-        'SecondLabelStart': 'secondLabelStart',
-        'StartCmacPrefix': 'startCmacPrefix',
-        'SvlanId': 'svlanId',
-        'SvlanPriority': 'svlanPriority',
-        'SvlanTpId': 'svlanTpId',
-        'UseSameSequenceNumber': 'useSameSequenceNumber',
+        "CmacPrefixLength": "cmacPrefixLength",
+        "CvlanId": "cvlanId",
+        "CvlanPriority": "cvlanPriority",
+        "CvlanTpId": "cvlanTpId",
+        "EnableCvlan": "enableCvlan",
+        "EnableSecondLabel": "enableSecondLabel",
+        "EnableSvlan": "enableSvlan",
+        "Enabled": "enabled",
+        "FirstLabelStart": "firstLabelStart",
+        "LabelMode": "labelMode",
+        "LabelStep": "labelStep",
+        "NoOfCmacs": "noOfCmacs",
+        "SecondLabelStart": "secondLabelStart",
+        "StartCmacPrefix": "startCmacPrefix",
+        "SvlanId": "svlanId",
+        "SvlanPriority": "svlanPriority",
+        "SvlanTpId": "svlanTpId",
+        "UseSameSequenceNumber": "useSameSequenceNumber",
     }
     _SDM_ENUM_MAP = {
-        'cvlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
-        'labelMode': ['fixed', 'increment'],
-        'svlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
+        "cvlanTpId": ["0x8100", "0x9100", "0x9200", "0x88A8"],
+        "labelMode": ["fixed", "increment"],
+        "svlanTpId": ["0x8100", "0x9100", "0x9200", "0x88A8"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -75,10 +76,13 @@ class CMacRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacmappedip_48b7535562046322b0adbf2eb95cecf1 import CMacMappedIp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacmappedip_48b7535562046322b0adbf2eb95cecf1 import (
+            CMacMappedIp,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CMacMappedIp', None) is not None:
-                return self._properties.get('CMacMappedIp')
+            if self._properties.get("CMacMappedIp", None) is not None:
+                return self._properties.get("CMacMappedIp")
         return CMacMappedIp(self)
 
     @property
@@ -92,10 +96,13 @@ class CMacRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrouteattributes_a2fb1110b2532702570503443080f315 import CmacRouteAttributes
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrouteattributes_a2fb1110b2532702570503443080f315 import (
+            CmacRouteAttributes,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('CmacRouteAttributes', None) is not None:
-                return self._properties.get('CmacRouteAttributes')
+            if self._properties.get("CmacRouteAttributes", None) is not None:
+                return self._properties.get("CmacRouteAttributes")
         return CmacRouteAttributes(self)._select()
 
     @property
@@ -106,11 +113,12 @@ class CMacRange(Base):
         -------
         - number: Prefix length of C-MAC address. Default value is 48. Minimum value is 0 and maximum value is 48.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CmacPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["CmacPrefixLength"])
+
     @CmacPrefixLength.setter
     def CmacPrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CmacPrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CmacPrefixLength"], value)
 
     @property
     def CvlanId(self):
@@ -120,11 +128,12 @@ class CMacRange(Base):
         -------
         - number: C-VLAN Identifier used in EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanId"])
+
     @CvlanId.setter
     def CvlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanId"], value)
 
     @property
     def CvlanPriority(self):
@@ -134,11 +143,12 @@ class CMacRange(Base):
         -------
         - number: C-VLAN Priority used in EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanPriority"])
+
     @CvlanPriority.setter
     def CvlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanPriority"], value)
 
     @property
     def CvlanTpId(self):
@@ -148,11 +158,12 @@ class CMacRange(Base):
         -------
         - str(0x8100 | 0x9100 | 0x9200 | 0x88A8): C-VLAN TPID used in EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanTpId"])
+
     @CvlanTpId.setter
     def CvlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanTpId"], value)
 
     @property
     def EnableCvlan(self):
@@ -162,11 +173,12 @@ class CMacRange(Base):
         -------
         - bool: If true then C-VLAN is used in EVPN traffic. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCvlan"])
+
     @EnableCvlan.setter
     def EnableCvlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCvlan"], value)
 
     @property
     def EnableSecondLabel(self):
@@ -176,11 +188,12 @@ class CMacRange(Base):
         -------
         - bool: If true then second label is inserted in the EVPN label stack. Default value is false. Label value is obtained for all macs in the same way of first label.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSecondLabel'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSecondLabel"])
+
     @EnableSecondLabel.setter
     def EnableSecondLabel(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSecondLabel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSecondLabel"], value)
 
     @property
     def EnableSvlan(self):
@@ -190,11 +203,12 @@ class CMacRange(Base):
         -------
         - bool: If true then S-VLAN is used in EVPN traffic. Default value is false.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSvlan'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSvlan"])
+
     @EnableSvlan.setter
     def EnableSvlan(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSvlan'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSvlan"], value)
 
     @property
     def Enabled(self):
@@ -204,11 +218,12 @@ class CMacRange(Base):
         -------
         - bool: If true then this C-MAC range is used in EVPN.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def FirstLabelStart(self):
@@ -218,11 +233,12 @@ class CMacRange(Base):
         -------
         - number: First EVPN label in label stack for MAC route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF. This label value is used in first mac of this mac range. If Label mode is fixed then same label value is used for all mac in this mac range. If label mode is Increment then label value for subsequent mac is obtained by adding the label step value to the first label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FirstLabelStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["FirstLabelStart"])
+
     @FirstLabelStart.setter
     def FirstLabelStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirstLabelStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FirstLabelStart"], value)
 
     @property
     def LabelMode(self):
@@ -232,11 +248,12 @@ class CMacRange(Base):
         -------
         - str(fixed | increment): It is used to get the label value of subsequent macs in the range by adding this value to the first label value. Default value is Increment. It can be either Fixed or Increment.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelMode'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelMode"])
+
     @LabelMode.setter
     def LabelMode(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelMode'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelMode"], value)
 
     @property
     def LabelStep(self):
@@ -246,11 +263,12 @@ class CMacRange(Base):
         -------
         - number: Label step to get the label value of subsequent macs in the mac range. Default value is 1. Minimum value is 0 and maximum value is 0xFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LabelStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["LabelStep"])
+
     @LabelStep.setter
     def LabelStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LabelStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LabelStep"], value)
 
     @property
     def NoOfCmacs(self):
@@ -260,11 +278,12 @@ class CMacRange(Base):
         -------
         - number: Number of C-MACs in this mac range. Default value is 1. Minimum value is 1 and maximum value is 0xFFFFFFFF.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfCmacs'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCmacs"])
+
     @NoOfCmacs.setter
     def NoOfCmacs(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfCmacs'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCmacs"], value)
 
     @property
     def SecondLabelStart(self):
@@ -274,11 +293,12 @@ class CMacRange(Base):
         -------
         - number: Second EVPN label in label stack for MAC route. Default value is 16. Minimum value is 16 and maximum value is 0xFFFFF. This label value is used in first mac of this mac range. If Label mode is fixed then same label value is used for all mac in this mac range. If label mode is Increment then label value for subsequent mac is obtained by adding the label step value to the second label value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SecondLabelStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["SecondLabelStart"])
+
     @SecondLabelStart.setter
     def SecondLabelStart(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SecondLabelStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SecondLabelStart"], value)
 
     @property
     def StartCmacPrefix(self):
@@ -288,11 +308,12 @@ class CMacRange(Base):
         -------
         - str: Start mac address of this range. Default value is 0x00 00 00 00 00 01.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartCmacPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartCmacPrefix"])
+
     @StartCmacPrefix.setter
     def StartCmacPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartCmacPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartCmacPrefix"], value)
 
     @property
     def SvlanId(self):
@@ -302,11 +323,12 @@ class CMacRange(Base):
         -------
         - number: S-VLAN Identifier used in EVPN traffic. Default value is 1. Minimum value is 0 and maximum value is 4095.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanId"])
+
     @SvlanId.setter
     def SvlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanId"], value)
 
     @property
     def SvlanPriority(self):
@@ -316,11 +338,12 @@ class CMacRange(Base):
         -------
         - number: S-VLAN Priority used in EVPN traffic. Default value is 0. Minimum value is 0 and maximum value is 7.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanPriority"])
+
     @SvlanPriority.setter
     def SvlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanPriority"], value)
 
     @property
     def SvlanTpId(self):
@@ -330,11 +353,12 @@ class CMacRange(Base):
         -------
         - str(0x8100 | 0x9100 | 0x9200 | 0x88A8): S-VLAN TPID used in EVPN traffic. Default value is 0x8100. User can select any one of {0x8100, 0x9100, 0x9200, 0x88A8}.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanTpId'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanTpId"])
+
     @SvlanTpId.setter
     def SvlanTpId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanTpId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanTpId"], value)
 
     @property
     def UseSameSequenceNumber(self):
@@ -344,13 +368,34 @@ class CMacRange(Base):
         -------
         - bool: If true then same sequence number is used in MAC Mobility Extended Community for all MAC routes for mac mobility. If false then subsequent C-MAC route uses unique sequence number in MAC Mobility Extended Community.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseSameSequenceNumber"])
+
     @UseSameSequenceNumber.setter
     def UseSameSequenceNumber(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseSameSequenceNumber"], value)
 
-    def update(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+    def update(
+        self,
+        CmacPrefixLength=None,
+        CvlanId=None,
+        CvlanPriority=None,
+        CvlanTpId=None,
+        EnableCvlan=None,
+        EnableSecondLabel=None,
+        EnableSvlan=None,
+        Enabled=None,
+        FirstLabelStart=None,
+        LabelMode=None,
+        LabelStep=None,
+        NoOfCmacs=None,
+        SecondLabelStart=None,
+        StartCmacPrefix=None,
+        SvlanId=None,
+        SvlanPriority=None,
+        SvlanTpId=None,
+        UseSameSequenceNumber=None,
+    ):
         # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Updates cMacRange resource on the server.
 
@@ -381,7 +426,27 @@ class CMacRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+    def add(
+        self,
+        CmacPrefixLength=None,
+        CvlanId=None,
+        CvlanPriority=None,
+        CvlanTpId=None,
+        EnableCvlan=None,
+        EnableSecondLabel=None,
+        EnableSvlan=None,
+        Enabled=None,
+        FirstLabelStart=None,
+        LabelMode=None,
+        LabelStep=None,
+        NoOfCmacs=None,
+        SecondLabelStart=None,
+        StartCmacPrefix=None,
+        SvlanId=None,
+        SvlanPriority=None,
+        SvlanTpId=None,
+        UseSameSequenceNumber=None,
+    ):
         # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Adds a new cMacRange resource on the server and adds it to the container.
 
@@ -426,7 +491,27 @@ class CMacRange(Base):
         """
         self._delete()
 
-    def find(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+    def find(
+        self,
+        CmacPrefixLength=None,
+        CvlanId=None,
+        CvlanPriority=None,
+        CvlanTpId=None,
+        EnableCvlan=None,
+        EnableSecondLabel=None,
+        EnableSvlan=None,
+        Enabled=None,
+        FirstLabelStart=None,
+        LabelMode=None,
+        LabelStep=None,
+        NoOfCmacs=None,
+        SecondLabelStart=None,
+        StartCmacPrefix=None,
+        SvlanId=None,
+        SvlanPriority=None,
+        SvlanTpId=None,
+        UseSameSequenceNumber=None,
+    ):
         # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Finds and retrieves cMacRange resources from the server.
 
@@ -499,7 +584,9 @@ class CMacRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseCmac', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("readvertiseCmac", payload=payload, response_object=None)

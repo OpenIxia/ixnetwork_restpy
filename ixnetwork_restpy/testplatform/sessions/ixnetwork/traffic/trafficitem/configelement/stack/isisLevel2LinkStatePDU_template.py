@@ -4,143 +4,143 @@ from ixnetwork_restpy.files import Files
 
 class IsisLevel2LinkStatePDU(Base):
     __slots__ = ()
-    _SDM_NAME = 'isisLevel2LinkStatePDU'
+    _SDM_NAME = "isisLevel2LinkStatePDU"
     _SDM_ATT_MAP = {
-        'CommonHeaderIntradomainRoutingProtocolDiscriminator': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.intradomainRoutingProtocolDiscriminator-1',
-        'CommonHeaderLengthIndicator': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.lengthIndicator-2',
-        'CommonHeaderVersionProtocolIDExtension': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.versionProtocolIDExtension-3',
-        'CommonHeaderIdLength': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.idLength-4',
-        'CommonHeaderReservedBit': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.reservedBit-5',
-        'CommonHeaderPduType': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.pduType-6',
-        'CommonHeaderVersion': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.version-7',
-        'CommonHeaderReserved': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.reserved-8',
-        'CommonHeaderMaximumAreaAddresses': 'isisLevel2LinkStatePDU.isisHeader.commonHeader.maximumAreaAddresses-9',
-        'FixedHeaderPduLength': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.pduLength-10',
-        'FixedHeaderRemainingLifetime': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.remainingLifetime-11',
-        'LspIDPseudonodeID': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspID.pseudonodeID-12',
-        'LspIDLspNumber': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspID.lspNumber-13',
-        'FixedHeaderSequenceNumber': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.sequenceNumber-14',
-        'FixedHeaderChecksum': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.checksum-15',
-        'FixedHeaderPartitionRepairBit': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.partitionRepairBit-16',
-        'FixedHeaderAttached': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.attached-17',
-        'FixedHeaderLspDatabaseOverload': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspDatabaseOverload-18',
-        'FixedHeaderIsType': 'isisLevel2LinkStatePDU.isisHeader.fixedHeader.isType-19',
-        'Tlv1AreaAddressesTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvCode-20',
-        'Tlv1AreaAddressesTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvLength-21',
-        'ValueFieldsAddressLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.addressLength-22',
-        'ValueFieldsAreaAddress': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.areaAddress-23',
-        'Tlv2ISNeighborsTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.tlvCode-24',
-        'Tlv2ISNeighborsTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.tlvLength-25',
-        'ValueFieldsVirtualFlag': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.virtualFlag-26',
-        'Tlv2RepeatingFieldsReservedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.reservedBit-27',
-        'Tlv2RepeatingFieldsInternalMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-28',
-        'Tlv2RepeatingFieldsDefaultMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.defaultMetric-29',
-        'Tlv2RepeatingFieldsSupportedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-30',
-        'ValuefieldsTlv2RepeatingFieldsInternalMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-31',
-        'Tlv2RepeatingFieldsDelayMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.delayMetric-32',
-        'ValuefieldsTlv2RepeatingFieldsSupportedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-33',
-        'Tlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-34',
-        'Tlv2RepeatingFieldsExpenseMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.expenseMetric-35',
-        'Tlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-36',
-        'TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-37',
-        'ValuefieldsTlv2RepeatingFieldsExpenseMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.expenseMetric-38',
-        'TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-39',
-        'TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-40',
-        'Tlv2RepeatingFieldsErrorMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.errorMetric-41',
-        'NeighborIDNeighborID': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.neighborID.neighborID-42',
-        'NeighborIDPadding8Bits': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.neighborID.padding8Bits-43',
-        'Tlv3EndSystemNeighborsTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.tlvCode-44',
-        'Tlv3EndSystemNeighborsTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.tlvLength-45',
-        'ValueFieldsReserved': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.valueFields.reserved-46',
-        'ValueFieldsNeighborID': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.valueFields.neighborID-47',
-        'Tlv10AuthenticationInformationTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvCode-48',
-        'Tlv10AuthenticationInformationTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvLength-49',
-        'ValueFieldsAuthenticationType': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationType-50',
-        'ValueFieldsAuthenticationValue': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationValue-51',
-        'Tlv14OriginatingLSPBufferSizeTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.tlvCode-52',
-        'Tlv14OriginatingLSPBufferSizeTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.tlvLength-53',
-        'Tlv14OriginatingLSPBufferSizeValue': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.value-54',
-        'Tlv22ExtendedISReachabilityTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.tlvCode-55',
-        'Tlv22ExtendedISReachabilityTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.tlvLength-56',
-        'ValueFieldSystemIDAndPseudonodeNumber': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.systemIDAndPseudonodeNumber-57',
-        'ValueFieldDefaultMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.defaultMetric-58',
-        'ValueFieldLengthOfSubTLVs': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.lengthOfSubTLVs-59',
-        'SubTLVsNoSubTLVs': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.noSubTLVs-60',
-        'SubTLV3AdministrativeGroupSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.subTLVCode-61',
-        'SubTLV3AdministrativeGroupSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.subTLVLength-62',
-        'ValueFieldAdministrativeGroup': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.valueField.administrativeGroup-63',
-        'SubTLV6IPv4InterfaceAddressSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.subTLVCode-64',
-        'SubTLV6IPv4InterfaceAddressSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.subTLVLength-65',
-        'ValueFieldIpv4InterfaceAddress': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.valueField.ipv4InterfaceAddress-66',
-        'SubTLV8IPv4NeighborAddressSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.subTLVCode-67',
-        'SubTLV8IPv4NeighborAddressSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.subTLVLength-68',
-        'ValueFieldIpv4NeighborAddress': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.valueField.ipv4NeighborAddress-69',
-        'SubTLV9MaximumLinkBandwidthSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.subTLVCode-70',
-        'SubTLV9MaximumLinkBandwidthSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.subTLVLength-71',
-        'ValueFieldMaximumLinkBandwidthBytessec': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.valueField.maximumLinkBandwidthBytessec-72',
-        'SubTLV10ReservableLinkBandwidthSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.subTLVCode-73',
-        'SubTLV10ReservableLinkBandwidthSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.subTLVLength-74',
-        'ValueFieldAuthenticationType': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.valueField.authenticationType-75',
-        'ValueFieldAuthenticationValue': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.valueField.authenticationValue-76',
-        'SubTLV11UnreservedBandwidthSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.subTLVCode-77',
-        'SubTLV11UnreservedBandwidthSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.subTLVLength-78',
-        'ValueFieldUnreservedBandwidthBytessec': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.valueField.unreservedBandwidthBytessec-79',
-        'SubTLV18TEDefaultMetricSubTLVCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.subTLVCode-80',
-        'SubTLV18TEDefaultMetricSubTLVLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.subTLVLength-81',
-        'ValueFieldTeDefaultMetric': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.valueField.teDefaultMetric-82',
-        'Tlv128IPInternalReachabilityCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.code-83',
-        'Tlv128IPInternalReachabilityLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.length-84',
-        'ValueEntriesZeroBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.zeroBit-85',
-        'ValueEntriesIe': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.ie-86',
-        'ValueEntriesDefaultMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.defaultMETRIC-87',
-        'ValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-88',
-        'ValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-89',
-        'ValueEntriesDelayMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.delayMETRIC-90',
-        'Tlv128ipinternalreachabilityValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-91',
-        'Tlv128ipinternalreachabilityValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-92',
-        'ValueEntriesExpenseMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.expenseMETRIC-93',
-        'TlvheadertypeTlv128ipinternalreachabilityValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-94',
-        'TlvheadertypeTlv128ipinternalreachabilityValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-95',
-        'ValueEntriesErrorMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.errorMETRIC-96',
-        'ValueEntriesIpADDRESS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.ipADDRESS-97',
-        'ValueEntriesSubnetMASK': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.subnetMASK-98',
-        'Tlv129ProtocolsSupportedCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.code-99',
-        'Tlv129ProtocolsSupportedLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.length-100',
-        'NlpidEntriesNlpid': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.nlpid-101',
-        'Tlv130IPExternalReachabilityCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.code-102',
-        'Tlv130IPExternalReachabilityLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.length-103',
-        'Tlv130ipexternalreachabilityValueEntriesZeroBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.zeroBit-104',
-        'Tlv130ipexternalreachabilityValueEntriesIe': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.ie-105',
-        'Tlv130ipexternalreachabilityValueEntriesDefaultMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.defaultMETRIC-106',
-        'Tlv130ipexternalreachabilityValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-107',
-        'Tlv130ipexternalreachabilityValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-108',
-        'Tlv130ipexternalreachabilityValueEntriesDelayMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.delayMETRIC-109',
-        'TlvheadertypeTlv130ipexternalreachabilityValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-110',
-        'TlvheadertypeTlv130ipexternalreachabilityValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-111',
-        'Tlv130ipexternalreachabilityValueEntriesExpenseMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.expenseMETRIC-112',
-        'TlvheadertypeTlv130ipexternalreachabilityValueEntriesS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-113',
-        'TlvheadertypeTlv130ipexternalreachabilityValueEntriesR': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-114',
-        'Tlv130ipexternalreachabilityValueEntriesErrorMETRIC': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.errorMETRIC-115',
-        'Tlv130ipexternalreachabilityValueEntriesIpADDRESS': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.ipADDRESS-116',
-        'Tlv130ipexternalreachabilityValueEntriesSubnetMASK': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.subnetMASK-117',
-        'Tlv131InterDomainRoutingProtocolInfoCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.code-118',
-        'Tlv131InterDomainRoutingProtocolInfoLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.length-119',
-        'Tlv131InterDomainRoutingProtocolInfoInterDomainInformationType': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.interDomainInformationType-120',
-        'Tlv131InterDomainRoutingProtocolInfoInfoLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.infoLength-121',
-        'Tlv131InterDomainRoutingProtocolInfoExternalInformation': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.externalInformation-122',
-        'Tlv132IPInterfaceAddressCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.code-123',
-        'Tlv132IPInterfaceAddressLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.length-124',
-        'IpAddressEntriesIpAddress': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.ipAddressEntries.ipAddress-125',
-        'Tlv232IPv6InterfaceAddressCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.code-126',
-        'Tlv232IPv6InterfaceAddressLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.length-127',
-        'Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.ipAddressEntries.ipAddress-128',
-        'Tlv237MultiTopologyReachableIPv6PrefixesTlvCode': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.tlvCode-129',
-        'Tlv237MultiTopologyReachableIPv6PrefixesTlvLength': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.tlvLength-130',
-        'ValueFieldReservedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-131',
-        'Tlv237multitopologyreachableipv6prefixesValueFieldReservedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-132',
-        'TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-133',
-        'TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-134',
-        'ValueFieldExtendedIntermediateSystemTLVFormat': 'isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.extendedIntermediateSystemTLVFormat-135',
+        "CommonHeaderIntradomainRoutingProtocolDiscriminator": "isisLevel2LinkStatePDU.isisHeader.commonHeader.intradomainRoutingProtocolDiscriminator-1",
+        "CommonHeaderLengthIndicator": "isisLevel2LinkStatePDU.isisHeader.commonHeader.lengthIndicator-2",
+        "CommonHeaderVersionProtocolIDExtension": "isisLevel2LinkStatePDU.isisHeader.commonHeader.versionProtocolIDExtension-3",
+        "CommonHeaderIdLength": "isisLevel2LinkStatePDU.isisHeader.commonHeader.idLength-4",
+        "CommonHeaderReservedBit": "isisLevel2LinkStatePDU.isisHeader.commonHeader.reservedBit-5",
+        "CommonHeaderPduType": "isisLevel2LinkStatePDU.isisHeader.commonHeader.pduType-6",
+        "CommonHeaderVersion": "isisLevel2LinkStatePDU.isisHeader.commonHeader.version-7",
+        "CommonHeaderReserved": "isisLevel2LinkStatePDU.isisHeader.commonHeader.reserved-8",
+        "CommonHeaderMaximumAreaAddresses": "isisLevel2LinkStatePDU.isisHeader.commonHeader.maximumAreaAddresses-9",
+        "FixedHeaderPduLength": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.pduLength-10",
+        "FixedHeaderRemainingLifetime": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.remainingLifetime-11",
+        "LspIDPseudonodeID": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspID.pseudonodeID-12",
+        "LspIDLspNumber": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspID.lspNumber-13",
+        "FixedHeaderSequenceNumber": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.sequenceNumber-14",
+        "FixedHeaderChecksum": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.checksum-15",
+        "FixedHeaderPartitionRepairBit": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.partitionRepairBit-16",
+        "FixedHeaderAttached": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.attached-17",
+        "FixedHeaderLspDatabaseOverload": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.lspDatabaseOverload-18",
+        "FixedHeaderIsType": "isisLevel2LinkStatePDU.isisHeader.fixedHeader.isType-19",
+        "Tlv1AreaAddressesTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvCode-20",
+        "Tlv1AreaAddressesTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.tlvLength-21",
+        "ValueFieldsAddressLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.addressLength-22",
+        "ValueFieldsAreaAddress": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv1AreaAddresses.valueFields.areaAddress-23",
+        "Tlv2ISNeighborsTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.tlvCode-24",
+        "Tlv2ISNeighborsTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.tlvLength-25",
+        "ValueFieldsVirtualFlag": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.virtualFlag-26",
+        "Tlv2RepeatingFieldsReservedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.reservedBit-27",
+        "Tlv2RepeatingFieldsInternalMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-28",
+        "Tlv2RepeatingFieldsDefaultMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.defaultMetric-29",
+        "Tlv2RepeatingFieldsSupportedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-30",
+        "ValuefieldsTlv2RepeatingFieldsInternalMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-31",
+        "Tlv2RepeatingFieldsDelayMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.delayMetric-32",
+        "ValuefieldsTlv2RepeatingFieldsSupportedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-33",
+        "Tlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-34",
+        "Tlv2RepeatingFieldsExpenseMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.expenseMetric-35",
+        "Tlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-36",
+        "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-37",
+        "ValuefieldsTlv2RepeatingFieldsExpenseMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.expenseMetric-38",
+        "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.supportedBit-39",
+        "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.internalMetric-40",
+        "Tlv2RepeatingFieldsErrorMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.errorMetric-41",
+        "NeighborIDNeighborID": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.neighborID.neighborID-42",
+        "NeighborIDPadding8Bits": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv2ISNeighbors.valueFields.tlv2RepeatingFields.neighborID.padding8Bits-43",
+        "Tlv3EndSystemNeighborsTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.tlvCode-44",
+        "Tlv3EndSystemNeighborsTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.tlvLength-45",
+        "ValueFieldsReserved": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.valueFields.reserved-46",
+        "ValueFieldsNeighborID": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv3EndSystemNeighbors.valueFields.neighborID-47",
+        "Tlv10AuthenticationInformationTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvCode-48",
+        "Tlv10AuthenticationInformationTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.tlvLength-49",
+        "ValueFieldsAuthenticationType": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationType-50",
+        "ValueFieldsAuthenticationValue": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv10AuthenticationInformation.valueFields.authenticationValue-51",
+        "Tlv14OriginatingLSPBufferSizeTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.tlvCode-52",
+        "Tlv14OriginatingLSPBufferSizeTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.tlvLength-53",
+        "Tlv14OriginatingLSPBufferSizeValue": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv14OriginatingLSPBufferSize.value-54",
+        "Tlv22ExtendedISReachabilityTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.tlvCode-55",
+        "Tlv22ExtendedISReachabilityTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.tlvLength-56",
+        "ValueFieldSystemIDAndPseudonodeNumber": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.systemIDAndPseudonodeNumber-57",
+        "ValueFieldDefaultMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.defaultMetric-58",
+        "ValueFieldLengthOfSubTLVs": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.lengthOfSubTLVs-59",
+        "SubTLVsNoSubTLVs": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.noSubTLVs-60",
+        "SubTLV3AdministrativeGroupSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.subTLVCode-61",
+        "SubTLV3AdministrativeGroupSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.subTLVLength-62",
+        "ValueFieldAdministrativeGroup": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV3AdministrativeGroup.valueField.administrativeGroup-63",
+        "SubTLV6IPv4InterfaceAddressSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.subTLVCode-64",
+        "SubTLV6IPv4InterfaceAddressSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.subTLVLength-65",
+        "ValueFieldIpv4InterfaceAddress": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV6IPv4InterfaceAddress.valueField.ipv4InterfaceAddress-66",
+        "SubTLV8IPv4NeighborAddressSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.subTLVCode-67",
+        "SubTLV8IPv4NeighborAddressSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.subTLVLength-68",
+        "ValueFieldIpv4NeighborAddress": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV8IPv4NeighborAddress.valueField.ipv4NeighborAddress-69",
+        "SubTLV9MaximumLinkBandwidthSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.subTLVCode-70",
+        "SubTLV9MaximumLinkBandwidthSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.subTLVLength-71",
+        "ValueFieldMaximumLinkBandwidthBytessec": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV9MaximumLinkBandwidth.valueField.maximumLinkBandwidthBytessec-72",
+        "SubTLV10ReservableLinkBandwidthSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.subTLVCode-73",
+        "SubTLV10ReservableLinkBandwidthSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.subTLVLength-74",
+        "ValueFieldAuthenticationType": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.valueField.authenticationType-75",
+        "ValueFieldAuthenticationValue": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV10ReservableLinkBandwidth.valueField.authenticationValue-76",
+        "SubTLV11UnreservedBandwidthSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.subTLVCode-77",
+        "SubTLV11UnreservedBandwidthSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.subTLVLength-78",
+        "ValueFieldUnreservedBandwidthBytessec": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV11UnreservedBandwidth.valueField.unreservedBandwidthBytessec-79",
+        "SubTLV18TEDefaultMetricSubTLVCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.subTLVCode-80",
+        "SubTLV18TEDefaultMetricSubTLVLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.subTLVLength-81",
+        "ValueFieldTeDefaultMetric": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv22ExtendedISReachability.valueField.subTLV.subTLVs.subTLV18TEDefaultMetric.valueField.teDefaultMetric-82",
+        "Tlv128IPInternalReachabilityCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.code-83",
+        "Tlv128IPInternalReachabilityLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.length-84",
+        "ValueEntriesZeroBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.zeroBit-85",
+        "ValueEntriesIe": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.ie-86",
+        "ValueEntriesDefaultMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.defaultMETRIC-87",
+        "ValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-88",
+        "ValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-89",
+        "ValueEntriesDelayMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.delayMETRIC-90",
+        "Tlv128ipinternalreachabilityValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-91",
+        "Tlv128ipinternalreachabilityValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-92",
+        "ValueEntriesExpenseMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.expenseMETRIC-93",
+        "TlvheadertypeTlv128ipinternalreachabilityValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.s-94",
+        "TlvheadertypeTlv128ipinternalreachabilityValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.r-95",
+        "ValueEntriesErrorMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.errorMETRIC-96",
+        "ValueEntriesIpADDRESS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.ipADDRESS-97",
+        "ValueEntriesSubnetMASK": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv128IPInternalReachability.valueEntries.subnetMASK-98",
+        "Tlv129ProtocolsSupportedCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.code-99",
+        "Tlv129ProtocolsSupportedLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.length-100",
+        "NlpidEntriesNlpid": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv129ProtocolsSupported.nlpidEntries.nlpid-101",
+        "Tlv130IPExternalReachabilityCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.code-102",
+        "Tlv130IPExternalReachabilityLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.length-103",
+        "Tlv130ipexternalreachabilityValueEntriesZeroBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.zeroBit-104",
+        "Tlv130ipexternalreachabilityValueEntriesIe": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.ie-105",
+        "Tlv130ipexternalreachabilityValueEntriesDefaultMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.defaultMETRIC-106",
+        "Tlv130ipexternalreachabilityValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-107",
+        "Tlv130ipexternalreachabilityValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-108",
+        "Tlv130ipexternalreachabilityValueEntriesDelayMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.delayMETRIC-109",
+        "TlvheadertypeTlv130ipexternalreachabilityValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-110",
+        "TlvheadertypeTlv130ipexternalreachabilityValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-111",
+        "Tlv130ipexternalreachabilityValueEntriesExpenseMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.expenseMETRIC-112",
+        "TlvheadertypeTlv130ipexternalreachabilityValueEntriesS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.s-113",
+        "TlvheadertypeTlv130ipexternalreachabilityValueEntriesR": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.r-114",
+        "Tlv130ipexternalreachabilityValueEntriesErrorMETRIC": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.errorMETRIC-115",
+        "Tlv130ipexternalreachabilityValueEntriesIpADDRESS": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.ipADDRESS-116",
+        "Tlv130ipexternalreachabilityValueEntriesSubnetMASK": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv130IPExternalReachability.valueEntries.subnetMASK-117",
+        "Tlv131InterDomainRoutingProtocolInfoCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.code-118",
+        "Tlv131InterDomainRoutingProtocolInfoLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.length-119",
+        "Tlv131InterDomainRoutingProtocolInfoInterDomainInformationType": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.interDomainInformationType-120",
+        "Tlv131InterDomainRoutingProtocolInfoInfoLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.infoLength-121",
+        "Tlv131InterDomainRoutingProtocolInfoExternalInformation": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv131InterDomainRoutingProtocolInfo.externalInformation-122",
+        "Tlv132IPInterfaceAddressCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.code-123",
+        "Tlv132IPInterfaceAddressLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.length-124",
+        "IpAddressEntriesIpAddress": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv132IPInterfaceAddress.ipAddressEntries.ipAddress-125",
+        "Tlv232IPv6InterfaceAddressCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.code-126",
+        "Tlv232IPv6InterfaceAddressLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.length-127",
+        "Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv232IPv6InterfaceAddress.ipAddressEntries.ipAddress-128",
+        "Tlv237MultiTopologyReachableIPv6PrefixesTlvCode": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.tlvCode-129",
+        "Tlv237MultiTopologyReachableIPv6PrefixesTlvLength": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.tlvLength-130",
+        "ValueFieldReservedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-131",
+        "Tlv237multitopologyreachableipv6prefixesValueFieldReservedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-132",
+        "TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-133",
+        "TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.reservedBit-134",
+        "ValueFieldExtendedIntermediateSystemTLVFormat": "isisLevel2LinkStatePDU.isisHeader.tlvHeader.tlvHeaderType.tlv237MultiTopologyReachableIPv6Prefixes.valueField.extendedIntermediateSystemTLVFormat-135",
     }
 
     def __init__(self, parent, list_op=False):
@@ -154,7 +154,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderIntradomainRoutingProtocolDiscriminator']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonHeaderIntradomainRoutingProtocolDiscriminator"]
+            ),
+        )
 
     @property
     def CommonHeaderLengthIndicator(self):
@@ -164,7 +170,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderLengthIndicator']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderLengthIndicator"])
+        )
 
     @property
     def CommonHeaderVersionProtocolIDExtension(self):
@@ -174,7 +183,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderVersionProtocolIDExtension']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CommonHeaderVersionProtocolIDExtension"]
+            ),
+        )
 
     @property
     def CommonHeaderIdLength(self):
@@ -185,7 +200,10 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: One, 1, Two, 2, Three, 3, Four, 4, Five, 5, Six, 6, Seven, 7, Eight, 8, 6 Octet ID field, 0, Null ID field, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderIdLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderIdLength"])
+        )
 
     @property
     def CommonHeaderReservedBit(self):
@@ -195,7 +213,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderReservedBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderReservedBit"])
+        )
 
     @property
     def CommonHeaderPduType(self):
@@ -205,7 +226,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderPduType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderPduType"])
+        )
 
     @property
     def CommonHeaderVersion(self):
@@ -215,7 +239,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderVersion"])
+        )
 
     @property
     def CommonHeaderReserved(self):
@@ -225,7 +252,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CommonHeaderReserved"])
+        )
 
     @property
     def CommonHeaderMaximumAreaAddresses(self):
@@ -235,7 +265,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CommonHeaderMaximumAreaAddresses']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CommonHeaderMaximumAreaAddresses"]),
+        )
 
     @property
     def FixedHeaderPduLength(self):
@@ -245,7 +279,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderPduLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderPduLength"])
+        )
 
     @property
     def FixedHeaderRemainingLifetime(self):
@@ -255,7 +292,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderRemainingLifetime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderRemainingLifetime"])
+        )
 
     @property
     def LspIDPseudonodeID(self):
@@ -265,7 +305,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspIDPseudonodeID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspIDPseudonodeID"])
+        )
 
     @property
     def LspIDLspNumber(self):
@@ -275,7 +318,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LspIDLspNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LspIDLspNumber"])
+        )
 
     @property
     def FixedHeaderSequenceNumber(self):
@@ -285,7 +331,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderSequenceNumber']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderSequenceNumber"])
+        )
 
     @property
     def FixedHeaderChecksum(self):
@@ -295,7 +344,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderChecksum']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderChecksum"])
+        )
 
     @property
     def FixedHeaderPartitionRepairBit(self):
@@ -306,7 +358,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Not supported, 0, Supported, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderPartitionRepairBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FixedHeaderPartitionRepairBit"]),
+        )
 
     @property
     def FixedHeaderAttached(self):
@@ -316,7 +372,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderAttached']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderAttached"])
+        )
 
     @property
     def FixedHeaderLspDatabaseOverload(self):
@@ -327,7 +386,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: No overload, 0, Overload, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderLspDatabaseOverload']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["FixedHeaderLspDatabaseOverload"]),
+        )
 
     @property
     def FixedHeaderIsType(self):
@@ -338,7 +401,10 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Level 1 IS, 1, Level 2 IS, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FixedHeaderIsType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FixedHeaderIsType"])
+        )
 
     @property
     def Tlv1AreaAddressesTlvCode(self):
@@ -348,7 +414,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv1AreaAddressesTlvCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv1AreaAddressesTlvCode"])
+        )
 
     @property
     def Tlv1AreaAddressesTlvLength(self):
@@ -358,7 +427,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv1AreaAddressesTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv1AreaAddressesTlvLength"])
+        )
 
     @property
     def ValueFieldsAddressLength(self):
@@ -368,7 +440,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAddressLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAddressLength"])
+        )
 
     @property
     def ValueFieldsAreaAddress(self):
@@ -378,7 +453,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAreaAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAreaAddress"])
+        )
 
     @property
     def Tlv2ISNeighborsTlvCode(self):
@@ -388,7 +466,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2ISNeighborsTlvCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv2ISNeighborsTlvCode"])
+        )
 
     @property
     def Tlv2ISNeighborsTlvLength(self):
@@ -398,7 +479,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2ISNeighborsTlvLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv2ISNeighborsTlvLength"])
+        )
 
     @property
     def ValueFieldsVirtualFlag(self):
@@ -409,7 +493,10 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Not Level 2 path to repair area partition, 0, Level 2 path to repair area partition, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsVirtualFlag']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsVirtualFlag"])
+        )
 
     @property
     def Tlv2RepeatingFieldsReservedBit(self):
@@ -420,7 +507,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsReservedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsReservedBit"]),
+        )
 
     @property
     def Tlv2RepeatingFieldsInternalMetric(self):
@@ -431,7 +522,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Zero, indicating Internal Metric, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsInternalMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsInternalMetric"]),
+        )
 
     @property
     def Tlv2RepeatingFieldsDefaultMetric(self):
@@ -441,7 +536,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsDefaultMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsDefaultMetric"]),
+        )
 
     @property
     def Tlv2RepeatingFieldsSupportedBit(self):
@@ -452,7 +551,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Metric unsupported, 1, Metric supported, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsSupportedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsSupportedBit"]),
+        )
 
     @property
     def ValuefieldsTlv2RepeatingFieldsInternalMetric(self):
@@ -463,7 +566,13 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Zero, indicating Internal Metric, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValuefieldsTlv2RepeatingFieldsInternalMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValuefieldsTlv2RepeatingFieldsInternalMetric"]
+            ),
+        )
 
     @property
     def Tlv2RepeatingFieldsDelayMetric(self):
@@ -473,7 +582,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsDelayMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsDelayMetric"]),
+        )
 
     @property
     def ValuefieldsTlv2RepeatingFieldsSupportedBit(self):
@@ -484,7 +597,13 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Metric unsupported, 1, Metric supported, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValuefieldsTlv2RepeatingFieldsSupportedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValuefieldsTlv2RepeatingFieldsSupportedBit"]
+            ),
+        )
 
     @property
     def Tlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric(self):
@@ -495,7 +614,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Zero, indicating Internal Metric, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric"
+                ]
+            ),
+        )
 
     @property
     def Tlv2RepeatingFieldsExpenseMetric(self):
@@ -505,7 +632,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsExpenseMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsExpenseMetric"]),
+        )
 
     @property
     def Tlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit(self):
@@ -516,7 +647,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Metric unsupported, 1, Metric supported, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric(self):
@@ -527,7 +666,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Zero, indicating Internal Metric, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric"
+                ]
+            ),
+        )
 
     @property
     def ValuefieldsTlv2RepeatingFieldsExpenseMetric(self):
@@ -537,7 +684,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValuefieldsTlv2RepeatingFieldsExpenseMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValuefieldsTlv2RepeatingFieldsExpenseMetric"]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit(self):
@@ -548,7 +701,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Metric unsupported, 1, Metric supported, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsSupportedBit"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric(self):
@@ -559,7 +720,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Zero, indicating Internal Metric, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv2isneighborsValuefieldsTlv2RepeatingFieldsInternalMetric"
+                ]
+            ),
+        )
 
     @property
     def Tlv2RepeatingFieldsErrorMetric(self):
@@ -569,7 +738,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv2RepeatingFieldsErrorMetric']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv2RepeatingFieldsErrorMetric"]),
+        )
 
     @property
     def NeighborIDNeighborID(self):
@@ -579,7 +752,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NeighborIDNeighborID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NeighborIDNeighborID"])
+        )
 
     @property
     def NeighborIDPadding8Bits(self):
@@ -589,7 +765,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NeighborIDPadding8Bits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NeighborIDPadding8Bits"])
+        )
 
     @property
     def Tlv3EndSystemNeighborsTlvCode(self):
@@ -599,7 +778,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv3EndSystemNeighborsTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv3EndSystemNeighborsTlvCode"]),
+        )
 
     @property
     def Tlv3EndSystemNeighborsTlvLength(self):
@@ -609,7 +792,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv3EndSystemNeighborsTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv3EndSystemNeighborsTlvLength"]),
+        )
 
     @property
     def ValueFieldsReserved(self):
@@ -619,7 +806,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsReserved']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsReserved"])
+        )
 
     @property
     def ValueFieldsNeighborID(self):
@@ -629,7 +819,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsNeighborID']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldsNeighborID"])
+        )
 
     @property
     def Tlv10AuthenticationInformationTlvCode(self):
@@ -639,7 +832,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv10AuthenticationInformationTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv10AuthenticationInformationTlvCode"]
+            ),
+        )
 
     @property
     def Tlv10AuthenticationInformationTlvLength(self):
@@ -649,7 +848,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv10AuthenticationInformationTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv10AuthenticationInformationTlvLength"]
+            ),
+        )
 
     @property
     def ValueFieldsAuthenticationType(self):
@@ -660,7 +865,11 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Cleartext password, 1, Routing domain private authentication method, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAuthenticationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAuthenticationType"]),
+        )
 
     @property
     def ValueFieldsAuthenticationValue(self):
@@ -670,7 +879,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldsAuthenticationValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldsAuthenticationValue"]),
+        )
 
     @property
     def Tlv14OriginatingLSPBufferSizeTlvCode(self):
@@ -680,7 +893,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv14OriginatingLSPBufferSizeTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv14OriginatingLSPBufferSizeTlvCode"]
+            ),
+        )
 
     @property
     def Tlv14OriginatingLSPBufferSizeTlvLength(self):
@@ -690,7 +909,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv14OriginatingLSPBufferSizeTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv14OriginatingLSPBufferSizeTlvLength"]
+            ),
+        )
 
     @property
     def Tlv14OriginatingLSPBufferSizeValue(self):
@@ -700,7 +925,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv14OriginatingLSPBufferSizeValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv14OriginatingLSPBufferSizeValue"]
+            ),
+        )
 
     @property
     def Tlv22ExtendedISReachabilityTlvCode(self):
@@ -710,7 +941,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv22ExtendedISReachabilityTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv22ExtendedISReachabilityTlvCode"]
+            ),
+        )
 
     @property
     def Tlv22ExtendedISReachabilityTlvLength(self):
@@ -720,7 +957,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv22ExtendedISReachabilityTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv22ExtendedISReachabilityTlvLength"]
+            ),
+        )
 
     @property
     def ValueFieldSystemIDAndPseudonodeNumber(self):
@@ -730,7 +973,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldSystemIDAndPseudonodeNumber']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValueFieldSystemIDAndPseudonodeNumber"]
+            ),
+        )
 
     @property
     def ValueFieldDefaultMetric(self):
@@ -740,7 +989,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldDefaultMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldDefaultMetric"])
+        )
 
     @property
     def ValueFieldLengthOfSubTLVs(self):
@@ -750,7 +1002,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldLengthOfSubTLVs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldLengthOfSubTLVs"])
+        )
 
     @property
     def SubTLVsNoSubTLVs(self):
@@ -760,7 +1015,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLVsNoSubTLVs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SubTLVsNoSubTLVs"])
+        )
 
     @property
     def SubTLV3AdministrativeGroupSubTLVCode(self):
@@ -770,7 +1028,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV3AdministrativeGroupSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV3AdministrativeGroupSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV3AdministrativeGroupSubTLVLength(self):
@@ -780,7 +1044,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV3AdministrativeGroupSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV3AdministrativeGroupSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldAdministrativeGroup(self):
@@ -790,7 +1060,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldAdministrativeGroup']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldAdministrativeGroup"]),
+        )
 
     @property
     def SubTLV6IPv4InterfaceAddressSubTLVCode(self):
@@ -800,7 +1074,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV6IPv4InterfaceAddressSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV6IPv4InterfaceAddressSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV6IPv4InterfaceAddressSubTLVLength(self):
@@ -810,7 +1090,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV6IPv4InterfaceAddressSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV6IPv4InterfaceAddressSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldIpv4InterfaceAddress(self):
@@ -820,7 +1106,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldIpv4InterfaceAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldIpv4InterfaceAddress"]),
+        )
 
     @property
     def SubTLV8IPv4NeighborAddressSubTLVCode(self):
@@ -830,7 +1120,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV8IPv4NeighborAddressSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV8IPv4NeighborAddressSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV8IPv4NeighborAddressSubTLVLength(self):
@@ -840,7 +1136,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV8IPv4NeighborAddressSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV8IPv4NeighborAddressSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldIpv4NeighborAddress(self):
@@ -850,7 +1152,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldIpv4NeighborAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldIpv4NeighborAddress"]),
+        )
 
     @property
     def SubTLV9MaximumLinkBandwidthSubTLVCode(self):
@@ -860,7 +1166,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV9MaximumLinkBandwidthSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV9MaximumLinkBandwidthSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV9MaximumLinkBandwidthSubTLVLength(self):
@@ -870,7 +1182,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV9MaximumLinkBandwidthSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV9MaximumLinkBandwidthSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldMaximumLinkBandwidthBytessec(self):
@@ -880,7 +1198,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldMaximumLinkBandwidthBytessec']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValueFieldMaximumLinkBandwidthBytessec"]
+            ),
+        )
 
     @property
     def SubTLV10ReservableLinkBandwidthSubTLVCode(self):
@@ -890,7 +1214,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV10ReservableLinkBandwidthSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV10ReservableLinkBandwidthSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV10ReservableLinkBandwidthSubTLVLength(self):
@@ -900,7 +1230,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV10ReservableLinkBandwidthSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV10ReservableLinkBandwidthSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldAuthenticationType(self):
@@ -911,7 +1247,10 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Cleartext password, 1, Routing domain private authentication method, 255
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldAuthenticationType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldAuthenticationType"])
+        )
 
     @property
     def ValueFieldAuthenticationValue(self):
@@ -921,7 +1260,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldAuthenticationValue']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["ValueFieldAuthenticationValue"]),
+        )
 
     @property
     def SubTLV11UnreservedBandwidthSubTLVCode(self):
@@ -931,7 +1274,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV11UnreservedBandwidthSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV11UnreservedBandwidthSubTLVCode"]
+            ),
+        )
 
     @property
     def SubTLV11UnreservedBandwidthSubTLVLength(self):
@@ -941,7 +1290,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV11UnreservedBandwidthSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV11UnreservedBandwidthSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldUnreservedBandwidthBytessec(self):
@@ -951,7 +1306,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldUnreservedBandwidthBytessec']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValueFieldUnreservedBandwidthBytessec"]
+            ),
+        )
 
     @property
     def SubTLV18TEDefaultMetricSubTLVCode(self):
@@ -961,7 +1322,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV18TEDefaultMetricSubTLVCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["SubTLV18TEDefaultMetricSubTLVCode"]),
+        )
 
     @property
     def SubTLV18TEDefaultMetricSubTLVLength(self):
@@ -971,7 +1336,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubTLV18TEDefaultMetricSubTLVLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SubTLV18TEDefaultMetricSubTLVLength"]
+            ),
+        )
 
     @property
     def ValueFieldTeDefaultMetric(self):
@@ -981,7 +1352,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldTeDefaultMetric']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldTeDefaultMetric"])
+        )
 
     @property
     def Tlv128IPInternalReachabilityCode(self):
@@ -991,7 +1365,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv128IPInternalReachabilityCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv128IPInternalReachabilityCode"]),
+        )
 
     @property
     def Tlv128IPInternalReachabilityLength(self):
@@ -1001,7 +1379,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv128IPInternalReachabilityLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv128IPInternalReachabilityLength"]
+            ),
+        )
 
     @property
     def ValueEntriesZeroBit(self):
@@ -1011,7 +1395,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesZeroBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesZeroBit"])
+        )
 
     @property
     def ValueEntriesIe(self):
@@ -1021,7 +1408,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesIe']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesIe"])
+        )
 
     @property
     def ValueEntriesDefaultMETRIC(self):
@@ -1031,7 +1421,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesDefaultMETRIC']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesDefaultMETRIC"])
+        )
 
     @property
     def ValueEntriesS(self):
@@ -1041,7 +1434,8 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesS']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesS"]))
 
     @property
     def ValueEntriesR(self):
@@ -1051,7 +1445,8 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesR']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesR"]))
 
     @property
     def ValueEntriesDelayMETRIC(self):
@@ -1061,7 +1456,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesDelayMETRIC']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesDelayMETRIC"])
+        )
 
     @property
     def Tlv128ipinternalreachabilityValueEntriesS(self):
@@ -1071,7 +1469,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv128ipinternalreachabilityValueEntriesS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv128ipinternalreachabilityValueEntriesS"]
+            ),
+        )
 
     @property
     def Tlv128ipinternalreachabilityValueEntriesR(self):
@@ -1081,7 +1485,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv128ipinternalreachabilityValueEntriesR']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv128ipinternalreachabilityValueEntriesR"]
+            ),
+        )
 
     @property
     def ValueEntriesExpenseMETRIC(self):
@@ -1091,7 +1501,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesExpenseMETRIC']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesExpenseMETRIC"])
+        )
 
     @property
     def TlvheadertypeTlv128ipinternalreachabilityValueEntriesS(self):
@@ -1101,7 +1514,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv128ipinternalreachabilityValueEntriesS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv128ipinternalreachabilityValueEntriesS"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv128ipinternalreachabilityValueEntriesR(self):
@@ -1111,7 +1532,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv128ipinternalreachabilityValueEntriesR']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv128ipinternalreachabilityValueEntriesR"
+                ]
+            ),
+        )
 
     @property
     def ValueEntriesErrorMETRIC(self):
@@ -1121,7 +1550,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesErrorMETRIC']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesErrorMETRIC"])
+        )
 
     @property
     def ValueEntriesIpADDRESS(self):
@@ -1131,7 +1563,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesIpADDRESS']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesIpADDRESS"])
+        )
 
     @property
     def ValueEntriesSubnetMASK(self):
@@ -1141,7 +1576,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueEntriesSubnetMASK']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueEntriesSubnetMASK"])
+        )
 
     @property
     def Tlv129ProtocolsSupportedCode(self):
@@ -1151,7 +1589,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv129ProtocolsSupportedCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv129ProtocolsSupportedCode"])
+        )
 
     @property
     def Tlv129ProtocolsSupportedLength(self):
@@ -1161,7 +1602,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv129ProtocolsSupportedLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv129ProtocolsSupportedLength"]),
+        )
 
     @property
     def NlpidEntriesNlpid(self):
@@ -1171,7 +1616,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NlpidEntriesNlpid']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NlpidEntriesNlpid"])
+        )
 
     @property
     def Tlv130IPExternalReachabilityCode(self):
@@ -1181,7 +1629,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130IPExternalReachabilityCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv130IPExternalReachabilityCode"]),
+        )
 
     @property
     def Tlv130IPExternalReachabilityLength(self):
@@ -1191,7 +1643,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130IPExternalReachabilityLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130IPExternalReachabilityLength"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesZeroBit(self):
@@ -1201,7 +1659,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesZeroBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesZeroBit"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesIe(self):
@@ -1211,7 +1675,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesIe']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesIe"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesDefaultMETRIC(self):
@@ -1221,7 +1691,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesDefaultMETRIC']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv130ipexternalreachabilityValueEntriesDefaultMETRIC"
+                ]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesS(self):
@@ -1231,7 +1709,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesS"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesR(self):
@@ -1241,7 +1725,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesR']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesR"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesDelayMETRIC(self):
@@ -1251,7 +1741,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesDelayMETRIC']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesDelayMETRIC"]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv130ipexternalreachabilityValueEntriesS(self):
@@ -1261,7 +1757,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv130ipexternalreachabilityValueEntriesS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv130ipexternalreachabilityValueEntriesS"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv130ipexternalreachabilityValueEntriesR(self):
@@ -1271,7 +1775,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv130ipexternalreachabilityValueEntriesR']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv130ipexternalreachabilityValueEntriesR"
+                ]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesExpenseMETRIC(self):
@@ -1281,7 +1793,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesExpenseMETRIC']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv130ipexternalreachabilityValueEntriesExpenseMETRIC"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv130ipexternalreachabilityValueEntriesS(self):
@@ -1291,7 +1811,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv130ipexternalreachabilityValueEntriesS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv130ipexternalreachabilityValueEntriesS"
+                ]
+            ),
+        )
 
     @property
     def TlvheadertypeTlv130ipexternalreachabilityValueEntriesR(self):
@@ -1301,7 +1829,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv130ipexternalreachabilityValueEntriesR']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv130ipexternalreachabilityValueEntriesR"
+                ]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesErrorMETRIC(self):
@@ -1311,7 +1847,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesErrorMETRIC']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesErrorMETRIC"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesIpADDRESS(self):
@@ -1321,7 +1863,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesIpADDRESS']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesIpADDRESS"]
+            ),
+        )
 
     @property
     def Tlv130ipexternalreachabilityValueEntriesSubnetMASK(self):
@@ -1331,7 +1879,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv130ipexternalreachabilityValueEntriesSubnetMASK']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv130ipexternalreachabilityValueEntriesSubnetMASK"]
+            ),
+        )
 
     @property
     def Tlv131InterDomainRoutingProtocolInfoCode(self):
@@ -1341,7 +1895,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv131InterDomainRoutingProtocolInfoCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv131InterDomainRoutingProtocolInfoCode"]
+            ),
+        )
 
     @property
     def Tlv131InterDomainRoutingProtocolInfoLength(self):
@@ -1351,7 +1911,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv131InterDomainRoutingProtocolInfoLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv131InterDomainRoutingProtocolInfoLength"]
+            ),
+        )
 
     @property
     def Tlv131InterDomainRoutingProtocolInfoInterDomainInformationType(self):
@@ -1362,7 +1928,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Reserved, 0, External info follows locally specified format, 1, External info contains autonomous tag, 2
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv131InterDomainRoutingProtocolInfoInterDomainInformationType']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv131InterDomainRoutingProtocolInfoInterDomainInformationType"
+                ]
+            ),
+        )
 
     @property
     def Tlv131InterDomainRoutingProtocolInfoInfoLength(self):
@@ -1372,7 +1946,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv131InterDomainRoutingProtocolInfoInfoLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv131InterDomainRoutingProtocolInfoInfoLength"]
+            ),
+        )
 
     @property
     def Tlv131InterDomainRoutingProtocolInfoExternalInformation(self):
@@ -1382,7 +1962,15 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv131InterDomainRoutingProtocolInfoExternalInformation']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv131InterDomainRoutingProtocolInfoExternalInformation"
+                ]
+            ),
+        )
 
     @property
     def Tlv132IPInterfaceAddressCode(self):
@@ -1392,7 +1980,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv132IPInterfaceAddressCode']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Tlv132IPInterfaceAddressCode"])
+        )
 
     @property
     def Tlv132IPInterfaceAddressLength(self):
@@ -1402,7 +1993,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv132IPInterfaceAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv132IPInterfaceAddressLength"]),
+        )
 
     @property
     def IpAddressEntriesIpAddress(self):
@@ -1412,7 +2007,10 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv4
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IpAddressEntriesIpAddress']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IpAddressEntriesIpAddress"])
+        )
 
     @property
     def Tlv232IPv6InterfaceAddressCode(self):
@@ -1422,7 +2020,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232IPv6InterfaceAddressCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv232IPv6InterfaceAddressCode"]),
+        )
 
     @property
     def Tlv232IPv6InterfaceAddressLength(self):
@@ -1432,7 +2034,11 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232IPv6InterfaceAddressLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["Tlv232IPv6InterfaceAddressLength"]),
+        )
 
     @property
     def Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress(self):
@@ -1442,7 +2048,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: iPv6
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv232ipv6interfaceaddressIpAddressEntriesIpAddress"]
+            ),
+        )
 
     @property
     def Tlv237MultiTopologyReachableIPv6PrefixesTlvCode(self):
@@ -1452,7 +2064,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv237MultiTopologyReachableIPv6PrefixesTlvCode']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv237MultiTopologyReachableIPv6PrefixesTlvCode"]
+            ),
+        )
 
     @property
     def Tlv237MultiTopologyReachableIPv6PrefixesTlvLength(self):
@@ -1462,7 +2080,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv237MultiTopologyReachableIPv6PrefixesTlvLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["Tlv237MultiTopologyReachableIPv6PrefixesTlvLength"]
+            ),
+        )
 
     @property
     def ValueFieldReservedBit(self):
@@ -1473,7 +2097,10 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldReservedBit']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ValueFieldReservedBit"])
+        )
 
     @property
     def Tlv237multitopologyreachableipv6prefixesValueFieldReservedBit(self):
@@ -1484,10 +2111,20 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Tlv237multitopologyreachableipv6prefixesValueFieldReservedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "Tlv237multitopologyreachableipv6prefixesValueFieldReservedBit"
+                ]
+            ),
+        )
 
     @property
-    def TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit(self):
+    def TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit(
+        self,
+    ):
         """
         Display Name: Reserved bit
         Default Value: 0
@@ -1495,10 +2132,20 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit"
+                ]
+            ),
+        )
 
     @property
-    def TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit(self):
+    def TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit(
+        self,
+    ):
         """
         Display Name: Reserved bit
         Default Value: 0
@@ -1506,7 +2153,15 @@ class IsisLevel2LinkStatePDU(Base):
         Available enum values: Must be Zero, 0
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP[
+                    "TlvheadertypeTlv237multitopologyreachableipv6prefixesValueFieldReservedBit"
+                ]
+            ),
+        )
 
     @property
     def ValueFieldExtendedIntermediateSystemTLVFormat(self):
@@ -1516,7 +2171,13 @@ class IsisLevel2LinkStatePDU(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ValueFieldExtendedIntermediateSystemTLVFormat']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["ValueFieldExtendedIntermediateSystemTLVFormat"]
+            ),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

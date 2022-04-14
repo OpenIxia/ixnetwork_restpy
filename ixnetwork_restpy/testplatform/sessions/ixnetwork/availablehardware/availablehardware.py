@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class AvailableHardware(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'availableHardware'
+    _SDM_NAME = "availableHardware"
     _SDM_ATT_MAP = {
-        'IsLocked': 'isLocked',
-        'IsOffChassis': 'isOffChassis',
-        'OffChassisHwM': 'offChassisHwM',
+        "IsLocked": "isLocked",
+        "IsOffChassis": "isOffChassis",
+        "OffChassisHwM": "offChassisHwM",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(AvailableHardware, self).__init__(parent, list_op)
@@ -55,10 +55,13 @@ class AvailableHardware(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import Chassis
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import (
+            Chassis,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Chassis', None) is not None:
-                return self._properties.get('Chassis')
+            if self._properties.get("Chassis", None) is not None:
+                return self._properties.get("Chassis")
         return Chassis(self)
 
     @property
@@ -72,10 +75,13 @@ class AvailableHardware(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import VirtualChassis
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import (
+            VirtualChassis,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('VirtualChassis', None) is not None:
-                return self._properties.get('VirtualChassis')
+            if self._properties.get("VirtualChassis", None) is not None:
+                return self._properties.get("VirtualChassis")
         return VirtualChassis(self)._select()
 
     @property
@@ -86,35 +92,37 @@ class AvailableHardware(Base):
         -------
         - bool: If true, locks the Hardware Manager.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsLocked'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsLocked"])
 
     @property
     def IsOffChassis(self):
         # type: () -> bool
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - bool: If true, the Hardware Manager is Off Chassis.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsOffChassis'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsOffChassis"])
+
     @IsOffChassis.setter
     def IsOffChassis(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsOffChassis'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsOffChassis"], value)
 
     @property
     def OffChassisHwM(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OffChassisHwM'])
+        return self._get_attribute(self._SDM_ATT_MAP["OffChassisHwM"])
+
     @OffChassisHwM.setter
     def OffChassisHwM(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OffChassisHwM'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OffChassisHwM"], value)
 
     def update(self, IsOffChassis=None, OffChassisHwM=None):
         # type: (bool, str) -> AvailableHardware

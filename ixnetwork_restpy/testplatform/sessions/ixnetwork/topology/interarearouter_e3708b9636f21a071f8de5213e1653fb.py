@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,29 +34,28 @@ class InterAreaRouter(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interAreaRouter'
+    _SDM_NAME = "interAreaRouter"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DCBit': 'dCBit',
-        'DescriptiveName': 'descriptiveName',
-        'DestRouterId': 'destRouterId',
-        'DestRouterIdPrefix': 'destRouterIdPrefix',
-        'EBit': 'eBit',
-        'LinkStateId': 'linkStateId',
-        'LinkStateIdStep': 'linkStateIdStep',
-        'MCBit': 'mCBit',
-        'Metric': 'metric',
-        'NBit': 'nBit',
-        'Name': 'name',
-        'RBit': 'rBit',
-        'RangeSize': 'rangeSize',
-        'ReservedBit6': 'reservedBit6',
-        'ReservedBit7': 'reservedBit7',
-        'V6Bit': 'v6Bit',
+        "Active": "active",
+        "Count": "count",
+        "DCBit": "dCBit",
+        "DescriptiveName": "descriptiveName",
+        "DestRouterId": "destRouterId",
+        "DestRouterIdPrefix": "destRouterIdPrefix",
+        "EBit": "eBit",
+        "LinkStateId": "linkStateId",
+        "LinkStateIdStep": "linkStateIdStep",
+        "MCBit": "mCBit",
+        "Metric": "metric",
+        "NBit": "nBit",
+        "Name": "name",
+        "RBit": "rBit",
+        "RangeSize": "rangeSize",
+        "ReservedBit6": "reservedBit6",
+        "ReservedBit7": "reservedBit7",
+        "V6Bit": "v6Bit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(InterAreaRouter, self).__init__(parent, list_op)
@@ -69,7 +69,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Whether this is to be advertised or not
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -79,7 +80,7 @@ class InterAreaRouter(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DCBit(self):
@@ -90,7 +91,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Demand Circuit bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DCBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DCBit"]))
 
     @property
     def DescriptiveName(self):
@@ -100,7 +102,7 @@ class InterAreaRouter(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def DestRouterId(self):
@@ -111,7 +113,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Router Id
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestRouterId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DestRouterId"]))
 
     @property
     def DestRouterIdPrefix(self):
@@ -122,7 +125,10 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Router Id Step
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DestRouterIdPrefix']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestRouterIdPrefix"])
+        )
 
     @property
     def EBit(self):
@@ -133,7 +139,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): bit describing how AS-external-LSAs are flooded
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EBit"]))
 
     @property
     def LinkStateId(self):
@@ -144,7 +151,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id of the simulated IPv6 network
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkStateId"]))
 
     @property
     def LinkStateIdStep(self):
@@ -155,7 +163,10 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Link State Id Step for the LSAs to be generated for this set of IPv6 Inter-Area networks.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkStateIdStep']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkStateIdStep"])
+        )
 
     @property
     def MCBit(self):
@@ -166,7 +177,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): bit for forwarding of IP multicast datagrams
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MCBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MCBit"]))
 
     @property
     def Metric(self):
@@ -177,7 +189,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Metric
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Metric"]))
 
     @property
     def NBit(self):
@@ -188,7 +201,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): bit for handling Type 7 LSAs
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["NBit"]))
 
     @property
     def Name(self):
@@ -198,11 +212,12 @@ class InterAreaRouter(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def RBit(self):
@@ -213,7 +228,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Router bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RBit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RBit"]))
 
     @property
     def RangeSize(self):
@@ -224,7 +240,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RangeSize']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RangeSize"]))
 
     @property
     def ReservedBit6(self):
@@ -235,7 +252,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (6) Reserved Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedBit6']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReservedBit6"]))
 
     @property
     def ReservedBit7(self):
@@ -246,7 +264,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): (7) Reserved Bit
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedBit7']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReservedBit7"]))
 
     @property
     def V6Bit(self):
@@ -257,7 +276,8 @@ class InterAreaRouter(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): bit for excluding the router/link from IPv6 routing calculations. If clear, router/link is excluded
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['V6Bit']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["V6Bit"]))
 
     def update(self, Name=None):
         # type: (str) -> InterAreaRouter
@@ -278,7 +298,7 @@ class InterAreaRouter(Base):
 
     def add(self, Name=None):
         # type: (str) -> InterAreaRouter
-        """Adds a new interAreaRouter resource on the json, only valid with config assistant
+        """Adds a new interAreaRouter resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -351,10 +371,12 @@ class InterAreaRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Advertise(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -383,10 +405,12 @@ class InterAreaRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("advertise", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -403,10 +427,12 @@ class InterAreaRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -423,10 +449,12 @@ class InterAreaRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def Withdraw(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -455,12 +483,32 @@ class InterAreaRouter(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("withdraw", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, DCBit=None, DestRouterId=None, DestRouterIdPrefix=None, EBit=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, Metric=None, NBit=None, RBit=None, RangeSize=None, ReservedBit6=None, ReservedBit7=None, V6Bit=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        DCBit=None,
+        DestRouterId=None,
+        DestRouterIdPrefix=None,
+        EBit=None,
+        LinkStateId=None,
+        LinkStateIdStep=None,
+        MCBit=None,
+        Metric=None,
+        NBit=None,
+        RBit=None,
+        RangeSize=None,
+        ReservedBit6=None,
+        ReservedBit7=None,
+        V6Bit=None,
+    ):
         """Base class infrastructure that gets a list of interAreaRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

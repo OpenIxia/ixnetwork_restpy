@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,46 +33,45 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpSRTEPoliciesTunnelEncapsulationListV4'
+    _SDM_NAME = "bgpSRTEPoliciesTunnelEncapsulationListV4"
     _SDM_ATT_MAP = {
-        'ENLPValue': 'ENLPValue',
-        'IPv6SID': 'IPv6SID',
-        'SID4Octet': 'SID4Octet',
-        'Active': 'active',
-        'AddressFamily': 'addressFamily',
-        'As4Number': 'as4Number',
-        'BindingSIDType': 'bindingSIDType',
-        'ColorCOBits': 'colorCOBits',
-        'ColorReservedBits': 'colorReservedBits',
-        'ColorValue': 'colorValue',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnBindingTLV': 'enBindingTLV',
-        'EnColorTLV': 'enColorTLV',
-        'EnENLPTLV': 'enENLPTLV',
-        'EnPolicyNameTLV': 'enPolicyNameTLV',
-        'EnPolicyPathNameTLV': 'enPolicyPathNameTLV',
-        'EnPolicyPrioritySubTLV': 'enPolicyPrioritySubTLV',
-        'EnPrefTLV': 'enPrefTLV',
-        'EnRemoteEndPointTLV': 'enRemoteEndPointTLV',
-        'Iflag': 'iflag',
-        'Name': 'name',
-        'NumberOfActiveSegmentList': 'numberOfActiveSegmentList',
-        'NumberOfSegmentListV4': 'numberOfSegmentListV4',
-        'PolicyName': 'policyName',
-        'PolicyPathName': 'policyPathName',
-        'PrefValue': 'prefValue',
-        'Priority': 'priority',
-        'RemainingBits': 'remainingBits',
-        'RemoteEndpointIPv4': 'remoteEndpointIPv4',
-        'RemoteEndpointIPv6': 'remoteEndpointIPv6',
-        'Sflag': 'sflag',
-        'SrtepolicyName': 'srtepolicyName',
-        'TunnelType': 'tunnelType',
-        'UseAsMPLSLabel': 'useAsMPLSLabel',
+        "ENLPValue": "ENLPValue",
+        "IPv6SID": "IPv6SID",
+        "SID4Octet": "SID4Octet",
+        "Active": "active",
+        "AddressFamily": "addressFamily",
+        "As4Number": "as4Number",
+        "BindingSIDType": "bindingSIDType",
+        "ColorCOBits": "colorCOBits",
+        "ColorReservedBits": "colorReservedBits",
+        "ColorValue": "colorValue",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnBindingTLV": "enBindingTLV",
+        "EnColorTLV": "enColorTLV",
+        "EnENLPTLV": "enENLPTLV",
+        "EnPolicyNameTLV": "enPolicyNameTLV",
+        "EnPolicyPathNameTLV": "enPolicyPathNameTLV",
+        "EnPolicyPrioritySubTLV": "enPolicyPrioritySubTLV",
+        "EnPrefTLV": "enPrefTLV",
+        "EnRemoteEndPointTLV": "enRemoteEndPointTLV",
+        "Iflag": "iflag",
+        "Name": "name",
+        "NumberOfActiveSegmentList": "numberOfActiveSegmentList",
+        "NumberOfSegmentListV4": "numberOfSegmentListV4",
+        "PolicyName": "policyName",
+        "PolicyPathName": "policyPathName",
+        "PrefValue": "prefValue",
+        "Priority": "priority",
+        "RemainingBits": "remainingBits",
+        "RemoteEndpointIPv4": "remoteEndpointIPv4",
+        "RemoteEndpointIPv6": "remoteEndpointIPv6",
+        "Sflag": "sflag",
+        "SrtepolicyName": "srtepolicyName",
+        "TunnelType": "tunnelType",
+        "UseAsMPLSLabel": "useAsMPLSLabel",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(BgpSRTEPoliciesTunnelEncapsulationListV4, self).__init__(parent, list_op)
@@ -87,10 +87,13 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentlistv4_6336750dadf06a61a8083b94d2a11d76 import BgpSRTEPoliciesSegmentListV4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentlistv4_6336750dadf06a61a8083b94d2a11d76 import (
+            BgpSRTEPoliciesSegmentListV4,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('BgpSRTEPoliciesSegmentListV4', None) is not None:
-                return self._properties.get('BgpSRTEPoliciesSegmentListV4')
+            if self._properties.get("BgpSRTEPoliciesSegmentListV4", None) is not None:
+                return self._properties.get("BgpSRTEPoliciesSegmentListV4")
         return BgpSRTEPoliciesSegmentListV4(self)._select()
 
     @property
@@ -102,7 +105,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Explicit NULL Label Policy Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ENLPValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ENLPValue"]))
 
     @property
     def IPv6SID(self):
@@ -113,7 +117,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv6SID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IPv6SID"]))
 
     @property
     def SID4Octet(self):
@@ -124,7 +129,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): 4 Octet SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SID4Octet']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SID4Octet"]))
 
     @property
     def Active(self):
@@ -135,7 +141,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AddressFamily(self):
@@ -146,7 +153,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Address Family
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressFamily']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AddressFamily"]))
 
     @property
     def As4Number(self):
@@ -157,7 +165,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): AS Number (4 Octects)
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['As4Number']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["As4Number"]))
 
     @property
     def BindingSIDType(self):
@@ -168,7 +177,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Binding SID Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BindingSIDType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BindingSIDType"])
+        )
 
     @property
     def ColorCOBits(self):
@@ -179,7 +191,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color CO Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorCOBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorCOBits"]))
 
     @property
     def ColorReservedBits(self):
@@ -190,7 +203,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color Reserved Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorReservedBits']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ColorReservedBits"])
+        )
 
     @property
     def ColorValue(self):
@@ -201,7 +217,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Color Value
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ColorValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorValue"]))
 
     @property
     def Count(self):
@@ -211,7 +228,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -221,7 +238,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnBindingTLV(self):
@@ -232,7 +249,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Binding Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnBindingTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnBindingTLV"]))
 
     @property
     def EnColorTLV(self):
@@ -243,7 +261,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Color Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnColorTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnColorTLV"]))
 
     @property
     def EnENLPTLV(self):
@@ -254,7 +273,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Explicit NULL Label Policy Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnENLPTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnENLPTLV"]))
 
     @property
     def EnPolicyNameTLV(self):
@@ -265,7 +285,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Policy Name Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnPolicyNameTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnPolicyNameTLV"])
+        )
 
     @property
     def EnPolicyPathNameTLV(self):
@@ -276,7 +299,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable policy candidate path name for sub-TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnPolicyPathNameTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnPolicyPathNameTLV"])
+        )
 
     @property
     def EnPolicyPrioritySubTLV(self):
@@ -287,7 +313,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Policy Priority Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnPolicyPrioritySubTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnPolicyPrioritySubTLV"])
+        )
 
     @property
     def EnPrefTLV(self):
@@ -298,7 +327,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Preference Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnPrefTLV']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnPrefTLV"]))
 
     @property
     def EnRemoteEndPointTLV(self):
@@ -309,7 +339,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Remote Endpoint Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnRemoteEndPointTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnRemoteEndPointTLV"])
+        )
 
     @property
     def Iflag(self):
@@ -320,7 +353,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes the Drop Upon Invalid behavior.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Iflag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Iflag"]))
 
     @property
     def Name(self):
@@ -330,11 +364,12 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfActiveSegmentList(self):
@@ -342,10 +377,13 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 
+        - obj(ixnetwork_restpy.multivalue.Multivalue):
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumberOfActiveSegmentList']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NumberOfActiveSegmentList"])
+        )
 
     @property
     def NumberOfSegmentListV4(self):
@@ -355,11 +393,12 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         -------
         - number: Count of Segment Lists Per Tunnel
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegmentListV4'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSegmentListV4"])
+
     @NumberOfSegmentListV4.setter
     def NumberOfSegmentListV4(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSegmentListV4'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSegmentListV4"], value)
 
     @property
     def PolicyName(self):
@@ -370,7 +409,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PolicyName"]))
 
     @property
     def PolicyPathName(self):
@@ -381,7 +421,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Policy candidate path name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PolicyPathName']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PolicyPathName"])
+        )
 
     @property
     def PrefValue(self):
@@ -392,7 +435,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Preference
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefValue']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PrefValue"]))
 
     @property
     def Priority(self):
@@ -403,7 +447,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Priority
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Priority"]))
 
     @property
     def RemainingBits(self):
@@ -414,7 +459,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Remaining Flag Bits takes the 8-bit flags value in Hex format. It ignores the bit position for flags exposed separately in GUI. For example, the 1st and 2nd bits are ignored since they are set using the S Flag and I Flag settings.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemainingBits']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemainingBits"]))
 
     @property
     def RemoteEndpointIPv4(self):
@@ -425,7 +471,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteEndpointIPv4']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteEndpointIPv4"])
+        )
 
     @property
     def RemoteEndpointIPv6(self):
@@ -436,7 +485,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteEndpointIPv6']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RemoteEndpointIPv6"])
+        )
 
     @property
     def Sflag(self):
@@ -447,7 +499,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): This flag encodes the Specified-BSID-only behavior.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Sflag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sflag"]))
 
     @property
     def SrtepolicyName(self):
@@ -457,7 +510,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         -------
         - list(str): Policy Name For Reference
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName'])
+        return self._get_attribute(self._SDM_ATT_MAP["SrtepolicyName"])
 
     @property
     def TunnelType(self):
@@ -468,7 +521,8 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Tunnel Type
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TunnelType']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TunnelType"]))
 
     @property
     def UseAsMPLSLabel(self):
@@ -479,7 +533,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): when Enanbled the BSID (SID 4 Octet) value will be treated as 3-Octet MPLS Label part of the BSID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseAsMPLSLabel']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseAsMPLSLabel"])
+        )
 
     def update(self, Name=None, NumberOfSegmentListV4=None):
         # type: (str, int) -> BgpSRTEPoliciesTunnelEncapsulationListV4
@@ -499,7 +556,14 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfSegmentListV4=None, SrtepolicyName=None):
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfSegmentListV4=None,
+        SrtepolicyName=None,
+    ):
         # type: (int, str, str, int, List[str]) -> BgpSRTEPoliciesTunnelEncapsulationListV4
         """Finds and retrieves bgpSRTEPoliciesTunnelEncapsulationListV4 resources from the server.
 
@@ -543,7 +607,40 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, ENLPValue=None, IPv6SID=None, SID4Octet=None, Active=None, AddressFamily=None, As4Number=None, BindingSIDType=None, ColorCOBits=None, ColorReservedBits=None, ColorValue=None, EnBindingTLV=None, EnColorTLV=None, EnENLPTLV=None, EnPolicyNameTLV=None, EnPolicyPathNameTLV=None, EnPolicyPrioritySubTLV=None, EnPrefTLV=None, EnRemoteEndPointTLV=None, Iflag=None, NumberOfActiveSegmentList=None, PolicyName=None, PolicyPathName=None, PrefValue=None, Priority=None, RemainingBits=None, RemoteEndpointIPv4=None, RemoteEndpointIPv6=None, Sflag=None, TunnelType=None, UseAsMPLSLabel=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        ENLPValue=None,
+        IPv6SID=None,
+        SID4Octet=None,
+        Active=None,
+        AddressFamily=None,
+        As4Number=None,
+        BindingSIDType=None,
+        ColorCOBits=None,
+        ColorReservedBits=None,
+        ColorValue=None,
+        EnBindingTLV=None,
+        EnColorTLV=None,
+        EnENLPTLV=None,
+        EnPolicyNameTLV=None,
+        EnPolicyPathNameTLV=None,
+        EnPolicyPrioritySubTLV=None,
+        EnPrefTLV=None,
+        EnRemoteEndPointTLV=None,
+        Iflag=None,
+        NumberOfActiveSegmentList=None,
+        PolicyName=None,
+        PolicyPathName=None,
+        PrefValue=None,
+        Priority=None,
+        RemainingBits=None,
+        RemoteEndpointIPv4=None,
+        RemoteEndpointIPv6=None,
+        Sflag=None,
+        TunnelType=None,
+        UseAsMPLSLabel=None,
+    ):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesTunnelEncapsulationListV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

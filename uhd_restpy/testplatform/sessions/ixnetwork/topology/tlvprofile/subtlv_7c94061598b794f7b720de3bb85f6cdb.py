@@ -137,7 +137,7 @@ class SubTlv(Base):
 
     def add(self, Description=None, IsEnabled=None, Name=None):
         # type: (str, bool, str) -> SubTlv
-        """Adds a new subTlv resource on the json, only valid with config assistant
+        """Adds a new subTlv resource on the json, only valid with batch add utility
 
         Args
         ----

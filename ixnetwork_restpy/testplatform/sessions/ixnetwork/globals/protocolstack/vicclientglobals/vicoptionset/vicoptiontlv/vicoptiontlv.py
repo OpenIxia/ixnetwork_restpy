@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,36 @@ class VicOptionTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'vicOptionTlv'
+    _SDM_NAME = "vicOptionTlv"
     _SDM_ATT_MAP = {
-        'Code': 'code',
-        'Increment': 'increment',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Rfc': 'rfc',
-        'Type': 'type',
-        'Value': 'value',
+        "Code": "code",
+        "Increment": "increment",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "Rfc": "rfc",
+        "Type": "type",
+        "Value": "value",
     }
     _SDM_ENUM_MAP = {
-        'type': ['boolean', 'domainName', 'hexadecimal', 'integer16', 'integer16List', 'integer32', 'integer32List', 'integer8', 'integer8List', 'ipv4Address', 'ipv4AddressList', 'ipv4Prefix', 'ipv6Address', 'ipv6AddressList', 'ipv6Prefix', 'string', 'zeroLength'],
+        "type": [
+            "boolean",
+            "domainName",
+            "hexadecimal",
+            "integer16",
+            "integer16List",
+            "integer32",
+            "integer32List",
+            "integer8",
+            "integer8List",
+            "ipv4Address",
+            "ipv4AddressList",
+            "ipv4Prefix",
+            "ipv6Address",
+            "ipv6AddressList",
+            "ipv6Prefix",
+            "string",
+            "zeroLength",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -59,11 +78,12 @@ class VicOptionTlv(Base):
         -------
         - number: Option code.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Code'])
+        return self._get_attribute(self._SDM_ATT_MAP["Code"])
+
     @Code.setter
     def Code(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Code'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Code"], value)
 
     @property
     def Increment(self):
@@ -73,11 +93,12 @@ class VicOptionTlv(Base):
         -------
         - str: The increment step for this TLV.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
+        return self._get_attribute(self._SDM_ATT_MAP["Increment"])
+
     @Increment.setter
     def Increment(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Increment"], value)
 
     @property
     def Name(self):
@@ -87,11 +108,12 @@ class VicOptionTlv(Base):
         -------
         - str: Option name.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -101,7 +123,7 @@ class VicOptionTlv(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def Rfc(self):
@@ -111,11 +133,12 @@ class VicOptionTlv(Base):
         -------
         - bool: True if defined in RFC documents.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rfc'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rfc"])
+
     @Rfc.setter
     def Rfc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rfc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rfc"], value)
 
     @property
     def Type(self):
@@ -125,11 +148,12 @@ class VicOptionTlv(Base):
         -------
         - str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength): Option value type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def Value(self):
@@ -139,13 +163,16 @@ class VicOptionTlv(Base):
         -------
         - str: Option value represented as string.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
-    def update(self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None):
+    def update(
+        self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None
+    ):
         # type: (int, str, str, bool, str, str) -> VicOptionTlv
         """Updates vicOptionTlv resource on the server.
 
@@ -164,7 +191,9 @@ class VicOptionTlv(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None):
+    def add(
+        self, Code=None, Increment=None, Name=None, Rfc=None, Type=None, Value=None
+    ):
         # type: (int, str, str, bool, str, str) -> VicOptionTlv
         """Adds a new vicOptionTlv resource on the server and adds it to the container.
 
@@ -197,7 +226,16 @@ class VicOptionTlv(Base):
         """
         self._delete()
 
-    def find(self, Code=None, Increment=None, Name=None, ObjectId=None, Rfc=None, Type=None, Value=None):
+    def find(
+        self,
+        Code=None,
+        Increment=None,
+        Name=None,
+        ObjectId=None,
+        Rfc=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (int, str, str, str, bool, str, str) -> VicOptionTlv
         """Finds and retrieves vicOptionTlv resources from the server.
 

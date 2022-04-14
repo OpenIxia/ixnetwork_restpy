@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class CiscoHDLC(Base):
     __slots__ = ()
-    _SDM_NAME = 'ciscoHDLC'
+    _SDM_NAME = "ciscoHDLC"
     _SDM_ATT_MAP = {
-        'HeaderAddress': 'ciscoHDLC.header.address-1',
-        'HeaderControl': 'ciscoHDLC.header.control-2',
-        'HeaderProtocolType': 'ciscoHDLC.header.protocolType-3',
-        'ClnsPadPad': 'ciscoHDLC.header.clnsPad.pad-4',
+        "HeaderAddress": "ciscoHDLC.header.address-1",
+        "HeaderControl": "ciscoHDLC.header.control-2",
+        "HeaderProtocolType": "ciscoHDLC.header.protocolType-3",
+        "ClnsPadPad": "ciscoHDLC.header.clnsPad.pad-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,8 @@ class CiscoHDLC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAddress']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderAddress"]))
 
     @property
     def HeaderControl(self):
@@ -33,7 +34,8 @@ class CiscoHDLC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderControl']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderControl"]))
 
     @property
     def HeaderProtocolType(self):
@@ -43,7 +45,10 @@ class CiscoHDLC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderProtocolType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderProtocolType"])
+        )
 
     @property
     def ClnsPadPad(self):
@@ -53,7 +58,8 @@ class CiscoHDLC(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ClnsPadPad']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ClnsPadPad"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

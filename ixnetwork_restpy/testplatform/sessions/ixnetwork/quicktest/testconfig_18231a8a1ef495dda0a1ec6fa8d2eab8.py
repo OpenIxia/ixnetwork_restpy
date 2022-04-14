@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,128 +33,158 @@ class TestConfig(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'testConfig'
+    _SDM_NAME = "testConfig"
     _SDM_ATT_MAP = {
-        'BackoffIteration': 'backoffIteration',
-        'BinaryBackoff': 'binaryBackoff',
-        'BinaryFrameLossUnit': 'binaryFrameLossUnit',
-        'BinaryLoadUnit': 'binaryLoadUnit',
-        'BinaryResolution': 'binaryResolution',
-        'BinarySearchType': 'binarySearchType',
-        'BinaryTolerance': 'binaryTolerance',
-        'BurstSize': 'burstSize',
-        'CalculateJitter': 'calculateJitter',
-        'CalculateLatency': 'calculateLatency',
-        'ComboBackoff': 'comboBackoff',
-        'ComboResolution': 'comboResolution',
-        'ComboTolerance': 'comboTolerance',
-        'CountRandomFrameSize': 'countRandomFrameSize',
-        'CountRandomLoadRate': 'countRandomLoadRate',
-        'DelayAfterTransmit': 'delayAfterTransmit',
-        'Duration': 'duration',
-        'EnableBackoffIteration': 'enableBackoffIteration',
-        'EnableDataIntegrity': 'enableDataIntegrity',
-        'EnableExtraIterations': 'enableExtraIterations',
-        'EnableFastConvergence': 'enableFastConvergence',
-        'EnableLayer1Rate': 'enableLayer1Rate',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'EnableSaturationIteration': 'enableSaturationIteration',
-        'EnableStopTestOnHighLoss': 'enableStopTestOnHighLoss',
-        'ExtraIterationOffsets': 'extraIterationOffsets',
-        'FastConvergenceDuration': 'fastConvergenceDuration',
-        'FastConvergenceThreshold': 'fastConvergenceThreshold',
-        'FrameLossUnit': 'frameLossUnit',
-        'FramesPerBurstGap': 'framesPerBurstGap',
-        'Framesize': 'framesize',
-        'FramesizeFixedValue': 'framesizeFixedValue',
-        'FramesizeList': 'framesizeList',
-        'Gap': 'gap',
-        'GenerateTrackingOptionAggregationFiles': 'generateTrackingOptionAggregationFiles',
-        'GroupDistributionType': 'groupDistributionType',
-        'Igmpv3MessageType': 'igmpv3MessageType',
-        'Igmpv3SourceAddrList': 'igmpv3SourceAddrList',
-        'InitialBinaryLoadRate': 'initialBinaryLoadRate',
-        'InitialComboLoadRate': 'initialComboLoadRate',
-        'InitialIncrementLoadRate': 'initialIncrementLoadRate',
-        'InitialStepLoadRate': 'initialStepLoadRate',
-        'Ipv4rate': 'ipv4rate',
-        'Ipv6rate': 'ipv6rate',
-        'IsMulticastAutomaticFrameData': 'isMulticastAutomaticFrameData',
-        'IsMulticastTrafficIncluded': 'isMulticastTrafficIncluded',
-        'IsUnicastTrafficIncluded': 'isUnicastTrafficIncluded',
-        'JoinLeaveMultiplier': 'joinLeaveMultiplier',
-        'JoinLeaveWaitTime': 'joinLeaveWaitTime',
-        'LatencyBins': 'latencyBins',
-        'LatencyBinsEnabled': 'latencyBinsEnabled',
-        'LatencyType': 'latencyType',
-        'LoadRateList': 'loadRateList',
-        'LoadRateValue': 'loadRateValue',
-        'LoadType': 'loadType',
-        'MaxBinaryLoadRate': 'maxBinaryLoadRate',
-        'MaxComboLoadRate': 'maxComboLoadRate',
-        'MaxIncrementFrameSize': 'maxIncrementFrameSize',
-        'MaxIncrementLoadRate': 'maxIncrementLoadRate',
-        'MaxQuickSearchLoadRate': 'maxQuickSearchLoadRate',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MaxRandomLoadRate': 'maxRandomLoadRate',
-        'MaxStepLoadRate': 'maxStepLoadRate',
-        'MinBinaryLoadRate': 'minBinaryLoadRate',
-        'MinComboLoadRate': 'minComboLoadRate',
-        'MinFpsRate': 'minFpsRate',
-        'MinIncrementFrameSize': 'minIncrementFrameSize',
-        'MinKbpsRate': 'minKbpsRate',
-        'MinQuickSearchLoadRate': 'minQuickSearchLoadRate',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'MinRandomLoadRate': 'minRandomLoadRate',
-        'Numtrials': 'numtrials',
-        'PercentMaxRate': 'percentMaxRate',
-        'PortDelayEnabled': 'portDelayEnabled',
-        'PortDelayUnit': 'portDelayUnit',
-        'PortDelayValue': 'portDelayValue',
-        'ProtocolItem': 'protocolItem',
-        'QuickSearchFrameLossUnit': 'quickSearchFrameLossUnit',
-        'QuickSearchLoadUnit': 'quickSearchLoadUnit',
-        'QuickSearchResolution': 'quickSearchResolution',
-        'QuickSearchSearchType': 'quickSearchSearchType',
-        'QuickSearchTolerance': 'quickSearchTolerance',
-        'RateSelect': 'rateSelect',
-        'ReportSequenceError': 'reportSequenceError',
-        'ReportTputRateUnit': 'reportTputRateUnit',
-        'Resolution': 'resolution',
-        'SaturationIteration': 'saturationIteration',
-        'StaggeredStart': 'staggeredStart',
-        'StepComboLoadRate': 'stepComboLoadRate',
-        'StepFrameLossUnit': 'stepFrameLossUnit',
-        'StepIncrementFrameSize': 'stepIncrementFrameSize',
-        'StepIncrementLoadRate': 'stepIncrementLoadRate',
-        'StepLoadUnit': 'stepLoadUnit',
-        'StepStepLoadRate': 'stepStepLoadRate',
-        'StepTolerance': 'stepTolerance',
-        'StopTestOnHighLoss': 'stopTestOnHighLoss',
-        'TestTrafficType': 'testTrafficType',
-        'Tolerance': 'tolerance',
-        'TrafficType': 'trafficType',
-        'TxDelay': 'txDelay',
-        'UnchangedValueList': 'unchangedValueList',
-        'UsePercentOffsets': 'usePercentOffsets',
+        "BackoffIteration": "backoffIteration",
+        "BinaryBackoff": "binaryBackoff",
+        "BinaryFrameLossUnit": "binaryFrameLossUnit",
+        "BinaryLoadUnit": "binaryLoadUnit",
+        "BinaryResolution": "binaryResolution",
+        "BinarySearchType": "binarySearchType",
+        "BinaryTolerance": "binaryTolerance",
+        "BurstSize": "burstSize",
+        "CalculateJitter": "calculateJitter",
+        "CalculateLatency": "calculateLatency",
+        "ComboBackoff": "comboBackoff",
+        "ComboResolution": "comboResolution",
+        "ComboTolerance": "comboTolerance",
+        "CountRandomFrameSize": "countRandomFrameSize",
+        "CountRandomLoadRate": "countRandomLoadRate",
+        "DelayAfterTransmit": "delayAfterTransmit",
+        "Duration": "duration",
+        "EnableBackoffIteration": "enableBackoffIteration",
+        "EnableDataIntegrity": "enableDataIntegrity",
+        "EnableExtraIterations": "enableExtraIterations",
+        "EnableFastConvergence": "enableFastConvergence",
+        "EnableLayer1Rate": "enableLayer1Rate",
+        "EnableMinFrameSize": "enableMinFrameSize",
+        "EnableSaturationIteration": "enableSaturationIteration",
+        "EnableStopTestOnHighLoss": "enableStopTestOnHighLoss",
+        "ExtraIterationOffsets": "extraIterationOffsets",
+        "FastConvergenceDuration": "fastConvergenceDuration",
+        "FastConvergenceThreshold": "fastConvergenceThreshold",
+        "FrameLossUnit": "frameLossUnit",
+        "FramesPerBurstGap": "framesPerBurstGap",
+        "Framesize": "framesize",
+        "FramesizeFixedValue": "framesizeFixedValue",
+        "FramesizeList": "framesizeList",
+        "Gap": "gap",
+        "GenerateTrackingOptionAggregationFiles": "generateTrackingOptionAggregationFiles",
+        "GroupDistributionType": "groupDistributionType",
+        "Igmpv3MessageType": "igmpv3MessageType",
+        "Igmpv3SourceAddrList": "igmpv3SourceAddrList",
+        "InitialBinaryLoadRate": "initialBinaryLoadRate",
+        "InitialComboLoadRate": "initialComboLoadRate",
+        "InitialIncrementLoadRate": "initialIncrementLoadRate",
+        "InitialStepLoadRate": "initialStepLoadRate",
+        "Ipv4rate": "ipv4rate",
+        "Ipv6rate": "ipv6rate",
+        "IsMulticastAutomaticFrameData": "isMulticastAutomaticFrameData",
+        "IsMulticastTrafficIncluded": "isMulticastTrafficIncluded",
+        "IsUnicastTrafficIncluded": "isUnicastTrafficIncluded",
+        "JoinLeaveMultiplier": "joinLeaveMultiplier",
+        "JoinLeaveWaitTime": "joinLeaveWaitTime",
+        "LatencyBins": "latencyBins",
+        "LatencyBinsEnabled": "latencyBinsEnabled",
+        "LatencyType": "latencyType",
+        "LoadRateList": "loadRateList",
+        "LoadRateValue": "loadRateValue",
+        "LoadType": "loadType",
+        "MaxBinaryLoadRate": "maxBinaryLoadRate",
+        "MaxComboLoadRate": "maxComboLoadRate",
+        "MaxIncrementFrameSize": "maxIncrementFrameSize",
+        "MaxIncrementLoadRate": "maxIncrementLoadRate",
+        "MaxQuickSearchLoadRate": "maxQuickSearchLoadRate",
+        "MaxRandomFrameSize": "maxRandomFrameSize",
+        "MaxRandomLoadRate": "maxRandomLoadRate",
+        "MaxStepLoadRate": "maxStepLoadRate",
+        "MinBinaryLoadRate": "minBinaryLoadRate",
+        "MinComboLoadRate": "minComboLoadRate",
+        "MinFpsRate": "minFpsRate",
+        "MinIncrementFrameSize": "minIncrementFrameSize",
+        "MinKbpsRate": "minKbpsRate",
+        "MinQuickSearchLoadRate": "minQuickSearchLoadRate",
+        "MinRandomFrameSize": "minRandomFrameSize",
+        "MinRandomLoadRate": "minRandomLoadRate",
+        "Numtrials": "numtrials",
+        "PercentMaxRate": "percentMaxRate",
+        "PortDelayEnabled": "portDelayEnabled",
+        "PortDelayUnit": "portDelayUnit",
+        "PortDelayValue": "portDelayValue",
+        "ProtocolItem": "protocolItem",
+        "QuickSearchFrameLossUnit": "quickSearchFrameLossUnit",
+        "QuickSearchLoadUnit": "quickSearchLoadUnit",
+        "QuickSearchResolution": "quickSearchResolution",
+        "QuickSearchSearchType": "quickSearchSearchType",
+        "QuickSearchTolerance": "quickSearchTolerance",
+        "RateSelect": "rateSelect",
+        "ReportSequenceError": "reportSequenceError",
+        "ReportTputRateUnit": "reportTputRateUnit",
+        "Resolution": "resolution",
+        "SaturationIteration": "saturationIteration",
+        "StaggeredStart": "staggeredStart",
+        "StepComboLoadRate": "stepComboLoadRate",
+        "StepFrameLossUnit": "stepFrameLossUnit",
+        "StepIncrementFrameSize": "stepIncrementFrameSize",
+        "StepIncrementLoadRate": "stepIncrementLoadRate",
+        "StepLoadUnit": "stepLoadUnit",
+        "StepStepLoadRate": "stepStepLoadRate",
+        "StepTolerance": "stepTolerance",
+        "StopTestOnHighLoss": "stopTestOnHighLoss",
+        "TestTrafficType": "testTrafficType",
+        "Tolerance": "tolerance",
+        "TrafficType": "trafficType",
+        "TxDelay": "txDelay",
+        "UnchangedValueList": "unchangedValueList",
+        "UsePercentOffsets": "usePercentOffsets",
     }
     _SDM_ENUM_MAP = {
-        'binaryFrameLossUnit': ['%', 'frames'],
-        'binaryLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'binarySearchType': ['linear', 'perFlow', 'perPort', 'perTrafficItem'],
-        'groupDistributionType': ['acrossHosts', 'acrossPorts'],
-        'igmpv3MessageType': ['exclude', 'include'],
-        'latencyType': ['cutThrough', 'storeForward'],
-        'loadType': ['binary', 'quickSearch', 'step'],
-        'portDelayUnit': ['bytes', 'nanoseconds'],
-        'quickSearchFrameLossUnit': ['%'],
-        'quickSearchLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'quickSearchSearchType': ['linear', 'perFlow', 'perPort', 'perTrafficItem'],
-        'rateSelect': ['fpsRate', 'kbpsRate', 'percentMaxRate'],
-        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
-        'stepFrameLossUnit': ['%', 'frames'],
-        'stepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
-        'trafficType': ['burstyLoading', 'constantLoading'],
+        "binaryFrameLossUnit": ["%", "frames"],
+        "binaryLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "binarySearchType": ["linear", "perFlow", "perPort", "perTrafficItem"],
+        "groupDistributionType": ["acrossHosts", "acrossPorts"],
+        "igmpv3MessageType": ["exclude", "include"],
+        "latencyType": ["cutThrough", "storeForward"],
+        "loadType": ["binary", "quickSearch", "step"],
+        "portDelayUnit": ["bytes", "nanoseconds"],
+        "quickSearchFrameLossUnit": ["%"],
+        "quickSearchLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "quickSearchSearchType": ["linear", "perFlow", "perPort", "perTrafficItem"],
+        "rateSelect": ["fpsRate", "kbpsRate", "percentMaxRate"],
+        "reportTputRateUnit": ["gbps", "gBps", "kbps", "kBps", "mbps", "mBps"],
+        "stepFrameLossUnit": ["%", "frames"],
+        "stepLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "trafficType": ["burstyLoading", "constantLoading"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -167,11 +198,12 @@ class TestConfig(Base):
         -------
         - number: This enables the test to run an extra iteration for calculating the Backoff Latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BackoffIteration'])
+        return self._get_attribute(self._SDM_ATT_MAP["BackoffIteration"])
+
     @BackoffIteration.setter
     def BackoffIteration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BackoffIteration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BackoffIteration"], value)
 
     @property
     def BinaryBackoff(self):
@@ -181,11 +213,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the percentage of binary backoff.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryBackoff'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryBackoff"])
+
     @BinaryBackoff.setter
     def BinaryBackoff(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryBackoff'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryBackoff"], value)
 
     @property
     def BinaryFrameLossUnit(self):
@@ -195,11 +228,12 @@ class TestConfig(Base):
         -------
         - str(% | frames): The frame loss unit of measurement for the binary algorithm in binary.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryFrameLossUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryFrameLossUnit"])
+
     @BinaryFrameLossUnit.setter
     def BinaryFrameLossUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryFrameLossUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryFrameLossUnit"], value)
 
     @property
     def BinaryLoadUnit(self):
@@ -209,11 +243,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies the binary load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"])
+
     @BinaryLoadUnit.setter
     def BinaryLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"], value)
 
     @property
     def BinaryResolution(self):
@@ -223,11 +258,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryResolution'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryResolution"])
+
     @BinaryResolution.setter
     def BinaryResolution(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryResolution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryResolution"], value)
 
     @property
     def BinarySearchType(self):
@@ -237,11 +273,12 @@ class TestConfig(Base):
         -------
         - str(linear | perFlow | perPort | perTrafficItem): The binary search type value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinarySearchType'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
+
     @BinarySearchType.setter
     def BinarySearchType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinarySearchType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinarySearchType"], value)
 
     @property
     def BinaryTolerance(self):
@@ -251,11 +288,12 @@ class TestConfig(Base):
         -------
         - number: The binary tolerance level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BinaryTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryTolerance"])
+
     @BinaryTolerance.setter
     def BinaryTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BinaryTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BinaryTolerance"], value)
 
     @property
     def BurstSize(self):
@@ -265,11 +303,12 @@ class TestConfig(Base):
         -------
         - number: The number of packets to send in a burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
+
     @BurstSize.setter
     def BurstSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstSize"], value)
 
     @property
     def CalculateJitter(self):
@@ -279,11 +318,12 @@ class TestConfig(Base):
         -------
         - bool: If true, the jitter is calculated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateJitter'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateJitter"])
+
     @CalculateJitter.setter
     def CalculateJitter(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateJitter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateJitter"], value)
 
     @property
     def CalculateLatency(self):
@@ -293,11 +333,12 @@ class TestConfig(Base):
         -------
         - bool: If true, calculates the latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
+        return self._get_attribute(self._SDM_ATT_MAP["CalculateLatency"])
+
     @CalculateLatency.setter
     def CalculateLatency(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CalculateLatency"], value)
 
     @property
     def ComboBackoff(self):
@@ -307,11 +348,12 @@ class TestConfig(Base):
         -------
         - number: The backoff combination of the test configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ComboBackoff'])
+        return self._get_attribute(self._SDM_ATT_MAP["ComboBackoff"])
+
     @ComboBackoff.setter
     def ComboBackoff(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ComboBackoff'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ComboBackoff"], value)
 
     @property
     def ComboResolution(self):
@@ -321,11 +363,12 @@ class TestConfig(Base):
         -------
         - number: The combined resolution value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ComboResolution'])
+        return self._get_attribute(self._SDM_ATT_MAP["ComboResolution"])
+
     @ComboResolution.setter
     def ComboResolution(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ComboResolution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ComboResolution"], value)
 
     @property
     def ComboTolerance(self):
@@ -335,11 +378,12 @@ class TestConfig(Base):
         -------
         - number: The combined tolerance level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ComboTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["ComboTolerance"])
+
     @ComboTolerance.setter
     def ComboTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ComboTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ComboTolerance"], value)
 
     @property
     def CountRandomFrameSize(self):
@@ -349,11 +393,12 @@ class TestConfig(Base):
         -------
         - number: If true, randomly counts the frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["CountRandomFrameSize"])
+
     @CountRandomFrameSize.setter
     def CountRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CountRandomFrameSize"], value)
 
     @property
     def CountRandomLoadRate(self):
@@ -363,11 +408,12 @@ class TestConfig(Base):
         -------
         - number: The random count of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CountRandomLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["CountRandomLoadRate"])
+
     @CountRandomLoadRate.setter
     def CountRandomLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CountRandomLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CountRandomLoadRate"], value)
 
     @property
     def DelayAfterTransmit(self):
@@ -377,11 +423,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the amount of delay after every transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
+        return self._get_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"])
+
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DelayAfterTransmit"], value)
 
     @property
     def Duration(self):
@@ -391,11 +438,12 @@ class TestConfig(Base):
         -------
         - number: The duration of the test in hours, which is used to calculate the number of frames to transmit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
+        return self._get_attribute(self._SDM_ATT_MAP["Duration"])
+
     @Duration.setter
     def Duration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Duration"], value)
 
     @property
     def EnableBackoffIteration(self):
@@ -405,11 +453,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables back off iteration test.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableBackoffIteration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBackoffIteration"])
+
     @EnableBackoffIteration.setter
     def EnableBackoffIteration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableBackoffIteration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableBackoffIteration"], value)
 
     @property
     def EnableDataIntegrity(self):
@@ -419,11 +468,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables the checking of data integrity for the pass or fail of the trial.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"])
+
     @EnableDataIntegrity.setter
     def EnableDataIntegrity(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableDataIntegrity"], value)
 
     @property
     def EnableExtraIterations(self):
@@ -433,11 +483,12 @@ class TestConfig(Base):
         -------
         - bool: If true, more iterations are performed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableExtraIterations'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableExtraIterations"])
+
     @EnableExtraIterations.setter
     def EnableExtraIterations(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableExtraIterations'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableExtraIterations"], value)
 
     @property
     def EnableFastConvergence(self):
@@ -447,11 +498,12 @@ class TestConfig(Base):
         -------
         - bool: If true, the test perform iterations using the fast convergence duration configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableFastConvergence'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableFastConvergence"])
+
     @EnableFastConvergence.setter
     def EnableFastConvergence(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableFastConvergence'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableFastConvergence"], value)
 
     @property
     def EnableLayer1Rate(self):
@@ -461,11 +513,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"])
+
     @EnableLayer1Rate.setter
     def EnableLayer1Rate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLayer1Rate"], value)
 
     @property
     def EnableMinFrameSize(self):
@@ -475,11 +528,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables minimum frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"])
+
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableMinFrameSize"], value)
 
     @property
     def EnableSaturationIteration(self):
@@ -489,11 +543,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables the test to run an extra iteration for calculating the SaturationLatency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableSaturationIteration'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSaturationIteration"])
+
     @EnableSaturationIteration.setter
     def EnableSaturationIteration(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableSaturationIteration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableSaturationIteration"], value)
 
     @property
     def EnableStopTestOnHighLoss(self):
@@ -503,11 +558,12 @@ class TestConfig(Base):
         -------
         - bool: If true, enables the test to stop in case of a high loss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableStopTestOnHighLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStopTestOnHighLoss"])
+
     @EnableStopTestOnHighLoss.setter
     def EnableStopTestOnHighLoss(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableStopTestOnHighLoss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableStopTestOnHighLoss"], value)
 
     @property
     def ExtraIterationOffsets(self):
@@ -517,11 +573,12 @@ class TestConfig(Base):
         -------
         - str: This enables the test to run an extra iteration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExtraIterationOffsets'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExtraIterationOffsets"])
+
     @ExtraIterationOffsets.setter
     def ExtraIterationOffsets(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExtraIterationOffsets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExtraIterationOffsets"], value)
 
     @property
     def FastConvergenceDuration(self):
@@ -531,11 +588,12 @@ class TestConfig(Base):
         -------
         - number: This enables the test to perform iterations using the fast convergence duration configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastConvergenceDuration'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastConvergenceDuration"])
+
     @FastConvergenceDuration.setter
     def FastConvergenceDuration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastConvergenceDuration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastConvergenceDuration"], value)
 
     @property
     def FastConvergenceThreshold(self):
@@ -545,11 +603,12 @@ class TestConfig(Base):
         -------
         - number: This enables the test to perform iterations using the fast convergence threshold configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FastConvergenceThreshold'])
+        return self._get_attribute(self._SDM_ATT_MAP["FastConvergenceThreshold"])
+
     @FastConvergenceThreshold.setter
     def FastConvergenceThreshold(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FastConvergenceThreshold'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FastConvergenceThreshold"], value)
 
     @property
     def FrameLossUnit(self):
@@ -559,11 +618,12 @@ class TestConfig(Base):
         -------
         - str: Frame loss measurement unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FrameLossUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["FrameLossUnit"])
+
     @FrameLossUnit.setter
     def FrameLossUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FrameLossUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FrameLossUnit"], value)
 
     @property
     def FramesPerBurstGap(self):
@@ -573,11 +633,12 @@ class TestConfig(Base):
         -------
         - number: The number of frames to be sent after each burst.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramesPerBurstGap"])
+
     @FramesPerBurstGap.setter
     def FramesPerBurstGap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramesPerBurstGap"], value)
 
     @property
     def Framesize(self):
@@ -587,11 +648,12 @@ class TestConfig(Base):
         -------
         - str: The frame size to be used.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Framesize'])
+        return self._get_attribute(self._SDM_ATT_MAP["Framesize"])
+
     @Framesize.setter
     def Framesize(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Framesize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Framesize"], value)
 
     @property
     def FramesizeFixedValue(self):
@@ -601,11 +663,12 @@ class TestConfig(Base):
         -------
         - number: The fixed value of framesize.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramesizeFixedValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramesizeFixedValue"])
+
     @FramesizeFixedValue.setter
     def FramesizeFixedValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramesizeFixedValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramesizeFixedValue"], value)
 
     @property
     def FramesizeList(self):
@@ -615,11 +678,12 @@ class TestConfig(Base):
         -------
         - list(str): The list of the available frame sizes.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['FramesizeList'])
+        return self._get_attribute(self._SDM_ATT_MAP["FramesizeList"])
+
     @FramesizeList.setter
     def FramesizeList(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FramesizeList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["FramesizeList"], value)
 
     @property
     def Gap(self):
@@ -629,11 +693,12 @@ class TestConfig(Base):
         -------
         - number: The gap in transmission of frames.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Gap'])
+        return self._get_attribute(self._SDM_ATT_MAP["Gap"])
+
     @Gap.setter
     def Gap(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Gap"], value)
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
@@ -643,11 +708,16 @@ class TestConfig(Base):
         -------
         - bool: If enabled, it generates the tracking option for aggregation files.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"]
+        )
+
     @GenerateTrackingOptionAggregationFiles.setter
     def GenerateTrackingOptionAggregationFiles(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["GenerateTrackingOptionAggregationFiles"], value
+        )
 
     @property
     def GroupDistributionType(self):
@@ -657,11 +727,12 @@ class TestConfig(Base):
         -------
         - str(acrossHosts | acrossPorts): Indicates the group distribution type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['GroupDistributionType'])
+        return self._get_attribute(self._SDM_ATT_MAP["GroupDistributionType"])
+
     @GroupDistributionType.setter
     def GroupDistributionType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['GroupDistributionType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["GroupDistributionType"], value)
 
     @property
     def Igmpv3MessageType(self):
@@ -671,11 +742,12 @@ class TestConfig(Base):
         -------
         - str(exclude | include): It gives details about the IGMPv3 message type in the test configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Igmpv3MessageType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Igmpv3MessageType"])
+
     @Igmpv3MessageType.setter
     def Igmpv3MessageType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Igmpv3MessageType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Igmpv3MessageType"], value)
 
     @property
     def Igmpv3SourceAddrList(self):
@@ -685,11 +757,12 @@ class TestConfig(Base):
         -------
         - str: It gives details about the IGMPv3 source address list in the test configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Igmpv3SourceAddrList'])
+        return self._get_attribute(self._SDM_ATT_MAP["Igmpv3SourceAddrList"])
+
     @Igmpv3SourceAddrList.setter
     def Igmpv3SourceAddrList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Igmpv3SourceAddrList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Igmpv3SourceAddrList"], value)
 
     @property
     def InitialBinaryLoadRate(self):
@@ -699,11 +772,12 @@ class TestConfig(Base):
         -------
         - number: The initial binary value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialBinaryLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialBinaryLoadRate"])
+
     @InitialBinaryLoadRate.setter
     def InitialBinaryLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialBinaryLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialBinaryLoadRate"], value)
 
     @property
     def InitialComboLoadRate(self):
@@ -713,11 +787,12 @@ class TestConfig(Base):
         -------
         - number: The initial combination value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialComboLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialComboLoadRate"])
+
     @InitialComboLoadRate.setter
     def InitialComboLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialComboLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialComboLoadRate"], value)
 
     @property
     def InitialIncrementLoadRate(self):
@@ -727,11 +802,12 @@ class TestConfig(Base):
         -------
         - number: The initial incremental value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialIncrementLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialIncrementLoadRate"])
+
     @InitialIncrementLoadRate.setter
     def InitialIncrementLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialIncrementLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialIncrementLoadRate"], value)
 
     @property
     def InitialStepLoadRate(self):
@@ -741,11 +817,12 @@ class TestConfig(Base):
         -------
         - number: The initial step value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InitialStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["InitialStepLoadRate"])
+
     @InitialStepLoadRate.setter
     def InitialStepLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InitialStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InitialStepLoadRate"], value)
 
     @property
     def Ipv4rate(self):
@@ -755,11 +832,12 @@ class TestConfig(Base):
         -------
         - number: The rate at which IPv4 traffic is sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv4rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv4rate"])
+
     @Ipv4rate.setter
     def Ipv4rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv4rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv4rate"], value)
 
     @property
     def Ipv6rate(self):
@@ -769,11 +847,12 @@ class TestConfig(Base):
         -------
         - number: The rate at which IPv6 traffic is sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6rate"])
+
     @Ipv6rate.setter
     def Ipv6rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6rate"], value)
 
     @property
     def IsMulticastAutomaticFrameData(self):
@@ -783,11 +862,12 @@ class TestConfig(Base):
         -------
         - str: It signifies the automatic frame data for multicast.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMulticastAutomaticFrameData'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMulticastAutomaticFrameData"])
+
     @IsMulticastAutomaticFrameData.setter
     def IsMulticastAutomaticFrameData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsMulticastAutomaticFrameData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsMulticastAutomaticFrameData"], value)
 
     @property
     def IsMulticastTrafficIncluded(self):
@@ -797,11 +877,12 @@ class TestConfig(Base):
         -------
         - bool: Indicates if the test has multicast traffic included or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsMulticastTrafficIncluded'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsMulticastTrafficIncluded"])
+
     @IsMulticastTrafficIncluded.setter
     def IsMulticastTrafficIncluded(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsMulticastTrafficIncluded'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsMulticastTrafficIncluded"], value)
 
     @property
     def IsUnicastTrafficIncluded(self):
@@ -811,11 +892,12 @@ class TestConfig(Base):
         -------
         - bool: Indicates if the test has unicast traffic included or not.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsUnicastTrafficIncluded'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsUnicastTrafficIncluded"])
+
     @IsUnicastTrafficIncluded.setter
     def IsUnicastTrafficIncluded(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsUnicastTrafficIncluded'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsUnicastTrafficIncluded"], value)
 
     @property
     def JoinLeaveMultiplier(self):
@@ -825,11 +907,12 @@ class TestConfig(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"])
+
     @JoinLeaveMultiplier.setter
     def JoinLeaveMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveMultiplier"], value)
 
     @property
     def JoinLeaveWaitTime(self):
@@ -839,25 +922,27 @@ class TestConfig(Base):
         -------
         - number: The wait time for the leave.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveWaitTime'])
+        return self._get_attribute(self._SDM_ATT_MAP["JoinLeaveWaitTime"])
+
     @JoinLeaveWaitTime.setter
     def JoinLeaveWaitTime(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['JoinLeaveWaitTime'], value)
+        self._set_attribute(self._SDM_ATT_MAP["JoinLeaveWaitTime"], value)
 
     @property
     def LatencyBins(self):
         # type: () -> str
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - str: Sets the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBins'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBins"])
+
     @LatencyBins.setter
     def LatencyBins(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBins'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBins"], value)
 
     @property
     def LatencyBinsEnabled(self):
@@ -867,11 +952,12 @@ class TestConfig(Base):
         -------
         - bool: Enables the latency bins statistics.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"])
+
     @LatencyBinsEnabled.setter
     def LatencyBinsEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyBinsEnabled"], value)
 
     @property
     def LatencyType(self):
@@ -881,11 +967,12 @@ class TestConfig(Base):
         -------
         - str(cutThrough | storeForward): The type of latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LatencyType"])
+
     @LatencyType.setter
     def LatencyType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LatencyType"], value)
 
     @property
     def LoadRateList(self):
@@ -895,11 +982,12 @@ class TestConfig(Base):
         -------
         - str: It signifies the list of load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateList'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateList"])
+
     @LoadRateList.setter
     def LoadRateList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateList"], value)
 
     @property
     def LoadRateValue(self):
@@ -909,11 +997,12 @@ class TestConfig(Base):
         -------
         - number: The value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadRateValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadRateValue"])
+
     @LoadRateValue.setter
     def LoadRateValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadRateValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadRateValue"], value)
 
     @property
     def LoadType(self):
@@ -923,11 +1012,12 @@ class TestConfig(Base):
         -------
         - str(binary | quickSearch | step): The type of the payload setting.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
+        return self._get_attribute(self._SDM_ATT_MAP["LoadType"])
+
     @LoadType.setter
     def LoadType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LoadType"], value)
 
     @property
     def MaxBinaryLoadRate(self):
@@ -937,11 +1027,12 @@ class TestConfig(Base):
         -------
         - number: The upper bound of the iteration rates for each frame size during a binary search.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxBinaryLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxBinaryLoadRate"])
+
     @MaxBinaryLoadRate.setter
     def MaxBinaryLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxBinaryLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxBinaryLoadRate"], value)
 
     @property
     def MaxComboLoadRate(self):
@@ -951,11 +1042,12 @@ class TestConfig(Base):
         -------
         - number: The maximum value of the load rate Combo Load Type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxComboLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxComboLoadRate"])
+
     @MaxComboLoadRate.setter
     def MaxComboLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxComboLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxComboLoadRate"], value)
 
     @property
     def MaxIncrementFrameSize(self):
@@ -965,11 +1057,12 @@ class TestConfig(Base):
         -------
         - number: The maximum incremental value of the frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxIncrementFrameSize"])
+
     @MaxIncrementFrameSize.setter
     def MaxIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxIncrementFrameSize"], value)
 
     @property
     def MaxIncrementLoadRate(self):
@@ -979,11 +1072,12 @@ class TestConfig(Base):
         -------
         - number: The maximum incremental value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxIncrementLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxIncrementLoadRate"])
+
     @MaxIncrementLoadRate.setter
     def MaxIncrementLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxIncrementLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxIncrementLoadRate"], value)
 
     @property
     def MaxQuickSearchLoadRate(self):
@@ -993,11 +1087,12 @@ class TestConfig(Base):
         -------
         - number: Sets the maximum QuickSearch load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxQuickSearchLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxQuickSearchLoadRate"])
+
     @MaxQuickSearchLoadRate.setter
     def MaxQuickSearchLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxQuickSearchLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxQuickSearchLoadRate"], value)
 
     @property
     def MaxRandomFrameSize(self):
@@ -1007,11 +1102,12 @@ class TestConfig(Base):
         -------
         - number: The maximum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"])
+
     @MaxRandomFrameSize.setter
     def MaxRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"], value)
 
     @property
     def MaxRandomLoadRate(self):
@@ -1021,11 +1117,12 @@ class TestConfig(Base):
         -------
         - number: The maximum random value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRandomLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRandomLoadRate"])
+
     @MaxRandomLoadRate.setter
     def MaxRandomLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRandomLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRandomLoadRate"], value)
 
     @property
     def MaxStepLoadRate(self):
@@ -1035,11 +1132,12 @@ class TestConfig(Base):
         -------
         - number: The maximum step value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxStepLoadRate"])
+
     @MaxStepLoadRate.setter
     def MaxStepLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxStepLoadRate"], value)
 
     @property
     def MinBinaryLoadRate(self):
@@ -1049,11 +1147,12 @@ class TestConfig(Base):
         -------
         - number: Specifies the minimum rate of the binary algorithm.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinBinaryLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinBinaryLoadRate"])
+
     @MinBinaryLoadRate.setter
     def MinBinaryLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinBinaryLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinBinaryLoadRate"], value)
 
     @property
     def MinComboLoadRate(self):
@@ -1063,11 +1162,12 @@ class TestConfig(Base):
         -------
         - number: The minimum combination load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinComboLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinComboLoadRate"])
+
     @MinComboLoadRate.setter
     def MinComboLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinComboLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinComboLoadRate"], value)
 
     @property
     def MinFpsRate(self):
@@ -1077,11 +1177,12 @@ class TestConfig(Base):
         -------
         - number: The rate at which minimum frames are sent per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinFpsRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinFpsRate"])
+
     @MinFpsRate.setter
     def MinFpsRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinFpsRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinFpsRate"], value)
 
     @property
     def MinIncrementFrameSize(self):
@@ -1091,11 +1192,12 @@ class TestConfig(Base):
         -------
         - number: The minimum incremental value of the frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinIncrementFrameSize"])
+
     @MinIncrementFrameSize.setter
     def MinIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinIncrementFrameSize"], value)
 
     @property
     def MinKbpsRate(self):
@@ -1105,11 +1207,12 @@ class TestConfig(Base):
         -------
         - number: The rate at which minimum frames are sent per kbps.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinKbpsRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinKbpsRate"])
+
     @MinKbpsRate.setter
     def MinKbpsRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinKbpsRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinKbpsRate"], value)
 
     @property
     def MinQuickSearchLoadRate(self):
@@ -1119,11 +1222,12 @@ class TestConfig(Base):
         -------
         - number: Signifies the minimum Quick Search load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinQuickSearchLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinQuickSearchLoadRate"])
+
     @MinQuickSearchLoadRate.setter
     def MinQuickSearchLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinQuickSearchLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinQuickSearchLoadRate"], value)
 
     @property
     def MinRandomFrameSize(self):
@@ -1133,11 +1237,12 @@ class TestConfig(Base):
         -------
         - number: The minimum random frame size to be sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"])
+
     @MinRandomFrameSize.setter
     def MinRandomFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRandomFrameSize"], value)
 
     @property
     def MinRandomLoadRate(self):
@@ -1147,11 +1252,12 @@ class TestConfig(Base):
         -------
         - number: The minimum random value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRandomLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRandomLoadRate"])
+
     @MinRandomLoadRate.setter
     def MinRandomLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRandomLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRandomLoadRate"], value)
 
     @property
     def Numtrials(self):
@@ -1161,11 +1267,12 @@ class TestConfig(Base):
         -------
         - number: The integer value that states the number of trials permitted.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
+        return self._get_attribute(self._SDM_ATT_MAP["Numtrials"])
+
     @Numtrials.setter
     def Numtrials(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Numtrials"], value)
 
     @property
     def PercentMaxRate(self):
@@ -1175,11 +1282,12 @@ class TestConfig(Base):
         -------
         - number: The rate in maximum percentage.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PercentMaxRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["PercentMaxRate"])
+
     @PercentMaxRate.setter
     def PercentMaxRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PercentMaxRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PercentMaxRate"], value)
 
     @property
     def PortDelayEnabled(self):
@@ -1189,11 +1297,12 @@ class TestConfig(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayEnabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayEnabled"])
+
     @PortDelayEnabled.setter
     def PortDelayEnabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayEnabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayEnabled"], value)
 
     @property
     def PortDelayUnit(self):
@@ -1203,11 +1312,12 @@ class TestConfig(Base):
         -------
         - str(bytes | nanoseconds): Sets the port delay unit in which it will be measured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayUnit"])
+
     @PortDelayUnit.setter
     def PortDelayUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayUnit"], value)
 
     @property
     def PortDelayValue(self):
@@ -1217,11 +1327,12 @@ class TestConfig(Base):
         -------
         - number: Sets the port delay value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDelayValue'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDelayValue"])
+
     @PortDelayValue.setter
     def PortDelayValue(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDelayValue'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDelayValue"], value)
 
     @property
     def ProtocolItem(self):
@@ -1231,11 +1342,12 @@ class TestConfig(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
+
     @ProtocolItem.setter
     def ProtocolItem(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolItem"], value)
 
     @property
     def QuickSearchFrameLossUnit(self):
@@ -1245,11 +1357,12 @@ class TestConfig(Base):
         -------
         - str(%): Signifies the quick search frame loss unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuickSearchFrameLossUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuickSearchFrameLossUnit"])
+
     @QuickSearchFrameLossUnit.setter
     def QuickSearchFrameLossUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QuickSearchFrameLossUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QuickSearchFrameLossUnit"], value)
 
     @property
     def QuickSearchLoadUnit(self):
@@ -1259,11 +1372,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Signifies the quick search load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuickSearchLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuickSearchLoadUnit"])
+
     @QuickSearchLoadUnit.setter
     def QuickSearchLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QuickSearchLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QuickSearchLoadUnit"], value)
 
     @property
     def QuickSearchResolution(self):
@@ -1273,11 +1387,12 @@ class TestConfig(Base):
         -------
         - number: Sets the quick search resolution.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuickSearchResolution'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuickSearchResolution"])
+
     @QuickSearchResolution.setter
     def QuickSearchResolution(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QuickSearchResolution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QuickSearchResolution"], value)
 
     @property
     def QuickSearchSearchType(self):
@@ -1287,11 +1402,12 @@ class TestConfig(Base):
         -------
         - str(linear | perFlow | perPort | perTrafficItem): Signifies the quick search type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuickSearchSearchType'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuickSearchSearchType"])
+
     @QuickSearchSearchType.setter
     def QuickSearchSearchType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QuickSearchSearchType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QuickSearchSearchType"], value)
 
     @property
     def QuickSearchTolerance(self):
@@ -1301,11 +1417,12 @@ class TestConfig(Base):
         -------
         - number: Sets the quick search tolerance.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['QuickSearchTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["QuickSearchTolerance"])
+
     @QuickSearchTolerance.setter
     def QuickSearchTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['QuickSearchTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["QuickSearchTolerance"], value)
 
     @property
     def RateSelect(self):
@@ -1315,11 +1432,12 @@ class TestConfig(Base):
         -------
         - str(fpsRate | kbpsRate | percentMaxRate): The rate selected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RateSelect'])
+        return self._get_attribute(self._SDM_ATT_MAP["RateSelect"])
+
     @RateSelect.setter
     def RateSelect(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RateSelect'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RateSelect"], value)
 
     @property
     def ReportSequenceError(self):
@@ -1329,11 +1447,12 @@ class TestConfig(Base):
         -------
         - bool: Reports sequence errors in the test result.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportSequenceError'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportSequenceError"])
+
     @ReportSequenceError.setter
     def ReportSequenceError(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportSequenceError'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportSequenceError"], value)
 
     @property
     def ReportTputRateUnit(self):
@@ -1343,11 +1462,12 @@ class TestConfig(Base):
         -------
         - str(gbps | gBps | kbps | kBps | mbps | mBps): The unit of rate for throughput.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"])
+
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ReportTputRateUnit"], value)
 
     @property
     def Resolution(self):
@@ -1357,11 +1477,12 @@ class TestConfig(Base):
         -------
         - number: Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Resolution'])
+        return self._get_attribute(self._SDM_ATT_MAP["Resolution"])
+
     @Resolution.setter
     def Resolution(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Resolution'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Resolution"], value)
 
     @property
     def SaturationIteration(self):
@@ -1371,11 +1492,12 @@ class TestConfig(Base):
         -------
         - number: This enables the test to run an extra iteration for calculating the Saturation latency.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SaturationIteration'])
+        return self._get_attribute(self._SDM_ATT_MAP["SaturationIteration"])
+
     @SaturationIteration.setter
     def SaturationIteration(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SaturationIteration'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SaturationIteration"], value)
 
     @property
     def StaggeredStart(self):
@@ -1385,11 +1507,12 @@ class TestConfig(Base):
         -------
         - bool: If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StaggeredStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["StaggeredStart"])
+
     @StaggeredStart.setter
     def StaggeredStart(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StaggeredStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StaggeredStart"], value)
 
     @property
     def StepComboLoadRate(self):
@@ -1399,11 +1522,12 @@ class TestConfig(Base):
         -------
         - number: The step value of combination load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepComboLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepComboLoadRate"])
+
     @StepComboLoadRate.setter
     def StepComboLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepComboLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepComboLoadRate"], value)
 
     @property
     def StepFrameLossUnit(self):
@@ -1413,11 +1537,12 @@ class TestConfig(Base):
         -------
         - str(% | frames): The step frame loss unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepFrameLossUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepFrameLossUnit"])
+
     @StepFrameLossUnit.setter
     def StepFrameLossUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepFrameLossUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepFrameLossUnit"], value)
 
     @property
     def StepIncrementFrameSize(self):
@@ -1427,11 +1552,12 @@ class TestConfig(Base):
         -------
         - number: The incremental step value of the frame size.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepIncrementFrameSize"])
+
     @StepIncrementFrameSize.setter
     def StepIncrementFrameSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepIncrementFrameSize"], value)
 
     @property
     def StepIncrementLoadRate(self):
@@ -1441,11 +1567,12 @@ class TestConfig(Base):
         -------
         - number: The step incremental value of the load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepIncrementLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepIncrementLoadRate"])
+
     @StepIncrementLoadRate.setter
     def StepIncrementLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepIncrementLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepIncrementLoadRate"], value)
 
     @property
     def StepLoadUnit(self):
@@ -1455,11 +1582,12 @@ class TestConfig(Base):
         -------
         - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate): Specifies the step rate of the load unit.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepLoadUnit'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepLoadUnit"])
+
     @StepLoadUnit.setter
     def StepLoadUnit(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepLoadUnit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepLoadUnit"], value)
 
     @property
     def StepStepLoadRate(self):
@@ -1469,11 +1597,12 @@ class TestConfig(Base):
         -------
         - number: The incremental step value of load rate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepStepLoadRate'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepStepLoadRate"])
+
     @StepStepLoadRate.setter
     def StepStepLoadRate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepStepLoadRate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepStepLoadRate"], value)
 
     @property
     def StepTolerance(self):
@@ -1483,11 +1612,12 @@ class TestConfig(Base):
         -------
         - number: The step value of the tolerance level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StepTolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["StepTolerance"])
+
     @StepTolerance.setter
     def StepTolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StepTolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StepTolerance"], value)
 
     @property
     def StopTestOnHighLoss(self):
@@ -1497,11 +1627,12 @@ class TestConfig(Base):
         -------
         - number: If true, enables this to stop the test in case of high frame loss.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StopTestOnHighLoss'])
+        return self._get_attribute(self._SDM_ATT_MAP["StopTestOnHighLoss"])
+
     @StopTestOnHighLoss.setter
     def StopTestOnHighLoss(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StopTestOnHighLoss'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StopTestOnHighLoss"], value)
 
     @property
     def TestTrafficType(self):
@@ -1511,11 +1642,12 @@ class TestConfig(Base):
         -------
         - str: It signifies the test traffic type value.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TestTrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TestTrafficType"])
+
     @TestTrafficType.setter
     def TestTrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TestTrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TestTrafficType"], value)
 
     @property
     def Tolerance(self):
@@ -1525,11 +1657,12 @@ class TestConfig(Base):
         -------
         - number: The value set for the tolerance level.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Tolerance'])
+        return self._get_attribute(self._SDM_ATT_MAP["Tolerance"])
+
     @Tolerance.setter
     def Tolerance(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Tolerance'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Tolerance"], value)
 
     @property
     def TrafficType(self):
@@ -1539,11 +1672,12 @@ class TestConfig(Base):
         -------
         - str(burstyLoading | constantLoading): The test based on the traffic type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
+
     @TrafficType.setter
     def TrafficType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficType"], value)
 
     @property
     def TxDelay(self):
@@ -1553,11 +1687,12 @@ class TestConfig(Base):
         -------
         - number: Signifies the transmission delay time.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
+        return self._get_attribute(self._SDM_ATT_MAP["TxDelay"])
+
     @TxDelay.setter
     def TxDelay(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TxDelay"], value)
 
     @property
     def UnchangedValueList(self):
@@ -1567,11 +1702,12 @@ class TestConfig(Base):
         -------
         - str: The number of unchanged sessions.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnchangedValueList'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnchangedValueList"])
+
     @UnchangedValueList.setter
     def UnchangedValueList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnchangedValueList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnchangedValueList"], value)
 
     @property
     def UsePercentOffsets(self):
@@ -1581,13 +1717,118 @@ class TestConfig(Base):
         -------
         - str: If true, sets the offset value in percentage.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UsePercentOffsets'])
+        return self._get_attribute(self._SDM_ATT_MAP["UsePercentOffsets"])
+
     @UsePercentOffsets.setter
     def UsePercentOffsets(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UsePercentOffsets'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UsePercentOffsets"], value)
 
-    def update(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CountRandomLoadRate=None, DelayAfterTransmit=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FrameLossUnit=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GroupDistributionType=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, IsMulticastAutomaticFrameData=None, IsMulticastTrafficIncluded=None, IsUnicastTrafficIncluded=None, JoinLeaveMultiplier=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, SaturationIteration=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, TestTrafficType=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UsePercentOffsets=None):
+    def update(
+        self,
+        BackoffIteration=None,
+        BinaryBackoff=None,
+        BinaryFrameLossUnit=None,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        BinarySearchType=None,
+        BinaryTolerance=None,
+        BurstSize=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        ComboBackoff=None,
+        ComboResolution=None,
+        ComboTolerance=None,
+        CountRandomFrameSize=None,
+        CountRandomLoadRate=None,
+        DelayAfterTransmit=None,
+        Duration=None,
+        EnableBackoffIteration=None,
+        EnableDataIntegrity=None,
+        EnableExtraIterations=None,
+        EnableFastConvergence=None,
+        EnableLayer1Rate=None,
+        EnableMinFrameSize=None,
+        EnableSaturationIteration=None,
+        EnableStopTestOnHighLoss=None,
+        ExtraIterationOffsets=None,
+        FastConvergenceDuration=None,
+        FastConvergenceThreshold=None,
+        FrameLossUnit=None,
+        FramesPerBurstGap=None,
+        Framesize=None,
+        FramesizeFixedValue=None,
+        FramesizeList=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        GroupDistributionType=None,
+        Igmpv3MessageType=None,
+        Igmpv3SourceAddrList=None,
+        InitialBinaryLoadRate=None,
+        InitialComboLoadRate=None,
+        InitialIncrementLoadRate=None,
+        InitialStepLoadRate=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        IsMulticastAutomaticFrameData=None,
+        IsMulticastTrafficIncluded=None,
+        IsUnicastTrafficIncluded=None,
+        JoinLeaveMultiplier=None,
+        JoinLeaveWaitTime=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LoadRateList=None,
+        LoadRateValue=None,
+        LoadType=None,
+        MaxBinaryLoadRate=None,
+        MaxComboLoadRate=None,
+        MaxIncrementFrameSize=None,
+        MaxIncrementLoadRate=None,
+        MaxQuickSearchLoadRate=None,
+        MaxRandomFrameSize=None,
+        MaxRandomLoadRate=None,
+        MaxStepLoadRate=None,
+        MinBinaryLoadRate=None,
+        MinComboLoadRate=None,
+        MinFpsRate=None,
+        MinIncrementFrameSize=None,
+        MinKbpsRate=None,
+        MinQuickSearchLoadRate=None,
+        MinRandomFrameSize=None,
+        MinRandomLoadRate=None,
+        Numtrials=None,
+        PercentMaxRate=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        QuickSearchFrameLossUnit=None,
+        QuickSearchLoadUnit=None,
+        QuickSearchResolution=None,
+        QuickSearchSearchType=None,
+        QuickSearchTolerance=None,
+        RateSelect=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Resolution=None,
+        SaturationIteration=None,
+        StaggeredStart=None,
+        StepComboLoadRate=None,
+        StepFrameLossUnit=None,
+        StepIncrementFrameSize=None,
+        StepIncrementLoadRate=None,
+        StepLoadUnit=None,
+        StepStepLoadRate=None,
+        StepTolerance=None,
+        StopTestOnHighLoss=None,
+        TestTrafficType=None,
+        Tolerance=None,
+        TrafficType=None,
+        TxDelay=None,
+        UnchangedValueList=None,
+        UsePercentOffsets=None,
+    ):
         # type: (int, int, str, str, int, str, int, int, bool, bool, int, int, int, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, int, str, int, List[str], int, bool, str, str, str, int, int, int, int, int, int, str, bool, bool, int, int, str, bool, str, str, int, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, bool, str, int, List[str], str, str, int, str, int, str, bool, str, int, int, bool, int, str, int, int, str, int, int, int, str, int, str, int, str, str) -> TestConfig
         """Updates testConfig resource on the server.
 
@@ -1702,7 +1943,111 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboResolution=None, ComboTolerance=None, CountRandomFrameSize=None, CountRandomLoadRate=None, DelayAfterTransmit=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FrameLossUnit=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, GroupDistributionType=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, IsMulticastAutomaticFrameData=None, IsMulticastTrafficIncluded=None, IsUnicastTrafficIncluded=None, JoinLeaveMultiplier=None, JoinLeaveWaitTime=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxQuickSearchLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinQuickSearchLoadRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, QuickSearchFrameLossUnit=None, QuickSearchLoadUnit=None, QuickSearchResolution=None, QuickSearchSearchType=None, QuickSearchTolerance=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, SaturationIteration=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, TestTrafficType=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedValueList=None, UsePercentOffsets=None):
+    def find(
+        self,
+        BackoffIteration=None,
+        BinaryBackoff=None,
+        BinaryFrameLossUnit=None,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        BinarySearchType=None,
+        BinaryTolerance=None,
+        BurstSize=None,
+        CalculateJitter=None,
+        CalculateLatency=None,
+        ComboBackoff=None,
+        ComboResolution=None,
+        ComboTolerance=None,
+        CountRandomFrameSize=None,
+        CountRandomLoadRate=None,
+        DelayAfterTransmit=None,
+        Duration=None,
+        EnableBackoffIteration=None,
+        EnableDataIntegrity=None,
+        EnableExtraIterations=None,
+        EnableFastConvergence=None,
+        EnableLayer1Rate=None,
+        EnableMinFrameSize=None,
+        EnableSaturationIteration=None,
+        EnableStopTestOnHighLoss=None,
+        ExtraIterationOffsets=None,
+        FastConvergenceDuration=None,
+        FastConvergenceThreshold=None,
+        FrameLossUnit=None,
+        FramesPerBurstGap=None,
+        Framesize=None,
+        FramesizeFixedValue=None,
+        FramesizeList=None,
+        Gap=None,
+        GenerateTrackingOptionAggregationFiles=None,
+        GroupDistributionType=None,
+        Igmpv3MessageType=None,
+        Igmpv3SourceAddrList=None,
+        InitialBinaryLoadRate=None,
+        InitialComboLoadRate=None,
+        InitialIncrementLoadRate=None,
+        InitialStepLoadRate=None,
+        Ipv4rate=None,
+        Ipv6rate=None,
+        IsMulticastAutomaticFrameData=None,
+        IsMulticastTrafficIncluded=None,
+        IsUnicastTrafficIncluded=None,
+        JoinLeaveMultiplier=None,
+        JoinLeaveWaitTime=None,
+        LatencyBins=None,
+        LatencyBinsEnabled=None,
+        LatencyType=None,
+        LoadRateList=None,
+        LoadRateValue=None,
+        LoadType=None,
+        MaxBinaryLoadRate=None,
+        MaxComboLoadRate=None,
+        MaxIncrementFrameSize=None,
+        MaxIncrementLoadRate=None,
+        MaxQuickSearchLoadRate=None,
+        MaxRandomFrameSize=None,
+        MaxRandomLoadRate=None,
+        MaxStepLoadRate=None,
+        MinBinaryLoadRate=None,
+        MinComboLoadRate=None,
+        MinFpsRate=None,
+        MinIncrementFrameSize=None,
+        MinKbpsRate=None,
+        MinQuickSearchLoadRate=None,
+        MinRandomFrameSize=None,
+        MinRandomLoadRate=None,
+        Numtrials=None,
+        PercentMaxRate=None,
+        PortDelayEnabled=None,
+        PortDelayUnit=None,
+        PortDelayValue=None,
+        ProtocolItem=None,
+        QuickSearchFrameLossUnit=None,
+        QuickSearchLoadUnit=None,
+        QuickSearchResolution=None,
+        QuickSearchSearchType=None,
+        QuickSearchTolerance=None,
+        RateSelect=None,
+        ReportSequenceError=None,
+        ReportTputRateUnit=None,
+        Resolution=None,
+        SaturationIteration=None,
+        StaggeredStart=None,
+        StepComboLoadRate=None,
+        StepFrameLossUnit=None,
+        StepIncrementFrameSize=None,
+        StepIncrementLoadRate=None,
+        StepLoadUnit=None,
+        StepStepLoadRate=None,
+        StepTolerance=None,
+        StopTestOnHighLoss=None,
+        TestTrafficType=None,
+        Tolerance=None,
+        TrafficType=None,
+        TxDelay=None,
+        UnchangedValueList=None,
+        UsePercentOffsets=None,
+    ):
         # type: (int, int, str, str, int, str, int, int, bool, bool, int, int, int, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, int, str, int, List[str], int, bool, str, str, str, int, int, int, int, int, int, str, bool, bool, int, int, str, bool, str, str, int, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, bool, str, int, List[str], str, str, int, str, int, str, bool, str, int, int, bool, int, str, int, int, str, int, int, int, str, int, str, int, str, str) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
@@ -1858,10 +2203,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('apply', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
 
     def ApplyAsync(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1876,10 +2223,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsync', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
 
     def ApplyAsyncResult(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]
@@ -1888,17 +2237,19 @@ class TestConfig(Base):
         applyAsyncResult(async_operation=bool)bool
         ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: 
+        - Returns bool:
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyAsyncResult', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1915,10 +2266,14 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1936,10 +2291,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('generateReport', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1965,10 +2322,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('run', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1992,10 +2351,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2012,10 +2373,12 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def WaitForTest(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -2033,7 +2396,9 @@ class TestConfig(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('waitForTest', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

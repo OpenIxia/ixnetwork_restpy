@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,25 +35,25 @@ class TunnelHeadToLeaf(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tunnelHeadToLeaf'
+    _SDM_NAME = "tunnelHeadToLeaf"
     _SDM_ATT_MAP = {
-        'DutHopType': 'dutHopType',
-        'DutPrefixLength': 'dutPrefixLength',
-        'Enabled': 'enabled',
-        'HeadIpStart': 'headIpStart',
-        'IsAppendTunnelLeaf': 'isAppendTunnelLeaf',
-        'IsPrependDut': 'isPrependDut',
-        'IsSendingAsEro': 'isSendingAsEro',
-        'IsSendingAsSero': 'isSendingAsSero',
-        'SubObjectList': 'subObjectList',
-        'TunnelLeafCount': 'tunnelLeafCount',
-        'TunnelLeafHopType': 'tunnelLeafHopType',
-        'TunnelLeafIpStart': 'tunnelLeafIpStart',
-        'TunnelLeafPrefixLength': 'tunnelLeafPrefixLength',
+        "DutHopType": "dutHopType",
+        "DutPrefixLength": "dutPrefixLength",
+        "Enabled": "enabled",
+        "HeadIpStart": "headIpStart",
+        "IsAppendTunnelLeaf": "isAppendTunnelLeaf",
+        "IsPrependDut": "isPrependDut",
+        "IsSendingAsEro": "isSendingAsEro",
+        "IsSendingAsSero": "isSendingAsSero",
+        "SubObjectList": "subObjectList",
+        "TunnelLeafCount": "tunnelLeafCount",
+        "TunnelLeafHopType": "tunnelLeafHopType",
+        "TunnelLeafIpStart": "tunnelLeafIpStart",
+        "TunnelLeafPrefixLength": "tunnelLeafPrefixLength",
     }
     _SDM_ENUM_MAP = {
-        'dutHopType': ['strict', 'loose'],
-        'tunnelLeafHopType': ['strict', 'loose'],
+        "dutHopType": ["strict", "loose"],
+        "tunnelLeafHopType": ["strict", "loose"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,11 +67,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - str(strict | loose): Based on the input, the corresponding L bit in the packet is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DutHopType'])
+        return self._get_attribute(self._SDM_ATT_MAP["DutHopType"])
+
     @DutHopType.setter
     def DutHopType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DutHopType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DutHopType"], value)
 
     @property
     def DutPrefixLength(self):
@@ -80,11 +82,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - number: Prefix length of DUT.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DutPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["DutPrefixLength"])
+
     @DutPrefixLength.setter
     def DutPrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['DutPrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["DutPrefixLength"], value)
 
     @property
     def Enabled(self):
@@ -94,11 +97,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - bool: It enables or disables the ERO/SERO specific configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def HeadIpStart(self):
@@ -108,7 +112,7 @@ class TunnelHeadToLeaf(Base):
         -------
         - str: It is the tunnel head IP address for which the ERO/SERO is being configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['HeadIpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["HeadIpStart"])
 
     @property
     def IsAppendTunnelLeaf(self):
@@ -118,11 +122,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - bool: If enabled, this appends the tunnel leaf at the end of the ERO/SERO list in the packet.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsAppendTunnelLeaf'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsAppendTunnelLeaf"])
+
     @IsAppendTunnelLeaf.setter
     def IsAppendTunnelLeaf(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsAppendTunnelLeaf'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsAppendTunnelLeaf"], value)
 
     @property
     def IsPrependDut(self):
@@ -132,11 +137,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - bool: Enables prepend DUT to the ERO/SERO list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsPrependDut'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsPrependDut"])
+
     @IsPrependDut.setter
     def IsPrependDut(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsPrependDut'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsPrependDut"], value)
 
     @property
     def IsSendingAsEro(self):
@@ -146,11 +152,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - bool: If enabled, the entire configuration would go as ERO.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsSendingAsEro'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsSendingAsEro"])
+
     @IsSendingAsEro.setter
     def IsSendingAsEro(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsSendingAsEro'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsSendingAsEro"], value)
 
     @property
     def IsSendingAsSero(self):
@@ -160,11 +167,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - bool: If enabled, the entire configuration would go as SERO.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsSendingAsSero'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsSendingAsSero"])
+
     @IsSendingAsSero.setter
     def IsSendingAsSero(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IsSendingAsSero'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IsSendingAsSero"], value)
 
     @property
     def SubObjectList(self):
@@ -174,11 +182,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - str: The sub-object list for this ERO/SERO can be configured by typing it as a string. Input String: = NULL| [<Subobject> ;< Subobject list>] Subobject: = <AS :< 1-65535> :< S|L>| <IP :< IP Addr>/<1-32> :< S|L> IP Addr: = <0-255>.<0-255>.<0-255>.<0-255> NULL: =Example. IP:2.2.2.2/24:S;AS:100:L;IP:33.33.33.33/32:S
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SubObjectList'])
+        return self._get_attribute(self._SDM_ATT_MAP["SubObjectList"])
+
     @SubObjectList.setter
     def SubObjectList(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SubObjectList'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SubObjectList"], value)
 
     @property
     def TunnelLeafCount(self):
@@ -188,11 +197,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - number: The count of tunnel leaf.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelLeafCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelLeafCount"])
+
     @TunnelLeafCount.setter
     def TunnelLeafCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelLeafCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelLeafCount"], value)
 
     @property
     def TunnelLeafHopType(self):
@@ -202,11 +212,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - str(strict | loose): It is enabled if Append Leaf is enabled. Based on the input, corresponding L bit in the packet is set.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelLeafHopType'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelLeafHopType"])
+
     @TunnelLeafHopType.setter
     def TunnelLeafHopType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelLeafHopType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelLeafHopType"], value)
 
     @property
     def TunnelLeafIpStart(self):
@@ -216,11 +227,12 @@ class TunnelHeadToLeaf(Base):
         -------
         - str: It contains the start IP address of leaf for which the ERO/SERO will be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelLeafIpStart'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelLeafIpStart"])
+
     @TunnelLeafIpStart.setter
     def TunnelLeafIpStart(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelLeafIpStart'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelLeafIpStart"], value)
 
     @property
     def TunnelLeafPrefixLength(self):
@@ -230,13 +242,28 @@ class TunnelHeadToLeaf(Base):
         -------
         - number: Prefix length of tunnel leaf.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TunnelLeafPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["TunnelLeafPrefixLength"])
+
     @TunnelLeafPrefixLength.setter
     def TunnelLeafPrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TunnelLeafPrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TunnelLeafPrefixLength"], value)
 
-    def update(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
+    def update(
+        self,
+        DutHopType=None,
+        DutPrefixLength=None,
+        Enabled=None,
+        IsAppendTunnelLeaf=None,
+        IsPrependDut=None,
+        IsSendingAsEro=None,
+        IsSendingAsSero=None,
+        SubObjectList=None,
+        TunnelLeafCount=None,
+        TunnelLeafHopType=None,
+        TunnelLeafIpStart=None,
+        TunnelLeafPrefixLength=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, str, int, str, str, int) -> TunnelHeadToLeaf
         """Updates tunnelHeadToLeaf resource on the server.
 
@@ -261,7 +288,21 @@ class TunnelHeadToLeaf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, DutHopType=None, DutPrefixLength=None, Enabled=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
+    def add(
+        self,
+        DutHopType=None,
+        DutPrefixLength=None,
+        Enabled=None,
+        IsAppendTunnelLeaf=None,
+        IsPrependDut=None,
+        IsSendingAsEro=None,
+        IsSendingAsSero=None,
+        SubObjectList=None,
+        TunnelLeafCount=None,
+        TunnelLeafHopType=None,
+        TunnelLeafIpStart=None,
+        TunnelLeafPrefixLength=None,
+    ):
         # type: (str, int, bool, bool, bool, bool, bool, str, int, str, str, int) -> TunnelHeadToLeaf
         """Adds a new tunnelHeadToLeaf resource on the server and adds it to the container.
 
@@ -300,7 +341,22 @@ class TunnelHeadToLeaf(Base):
         """
         self._delete()
 
-    def find(self, DutHopType=None, DutPrefixLength=None, Enabled=None, HeadIpStart=None, IsAppendTunnelLeaf=None, IsPrependDut=None, IsSendingAsEro=None, IsSendingAsSero=None, SubObjectList=None, TunnelLeafCount=None, TunnelLeafHopType=None, TunnelLeafIpStart=None, TunnelLeafPrefixLength=None):
+    def find(
+        self,
+        DutHopType=None,
+        DutPrefixLength=None,
+        Enabled=None,
+        HeadIpStart=None,
+        IsAppendTunnelLeaf=None,
+        IsPrependDut=None,
+        IsSendingAsEro=None,
+        IsSendingAsSero=None,
+        SubObjectList=None,
+        TunnelLeafCount=None,
+        TunnelLeafHopType=None,
+        TunnelLeafIpStart=None,
+        TunnelLeafPrefixLength=None,
+    ):
         # type: (str, int, bool, str, bool, bool, bool, bool, str, int, str, str, int) -> TunnelHeadToLeaf
         """Finds and retrieves tunnelHeadToLeaf resources from the server.
 

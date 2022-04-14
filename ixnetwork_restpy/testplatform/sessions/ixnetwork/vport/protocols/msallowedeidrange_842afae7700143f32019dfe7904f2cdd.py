@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,16 @@ class MsAllowedEidRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'msAllowedEidRange'
+    _SDM_NAME = "msAllowedEidRange"
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'Family': 'family',
-        'PrefixLength': 'prefixLength',
+        "Address": "address",
+        "Count": "count",
+        "Enabled": "enabled",
+        "Family": "family",
+        "PrefixLength": "prefixLength",
     }
     _SDM_ENUM_MAP = {
-        'family': ['ipv4', 'ipv6'],
+        "family": ["ipv4", "ipv6"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -57,11 +58,12 @@ class MsAllowedEidRange(Base):
         -------
         - str: It gives details about the address
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Address'])
+        return self._get_attribute(self._SDM_ATT_MAP["Address"])
+
     @Address.setter
     def Address(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Address'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Address"], value)
 
     @property
     def Count(self):
@@ -71,11 +73,12 @@ class MsAllowedEidRange(Base):
         -------
         - number: it gives details about the count
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -85,11 +88,12 @@ class MsAllowedEidRange(Base):
         -------
         - bool: If true, it enables the protocol
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def Family(self):
@@ -99,11 +103,12 @@ class MsAllowedEidRange(Base):
         -------
         - str(ipv4 | ipv6): It details about the ip family
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Family'])
+        return self._get_attribute(self._SDM_ATT_MAP["Family"])
+
     @Family.setter
     def Family(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Family'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Family"], value)
 
     @property
     def PrefixLength(self):
@@ -113,13 +118,16 @@ class MsAllowedEidRange(Base):
         -------
         - number: It gives details about the prefix length
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
+
     @PrefixLength.setter
     def PrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLength"], value)
 
-    def update(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
+    def update(
+        self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None
+    ):
         # type: (str, int, bool, str, int) -> MsAllowedEidRange
         """Updates msAllowedEidRange resource on the server.
 
@@ -137,7 +145,9 @@ class MsAllowedEidRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
+    def add(
+        self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None
+    ):
         # type: (str, int, bool, str, int) -> MsAllowedEidRange
         """Adds a new msAllowedEidRange resource on the server and adds it to the container.
 
@@ -169,7 +179,9 @@ class MsAllowedEidRange(Base):
         """
         self._delete()
 
-    def find(self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None):
+    def find(
+        self, Address=None, Count=None, Enabled=None, Family=None, PrefixLength=None
+    ):
         # type: (str, int, bool, str, int) -> MsAllowedEidRange
         """Finds and retrieves msAllowedEidRange resources from the server.
 

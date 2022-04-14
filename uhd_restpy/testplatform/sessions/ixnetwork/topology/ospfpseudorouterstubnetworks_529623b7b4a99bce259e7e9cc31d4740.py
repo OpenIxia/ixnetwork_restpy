@@ -254,7 +254,7 @@ class OspfPseudoRouterStubNetworks(Base):
 
     def add(self, Name=None):
         # type: (str) -> OspfPseudoRouterStubNetworks
-        """Adds a new ospfPseudoRouterStubNetworks resource on the json, only valid with config assistant
+        """Adds a new ospfPseudoRouterStubNetworks resource on the json, only valid with batch add utility
 
         Args
         ----

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,20 +34,19 @@ class Tables(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'tables'
+    _SDM_NAME = "tables"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ChannelIndex': 'channelIndex',
-        'ChannelRemoteIp': 'channelRemoteIp',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfFlowSet': 'numberOfFlowSet',
-        'TableId': 'tableId',
-        'TableName': 'tableName',
+        "Active": "active",
+        "ChannelIndex": "channelIndex",
+        "ChannelRemoteIp": "channelRemoteIp",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "Name": "name",
+        "NumberOfFlowSet": "numberOfFlowSet",
+        "TableId": "tableId",
+        "TableName": "tableName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Tables, self).__init__(parent, list_op)
@@ -62,10 +62,13 @@ class Tables(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowset_4668cc7c02c6c6c6cb9975c2ed2dbda5 import FlowSet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowset_4668cc7c02c6c6c6cb9975c2ed2dbda5 import (
+            FlowSet,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('FlowSet', None) is not None:
-                return self._properties.get('FlowSet')
+            if self._properties.get("FlowSet", None) is not None:
+                return self._properties.get("FlowSet")
         return FlowSet(self)
 
     @property
@@ -77,7 +80,8 @@ class Tables(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def ChannelIndex(self):
@@ -87,7 +91,7 @@ class Tables(Base):
         -------
         - list(str): Parent Channel Index
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelIndex'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelIndex"])
 
     @property
     def ChannelRemoteIp(self):
@@ -97,7 +101,7 @@ class Tables(Base):
         -------
         - list(str): The remote IP address of the OF Channel. This field is auto-populated and cannot be changed.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ChannelRemoteIp'])
+        return self._get_attribute(self._SDM_ATT_MAP["ChannelRemoteIp"])
 
     @property
     def Count(self):
@@ -107,7 +111,7 @@ class Tables(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -117,7 +121,7 @@ class Tables(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def Name(self):
@@ -127,11 +131,12 @@ class Tables(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def NumberOfFlowSet(self):
@@ -141,11 +146,12 @@ class Tables(Base):
         -------
         - number: Specify the number of Flow Set for this controller configuration.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfFlowSet'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfFlowSet"])
+
     @NumberOfFlowSet.setter
     def NumberOfFlowSet(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfFlowSet'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfFlowSet"], value)
 
     @property
     def TableId(self):
@@ -156,7 +162,8 @@ class Tables(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the controller table identifier. Lower numbered tables are consulted first.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableId']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TableId"]))
 
     @property
     def TableName(self):
@@ -167,7 +174,8 @@ class Tables(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the name of the controller table.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TableName"]))
 
     def update(self, Name=None, NumberOfFlowSet=None):
         # type: (str, int) -> Tables
@@ -189,7 +197,7 @@ class Tables(Base):
 
     def add(self, Name=None, NumberOfFlowSet=None):
         # type: (str, int) -> Tables
-        """Adds a new tables resource on the json, only valid with config assistant
+        """Adds a new tables resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -206,7 +214,15 @@ class Tables(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ChannelIndex=None, ChannelRemoteIp=None, Count=None, DescriptiveName=None, Name=None, NumberOfFlowSet=None):
+    def find(
+        self,
+        ChannelIndex=None,
+        ChannelRemoteIp=None,
+        Count=None,
+        DescriptiveName=None,
+        Name=None,
+        NumberOfFlowSet=None,
+    ):
         # type: (List[str], List[str], int, str, str, int) -> Tables
         """Finds and retrieves tables resources from the server.
 

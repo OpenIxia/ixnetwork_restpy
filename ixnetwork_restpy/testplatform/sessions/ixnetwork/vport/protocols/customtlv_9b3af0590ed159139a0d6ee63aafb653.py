@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,18 +35,17 @@ class CustomTlv(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'customTlv'
+    _SDM_NAME = "customTlv"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IncludeInHello': 'includeInHello',
-        'IncludeInLsp': 'includeInLsp',
-        'IncludeInNetworkRange': 'includeInNetworkRange',
-        'Length': 'length',
-        'Type': 'type',
-        'Value': 'value',
+        "Enabled": "enabled",
+        "IncludeInHello": "includeInHello",
+        "IncludeInLsp": "includeInLsp",
+        "IncludeInNetworkRange": "includeInNetworkRange",
+        "Length": "length",
+        "Type": "type",
+        "Value": "value",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CustomTlv, self).__init__(parent, list_op)
@@ -58,11 +58,12 @@ class CustomTlv(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IncludeInHello(self):
@@ -72,11 +73,12 @@ class CustomTlv(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInHello'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInHello"])
+
     @IncludeInHello.setter
     def IncludeInHello(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInHello'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInHello"], value)
 
     @property
     def IncludeInLsp(self):
@@ -86,11 +88,12 @@ class CustomTlv(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInLsp'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInLsp"])
+
     @IncludeInLsp.setter
     def IncludeInLsp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInLsp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInLsp"], value)
 
     @property
     def IncludeInNetworkRange(self):
@@ -100,11 +103,12 @@ class CustomTlv(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeInNetworkRange'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeInNetworkRange"])
+
     @IncludeInNetworkRange.setter
     def IncludeInNetworkRange(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeInNetworkRange'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeInNetworkRange"], value)
 
     @property
     def Length(self):
@@ -114,11 +118,12 @@ class CustomTlv(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Length'])
+        return self._get_attribute(self._SDM_ATT_MAP["Length"])
+
     @Length.setter
     def Length(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Length'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Length"], value)
 
     @property
     def Type(self):
@@ -128,11 +133,12 @@ class CustomTlv(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     @property
     def Value(self):
@@ -142,13 +148,23 @@ class CustomTlv(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Value'])
+        return self._get_attribute(self._SDM_ATT_MAP["Value"])
+
     @Value.setter
     def Value(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Value"], value)
 
-    def update(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
+    def update(
+        self,
+        Enabled=None,
+        IncludeInHello=None,
+        IncludeInLsp=None,
+        IncludeInNetworkRange=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, str) -> CustomTlv
         """Updates customTlv resource on the server.
 
@@ -168,7 +184,16 @@ class CustomTlv(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
+    def add(
+        self,
+        Enabled=None,
+        IncludeInHello=None,
+        IncludeInLsp=None,
+        IncludeInNetworkRange=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, str) -> CustomTlv
         """Adds a new customTlv resource on the server and adds it to the container.
 
@@ -202,7 +227,16 @@ class CustomTlv(Base):
         """
         self._delete()
 
-    def find(self, Enabled=None, IncludeInHello=None, IncludeInLsp=None, IncludeInNetworkRange=None, Length=None, Type=None, Value=None):
+    def find(
+        self,
+        Enabled=None,
+        IncludeInHello=None,
+        IncludeInLsp=None,
+        IncludeInNetworkRange=None,
+        Length=None,
+        Type=None,
+        Value=None,
+    ):
         # type: (bool, bool, bool, bool, int, int, str) -> CustomTlv
         """Finds and retrieves customTlv resources from the server.
 

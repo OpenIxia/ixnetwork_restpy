@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,17 +35,17 @@ class Band(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'band'
+    _SDM_NAME = "band"
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'Description': 'description',
-        'Experimenter': 'experimenter',
-        'PrecedenceLevel': 'precedenceLevel',
-        'Rate': 'rate',
-        'Type': 'type',
+        "BurstSize": "burstSize",
+        "Description": "description",
+        "Experimenter": "experimenter",
+        "PrecedenceLevel": "precedenceLevel",
+        "Rate": "rate",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['drop', 'dscpRemark', 'experimenter'],
+        "type": ["drop", "dscpRemark", "experimenter"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -58,11 +59,12 @@ class Band(Base):
         -------
         - number: This indicates the length of the packet or byte burst to consider for applying the meter. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
+        return self._get_attribute(self._SDM_ATT_MAP["BurstSize"])
+
     @BurstSize.setter
     def BurstSize(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
+        self._set_attribute(self._SDM_ATT_MAP["BurstSize"], value)
 
     @property
     def Description(self):
@@ -72,11 +74,12 @@ class Band(Base):
         -------
         - str: A description of the band.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Description'])
+        return self._get_attribute(self._SDM_ATT_MAP["Description"])
+
     @Description.setter
     def Description(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Description"], value)
 
     @property
     def Experimenter(self):
@@ -86,11 +89,12 @@ class Band(Base):
         -------
         - number: The experimenter ID. The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
+        return self._get_attribute(self._SDM_ATT_MAP["Experimenter"])
+
     @Experimenter.setter
     def Experimenter(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Experimenter"], value)
 
     @property
     def PrecedenceLevel(self):
@@ -100,11 +104,12 @@ class Band(Base):
         -------
         - number: This indicates the amount by which the drop precedence of the packet should be increased if the band is exceeded. The default value is 0.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrecedenceLevel'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrecedenceLevel"])
+
     @PrecedenceLevel.setter
     def PrecedenceLevel(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrecedenceLevel'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrecedenceLevel"], value)
 
     @property
     def Rate(self):
@@ -114,11 +119,12 @@ class Band(Base):
         -------
         - number: This indicates the rate value above which the corresponding band may apply to packets The default value is 1.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
+        return self._get_attribute(self._SDM_ATT_MAP["Rate"])
+
     @Rate.setter
     def Rate(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Rate"], value)
 
     @property
     def Type(self):
@@ -128,13 +134,22 @@ class Band(Base):
         -------
         - str(drop | dscpRemark | experimenter): Select the band type from the list.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
-    def update(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+    def update(
+        self,
+        BurstSize=None,
+        Description=None,
+        Experimenter=None,
+        PrecedenceLevel=None,
+        Rate=None,
+        Type=None,
+    ):
         # type: (int, str, int, int, int, str) -> Band
         """Updates band resource on the server.
 
@@ -153,7 +168,15 @@ class Band(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+    def add(
+        self,
+        BurstSize=None,
+        Description=None,
+        Experimenter=None,
+        PrecedenceLevel=None,
+        Rate=None,
+        Type=None,
+    ):
         # type: (int, str, int, int, int, str) -> Band
         """Adds a new band resource on the server and adds it to the container.
 
@@ -186,7 +209,15 @@ class Band(Base):
         """
         self._delete()
 
-    def find(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+    def find(
+        self,
+        BurstSize=None,
+        Description=None,
+        Experimenter=None,
+        PrecedenceLevel=None,
+        Rate=None,
+        Type=None,
+    ):
         # type: (int, str, int, int, int, str) -> Band
         """Finds and retrieves band resources from the server.
 

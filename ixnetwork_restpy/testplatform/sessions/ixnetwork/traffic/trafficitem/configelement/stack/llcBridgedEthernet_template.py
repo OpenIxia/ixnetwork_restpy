@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class LlcBridgedEthernet(Base):
     __slots__ = ()
-    _SDM_NAME = 'llcBridgedEthernet'
+    _SDM_NAME = "llcBridgedEthernet"
     _SDM_ATT_MAP = {
-        'HeaderLlcHeader': 'llcBridgedEthernet.header.llcHeader-1',
-        'HeaderOui': 'llcBridgedEthernet.header.oui-2',
-        'HeaderPid': 'llcBridgedEthernet.header.pid-3',
-        'HeaderPad': 'llcBridgedEthernet.header.pad-4',
+        "HeaderLlcHeader": "llcBridgedEthernet.header.llcHeader-1",
+        "HeaderOui": "llcBridgedEthernet.header.oui-2",
+        "HeaderPid": "llcBridgedEthernet.header.pid-3",
+        "HeaderPad": "llcBridgedEthernet.header.pad-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,10 @@ class LlcBridgedEthernet(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderLlcHeader']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderLlcHeader"])
+        )
 
     @property
     def HeaderOui(self):
@@ -33,7 +36,8 @@ class LlcBridgedEthernet(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderOui']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderOui"]))
 
     @property
     def HeaderPid(self):
@@ -44,7 +48,8 @@ class LlcBridgedEthernet(Base):
         Available enum values: With FCS, 1, Without FCS, 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderPid"]))
 
     @property
     def HeaderPad(self):
@@ -54,7 +59,8 @@ class LlcBridgedEthernet(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderPad']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderPad"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class MacRanges(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'macRanges'
+    _SDM_NAME = "macRanges"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Enabled': 'enabled',
-        'MacAddress': 'macAddress',
-        'Step': 'step',
-        'TrafficGroupId': 'trafficGroupId',
+        "Count": "count",
+        "Enabled": "enabled",
+        "MacAddress": "macAddress",
+        "Step": "step",
+        "TrafficGroupId": "trafficGroupId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(MacRanges, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class MacRanges(Base):
         -------
         - number: The number of times to increment in this MAC range, starting with the address set in macAddress.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Enabled(self):
@@ -70,11 +71,12 @@ class MacRanges(Base):
         -------
         - bool: If true, the MAC range is enabled.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def MacAddress(self):
@@ -84,11 +86,12 @@ class MacRanges(Base):
         -------
         - str: The MAC address of the first entry in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["MacAddress"])
+
     @MacAddress.setter
     def MacAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MacAddress"], value)
 
     @property
     def Step(self):
@@ -98,11 +101,12 @@ class MacRanges(Base):
         -------
         - str: The amount to increment each MAC address in the range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Step'])
+        return self._get_attribute(self._SDM_ATT_MAP["Step"])
+
     @Step.setter
     def Step(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Step"], value)
 
     @property
     def TrafficGroupId(self):
@@ -112,13 +116,16 @@ class MacRanges(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
+
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["TrafficGroupId"], value)
 
-    def update(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+    def update(
+        self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None
+    ):
         # type: (int, bool, str, str, str) -> MacRanges
         """Updates macRanges resource on the server.
 
@@ -136,7 +143,9 @@ class MacRanges(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+    def add(
+        self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None
+    ):
         # type: (int, bool, str, str, str) -> MacRanges
         """Adds a new macRanges resource on the server and adds it to the container.
 
@@ -168,7 +177,9 @@ class MacRanges(Base):
         """
         self._delete()
 
-    def find(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+    def find(
+        self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None
+    ):
         # type: (int, bool, str, str, str) -> MacRanges
         """Finds and retrieves macRanges resources from the server.
 

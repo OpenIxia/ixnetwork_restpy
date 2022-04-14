@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,23 +35,23 @@ class DceNodeMacGroups(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dceNodeMacGroups'
+    _SDM_NAME = "dceNodeMacGroups"
     _SDM_ATT_MAP = {
-        'IncludeMacGroups': 'includeMacGroups',
-        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
-        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
-        'MulticastMacCount': 'multicastMacCount',
-        'MulticastMacStep': 'multicastMacStep',
-        'NoOfUnicastScrMacsPerMulicastMac': 'noOfUnicastScrMacsPerMulicastMac',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'StartMulticastMac': 'startMulticastMac',
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
-        'VlanId': 'vlanId',
+        "IncludeMacGroups": "includeMacGroups",
+        "InterGroupUnicastMacIncrement": "interGroupUnicastMacIncrement",
+        "IntraGroupUnicastMacIncrement": "intraGroupUnicastMacIncrement",
+        "MulticastAddressNodeStep": "multicastAddressNodeStep",
+        "MulticastMacCount": "multicastMacCount",
+        "MulticastMacStep": "multicastMacStep",
+        "NoOfUnicastScrMacsPerMulicastMac": "noOfUnicastScrMacsPerMulicastMac",
+        "SourceGroupMapping": "sourceGroupMapping",
+        "StartMulticastMac": "startMulticastMac",
+        "StartUnicastSourceMac": "startUnicastSourceMac",
+        "UnicastAddressNodeStep": "unicastAddressNodeStep",
+        "VlanId": "vlanId",
     }
     _SDM_ENUM_MAP = {
-        'sourceGroupMapping': ['fullyMeshed', 'oneToOne', 'manualMapping'],
+        "sourceGroupMapping": ["fullyMeshed", "oneToOne", "manualMapping"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -64,11 +65,12 @@ class DceNodeMacGroups(Base):
         -------
         - bool: If true, includes MAC groups for this Network Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeMacGroups'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeMacGroups"])
+
     @IncludeMacGroups.setter
     def IncludeMacGroups(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeMacGroups'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeMacGroups"], value)
 
     @property
     def InterGroupUnicastMacIncrement(self):
@@ -78,11 +80,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The MAC address format of the Unicast MAC between one or more node groups.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['InterGroupUnicastMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["InterGroupUnicastMacIncrement"])
+
     @InterGroupUnicastMacIncrement.setter
     def InterGroupUnicastMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['InterGroupUnicastMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["InterGroupUnicastMacIncrement"], value)
 
     @property
     def IntraGroupUnicastMacIncrement(self):
@@ -92,11 +95,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The MAC address format of the Unicast MAC within a node group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"])
+
     @IntraGroupUnicastMacIncrement.setter
     def IntraGroupUnicastMacIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IntraGroupUnicastMacIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IntraGroupUnicastMacIncrement"], value)
 
     @property
     def MulticastAddressNodeStep(self):
@@ -106,11 +110,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The Multicast MAC address that configures the increment across the Network Range simulated RBridges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"])
+
     @MulticastAddressNodeStep.setter
     def MulticastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastAddressNodeStep"], value)
 
     @property
     def MulticastMacCount(self):
@@ -120,11 +125,12 @@ class DceNodeMacGroups(Base):
         -------
         - number: The number of Multicast MAC addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacCount"])
+
     @MulticastMacCount.setter
     def MulticastMacCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacCount"], value)
 
     @property
     def MulticastMacStep(self):
@@ -134,11 +140,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The incremental value of Multicast MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MulticastMacStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastMacStep"])
+
     @MulticastMacStep.setter
     def MulticastMacStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MulticastMacStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MulticastMacStep"], value)
 
     @property
     def NoOfUnicastScrMacsPerMulicastMac(self):
@@ -148,11 +155,16 @@ class DceNodeMacGroups(Base):
         -------
         - number: The number of Unicast Source for each Multicast MAC address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoOfUnicastScrMacsPerMulicastMac'])
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NoOfUnicastScrMacsPerMulicastMac"]
+        )
+
     @NoOfUnicastScrMacsPerMulicastMac.setter
     def NoOfUnicastScrMacsPerMulicastMac(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoOfUnicastScrMacsPerMulicastMac'], value)
+        self._set_attribute(
+            self._SDM_ATT_MAP["NoOfUnicastScrMacsPerMulicastMac"], value
+        )
 
     @property
     def SourceGroupMapping(self):
@@ -162,11 +174,12 @@ class DceNodeMacGroups(Base):
         -------
         - str(fullyMeshed | oneToOne | manualMapping): The Source Group mapping type.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
+        return self._get_attribute(self._SDM_ATT_MAP["SourceGroupMapping"])
+
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SourceGroupMapping"], value)
 
     @property
     def StartMulticastMac(self):
@@ -176,11 +189,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The MAC address format of the starting Multicast MAC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartMulticastMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartMulticastMac"])
+
     @StartMulticastMac.setter
     def StartMulticastMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartMulticastMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartMulticastMac"], value)
 
     @property
     def StartUnicastSourceMac(self):
@@ -190,11 +204,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The MAC address format of the starting Unicast Source MAC.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'])
+        return self._get_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"])
+
     @StartUnicastSourceMac.setter
     def StartUnicastSourceMac(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StartUnicastSourceMac'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StartUnicastSourceMac"], value)
 
     @property
     def UnicastAddressNodeStep(self):
@@ -204,11 +219,12 @@ class DceNodeMacGroups(Base):
         -------
         - str: The Unicast MAC address that configures the increment across the Network Range simulated RBridges.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"])
+
     @UnicastAddressNodeStep.setter
     def UnicastAddressNodeStep(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UnicastAddressNodeStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UnicastAddressNodeStep"], value)
 
     @property
     def VlanId(self):
@@ -218,13 +234,28 @@ class DceNodeMacGroups(Base):
         -------
         - number: The VLAN ID of the enabled Multicast MAC Range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanId"])
+
     @VlanId.setter
     def VlanId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanId"], value)
 
-    def update(self, IncludeMacGroups=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NoOfUnicastScrMacsPerMulicastMac=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def update(
+        self,
+        IncludeMacGroups=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NoOfUnicastScrMacsPerMulicastMac=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> DceNodeMacGroups
         """Updates dceNodeMacGroups resource on the server.
 
@@ -249,7 +280,21 @@ class DceNodeMacGroups(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, IncludeMacGroups=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NoOfUnicastScrMacsPerMulicastMac=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def add(
+        self,
+        IncludeMacGroups=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NoOfUnicastScrMacsPerMulicastMac=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> DceNodeMacGroups
         """Adds a new dceNodeMacGroups resource on the server and adds it to the container.
 
@@ -288,7 +333,21 @@ class DceNodeMacGroups(Base):
         """
         self._delete()
 
-    def find(self, IncludeMacGroups=None, InterGroupUnicastMacIncrement=None, IntraGroupUnicastMacIncrement=None, MulticastAddressNodeStep=None, MulticastMacCount=None, MulticastMacStep=None, NoOfUnicastScrMacsPerMulicastMac=None, SourceGroupMapping=None, StartMulticastMac=None, StartUnicastSourceMac=None, UnicastAddressNodeStep=None, VlanId=None):
+    def find(
+        self,
+        IncludeMacGroups=None,
+        InterGroupUnicastMacIncrement=None,
+        IntraGroupUnicastMacIncrement=None,
+        MulticastAddressNodeStep=None,
+        MulticastMacCount=None,
+        MulticastMacStep=None,
+        NoOfUnicastScrMacsPerMulicastMac=None,
+        SourceGroupMapping=None,
+        StartMulticastMac=None,
+        StartUnicastSourceMac=None,
+        UnicastAddressNodeStep=None,
+        VlanId=None,
+    ):
         # type: (bool, str, str, str, int, str, int, str, str, str, str, int) -> DceNodeMacGroups
         """Finds and retrieves dceNodeMacGroups resources from the server.
 

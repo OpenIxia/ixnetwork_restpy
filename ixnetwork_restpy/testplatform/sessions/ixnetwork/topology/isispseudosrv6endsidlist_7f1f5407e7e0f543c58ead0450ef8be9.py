@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,29 +33,28 @@ class IsisPseudoSRv6EndSIDList(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'isisPseudoSRv6EndSIDList'
+    _SDM_NAME = "isisPseudoSRv6EndSIDList"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'ArgumentLength': 'argumentLength',
-        'CFlag': 'cFlag',
-        'Count': 'count',
-        'CustomEndPointFunction': 'customEndPointFunction',
-        'CustomSubTlv': 'customSubTlv',
-        'DescriptiveName': 'descriptiveName',
-        'EndPointFunction': 'endPointFunction',
-        'Flags': 'flags',
-        'FunctionLength': 'functionLength',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorName': 'locatorName',
-        'LocatorNodeLength': 'locatorNodeLength',
-        'Name': 'name',
-        'Sid': 'sid',
-        'SidName': 'sidName',
+        "Active": "active",
+        "AdvertiseCustomSubTLV": "advertiseCustomSubTLV",
+        "ArgumentLength": "argumentLength",
+        "CFlag": "cFlag",
+        "Count": "count",
+        "CustomEndPointFunction": "customEndPointFunction",
+        "CustomSubTlv": "customSubTlv",
+        "DescriptiveName": "descriptiveName",
+        "EndPointFunction": "endPointFunction",
+        "Flags": "flags",
+        "FunctionLength": "functionLength",
+        "IncludeSRv6SIDStructureSubSubTlv": "includeSRv6SIDStructureSubSubTlv",
+        "LocatorBlockLength": "locatorBlockLength",
+        "LocatorName": "locatorName",
+        "LocatorNodeLength": "locatorNodeLength",
+        "Name": "name",
+        "Sid": "sid",
+        "SidName": "sidName",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(IsisPseudoSRv6EndSIDList, self).__init__(parent, list_op)
@@ -68,7 +68,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def AdvertiseCustomSubTLV(self):
@@ -79,7 +80,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Custom Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseCustomSubTLV']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseCustomSubTLV"])
+        )
 
     @property
     def ArgumentLength(self):
@@ -90,7 +94,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Argument Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ArgumentLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLength"])
+        )
 
     @property
     def CFlag(self):
@@ -101,7 +108,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, it indicates that this Sid support compression.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CFlag']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CFlag"]))
 
     @property
     def Count(self):
@@ -111,7 +119,7 @@ class IsisPseudoSRv6EndSIDList(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def CustomEndPointFunction(self):
@@ -122,7 +130,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom End-Point Function
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomEndPointFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomEndPointFunction"])
+        )
 
     @property
     def CustomSubTlv(self):
@@ -133,7 +144,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Custom Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CustomSubTlv']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CustomSubTlv"]))
 
     @property
     def DescriptiveName(self):
@@ -143,7 +155,7 @@ class IsisPseudoSRv6EndSIDList(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EndPointFunction(self):
@@ -154,7 +166,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): End-Point Function
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EndPointFunction']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EndPointFunction"])
+        )
 
     @property
     def Flags(self):
@@ -165,7 +180,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Flags
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Flags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Flags"]))
 
     @property
     def FunctionLength(self):
@@ -176,7 +192,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FunctionLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLength"])
+        )
 
     @property
     def IncludeSRv6SIDStructureSubSubTlv(self):
@@ -187,7 +206,11 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Include SRv6 SID Structure Sub-Sub-TLV
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSRv6SIDStructureSubSubTlv']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncludeSRv6SIDStructureSubSubTlv"]),
+        )
 
     @property
     def LocatorBlockLength(self):
@@ -198,7 +221,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorBlockLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlockLength"])
+        )
 
     @property
     def LocatorName(self):
@@ -208,7 +234,7 @@ class IsisPseudoSRv6EndSIDList(Base):
         -------
         - list(str): Locator Name
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocatorName'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocatorName"])
 
     @property
     def LocatorNodeLength(self):
@@ -219,7 +245,10 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node Length in Bits
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorNodeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocatorNodeLength"])
+        )
 
     @property
     def Name(self):
@@ -229,11 +258,12 @@ class IsisPseudoSRv6EndSIDList(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def Sid(self):
@@ -244,7 +274,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Sid']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sid"]))
 
     @property
     def SidName(self):
@@ -255,7 +286,8 @@ class IsisPseudoSRv6EndSIDList(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID Name
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidName']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SidName"]))
 
     def update(self, Name=None):
         # type: (str) -> IsisPseudoSRv6EndSIDList
@@ -332,10 +364,12 @@ class IsisPseudoSRv6EndSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -352,10 +386,12 @@ class IsisPseudoSRv6EndSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -372,12 +408,31 @@ class IsisPseudoSRv6EndSIDList(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseCustomSubTLV=None, ArgumentLength=None, CFlag=None, CustomEndPointFunction=None, CustomSubTlv=None, EndPointFunction=None, Flags=None, FunctionLength=None, IncludeSRv6SIDStructureSubSubTlv=None, LocatorBlockLength=None, LocatorNodeLength=None, Sid=None, SidName=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        AdvertiseCustomSubTLV=None,
+        ArgumentLength=None,
+        CFlag=None,
+        CustomEndPointFunction=None,
+        CustomSubTlv=None,
+        EndPointFunction=None,
+        Flags=None,
+        FunctionLength=None,
+        IncludeSRv6SIDStructureSubSubTlv=None,
+        LocatorBlockLength=None,
+        LocatorNodeLength=None,
+        Sid=None,
+        SidName=None,
+    ):
         """Base class infrastructure that gets a list of isisPseudoSRv6EndSIDList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

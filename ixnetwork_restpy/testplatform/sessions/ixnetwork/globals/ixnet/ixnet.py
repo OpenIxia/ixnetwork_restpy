@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,13 +33,12 @@ class Ixnet(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ixnet'
+    _SDM_NAME = "ixnet"
     _SDM_ATT_MAP = {
-        'ConnectedClients': 'connectedClients',
-        'IsActive': 'isActive',
+        "ConnectedClients": "connectedClients",
+        "IsActive": "isActive",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ixnet, self).__init__(parent, list_op)
@@ -51,7 +51,7 @@ class Ixnet(Base):
         -------
         - list(str): Returns the remote address and remote port for each of the currently connected ixNet clients.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedClients'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedClients"])
 
     @property
     def IsActive(self):
@@ -61,7 +61,7 @@ class Ixnet(Base):
         -------
         - bool: Returns true if any remote clients are connected, false if no remote clients are connected.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IsActive'])
+        return self._get_attribute(self._SDM_ATT_MAP["IsActive"])
 
     def find(self, ConnectedClients=None, IsActive=None):
         # type: (List[str], bool) -> Ixnet

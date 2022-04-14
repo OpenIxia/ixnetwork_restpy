@@ -4,24 +4,24 @@ from ixnetwork_restpy.files import Files
 
 class Trill(Base):
     __slots__ = ()
-    _SDM_NAME = 'trill'
+    _SDM_NAME = "trill"
     _SDM_ATT_MAP = {
-        'Ver': 'trill.trillHeader.ver-1',
-        'Res': 'trill.trillHeader.res-2',
-        'Multdest': 'trill.trillHeader.multdest-3',
-        'Oplen': 'trill.trillHeader.oplen-4',
-        'Hpcnt': 'trill.trillHeader.hpcnt-5',
-        'Erbridge': 'trill.trillHeader.erbridge-6',
-        'Irbridge': 'trill.trillHeader.irbridge-7',
-        'Critical_sum_bitsChbhs': 'trill.trillHeader.options.trill_extension_header.critical_sum_bits.chbhs-8',
-        'Critical_sum_bitsCites': 'trill.trillHeader.options.trill_extension_header.critical_sum_bits.cites-9',
-        'Critical_sum_bitsCrsvs': 'trill.trillHeader.options.trill_extension_header.critical_sum_bits.crsvs-10',
-        'Trill_extension_headerChbh': 'trill.trillHeader.options.trill_extension_header.chbh-11',
-        'Trill_extension_headerNchbh': 'trill.trillHeader.options.trill_extension_header.nchbh-12',
-        'Trill_extension_headerCrsv': 'trill.trillHeader.options.trill_extension_header.crsv-13',
-        'Trill_extension_headerNcrsv': 'trill.trillHeader.options.trill_extension_header.ncrsv-14',
-        'Trill_extension_headerCite': 'trill.trillHeader.options.trill_extension_header.cite-15',
-        'Trill_extension_headerNcite': 'trill.trillHeader.options.trill_extension_header.ncite-16',
+        "Ver": "trill.trillHeader.ver-1",
+        "Res": "trill.trillHeader.res-2",
+        "Multdest": "trill.trillHeader.multdest-3",
+        "Oplen": "trill.trillHeader.oplen-4",
+        "Hpcnt": "trill.trillHeader.hpcnt-5",
+        "Erbridge": "trill.trillHeader.erbridge-6",
+        "Irbridge": "trill.trillHeader.irbridge-7",
+        "Critical_sum_bitsChbhs": "trill.trillHeader.options.trill_extension_header.critical_sum_bits.chbhs-8",
+        "Critical_sum_bitsCites": "trill.trillHeader.options.trill_extension_header.critical_sum_bits.cites-9",
+        "Critical_sum_bitsCrsvs": "trill.trillHeader.options.trill_extension_header.critical_sum_bits.crsvs-10",
+        "Trill_extension_headerChbh": "trill.trillHeader.options.trill_extension_header.chbh-11",
+        "Trill_extension_headerNchbh": "trill.trillHeader.options.trill_extension_header.nchbh-12",
+        "Trill_extension_headerCrsv": "trill.trillHeader.options.trill_extension_header.crsv-13",
+        "Trill_extension_headerNcrsv": "trill.trillHeader.options.trill_extension_header.ncrsv-14",
+        "Trill_extension_headerCite": "trill.trillHeader.options.trill_extension_header.cite-15",
+        "Trill_extension_headerNcite": "trill.trillHeader.options.trill_extension_header.ncite-16",
     }
 
     def __init__(self, parent, list_op=False):
@@ -35,7 +35,8 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ver']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ver"]))
 
     @property
     def Res(self):
@@ -45,7 +46,8 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Res']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Res"]))
 
     @property
     def Multdest(self):
@@ -56,7 +58,8 @@ class Trill(Base):
         Available enum values: Nickname represents Unicast Mac, 0, Nickname represents Distribution Tree, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Multdest']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Multdest"]))
 
     @property
     def Oplen(self):
@@ -66,7 +69,8 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Oplen']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Oplen"]))
 
     @property
     def Hpcnt(self):
@@ -76,7 +80,8 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Hpcnt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Hpcnt"]))
 
     @property
     def Erbridge(self):
@@ -86,7 +91,8 @@ class Trill(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Erbridge']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Erbridge"]))
 
     @property
     def Irbridge(self):
@@ -96,7 +102,8 @@ class Trill(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Irbridge']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Irbridge"]))
 
     @property
     def Critical_sum_bitsChbhs(self):
@@ -106,7 +113,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Critical_sum_bitsChbhs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Critical_sum_bitsChbhs"])
+        )
 
     @property
     def Critical_sum_bitsCites(self):
@@ -116,7 +126,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Critical_sum_bitsCites']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Critical_sum_bitsCites"])
+        )
 
     @property
     def Critical_sum_bitsCrsvs(self):
@@ -126,7 +139,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Critical_sum_bitsCrsvs']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Critical_sum_bitsCrsvs"])
+        )
 
     @property
     def Trill_extension_headerChbh(self):
@@ -136,7 +152,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerChbh']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerChbh"])
+        )
 
     @property
     def Trill_extension_headerNchbh(self):
@@ -146,7 +165,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerNchbh']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerNchbh"])
+        )
 
     @property
     def Trill_extension_headerCrsv(self):
@@ -156,7 +178,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerCrsv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerCrsv"])
+        )
 
     @property
     def Trill_extension_headerNcrsv(self):
@@ -166,7 +191,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerNcrsv']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerNcrsv"])
+        )
 
     @property
     def Trill_extension_headerCite(self):
@@ -176,7 +204,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerCite']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerCite"])
+        )
 
     @property
     def Trill_extension_headerNcite(self):
@@ -186,7 +217,10 @@ class Trill(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Trill_extension_headerNcite']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Trill_extension_headerNcite"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

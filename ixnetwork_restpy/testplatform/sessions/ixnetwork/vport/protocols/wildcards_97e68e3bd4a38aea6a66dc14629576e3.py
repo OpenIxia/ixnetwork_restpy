@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,16 +33,15 @@ class Wildcards(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'wildcards'
+    _SDM_NAME = "wildcards"
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHasMask': 'experimenterHasMask',
-        'ExperimenterId': 'experimenterId',
+        "ExperimenterData": "experimenterData",
+        "ExperimenterDataLength": "experimenterDataLength",
+        "ExperimenterField": "experimenterField",
+        "ExperimenterHasMask": "experimenterHasMask",
+        "ExperimenterId": "experimenterId",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Wildcards, self).__init__(parent, list_op)
@@ -57,10 +57,13 @@ class Wildcards(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_a9d755a9e53cafc314f8e288acc0e118 import WildcardsFields
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_a9d755a9e53cafc314f8e288acc0e118 import (
+            WildcardsFields,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('WildcardsFields', None) is not None:
-                return self._properties.get('WildcardsFields')
+            if self._properties.get("WildcardsFields", None) is not None:
+                return self._properties.get("WildcardsFields")
         return WildcardsFields(self)._select()
 
     @property
@@ -71,11 +74,12 @@ class Wildcards(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterData"])
+
     @ExperimenterData.setter
     def ExperimenterData(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterData"], value)
 
     @property
     def ExperimenterDataLength(self):
@@ -85,11 +89,12 @@ class Wildcards(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"])
+
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterDataLength"], value)
 
     @property
     def ExperimenterField(self):
@@ -99,11 +104,12 @@ class Wildcards(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterField"])
+
     @ExperimenterField.setter
     def ExperimenterField(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterField"], value)
 
     @property
     def ExperimenterHasMask(self):
@@ -113,11 +119,12 @@ class Wildcards(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterHasMask"])
+
     @ExperimenterHasMask.setter
     def ExperimenterHasMask(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterHasMask"], value)
 
     @property
     def ExperimenterId(self):
@@ -127,13 +134,21 @@ class Wildcards(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ExperimenterId"])
+
     @ExperimenterId.setter
     def ExperimenterId(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ExperimenterId"], value)
 
-    def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+    def update(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHasMask=None,
+        ExperimenterId=None,
+    ):
         # type: (str, int, int, bool, int) -> Wildcards
         """Updates wildcards resource on the server.
 
@@ -151,7 +166,14 @@ class Wildcards(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+    def find(
+        self,
+        ExperimenterData=None,
+        ExperimenterDataLength=None,
+        ExperimenterField=None,
+        ExperimenterHasMask=None,
+        ExperimenterId=None,
+    ):
         # type: (str, int, int, bool, int) -> Wildcards
         """Finds and retrieves wildcards resources from the server.
 

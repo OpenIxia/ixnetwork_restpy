@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class Config(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'config'
+    _SDM_NAME = "config"
     _SDM_ATT_MAP = {
-        'NoFlood': 'noFlood',
-        'NoForward': 'noForward',
-        'NoPacketIn': 'noPacketIn',
-        'NoReceive': 'noReceive',
-        'NoReceiveStp': 'noReceiveStp',
-        'NoStp': 'noStp',
-        'PortDown': 'portDown',
+        "NoFlood": "noFlood",
+        "NoForward": "noForward",
+        "NoPacketIn": "noPacketIn",
+        "NoReceive": "noReceive",
+        "NoReceiveStp": "noReceiveStp",
+        "NoStp": "noStp",
+        "PortDown": "portDown",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Config, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class Config(Base):
         -------
         - bool: Indicates that the port is not included when flooding.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoFlood'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoFlood"])
+
     @NoFlood.setter
     def NoFlood(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoFlood'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoFlood"], value)
 
     @property
     def NoForward(self):
@@ -70,11 +71,12 @@ class Config(Base):
         -------
         - bool: Indicates that the port drop all packets forwarded to it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoForward'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoForward"])
+
     @NoForward.setter
     def NoForward(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoForward'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoForward"], value)
 
     @property
     def NoPacketIn(self):
@@ -84,11 +86,12 @@ class Config(Base):
         -------
         - bool: Indicates that the port does not send packet-in messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoPacketIn'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoPacketIn"])
+
     @NoPacketIn.setter
     def NoPacketIn(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoPacketIn'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoPacketIn"], value)
 
     @property
     def NoReceive(self):
@@ -98,11 +101,12 @@ class Config(Base):
         -------
         - bool: Indicates that the port drops all packets except 802.1D spanning tree packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReceive'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReceive"])
+
     @NoReceive.setter
     def NoReceive(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoReceive'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoReceive"], value)
 
     @property
     def NoReceiveStp(self):
@@ -112,11 +116,12 @@ class Config(Base):
         -------
         - bool: Indicates that the port drops received 802.1D STP packets.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoReceiveStp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoReceiveStp"])
+
     @NoReceiveStp.setter
     def NoReceiveStp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoReceiveStp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoReceiveStp"], value)
 
     @property
     def NoStp(self):
@@ -126,11 +131,12 @@ class Config(Base):
         -------
         - bool: Indicates that 802.1D spanning tree on port is disable.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NoStp'])
+        return self._get_attribute(self._SDM_ATT_MAP["NoStp"])
+
     @NoStp.setter
     def NoStp(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NoStp'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NoStp"], value)
 
     @property
     def PortDown(self):
@@ -140,13 +146,23 @@ class Config(Base):
         -------
         - bool: Indicates that the port is administratively down.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PortDown'])
+        return self._get_attribute(self._SDM_ATT_MAP["PortDown"])
+
     @PortDown.setter
     def PortDown(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PortDown'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PortDown"], value)
 
-    def update(self, NoFlood=None, NoForward=None, NoPacketIn=None, NoReceive=None, NoReceiveStp=None, NoStp=None, PortDown=None):
+    def update(
+        self,
+        NoFlood=None,
+        NoForward=None,
+        NoPacketIn=None,
+        NoReceive=None,
+        NoReceiveStp=None,
+        NoStp=None,
+        PortDown=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool) -> Config
         """Updates config resource on the server.
 
@@ -166,7 +182,16 @@ class Config(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, NoFlood=None, NoForward=None, NoPacketIn=None, NoReceive=None, NoReceiveStp=None, NoStp=None, PortDown=None):
+    def find(
+        self,
+        NoFlood=None,
+        NoForward=None,
+        NoPacketIn=None,
+        NoReceive=None,
+        NoReceiveStp=None,
+        NoStp=None,
+        PortDown=None,
+    ):
         # type: (bool, bool, bool, bool, bool, bool, bool) -> Config
         """Finds and retrieves config resources from the server.
 

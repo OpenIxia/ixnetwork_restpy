@@ -203,7 +203,7 @@ class Field(Base):
 
     def add(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
         # type: (str, str, bool, bool, str, int, str) -> Field
-        """Adds a new field resource on the json, only valid with config assistant
+        """Adds a new field resource on the json, only valid with batch add utility
 
         Args
         ----

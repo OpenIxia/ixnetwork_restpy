@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,23 @@ class FramePayload(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'framePayload'
+    _SDM_NAME = "framePayload"
     _SDM_ATT_MAP = {
-        'CustomPattern': 'customPattern',
-        'CustomRepeat': 'customRepeat',
-        'Type': 'type',
+        "CustomPattern": "customPattern",
+        "CustomRepeat": "customRepeat",
+        "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        'type': ['CJPAT', 'CRPAT', 'custom', 'decrementByte', 'decrementWord', 'incrementByte', 'incrementWord', 'random'],
+        "type": [
+            "CJPAT",
+            "CRPAT",
+            "custom",
+            "decrementByte",
+            "decrementWord",
+            "incrementByte",
+            "incrementWord",
+            "random",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -53,11 +63,12 @@ class FramePayload(Base):
         -------
         - str: If Frame Payload type is Custom, then this attribute specifies a string in hex format.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomPattern'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomPattern"])
+
     @CustomPattern.setter
     def CustomPattern(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomPattern'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomPattern"], value)
 
     @property
     def CustomRepeat(self):
@@ -67,11 +78,12 @@ class FramePayload(Base):
         -------
         - bool: f true, Custom Pattern is repeated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CustomRepeat'])
+        return self._get_attribute(self._SDM_ATT_MAP["CustomRepeat"])
+
     @CustomRepeat.setter
     def CustomRepeat(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CustomRepeat'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CustomRepeat"], value)
 
     @property
     def Type(self):
@@ -81,11 +93,12 @@ class FramePayload(Base):
         -------
         - str(CJPAT | CRPAT | custom | decrementByte | decrementWord | incrementByte | incrementWord | random): The types of Frame Payload.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Type'])
+        return self._get_attribute(self._SDM_ATT_MAP["Type"])
+
     @Type.setter
     def Type(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Type"], value)
 
     def update(self, CustomPattern=None, CustomRepeat=None, Type=None):
         # type: (str, bool, str) -> FramePayload

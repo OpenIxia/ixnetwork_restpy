@@ -4,12 +4,12 @@ from ixnetwork_restpy.files import Files
 
 class Vxlan(Base):
     __slots__ = ()
-    _SDM_NAME = 'vxlan'
+    _SDM_NAME = "vxlan"
     _SDM_ATT_MAP = {
-        'Flags': 'vxlan.header.flags-1',
-        'Reserved': 'vxlan.header.reserved-2',
-        'Vni': 'vxlan.header.vni-3',
-        'Reserved8': 'vxlan.header.reserved8-4',
+        "Flags": "vxlan.header.flags-1",
+        "Reserved": "vxlan.header.reserved-2",
+        "Vni": "vxlan.header.vni-3",
+        "Reserved8": "vxlan.header.reserved8-4",
     }
 
     def __init__(self, parent, list_op=False):
@@ -23,7 +23,8 @@ class Vxlan(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Flags']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Flags"]))
 
     @property
     def Reserved(self):
@@ -33,7 +34,8 @@ class Vxlan(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
     def Vni(self):
@@ -43,7 +45,8 @@ class Vxlan(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vni']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Vni"]))
 
     @property
     def Reserved8(self):
@@ -53,7 +56,8 @@ class Vxlan(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Reserved8']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved8"]))
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

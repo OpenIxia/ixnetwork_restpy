@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,49 +35,57 @@ class LdpTargetedRouterV6(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ldpTargetedRouterV6'
+    _SDM_NAME = "ldpTargetedRouterV6"
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BfdOpeMode': 'bfdOpeMode',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFec128Advertisement': 'enableFec128Advertisement',
-        'EnableFec129Advertisement': 'enableFec129Advertisement',
-        'EnableGracefulRestart': 'enableGracefulRestart',
-        'EnableIpv4Advertisement': 'enableIpv4Advertisement',
-        'EnableIpv6Advertisement': 'enableIpv6Advertisement',
-        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
-        'EnableP2MPCapability': 'enableP2MPCapability',
-        'Errors': 'errors',
-        'IgnoreStateAdvertisementControlCapability': 'ignoreStateAdvertisementControlCapability',
-        'IncludeSac': 'includeSac',
-        'Ipv6peerCount': 'ipv6peerCount',
-        'KeepAliveHoldTime': 'keepAliveHoldTime',
-        'KeepAliveInterval': 'keepAliveInterval',
-        'LabelSpaceID': 'labelSpaceID',
-        'LdpVersion': 'ldpVersion',
-        'LeafRangesCountV6': 'leafRangesCountV6',
-        'LocalRouterID': 'localRouterID',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'OperationMode': 'operationMode',
-        'PeerCount': 'peerCount',
-        'ReconnectTime': 'reconnectTime',
-        'RecoveryTime': 'recoveryTime',
-        'RootRangesCountV6': 'rootRangesCountV6',
-        'SessionInfo': 'sessionInfo',
-        'SessionPreference': 'sessionPreference',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        "Active": "active",
+        "BfdOpeMode": "bfdOpeMode",
+        "ConnectedVia": "connectedVia",
+        "Count": "count",
+        "DescriptiveName": "descriptiveName",
+        "EnableBfdMplsLearnedLsp": "enableBfdMplsLearnedLsp",
+        "EnableBfdRegistration": "enableBfdRegistration",
+        "EnableFec128Advertisement": "enableFec128Advertisement",
+        "EnableFec129Advertisement": "enableFec129Advertisement",
+        "EnableGracefulRestart": "enableGracefulRestart",
+        "EnableIpv4Advertisement": "enableIpv4Advertisement",
+        "EnableIpv6Advertisement": "enableIpv6Advertisement",
+        "EnableLspPingLearnedLsp": "enableLspPingLearnedLsp",
+        "EnableP2MPCapability": "enableP2MPCapability",
+        "Errors": "errors",
+        "IgnoreStateAdvertisementControlCapability": "ignoreStateAdvertisementControlCapability",
+        "IncludeSac": "includeSac",
+        "Ipv6peerCount": "ipv6peerCount",
+        "KeepAliveHoldTime": "keepAliveHoldTime",
+        "KeepAliveInterval": "keepAliveInterval",
+        "LabelSpaceID": "labelSpaceID",
+        "LdpVersion": "ldpVersion",
+        "LeafRangesCountV6": "leafRangesCountV6",
+        "LocalRouterID": "localRouterID",
+        "Multiplier": "multiplier",
+        "Name": "name",
+        "OperationMode": "operationMode",
+        "PeerCount": "peerCount",
+        "ReconnectTime": "reconnectTime",
+        "RecoveryTime": "recoveryTime",
+        "RootRangesCountV6": "rootRangesCountV6",
+        "SessionInfo": "sessionInfo",
+        "SessionPreference": "sessionPreference",
+        "SessionStatus": "sessionStatus",
+        "StackedLayers": "stackedLayers",
+        "StateCounts": "stateCounts",
+        "Status": "status",
     }
     _SDM_ENUM_MAP = {
-        'ldpVersion': ['version1', 'version2'],
-        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        "ldpVersion": ["version1", "version2"],
+        "status": [
+            "configured",
+            "error",
+            "mixed",
+            "notStarted",
+            "started",
+            "starting",
+            "stopping",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -93,10 +102,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import (
+            Connector,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Connector', None) is not None:
-                return self._properties.get('Connector')
+            if self._properties.get("Connector", None) is not None:
+                return self._properties.get("Connector")
         return Connector(self)
 
     @property
@@ -110,10 +122,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpleafrangev6_3dad6635b6afcf8ce78906311e26bfe0 import LdpLeafRangeV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpleafrangev6_3dad6635b6afcf8ce78906311e26bfe0 import (
+            LdpLeafRangeV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpLeafRangeV6', None) is not None:
-                return self._properties.get('LdpLeafRangeV6')
+            if self._properties.get("LdpLeafRangeV6", None) is not None:
+                return self._properties.get("LdpLeafRangeV6")
         return LdpLeafRangeV6(self)._select()
 
     @property
@@ -127,10 +142,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldprootrangev6_45885b6f21e934c88aa56da8381f4ec3 import LdpRootRangeV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldprootrangev6_45885b6f21e934c88aa56da8381f4ec3 import (
+            LdpRootRangeV6,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpRootRangeV6', None) is not None:
-                return self._properties.get('LdpRootRangeV6')
+            if self._properties.get("LdpRootRangeV6", None) is not None:
+                return self._properties.get("LdpRootRangeV6")
         return LdpRootRangeV6(self)._select()
 
     @property
@@ -144,10 +162,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedipv6peer_cf8c841244e1f69d674a5c2fa9c4b473 import LdpTargetedIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedipv6peer_cf8c841244e1f69d674a5c2fa9c4b473 import (
+            LdpTargetedIpv6Peer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedIpv6Peer', None) is not None:
-                return self._properties.get('LdpTargetedIpv6Peer')
+            if self._properties.get("LdpTargetedIpv6Peer", None) is not None:
+                return self._properties.get("LdpTargetedIpv6Peer")
         return LdpTargetedIpv6Peer(self)._select()
 
     @property
@@ -161,10 +182,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedpeer_3f5aecf84abee4c45cfdedcf70163bfc import LdpTargetedPeer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedpeer_3f5aecf84abee4c45cfdedcf70163bfc import (
+            LdpTargetedPeer,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LdpTargetedPeer', None) is not None:
-                return self._properties.get('LdpTargetedPeer')
+            if self._properties.get("LdpTargetedPeer", None) is not None:
+                return self._properties.get("LdpTargetedPeer")
         return LdpTargetedPeer(self)._select()
 
     @property
@@ -178,10 +202,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpotherpws_c7a119da3cff2b6dc1e78257b76d70b9 import Ldpotherpws
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpotherpws_c7a119da3cff2b6dc1e78257b76d70b9 import (
+            Ldpotherpws,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ldpotherpws', None) is not None:
-                return self._properties.get('Ldpotherpws')
+            if self._properties.get("Ldpotherpws", None) is not None:
+                return self._properties.get("Ldpotherpws")
         return Ldpotherpws(self)
 
     @property
@@ -195,10 +222,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldppwvpls_e691d6b250f877cef17952ec6e6b30b9 import Ldppwvpls
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldppwvpls_e691d6b250f877cef17952ec6e6b30b9 import (
+            Ldppwvpls,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ldppwvpls', None) is not None:
-                return self._properties.get('Ldppwvpls')
+            if self._properties.get("Ldppwvpls", None) is not None:
+                return self._properties.get("Ldppwvpls")
         return Ldppwvpls(self)
 
     @property
@@ -212,10 +242,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpvplsbgpad_0f32fa32863dd9e13cd7e772a3fb8771 import Ldpvplsbgpad
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpvplsbgpad_0f32fa32863dd9e13cd7e772a3fb8771 import (
+            Ldpvplsbgpad,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Ldpvplsbgpad', None) is not None:
-                return self._properties.get('Ldpvplsbgpad')
+            if self._properties.get("Ldpvplsbgpad", None) is not None:
+                return self._properties.get("Ldpvplsbgpad")
         return Ldpvplsbgpad(self)
 
     @property
@@ -229,10 +262,13 @@ class LdpTargetedRouterV6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('LearnedInfo', None) is not None:
-                return self._properties.get('LearnedInfo')
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
         return LearnedInfo(self)
 
     @property
@@ -244,7 +280,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def BfdOpeMode(self):
@@ -255,21 +292,23 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): BFD Operation Mode
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['BfdOpeMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdOpeMode"]))
 
     @property
     def ConnectedVia(self):
         # type: () -> List[str]
-        """DEPRECATED 
+        """DEPRECATED
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
+        return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
+
     @ConnectedVia.setter
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
 
     @property
     def Count(self):
@@ -279,7 +318,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
     def DescriptiveName(self):
@@ -289,7 +328,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+        return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
     def EnableBfdMplsLearnedLsp(self):
@@ -300,7 +339,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, BFD MPLS is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdMplsLearnedLsp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdMplsLearnedLsp"])
+        )
 
     @property
     def EnableBfdRegistration(self):
@@ -311,7 +353,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
+        )
 
     @property
     def EnableFec128Advertisement(self):
@@ -322,7 +367,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, FEC128 P2P-PW app type is enabled in SAC TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFec128Advertisement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableFec128Advertisement"])
+        )
 
     @property
     def EnableFec129Advertisement(self):
@@ -333,7 +381,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, FEC129 P2P-PW app type is enabled in SAC TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableFec129Advertisement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableFec129Advertisement"])
+        )
 
     @property
     def EnableGracefulRestart(self):
@@ -344,7 +395,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LDP Graceful Restart is enabled on this Ixia-emulated LDP Router.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestart']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableGracefulRestart"])
+        )
 
     @property
     def EnableIpv4Advertisement(self):
@@ -355,7 +409,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, IPv4-Prefix LSP app type is enabled in SAC TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIpv4Advertisement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIpv4Advertisement"])
+        )
 
     @property
     def EnableIpv6Advertisement(self):
@@ -366,7 +423,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, IPv6-Prefix LSP app type is enabled in SAC TLV.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIpv6Advertisement']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIpv6Advertisement"])
+        )
 
     @property
     def EnableLspPingLearnedLsp(self):
@@ -377,7 +437,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LSP Ping is enabled for learned LSPs.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLspPingLearnedLsp']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLspPingLearnedLsp"])
+        )
 
     @property
     def EnableP2MPCapability(self):
@@ -388,7 +451,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LDP Router is P2MP capable.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableP2MPCapability']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableP2MPCapability"])
+        )
 
     @property
     def Errors(self):
@@ -397,7 +463,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+        return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
     def IgnoreStateAdvertisementControlCapability(self):
@@ -408,7 +474,13 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, LDP Router ignores SAC TLV it receives.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreStateAdvertisementControlCapability']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["IgnoreStateAdvertisementControlCapability"]
+            ),
+        )
 
     @property
     def IncludeSac(self):
@@ -419,7 +491,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Select to include 'State Advertisement Control Capability' TLV in Initialization message and Capability message
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSac']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeSac"]))
 
     @property
     def Ipv6peerCount(self):
@@ -429,11 +502,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: The number of ipv6 Target Peers configured for this LDP router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Ipv6peerCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["Ipv6peerCount"])
+
     @Ipv6peerCount.setter
     def Ipv6peerCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Ipv6peerCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Ipv6peerCount"], value)
 
     @property
     def KeepAliveHoldTime(self):
@@ -444,7 +518,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The period of time, in seconds, between KEEP-ALIVE messages sent to the DUT.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepAliveHoldTime']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepAliveHoldTime"])
+        )
 
     @property
     def KeepAliveInterval(self):
@@ -455,7 +532,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The frequency, in seconds, at which IxNetwork sends KEEP-ALIVE requests.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['KeepAliveInterval']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeepAliveInterval"])
+        )
 
     @property
     def LabelSpaceID(self):
@@ -466,7 +546,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Identifies the set of labels that will be used. Part of the LDP Identifier
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LabelSpaceID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelSpaceID"]))
 
     @property
     def LdpVersion(self):
@@ -476,11 +557,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - str(version1 | version2): Version of LDP. When RFC 5036 is chosen, LDP version is version 1. When draft-pdutta-mpls-ldp-adj-capability-00 is chosen, LDP version is version 2
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LdpVersion'])
+        return self._get_attribute(self._SDM_ATT_MAP["LdpVersion"])
+
     @LdpVersion.setter
     def LdpVersion(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LdpVersion'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LdpVersion"], value)
 
     @property
     def LeafRangesCountV6(self):
@@ -490,11 +572,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: The number of Leaf Ranges configured for this LDP router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LeafRangesCountV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["LeafRangesCountV6"])
+
     @LeafRangesCountV6.setter
     def LeafRangesCountV6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LeafRangesCountV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LeafRangesCountV6"], value)
 
     @property
     def LocalRouterID(self):
@@ -504,7 +587,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - list(str): Router ID
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LocalRouterID'])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
 
     @property
     def Multiplier(self):
@@ -514,11 +597,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: Number of layer instances per parent instance (multiplier)
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["Multiplier"])
+
     @Multiplier.setter
     def Multiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
     def Name(self):
@@ -528,11 +612,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - str: Name of NGPF element, guaranteed to be unique in Scenario
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def OperationMode(self):
@@ -543,7 +628,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The type of LDP Label Advertisement
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OperationMode']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OperationMode"]))
 
     @property
     def PeerCount(self):
@@ -553,11 +639,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: The number of Target Peers configured for this LDP router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PeerCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PeerCount"])
+
     @PeerCount.setter
     def PeerCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PeerCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PeerCount"], value)
 
     @property
     def ReconnectTime(self):
@@ -568,7 +655,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): Reconnect Time ms
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReconnectTime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ReconnectTime"]))
 
     @property
     def RecoveryTime(self):
@@ -579,7 +667,8 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The restarting LSR advertises the amount of time that it will retain its MPLS forwarding state.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RecoveryTime']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RecoveryTime"]))
 
     @property
     def RootRangesCountV6(self):
@@ -589,11 +678,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - number: The number of Root Ranges configured for this LDP router
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RootRangesCountV6'])
+        return self._get_attribute(self._SDM_ATT_MAP["RootRangesCountV6"])
+
     @RootRangesCountV6.setter
     def RootRangesCountV6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RootRangesCountV6'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RootRangesCountV6"], value)
 
     @property
     def SessionInfo(self):
@@ -603,7 +693,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - list(str[lDP_STATE_INITIALIZED | lDP_STATE_MULTIPLE_PEERS | lDP_STATE_NON_EXISTENT | lDP_STATE_OPENREC | lDP_STATE_OPENSENT | lDP_STATE_OPERATIONAL | none]): Logs additional information about the LDP session state
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionInfo"])
 
     @property
     def SessionPreference(self):
@@ -614,7 +704,10 @@ class LdpTargetedRouterV6(Base):
         - obj(ixnetwork_restpy.multivalue.Multivalue): The transport connection preference of the LDP router that is conveyed in Dual-stack capability TLV included in LDP Hello message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SessionPreference']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SessionPreference"])
+        )
 
     @property
     def SessionStatus(self):
@@ -624,7 +717,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SessionStatus'])
+        return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
     def StackedLayers(self):
@@ -634,11 +727,12 @@ class LdpTargetedRouterV6(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
+        return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
+
     @StackedLayers.setter
     def StackedLayers(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
+        self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
 
     @property
     def StateCounts(self):
@@ -647,7 +741,7 @@ class LdpTargetedRouterV6(Base):
         -------
         - dict(total:number,notStarted:number,down:number,up:number): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         """
-        return self._get_attribute(self._SDM_ATT_MAP['StateCounts'])
+        return self._get_attribute(self._SDM_ATT_MAP["StateCounts"])
 
     @property
     def Status(self):
@@ -657,9 +751,20 @@ class LdpTargetedRouterV6(Base):
         -------
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Status'])
+        return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
-    def update(self, ConnectedVia=None, Ipv6peerCount=None, LdpVersion=None, LeafRangesCountV6=None, Multiplier=None, Name=None, PeerCount=None, RootRangesCountV6=None, StackedLayers=None):
+    def update(
+        self,
+        ConnectedVia=None,
+        Ipv6peerCount=None,
+        LdpVersion=None,
+        LeafRangesCountV6=None,
+        Multiplier=None,
+        Name=None,
+        PeerCount=None,
+        RootRangesCountV6=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, str, int, int, List[str]) -> LdpTargetedRouterV6
         """Updates ldpTargetedRouterV6 resource on the server.
 
@@ -684,7 +789,18 @@ class LdpTargetedRouterV6(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedVia=None, Ipv6peerCount=None, LdpVersion=None, LeafRangesCountV6=None, Multiplier=None, Name=None, PeerCount=None, RootRangesCountV6=None, StackedLayers=None):
+    def add(
+        self,
+        ConnectedVia=None,
+        Ipv6peerCount=None,
+        LdpVersion=None,
+        LeafRangesCountV6=None,
+        Multiplier=None,
+        Name=None,
+        PeerCount=None,
+        RootRangesCountV6=None,
+        StackedLayers=None,
+    ):
         # type: (List[str], int, str, int, int, str, int, int, List[str]) -> LdpTargetedRouterV6
         """Adds a new ldpTargetedRouterV6 resource on the server and adds it to the container.
 
@@ -720,7 +836,26 @@ class LdpTargetedRouterV6(Base):
         """
         self._delete()
 
-    def find(self, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, Ipv6peerCount=None, LdpVersion=None, LeafRangesCountV6=None, LocalRouterID=None, Multiplier=None, Name=None, PeerCount=None, RootRangesCountV6=None, SessionInfo=None, SessionStatus=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(
+        self,
+        ConnectedVia=None,
+        Count=None,
+        DescriptiveName=None,
+        Errors=None,
+        Ipv6peerCount=None,
+        LdpVersion=None,
+        LeafRangesCountV6=None,
+        LocalRouterID=None,
+        Multiplier=None,
+        Name=None,
+        PeerCount=None,
+        RootRangesCountV6=None,
+        SessionInfo=None,
+        SessionStatus=None,
+        StackedLayers=None,
+        StateCounts=None,
+        Status=None,
+    ):
         """Finds and retrieves ldpTargetedRouterV6 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ldpTargetedRouterV6 resources from the server.
@@ -802,10 +937,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -834,10 +971,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -856,10 +997,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearAllLearnedInfoInClient", payload=payload, response_object=None
+        )
 
     def GetAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -894,10 +1039,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getAllLearnedInfo", payload=payload, response_object=None)
 
     def GetFEC128LearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -932,10 +1079,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getFEC128LearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getFEC128LearnedInfo", payload=payload, response_object=None
+        )
 
     def GetFEC129LearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -970,10 +1121,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getFEC129LearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getFEC129LearnedInfo", payload=payload, response_object=None
+        )
 
     def GetIPv4FECLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1008,10 +1163,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4FECLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getIPv4FECLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetIPv6FECLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1046,10 +1205,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6FECLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getIPv6FECLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetP2MPFECLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1084,10 +1247,14 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getP2MPFECLearnedInfo', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getP2MPFECLearnedInfo", payload=payload, response_object=None
+        )
 
     def GracefullyRestart(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1126,10 +1293,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('gracefullyRestart', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("gracefullyRestart", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1158,10 +1327,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("restartDown", payload=payload, response_object=None)
 
     def ResumeKeepAlive(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1190,10 +1361,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeKeepAlive', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumeKeepAlive", payload=payload, response_object=None)
 
     def Resumekeepalive(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1212,10 +1385,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumekeepalive', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("resumekeepalive", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1244,10 +1419,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1276,10 +1453,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
 
     def StopKeepAlive(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1308,10 +1487,12 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopKeepAlive', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopKeepAlive", payload=payload, response_object=None)
 
     def Stopkeepalive(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1330,12 +1511,37 @@ class LdpTargetedRouterV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopkeepalive', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopkeepalive", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, BfdOpeMode=None, EnableBfdMplsLearnedLsp=None, EnableBfdRegistration=None, EnableFec128Advertisement=None, EnableFec129Advertisement=None, EnableGracefulRestart=None, EnableIpv4Advertisement=None, EnableIpv6Advertisement=None, EnableLspPingLearnedLsp=None, EnableP2MPCapability=None, IgnoreStateAdvertisementControlCapability=None, IncludeSac=None, KeepAliveHoldTime=None, KeepAliveInterval=None, LabelSpaceID=None, OperationMode=None, ReconnectTime=None, RecoveryTime=None, SessionPreference=None):
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        BfdOpeMode=None,
+        EnableBfdMplsLearnedLsp=None,
+        EnableBfdRegistration=None,
+        EnableFec128Advertisement=None,
+        EnableFec129Advertisement=None,
+        EnableGracefulRestart=None,
+        EnableIpv4Advertisement=None,
+        EnableIpv6Advertisement=None,
+        EnableLspPingLearnedLsp=None,
+        EnableP2MPCapability=None,
+        IgnoreStateAdvertisementControlCapability=None,
+        IncludeSac=None,
+        KeepAliveHoldTime=None,
+        KeepAliveInterval=None,
+        LabelSpaceID=None,
+        OperationMode=None,
+        ReconnectTime=None,
+        RecoveryTime=None,
+        SessionPreference=None,
+    ):
         """Base class infrastructure that gets a list of ldpTargetedRouterV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.

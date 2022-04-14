@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,13 +34,12 @@ class Network(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'network'
+    _SDM_NAME = "network"
     _SDM_ATT_MAP = {
-        'NeighborRouterIds': 'neighborRouterIds',
-        'NetworkMask': 'networkMask',
+        "NeighborRouterIds": "neighborRouterIds",
+        "NetworkMask": "networkMask",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Network, self).__init__(parent, list_op)
@@ -50,13 +50,14 @@ class Network(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str):
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NeighborRouterIds'])
+        return self._get_attribute(self._SDM_ATT_MAP["NeighborRouterIds"])
+
     @NeighborRouterIds.setter
     def NeighborRouterIds(self, value):
         # type: (List[str]) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NeighborRouterIds'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NeighborRouterIds"], value)
 
     @property
     def NetworkMask(self):
@@ -64,13 +65,14 @@ class Network(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NetworkMask'])
+        return self._get_attribute(self._SDM_ATT_MAP["NetworkMask"])
+
     @NetworkMask.setter
     def NetworkMask(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NetworkMask'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NetworkMask"], value)
 
     def update(self, NeighborRouterIds=None, NetworkMask=None):
         # type: (List[str], str) -> Network
@@ -78,8 +80,8 @@ class Network(Base):
 
         Args
         ----
-        - NeighborRouterIds (list(str)): 
-        - NetworkMask (str): 
+        - NeighborRouterIds (list(str)):
+        - NetworkMask (str):
 
         Raises
         ------
@@ -89,12 +91,12 @@ class Network(Base):
 
     def add(self, NeighborRouterIds=None, NetworkMask=None):
         # type: (List[str], str) -> Network
-        """Adds a new network resource on the json, only valid with config assistant
+        """Adds a new network resource on the json, only valid with batch add utility
 
         Args
         ----
-        - NeighborRouterIds (list(str)): 
-        - NetworkMask (str): 
+        - NeighborRouterIds (list(str)):
+        - NetworkMask (str):
 
         Returns
         -------
@@ -116,8 +118,8 @@ class Network(Base):
 
         Args
         ----
-        - NeighborRouterIds (list(str)): 
-        - NetworkMask (str): 
+        - NeighborRouterIds (list(str)):
+        - NetworkMask (str):
 
         Returns
         -------

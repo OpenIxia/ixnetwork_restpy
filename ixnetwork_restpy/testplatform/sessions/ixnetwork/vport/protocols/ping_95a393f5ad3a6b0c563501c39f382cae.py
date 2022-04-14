@@ -18,28 +18,28 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
 class Ping(Base):
-    """"Packet Internet Groper/PING" uses Internet Message Control Protocol (ICMP) echo messages and responses.
+    """ "Packet Internet Groper/PING" uses Internet Message Control Protocol (ICMP) echo messages and responses.
     The Ping class encapsulates a list of ping resources that are managed by the user.
     A list of resources can be retrieved from the server using the Ping.find() method.
     The list can be managed by using the Ping.add() and Ping.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'ping'
+    _SDM_NAME = "ping"
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
+        "Enabled": "enabled",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Ping, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class Ping(Base):
         -------
         - bool: Enables IPv4 PING transmission and reception for this port. PING messages are IPv4 ICMP messages of type Echo Request. Responses are IPv4 ICMP message of type Echo Response.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     def update(self, Enabled=None):
         # type: (bool) -> Ping

@@ -54,7 +54,7 @@ class AvailablePortFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def add(self):
-        """Adds a new availablePortFilter resource on the json, only valid with config assistant
+        """Adds a new availablePortFilter resource on the json, only valid with batch add utility
 
         Returns
         -------

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,11 +33,9 @@ class ApplySetField(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'applySetField'
-    _SDM_ATT_MAP = {
-    }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_NAME = "applySetField"
+    _SDM_ATT_MAP = {}
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ApplySetField, self).__init__(parent, list_op)
@@ -52,10 +51,13 @@ class ApplySetField(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_82c6ee107b12ee013dcfe1404de190d2 import Fields
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_82c6ee107b12ee013dcfe1404de190d2 import (
+            Fields,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('Fields', None) is not None:
-                return self._properties.get('Fields')
+            if self._properties.get("Fields", None) is not None:
+                return self._properties.get("Fields")
         return Fields(self)._select()
 
     @property
@@ -69,10 +71,13 @@ class ApplySetField(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_731e6a490626a72d2ce6360754e838fe import MissFields
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_731e6a490626a72d2ce6360754e838fe import (
+            MissFields,
+        )
+
         if len(self._object_properties) > 0:
-            if self._properties.get('MissFields', None) is not None:
-                return self._properties.get('MissFields')
+            if self._properties.get("MissFields", None) is not None:
+                return self._properties.get("MissFields")
         return MissFields(self)._select()
 
     def find(self):

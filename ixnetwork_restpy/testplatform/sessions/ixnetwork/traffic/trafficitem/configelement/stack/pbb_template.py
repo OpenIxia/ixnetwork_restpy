@@ -4,17 +4,17 @@ from ixnetwork_restpy.files import Files
 
 class Pbb(Base):
     __slots__ = ()
-    _SDM_NAME = 'pbb'
+    _SDM_NAME = "pbb"
     _SDM_ATT_MAP = {
-        'ITAGPcp': 'pbb.header.iTAG.pcp-1',
-        'ITAGDrop': 'pbb.header.iTAG.drop-2',
-        'ITAGFmt': 'pbb.header.iTAG.fmt-3',
-        'ITAGReserved': 'pbb.header.iTAG.reserved-4',
-        'ITAGISID': 'pbb.header.iTAG.iSID-5',
-        'CEthernetHeaderCDestinationAddress': 'pbb.header.cEthernetHeader.cDestinationAddress-6',
-        'CEthernetHeaderCSourceAddress': 'pbb.header.cEthernetHeader.cSourceAddress-7',
-        'CEthernetHeaderCEtherType': 'pbb.header.cEthernetHeader.cEtherType-8',
-        'CEthernetHeaderPfcQueue': 'pbb.header.cEthernetHeader.pfcQueue-9',
+        "ITAGPcp": "pbb.header.iTAG.pcp-1",
+        "ITAGDrop": "pbb.header.iTAG.drop-2",
+        "ITAGFmt": "pbb.header.iTAG.fmt-3",
+        "ITAGReserved": "pbb.header.iTAG.reserved-4",
+        "ITAGISID": "pbb.header.iTAG.iSID-5",
+        "CEthernetHeaderCDestinationAddress": "pbb.header.cEthernetHeader.cDestinationAddress-6",
+        "CEthernetHeaderCSourceAddress": "pbb.header.cEthernetHeader.cSourceAddress-7",
+        "CEthernetHeaderCEtherType": "pbb.header.cEthernetHeader.cEtherType-8",
+        "CEthernetHeaderPfcQueue": "pbb.header.cEthernetHeader.pfcQueue-9",
     }
 
     def __init__(self, parent, list_op=False):
@@ -28,7 +28,8 @@ class Pbb(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGPcp']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGPcp"]))
 
     @property
     def ITAGDrop(self):
@@ -38,7 +39,8 @@ class Pbb(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGDrop']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGDrop"]))
 
     @property
     def ITAGFmt(self):
@@ -49,7 +51,8 @@ class Pbb(Base):
         Available enum values: Payload Encapsulated Wi Fcs, 0, Payload Encapsulated Wo Fcs, 1, No Encapsulation, 2, Reserved, 3
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGFmt']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGFmt"]))
 
     @property
     def ITAGReserved(self):
@@ -59,7 +62,8 @@ class Pbb(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGReserved']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGReserved"]))
 
     @property
     def ITAGISID(self):
@@ -69,7 +73,8 @@ class Pbb(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ITAGISID']))
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ITAGISID"]))
 
     @property
     def CEthernetHeaderCDestinationAddress(self):
@@ -79,7 +84,13 @@ class Pbb(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CEthernetHeaderCDestinationAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["CEthernetHeaderCDestinationAddress"]
+            ),
+        )
 
     @property
     def CEthernetHeaderCSourceAddress(self):
@@ -89,7 +100,11 @@ class Pbb(Base):
         Value Format: mAC
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CEthernetHeaderCSourceAddress']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CEthernetHeaderCSourceAddress"]),
+        )
 
     @property
     def CEthernetHeaderCEtherType(self):
@@ -99,7 +114,10 @@ class Pbb(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CEthernetHeaderCEtherType']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CEthernetHeaderCEtherType"])
+        )
 
     @property
     def CEthernetHeaderPfcQueue(self):
@@ -109,7 +127,10 @@ class Pbb(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CEthernetHeaderPfcQueue']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CEthernetHeaderPfcQueue"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

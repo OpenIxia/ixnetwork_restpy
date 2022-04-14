@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,14 +33,13 @@ class CsvLoggingSettings(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'csvLoggingSettings'
+    _SDM_NAME = "csvLoggingSettings"
     _SDM_ATT_MAP = {
-        'CsvLogPollingIntervalMultiplier': 'csvLogPollingIntervalMultiplier',
-        'CsvLoggingPath': 'csvLoggingPath',
-        'EnableCSVLoggingForAllViews': 'enableCSVLoggingForAllViews',
+        "CsvLogPollingIntervalMultiplier": "csvLogPollingIntervalMultiplier",
+        "CsvLoggingPath": "csvLoggingPath",
+        "EnableCSVLoggingForAllViews": "enableCSVLoggingForAllViews",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(CsvLoggingSettings, self).__init__(parent, list_op)
@@ -52,11 +52,12 @@ class CsvLoggingSettings(Base):
         -------
         - number: Used to specify the time interval between log polling events.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLogPollingIntervalMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLogPollingIntervalMultiplier"])
+
     @CsvLogPollingIntervalMultiplier.setter
     def CsvLogPollingIntervalMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CsvLogPollingIntervalMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CsvLogPollingIntervalMultiplier"], value)
 
     @property
     def CsvLoggingPath(self):
@@ -66,7 +67,7 @@ class CsvLoggingSettings(Base):
         -------
         - str: Returns the CSV Logging path.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CsvLoggingPath'])
+        return self._get_attribute(self._SDM_ATT_MAP["CsvLoggingPath"])
 
     @property
     def EnableCSVLoggingForAllViews(self):
@@ -76,13 +77,16 @@ class CsvLoggingSettings(Base):
         -------
         - bool: When set, the CSV Logging for all views is enabled
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableCSVLoggingForAllViews'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableCSVLoggingForAllViews"])
+
     @EnableCSVLoggingForAllViews.setter
     def EnableCSVLoggingForAllViews(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableCSVLoggingForAllViews'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableCSVLoggingForAllViews"], value)
 
-    def update(self, CsvLogPollingIntervalMultiplier=None, EnableCSVLoggingForAllViews=None):
+    def update(
+        self, CsvLogPollingIntervalMultiplier=None, EnableCSVLoggingForAllViews=None
+    ):
         # type: (int, bool) -> CsvLoggingSettings
         """Updates csvLoggingSettings resource on the server.
 
@@ -97,7 +101,12 @@ class CsvLoggingSettings(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CsvLogPollingIntervalMultiplier=None, CsvLoggingPath=None, EnableCSVLoggingForAllViews=None):
+    def find(
+        self,
+        CsvLogPollingIntervalMultiplier=None,
+        CsvLoggingPath=None,
+        EnableCSVLoggingForAllViews=None,
+    ):
         # type: (int, str, bool) -> CsvLoggingSettings
         """Finds and retrieves csvLoggingSettings resources from the server.
 

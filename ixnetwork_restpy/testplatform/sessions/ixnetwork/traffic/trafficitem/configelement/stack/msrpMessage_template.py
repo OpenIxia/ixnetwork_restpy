@@ -4,20 +4,20 @@ from ixnetwork_restpy.files import Files
 
 class MsrpMessage(Base):
     __slots__ = ()
-    _SDM_NAME = 'msrpMessage'
+    _SDM_NAME = "msrpMessage"
     _SDM_ATT_MAP = {
-        'MsrpHeaderProtoVersion': 'msrpMessage.header.msrpHeader.protoVersion-1',
-        'MsrpTalkerAdvertiseAttributeLength': 'msrpMessage.header.attributeType.msrpTalkerAdvertise.attributeLength-2',
-        'MsrpTalkerAdvertiseAttributeLength': 'msrpMessage.header.attributeType.msrpTalkerAdvertise.attributeLength-3',
-        'MsrpTalkerFailedAttributeLength': 'msrpMessage.header.attributeType.msrpTalkerFailed.attributeLength-4',
-        'MsrpTalkerFailedAttributeLength': 'msrpMessage.header.attributeType.msrpTalkerFailed.attributeLength-5',
-        'MsrpListenerAttributeLength': 'msrpMessage.header.attributeType.msrpListener.attributeLength-6',
-        'MsrpListenerAttributeLength': 'msrpMessage.header.attributeType.msrpListener.attributeLength-7',
-        'MsrpDomainAttributeLength': 'msrpMessage.header.attributeType.msrpDomain.attributeLength-8',
-        'MsrpDomainAttributeLength': 'msrpMessage.header.attributeType.msrpDomain.attributeLength-9',
-        'MsrpCustomAttributeAttributeLength': 'msrpMessage.header.attributeType.msrpCustomAttribute.attributeLength-10',
-        'MsrpCustomAttributeAttributeLength': 'msrpMessage.header.attributeType.msrpCustomAttribute.attributeLength-11',
-        'HeaderAttributeListLength': 'msrpMessage.header.attributeListLength-12',
+        "MsrpHeaderProtoVersion": "msrpMessage.header.msrpHeader.protoVersion-1",
+        "MsrpTalkerAdvertiseAttributeLength": "msrpMessage.header.attributeType.msrpTalkerAdvertise.attributeLength-2",
+        "MsrpTalkerAdvertiseAttributeLength": "msrpMessage.header.attributeType.msrpTalkerAdvertise.attributeLength-3",
+        "MsrpTalkerFailedAttributeLength": "msrpMessage.header.attributeType.msrpTalkerFailed.attributeLength-4",
+        "MsrpTalkerFailedAttributeLength": "msrpMessage.header.attributeType.msrpTalkerFailed.attributeLength-5",
+        "MsrpListenerAttributeLength": "msrpMessage.header.attributeType.msrpListener.attributeLength-6",
+        "MsrpListenerAttributeLength": "msrpMessage.header.attributeType.msrpListener.attributeLength-7",
+        "MsrpDomainAttributeLength": "msrpMessage.header.attributeType.msrpDomain.attributeLength-8",
+        "MsrpDomainAttributeLength": "msrpMessage.header.attributeType.msrpDomain.attributeLength-9",
+        "MsrpCustomAttributeAttributeLength": "msrpMessage.header.attributeType.msrpCustomAttribute.attributeLength-10",
+        "MsrpCustomAttributeAttributeLength": "msrpMessage.header.attributeType.msrpCustomAttribute.attributeLength-11",
+        "HeaderAttributeListLength": "msrpMessage.header.attributeListLength-12",
     }
 
     def __init__(self, parent, list_op=False):
@@ -31,7 +31,10 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpHeaderProtoVersion']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MsrpHeaderProtoVersion"])
+        )
 
     @property
     def MsrpTalkerAdvertiseAttributeLength(self):
@@ -41,7 +44,13 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpTalkerAdvertiseAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MsrpTalkerAdvertiseAttributeLength"]
+            ),
+        )
 
     @property
     def MsrpTalkerAdvertiseAttributeLength(self):
@@ -51,7 +60,13 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpTalkerAdvertiseAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MsrpTalkerAdvertiseAttributeLength"]
+            ),
+        )
 
     @property
     def MsrpTalkerFailedAttributeLength(self):
@@ -61,7 +76,11 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpTalkerFailedAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MsrpTalkerFailedAttributeLength"]),
+        )
 
     @property
     def MsrpTalkerFailedAttributeLength(self):
@@ -71,7 +90,11 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpTalkerFailedAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["MsrpTalkerFailedAttributeLength"]),
+        )
 
     @property
     def MsrpListenerAttributeLength(self):
@@ -81,7 +104,10 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpListenerAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MsrpListenerAttributeLength"])
+        )
 
     @property
     def MsrpListenerAttributeLength(self):
@@ -91,7 +117,10 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpListenerAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MsrpListenerAttributeLength"])
+        )
 
     @property
     def MsrpDomainAttributeLength(self):
@@ -101,7 +130,10 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpDomainAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MsrpDomainAttributeLength"])
+        )
 
     @property
     def MsrpDomainAttributeLength(self):
@@ -111,7 +143,10 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpDomainAttributeLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MsrpDomainAttributeLength"])
+        )
 
     @property
     def MsrpCustomAttributeAttributeLength(self):
@@ -121,7 +156,13 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpCustomAttributeAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MsrpCustomAttributeAttributeLength"]
+            ),
+        )
 
     @property
     def MsrpCustomAttributeAttributeLength(self):
@@ -131,7 +172,13 @@ class MsrpMessage(Base):
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MsrpCustomAttributeAttributeLength']))
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["MsrpCustomAttributeAttributeLength"]
+            ),
+        )
 
     @property
     def HeaderAttributeListLength(self):
@@ -141,7 +188,10 @@ class MsrpMessage(Base):
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HeaderAttributeListLength']))
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["HeaderAttributeListLength"])
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

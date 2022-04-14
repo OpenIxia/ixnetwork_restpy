@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,38 +33,37 @@ class DhcpServerRange(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'dhcpServerRange'
+    _SDM_NAME = "dhcpServerRange"
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Dhcp4EchoRelayInfo': 'dhcp4EchoRelayInfo',
-        'Dhcp6IaType': 'dhcp6IaType',
-        'Enabled': 'enabled',
-        'IpAddress': 'ipAddress',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'IpAddressPoolIncrement': 'ipAddressPoolIncrement',
-        'IpAddressPrefix': 'ipAddressPrefix',
-        'IpAddressPrefixIncrement': 'ipAddressPrefixIncrement',
-        'IpAddressPrefixPoolIncrement': 'ipAddressPrefixPoolIncrement',
-        'IpDns1': 'ipDns1',
-        'IpDns2': 'ipDns2',
-        'IpGateway': 'ipGateway',
-        'IpGatewayIncrement': 'ipGatewayIncrement',
-        'IpPrefix': 'ipPrefix',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PrefixCount': 'prefixCount',
-        'PrefixLength': 'prefixLength',
-        'ServerAddress': 'serverAddress',
-        'ServerAddressIncrement': 'serverAddressIncrement',
-        'ServerCount': 'serverCount',
-        'ServerGateway': 'serverGateway',
-        'ServerGatewayIncrement': 'serverGatewayIncrement',
-        'ServerPrefix': 'serverPrefix',
-        'UseRapidCommit': 'useRapidCommit',
+        "Count": "count",
+        "Dhcp4EchoRelayInfo": "dhcp4EchoRelayInfo",
+        "Dhcp6IaType": "dhcp6IaType",
+        "Enabled": "enabled",
+        "IpAddress": "ipAddress",
+        "IpAddressIncrement": "ipAddressIncrement",
+        "IpAddressPoolIncrement": "ipAddressPoolIncrement",
+        "IpAddressPrefix": "ipAddressPrefix",
+        "IpAddressPrefixIncrement": "ipAddressPrefixIncrement",
+        "IpAddressPrefixPoolIncrement": "ipAddressPrefixPoolIncrement",
+        "IpDns1": "ipDns1",
+        "IpDns2": "ipDns2",
+        "IpGateway": "ipGateway",
+        "IpGatewayIncrement": "ipGatewayIncrement",
+        "IpPrefix": "ipPrefix",
+        "IpType": "ipType",
+        "Name": "name",
+        "ObjectId": "objectId",
+        "PrefixCount": "prefixCount",
+        "PrefixLength": "prefixLength",
+        "ServerAddress": "serverAddress",
+        "ServerAddressIncrement": "serverAddressIncrement",
+        "ServerCount": "serverCount",
+        "ServerGateway": "serverGateway",
+        "ServerGatewayIncrement": "serverGatewayIncrement",
+        "ServerPrefix": "serverPrefix",
+        "UseRapidCommit": "useRapidCommit",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DhcpServerRange, self).__init__(parent, list_op)
@@ -76,11 +76,12 @@ class DhcpServerRange(Base):
         -------
         - number: The number of leases to be allocated per each server address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+        return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
     @Count.setter
     def Count(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Count"], value)
 
     @property
     def Dhcp4EchoRelayInfo(self):
@@ -90,11 +91,12 @@ class DhcpServerRange(Base):
         -------
         - bool: Enable echoing of DHCP option 82.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4EchoRelayInfo'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp4EchoRelayInfo"])
+
     @Dhcp4EchoRelayInfo.setter
     def Dhcp4EchoRelayInfo(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp4EchoRelayInfo'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp4EchoRelayInfo"], value)
 
     @property
     def Dhcp6IaType(self):
@@ -104,11 +106,12 @@ class DhcpServerRange(Base):
         -------
         - str: The Identity Association type supported by IPv6 address pools.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaType'])
+        return self._get_attribute(self._SDM_ATT_MAP["Dhcp6IaType"])
+
     @Dhcp6IaType.setter
     def Dhcp6IaType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Dhcp6IaType"], value)
 
     @property
     def Enabled(self):
@@ -118,11 +121,12 @@ class DhcpServerRange(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
+        return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
+
     @Enabled.setter
     def Enabled(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
     @property
     def IpAddress(self):
@@ -132,11 +136,12 @@ class DhcpServerRange(Base):
         -------
         - str: The IP address of the first lease pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddress"])
+
     @IpAddress.setter
     def IpAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddress"], value)
 
     @property
     def IpAddressIncrement(self):
@@ -146,11 +151,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the lease address within the lease pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressIncrement"])
+
     @IpAddressIncrement.setter
     def IpAddressIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressIncrement"], value)
 
     @property
     def IpAddressPoolIncrement(self):
@@ -160,11 +166,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the starting lease address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressPoolIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressPoolIncrement"])
+
     @IpAddressPoolIncrement.setter
     def IpAddressPoolIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressPoolIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressPoolIncrement"], value)
 
     @property
     def IpAddressPrefix(self):
@@ -174,11 +181,12 @@ class DhcpServerRange(Base):
         -------
         - str: The prefix of the first lease pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressPrefix"])
+
     @IpAddressPrefix.setter
     def IpAddressPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressPrefix"], value)
 
     @property
     def IpAddressPrefixIncrement(self):
@@ -188,11 +196,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the prefix of the lease address within the lease pool.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressPrefixIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressPrefixIncrement"])
+
     @IpAddressPrefixIncrement.setter
     def IpAddressPrefixIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressPrefixIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressPrefixIncrement"], value)
 
     @property
     def IpAddressPrefixPoolIncrement(self):
@@ -202,11 +211,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the prefix of the starting lease.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpAddressPrefixPoolIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpAddressPrefixPoolIncrement"])
+
     @IpAddressPrefixPoolIncrement.setter
     def IpAddressPrefixPoolIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpAddressPrefixPoolIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpAddressPrefixPoolIncrement"], value)
 
     @property
     def IpDns1(self):
@@ -216,11 +226,12 @@ class DhcpServerRange(Base):
         -------
         - str: The first DNS address advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDns1'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDns1"])
+
     @IpDns1.setter
     def IpDns1(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDns1'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDns1"], value)
 
     @property
     def IpDns2(self):
@@ -230,11 +241,12 @@ class DhcpServerRange(Base):
         -------
         - str: The second DNS address advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpDns2'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpDns2"])
+
     @IpDns2.setter
     def IpDns2(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpDns2'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpDns2"], value)
 
     @property
     def IpGateway(self):
@@ -244,11 +256,12 @@ class DhcpServerRange(Base):
         -------
         - str: The Router address advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpGateway'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpGateway"])
+
     @IpGateway.setter
     def IpGateway(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpGateway'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpGateway"], value)
 
     @property
     def IpGatewayIncrement(self):
@@ -258,11 +271,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the Router address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpGatewayIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpGatewayIncrement"])
+
     @IpGatewayIncrement.setter
     def IpGatewayIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpGatewayIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpGatewayIncrement"], value)
 
     @property
     def IpPrefix(self):
@@ -272,11 +286,12 @@ class DhcpServerRange(Base):
         -------
         - number: The Subnet Address length used to compute the subnetwork the advertised lease is part of.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpPrefix"])
+
     @IpPrefix.setter
     def IpPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpPrefix"], value)
 
     @property
     def IpType(self):
@@ -286,11 +301,12 @@ class DhcpServerRange(Base):
         -------
         - str: The type of IP addresses to be created by this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
+        return self._get_attribute(self._SDM_ATT_MAP["IpType"])
+
     @IpType.setter
     def IpType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IpType"], value)
 
     @property
     def Name(self):
@@ -300,11 +316,12 @@ class DhcpServerRange(Base):
         -------
         - str: Name of range
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+        return self._get_attribute(self._SDM_ATT_MAP["Name"])
+
     @Name.setter
     def Name(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
     def ObjectId(self):
@@ -314,7 +331,7 @@ class DhcpServerRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+        return self._get_attribute(self._SDM_ATT_MAP["ObjectId"])
 
     @property
     def PrefixCount(self):
@@ -324,11 +341,12 @@ class DhcpServerRange(Base):
         -------
         - number: The number of leases to be allocated per each server prefix.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixCount"])
+
     @PrefixCount.setter
     def PrefixCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixCount"], value)
 
     @property
     def PrefixLength(self):
@@ -338,11 +356,12 @@ class DhcpServerRange(Base):
         -------
         - number: The Subnet Prefix length advertised in DHCP Offer and Reply messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixLength"])
+
     @PrefixLength.setter
     def PrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixLength"], value)
 
     @property
     def ServerAddress(self):
@@ -352,11 +371,12 @@ class DhcpServerRange(Base):
         -------
         - str: The IP address of the first server interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerAddress"])
+
     @ServerAddress.setter
     def ServerAddress(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerAddress'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerAddress"], value)
 
     @property
     def ServerAddressIncrement(self):
@@ -366,11 +386,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the server address.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerAddressIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerAddressIncrement"])
+
     @ServerAddressIncrement.setter
     def ServerAddressIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerAddressIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerAddressIncrement"], value)
 
     @property
     def ServerCount(self):
@@ -380,11 +401,12 @@ class DhcpServerRange(Base):
         -------
         - number: The number of server addresses to create for this range.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerCount"])
+
     @ServerCount.setter
     def ServerCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerCount"], value)
 
     @property
     def ServerGateway(self):
@@ -394,11 +416,12 @@ class DhcpServerRange(Base):
         -------
         - str: The gateway address associated with DHCP server interfaces.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerGateway'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerGateway"])
+
     @ServerGateway.setter
     def ServerGateway(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerGateway'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerGateway"], value)
 
     @property
     def ServerGatewayIncrement(self):
@@ -408,11 +431,12 @@ class DhcpServerRange(Base):
         -------
         - str: The increment value for the gateway addresses.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerGatewayIncrement'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerGatewayIncrement"])
+
     @ServerGatewayIncrement.setter
     def ServerGatewayIncrement(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerGatewayIncrement'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerGatewayIncrement"], value)
 
     @property
     def ServerPrefix(self):
@@ -422,11 +446,12 @@ class DhcpServerRange(Base):
         -------
         - number: The subnet prefix length associated with server interfaces.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ServerPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["ServerPrefix"])
+
     @ServerPrefix.setter
     def ServerPrefix(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ServerPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ServerPrefix"], value)
 
     @property
     def UseRapidCommit(self):
@@ -436,13 +461,42 @@ class DhcpServerRange(Base):
         -------
         - bool: Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit'])
+        return self._get_attribute(self._SDM_ATT_MAP["UseRapidCommit"])
+
     @UseRapidCommit.setter
     def UseRapidCommit(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseRapidCommit'], value)
+        self._set_attribute(self._SDM_ATT_MAP["UseRapidCommit"], value)
 
-    def update(self, Count=None, Dhcp4EchoRelayInfo=None, Dhcp6IaType=None, Enabled=None, IpAddress=None, IpAddressIncrement=None, IpAddressPoolIncrement=None, IpAddressPrefix=None, IpAddressPrefixIncrement=None, IpAddressPrefixPoolIncrement=None, IpDns1=None, IpDns2=None, IpGateway=None, IpGatewayIncrement=None, IpPrefix=None, IpType=None, Name=None, PrefixCount=None, PrefixLength=None, ServerAddress=None, ServerAddressIncrement=None, ServerCount=None, ServerGateway=None, ServerGatewayIncrement=None, ServerPrefix=None, UseRapidCommit=None):
+    def update(
+        self,
+        Count=None,
+        Dhcp4EchoRelayInfo=None,
+        Dhcp6IaType=None,
+        Enabled=None,
+        IpAddress=None,
+        IpAddressIncrement=None,
+        IpAddressPoolIncrement=None,
+        IpAddressPrefix=None,
+        IpAddressPrefixIncrement=None,
+        IpAddressPrefixPoolIncrement=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpGateway=None,
+        IpGatewayIncrement=None,
+        IpPrefix=None,
+        IpType=None,
+        Name=None,
+        PrefixCount=None,
+        PrefixLength=None,
+        ServerAddress=None,
+        ServerAddressIncrement=None,
+        ServerCount=None,
+        ServerGateway=None,
+        ServerGatewayIncrement=None,
+        ServerPrefix=None,
+        UseRapidCommit=None,
+    ):
         # type: (int, bool, str, bool, str, str, str, str, str, str, str, str, str, str, int, str, str, int, int, str, str, int, str, str, int, bool) -> DhcpServerRange
         """Updates dhcpServerRange resource on the server.
 
@@ -481,7 +535,36 @@ class DhcpServerRange(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, Dhcp4EchoRelayInfo=None, Dhcp6IaType=None, Enabled=None, IpAddress=None, IpAddressIncrement=None, IpAddressPoolIncrement=None, IpAddressPrefix=None, IpAddressPrefixIncrement=None, IpAddressPrefixPoolIncrement=None, IpDns1=None, IpDns2=None, IpGateway=None, IpGatewayIncrement=None, IpPrefix=None, IpType=None, Name=None, ObjectId=None, PrefixCount=None, PrefixLength=None, ServerAddress=None, ServerAddressIncrement=None, ServerCount=None, ServerGateway=None, ServerGatewayIncrement=None, ServerPrefix=None, UseRapidCommit=None):
+    def find(
+        self,
+        Count=None,
+        Dhcp4EchoRelayInfo=None,
+        Dhcp6IaType=None,
+        Enabled=None,
+        IpAddress=None,
+        IpAddressIncrement=None,
+        IpAddressPoolIncrement=None,
+        IpAddressPrefix=None,
+        IpAddressPrefixIncrement=None,
+        IpAddressPrefixPoolIncrement=None,
+        IpDns1=None,
+        IpDns2=None,
+        IpGateway=None,
+        IpGatewayIncrement=None,
+        IpPrefix=None,
+        IpType=None,
+        Name=None,
+        ObjectId=None,
+        PrefixCount=None,
+        PrefixLength=None,
+        ServerAddress=None,
+        ServerAddressIncrement=None,
+        ServerCount=None,
+        ServerGateway=None,
+        ServerGatewayIncrement=None,
+        ServerPrefix=None,
+        UseRapidCommit=None,
+    ):
         # type: (int, bool, str, bool, str, str, str, str, str, str, str, str, str, str, int, str, str, str, int, int, str, str, int, str, str, int, bool) -> DhcpServerRange
         """Finds and retrieves dhcpServerRange resources from the server.
 
@@ -564,10 +647,14 @@ class DhcpServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "customProtocolStack", payload=payload, response_object=None
+        )
 
     def DisableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -586,10 +673,14 @@ class DhcpServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "disableProtocolStack", payload=payload, response_object=None
+        )
 
     def EnableProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -608,7 +699,11 @@ class DhcpServerRange(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('enableProtocolStack', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "enableProtocolStack", payload=payload, response_object=None
+        )

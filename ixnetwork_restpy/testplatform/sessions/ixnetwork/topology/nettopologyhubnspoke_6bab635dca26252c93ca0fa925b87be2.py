@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -34,16 +35,15 @@ class NetTopologyHubNSpoke(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'netTopologyHubNSpoke'
+    _SDM_NAME = "netTopologyHubNSpoke"
     _SDM_ATT_MAP = {
-        'EnableLevel2Spokes': 'enableLevel2Spokes',
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'LinkMultiplier': 'linkMultiplier',
-        'NumberOfFirstLevelSpokes': 'numberOfFirstLevelSpokes',
-        'NumberOfSecondLevelSpokes': 'numberOfSecondLevelSpokes',
+        "EnableLevel2Spokes": "enableLevel2Spokes",
+        "IncludeEntryPoint": "includeEntryPoint",
+        "LinkMultiplier": "linkMultiplier",
+        "NumberOfFirstLevelSpokes": "numberOfFirstLevelSpokes",
+        "NumberOfSecondLevelSpokes": "numberOfSecondLevelSpokes",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(NetTopologyHubNSpoke, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class NetTopologyHubNSpoke(Base):
         -------
         - bool: Enable Level 2 Spokes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableLevel2Spokes'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableLevel2Spokes"])
+
     @EnableLevel2Spokes.setter
     def EnableLevel2Spokes(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableLevel2Spokes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableLevel2Spokes"], value)
 
     @property
     def IncludeEntryPoint(self):
@@ -70,11 +71,12 @@ class NetTopologyHubNSpoke(Base):
         -------
         - bool: if true, entry node belongs to ring topology, otherwise it is outside of ring
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"])
+
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncludeEntryPoint"], value)
 
     @property
     def LinkMultiplier(self):
@@ -84,11 +86,12 @@ class NetTopologyHubNSpoke(Base):
         -------
         - number: number of links between two nodes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
+        return self._get_attribute(self._SDM_ATT_MAP["LinkMultiplier"])
+
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LinkMultiplier"], value)
 
     @property
     def NumberOfFirstLevelSpokes(self):
@@ -98,11 +101,12 @@ class NetTopologyHubNSpoke(Base):
         -------
         - number: Number of First Level Spokes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfFirstLevelSpokes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfFirstLevelSpokes"])
+
     @NumberOfFirstLevelSpokes.setter
     def NumberOfFirstLevelSpokes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfFirstLevelSpokes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfFirstLevelSpokes"], value)
 
     @property
     def NumberOfSecondLevelSpokes(self):
@@ -112,13 +116,21 @@ class NetTopologyHubNSpoke(Base):
         -------
         - number: Number of Second Level Spokes
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSecondLevelSpokes'])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfSecondLevelSpokes"])
+
     @NumberOfSecondLevelSpokes.setter
     def NumberOfSecondLevelSpokes(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfSecondLevelSpokes'], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfSecondLevelSpokes"], value)
 
-    def update(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+    def update(
+        self,
+        EnableLevel2Spokes=None,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        NumberOfFirstLevelSpokes=None,
+        NumberOfSecondLevelSpokes=None,
+    ):
         # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Updates netTopologyHubNSpoke resource on the server.
 
@@ -136,7 +148,14 @@ class NetTopologyHubNSpoke(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+    def add(
+        self,
+        EnableLevel2Spokes=None,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        NumberOfFirstLevelSpokes=None,
+        NumberOfSecondLevelSpokes=None,
+    ):
         # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Adds a new netTopologyHubNSpoke resource on the server and adds it to the container.
 
@@ -168,7 +187,14 @@ class NetTopologyHubNSpoke(Base):
         """
         self._delete()
 
-    def find(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+    def find(
+        self,
+        EnableLevel2Spokes=None,
+        IncludeEntryPoint=None,
+        LinkMultiplier=None,
+        NumberOfFirstLevelSpokes=None,
+        NumberOfSecondLevelSpokes=None,
+    ):
         # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Finds and retrieves netTopologyHubNSpoke resources from the server.
 

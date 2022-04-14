@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,28 +33,28 @@ class ConfigVLANParams(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'configVLANParams'
+    _SDM_NAME = "configVLANParams"
     _SDM_ATT_MAP = {
-        'CvlanID': 'cvlanID',
-        'CvlanIDStep': 'cvlanIDStep',
-        'CvlanPriority': 'cvlanPriority',
-        'CvlanTpid': 'cvlanTpid',
-        'EnableVLAN': 'enableVLAN',
-        'SvlanID': 'svlanID',
-        'SvlanIDStep': 'svlanIDStep',
-        'SvlanPriority': 'svlanPriority',
-        'SvlanTpid': 'svlanTpid',
-        'VlanID': 'vlanID',
-        'VlanIDStep': 'vlanIDStep',
-        'VlanPriority': 'vlanPriority',
-        'VlanTpid': 'vlanTpid',
-        'VlanType': 'vlanType',
+        "CvlanID": "cvlanID",
+        "CvlanIDStep": "cvlanIDStep",
+        "CvlanPriority": "cvlanPriority",
+        "CvlanTpid": "cvlanTpid",
+        "EnableVLAN": "enableVLAN",
+        "SvlanID": "svlanID",
+        "SvlanIDStep": "svlanIDStep",
+        "SvlanPriority": "svlanPriority",
+        "SvlanTpid": "svlanTpid",
+        "VlanID": "vlanID",
+        "VlanIDStep": "vlanIDStep",
+        "VlanPriority": "vlanPriority",
+        "VlanTpid": "vlanTpid",
+        "VlanType": "vlanType",
     }
     _SDM_ENUM_MAP = {
-        'cvlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
-        'svlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
-        'vlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
-        'vlanType': ['vlanStackingTypeSingleVlan', 'vlanStackingTypeStackedVlan'],
+        "cvlanTpid": ["vlanTpId8100", "vlanTpId88a8", "vlanTpId9100", "vlanTpId9200"],
+        "svlanTpid": ["vlanTpId8100", "vlanTpId88a8", "vlanTpId9100", "vlanTpId9200"],
+        "vlanTpid": ["vlanTpId8100", "vlanTpId88a8", "vlanTpId9100", "vlanTpId9200"],
+        "vlanType": ["vlanStackingTypeSingleVlan", "vlanStackingTypeStackedVlan"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -67,11 +68,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanID'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanID"])
+
     @CvlanID.setter
     def CvlanID(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanID'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanID"], value)
 
     @property
     def CvlanIDStep(self):
@@ -81,11 +83,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanIDStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanIDStep"])
+
     @CvlanIDStep.setter
     def CvlanIDStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanIDStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanIDStep"], value)
 
     @property
     def CvlanPriority(self):
@@ -95,11 +98,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanPriority"])
+
     @CvlanPriority.setter
     def CvlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanPriority"], value)
 
     @property
     def CvlanTpid(self):
@@ -109,11 +113,12 @@ class ConfigVLANParams(Base):
         -------
         - str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200): Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['CvlanTpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["CvlanTpid"])
+
     @CvlanTpid.setter
     def CvlanTpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['CvlanTpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["CvlanTpid"], value)
 
     @property
     def EnableVLAN(self):
@@ -123,11 +128,12 @@ class ConfigVLANParams(Base):
         -------
         - bool: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableVLAN'])
+        return self._get_attribute(self._SDM_ATT_MAP["EnableVLAN"])
+
     @EnableVLAN.setter
     def EnableVLAN(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableVLAN'], value)
+        self._set_attribute(self._SDM_ATT_MAP["EnableVLAN"], value)
 
     @property
     def SvlanID(self):
@@ -137,11 +143,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanID'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanID"])
+
     @SvlanID.setter
     def SvlanID(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanID'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanID"], value)
 
     @property
     def SvlanIDStep(self):
@@ -151,11 +158,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanIDStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanIDStep"])
+
     @SvlanIDStep.setter
     def SvlanIDStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanIDStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanIDStep"], value)
 
     @property
     def SvlanPriority(self):
@@ -165,11 +173,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanPriority"])
+
     @SvlanPriority.setter
     def SvlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanPriority"], value)
 
     @property
     def SvlanTpid(self):
@@ -179,11 +188,12 @@ class ConfigVLANParams(Base):
         -------
         - str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200): Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SvlanTpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["SvlanTpid"])
+
     @SvlanTpid.setter
     def SvlanTpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SvlanTpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SvlanTpid"], value)
 
     @property
     def VlanID(self):
@@ -193,11 +203,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanID'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanID"])
+
     @VlanID.setter
     def VlanID(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanID'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanID"], value)
 
     @property
     def VlanIDStep(self):
@@ -207,11 +218,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanIDStep'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanIDStep"])
+
     @VlanIDStep.setter
     def VlanIDStep(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanIDStep'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanIDStep"], value)
 
     @property
     def VlanPriority(self):
@@ -221,11 +233,12 @@ class ConfigVLANParams(Base):
         -------
         - number: Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanPriority"])
+
     @VlanPriority.setter
     def VlanPriority(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanPriority"], value)
 
     @property
     def VlanTpid(self):
@@ -235,11 +248,12 @@ class ConfigVLANParams(Base):
         -------
         - str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200): Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanTpid'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanTpid"])
+
     @VlanTpid.setter
     def VlanTpid(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanTpid'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanTpid"], value)
 
     @property
     def VlanType(self):
@@ -249,13 +263,30 @@ class ConfigVLANParams(Base):
         -------
         - str(vlanStackingTypeSingleVlan | vlanStackingTypeStackedVlan): Import only the best routes (provided route file has this information).
         """
-        return self._get_attribute(self._SDM_ATT_MAP['VlanType'])
+        return self._get_attribute(self._SDM_ATT_MAP["VlanType"])
+
     @VlanType.setter
     def VlanType(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['VlanType'], value)
+        self._set_attribute(self._SDM_ATT_MAP["VlanType"], value)
 
-    def update(self, CvlanID=None, CvlanIDStep=None, CvlanPriority=None, CvlanTpid=None, EnableVLAN=None, SvlanID=None, SvlanIDStep=None, SvlanPriority=None, SvlanTpid=None, VlanID=None, VlanIDStep=None, VlanPriority=None, VlanTpid=None, VlanType=None):
+    def update(
+        self,
+        CvlanID=None,
+        CvlanIDStep=None,
+        CvlanPriority=None,
+        CvlanTpid=None,
+        EnableVLAN=None,
+        SvlanID=None,
+        SvlanIDStep=None,
+        SvlanPriority=None,
+        SvlanTpid=None,
+        VlanID=None,
+        VlanIDStep=None,
+        VlanPriority=None,
+        VlanTpid=None,
+        VlanType=None,
+    ):
         # type: (int, int, int, str, bool, int, int, int, str, int, int, int, str, str) -> ConfigVLANParams
         """Updates configVLANParams resource on the server.
 
@@ -282,7 +313,23 @@ class ConfigVLANParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CvlanID=None, CvlanIDStep=None, CvlanPriority=None, CvlanTpid=None, EnableVLAN=None, SvlanID=None, SvlanIDStep=None, SvlanPriority=None, SvlanTpid=None, VlanID=None, VlanIDStep=None, VlanPriority=None, VlanTpid=None, VlanType=None):
+    def find(
+        self,
+        CvlanID=None,
+        CvlanIDStep=None,
+        CvlanPriority=None,
+        CvlanTpid=None,
+        EnableVLAN=None,
+        SvlanID=None,
+        SvlanIDStep=None,
+        SvlanPriority=None,
+        SvlanTpid=None,
+        VlanID=None,
+        VlanIDStep=None,
+        VlanPriority=None,
+        VlanTpid=None,
+        VlanType=None,
+    ):
         # type: (int, int, int, str, bool, int, int, int, str, int, int, int, str, str) -> ConfigVLANParams
         """Finds and retrieves configVLANParams resources from the server.
 
@@ -350,7 +397,9 @@ class ConfigVLANParams(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('configVLAN', payload=payload, response_object=None)
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("configVLAN", payload=payload, response_object=None)

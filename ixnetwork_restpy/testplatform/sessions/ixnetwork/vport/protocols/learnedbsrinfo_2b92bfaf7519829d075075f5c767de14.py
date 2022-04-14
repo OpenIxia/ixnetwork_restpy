@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,15 +34,15 @@ class LearnedBsrInfo(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'learnedBsrInfo'
+    _SDM_NAME = "learnedBsrInfo"
     _SDM_ATT_MAP = {
-        'BsrAddress': 'bsrAddress',
-        'LastBsmSendRecv': 'lastBsmSendRecv',
-        'OurBsrState': 'ourBsrState',
-        'Priority': 'priority',
+        "BsrAddress": "bsrAddress",
+        "LastBsmSendRecv": "lastBsmSendRecv",
+        "OurBsrState": "ourBsrState",
+        "Priority": "priority",
     }
     _SDM_ENUM_MAP = {
-        'ourBsrState': ['candidate', 'elected', 'notStarted', 'pending'],
+        "ourBsrState": ["candidate", "elected", "notStarted", "pending"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -55,7 +56,7 @@ class LearnedBsrInfo(Base):
         -------
         - str: The address of the elected bootstrap router that is sending periodic bootstrap messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['BsrAddress'])
+        return self._get_attribute(self._SDM_ATT_MAP["BsrAddress"])
 
     @property
     def LastBsmSendRecv(self):
@@ -65,7 +66,7 @@ class LearnedBsrInfo(Base):
         -------
         - number: Indicates the elapsed time (in seconds) since last bootstrap message was received or sent.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LastBsmSendRecv'])
+        return self._get_attribute(self._SDM_ATT_MAP["LastBsmSendRecv"])
 
     @property
     def OurBsrState(self):
@@ -75,7 +76,7 @@ class LearnedBsrInfo(Base):
         -------
         - str(candidate | elected | notStarted | pending): Indicates the state of the configured bootstrap router.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OurBsrState'])
+        return self._get_attribute(self._SDM_ATT_MAP["OurBsrState"])
 
     @property
     def Priority(self):
@@ -85,10 +86,10 @@ class LearnedBsrInfo(Base):
         -------
         - number: Priority of the elected bootstrap router as received in Bootstrap messages or configured priority.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
+        return self._get_attribute(self._SDM_ATT_MAP["Priority"])
 
     def add(self):
-        """Adds a new learnedBsrInfo resource on the json, only valid with config assistant
+        """Adds a new learnedBsrInfo resource on the json, only valid with batch add utility
 
         Returns
         -------
@@ -100,7 +101,9 @@ class LearnedBsrInfo(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, BsrAddress=None, LastBsmSendRecv=None, OurBsrState=None, Priority=None):
+    def find(
+        self, BsrAddress=None, LastBsmSendRecv=None, OurBsrState=None, Priority=None
+    ):
         # type: (str, int, str, int) -> LearnedBsrInfo
         """Finds and retrieves learnedBsrInfo resources from the server.
 

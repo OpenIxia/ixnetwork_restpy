@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -32,18 +33,17 @@ class RateControlParameters(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'rateControlParameters'
+    _SDM_NAME = "rateControlParameters"
     _SDM_ATT_MAP = {
-        'ArpRefreshInterval': 'arpRefreshInterval',
-        'MaxRequestsPerBurst': 'maxRequestsPerBurst',
-        'MaxRequestsPerSec': 'maxRequestsPerSec',
-        'MinRetryInterval': 'minRetryInterval',
-        'RetryCount': 'retryCount',
-        'SendInBursts': 'sendInBursts',
-        'SendRequestsAsFastAsPossible': 'sendRequestsAsFastAsPossible',
+        "ArpRefreshInterval": "arpRefreshInterval",
+        "MaxRequestsPerBurst": "maxRequestsPerBurst",
+        "MaxRequestsPerSec": "maxRequestsPerSec",
+        "MinRetryInterval": "minRetryInterval",
+        "RetryCount": "retryCount",
+        "SendInBursts": "sendInBursts",
+        "SendRequestsAsFastAsPossible": "sendRequestsAsFastAsPossible",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(RateControlParameters, self).__init__(parent, list_op)
@@ -56,11 +56,12 @@ class RateControlParameters(Base):
         -------
         - number: Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
         """
-        return self._get_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["ArpRefreshInterval"])
+
     @ArpRefreshInterval.setter
     def ArpRefreshInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["ArpRefreshInterval"], value)
 
     @property
     def MaxRequestsPerBurst(self):
@@ -70,11 +71,12 @@ class RateControlParameters(Base):
         -------
         - number: Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRequestsPerBurst'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRequestsPerBurst"])
+
     @MaxRequestsPerBurst.setter
     def MaxRequestsPerBurst(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRequestsPerBurst'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRequestsPerBurst"], value)
 
     @property
     def MaxRequestsPerSec(self):
@@ -84,11 +86,12 @@ class RateControlParameters(Base):
         -------
         - number: The maximum requests per second.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MaxRequestsPerSec'])
+        return self._get_attribute(self._SDM_ATT_MAP["MaxRequestsPerSec"])
+
     @MaxRequestsPerSec.setter
     def MaxRequestsPerSec(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MaxRequestsPerSec'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MaxRequestsPerSec"], value)
 
     @property
     def MinRetryInterval(self):
@@ -98,11 +101,12 @@ class RateControlParameters(Base):
         -------
         - number: Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['MinRetryInterval'])
+        return self._get_attribute(self._SDM_ATT_MAP["MinRetryInterval"])
+
     @MinRetryInterval.setter
     def MinRetryInterval(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['MinRetryInterval'], value)
+        self._set_attribute(self._SDM_ATT_MAP["MinRetryInterval"], value)
 
     @property
     def RetryCount(self):
@@ -112,11 +116,12 @@ class RateControlParameters(Base):
         -------
         - number: Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['RetryCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["RetryCount"])
+
     @RetryCount.setter
     def RetryCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RetryCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["RetryCount"], value)
 
     @property
     def SendInBursts(self):
@@ -126,11 +131,12 @@ class RateControlParameters(Base):
         -------
         - bool: Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendInBursts'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendInBursts"])
+
     @SendInBursts.setter
     def SendInBursts(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendInBursts'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendInBursts"], value)
 
     @property
     def SendRequestsAsFastAsPossible(self):
@@ -140,13 +146,23 @@ class RateControlParameters(Base):
         -------
         - bool: If enabled, allows to send ARP/NS requests immediately without any rate control.
         """
-        return self._get_attribute(self._SDM_ATT_MAP['SendRequestsAsFastAsPossible'])
+        return self._get_attribute(self._SDM_ATT_MAP["SendRequestsAsFastAsPossible"])
+
     @SendRequestsAsFastAsPossible.setter
     def SendRequestsAsFastAsPossible(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['SendRequestsAsFastAsPossible'], value)
+        self._set_attribute(self._SDM_ATT_MAP["SendRequestsAsFastAsPossible"], value)
 
-    def update(self, ArpRefreshInterval=None, MaxRequestsPerBurst=None, MaxRequestsPerSec=None, MinRetryInterval=None, RetryCount=None, SendInBursts=None, SendRequestsAsFastAsPossible=None):
+    def update(
+        self,
+        ArpRefreshInterval=None,
+        MaxRequestsPerBurst=None,
+        MaxRequestsPerSec=None,
+        MinRetryInterval=None,
+        RetryCount=None,
+        SendInBursts=None,
+        SendRequestsAsFastAsPossible=None,
+    ):
         # type: (int, int, int, int, int, bool, bool) -> RateControlParameters
         """Updates rateControlParameters resource on the server.
 
@@ -166,7 +182,16 @@ class RateControlParameters(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ArpRefreshInterval=None, MaxRequestsPerBurst=None, MaxRequestsPerSec=None, MinRetryInterval=None, RetryCount=None, SendInBursts=None, SendRequestsAsFastAsPossible=None):
+    def find(
+        self,
+        ArpRefreshInterval=None,
+        MaxRequestsPerBurst=None,
+        MaxRequestsPerSec=None,
+        MinRetryInterval=None,
+        RetryCount=None,
+        SendInBursts=None,
+        SendRequestsAsFastAsPossible=None,
+    ):
         # type: (int, int, int, int, int, bool, bool) -> RateControlParameters
         """Finds and retrieves rateControlParameters resources from the server.
 

@@ -18,10 +18,11 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE. 
+# THE SOFTWARE.
 import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+
 if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
@@ -33,22 +34,21 @@ class InterAreaPrefix(Base):
     """
 
     __slots__ = ()
-    _SDM_NAME = 'interAreaPrefix'
+    _SDM_NAME = "interAreaPrefix"
     _SDM_ATT_MAP = {
-        'AddPrefixLength': 'addPrefixLength',
-        'AddressPrefix': 'addressPrefix',
-        'IncrLinkStateId': 'incrLinkStateId',
-        'LsaCount': 'lsaCount',
-        'Metric': 'metric',
-        'OptBitLa': 'optBitLa',
-        'OptBitMc': 'optBitMc',
-        'OptBitNu': 'optBitNu',
-        'OptBitP': 'optBitP',
-        'Option': 'option',
-        'PrefixAddressIncrementBy': 'prefixAddressIncrementBy',
+        "AddPrefixLength": "addPrefixLength",
+        "AddressPrefix": "addressPrefix",
+        "IncrLinkStateId": "incrLinkStateId",
+        "LsaCount": "lsaCount",
+        "Metric": "metric",
+        "OptBitLa": "optBitLa",
+        "OptBitMc": "optBitMc",
+        "OptBitNu": "optBitNu",
+        "OptBitP": "optBitP",
+        "Option": "option",
+        "PrefixAddressIncrementBy": "prefixAddressIncrementBy",
     }
-    _SDM_ENUM_MAP = {
-    }
+    _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(InterAreaPrefix, self).__init__(parent, list_op)
@@ -59,13 +59,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddPrefixLength'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddPrefixLength"])
+
     @AddPrefixLength.setter
     def AddPrefixLength(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddPrefixLength'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddPrefixLength"], value)
 
     @property
     def AddressPrefix(self):
@@ -73,13 +74,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['AddressPrefix'])
+        return self._get_attribute(self._SDM_ATT_MAP["AddressPrefix"])
+
     @AddressPrefix.setter
     def AddressPrefix(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['AddressPrefix'], value)
+        self._set_attribute(self._SDM_ATT_MAP["AddressPrefix"], value)
 
     @property
     def IncrLinkStateId(self):
@@ -87,13 +89,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - str: 
+        - str:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
+        return self._get_attribute(self._SDM_ATT_MAP["IncrLinkStateId"])
+
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
         # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
+        self._set_attribute(self._SDM_ATT_MAP["IncrLinkStateId"], value)
 
     @property
     def LsaCount(self):
@@ -101,13 +104,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['LsaCount'])
+        return self._get_attribute(self._SDM_ATT_MAP["LsaCount"])
+
     @LsaCount.setter
     def LsaCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['LsaCount'], value)
+        self._set_attribute(self._SDM_ATT_MAP["LsaCount"], value)
 
     @property
     def Metric(self):
@@ -115,13 +119,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Metric'])
+        return self._get_attribute(self._SDM_ATT_MAP["Metric"])
+
     @Metric.setter
     def Metric(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Metric"], value)
 
     @property
     def OptBitLa(self):
@@ -129,13 +134,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitLa'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitLa"])
+
     @OptBitLa.setter
     def OptBitLa(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitLa'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitLa"], value)
 
     @property
     def OptBitMc(self):
@@ -143,13 +149,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitMc"])
+
     @OptBitMc.setter
     def OptBitMc(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitMc"], value)
 
     @property
     def OptBitNu(self):
@@ -157,13 +164,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitNu'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitNu"])
+
     @OptBitNu.setter
     def OptBitNu(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitNu'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitNu"], value)
 
     @property
     def OptBitP(self):
@@ -171,13 +179,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['OptBitP'])
+        return self._get_attribute(self._SDM_ATT_MAP["OptBitP"])
+
     @OptBitP.setter
     def OptBitP(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['OptBitP'], value)
+        self._set_attribute(self._SDM_ATT_MAP["OptBitP"], value)
 
     @property
     def Option(self):
@@ -185,13 +194,14 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['Option'])
+        return self._get_attribute(self._SDM_ATT_MAP["Option"])
+
     @Option.setter
     def Option(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['Option'], value)
+        self._set_attribute(self._SDM_ATT_MAP["Option"], value)
 
     @property
     def PrefixAddressIncrementBy(self):
@@ -199,31 +209,45 @@ class InterAreaPrefix(Base):
         """
         Returns
         -------
-        - number: 
+        - number:
         """
-        return self._get_attribute(self._SDM_ATT_MAP['PrefixAddressIncrementBy'])
+        return self._get_attribute(self._SDM_ATT_MAP["PrefixAddressIncrementBy"])
+
     @PrefixAddressIncrementBy.setter
     def PrefixAddressIncrementBy(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP['PrefixAddressIncrementBy'], value)
+        self._set_attribute(self._SDM_ATT_MAP["PrefixAddressIncrementBy"], value)
 
-    def update(self, AddPrefixLength=None, AddressPrefix=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, Option=None, PrefixAddressIncrementBy=None):
+    def update(
+        self,
+        AddPrefixLength=None,
+        AddressPrefix=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        Option=None,
+        PrefixAddressIncrementBy=None,
+    ):
         # type: (int, str, str, int, int, bool, bool, bool, bool, int, int) -> InterAreaPrefix
         """Updates interAreaPrefix resource on the server.
 
         Args
         ----
-        - AddPrefixLength (number): 
-        - AddressPrefix (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - Option (number): 
-        - PrefixAddressIncrementBy (number): 
+        - AddPrefixLength (number):
+        - AddressPrefix (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - Option (number):
+        - PrefixAddressIncrementBy (number):
 
         Raises
         ------
@@ -231,23 +255,36 @@ class InterAreaPrefix(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AddPrefixLength=None, AddressPrefix=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, Option=None, PrefixAddressIncrementBy=None):
+    def add(
+        self,
+        AddPrefixLength=None,
+        AddressPrefix=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        Option=None,
+        PrefixAddressIncrementBy=None,
+    ):
         # type: (int, str, str, int, int, bool, bool, bool, bool, int, int) -> InterAreaPrefix
-        """Adds a new interAreaPrefix resource on the json, only valid with config assistant
+        """Adds a new interAreaPrefix resource on the json, only valid with batch add utility
 
         Args
         ----
-        - AddPrefixLength (number): 
-        - AddressPrefix (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - Option (number): 
-        - PrefixAddressIncrementBy (number): 
+        - AddPrefixLength (number):
+        - AddressPrefix (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - Option (number):
+        - PrefixAddressIncrementBy (number):
 
         Returns
         -------
@@ -259,7 +296,20 @@ class InterAreaPrefix(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AddPrefixLength=None, AddressPrefix=None, IncrLinkStateId=None, LsaCount=None, Metric=None, OptBitLa=None, OptBitMc=None, OptBitNu=None, OptBitP=None, Option=None, PrefixAddressIncrementBy=None):
+    def find(
+        self,
+        AddPrefixLength=None,
+        AddressPrefix=None,
+        IncrLinkStateId=None,
+        LsaCount=None,
+        Metric=None,
+        OptBitLa=None,
+        OptBitMc=None,
+        OptBitNu=None,
+        OptBitP=None,
+        Option=None,
+        PrefixAddressIncrementBy=None,
+    ):
         # type: (int, str, str, int, int, bool, bool, bool, bool, int, int) -> InterAreaPrefix
         """Finds and retrieves interAreaPrefix resources from the server.
 
@@ -269,17 +319,17 @@ class InterAreaPrefix(Base):
 
         Args
         ----
-        - AddPrefixLength (number): 
-        - AddressPrefix (str): 
-        - IncrLinkStateId (str): 
-        - LsaCount (number): 
-        - Metric (number): 
-        - OptBitLa (bool): 
-        - OptBitMc (bool): 
-        - OptBitNu (bool): 
-        - OptBitP (bool): 
-        - Option (number): 
-        - PrefixAddressIncrementBy (number): 
+        - AddPrefixLength (number):
+        - AddressPrefix (str):
+        - IncrLinkStateId (str):
+        - LsaCount (number):
+        - Metric (number):
+        - OptBitLa (bool):
+        - OptBitMc (bool):
+        - OptBitNu (bool):
+        - OptBitP (bool):
+        - Option (number):
+        - PrefixAddressIncrementBy (number):
 
         Returns
         -------
